@@ -1,13 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default function getAccommodations(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<object>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+
+  // TODO: Add Accommodations to API
+    
+  res.status(200).json({status: 'OK'})
 }
