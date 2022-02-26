@@ -43,7 +43,6 @@ export const FilterBox = styled.View`
 export const FilterBoxHeader = styled.View`
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid green;
   padding: 0px 0px 22px 0px;
   display: flex;
   color: #000000;
@@ -52,10 +51,8 @@ export const FilterBoxHeader = styled.View`
 export const FilterBoxFooter = styled.View`
   width: 100%;
   text-align: center;
-
   display: flex;
   align-items: center;
-
   padding: 22px 22px 10px 22px;
 `;
 
