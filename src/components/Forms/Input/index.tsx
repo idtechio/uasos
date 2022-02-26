@@ -1,21 +1,21 @@
-import type { InputProps } from './types'
-import { InputWraper, Label, TextInput } from './style'
-import React, { useState } from 'react'
+import type { InputProps } from "./types";
+import { InputWraper, Label, TextInput } from "./style";
+import React, { useState } from "react";
 
-const Input = ({placeholder, backgroundColor}: InputProps) => {
-  const [placeholderIsLabel, setPlaceholderIsLabel] = useState(0)
-  
+const Input = ({ placeholder, backgroundColor }: InputProps) => {
+  const [placeholderIsLabel, setPlaceholderIsLabel] = useState(0);
+
   const onFocus = (e) => {
-    e.target.placeholder = ''
-    setPlaceholderIsLabel(1)
-  }
+    e.target.placeholder = "";
+    setPlaceholderIsLabel(1);
+  };
 
   const onBlur = (e) => {
-    e.target.placeholder = placeholder
-    setPlaceholderIsLabel(0)
-  }
+    e.target.placeholder = placeholder;
+    setPlaceholderIsLabel(0);
+  };
 
-  return(
+  return (
     <InputWraper>
       {placeholderIsLabel ? <Label>{placeholder}</Label> : null}
       <TextInput
@@ -25,7 +25,7 @@ const Input = ({placeholder, backgroundColor}: InputProps) => {
         placeholder={placeholder}
       />
     </InputWraper>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

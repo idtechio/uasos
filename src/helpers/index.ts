@@ -1,1 +1,1 @@
-export { default as lenguageTextSwitcher } from './lenguageTextSwitcher'
+export { default as lenguageTextSwitcher } from "./lenguageTextSwitcher";

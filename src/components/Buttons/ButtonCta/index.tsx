@@ -1,12 +1,12 @@
-import { Button, ButtonAnchor } from './style'
-import type { ButtonProps } from '../types'
+import { Button, ButtonAnchor } from "./style";
+import type { ButtonProps } from "../types";
 
-const ButtonCta = ({anchor}: ButtonProps) => {
-	return(
-		<Button>
-			<ButtonAnchor>{anchor}</ButtonAnchor>
-		</Button>
-	)
-}
+const ButtonCta = ({ anchor }: ButtonProps) => {
+  return (
+    <Button>
+      <ButtonAnchor>{anchor}</ButtonAnchor>
+    </Button>
+  );
+};
 
-export default ButtonCta
+export default ButtonCta;

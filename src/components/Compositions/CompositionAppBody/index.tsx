@@ -1,12 +1,8 @@
-import type { AppBodyProps } from './types'
-import { AppBodyWraper } from './style'
+import type { AppBodyProps } from "./types";
+import { AppBodyWraper } from "./style";
 
-const CompositionAppBody = ({children}: AppBodyProps) => {
-	return(
-		<AppBodyWraper>
-			{children}
-		</AppBodyWraper>
-	)
-}
+const CompositionAppBody = ({ children }: AppBodyProps) => {
+  return <AppBodyWraper>{children}</AppBodyWraper>;
+};
 
-export default CompositionAppBody
+export default CompositionAppBody;

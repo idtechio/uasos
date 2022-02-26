@@ -1,4 +1,4 @@
 export type ButtonProps = {
-	title?: string
-    subtitle?: string
-}
+  title?: string;
+  subtitle?: string;
+};

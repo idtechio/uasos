@@ -1,5 +1,5 @@
-import styled from 'styled-components/native'
-import { InputProps } from './types';
+import styled from "styled-components/native";
+import { InputProps } from "./types";
 
 export const InputWraper = styled.View`
   width: 100%;
@@ -7,12 +7,12 @@ export const InputWraper = styled.View`
   display: flex;
   justify-content: flex-end;
   margin-top: 16px;
-`
+`;
 
 export const Label = styled.Text<InputProps>`
   margin-bottom: -10px;
   margin-left: 15px;
-  background-color: #F5F4F4;
+  background-color: #f5f4f4;
   width: fit-content;
   padding: 3px 5px;
   line-height: 100%;
@@ -20,13 +20,13 @@ export const Label = styled.Text<InputProps>`
 `;
 
 export const TextInput = styled.TextInput`
-  border: 2px solid rgba(28,27,37,.3);
+  border: 2px solid rgba(28, 27, 37, 0.3);
   background-color: transparent;
   padding: 20px;
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
   &:focus {
-    outlineColor: '#003566';
+    outlinecolor: "#003566";
   }
-`
+`;
