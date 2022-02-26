@@ -1,3 +1,3 @@
 export type AppBodyProps = {
-	children?:  React.ReactNode
-}
+  children?: React.ReactNode;
+};

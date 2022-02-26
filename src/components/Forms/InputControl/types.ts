@@ -1,3 +1,1 @@
-export type InputControlProps = {
-
-}
+export type InputControlProps = {};

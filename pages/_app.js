@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Head from 'next/head'
-import { ThemeProvider } from 'styled-components/native'
-import { primary, secendary } from '../src/style/theme.config'
+import * as React from "react";
+import Head from "next/head";
+import { ThemeProvider } from "styled-components/native";
+import { primary, secendary } from "../src/style/theme.config";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
