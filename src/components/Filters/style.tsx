@@ -10,7 +10,6 @@ export const FiltersWraper = styled.View`
   flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 `;
 
 export const Filter = styled.View`
