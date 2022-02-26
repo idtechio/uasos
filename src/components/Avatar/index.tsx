@@ -8,20 +8,21 @@ import {
 } from "./style";
 import Image from "next/image";
 
-const Avatar = ({ title, subtitle }: ButtonProps) => {
+const Avatar = ({ title, subtitle, reversedTitle, avatar }: ButtonProps) => {
   return (
     <AvatarWraper>
       <AvatarImage>
         <Image
-          src="http://placehold.jp/150x150.png"
+          src={`${avatar || "http://placehold.jp/150x150.png"}`}
           alt=""
           width={32}
           height={32}
         />
       </AvatarImage>
       <AvatarContent>
-        <Subtitle>{subtitle}</Subtitle>
+        {!reversedTitle && <Subtitle>{subtitle}</Subtitle>}
         <Title>{title}</Title>
+        {!!reversedTitle && <Subtitle>{subtitle}</Subtitle>}
       </AvatarContent>
     </AvatarWraper>
   );
