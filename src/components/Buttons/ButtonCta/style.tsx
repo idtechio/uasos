@@ -5,6 +5,10 @@ export const Button = styled.View`
 	border-radius: 50px;
 	padding: 12px 25px,
 	width: fit-content;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.7
+	}
 `;
 
 export const ButtonAnchor = styled.Text`
