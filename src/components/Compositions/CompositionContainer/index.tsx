@@ -1,5 +1,5 @@
 import type { ContainerProps } from "./types";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView, View } from "react-native";
 
 // ? ScrollView don't work with project default component file structure and styled-components ?
 
