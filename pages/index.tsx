@@ -10,7 +10,6 @@ export default function App(props) {
     <CompositionAppBody>
       <Filters filters={[{ name: "lokalizacja" }]} />
       <CompositionContainer>
-        //TODO: loop with dumy data
         <OfferBox />
         <OfferBox />
         <OfferBox />
