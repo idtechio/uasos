@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const FiltersWraper = styled.ScrollView`
   padding: 16px 20px;
-  height: 110px;
+  height: 100px;
   flex-direction: row;
 
   flex-wrap: wrap;
