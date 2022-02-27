@@ -1,10 +1,10 @@
-import GuestCard from "../../src/components/GuestCard";
+import GuestCard from "../src/components/GuestCard";
 import {
   CompositionAppBody,
   CompositionContainer,
-} from "../../src/components/Compositions";
-import Filters from "../../src/components/Filters";
-import { FilterModal } from "../../src/components/Filters/style";
+} from "../src/components/Compositions";
+import Filters from "../src/components/Filters";
+import { FilterModal } from "../src/components/Filters/style";
 
 export default function App(props) {
   return (

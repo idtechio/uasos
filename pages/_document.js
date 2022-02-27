@@ -9,6 +9,9 @@ const normalizeNextElements = `
     flex-direction: column;
     height: 100%;
   }
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default class MyDocument extends Document {
@@ -26,7 +29,12 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html style={{ height: "100%" }}>
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=optional"
+            rel="stylesheet"
+          />
+        </Head>
         <body style={{ height: "100%", overflow: "hidden" }}>
           <Main />
           <NextScript />

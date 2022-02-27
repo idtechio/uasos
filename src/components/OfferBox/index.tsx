@@ -126,7 +126,7 @@ const OfferBox = (props: OfferBoxProps) => {
       </View>
       <View style={styles.footer}>
         <Avatar title="Alina" subtitle="Gospodarz" />
-        <ButtonCta anchor="Zadzwoń" />
+        {/* <ButtonCta anchor="Zadzwoń" /> */}
       </View>
     </View>
   );

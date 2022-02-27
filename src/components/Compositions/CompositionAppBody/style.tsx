@@ -8,11 +8,3 @@ export const AppBodyWraper = styled.View<AppBodyProps>`
   flex: 1;
   width: 100%;
 `;
-
-export const Header = styled.View`
-  background-color: #ffffff;
-  width: 100%;
-  height: 66px;
-  padding: 18px 23px 13px 23px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-`;

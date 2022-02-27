@@ -1,10 +1,10 @@
 import { Button, ButtonAnchor } from "./style";
 import type { ButtonProps } from "../types";
 
-const ButtonCta = ({ anchor }: ButtonProps) => {
+const ButtonCta = ({ anchor, onPress }: ButtonProps) => {
   return (
     <Button>
-      <ButtonAnchor>{anchor}</ButtonAnchor>
+      <ButtonAnchor onPress={onPress}>{anchor}</ButtonAnchor>
     </Button>
   );
 };

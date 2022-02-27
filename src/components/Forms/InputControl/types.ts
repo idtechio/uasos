@@ -1,1 +1,3 @@
-export type InputControlProps = {};
+export type InputControlProps = {
+  children: React.ReactNode;
+};
