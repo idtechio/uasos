@@ -14,6 +14,7 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  secret: process.env.SECRET,
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
     brandColor: "#1A3764", // Hex color code
