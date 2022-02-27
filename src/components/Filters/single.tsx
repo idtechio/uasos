@@ -53,7 +53,19 @@ const SingleFilter = ({
                 {name}
               </FilterBoxHeader>
               <View style={styles.content}>
-                <select onChange={(e) => setVal(e.target.value)}>
+                <select
+                  onChange={(e) => {
+                    if (e.target.value !== "Wybierz...") {
+                      setVal(e.target.value);
+                    } else {
+                      setVal(null);
+                    }
+                  }}
+                  style={{ height: "40px" }}
+                >
+                  <option value={null} selected={val === null}>
+                    Wybierz...
+                  </option>
                   {options.map((option) => (
                     <option selected={val == option.value} value={option.value}>
                       {option.label}

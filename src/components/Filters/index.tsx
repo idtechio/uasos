@@ -4,7 +4,14 @@ import SingleFilter from "./single";
 
 const Filters = ({ filters }: FiltersProps) => {
   return (
-    <FiltersWraper>
+    <FiltersWraper
+      horizontal={true}
+      centerContent={false}
+      contentContainerStyle={{
+        justifyContent: "flex-start",
+        flexDirection: "row",
+      }}
+    >
       {filters.map((filter) => {
         return <SingleFilter {...filter} />;
       })}

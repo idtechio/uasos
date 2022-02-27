@@ -1,12 +1,11 @@
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 
-export const FiltersWraper = styled.View`
+export const FiltersWraper = styled.ScrollView`
   padding: 16px 20px;
+  height: 110px;
   flex-direction: row;
-  justify-content: flex-start;
-  max-width: 1000px;
-  width: 1000%;
+
   flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto;
