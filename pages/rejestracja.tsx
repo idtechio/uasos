@@ -4,7 +4,7 @@ import {
 } from "../src/components/Compositions";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-export default function App(props) {
+export default function (props) {
   const { data: session } = useSession();
   if (session) {
     return (

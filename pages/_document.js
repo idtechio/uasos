@@ -9,6 +9,9 @@ const normalizeNextElements = `
     flex-direction: column;
     height: 100%;
   }
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default class MyDocument extends Document {
