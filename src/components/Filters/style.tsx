@@ -54,6 +54,8 @@ export const FilterBoxFooter = styled.View`
   display: flex;
   align-items: center;
   padding: 22px 22px 10px 22px;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const styles = StyleSheet.create({
@@ -76,6 +78,20 @@ export const FilterBoxButton = styled.View`
   height: 50px;
 	width: fit-content;
 	cursor: pointer;
+  margin-right:10px;
+	&:hover {
+		opacity: 0.7
+	}
+`;
+
+export const FilterBoxButtonCancel = styled.View`
+	background-color: #999999;
+	border-radius: 50px;
+	padding: 12px 25px,
+  height: 50px;
+	width: fit-content;
+	cursor: pointer;
+   margin-left:10px;
 	&:hover {
 		opacity: 0.7
 	}
