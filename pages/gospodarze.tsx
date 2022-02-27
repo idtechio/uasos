@@ -5,7 +5,9 @@ import {
 } from "../src/components/Compositions";
 import Filters from "../src/components/Filters";
 import Cities from "../src/consts/cities.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import firebase from "../firebaase/clientApp";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 export default function App(props) {
   const [filters, setFilters] = useState({
@@ -15,6 +17,16 @@ export default function App(props) {
     toddler: null,
   });
   console.log({ filters });
+
+  const [votes, votesLoading, votesError] = useCollection(
+    firebase.firestore().collection("votes"),
+    {}
+  );
+
+  if (!votesLoading && votes) {
+    votes.docs.map((doc) => console.log(doc.data()));
+  }
+
   return (
     <CompositionAppBody>
       <Filters
