@@ -5,12 +5,12 @@ export default async function getAccommodations(
   req: NextApiRequest,
   res: NextApiResponse<object>
 ) {
-  // TODO: Add Accommodations to API
-  const accommodations = await db
-    .collection("accommodations")
-    .doc("leerob")
-    .get();
-  console.log(accommodations);
+  try {
+    const accommodations = await db.collection("accommodations").get();
+    const accommodationsData = accommodations.docs.map((entry) => entry.data());
 
-  res.status(200).json({ status: "OK" });
+    res.status(200).json(accommodationsData);
+  } catch (e) {
+    res.status(400).end();
+  }
 }
