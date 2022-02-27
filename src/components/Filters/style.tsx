@@ -1,12 +1,11 @@
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 
-export const FiltersWraper = styled.View`
+export const FiltersWraper = styled.ScrollView`
   padding: 16px 20px;
+  height: 100px;
   flex-direction: row;
-  justify-content: flex-start;
-  max-width: 1000px;
-  width: 1000%;
+
   flex-wrap: wrap;
   margin-right: auto;
   margin-left: auto;
@@ -54,6 +53,8 @@ export const FilterBoxFooter = styled.View`
   display: flex;
   align-items: center;
   padding: 22px 22px 10px 22px;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const styles = StyleSheet.create({
@@ -76,6 +77,20 @@ export const FilterBoxButton = styled.View`
   height: 50px;
 	width: fit-content;
 	cursor: pointer;
+  margin-right:10px;
+	&:hover {
+		opacity: 0.7
+	}
+`;
+
+export const FilterBoxButtonCancel = styled.View`
+	background-color: #999999;
+	border-radius: 50px;
+	padding: 12px 25px,
+  height: 50px;
+	width: fit-content;
+	cursor: pointer;
+   margin-left:10px;
 	&:hover {
 		opacity: 0.7
 	}
