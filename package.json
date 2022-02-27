@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
+    "firebase": "^9.6.7",
     "next": "latest",
     "next-auth": "^4.2.1",
     "next-transpile-modules": "^9.0.0",
