@@ -1,6 +1,6 @@
 import { HeaderPage, ActionBar, ServiceLogo } from "./style";
 import Logo from "./image/Logo";
-import { ButtonCta } from "../Buttons";
+import { ButtonCta, ButtonDefault } from "../Buttons";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
       </ServiceLogo>
       <ActionBar>
         {session ? (
-          <ButtonCta anchor="dodaj lokum" onPress={() => signOut()} />
+          <ButtonDefault anchor="wyloguj" onPress={() => signOut()} />
         ) : (
           <ButtonCta anchor="dodaj lokum" onPress={() => signIn()} />
         )}

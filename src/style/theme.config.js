@@ -10,8 +10,8 @@ export const primary = {
     textOnCta: "#003566",
   },
   fonts: {
-    headings: "'Poppins', sans-serif",
-    text: "'Rubik', sans-serif",
+    headings: "'Roboto', sans-serif",
+    text: "'Roboto', sans-serif",
   },
   pageSection: {
     desktopSpacing: "35px",

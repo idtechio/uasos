@@ -8,6 +8,7 @@ export const HeaderPage = styled.View`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  z-index: 2;
 `;
 
 export const ActionBar = styled.View``;

@@ -1,27 +1,41 @@
-import { Input, ChoiceButton } from "../src/components/Forms";
+import type { AddAccommodationFormProps } from "./types";
+import {} from "./style";
 import {
-  CompositionAppBody,
-  CompositionContainer,
   CompositionSection,
   CompositionGrid,
-} from "../src/components/Compositions";
-import { Text } from "react-native";
-import { lenguageTextSwitcher } from "../src/helpers";
+  CompositionRow,
+} from "../Compositions";
+import { lenguageTextSwitcher } from "../../helpers";
+import {
+  Input,
+  ChoiceButton,
+  InputControl,
+  InputCotrolLabel,
+  RadioButtons,
+} from "../Forms";
+import { ScrollView, StyleSheet } from "react-native";
 
-export default function HostRegisterForm(props) {
+const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   return (
-    <CompositionAppBody>
-      <CompositionContainer>
-        <CompositionSection padding={[8, 40, 35, 40]}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={styles.container}
+      style={styles.containerWraper}
+    >
+      <CompositionSection padding={[35, 30, 8, 30]}>
+        <InputControl>
           <Input placeholder="imię" />
+        </InputControl>
+        <InputControl>
           <Input placeholder="e-mail" />
+        </InputControl>
+        <InputControl>
           <Input placeholder="miejscowość" />
-        </CompositionSection>
-        <CompositionSection
-          backgroundColor="#F5F4F4"
-          padding={[35, 40, 35, 40]}
-        >
-          <Text>
+        </InputControl>
+      </CompositionSection>
+      <CompositionSection backgroundColor="#F5F4F4" padding={[35, 30, 10, 30]}>
+        <InputControl>
+          <InputCotrolLabel>
             {lenguageTextSwitcher([
               {
                 locale: "ua-UA",
@@ -29,14 +43,14 @@ export default function HostRegisterForm(props) {
               },
               {
                 locale: "pl-PL",
-                text: "Określ swoje preferencje, kogo chcesz przyjąć:",
+                text: "Określ swoje preferencje - komu możesz pomóc:",
               },
               {
                 locale: "ru-RU",
                 text: "(RU) Określ swoje preferencje, kogo chcesz przyjąć:",
               },
             ])}
-          </Text>
+          </InputCotrolLabel>
           <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
             {hostPreferences.map((hostPreference: HostPreferenceData) => {
               return (
@@ -47,17 +61,44 @@ export default function HostRegisterForm(props) {
               );
             })}
           </CompositionGrid>
-        </CompositionSection>
-      </CompositionContainer>
-    </CompositionAppBody>
+        </InputControl>
+        <InputControl>
+          <InputCotrolLabel>
+            {lenguageTextSwitcher("Ile osób możesz przyjąć?")}
+          </InputCotrolLabel>
+          <RadioButtons
+            radios={[
+              { text: "1", id: "1" },
+              { text: "2", id: "2" },
+              { text: "3", id: "3" },
+              { text: "4", id: "4" },
+              { text: "5", id: "5" },
+              { text: "więcej", id: "6", more: "number" },
+            ]}
+          />
+        </InputControl>
+      </CompositionSection>
+    </ScrollView>
   );
-}
+};
+
+export default AddAccommodationForm;
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    flexDirection: "column",
+  },
+  containerWraper: {
+    width: "100%",
+  },
+});
 
 /**
  * Temporary dumy data
  * TODO: destiny API
  */
-import type { LenguageText } from "../src/helpers/lenguageTextSwitcher";
+import type { LenguageText } from "../../helpers/lenguageTextSwitcher";
 export type HostPreferenceData = {
   id: string;
   text: LenguageText;
@@ -117,7 +158,7 @@ const hostPreferences: HostPreferencesData = [
   },
   {
     id: "hostPreference_3",
-    text: "zapewniam wyżywieniet",
+    text: "zapewnie wyżywienie",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +180,7 @@ const hostPreferences: HostPreferencesData = [
   },
   {
     id: "hostPreference_4",
-    text: "osoby niepełnosprawne",
+    text: "osoby z niepełnosprawnością",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

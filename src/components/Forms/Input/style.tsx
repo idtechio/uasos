@@ -3,20 +3,21 @@ import { InputProps } from "./types";
 
 export const InputWraper = styled.View`
   width: 100%;
-  height: 72px;
+  height: 62px;
   display: flex;
   justify-content: flex-end;
-  margin-top: 16px;
+  /* margin-top: 16px; */
 `;
 
 export const Label = styled.Text<InputProps>`
   margin-bottom: -10px;
   margin-left: 15px;
-  background-color: #f5f4f4;
+  background-color: #fff;
   width: fit-content;
   padding: 3px 5px;
   line-height: 100%;
   z-index: 2;
+  color: rgba(28, 27, 37, 0.5);
 `;
 
 export const TextInput = styled.TextInput`
