@@ -6,6 +6,7 @@ export const Button = styled.View`
 	padding: 12px 25px,
 	width: fit-content;
 	cursor: pointer;
+	text-align: center;
 	&:hover {
 		opacity: 0.7
 	}

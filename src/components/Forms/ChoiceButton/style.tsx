@@ -1,7 +1,7 @@
 import type { ChoiceButtonProps } from "./type";
 import styled from "styled-components/native";
 
-export const Button = styled.TouchableOpacity<ChoiceButtonProps>`
+export const Button = styled.View<ChoiceButtonProps>`
   border: ${(props) =>
     props.isChoice ? `2px solid #38B000` : `2px solid rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) =>
@@ -13,7 +13,10 @@ export const Button = styled.TouchableOpacity<ChoiceButtonProps>`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-right: ${(props) => (props.isSmall ? `10px` : `0`)}; ;
+  margin-right: ${(props) => (props.isSmall ? `10px` : `0`)};
+  margin-bottom: ${(props) => (props.isSmall ? `10px` : `0`)};
+  height: ${(props) => (props.isSmall ? `unset` : `100%`)};
+  width: ${(props) => (props.isSmall ? `unset` : `100%`)};
 `;
 
 export const Text = styled.Text`

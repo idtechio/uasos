@@ -15,7 +15,7 @@ const Header = () => {
         {session ? (
           <ButtonDefault anchor="wyloguj" onPress={() => signOut()} />
         ) : (
-          <ButtonCta anchor="dodaj lokum" onPress={() => signIn()} />
+          <ButtonCta anchor="udostępnij miejsce" onPress={() => signIn()} />
         )}
       </ActionBar>
     </HeaderPage>

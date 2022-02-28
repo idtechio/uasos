@@ -18,11 +18,10 @@ export default NextAuth({
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
     brandColor: "#1A3764", // Hex color code
-    logo: "http://localhost:3000/logo.svg", // Absolute URL to image
+    logo: "https://www.sosua.pl/logo.svg", // Absolute URL to image
   },
   callbacks: {
     redirect({ url, baseUrl }) {
-      console.log(url, baseUrl);
       return `/account`;
     },
   },

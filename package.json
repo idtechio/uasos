@@ -9,15 +9,19 @@
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
     "firebase": "^9.6.7",
+    "firebase-admin": "^10.0.2",
     "next": "latest",
     "next-auth": "^4.2.1",
     "next-transpile-modules": "^9.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-fetch-hook": "^1.8.5",
+    "react-hook-form": "^7.27.1",
     "react-native": "^0.67.3",
     "react-native-modal": "^13.0.0",
     "react-native-web": "^0.13.14",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",

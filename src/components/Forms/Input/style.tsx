@@ -17,11 +17,12 @@ export const Label = styled.Text<InputProps>`
   padding: 3px 5px;
   line-height: 100%;
   z-index: 2;
-  color: rgba(28, 27, 37, 0.5);
+  color: ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.5)`)};
 `;
 
 export const TextInput = styled.TextInput`
-  border: 2px solid rgba(28, 27, 37, 0.3);
+  border: 2px solid
+    ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
   background-color: transparent;
   padding: 20px;
   border-radius: 4px;
@@ -30,4 +31,8 @@ export const TextInput = styled.TextInput`
   &:focus {
     outlinecolor: "#003566";
   }
+`;
+
+export const Error = styled.Text`
+  color: #d8000c;
 `;

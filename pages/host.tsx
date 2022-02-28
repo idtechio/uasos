@@ -4,18 +4,28 @@ import {
 } from "../src/components/Compositions";
 import AddAccommodationForm from "../src/components/AddAccommodationForm";
 import { StyleSheet, View } from "react-native";
+import { useSession } from "next-auth/react";
 
 export default function Account(props) {
   const hostAddAccommodation = false;
+  const { data: session } = useSession();
 
   return (
     <CompositionAppBody>
-      {!hostAddAccommodation ? (
+      {session ? (
+        <>
+          {!hostAddAccommodation ? (
+            <View style={styles.container}>
+              <AddAccommodationForm />
+            </View>
+          ) : (
+            <>lista</>
+          )}
+        </>
+      ) : (
         <View style={styles.container}>
           <AddAccommodationForm />
         </View>
-      ) : (
-        <>lista</>
       )}
     </CompositionAppBody>
   );
