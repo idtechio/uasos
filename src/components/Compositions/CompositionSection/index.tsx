@@ -1,5 +1,5 @@
 import type { SectionProps } from "./types";
-import { PageSection } from "./style";
+import { PageSection, SectionHeader } from "./style";
 
 const CompositionSection = ({
   children,
@@ -7,6 +7,7 @@ const CompositionSection = ({
   zeroPadding,
   sectionId,
   padding,
+  header,
 }: SectionProps) => {
   return (
     <PageSection
@@ -15,6 +16,7 @@ const CompositionSection = ({
       zeroPadding={zeroPadding}
       padding={padding}
     >
+      {header ? <SectionHeader>{header}</SectionHeader> : null}
       {children}
     </PageSection>
   );
