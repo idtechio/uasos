@@ -6,10 +6,13 @@ export const Button = styled.Pressable`
 	padding: 12px 25px,
 	text-align: center;
 	display: inline-block;
-	font-weight: 700;
-	color: ${({ theme }) => theme.colors.textOnCta};
 
 	&:hover {
 		opacity: 0.7
 	}
+`;
+
+export const Text = styled.Text`
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.textOnCta};
 `;
