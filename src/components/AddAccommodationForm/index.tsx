@@ -174,7 +174,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     const floorApiArray = [];
     for (const [key, value] of Object.entries(floor)) {
       if (value) {
-        floorApiArray.push(`floor_${key}`);
+        floorApiArray.push(key);
       }
     }
 
@@ -199,20 +199,24 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     fetch("/api/accommodations/add", {
       method: "post",
       body: JSON.stringify({
-        host: {
-          name: data.name,
-          email: data.email,
-        },
-        location: {
-          city: data.location,
-          state: "",
-        },
-        conditions: [...conditionsApiArray, ...floorApiArray],
-        preferences: preferencesApiArray,
-        resources: [...howMenyPeopleApiArray],
+        name: data.namei,
+        email: data.email,
+        city: data.location,
+        post_code: "",
+        status: 1,
+        children_allowed: preferences.kids,
+        floor: parseInt(floorApiArray[0]),
+        pet_allowed: preferences.animals,
+        lift: floorApiArray[0] === "bright" ? true : false,
+        handicapped_allowed: preferences.disability,
+        num_people: data.howMenyPeople,
+        period: parseInt(howLongArray[0]),
+        provide_food: preferences.food,
+        ts_registered: "2022-02-28 16:45:52.191319",
       }),
     }).then((res) => {
       if (res.status === 200) {
+        console.log("send");
       } else {
       }
     });
@@ -256,10 +260,10 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   }, [howMenyPeople["more"]]);
 
   const [howLong, setHowLong] = useState({
-    week_1: false,
-    week_2: false,
-    week_3: false,
-    week_more: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
   });
   const clickHowLong = (id) => {
     setHowLong((prevState) => {
@@ -397,9 +401,10 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               ])}
             </InputCotrolLabel>
             <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
-              {hostPreferences.map((hostPreference: HostPreferenceData) => {
+              {hostPreferences.map((hostPreference: HostPreferenceDatai, i) => {
                 return (
                   <TouchableOpacity
+                    key={i}
                     onPress={() => {
                       clickPreferences(hostPreference.id);
                     }}
@@ -506,47 +511,35 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <RadioButtons>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowLong("week_1");
+                  clickHowLong("1");
                 }}
               >
-                <ChoiceButton
-                  text="tydzień"
-                  isSmall
-                  isChoice={howLong["week_1"]}
-                />
+                <ChoiceButton text="tydzień" isSmall isChoice={howLong["1"]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowLong("week_2");
+                  clickHowLong("2");
                 }}
               >
                 <ChoiceButton
                   text="2 tygodnie"
                   isSmall
-                  isChoice={howLong["week_2"]}
+                  isChoice={howLong["2"]}
                 />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowLong("week_4");
+                  clickHowLong("4");
                 }}
               >
-                <ChoiceButton
-                  text="miesiąc"
-                  isSmall
-                  isChoice={howLong["week_4"]}
-                />
+                <ChoiceButton text="miesiąc" isSmall isChoice={howLong["4"]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowLong("week_more");
+                  clickHowLong("5");
                 }}
               >
-                <ChoiceButton
-                  text="dłuej"
-                  isSmall
-                  isChoice={howLong["week_more"]}
-                />
+                <ChoiceButton text="dłuej" isSmall isChoice={howLong["5"]} />
               </TouchableOpacity>
             </RadioButtons>
           </InputControl>

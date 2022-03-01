@@ -9,6 +9,7 @@ export default async function getAccommodations(
 
   const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
   const data = JSON.stringify(body);
+  console.log(body);
 
   // Imports the Google Cloud client library
   const { PubSub } = require("@google-cloud/pubsub");
@@ -25,13 +26,18 @@ export default async function getAccommodations(
         .topic(topicNameOrId)
         .publish(dataBuffer);
       console.log(`Message ${messageId} published.`);
+      res.status(200).json({ status: "ok" });
     } catch (error) {
       console.error(`Received error while publishing: ${error.message}`);
+      res
+        .status(200)
+        .json({
+          status: "error",
+          error: `Received error while publishing: ${error.message}`,
+        });
       process.exitCode = 1;
     }
   }
 
   publishMessage();
-
-  res.status(200).json({ status: "ok" });
 }
