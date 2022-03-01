@@ -400,6 +400,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               {hostPreferences.map((hostPreference: HostPreferenceData) => {
                 return (
                   <TouchableOpacity
+                    key={hostPreference.id}
                     onPress={() => {
                       clickPreferences(hostPreference.id);
                     }}

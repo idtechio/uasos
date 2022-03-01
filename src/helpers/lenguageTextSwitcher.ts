@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 export type LenguageText = string | Array<{ locale: string; text: string }>;
 
 const lenguageTextSwitcher = (text: LenguageText) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks -- TODO @MateW fix this pls
   const { locale } = useRouter();
   if (typeof text === "string") {
     return text;

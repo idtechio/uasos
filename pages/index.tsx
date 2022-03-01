@@ -65,8 +65,9 @@ function Home(props) {
       />
       <CompositionContainer>
         <>
-          {data.map((accommodation) => {
-            return <OfferBox {...accommodation} />;
+          {data.map((accommodation, index) => {
+            // TODO replace index with some id
+            return <OfferBox {...accommodation} key={index} />;
           })}
         </>
       </CompositionContainer>
