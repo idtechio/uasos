@@ -302,7 +302,19 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             error={errors.email}
             errorMsg={"Podaj porawny e-mail"}
           />
-
+          <FormTextInput
+            name="phoneNumber"
+            label={"telefon"}
+            rules={{
+              required: true,
+              pattern: {
+                value: /\d{9,15}/,
+                message: "Podaj prawidłowy numer telefonu",
+              },
+            }}
+            error={errors.location}
+            errorMsg={"Podaj prawidłowy numer telefonu"}
+          />
           <FormTextInput
             name="location"
             label={"miejscowość"}
