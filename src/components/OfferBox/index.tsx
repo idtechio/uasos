@@ -9,6 +9,7 @@ import Calendar from "./image/Calendar";
 import Dish from "./image/Dish";
 import Animals from "./image/Animals";
 import Disability from "./image/Disability";
+import { Trans, useTranslation } from "next-i18next";
 
 const OfferBox = ({
   location,
@@ -17,6 +18,7 @@ const OfferBox = ({
   preferences,
   resources,
 }: Accommodation) => {
+  const { t } = useTranslation();
   return (
     <View style={styles.box}>
       <View style={styles.header}>
@@ -31,13 +33,23 @@ const OfferBox = ({
           <View style={styles.headerRightText}>
             <User />
             <Text style={styles.headerRightTextConent}>
-              miejsce dla <strong>3 osób</strong>
+              <Trans
+                i18nKey="accommodationOffer.canAccommodate"
+                values={{ count: 6 }}
+              >
+                place for <strong>3 people</strong>
+              </Trans>
             </Text>
           </View>
           <View style={styles.headerRightText}>
             <Calendar />
             <Text style={styles.headerRightTextConent}>
-              max. <strong>2 tygodnie</strong>
+              <Trans
+                i18nKey="accommodationOffer.duration"
+                values={{ time: t("staticValues.timePeriod.twoWeeks") }}
+              >
+                max. <strong>2 weeks</strong>
+              </Trans>
             </Text>
           </View>
         </View>
@@ -51,29 +63,28 @@ const OfferBox = ({
                     <View style={styles.tag}>
                       <Animals />
                       <Text style={styles.tagText}>
-                        zwierzęta mile widziane
+                        {t("accommodationOffer.acceptAnimals")}
                       </Text>
                     </View>
                   );
-                  break;
                 case "disability":
                   return (
                     <View style={[styles.tag]}>
                       <Disability />
                       <Text style={styles.tagText}>
-                        udogodnienia dla niepełnosprawnych
+                        {t("accommodationOffer.disabledSupport")}
                       </Text>
                     </View>
                   );
-                  break;
                 case "foof":
                   return (
                     <View style={styles.tag}>
                       <Dish />
-                      <Text style={styles.tagText}>wyżywienie</Text>
+                      <Text style={styles.tagText}>
+                        {t("accommodationOffer.includesFood")}
+                      </Text>
                     </View>
                   );
-                  break;
                 default:
                   return <></>;
               }
@@ -81,7 +92,10 @@ const OfferBox = ({
           : null}
       </View>
       <View style={styles.footer}>
-        <Avatar title={host.name} subtitle="Gospodarz" />
+        <Avatar
+          title={host.name}
+          subtitle={t("accommodationOffer.author.owner")}
+        />
         {/* <ButtonCta anchor="Zadzwoń" /> */}
       </View>
     </View>

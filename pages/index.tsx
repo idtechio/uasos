@@ -7,8 +7,10 @@ import Filters from "../src/components/Filters";
 import Cities from "../src/consts/cities.json";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 function Home(props) {
+  const { t } = useTranslation();
   const [filters, setFilters] = useState({
     city: null,
     guests: null,
@@ -23,40 +25,43 @@ function Home(props) {
       <Filters
         filters={[
           {
-            name: "Lokalizacja",
+            name: t("labels.location"),
             options: Cities.map(({ name }) => ({ value: name, label: name })),
             onSubmit: (e) => setFilters({ ...filters, city: e }),
             value: filters.city,
           },
           {
-            name: "Liczba gości",
+            name: t("labels.numberOfGuests"),
             options: [
               { value: "1", label: "1" },
               { value: "2", label: "2" },
               { value: "3", label: "3" },
               { value: "4", label: "4" },
               { value: "5", label: "5" },
-              { value: ">5", label: "więcej" },
+              { value: ">5", label: t("more") },
             ],
             onSubmit: (e) => setFilters({ ...filters, guests: e }),
             value: filters.guests,
           },
           {
-            name: "Okres",
+            name: t("labels.timePeriod"),
             options: [
-              { value: "tydzień", label: "tydzień" },
-              { value: "2 tygodnie", label: "2 tygodnie" },
-              { value: "miesiąc", label: "miesiąc" },
-              { value: "dłuzej", label: "dłuzej" },
+              { value: "tydzień", label: t("staticValues.timePeriod.week") },
+              {
+                value: "2 tygodnie",
+                label: t("staticValues.timePeriod.twoWeeks"),
+              },
+              { value: "miesiąc", label: t("staticValues.timePeriod.month") },
+              { value: "dłuzej", label: t("staticValues.timePeriod.longer") },
             ],
             onSubmit: (e) => setFilters({ ...filters, timeframe: e }),
             value: filters.timeframe,
           },
           {
-            name: "Jestem z dzieckiem",
+            name: t("labels.withKids"),
             options: [
-              { value: "tak", label: "tak" },
-              { value: "nie", label: "nie" },
+              { value: "tak", label: t("staticValues.boolean.yes") },
+              { value: "nie", label: t("staticValues.boolean.no") },
             ],
             onSubmit: (e) => setFilters({ ...filters, toddler: e }),
             value: filters.toddler,
@@ -83,7 +88,15 @@ export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale)),
-      data: [],
+      data: [
+        {
+          location: "Warszawa",
+          host: "owner",
+          conditions: null,
+          preferences: ["animals", "disability", "foof"],
+          resources: null,
+        },
+      ],
     },
   };
 }

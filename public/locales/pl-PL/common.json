@@ -1,3 +1,50 @@
 {
-  "test": "testowa wiadomość  PL"
+  "labels": {
+    "location": "Lokalizacja",
+    "numberOfGuests": "Liczba gości",
+    "timePeriod": "Okres",
+    "withKids": "Jestem z dzieckiem"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "week": "tydzień",
+      "twoWeeks": "2 tygodnie",
+      "month": "miesiąc",
+      "longer": "dłużej"
+    },
+    "boolean": {
+      "yes": "tak",
+      "no": "nie"
+    },
+    "anyLocation": "Dowolna"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "miejsce dla <1>{{count}} osób</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "zwierzęta mile widziane",
+    "disabledSupport": "udogodnienia dla niepełnosprawnych",
+    "includesFood": "wyżywienie",
+    "author": {
+      "owner": "Gospodaż"
+    }
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} osoby",
+    "preferredLocation": "preferowana lokalizacja: <1>{{location}}</1>",
+    "withAnimals": "jest z nami zwierzak: <1>{{animals}}</1>",
+    "withKids": "jest ze mną dziecko: <1>{{age}}</1>",
+    "withDisabled": "jest ze mną osoba niepełnosprawna",
+    "withElder": "jest ze mną osoba starsza",
+    "invite": "Przyjmij do siebie"
+  },
+  "flags": {
+    "pl": "flaga polski",
+    "en": "flaga wielkiej brytanii",
+    "ua": "flaga ukrainy",
+    "ru": "flaga rosji"
+  },
+  "logout": "wyloguj",
+  "shareLocation": "udostępnij miejsce",
+  "more": "więcej"
 }

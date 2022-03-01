@@ -68,22 +68,22 @@ const hostPreferences: HostPreferencesData = [
       { locale: "pl-PL", text: "zwierzęta mile widziane" },
       { locale: "ru-RU", text: "домашние животные приветствуются" },
     ],
-    icon: <AnimalsIcon />,
+    icon: <AnimalsIcon width="30" height="25" />,
   },
   {
     id: "kids",
     text: "dzieci poniźej 2 lat",
-    icon: <KidsIcon />,
+    icon: <KidsIcon width="26" height="25" />,
   },
   {
     id: "food",
     text: "zapewnie wyżywienie",
-    icon: <FoodIcon />,
+    icon: <FoodIcon width="26" height="25" />,
   },
   {
     id: "disability",
     text: "osoby z niepełnosprawnością",
-    icon: <DisabilityIcon />,
+    icon: <DisabilityIcon width="24" height="25" />,
   },
 ];
 
