@@ -4,4 +4,5 @@ export type SectionProps = {
   zeroPadding?: boolean;
   sectionId?: string;
   padding?: [number, number, number, number];
+  header?: string;
 };

@@ -14,3 +14,10 @@ export const PageSection = styled.View<SectionProps>`
       : props.theme.pageSection.backgroundColor};
   flex-direction: column;
 `;
+
+export const SectionHeader = styled.Text<SectionProps>`
+  color: ${(props) => props.theme.colors.headings};
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 24px;
+`;
