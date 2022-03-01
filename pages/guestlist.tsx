@@ -1,14 +1,22 @@
 import GuestCard from "../src/components/GuestCard";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
 import Filters from "../src/components/Filters";
-import { FilterModal } from "../src/components/Filters/style";
 import Cities from "../src/consts/cities.json";
 import { useState } from "react";
 
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale)),
+  },
+});
+
 export default function App(props) {
+  const { t } = useTranslation();
   const [filters, setFilters] = useState({
     city: null,
     guests: null,
@@ -90,8 +98,3 @@ export default function App(props) {
     </CompositionAppBody>
   );
 }
-
-/**
- * Temporary dumy data
- * TODO: api/getAccommodations
- */

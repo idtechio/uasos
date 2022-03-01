@@ -6,7 +6,7 @@ import {
 import Filters from "../src/components/Filters";
 import Cities from "../src/consts/cities.json";
 import { useState } from "react";
-import useFetch from "react-fetch-hook";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function Home(props) {
   const [filters, setFilters] = useState({
@@ -75,13 +75,15 @@ function Home(props) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/accommodations");
-  const data = await res.json();
+export async function getStaticProps({ locale }) {
+  /** TODO: Uncomment when remote API is ready */
+  // const res = await fetch("http://localhost:3000/api/accommodations");
+  // const data = await res.json();
 
   return {
     props: {
-      data,
+      ...(await serverSideTranslations(locale)),
+      data: [],
     },
   };
 }
