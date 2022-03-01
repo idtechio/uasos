@@ -18,7 +18,7 @@ import {
   View,
 } from "react-native";
 import { ButtonCta } from "../Buttons";
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller, FormProvider } from "react-hook-form";
 import { useState, useEffect } from "react";
 import type { LenguageText } from "../../helpers/lenguageTextSwitcher";
 import AnimalsIcon from "../../style/svgs/animals.svg";
@@ -26,6 +26,12 @@ import KidsIcon from "../../style/svgs/kids.svg";
 import FoodIcon from "../../style/svgs/food.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import FormTextInput from "../Inputs/FormTextInput";
+import {
+  ForHowLong,
+  FormType,
+  LivingConditions,
+} from "../../helpers/FormTypes";
+import FormRadioGroup from "../Inputs/FormRadioGroup";
 
 // TODO: all file to revalidaete !!!!
 
@@ -82,19 +88,13 @@ const hostPreferences: HostPreferencesData = [
 ];
 
 const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
+  const formFields = useForm<FormType>();
   const {
     control,
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm({
-    defaultValues: {
-      name: "",
-      email: "",
-      location: "",
-      howManyPeople: "",
-    },
-  });
+  } = formFields;
   const onSubmit = (data) => {
     const preferencesApiArray = [];
     for (const [key, value] of Object.entries(preferences)) {
@@ -154,6 +154,9 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
       }
     });
   };
+  const onError = (error) => {
+    console.log("form error:", error);
+  };
 
   const [preferences, setPreferences] = useState({
     animals: false,
@@ -185,19 +188,6 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     5: false,
     more: false,
   });
-
-  const [showHowManyPeople, setShowHowManyPeople] = useState(false);
-  const clickHowManyPeople = (id: keyof HowManyPeopleState) => {
-    setHowManyPeople((prevState: HowManyPeopleState) => {
-      return {
-        ...prevState,
-        [id]: !prevState[id],
-      };
-    });
-  };
-  useEffect(() => {
-    setShowHowManyPeople(howManyPeople["more"]);
-  }, [howManyPeople["more"]]);
 
   type HowLongState = {
     week_1: boolean;
@@ -273,24 +263,24 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   };
 
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.container}
-      style={styles.containerWraper}
-    >
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <FormProvider {...formFields}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.container}
+        style={styles.containerWraper}
+      >
         <CompositionSection padding={[35, 30, 8, 30]}>
           <FormTextInput
-            name={"name"}
+            name={"host.core.name"}
             label={"imię"}
             rules={{
               required: true,
             }}
-            error={errors.name}
+            error={errors?.host?.core?.name}
             errorMsg={"Podaj swoję imię"}
           />
           <FormTextInput
-            name={"email"}
+            name={"host.core.email"}
             label={"e-mail"}
             rules={{
               required: true,
@@ -299,11 +289,11 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 message: "Podaj porawny e-mail",
               },
             }}
-            error={errors.email}
+            error={errors?.host?.core?.email}
             errorMsg={"Podaj porawny e-mail"}
           />
           <FormTextInput
-            name="phoneNumber"
+            name="host.core.phoneNumber"
             label={"telefon"}
             rules={{
               required: true,
@@ -312,16 +302,16 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 message: "Podaj prawidłowy numer telefonu",
               },
             }}
-            error={errors.location}
+            error={errors?.host?.core?.phoneNumber}
             errorMsg={"Podaj prawidłowy numer telefonu"}
           />
           <FormTextInput
-            name="location"
+            name="host.core.location"
             label={"miejscowość"}
             rules={{
               required: true,
             }}
-            error={errors.location}
+            error={errors?.host?.core?.location}
             errorMsg={"Podaj miejscowość"}
           />
         </CompositionSection>
@@ -368,136 +358,37 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <InputCotrolLabel>
               {lenguageTextSwitcher("Ile osób możesz przyjąć?")}
             </InputCotrolLabel>
-            <RadioButtons>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople(1);
-                }}
-              >
-                <ChoiceButton text="1" isSmall isChoice={howManyPeople[1]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople(2);
-                }}
-              >
-                <ChoiceButton text="2" isSmall isChoice={howManyPeople[2]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople(3);
-                }}
-              >
-                <ChoiceButton text="3" isSmall isChoice={howManyPeople[3]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople(4);
-                }}
-              >
-                <ChoiceButton text="4" isSmall isChoice={howManyPeople[4]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople(5);
-                }}
-              >
-                <ChoiceButton text="5" isSmall isChoice={howManyPeople[5]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowManyPeople("more");
-                }}
-              >
-                <ChoiceButton
-                  text="więcej"
-                  isSmall
-                  isChoice={howManyPeople["more"]}
-                />
-              </TouchableOpacity>
-            </RadioButtons>
-            {showHowManyPeople ? (
-              <View style={styles.input}>
-                <Controller
-                  control={control}
-                  rules={{
-                    required: true,
-                    pattern: {
-                      value: /^-?[0-9]\d*\.?\d*$/,
-                      message: "Podaj porawny e-mail",
-                    },
-                  }}
-                  render={({ field: { onChange, onBlur, value } }) => (
-                    <InputControl>
-                      <Input
-                        placeholder="ilość osób"
-                        onChange={onChange}
-                        onBlur={onBlur}
-                        value={value}
-                        error={errors.howManyPeople}
-                      />
-                      {errors.howManyPeople && (
-                        <Text style={styles.error}>
-                          Podaj prawidłową liczbę osób
-                        </Text>
-                      )}
-                    </InputControl>
-                  )}
-                  name="howManyPeople"
-                />{" "}
-              </View>
-            ) : null}
+            <FormRadioGroup<string | number>
+              name="host.preferences.peopleQuantity"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: "1", value: 1 },
+                { label: "2", value: 2 },
+                { label: "3", value: 3 },
+                { label: "4", value: 4 },
+                { label: "5", value: 5 },
+                { label: "więcej", value: "more" },
+              ]}
+            />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
               {lenguageTextSwitcher("Na jak długo?")}
             </InputCotrolLabel>
-            <RadioButtons>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowLong("week_1");
-                }}
-              >
-                <ChoiceButton
-                  text="tydzień"
-                  isSmall
-                  isChoice={howLong["week_1"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowLong("week_2");
-                }}
-              >
-                <ChoiceButton
-                  text="2 tygodnie"
-                  isSmall
-                  isChoice={howLong["week_2"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowLong("week_3");
-                }}
-              >
-                <ChoiceButton
-                  text="miesiąc"
-                  isSmall
-                  isChoice={howLong["week_3"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickHowLong("week_more");
-                }}
-              >
-                <ChoiceButton
-                  text="dłuej"
-                  isSmall
-                  isChoice={howLong["week_more"]}
-                />
-              </TouchableOpacity>
-            </RadioButtons>
+            <FormRadioGroup<ForHowLong>
+              name="host.preferences.forHowLong"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: "tydzień", value: ForHowLong.WEEK },
+                { label: "2 tygodnie", value: ForHowLong.TWO_WEEKS },
+                { label: "miesiąc", value: ForHowLong.MONTH },
+                { label: "dłużej", value: ForHowLong.LONGER },
+              ]}
+            />
           </InputControl>
         </CompositionSection>
 
@@ -506,52 +397,21 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <InputCotrolLabel>
               {lenguageTextSwitcher("Jakie warunki lokalowe możesz zapewnić?")}
             </InputCotrolLabel>
-            <RadioButtons>
-              <TouchableOpacity
-                onPress={() => {
-                  clickConditions("selfContained");
-                }}
-              >
-                <ChoiceButton
-                  text="mam wolne mieszkanie"
-                  isSmall
-                  isChoice={conditions["selfContained"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickConditions("room");
-                }}
-              >
-                <ChoiceButton
-                  text="mam wolny pokój"
-                  isSmall
-                  isChoice={conditions["room"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickConditions("mattress");
-                }}
-              >
-                <ChoiceButton
-                  text="mogę “dostawić materac”"
-                  isSmall
-                  isChoice={conditions["mattress"]}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickConditions("other");
-                }}
-              >
-                <ChoiceButton
-                  text="inne"
-                  isSmall
-                  isChoice={conditions["other"]}
-                />
-              </TouchableOpacity>
-            </RadioButtons>
+            <FormRadioGroup<LivingConditions>
+              name="host.livingConditions"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: "mam wolne mieszkanie", value: LivingConditions.FLAT },
+                { label: "mam wolny pokój", value: LivingConditions.ROOM },
+                {
+                  label: 'mogę "dostawić materac"',
+                  value: LivingConditions.MATTRESS,
+                },
+                { label: "inne", value: LivingConditions.OTHER },
+              ]}
+            />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
@@ -560,64 +420,30 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <InputCotrolLabelSmall>
               *Osoby starsze mogą mieć problem z wejściem na wysokie piętro
             </InputCotrolLabelSmall>
-            <RadioButtons>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor(0);
-                }}
-              >
-                <ChoiceButton text="0" isSmall isChoice={floor[0]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor(1);
-                }}
-              >
-                <ChoiceButton text="1" isSmall isChoice={floor[1]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor(2);
-                }}
-              >
-                <ChoiceButton text="2" isSmall isChoice={floor[2]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor(3);
-                }}
-              >
-                <ChoiceButton text="3" isSmall isChoice={floor[3]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor(4);
-                }}
-              >
-                <ChoiceButton text="4" isSmall isChoice={floor[4]} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  clickFloor("bright");
-                }}
-              >
-                <ChoiceButton
-                  text="jest winda"
-                  isSmall
-                  isChoice={floor["bright"]}
-                />
-              </TouchableOpacity>
-            </RadioButtons>
+            <FormRadioGroup<string | number>
+              name="host.floor"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: "0", value: 0 },
+                { label: "1", value: 1 },
+                { label: "2", value: 2 },
+                { label: "3", value: 3 },
+                { label: "4", value: 4 },
+                { label: "jest winda", value: "month" },
+              ]}
+            />
           </InputControl>
           <InputControl>
             <ButtonCta
-              onPress={handleSubmit(onSubmit)}
+              onPress={handleSubmit(onSubmit, onError)}
               anchor="Zgłoś swoją gotowość  "
             />
           </InputControl>
         </CompositionSection>
-      </form>
-    </ScrollView>
+      </ScrollView>
+    </FormProvider>
   );
 };
 

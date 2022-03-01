@@ -1,8 +1,14 @@
 import { VFC } from "react";
-import { Controller, FieldError, useForm } from "react-hook-form";
+import {
+  Controller,
+  FieldError,
+  useForm,
+  useFormContext,
+} from "react-hook-form";
 import Input from "../Forms/Input";
 import InputControl from "../Forms/InputControl";
 import { StyleSheet, Text } from "react-native";
+import { FormKey } from "../../helpers/FormTypes";
 
 const styles = StyleSheet.create({
   error: {
@@ -12,7 +18,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  name: string;
+  name: FormKey;
   label: string;
   error?: FieldError;
   errorMsg?: string;
@@ -20,7 +26,7 @@ type Props = {
 
 const FormTextInput: VFC<Props> = (props) => {
   const { name, label, errorMsg, rules, error } = props;
-  const { control } = useForm();
+  const { control } = useFormContext();
   return (
     <Controller
       control={control}
