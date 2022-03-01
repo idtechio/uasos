@@ -1,10 +1,13 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text } from "react-native";
+
 import { CompositionSection } from "../Compositions";
 import { Input, InputControl, InputCotrolLabel } from "../Forms";
 
 export default function AddAccommodationAdvancedForm() {
+  const { t } = useTranslation();
   const {
     control,
     handleSubmit,
@@ -15,6 +18,9 @@ export default function AddAccommodationAdvancedForm() {
       city: "",
       country: "",
       accommodationType: "",
+      fullBedCount: 0,
+      childBedCount: 0,
+      accommodationTime: 0,
     },
   });
 
@@ -40,15 +46,17 @@ export default function AddAccommodationAdvancedForm() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <InputControl>
-                <InputCotrolLabel>Kraj</InputCotrolLabel>
+                <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
                 <Input
-                  placeholder="Kraj"
+                  placeholder={t("hostAdd.country")}
                   onChange={onChange}
                   onBlur={onBlur}
                   value={value}
                   error={errors.country}
                 />
-                {errors.country && <Text style={styles.error}>Kraj</Text>}
+                {errors.country && (
+                  <Text style={styles.error}>{t("hostAdd.countryError")}</Text>
+                )}
               </InputControl>
             )}
             name="country"
@@ -60,15 +68,17 @@ export default function AddAccommodationAdvancedForm() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <InputControl>
-                <InputCotrolLabel>Miasto</InputCotrolLabel>
+                <InputCotrolLabel>{t("hostAdd.city")}</InputCotrolLabel>
                 <Input
-                  placeholder="Kraj"
+                  placeholder={t("hostAdd.city")}
                   onChange={onChange}
                   onBlur={onBlur}
                   value={value}
                   error={errors.city}
                 />
-                {errors.city && <Text style={styles.error}>Miasto</Text>}
+                {errors.city && (
+                  <Text style={styles.error}>{t("hostAdd.cityError")}</Text>
+                )}
               </InputControl>
             )}
             name="city"
@@ -82,20 +92,97 @@ export default function AddAccommodationAdvancedForm() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <InputControl>
-                <InputCotrolLabel>Typ noclegu</InputCotrolLabel>
+                <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
                 <Input
-                  placeholder="Kraj"
+                  placeholder={t("hostAdd.type")}
                   onChange={onChange}
                   onBlur={onBlur}
                   value={value}
                   error={errors.accommodationType}
                 />
                 {errors.accommodationType && (
-                  <Text style={styles.error}>Typ noclegu</Text>
+                  <Text style={styles.error}>{t("hostAdd.typeError")}</Text>
                 )}
               </InputControl>
             )}
             name="accommodationType"
+          />
+          {/* Image Picker usage here */}
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputControl>
+                <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
+                <Input
+                  placeholder={t("hostAdd.fullBedCount")}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  error={errors.fullBedCount}
+                />
+                {errors.fullBedCount && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.fullBedCountError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="fullBedCount"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputControl>
+                <InputCotrolLabel>
+                  {t("hostAdd.childBedCount")}
+                </InputCotrolLabel>
+                <Input
+                  placeholder={t("hostAdd.childBedCount")}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  error={errors.childBedCount}
+                />
+                {errors.childBedCount && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.childBedCountError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="childBedCount"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputControl>
+                <InputCotrolLabel>
+                  {t("hostAdd.accommodationTime")}
+                </InputCotrolLabel>
+                <Input
+                  placeholder={t("hostAdd.accommodationTime")}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  error={errors.accommodationTime}
+                />
+                {errors.accommodationTime && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.accommodationTimeError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="accommodationTime"
           />
         </CompositionSection>
       </form>

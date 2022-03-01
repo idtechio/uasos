@@ -1,3 +1,11 @@
 {
-  "test": "testowa wiadomość UA"
+  "test": "testowa wiadomość UA",
+  "hostAdd": {
+    "country": "Kraj",
+    "city": "Miasto",
+    "type": "Typ noclegu",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?"
+  }
 }
