@@ -14,6 +14,48 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+For dev purposes:
+
+To launch app without firebase add patch below:
+```ts
+------------------------------- lib/firebase.js -------------------------------
+index f90a8c4..2766c48 100644
+@@ -1,15 +1,4 @@
+ import * as admin from "firebase-admin";
+ 
+-if (!admin.apps.length) {
+-  admin.initializeApp({
+-    credential: admin.credential.cert({
+-      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+-      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+-    }),
+-  });
+-}
+-
+-const db = admin.firestore();
+-
++const db = {};
+ export { db };
+
+------------------------------- pages/index.tsx -------------------------------
+index 2254fc6..9a84a73 100644
+@@ -75,12 +75,9 @@ function Home(props) {
+ }
+ 
+ export async function getStaticProps() {
+-  const res = await fetch("http://localhost:3000/api/accommodations");
+-  const data = await res.json();
+-
+   return {
+     props: {
+-      data,
++      data: [],
+     },
+   };
+ }
+```
+
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
