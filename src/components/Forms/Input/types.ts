@@ -1,4 +1,8 @@
 export type InputProps = {
   placeholder: string;
-  backgroundColor?: string;
+  onChange?: any;
+  onBlur?: any;
+  value?: any;
+  error?: any;
+  type?: string;
 };

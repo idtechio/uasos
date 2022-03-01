@@ -3,39 +3,17 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type { LenguageText } from "../../src/helpers/lenguageTextSwitcher";
 
 export type Accommodation = {
-  id: string;
   host: {
-    id: string;
     name: string;
     email: string;
   };
   location: {
-    id: string;
     city: string;
     state: string;
-    preferences: [
-      {
-        id: string;
-        name: LenguageText;
-        icon: React.ReactNode;
-        value: boolean;
-      }
-    ];
-    resources: [
-      {
-        id: string;
-        name: LenguageText;
-        value: boolean | number;
-      }
-    ];
-    conditions: [
-      {
-        id: string;
-        name: LenguageText;
-        value: boolean | number;
-      }
-    ];
   };
+  preferences: Array<string>;
+  resources: Array<string>;
+  conditions: Array<string>;
 };
 export type Accommodations = Array<Accommodation>;
 

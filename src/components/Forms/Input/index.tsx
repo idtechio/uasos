@@ -2,27 +2,31 @@ import type { InputProps } from "./types";
 import { InputWraper, Label, TextInput } from "./style";
 import React, { useState } from "react";
 
-const Input = ({ placeholder, backgroundColor }: InputProps) => {
-  const [placeholderIsLabel, setPlaceholderIsLabel] = useState(0);
+const Input = ({ placeholder, onChange, onBlur, value, error }: InputProps) => {
+  const [hideLabel, setHideLabel] = useState(true);
 
-  const onFocus = (e) => {
-    e.target.placeholder = "";
-    setPlaceholderIsLabel(1);
-  };
-
-  const onBlur = (e) => {
+  const hendleOnBlur = (e) => {
     e.target.placeholder = placeholder;
-    setPlaceholderIsLabel(0);
+    if (value === "") {
+      setHideLabel(true);
+    }
+  };
+  const hendleOnFocus = (e) => {
+    e.target.placeholder = "";
+    setHideLabel(false);
   };
 
   return (
     <InputWraper>
-      {placeholderIsLabel ? <Label>{placeholder}</Label> : null}
+      {hideLabel ? null : <Label>{placeholder}</Label>}
       <TextInput
-        onFocus={(e) => onFocus(e)}
-        onBlur={(e) => onBlur(e)}
-        // value={number}
+        // onBlur={onBlur}
+        onChangeText={onChange}
+        value={value}
         placeholder={placeholder}
+        onFocus={(e) => hendleOnFocus(e)}
+        onBlur={(e) => hendleOnBlur(e)}
+        error={error}
       />
     </InputWraper>
   );

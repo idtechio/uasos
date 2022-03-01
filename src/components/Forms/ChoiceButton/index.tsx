@@ -7,18 +7,10 @@ const ChoiceButton = ({
   text,
   icon,
   isSmall = false,
-  userClick = false,
+  isChoice,
 }: ChoiceButtonProps) => {
-  const [isChoice, setIsChoice] = useState(userClick);
-
   return (
-    <Button
-      isChoice={isChoice}
-      onPress={() => {
-        setIsChoice(!isChoice);
-      }}
-      isSmall={isSmall}
-    >
+    <Button isChoice={isChoice} isSmall={isSmall}>
       {icon ? <Icon>{icon}</Icon> : null}
       {text ? <Text>{lenguageTextSwitcher(text)}</Text> : null}
     </Button>

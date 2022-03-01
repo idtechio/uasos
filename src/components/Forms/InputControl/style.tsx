@@ -13,3 +13,11 @@ export const InputCotrolLabel = styled.Text`
   color: ${(props) => props.theme.colors.headings};
   margin-bottom: 16px;
 `;
+
+export const InputCotrolLabelSmall = styled.Text`
+  color: ${(props) => props.theme.colors.headings};
+  margoin-sixe: 12pxr;
+  margin-top: -12px;
+  font-size: 12px;
+  margin-bottom: 16px;
+`;
