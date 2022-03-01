@@ -21,6 +21,7 @@ export default function AddAccommodationAdvancedForm() {
     formState: { errors },
     watch,
   } = useForm({
+    // TODO: use proper names required by backend
     defaultValues: {
       city: "",
       country: "",
@@ -30,11 +31,17 @@ export default function AddAccommodationAdvancedForm() {
       accommodationTime: 0,
       nationality: [],
       groupsTypes: [],
+      transportReady: false,
+      pregnantReady: false,
+      dissabilityReady: false,
+      animalReady: false,
+      prolongationReady: false,
     },
   });
 
   const onSubmit = (data) => {
     // TODO: implement
+    console.log("!@# handle submit", data);
   };
 
   return (
@@ -243,7 +250,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Multiselect component
+              // TODO: use proper Multiselect component instead of Input
               // Do we need to fetch data for this multiselect from the backend?
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
@@ -262,6 +269,126 @@ export default function AddAccommodationAdvancedForm() {
               </InputControl>
             )}
             name="groupsTypes"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use properly ChoiceButton component after it's refactor
+              <InputControl>
+                <TouchableOpacity onPress={() => {}}>
+                  <ChoiceButton
+                    text={t("hostAdd.transportReady")}
+                    isSmall
+                    isChoice={false}
+                  />
+                </TouchableOpacity>
+                {errors.transportReady && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.transportReadyError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="transportReady"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use properly ChoiceButton component after it's refactor
+              <InputControl>
+                <TouchableOpacity onPress={() => {}}>
+                  <ChoiceButton
+                    text={t("hostAdd.pregnantReady")}
+                    isSmall
+                    isChoice={false}
+                  />
+                </TouchableOpacity>
+                {errors.pregnantReady && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.pregnantReadyError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="pregnantReady"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use properly ChoiceButton component after it's refactor
+              <InputControl>
+                <TouchableOpacity onPress={() => {}}>
+                  <ChoiceButton
+                    text={t("hostAdd.dissabilityReady")}
+                    isSmall
+                    isChoice={false}
+                  />
+                </TouchableOpacity>
+                {errors.dissabilityReady && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.dissabilityReadyError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="dissabilityReady"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use properly ChoiceButton component after it's refactor
+              <InputControl>
+                <TouchableOpacity onPress={() => {}}>
+                  <ChoiceButton
+                    text={t("hostAdd.animalReady")}
+                    isSmall
+                    isChoice={false}
+                  />
+                </TouchableOpacity>
+                {errors.animalReady && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.animalReadyError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="animalReady"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use properly ChoiceButton component after it's refactor
+              <InputControl>
+                <TouchableOpacity onPress={() => {}}>
+                  <ChoiceButton
+                    text={t("hostAdd.prolongationReady")}
+                    isSmall
+                    isChoice={false}
+                  />
+                </TouchableOpacity>
+                {errors.prolongationReady && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.prolongationReadyError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="prolongationReady"
           />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
