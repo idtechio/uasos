@@ -25,6 +25,7 @@ import AnimalsIcon from "../../style/svgs/animals.svg";
 import KidsIcon from "../../style/svgs/kids.svg";
 import FoodIcon from "../../style/svgs/food.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
+import FormTextInput from "../Inputs/FormTextInput";
 
 // TODO: all file to revalidaete !!!!
 
@@ -279,30 +280,18 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <CompositionSection padding={[35, 30, 8, 30]}>
-          <Controller
-            control={control}
+          <FormTextInput
+            name={"name"}
+            label={"imię"}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <Input
-                  placeholder="imię"
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.name}
-                />
-                {errors.name && (
-                  <Text style={styles.error}>Podaj swoję imię</Text>
-                )}
-              </InputControl>
-            )}
-            name="name"
+            error={errors.name}
+            errorMsg={"Podaj swoję imię"}
           />
-
-          <Controller
-            control={control}
+          <FormTextInput
+            name={"email"}
+            label={"e-mail"}
             rules={{
               required: true,
               pattern: {
@@ -310,43 +299,18 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 message: "Podaj porawny e-mail",
               },
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <Input
-                  placeholder="e-mail"
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.email}
-                />
-                {errors.email && (
-                  <Text style={styles.error}>Podaj porawny e-mail</Text>
-                )}
-              </InputControl>
-            )}
-            name="email"
+            error={errors.email}
+            errorMsg={"Podaj porawny e-mail"}
           />
 
-          <Controller
-            control={control}
+          <FormTextInput
+            name="location"
+            label={"miejscowość"}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <Input
-                  placeholder="miejscowość"
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.location}
-                />
-                {errors.location && (
-                  <Text style={styles.error}>Podaj miejscowość</Text>
-                )}
-              </InputControl>
-            )}
-            name="location"
+            error={errors.location}
+            errorMsg={"Podaj miejscowość"}
           />
         </CompositionSection>
 
