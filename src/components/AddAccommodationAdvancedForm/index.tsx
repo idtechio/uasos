@@ -1,10 +1,17 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import { Input, InputControl, InputCotrolLabel } from "../Forms";
+import {
+  ChoiceButton,
+  Input,
+  InputControl,
+  InputCotrolLabel,
+  RadioButtons,
+} from "../Forms";
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -21,6 +28,8 @@ export default function AddAccommodationAdvancedForm() {
       fullBedCount: 0,
       childBedCount: 0,
       accommodationTime: 0,
+      nationality: [],
+      groupsTypes: [],
     },
   });
 
@@ -37,7 +46,7 @@ export default function AddAccommodationAdvancedForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <CompositionSection
           padding={[35, 30, 8, 30]}
-          header="Podaj informacje na temat noclegu który oferujesz"
+          header={t("hostAdd.basicInfoHeader")}
         >
           <Controller
             control={control}
@@ -45,6 +54,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Dropdown component
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
                 <Input
@@ -67,6 +77,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Dropdown component
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.city")}</InputCotrolLabel>
                 <Input
@@ -91,6 +102,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Dropdown component
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
                 <Input
@@ -114,6 +126,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Stepper component
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
                 <Input
@@ -138,6 +151,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Stepper component
               <InputControl>
                 <InputCotrolLabel>
                   {t("hostAdd.childBedCount")}
@@ -185,6 +199,79 @@ export default function AddAccommodationAdvancedForm() {
             name="accommodationTime"
           />
         </CompositionSection>
+        <CompositionSection
+          padding={[35, 30, 8, 30]}
+          header={t("hostAdd.additionalInformationHeader")}
+        >
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputControl>
+                <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
+                {/* FIXME: use RadioButtons properly. We need to first implement this component properly */}
+                <RadioButtons>
+                  <TouchableOpacity onPress={() => {}}>
+                    <ChoiceButton
+                      text={t("hostAdd.ukraine")}
+                      isSmall
+                      isChoice={false}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => {}}>
+                    <ChoiceButton
+                      text={t("hostAdd.any")}
+                      isSmall
+                      isChoice={false}
+                    />
+                  </TouchableOpacity>
+                </RadioButtons>
+                {errors.nationality && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.nationalityError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="nationality"
+          />
+          <Controller
+            control={control}
+            rules={{
+              required: true,
+            }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              // TODO: use proper Multiselect component
+              // Do we need to fetch data for this multiselect from the backend?
+              <InputControl>
+                <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
+                <Input
+                  placeholder={t("hostAdd.groupsTypes")}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  error={errors.groupsTypes}
+                />
+                {errors.groupsTypes && (
+                  <Text style={styles.error}>
+                    {t("hostAdd.groupsTypesError")}
+                  </Text>
+                )}
+              </InputControl>
+            )}
+            name="groupsTypes"
+          />
+        </CompositionSection>
+        <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
+          <InputControl>
+            <ButtonCta
+              onPress={handleSubmit(onSubmit)}
+              anchor={t("hostAdd.addButton")}
+            />
+          </InputControl>
+        </CompositionSection>
       </form>
     </ScrollView>
   );
@@ -201,8 +288,5 @@ const styles = StyleSheet.create({
   },
   containerWraper: {
     width: "100%",
-  },
-  input: {
-    marginTop: 20,
   },
 });
