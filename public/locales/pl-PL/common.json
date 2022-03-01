@@ -96,7 +96,14 @@
     "type": "Typ noclegu",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
-    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?"
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "ukraine": "Ukraina",
+    "any": "Dowolne",
+    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "additionalInformationHeader": "Dodatkowe informacje",
+    "addButton": "Zatwierdź/Dodaj"
   },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",
