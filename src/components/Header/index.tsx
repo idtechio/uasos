@@ -2,6 +2,7 @@ import { HeaderPage, ActionBar, ServiceLogo } from "./style";
 import Logo from "./image/Logo";
 import { ButtonCta, ButtonDefault } from "../Buttons";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -9,7 +10,11 @@ const Header = () => {
   return (
     <HeaderPage>
       <ServiceLogo>
-        <Logo />
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </ServiceLogo>
       <ActionBar>
         {session ? (
