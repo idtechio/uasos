@@ -91,7 +91,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
       name: "",
       email: "",
       location: "",
-      howMenyPeople: "",
+      howManyPeople: "",
     },
   });
   const onSubmit = (data) => {
@@ -114,13 +114,13 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
       }
     }
 
-    const howMenyPeopleApiArray = [];
-    for (const [key, value] of Object.entries(howMenyPeople)) {
+    const howManyPeopleApiArray = [];
+    for (const [key, value] of Object.entries(howManyPeople)) {
       if (value) {
         if (key === "more") {
-          howMenyPeopleApiArray.push(`people_${data.howMenyPeople}`);
+          howManyPeopleApiArray.push(`people_${data.howManyPeople}`);
         } else {
-          howMenyPeopleApiArray.push(`people_${key}`);
+          howManyPeopleApiArray.push(`people_${key}`);
         }
       }
     }
@@ -145,7 +145,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
         },
         conditions: [...conditionsApiArray, ...floorApiArray],
         preferences: preferencesApiArray,
-        resources: [...howMenyPeopleApiArray],
+        resources: [...howManyPeopleApiArray],
       }),
     }).then((res) => {
       if (res.status === 200) {
@@ -167,7 +167,16 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     }));
   };
 
-  const [howMenyPeople, setHowMenyPeople] = useState({
+  type HowManyPeopleState = {
+    1: false;
+    2: false;
+    3: false;
+    4: false;
+    5: false;
+    more: false;
+  };
+
+  const [howManyPeople, setHowManyPeople] = useState<HowManyPeopleState>({
     1: false,
     2: false,
     3: false,
@@ -175,51 +184,76 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     5: false,
     more: false,
   });
-  const [showHowMenyPeople, setShowHowMenyPeople] = useState(false);
-  const clickHowMenyPeople = (id) => {
-    setHowMenyPeople((prevState) => {
+
+  const [showHowManyPeople, setShowHowManyPeople] = useState(false);
+  const clickHowManyPeople = (id: keyof HowManyPeopleState) => {
+    setHowManyPeople((prevState: HowManyPeopleState) => {
       return {
+        ...prevState,
         [id]: !prevState[id],
       };
     });
   };
   useEffect(() => {
-    if (howMenyPeople["more"] === true) {
-      setShowHowMenyPeople(true);
-    } else {
-      setShowHowMenyPeople(false);
-    }
-  }, [howMenyPeople["more"]]);
+    setShowHowManyPeople(howManyPeople["more"]);
+  }, [howManyPeople["more"]]);
 
-  const [howLong, setHowLong] = useState({
+  type HowLongState = {
+    week_1: boolean;
+    week_2: boolean;
+    week_3: boolean;
+    week_more: boolean;
+  };
+
+  const [howLong, setHowLong] = useState<HowLongState>({
     week_1: false,
     week_2: false,
     week_3: false,
     week_more: false,
   });
-  const clickHowLong = (id) => {
-    setHowLong((prevState) => {
+
+  const clickHowLong = (id: keyof HowLongState) => {
+    setHowLong((prevState): HowLongState => {
       return {
+        ...prevState,
         [id]: !prevState[id],
       };
     });
   };
 
-  const [conditions, setConditions] = useState({
+  type ConditionsState = {
+    selfContained: boolean;
+    room: boolean;
+    mattress: boolean;
+    other: boolean;
+  };
+
+  const [conditions, setConditions] = useState<ConditionsState>({
     selfContained: false,
     room: false,
     mattress: false,
     other: false,
   });
-  const clickConditions = (id) => {
-    setConditions((prevState) => {
+
+  const clickConditions = (id: keyof ConditionsState) => {
+    setConditions((prevState: ConditionsState) => {
       return {
+        ...prevState,
         [id]: !prevState[id],
       };
     });
   };
 
-  const [floor, setFloor] = useState({
+  type FloorState = {
+    0: boolean;
+    1: boolean;
+    2: boolean;
+    3: boolean;
+    4: boolean;
+    bright: boolean;
+  };
+
+  const [floor, setFloor] = useState<FloorState>({
     0: false,
     1: false,
     2: false,
@@ -227,9 +261,11 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
     4: false,
     bright: false,
   });
-  const clickFloor = (id) => {
-    setFloor((prevState) => {
+
+  const clickFloor = (id: keyof FloorState) => {
+    setFloor((prevState: FloorState) => {
       return {
+        ...prevState,
         [id]: !prevState[id],
       };
     });
@@ -359,52 +395,52 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <RadioButtons>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople(1);
+                  clickHowManyPeople(1);
                 }}
               >
-                <ChoiceButton text="1" isSmall isChoice={howMenyPeople[1]} />
+                <ChoiceButton text="1" isSmall isChoice={howManyPeople[1]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople(2);
+                  clickHowManyPeople(2);
                 }}
               >
-                <ChoiceButton text="2" isSmall isChoice={howMenyPeople[2]} />
+                <ChoiceButton text="2" isSmall isChoice={howManyPeople[2]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople(3);
+                  clickHowManyPeople(3);
                 }}
               >
-                <ChoiceButton text="3" isSmall isChoice={howMenyPeople[3]} />
+                <ChoiceButton text="3" isSmall isChoice={howManyPeople[3]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople(4);
+                  clickHowManyPeople(4);
                 }}
               >
-                <ChoiceButton text="4" isSmall isChoice={howMenyPeople[4]} />
+                <ChoiceButton text="4" isSmall isChoice={howManyPeople[4]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople(5);
+                  clickHowManyPeople(5);
                 }}
               >
-                <ChoiceButton text="5" isSmall isChoice={howMenyPeople[5]} />
+                <ChoiceButton text="5" isSmall isChoice={howManyPeople[5]} />
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowMenyPeople("more");
+                  clickHowManyPeople("more");
                 }}
               >
                 <ChoiceButton
                   text="więcej"
                   isSmall
-                  isChoice={howMenyPeople["more"]}
+                  isChoice={howManyPeople["more"]}
                 />
               </TouchableOpacity>
             </RadioButtons>
-            {showHowMenyPeople ? (
+            {showHowManyPeople ? (
               <View style={styles.input}>
                 <Controller
                   control={control}
@@ -422,16 +458,16 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                         onChange={onChange}
                         onBlur={onBlur}
                         value={value}
-                        error={errors.howMenyPeople}
+                        error={errors.howManyPeople}
                       />
-                      {errors.howMenyPeople && (
+                      {errors.howManyPeople && (
                         <Text style={styles.error}>
                           Podaj prawidłową liczbę osób
                         </Text>
                       )}
                     </InputControl>
                   )}
-                  name="howMenyPeople"
+                  name="howManyPeople"
                 />{" "}
               </View>
             ) : null}
@@ -465,13 +501,13 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  clickHowLong("week_4");
+                  clickHowLong("week_3");
                 }}
               >
                 <ChoiceButton
                   text="miesiąc"
                   isSmall
-                  isChoice={howLong["week_4"]}
+                  isChoice={howLong["week_3"]}
                 />
               </TouchableOpacity>
               <TouchableOpacity
