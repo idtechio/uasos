@@ -1,19 +1,37 @@
 import React from "react";
 import type { ChoiceButtonProps } from "./type";
 import { Button, Text, Icon } from "./style";
+import { TouchableOpacity } from "react-native";
 
 const ChoiceButton = ({
   text,
   icon,
   isSmall = false,
-  isChoice,
+  isSelected,
+  onPress,
+  isVertical = false,
   error,
 }: ChoiceButtonProps) => {
   return (
-    <Button isChoice={isChoice} isSmall={isSmall} error={error}>
-      {icon ? <Icon>{icon}</Icon> : null}
-      {text ? <Text>{text}</Text> : null}
-    </Button>
+    <TouchableOpacity onPress={onPress}>
+      <Button
+        error={error}
+        isSelected={isSelected}
+        isSmall={isSmall}
+        isVertical={isVertical}
+      >
+        {icon ? (
+          <Icon isSelected={isSelected} isVertical={isVertical}>
+            {icon}
+          </Icon>
+        ) : null}
+        {text ? (
+          <Text isVertical={isVertical} isSelected={isSelected}>
+            {text}
+          </Text>
+        ) : null}
+      </Button>
+    </TouchableOpacity>
   );
 };
 

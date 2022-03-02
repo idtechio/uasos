@@ -1,3 +1,4 @@
+import { View } from "react-native";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -10,7 +11,6 @@ import {
 import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
 import { View } from "react-native";
-import Link from "next/link";
 
 export const ThankfulnessModal = () => {
   const { t } = useTranslation();
@@ -31,22 +31,18 @@ export const ThankfulnessModal = () => {
         </View>
         <ThankfulnessModalTextWrapper>
           <ThankfulnessHeader>
-            {t("ThankfulnessModal.thankYou")}
+            {t("thankfulnessModal.thankYou")}
           </ThankfulnessHeader>
           <ThankfulnessText>
-            {t("ThankfulnessModal.applicationSent")}
+            {t("thankfulnessModal.applicationSent")}
           </ThankfulnessText>
 
           <ThankfulnessText style={{ marginTop: 24 }}>
-            {t("ThankfulnessModal.informWhenAccomodationFound")}
+            {t("thankfulnessModal.informWhenAccomodationFound")}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href="/">
-            <a>
-              <ButtonCta anchor="Powrót do strony głównej" onPress={() => {}} />
-            </a>
-          </Link>
+          <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
         </ThankfulnessModalButtonCtaWrapper>
       </ThankfulnessModalContentWrapper>
     </CardModal>

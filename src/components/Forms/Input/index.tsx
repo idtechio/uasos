@@ -1,8 +1,15 @@
 import type { InputProps } from "./types";
-import { InputWraper, Label, TextInput } from "./style";
+import { InputWraper, Label, TextInput, InputRow } from "./style";
 import React, { useState } from "react";
 
-const Input = ({ placeholder, onChange, onBlur, value, error }: InputProps) => {
+const Input = ({
+  placeholder,
+  onChange,
+  value,
+  error,
+  extra,
+  labelsBackgroundColor,
+}: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
 
   const hendleOnBlur = (e) => {
@@ -18,16 +25,23 @@ const Input = ({ placeholder, onChange, onBlur, value, error }: InputProps) => {
 
   return (
     <InputWraper>
-      {hideLabel ? null : <Label>{placeholder}</Label>}
-      <TextInput
-        // onBlur={onBlur}
-        onChangeText={onChange}
-        value={value}
-        placeholder={placeholder}
-        onFocus={(e) => hendleOnFocus(e)}
-        onBlur={(e) => hendleOnBlur(e)}
-        error={error}
-      />
+      {hideLabel ? null : (
+        <Label labelsBackgroundColor={labelsBackgroundColor}>
+          {placeholder}
+        </Label>
+      )}
+      <InputRow>
+        <TextInput
+          onChangeText={onChange}
+          value={value}
+          placeholder={placeholder}
+          onFocus={(e) => hendleOnFocus(e)}
+          onBlur={(e) => hendleOnBlur(e)}
+          error={error}
+        />
+
+        {extra && extra}
+      </InputRow>
     </InputWraper>
   );
 };

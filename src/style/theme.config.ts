@@ -6,6 +6,7 @@ export const primary = {
     text: "#003566",
     cta: "#FFD700",
     textOnCta: "#003566",
+    blue: "#003566",
     secondaryBlue: "#0057B8",
   },
   fonts: {
