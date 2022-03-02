@@ -10,7 +10,7 @@ import {
 } from "./style";
 import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
-import { View } from "react-native";
+import Link from "next/link";
 
 export const ThankfulnessModal = () => {
   const { t } = useTranslation();
@@ -42,7 +42,11 @@ export const ThankfulnessModal = () => {
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
+          <Link href="/">
+            <a>
+              <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
+            </a>
+          </Link>
         </ThankfulnessModalButtonCtaWrapper>
       </ThankfulnessModalContentWrapper>
     </CardModal>
