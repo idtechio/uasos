@@ -63,10 +63,11 @@ export const Dropdown = ({
           isInvalid={!!error}
           areOptionsVisible={areOptionsVisible}
           onPress={() => {
-            setOptionsAreVisible(!areOptionsVisible);
             if (areOptionsVisible) {
               onBlur?.();
             }
+
+            setOptionsAreVisible(!areOptionsVisible);
           }}
         >
           <SelectText>
