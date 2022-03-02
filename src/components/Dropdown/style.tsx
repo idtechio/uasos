@@ -1,5 +1,12 @@
 import styled from "styled-components/native";
 
+export const Pill = styled.Text`
+  border-radius: 4px;
+  border: 1px ${(props) => props.theme.forms.border} solid;
+  padding: 4px 6px;
+  margin-right: 4px;
+`;
+
 export const Select = styled.Pressable`
   color: ${(props) => props.theme.colors.text};
   border-width: ${(props) => props.theme.forms.borderWidth};
@@ -56,6 +63,8 @@ export const SelectItem = styled.Pressable`
   padding-left: 12px;
   border-bottom-width: 1px;
   border-color: ${(props) => props.theme.forms.border};
+  background-color: ${(props) =>
+    props.selected ? "rgba(56, 176, 0, 0.1)" : "#fff"};
 
   &:hover {
     background-color: #cccccc;

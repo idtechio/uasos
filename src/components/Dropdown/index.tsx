@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Select,
   SelectLabel,
@@ -7,8 +7,9 @@ import {
   Icon,
   PlaceholderText,
   SelectText,
+  Pill,
 } from "./style";
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
@@ -26,15 +27,26 @@ export const Dropdown = ({
   onBlur,
   searchable = false,
 }: DropdownProps) => {
+<<<<<<< HEAD
   const { t } = useTranslation();
 
   const [showOptions, setShowOptions] = useState(false);
+=======
+  const containerRef = useRef<any>();
+  const [areOptionsVisible, setOptionsAreVisible] = useState(false);
+>>>>>>> f4111c3... handle dropdown outside clicks on web only (i am not smart enough to do it universally)
   const [selectWidth, setSelectWidth] = useState(0);
   const [selectHeight, setSelectHeight] = useState(0);
 
   const [filteredData, setFilteredData] = useState(data);
 
-  const selectedItem = (data ?? []).find(({ value }) => value === selected);
+  const selectedValues = Array.isArray(selected)
+    ? selected
+    : [selected].filter(Boolean);
+
+  const selectedItems = (data ?? []).filter(({ value }) =>
+    selectedValues.includes(value)
+  );
 
   const handleItemPress = (value: any) => {
     itemPressFunction(value);
@@ -46,9 +58,28 @@ export const Dropdown = ({
       title={item.label}
       value={item.value}
       itemPressFunction={handleItemPress}
-      setShowOptions={setShowOptions}
+      setOptionsAreVisible={multiselect ? () => {} : setOptionsAreVisible}
+      selected={multiselect && selectedValues.includes(item.value)}
     />
   );
+
+  useEffect(() => {
+    const handleClickOutside = (ev) => {
+      if (containerRef.current && !containerRef.current?.contains(ev.target)) {
+        setOptionsAreVisible(false);
+      }
+    };
+
+    if (containerRef.current && Platform.OS === "web" && areOptionsVisible) {
+      document.body.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      if (Platform.OS === "web") {
+        document.body.removeEventListener("click", handleClickOutside);
+      }
+    };
+  }, [areOptionsVisible]);
 
   return (
     <>
@@ -58,6 +89,7 @@ export const Dropdown = ({
           setSelectWidth(event.nativeEvent.layout.width);
           setSelectHeight(event.nativeEvent.layout.height);
         }}
+        ref={containerRef}
       >
         <Select
           isInvalid={!!error}
@@ -71,8 +103,14 @@ export const Dropdown = ({
           }}
         >
           <SelectText>
-            {selectedItem ? (
-              selectedItem.label
+            {selectedItems.length > 0 ? (
+              multiselect ? (
+                selectedItems.map(({ label, value }) => (
+                  <Pill key={value}>{label}</Pill>
+                ))
+              ) : (
+                selectedItems[0].label
+              )
             ) : (
               <PlaceholderText numberOfLines={1}>{placeholder}</PlaceholderText>
             )}

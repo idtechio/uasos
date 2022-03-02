@@ -157,6 +157,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
           <FormDropdown
+            multiSelect
             zIndex={11}
             data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.groupsTypes"
