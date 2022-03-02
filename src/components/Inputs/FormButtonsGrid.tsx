@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 type Data = {
   id: FormKey;
   label: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
 };
 
 type Props = {

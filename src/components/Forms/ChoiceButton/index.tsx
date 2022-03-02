@@ -9,11 +9,12 @@ const ChoiceButton = ({
   isSmall = false,
   isSelected,
   onPress,
+  isVertical = false,
 }: ChoiceButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <Button isSelected={isSelected} isSmall={isSmall}>
-        {icon ? <Icon>{icon}</Icon> : null}
+      <Button isSelected={isSelected} isSmall={isSmall} isVertical={isVertical}>
+        {icon ? <Icon isVertical={isVertical}>{icon}</Icon> : null}
         {text ? <Text>{text}</Text> : null}
       </Button>
     </TouchableOpacity>

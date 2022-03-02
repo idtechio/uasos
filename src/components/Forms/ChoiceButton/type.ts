@@ -10,5 +10,6 @@ export type ChoiceButtonProps = {
   preferenceId?: string;
   radioButton?: boolean;
   userClick?: boolean;
+  isVertical?: boolean;
   error?: boolean;
 };

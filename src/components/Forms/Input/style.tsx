@@ -9,6 +9,11 @@ export const InputWraper = styled.View`
   /* margin-top: 16px; */
 `;
 
+export const InputRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const Label = styled.Text<InputProps>`
   margin-bottom: -10px;
   margin-left: 15px;

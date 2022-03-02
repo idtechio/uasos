@@ -11,7 +11,7 @@ const CheckboxField = ({ text, isChecked, onChange }: CheckboxFieldProps) => {
     <View>
       <InputCotrolLabel>
         {Platform.OS === "web" ? (
-          <input type="checkbox" />
+          <input type="checkbox" onChange={onChange} />
         ) : (
           <CheckBox value={isChecked} onValueChange={onChange} />
         )}
