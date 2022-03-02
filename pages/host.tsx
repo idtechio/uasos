@@ -21,15 +21,15 @@ export default function Account(props) {
 
   return (
     <CompositionAppBody>
-      {session ? (
-        <View style={styles.home}>
-          <View>
-            <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
-          </View>
+      {/* {session ? ( */}
+      <View style={styles.home}>
+        <View>
+          <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
         </View>
-      ) : (
+      </View>
+      {/* ) : (
         <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
-      )}
+      )} */}
     </CompositionAppBody>
   );
 }
