@@ -12,6 +12,7 @@ import {
   InputCotrolLabel,
   RadioButtons,
 } from "../Forms";
+import NumericInput from "../Forms/NumericInput";
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -133,13 +134,10 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Stepper component
               <InputControl>
                 <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.fullBedCount")}
+                <NumericInput
                   onChange={onChange}
-                  onBlur={onBlur}
                   value={value}
                   error={errors.fullBedCount}
                 />
@@ -158,15 +156,12 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Stepper component
               <InputControl>
                 <InputCotrolLabel>
                   {t("hostAdd.childBedCount")}
                 </InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.childBedCount")}
+                <NumericInput
                   onChange={onChange}
-                  onBlur={onBlur}
                   value={value}
                   error={errors.childBedCount}
                 />
@@ -189,10 +184,8 @@ export default function AddAccommodationAdvancedForm() {
                 <InputCotrolLabel>
                   {t("hostAdd.accommodationTime")}
                 </InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.accommodationTime")}
+                <NumericInput
                   onChange={onChange}
-                  onBlur={onBlur}
                   value={value}
                   error={errors.accommodationTime}
                 />
@@ -273,7 +266,7 @@ export default function AddAccommodationAdvancedForm() {
           <Controller
             control={control}
             rules={{
-              required: true,
+              required: false,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               // TODO: use properly ChoiceButton component after it's refactor
@@ -297,7 +290,7 @@ export default function AddAccommodationAdvancedForm() {
           <Controller
             control={control}
             rules={{
-              required: true,
+              required: false,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               // TODO: use properly ChoiceButton component after it's refactor
@@ -321,7 +314,7 @@ export default function AddAccommodationAdvancedForm() {
           <Controller
             control={control}
             rules={{
-              required: true,
+              required: false,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               // TODO: use properly ChoiceButton component after it's refactor
@@ -345,7 +338,7 @@ export default function AddAccommodationAdvancedForm() {
           <Controller
             control={control}
             rules={{
-              required: true,
+              required: false,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               // TODO: use properly ChoiceButton component after it's refactor
@@ -369,7 +362,7 @@ export default function AddAccommodationAdvancedForm() {
           <Controller
             control={control}
             rules={{
-              required: true,
+              required: false,
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               // TODO: use properly ChoiceButton component after it's refactor
