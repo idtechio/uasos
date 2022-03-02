@@ -1,4 +1,11 @@
 {
+  "test": "testowa wiadomość  PL",
+
+  "navigationDrawer": {
+    "profile": "Profil użytkownika",
+    "placesList": "Twoja lista mieszkań",
+    "logout": "Wyloguj"
+  },
   "labels": {
     "location": "Lokalizacja",
     "numberOfGuests": "Liczba gości",
