@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Image,
+  View,
+} from "react-native";
 import { FormKey, FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import {
+  ChoiceButton,
+  InputControl,
+  InputCotrolLabel as InputControlLabel,
+} from "../Forms";
+import UploadInput from "../Forms/UploadInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -62,6 +74,7 @@ export default function AddAccommodationAdvancedForm() {
   const onSubmit = (data) => {
     console.log("Handle submit", data);
   };
+  const [uploadPreview, setUploadPreview] = useState<string>();
 
   return (
     <FormProvider {...formFields}>
@@ -75,7 +88,7 @@ export default function AddAccommodationAdvancedForm() {
           header={t("hostAdd.basicInfoHeader")}
           zIndex={3}
         >
-          <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
           <FormDropdown
             zIndex={14}
             data={DUMMY_DROPDOWN_ITEMS}
@@ -87,7 +100,7 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.country}
             errorMsg={t("hostAdd.errors.country")}
           />
-          <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.town")}</InputControlLabel>
           <FormDropdown
             zIndex={13}
             data={DUMMY_DROPDOWN_ITEMS}
@@ -106,7 +119,7 @@ export default function AddAccommodationAdvancedForm() {
           backgroundColor="#F5F4F4"
           zIndex={2}
         >
-          <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
           {/* TODO: use Dropdown here */}
           <FormDropdown
             zIndex={12}
@@ -119,7 +132,48 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.accommodationType}
             errorMsg={t("hostAdd.errors.type")}
           />
-          <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
+          <InputControlLabel>
+            {t("hostAdd.accomodationPhoto")}
+          </InputControlLabel>
+          <View style={{ marginBottom: 16 }}>
+            <Controller
+              control={control}
+              rules={{
+                required: false,
+              }}
+              name="advancedHost.accomodationPhoto"
+              render={({ field: { onChange, onBlur, value } }) => {
+                return value ? (
+                  <>
+                    <img src={uploadPreview} alt="" />
+                    <TouchableOpacity
+                      onPress={() => {
+                        onChange(undefined);
+                        setUploadPreview(undefined);
+                      }}
+                    >
+                      <Text style={{ color: "#D8000C" }}>
+                        {t("hostAdd.accomodationPhotoReset")}
+                      </Text>
+                    </TouchableOpacity>
+                  </>
+                ) : (
+                  <UploadInput
+                    accept="image/*"
+                    onFileChange={(file, dataUri) => {
+                      onChange(file);
+                      setUploadPreview(dataUri);
+
+                      onBlur();
+                    }}
+                  >
+                    {t("hostAdd.accomodationPhotoLabel")}
+                  </UploadInput>
+                );
+              }}
+            />
+          </View>
+          <InputControlLabel>{t("hostAdd.fullBedCount")}</InputControlLabel>
           <FormNumericInput
             name="advancedHost.fullBedCount"
             rules={{
@@ -128,7 +182,7 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.fullBedCount}
             errorMsg={t("hostAdd.errors.fullBedCount")}
           />
-          <InputCotrolLabel>{t("hostAdd.childBedCount")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.childBedCount")}</InputControlLabel>
           <FormNumericInput
             name="advancedHost.childBedCount"
             rules={{
@@ -137,7 +191,9 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.childBedCount}
             errorMsg={t("hostAdd.errors.childBedCount")}
           />
-          <InputCotrolLabel>{t("hostAdd.accommodationTime")}</InputCotrolLabel>
+          <InputControlLabel>
+            {t("hostAdd.accommodationTime")}
+          </InputControlLabel>
           <FormNumericInput
             name="advancedHost.accommodationTime"
             rules={{
@@ -152,7 +208,7 @@ export default function AddAccommodationAdvancedForm() {
           header={t("hostAdd.additionalInformationHeader")}
           zIndex={1}
         >
-          <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
           <FormRadioGroup<string | string>
             name="advancedHost.nationality"
             rules={{
@@ -164,7 +220,7 @@ export default function AddAccommodationAdvancedForm() {
             ]}
             errorMsg={t("validations.nationalityError")}
           />
-          <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
+          <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
           <FormDropdown
             multiSelect
             zIndex={11}

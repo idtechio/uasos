@@ -51,6 +51,7 @@ export type FormType = {
     dissabilityReady: boolean;
     animalReady: boolean;
     prolongationReady: boolean;
+    accomodationPhoto: Blob;
   };
 };
 
