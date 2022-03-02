@@ -70,13 +70,12 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
         period: data.host.preferences.forHowLong,
         pietro: data.host.floor,
       }),
-    })
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
+    }).then(function (res) {
+      if (res.status === 200) {
         setShowModal(true);
-      });
+      }
+      return console.log();
+    });
   };
 
   const onError = (error) => {
