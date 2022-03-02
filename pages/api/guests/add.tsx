@@ -7,7 +7,7 @@ export default async function getAccommodations(req, res) {
     // Signed in
     const body = JSON.parse(req.body);
     console.log(body);
-    const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
+    const topicNameOrId = "projects/ukrn-hlpr/topics/guests";
     const data = JSON.stringify(body);
 
     // Imports the Google Cloud client library

@@ -55,6 +55,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const onSubmit = (data: FormType) => {
+    console.log(data);
     fetch("/api/accommodations/add", {
       method: "post",
       body: JSON.stringify({
