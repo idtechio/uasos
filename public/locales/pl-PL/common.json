@@ -170,6 +170,31 @@
       "addRefugee": "Dodaj osobę"
     }
   },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "addButton": "Wyślij aplikację",
+    "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
+    "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+    "animalReady": "Jest ze mną mój zwierzak",
+    "elderReady": "Jestem lub jest ze mną osoba starsza",
+    "age": "Wiek",
+    "sex": "Płeć",
+    "sexPlaceholder": "Podaj płeć",
+    "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "placeOfRefuge": "Gdzie szukasz schronienia?",
+    "countryOfRefuge": "W jakim kraju szukasz schronienia? ",
+    "cityOfRefuge": "Wybierz miasto:",
+    "firstname": "Imię  (Podaj tylko pierwsze imię)",
+    "lastname": "Podaj adres e-mail:",
+    "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
+    "selectPlaceholder": "Wybierz z listy",
+    "accommodationType": "Jakiego typu noclegu szukasz?",
+    "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
+    "countryOfGroupUA": "Ukraina",
+    "countryOfGroupOthers": "Inne"
+  },
   "whatSosUaDoesSection": {
     "title": "Co robi SOS-UA?",
     "bulletPoints": [
