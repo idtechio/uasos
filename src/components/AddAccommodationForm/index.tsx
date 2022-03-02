@@ -1,16 +1,14 @@
 import type { AddAccommodationFormProps } from "./types";
 import {} from "./style";
-import { CompositionSection, CompositionGrid } from "../Compositions";
+import { CompositionSection } from "../Compositions";
 import {
-  ChoiceButton,
   InputControl,
   InputCotrolLabel,
   InputCotrolLabelSmall,
 } from "../Forms";
-import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { ButtonCta } from "../Buttons";
 import { useForm, FormProvider } from "react-hook-form";
-import { useState, useMemo } from "react";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import KidsIcon from "../../style/svgs/kids.svg";
 import FoodIcon from "../../style/svgs/food.svg";
@@ -22,7 +20,8 @@ import {
   LivingConditions,
 } from "../../helpers/FormTypes";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import { TFunction, useTranslation } from "next-i18next";
+import FormButtonsGrid from "../Inputs/FormButtonsGrid";
+import { useTranslation } from "next-i18next";
 
 // TODO: all file to revalidaete !!!!
 
@@ -43,97 +42,33 @@ const styles = StyleSheet.create({
   },
 });
 
-export type HostPreferences = {
-  id: string;
-  text: string;
-  icon?: React.ReactNode;
-};
-
-const hostPreferencesFactory = (t: TFunction): HostPreferences[] => [
-  {
-    id: "animals",
-    text: t("addAccommodation.hostPreferences.acceptAnimals"),
-    icon: <AnimalsIcon width="30" height="25" />,
-  },
-  {
-    id: "kids",
-    text: t("addAccommodation.hostPreferences.kidsUnder2"),
-    icon: <KidsIcon width="26" height="25" />,
-  },
-  {
-    id: "food",
-    text: t("addAccommodation.hostPreferences.foodIncluded"),
-    icon: <FoodIcon width="26" height="25" />,
-  },
-  {
-    id: "disability",
-    text: t("addAccommodation.hostPreferences.disabledSupport"),
-    icon: <DisabilityIcon width="24" height="25" />,
-  },
-];
-
 const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   const { t } = useTranslation();
   const formFields = useForm<FormType>();
-  const hostPreferences = useMemo(() => hostPreferencesFactory(t), [t]);
   const {
-    control,
     handleSubmit,
     formState: { errors },
-    watch,
   } = formFields;
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormType) => {
     const preferencesApiArray = [];
-    for (const [key, value] of Object.entries(preferences)) {
-      if (value) {
-        preferencesApiArray.push(key);
-      }
-    }
     const conditionsApiArray = [];
-    for (const [key, value] of Object.entries(conditions)) {
-      if (value) {
-        conditionsApiArray.push(key);
-      }
-    }
-    const floorApiArray = [];
-    for (const [key, value] of Object.entries(floor)) {
-      if (value) {
-        floorApiArray.push(`floor_${key}`);
-      }
-    }
 
-    const howManyPeopleApiArray = [];
-    for (const [key, value] of Object.entries(howManyPeople)) {
-      if (value) {
-        if (key === "more") {
-          howManyPeopleApiArray.push(`people_${data.howManyPeople}`);
-        } else {
-          howManyPeopleApiArray.push(`people_${key}`);
-        }
-      }
-    }
-
-    const howLongArray = [];
-    for (const [key, value] of Object.entries(howLong)) {
-      if (value) {
-        howLongArray.push(key);
-      }
-    }
+    const floorApi = `floor_${data.host.floor}`;
 
     fetch("/api/accommodations/add", {
       method: "post",
       body: JSON.stringify({
         host: {
-          name: data.name,
-          email: data.email,
+          name: data.host.core.name,
+          email: data.host.core.email,
         },
         location: {
-          city: data.location,
+          city: data.host.core.location,
           state: "",
         },
-        conditions: [...conditionsApiArray, ...floorApiArray],
+        conditions: [...conditionsApiArray, floorApi],
         preferences: preferencesApiArray,
-        resources: [...howManyPeopleApiArray],
+        resources: [data.host.preferences.peopleQuantity],
       }),
     }).then((res) => {
       if (res.status === 200) {
@@ -143,110 +78,6 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   };
   const onError = (error) => {
     console.log("form error:", error);
-  };
-
-  const [preferences, setPreferences] = useState({
-    animals: false,
-    kids: false,
-    food: false,
-    disability: false,
-  });
-  const clickPreferences = (id) => {
-    setPreferences((prevState) => ({
-      ...prevState,
-      [id]: !preferences[id],
-    }));
-  };
-
-  type HowManyPeopleState = {
-    1: false;
-    2: false;
-    3: false;
-    4: false;
-    5: false;
-    more: false;
-  };
-
-  const [howManyPeople, setHowManyPeople] = useState<HowManyPeopleState>({
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-    more: false,
-  });
-
-  type HowLongState = {
-    week_1: boolean;
-    week_2: boolean;
-    week_3: boolean;
-    week_more: boolean;
-  };
-
-  const [howLong, setHowLong] = useState<HowLongState>({
-    week_1: false,
-    week_2: false,
-    week_3: false,
-    week_more: false,
-  });
-
-  const clickHowLong = (id: keyof HowLongState) => {
-    setHowLong((prevState): HowLongState => {
-      return {
-        ...prevState,
-        [id]: !prevState[id],
-      };
-    });
-  };
-
-  type ConditionsState = {
-    selfContained: boolean;
-    room: boolean;
-    mattress: boolean;
-    other: boolean;
-  };
-
-  const [conditions, setConditions] = useState<ConditionsState>({
-    selfContained: false,
-    room: false,
-    mattress: false,
-    other: false,
-  });
-
-  const clickConditions = (id: keyof ConditionsState) => {
-    setConditions((prevState: ConditionsState) => {
-      return {
-        ...prevState,
-        [id]: !prevState[id],
-      };
-    });
-  };
-
-  type FloorState = {
-    0: boolean;
-    1: boolean;
-    2: boolean;
-    3: boolean;
-    4: boolean;
-    bright: boolean;
-  };
-
-  const [floor, setFloor] = useState<FloorState>({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    bright: false,
-  });
-
-  const clickFloor = (id: keyof FloorState) => {
-    setFloor((prevState: FloorState) => {
-      return {
-        ...prevState,
-        [id]: !prevState[id],
-      };
-    });
   };
 
   return (
@@ -308,25 +139,30 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
             <InputCotrolLabel>
               {t("addAccommodation.hostPreferences.label")}
             </InputCotrolLabel>
-            <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
-              {hostPreferences.map((hostPreference) => {
-                return (
-                  <TouchableOpacity
-                    key={hostPreference.id}
-                    onPress={() => {
-                      clickPreferences(hostPreference.id);
-                    }}
-                  >
-                    <ChoiceButton
-                      text={hostPreference.text}
-                      icon={hostPreference.icon}
-                      preferenceId={hostPreference.id}
-                      isChoice={preferences[hostPreference.id]}
-                    />
-                  </TouchableOpacity>
-                );
-              })}
-            </CompositionGrid>
+            <FormButtonsGrid
+              data={[
+                {
+                  id: "host.preferences.animals",
+                  label: t("addAccommodation.hostPreferences.acceptAnimals"),
+                  icon: <AnimalsIcon width="30" height="25" />,
+                },
+                {
+                  id: "host.preferences.kids",
+                  label: t("addAccommodation.hostPreferences.kidsUnder2"),
+                  icon: <KidsIcon width="26" height="25" />,
+                },
+                {
+                  id: "host.preferences.food",
+                  label: t("addAccommodation.hostPreferences.foodIncluded"),
+                  icon: <FoodIcon width="26" height="25" />,
+                },
+                {
+                  id: "host.preferences.disability",
+                  label: t("addAccommodation.hostPreferences.disabledSupport"),
+                  icon: <DisabilityIcon width="24" height="25" />,
+                },
+              ]}
+            />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
