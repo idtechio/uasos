@@ -1,10 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 
-export default async function getAccommodations(
-  req: NextApiRequest,
-  res: NextApiResponse<object>
-) {
+export default async function getAccommodations(req, res) {
   const session = await getSession({ req });
   if (session) {
     // Signed in
