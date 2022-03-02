@@ -59,15 +59,16 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
       method: "post",
       body: JSON.stringify({
         name: data.host.core.name,
-        children_allowed: data.host.preferences.kids,
-        city: data.host.core.location,
+        phone_num: data.host.core.phoneNumber,
+        status: 1,
         email: data.host.core.email,
+        city: data.host.core.location,
+        children_allowed: data.host.preferences.kids,
+        pet_allowed: data.host.preferences.animals,
         handicapped_allowed: data.host.preferences.disability,
         num_people: data.host.preferences.peopleQuantity,
         period: data.host.preferences.forHowLong,
-        pet_allowed: data.host.preferences.animals,
         pietro: data.host.floor,
-        status: 1,
       }),
     })
       .then(function (res) {
