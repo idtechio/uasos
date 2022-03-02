@@ -8,8 +8,7 @@ import {
   PlaceholderText,
   SelectText,
 } from "./style";
-import { Text, View } from "react-native";
-import { useTranslation } from "next-i18next";
+import { View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
@@ -23,6 +22,7 @@ export const Dropdown = ({
   multiselect,
   itemPressFunction,
   placeholder,
+  error,
   onBlur,
   searchable = false,
 }: DropdownProps) => {
@@ -40,8 +40,6 @@ export const Dropdown = ({
     itemPressFunction(value);
     onBlur?.();
   };
-
-  const { t } = useTranslation();
 
   const renderItem = ({ item }) => (
     <Item
@@ -62,8 +60,14 @@ export const Dropdown = ({
         }}
       >
         <Select
-          showOptions={showOptions}
-          onPress={() => setShowOptions(!showOptions)}
+          isInvalid={!!error}
+          areOptionsVisible={areOptionsVisible}
+          onPress={() => {
+            setOptionsAreVisible(!areOptionsVisible);
+            if (areOptionsVisible) {
+              onBlur?.();
+            }
+          }}
         >
           <SelectText>
             {selectedItem ? (
@@ -76,7 +80,8 @@ export const Dropdown = ({
             <ArrowIcon />
           </Icon>
         </Select>
-        {showOptions && (
+
+        {areOptionsVisible && (
           <>
             <Options
               style={{

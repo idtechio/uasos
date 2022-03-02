@@ -76,7 +76,7 @@ export default function AddAccommodationAdvancedForm() {
               required: true,
             }}
             error={errors?.advancedHost?.country}
-            errorMsg={t("hostAdd.errors.rcountry")}
+            errorMsg={t("hostAdd.errors.country")}
           />
           <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
           <FormDropdown

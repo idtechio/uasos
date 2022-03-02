@@ -47,7 +47,7 @@ const FormDropdown: VFC<Props> = (props) => {
               itemPressFunction={onChange}
               onBlur={onBlur}
               selected={value}
-              /*error={error}*/
+              error={!!error}
             />
             {error && <Text style={styles.error}>{errorMsg}</Text>}
           </InputControl>
