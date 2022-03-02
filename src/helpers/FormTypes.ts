@@ -1,8 +1,8 @@
 export enum ForHowLong {
-  WEEK = "week",
-  TWO_WEEKS = "two_weeks",
-  MONTH = "month",
-  LONGER = "longer",
+  WEEK = "1",
+  TWO_WEEKS = "2",
+  MONTH = "4",
+  LONGER = "48",
 }
 
 export enum LivingConditions {
