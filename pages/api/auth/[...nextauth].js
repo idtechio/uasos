@@ -22,7 +22,7 @@ export default NextAuth({
   },
   callbacks: {
     redirect({ url, baseUrl }) {
-      return `/host`;
+      return `/`;
     },
   },
 });

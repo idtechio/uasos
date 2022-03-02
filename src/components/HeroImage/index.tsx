@@ -2,8 +2,9 @@ import * as React from "react";
 import styled from "styled-components/native";
 import { ButtonCta } from "../Buttons";
 import heroImage from "../../../public/hero.png";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 const SubTitle = styled.Text`
   font-weight: 400;
@@ -39,6 +40,7 @@ const ButtonContainer = styled.View`
 
 const HeroImage = () => {
   const { t } = useTranslation();
+  const { data: session } = useSession();
   return (
     <section style={{ flex: 1, width: "100%" }}>
       {/* @ts-ignore */}
@@ -60,7 +62,25 @@ const HeroImage = () => {
             </SubTitle>
 
             <ButtonContainer>
-              <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+              {session ? (
+                <>
+                  <Link href="/guest">
+                    <a>
+                      <ButtonCta anchor="Szukam schronienia" />
+                    </a>
+                  </Link>
+                  <Link href="/host">
+                    <a>
+                      <ButtonCta anchor="Oferuje pomoc" />
+                    </a>
+                  </Link>
+                </>
+              ) : (
+                <ButtonCta
+                  anchor={t("shareLocation")}
+                  onPress={() => signIn()}
+                />
+              )}
             </ButtonContainer>
           </Container>
         </Wraper>
