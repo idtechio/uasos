@@ -39,7 +39,7 @@ const HeroImage = () => {
   return (
     <section style={{ flex: 1 }}>
       {/* @ts-ignore */}
-      <Image source={heroImage.src}>
+      <Image source={heroImage.src} alt="helping hands, Sława Ukrajini!">
         <HeroImageOverlay />
         <Container>
           <h1>

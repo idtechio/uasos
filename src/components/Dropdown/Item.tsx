@@ -12,7 +12,7 @@ export const Item = ({
 }) => {
   const handleClick = () => {
     itemPressFunction();
-    // setOptionsAreVisible(false);
+    setOptionsAreVisible(false);
   };
   return (
     <SelectItem onPress={handleClick}>

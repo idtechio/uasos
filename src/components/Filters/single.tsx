@@ -57,7 +57,7 @@ const SingleFilter = ({
                 {name}
               </FilterBoxHeader>
               <View style={styles.content}>
-              <Dropdown
+                <Dropdown
                   data={options}
                   direction={"to-top"}
                   itemPressFunction={chosenItem}
