@@ -117,19 +117,6 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               errorMsg={t("validations.invalidEmail")}
             />
             <FormTextInput
-              name="host.core.phoneNumber"
-              label={t("labels.phone")}
-              rules={{
-                required: true,
-                pattern: {
-                  value: /\d{9,15}/,
-                  message: t("validations.invalidPhoneNumber"),
-                },
-              }}
-              error={errors?.host?.core?.phoneNumber}
-              errorMsg={t("validations.invalidPhoneNumber")}
-            />
-            <FormTextInput
               name="host.core.location"
               label={t("labels.town")}
               rules={{

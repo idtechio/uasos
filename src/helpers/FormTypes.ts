@@ -50,6 +50,7 @@ export type FormType = {
       peopleQuantity: string;
       animal: string;
       peopleDetails: PeopleDetails;
+      forHowLong: ForHowLong;
       people: {
         [name: string]: string;
       };

@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/helpers/sendToEvaporationEngine.js"
+    "src/helpers/sendToEvaporationEngine.js",
+    "pages/api/guests/add.js"
   ],
   "exclude": ["node_modules"]
 }

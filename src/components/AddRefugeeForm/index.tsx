@@ -10,6 +10,7 @@ import {
   InputCotrolLabel,
   RadioButtons,
 } from "../Forms";
+import { ForHowLong } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
@@ -34,10 +35,10 @@ const AddRefugeeForm = () => {
   const refugeesCountOptions = useMemo(
     () => [
       { label: t("refugeeForm.refugeesCountOptions.alone"), value: "1" },
-      { label: "1", value: "2" },
-      { label: "2", value: "3" },
-      { label: "3", value: "4" },
-      { label: t("refugeeForm.refugeesCountOptions.more"), value: "5" },
+      { label: "2", value: "2" },
+      { label: "3", value: "3" },
+      { label: "4", value: "4" },
+      { label: t("refugeeForm.refugeesCountOptions.more"), value: "100" },
     ],
     [t]
   );
@@ -98,7 +99,6 @@ const AddRefugeeForm = () => {
       method: "post",
       body: JSON.stringify({
         name: data.refugee.core.name,
-        phone_num: data.refugee.core.phoneNumber,
         status: 1,
         email: data.refugee.core.email,
         city: data.refugee.core.location,
@@ -106,7 +106,7 @@ const AddRefugeeForm = () => {
         pet_allowed: data.refugee.preferences.peopleDetails.animals,
         handicapped_allowed: data.refugee.preferences.peopleDetails.disability,
         num_people: data.refugee.preferences.peopleQuantity,
-        period: data.refugee.preferences.forHowLong,
+        // period: data.refugee.preferences.forHowLong
       }),
     }).then(function (res) {
       if (res.status === 200) {
@@ -167,11 +167,42 @@ const AddRefugeeForm = () => {
                 data={refugeesCountOptions}
                 errorMsg={t("validations.requiredPeopleQuantity")}
               />
-
+            </InputControl>
+            <InputControl>
+              <InputCotrolLabel>
+                {t("addAccommodation.forHowLong")}
+              </InputCotrolLabel>
+              <FormRadioGroup<ForHowLong>
+                name="host.preferences.forHowLong"
+                rules={{
+                  required: true,
+                }}
+                data={[
+                  {
+                    label: t("staticValues.timePeriod.week"),
+                    value: ForHowLong.WEEK,
+                  },
+                  {
+                    label: t("staticValues.timePeriod.twoWeeks"),
+                    value: ForHowLong.TWO_WEEKS,
+                  },
+                  {
+                    label: t("staticValues.timePeriod.month"),
+                    value: ForHowLong.MONTH,
+                  },
+                  {
+                    label: t("staticValues.timePeriod.longer"),
+                    value: ForHowLong.LONGER,
+                  },
+                ]}
+                errorMsg={t("validations.requiredTime")}
+              />
+            </InputControl>
+            {/* </InputControl>
               <InputCotrolLabel>
                 {t("refugeeForm.labels.refugeeDetails")}
-              </InputCotrolLabel>
-              {fields.map((_, index) => (
+              </InputCotrolLabel> */}
+            {/* {fields.map((_, index) => (
                 <FormTextInput
                   key={index}
                   rules={{
@@ -196,12 +227,12 @@ const AddRefugeeForm = () => {
                     </TouchableOpacity>
                   }
                 />
-              ))}
-              <ButtonCta
+              ))} */}
+            {/* <ButtonCta
                 anchor={t("refugeeForm.labels.addRefugee")}
                 onPress={() => append("")}
               />
-            </InputControl>
+            </InputControl> */}
 
             <InputControl>
               <InputCotrolLabel>
