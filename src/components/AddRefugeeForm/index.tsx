@@ -34,11 +34,11 @@ const AddRefugeeForm = () => {
 
   const refugeesCountOptions = useMemo(
     () => [
-      { label: t("refugeeForm.refugeesCountOptions.alone"), value: "1" },
-      { label: "2", value: "2" },
-      { label: "3", value: "3" },
-      { label: "4", value: "4" },
-      { label: t("refugeeForm.refugeesCountOptions.more"), value: "100" },
+      { label: t("refugeeForm.refugeesCountOptions.alone"), value: 1 },
+      { label: "2", value: 2 },
+      { label: "3", value: 3 },
+      { label: "4", value: 4 },
+      { label: t("refugeeForm.refugeesCountOptions.more"), value: 100 },
     ],
     [t]
   );
@@ -106,7 +106,7 @@ const AddRefugeeForm = () => {
         pet_allowed: data.refugee.preferences.peopleDetails.animals,
         handicapped_allowed: data.refugee.preferences.peopleDetails.disability,
         num_people: data.refugee.preferences.peopleQuantity,
-        // period: data.refugee.preferences.forHowLong
+        period: data.host.preferences.forHowLong,
       }),
     }).then(function (res) {
       if (res.status === 200) {
@@ -198,42 +198,6 @@ const AddRefugeeForm = () => {
                 errorMsg={t("validations.requiredTime")}
               />
             </InputControl>
-            {/* </InputControl>
-              <InputCotrolLabel>
-                {t("refugeeForm.labels.refugeeDetails")}
-              </InputCotrolLabel> */}
-            {/* {fields.map((_, index) => (
-                <FormTextInput
-                  key={index}
-                  rules={{
-                    required: true,
-                    pattern: {
-                      value: /\S{3,30}/,
-                      message: t("refugeeForm.errors.required"),
-                    },
-                  }}
-                  labelsBackgroundColor="#F5F4F4"
-                  name={`refugee.preferences.people.refugee${index}`}
-                  label={t("refugeeForm.labels.refugee", {
-                    number: index + 1,
-                  })}
-                  error={
-                    errors.refugee?.preferences?.people?.[`refugee${index}`]
-                  }
-                  errorMsg={t("refugeeForm.errors.required")}
-                  extra={
-                    <TouchableOpacity onPress={() => remove(index)}>
-                      <CrossIcon width="25" height="25" />
-                    </TouchableOpacity>
-                  }
-                />
-              ))} */}
-            {/* <ButtonCta
-                anchor={t("refugeeForm.labels.addRefugee")}
-                onPress={() => append("")}
-              />
-            </InputControl> */}
-
             <InputControl>
               <InputCotrolLabel>
                 {t("refugeeForm.labels.location")}

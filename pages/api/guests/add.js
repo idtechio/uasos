@@ -2,7 +2,6 @@ import { getSession } from "next-auth/react";
 
 export default async function getAccommodations(req, res) {
   const session = await getSession({ req });
-  console.log(session);
   if (session) {
     // Signed in
     const body = JSON.parse(req.body);
