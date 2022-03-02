@@ -2,6 +2,8 @@ import * as React from "react";
 import styled from "styled-components/native";
 import { ButtonCta } from "../Buttons";
 import heroImage from "../../../public/hero.png";
+import { signIn } from "next-auth/react";
+import { useTranslation } from "next-i18next";
 
 const SubTitle = styled.Text`
   font-weight: 400;
@@ -36,33 +38,41 @@ const ButtonContainer = styled.View`
 `;
 
 const HeroImage = () => {
+  const { t } = useTranslation();
   return (
-    <section style={{ flex: 1 }}>
+    <section style={{ flex: 1, width: "100%" }}>
       {/* @ts-ignore */}
       <Image source={heroImage.src}>
         <HeroImageOverlay />
-        <Container>
-          <h1>
-            Pomagamy znaleźć schronienie ofiarom wojny
-            <br />w Ukrainie
-          </h1>
+        <Wraper>
+          <Container>
+            <h1>
+              Pomagamy znaleźć schronienie ofiarom wojny
+              <br />w Ukrainie
+            </h1>
 
-          <SubTitle>
-            Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez
-            osoby i instytucje chcące nieść pomoc.
-            <br />
-            Nasz portal ma za zadanie automatycznie połączyć potencjalne lokum z
-            szukającym schronienia na podstawie określonych potrzeb
-          </SubTitle>
+            <SubTitle>
+              Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez
+              osoby i instytucje chcące nieść pomoc.
+              <br />
+              Nasz portal ma za zadanie automatycznie połączyć potencjalne lokum
+              z szukającym schronienia na podstawie określonych potrzeb
+            </SubTitle>
 
-          <ButtonContainer>
-            <ButtonCta anchor="Szukam schronienia" style={{ fontSize: 16 }} />
-            <ButtonCta anchor="Oferuję pomoc" style={{ fontSize: 16 }} />
-          </ButtonContainer>
-        </Container>
+            <ButtonContainer>
+              <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+            </ButtonContainer>
+          </Container>
+        </Wraper>
       </Image>
     </section>
   );
 };
 
 export default HeroImage;
+
+const Wraper = styled.View`
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+`;
