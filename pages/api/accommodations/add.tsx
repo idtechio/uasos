@@ -1,43 +1,49 @@
-import { db } from "../../../lib/firebase";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { getSession } from "next-auth/react";
 
 export default async function getAccommodations(
   req: NextApiRequest,
   res: NextApiResponse<object>
 ) {
-  const body = JSON.parse(req.body);
+  const session = await getSession({ req });
+  if (session) {
+    // Signed in
+    const body = JSON.parse(req.body);
 
-  const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
-  const data = JSON.stringify(body);
-  console.log(body);
+    const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
+    const data = JSON.stringify(body);
+    console.log(body);
 
-  // Imports the Google Cloud client library
-  const { PubSub } = require("@google-cloud/pubsub");
+    // Imports the Google Cloud client library
+    const { PubSub } = require("@google-cloud/pubsub");
 
-  // Creates a client; cache this for further use
-  const pubSubClient = new PubSub();
+    // Creates a client; cache this for further use
+    const pubSubClient = new PubSub();
 
-  async function publishMessage() {
-    // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
-    const dataBuffer = Buffer.from(data);
+    async function publishMessage() {
+      // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
+      const dataBuffer = Buffer.from(data);
 
-    try {
-      const messageId = await pubSubClient
-        .topic(topicNameOrId)
-        .publish(dataBuffer);
-      console.log(`Message ${messageId} published.`);
-      res.status(200).json({ status: "ok" });
-    } catch (error) {
-      console.error(`Received error while publishing: ${error.message}`);
-      res
-        .status(200)
-        .json({
+      try {
+        const messageId = await pubSubClient
+          .topic(topicNameOrId)
+          .publish(dataBuffer);
+        console.log(`Message ${messageId} published.`);
+        res.status(200).json({ status: "ok" });
+      } catch (error) {
+        console.error(`Received error while publishing: ${error.message}`);
+        res.status(200).json({
           status: "error",
           error: `Received error while publishing: ${error.message}`,
         });
-      process.exitCode = 1;
+        process.exitCode = 1;
+      }
     }
-  }
 
-  publishMessage();
+    publishMessage();
+  } else {
+    // Not Signed in
+    res.status(401);
+  }
+  res.end();
 }

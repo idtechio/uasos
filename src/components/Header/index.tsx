@@ -4,9 +4,11 @@ import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
+  const { data: session } = useSession();
 
   const toggleNavigationDrawer = () =>
     setNavigationDrawerOpen(!navigationDrawerOpen);
@@ -22,7 +24,11 @@ const Header = () => {
           </Link>
         </ServiceLogo>
         <ActionBar>
-          <HamburgerButton onPress={toggleNavigationDrawer} />
+          {session ? (
+            <HamburgerButton onPress={toggleNavigationDrawer} />
+          ) : (
+            <></>
+          )}
         </ActionBar>
       </HeaderPage>
       <NavigationDrawer

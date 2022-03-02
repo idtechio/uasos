@@ -44,9 +44,9 @@ const CardModal = ({ cardStyle, children, onModalClose }: CardModalProps) => {
               width={screenWidth - 30}
               style={[{ maxWidth: 600 }, cardStyle]}
             >
-              <CloseIconWrapper onPress={() => setModalVisible(false)}>
+              {/* <CloseIconWrapper onPress={() => setModalVisible(false)}>
                 <CrossIcon />
-              </CloseIconWrapper>
+              </CloseIconWrapper> */}
               {children}
             </Card>
           </CenterBox>
