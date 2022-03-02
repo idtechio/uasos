@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Select, SelectLabel, Options, ItemList } from "./style";
-import { Text, View, Modal, TouchableOpacity, TextInput } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import { useTranslation } from "next-i18next";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
@@ -8,7 +8,7 @@ import { SearchHeader } from "./SearchHeader";
 
 export const Dropdown = ({
   data,
-  direction,
+  direction = "to-bottom",
   label,
   multiselect,
   itemPressFunction,
@@ -29,8 +29,6 @@ export const Dropdown = ({
 
   const { t } = useTranslation();
 
-  let defaultDirection = direction ? direction : "to-bottom";
-
   const renderItem = ({ item }) => (
     <Item
       title={item.value}
@@ -46,41 +44,38 @@ export const Dropdown = ({
           var { x, y, width } = event.nativeEvent.layout;
           setSelectWidth(width);
           setSelectPosY(y);
-          if (defaultDirection === "to-top") {
+          if (direction === "to-top") {
             setSelectPosX(x + 157);
           } else {
-            setSelectPosX(x + 40);
+            setSelectPosX(x + 45);
           }
         }}
       >
         <Select onPress={() => setOptionsAreVisible(true)}>
-          <Text>{t("choose")}</Text>
+          <Text>{t("dropdownChoose")}</Text>
           <ArrowIcon />
         </Select>
-      </View>
-      <Modal
-        transparent
-        visible={areOptionsVisible}
-        animationType="fade"
-        onRequestClose={() => setOptionsAreVisible(false)}
-      >
-        <TouchableOpacity
-          activeOpacity={1}
-          //TO DO set this to false to test the filter input
-          // set to true to have it close on click
-          onPress={() => setOptionsAreVisible(false)}
-          style={{
-            backgroundColor: "rgba(0,0,0, 0.2)",
-            flex: 1,
-          }}
-        >
-          {areOptionsVisible && (
+        {areOptionsVisible && (
+          <>
+            <TouchableOpacity
+              activeOpacity={1}
+              onPress={() => setOptionsAreVisible(false)}
+              style={{
+                backgroundColor: "rgba(0,0,0, 0.2)",
+                position: "fixed",
+                width: "100vw",
+                height: "100vh",
+                top: 0,
+                left: 0,
+              }}
+            ></TouchableOpacity>
             <Options
               style={{
                 width: selectWidth + "px",
                 left: selectPosY + "px",
                 top: direction === "to-bottom" ? selectPosX + "px" : "unset",
                 bottom: direction === "to-top" ? selectPosX + "px" : "unset",
+                zIndex: "100",
               }}
             >
               <SearchHeader
@@ -94,9 +89,9 @@ export const Dropdown = ({
                 keyExtractor={(item) => item.value}
               />
             </Options>
-          )}
-        </TouchableOpacity>
-      </Modal>
+          </>
+        )}
+      </View>
     </>
   );
 };
