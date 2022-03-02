@@ -4,7 +4,8 @@ export const Select = styled.Pressable`
   color: ${(props) => props.theme.colors.text};
   border-width: ${(props) => props.theme.forms.borderWidth};
   border-radius: ${(props) => props.theme.forms.borderRadius};
-  border-color: ${(props) => props.theme.forms.border};
+  border-color: ${(props) =>
+    props.isInvalid ? "#D8000C" : props.theme.forms.border};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
 
   padding: 10px;
@@ -51,13 +52,14 @@ export const Icon = styled.View`
 `;
 
 export const SelectItem = styled.Pressable`
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 12px;
   border-bottom-width: 1px;
   border-color: ${(props) => props.theme.forms.border};
+
   &:hover {
-    // TO DO
+    background-color: #cccccc;
   }
 `;
 

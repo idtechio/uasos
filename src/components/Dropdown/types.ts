@@ -10,4 +10,5 @@ export type DropdownProps = {
   itemPressFunction(value: any): void;
   searchable?: boolean;
   onBlur?(): void;
+  error?: React.ReactNode;
 };
