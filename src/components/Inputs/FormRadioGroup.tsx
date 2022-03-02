@@ -49,20 +49,17 @@ const FormRadioGroup = <T extends Object>({
       render={({ field: { onChange } }) => (
         <RadioButtons>
           {data.map(({ label, value }) => (
-            <TouchableOpacity
+            <ChoiceButton
               key={label}
               onPress={() => {
                 setMarkedCheckbox(label);
                 onChange(value);
               }}
-            >
-              <ChoiceButton
-                text={label}
-                isSmall
-                isChoice={label === markedCheckbox}
-                error={!!error}
-              />
-            </TouchableOpacity>
+              error={!!error}
+              text={label}
+              isSmall
+              isSelected={label === markedCheckbox}
+            />
           ))}
           {error ? <Text style={styles.error}>{errorMsg}</Text> : null}
         </RadioButtons>

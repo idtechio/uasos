@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
+    "@react-native-community/checkbox": "^0.5.11",
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "next": "latest",
@@ -19,6 +20,7 @@
     "react-dom": "^17.0.2",
     "react-fetch-hook": "^1.8.5",
     "react-hook-form": "^7.27.1",
+    "react-intl": "^5.24.6",
     "react-native": "^0.67.3",
     "react-native-modal": "^13.0.0",
     "react-native-web": "^0.17.6",

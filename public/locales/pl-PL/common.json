@@ -1,6 +1,5 @@
 {
   "test": "testowa wiadomość  PL",
-
   "navigationDrawer": {
     "profile": "Profil użytkownika",
     "placesList": "Twoja lista mieszkań",
@@ -98,5 +97,38 @@
     "thankYou": "Dziękujemy!",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
     "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o ty za pomocą maila."
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "Jestem razem ze swoim zwierzakiem",
+      "toddler": "Dziecko jest poniżej 2 roku życia",
+      "oldPerson": "Jestem lub jest ze mną osoba starsza",
+      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością"
+    },
+    "refugeesCountOptions": {
+      "alone": "jestem sam",
+      "more": "więcej"
+    },
+    "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "phone": "Podaj poprawny numer telefonu",
+      "required": "To pole jest wymagane"
+    },
+    "labels": {
+      "name": "Imię",
+      "email": "Email",
+      "phone": "Numer telefonu",
+      "refugeesCount": "Dla ilu osób szukasz schronienia",
+      "refugee": "Uchodźca {{number}}",
+      "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie:",
+      "refugeesAnimal": "Rasa (imie zwierzaka)",
+      "isGDPRAccepted": "Akceptuję politykę prywatnosci",
+      "submitButton": "Skorzystaj z pomocy",
+      "location": "Gdzie chciałbyś się zatrzymać?",
+      "anyLocation": "Dowolna lokalizacja",
+      "prefferedLocation": "Preferowana lokalizacja",
+      "city": "Miejscowość"
+    }
   }
 }
