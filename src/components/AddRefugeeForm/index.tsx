@@ -157,9 +157,7 @@ const AddRefugeeForm = () => {
                 key={index}
                 rules={{ required: true }}
                 labelsBackgroundColor="#F5F4F4"
-                name={
-                  `refugee.preferences.people.${index}` as unknown as FormKey
-                }
+                name={`refugee.preferences.people.${index}`}
                 label={t("refugeeForm.labels.refugee", {
                   number: index + 1,
                 })}
