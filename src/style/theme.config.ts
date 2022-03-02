@@ -32,7 +32,7 @@ export const primary = {
   },
   forms: {
     border: "#BBBBBC",
-    borderWidth: "2px",
+    borderWidth: "1px",
     borderRadius: "4px",
     placeholderColor: "#BBBBBC",
     placeholderSize: "14px",

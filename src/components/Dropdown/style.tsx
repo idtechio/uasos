@@ -5,17 +5,26 @@ export const Select = styled.Pressable`
   border-width: ${(props) => props.theme.forms.borderWidth};
   border-radius: ${(props) => props.theme.forms.borderRadius};
   border-color: ${(props) => props.theme.forms.border};
-  padding: 20px;
-  font-size: 16px;
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
+
+  padding: 10px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  position: relative;
   &:hover {
     // TO DO
   }
   box-shadow: ${(props) => (props.showOptions ? `0 0 15px #cccccc` : `none`)};
+`;
+
+export const SelectText = styled.Text`
+  font-size: 14px;
+  line-height: 24px;
+`;
+
+export const PlaceholderText = styled.Text`
+  color: ${(props) => props.theme.forms.placeholderColor};
 `;
 
 export const SelectLabel = styled.Pressable`
