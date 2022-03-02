@@ -90,7 +90,11 @@ const AddRefugeeForm = () => {
   });
 
   const onSubmit = (data: FormType) => {
-    console.log(data);
+    console.log("data:", data);
+  };
+
+  const onError = (error) => {
+    console.log("error:", error);
   };
 
   return (
@@ -228,7 +232,7 @@ const AddRefugeeForm = () => {
           />
           <InputControl>
             <ButtonCta
-              onPress={handleSubmit(onSubmit)}
+              onPress={handleSubmit(onSubmit, onError)}
               anchor={t("refugeeForm.labels.submitButton")}
             />
           </InputControl>
