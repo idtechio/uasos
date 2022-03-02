@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { Select, SelectLabel, Options, ItemList, Icon } from "./style";
+import {
+  Select,
+  SelectLabel,
+  Options,
+  ItemList,
+  Icon,
+  PlaceholderText,
+  SelectText,
+} from "./style";
 import { Text, View } from "react-native";
 import { useTranslation } from "next-i18next";
 import ArrowIcon from "../../style/svgs/arrow.svg";
@@ -56,7 +64,13 @@ export const Dropdown = ({
           areOptionsVisible={areOptionsVisible}
           onPress={() => setOptionsAreVisible(!areOptionsVisible)}
         >
-          <Text>{selectedItem ? selectedItem.label : placeholder}</Text>
+          <SelectText>
+            {selectedItem ? (
+              selectedItem.label
+            ) : (
+              <PlaceholderText numberOfLines={1}>{placeholder}</PlaceholderText>
+            )}
+          </SelectText>
           <Icon areOptionsVisible={areOptionsVisible}>
             <ArrowIcon />
           </Icon>

@@ -2,15 +2,24 @@ import React from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import styled from "styled-components";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
+import { Dropdown } from "../Dropdown";
+import { Select } from "../Dropdown/style";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
+
+const HostDropdown = styled(Dropdown)`
+  ${Select} & {
+    background-color: white;
+  }
+`;
 
 const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 1", value: "Item 1" },
@@ -55,9 +64,11 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.basicInfoHeader")}
+          zIndex={3}
         >
           <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
           <FormDropdown
+            zIndex={14}
             data={DUMMY_DROPDOWN_ITEMS}
             placeholder={t("hostAdd.country")}
             name="advancedHost.country"
@@ -69,6 +80,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
           <FormDropdown
+            zIndex={13}
             data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.town"
             placeholder={t("hostAdd.town")}
@@ -80,10 +92,15 @@ export default function AddAccommodationAdvancedForm() {
           />
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
-        <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
+        <CompositionSection
+          padding={[35, 30, 8, 30]}
+          backgroundColor="#F5F4F4"
+          zIndex={2}
+        >
           <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
           {/* TODO: use Dropdown here */}
           <FormDropdown
+            zIndex={12}
             data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
@@ -124,6 +141,7 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
+          zIndex={1}
         >
           <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
           <FormRadioGroup<string | string>
@@ -139,6 +157,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
           <FormDropdown
+            zIndex={11}
             data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.groupsTypes"
             placeholder={t("forms.chooseFromListMulti")}

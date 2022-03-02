@@ -8,6 +8,7 @@ const CompositionSection = ({
   sectionId,
   padding,
   header,
+  zIndex,
 }: SectionProps) => {
   return (
     <PageSection
@@ -15,6 +16,7 @@ const CompositionSection = ({
       backgroundColor={backgroundColor}
       zeroPadding={zeroPadding}
       padding={padding}
+      zIndex={zIndex}
     >
       {header ? <SectionHeader>{header}</SectionHeader> : null}
       {children}

@@ -8,12 +8,14 @@ export const InputWraper = styled.View`
 `;
 
 export const TextInput = styled.TextInput`
-  border: 2px solid
+  border: ${(props) => props.theme.forms.borderWidth} solid
     ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
-  background-color: transparent;
-  padding: 20px;
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
+  min-height: 24px;
+  padding: 10px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 24px;
   width: 100%;
   &:focus {
     outlinecolor: "#003566";

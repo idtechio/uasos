@@ -21,9 +21,9 @@ export const Label = styled.Text<InputProps>`
 `;
 
 export const TextInput = styled.TextInput`
-  border: 2px solid
+  border: ${(props) => props.theme.forms.borderWidth} solid
     ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
-  background-color: transparent;
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
   padding: 20px;
   border-radius: 4px;
   font-size: 16px;

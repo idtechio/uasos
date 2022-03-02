@@ -4,10 +4,10 @@ import styled from "styled-components/native";
 export const Button = styled.View<ChoiceButtonProps>`
   border: ${(props) =>
     props.isChoice
-      ? `2px solid #38B000`
+      ? `${props.theme.forms.borderWidth} solid #38B000`
       : props.error
-      ? `2px solid #D8000C`
-      : `2px solid rgba(28, 27, 37, 0.3)`};
+      ? `${props.theme.forms.borderWidth} solid #D8000C`
+      : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) =>
     props.isChoice ? `rgba(56, 176, 0, 0.1)` : `transparent`};
   border-radius: 4px;
@@ -25,7 +25,9 @@ export const Button = styled.View<ChoiceButtonProps>`
 
 export const Text = styled.Text`
   color: ${(props) =>
-    props.isChoice ? `#38B000` : `2px solid rgba(28, 27, 37, 0.7)`};
+    props.isChoice
+      ? `#38B000`
+      : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.7)`};
 `;
 
 export const Icon = styled.View`
