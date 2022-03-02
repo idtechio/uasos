@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { Select, SelectLabel, Options, ItemList, Icon } from "./style";
-import { Text, View } from "react-native";
-import { useTranslation } from "next-i18next";
+import {
+  Select,
+  SelectLabel,
+  Options,
+  ItemList,
+  Icon,
+  PlaceholderText,
+  SelectText,
+} from "./style";
+import { View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
@@ -11,37 +18,63 @@ export const Dropdown = ({
   data,
   direction = "to-bottom",
   label,
+  selected,
   multiselect,
   itemPressFunction,
+  placeholder,
+  error,
+  onBlur,
   searchable = false,
 }: DropdownProps) => {
   const [areOptionsVisible, setOptionsAreVisible] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
+  const [selectHeight, setSelectHeight] = useState(0);
+
   const [filteredData, setFilteredData] = useState(data);
 
-  const { t } = useTranslation();
+  const selectedItem = (data ?? []).find(({ value }) => value === selected);
+
+  const handleItemPress = (value: any) => {
+    itemPressFunction(value);
+    onBlur?.();
+  };
 
   const renderItem = ({ item }) => (
     <Item
-      title={item.value}
-      itemPressFunction={itemPressFunction}
+      title={item.label}
+      value={item.value}
+      itemPressFunction={handleItemPress}
       setOptionsAreVisible={setOptionsAreVisible}
     />
   );
+
   return (
     <>
       {label && <SelectLabel>{label}</SelectLabel>}
       <View
         onLayout={(event) => {
-          var { width } = event.nativeEvent.layout;
+          var { width, height } = event.nativeEvent.layout;
           setSelectWidth(width);
+          setSelectHeight(height);
         }}
       >
         <Select
+          isInvalid={!!error}
           areOptionsVisible={areOptionsVisible}
-          onPress={() => setOptionsAreVisible(!areOptionsVisible)}
+          onPress={() => {
+            setOptionsAreVisible(!areOptionsVisible);
+            if (areOptionsVisible) {
+              onBlur?.();
+            }
+          }}
         >
-          <Text>{t("dropdownChoose")}</Text>
+          <SelectText>
+            {selectedItem ? (
+              selectedItem.label
+            ) : (
+              <PlaceholderText numberOfLines={1}>{placeholder}</PlaceholderText>
+            )}
+          </SelectText>
           <Icon areOptionsVisible={areOptionsVisible}>
             <ArrowIcon />
           </Icon>
@@ -51,8 +84,8 @@ export const Dropdown = ({
             <Options
               style={{
                 width: selectWidth + "px",
-                top: direction === "to-bottom" ? "45px" : "unset",
-                bottom: direction === "to-top" ? "45px" : "unset",
+                top: direction === "to-bottom" ? selectHeight : "unset",
+                bottom: direction === "to-top" ? selectHeight : "unset",
                 zIndex: "100",
               }}
             >

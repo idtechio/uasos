@@ -5,4 +5,5 @@ export type SectionProps = {
   sectionId?: string;
   padding?: [number, number, number, number];
   header?: string;
+  zIndex?: number;
 };

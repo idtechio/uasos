@@ -8,7 +8,7 @@ export const SearchHeader = ({ data, searchable, setFilteredData }) => {
   useEffect(() => {
     var textToSearch = text || "";
     var filteredArray = data.filter(({ label }) => {
-      return label.includes(textToSearch);
+      return label.toLowerCase().includes(textToSearch.toLowerCase());
     });
     setFilteredData(filteredArray);
   }, [data, setFilteredData, text]);

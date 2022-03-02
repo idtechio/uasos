@@ -2,14 +2,33 @@ import React from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import styled from "styled-components";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import { Dropdown } from "../Dropdown";
+import { Select } from "../Dropdown/style";
+import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormTextInput from "../Inputs/FormTextInput";
+
+const HostDropdown = styled(Dropdown)`
+  ${Select} & {
+    background-color: white;
+  }
+`;
+
+const DUMMY_DROPDOWN_ITEMS = [
+  { label: "Item 1", value: "Item 1" },
+  { label: "Item 2", value: "Item 2" },
+  { label: "Item 3", value: "Item 3" },
+  { label: "Item 4", value: "Item 4" },
+  { label: "Item 5", value: "Item 5" },
+  { label: "Item 6", value: "Item 6" },
+  { label: "Item 7", value: "Item 7" },
+];
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -44,21 +63,26 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.basicInfoHeader")}
+          zIndex={3}
         >
           <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            zIndex={14}
+            data={DUMMY_DROPDOWN_ITEMS}
+            placeholder={t("hostAdd.country")}
             name="advancedHost.country"
-            label={t("hostAdd.country")}
             rules={{
               required: true,
             }}
             error={errors?.advancedHost?.country}
-            errorMsg={t("hostAdd.errors.rcountry")}
+            errorMsg={t("hostAdd.errors.country")}
           />
           <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            zIndex={13}
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.town"
-            label={t("hostAdd.town")}
+            placeholder={t("hostAdd.town")}
             rules={{
               required: true,
             }}
@@ -67,12 +91,18 @@ export default function AddAccommodationAdvancedForm() {
           />
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
-        <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
+        <CompositionSection
+          padding={[35, 30, 8, 30]}
+          backgroundColor="#F5F4F4"
+          zIndex={2}
+        >
           <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
           {/* TODO: use Dropdown here */}
-          <FormTextInput
+          <FormDropdown
+            zIndex={12}
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.accommodationType"
-            label={t("hostAdd.type")}
+            placeholder={t("forms.chooseFromList")}
             rules={{
               required: true,
             }}
@@ -110,6 +140,7 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
+          zIndex={1}
         >
           <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
           <FormRadioGroup<string | string>
@@ -124,9 +155,11 @@ export default function AddAccommodationAdvancedForm() {
             errorMsg={t("validations.nationalityError")}
           />
           <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            zIndex={11}
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.groupsTypes"
-            label={t("hostAdd.groupsTypes")}
+            placeholder={t("forms.chooseFromListMulti")}
             rules={{
               required: true,
             }}

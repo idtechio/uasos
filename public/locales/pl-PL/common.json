@@ -49,6 +49,10 @@
       "owner": "Gospodaż"
     }
   },
+  "forms": {
+    "chooseFromList": "Wybierz z listy",
+    "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
+  },
   "guestOffer": {
     "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
     "peopleToAccommodate": "+ {{count}} osoby",
@@ -110,9 +114,9 @@
     "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
     "addButton": "Zatwierdź/Dodaj",
     "errors": {
-      "country": "",
-      "town": "",
-      "type": "",
+      "country": "Kraj jest wymagany",
+      "town": "Miasto jest wymagane",
+      "type": "Typ noclegu jest wymagany",
       "fullBedCount": "",
       "childBedCount": "",
       "accommodationTime": "",

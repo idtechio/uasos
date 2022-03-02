@@ -4,10 +4,12 @@ export const Select = styled.Pressable`
   color: ${(props) => props.theme.colors.text};
   border-width: ${(props) => props.theme.forms.borderWidth};
   border-radius: ${(props) => props.theme.forms.borderRadius};
-  border-color: ${(props) => props.theme.forms.border};
-  padding: 10px 15px 10px 10px;
+  border-color: ${(props) =>
+    props.isInvalid ? "#D8000C" : props.theme.forms.border};
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
+
+  padding: 10px;
   width: 100%;
-  height: 40px;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
@@ -16,6 +18,15 @@ export const Select = styled.Pressable`
   }
   box-shadow: ${(props) =>
     props.areOptionsVisible ? `0 0 15px #cccccc` : `none`};
+`;
+
+export const SelectText = styled.Text`
+  font-size: 14px;
+  line-height: 24px;
+`;
+
+export const PlaceholderText = styled.Text`
+  color: ${(props) => props.theme.forms.placeholderColor};
 `;
 
 export const SelectLabel = styled.Pressable`
@@ -33,6 +44,7 @@ export const Options = styled.View`
 
 export const ItemList = styled.FlatList`
   max-height: 200px;
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
 `;
 
 export const Icon = styled.View`
@@ -40,13 +52,14 @@ export const Icon = styled.View`
 `;
 
 export const SelectItem = styled.Pressable`
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 12px;
   border-bottom-width: 1px;
   border-color: ${(props) => props.theme.forms.border};
+
   &:hover {
-    // TO DO
+    background-color: #cccccc;
   }
 `;
 
