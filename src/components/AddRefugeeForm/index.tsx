@@ -225,6 +225,9 @@ const AddRefugeeForm = () => {
             data={refugeeDetailsOptions}
           />
           <FormCheckbox
+            rules={{
+              required: true,
+            }}
             error={errors?.refugee?.isGDPRAccepted}
             errorMsg={t("refugeeForm.errors.required")}
             name="refugee.isGDPRAccepted"

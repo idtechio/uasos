@@ -4,21 +4,19 @@ import React from "react";
 
 import { CheckboxFieldProps } from "./type";
 import { InputCotrolLabel } from "../";
-import { View } from "./style";
+import { Label } from "./style";
 
-const CheckboxField = ({ text, onChange }: CheckboxFieldProps) => {
+const CheckboxField = ({ text, onChange, error }: CheckboxFieldProps) => {
   return (
-    <View>
-      <InputCotrolLabel>
-        {Platform.OS === "web" ? (
-          <input type="checkbox" onChange={onChange} />
-        ) : (
-          <CheckBox onValueChange={onChange} />
-        )}
+    <InputCotrolLabel>
+      {Platform.OS === "web" ? (
+        <input type="checkbox" onChange={onChange} />
+      ) : (
+        <CheckBox onValueChange={onChange} />
+      )}
 
-        {text}
-      </InputCotrolLabel>
-    </View>
+      <Label error={error}>{text}</Label>
+    </InputCotrolLabel>
   );
 };
 
