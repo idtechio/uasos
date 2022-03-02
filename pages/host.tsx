@@ -4,8 +4,10 @@ import {
 } from "../src/components/Compositions";
 import AddAccommodationForm from "../src/components/AddAccommodationForm";
 import { StyleSheet, View } from "react-native";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ButtonCta } from "../src/components/Buttons";
+import { useTranslation } from "next-i18next";
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -14,38 +16,29 @@ export const getServerSideProps = async ({ locale }) => ({
 });
 
 export default function Account(props) {
-  const hostAddAccommodation = false;
+  const { t } = useTranslation();
   const { data: session } = useSession();
 
   return (
     <CompositionAppBody>
-      {session ? (
-        <>
-          {!hostAddAccommodation ? (
-            <View style={styles.container}>
-              <AddAccommodationForm />
-            </View>
-          ) : (
-            <>lista</>
-          )}
-        </>
-      ) : (
-        <View style={styles.container}>
-          <AddAccommodationForm />
+      {/* {session ? ( */}
+      <View style={styles.home}>
+        <View>
+          <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
         </View>
-      )}
+      </View>
+      {/* ) : (
+        <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+      )} */}
     </CompositionAppBody>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // maxWidth: "50%",
-    width: "100%",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    marginRight: "auto",
-    marginLeft: "auto",
+  home: {
     flex: 1,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

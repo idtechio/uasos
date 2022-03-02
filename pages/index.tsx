@@ -1,99 +1,26 @@
-import OfferBox from "../src/components/OfferBox";
-import {
-  CompositionAppBody,
-  CompositionContainer,
-} from "../src/components/Compositions";
-import Filters from "../src/components/Filters";
-import Cities from "../src/consts/cities.json";
+import { CompositionAppBody } from "../src/components/Compositions";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../src/components/Buttons";
-import { ThankfulnessModal } from "../src/components/ThankfulnessModal";
+import { signIn } from "next-auth/react";
+import { View, StyleSheet } from "react-native";
 
 function Home(props) {
   const { t } = useTranslation();
-  const [filters, setFilters] = useState({
-    city: null,
-    guests: null,
-    timeframe: null,
-    toddler: null,
-  });
-
-  const [showModal, setShowModal] = useState(false);
-
-  const { data } = props;
 
   return (
     <CompositionAppBody>
-      <ButtonCta
-        anchor="Pokaz modal dziękujemy"
-        onPress={() => setShowModal(true)}
-      />
-      {showModal && <ThankfulnessModal />}
-      <Filters
-        filters={[
-          {
-            name: t("labels.location"),
-            options: Cities.map(({ name }) => ({ value: name, label: name })),
-            onSubmit: (e) => setFilters({ ...filters, city: e }),
-            value: filters.city,
-          },
-          {
-            name: t("labels.numberOfGuests"),
-            options: [
-              { value: "1", label: "1" },
-              { value: "2", label: "2" },
-              { value: "3", label: "3" },
-              { value: "4", label: "4" },
-              { value: "5", label: "5" },
-              { value: ">5", label: t("more") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, guests: e }),
-            value: filters.guests,
-          },
-          {
-            name: t("labels.timePeriod"),
-            options: [
-              { value: "tydzień", label: t("staticValues.timePeriod.week") },
-              {
-                value: "2 tygodnie",
-                label: t("staticValues.timePeriod.twoWeeks"),
-              },
-              { value: "miesiąc", label: t("staticValues.timePeriod.month") },
-              { value: "dłuzej", label: t("staticValues.timePeriod.longer") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, timeframe: e }),
-            value: filters.timeframe,
-          },
-          {
-            name: t("labels.withKids"),
-            options: [
-              { value: "tak", label: t("staticValues.boolean.yes") },
-              { value: "nie", label: t("staticValues.boolean.no") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, toddler: e }),
-            value: filters.toddler,
-          },
-        ]}
-      />
-      <CompositionContainer>
-        <>
-          {data.map((accommodation, index) => {
-            // TODO replace index with some id
-            return <OfferBox {...accommodation} key={index} />;
-          })}
-        </>
-      </CompositionContainer>
+      <View style={styles.home}>
+        <View style={styles.host}>
+          <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+        </View>
+      </View>
     </CompositionAppBody>
   );
 }
 
 export async function getStaticProps({ locale }) {
-  /** TODO: Uncomment when remote API is ready */
-  // const res = await fetch("http://localhost:3000/api/accommodations");
-  // const data = await res.json();
-
   return {
     props: {
       ...(await serverSideTranslations(locale)),
@@ -109,5 +36,18 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
+const styles = StyleSheet.create({
+  home: {
+    flex: 1,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  host: {},
+  guest: {
+    marginTop: 20,
+  },
+});
 
 export default Home;

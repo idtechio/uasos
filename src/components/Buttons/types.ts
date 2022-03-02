@@ -4,4 +4,5 @@ export type ButtonProps = {
   onPress?: any;
   chevronVisible?: boolean;
   chevronUpsideDown?: boolean;
+  colorOposite?: boolean;
 };
