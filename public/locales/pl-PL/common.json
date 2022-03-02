@@ -140,7 +140,8 @@
       "animals": "Jestem razem ze swoim zwierzakiem",
       "toddler": "Dziecko jest poniżej 2 roku życia",
       "oldPerson": "Jestem lub jest ze mną osoba starsza",
-      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością"
+      "disability": "Jestem lub jest ze mną osobaz niepełnosprawnością",
+      "pregnant": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)"
     },
     "refugeesCountOptions": {
       "alone": "Jestem sam",
@@ -171,29 +172,38 @@
     }
   },
   "refugeeAddForm": {
-    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
     "addButton": "Wyślij aplikację",
     "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
     "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
     "animalReady": "Jest ze mną mój zwierzak",
     "elderReady": "Jestem lub jest ze mną osoba starsza",
-    "age": "Wiek",
-    "sex": "Płeć",
+    "ageLabel": "Wiek",
+    "sexLabel": "Płeć",
     "sexPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
     "placeOfRefuge": "Gdzie szukasz schronienia?",
-    "countryOfRefuge": "W jakim kraju szukasz schronienia? ",
+    "countryOfRefuge": "W jakim kraju szukasz schronienia?",
+    "countryOfRefugPlaceholder": "Wybierz kraj",
     "cityOfRefuge": "Wybierz miasto:",
-    "firstname": "Imię  (Podaj tylko pierwsze imię)",
-    "lastname": "Podaj adres e-mail:",
+    "cityOfRefugePlaceholder": "Wybierz obszar",
+    "firstnameLabel": "Imię  (Podaj tylko pierwsze imię)",
+    "firstnamePlaceholder": "Imię",
+    "emailLabel": "Podaj adres e-mail:",
+    "emailPlaceholder": "e-mail",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
     "selectPlaceholder": "Wybierz z listy",
     "accommodationType": "Jakiego typu noclegu szukasz?",
     "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
     "countryOfGroupUA": "Ukraina",
-    "countryOfGroupOthers": "Inne"
+    "countryOfGroupOthers": "Inne",
+    "accompanyingPerson": "Osoba towarzysząca",
+    "errors": {
+      "firstname": "",
+      "email": ""
+    }
   },
   "whatSosUaDoesSection": {
     "title": "Co robi SOS-UA?",
