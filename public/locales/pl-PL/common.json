@@ -50,6 +50,10 @@
       "owner": "Gospodaż"
     }
   },
+  "forms": {
+    "chooseFromList": "Wybierz z listy",
+    "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
+  },
   "guestOffer": {
     "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
     "peopleToAccommodate": "+ {{count}} osoby",

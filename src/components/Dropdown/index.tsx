@@ -11,37 +11,52 @@ export const Dropdown = ({
   data,
   direction = "to-bottom",
   label,
+  selected,
   multiselect,
   itemPressFunction,
+  placeholder,
+  onBlur,
   searchable = false,
 }: DropdownProps) => {
   const [areOptionsVisible, setOptionsAreVisible] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
+  const [selectHeight, setSelectHeight] = useState(0);
+
   const [filteredData, setFilteredData] = useState(data);
+
+  const selectedItem = (data ?? []).find(({ value }) => value === selected);
+
+  const handleItemPress = (value: any) => {
+    itemPressFunction(value);
+    onBlur?.();
+  };
 
   const { t } = useTranslation();
 
   const renderItem = ({ item }) => (
     <Item
-      title={item.value}
-      itemPressFunction={itemPressFunction}
+      title={item.label}
+      value={item.value}
+      itemPressFunction={handleItemPress}
       setOptionsAreVisible={setOptionsAreVisible}
     />
   );
+
   return (
     <>
       {label && <SelectLabel>{label}</SelectLabel>}
       <View
         onLayout={(event) => {
-          var { width } = event.nativeEvent.layout;
+          var { width, height } = event.nativeEvent.layout;
           setSelectWidth(width);
+          setSelectHeight(height);
         }}
       >
         <Select
           areOptionsVisible={areOptionsVisible}
           onPress={() => setOptionsAreVisible(!areOptionsVisible)}
         >
-          <Text>{t("dropdownChoose")}</Text>
+          <Text>{selectedItem ? selectedItem.label : placeholder}</Text>
           <Icon areOptionsVisible={areOptionsVisible}>
             <ArrowIcon />
           </Icon>
@@ -51,8 +66,8 @@ export const Dropdown = ({
             <Options
               style={{
                 width: selectWidth + "px",
-                top: direction === "to-bottom" ? "45px" : "unset",
-                bottom: direction === "to-top" ? "45px" : "unset",
+                top: direction === "to-bottom" ? selectHeight : "unset",
+                bottom: direction === "to-top" ? selectHeight : "unset",
                 zIndex: "100",
               }}
             >

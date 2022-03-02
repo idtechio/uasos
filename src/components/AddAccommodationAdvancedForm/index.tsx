@@ -7,9 +7,20 @@ import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
+
+const DUMMY_DROPDOWN_ITEMS = [
+  { label: "Item 1", value: "Item 1" },
+  { label: "Item 2", value: "Item 2" },
+  { label: "Item 3", value: "Item 3" },
+  { label: "Item 4", value: "Item 4" },
+  { label: "Item 5", value: "Item 5" },
+  { label: "Item 6", value: "Item 6" },
+  { label: "Item 7", value: "Item 7" },
+];
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -46,9 +57,10 @@ export default function AddAccommodationAdvancedForm() {
           header={t("hostAdd.basicInfoHeader")}
         >
           <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            data={DUMMY_DROPDOWN_ITEMS}
+            placeholder={t("hostAdd.country")}
             name="advancedHost.country"
-            label={t("hostAdd.country")}
             rules={{
               required: true,
             }}
@@ -56,9 +68,10 @@ export default function AddAccommodationAdvancedForm() {
             errorMsg={t("hostAdd.errors.rcountry")}
           />
           <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.town"
-            label={t("hostAdd.town")}
+            placeholder={t("hostAdd.town")}
             rules={{
               required: true,
             }}
@@ -70,9 +83,10 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
           {/* TODO: use Dropdown here */}
-          <FormTextInput
+          <FormDropdown
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.accommodationType"
-            label={t("hostAdd.type")}
+            placeholder={t("forms.chooseFromList")}
             rules={{
               required: true,
             }}
@@ -124,9 +138,10 @@ export default function AddAccommodationAdvancedForm() {
             errorMsg={t("validations.nationalityError")}
           />
           <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
-          <FormTextInput
+          <FormDropdown
+            data={DUMMY_DROPDOWN_ITEMS}
             name="advancedHost.groupsTypes"
-            label={t("hostAdd.groupsTypes")}
+            placeholder={t("forms.chooseFromListMulti")}
             rules={{
               required: true,
             }}

@@ -17,6 +17,15 @@ export const primary = {
     mobileSpacing: "35px",
     backgroundColor: "#FFF",
   },
+  forms: {
+    border: "#BBBBBC",
+    borderWidth: "2px",
+    borderRadius: "4px",
+    placeholderColor: "#BBBBBC",
+    placeholderSize: "14px",
+    labelColor: "#003566",
+    labelSize: "12px",
+  },
 };
 
 // TODO: DarkMode
