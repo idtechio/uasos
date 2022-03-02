@@ -8,4 +8,5 @@ export type ChoiceButtonProps = {
   radioButton?: boolean;
   parentCallback?: any;
   userClick?: boolean;
+  error?: boolean;
 };

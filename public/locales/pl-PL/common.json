@@ -20,7 +20,11 @@
     "requiredName": "Podaj swoję imię",
     "invalidEmail": "Podaj porawny e-mail",
     "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
-    "requiredTown": "Podaj miejscowość"
+    "requiredTown": "Podaj miejscowość",
+    "requiredTime": "Podaj na jak długo",
+    "requiredPeopleQuantity": "Podaj liczbę osób, które mozesz przyjąć",
+    "requiredLivingConditions": "Podaj warunki lokalowe",
+    "requiredFloor": "Podaj piętro"
   },
   "staticValues": {
     "timePeriod": {

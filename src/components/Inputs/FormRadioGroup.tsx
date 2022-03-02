@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";
@@ -24,9 +24,24 @@ type Props<T> = {
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormRadioGroup = <T extends Object>({ name, rules, data }: Props<T>) => {
-  const { control } = useFormContext();
+const FormRadioGroup = <T extends Object>({
+  name,
+  rules,
+  data,
+  errorMsg,
+}: Props<T>) => {
+  const { control, formState } = useFormContext();
   const [markedCheckbox, setMarkedCheckbox] = useState<string>();
+
+  const error = useMemo(() => {
+    return name
+      .split(".")
+      .reduce(
+        (accu, item) => (accu ? accu[item] : undefined),
+        formState.errors
+      );
+  }, [name, formState]);
+
   return (
     <Controller
       control={control}
@@ -45,9 +60,11 @@ const FormRadioGroup = <T extends Object>({ name, rules, data }: Props<T>) => {
                 text={label}
                 isSmall
                 isChoice={label === markedCheckbox}
+                error={!!error}
               />
             </TouchableOpacity>
           ))}
+          {error ? <Text style={styles.error}>{errorMsg}</Text> : null}
         </RadioButtons>
       )}
       name={name}

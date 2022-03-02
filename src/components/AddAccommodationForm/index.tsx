@@ -181,6 +181,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 { label: "5", value: 5 },
                 { label: t("more"), value: "more" },
               ]}
+              errorMsg={t("validations.requiredPeopleQuantity")}
             />
           </InputControl>
           <InputControl>
@@ -210,6 +211,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   value: ForHowLong.LONGER,
                 },
               ]}
+              errorMsg={t("validations.requiredTime")}
             />
           </InputControl>
         </CompositionSection>
@@ -244,6 +246,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   value: LivingConditions.OTHER,
                 },
               ]}
+              errorMsg={t("validations.requiredLivingConditions")}
             />
           </InputControl>
           <InputControl>
@@ -266,6 +269,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 { label: "4", value: 4 },
                 { label: t("staticValues.withElevator"), value: "elevator" },
               ]}
+              errorMsg={t("validations.requiredFloor")}
             />
           </InputControl>
           <InputControl>

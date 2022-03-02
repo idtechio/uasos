@@ -7,9 +7,10 @@ const ChoiceButton = ({
   icon,
   isSmall = false,
   isChoice,
+  error,
 }: ChoiceButtonProps) => {
   return (
-    <Button isChoice={isChoice} isSmall={isSmall}>
+    <Button isChoice={isChoice} isSmall={isSmall} error={error}>
       {icon ? <Icon>{icon}</Icon> : null}
       {text ? <Text>{text}</Text> : null}
     </Button>
