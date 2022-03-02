@@ -10,7 +10,6 @@ import {
 } from "./style";
 import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
-import { View } from "react-native";
 
 export const ThankfulnessModal = () => {
   const { t } = useTranslation();
