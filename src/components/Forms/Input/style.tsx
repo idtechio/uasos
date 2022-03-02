@@ -7,6 +7,7 @@ export const InputWraper = styled.View`
   display: flex;
   justify-content: flex-end;
   /* margin-top: 16px; */
+  margin-bottom: 10px;
 `;
 
 export const InputRow = styled.View`
@@ -17,7 +18,8 @@ export const InputRow = styled.View`
 export const Label = styled.Text<InputProps>`
   margin-bottom: -10px;
   margin-left: 15px;
-  background-color: #fff;
+  background-color: ${(props) =>
+    props.labelsBackgroundColor ? `${props.labelsBackgroundColor}` : `#fff`};
   width: fit-content;
   padding: 3px 5px;
   line-height: 100%;

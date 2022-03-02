@@ -4,13 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";
-
-const styles = StyleSheet.create({
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-});
+import { Error } from "./style";
 
 type Data<T> = {
   label: string;
@@ -61,7 +55,7 @@ const FormRadioGroup = <T extends Object>({
               isSelected={label === markedCheckbox}
             />
           ))}
-          {error ? <Text style={styles.error}>{errorMsg}</Text> : null}
+          {error ? <Error>{errorMsg}</Error> : null}
         </RadioButtons>
       )}
       name={name}

@@ -5,11 +5,10 @@ import React, { useState } from "react";
 const Input = ({
   placeholder,
   onChange,
-  onBlur,
   value,
   error,
   extra,
-  labelsStyle,
+  labelsBackgroundColor,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
 
@@ -26,10 +25,13 @@ const Input = ({
 
   return (
     <InputWraper>
-      {hideLabel ? null : <Label style={labelsStyle}>{placeholder}</Label>}
+      {hideLabel ? null : (
+        <Label labelsBackgroundColor={labelsBackgroundColor}>
+          {placeholder}
+        </Label>
+      )}
       <InputRow>
         <TextInput
-          // onBlur={onBlur}
           onChangeText={onChange}
           value={value}
           placeholder={placeholder}

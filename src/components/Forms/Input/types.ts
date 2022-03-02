@@ -9,5 +9,5 @@ export type InputProps = {
   error?: any;
   type?: string;
   extra?: ReactNode;
-  labelsStyle?: StyleProp<ViewStyle>;
+  labelsBackgroundColor?: string;
 };

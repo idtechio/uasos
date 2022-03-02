@@ -1,22 +1,10 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import {
-  useForm,
-  Controller,
-  FormProvider,
-  useFieldArray,
-} from "react-hook-form";
+import { ScrollView, TouchableOpacity } from "react-native";
+import { useForm, FormProvider, useFieldArray } from "react-hook-form";
 import { useState, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 
 import { CompositionSection } from "../Compositions";
 import {
-  Input,
   ChoiceButton,
   InputControl,
   InputCotrolLabel,
@@ -24,38 +12,15 @@ import {
 } from "../Forms";
 import { ButtonCta } from "../Buttons";
 import AnimalsIcon from "../../style/svgs/animals.svg";
-import CheckboxField from "../Forms/CheckboxField";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import CrossIcon from "../../style/svgs/cross.svg";
-import FoodIcon from "../../style/svgs/food.svg";
+import ElderIcon from "../../style/svgs/elder.svg";
 import FormTextInput from "../Inputs/FormTextInput";
 import KidsIcon from "../../style/svgs/kids.svg";
-import { FormType } from "./types";
+import { FormKey, FormType } from "../../helpers/FormTypes";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-
-const styles = StyleSheet.create({
-  button: {
-    textAlign: "center",
-  },
-  container: {
-    width: "100%",
-    flexDirection: "column",
-  },
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-  containerWraper: {
-    width: "100%",
-  },
-
-  greyLabel: {
-    backgroundColor: "#F5F4F4",
-  },
-  input: {
-    marginTop: 20,
-  },
-});
+import FormCheckbox from "../Inputs/FormCheckbox";
+import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 
 const enum Location {
   Any,
@@ -76,25 +41,31 @@ const AddRefugeeForm = () => {
     [t]
   );
 
-  const refugeeDetailsOptions = useMemo(
+  const refugeeDetailsOptions: Data[] = useMemo(
     () => [
       {
-        id: "animals",
+        id: "refugee.preferences.peopleDetails.animals",
         label: t("refugeeForm.refugeeDetailsOptions.animals"),
         icon: <AnimalsIcon width="30" height="25" />,
+        extra: (
+          <FormTextInput
+            name="refugee.preferences.animal"
+            label={t("refugeeForm.labels.refugeesAnimal")}
+          />
+        ),
       },
       {
-        id: "toddler",
+        id: "refugee.preferences.peopleDetails.toddler",
         label: t("refugeeForm.refugeeDetailsOptions.toddler"),
         icon: <KidsIcon width="26" height="25" />,
       },
       {
-        id: "oldPerson",
+        id: "refugee.preferences.peopleDetails.oldPerson",
         label: t("refugeeForm.refugeeDetailsOptions.oldPerson"),
-        icon: <FoodIcon width="26" height="25" />,
+        icon: <ElderIcon width="26" height="25" />,
       },
       {
-        id: "disability",
+        id: "refugee.preferences.peopleDetails.disability",
         label: t("refugeeForm.refugeeDetailsOptions.disability"),
         icon: <DisabilityIcon width="26" height="25" />,
       },
@@ -102,29 +73,7 @@ const AddRefugeeForm = () => {
     [t]
   );
 
-  const formFields = useForm<FormType>({
-    defaultValues: {
-      refugee: {
-        core: {
-          name: "",
-          email: "",
-          phoneNumber: "",
-          location: "",
-        },
-        preferences: {
-          peopleQuantity: "1",
-          animal: "",
-          people: [],
-          peopleDetails: {
-            animals: false,
-            toddler: false,
-            oldPerson: false,
-            disability: false,
-          },
-        },
-      },
-    },
-  });
+  const formFields = useForm<FormType>();
 
   const {
     control,
@@ -136,20 +85,17 @@ const AddRefugeeForm = () => {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "refugee.preferences.people",
+    //@ts-ignore
+    name: "refugee.preferences.people" as unknown as FormKey,
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FormType) => {
     console.log(data);
   };
 
   return (
     <FormProvider {...formFields}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.container}
-        style={styles.containerWraper}
-      >
+      <ScrollView showsVerticalScrollIndicator={false}>
         <CompositionSection padding={[35, 30, 8, 30]}>
           <FormTextInput
             name="refugee.core.name"
@@ -209,14 +155,14 @@ const AddRefugeeForm = () => {
             {fields.map((_, index) => (
               <FormTextInput
                 key={index}
-                labelsStyle={styles.greyLabel}
-                name={`refugee.preferences.people.${index}`}
+                rules={{ required: true }}
+                labelsBackgroundColor="#F5F4F4"
+                name={
+                  `refugee.preferences.people.${index}` as unknown as FormKey
+                }
                 label={t("refugeeForm.labels.refugee", {
                   number: index + 1,
                 })}
-                rules={{
-                  required: true,
-                }}
                 error={errors.refugee?.preferences?.[`refugee${index}`]}
                 errorMsg={t("refugeeForm.errors.required")}
                 extra={
@@ -227,7 +173,6 @@ const AddRefugeeForm = () => {
               />
             ))}
             <ButtonCta
-              style={styles.button}
               anchor={t("refugeeForm.labels.addRefugee")}
               onPress={() => append("")}
             />
@@ -255,7 +200,7 @@ const AddRefugeeForm = () => {
               <FormTextInput
                 name="refugee.core.location"
                 label={t("refugeeForm.labels.city")}
-                labelsStyle={styles.greyLabel}
+                labelsBackgroundColor="#F5F4F4"
                 rules={{
                   required: true,
                 }}
@@ -267,72 +212,18 @@ const AddRefugeeForm = () => {
         </CompositionSection>
 
         <CompositionSection padding={[35, 30, 8, 30]}>
-          <Controller
-            control={control}
-            render={({ field: { onChange, value: fieldValue } }) => (
-              <InputControl>
-                <InputCotrolLabel>
-                  {t("refugeeForm.labels.refugeeDetails")}
-                </InputCotrolLabel>
-                {refugeeDetailsOptions.map(({ id, label, icon }) => {
-                  return (
-                    <View key={id}>
-                      <ChoiceButton
-                        text={label}
-                        isSmall
-                        isVertical
-                        onPress={() =>
-                          onChange({
-                            ...fieldValue,
-                            [id]: !fieldValue[id],
-                          })
-                        }
-                        isSelected={fieldValue[id]}
-                        icon={icon}
-                      />
-                      {id === "animals" && fieldValue.animals && (
-                        <Controller
-                          control={control}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <InputControl>
-                              <Input
-                                placeholder={t(
-                                  "refugeeForm.labels.refugeesAnimal"
-                                )}
-                                onChange={onChange}
-                                onBlur={onBlur}
-                                value={value}
-                              />
-                            </InputControl>
-                          )}
-                          name="refugee.preferences.animal"
-                        />
-                      )}
-                    </View>
-                  );
-                })}
-              </InputControl>
-            )}
-            name="refugee.preferences.peopleDetails"
+          <FormButtonsVertical
+            label={t("refugeeForm.labels.refugeeDetails")}
+            data={refugeeDetailsOptions}
           />
-
+          <FormCheckbox
+            error={errors?.refugee?.isGDPRAccepted}
+            errorMsg={t("refugeeForm.errors.required")}
+            name="refugee.isGDPRAccepted"
+            label={t("refugeeForm.labels.isGDPRAccepted")}
+          />
           <InputControl>
-            <Controller
-              control={control}
-              rules={{
-                required: true,
-              }}
-              render={({ field: { onChange, value } }) => (
-                <CheckboxField
-                  text={t("refugeeForm.labels.isGDPRAccepted")}
-                  isChecked={value}
-                  onChange={onChange}
-                />
-              )}
-              name="refugee.isGDPRAccepted"
-            />
             <ButtonCta
-              style={styles.button}
               onPress={handleSubmit(onSubmit)}
               anchor={t("refugeeForm.labels.submitButton")}
             />

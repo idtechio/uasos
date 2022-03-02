@@ -25,6 +25,8 @@ export const Button = styled.View<ChoiceButtonProps>`
 `;
 
 export const Text = styled.Text`
+  width: ${(props) => (props.isVertical ? `245px` : `uset`)};
+  text-align: left;
   color: ${(props) =>
     props.isSelected ? `#38B000` : `2px solid rgba(28, 27, 37, 0.7)`};
 `;
@@ -32,4 +34,6 @@ export const Text = styled.Text`
 export const Icon = styled.View<ChoiceButtonProps>`
   margin-bottom: ${(props) => (props.isVertical ? `0` : `12px`)};
   margin-right: ${(props) => (props.isVertical ? `12px` : `0`)};
+  color: ${(props) =>
+    props.isSelected ? `#38B000` : `2px solid rgba(28, 27, 37, 0.7)`};
 `;

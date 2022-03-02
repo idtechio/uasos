@@ -6,14 +6,14 @@ import { CheckboxFieldProps } from "./type";
 import { InputCotrolLabel } from "../";
 import { View } from "./style";
 
-const CheckboxField = ({ text, isChecked, onChange }: CheckboxFieldProps) => {
+const CheckboxField = ({ text, onChange }: CheckboxFieldProps) => {
   return (
     <View>
       <InputCotrolLabel>
         {Platform.OS === "web" ? (
           <input type="checkbox" onChange={onChange} />
         ) : (
-          <CheckBox value={isChecked} onValueChange={onChange} />
+          <CheckBox onValueChange={onChange} />
         )}
 
         {text}

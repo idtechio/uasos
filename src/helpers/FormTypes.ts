@@ -12,6 +12,13 @@ export enum LivingConditions {
   OTHER = "other",
 }
 
+type PeopleDetails = {
+  animals: boolean;
+  toddler: boolean;
+  oldPerson: boolean;
+  disability: boolean;
+};
+
 export type FormType = {
   host: {
     core: {
@@ -32,9 +39,29 @@ export type FormType = {
     floor: number;
     elevator: boolean;
   };
+  refugee: {
+    core: {
+      name: string;
+      email: string;
+      phoneNumber: string;
+      location: string;
+    };
+    preferences: {
+      peopleQuantity: string;
+      animal: string;
+      peopleDetails: PeopleDetails;
+      people: string[];
+    };
+    isGDPRAccepted: boolean;
+  };
 };
 
-type PathsToStringProps<T> = T extends string | number | Date | boolean
+type PathsToStringProps<T> = T extends
+  | string
+  | number
+  | Date
+  | boolean
+  | string[]
   ? []
   : {
       [K in Extract<keyof T, any>]: [K, ...PathsToStringProps<T[K]>];
