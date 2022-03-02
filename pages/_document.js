@@ -8,6 +8,7 @@ const normalizeNextElements = `
     display: flex;
     flex-direction: column;
     height: 100%;
+    white-space: pre-line;
   }
   a {
     text-decoration: none;
