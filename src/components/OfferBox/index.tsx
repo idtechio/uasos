@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import { ButtonCta } from "../Buttons";
 import Avatar from "../Avatar";
 import { styles } from "./style";
-import type { Accommodation } from "../../../pages/api/addAccommodation";
 import Marker from "./image/Marker";
 import User from "./image/User";
 import Calendar from "./image/Calendar";
@@ -17,7 +16,7 @@ const OfferBox = ({
   conditions,
   preferences,
   resources,
-}: Accommodation) => {
+}: any) => {
   const { t } = useTranslation();
   return (
     <View style={styles.box}>

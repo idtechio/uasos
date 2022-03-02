@@ -23,7 +23,7 @@ export default function Account(props) {
     <CompositionAppBody>
       {session ? (
         <View style={styles.home}>
-          <View style={styles.host}>
+          <View>
             <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
           </View>
         </View>
