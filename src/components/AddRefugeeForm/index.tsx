@@ -155,13 +155,19 @@ const AddRefugeeForm = () => {
             {fields.map((_, index) => (
               <FormTextInput
                 key={index}
-                rules={{ required: true }}
+                rules={{
+                  required: true,
+                  pattern: {
+                    value: /\S{3,30}/,
+                    message: t("refugeeForm.errors.required"),
+                  },
+                }}
                 labelsBackgroundColor="#F5F4F4"
-                name={`refugee.preferences.people.${index}`}
+                name={`refugee.preferences.people.refugee${index}`}
                 label={t("refugeeForm.labels.refugee", {
                   number: index + 1,
                 })}
-                error={errors.refugee?.preferences?.[`refugee${index}`]}
+                error={errors.refugee?.preferences?.people?.[`refugee${index}`]}
                 errorMsg={t("refugeeForm.errors.required")}
                 extra={
                   <TouchableOpacity onPress={() => remove(index)}>
