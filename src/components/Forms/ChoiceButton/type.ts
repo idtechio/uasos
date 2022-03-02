@@ -1,12 +1,11 @@
-import type { LenguageText } from "../../../helpers/lenguageTextSwitcher";
+import { ReactNode } from "react";
 
 export type ChoiceButtonProps = {
-  text?: LenguageText;
-  icon?: React.ReactNode;
+  text?: ReactNode;
+  icon?: ReactNode;
   isSmall?: boolean;
   preferenceId?: string;
   isChoice?: boolean;
-
   radioButton?: boolean;
   parentCallback?: any;
   userClick?: boolean;

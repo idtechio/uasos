@@ -1,26 +1,16 @@
 import type { AddAccommodationFormProps } from "./types";
 import {} from "./style";
 import { CompositionSection, CompositionGrid } from "../Compositions";
-import { lenguageTextSwitcher } from "../../helpers";
 import {
-  Input,
   ChoiceButton,
   InputControl,
   InputCotrolLabel,
-  RadioButtons,
   InputCotrolLabelSmall,
 } from "../Forms";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { ButtonCta } from "../Buttons";
-import { useForm, Controller, FormProvider } from "react-hook-form";
-import { useState, useEffect } from "react";
-import type { LenguageText } from "../../helpers/lenguageTextSwitcher";
+import { useForm, FormProvider } from "react-hook-form";
+import { useState, useMemo } from "react";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import KidsIcon from "../../style/svgs/kids.svg";
 import FoodIcon from "../../style/svgs/food.svg";
@@ -32,6 +22,7 @@ import {
   LivingConditions,
 } from "../../helpers/FormTypes";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
+import { TFunction, useTranslation } from "next-i18next";
 
 // TODO: all file to revalidaete !!!!
 
@@ -52,43 +43,39 @@ const styles = StyleSheet.create({
   },
 });
 
-export type HostPreferenceData = {
+export type HostPreferences = {
   id: string;
-  text: LenguageText;
+  text: string;
   icon?: React.ReactNode;
 };
 
-export type HostPreferencesData = Array<HostPreferenceData>;
-
-const hostPreferences: HostPreferencesData = [
+const hostPreferencesFactory = (t: TFunction): HostPreferences[] => [
   {
     id: "animals",
-    text: [
-      { locale: "ua-UA", text: "домашні тварини вітаються" },
-      { locale: "pl-PL", text: "zwierzęta mile widziane" },
-      { locale: "ru-RU", text: "домашние животные приветствуются" },
-    ],
+    text: t("addAccommodation.hostPreferences.acceptAnimals"),
     icon: <AnimalsIcon width="30" height="25" />,
   },
   {
     id: "kids",
-    text: "dzieci poniźej 2 lat",
+    text: t("addAccommodation.hostPreferences.kidsUnder2"),
     icon: <KidsIcon width="26" height="25" />,
   },
   {
     id: "food",
-    text: "zapewnie wyżywienie",
+    text: t("addAccommodation.hostPreferences.foodIncluded"),
     icon: <FoodIcon width="26" height="25" />,
   },
   {
     id: "disability",
-    text: "osoby z niepełnosprawnością",
+    text: t("addAccommodation.hostPreferences.disabledSupport"),
     icon: <DisabilityIcon width="24" height="25" />,
   },
 ];
 
 const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
+  const { t } = useTranslation();
   const formFields = useForm<FormType>();
+  const hostPreferences = useMemo(() => hostPreferencesFactory(t), [t]);
   const {
     control,
     handleSubmit,
@@ -272,70 +259,57 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
         <CompositionSection padding={[35, 30, 8, 30]}>
           <FormTextInput
             name={"host.core.name"}
-            label={"imię"}
+            label={t("labels.name")}
             rules={{
               required: true,
             }}
             error={errors?.host?.core?.name}
-            errorMsg={"Podaj swoję imię"}
+            errorMsg={t("validations.requiredName")}
           />
           <FormTextInput
             name={"host.core.email"}
-            label={"e-mail"}
+            label={t("labels.email")}
             rules={{
               required: true,
               pattern: {
                 value: /\S+@\S+\.\S+/,
-                message: "Podaj porawny e-mail",
+                message: t("validations.invalidEmail"),
               },
             }}
             error={errors?.host?.core?.email}
-            errorMsg={"Podaj porawny e-mail"}
+            errorMsg={t("validations.invalidEmail")}
           />
           <FormTextInput
             name="host.core.phoneNumber"
-            label={"telefon"}
+            label={t("labels.phone")}
             rules={{
               required: true,
               pattern: {
                 value: /\d{9,15}/,
-                message: "Podaj prawidłowy numer telefonu",
+                message: t("validations.invalidPhoneNumber"),
               },
             }}
             error={errors?.host?.core?.phoneNumber}
-            errorMsg={"Podaj prawidłowy numer telefonu"}
+            errorMsg={t("validations.invalidPhoneNumber")}
           />
           <FormTextInput
             name="host.core.location"
-            label={"miejscowość"}
+            label={t("labels.town")}
             rules={{
               required: true,
             }}
             error={errors?.host?.core?.location}
-            errorMsg={"Podaj miejscowość"}
+            errorMsg={t("validations.requiredTown")}
           />
         </CompositionSection>
 
         <CompositionSection backgroundColor="#F5F4F4" padding={[35, 30, 0, 30]}>
           <InputControl>
             <InputCotrolLabel>
-              {lenguageTextSwitcher([
-                {
-                  locale: "ua-UA",
-                  text: "(UA) Określ swoje preferencje, kogo chcesz przyjąć:я",
-                },
-                {
-                  locale: "pl-PL",
-                  text: "Określ swoje preferencje - komu możesz pomóc:",
-                },
-                {
-                  locale: "ru-RU",
-                  text: "(RU) Określ swoje preferencje, kogo chcesz przyjąć:",
-                },
-              ])}
+              {t("addAccommodation.hostPreferences.label")}
             </InputCotrolLabel>
             <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
-              {hostPreferences.map((hostPreference: HostPreferenceData) => {
+              {hostPreferences.map((hostPreference) => {
                 return (
                   <TouchableOpacity
                     key={hostPreference.id}
@@ -356,7 +330,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
-              {lenguageTextSwitcher("Ile osób możesz przyjąć?")}
+              {t("addAccommodation.peopleQuantity")}
             </InputCotrolLabel>
             <FormRadioGroup<string | number>
               name="host.preferences.peopleQuantity"
@@ -369,13 +343,13 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 { label: "3", value: 3 },
                 { label: "4", value: 4 },
                 { label: "5", value: 5 },
-                { label: "więcej", value: "more" },
+                { label: t("more"), value: "more" },
               ]}
             />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
-              {lenguageTextSwitcher("Na jak długo?")}
+              {t("addAccommodation.forHowLong")}
             </InputCotrolLabel>
             <FormRadioGroup<ForHowLong>
               name="host.preferences.forHowLong"
@@ -383,10 +357,22 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 required: true,
               }}
               data={[
-                { label: "tydzień", value: ForHowLong.WEEK },
-                { label: "2 tygodnie", value: ForHowLong.TWO_WEEKS },
-                { label: "miesiąc", value: ForHowLong.MONTH },
-                { label: "dłużej", value: ForHowLong.LONGER },
+                {
+                  label: t("staticValues.timePeriod.week"),
+                  value: ForHowLong.WEEK,
+                },
+                {
+                  label: t("staticValues.timePeriod.twoWeeks"),
+                  value: ForHowLong.TWO_WEEKS,
+                },
+                {
+                  label: t("staticValues.timePeriod.month"),
+                  value: ForHowLong.MONTH,
+                },
+                {
+                  label: t("staticValues.timePeriod.longer"),
+                  value: ForHowLong.LONGER,
+                },
               ]}
             />
           </InputControl>
@@ -395,7 +381,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
         <CompositionSection padding={[35, 30, 9, 30]}>
           <InputControl>
             <InputCotrolLabel>
-              {lenguageTextSwitcher("Jakie warunki lokalowe możesz zapewnić?")}
+              {t("addAccommodation.livingConditions.label")}
             </InputCotrolLabel>
             <FormRadioGroup<LivingConditions>
               name="host.livingConditions"
@@ -403,22 +389,33 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 required: true,
               }}
               data={[
-                { label: "mam wolne mieszkanie", value: LivingConditions.FLAT },
-                { label: "mam wolny pokój", value: LivingConditions.ROOM },
                 {
-                  label: 'mogę "dostawić materac"',
+                  label: t("addAccommodation.livingConditions.options.flat"),
+                  value: LivingConditions.FLAT,
+                },
+                {
+                  label: t("addAccommodation.livingConditions.options.room"),
+                  value: LivingConditions.ROOM,
+                },
+                {
+                  label: t(
+                    "addAccommodation.livingConditions.options.mattress"
+                  ),
                   value: LivingConditions.MATTRESS,
                 },
-                { label: "inne", value: LivingConditions.OTHER },
+                {
+                  label: t("addAccommodation.livingConditions.options.other"),
+                  value: LivingConditions.OTHER,
+                },
               ]}
             />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
-              {lenguageTextSwitcher("Na którym piętrze zamieszkają?")}
+              {t("addAccommodation.floor.label")}
             </InputCotrolLabel>
             <InputCotrolLabelSmall>
-              *Osoby starsze mogą mieć problem z wejściem na wysokie piętro
+              {t("addAccommodation.floor.hint")}
             </InputCotrolLabelSmall>
             <FormRadioGroup<string | number>
               name="host.floor"
@@ -431,14 +428,14 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                 { label: "2", value: 2 },
                 { label: "3", value: 3 },
                 { label: "4", value: 4 },
-                { label: "jest winda", value: "month" },
+                { label: t("staticValues.withElevator"), value: "elevator" },
               ]}
             />
           </InputControl>
           <InputControl>
             <ButtonCta
               onPress={handleSubmit(onSubmit, onError)}
-              anchor="Zgłoś swoją gotowość  "
+              anchor={t("addAccommodation.submit")}
             />
           </InputControl>
         </CompositionSection>

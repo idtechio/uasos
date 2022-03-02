@@ -10,7 +10,17 @@
     "location": "Lokalizacja",
     "numberOfGuests": "Liczba gości",
     "timePeriod": "Okres",
-    "withKids": "Jestem z dzieckiem"
+    "withKids": "Jestem z dzieckiem",
+    "name": "imię",
+    "email": "e-mail",
+    "phone": "phone",
+    "town": "miejscowość"
+  },
+  "validations": {
+    "requiredName": "Podaj swoję imię",
+    "invalidEmail": "Podaj porawny e-mail",
+    "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
+    "requiredTown": "Podaj miejscowość"
   },
   "staticValues": {
     "timePeriod": {
@@ -23,7 +33,8 @@
       "yes": "tak",
       "no": "nie"
     },
-    "anyLocation": "Dowolna"
+    "anyLocation": "Dowolna",
+    "withElevator": "jest winda"
   },
   "accommodationOffer": {
     "canAccommodate": "miejsce dla <1>{{count}} osób</1>",
@@ -44,6 +55,31 @@
     "withDisabled": "jest ze mną osoba niepełnosprawna",
     "withElder": "jest ze mną osoba starsza",
     "invite": "Przyjmij do siebie"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Określ swoje preferencje, kogo chcesz przyjąć:",
+      "acceptAnimals": "zwierzęta mile widziane",
+      "disabledSupport": "osoby z niepełnosprawnością",
+      "kidsUnder2": "dzieci poniźej 2 lat",
+      "foodIncluded": "zapewnie wyżywienie"
+    },
+    "peopleQuantity": "Ile osób możesz przyjąć?",
+    "forHowLong": "Na jak długo?",
+    "livingConditions": {
+      "label": "Jakie warunki lokalowe możesz zapewnić?",
+      "options": {
+        "flat": "mam wolne mieszkanie",
+        "room": "mam wolny pokój",
+        "mattress": "mogę \"dostawić materac\"",
+        "other": "inne"
+      }
+    },
+    "floor": {
+      "label": "Na którym piętrze zamieszkają?",
+      "hint": "*Osoby starsze mogą mieć problem z wejściem na wysokie piętro"
+    },
+    "submit": "Zgłoś swoją gotowość"
   },
   "flags": {
     "pl": "flaga polski",
