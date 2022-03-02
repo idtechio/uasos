@@ -18,7 +18,7 @@ export const InputCotrolLabel = styled.Text`
 
 export const InputCotrolLabelSmall = styled.Text`
   color: ${(props) => props.theme.colors.headings};
-  margoin-sixe: 12pxr;
+  margin-size: 12pxr;
   margin-top: -12px;
   font-size: 12px;
   margin-bottom: 16px;

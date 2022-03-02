@@ -22,10 +22,10 @@ export default function AddAccommodationAdvancedForm() {
 
   const formFields = useForm<FormType>({
     defaultValues: {
-      advancedHost: {
+      advancedRefugee: {
         fullBedCount: 0,
         childBedCount: 0,
-        accommodationTime: 0,
+        age: 0,
       },
     },
   });
@@ -89,12 +89,10 @@ export default function AddAccommodationAdvancedForm() {
           padding={[35, 30, 8, 30]}
           header={t("refugeeAddForm.basicInfoHeader")}
         >
-          <InputCotrolLabel>
-            {t("refugeeAddForm.firstnameLabel")}
-          </InputCotrolLabel>
+          <InputCotrolLabel>{t("refugeeAddForm.nameLabel")}</InputCotrolLabel>
           <FormTextInput
-            name="refugeeAddForm.firstnamePlaceholder"
-            label={t("refugeeAddForm.firstnamePlaceholder")}
+            name="advancedRefugee.name"
+            label={t("refugeeAddForm.namePlaceholder")}
             rules={{
               required: true,
             }}
@@ -103,7 +101,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("refugeeAddForm.emailLabel")}</InputCotrolLabel>
           <FormTextInput
-            name="refugeeAddForm.emailPlaceholder"
+            name="advancedRefugee.email"
             label={t("refugeeAddForm.emailPlaceholder")}
             rules={{
               required: true,
@@ -124,7 +122,7 @@ export default function AddAccommodationAdvancedForm() {
             {t("refugeeAddForm.countryOfRefuge")}
           </InputCotrolLabel>
           <FormTextInput
-            name="refugeeAddForm.country"
+            name="advancedRefugee.country"
             label={t("refugeeAddForm.countryOfRefugPlaceholder")}
             rules={{
               required: true,
@@ -136,13 +134,13 @@ export default function AddAccommodationAdvancedForm() {
             {t("refugeeAddForm.cityOfRefuge")}
           </InputCotrolLabel>
           <FormTextInput
-            name="refugeeAddForm.country"
+            name="advancedRefugee.cityOfRefuge"
             label={t("refugeeAddForm.cityOfRefugePlaceholder")}
             rules={{
               required: true,
             }}
             error={errors?.advancedHost?.country}
-            errorMsg={t("hostAdd.errors.rcountry")}
+            errorMsg={t("hostAdd.errors.cityOfRefuge")}
           />
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
@@ -153,7 +151,7 @@ export default function AddAccommodationAdvancedForm() {
         >
           <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
           <FormNumericInput
-            name="refugeeAddForm.fullBedCount"
+            name="advancedRefugee.fullBedCount"
             rules={{
               required: true,
             }}
@@ -162,7 +160,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("hostAdd.childBedCount")}</InputCotrolLabel>
           <FormNumericInput
-            name="refugeeAddForm.childBedCount"
+            name="advancedRefugee.childBedCount"
             rules={{
               required: true,
             }}
@@ -177,7 +175,7 @@ export default function AddAccommodationAdvancedForm() {
         >
           <InputCotrolLabel>{t("refugeeAddForm.sexLabel")}</InputCotrolLabel>
           <FormTextInput
-            name="refugeeAddForm.sex"
+            name="advancedRefugee.sex"
             label={t("refugeeAddForm.sexPlaceholder")}
             rules={{
               required: true,
@@ -187,7 +185,7 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputCotrolLabel>{t("refugeeAddForm.ageLabel")}</InputCotrolLabel>
           <FormNumericInput
-            name="refugeeAddForm.ageLabel"
+            name="advancedRefugee.age"
             rules={{
               required: true,
             }}
@@ -207,7 +205,7 @@ export default function AddAccommodationAdvancedForm() {
 
         <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
         <FormRadioGroup<string | string>
-          name="refugeeAddForm.nationality"
+          name="advancedRefugee.nationality"
           rules={{
             required: true,
           }}
@@ -221,7 +219,7 @@ export default function AddAccommodationAdvancedForm() {
           {t("refugeeAddForm.groupRelations")}
         </InputCotrolLabel>
         <FormTextInput
-          name="refugeeAddForm.groupRelations"
+          name="advancedRefugee.groupRelations"
           label={t("refugeeAddForm.selectPlaceholder")}
           rules={{
             required: true,
@@ -233,7 +231,7 @@ export default function AddAccommodationAdvancedForm() {
           {t("refugeeAddForm.accommodationType")}
         </InputCotrolLabel>
         <FormTextInput
-          name="refugeeAddForm.accommodationType"
+          name="advancedRefugee.accommodationType"
           label={t("refugeeAddForm.accommodationType")}
           rules={{
             required: true,

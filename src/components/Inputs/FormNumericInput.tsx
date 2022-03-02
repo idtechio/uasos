@@ -14,12 +14,14 @@ const styles = StyleSheet.create({
 
 type Props = {
   name: FormKey;
+  min?: number;
+  max?: number;
   error?: FieldError;
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput: VFC<Props> = (props) => {
-  const { name, errorMsg, rules, error } = props;
+  const { name, errorMsg, rules, error, max, min } = props;
   const { control } = useFormContext();
   return (
     <Controller
@@ -27,7 +29,13 @@ const FormTextInput: VFC<Props> = (props) => {
       rules={rules}
       render={({ field: { onChange, value } }) => (
         <InputControl>
-          <NumericInput onChange={onChange} value={value} error={error} />
+          <NumericInput
+            onChange={onChange}
+            value={value}
+            error={error}
+            min={min}
+            max={max}
+          />
           {error && <Text style={styles.error}>{errorMsg}</Text>}
         </InputControl>
       )}

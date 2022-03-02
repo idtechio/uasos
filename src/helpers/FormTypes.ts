@@ -17,6 +17,7 @@ type PeopleDetails = {
   toddler: boolean;
   oldPerson: boolean;
   disability: boolean;
+  pregnant?: boolean;
 };
 
 export enum Nationality {
@@ -75,6 +76,19 @@ export type FormType = {
     dissabilityReady: boolean;
     animalReady: boolean;
     prolongationReady: boolean;
+  };
+  advancedRefugee: {
+    name: string;
+    email: string;
+    country: string;
+    cityOfRefuge: string;
+    fullBedCount: number;
+    childBedCount: number;
+    sex: string;
+    age: number;
+    nationality: string;
+    groupRelations: string;
+    accommodationType: string;
   };
 };
 

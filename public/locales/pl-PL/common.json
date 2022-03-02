@@ -140,7 +140,7 @@
       "animals": "Jestem razem ze swoim zwierzakiem",
       "toddler": "Dziecko jest poniżej 2 roku życia",
       "oldPerson": "Jestem lub jest ze mną osoba starsza",
-      "disability": "Jestem lub jest ze mną osobaz niepełnosprawnością",
+      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością",
       "pregnant": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)"
     },
     "refugeesCountOptions": {
@@ -189,8 +189,8 @@
     "countryOfRefugPlaceholder": "Wybierz kraj",
     "cityOfRefuge": "Wybierz miasto:",
     "cityOfRefugePlaceholder": "Wybierz obszar",
-    "firstnameLabel": "Imię  (Podaj tylko pierwsze imię)",
-    "firstnamePlaceholder": "Imię",
+    "nameLabel": "Imię (Podaj tylko pierwsze imię)",
+    "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
@@ -201,8 +201,9 @@
     "countryOfGroupOthers": "Inne",
     "accompanyingPerson": "Osoba towarzysząca",
     "errors": {
-      "firstname": "",
-      "email": ""
+      "name": "",
+      "email": "",
+      "cityOfRefuge": ""
     }
   },
   "whatSosUaDoesSection": {
