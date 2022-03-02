@@ -12,8 +12,9 @@ const Filters = ({ filters }: FiltersProps) => {
         flexDirection: "row",
       }}
     >
-      {filters.map((filter) => {
-        return <SingleFilter {...filter} />;
+      {filters.map((filter, index) => {
+        // TODO: fix index key
+        return <SingleFilter {...filter} key={index} />;
       })}
     </FiltersWraper>
   );

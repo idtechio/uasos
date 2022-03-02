@@ -1,29 +1,35 @@
 import { HeaderPage, ActionBar, ServiceLogo } from "./style";
 import Logo from "./image/Logo";
-import { ButtonCta, ButtonDefault } from "../Buttons";
-import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
+import HamburgerButton from "../Navigation/HamburgerButton";
+import NavigationDrawer from "../Navigation/NavigationDrawer";
+import { useState } from "react";
 
 const Header = () => {
-  const { data: session } = useSession();
+  const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
+
+  const toggleNavigationDrawer = () =>
+    setNavigationDrawerOpen(!navigationDrawerOpen);
 
   return (
-    <HeaderPage>
-      <ServiceLogo>
-        <Link href="/">
-          <a>
-            <Logo />
-          </a>
-        </Link>
-      </ServiceLogo>
-      <ActionBar>
-        {session ? (
-          <ButtonDefault anchor="wyloguj" onPress={() => signOut()} />
-        ) : (
-          <ButtonCta anchor="udostępnij miejsce" onPress={() => signIn()} />
-        )}
-      </ActionBar>
-    </HeaderPage>
+    <>
+      <HeaderPage>
+        <ServiceLogo>
+          <Link href="/">
+            <a>
+              <Logo />
+            </a>
+          </Link>
+        </ServiceLogo>
+        <ActionBar>
+          <HamburgerButton onPress={toggleNavigationDrawer} />
+        </ActionBar>
+      </HeaderPage>
+      <NavigationDrawer
+        isOpen={navigationDrawerOpen}
+        hideDrawer={toggleNavigationDrawer}
+      />
+    </>
   );
 };
 

@@ -42,11 +42,11 @@ const SingleFilter = ({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM10 8.59L13.59 5L15 6.41L11.41 10L15 13.59L13.59 15L10 11.41L6.41 15L5 13.59L8.59 10L5 6.41L6.41 5L10 8.59Z"
                       fill="#003566"
-                      fill-opacity="0.5"
+                      fillOpacity="0.5"
                     />
                   </svg>
                 </TouchableOpacity>
@@ -66,8 +66,13 @@ const SingleFilter = ({
                   <option value={null} selected={val === null}>
                     Wybierz...
                   </option>
-                  {options.map((option) => (
-                    <option selected={val == option.value} value={option.value}>
+                  {options.map((option, index) => (
+                    // TODO: fix index key
+                    <option
+                      key={index}
+                      selected={val == option.value}
+                      value={option.value}
+                    >
                       {option.label}
                     </option>
                   ))}

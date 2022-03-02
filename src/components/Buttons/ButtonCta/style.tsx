@@ -1,17 +1,18 @@
 import styled from "styled-components/native";
 
-export const Button = styled.View`
-	background-color: ${(props) => props.theme.colors.cta};
+export const Button = styled.Pressable`
+	background-color: ${({ theme }) => theme.colors.cta};
 	border-radius: 50px;
 	padding: 12px 25px,
-	width: fit-content;
-	cursor: pointer;
 	text-align: center;
+	display: inline-block;
+
 	&:hover {
 		opacity: 0.7
 	}
 `;
 
-export const ButtonAnchor = styled.Text`
-  color: ${(props) => props.theme.colors.textOnCta};
+export const Text = styled.Text`
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.textOnCta};
 `;
