@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { LenguageText } from "../../src/helpers/lenguageTextSwitcher";
 
 export type Accommodation = {
   host: {

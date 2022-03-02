@@ -1,4 +1,5 @@
 const withTM = require("next-transpile-modules")(["styled-components"]);
+const { i18n } = require("./next-i18next.config");
 
 module.exports = withTM({
   transpileModules: [
@@ -7,6 +8,10 @@ module.exports = withTM({
     "styled-components/native",
   ],
   webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
     return {
       ...config,
       resolve: {
@@ -32,8 +37,5 @@ module.exports = withTM({
   images: {
     domains: ["placehold.jp"],
   },
-  i18n: {
-    locales: ["ua-UA", "pl-PL", "ru-RU"],
-    defaultLocale: "pl-PL",
-  },
+  i18n,
 });

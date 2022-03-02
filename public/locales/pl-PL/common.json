@@ -1,0 +1,102 @@
+{
+  "test": "testowa wiadomość  PL",
+
+  "navigationDrawer": {
+    "profile": "Profil użytkownika",
+    "placesList": "Twoja lista mieszkań",
+    "logout": "Wyloguj"
+  },
+  "labels": {
+    "location": "Lokalizacja",
+    "numberOfGuests": "Liczba gości",
+    "timePeriod": "Okres",
+    "withKids": "Jestem z dzieckiem",
+    "name": "imię",
+    "email": "e-mail",
+    "phone": "phone",
+    "town": "miejscowość"
+  },
+  "validations": {
+    "requiredName": "Podaj swoję imię",
+    "invalidEmail": "Podaj porawny e-mail",
+    "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
+    "requiredTown": "Podaj miejscowość",
+    "requiredTime": "Podaj na jak długo",
+    "requiredPeopleQuantity": "Podaj liczbę osób, które mozesz przyjąć",
+    "requiredLivingConditions": "Podaj warunki lokalowe",
+    "requiredFloor": "Podaj piętro"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "week": "tydzień",
+      "twoWeeks": "2 tygodnie",
+      "month": "miesiąc",
+      "longer": "dłużej"
+    },
+    "boolean": {
+      "yes": "tak",
+      "no": "nie"
+    },
+    "anyLocation": "Dowolna",
+    "withElevator": "jest winda"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "miejsce dla <1>{{count}} osób</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "zwierzęta mile widziane",
+    "disabledSupport": "udogodnienia dla niepełnosprawnych",
+    "includesFood": "wyżywienie",
+    "author": {
+      "owner": "Gospodaż"
+    }
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} osoby",
+    "preferredLocation": "preferowana lokalizacja: <1>{{location}}</1>",
+    "withAnimals": "jest z nami zwierzak: <1>{{animals}}</1>",
+    "withKids": "jest ze mną dziecko: <1>{{age}}</1>",
+    "withDisabled": "jest ze mną osoba niepełnosprawna",
+    "withElder": "jest ze mną osoba starsza",
+    "invite": "Przyjmij do siebie"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Określ swoje preferencje, kogo chcesz przyjąć:",
+      "acceptAnimals": "zwierzęta mile widziane",
+      "disabledSupport": "osoby z niepełnosprawnością",
+      "kidsUnder2": "dzieci poniźej 2 lat",
+      "foodIncluded": "zapewnie wyżywienie"
+    },
+    "peopleQuantity": "Ile osób możesz przyjąć?",
+    "forHowLong": "Na jak długo?",
+    "livingConditions": {
+      "label": "Jakie warunki lokalowe możesz zapewnić?",
+      "options": {
+        "flat": "mam wolne mieszkanie",
+        "room": "mam wolny pokój",
+        "mattress": "mogę \"dostawić materac\"",
+        "other": "inne"
+      }
+    },
+    "floor": {
+      "label": "Na którym piętrze zamieszkają?",
+      "hint": "*Osoby starsze mogą mieć problem z wejściem na wysokie piętro"
+    },
+    "submit": "Zgłoś swoją gotowość"
+  },
+  "flags": {
+    "pl": "flaga polski",
+    "en": "flaga wielkiej brytanii",
+    "ua": "flaga ukrainy",
+    "ru": "flaga rosji"
+  },
+  "logout": "wyloguj",
+  "shareLocation": "udostępnij miejsce",
+  "more": "więcej",
+  "ThankfulnessModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o ty za pomocą maila."
+  }
+}

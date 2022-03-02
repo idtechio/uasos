@@ -20,7 +20,10 @@ export default class MyDocument extends Document {
     const { getStyleElement } = AppRegistry.getApplication(config.name);
     const page = await renderPage();
     const styles = [
-      <style dangerouslySetInnerHTML={{ __html: normalizeNextElements }} />,
+      <style
+        dangerouslySetInnerHTML={{ __html: normalizeNextElements }}
+        key="1"
+      />,
       getStyleElement(),
     ];
     return { ...page, styles: Children.toArray(styles) };
