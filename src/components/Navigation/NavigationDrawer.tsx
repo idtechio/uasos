@@ -29,7 +29,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
       <DrawerContainer>
         {session ? (
           <>
-            <NavigationMenuItem
+            {/* <NavigationMenuItem
               title={t("navigationDrawer.profile")}
               Icon={UserIcon}
               onPress={noop} // TODO implement
@@ -38,7 +38,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
               title={t("navigationDrawer.placesList")}
               Icon={ListIcon}
               onPress={noop} // TODO implement
-            />
+            /> */}
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
               Icon={KeyIcon}
@@ -46,7 +46,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             />
           </>
         ) : (
-          <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+          <></>
         )}
       </DrawerContainer>
       <DrawerEmptySpace onPress={hideDrawer} />

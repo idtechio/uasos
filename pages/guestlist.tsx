@@ -23,6 +23,7 @@ export default function App(props) {
     timeframe: null,
     toddler: null,
   });
+  const [showModal, setShowModal] = useState(false);
   return (
     <CompositionAppBody>
       <Filters

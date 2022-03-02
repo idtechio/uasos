@@ -10,6 +10,7 @@ import {
 import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
 import { View } from "react-native";
+import Link from "next/link";
 
 export const ThankfulnessModal = () => {
   const { t } = useTranslation();
@@ -41,7 +42,11 @@ export const ThankfulnessModal = () => {
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <ButtonCta anchor="Powrót do strony głównej" onPress={() => {}} />
+          <Link href="/">
+            <a>
+              <ButtonCta anchor="Powrót do strony głównej" onPress={() => {}} />
+            </a>
+          </Link>
         </ThankfulnessModalButtonCtaWrapper>
       </ThankfulnessModalContentWrapper>
     </CardModal>

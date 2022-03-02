@@ -9,7 +9,6 @@ export const HeaderPage = styled.View`
   align-items: center;
   flex-direction: row;
   z-index: 3;
-  margin-bottom: 30px;
 `;
 
 export const ActionBar = styled.View``;
