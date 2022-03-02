@@ -177,7 +177,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   { label: "3", value: 3 },
                   { label: "4", value: 4 },
                   { label: "5", value: 5 },
-                  { label: t("more"), value: "more" },
+                  { label: t("more"), value: 999 },
                 ]}
                 errorMsg={t("validations.requiredPeopleQuantity")}
               />
@@ -265,7 +265,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   { label: "2", value: 2 },
                   { label: "3", value: 3 },
                   { label: "4", value: 4 },
-                  { label: t("staticValues.withElevator"), value: "elevator" },
+                  { label: t("staticValues.withElevator"), value: 0 },
                 ]}
                 errorMsg={t("validations.requiredFloor")}
               />

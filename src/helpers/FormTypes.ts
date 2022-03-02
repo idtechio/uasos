@@ -2,7 +2,7 @@ export enum ForHowLong {
   WEEK = "1",
   TWO_WEEKS = "2",
   MONTH = "4",
-  LONGER = "48",
+  LONGER = "999",
 }
 
 export enum LivingConditions {
@@ -32,7 +32,7 @@ export type FormType = {
       kids: boolean;
       food: boolean;
       disability: boolean;
-      peopleQuantity: number | string;
+      peopleQuantity: number;
       forHowLong: ForHowLong;
     };
     livingConditions: LivingConditions;
