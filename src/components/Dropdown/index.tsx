@@ -11,38 +11,53 @@ export const Dropdown = ({
   data,
   direction = "to-bottom",
   label,
+  selected,
   multiselect,
   itemPressFunction,
+  placeholder,
+  onBlur,
   searchable = false,
 }: DropdownProps) => {
   const { t } = useTranslation();
 
   const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
+  const [selectHeight, setSelectHeight] = useState(0);
+
   const [filteredData, setFilteredData] = useState(data);
-  const [selectValue, setSelectValue] = useState(t("dropdownChoose"));
+
+  const selectedItem = (data ?? []).find(({ value }) => value === selected);
+
+  const handleItemPress = (value: any) => {
+    itemPressFunction(value);
+    onBlur?.();
+  };
+
+  const { t } = useTranslation();
 
   const renderItem = ({ item }) => (
     <Item
-      title={item.value}
-      itemPressFunction={itemPressFunction}
+      title={item.label}
+      value={item.value}
+      itemPressFunction={handleItemPress}
       setShowOptions={setShowOptions}
-      setSelectValue={setSelectValue}
     />
   );
+
   return (
     <>
       {label && <SelectLabel>{label}</SelectLabel>}
       <View
         onLayout={(event) => {
           setSelectWidth(event.nativeEvent.layout.width);
+          setSelectHeight(event.nativeEvent.layout.height);
         }}
       >
         <Select
           showOptions={showOptions}
           onPress={() => setShowOptions(!showOptions)}
         >
-          <Text>{selectValue}</Text>
+          <Text>{selectedItem ? selectedItem.label : placeholder}</Text>
           <Icon showOptions={showOptions}>
             <ArrowIcon />
           </Icon>
@@ -52,8 +67,8 @@ export const Dropdown = ({
             <Options
               style={{
                 width: selectWidth + "px",
-                top: direction === "to-bottom" ? "45px" : "unset",
-                bottom: direction === "to-top" ? "45px" : "unset",
+                top: direction === "to-bottom" ? selectHeight : "unset",
+                bottom: direction === "to-top" ? selectHeight : "unset",
                 zIndex: "100",
               }}
             >

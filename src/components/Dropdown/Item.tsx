@@ -2,20 +2,20 @@ import { SelectItem } from "./style";
 import { Text } from "react-native";
 
 export const Item = ({
+  value,
   title,
   itemPressFunction,
   setShowOptions,
   setSelectValue,
 }: {
+  value: any;
   title: string;
-  itemPressFunction(): any;
-  setShowOptions(isVisible: boolean): void;
-  setSelectValue: any;
+  itemPressFunction(value: any): void;
+  setOptionsAreVisible(isVisible: boolean): void;
 }) => {
   const handleClick = () => {
-    itemPressFunction();
-    setShowOptions(false);
-    setSelectValue(title);
+    itemPressFunction(value);
+    setOptionsAreVisible(false);
   };
   return (
     <SelectItem onPress={handleClick}>

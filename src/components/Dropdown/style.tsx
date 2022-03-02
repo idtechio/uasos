@@ -5,12 +5,13 @@ export const Select = styled.Pressable`
   border-width: ${(props) => props.theme.forms.borderWidth};
   border-radius: ${(props) => props.theme.forms.borderRadius};
   border-color: ${(props) => props.theme.forms.border};
-  padding: 10px 15px 10px 10px;
+  padding: 20px;
+  font-size: 16px;
   width: 100%;
-  height: 40px;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  position: relative;
   &:hover {
     // TO DO
   }
@@ -32,6 +33,7 @@ export const Options = styled.View`
 
 export const ItemList = styled.FlatList`
   max-height: 200px;
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
 `;
 
 export const Icon = styled.View`

@@ -1,8 +1,13 @@
+import React from "react";
+
 export type DropdownProps = {
-  data: any[];
+  data: { label: React.ReactNode; value: any }[];
   direction?: "to-bottom" | "to-top";
+  selected: any;
   label?: string;
   multiselect?: boolean;
-  itemPressFunction: any;
+  placeholder?: React.ReactNode;
+  itemPressFunction(value: any): void;
   searchable?: boolean;
+  onBlur?(): void;
 };
