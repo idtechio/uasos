@@ -88,6 +88,7 @@ export type FormType = {
     age: number;
     nationality: string;
     groupRelations: string;
+    groupsTypes: string;
     accommodationType: string;
   };
 };

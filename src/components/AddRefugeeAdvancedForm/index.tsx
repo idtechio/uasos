@@ -96,7 +96,7 @@ export default function AddAccommodationAdvancedForm() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.country}
+            error={errors?.advancedRefugee?.name}
             errorMsg={t("validations.requiredName")}
           />
           <InputCotrolLabel>{t("refugeeAddForm.emailLabel")}</InputCotrolLabel>
@@ -110,7 +110,7 @@ export default function AddAccommodationAdvancedForm() {
                 message: t("validations.invalidEmail"),
               },
             }}
-            error={errors?.advancedHost?.town}
+            error={errors?.advancedRefugee?.email}
             errorMsg={t("validations.invalidEmail")}
           />
         </CompositionSection>
@@ -119,7 +119,7 @@ export default function AddAccommodationAdvancedForm() {
           header={t("refugeeAddForm.placeOfRefuge")}
         >
           <InputCotrolLabel>
-            {t("refugeeAddForm.countryOfRefuge")}
+            {t("refugeeAddForm.countryOfRefugeLabel")}
           </InputCotrolLabel>
           <FormTextInput
             name="advancedRefugee.country"
@@ -127,11 +127,11 @@ export default function AddAccommodationAdvancedForm() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.country}
+            error={errors?.advancedRefugee?.country}
             errorMsg={t("hostAdd.errors.rcountry")}
           />
           <InputCotrolLabel>
-            {t("refugeeAddForm.cityOfRefuge")}
+            {t("refugeeAddForm.cityOfRefugeLabel")}
           </InputCotrolLabel>
           <FormTextInput
             name="advancedRefugee.cityOfRefuge"
@@ -139,7 +139,7 @@ export default function AddAccommodationAdvancedForm() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.country}
+            error={errors?.advancedRefugee?.cityOfRefuge}
             errorMsg={t("hostAdd.errors.cityOfRefuge")}
           />
         </CompositionSection>
@@ -149,23 +149,27 @@ export default function AddAccommodationAdvancedForm() {
           backgroundColor="#F5F4F4"
           header={t("refugeeAddForm.travelCompanions")}
         >
-          <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.fullBedCountLabel")}
+          </InputCotrolLabel>
           <FormNumericInput
             name="advancedRefugee.fullBedCount"
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.fullBedCount}
-            errorMsg={t("hostAdd.errors.fullBedCount")}
+            error={errors?.advancedRefugee?.fullBedCount}
+            errorMsg={t("refugeeAddForm.errors.fullBedCount")}
           />
-          <InputCotrolLabel>{t("hostAdd.childBedCount")}</InputCotrolLabel>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.childBedCountLabel")}
+          </InputCotrolLabel>
           <FormNumericInput
             name="advancedRefugee.childBedCount"
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.childBedCount}
-            errorMsg={t("hostAdd.errors.childBedCount")}
+            error={errors?.advancedRefugee?.childBedCount}
+            errorMsg={t("refugeeAddForm.errors.childBedCount")}
           />
         </CompositionSection>
         <CompositionSection
@@ -180,7 +184,7 @@ export default function AddAccommodationAdvancedForm() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.fullBedCount}
+            error={errors?.advancedRefugee?.fullBedCount}
             errorMsg={t("hostAdd.errors.fullBedCount")}
           />
           <InputCotrolLabel>{t("refugeeAddForm.ageLabel")}</InputCotrolLabel>
@@ -189,7 +193,7 @@ export default function AddAccommodationAdvancedForm() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.childBedCount}
+            error={errors?.advancedRefugee?.childBedCount}
             errorMsg={t("hostAdd.errors.childBedCount")}
           />
         </CompositionSection>
@@ -224,7 +228,7 @@ export default function AddAccommodationAdvancedForm() {
           rules={{
             required: true,
           }}
-          error={errors?.advancedHost?.groupsTypes}
+          error={errors?.advancedRefugee?.groupsTypes}
           errorMsg={t("hostAdd.errors.groupsTypes")}
         />
         <InputCotrolLabel>
@@ -236,7 +240,7 @@ export default function AddAccommodationAdvancedForm() {
           rules={{
             required: true,
           }}
-          error={errors?.advancedHost?.groupsTypes}
+          error={errors?.advancedRefugee?.groupsTypes}
           errorMsg={t("hostAdd.errors.groupsTypes")}
         />
 

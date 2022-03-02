@@ -182,12 +182,12 @@
     "sexLabel": "Płeć",
     "sexPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
-    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
-    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "fullBedCountLabel": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
     "placeOfRefuge": "Gdzie szukasz schronienia?",
-    "countryOfRefuge": "W jakim kraju szukasz schronienia?",
-    "countryOfRefugPlaceholder": "Wybierz kraj",
-    "cityOfRefuge": "Wybierz miasto:",
+    "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
+    "countryOfRefugePlaceholder": "Wybierz kraj",
+    "cityOfRefugeLabel": "Wybierz miasto:",
     "cityOfRefugePlaceholder": "Wybierz obszar",
     "nameLabel": "Imię (Podaj tylko pierwsze imię)",
     "namePlaceholder": "Imię",
@@ -203,7 +203,9 @@
     "errors": {
       "name": "",
       "email": "",
-      "cityOfRefuge": ""
+      "cityOfRefuge": "",
+      "childBedCount": "",
+      "fullBedCountsaas": ""
     }
   },
   "whatSosUaDoesSection": {
