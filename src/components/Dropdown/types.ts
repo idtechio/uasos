@@ -1,5 +1,5 @@
 export type DropdownProps = {
-  data: [];
+  data: any[];
   direction?: "to-bottom" | "to-top";
   label?: string;
   multiselect?: boolean;
