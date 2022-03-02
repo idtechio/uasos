@@ -21,7 +21,7 @@
     "react-hook-form": "^7.27.1",
     "react-native": "^0.67.3",
     "react-native-modal": "^13.0.0",
-    "react-native-web": "^0.13.14",
+    "react-native-web": "^0.17.6",
     "styled-components": "^5.3.3",
     "swr": "^1.2.2"
   },

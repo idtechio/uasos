@@ -93,5 +93,10 @@
   },
   "logout": "wyloguj",
   "shareLocation": "udostępnij miejsce",
-  "more": "więcej"
+  "more": "więcej",
+  "ThankfulnessModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o ty za pomocą maila."
+  }
 }

@@ -8,6 +8,8 @@ import Cities from "../src/consts/cities.json";
 import { useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import { ButtonCta } from "../src/components/Buttons";
+import { ThankfulnessModal } from "../src/components/ThankfulnessModal";
 
 function Home(props) {
   const { t } = useTranslation();
@@ -18,10 +20,17 @@ function Home(props) {
     toddler: null,
   });
 
+  const [showModal, setShowModal] = useState(false);
+
   const { data } = props;
 
   return (
     <CompositionAppBody>
+      <ButtonCta
+        anchor="Pokaz modal dziękujemy"
+        onPress={() => setShowModal(true)}
+      />
+      {showModal && <ThankfulnessModal />}
       <Filters
         filters={[
           {
