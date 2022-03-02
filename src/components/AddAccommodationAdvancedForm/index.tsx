@@ -1,268 +1,139 @@
 import React from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import {
-  ChoiceButton,
-  Input,
-  InputControl,
-  InputCotrolLabel,
-  RadioButtons,
-} from "../Forms";
-import NumericInput from "../Forms/NumericInput";
+import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import FormNumericInput from "../Inputs/FormNumericInput";
+import FormRadioGroup from "../Inputs/FormRadioGroup";
+import FormTextInput from "../Inputs/FormTextInput";
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
+
+  const formFields = useForm<FormType>({
+    defaultValues: {
+      advancedHost: {
+        fullBedCount: 0,
+        childBedCount: 0,
+        accommodationTime: 0,
+      },
+    },
+  });
   const {
     control,
     handleSubmit,
     formState: { errors },
-    watch,
-  } = useForm({
-    // TODO: use proper names required by backend
-    defaultValues: {
-      city: "",
-      country: "",
-      accommodationType: "",
-      fullBedCount: 0,
-      childBedCount: 0,
-      accommodationTime: 0,
-      nationality: [],
-      groupsTypes: [],
-      transportReady: false,
-      pregnantReady: false,
-      dissabilityReady: false,
-      animalReady: false,
-      prolongationReady: false,
-    },
-  });
+  } = formFields;
 
   const onSubmit = (data) => {
     // TODO: implement
-    console.log("!@# handle submit", data);
+    console.log("Handle submit", data);
   };
 
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.container}
-      style={styles.containerWraper}
-    >
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <FormProvider {...formFields}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.container}
+        style={styles.containerWraper}
+      >
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.basicInfoHeader")}
         >
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
+          <FormTextInput
+            name="advancedHost.country"
+            label={t("hostAdd.country")}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Dropdown component
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.country")}
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.country}
-                />
-                {errors.country && (
-                  <Text style={styles.error}>{t("hostAdd.countryError")}</Text>
-                )}
-              </InputControl>
-            )}
-            name="country"
+            error={errors?.advancedHost?.country}
+            errorMsg={t("hostAdd.errors.rcountry")}
           />
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
+          <FormTextInput
+            name="advancedHost.town"
+            label={t("hostAdd.town")}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Dropdown component
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.city")}</InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.city")}
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.city}
-                />
-                {errors.city && (
-                  <Text style={styles.error}>{t("hostAdd.cityError")}</Text>
-                )}
-              </InputControl>
-            )}
-            name="city"
+            error={errors?.advancedHost?.town}
+            errorMsg={t("validations.requiredTown")}
           />
         </CompositionSection>
+        {/* TODO: Image Picker usage here */}
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
+          {/* TODO: use Dropdown here */}
+          <FormTextInput
+            name="advancedHost.accommodationType"
+            label={t("hostAdd.type")}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Dropdown component
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.type")}</InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.type")}
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.accommodationType}
-                />
-                {errors.accommodationType && (
-                  <Text style={styles.error}>{t("hostAdd.typeError")}</Text>
-                )}
-              </InputControl>
-            )}
-            name="accommodationType"
+            error={errors?.advancedHost?.accommodationType}
+            errorMsg={t("hostAdd.errors.type")}
           />
-          {/* Image Picker usage here */}
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
+          <FormNumericInput
+            name="advancedHost.fullBedCount"
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.fullBedCount")}</InputCotrolLabel>
-                <NumericInput
-                  onChange={onChange}
-                  value={value}
-                  error={errors.fullBedCount}
-                />
-                {errors.fullBedCount && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.fullBedCountError")}
-                  </Text>
-                )}
-              </InputControl>
-            )}
-            name="fullBedCount"
+            error={errors?.advancedHost?.fullBedCount}
+            errorMsg={t("hostAdd.errors.fullBedCount")}
           />
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.childBedCount")}</InputCotrolLabel>
+          <FormNumericInput
+            name="advancedHost.childBedCount"
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <InputCotrolLabel>
-                  {t("hostAdd.childBedCount")}
-                </InputCotrolLabel>
-                <NumericInput
-                  onChange={onChange}
-                  value={value}
-                  error={errors.childBedCount}
-                />
-                {errors.childBedCount && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.childBedCountError")}
-                  </Text>
-                )}
-              </InputControl>
-            )}
-            name="childBedCount"
+            error={errors?.advancedHost?.childBedCount}
+            errorMsg={t("hostAdd.errors.childBedCount")}
           />
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.accommodationTime")}</InputCotrolLabel>
+          <FormNumericInput
+            name="advancedHost.accommodationTime"
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <InputCotrolLabel>
-                  {t("hostAdd.accommodationTime")}
-                </InputCotrolLabel>
-                <NumericInput
-                  onChange={onChange}
-                  value={value}
-                  error={errors.accommodationTime}
-                />
-                {errors.accommodationTime && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.accommodationTimeError")}
-                  </Text>
-                )}
-              </InputControl>
-            )}
-            name="accommodationTime"
+            error={errors?.advancedHost?.accommodationTime}
+            errorMsg={t("hostAdd.errors.accommodationTime")}
           />
         </CompositionSection>
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
         >
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
+          <FormRadioGroup<string | string>
+            name="advancedHost.nationality"
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
-                {/* FIXME: use RadioButtons properly. We need to first implement this component properly */}
-                <RadioButtons>
-                  <TouchableOpacity onPress={() => {}}>
-                    <ChoiceButton
-                      text={t("hostAdd.ukraine")}
-                      isSmall
-                      isChoice={false}
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => {}}>
-                    <ChoiceButton
-                      text={t("hostAdd.any")}
-                      isSmall
-                      isChoice={false}
-                    />
-                  </TouchableOpacity>
-                </RadioButtons>
-                {errors.nationality && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.nationalityError")}
-                  </Text>
-                )}
-              </InputControl>
-            )}
-            name="nationality"
+            data={[
+              { label: t("hostAdd.ukraine"), value: "ukraine" },
+              { label: t("hostAdd.any"), value: "any" },
+            ]}
+            errorMsg={t("validations.nationalityError")}
           />
-          <Controller
-            control={control}
+          <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
+          <FormTextInput
+            name="advancedHost.groupsTypes"
+            label={t("hostAdd.groupsTypes")}
             rules={{
               required: true,
             }}
-            render={({ field: { onChange, onBlur, value } }) => (
-              // TODO: use proper Multiselect component instead of Input
-              // Do we need to fetch data for this multiselect from the backend?
-              <InputControl>
-                <InputCotrolLabel>{t("hostAdd.groupsTypes")}</InputCotrolLabel>
-                <Input
-                  placeholder={t("hostAdd.groupsTypes")}
-                  onChange={onChange}
-                  onBlur={onBlur}
-                  value={value}
-                  error={errors.groupsTypes}
-                />
-                {errors.groupsTypes && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.groupsTypesError")}
-                  </Text>
-                )}
-              </InputControl>
-            )}
-            name="groupsTypes"
+            error={errors?.advancedHost?.groupsTypes}
+            errorMsg={t("hostAdd.errors.groupsTypes")}
           />
+
           <Controller
             control={control}
             rules={{
@@ -278,14 +149,9 @@ export default function AddAccommodationAdvancedForm() {
                     isChoice={false}
                   />
                 </TouchableOpacity>
-                {errors.transportReady && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.transportReadyError")}
-                  </Text>
-                )}
               </InputControl>
             )}
-            name="transportReady"
+            name="advancedHost.transportReady"
           />
           <Controller
             control={control}
@@ -302,14 +168,9 @@ export default function AddAccommodationAdvancedForm() {
                     isChoice={false}
                   />
                 </TouchableOpacity>
-                {errors.pregnantReady && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.pregnantReadyError")}
-                  </Text>
-                )}
               </InputControl>
             )}
-            name="pregnantReady"
+            name="advancedHost.pregnantReady"
           />
           <Controller
             control={control}
@@ -326,14 +187,9 @@ export default function AddAccommodationAdvancedForm() {
                     isChoice={false}
                   />
                 </TouchableOpacity>
-                {errors.dissabilityReady && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.dissabilityReadyError")}
-                  </Text>
-                )}
               </InputControl>
             )}
-            name="dissabilityReady"
+            name="advancedHost.dissabilityReady"
           />
           <Controller
             control={control}
@@ -350,14 +206,9 @@ export default function AddAccommodationAdvancedForm() {
                     isChoice={false}
                   />
                 </TouchableOpacity>
-                {errors.animalReady && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.animalReadyError")}
-                  </Text>
-                )}
               </InputControl>
             )}
-            name="animalReady"
+            name="advancedHost.animalReady"
           />
           <Controller
             control={control}
@@ -374,14 +225,9 @@ export default function AddAccommodationAdvancedForm() {
                     isChoice={false}
                   />
                 </TouchableOpacity>
-                {errors.prolongationReady && (
-                  <Text style={styles.error}>
-                    {t("hostAdd.prolongationReadyError")}
-                  </Text>
-                )}
               </InputControl>
             )}
-            name="prolongationReady"
+            name="advancedHost.prolongationReady"
           />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
@@ -392,8 +238,8 @@ export default function AddAccommodationAdvancedForm() {
             />
           </InputControl>
         </CompositionSection>
-      </form>
-    </ScrollView>
+      </ScrollView>
+    </FormProvider>
   );
 }
 
