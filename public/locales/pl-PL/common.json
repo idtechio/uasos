@@ -92,7 +92,7 @@
   },
   "hostAdd": {
     "country": "Kraj",
-    "city": "Miasto",
+    "town": "Miasto",
     "type": "Typ noclegu",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
@@ -108,7 +108,17 @@
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
     "additionalInformationHeader": "Dodatkowe informacje",
     "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
-    "addButton": "Zatwierdź/Dodaj"
+    "addButton": "Zatwierdź/Dodaj",
+    "errors": {
+      "country": "",
+      "town": "",
+      "type": "",
+      "fullBedCount": "",
+      "childBedCount": "",
+      "accommodationTime": "",
+      "nationality": "",
+      "groupsTypes": ""
+    }
   },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",
