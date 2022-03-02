@@ -2,10 +2,17 @@ import * as React from "react";
 import styled from "styled-components";
 import Container from "../Container";
 import { colors } from "../../style/landingPageStyle";
+import styledMobile from "styled-components/native";
 
 const StyledSection = styled.section<{ bgColor: string }>`
   background-color: ${(props) => props.bgColor};
   padding: 30px 0;
+`;
+
+const Wraper = styledMobile.View`
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const Title = styled.h1`
@@ -46,14 +53,16 @@ const YellowHighlight = styled.div`
 function Section({ title, bgColor, children }: SectionProps) {
   return (
     <StyledSection bgColor={bgColor}>
-      <Container>
-        {title !== undefined ? (
-          <>
-            <Title>{title}</Title>
-            <YellowHighlight />
-          </>
-        ) : null}
-      </Container>
+      <Wraper>
+        <Container>
+          {title !== undefined ? (
+            <>
+              <Title>{title}</Title>
+              <YellowHighlight />
+            </>
+          ) : null}
+        </Container>
+      </Wraper>
       {children}
     </StyledSection>
   );

@@ -19,11 +19,7 @@ export default function Account(props) {
 
   return (
     <CompositionAppBody>
-      <CompositionContainer>
-        <View style={styles.container}>
-          <AddRefugeeForm />
-        </View>
-      </CompositionContainer>
+      {session ? <AddRefugeeForm /> : <AddRefugeeForm />}
     </CompositionAppBody>
   );
 }
