@@ -37,13 +37,13 @@ const LandingFooter = () => {
             <Link href="./" passHref>
               <FooterItem>{t("rodo")}</FooterItem>
             </Link>
-            <Link href="./" passHref>
-              <FooterItem href="./">{t("privacyPolicy")}</FooterItem>
+            <Link href="/polityka-prywatnosci.pdf" passHref>
+              <FooterItem>{t("privacyPolicy")}</FooterItem>
             </Link>
           </FooterContentRow>
           <FooterContentRow>
-            <Link href="./" passHref>
-              <FooterItem href="./">{t("register2")}</FooterItem>
+            <Link href="/regulamin.pdf" passHref>
+              <FooterItem>Regulamin</FooterItem>
             </Link>
             <Link href="./" passHref>
               <FooterItem href="./">{t("patrons")}</FooterItem>
