@@ -132,6 +132,7 @@ const AddRefugeeForm = () => {
               label={t("refugeeForm.labels.name")}
               rules={{
                 required: true,
+                maxLength: 50,
               }}
               error={errors?.refugee?.core?.name}
               errorMsg={t("refugeeForm.errors.name")}
@@ -141,6 +142,7 @@ const AddRefugeeForm = () => {
               label={t("refugeeForm.labels.email")}
               rules={{
                 required: true,
+                maxLength: 100,
                 pattern: {
                   value: /\S+@\S+\.\S+/,
                   message: t("refugeeForm.errors.email"),
@@ -223,6 +225,7 @@ const AddRefugeeForm = () => {
                   labelsBackgroundColor="#F5F4F4"
                   rules={{
                     required: true,
+                    maxLength: 50,
                   }}
                   error={errors?.refugee?.core?.location}
                   errorMsg={t("refugeeForm.errors.location")}
