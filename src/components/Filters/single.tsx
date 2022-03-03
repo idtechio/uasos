@@ -58,10 +58,14 @@ const SingleFilter = ({
               </FilterBoxHeader>
               <View style={styles.content}>
                 <Dropdown
-                  data={options}
                   direction={"to-top"}
-                  itemPressFunction={chosenItem}
                   searchable={true}
+                  data={options}
+                  placeholder={"wybierz coś plis"}
+                  label={"labelka"}
+                  itemPressFunction={chosenItem}
+                  selected={value}
+                  error={!!"error!!!"}
                 />
               </View>
               <FilterBoxFooter>

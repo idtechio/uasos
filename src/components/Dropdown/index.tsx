@@ -27,14 +27,8 @@ export const Dropdown = ({
   onBlur,
   searchable = false,
 }: DropdownProps) => {
-<<<<<<< HEAD
-  const { t } = useTranslation();
-
-  const [showOptions, setShowOptions] = useState(false);
-=======
   const containerRef = useRef<any>();
-  const [areOptionsVisible, setOptionsAreVisible] = useState(false);
->>>>>>> f4111c3... handle dropdown outside clicks on web only (i am not smart enough to do it universally)
+  const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
   const [selectHeight, setSelectHeight] = useState(0);
 
@@ -58,7 +52,7 @@ export const Dropdown = ({
       title={item.label}
       value={item.value}
       itemPressFunction={handleItemPress}
-      setOptionsAreVisible={multiselect ? () => {} : setOptionsAreVisible}
+      setShowOptions={multiselect ? () => {} : setShowOptions}
       selected={multiselect && selectedValues.includes(item.value)}
     />
   );
@@ -66,11 +60,11 @@ export const Dropdown = ({
   useEffect(() => {
     const handleClickOutside = (ev) => {
       if (containerRef.current && !containerRef.current?.contains(ev.target)) {
-        setOptionsAreVisible(false);
+        setShowOptions(false);
       }
     };
 
-    if (containerRef.current && Platform.OS === "web" && areOptionsVisible) {
+    if (containerRef.current && Platform.OS === "web" && showOptions) {
       document.body.addEventListener("click", handleClickOutside);
     }
 
@@ -79,7 +73,7 @@ export const Dropdown = ({
         document.body.removeEventListener("click", handleClickOutside);
       }
     };
-  }, [areOptionsVisible]);
+  }, [showOptions]);
 
   return (
     <>
@@ -93,13 +87,13 @@ export const Dropdown = ({
       >
         <Select
           isInvalid={!!error}
-          areOptionsVisible={areOptionsVisible}
+          showOptions={showOptions}
           onPress={() => {
-            if (areOptionsVisible) {
+            if (showOptions) {
               onBlur?.();
             }
 
-            setOptionsAreVisible(!areOptionsVisible);
+            setShowOptions(!showOptions);
           }}
         >
           <SelectText>
@@ -115,12 +109,12 @@ export const Dropdown = ({
               <PlaceholderText numberOfLines={1}>{placeholder}</PlaceholderText>
             )}
           </SelectText>
-          <Icon areOptionsVisible={areOptionsVisible}>
+          <Icon showOptions={showOptions}>
             <ArrowIcon />
           </Icon>
         </Select>
 
-        {areOptionsVisible && (
+        {showOptions && (
           <>
             <Options
               style={{
