@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { View } from "react-native";
 import { UnorderedList } from "../UnorderedList/UnorderedList";
@@ -12,53 +12,81 @@ import {
 } from "./style";
 import gradient from "../../../public/gradient.png";
 import { ButtonDefault } from "../Buttons";
-import InstructionsCarousel from "../InstructionsCarousel";
-import styled from "styled-components/native";
+import { InstructionsCarousel, InstructionsGrid } from "../Instructions";
+import SectionTitle from "../SectionTitle";
+import { useTheme } from "styled-components/native";
 
 const WhatWeDoSection = () => {
+  const { getBreakPoint } = useTheme();
+  const isDesktop = getBreakPoint({ default: false, lg: true });
+
   const { t } = useTranslation("common");
 
   const [isOpen, setOpen] = useState(false);
 
-  const toggleRolldown = () => setOpen(!isOpen);
+  const toggleRolldown = () => setOpen((open) => !open);
+
+  useEffect(() => {
+    setOpen(isDesktop ? true : false);
+  }, [isDesktop, setOpen]);
 
   return (
-    <Section title={t("whatSosUaDoesSection.title")} bgColor="#F8F8F8">
-      <Wraper>
-        <Container isOpen={isOpen}>
-          <Text>{t("whatSosUaDoesSection.description")}</Text>
+    <Section bgColor="#F8F8F8">
+      <View
+        style={{
+          flexDirection: isDesktop ? "row" : "column",
+          justifyContent: "space-between",
+          width: "100%",
+          paddingTop: "100px",
+          paddingBottom: "50px",
+        }}
+      >
+        <View
+          style={{
+            alignItems: "flex-start",
+            width: isDesktop ? "33%" : "auto",
+          }}
+        >
+          <SectionTitle title={t("whatSosUaDoesSection.title")} />
+          <Container isOpen={isOpen}>
+            <Text>{t("whatSosUaDoesSection.description")}</Text>
 
-          <TextBold>{t("whatSosUaDoesSection.howItWorks")}</TextBold>
+            <TextBold>{t("whatSosUaDoesSection.howItWorks")}</TextBold>
 
-          <UnorderedList
-            texts={t("whatSosUaDoesSection.bulletPoints", {
-              returnObjects: true,
-            })}
-          ></UnorderedList>
-          <View style={{ marginTop: "10px" }} />
+            <UnorderedList
+              texts={t("whatSosUaDoesSection.bulletPoints", {
+                returnObjects: true,
+              })}
+            ></UnorderedList>
+            <View style={{ marginTop: "10px" }} />
 
-          <Text>{t("whatSosUaDoesSection.algorithmExplanation")}</Text>
-          {!isOpen && <GradientBackground source={{ uri: gradient.src }} />}
-        </Container>
-        <ButtonContainer>
-          <ButtonDefault
-            anchor={t("whatSosUaDoesSection.rolldown")}
-            onPress={toggleRolldown}
-            chevronVisible
-            chevronUpsideDown={isOpen}
-          />
-        </ButtonContainer>
+            <Text>{t("whatSosUaDoesSection.algorithmExplanation")}</Text>
+            {!isOpen && <GradientBackground source={{ uri: gradient.src }} />}
+          </Container>
+          {!isDesktop && (
+            <ButtonContainer>
+              <ButtonDefault
+                anchor={t(
+                  isOpen
+                    ? "whatSosUaDoesSection.rollup"
+                    : "whatSosUaDoesSection.rolldown"
+                )}
+                onPress={toggleRolldown}
+                chevronVisible
+                chevronUpsideDown={isOpen}
+              />
+            </ButtonContainer>
+          )}
+        </View>
 
-        <InstructionsCarousel />
-      </Wraper>
+        <View
+          style={{ alignSelf: "stretch", width: isDesktop ? "60%" : "auto" }}
+        >
+          {isDesktop ? <InstructionsGrid /> : <InstructionsCarousel />}
+        </View>
+      </View>
     </Section>
   );
 };
 
 export default WhatWeDoSection;
-
-const Wraper = styled.View`
-  max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
-`;

@@ -1,4 +1,16 @@
+export const base = {
+  breakPoints: {
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+    xxl: 1500,
+  },
+  maxContainerWidth: 1200,
+};
+
 export const primary = {
+  ...base,
   colors: {
     accent: "red",
     textOnAccent: "#FFFFFF",
@@ -31,6 +43,7 @@ export const primary = {
 
 // TODO: DarkMode
 export const secendary = {
+  ...base,
   colors: {
     accent: "red",
     textOnAccent: "red",
