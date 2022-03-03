@@ -20,6 +20,7 @@ export const primary = {
     textOnCta: "#003566",
     blue: "#003566",
     secondaryBlue: "#0057B8",
+    error: "#d8000c",
   },
   fonts: {
     headings: "'Roboto', sans-serif",

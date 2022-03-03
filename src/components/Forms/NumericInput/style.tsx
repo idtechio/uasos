@@ -9,7 +9,8 @@ export const InputWraper = styled.View`
 
 export const TextInput = styled.TextInput`
   border: ${(props) => props.theme.forms.borderWidth} solid
-    ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
+    ${(props) =>
+      props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
   min-height: 24px;
   padding: 10px;
@@ -23,7 +24,7 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Error = styled.Text`
-  color: #d8000c;
+  color: ${(props) => props.theme.colors.error};
 `;
 
 export const Controls = styled.View`

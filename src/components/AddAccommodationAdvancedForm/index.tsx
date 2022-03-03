@@ -6,18 +6,15 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Image,
   View,
 } from "react-native";
+import styled from "styled-components/native";
 import { FormKey, FormType } from "../../helpers/FormTypes";
+import { primary } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import {
-  ChoiceButton,
-  InputControl,
-  InputCotrolLabel as InputControlLabel,
-} from "../Forms";
+import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import UploadInput from "../Forms/UploadInput/index.web";
 import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
@@ -53,6 +50,10 @@ const ADDITIONAL_HOST_FEATS: {
     translateId: "hostAdd.prolongationReady",
   },
 ];
+
+const DeletePhotoText = styled.Text`
+  color: ${(props) => props.theme.colors.error};
+`;
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -153,9 +154,9 @@ export default function AddAccommodationAdvancedForm() {
                         setUploadPreview(undefined);
                       }}
                     >
-                      <Text style={{ color: "#D8000C" }}>
+                      <DeletePhotoText>
                         {t("hostAdd.accomodationPhotoReset")}
-                      </Text>
+                      </DeletePhotoText>
                     </TouchableOpacity>
                   </>
                 ) : (
@@ -263,7 +264,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   error: {
-    color: "#D8000C",
+    color: primary.colors.error,
     marginTop: 10,
   },
   containerWraper: {

@@ -12,7 +12,7 @@ export const Select = styled.Pressable`
   border-width: ${(props) => props.theme.forms.borderWidth};
   border-radius: ${(props) => props.theme.forms.borderRadius};
   border-color: ${(props) =>
-    props.isInvalid ? "#D8000C" : props.theme.forms.border};
+    props.isInvalid ? props.theme.colors.error : props.theme.forms.border};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
   padding: 10px;
   width: 100%;
