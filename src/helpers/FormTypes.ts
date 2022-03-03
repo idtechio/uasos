@@ -17,6 +17,13 @@ export enum Nationality {
   ANY = "any",
 }
 
+type PeopleDetails = {
+  animals: boolean;
+  toddler: boolean;
+  oldPerson: boolean;
+  disability: boolean;
+};
+
 export type FormType = {
   host: {
     core: {
@@ -37,6 +44,24 @@ export type FormType = {
     floor: number;
     elevator: boolean;
   };
+  refugee: {
+    core: {
+      name: string;
+      email: string;
+      phoneNumber: string;
+      location: string;
+    };
+    preferences: {
+      peopleQuantity: string;
+      animal: string;
+      peopleDetails: PeopleDetails;
+      people: {
+        [name: string]: string;
+      };
+    };
+    isGDPRAccepted: boolean;
+  };
+
   advancedHost: {
     town: string;
     country: string;
