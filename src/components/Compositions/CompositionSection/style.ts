@@ -22,10 +22,3 @@ export const SectionHeader = styled.Text<SectionProps>`
   font-weight: 700;
   margin-bottom: 24px;
 `;
-
-export const SectionHeader = styled.Text<SectionProps>`
-  color: ${(props) => props.theme.colors.headings};
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 24px;
-`;

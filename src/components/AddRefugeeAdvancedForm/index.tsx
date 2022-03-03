@@ -5,6 +5,9 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
+import FormDropdown from "../Inputs/FormDropdown";
+import FormCityDropdown from "../Inputs/FormCityDropdown";
+import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import { CompositionSection } from "../Compositions";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
 import FormNumericInput from "../Inputs/FormNumericInput";
@@ -78,6 +81,14 @@ export default function AddAccommodationAdvancedForm() {
     console.log("Handle submit", data);
   };
 
+  const GROUP_RELATIONS = [
+    { label: "Singiel", value: "single_man" },
+    { label: "Singielka", value: "single_woman" },
+    { label: "Małżonkowie", value: "spouses" },
+    { label: "Rodzina z dziećmi", value: "family_with_children" },
+    { label: "Niepowiązana grupa", value: "unrelated_group" },
+  ];
+
   return (
     <FormProvider {...formFields}>
       <ScrollView
@@ -118,24 +129,22 @@ export default function AddAccommodationAdvancedForm() {
           padding={[35, 30, 8, 30]}
           header={t("refugeeAddForm.placeOfRefuge")}
         >
-          <InputCotrolLabel>
-            {t("refugeeAddForm.countryOfRefugeLabel")}
-          </InputCotrolLabel>
-          <FormTextInput
+          <FormCountryDropdown
+            zIndex={25}
             name="advancedRefugee.country"
-            label={t("refugeeAddForm.countryOfRefugPlaceholder")}
+            label={t("refugeeAddForm.countryOfRefugeLabel")}
+            placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
             rules={{
               required: true,
             }}
             error={errors?.advancedRefugee?.country}
             errorMsg={t("hostAdd.errors.rcountry")}
           />
-          <InputCotrolLabel>
-            {t("refugeeAddForm.cityOfRefugeLabel")}
-          </InputCotrolLabel>
-          <FormTextInput
+          <FormCityDropdown
+            zIndex={25}
             name="advancedRefugee.cityOfRefuge"
-            label={t("refugeeAddForm.cityOfRefugePlaceholder")}
+            label={t("refugeeAddForm.cityOfRefugeLabel")}
+            placeholder={t("refugeeAddForm.cityOfRefugePlaceholder")}
             rules={{
               required: true,
             }}
@@ -222,9 +231,11 @@ export default function AddAccommodationAdvancedForm() {
         <InputCotrolLabel>
           {t("refugeeAddForm.groupRelations")}
         </InputCotrolLabel>
-        <FormTextInput
+        <FormDropdown
+          zIndex={20}
+          data={GROUP_RELATIONS}
           name="advancedRefugee.groupRelations"
-          label={t("refugeeAddForm.selectPlaceholder")}
+          placeholder={t("refugeeAddForm.selectPlaceholder")}
           rules={{
             required: true,
           }}
