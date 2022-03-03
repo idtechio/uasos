@@ -14,8 +14,7 @@ export const Select = styled.Pressable`
   &:hover {
     // TO DO
   }
-  box-shadow: ${(props) =>
-    props.areOptionsVisible ? `0 0 15px #cccccc` : `none`};
+  box-shadow: ${(props) => (props.showOptions ? `0 0 15px #cccccc` : `none`)};
 `;
 
 export const SelectLabel = styled.Pressable`
@@ -36,7 +35,7 @@ export const ItemList = styled.FlatList`
 `;
 
 export const Icon = styled.View`
-  transform: ${(props) => (props.areOptionsVisible ? `rotate(180deg)` : ``)};
+  transform: ${(props) => (props.showOptions ? `rotate(180deg)` : ``)};
 `;
 
 export const SelectItem = styled.Pressable`

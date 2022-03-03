@@ -15,17 +15,19 @@ export const Dropdown = ({
   itemPressFunction,
   searchable = false,
 }: DropdownProps) => {
-  const [areOptionsVisible, setOptionsAreVisible] = useState(false);
+  const { t } = useTranslation();
+
+  const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
   const [filteredData, setFilteredData] = useState(data);
-
-  const { t } = useTranslation();
+  const [selectValue, setSelectValue] = useState(t("dropdownChoose"));
 
   const renderItem = ({ item }) => (
     <Item
       title={item.value}
       itemPressFunction={itemPressFunction}
-      setOptionsAreVisible={setOptionsAreVisible}
+      setShowOptions={setShowOptions}
+      setSelectValue={setSelectValue}
     />
   );
   return (
@@ -33,20 +35,19 @@ export const Dropdown = ({
       {label && <SelectLabel>{label}</SelectLabel>}
       <View
         onLayout={(event) => {
-          var { width } = event.nativeEvent.layout;
-          setSelectWidth(width);
+          setSelectWidth(event.nativeEvent.layout.width);
         }}
       >
         <Select
-          areOptionsVisible={areOptionsVisible}
-          onPress={() => setOptionsAreVisible(!areOptionsVisible)}
+          showOptions={showOptions}
+          onPress={() => setShowOptions(!showOptions)}
         >
-          <Text>{t("dropdownChoose")}</Text>
-          <Icon areOptionsVisible={areOptionsVisible}>
+          <Text>{selectValue}</Text>
+          <Icon showOptions={showOptions}>
             <ArrowIcon />
           </Icon>
         </Select>
-        {areOptionsVisible && (
+        {showOptions && (
           <>
             <Options
               style={{

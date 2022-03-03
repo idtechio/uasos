@@ -167,5 +167,7 @@
       }
     }
   },
-  "dropdownChoose": "Wybierz..."
+  "dropdownChoose": "Wybierz...",
+  "dropdownSearch": "Szukaj",
+  "heroImageAlt": "Sława Ukrajini!"
 }
