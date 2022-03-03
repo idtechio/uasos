@@ -19,6 +19,7 @@ import {
   InputCotrolLabel as InputControlLabel,
 } from "../Forms";
 import UploadInput from "../Forms/UploadInput";
+import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -235,26 +236,7 @@ export default function AddAccommodationAdvancedForm() {
           />
 
           {ADDITIONAL_HOST_FEATS.map(({ translateId, name }) => (
-            <Controller
-              key={name}
-              control={control}
-              rules={{
-                required: false,
-              }}
-              render={({ field: { onChange, onBlur, value } }) => (
-                // TODO: use properly ChoiceButton component after it's refactor
-                <InputControl>
-                  <TouchableOpacity onPress={() => onChange(!value)}>
-                    <ChoiceButton
-                      text={t(translateId)}
-                      isSmall
-                      isChoice={!!value}
-                    />
-                  </TouchableOpacity>
-                </InputControl>
-              )}
-              name={name}
-            />
+            <FormChoiceButton key={name} name={name} text={t(translateId)} />
           ))}
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">

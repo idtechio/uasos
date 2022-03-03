@@ -4,13 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";
-
-const styles = StyleSheet.create({
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-});
+import { common } from "./styles";
 
 type Data<T> = {
   label: string;
@@ -64,7 +58,7 @@ const FormRadioGroup = <T extends Object>({
               />
             </TouchableOpacity>
           ))}
-          {error ? <Text style={styles.error}>{errorMsg}</Text> : null}
+          {error ? <Text style={common.error}>{errorMsg}</Text> : null}
         </RadioButtons>
       )}
       name={name}

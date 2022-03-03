@@ -2,15 +2,9 @@ import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import NumericInput from "../Forms/NumericInput";
 import InputControl from "../Forms/InputControl";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
-
-const styles = StyleSheet.create({
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-});
+import { common } from "./styles";
 
 type Props = {
   name: FormKey;
@@ -28,7 +22,7 @@ const FormTextInput: VFC<Props> = (props) => {
       render={({ field: { onChange, value } }) => (
         <InputControl>
           <NumericInput onChange={onChange} value={value} error={error} />
-          {error && <Text style={styles.error}>{errorMsg}</Text>}
+          {error && <Text style={common.error}>{errorMsg}</Text>}
         </InputControl>
       )}
       name={name}
