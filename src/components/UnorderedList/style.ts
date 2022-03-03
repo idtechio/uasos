@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Column = styled.View`
   display: flex;
@@ -8,6 +8,8 @@ export const Column = styled.View`
 export const ColumnBulletPoint = styled.Text`
   align-self: flex-start;
   justify-content: flex-start;
+  padding-right: 6px;
+  padding-top: 2px;
 `;
 
 export const Row = styled.View`
@@ -24,5 +26,6 @@ export const PointColumn = styled.View`
 
 export const ColumnText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
-  max-width: 85vw;
+  font-size: 14px;
+  line-height: 20px;
 `;
