@@ -85,10 +85,16 @@
     "submit": "Zgłoś swoją gotowość"
   },
   "flags": {
-    "pl": "flaga polski",
-    "en": "flaga wielkiej brytanii",
-    "ua": "flaga ukrainy",
-    "ru": "flaga rosji"
+    "cz": "flaga Czech",
+    "en": "flaga Wielkiej Brytanii",
+    "es": "flaga Hiszpanii",
+    "fr": "flaga Francji",
+    "hu": "flaga Węgier",
+    "it": "flaga Włoch",
+    "pl": "flaga Polski",
+    "ro": "flaga Rumunii",
+    "sk": "flaga Słowacji",
+    "ua": "flaga Ukrainy"
   },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",

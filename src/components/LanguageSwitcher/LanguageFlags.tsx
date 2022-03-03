@@ -12,42 +12,104 @@ const SIZE = {
 
 export const LanguageFlags = ({ locale }: Props) => {
   const { t } = useTranslation();
-  const [shortLocale] = locale.split("-");
-  switch (shortLocale.toLocaleLowerCase()) {
+  switch (locale.toLocaleLowerCase()) {
     case "pl":
       return (
         <Image
           width={SIZE.width}
           height={SIZE.height}
           src="/assets/PL_flag.png"
-          alt={t("flags.pl")}
+          alt={t("flags.pl", "PL")}
         />
       );
-    case "us":
-      return (
-        <Image
-          width={SIZE.width}
-          height={SIZE.height}
-          src="/assets/US_flag.png"
-          alt={t("flags.us")}
-        />
-      );
-    case "ru":
-      return (
-        <Image
-          width={SIZE.width}
-          height={SIZE.height}
-          src="/assets/RU_flag.png"
-          alt={t("flags.ru")}
-        />
-      );
-    case "ua":
+    case "uk":
       return (
         <Image
           width={SIZE.width}
           height={SIZE.height}
           src="/assets/UA_flag.png"
-          alt={t("flags.ua")}
+          alt={t("flags.ua", "UA")}
+        />
+      );
+    case "en":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/US_flag.png"
+          alt={t("flags.en", "EN")}
+        />
+      );
+    case "de":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/DE_flag.png"
+          alt={t("flags.de", "DE")}
+        />
+      );
+    case "fr":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/FR_flag.png"
+          alt={t("flags.fr", "FR")}
+        />
+      );
+    case "uk":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/RO_flag.png"
+          alt={t("flags.ro", "RO")}
+        />
+      );
+    case "hu":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/HU_flag.png"
+          alt={t("flags.hu", "HU")}
+        />
+      );
+    case "es":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/ES_flag.png"
+          alt={t("flags.es", "ES")}
+        />
+      );
+    case "cz":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/CZ_flag.png"
+          alt={t("flags.cz", "CZ")}
+        />
+      );
+    case "sk":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/SK_flag.png"
+          alt={t("flags.sk", "SK")}
+        />
+      );
+    case "it":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/IT_flag.png"
+          alt={t("flags.it", "IT")}
         />
       );
     default:
