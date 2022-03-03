@@ -34,9 +34,6 @@ const LandingFooter = () => {
         <HorizontalLine />
         <FooterContentWrapper>
           <FooterContentRow>
-            <Link href="./" passHref>
-              <FooterItem>{t("rodo")}</FooterItem>
-            </Link>
             <Link href="/polityka-prywatnosci.pdf" passHref>
               <FooterItem>{t("privacyPolicy")}</FooterItem>
             </Link>
@@ -44,9 +41,6 @@ const LandingFooter = () => {
           <FooterContentRow>
             <Link href="/regulamin.pdf" passHref>
               <FooterItem>Regulamin</FooterItem>
-            </Link>
-            <Link href="./" passHref>
-              <FooterItem href="./">{t("patrons")}</FooterItem>
             </Link>
           </FooterContentRow>
         </FooterContentWrapper>
