@@ -95,7 +95,7 @@
   "shareLocation": "Zarejestruj się",
   "registerGuest": "Znajdź lokum",
   "more": "więcej",
-  "register1": "Zarejestuj się",
+  "register1": "Zarejestruj się",
   "register2": "Rejestracja",
   "privacyPolicy": "Polityka prywatności",
   "patrons": "Patroni",
@@ -149,11 +149,18 @@
     ],
     "algorithmExplanation": "Algorytm optymalizuje dopasowania tak, aby jak najwięcej potrzebujących znalazło schronienie.",
     "rolldown": "Rozwiń",
+    "rollup": "Zwiń",
     "description": "Portal łączy osoby potrzebujące wsparcia z osobami i instytucjami oferującymi pomoc.",
     "howItWorks": "Jak to działa?"
   },
   "landingPage": {
     "supportingPartners": "Partnerzy wspierający akcję",
+    "hero": {
+      "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
+      "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
+      "lookingForHelp": "Szukam schronienia",
+      "shareHelp": "Oferuję pomoc"
+    },
     "likeToHelp": {
       "title": "Chcesz pomóc?",
       "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie \n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako \n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu. \n \n Nasza aplikacja pomoże automatycznie dopasować \n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
@@ -163,7 +170,7 @@
       "cards": {
         "helpedPeople": "potrzebujących osób",
         "lookingForHelp": "nadal poszukuje wsparcia",
-        "currentOffers": "aktalnie dostępnych ofert"
+        "currentOffers": "aktualnie dostępnych ofert"
       }
     }
   }

@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
-import StyledContainer from "../Container/index";
 
-export const Container = styled(StyledContainer)`
+export const Container = styled.View`
   position: relative;
   overflow: hidden;
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "140px;")};
@@ -23,7 +22,6 @@ export const GradientBackground = styled.ImageBackground`
   position: absolute;
   background-color: transparent;
   height: 10px;
-  width: 100%;
   background-size: stretch;
   width: 100vw;
   height: 50;
@@ -32,4 +30,5 @@ export const GradientBackground = styled.ImageBackground`
 
 export const ButtonContainer = styled.View`
   align-items: center;
+  width: 100%;
 `;

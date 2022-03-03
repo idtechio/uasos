@@ -1,8 +1,8 @@
 import * as React from "react";
-import { View } from "react-native";
 import { PARTNERS_1ST_ROW, PARTNERS_2ND_ROW } from "./config";
-import styled from "styled-components/native";
+import styled, { css, useTheme } from "styled-components/native";
 import Card from "../Card";
+import { View } from "react-native";
 
 const Row = styled.View`
   width: 100%;
@@ -17,6 +17,15 @@ const StyledCard = styled(Card)`
   margin: 5px;
   height: 65px;
   width: 90px;
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        height: 200px;
+        width: 235px;
+        margin: 16px 8px 0;
+      `,
+    })}
 `;
 
 const Item = styled.View`
@@ -27,6 +36,12 @@ const Item = styled.View`
 const ScrollView = styled.ScrollView`
   padding: 20px 16px 20px 35px;
   margin: -20px 0;
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        padding: 20px 0;
+      `,
+    })}
 `;
 
 const Image = styled.Image`
@@ -34,6 +49,10 @@ const Image = styled.Image`
 `;
 
 const PartnersCarousel = () => {
+  const { getBreakPoint } = useTheme();
+
+  const isDesktop = getBreakPoint({ default: false, lg: true });
+
   return (
     <ScrollView horizontal>
       <View>
@@ -51,7 +70,7 @@ const PartnersCarousel = () => {
           ))}
         </Row>
 
-        <Row style={{ marginLeft: "20px" }}>
+        <Row style={{ marginLeft: isDesktop ? 0 : "20px" }}>
           {PARTNERS_2ND_ROW.map((item) => (
             <StyledCard key={item.image}>
               <Item>
