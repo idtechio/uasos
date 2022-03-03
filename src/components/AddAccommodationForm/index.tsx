@@ -56,7 +56,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
 
   const onSubmit = (data: FormType) => {
     console.log(data);
-    fetch("/api/accommodations/add", {
+    fetch("/api/hosts/add", {
       method: "post",
       body: JSON.stringify({
         name: data.host.core.name,
