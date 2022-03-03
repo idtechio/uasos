@@ -8,7 +8,7 @@ import CompositionGrid from "../Compositions/CompositionGrid";
 type Data = {
   id: FormKey;
   label: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
 };
 
 type Props = {
@@ -45,16 +45,13 @@ const FormButtonsGrid = ({ data }: Props) => {
             key={id}
             control={control}
             render={({ field: { onChange } }) => (
-              <TouchableOpacity
+              <ChoiceButton
                 key={id}
                 onPress={() => onTilePress(id, onChange)}
-              >
-                <ChoiceButton
-                  text={label}
-                  icon={icon}
-                  isChoice={buttonsState.includes(id)}
-                />
-              </TouchableOpacity>
+                text={label}
+                icon={icon}
+                isSelected={buttonsState.includes(id)}
+              />
             )}
             name={id}
           />

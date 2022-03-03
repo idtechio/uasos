@@ -1,8 +1,7 @@
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { TouchableOpacity, Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import { ChoiceButton, InputControl } from "../Forms";
-import { common } from "./styles";
+import { Error } from "./style";
 
 type Props = {
   text: React.ReactNode;
@@ -21,15 +20,16 @@ const FormChoiceButton = ({ text, name, error, errorMsg }: Props) => {
       }}
       render={({ field: { onChange, onBlur, value } }) => (
         <InputControl>
-          <TouchableOpacity
+          <ChoiceButton
+            text={text}
+            isSmall
+            isSelected={!!value}
             onPress={() => {
               onChange(!value);
               onBlur();
             }}
-          >
-            <ChoiceButton text={text} isSmall isChoice={!!value} />
-            {error && <Text style={common.error}>{errorMsg}</Text>}
-          </TouchableOpacity>
+          />
+          {error && <Error>{errorMsg}</Error>}
         </InputControl>
       )}
       name={name}

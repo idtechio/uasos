@@ -14,17 +14,12 @@ export const Select = styled.Pressable`
   border-color: ${(props) =>
     props.isInvalid ? "#D8000C" : props.theme.forms.border};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
-
   padding: 10px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  &:hover {
-    // TO DO
-  }
-  box-shadow: ${(props) =>
-    props.areOptionsVisible ? `0 0 15px #cccccc` : `none`};
+  box-shadow: ${(props) => (props.showOptions ? `0 0 15px #cccccc` : `none`)};
 `;
 
 export const SelectText = styled.Text`
@@ -47,6 +42,12 @@ export const Options = styled.View`
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
   border-color: ${(props) => props.theme.forms.border};
   border-width: ${(props) => props.theme.forms.borderWidth};
+  width: ${(props) => props.selectWidth + `px`};
+  top: ${(props) =>
+    props.direction === "to-bottom" ? props.selectHeight : `unset`};
+  bottom: ${(props) =>
+    props.direction === "to-top" ? props.selectHeight : `unset`};
+  z-index: 100;
 `;
 
 export const ItemList = styled.FlatList`
@@ -55,7 +56,7 @@ export const ItemList = styled.FlatList`
 `;
 
 export const Icon = styled.View`
-  transform: ${(props) => (props.areOptionsVisible ? `rotate(180deg)` : ``)};
+  transform: ${(props) => (props.showOptions ? `rotate(180deg)` : ``)};
 `;
 
 export const SelectItem = styled.Pressable`

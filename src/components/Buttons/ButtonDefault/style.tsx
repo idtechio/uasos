@@ -7,6 +7,7 @@ export const Button = styled.View`
   padding: 6px 12px;
   width: fit-content;
   display: "flex";
+  flex-direction: "row";
 `;
 
 export const ButtonAnchor = styled.Text`

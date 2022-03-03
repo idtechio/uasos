@@ -5,8 +5,8 @@ on:
       - main
 
 env:
-  project_id: 'ukrn-hlpr'
-  image_name: 'sosua'
+  project_id: "ukrn-hlpr"
+  image_name: "sosua"
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
 
 jobs:
@@ -20,9 +20,9 @@ jobs:
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - id: auth
-        uses: 'google-github-actions/auth@v0'
+        uses: "google-github-actions/auth@v0"
         with:
-          credentials_json: '${{ secrets.DEPLOYER_SA_KEY }}'
+          credentials_json: "${{ secrets.DEPLOYER_SA_KEY }}"
       - uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{env.project_id}}

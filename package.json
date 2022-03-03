@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
+    "@google-cloud/pubsub": "^2.19.0",
+    "@react-native-community/checkbox": "^0.5.11",
+    "babel-preset-next": "^1.4.0",
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "next": "latest",
@@ -22,6 +25,8 @@
     "react-native": "^0.67.3",
     "react-native-modal": "^13.0.0",
     "react-native-web": "^0.17.6",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
     "swr": "^1.2.2"
   },

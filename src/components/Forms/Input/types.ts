@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import { ViewStyle, StyleProp } from "react-native";
+
 export type InputProps = {
   placeholder: string;
   onChange?: any;
@@ -5,4 +8,6 @@ export type InputProps = {
   value?: any;
   error?: any;
   type?: string;
+  extra?: ReactNode;
+  labelsBackgroundColor?: string;
 };

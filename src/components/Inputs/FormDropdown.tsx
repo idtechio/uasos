@@ -6,11 +6,11 @@ import {
   useFormContext,
 } from "react-hook-form";
 import InputControl from "../Forms/InputControl";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import { DropdownProps } from "../Dropdown/types";
 import { Dropdown } from "../Dropdown";
-import { common } from "./styles";
+import { Error } from "./style";
 
 type Props = {
   name: FormKey;
@@ -69,7 +69,7 @@ const FormDropdown: VFC<Props> = (props) => {
                 selected={value}
                 error={!!error}
               />
-              {error && <Text style={common.error}>{errorMsg}</Text>}
+              {error && <Error>{errorMsg}</Error>}
             </InputControl>
           </View>
         );

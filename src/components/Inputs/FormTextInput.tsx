@@ -1,20 +1,23 @@
-import { VFC } from "react";
+import { VFC, ReactNode } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
+
+import { Error } from "./style";
 import Input from "../Forms/Input";
 import InputControl from "../Forms/InputControl";
-import { Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
-import { common } from "./styles";
 
 type Props = {
   name: FormKey;
   label: string;
   error?: FieldError;
   errorMsg?: string;
+  extra?: ReactNode;
+  labelsBackgroundColor?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput: VFC<Props> = (props) => {
-  const { name, label, errorMsg, rules, error } = props;
+  const { name, label, errorMsg, rules, error, extra, labelsBackgroundColor } =
+    props;
   const { control } = useFormContext();
   return (
     <Controller
@@ -26,10 +29,11 @@ const FormTextInput: VFC<Props> = (props) => {
             placeholder={label}
             onChange={onChange}
             onBlur={onBlur}
-            value={value}
             error={error}
+            extra={extra}
+            labelsBackgroundColor={labelsBackgroundColor}
           />
-          {error && <Text style={common.error}>{errorMsg}</Text>}
+          {error && <Error>{errorMsg}</Error>}
         </InputControl>
       )}
       name={name}

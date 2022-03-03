@@ -32,3 +32,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+sa_key.json
+
+# ide
+.vscode

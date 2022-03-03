@@ -61,7 +61,7 @@ type PathsToStringProps<T> = T extends string | number | Date | boolean
       [K in Extract<keyof T, any>]: [K, ...PathsToStringProps<T[K]>];
     }[Extract<keyof T, any>];
 
-type JoinTuple<T extends string[], D extends string> = T extends []
+type JoinTuple<T extends (string | number)[], D extends string> = T extends []
   ? never
   : T extends [infer F]
   ? F

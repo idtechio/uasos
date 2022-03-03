@@ -12,6 +12,8 @@ export const InputWraper = styled.View<InputControlProps>`
 export const InputCotrolLabel = styled.Text`
   color: ${(props) => props.theme.colors.headings};
   margin-bottom: 16px;
+  align-items: center;
+  display: flex;
 `;
 
 export const InputCotrolLabelSmall = styled.Text`

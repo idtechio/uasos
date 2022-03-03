@@ -17,12 +17,13 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 For dev purposes:
 
 To launch app without firebase add patch below:
+
 ```ts
 ------------------------------- lib/firebase.js -------------------------------
 index f90a8c4..2766c48 100644
 @@ -1,15 +1,4 @@
  import * as admin from "firebase-admin";
- 
+
 -if (!admin.apps.length) {
 -  admin.initializeApp({
 -    credential: admin.credential.cert({
@@ -42,7 +43,7 @@ index f90a8c4..2766c48 100644
 index 2254fc6..9a84a73 100644
 @@ -75,12 +75,9 @@ function Home(props) {
  }
- 
+
  export async function getStaticProps() {
 -  const res = await fetch("http://localhost:3000/api/accommodations");
 -  const data = await res.json();

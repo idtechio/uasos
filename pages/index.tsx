@@ -1,113 +1,60 @@
-import OfferBox from "../src/components/OfferBox";
-import {
-  CompositionAppBody,
-  CompositionContainer,
-} from "../src/components/Compositions";
-import Filters from "../src/components/Filters";
-import Cities from "../src/consts/cities.json";
-import { useState } from "react";
+import * as React from "react";
+import { ScrollView, View } from "react-native";
+import styled from "styled-components/native";
+import Header from "../src/components/Header";
+import HeroImage from "../src/components/HeroImage";
+import Section from "../src/components/Section";
+import PartnersCarousel from "../src/components/PartnersCarousel";
+import WhatWeDoSection from "../src/components/LandingSections/WhatWeDo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { ButtonCta } from "../src/components/Buttons";
-import { ThankfulnessModal } from "../src/components/ThankfulnessModal";
+import LandingFooter from "../src/components/LandingFooter/LandingFooter";
+import LandingMatchedSection from "../src/components/LandingMatchedSection/LandingMatchedSection";
+import SectionTitle from "../src/components/SectionTitle";
+import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 
-function Home(props) {
+const HeroImageWrapper = styled.View`
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+`;
+
+const ElipseEffect = styled.View`
+  height: 100px;
+  width: 140%;
+  top: -20px;
+  margin-bottom: -70px;
+  background-color: white;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+`;
+
+function Landing() {
   const { t } = useTranslation();
-  const [filters, setFilters] = useState({
-    city: null,
-    guests: null,
-    timeframe: null,
-    toddler: null,
-  });
-
-  const [showModal, setShowModal] = useState(false);
-
-  const { data } = props;
 
   return (
-    <CompositionAppBody>
-      <ButtonCta
-        anchor="Pokaz modal dziękujemy"
-        onPress={() => setShowModal(true)}
-      />
-      {showModal && <ThankfulnessModal />}
-      <Filters
-        filters={[
-          {
-            name: t("labels.location"),
-            options: Cities.map(({ name }) => ({ value: name, label: name })),
-            onSubmit: (e) => setFilters({ ...filters, city: e }),
-            value: filters.city,
-          },
-          {
-            name: t("labels.numberOfGuests"),
-            options: [
-              { value: "1", label: "1" },
-              { value: "2", label: "2" },
-              { value: "3", label: "3" },
-              { value: "4", label: "4" },
-              { value: "5", label: "5" },
-              { value: ">5", label: t("more") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, guests: e }),
-            value: filters.guests,
-          },
-          {
-            name: t("labels.timePeriod"),
-            options: [
-              { value: "tydzień", label: t("staticValues.timePeriod.week") },
-              {
-                value: "2 tygodnie",
-                label: t("staticValues.timePeriod.twoWeeks"),
-              },
-              { value: "miesiąc", label: t("staticValues.timePeriod.month") },
-              { value: "dłuzej", label: t("staticValues.timePeriod.longer") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, timeframe: e }),
-            value: filters.timeframe,
-          },
-          {
-            name: t("labels.withKids"),
-            options: [
-              { value: "tak", label: t("staticValues.boolean.yes") },
-              { value: "nie", label: t("staticValues.boolean.no") },
-            ],
-            onSubmit: (e) => setFilters({ ...filters, toddler: e }),
-            value: filters.toddler,
-          },
-        ]}
-      />
-      <CompositionContainer>
-        <>
-          {data.map((accommodation, index) => {
-            // TODO replace index with some id
-            return <OfferBox {...accommodation} key={index} />;
-          })}
-        </>
-      </CompositionContainer>
-    </CompositionAppBody>
+    <ScrollView>
+      <Header />
+      <HeroImageWrapper>
+        <HeroImage />
+        <ElipseEffect />
+      </HeroImageWrapper>
+      <Section bgColor="#fff">
+        <SectionTitle title={t("landingPage.supportingPartners")} />
+        <View style={{ alignItems: "center" }}>
+          <PartnersCarousel />
+        </View>
+      </Section>
+      <WhatWeDoSection />
+      <LikeToHelpSection />
+      <LandingMatchedSection />
+      <LandingFooter />
+    </ScrollView>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  /** TODO: Uncomment when remote API is ready */
-  // const res = await fetch("http://localhost:3000/api/accommodations");
-  // const data = await res.json();
+export const getServerSideProps = async ({ locale }) => ({
+  props: { ...(await serverSideTranslations(locale)) },
+});
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale)),
-      data: [
-        {
-          location: "Warszawa",
-          host: "owner",
-          conditions: null,
-          preferences: ["animals", "disability", "foof"],
-          resources: null,
-        },
-      ],
-    },
-  };
-}
-
-export default Home;
+export default Landing;
