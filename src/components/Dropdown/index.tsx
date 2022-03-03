@@ -77,7 +77,7 @@ export const Dropdown = ({
 
   return (
     <>
-      {label && <SelectLabel>{label}</SelectLabel>}
+      {label ? <SelectLabel>{label}</SelectLabel> : null}
       <View
         onLayout={(event) => {
           setSelectWidth(event.nativeEvent.layout.width);
@@ -114,7 +114,7 @@ export const Dropdown = ({
           </Icon>
         </Select>
 
-        {showOptions && (
+        {showOptions ? (
           <>
             <Options
               selectWidth={selectWidth}
@@ -133,7 +133,7 @@ export const Dropdown = ({
               />
             </Options>
           </>
-        )}
+        ) : null}
       </View>
     </>
   );

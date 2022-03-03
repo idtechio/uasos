@@ -17,7 +17,7 @@ export const SearchHeader = ({ data, searchable, setFilteredData }) => {
 
   return (
     <>
-      {searchable && (
+      {searchable ? (
         <Search>
           <TextInput
             placeholder={t("dropdownSearch")}
@@ -25,7 +25,7 @@ export const SearchHeader = ({ data, searchable, setFilteredData }) => {
             value={text}
           />
         </Search>
-      )}
+      ) : null}
     </>
   );
 };
