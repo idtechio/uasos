@@ -99,6 +99,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               label={t("labels.name")}
               rules={{
                 required: true,
+                maxLength: 50,
               }}
               error={errors?.host?.core?.name}
               errorMsg={t("validations.requiredName")}
@@ -108,6 +109,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               label={t("labels.email")}
               rules={{
                 required: true,
+                maxLength: 100,
                 pattern: {
                   value: /\S+@\S+\.\S+/,
                   message: t("validations.invalidEmail"),
@@ -121,6 +123,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               label={t("labels.town")}
               rules={{
                 required: true,
+                maxLength: 50,
               }}
               error={errors?.host?.core?.location}
               errorMsg={t("validations.requiredTown")}
