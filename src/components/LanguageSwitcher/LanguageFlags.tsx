@@ -18,16 +18,16 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/PL_flag.png"
+          src="/assets/PL_flag.svg"
           alt={t("flags.pl", "PL")}
         />
       );
-    case "uk":
+    case "ua":
       return (
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/UA_flag.png"
+          src="/assets/UA_flag.svg"
           alt={t("flags.ua", "UA")}
         />
       );
@@ -36,7 +36,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/US_flag.png"
+          src="/assets/EN_flag.svg"
           alt={t("flags.en", "EN")}
         />
       );
@@ -45,7 +45,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/DE_flag.png"
+          src="/assets/DE_flag.svg"
           alt={t("flags.de", "DE")}
         />
       );
@@ -54,7 +54,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/FR_flag.png"
+          src="/assets/FR_flag.svg"
           alt={t("flags.fr", "FR")}
         />
       );
@@ -63,7 +63,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/RO_flag.png"
+          src="/assets/RU_flag.svg"
           alt={t("flags.ro", "RO")}
         />
       );
@@ -72,7 +72,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/HU_flag.png"
+          src="/assets/HU_flag.svg"
           alt={t("flags.hu", "HU")}
         />
       );
@@ -81,16 +81,16 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/ES_flag.png"
+          src="/assets/ES_flag.svg"
           alt={t("flags.es", "ES")}
         />
       );
-    case "cs":
+    case "cz":
       return (
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/CZ_flag.png"
+          src="/assets/CZ_flag.svg"
           alt={t("flags.cz", "CZ")}
         />
       );
@@ -99,7 +99,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/SK_flag.png"
+          src="/assets/SK_flag.svg"
           alt={t("flags.sk", "SK")}
         />
       );
@@ -108,7 +108,7 @@ export const LanguageFlags = ({ locale }: Props) => {
         <Image
           width={SIZE.width}
           height={SIZE.height}
-          src="/assets/IT_flag.png"
+          src="/assets/IT_flag.svg"
           alt={t("flags.it", "IT")}
         />
       );
