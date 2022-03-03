@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
-    "@react-native-community/checkbox": "^0.5.11",
     "@google-cloud/pubsub": "^2.19.0",
+    "@react-native-community/checkbox": "^0.5.11",
+    "babel-preset-next": "^1.4.0",
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "next": "latest",
