@@ -143,7 +143,7 @@
   "whatSosUaDoesSection": {
     "title": "Co robi SOS-UA?",
     "bulletPoints": [
-      "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna ilość osób, długość pobytu)",
+      "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna liczba osób, długość pobytu)",
       "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",
       "SOS-UA automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
     ],
@@ -157,13 +157,13 @@
     "supportingPartners": "Partnerzy wspierający akcję",
     "hero": {
       "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
-      "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
+      "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal automatycznie łączy potrzebujących z osobami oferującymi bezpieczne miejsce.",
       "lookingForHelp": "Szukam schronienia",
       "shareHelp": "Oferuję pomoc"
     },
     "likeToHelp": {
       "title": "Chcesz pomóc?",
-      "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie \n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako \n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu. \n \n Nasza aplikacja pomoże automatycznie dopasować \n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
+      "details": "Jeśli dysponujesz miejscem, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako wolontariusz i wypełnij kwestionariusz opisujący miejsce, które chcesz udostępnić. \n \n Nasza aplikacja pomoże Ci automatycznie znaleźć potrzebujących Twojej pomocy."
     },
     "weMatched": {
       "title": "Udało nam się dopasować już...",

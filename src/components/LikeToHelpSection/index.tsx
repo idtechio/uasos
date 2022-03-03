@@ -41,6 +41,7 @@ const ContentContainer = styled.View`
     theme.getBreakPoint({
       lg: css`
         padding-left: 40px;
+        max-width: 50%;
       `,
     })}
 `;
