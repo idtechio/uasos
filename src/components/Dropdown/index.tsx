@@ -117,12 +117,9 @@ export const Dropdown = ({
         {showOptions && (
           <>
             <Options
-              style={{
-                width: selectWidth + "px",
-                top: direction === "to-bottom" ? selectHeight : "unset",
-                bottom: direction === "to-top" ? selectHeight : "unset",
-                zIndex: "100",
-              }}
+              selectWidth={selectWidth}
+              selectHeight={selectHeight}
+              direction={direction}
             >
               <SearchHeader
                 data={data}
