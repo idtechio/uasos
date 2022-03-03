@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/helpers/sendToEvaporationEngine.ts",
-    "pages/api/guests/add.js"
+    "pages/api/guests/add.js",
+    "pages/regulamin.js"
   ],
   "exclude": ["node_modules"]
 }
