@@ -1,0 +1,34 @@
+{
+  "supportingPartners": "Partnerzy wspierający akcję",
+  "hero": {
+    "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
+    "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
+    "lookingForHelp": "Szukam schronienia",
+    "shareHelp": "Oferuję pomoc"
+  },
+  "likeToHelp": {
+    "title": "Chcesz pomóc?",
+    "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie \n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako \n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu. \n \n Nasza aplikacja pomoże automatycznie dopasować \n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
+  },
+  "weMatched": {
+    "title": "Udało nam się dopasować już...",
+    "cards": {
+      "helpedPeople": "potrzebujących osób",
+      "lookingForHelp": "nadal poszukuje wsparcia",
+      "currentOffers": "aktualnie dostępnych ofert"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "Co robi SOS-UA?",
+    "bulletPoints": {
+      "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna ilość osób, długość pobytu)",
+      "1": "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",
+      "2": "SOS-UA automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
+    },
+    "algorithmExplanation": "Algorytm optymalizuje dopasowania tak, aby jak najwięcej potrzebujących znalazło schronienie.",
+    "rolldown": "Rozwiń",
+    "rollup": "Zwiń",
+    "description": "Portal łączy osoby potrzebujące wsparcia z osobami i instytucjami oferującymi pomoc.",
+    "howItWorks": "Jak to działa?"
+  }
+}

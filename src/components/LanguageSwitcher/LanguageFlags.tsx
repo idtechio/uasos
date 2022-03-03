@@ -58,7 +58,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.fr", "FR")}
         />
       );
-    case "uk":
+    case "ro":
       return (
         <Image
           width={SIZE.width}
@@ -85,7 +85,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.es", "ES")}
         />
       );
-    case "cz":
+    case "cs":
       return (
         <Image
           width={SIZE.width}

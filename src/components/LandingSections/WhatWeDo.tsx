@@ -20,7 +20,7 @@ const WhatWeDoSection = () => {
   const { getBreakPoint } = useTheme();
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("landingPage");
 
   const [isOpen, setOpen] = useState(false);
 

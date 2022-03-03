@@ -1,0 +1,11 @@
+{
+  "arrival": "Przyjazd do Polski",
+  "persons": "Liczba gości",
+  "locationPreference": "Preferowana lokalizacja",
+  "anyLocation": "Dowolna",
+  "travelingWithAnimal": "jest z nami zwierzak",
+  "travelingWithOlderPerson": "jest z nami starsza osoba",
+  "travelingWithDisabledPerson": "jest z nami osoba niepełnosprawna",
+  "travelingWithToddler": "jest z nami dziecko",
+  "inviteGuest": "Przyjmij do siebie"
+}

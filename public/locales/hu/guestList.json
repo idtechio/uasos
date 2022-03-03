@@ -1,0 +1,11 @@
+{
+  "arrival": "Érkezési dátum",
+  "persons": "Vendégek száma",
+  "locationPreference": "Előnyben részesített hely",
+  "anyLocation": "Bármelyik",
+  "travelingWithAnimal": "Állattal utazom",
+  "travelingWithOlderPerson": "Idős emberrel utazom",
+  "travelingWithDisabledPerson": "Mozgássérült emberrel utazom",
+  "travelingWithToddler": "Gyerekkel utazom",
+  "inviteGuest": "Vendég meghívása"
+}
