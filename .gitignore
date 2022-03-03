@@ -34,3 +34,6 @@ yarn-error.log*
 .vercel
 
 sa_key.json
+
+# ide
+.vscode
