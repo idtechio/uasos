@@ -27,6 +27,7 @@
   },
   "staticValues": {
     "timePeriod": {
+      "lessThanAWeek": "mniej niż tydzień",
       "week": "tydzień",
       "twoWeeks": "2 tygodnie",
       "month": "miesiąc",
@@ -195,6 +196,7 @@
     "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
     "cityOfRefugeLabel": "Wybierz miasto:",
+    "overnightTimeLabel": "Na jaki okres poszukujesz noclegu?",
     "cityOfRefugePlaceholder": "Wybierz obszar",
     "nameLabel": "Imię (Podaj tylko pierwsze imię)",
     "namePlaceholder": "Imię",
@@ -208,11 +210,12 @@
     "countryOfGroupOthers": "Inne",
     "accompanyingPerson": "Osoba towarzysząca",
     "errors": {
-      "name": "",
-      "email": "",
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
       "cityOfRefuge": "",
       "childBedCount": "",
-      "fullBedCountsaas": ""
+      "fullBedCountsaas": "",
+      "accommodationType": ""
     }
   },
   "whatSosUaDoesSection": {

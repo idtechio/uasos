@@ -9,7 +9,7 @@ import COUNTRY_LIST from "../../consts/countryDropdown.json";
 
 type Props = {
   name: FormKey;
-  label: string;
+  label?: string;
   zIndex?: number;
   placeholder?: string;
   error?: FieldError;
@@ -30,31 +30,27 @@ const FormTextInput: VFC<Props> = (props) => {
   } = props;
   const { control } = useFormContext();
   return (
-    <InputControl>
-      <CenteredView>
-        <Controller
-          control={control}
-          rules={rules}
-          render={({ field: { onChange, value } }) => (
-            <FormDropdown
-              zIndex={zIndex}
-              data={COUNTRY_LIST}
-              name={name}
-              placeholder={placeholder}
-              rules={rules}
-              error={error}
-              label={label}
-              errorMsg={errorMsg}
-              multiSelect={multiSelect}
-              onChange={onChange}
-              value={value}
-            />
-          )}
-          name={name}
-        />
-        {error && <Error>{errorMsg}</Error>}
-      </CenteredView>
-    </InputControl>
+    <>
+      <Controller
+        control={control}
+        rules={rules}
+        render={({ field: { onChange, value } }) => (
+          <FormDropdown
+            zIndex={zIndex}
+            data={COUNTRY_LIST}
+            name={name}
+            placeholder={placeholder}
+            rules={rules}
+            error={error}
+            label={label}
+            errorMsg={errorMsg}
+            multiSelect={multiSelect}
+          />
+        )}
+        name={name}
+      />
+      {error && <Error>{errorMsg}</Error>}
+    </>
   );
 };
 export default FormTextInput;

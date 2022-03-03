@@ -85,6 +85,7 @@ export type FormType = {
     cityOfRefuge: string;
     fullBedCount: number;
     childBedCount: number;
+    phoneNumber: string;
     sex: string;
     age: number;
     nationality: string;
