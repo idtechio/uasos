@@ -18,7 +18,7 @@ import {
   InputControl,
   InputCotrolLabel as InputControlLabel,
 } from "../Forms";
-import UploadInput from "../Forms/UploadInput";
+import UploadInput from "../Forms/UploadInput/index.web";
 import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";

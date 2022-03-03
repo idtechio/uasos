@@ -31,10 +31,8 @@ const UploadInput = ({ accept, children, onFileChange }: UploadInputProps) => {
   const [isLoading, toggleLoading] = useState(false);
 
   const handleClick = useCallback(() => {
-    if (!isLoading) {
-      if (inputRef.current) {
-        inputRef.current.click();
-      }
+    if (!isLoading && inputRef.current) {
+      inputRef.current.click();
     }
   }, [isLoading]);
 
