@@ -27,10 +27,26 @@
   },
   "staticValues": {
     "timePeriod": {
+      "lessThanAWeek": "",
       "week": "",
       "twoWeeks": "",
       "month": "",
       "longer": ""
+    },
+    "groupRelations": {
+      "single_man": "",
+      "single_woman": "",
+      "spouses": "",
+      "mother_with_children": "",
+      "family_with_children": "",
+      "unrelated_group": ""
+    },
+    "accommodationTypes": {
+      "bed": "",
+      "room": "",
+      "flat": "",
+      "house": "",
+      "public_shared_space": ""
     },
     "boolean": {
       "yes": "",
@@ -105,6 +121,7 @@
   "register1": "",
   "register2": "",
   "privacyPolicy": "",
+  "termsOfService": "",
   "patrons": "",
   "rodo": "",
   "thankfulnessModal": {
@@ -117,7 +134,8 @@
       "animals": "",
       "toddler": "",
       "oldPerson": "",
-      "disability": ""
+      "disability": "",
+      "pregnant": ""
     },
     "refugeesCountOptions": {
       "alone": "",
@@ -146,5 +164,75 @@
       "city": "",
       "addRefugee": ""
     }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "",
+    "addButton": "",
+    "pregnantReady": "",
+    "dissabilityReady": "",
+    "animalReady": "",
+    "elderReady": "",
+    "ageLabel": "",
+    "genderLabel": "",
+    "genderPlaceholder": "",
+    "travelCompanions": "",
+    "fullBedCountLabel": "",
+    "childBedCountLabel": "",
+    "placeOfRefuge": "",
+    "countryOfRefugeLabel": "",
+    "countryOfRefugePlaceholder": "",
+    "cityOfRefugeLabel": "",
+    "overnightDurationLabel": "",
+    "cityOfRefugePlaceholder": "",
+    "nameLabel": "",
+    "namePlaceholder": "",
+    "emailLabel": "",
+    "emailPlaceholder": "",
+    "groupRelations": "",
+    "selectPlaceholder": "",
+    "accommodationType": "",
+    "countryOfGroup": "",
+    "countryOfGroupUA": "",
+    "countryOfGroupOthers": "",
+    "accompanyingPerson": "",
+    "errors": {
+      "name": "",
+      "email": "",
+      "gender": "",
+      "cityOfRefuge": "",
+      "phoneNumber": "",
+      "countryOfRefuge": "",
+      "childBedCount": "",
+      "fullBedCountsaas": "",
+      "groupRelations": "",
+      "overnightDuration": "",
+      "accommodationType": ""
+    }
+  },
+  "accomodationPhoto": "",
+  "accomodationPhotoReset": "",
+  "accomodationPhotoLabel": "",
+  "dropdownChoose": "",
+  "dropdownSearch": "",
+  "heroImageAlt": "",
+  "hostAdd": {
+    "accommodationTime": "",
+    "addButton": "",
+    "additionalInformationHeader": "",
+    "animalReady": "",
+    "any": "",
+    "basicInfoHeader": "",
+    "childBedCount": "",
+    "city": "",
+    "country": "",
+    "dissabilityReady": "",
+    "fullBedCount": "",
+    "groupsTypes": "",
+    "nationality": "",
+    "pregnantReady": "",
+    "prolongationReady": "",
+    "transportReady": "",
+    "type": "",
+    "ukraine": ""
   }
 }
