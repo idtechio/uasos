@@ -2,8 +2,9 @@ import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { ButtonCta } from "../Buttons";
 import heroImage from "../../../public/hero.png";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 const Container = styled.View`
   width: 100%;
@@ -104,9 +105,10 @@ const ButtonStyle = styled(ButtonCta)`
 
 const HeroImage = () => {
   const { t } = useTranslation();
+  const { data: session } = useSession();
   return (
     <Container>
-      <Image source={heroImage.src} alt={t("heroImage")}>
+      <Image source={heroImage.src}>
         <HeroImageOverlay />
         <ContentWrapper>
           <TextContainer>
@@ -117,12 +119,28 @@ const HeroImage = () => {
             <SubTitle>{t("landingPage.hero.description")}</SubTitle>
 
             <ButtonContainer>
-              <ButtonStyle
-                first
-                anchor={t("landingPage.hero.lookingForHelp")}
-                onPress={() => signIn()}
-              />
-              <ButtonStyle anchor={t("landingPage.hero.shareHelp")} />
+              {session ? (
+                <>
+                  <Link href="/guest">
+                    <a>
+                      <ButtonStyle
+                        anchor={t("landingPage.hero.lookingForHelp")}
+                      />
+                    </a>
+                  </Link>
+                  <Link href="/host">
+                    <a>
+                      <ButtonStyle anchor={t("landingPage.hero.shareHelp")} />
+                    </a>
+                  </Link>
+                </>
+              ) : (
+                <ButtonStyle
+                  first
+                  anchor={t("shareLocation")}
+                  onPress={() => signIn()}
+                />
+              )}
             </ButtonContainer>
           </TextContainer>
         </ContentWrapper>

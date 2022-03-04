@@ -1,12 +1,14 @@
 import { StyleSheet, View } from "react-native";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ButtonCta } from "../src/components/Buttons";
 
 import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
 import AddRefugeeForm from "../src/components/AddRefugeeForm";
+import { useTranslation } from "next-i18next";
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -16,10 +18,15 @@ export const getServerSideProps = async ({ locale }) => ({
 export default function Account(props) {
   const hostAddAccommodation = false;
   const { data: session } = useSession();
+  const { t } = useTranslation();
 
   return (
     <CompositionAppBody>
-      {session ? <AddRefugeeForm /> : <AddRefugeeForm />}
+      {session ? (
+        <AddRefugeeForm />
+      ) : (
+        <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+      )}
     </CompositionAppBody>
   );
 }

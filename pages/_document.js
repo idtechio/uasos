@@ -13,6 +13,9 @@ const normalizeNextElements = `
   a {
     text-decoration: none;
   }
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
 `;
 
 export default class MyDocument extends Document {

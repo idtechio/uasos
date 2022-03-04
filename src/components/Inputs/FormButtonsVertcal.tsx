@@ -58,7 +58,7 @@ const FormButtonsVertical = ({ data, label }: Props) => {
                   icon={icon}
                   isSelected={buttonsState.includes(id)}
                 />
-                {extra && value && extra}
+                {/* {extra && value && extra} */}
               </View>
             )}
             name={id}

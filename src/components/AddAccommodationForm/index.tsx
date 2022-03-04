@@ -56,7 +56,8 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const onSubmit = (data: FormType) => {
-    fetch("/api/accommodations/add", {
+    console.log(data);
+    fetch("/api/hosts/add", {
       method: "post",
       body: JSON.stringify({
         name: data.host.core.name,
@@ -99,6 +100,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               label={t("labels.name")}
               rules={{
                 required: true,
+                maxLength: 50,
               }}
               error={errors?.host?.core?.name}
               errorMsg={t("validations.requiredName")}
@@ -108,6 +110,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               label={t("labels.email")}
               rules={{
                 required: true,
+                maxLength: 100,
                 pattern: {
                   value: /\S+@\S+\.\S+/,
                   message: t("validations.invalidEmail"),
@@ -117,23 +120,11 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
               errorMsg={t("validations.invalidEmail")}
             />
             <FormTextInput
-              name="host.core.phoneNumber"
-              label={t("labels.phone")}
-              rules={{
-                required: true,
-                pattern: {
-                  value: /\d{9,15}/,
-                  message: t("validations.invalidPhoneNumber"),
-                },
-              }}
-              error={errors?.host?.core?.phoneNumber}
-              errorMsg={t("validations.invalidPhoneNumber")}
-            />
-            <FormTextInput
               name="host.core.location"
               label={t("labels.town")}
               rules={{
                 required: true,
+                maxLength: 50,
               }}
               error={errors?.host?.core?.location}
               errorMsg={t("validations.requiredTown")}
@@ -190,7 +181,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   { label: "3", value: 3 },
                   { label: "4", value: 4 },
                   { label: "5", value: 5 },
-                  { label: t("more"), value: "more" },
+                  { label: t("more"), value: 999 },
                 ]}
                 errorMsg={t("validations.requiredPeopleQuantity")}
               />
@@ -278,7 +269,7 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
                   { label: "2", value: 2 },
                   { label: "3", value: 3 },
                   { label: "4", value: 4 },
-                  { label: t("staticValues.withElevator"), value: "elevator" },
+                  { label: t("staticValues.withElevator"), value: 0 },
                 ]}
                 errorMsg={t("validations.requiredFloor")}
               />
