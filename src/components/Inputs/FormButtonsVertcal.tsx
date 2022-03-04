@@ -8,7 +8,7 @@ import { InputControl, InputCotrolLabel } from "../Forms";
 import ChoiceButton from "../Forms/ChoiceButton";
 
 export type Data = {
-  id: string;
+  id: FormKey;
   label: string;
   icon?: ReactNode;
   extra?: ReactNode;

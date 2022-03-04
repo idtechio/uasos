@@ -103,6 +103,9 @@
   },
   "hostAdd": {
     "country": "Kraj",
+    "countries": {
+      "poland": "Polska"
+    },
     "town": "Miasto",
     "type": "Typ noclegu",
     "hostType": "Typ gospodarza",
@@ -123,6 +126,7 @@
       "month": "Miesiąc",
       "longer": "Dłużej"
     },
+    "volunteerVisitAcceptance": "Zgadzam się na weryfikację mieszkania (wizytę wolontariusza)",
     "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "ukraine": "Ukraina",
     "any": "Dowolne",

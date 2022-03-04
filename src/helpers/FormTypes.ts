@@ -95,6 +95,8 @@ export type FormType = {
     prolongationReady: boolean;
     accomodationPhoto: Blob;
     hostType: HostType;
+    volunteerVisitAcceptance: string;
+    elderReady: string;
   };
 };
 

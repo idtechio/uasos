@@ -31,6 +31,7 @@ import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
+import FormCheckbox from "../Inputs/FormCheckbox";
 
 const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 1", value: "Item 1" },
@@ -84,6 +85,7 @@ export default function AddAccommodationAdvancedForm() {
     defaultValues: {
       advancedHost: {
         guestCount: 0,
+        country: "poland",
       },
     },
   });
@@ -113,7 +115,7 @@ export default function AddAccommodationAdvancedForm() {
           <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
           <FormDropdown
             zIndex={14}
-            data={DUMMY_DROPDOWN_ITEMS}
+            data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
             placeholder={t("hostAdd.country")}
             name="advancedHost.country"
             rules={{
@@ -280,6 +282,17 @@ export default function AddAccommodationAdvancedForm() {
             errorMsg={t("hostAdd.errors.groupsTypes")}
           />
           <FormButtonsVertical data={additionalHostsFeats} />
+        </CompositionSection>
+        <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
+          <FormCheckbox
+            rules={{
+              required: true, // TODO
+            }}
+            error={errors?.refugee?.isGDPRAccepted}
+            errorMsg={t("hostAdd.errors.required")}
+            name={t("hostAdd.volunteerVisitAcceptance")}
+            label={t("hostAdd.volunteerVisitAcceptance")}
+          />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <InputControl>
