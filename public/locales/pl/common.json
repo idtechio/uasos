@@ -105,9 +105,24 @@
     "country": "Kraj",
     "town": "Miasto",
     "type": "Typ noclegu",
-    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
-    "childBedCount": "Liczba miejsc do spania dla dzieci",
-    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "hostType": "Typ gospodarza",
+    "hostTypeLabel": {
+      "host_type_men": "Męczyzna (sam)",
+      "host_type_women": "Kobieta (sama)",
+      "host_type_couple": "Para / małżonkowie",
+      "host_type_family": "Rodzina z dzieckiem/dziećmi",
+      "host_type_elder_people": "Osoby starsze",
+      "host_type_friends_group": "Grupa znajomych"
+    },
+    "guestCount": "Ile osób możesz przyjąć?",
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia?",
+    "accommodationTimeLabel": {
+      "less_than_week": "Poniej tygodnia",
+      "week": "Tydzień",
+      "two_weeks": "2 tygodnie",
+      "month": "Miesiąc",
+      "longer": "Dłużej"
+    },
     "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "ukraine": "Ukraina",
     "any": "Dowolne",
@@ -115,6 +130,7 @@
     "transportReady": "Oferuję możliwość transportu",
     "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
     "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "elderReady": "Przyjmę osobę/osoby starsze",
     "animalReady": "Przyjmę osobę ze zwierzakiem",
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
     "additionalInformationHeader": "Dodatkowe informacje",
@@ -124,9 +140,9 @@
       "country": "Kraj jest wymagany",
       "town": "Miasto jest wymagane",
       "type": "Typ noclegu jest wymagany",
-      "fullBedCount": "",
-      "childBedCount": "",
-      "accommodationTime": "",
+      "hostType": "Typ gospodarza jest wymagany",
+      "guestCount": "",
+      "accommodationTime": "Okres trwania pobytu jest wymagany",
       "nationality": "",
       "groupsTypes": ""
     }

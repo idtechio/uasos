@@ -24,6 +24,22 @@ type PeopleDetails = {
   disability: boolean;
 };
 
+export enum HostType {
+  MALE = "host_type_men",
+  WOMEN = "host_type_women",
+  COUPLE = "host_type_couple",
+  FAMILY = "host_type_family",
+  ELDER = "host_type_elder_people",
+  FRIENDS = "host_type_friends_group",
+}
+
+export enum AccomodationTime {
+  LESS_THAN_WEEK = "less_than_week",
+  WEEK = "week",
+  TWO_WEEKS = "two_weeks",
+  MONTH = "month",
+  LONGER = "longer",
+}
 export type FormType = {
   host: {
     core: {
@@ -67,9 +83,9 @@ export type FormType = {
     town: string;
     country: string;
     accommodationType: string;
-    fullBedCount: number;
+    guestCount: number;
     childBedCount: number;
-    accommodationTime: number;
+    accommodationTime: AccomodationTime;
     nationality: Nationality;
     groupsTypes: string;
     transportReady: boolean;
@@ -78,6 +94,7 @@ export type FormType = {
     animalReady: boolean;
     prolongationReady: boolean;
     accomodationPhoto: Blob;
+    hostType: HostType;
   };
 };
 

@@ -8,14 +8,14 @@ import { InputControl, InputCotrolLabel } from "../Forms";
 import ChoiceButton from "../Forms/ChoiceButton";
 
 export type Data = {
-  id: FormKey;
+  id: string;
   label: string;
   icon?: ReactNode;
   extra?: ReactNode;
 };
 
 type Props = {
-  label: string;
+  label?: string;
   data: Data[];
 };
 
@@ -41,7 +41,7 @@ const FormButtonsVertical = ({ data, label }: Props) => {
 
   return (
     <InputControl>
-      <InputCotrolLabel>{label}</InputCotrolLabel>
+      {!!label && <InputCotrolLabel>{label}</InputCotrolLabel>}
       {data.map(({ id, label, icon, extra }) => {
         return (
           <Controller

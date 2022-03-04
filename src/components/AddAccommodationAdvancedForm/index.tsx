@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState, useMemo } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
@@ -9,9 +9,19 @@ import {
   View,
 } from "react-native";
 import styled from "styled-components/native";
-import { FormKey, FormType } from "../../helpers/FormTypes";
+import {
+  AccomodationTime,
+  FormKey,
+  FormType,
+  HostType,
+} from "../../helpers/FormTypes";
 import { primary } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
+import AnimalsIcon from "../../style/svgs/animals.svg";
+import DisabilityIcon from "../../style/svgs/disability.svg";
+import PregnancyIcon from "../../style/svgs/pregnancy.svg";
+import CarIcon from "../../style/svgs/car.svg";
+import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
 
 import { CompositionSection } from "../Compositions";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
@@ -20,6 +30,7 @@ import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
+import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 
 const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 1", value: "Item 1" },
@@ -31,26 +42,6 @@ const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 7", value: "Item 7" },
 ];
 
-const ADDITIONAL_HOST_FEATS: {
-  name: FormKey;
-  translateId: string;
-}[] = [
-  {
-    name: "advancedHost.transportReady" as const,
-    translateId: "hostAdd.transportReady",
-  },
-  { name: "advancedHost.pregnantReady", translateId: "hostAdd.pregnantReady" },
-  {
-    name: "advancedHost.dissabilityReady",
-    translateId: "hostAdd.dissabilityReady",
-  },
-  { name: "advancedHost.animalReady", translateId: "hostAdd.animalReady" },
-  {
-    name: "advancedHost.prolongationReady",
-    translateId: "hostAdd.prolongationReady",
-  },
-];
-
 const DeletePhotoText = styled.Text`
   color: ${(props) => props.theme.colors.error};
 `;
@@ -58,12 +49,41 @@ const DeletePhotoText = styled.Text`
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
 
+  const additionalHostsFeats: Data[] = useMemo(
+    () => [
+      {
+        id: "advancedHost.transportReady",
+        label: t("hostAdd.transportReady"),
+        icon: <CarIcon width="30" height="30" />,
+      },
+      {
+        id: "advancedHost.pregnantReady",
+        label: t("hostAdd.pregnantReady"),
+        icon: <PregnancyIcon width="30" height="30" />,
+      },
+      {
+        id: "advancedHost.elderReady",
+        label: t("hostAdd.elderReady"),
+        icon: <ElderSittingIcon width="30" height="30" />,
+      },
+      {
+        id: "advancedHost.dissabilityReady",
+        label: t("hostAdd.dissabilityReady"),
+        icon: <DisabilityIcon width="30" height="30" />,
+      },
+      {
+        id: "advancedHost.animalReady",
+        label: t("hostAdd.animalReady"),
+        icon: <AnimalsIcon width="30" height="30" />,
+      },
+    ],
+    [t]
+  );
+
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedHost: {
-        fullBedCount: 0,
-        childBedCount: 0,
-        accommodationTime: 0,
+        guestCount: 0,
       },
     },
   });
@@ -134,9 +154,30 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.accommodationType}
             errorMsg={t("hostAdd.errors.type")}
           />
+
+          <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
+          {/* TODO: ADD validation */}
+          <FormDropdown
+            data={(Object.keys(HostType) as Array<keyof HostType>).map(
+              (key) => ({
+                value: key,
+                label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
+              })
+            )}
+            name="advancedHost.hostType"
+            placeholder={t("forms.chooseFromList")}
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedHost?.hostType}
+            errorMsg={t("hostAdd.errors.hostType")}
+            zIndex={11}
+          />
+
           <InputControlLabel>
             {t("hostAdd.accomodationPhoto")}
           </InputControlLabel>
+
           <View style={{ marginBottom: 16 }}>
             <Controller
               control={control}
@@ -175,32 +216,35 @@ export default function AddAccommodationAdvancedForm() {
               }}
             />
           </View>
-          <InputControlLabel>{t("hostAdd.fullBedCount")}</InputControlLabel>
+
+          <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
           <FormNumericInput
-            name="advancedHost.fullBedCount"
+            name="advancedHost.guestCount"
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.fullBedCount}
-            errorMsg={t("hostAdd.errors.fullBedCount")}
+            error={errors?.advancedHost?.guestCount}
+            errorMsg={t("hostAdd.errors.guestCount")}
           />
-          <InputControlLabel>{t("hostAdd.childBedCount")}</InputControlLabel>
-          <FormNumericInput
-            name="advancedHost.childBedCount"
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.childBedCount}
-            errorMsg={t("hostAdd.errors.childBedCount")}
-          />
+
           <InputControlLabel>
             {t("hostAdd.accommodationTime")}
           </InputControlLabel>
-          <FormNumericInput
-            name="advancedHost.accommodationTime"
+          <FormRadioGroup<AccomodationTime>
+            name={t("advancedHost.accommodationTime")}
             rules={{
               required: true,
             }}
+            data={(
+              Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
+            ).map((key: keyof AccomodationTime) => ({
+              value: key,
+              label: t(
+                `hostAdd.accommodationTimeLabel.${String(
+                  AccomodationTime[key]
+                )}`
+              ),
+            }))}
             error={errors?.advancedHost?.accommodationTime}
             errorMsg={t("hostAdd.errors.accommodationTime")}
           />
@@ -235,10 +279,7 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.groupsTypes}
             errorMsg={t("hostAdd.errors.groupsTypes")}
           />
-
-          {ADDITIONAL_HOST_FEATS.map(({ translateId, name }) => (
-            <FormChoiceButton key={name} name={name} text={t(translateId)} />
-          ))}
+          <FormButtonsVertical data={additionalHostsFeats} />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <InputControl>
