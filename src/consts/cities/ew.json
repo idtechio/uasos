@@ -1,0 +1,552 @@
+[
+  {
+    "label": "Tallinn",
+    "value": "588409",
+    "population": 394024
+  },
+  {
+    "label": "Tartu",
+    "value": "588335",
+    "population": 101092
+  },
+  {
+    "label": "Narva",
+    "value": "590031",
+    "population": 66980
+  },
+  {
+    "label": "Kohtla-Järve",
+    "value": "591260",
+    "population": 46060
+  },
+  {
+    "label": "Pärnu",
+    "value": "589580",
+    "population": 44192
+  },
+  {
+    "label": "Viljandi",
+    "value": "587577",
+    "population": 20309
+  },
+  {
+    "label": "Rakvere",
+    "value": "589165",
+    "population": 16736
+  },
+  {
+    "label": "Sillamäe",
+    "value": "588686",
+    "population": 16672
+  },
+  {
+    "label": "Maardu",
+    "value": "590447",
+    "population": 16630
+  },
+  {
+    "label": "Kuressaare",
+    "value": "590939",
+    "population": 14921
+  },
+  {
+    "label": "Võru",
+    "value": "587450",
+    "population": 14631
+  },
+  {
+    "label": "Valga",
+    "value": "587876",
+    "population": 13945
+  },
+  {
+    "label": "Haapsalu",
+    "value": "592225",
+    "population": 11805
+  },
+  {
+    "label": "Jõhvi",
+    "value": "591893",
+    "population": 11469
+  },
+  {
+    "label": "Paide",
+    "value": "589709",
+    "population": 9735
+  },
+  {
+    "label": "Keila",
+    "value": "591472",
+    "population": 9411
+  },
+  {
+    "label": "Kiviõli",
+    "value": "591313",
+    "population": 6953
+  },
+  {
+    "label": "Tapa",
+    "value": "588348",
+    "population": 6551
+  },
+  {
+    "label": "Põlva",
+    "value": "589375",
+    "population": 6504
+  },
+  {
+    "label": "Jõgeva",
+    "value": "591902",
+    "population": 6396
+  },
+  {
+    "label": "Türi",
+    "value": "588153",
+    "population": 6138
+  },
+  {
+    "label": "Elva",
+    "value": "592279",
+    "population": 5819
+  },
+  {
+    "label": "Rapla",
+    "value": "589116",
+    "population": 5684
+  },
+  {
+    "label": "Laagri",
+    "value": "794964",
+    "population": 5165
+  },
+  {
+    "label": "Saue",
+    "value": "588780",
+    "population": 5022
+  },
+  {
+    "label": "Põltsamaa",
+    "value": "589379",
+    "population": 4764
+  },
+  {
+    "label": "Saku",
+    "value": "588831",
+    "population": 4548
+  },
+  {
+    "label": "Paldiski",
+    "value": "589663",
+    "population": 4202
+  },
+  {
+    "label": "Sindi",
+    "value": "588673",
+    "population": 4036
+  },
+  {
+    "label": "Kunda",
+    "value": "590977",
+    "population": 3996
+  },
+  {
+    "label": "Kärdla",
+    "value": "591632",
+    "population": 3763
+  },
+  {
+    "label": "Tabasalu",
+    "value": "588454",
+    "population": 3527
+  },
+  {
+    "label": "Rummu",
+    "value": "588922",
+    "population": 3488
+  },
+  {
+    "label": "Loksa",
+    "value": "590552",
+    "population": 3463
+  },
+  {
+    "label": "Kohila",
+    "value": "591265",
+    "population": 3355
+  },
+  {
+    "label": "Kehra",
+    "value": "591476",
+    "population": 3183
+  },
+  {
+    "label": "Tõrva",
+    "value": "588204",
+    "population": 3112
+  },
+  {
+    "label": "Märjamaa",
+    "value": "590322",
+    "population": 3063
+  },
+  {
+    "label": "Räpina",
+    "value": "589117",
+    "population": 2901
+  },
+  {
+    "label": "Narva-Jõesuu",
+    "value": "590030",
+    "population": 2802
+  },
+  {
+    "label": "Jüri",
+    "value": "591876",
+    "population": 2581
+  },
+  {
+    "label": "Vändra",
+    "value": "587440",
+    "population": 2544
+  },
+  {
+    "label": "Kadrina",
+    "value": "591783",
+    "population": 2406
+  },
+  {
+    "label": "Toila",
+    "value": "588264",
+    "population": 2304
+  },
+  {
+    "label": "Kose",
+    "value": "591076",
+    "population": 2232
+  },
+  {
+    "label": "Kilingi-Nõmme",
+    "value": "591381",
+    "population": 2175
+  },
+  {
+    "label": "Väike-Maarja",
+    "value": "587923",
+    "population": 2155
+  },
+  {
+    "label": "Tamsalu",
+    "value": "588365",
+    "population": 2119
+  },
+  {
+    "label": "Otepää",
+    "value": "589782",
+    "population": 2105
+  },
+  {
+    "label": "Loo",
+    "value": "590537",
+    "population": 2093
+  },
+  {
+    "label": "Haabneeme",
+    "value": "592233",
+    "population": 2077
+  },
+  {
+    "label": "Paikuse",
+    "value": "589703",
+    "population": 1996
+  },
+  {
+    "label": "Aruküla",
+    "value": "592396",
+    "population": 1829
+  },
+  {
+    "label": "Viimsi",
+    "value": "587629",
+    "population": 1740
+  },
+  {
+    "label": "Mustvee",
+    "value": "590067",
+    "population": 1662
+  },
+  {
+    "label": "Kehtna",
+    "value": "591475",
+    "population": 1579
+  },
+  {
+    "label": "Karksi-Nuia",
+    "value": "589922",
+    "population": 1554
+  },
+  {
+    "label": "Viimsi",
+    "value": "8181718",
+    "population": 1500
+  },
+  {
+    "label": "Nõo",
+    "value": "589933",
+    "population": 1476
+  },
+  {
+    "label": "Järvakandi",
+    "value": "591965",
+    "population": 1471
+  },
+  {
+    "label": "Vana-Antsla",
+    "value": "587826",
+    "population": 1468
+  },
+  {
+    "label": "Kiili",
+    "value": "591403",
+    "population": 1461
+  },
+  {
+    "label": "Lihula",
+    "value": "590657",
+    "population": 1457
+  },
+  {
+    "label": "Aseri",
+    "value": "592379",
+    "population": 1439
+  },
+  {
+    "label": "Audru",
+    "value": "592351",
+    "population": 1430
+  },
+  {
+    "label": "Abja-Paluoja",
+    "value": "592626",
+    "population": 1372
+  },
+  {
+    "label": "Sõmeru",
+    "value": "793457",
+    "population": 1350
+  },
+  {
+    "label": "Pärnu-Jaagupi",
+    "value": "589578",
+    "population": 1341
+  },
+  {
+    "label": "Võhma",
+    "value": "587517",
+    "population": 1332
+  },
+  {
+    "label": "Viiratsi",
+    "value": "587620",
+    "population": 1332
+  },
+  {
+    "label": "Raasiku",
+    "value": "589223",
+    "population": 1317
+  },
+  {
+    "label": "Suure-Jaani",
+    "value": "588532",
+    "population": 1254
+  },
+  {
+    "label": "Kuusalu",
+    "value": "590888",
+    "population": 1238
+  },
+  {
+    "label": "Haljala",
+    "value": "592200",
+    "population": 1233
+  },
+  {
+    "label": "Koeru",
+    "value": "591276",
+    "population": 1178
+  },
+  {
+    "label": "Turba",
+    "value": "588157",
+    "population": 1096
+  },
+  {
+    "label": "Kohtla-Nõmme",
+    "value": "591264",
+    "population": 1075
+  },
+  {
+    "label": "Puhja",
+    "value": "589307",
+    "population": 1072
+  },
+  {
+    "label": "Uuemõisa",
+    "value": "588015",
+    "population": 1068
+  },
+  {
+    "label": "Orissaare",
+    "value": "589796",
+    "population": 1065
+  },
+  {
+    "label": "Sauga",
+    "value": "588774",
+    "population": 1062
+  },
+  {
+    "label": "Riisipere",
+    "value": "589024",
+    "population": 1058
+  },
+  {
+    "label": "Järva-Jaani",
+    "value": "591968",
+    "population": 1051
+  },
+  {
+    "label": "Ülenurme",
+    "value": "588092",
+    "population": 1047
+  },
+  {
+    "label": "Särevere",
+    "value": "588792",
+    "population": 1035
+  },
+  {
+    "label": "Vinni",
+    "value": "587571",
+    "population": 1032
+  },
+  {
+    "label": "Vaida",
+    "value": "587938",
+    "population": 1016
+  },
+  {
+    "label": "Rakke",
+    "value": "589166",
+    "population": 1015
+  },
+  {
+    "label": "Taebla",
+    "value": "588449",
+    "population": 990
+  },
+  {
+    "label": "Iisaku",
+    "value": "592062",
+    "population": 916
+  },
+  {
+    "label": "Pajusti",
+    "value": "589688",
+    "population": 756
+  },
+  {
+    "label": "Kanepi",
+    "value": "591672",
+    "population": 638
+  },
+  {
+    "label": "Pringi",
+    "value": "589336",
+    "population": 603
+  },
+  {
+    "label": "Luunja",
+    "value": "590468",
+    "population": 579
+  },
+  {
+    "label": "Kõrveküla",
+    "value": "591086",
+    "population": 571
+  },
+  {
+    "label": "Värska",
+    "value": "587739",
+    "population": 563
+  },
+  {
+    "label": "Uulu",
+    "value": "588002",
+    "population": 524
+  },
+  {
+    "label": "Rõuge",
+    "value": "588944",
+    "population": 442
+  },
+  {
+    "label": "Alatskivi",
+    "value": "592557",
+    "population": 430
+  },
+  {
+    "label": "Linaküla",
+    "value": "590616",
+    "population": 119
+  },
+  {
+    "label": "Hullo",
+    "value": "592091",
+    "population": 104
+  },
+  {
+    "label": "Vaiatu",
+    "value": "793250",
+    "population": 102
+  },
+  {
+    "label": "Ruhnu",
+    "value": "588936",
+    "population": 64
+  },
+  {
+    "label": "Kose",
+    "value": "591078",
+    "population": 0
+  },
+  {
+    "label": "Liiva",
+    "value": "590637",
+    "population": 0
+  },
+  {
+    "label": "Antsla",
+    "value": "592459",
+    "population": 0
+  },
+  {
+    "label": "Kurepalu",
+    "value": "590945",
+    "population": 0
+  },
+  {
+    "label": "Harku",
+    "value": "794963",
+    "population": 0
+  },
+  {
+    "label": "Tehumardi",
+    "value": "588311",
+    "population": 0
+  },
+  {
+    "label": "Kunda",
+    "value": "590975",
+    "population": 0
+  }
+]

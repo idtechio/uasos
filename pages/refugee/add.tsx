@@ -30,7 +30,6 @@ export default function Account(props) {
 
 const styles = StyleSheet.create({
   container: {
-    // maxWidth: "50%",
     width: "100%",
     flexDirection: "column",
     flexWrap: "wrap",

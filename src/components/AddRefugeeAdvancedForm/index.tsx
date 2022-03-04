@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from "react";
-import { Controller, FormProvider, useForm } from "react-hook-form";
+import React, { useMemo } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
@@ -28,7 +28,7 @@ export default function AddAccommodationAdvancedForm() {
       advancedRefugee: {
         fullBedCount: 0,
         childBedCount: 0,
-        age: 0,
+        age: 18,
       },
     },
   });
@@ -36,33 +36,33 @@ export default function AddAccommodationAdvancedForm() {
   const refugeeDetailsOptions: Data[] = useMemo(
     () => [
       {
-        id: "refugee.preferences.peopleDetails.animals",
+        id: "advancedRefugee.preferences.peopleDetails.animals",
         label: t("refugeeForm.refugeeDetailsOptions.animals"),
         icon: <AnimalsIcon width="30" height="25" />,
         extra: (
           <FormTextInput
-            name="refugee.preferences.animal"
+            name="advancedRefugee.preferences.animal"
             label={t("refugeeForm.labels.refugeesAnimal")}
           />
         ),
       },
       {
-        id: "refugee.preferences.peopleDetails.pregnant",
+        id: "advancedRefugee.preferences.peopleDetails.pregnant",
         label: t("refugeeForm.refugeeDetailsOptions.pregnant"),
         icon: <PregnantIcon width="26" height="25" />,
       },
       {
-        id: "refugee.preferences.peopleDetails.toddler",
+        id: "advancedRefugee.preferences.peopleDetails.toddler",
         label: t("refugeeForm.refugeeDetailsOptions.toddler"),
         icon: <KidsIcon width="26" height="25" />,
       },
       {
-        id: "refugee.preferences.peopleDetails.oldPerson",
+        id: "advancedRefugee.preferences.peopleDetails.oldPerson",
         label: t("refugeeForm.refugeeDetailsOptions.oldPerson"),
         icon: <ElderIcon width="26" height="25" />,
       },
       {
-        id: "refugee.preferences.peopleDetails.disability",
+        id: "advancedRefugee.preferences.peopleDetails.disability",
         label: t("refugeeForm.refugeeDetailsOptions.disability"),
         icon: <DisabilityIcon width="26" height="25" />,
       },
@@ -71,10 +71,13 @@ export default function AddAccommodationAdvancedForm() {
   );
 
   const {
-    control,
     handleSubmit,
     formState: { errors },
+    resetField,
+    watch,
   } = formFields;
+
+  const watchCountry = watch("advancedRefugee.country", "");
 
   const onSubmit = (data) => {
     // TODO: implement
@@ -82,19 +85,49 @@ export default function AddAccommodationAdvancedForm() {
   };
 
   const GROUP_RELATIONS = [
-    { label: "Singiel", value: "single_man" },
-    { label: "Singielka", value: "single_woman" },
-    { label: "Małżonkowie", value: "spouses" },
-    { label: "Rodzina z dziećmi", value: "family_with_children" },
-    { label: "Niepowiązana grupa", value: "unrelated_group" },
+    { label: t("staticValues.groupRelations.single_man"), value: "single_man" },
+    {
+      label: t("staticValues.groupRelations.single_woman"),
+      value: "single_woman",
+    },
+    { label: t("staticValues.groupRelations.spouses"), value: "spouses" },
+    {
+      label: t("staticValues.groupRelations.mother_with_children"),
+      value: "mother_with_children",
+    },
+    {
+      label: t("staticValues.groupRelations.family_with_children"),
+      value: "family_with_children",
+    },
+    {
+      label: t("staticValues.groupRelations.unrelated_group"),
+      value: "unrelated_group",
+    },
   ];
 
   const ACCOMMODATION_TYPES = [
-    { label: "Łóźko w współdzielonym pokoju", value: "1" },
-    { label: "Pokój w współdzielonym mieszkaniu/domu", value: "2" },
-    { label: "Mieszkanie na wyłączność", value: "3" },
-    { label: "Dom na wyłączność", value: "4" },
-    { label: "Pokój zbiorowy (np. szkolna sala)", value: "5" },
+    { label: t("staticValues.accommodationTypes.bed"), value: "bed" },
+    { label: t("staticValues.accommodationTypes.room"), value: "room" },
+    { label: t("staticValues.accommodationTypes.flat"), value: "flat" },
+    { label: t("staticValues.accommodationTypes.house"), value: "house" },
+    {
+      label: t("staticValues.accommodationTypes.public_shared_space"),
+      value: "public_shared_space",
+    },
+  ];
+
+  const OVERNIGHT_DURATION_TYPES = [
+    {
+      label: t("staticValues.timePeriod.lessThanAWeek"),
+      value: "lessThanAWeek",
+    },
+    { label: t("staticValues.timePeriod.week"), value: "week" },
+    {
+      label: t("staticValues.timePeriod.twoWeeks"),
+      value: "twoWeeks",
+    },
+    { label: t("staticValues.timePeriod.month"), value: "month" },
+    { label: t("staticValues.timePeriod.longer"), value: "longer" },
   ];
 
   return (
@@ -118,7 +151,7 @@ export default function AddAccommodationAdvancedForm() {
                 required: true,
               }}
               error={errors?.advancedRefugee?.name}
-              errorMsg={t("validations.requiredName")}
+              errorMsg={t("refugeeAddForm.errors.name")}
             />
           </InputControl>
           <InputControl>
@@ -136,7 +169,7 @@ export default function AddAccommodationAdvancedForm() {
                 },
               }}
               error={errors?.advancedRefugee?.email}
-              errorMsg={t("validations.invalidEmail")}
+              errorMsg={t("refugeeAddForm.errors.email")}
             />
           </InputControl>
           <InputControl>
@@ -150,8 +183,8 @@ export default function AddAccommodationAdvancedForm() {
                   message: t("refugeeForm.errors.phoneNumber"),
                 },
               }}
-              error={errors?.refugee?.core?.phoneNumber}
-              errorMsg={t("refugeeForm.errors.phoneNumber")}
+              error={errors?.advancedRefugee?.phoneNumber}
+              errorMsg={t("refugeeAddForm.errors.phoneNumber")}
             />
           </InputControl>
         </CompositionSection>
@@ -170,8 +203,9 @@ export default function AddAccommodationAdvancedForm() {
               rules={{
                 required: true,
               }}
+              onChange={() => resetField("advancedRefugee.cityOfRefuge")}
               error={errors?.advancedRefugee?.country}
-              errorMsg={t("hostAdd.errors.rcountry")}
+              errorMsg={t("refugeeAddForm.errors.countryOfRefuge")}
             />
           </InputControl>
           <InputControl zIndex={12}>
@@ -180,37 +214,27 @@ export default function AddAccommodationAdvancedForm() {
             </InputCotrolLabel>
             <FormCityDropdown
               name="advancedRefugee.cityOfRefuge"
+              country={watchCountry}
               placeholder={t("refugeeAddForm.cityOfRefugePlaceholder")}
               rules={{
                 required: true,
               }}
               error={errors?.advancedRefugee?.cityOfRefuge}
-              errorMsg={t("hostAdd.errors.cityOfRefuge")}
+              errorMsg={t("refugeeAddForm.errors.cityOfRefuge")}
             />
           </InputControl>
           <InputControl>
             <InputCotrolLabel>
-              {t("refugeeAddForm.overnightTimeLabel")}
+              {t("refugeeAddForm.overnightDurationLabel")}
             </InputCotrolLabel>
             <FormRadioGroup<string | string>
-              name="advancedRefugee.nationality"
+              name="advancedRefugee.overnightDuration"
               rules={{
                 required: true,
               }}
-              data={[
-                {
-                  label: t("staticValues.timePeriod.lessThanAWeek"),
-                  value: "lessThanAWeek",
-                },
-                { label: t("staticValues.timePeriod.week"), value: "week" },
-                {
-                  label: t("staticValues.timePeriod.twoWeeks"),
-                  value: "twoWeeks",
-                },
-                { label: t("staticValues.timePeriod.month"), value: "month" },
-                { label: t("staticValues.timePeriod.longer"), value: "longer" },
-              ]}
-              errorMsg={t("validations.nationalityError")}
+              data={OVERNIGHT_DURATION_TYPES}
+              error={errors?.advancedRefugee?.overnightDuration}
+              errorMsg={t("refugeeAddForm.errors.overnightDuration")}
             />
           </InputControl>
         </CompositionSection>
@@ -255,15 +279,17 @@ export default function AddAccommodationAdvancedForm() {
           header={t("refugeeAddForm.accompanyingPerson")}
         >
           <InputControl>
-            <InputCotrolLabel>{t("refugeeAddForm.sexLabel")}</InputCotrolLabel>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.genderLabel")}
+            </InputCotrolLabel>
             <FormTextInput
-              name="advancedRefugee.sex"
-              label={t("refugeeAddForm.sexPlaceholder")}
+              name="advancedRefugee.gender"
+              label={t("refugeeAddForm.genderPlaceholder")}
               rules={{
                 required: true,
               }}
-              error={errors?.advancedRefugee?.fullBedCount}
-              errorMsg={t("hostAdd.errors.fullBedCount")}
+              error={errors?.advancedRefugee?.gender}
+              errorMsg={t("refugeeAddForm.errors.gender")}
             />
           </InputControl>
           <InputControl>
@@ -273,6 +299,8 @@ export default function AddAccommodationAdvancedForm() {
               rules={{
                 required: true,
               }}
+              min={0}
+              max={150}
               error={errors?.advancedRefugee?.childBedCount}
               errorMsg={t("hostAdd.errors.childBedCount")}
             />
@@ -298,8 +326,8 @@ export default function AddAccommodationAdvancedForm() {
               rules={{
                 required: true,
               }}
-              error={errors?.advancedRefugee?.groupsTypes}
-              errorMsg={t("hostAdd.errors.groupsTypes")}
+              error={errors?.advancedRefugee?.groupRelations}
+              errorMsg={t("refugeeAddForm.errors.groupRelations")}
             />
           </InputControl>
           <InputControl zIndex={10}>
@@ -329,7 +357,8 @@ export default function AddAccommodationAdvancedForm() {
                 { label: t("hostAdd.ukraine"), value: "ukraine" },
                 { label: t("hostAdd.any"), value: "any" },
               ]}
-              errorMsg={t("validations.nationalityError")}
+              error={errors?.advancedRefugee?.nationality}
+              errorMsg={t("refugeeAddForm.errors.accommodationType")}
             />
           </InputControl>
         </CompositionSection>

@@ -1,0 +1,1837 @@
+[
+  {
+    "label": "Dublin",
+    "value": "2964574",
+    "population": 1024027
+  },
+  {
+    "label": "Cork",
+    "value": "2965140",
+    "population": 190384
+  },
+  {
+    "label": "Luimneach",
+    "value": "2962943",
+    "population": 90054
+  },
+  {
+    "label": "Gaillimh",
+    "value": "2964180",
+    "population": 70686
+  },
+  {
+    "label": "Tallaght",
+    "value": "2961284",
+    "population": 64282
+  },
+  {
+    "label": "Waterford",
+    "value": "2960992",
+    "population": 47904
+  },
+  {
+    "label": "Drogheda",
+    "value": "2964661",
+    "population": 40956
+  },
+  {
+    "label": "Swords",
+    "value": "2961297",
+    "population": 36924
+  },
+  {
+    "label": "Dundalk",
+    "value": "2964540",
+    "population": 33428
+  },
+  {
+    "label": "Bray",
+    "value": "2966022",
+    "population": 32600
+  },
+  {
+    "label": "Douglas",
+    "value": "2964690",
+    "population": 26883
+  },
+  {
+    "label": "Dún Laoghaire",
+    "value": "2964506",
+    "population": 26525
+  },
+  {
+    "label": "Navan",
+    "value": "2962308",
+    "population": 24545
+  },
+  {
+    "label": "Ennis",
+    "value": "2964405",
+    "population": 24427
+  },
+  {
+    "label": "Tralee",
+    "value": "2961123",
+    "population": 22941
+  },
+  {
+    "label": "Droichead Nua",
+    "value": "2962290",
+    "population": 22742
+  },
+  {
+    "label": "Sandyford",
+    "value": "3315278",
+    "population": 22288
+  },
+  {
+    "label": "Balbriggan",
+    "value": "2966794",
+    "population": 21722
+  },
+  {
+    "label": "Kilkenny",
+    "value": "2963398",
+    "population": 21589
+  },
+  {
+    "label": "Athlone",
+    "value": "3313472",
+    "population": 21351
+  },
+  {
+    "label": "Naas",
+    "value": "2962334",
+    "population": 20713
+  },
+  {
+    "label": "Celbridge",
+    "value": "2965529",
+    "population": 20288
+  },
+  {
+    "label": "Sligo",
+    "value": "2961423",
+    "population": 20228
+  },
+  {
+    "label": "Carlow",
+    "value": "2965768",
+    "population": 20055
+  },
+  {
+    "label": "Wexford",
+    "value": "2960964",
+    "population": 19913
+  },
+  {
+    "label": "Finglas",
+    "value": "2964303",
+    "population": 19768
+  },
+  {
+    "label": "Letterkenny",
+    "value": "2962961",
+    "population": 19274
+  },
+  {
+    "label": "Ballincollig",
+    "value": "2966749",
+    "population": 18621
+  },
+  {
+    "label": "Greystones",
+    "value": "2963848",
+    "population": 18140
+  },
+  {
+    "label": "Cluain Meala",
+    "value": "2965353",
+    "population": 17394
+  },
+  {
+    "label": "An Muileann gCearr",
+    "value": "2962361",
+    "population": 17262
+  },
+  {
+    "label": "Malahide",
+    "value": "2962725",
+    "population": 16550
+  },
+  {
+    "label": "Blanchardstown",
+    "value": "2966110",
+    "population": 16511
+  },
+  {
+    "label": "Carrigaline",
+    "value": "2965715",
+    "population": 15770
+  },
+  {
+    "label": "Leixlip",
+    "value": "2962974",
+    "population": 15504
+  },
+  {
+    "label": "Donaghmede",
+    "value": "6691033",
+    "population": 15299
+  },
+  {
+    "label": "Lucan",
+    "value": "2962785",
+    "population": 15269
+  },
+  {
+    "label": "Kilquade",
+    "value": "7870988",
+    "population": 14886
+  },
+  {
+    "label": "Castletroy",
+    "value": "7838907",
+    "population": 14733
+  },
+  {
+    "label": "Knocklyon",
+    "value": "7838921",
+    "population": 14628
+  },
+  {
+    "label": "Maynooth",
+    "value": "2962668",
+    "population": 14585
+  },
+  {
+    "label": "Clondalkin",
+    "value": "2965381",
+    "population": 14508
+  },
+  {
+    "label": "Cill Airne",
+    "value": "2963370",
+    "population": 14504
+  },
+  {
+    "label": "Shankill",
+    "value": "2961523",
+    "population": 14257
+  },
+  {
+    "label": "Wicklow",
+    "value": "2960936",
+    "population": 14048
+  },
+  {
+    "label": "Portlaoise",
+    "value": "2962026",
+    "population": 13622
+  },
+  {
+    "label": "Arklow",
+    "value": "2966883",
+    "population": 13163
+  },
+  {
+    "label": "Castlebar",
+    "value": "2965654",
+    "population": 12874
+  },
+  {
+    "label": "Foxrock",
+    "value": "3315280",
+    "population": 12870
+  },
+  {
+    "label": "Cobh",
+    "value": "2965260",
+    "population": 12800
+  },
+  {
+    "label": "Ashbourne",
+    "value": "2966870",
+    "population": 12679
+  },
+  {
+    "label": "Midleton",
+    "value": "2962630",
+    "population": 12496
+  },
+  {
+    "label": "Mallow",
+    "value": "2962714",
+    "population": 12459
+  },
+  {
+    "label": "Dundrum",
+    "value": "2964532",
+    "population": 12152
+  },
+  {
+    "label": "Tullamore",
+    "value": "2961086",
+    "population": 11575
+  },
+  {
+    "label": "Crumlin",
+    "value": "2964963",
+    "population": 11294
+  },
+  {
+    "label": "Palmerstown",
+    "value": "7838923",
+    "population": 11130
+  },
+  {
+    "label": "Rathmines",
+    "value": "2961896",
+    "population": 11044
+  },
+  {
+    "label": "Marino",
+    "value": "2962696",
+    "population": 11023
+  },
+  {
+    "label": "Laytown",
+    "value": "2963007",
+    "population": 10889
+  },
+  {
+    "label": "Jobstown",
+    "value": "7869995",
+    "population": 10825
+  },
+  {
+    "label": "Donnybrook",
+    "value": "2964745",
+    "population": 10645
+  },
+  {
+    "label": "Trá Mhór",
+    "value": "2961120",
+    "population": 10381
+  },
+  {
+    "label": "Ballina",
+    "value": "2966778",
+    "population": 10087
+  },
+  {
+    "label": "Skerries",
+    "value": "2961461",
+    "population": 10043
+  },
+  {
+    "label": "Cabinteely",
+    "value": "2965882",
+    "population": 10038
+  },
+  {
+    "label": "Gorey",
+    "value": "2963962",
+    "population": 9822
+  },
+  {
+    "label": "Oldbawn",
+    "value": "3315430",
+    "population": 9784
+  },
+  {
+    "label": "Shannon",
+    "value": "3310247",
+    "population": 9729
+  },
+  {
+    "label": "Enniscorthy",
+    "value": "2964403",
+    "population": 9709
+  },
+  {
+    "label": "Athy",
+    "value": "2966837",
+    "population": 9677
+  },
+  {
+    "label": "Ballyboden",
+    "value": "2966670",
+    "population": 9611
+  },
+  {
+    "label": "Portmarnock",
+    "value": "2962019",
+    "population": 9285
+  },
+  {
+    "label": "An Ros",
+    "value": "2961651",
+    "population": 9231
+  },
+  {
+    "label": "Trim",
+    "value": "2961107",
+    "population": 9194
+  },
+  {
+    "label": "Balally",
+    "value": "8642910",
+    "population": 9051
+  },
+  {
+    "label": "Ratoath",
+    "value": "2961872",
+    "population": 9043
+  },
+  {
+    "label": "Sandymount",
+    "value": "2961589",
+    "population": 8967
+  },
+  {
+    "label": "Glanmire",
+    "value": "2964114",
+    "population": 8924
+  },
+  {
+    "label": "Blackrock",
+    "value": "2966131",
+    "population": 8821
+  },
+  {
+    "label": "Tuam",
+    "value": "2961099",
+    "population": 8767
+  },
+  {
+    "label": "Kildare",
+    "value": "2963436",
+    "population": 8634
+  },
+  {
+    "label": "Beaumont",
+    "value": "3315311",
+    "population": 8609
+  },
+  {
+    "label": "Ballyfermot",
+    "value": "3315378",
+    "population": 8558
+  },
+  {
+    "label": "Ballinteer",
+    "value": "6691010",
+    "population": 8547
+  },
+  {
+    "label": "Rathgar",
+    "value": "3315287",
+    "population": 8394
+  },
+  {
+    "label": "Castleknock",
+    "value": "2965599",
+    "population": 8301
+  },
+  {
+    "label": "Howth",
+    "value": "2963722",
+    "population": 8277
+  },
+  {
+    "label": "Ringsend",
+    "value": "2961816",
+    "population": 8202
+  },
+  {
+    "label": "Baldoyle",
+    "value": "2966793",
+    "population": 8043
+  },
+  {
+    "label": "New Ross",
+    "value": "2962252",
+    "population": 8040
+  },
+  {
+    "label": "Little Bray",
+    "value": "3315204",
+    "population": 8015
+  },
+  {
+    "label": "Youghal",
+    "value": "2960869",
+    "population": 7963
+  },
+  {
+    "label": "Thurles",
+    "value": "2961214",
+    "population": 7940
+  },
+  {
+    "label": "Cherry Orchard",
+    "value": "6619871",
+    "population": 7924
+  },
+  {
+    "label": "Mount Merrion",
+    "value": "2962638",
+    "population": 7846
+  },
+  {
+    "label": "Portarlington",
+    "value": "2962029",
+    "population": 7788
+  },
+  {
+    "label": "Longford",
+    "value": "2962840",
+    "population": 7787
+  },
+  {
+    "label": "Lusk",
+    "value": "2962769",
+    "population": 7786
+  },
+  {
+    "label": "Monaghan",
+    "value": "2962568",
+    "population": 7678
+  },
+  {
+    "label": "Terenure",
+    "value": "2961235",
+    "population": 7674
+  },
+  {
+    "label": "Donnycarney",
+    "value": "6691048",
+    "population": 7660
+  },
+  {
+    "label": "Dungarvan",
+    "value": "2964528",
+    "population": 7551
+  },
+  {
+    "label": "Donabate",
+    "value": "2964765",
+    "population": 7443
+  },
+  {
+    "label": "Edenderry",
+    "value": "2964436",
+    "population": 7359
+  },
+  {
+    "label": "Clane",
+    "value": "2965484",
+    "population": 7280
+  },
+  {
+    "label": "Dunboyne",
+    "value": "2964547",
+    "population": 7272
+  },
+  {
+    "label": "Raheny",
+    "value": "2961960",
+    "population": 7197
+  },
+  {
+    "label": "Booterstown",
+    "value": "6691006",
+    "population": 7142
+  },
+  {
+    "label": "Templeogue",
+    "value": "3315404",
+    "population": 7023
+  },
+  {
+    "label": "Bandon",
+    "value": "2966370",
+    "population": 6957
+  },
+  {
+    "label": "Sallynoggin",
+    "value": "3315282",
+    "population": 6916
+  },
+  {
+    "label": "Greenhills",
+    "value": "6691017",
+    "population": 6876
+  },
+  {
+    "label": "Firhouse",
+    "value": "3315276",
+    "population": 6859
+  },
+  {
+    "label": "Walkinstown",
+    "value": "3315322",
+    "population": 6819
+  },
+  {
+    "label": "Buncrana",
+    "value": "2654332",
+    "population": 6785
+  },
+  {
+    "label": "Newtown Trim",
+    "value": "2962222",
+    "population": 6781
+  },
+  {
+    "label": "Nenagh Bridge",
+    "value": "3306439",
+    "population": 6672
+  },
+  {
+    "label": "Ballinasloe",
+    "value": "2966753",
+    "population": 6662
+  },
+  {
+    "label": "Dalkey",
+    "value": "2964892",
+    "population": 6622
+  },
+  {
+    "label": "Newcastle West",
+    "value": "2962283",
+    "population": 6619
+  },
+  {
+    "label": "Fermoy",
+    "value": "2964320",
+    "population": 6585
+  },
+  {
+    "label": "Cavan",
+    "value": "2965535",
+    "population": 6388
+  },
+  {
+    "label": "Cherryville",
+    "value": "2965509",
+    "population": 6380
+  },
+  {
+    "label": "Ballymun",
+    "value": "3315315",
+    "population": 6262
+  },
+  {
+    "label": "Westport",
+    "value": "2960970",
+    "population": 6198
+  },
+  {
+    "label": "Hartstown",
+    "value": "3315332",
+    "population": 5882
+  },
+  {
+    "label": "Passage West",
+    "value": "2962066",
+    "population": 5843
+  },
+  {
+    "label": "Kinsealy-Drinan",
+    "value": "8658946",
+    "population": 5814
+  },
+  {
+    "label": "Carrick-on-Suir",
+    "value": "2965726",
+    "population": 5771
+  },
+  {
+    "label": "Birr",
+    "value": "2966154",
+    "population": 5741
+  },
+  {
+    "label": "Roscommon",
+    "value": "2961732",
+    "population": 5693
+  },
+  {
+    "label": "Sutton",
+    "value": "2961305",
+    "population": 5680
+  },
+  {
+    "label": "Darndale",
+    "value": "6691035",
+    "population": 5667
+  },
+  {
+    "label": "Loughrea",
+    "value": "2962800",
+    "population": 5556
+  },
+  {
+    "label": "Monkstown",
+    "value": "2962543",
+    "population": 5555
+  },
+  {
+    "label": "Kilcock",
+    "value": "2963472",
+    "population": 5533
+  },
+  {
+    "label": "Blessington",
+    "value": "2966101",
+    "population": 5520
+  },
+  {
+    "label": "Nenagh",
+    "value": "2962304",
+    "population": 5500
+  },
+  {
+    "label": "Roscrea",
+    "value": "2961730",
+    "population": 5446
+  },
+  {
+    "label": "Confey",
+    "value": "7870938",
+    "population": 5389
+  },
+  {
+    "label": "Eadestown",
+    "value": "3315200",
+    "population": 5346
+  },
+  {
+    "label": "Artane",
+    "value": "3315304",
+    "population": 5328
+  },
+  {
+    "label": "Chapelizod",
+    "value": "2965525",
+    "population": 5296
+  },
+  {
+    "label": "Sallins",
+    "value": "2961607",
+    "population": 5283
+  },
+  {
+    "label": "Kinsale",
+    "value": "2963155",
+    "population": 5281
+  },
+  {
+    "label": "Killester",
+    "value": "7869996",
+    "population": 5099
+  },
+  {
+    "label": "Carrigtwohill",
+    "value": "2965694",
+    "population": 5080
+  },
+  {
+    "label": "Dollymount",
+    "value": "2964767",
+    "population": 5070
+  },
+  {
+    "label": "Carrickmacross",
+    "value": "2965733",
+    "population": 5032
+  },
+  {
+    "label": "Blackrock",
+    "value": "2966130",
+    "population": 5000
+  },
+  {
+    "label": "Oranmore",
+    "value": "2962153",
+    "population": 4990
+  },
+  {
+    "label": "Tipperary",
+    "value": "2961192",
+    "population": 4979
+  },
+  {
+    "label": "Ardee",
+    "value": "2966925",
+    "population": 4928
+  },
+  {
+    "label": "Ballybofey",
+    "value": "2966668",
+    "population": 4852
+  },
+  {
+    "label": "Kells",
+    "value": "2963528",
+    "population": 4820
+  },
+  {
+    "label": "Listowel",
+    "value": "2962864",
+    "population": 4820
+  },
+  {
+    "label": "Tullow",
+    "value": "2961079",
+    "population": 4673
+  },
+  {
+    "label": "Clonakilty",
+    "value": "2965402",
+    "population": 4592
+  },
+  {
+    "label": "Bonnybrook",
+    "value": "6691032",
+    "population": 4554
+  },
+  {
+    "label": "Bayside",
+    "value": "6693222",
+    "population": 4511
+  },
+  {
+    "label": "Clonskeagh",
+    "value": "6691003",
+    "population": 4500
+  },
+  {
+    "label": "Drumcondra",
+    "value": "3315312",
+    "population": 4465
+  },
+  {
+    "label": "Moyross",
+    "value": "7648535",
+    "population": 4448
+  },
+  {
+    "label": "Athenry",
+    "value": "2966843",
+    "population": 4445
+  },
+  {
+    "label": "Cashel",
+    "value": "2965664",
+    "population": 4422
+  },
+  {
+    "label": "Cabra",
+    "value": "3315319",
+    "population": 4389
+  },
+  {
+    "label": "Monasterevin",
+    "value": "2962556",
+    "population": 4246
+  },
+  {
+    "label": "Kilcoole",
+    "value": "2963460",
+    "population": 4239
+  },
+  {
+    "label": "Duleek",
+    "value": "2964558",
+    "population": 4219
+  },
+  {
+    "label": "Gweedore",
+    "value": "2963827",
+    "population": 4200
+  },
+  {
+    "label": "Milltown",
+    "value": "6691002",
+    "population": 4049
+  },
+  {
+    "label": "Dunshaughlin",
+    "value": "2964472",
+    "population": 4035
+  },
+  {
+    "label": "Carrick-on-Shannon",
+    "value": "2965727",
+    "population": 3980
+  },
+  {
+    "label": "Charleville",
+    "value": "2965516",
+    "population": 3919
+  },
+  {
+    "label": "Mulhurddart",
+    "value": "3315334",
+    "population": 3866
+  },
+  {
+    "label": "Fairview",
+    "value": "7838916",
+    "population": 3821
+  },
+  {
+    "label": "Macroom",
+    "value": "2962745",
+    "population": 3765
+  },
+  {
+    "label": "Mitchelstown",
+    "value": "2962587",
+    "population": 3740
+  },
+  {
+    "label": "Kilcullen",
+    "value": "2963444",
+    "population": 3710
+  },
+  {
+    "label": "Claremorris",
+    "value": "2965471",
+    "population": 3687
+  },
+  {
+    "label": "Loughlinstown",
+    "value": "2962804",
+    "population": 3665
+  },
+  {
+    "label": "Rialto",
+    "value": "6690994",
+    "population": 3652
+  },
+  {
+    "label": "Glasnevin",
+    "value": "2964102",
+    "population": 3633
+  },
+  {
+    "label": "Castleblayney",
+    "value": "2965649",
+    "population": 3607
+  },
+  {
+    "label": "Cahir",
+    "value": "2965873",
+    "population": 3593
+  },
+  {
+    "label": "Courtown",
+    "value": "2965092",
+    "population": 3591
+  },
+  {
+    "label": "Mountmellick",
+    "value": "2962476",
+    "population": 3547
+  },
+  {
+    "label": "Tower",
+    "value": "2961129",
+    "population": 3421
+  },
+  {
+    "label": "Rathcoole",
+    "value": "2961929",
+    "population": 3421
+  },
+  {
+    "label": "Dunlewy",
+    "value": "2964503",
+    "population": 3400
+  },
+  {
+    "label": "Stamullin",
+    "value": "2961366",
+    "population": 3361
+  },
+  {
+    "label": "Kill",
+    "value": "3314724",
+    "population": 3348
+  },
+  {
+    "label": "Clara",
+    "value": "2965482",
+    "population": 3242
+  },
+  {
+    "label": "Enfield",
+    "value": "2964407",
+    "population": 3239
+  },
+  {
+    "label": "Saggart",
+    "value": "2961636",
+    "population": 3133
+  },
+  {
+    "label": "Gort",
+    "value": "2963958",
+    "population": 2994
+  },
+  {
+    "label": "Rathnew",
+    "value": "2961884",
+    "population": 2964
+  },
+  {
+    "label": "Annacotty",
+    "value": "3305634",
+    "population": 2930
+  },
+  {
+    "label": "Bagenalstown",
+    "value": "2966800",
+    "population": 2837
+  },
+  {
+    "label": "Newtownmountkennedy",
+    "value": "7870989",
+    "population": 2835
+  },
+  {
+    "label": "Ballinrobe",
+    "value": "2966715",
+    "population": 2786
+  },
+  {
+    "label": "Skibbereen",
+    "value": "2961459",
+    "population": 2778
+  },
+  {
+    "label": "Moate",
+    "value": "2962580",
+    "population": 2763
+  },
+  {
+    "label": "Moate",
+    "value": "3314017",
+    "population": 2763
+  },
+  {
+    "label": "Bantry",
+    "value": "2966356",
+    "population": 2722
+  },
+  {
+    "label": "Kilrush",
+    "value": "2963218",
+    "population": 2719
+  },
+  {
+    "label": "Bailieborough",
+    "value": "2966796",
+    "population": 2683
+  },
+  {
+    "label": "Kinnegad",
+    "value": "2963158",
+    "population": 2662
+  },
+  {
+    "label": "Ballyjamesduff",
+    "value": "2966550",
+    "population": 2661
+  },
+  {
+    "label": "Newcastle",
+    "value": "2962281",
+    "population": 2659
+  },
+  {
+    "label": "Virginia",
+    "value": "2961006",
+    "population": 2648
+  },
+  {
+    "label": "Coolock",
+    "value": "6691030",
+    "population": 2632
+  },
+  {
+    "label": "Sixmilebridge",
+    "value": "2961470",
+    "population": 2625
+  },
+  {
+    "label": "Donegal",
+    "value": "2964752",
+    "population": 2618
+  },
+  {
+    "label": "Crosshaven",
+    "value": "2964985",
+    "population": 2577
+  },
+  {
+    "label": "Boyle",
+    "value": "2966044",
+    "population": 2568
+  },
+  {
+    "label": "Blarney",
+    "value": "2966107",
+    "population": 2539
+  },
+  {
+    "label": "Kingscourt",
+    "value": "2963169",
+    "population": 2499
+  },
+  {
+    "label": "Castleisland",
+    "value": "2965604",
+    "population": 2486
+  },
+  {
+    "label": "Callan",
+    "value": "2965841",
+    "population": 2475
+  },
+  {
+    "label": "Carndonagh",
+    "value": "2965761",
+    "population": 2471
+  },
+  {
+    "label": "Thomastown",
+    "value": "2961224",
+    "population": 2445
+  },
+  {
+    "label": "Ballina",
+    "value": "2966779",
+    "population": 2442
+  },
+  {
+    "label": "Athboy",
+    "value": "2966848",
+    "population": 2397
+  },
+  {
+    "label": "Rathangan",
+    "value": "2961938",
+    "population": 2374
+  },
+  {
+    "label": "Ballyhaunis",
+    "value": "2966566",
+    "population": 2366
+  },
+  {
+    "label": "Kanturk",
+    "value": "2963555",
+    "population": 2350
+  },
+  {
+    "label": "Ballyshannon",
+    "value": "2966406",
+    "population": 2299
+  },
+  {
+    "label": "Prosperous",
+    "value": "2961994",
+    "population": 2248
+  },
+  {
+    "label": "Killorglin",
+    "value": "2963311",
+    "population": 2199
+  },
+  {
+    "label": "Kenmare",
+    "value": "2963522",
+    "population": 2175
+  },
+  {
+    "label": "Clogherhead",
+    "value": "2965420",
+    "population": 2145
+  },
+  {
+    "label": "Baltinglass",
+    "value": "2966375",
+    "population": 2137
+  },
+  {
+    "label": "Old Kilcullen",
+    "value": "2962170",
+    "population": 2110
+  },
+  {
+    "label": "Castleconnell",
+    "value": "3305640",
+    "population": 2107
+  },
+  {
+    "label": "Edgeworthstown",
+    "value": "2964434",
+    "population": 2072
+  },
+  {
+    "label": "Dingle",
+    "value": "2964782",
+    "population": 2050
+  },
+  {
+    "label": "Abbeyfeale",
+    "value": "2967095",
+    "population": 2023
+  },
+  {
+    "label": "Balrothery",
+    "value": "2966378",
+    "population": 2017
+  },
+  {
+    "label": "Bearna",
+    "value": "2966342",
+    "population": 1998
+  },
+  {
+    "label": "Castlerea",
+    "value": "2965570",
+    "population": 1992
+  },
+  {
+    "label": "Tobercurry",
+    "value": "2961182",
+    "population": 1986
+  },
+  {
+    "label": "Bunclody",
+    "value": "2965932",
+    "population": 1984
+  },
+  {
+    "label": "Bundoran",
+    "value": "2965929",
+    "population": 1963
+  },
+  {
+    "label": "Templemore",
+    "value": "2961237",
+    "population": 1939
+  },
+  {
+    "label": "Enniskerry",
+    "value": "2964401",
+    "population": 1889
+  },
+  {
+    "label": "Ballymahon",
+    "value": "2966515",
+    "population": 1877
+  },
+  {
+    "label": "Cootehill",
+    "value": "2965158",
+    "population": 1853
+  },
+  {
+    "label": "Castlebridge",
+    "value": "2965645",
+    "population": 1840
+  },
+  {
+    "label": "Dunleer",
+    "value": "2964504",
+    "population": 1822
+  },
+  {
+    "label": "Ballaghaderreen",
+    "value": "2966784",
+    "population": 1822
+  },
+  {
+    "label": "Ballivor",
+    "value": "2966690",
+    "population": 1809
+  },
+  {
+    "label": "Dunmore East",
+    "value": "2964492",
+    "population": 1808
+  },
+  {
+    "label": "Newport",
+    "value": "2962257",
+    "population": 1806
+  },
+  {
+    "label": "Cloyne",
+    "value": "2965276",
+    "population": 1803
+  },
+  {
+    "label": "Charlesland",
+    "value": "6857857",
+    "population": 1800
+  },
+  {
+    "label": "Newmarket on Fergus",
+    "value": "2962262",
+    "population": 1773
+  },
+  {
+    "label": "Abbeyleix",
+    "value": "2967092",
+    "population": 1770
+  },
+  {
+    "label": "Rathcormac",
+    "value": "2961924",
+    "population": 1762
+  },
+  {
+    "label": "Banagher",
+    "value": "2966371",
+    "population": 1760
+  },
+  {
+    "label": "Valleymount",
+    "value": "3315130",
+    "population": 1756
+  },
+  {
+    "label": "Strandhill",
+    "value": "2963025",
+    "population": 1753
+  },
+  {
+    "label": "Moycullen",
+    "value": "2962440",
+    "population": 1704
+  },
+  {
+    "label": "Portlaw",
+    "value": "2962025",
+    "population": 1696
+  },
+  {
+    "label": "Kilmallock",
+    "value": "2963275",
+    "population": 1688
+  },
+  {
+    "label": "Clones",
+    "value": "2965367",
+    "population": 1680
+  },
+  {
+    "label": "Mountrath",
+    "value": "2962465",
+    "population": 1661
+  },
+  {
+    "label": "Leifear",
+    "value": "2962945",
+    "population": 1658
+  },
+  {
+    "label": "Dunmanway",
+    "value": "2964496",
+    "population": 1655
+  },
+  {
+    "label": "Collooney",
+    "value": "2965248",
+    "population": 1610
+  },
+  {
+    "label": "Derrinturn",
+    "value": "2964822",
+    "population": 1602
+  },
+  {
+    "label": "Clifden",
+    "value": "2965449",
+    "population": 1597
+  },
+  {
+    "label": "Rathdrum",
+    "value": "2961918",
+    "population": 1586
+  },
+  {
+    "label": "Longwood",
+    "value": "2962827",
+    "population": 1581
+  },
+  {
+    "label": "Termonfeckin",
+    "value": "2961231",
+    "population": 1579
+  },
+  {
+    "label": "Millstreet",
+    "value": "2962613",
+    "population": 1555
+  },
+  {
+    "label": "Derrybeg",
+    "value": "2964817",
+    "population": 1553
+  },
+  {
+    "label": "Rathkeale",
+    "value": "2961905",
+    "population": 1550
+  },
+  {
+    "label": "Ballymote",
+    "value": "2966492",
+    "population": 1549
+  },
+  {
+    "label": "Tullyallen",
+    "value": "2961077",
+    "population": 1547
+  },
+  {
+    "label": "Rosslare",
+    "value": "2961690",
+    "population": 1547
+  },
+  {
+    "label": "Fethard",
+    "value": "2964310",
+    "population": 1545
+  },
+  {
+    "label": "Convoy",
+    "value": "2965226",
+    "population": 1526
+  },
+  {
+    "label": "Castlecomer",
+    "value": "2965643",
+    "population": 1502
+  },
+  {
+    "label": "Rochfortbridge",
+    "value": "2961770",
+    "population": 1494
+  },
+  {
+    "label": "Killaloe",
+    "value": "2963376",
+    "population": 1484
+  },
+  {
+    "label": "Moville",
+    "value": "2962450",
+    "population": 1481
+  },
+  {
+    "label": "Caherconlish",
+    "value": "2965865",
+    "population": 1476
+  },
+  {
+    "label": "Graiguenamanagh",
+    "value": "2963905",
+    "population": 1475
+  },
+  {
+    "label": "Castledermot",
+    "value": "2965632",
+    "population": 1475
+  },
+  {
+    "label": "Manorhamilton",
+    "value": "2962706",
+    "population": 1466
+  },
+  {
+    "label": "Lanesborough",
+    "value": "2963036",
+    "population": 1454
+  },
+  {
+    "label": "Portumna",
+    "value": "2962010",
+    "population": 1450
+  },
+  {
+    "label": "Carlingford",
+    "value": "2965772",
+    "population": 1445
+  },
+  {
+    "label": "Aughrim",
+    "value": "2966817",
+    "population": 1442
+  },
+  {
+    "label": "Ashford",
+    "value": "3315010",
+    "population": 1425
+  },
+  {
+    "label": "Ferns",
+    "value": "2964318",
+    "population": 1415
+  },
+  {
+    "label": "Ardnacrusha",
+    "value": "2966906",
+    "population": 1414
+  },
+  {
+    "label": "Swinford",
+    "value": "2961299",
+    "population": 1394
+  },
+  {
+    "label": "Oldcastle",
+    "value": "2962179",
+    "population": 1384
+  },
+  {
+    "label": "Moroe",
+    "value": "2962522",
+    "population": 1377
+  },
+  {
+    "label": "Portraine",
+    "value": "3230840",
+    "population": 1372
+  },
+  {
+    "label": "Killucan",
+    "value": "2963301",
+    "population": 1370
+  },
+  {
+    "label": "Belturbet",
+    "value": "2966201",
+    "population": 1369
+  },
+  {
+    "label": "Slane",
+    "value": "2961450",
+    "population": 1369
+  },
+  {
+    "label": "Ballybunnion",
+    "value": "2966658",
+    "population": 1354
+  },
+  {
+    "label": "Ballysadare",
+    "value": "2966414",
+    "population": 1350
+  },
+  {
+    "label": "Stradbally",
+    "value": "2961349",
+    "population": 1350
+  },
+  {
+    "label": "Watergrasshill",
+    "value": "2960987",
+    "population": 1346
+  },
+  {
+    "label": "Ballygar",
+    "value": "2966589",
+    "population": 1345
+  },
+  {
+    "label": "Ballisodare",
+    "value": "7838897",
+    "population": 1344
+  },
+  {
+    "label": "Oughterard",
+    "value": "2962144",
+    "population": 1318
+  },
+  {
+    "label": "Oughterard",
+    "value": "3315239",
+    "population": 1318
+  },
+  {
+    "label": "Foxford",
+    "value": "2964233",
+    "population": 1315
+  },
+  {
+    "label": "Kilbeggan",
+    "value": "2963499",
+    "population": 1288
+  },
+  {
+    "label": "Kilpedder",
+    "value": "3315082",
+    "population": 1287
+  },
+  {
+    "label": "Castlemartyr",
+    "value": "2965590",
+    "population": 1277
+  },
+  {
+    "label": "Ramelton",
+    "value": "2961897",
+    "population": 1266
+  },
+  {
+    "label": "Claregalway",
+    "value": "2965474",
+    "population": 1248
+  },
+  {
+    "label": "Ballybay",
+    "value": "2966675",
+    "population": 1241
+  },
+  {
+    "label": "Killybegs",
+    "value": "2963295",
+    "population": 1236
+  },
+  {
+    "label": "Muff",
+    "value": "2962389",
+    "population": 1226
+  },
+  {
+    "label": "Rathwire",
+    "value": "2961873",
+    "population": 1226
+  },
+  {
+    "label": "Rathdowney",
+    "value": "2961920",
+    "population": 1208
+  },
+  {
+    "label": "Moone",
+    "value": "2962539",
+    "population": 1195
+  },
+  {
+    "label": "Castletown",
+    "value": "3226389",
+    "population": 1195
+  },
+  {
+    "label": "Piltown",
+    "value": "2962045",
+    "population": 1187
+  },
+  {
+    "label": "Kentstown",
+    "value": "7870969",
+    "population": 1179
+  },
+  {
+    "label": "Athgarvan",
+    "value": "2966842",
+    "population": 1176
+  },
+  {
+    "label": "Mooncoin",
+    "value": "2962540",
+    "population": 1175
+  },
+  {
+    "label": "Ferbane",
+    "value": "2964322",
+    "population": 1165
+  },
+  {
+    "label": "Dungloe",
+    "value": "2964524",
+    "population": 1164
+  },
+  {
+    "label": "Castlepollard",
+    "value": "2965573",
+    "population": 1163
+  },
+  {
+    "label": "Ballinroad",
+    "value": "3304313",
+    "population": 1161
+  },
+  {
+    "label": "Croom",
+    "value": "2964999",
+    "population": 1159
+  },
+  {
+    "label": "Raphoe",
+    "value": "2961944",
+    "population": 1157
+  },
+  {
+    "label": "Inishcrone",
+    "value": "2963658",
+    "population": 1156
+  },
+  {
+    "label": "Whitegate",
+    "value": "2960952",
+    "population": 1154
+  },
+  {
+    "label": "Askeaton",
+    "value": "2966857",
+    "population": 1137
+  },
+  {
+    "label": "Mullagh",
+    "value": "2962376",
+    "population": 1137
+  },
+  {
+    "label": "Killumney",
+    "value": "2963299",
+    "population": 1132
+  },
+  {
+    "label": "Adare",
+    "value": "2967076",
+    "population": 1129
+  },
+  {
+    "label": "Castlebellingham",
+    "value": "2965653",
+    "population": 1126
+  },
+  {
+    "label": "Ballygerry",
+    "value": "3302076",
+    "population": 1123
+  },
+  {
+    "label": "Dromiskin",
+    "value": "2964642",
+    "population": 1115
+  },
+  {
+    "label": "Ballyconnell",
+    "value": "2966638",
+    "population": 1105
+  },
+  {
+    "label": "Ballylinan",
+    "value": "7838899",
+    "population": 1084
+  },
+  {
+    "label": "Ballyragget",
+    "value": "2966420",
+    "population": 1082
+  },
+  {
+    "label": "Kiltamagh",
+    "value": "2963208",
+    "population": 1069
+  },
+  {
+    "label": "Newtown Cunningham",
+    "value": "2962235",
+    "population": 1067
+  },
+  {
+    "label": "Kilworth",
+    "value": "2963184",
+    "population": 1055
+  },
+  {
+    "label": "Carnew",
+    "value": "2965760",
+    "population": 1052
+  },
+  {
+    "label": "Ennistimon",
+    "value": "2964400",
+    "population": 1045
+  },
+  {
+    "label": "Crossmolina",
+    "value": "2964980",
+    "population": 1044
+  },
+  {
+    "label": "Cahersiveen",
+    "value": "2965852",
+    "population": 1041
+  },
+  {
+    "label": "Urlingford",
+    "value": "2961025",
+    "population": 1038
+  },
+  {
+    "label": "Daingean",
+    "value": "2962054",
+    "population": 1037
+  },
+  {
+    "label": "Charlestown",
+    "value": "2965518",
+    "population": 1033
+  },
+  {
+    "label": "Kinlough",
+    "value": "2963162",
+    "population": 1032
+  },
+  {
+    "label": "Aghada",
+    "value": "2967061",
+    "population": 1030
+  },
+  {
+    "label": "Kilmacanoge",
+    "value": "3315162",
+    "population": 1028
+  },
+  {
+    "label": "Belmullet",
+    "value": "2966208",
+    "population": 1019
+  },
+  {
+    "label": "Toormakeady",
+    "value": "2961143",
+    "population": 1007
+  },
+  {
+    "label": "Johnstown",
+    "value": "2963565",
+    "population": 1005
+  },
+  {
+    "label": "Ballybofey-Stranorlar",
+    "value": "11612450",
+    "population": 0
+  },
+  {
+    "label": "Courtbrack",
+    "value": "11612344",
+    "population": 0
+  }
+]

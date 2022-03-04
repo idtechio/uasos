@@ -86,11 +86,15 @@ export type FormType = {
     fullBedCount: number;
     childBedCount: number;
     phoneNumber: string;
-    sex: string;
+    preferences: {
+      animal: string;
+      peopleDetails: PeopleDetails;
+    };
+    gender: string;
     age: number;
     nationality: string;
+    overnightDuration: string;
     groupRelations: string;
-    groupsTypes: string;
     accommodationType: string;
   };
 };

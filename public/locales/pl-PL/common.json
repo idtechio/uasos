@@ -17,7 +17,7 @@
   },
   "validations": {
     "requiredName": "Podaj swoję imię",
-    "invalidEmail": "Podaj porawny e-mail",
+    "invalidEmail": "Podaj poprawny e-mail",
     "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
     "requiredTown": "Podaj miejscowość",
     "requiredTime": "Podaj na jak długo",
@@ -32,6 +32,21 @@
       "twoWeeks": "2 tygodnie",
       "month": "miesiąc",
       "longer": "dłużej"
+    },
+    "groupRelations": {
+      "single_man": "Singiel",
+      "single_woman": "Singielka",
+      "spouses": "Małżonkowie",
+      "mother_with_children": "Matka z dziećmi",
+      "family_with_children": "Rodzina z dziećmi",
+      "unrelated_group": "Niepowiązana grupa"
+    },
+    "accommodationTypes": {
+      "bed": "Łóźko w współdzielonym pokoju",
+      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "flat": "Mieszkanie na wyłączność",
+      "house": "Dom na wyłączność",
+      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
     },
     "boolean": {
       "yes": "tak",
@@ -187,8 +202,8 @@
     "animalReady": "Jest ze mną mój zwierzak",
     "elderReady": "Jestem lub jest ze mną osoba starsza",
     "ageLabel": "Wiek",
-    "sexLabel": "Płeć",
-    "sexPlaceholder": "Podaj płeć",
+    "genderLabel": "Płeć",
+    "genderPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
     "fullBedCountLabel": "Liczba pełnowymiarowych miejsc do spania",
     "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
@@ -196,7 +211,7 @@
     "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
     "cityOfRefugeLabel": "Wybierz miasto:",
-    "overnightTimeLabel": "Na jaki okres poszukujesz noclegu?",
+    "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
     "cityOfRefugePlaceholder": "Wybierz obszar",
     "nameLabel": "Imię (Podaj tylko pierwsze imię)",
     "namePlaceholder": "Imię",
@@ -212,10 +227,15 @@
     "errors": {
       "name": "Podaj swoję imię",
       "email": "Podaj poprawny email",
-      "cityOfRefuge": "",
-      "childBedCount": "",
-      "fullBedCountsaas": "",
-      "accommodationType": ""
+      "gender": "Uzupełnij płeć z którą się utożsamiasz",
+      "cityOfRefuge": "Wybierz miasto",
+      "phoneNumber": "Podaj numer telefonu",
+      "countryOfRefuge": "Wybierz kraj",
+      "childBedCount": "Podaj ilość miejsc",
+      "fullBedCountsaas": "Podaj ilość miejsc",
+      "groupRelations": "Wybierz relacje",
+      "overnightDuration": "Wybierz typ noclegu",
+      "accommodationType": "Wybierz narodowość"
     }
   },
   "whatSosUaDoesSection": {
