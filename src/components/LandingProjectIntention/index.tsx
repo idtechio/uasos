@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { ButtonCta } from "../Buttons";
-import splashYellowImage from "../../../public/splash_yellow.jpg";
-import splashBlueImage from "../../../public/splash_blue.jpg";
+import splashYellowImage from "../../../public/splash_yellow1.png";
+import splashBlueImage from "../../../public/splash_blue.png";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
@@ -79,7 +79,6 @@ const BoldSubTitle = styled(SubTitle)`
 const ImageSplashYellow = styled.Image`
   position: absolute;
   width: 100%;
-  min-height: 390px;
   height: 650px;
   top: -220px;
   left: -175px;
@@ -95,12 +94,11 @@ const ImageSplashYellow = styled.Image`
     })}
 `;
 
-const ImageSplashBlue = styled.ImageBackground`
+const ImageSplashBlue = styled.Image`
   position: absolute;
   width: 100%;
-  min-height: 240px;
-  height: 240px;
-  top: 400px;
+  height: 440px;
+  top: 300px;
   right: -50%;
 
   ${({ theme }) =>
@@ -141,28 +139,22 @@ const ButtonStyle = styled(ButtonCta)`
 `;
 
 const LandingProjectIntention = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
   return (
     <Container>
-      <ImageSplashYellow source={splashYellowImage.src} />
-      <ImageSplashBlue source={splashBlueImage.src} />
+      <ImageSplashYellow source={splashYellowImage.src} resizeMode="contain" />
+      <ImageSplashBlue source={splashBlueImage.src} resizeMode="contain" />
       <ContentWrapper>
         <TextContainer>
           <Title accessibilityRole="heading" accessibilityLevel={1}>
-            {t("landingPage.projectIntention.title")}
+            {t("projectIntention.title")}
           </Title>
 
           <SubTitleWrapper>
-            <SubTitle>
-              {t("landingPage.projectIntention.description_part1")}
-            </SubTitle>
-            <BoldSubTitle>
-              {t("landingPage.projectIntention.freeOfCharge")}
-            </BoldSubTitle>
-            <SubTitle>
-              {t("landingPage.projectIntention.description_part2")}
-            </SubTitle>
+            <SubTitle>{t("projectIntention.description_part1")}</SubTitle>
+            <BoldSubTitle>{t("projectIntention.freeOfCharge")}</BoldSubTitle>
+            <SubTitle>{t("projectIntention.description_part2")}</SubTitle>
           </SubTitleWrapper>
 
           <ButtonContainer>
@@ -172,7 +164,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOposite
-                      anchor={t("landingPage.projectIntention.lookingForHelp")}
+                      anchor={t("projectIntention.lookingForHelp")}
                     />
                   </a>
                 </Link>
@@ -180,7 +172,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOposite
-                      anchor={t("landingPage.projectIntention.shareHelp")}
+                      anchor={t("projectIntention.shareHelp")}
                     />
                   </a>
                 </Link>
