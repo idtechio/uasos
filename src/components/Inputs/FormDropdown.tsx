@@ -5,19 +5,12 @@ import {
   useForm,
   useFormContext,
 } from "react-hook-form";
-import Input from "../Forms/Input";
 import InputControl from "../Forms/InputControl";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import { DropdownProps } from "../Dropdown/types";
 import { Dropdown } from "../Dropdown";
-
-const styles = StyleSheet.create({
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-});
+import { Error } from "./style";
 
 type Props = {
   name: FormKey;
@@ -82,7 +75,7 @@ const FormDropdown: VFC<Props> = (props) => {
                 selected={value}
                 error={!!error}
               />
-              {error && <Text style={styles.error}>{errorMsg}</Text>}
+              {error && <Error>{errorMsg}</Error>}
             </InputControl>
           </View>
         );

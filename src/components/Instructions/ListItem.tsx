@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { colors } from "../../style/landingPageStyle";
 
 const ListItemWrapper = styled.View`
@@ -13,6 +13,15 @@ const ListItemWrapper = styled.View`
   padding: 12px;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.13);
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        height: 100%;
+        margin: 0;
+      `,
+    })}
 `;
 
 const Title = styled.Text`
@@ -59,6 +68,13 @@ const BadgeText = styled.Text`
 const ContentContainer = styled.View`
   margin-top: 20px;
   height: 100%;
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        margin: 0;
+      `,
+    })}
 `;
 
 const Image = styled.Image`

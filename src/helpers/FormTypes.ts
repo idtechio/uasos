@@ -12,6 +12,11 @@ export enum LivingConditions {
   OTHER = "other",
 }
 
+export enum Nationality {
+  UKRAINIAN = "ukrainian",
+  ANY = "any",
+}
+
 type PeopleDetails = {
   animals: boolean;
   toddler: boolean;
@@ -19,11 +24,6 @@ type PeopleDetails = {
   disability: boolean;
   pregnant?: boolean;
 };
-
-export enum Nationality {
-  UKRAINIAN = "ukrainian",
-  ANY = "any",
-}
 
 export type FormType = {
   host: {

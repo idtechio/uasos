@@ -28,7 +28,7 @@ export const Dropdown = ({
   searchable = false,
 }: DropdownProps) => {
   const containerRef = useRef<any>();
-  const [areOptionsVisible, setOptionsAreVisible] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
   const [selectHeight, setSelectHeight] = useState(0);
 
@@ -52,7 +52,7 @@ export const Dropdown = ({
       title={item.label}
       value={item.value}
       itemPressFunction={handleItemPress}
-      setOptionsAreVisible={multiselect ? () => {} : setOptionsAreVisible}
+      setShowOptions={multiselect ? () => {} : setShowOptions}
       selected={multiselect && selectedValues.includes(item.value)}
     />
   );
@@ -60,11 +60,11 @@ export const Dropdown = ({
   useEffect(() => {
     const handleClickOutside = (ev) => {
       if (containerRef.current && !containerRef.current?.contains(ev.target)) {
-        setOptionsAreVisible(false);
+        setShowOptions(false);
       }
     };
 
-    if (containerRef.current && Platform.OS === "web" && areOptionsVisible) {
+    if (containerRef.current && Platform.OS === "web" && showOptions) {
       document.body.addEventListener("click", handleClickOutside);
     }
 
@@ -73,28 +73,27 @@ export const Dropdown = ({
         document.body.removeEventListener("click", handleClickOutside);
       }
     };
-  }, [areOptionsVisible]);
+  }, [showOptions]);
 
   return (
     <>
-      {label && <SelectLabel>{label}</SelectLabel>}
+      {label ? <SelectLabel>{label}</SelectLabel> : null}
       <View
         onLayout={(event) => {
-          var { width, height } = event.nativeEvent.layout;
-          setSelectWidth(width);
-          setSelectHeight(height);
+          setSelectWidth(event.nativeEvent.layout.width);
+          setSelectHeight(event.nativeEvent.layout.height);
         }}
         ref={containerRef}
       >
         <Select
           isInvalid={!!error}
-          areOptionsVisible={areOptionsVisible}
+          showOptions={showOptions}
           onPress={() => {
-            if (areOptionsVisible) {
+            if (showOptions) {
               onBlur?.();
             }
 
-            setOptionsAreVisible(!areOptionsVisible);
+            setShowOptions(!showOptions);
           }}
         >
           <SelectText>
@@ -110,19 +109,17 @@ export const Dropdown = ({
               <PlaceholderText numberOfLines={1}>{placeholder}</PlaceholderText>
             )}
           </SelectText>
-          <Icon areOptionsVisible={areOptionsVisible}>
+          <Icon showOptions={showOptions}>
             <ArrowIcon />
           </Icon>
         </Select>
-        {areOptionsVisible && (
+
+        {showOptions ? (
           <>
             <Options
-              style={{
-                width: selectWidth + "px",
-                top: direction === "to-bottom" ? selectHeight : "unset",
-                bottom: direction === "to-top" ? selectHeight : "unset",
-                zIndex: "100",
-              }}
+              selectWidth={selectWidth}
+              selectHeight={selectHeight}
+              direction={direction}
             >
               <SearchHeader
                 data={data}
@@ -136,7 +133,7 @@ export const Dropdown = ({
               />
             </Options>
           </>
-        )}
+        ) : null}
       </View>
     </>
   );

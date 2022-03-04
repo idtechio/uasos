@@ -24,6 +24,7 @@ import FormButtonsGrid from "../Inputs/FormButtonsGrid";
 import { useTranslation } from "next-i18next";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useState } from "react";
+import { primary } from "../../style/theme.config";
 
 // TODO: all file to revalidaete !!!!
 
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   error: {
-    color: "#D8000C",
+    color: primary.colors.error,
     marginTop: 10,
   },
   containerWraper: {
@@ -59,23 +60,23 @@ const AddAccommodationForm = ({}: AddAccommodationFormProps) => {
       method: "post",
       body: JSON.stringify({
         name: data.host.core.name,
-        children_allowed: data.host.preferences.kids,
-        city: data.host.core.location,
+        phone_num: data.host.core.phoneNumber,
+        status: 1,
         email: data.host.core.email,
+        city: data.host.core.location,
+        children_allowed: data.host.preferences.kids,
+        pet_allowed: data.host.preferences.animals,
         handicapped_allowed: data.host.preferences.disability,
         num_people: data.host.preferences.peopleQuantity,
         period: data.host.preferences.forHowLong,
-        pet_allowed: data.host.preferences.animals,
         pietro: data.host.floor,
-        status: 1,
       }),
-    })
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (data) {
+    }).then(function (res) {
+      if (res.status === 200) {
         setShowModal(true);
-      });
+      }
+      return console.log();
+    });
   };
 
   const onError = (error) => {

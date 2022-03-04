@@ -6,19 +6,17 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  Image,
   View,
 } from "react-native";
+import styled from "styled-components/native";
 import { FormKey, FormType } from "../../helpers/FormTypes";
+import { primary } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import {
-  ChoiceButton,
-  InputControl,
-  InputCotrolLabel as InputControlLabel,
-} from "../Forms";
-import UploadInput from "../Forms/UploadInput";
+import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
+import UploadInput from "../Forms/UploadInput/index.web";
+import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -52,6 +50,10 @@ const ADDITIONAL_HOST_FEATS: {
     translateId: "hostAdd.prolongationReady",
   },
 ];
+
+const DeletePhotoText = styled.Text`
+  color: ${(props) => props.theme.colors.error};
+`;
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -152,9 +154,9 @@ export default function AddAccommodationAdvancedForm() {
                         setUploadPreview(undefined);
                       }}
                     >
-                      <Text style={{ color: "#D8000C" }}>
+                      <DeletePhotoText>
                         {t("hostAdd.accomodationPhotoReset")}
-                      </Text>
+                      </DeletePhotoText>
                     </TouchableOpacity>
                   </>
                 ) : (
@@ -235,26 +237,7 @@ export default function AddAccommodationAdvancedForm() {
           />
 
           {ADDITIONAL_HOST_FEATS.map(({ translateId, name }) => (
-            <Controller
-              key={name}
-              control={control}
-              rules={{
-                required: false,
-              }}
-              render={({ field: { onChange, onBlur, value } }) => (
-                // TODO: use properly ChoiceButton component after it's refactor
-                <InputControl>
-                  <TouchableOpacity onPress={() => onChange(!value)}>
-                    <ChoiceButton
-                      text={t(translateId)}
-                      isSmall
-                      isChoice={!!value}
-                    />
-                  </TouchableOpacity>
-                </InputControl>
-              )}
-              name={name}
-            />
+            <FormChoiceButton key={name} name={name} text={t(translateId)} />
           ))}
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
@@ -281,7 +264,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   error: {
-    color: "#D8000C",
+    color: primary.colors.error,
     marginTop: 10,
   },
   containerWraper: {

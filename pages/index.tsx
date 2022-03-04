@@ -1,53 +1,60 @@
-import { CompositionAppBody } from "../src/components/Compositions";
-import { useState } from "react";
+import * as React from "react";
+import { ScrollView, View } from "react-native";
+import styled from "styled-components/native";
+import Header from "../src/components/Header";
+import HeroImage from "../src/components/HeroImage";
+import Section from "../src/components/Section";
+import PartnersCarousel from "../src/components/PartnersCarousel";
+import WhatWeDoSection from "../src/components/LandingSections/WhatWeDo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { ButtonCta } from "../src/components/Buttons";
-import { signIn } from "next-auth/react";
-import { View, StyleSheet } from "react-native";
+import LandingFooter from "../src/components/LandingFooter/LandingFooter";
+import LandingMatchedSection from "../src/components/LandingMatchedSection/LandingMatchedSection";
+import SectionTitle from "../src/components/SectionTitle";
+import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 
-function Home(props) {
+const HeroImageWrapper = styled.View`
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+`;
+
+const ElipseEffect = styled.View`
+  height: 100px;
+  width: 140%;
+  top: -20px;
+  margin-bottom: -70px;
+  background-color: white;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+`;
+
+function Landing() {
   const { t } = useTranslation();
 
   return (
-    <CompositionAppBody>
-      <View style={styles.home}>
-        <View style={styles.host}>
-          <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
+    <ScrollView>
+      <Header />
+      <HeroImageWrapper>
+        <HeroImage />
+        <ElipseEffect />
+      </HeroImageWrapper>
+      <Section bgColor="#fff">
+        <SectionTitle title={t("landingPage.supportingPartners")} />
+        <View style={{ alignItems: "center" }}>
+          <PartnersCarousel />
         </View>
-      </View>
-    </CompositionAppBody>
+      </Section>
+      <WhatWeDoSection />
+      <LikeToHelpSection />
+      <LandingMatchedSection />
+      <LandingFooter />
+    </ScrollView>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale)),
-      data: [
-        {
-          location: "Warszawa",
-          host: "owner",
-          conditions: null,
-          preferences: ["animals", "disability", "foof"],
-          resources: null,
-        },
-      ],
-    },
-  };
-}
-
-const styles = StyleSheet.create({
-  home: {
-    flex: 1,
-    height: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  host: {},
-  guest: {
-    marginTop: 20,
-  },
+export const getServerSideProps = async ({ locale }) => ({
+  props: { ...(await serverSideTranslations(locale)) },
 });
 
-export default Home;
+export default Landing;

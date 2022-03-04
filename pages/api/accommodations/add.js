@@ -2,13 +2,13 @@ import { getSession } from "next-auth/react";
 
 export default async function getAccommodations(req, res) {
   const session = await getSession({ req });
+  console.log(session);
   if (session) {
     // Signed in
     const body = JSON.parse(req.body);
 
     const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
     const data = JSON.stringify(body);
-    console.log(body);
 
     // Imports the Google Cloud client library
     const { PubSub } = require("@google-cloud/pubsub");
@@ -28,7 +28,7 @@ export default async function getAccommodations(req, res) {
         res.status(200).json({ status: "ok" });
       } catch (error) {
         console.error(`Received error while publishing: ${error.message}`);
-        res.status(200).json({
+        res.status(401).json({
           status: "error",
           error: `Received error while publishing: ${error.message}`,
         });
