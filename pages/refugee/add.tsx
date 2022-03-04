@@ -1,6 +1,6 @@
-import { StyleSheet, View } from "react-native";
 import { useSession } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ContainerWrapper } from "./style";
 
 import {
   CompositionAppBody,
@@ -20,21 +20,10 @@ export default function Account(props) {
   return (
     <CompositionAppBody>
       <CompositionContainer>
-        <View style={styles.container}>
+        <ContainerWrapper>
           <AddRefugeeAdvancedForm />
-        </View>
+        </ContainerWrapper>
       </CompositionContainer>
     </CompositionAppBody>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    marginRight: "auto",
-    marginLeft: "auto",
-    flex: 1,
-  },
-});
