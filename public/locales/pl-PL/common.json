@@ -79,7 +79,7 @@
       }
     },
     "floor": {
-      "label": "Na którym piętrze zamieszkają?",
+      "label": "Na którym piętrze znajduje się lokal?",
       "hint": "*Osoby starsze mogą mieć problem z wejściem na wysokie piętro"
     },
     "submit": "Zgłoś swoją gotowość"
@@ -103,7 +103,7 @@
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
-    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o ty za pomocą maila."
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o tym za pomocą maila."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -127,7 +127,7 @@
       "name": "Imię",
       "email": "Email",
       "phoneNumber": "Numer telefonu",
-      "refugeesCount": "Dla ilu osób szukasz schronienia",
+      "refugeesCount": "Dla ilu osób szukasz schronienia?",
       "refugee": "Uchodźca {{number}}",
       "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie:",
       "refugeesAnimal": "Rasa (imie zwierzaka)",
