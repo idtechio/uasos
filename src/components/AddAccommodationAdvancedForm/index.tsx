@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import {
+  AccommodationType,
   AccomodationTime,
   FormKey,
   FormType,
@@ -82,7 +83,34 @@ export default function AddAccommodationAdvancedForm() {
     [t]
   );
 
-  const formFields = useForm<FormType>({
+  // todo: make sure values are consistent with API
+  const accomodationTypeDropdownFields = useMemo(
+    () => [
+      {
+        label: t("advancedHost.accommodationTypeOptions.bed"),
+        value: AccommodationType.BED,
+      },
+      {
+        label: t("advancedHost.accommodationTypeOptions.room"),
+        value: AccommodationType.ROOM,
+      },
+      {
+        label: t("advancedHost.accommodationTypeOptions.flat"),
+        value: AccommodationType.FLAT,
+      },
+      {
+        label: t("advancedHost.accommodationTypeOptions.house"),
+        value: AccommodationType.HOUSE,
+      },
+      {
+        label: t("advancedHost.accommodationTypeOptions.collective"),
+        value: AccommodationType.COLLECTIVE,
+      },
+    ],
+    [t]
+  );
+
+  const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
         guestCount: 0,
@@ -94,7 +122,18 @@ export default function AddAccommodationAdvancedForm() {
     control,
     handleSubmit,
     formState: { errors },
-  } = formFields;
+  } = form;
+
+  const watchAccomodationTypeFieldValue = form.watch(
+    "advancedHost.accommodationType"
+  );
+
+  const shouldIncludeHostTypeField = useMemo(
+    () =>
+      watchAccomodationTypeFieldValue === AccommodationType.BED ||
+      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
+    [watchAccomodationTypeFieldValue]
+  );
 
   const onSubmit = (data) => {
     console.log("Handle submit", data);
@@ -102,7 +141,7 @@ export default function AddAccommodationAdvancedForm() {
   const [uploadPreview, setUploadPreview] = useState<string>();
 
   return (
-    <FormProvider {...formFields}>
+    <FormProvider {...form}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.container}
@@ -128,7 +167,7 @@ export default function AddAccommodationAdvancedForm() {
           <InputControlLabel>{t("hostAdd.town")}</InputControlLabel>
           <FormDropdown
             zIndex={13}
-            data={DUMMY_DROPDOWN_ITEMS}
+            data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
             name="advancedHost.town"
             placeholder={t("hostAdd.town")}
             rules={{
@@ -148,7 +187,7 @@ export default function AddAccommodationAdvancedForm() {
           {/* TODO: use Dropdown here */}
           <FormDropdown
             zIndex={12}
-            data={DUMMY_DROPDOWN_ITEMS}
+            data={accomodationTypeDropdownFields}
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
             rules={{
@@ -158,24 +197,28 @@ export default function AddAccommodationAdvancedForm() {
             errorMsg={t("hostAdd.errors.type")}
           />
 
-          <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
-          {/* TODO: ADD validation */}
-          <FormDropdown
-            data={(Object.keys(HostType) as Array<keyof HostType>).map(
-              (key) => ({
-                value: key,
-                label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
-              })
-            )}
-            name="advancedHost.hostType"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.hostType}
-            errorMsg={t("hostAdd.errors.hostType")}
-            zIndex={11}
-          />
+          {shouldIncludeHostTypeField && (
+            <>
+              <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
+              {/* TODO: ADD validation */}
+              <FormDropdown
+                data={(Object.keys(HostType) as Array<keyof HostType>).map(
+                  (key) => ({
+                    value: key,
+                    label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
+                  })
+                )}
+                name="advancedHost.hostType"
+                placeholder={t("forms.chooseFromList")}
+                rules={{
+                  required: true,
+                }}
+                error={errors?.advancedHost?.hostType}
+                errorMsg={t("hostAdd.errors.hostType")}
+                zIndex={11}
+              />
+            </>
+          )}
 
           <InputControlLabel>
             {t("hostAdd.accomodationPhoto")}

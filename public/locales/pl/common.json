@@ -271,5 +271,14 @@
   "accomodationPhotoLabel": "Prześlij",
   "dropdownChoose": "Wybierz...",
   "dropdownSearch": "Szukaj",
-  "heroImageAlt": "Sława Ukrajini!"
+  "heroImageAlt": "Sława Ukrajini!",
+  "advancedHost": {
+    "accommodationTypeOptions": {
+      "bed": "Łóźko w współdzielonym pokoju",
+      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "flat": "Mieszkanie na wyłączność",
+      "house": "Dom na wyłączność",
+      "collective": "Pokój zbiorowy (np. szkolna sala)"
+    }
+  }
 }

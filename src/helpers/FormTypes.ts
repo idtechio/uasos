@@ -41,6 +41,15 @@ export enum AccomodationTime {
   MONTH = "month",
   LONGER = "longer",
 }
+
+export enum AccommodationType {
+  ROOM = "room",
+  BED = "bed",
+  FLAT = "flat",
+  HOUSE = "house",
+  COLLECTIVE = "collective",
+}
+
 export type FormType = {
   host: {
     core: {
