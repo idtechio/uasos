@@ -2,13 +2,13 @@
   "supportingPartners": "Partnerzy wspierający akcję",
   "hero": {
     "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
-    "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
+    "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc.\nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
     "lookingForHelp": "Szukam schronienia",
     "shareHelp": "Oferuję pomoc"
   },
   "likeToHelp": {
     "title": "Chcesz pomóc?",
-    "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie \n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako \n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu. \n \n Nasza aplikacja pomoże automatycznie dopasować \n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
+    "details": "Jeśli dysponujesz miejscem, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako wolontariusz i wypełnij kwestionariusz opisujący miejsce, które chcesz udostępnić. \\n \\n Nasza aplikacja pomoże Ci automatycznie znaleźć potrzebujących Twojej pomocy."
   },
   "weMatched": {
     "title": "Udało nam się dopasować już...",
@@ -21,7 +21,7 @@
   "whatSosUaDoesSection": {
     "title": "Co robi SOS-UA?",
     "bulletPoints": {
-      "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna ilość osób, długość pobytu)",
+      "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna liczba osób, długość pobytu)",
       "1": "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",
       "2": "SOS-UA automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
     },
@@ -34,27 +34,27 @@
   "instructions": {
     "0": {
       "title": "Rejestracja na portalu",
-      "text": "Użytkownik rejestruje się na portalu jako oferujący lokum / potrzebujący schronienia"
+      "text": "Użytkownik rejestruje się w portalu jako oferujący lokum albo potrzebujący schronienia."
     },
     "1": {
       "title": "Wypełnienie formularza",
-      "text": "Użytkownik wypełnia dopasowany formularz dotyczący oferowanego lokum lub poszukiwanego zakwaterowania"
+      "text": "Użytkownik wypełnia formularz dotyczący oferowanego lokum lub poszukiwanego zakwaterowania."
     },
     "2": {
       "title": "Automatyczne parowanie",
       "text": "Algorytm przeszukuje bazę ogłoszeń oraz bazę potrzebujących i na podstawie dostarczonych informacji dobiera najlepsze połączenie."
     },
     "3": {
-      "title": "Informacja do użytkownika",
+      "title": "Informacja wysłana do użytkownika",
       "text": "Po poprawnym dopasowaniu użytkownicy otrzymują wiadomość e-mail. W aplikacji widoczny jest dodatkowy opis połączonych użytkowników."
     },
     "4": {
       "title": "Kontakt użytkowników",
-      "text": "Po połączeniu, możliwy jest kontakt mailowy lub telefonicznych użytkowników w celu omówienia szczegółów"
+      "text": "Po połączeniu, możliwy jest kontakt mailowy lub telefoniczny użytkowników w celu omówienia szczegółów."
     },
     "5": {
       "title": "Potwierdzenie lub odrzucenie oferty",
-      "text": "Ostatnim krokiem jest potwierdzenie lub odrzucenie oferty w aplikacji. Jeśli oferta zostanie odrzucona, ogłoszenia wracają do puli."
+      "text": "Ostatnim krokiem jest potwierdzenie lub odrzucenie oferty w aplikacji. Jeśli oferta zostanie odrzucona, ogłoszenia wracają do puli dostępnych ogłoszeń."
     }
   }
 }

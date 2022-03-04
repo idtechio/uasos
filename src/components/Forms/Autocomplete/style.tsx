@@ -18,7 +18,7 @@ export const InputRow = styled.View`
   align-items: center;
   border-radius: 4px;
   border: 2px solid
-    ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
+    ${({ error }) => (error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
   flex-direction: row;
   &:focus {
     outline-color: "#003566";

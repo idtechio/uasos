@@ -13,7 +13,7 @@ export const PageSection = styled.View<SectionProps>`
       ? props.backgroundColor
       : props.theme.pageSection.backgroundColor};
   flex-direction: column;
-  z-index: ${(props) => props.zIndex || "0"};
+  z-index: ${({ zIndex }) => zIndex || "0"};
 `;
 
 export const SectionHeader = styled.Text<SectionProps>`

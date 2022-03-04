@@ -7,12 +7,14 @@ import { Error } from "./style";
 
 type Props = {
   name: FormKey;
+  min?: number;
+  max?: number;
   error?: FieldError;
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput: VFC<Props> = (props) => {
-  const { name, errorMsg, rules, error } = props;
+  const { name, errorMsg, rules, error, max, min } = props;
   const { control } = useFormContext();
   return (
     <Controller

@@ -22,6 +22,7 @@ type PeopleDetails = {
   toddler: boolean;
   oldPerson: boolean;
   disability: boolean;
+  pregnant?: boolean;
 };
 
 export enum HostType {
@@ -97,6 +98,25 @@ export type FormType = {
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;
+  };
+  advancedRefugee: {
+    name: string;
+    email: string;
+    country: string;
+    cityOfRefuge: string;
+    fullBedCount: number;
+    childBedCount: number;
+    phoneNumber: string;
+    preferences: {
+      animal: string;
+      peopleDetails: PeopleDetails;
+    };
+    gender: string;
+    age: number;
+    nationality: string;
+    overnightDuration: string;
+    groupRelations: string;
+    accommodationType: string;
   };
 };
 

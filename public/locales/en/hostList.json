@@ -1,14 +1,14 @@
 {
-  "placeFor": "Miejsce dla",
-  "people": "osób",
+  "placeFor": "Place for",
+  "people": "people",
   "maximum": "max.",
-  "oneWeek": "tydzień",
-  "twoWeeks": "dwa tygodnie",
-  "month": "miesiąc",
-  "longerThanMonth": "więcej niż miesiąc",
-  "food": "wyżywienie",
-  "petsWelcome": "zwierzęta mile widziane",
-  "disabledReady": "udogodnienia dla niepełnosprawnych",
-  "locationOwner": "Gospodarz",
-  "use": "Skorzystaj"
+  "oneWeek": "One week",
+  "twoWeeks": "Two weeks",
+  "month": "One month",
+  "longerThanMonth": "More than a month",
+  "food": "Food",
+  "petsWelcome": "Pets accepted",
+  "disabledReady": "Facilities for disabled guests",
+  "locationOwner": "Host",
+  "use": "Use"
 }

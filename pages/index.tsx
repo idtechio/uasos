@@ -12,11 +12,24 @@ import LandingFooter from "../src/components/LandingFooter/LandingFooter";
 import LandingMatchedSection from "../src/components/LandingMatchedSection/LandingMatchedSection";
 import SectionTitle from "../src/components/SectionTitle";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
+import { css } from "styled-components";
 
 const HeroImageWrapper = styled.View`
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+`;
+
+const PartnersCarouselWrapper = styled.View`
+  width: 100%;
+  max-width: 100%;
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+      width: auto,
+      max-width: auto
+    `,
+    })}
 `;
 
 const ElipseEffect = styled.View`
@@ -41,9 +54,9 @@ function Landing() {
       </HeroImageWrapper>
       <Section bgColor="#fff">
         <SectionTitle title={t("supportingPartners")} />
-        <View style={{ alignItems: "center" }}>
+        <PartnersCarouselWrapper>
           <PartnersCarousel />
-        </View>
+        </PartnersCarouselWrapper>
       </Section>
       <WhatWeDoSection />
       <LikeToHelpSection />

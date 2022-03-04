@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     name: build-docker
     runs-on: ubuntu-latest
-    environment: 'dev-cloud'
+    environment: "dev-cloud"
     steps:
       - uses: actions/checkout@v2
       - name: Set outputs
@@ -41,7 +41,7 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{env.deploy_project_id}}
-      - name: Deploy to Cloud Run Test Env
+      - name: Deploy to Cloud Run Dev Env
         id: deploy-service
         uses: google-github-actions/deploy-cloudrun@v0
         with:
