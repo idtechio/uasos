@@ -207,5 +207,8 @@
       "overnightDuration": "Виберіть тип проживання",
       "accommodationType": "Будь ласка, виберіть національність"
     }
-  }
+  },
+  "accomodationPhoto": "",
+  "accomodationPhotoReset": "",
+  "accomodationPhotoLabel": ""
 }

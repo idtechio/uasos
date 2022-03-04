@@ -207,5 +207,8 @@
       "overnightDuration": "Выберите тип размещения",
       "accommodationType": "Пожалуйста, выберите национальность"
     }
-  }
+  },
+  "accomodationPhoto": "",
+  "accomodationPhotoReset": "",
+  "accomodationPhotoLabel": ""
 }
