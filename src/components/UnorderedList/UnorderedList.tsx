@@ -1,26 +1,17 @@
 import React from "react";
-import {
-  Column,
-  ColumnBulletPoint,
-  PointColumn,
-  Row,
-  ColumnText,
-} from "./style";
+import { View } from "react-native";
+import { Row, ColumnBulletPoint, ColumnText } from "./style";
 
 interface Props {
   texts: string[];
 }
 export const UnorderedList = ({ texts }: Props) => (
-  <Column>
+  <View>
     {texts.map((text, index) => (
       <Row key={index}>
-        <PointColumn>
-          <ColumnBulletPoint>{"\u2022"}</ColumnBulletPoint>
-        </PointColumn>
-        <Column>
-          <ColumnText>{text}</ColumnText>
-        </Column>
+        <ColumnBulletPoint>{"\u2022"}</ColumnBulletPoint>
+        <ColumnText>{text}</ColumnText>
       </Row>
     ))}
-  </Column>
+  </View>
 );
