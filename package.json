@@ -13,6 +13,7 @@
     "@react-native-community/checkbox": "^0.5.11",
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
+    "lodash.debounce": "^4.0.8",
     "next": "latest",
     "next-auth": "^4.2.1",
     "next-i18next": "^10.4.0",

@@ -14,7 +14,6 @@ import { ForHowLong } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
-import CrossIcon from "../../style/svgs/cross.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import FormTextInput from "../Inputs/FormTextInput";
 import KidsIcon from "../../style/svgs/kids.svg";
@@ -23,6 +22,7 @@ import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
+import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 
 const enum Location {
   Any,
@@ -101,7 +101,8 @@ const AddRefugeeForm = () => {
         name: data.refugee.core.name,
         status: 1,
         email: data.refugee.core.email,
-        city: data.refugee.core.location,
+        city:
+          location === Location.Any ? undefined : data.refugee.core.location,
         children_allowed: data.refugee.preferences.peopleDetails.toddler,
         pet_allowed: data.refugee.preferences.peopleDetails.animals,
         handicapped_allowed: data.refugee.preferences.peopleDetails.disability,
@@ -219,22 +220,20 @@ const AddRefugeeForm = () => {
                 />
               </RadioButtons>
               {location === Location.Preffered && (
-                <FormTextInput
-                  name="refugee.core.location"
-                  label={t("refugeeForm.labels.city")}
-                  labelsBackgroundColor="#F5F4F4"
-                  rules={{
-                    required: true,
-                    maxLength: 50,
-                  }}
+                <FormAutocompleteInput
                   error={errors?.refugee?.core?.location}
                   errorMsg={t("refugeeForm.errors.location")}
+                  name="refugee.core.location"
+                  label={t("refugeeForm.labels.city")}
+                  rules={{
+                    required: true,
+                  }}
                 />
               )}
             </InputControl>
           </CompositionSection>
 
-          <CompositionSection padding={[35, 30, 8, 30]}>
+          <CompositionSection zIndex={-1} padding={[35, 30, 8, 30]}>
             <FormButtonsVertical
               label={t("refugeeForm.labels.refugeeDetails")}
               data={refugeeDetailsOptions}
