@@ -1,10 +1,12 @@
 import React, { ReactNode, useState, useMemo } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
+import Tooltip from "react-native-walkthrough-tooltip";
 import { useTranslation } from "react-i18next";
 import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableHighlight,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -48,7 +50,14 @@ const DeletePhotoText = styled.Text`
   color: ${(props) => props.theme.colors.error};
 `;
 
+const TooltipIcon = styled.View`
+  background: "black";
+  color: "white";
+`;
+
 export default function AddAccommodationAdvancedForm() {
+  const [cityTooltipVisible, setCityTooltipVisible] = useState(false);
+
   const { t } = useTranslation();
 
   const additionalHostsFeats: Data[] = useMemo(
@@ -163,7 +172,19 @@ export default function AddAccommodationAdvancedForm() {
             error={errors?.advancedHost?.country}
             errorMsg={t("hostAdd.errors.country")}
           />
-          <InputControlLabel>{t("hostAdd.town")}</InputControlLabel>
+          <InputControlLabel>
+            {t("hostAdd.town")}
+            {/* <Tooltip
+              isVisible={cityTooltipVisible}
+              content={<Text>{t("advancedHost.tooltipText")}</Text>}
+              placement="top"
+              onClose={() => setCityTooltipVisible((visible) => !visible)}
+            >
+              <TouchableHighlight>
+                <Text>!</Text>
+              </TouchableHighlight>
+            </Tooltip> */}
+          </InputControlLabel>
           <FormDropdown
             zIndex={13}
             data={DUMMY_DROPDOWN_ITEMS} // todo: google places api

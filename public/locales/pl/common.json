@@ -273,6 +273,7 @@
   "dropdownSearch": "Szukaj",
   "heroImageAlt": "Sława Ukrajini!",
   "advancedHost": {
+    "advancedHost.tooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "accommodationTypeOptions": {
       "bed": "Łóźko w współdzielonym pokoju",
       "room": "Pokój w współdzielonym mieszkaniu/domu",
