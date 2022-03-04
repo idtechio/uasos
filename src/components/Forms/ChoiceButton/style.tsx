@@ -6,7 +6,7 @@ export const Button = styled.View<ChoiceButtonProps>`
     props.isChoice
       ? `${props.theme.forms.borderWidth} solid #38B000`
       : props.error
-      ? `${props.theme.forms.borderWidth} solid ${props.theme.colors.error}`
+      ? `${props.theme.forms.borderWidth} solid #D8000C`
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) =>
     props.isSelected ? `rgba(56, 176, 0, 0.1)` : `transparent`};
@@ -26,7 +26,7 @@ export const Button = styled.View<ChoiceButtonProps>`
 
 export const Text = styled.Text`
   width: ${(props) => (props.isVertical ? `245px` : `uset`)};
-  text-align: left;
+  text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>
     props.isChoice
       ? `#38B000`

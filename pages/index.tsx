@@ -47,7 +47,6 @@ function Landing() {
       </Section>
       <WhatWeDoSection />
       <LikeToHelpSection />
-      <LandingMatchedSection />
       <LandingFooter />
     </ScrollView>
   );
