@@ -20,7 +20,6 @@ type Props = {
   data: DropdownProps["data"];
   errorMsg?: string;
   multiSelect?: boolean;
-  onChange?: (selected: string | string[]) => void;
   zIndex?: number;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
@@ -34,7 +33,6 @@ const FormDropdown: VFC<Props> = (props) => {
     data,
     placeholder,
     zIndex,
-    onChange: onChangeProp,
     multiSelect = false,
   } = props;
   const { control } = useFormContext();
@@ -46,19 +44,15 @@ const FormDropdown: VFC<Props> = (props) => {
       render={({ field: { onChange, onBlur, value } }) => {
         const handleChange = (selected) => {
           if (multiSelect) {
-            let items = value ?? [];
+            const items = value ?? [];
 
             if (items.includes(selected)) {
-              items = items.filter((v) => v !== selected);
+              onChange(items.filter((v) => v !== selected));
             } else {
-              items = [...items, selected];
+              onChange([...items, selected]);
             }
-
-            onChange(items);
-            onChangeProp && onChangeProp(items);
           } else {
             onChange(selected);
-            onChangeProp && onChangeProp(selected);
           }
         };
 

@@ -4,6 +4,8 @@ import styled, { css } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
 import image1 from "../../../public/image1.png";
 import { ButtonCta } from "../Buttons";
+import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
 
 const Image = styled.Image`
   flex: 1;
@@ -75,10 +77,12 @@ const ImageSize = styled.View`
 const ButtonContainer = styled.View`
   margin-top: 25px;
   align-items: flex-start;
+  flex-direction: row;
 `;
 
 export function LikeToHelpSection() {
   const { t } = useTranslation();
+  const { data: session } = useSession();
   return (
     <Container>
       <ContentContainer>
@@ -86,7 +90,22 @@ export function LikeToHelpSection() {
         <View>
           {t("landingPage.likeToHelp.details")}
           <ButtonContainer>
-            <ButtonCta anchor={t("register1")} />
+            {session ? (
+              <>
+                <Link href="/guest">
+                  <a>
+                    <ButtonCta anchor={t("landingPage.hero.lookingForHelp")} />
+                  </a>
+                </Link>
+                <Link href="/host">
+                  <a style={{ marginLeft: 10 }}>
+                    <ButtonCta anchor={t("landingPage.hero.shareHelp")} />
+                  </a>
+                </Link>
+              </>
+            ) : (
+              <ButtonCta anchor={t("register1")} onPress={() => signIn()} />
+            )}
           </ButtonContainer>
         </View>
       </ContentContainer>

@@ -5,6 +5,8 @@ import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { View, StyleSheet } from "react-native";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
@@ -24,6 +26,9 @@ const Header = () => {
           </Link>
         </ServiceLogo>
         <ActionBar>
+          <View style={styles.flags}>
+            <LanguageSwitcher />
+          </View>
           {session ? (
             <HamburgerButton onPress={toggleNavigationDrawer} />
           ) : (
@@ -38,5 +43,12 @@ const Header = () => {
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  flags: {
+    flexDirection: "row",
+    marginRight: 20,
+  },
+});
 
 export default Header;

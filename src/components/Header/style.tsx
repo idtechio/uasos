@@ -11,6 +11,8 @@ export const HeaderPage = styled.View`
   z-index: 3;
 `;
 
-export const ActionBar = styled.View``;
+export const ActionBar = styled.View`
+  flex-direction: row;
+`;
 
 export const ServiceLogo = styled.View``;

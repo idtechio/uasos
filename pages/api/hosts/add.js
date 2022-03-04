@@ -6,7 +6,7 @@ export default async function getAccommodations(req, res) {
   if (session) {
     // Signed in
     const body = JSON.parse(req.body);
-
+    console.log(body);
     const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
     const data = JSON.stringify(body);
 
