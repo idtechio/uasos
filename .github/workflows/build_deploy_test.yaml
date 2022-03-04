@@ -41,7 +41,7 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{env.deploy_project_id}}
-      - name: Deploy to Cloud Run Dev Env
+      - name: Deploy to Cloud Run Test Env
         id: deploy-service
         uses: google-github-actions/deploy-cloudrun@v0
         with:
