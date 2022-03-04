@@ -8,7 +8,7 @@ export const Text = styled.Text`
 `;
 
 export const Touchable = styled.TouchableOpacity`
-  cursor: ${(props) => (props.disabled ? `default` : `pointer`)};
+  cursor: ${({ disabled }) => (disabled ? `default` : `pointer`)};
   padding: 20px;
 `;
 
