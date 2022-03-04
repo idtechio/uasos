@@ -1,0 +1,6437 @@
+[
+  {
+    "label": "Prague",
+    "value": "3067696",
+    "population": 1165581
+  },
+  {
+    "label": "Brno",
+    "value": "3078610",
+    "population": 369559
+  },
+  {
+    "label": "Ostrava",
+    "value": "3068799",
+    "population": 313088
+  },
+  {
+    "label": "Pilsen",
+    "value": "3068160",
+    "population": 164180
+  },
+  {
+    "label": "Olomouc",
+    "value": "3069011",
+    "population": 101268
+  },
+  {
+    "label": "Liberec",
+    "value": "3071961",
+    "population": 97770
+  },
+  {
+    "label": "České Budějovice",
+    "value": "3077916",
+    "population": 96053
+  },
+  {
+    "label": "Hradec Králové",
+    "value": "3074967",
+    "population": 95195
+  },
+  {
+    "label": "Ústí nad Labem",
+    "value": "3063548",
+    "population": 94105
+  },
+  {
+    "label": "Pardubice",
+    "value": "3068582",
+    "population": 88741
+  },
+  {
+    "label": "Havířov",
+    "value": "3075921",
+    "population": 82768
+  },
+  {
+    "label": "Zlín",
+    "value": "3061370",
+    "population": 78759
+  },
+  {
+    "label": "Kladno",
+    "value": "3073699",
+    "population": 70003
+  },
+  {
+    "label": "Most",
+    "value": "3070291",
+    "population": 67905
+  },
+  {
+    "label": "Karviná",
+    "value": "3073789",
+    "population": 63677
+  },
+  {
+    "label": "Opava",
+    "value": "3068927",
+    "population": 60252
+  },
+  {
+    "label": "Frýdek-Místek",
+    "value": "3076127",
+    "population": 59416
+  },
+  {
+    "label": "Děčín",
+    "value": "3077244",
+    "population": 52058
+  },
+  {
+    "label": "Karlovy Vary",
+    "value": "3073803",
+    "population": 51807
+  },
+  {
+    "label": "Teplice",
+    "value": "3064288",
+    "population": 51223
+  },
+  {
+    "label": "Chomutov",
+    "value": "3077685",
+    "population": 50251
+  },
+  {
+    "label": "Jihlava",
+    "value": "3074199",
+    "population": 50100
+  },
+  {
+    "label": "Prostějov",
+    "value": "3067421",
+    "population": 47374
+  },
+  {
+    "label": "Přerov",
+    "value": "3067580",
+    "population": 47311
+  },
+  {
+    "label": "Jablonec nad Nisou",
+    "value": "3074603",
+    "population": 44878
+  },
+  {
+    "label": "Mladá Boleslav",
+    "value": "3070544",
+    "population": 43684
+  },
+  {
+    "label": "Česká Lípa",
+    "value": "3077929",
+    "population": 38841
+  },
+  {
+    "label": "Třebíč",
+    "value": "3064104",
+    "population": 38785
+  },
+  {
+    "label": "Třinec",
+    "value": "3064000",
+    "population": 38415
+  },
+  {
+    "label": "Tábor",
+    "value": "3064379",
+    "population": 36264
+  },
+  {
+    "label": "Znojmo",
+    "value": "3061344",
+    "population": 35280
+  },
+  {
+    "label": "Příbram",
+    "value": "3067542",
+    "population": 35251
+  },
+  {
+    "label": "Orlová",
+    "value": "3068873",
+    "population": 34282
+  },
+  {
+    "label": "Cheb",
+    "value": "3077835",
+    "population": 33242
+  },
+  {
+    "label": "Modřany",
+    "value": "3070420",
+    "population": 31901
+  },
+  {
+    "label": "Libeň",
+    "value": "3071966",
+    "population": 31756
+  },
+  {
+    "label": "Trutnov",
+    "value": "3063907",
+    "population": 31398
+  },
+  {
+    "label": "Písek",
+    "value": "3068293",
+    "population": 29774
+  },
+  {
+    "label": "Kolín",
+    "value": "3073371",
+    "population": 29690
+  },
+  {
+    "label": "Kroměříž",
+    "value": "3072649",
+    "population": 29126
+  },
+  {
+    "label": "Šumperk",
+    "value": "3064673",
+    "population": 28768
+  },
+  {
+    "label": "Vsetín",
+    "value": "3062339",
+    "population": 28575
+  },
+  {
+    "label": "Valašské Meziříčí",
+    "value": "3063447",
+    "population": 27481
+  },
+  {
+    "label": "Litvínov",
+    "value": "3071665",
+    "population": 27022
+  },
+  {
+    "label": "Nový Jičín",
+    "value": "3069305",
+    "population": 26547
+  },
+  {
+    "label": "Uherské Hradiště",
+    "value": "3063739",
+    "population": 26421
+  },
+  {
+    "label": "Hodonín",
+    "value": "3075654",
+    "population": 26345
+  },
+  {
+    "label": "Břeclav",
+    "value": "3078773",
+    "population": 25789
+  },
+  {
+    "label": "Český Těšín",
+    "value": "3077882",
+    "population": 25750
+  },
+  {
+    "label": "Krnov",
+    "value": "3072656",
+    "population": 25547
+  },
+  {
+    "label": "Sokolov",
+    "value": "3065617",
+    "population": 24901
+  },
+  {
+    "label": "Litoměřice",
+    "value": "3071677",
+    "population": 24489
+  },
+  {
+    "label": "Havlíčkův Brod",
+    "value": "3075919",
+    "population": 24356
+  },
+  {
+    "label": "Chrudim",
+    "value": "3077539",
+    "population": 23630
+  },
+  {
+    "label": "Strakonice",
+    "value": "3065067",
+    "population": 23545
+  },
+  {
+    "label": "Kopřivnice",
+    "value": "3073254",
+    "population": 23424
+  },
+  {
+    "label": "Klatovy",
+    "value": "3073660",
+    "population": 23102
+  },
+  {
+    "label": "Bohumín",
+    "value": "3079129",
+    "population": 23075
+  },
+  {
+    "label": "Starý Bohumín",
+    "value": "3065281",
+    "population": 23034
+  },
+  {
+    "label": "Jindřichův Hradec",
+    "value": "3074149",
+    "population": 22812
+  },
+  {
+    "label": "Vyškov",
+    "value": "3062283",
+    "population": 22265
+  },
+  {
+    "label": "Černý Most",
+    "value": "6269470",
+    "population": 21500
+  },
+  {
+    "label": "Kutná Hora",
+    "value": "3072463",
+    "population": 21280
+  },
+  {
+    "label": "Náchod",
+    "value": "3070122",
+    "population": 21263
+  },
+  {
+    "label": "Jirkov",
+    "value": "3074110",
+    "population": 21056
+  },
+  {
+    "label": "Žďár nad Sázavou",
+    "value": "3061695",
+    "population": 20847
+  },
+  {
+    "label": "Blansko",
+    "value": "3079273",
+    "population": 20384
+  },
+  {
+    "label": "Žatec",
+    "value": "3061822",
+    "population": 19607
+  },
+  {
+    "label": "Hranice",
+    "value": "3074893",
+    "population": 19582
+  },
+  {
+    "label": "Mělník",
+    "value": "3070862",
+    "population": 19231
+  },
+  {
+    "label": "Louny",
+    "value": "3071507",
+    "population": 19147
+  },
+  {
+    "label": "Otrokovice",
+    "value": "3068690",
+    "population": 18857
+  },
+  {
+    "label": "Kadaň",
+    "value": "3074020",
+    "population": 18759
+  },
+  {
+    "label": "Braník",
+    "value": "3078833",
+    "population": 18740
+  },
+  {
+    "label": "Bruntál",
+    "value": "3078545",
+    "population": 17686
+  },
+  {
+    "label": "Beroun",
+    "value": "3079467",
+    "population": 17550
+  },
+  {
+    "label": "Uherský Brod",
+    "value": "3063736",
+    "population": 17508
+  },
+  {
+    "label": "Svitavy",
+    "value": "3064454",
+    "population": 17427
+  },
+  {
+    "label": "Kralupy nad Vltavou",
+    "value": "3072929",
+    "population": 17373
+  },
+  {
+    "label": "Rožnov pod Radhoštěm",
+    "value": "3066651",
+    "population": 17238
+  },
+  {
+    "label": "Ostrov",
+    "value": "3068766",
+    "population": 17206
+  },
+  {
+    "label": "Česká Třebová",
+    "value": "3077920",
+    "population": 16655
+  },
+  {
+    "label": "Pelhřimov",
+    "value": "3068445",
+    "population": 16541
+  },
+  {
+    "label": "Rakovník",
+    "value": "3067051",
+    "population": 16473
+  },
+  {
+    "label": "Neratovice",
+    "value": "3069844",
+    "population": 16427
+  },
+  {
+    "label": "Jičín",
+    "value": "3074204",
+    "population": 16328
+  },
+  {
+    "label": "Benešov",
+    "value": "3079508",
+    "population": 16257
+  },
+  {
+    "label": "Dvůr Králové nad Labem",
+    "value": "3061284",
+    "population": 16150
+  },
+  {
+    "label": "Varnsdorf",
+    "value": "3063375",
+    "population": 15895
+  },
+  {
+    "label": "Letňany",
+    "value": "3072137",
+    "population": 15862
+  },
+  {
+    "label": "Bílina",
+    "value": "3079348",
+    "population": 15738
+  },
+  {
+    "label": "Prosek",
+    "value": "3067433",
+    "population": 15581
+  },
+  {
+    "label": "Brandýs nad Labem-Stará Boleslav",
+    "value": "3078837",
+    "population": 15398
+  },
+  {
+    "label": "Ústí nad Orlicí",
+    "value": "3063546",
+    "population": 15151
+  },
+  {
+    "label": "Slaný",
+    "value": "3065903",
+    "population": 15070
+  },
+  {
+    "label": "Klášterec nad Ohří",
+    "value": "3073668",
+    "population": 15040
+  },
+  {
+    "label": "Turnov",
+    "value": "3063853",
+    "population": 14507
+  },
+  {
+    "label": "Chodov",
+    "value": "3077706",
+    "population": 14454
+  },
+  {
+    "label": "Nymburk",
+    "value": "3069236",
+    "population": 14373
+  },
+  {
+    "label": "Zábřeh",
+    "value": "3062111",
+    "population": 14360
+  },
+  {
+    "label": "Horní Počernice",
+    "value": "3075257",
+    "population": 14296
+  },
+  {
+    "label": "Mariánské Lázně",
+    "value": "3071024",
+    "population": 14277
+  },
+  {
+    "label": "Hlučín",
+    "value": "3075716",
+    "population": 14228
+  },
+  {
+    "label": "Český Krumlov",
+    "value": "3077889",
+    "population": 14146
+  },
+  {
+    "label": "Střížkov",
+    "value": "3064894",
+    "population": 14069
+  },
+  {
+    "label": "Šternberk",
+    "value": "3065166",
+    "population": 13967
+  },
+  {
+    "label": "Rokycany",
+    "value": "3066794",
+    "population": 13826
+  },
+  {
+    "label": "Krupka",
+    "value": "3072598",
+    "population": 13687
+  },
+  {
+    "label": "Aš",
+    "value": "3079751",
+    "population": 13210
+  },
+  {
+    "label": "Poděbrady",
+    "value": "3068107",
+    "population": 13128
+  },
+  {
+    "label": "Roudnice nad Labem",
+    "value": "3066727",
+    "population": 13084
+  },
+  {
+    "label": "Vrchlabí",
+    "value": "3062439",
+    "population": 12898
+  },
+  {
+    "label": "Jaroměř",
+    "value": "3074462",
+    "population": 12831
+  },
+  {
+    "label": "Tachov",
+    "value": "3064373",
+    "population": 12640
+  },
+  {
+    "label": "Jeseník",
+    "value": "3074281",
+    "population": 12457
+  },
+  {
+    "label": "Uničov",
+    "value": "3063596",
+    "population": 12385
+  },
+  {
+    "label": "Holešov",
+    "value": "3075606",
+    "population": 12384
+  },
+  {
+    "label": "Vysoké Mýto",
+    "value": "3062214",
+    "population": 12293
+  },
+  {
+    "label": "Vlašim",
+    "value": "3062759",
+    "population": 12225
+  },
+  {
+    "label": "Kyjov",
+    "value": "3072407",
+    "population": 12191
+  },
+  {
+    "label": "Nový Bor",
+    "value": "3069381",
+    "population": 12171
+  },
+  {
+    "label": "Veselí nad Moravou",
+    "value": "3063032",
+    "population": 12081
+  },
+  {
+    "label": "Karlín",
+    "value": "3073838",
+    "population": 11971
+  },
+  {
+    "label": "Prachatice",
+    "value": "3067713",
+    "population": 11803
+  },
+  {
+    "label": "Velké Meziříčí",
+    "value": "3063196",
+    "population": 11753
+  },
+  {
+    "label": "Rychnov nad Kněžnou",
+    "value": "3066503",
+    "population": 11695
+  },
+  {
+    "label": "Vysočany",
+    "value": "3062257",
+    "population": 11646
+  },
+  {
+    "label": "Sušice",
+    "value": "3064662",
+    "population": 11483
+  },
+  {
+    "label": "Moravská Třebová",
+    "value": "3070325",
+    "population": 11414
+  },
+  {
+    "label": "Frenštát pod Radhoštěm",
+    "value": "3076132",
+    "population": 11334
+  },
+  {
+    "label": "Říčany",
+    "value": "3066878",
+    "population": 11329
+  },
+  {
+    "label": "Boskovice",
+    "value": "3078910",
+    "population": 11121
+  },
+  {
+    "label": "Rumburk",
+    "value": "3066578",
+    "population": 11101
+  },
+  {
+    "label": "Domažlice",
+    "value": "3076587",
+    "population": 10944
+  },
+  {
+    "label": "Humpolec",
+    "value": "3074723",
+    "population": 10914
+  },
+  {
+    "label": "Hlinsko",
+    "value": "3075766",
+    "population": 10411
+  },
+  {
+    "label": "Studénka",
+    "value": "3064807",
+    "population": 10341
+  },
+  {
+    "label": "Litomyšl",
+    "value": "3071675",
+    "population": 10146
+  },
+  {
+    "label": "Staré Město",
+    "value": "3065328",
+    "population": 10127
+  },
+  {
+    "label": "Nové Město nad Metují",
+    "value": "3069466",
+    "population": 10126
+  },
+  {
+    "label": "Čelákovice",
+    "value": "3078160",
+    "population": 10125
+  },
+  {
+    "label": "Nové Město na Moravě",
+    "value": "3069465",
+    "population": 10098
+  },
+  {
+    "label": "Litovel",
+    "value": "3071669",
+    "population": 10062
+  },
+  {
+    "label": "Čáslav",
+    "value": "3078234",
+    "population": 10025
+  },
+  {
+    "label": "Chotěboř",
+    "value": "3077669",
+    "population": 9849
+  },
+  {
+    "label": "Lanškroun",
+    "value": "3072332",
+    "population": 9847
+  },
+  {
+    "label": "Frýdlant nad Ostravicí",
+    "value": "3076123",
+    "population": 9824
+  },
+  {
+    "label": "Mohelnice",
+    "value": "3070409",
+    "population": 9742
+  },
+  {
+    "label": "Ivančice",
+    "value": "3074615",
+    "population": 9354
+  },
+  {
+    "label": "Milevsko",
+    "value": "3070678",
+    "population": 9343
+  },
+  {
+    "label": "Kuřim",
+    "value": "3072476",
+    "population": 9283
+  },
+  {
+    "label": "Nová Paka",
+    "value": "3069669",
+    "population": 9219
+  },
+  {
+    "label": "Lovosice",
+    "value": "3071480",
+    "population": 9196
+  },
+  {
+    "label": "Štětí",
+    "value": "3065163",
+    "population": 9165
+  },
+  {
+    "label": "Polička",
+    "value": "3067882",
+    "population": 9129
+  },
+  {
+    "label": "Rýmařov",
+    "value": "3066483",
+    "population": 9069
+  },
+  {
+    "label": "Semily",
+    "value": "3066220",
+    "population": 9040
+  },
+  {
+    "label": "Choceň",
+    "value": "3077725",
+    "population": 9008
+  },
+  {
+    "label": "Bystřice nad Pernštejnem",
+    "value": "3078288",
+    "population": 8996
+  },
+  {
+    "label": "Duchcov",
+    "value": "3076311",
+    "population": 8937
+  },
+  {
+    "label": "Hořice",
+    "value": "3075493",
+    "population": 8899
+  },
+  {
+    "label": "Třeboň",
+    "value": "3064079",
+    "population": 8862
+  },
+  {
+    "label": "Příbor",
+    "value": "3067544",
+    "population": 8789
+  },
+  {
+    "label": "Bystřice pod Hostýnem",
+    "value": "3078286",
+    "population": 8727
+  },
+  {
+    "label": "Přelouč",
+    "value": "3067594",
+    "population": 8586
+  },
+  {
+    "label": "Nejdek",
+    "value": "3069934",
+    "population": 8565
+  },
+  {
+    "label": "Červený Kostelec",
+    "value": "3077955",
+    "population": 8441
+  },
+  {
+    "label": "Lipník nad Bečvou",
+    "value": "3071791",
+    "population": 8369
+  },
+  {
+    "label": "Mnichovo Hradiště",
+    "value": "3070451",
+    "population": 8368
+  },
+  {
+    "label": "Týn nad Vltavou",
+    "value": "3063794",
+    "population": 8296
+  },
+  {
+    "label": "Broumov",
+    "value": "3078577",
+    "population": 8254
+  },
+  {
+    "label": "Tišnov",
+    "value": "3064211",
+    "population": 8227
+  },
+  {
+    "label": "Lysá nad Labem",
+    "value": "3071304",
+    "population": 8194
+  },
+  {
+    "label": "Vimperk",
+    "value": "3062888",
+    "population": 8043
+  },
+  {
+    "label": "Moravské Budějovice",
+    "value": "3070323",
+    "population": 7971
+  },
+  {
+    "label": "Dačice",
+    "value": "3077304",
+    "population": 7958
+  },
+  {
+    "label": "Dobříš",
+    "value": "3077024",
+    "population": 7926
+  },
+  {
+    "label": "Sedlčany",
+    "value": "3066333",
+    "population": 7836
+  },
+  {
+    "label": "Stříbro",
+    "value": "3064919",
+    "population": 7689
+  },
+  {
+    "label": "Napajedla",
+    "value": "3070045",
+    "population": 7662
+  },
+  {
+    "label": "Mikulov",
+    "value": "3070720",
+    "population": 7608
+  },
+  {
+    "label": "Dubí",
+    "value": "3076346",
+    "population": 7591
+  },
+  {
+    "label": "Hulín",
+    "value": "3074731",
+    "population": 7571
+  },
+  {
+    "label": "Bílovec",
+    "value": "3079336",
+    "population": 7486
+  },
+  {
+    "label": "Frýdlant",
+    "value": "3076124",
+    "population": 7471
+  },
+  {
+    "label": "Sezimovo Ústí",
+    "value": "3066154",
+    "population": 7420
+  },
+  {
+    "label": "Odry",
+    "value": "3069136",
+    "population": 7395
+  },
+  {
+    "label": "Hrádek nad Nisou",
+    "value": "3074944",
+    "population": 7327
+  },
+  {
+    "label": "Soběslav",
+    "value": "3065644",
+    "population": 7308
+  },
+  {
+    "label": "Kaplice",
+    "value": "3073862",
+    "population": 7195
+  },
+  {
+    "label": "Nový Bydžov",
+    "value": "3069377",
+    "population": 7160
+  },
+  {
+    "label": "Kraslice",
+    "value": "3072903",
+    "population": 7159
+  },
+  {
+    "label": "Šlapanice",
+    "value": "3065901",
+    "population": 7109
+  },
+  {
+    "label": "Dobruška",
+    "value": "3076985",
+    "population": 7085
+  },
+  {
+    "label": "Slavičín",
+    "value": "3065843",
+    "population": 7079
+  },
+  {
+    "label": "Světlá nad Sázavou",
+    "value": "3064510",
+    "population": 7037
+  },
+  {
+    "label": "Nýřany",
+    "value": "3069232",
+    "population": 6942
+  },
+  {
+    "label": "Tanvald",
+    "value": "3064358",
+    "population": 6921
+  },
+  {
+    "label": "Petřvald",
+    "value": "3068329",
+    "population": 6854
+  },
+  {
+    "label": "Benátky nad Jizerou",
+    "value": "3079514",
+    "population": 6818
+  },
+  {
+    "label": "Letovice",
+    "value": "3072130",
+    "population": 6799
+  },
+  {
+    "label": "Kravaře",
+    "value": "3072841",
+    "population": 6787
+  },
+  {
+    "label": "Rychvald",
+    "value": "3066492",
+    "population": 6771
+  },
+  {
+    "label": "Staré Město",
+    "value": "3065335",
+    "population": 6742
+  },
+  {
+    "label": "Blatná",
+    "value": "3079252",
+    "population": 6735
+  },
+  {
+    "label": "Mimoň",
+    "value": "3070622",
+    "population": 6692
+  },
+  {
+    "label": "Vodňany",
+    "value": "3062642",
+    "population": 6687
+  },
+  {
+    "label": "Dubňany",
+    "value": "3076329",
+    "population": 6649
+  },
+  {
+    "label": "Český Brod",
+    "value": "3077898",
+    "population": 6609
+  },
+  {
+    "label": "Veselí nad Lužnicí",
+    "value": "3063033",
+    "population": 6534
+  },
+  {
+    "label": "Hronov",
+    "value": "3074805",
+    "population": 6516
+  },
+  {
+    "label": "Železný Brod",
+    "value": "3061562",
+    "population": 6442
+  },
+  {
+    "label": "Hořovice",
+    "value": "3075119",
+    "population": 6431
+  },
+  {
+    "label": "Kojetín",
+    "value": "3073407",
+    "population": 6397
+  },
+  {
+    "label": "Bučovice",
+    "value": "3078503",
+    "population": 6386
+  },
+  {
+    "label": "Vratimov",
+    "value": "3062497",
+    "population": 6378
+  },
+  {
+    "label": "Přeštice",
+    "value": "3067553",
+    "population": 6353
+  },
+  {
+    "label": "Malá Strana",
+    "value": "3071213",
+    "population": 6350
+  },
+  {
+    "label": "Týniště nad Orlicí",
+    "value": "3063797",
+    "population": 6342
+  },
+  {
+    "label": "Holice",
+    "value": "3075599",
+    "population": 6219
+  },
+  {
+    "label": "Podbořany",
+    "value": "3068119",
+    "population": 6212
+  },
+  {
+    "label": "Vítkov",
+    "value": "3062811",
+    "population": 6202
+  },
+  {
+    "label": "Letohrad",
+    "value": "3072134",
+    "population": 6195
+  },
+  {
+    "label": "Kostelec nad Orlicí",
+    "value": "3073149",
+    "population": 6184
+  },
+  {
+    "label": "Fulnek",
+    "value": "3076116",
+    "population": 6107
+  },
+  {
+    "label": "Žamberk",
+    "value": "3061888",
+    "population": 6082
+  },
+  {
+    "label": "Vrbno pod Pradědem",
+    "value": "3062446",
+    "population": 6072
+  },
+  {
+    "label": "Chrastava",
+    "value": "3077584",
+    "population": 6051
+  },
+  {
+    "label": "Moravský Krumlov",
+    "value": "3070310",
+    "population": 6050
+  },
+  {
+    "label": "Ledeč nad Sázavou",
+    "value": "3072235",
+    "population": 6048
+  },
+  {
+    "label": "Třešť",
+    "value": "3064029",
+    "population": 5979
+  },
+  {
+    "label": "Úpice",
+    "value": "3063590",
+    "population": 5959
+  },
+  {
+    "label": "Lomnice nad Popelkou",
+    "value": "3071606",
+    "population": 5957
+  },
+  {
+    "label": "Roztoky",
+    "value": "3066636",
+    "population": 5956
+  },
+  {
+    "label": "Slavkov u Brna",
+    "value": "3065824",
+    "population": 5936
+  },
+  {
+    "label": "Hustopeče",
+    "value": "3074677",
+    "population": 5913
+  },
+  {
+    "label": "Strážnice",
+    "value": "3064995",
+    "population": 5900
+  },
+  {
+    "label": "Telč",
+    "value": "3064316",
+    "population": 5883
+  },
+  {
+    "label": "Horní Slavkov",
+    "value": "3075208",
+    "population": 5818
+  },
+  {
+    "label": "Králův Dvůr",
+    "value": "3072927",
+    "population": 5805
+  },
+  {
+    "label": "Jablunkov",
+    "value": "3074593",
+    "population": 5782
+  },
+  {
+    "label": "Dobřany",
+    "value": "3077073",
+    "population": 5779
+  },
+  {
+    "label": "Jilemnice",
+    "value": "3074187",
+    "population": 5777
+  },
+  {
+    "label": "Bechyně",
+    "value": "3079616",
+    "population": 5755
+  },
+  {
+    "label": "Horažďovice",
+    "value": "3075522",
+    "population": 5727
+  },
+  {
+    "label": "Šluknov",
+    "value": "3065768",
+    "population": 5701
+  },
+  {
+    "label": "Třebechovice pod Orebem",
+    "value": "3064122",
+    "population": 5611
+  },
+  {
+    "label": "Luhačovice",
+    "value": "3071407",
+    "population": 5554
+  },
+  {
+    "label": "Stochov",
+    "value": "3065117",
+    "population": 5538
+  },
+  {
+    "label": "Česká Kamenice",
+    "value": "3077932",
+    "population": 5475
+  },
+  {
+    "label": "Šenov",
+    "value": "3066184",
+    "population": 5462
+  },
+  {
+    "label": "Milovice",
+    "value": "3070628",
+    "population": 5461
+  },
+  {
+    "label": "Kbely",
+    "value": "3073743",
+    "population": 5457
+  },
+  {
+    "label": "Planá",
+    "value": "3068246",
+    "population": 5450
+  },
+  {
+    "label": "Skuteč",
+    "value": "3065921",
+    "population": 5415
+  },
+  {
+    "label": "Zubří",
+    "value": "3061327",
+    "population": 5409
+  },
+  {
+    "label": "Česká Skalice",
+    "value": "3077921",
+    "population": 5402
+  },
+  {
+    "label": "Františkovy Lázně",
+    "value": "3076136",
+    "population": 5355
+  },
+  {
+    "label": "Habartov",
+    "value": "3076076",
+    "population": 5337
+  },
+  {
+    "label": "Jílové",
+    "value": "3074181",
+    "population": 5307
+  },
+  {
+    "label": "Chlumec nad Cidlinou",
+    "value": "3077751",
+    "population": 5292
+  },
+  {
+    "label": "Rosice",
+    "value": "3066759",
+    "population": 5287
+  },
+  {
+    "label": "Hradec nad Moravicí",
+    "value": "3074975",
+    "population": 5255
+  },
+  {
+    "label": "Valašské Klobouky",
+    "value": "3063448",
+    "population": 5201
+  },
+  {
+    "label": "Náměšť nad Oslavou",
+    "value": "3070055",
+    "population": 5192
+  },
+  {
+    "label": "Chropyně",
+    "value": "3077549",
+    "population": 5172
+  },
+  {
+    "label": "Týnec nad Sázavou",
+    "value": "3063804",
+    "population": 5165
+  },
+  {
+    "label": "Kunovice",
+    "value": "3072497",
+    "population": 5148
+  },
+  {
+    "label": "Pacov",
+    "value": "3068647",
+    "population": 5145
+  },
+  {
+    "label": "Kynšperk nad Ohří",
+    "value": "3072394",
+    "population": 5085
+  },
+  {
+    "label": "Nové Strašecí",
+    "value": "3069431",
+    "population": 5082
+  },
+  {
+    "label": "Bystřice",
+    "value": "3078301",
+    "population": 5076
+  },
+  {
+    "label": "Nýrsko",
+    "value": "3069230",
+    "population": 5070
+  },
+  {
+    "label": "Doksy",
+    "value": "3076972",
+    "population": 5025
+  },
+  {
+    "label": "Protivín",
+    "value": "3067395",
+    "population": 5021
+  },
+  {
+    "label": "Rousínov",
+    "value": "3066719",
+    "population": 5016
+  },
+  {
+    "label": "Polná",
+    "value": "3067870",
+    "population": 5006
+  },
+  {
+    "label": "Kdyně",
+    "value": "3073739",
+    "population": 4985
+  },
+  {
+    "label": "Osek",
+    "value": "3068857",
+    "population": 4975
+  },
+  {
+    "label": "Zruč nad Sázavou",
+    "value": "3061332",
+    "population": 4925
+  },
+  {
+    "label": "Postoloprty",
+    "value": "3067770",
+    "population": 4924
+  },
+  {
+    "label": "Černošice",
+    "value": "3078029",
+    "population": 4920
+  },
+  {
+    "label": "Hostivice",
+    "value": "3075051",
+    "population": 4915
+  },
+  {
+    "label": "Horšovský Týn",
+    "value": "3075112",
+    "population": 4905
+  },
+  {
+    "label": "Meziboři",
+    "value": "3070792",
+    "population": 4885
+  },
+  {
+    "label": "Petrovice u Karviné",
+    "value": "3068345",
+    "population": 4874
+  },
+  {
+    "label": "Adamov",
+    "value": "3079841",
+    "population": 4871
+  },
+  {
+    "label": "Bělá pod Bezdězem",
+    "value": "3079556",
+    "population": 4855
+  },
+  {
+    "label": "Velká Bíteš",
+    "value": "3063276",
+    "population": 4843
+  },
+  {
+    "label": "Heřmanův Městec",
+    "value": "3075841",
+    "population": 4841
+  },
+  {
+    "label": "Úvaly",
+    "value": "3063502",
+    "population": 4797
+  },
+  {
+    "label": "Hostinné",
+    "value": "3075058",
+    "population": 4795
+  },
+  {
+    "label": "Vamberk",
+    "value": "3063400",
+    "population": 4768
+  },
+  {
+    "label": "Bojkovice",
+    "value": "3079082",
+    "population": 4742
+  },
+  {
+    "label": "Králíky",
+    "value": "3072952",
+    "population": 4723
+  },
+  {
+    "label": "Dolní Lutyně",
+    "value": "3076777",
+    "population": 4712
+  },
+  {
+    "label": "Trhové Sviny",
+    "value": "3064015",
+    "population": 4705
+  },
+  {
+    "label": "Hluboká nad Vltavou",
+    "value": "3075731",
+    "population": 4682
+  },
+  {
+    "label": "Holýšov",
+    "value": "3075562",
+    "population": 4659
+  },
+  {
+    "label": "Třemošná",
+    "value": "3064047",
+    "population": 4654
+  },
+  {
+    "label": "Ludgeřovice",
+    "value": "3071429",
+    "population": 4635
+  },
+  {
+    "label": "Oslavany",
+    "value": "3068830",
+    "population": 4561
+  },
+  {
+    "label": "Uherský Ostroh",
+    "value": "3063735",
+    "population": 4526
+  },
+  {
+    "label": "Vizovice",
+    "value": "3062783",
+    "population": 4518
+  },
+  {
+    "label": "Vracov",
+    "value": "3062545",
+    "population": 4491
+  },
+  {
+    "label": "Horní Suchá",
+    "value": "3075187",
+    "population": 4466
+  },
+  {
+    "label": "Horní Bříza",
+    "value": "3075433",
+    "population": 4463
+  },
+  {
+    "label": "Votice",
+    "value": "3062559",
+    "population": 4461
+  },
+  {
+    "label": "Odolena Voda",
+    "value": "3069150",
+    "population": 4451
+  },
+  {
+    "label": "Hlubočky",
+    "value": "3075744",
+    "population": 4448
+  },
+  {
+    "label": "Zlaté Hory",
+    "value": "3061393",
+    "population": 4446
+  },
+  {
+    "label": "Cvikov",
+    "value": "3077318",
+    "population": 4435
+  },
+  {
+    "label": "Hluk",
+    "value": "3075715",
+    "population": 4424
+  },
+  {
+    "label": "Bakov nad Jizerou",
+    "value": "3079685",
+    "population": 4417
+  },
+  {
+    "label": "Pohořelice",
+    "value": "3067953",
+    "population": 4409
+  },
+  {
+    "label": "Starý Plzenec",
+    "value": "3065249",
+    "population": 4387
+  },
+  {
+    "label": "Pečky",
+    "value": "3068476",
+    "population": 4317
+  },
+  {
+    "label": "Police nad Metují",
+    "value": "3067885",
+    "population": 4316
+  },
+  {
+    "label": "Bzenec",
+    "value": "3078275",
+    "population": 4315
+  },
+  {
+    "label": "Dolní Benešov",
+    "value": "3076931",
+    "population": 4314
+  },
+  {
+    "label": "Jemnice",
+    "value": "3074331",
+    "population": 4311
+  },
+  {
+    "label": "Rožmitál pod Třemšínem",
+    "value": "3066659",
+    "population": 4245
+  },
+  {
+    "label": "Bolatice",
+    "value": "3079078",
+    "population": 4186
+  },
+  {
+    "label": "Mníšek pod Brdy",
+    "value": "3070446",
+    "population": 4181
+  },
+  {
+    "label": "Jaroměřice nad Rokytnou",
+    "value": "3074459",
+    "population": 4171
+  },
+  {
+    "label": "Chlumec",
+    "value": "3077754",
+    "population": 4170
+  },
+  {
+    "label": "Velké Opatovice",
+    "value": "3063193",
+    "population": 4169
+  },
+  {
+    "label": "Kamenice nad Lipou",
+    "value": "3073936",
+    "population": 4148
+  },
+  {
+    "label": "Horní Těrlicko",
+    "value": "3075179",
+    "population": 4134
+  },
+  {
+    "label": "Stráž pod Ralskem",
+    "value": "3064983",
+    "population": 4068
+  },
+  {
+    "label": "Volary",
+    "value": "3062593",
+    "population": 4059
+  },
+  {
+    "label": "Nová Role",
+    "value": "3069662",
+    "population": 4047
+  },
+  {
+    "label": "Benešov nad Ploučnicí",
+    "value": "3079500",
+    "population": 4043
+  },
+  {
+    "label": "Bor",
+    "value": "3079038",
+    "population": 4025
+  },
+  {
+    "label": "Velešín",
+    "value": "3063307",
+    "population": 4023
+  },
+  {
+    "label": "Albrechtice",
+    "value": "3079824",
+    "population": 4019
+  },
+  {
+    "label": "Slatiňany",
+    "value": "3065873",
+    "population": 4004
+  },
+  {
+    "label": "Ratíškovice",
+    "value": "3066987",
+    "population": 3994
+  },
+  {
+    "label": "Bystřice",
+    "value": "3078300",
+    "population": 3993
+  },
+  {
+    "label": "Mosty u Jablunkova",
+    "value": "3070271",
+    "population": 3989
+  },
+  {
+    "label": "Lišov",
+    "value": "3071709",
+    "population": 3989
+  },
+  {
+    "label": "Kamenický Šenov",
+    "value": "3073928",
+    "population": 3982
+  },
+  {
+    "label": "Přibyslav",
+    "value": "3067535",
+    "population": 3965
+  },
+  {
+    "label": "Jiříkov",
+    "value": "3074119",
+    "population": 3926
+  },
+  {
+    "label": "Vendryně",
+    "value": "3063103",
+    "population": 3918
+  },
+  {
+    "label": "Nové Město pod Smrkem",
+    "value": "3069464",
+    "population": 3915
+  },
+  {
+    "label": "Blovice",
+    "value": "3079203",
+    "population": 3901
+  },
+  {
+    "label": "Zbýšov",
+    "value": "3061734",
+    "population": 3890
+  },
+  {
+    "label": "Větřní",
+    "value": "3062986",
+    "population": 3870
+  },
+  {
+    "label": "Modřice",
+    "value": "3070416",
+    "population": 3866
+  },
+  {
+    "label": "Kosmonosy",
+    "value": "3073190",
+    "population": 3822
+  },
+  {
+    "label": "Dětmarovice",
+    "value": "3077184",
+    "population": 3821
+  },
+  {
+    "label": "Zdice",
+    "value": "3061658",
+    "population": 3816
+  },
+  {
+    "label": "Návsí u Jablunkova",
+    "value": "3070010",
+    "population": 3809
+  },
+  {
+    "label": "Strání",
+    "value": "3065051",
+    "population": 3803
+  },
+  {
+    "label": "Sázava",
+    "value": "3066385",
+    "population": 3797
+  },
+  {
+    "label": "Klimkovice",
+    "value": "3073599",
+    "population": 3779
+  },
+  {
+    "label": "Paskov",
+    "value": "3068547",
+    "population": 3754
+  },
+  {
+    "label": "Brtnice",
+    "value": "3078561",
+    "population": 3744
+  },
+  {
+    "label": "Lázně Bělohrad",
+    "value": "3072268",
+    "population": 3744
+  },
+  {
+    "label": "Borovany",
+    "value": "3078957",
+    "population": 3739
+  },
+  {
+    "label": "Lom u Mostu",
+    "value": "3071602",
+    "population": 3736
+  },
+  {
+    "label": "Toužim",
+    "value": "3064145",
+    "population": 3732
+  },
+  {
+    "label": "Velké Bílovice",
+    "value": "3063217",
+    "population": 3727
+  },
+  {
+    "label": "Lanžhot",
+    "value": "3072319",
+    "population": 3713
+  },
+  {
+    "label": "Jablonné v Podještědí",
+    "value": "3074597",
+    "population": 3699
+  },
+  {
+    "label": "Břidličná",
+    "value": "3078648",
+    "population": 3698
+  },
+  {
+    "label": "Krásná Lípa",
+    "value": "3072890",
+    "population": 3677
+  },
+  {
+    "label": "Nepomuk",
+    "value": "3069862",
+    "population": 3670
+  },
+  {
+    "label": "Krásná Lípa",
+    "value": "3072889",
+    "population": 3666
+  },
+  {
+    "label": "Březnice",
+    "value": "3078683",
+    "population": 3662
+  },
+  {
+    "label": "Suchdol nad Lužnicí",
+    "value": "3064742",
+    "population": 3659
+  },
+  {
+    "label": "Zliv",
+    "value": "3061368",
+    "population": 3656
+  },
+  {
+    "label": "Valtice",
+    "value": "3063409",
+    "population": 3656
+  },
+  {
+    "label": "Mutěnice",
+    "value": "3070190",
+    "population": 3647
+  },
+  {
+    "label": "Město Albrechtice",
+    "value": "3070819",
+    "population": 3638
+  },
+  {
+    "label": "Libochovice",
+    "value": "3071911",
+    "population": 3627
+  },
+  {
+    "label": "Brušperk",
+    "value": "3078536",
+    "population": 3620
+  },
+  {
+    "label": "Rájec-Jestřebí",
+    "value": "3067080",
+    "population": 3619
+  },
+  {
+    "label": "Žacléř",
+    "value": "3062099",
+    "population": 3613
+  },
+  {
+    "label": "Hodkovičky",
+    "value": "3075663",
+    "population": 3584
+  },
+  {
+    "label": "Hanušovice",
+    "value": "3075958",
+    "population": 3556
+  },
+  {
+    "label": "Fryšták",
+    "value": "3076118",
+    "population": 3540
+  },
+  {
+    "label": "Stod",
+    "value": "3065116",
+    "population": 3532
+  },
+  {
+    "label": "Kralovice",
+    "value": "3072941",
+    "population": 3526
+  },
+  {
+    "label": "Desná",
+    "value": "3077198",
+    "population": 3481
+  },
+  {
+    "label": "Unhošť",
+    "value": "3063599",
+    "population": 3480
+  },
+  {
+    "label": "České Velenice",
+    "value": "3077903",
+    "population": 3479
+  },
+  {
+    "label": "Jílové u Prahy",
+    "value": "3074178",
+    "population": 3461
+  },
+  {
+    "label": "Smržovka",
+    "value": "3065684",
+    "population": 3433
+  },
+  {
+    "label": "Rotava",
+    "value": "3066743",
+    "population": 3403
+  },
+  {
+    "label": "Štramberk",
+    "value": "3065062",
+    "population": 3380
+  },
+  {
+    "label": "Nová Bystřice",
+    "value": "3069706",
+    "population": 3371
+  },
+  {
+    "label": "Moravský Beroun",
+    "value": "3070314",
+    "population": 3369
+  },
+  {
+    "label": "Ostrožská Nová Ves",
+    "value": "3068750",
+    "population": 3360
+  },
+  {
+    "label": "Rudná",
+    "value": "3066599",
+    "population": 3360
+  },
+  {
+    "label": "Rohatec",
+    "value": "3066825",
+    "population": 3343
+  },
+  {
+    "label": "Háj ve Slezsku",
+    "value": "3076001",
+    "population": 3322
+  },
+  {
+    "label": "Postřelmov",
+    "value": "3067765",
+    "population": 3314
+  },
+  {
+    "label": "Štěpánov",
+    "value": "3065185",
+    "population": 3310
+  },
+  {
+    "label": "Štěpánov",
+    "value": "3065180",
+    "population": 3306
+  },
+  {
+    "label": "Rokytnice nad Jizerou",
+    "value": "3066783",
+    "population": 3281
+  },
+  {
+    "label": "Nivnice",
+    "value": "3069744",
+    "population": 3278
+  },
+  {
+    "label": "Lázně Bohdaneč",
+    "value": "3337421",
+    "population": 3274
+  },
+  {
+    "label": "Třemošnice",
+    "value": "3064043",
+    "population": 3273
+  },
+  {
+    "label": "Vejprty",
+    "value": "3063333",
+    "population": 3273
+  },
+  {
+    "label": "Kostelec nad Černými Lesy",
+    "value": "3073152",
+    "population": 3264
+  },
+  {
+    "label": "Kobeřice",
+    "value": "3073493",
+    "population": 3228
+  },
+  {
+    "label": "Libčice nad Vltavou",
+    "value": "3071980",
+    "population": 3227
+  },
+  {
+    "label": "Chvaletice",
+    "value": "3077501",
+    "population": 3223
+  },
+  {
+    "label": "Baška",
+    "value": "3079645",
+    "population": 3222
+  },
+  {
+    "label": "Jesenice",
+    "value": "3074286",
+    "population": 3221
+  },
+  {
+    "label": "Loket",
+    "value": "3071627",
+    "population": 3217
+  },
+  {
+    "label": "Hrušovany nad Jevišovkou",
+    "value": "3074764",
+    "population": 3209
+  },
+  {
+    "label": "Lutín",
+    "value": "3071350",
+    "population": 3194
+  },
+  {
+    "label": "Volyně",
+    "value": "3062571",
+    "population": 3190
+  },
+  {
+    "label": "Chrast",
+    "value": "3077596",
+    "population": 3186
+  },
+  {
+    "label": "Červená Voda",
+    "value": "3077972",
+    "population": 3180
+  },
+  {
+    "label": "Opočno",
+    "value": "3068915",
+    "population": 3177
+  },
+  {
+    "label": "Budišov nad Budišovkou",
+    "value": "3078469",
+    "population": 3159
+  },
+  {
+    "label": "Bludov",
+    "value": "3079194",
+    "population": 3155
+  },
+  {
+    "label": "Velká nad Veličkou",
+    "value": "3063240",
+    "population": 3149
+  },
+  {
+    "label": "Jablonné nad Orlicí",
+    "value": "3074598",
+    "population": 3147
+  },
+  {
+    "label": "Jáchymov",
+    "value": "3074587",
+    "population": 3143
+  },
+  {
+    "label": "Planá nad Lužnicí",
+    "value": "3068245",
+    "population": 3128
+  },
+  {
+    "label": "Smiřice",
+    "value": "3065728",
+    "population": 3122
+  },
+  {
+    "label": "Loštice",
+    "value": "3071579",
+    "population": 3098
+  },
+  {
+    "label": "Sezemice",
+    "value": "3066159",
+    "population": 3097
+  },
+  {
+    "label": "Štěpánkovice",
+    "value": "3065187",
+    "population": 3096
+  },
+  {
+    "label": "Sadská",
+    "value": "3066446",
+    "population": 3095
+  },
+  {
+    "label": "Žirovnice",
+    "value": "3061437",
+    "population": 3085
+  },
+  {
+    "label": "Velké Pavlovice",
+    "value": "3063192",
+    "population": 3078
+  },
+  {
+    "label": "Židlochovice",
+    "value": "3061472",
+    "population": 3075
+  },
+  {
+    "label": "Vnorovy",
+    "value": "3062658",
+    "population": 3062
+  },
+  {
+    "label": "Vrdy",
+    "value": "3062419",
+    "population": 3062
+  },
+  {
+    "label": "Uhlířské Janovice",
+    "value": "3063727",
+    "population": 3058
+  },
+  {
+    "label": "Kaznějov",
+    "value": "3073752",
+    "population": 3053
+  },
+  {
+    "label": "Kostelec nad Labem",
+    "value": "3073151",
+    "population": 3052
+  },
+  {
+    "label": "Vlčnov",
+    "value": "3062708",
+    "population": 3039
+  },
+  {
+    "label": "Vlčnov",
+    "value": "3062710",
+    "population": 3037
+  },
+  {
+    "label": "Klášter",
+    "value": "3073672",
+    "population": 3034
+  },
+  {
+    "label": "Dobrá",
+    "value": "3077075",
+    "population": 3032
+  },
+  {
+    "label": "Staňkov",
+    "value": "3065439",
+    "population": 3026
+  },
+  {
+    "label": "Rtyně v Podkrkonoší",
+    "value": "3066623",
+    "population": 3023
+  },
+  {
+    "label": "Miroslav",
+    "value": "3070593",
+    "population": 3017
+  },
+  {
+    "label": "Teplá",
+    "value": "3070820",
+    "population": 3013
+  },
+  {
+    "label": "Kamenice",
+    "value": "3073944",
+    "population": 3011
+  },
+  {
+    "label": "Rapotín",
+    "value": "3067026",
+    "population": 3009
+  },
+  {
+    "label": "Terezín",
+    "value": "3064268",
+    "population": 2992
+  },
+  {
+    "label": "Javorník",
+    "value": "3074398",
+    "population": 2967
+  },
+  {
+    "label": "Dolní Němčí",
+    "value": "3076761",
+    "population": 2957
+  },
+  {
+    "label": "Dobrovice",
+    "value": "3076991",
+    "population": 2954
+  },
+  {
+    "label": "Hrušovany u Brna",
+    "value": "3074763",
+    "population": 2941
+  },
+  {
+    "label": "Velvary",
+    "value": "3063109",
+    "population": 2934
+  },
+  {
+    "label": "Konice",
+    "value": "3073299",
+    "population": 2931
+  },
+  {
+    "label": "Karolinka",
+    "value": "3073792",
+    "population": 2916
+  },
+  {
+    "label": "Velká Bystřice",
+    "value": "3063271",
+    "population": 2913
+  },
+  {
+    "label": "Městec Králové",
+    "value": "3070822",
+    "population": 2913
+  },
+  {
+    "label": "Řevnice",
+    "value": "3066890",
+    "population": 2908
+  },
+  {
+    "label": "Slušovice",
+    "value": "3065759",
+    "population": 2904
+  },
+  {
+    "label": "Koryčany",
+    "value": "3073222",
+    "population": 2900
+  },
+  {
+    "label": "Hrádek",
+    "value": "3074954",
+    "population": 2897
+  },
+  {
+    "label": "Jevíčko",
+    "value": "3074241",
+    "population": 2886
+  },
+  {
+    "label": "Ivanovice na Hané",
+    "value": "3074614",
+    "population": 2884
+  },
+  {
+    "label": "Dobřichovice",
+    "value": "3077034",
+    "population": 2874
+  },
+  {
+    "label": "Podivín",
+    "value": "3068066",
+    "population": 2872
+  },
+  {
+    "label": "Trmice",
+    "value": "3063987",
+    "population": 2862
+  },
+  {
+    "label": "Velké Losiny",
+    "value": "3063197",
+    "population": 2862
+  },
+  {
+    "label": "Dolní Bojanovice",
+    "value": "3076923",
+    "population": 2859
+  },
+  {
+    "label": "Kozlovice",
+    "value": "3073008",
+    "population": 2852
+  },
+  {
+    "label": "Kostelec na Hané",
+    "value": "3073147",
+    "population": 2851
+  },
+  {
+    "label": "Veverská Bítýška",
+    "value": "3062965",
+    "population": 2842
+  },
+  {
+    "label": "Březová",
+    "value": "3078664",
+    "population": 2826
+  },
+  {
+    "label": "Raspenava",
+    "value": "3067006",
+    "population": 2826
+  },
+  {
+    "label": "Žlutice",
+    "value": "3061350",
+    "population": 2817
+  },
+  {
+    "label": "Zákupy",
+    "value": "3061949",
+    "population": 2792
+  },
+  {
+    "label": "Zašová",
+    "value": "3061833",
+    "population": 2790
+  },
+  {
+    "label": "Meziměstí",
+    "value": "3070774",
+    "population": 2784
+  },
+  {
+    "label": "Mladá Vožice",
+    "value": "3070542",
+    "population": 2772
+  },
+  {
+    "label": "Velké Hamry",
+    "value": "3063209",
+    "population": 2754
+  },
+  {
+    "label": "Palkovice",
+    "value": "3068623",
+    "population": 2751
+  },
+  {
+    "label": "Hejnice",
+    "value": "3075894",
+    "population": 2751
+  },
+  {
+    "label": "Mikulovice",
+    "value": "3070715",
+    "population": 2750
+  },
+  {
+    "label": "Lužice",
+    "value": "3071330",
+    "population": 2750
+  },
+  {
+    "label": "Ždánice",
+    "value": "3061729",
+    "population": 2721
+  },
+  {
+    "label": "Netolice",
+    "value": "3069808",
+    "population": 2721
+  },
+  {
+    "label": "Počátky",
+    "value": "3068140",
+    "population": 2719
+  },
+  {
+    "label": "Nový Hrozenkov",
+    "value": "3069308",
+    "population": 2714
+  },
+  {
+    "label": "Nový Malín",
+    "value": "3069290",
+    "population": 2713
+  },
+  {
+    "label": "Slavonice",
+    "value": "3065818",
+    "population": 2706
+  },
+  {
+    "label": "Košťany",
+    "value": "3073170",
+    "population": 2700
+  },
+  {
+    "label": "Český Dub",
+    "value": "3077895",
+    "population": 2698
+  },
+  {
+    "label": "Rajhrad",
+    "value": "3067078",
+    "population": 2697
+  },
+  {
+    "label": "Chotěšov",
+    "value": "3077650",
+    "population": 2688
+  },
+  {
+    "label": "Nové Sedlo",
+    "value": "3069437",
+    "population": 2669
+  },
+  {
+    "label": "Úštěk",
+    "value": "3063556",
+    "population": 2664
+  },
+  {
+    "label": "Hodkovice nad Mohelkou",
+    "value": "3075664",
+    "population": 2659
+  },
+  {
+    "label": "Velké Karlovice",
+    "value": "3063202",
+    "population": 2651
+  },
+  {
+    "label": "Golčův Jeníkov",
+    "value": "3076098",
+    "population": 2644
+  },
+  {
+    "label": "Kunštát",
+    "value": "3072486",
+    "population": 2637
+  },
+  {
+    "label": "Obrnice",
+    "value": "3069179",
+    "population": 2631
+  },
+  {
+    "label": "Vyšší Brod",
+    "value": "3062184",
+    "population": 2628
+  },
+  {
+    "label": "Vejprnice",
+    "value": "3063334",
+    "population": 2626
+  },
+  {
+    "label": "Zbiroh",
+    "value": "3061780",
+    "population": 2625
+  },
+  {
+    "label": "Kelč",
+    "value": "3073731",
+    "population": 2623
+  },
+  {
+    "label": "Mokrá Hora",
+    "value": "3070390",
+    "population": 2612
+  },
+  {
+    "label": "Čerčany",
+    "value": "3078122",
+    "population": 2611
+  },
+  {
+    "label": "Tovačov",
+    "value": "3064143",
+    "population": 2605
+  },
+  {
+    "label": "Bílovice nad Svitavou",
+    "value": "3079332",
+    "population": 2600
+  },
+  {
+    "label": "Luže",
+    "value": "3071339",
+    "population": 2591
+  },
+  {
+    "label": "Nové Hrady",
+    "value": "3069493",
+    "population": 2590
+  },
+  {
+    "label": "Luka nad Jihlavou",
+    "value": "3071390",
+    "population": 2586
+  },
+  {
+    "label": "Jedovnice",
+    "value": "3074360",
+    "population": 2578
+  },
+  {
+    "label": "Střelice",
+    "value": "3064962",
+    "population": 2578
+  },
+  {
+    "label": "Libušín",
+    "value": "3071881",
+    "population": 2564
+  },
+  {
+    "label": "Česká Ves",
+    "value": "3077918",
+    "population": 2554
+  },
+  {
+    "label": "Bohušovice nad Ohří",
+    "value": "3079102",
+    "population": 2544
+  },
+  {
+    "label": "Dolní Dobrouč",
+    "value": "3076882",
+    "population": 2543
+  },
+  {
+    "label": "Hať",
+    "value": "3075930",
+    "population": 2539
+  },
+  {
+    "label": "Spálené Poříčí",
+    "value": "3065560",
+    "population": 2529
+  },
+  {
+    "label": "Plasy",
+    "value": "3068222",
+    "population": 2527
+  },
+  {
+    "label": "Čejkovice",
+    "value": "3078181",
+    "population": 2527
+  },
+  {
+    "label": "Luby",
+    "value": "3071448",
+    "population": 2525
+  },
+  {
+    "label": "Moravská Nová Ves",
+    "value": "3070329",
+    "population": 2517
+  },
+  {
+    "label": "Křemže",
+    "value": "3072781",
+    "population": 2516
+  },
+  {
+    "label": "Štítná nad Vláří",
+    "value": "3065123",
+    "population": 2500
+  },
+  {
+    "label": "Ruda nad Moravou",
+    "value": "3066613",
+    "population": 2490
+  },
+  {
+    "label": "Buchlovice",
+    "value": "3078513",
+    "population": 2487
+  },
+  {
+    "label": "Tlučná",
+    "value": "3064185",
+    "population": 2482
+  },
+  {
+    "label": "Sobotín",
+    "value": "3065627",
+    "population": 2468
+  },
+  {
+    "label": "Tlumačov",
+    "value": "3064183",
+    "population": 2468
+  },
+  {
+    "label": "Studená",
+    "value": "3064826",
+    "population": 2464
+  },
+  {
+    "label": "Rokytnice v Orlických Horách",
+    "value": "3066781",
+    "population": 2463
+  },
+  {
+    "label": "Horní Benešov",
+    "value": "3075451",
+    "population": 2460
+  },
+  {
+    "label": "Stará Ves nad Ondřejnicí",
+    "value": "3065379",
+    "population": 2450
+  },
+  {
+    "label": "Nová Včelnice",
+    "value": "3069648",
+    "population": 2449
+  },
+  {
+    "label": "Strašice",
+    "value": "3065033",
+    "population": 2442
+  },
+  {
+    "label": "Kryry",
+    "value": "3072581",
+    "population": 2431
+  },
+  {
+    "label": "Komárov",
+    "value": "3073345",
+    "population": 2426
+  },
+  {
+    "label": "Horní Bečva",
+    "value": "3075454",
+    "population": 2420
+  },
+  {
+    "label": "Mořkov",
+    "value": "3070299",
+    "population": 2414
+  },
+  {
+    "label": "Vřesina",
+    "value": "3062417",
+    "population": 2410
+  },
+  {
+    "label": "Zastávka",
+    "value": "3061830",
+    "population": 2405
+  },
+  {
+    "label": "Starý Jičín",
+    "value": "3065263",
+    "population": 2405
+  },
+  {
+    "label": "Dolní Kounice",
+    "value": "3076822",
+    "population": 2403
+  },
+  {
+    "label": "Bohuňovice",
+    "value": "3079121",
+    "population": 2390
+  },
+  {
+    "label": "Batelov",
+    "value": "3079637",
+    "population": 2388
+  },
+  {
+    "label": "Rudolfov",
+    "value": "3066592",
+    "population": 2384
+  },
+  {
+    "label": "Plumlov",
+    "value": "3068162",
+    "population": 2384
+  },
+  {
+    "label": "Chlumčany",
+    "value": "3077760",
+    "population": 2383
+  },
+  {
+    "label": "Mikulášovice",
+    "value": "3070725",
+    "population": 2375
+  },
+  {
+    "label": "Ořechov",
+    "value": "3068897",
+    "population": 2368
+  },
+  {
+    "label": "Halenkov",
+    "value": "3075997",
+    "population": 2367
+  },
+  {
+    "label": "Dobšice",
+    "value": "3076984",
+    "population": 2363
+  },
+  {
+    "label": "Neveklov",
+    "value": "3069785",
+    "population": 2357
+  },
+  {
+    "label": "Lednice",
+    "value": "3072232",
+    "population": 2355
+  },
+  {
+    "label": "Fryčovice",
+    "value": "3076129",
+    "population": 2353
+  },
+  {
+    "label": "Hovězí",
+    "value": "3075025",
+    "population": 2351
+  },
+  {
+    "label": "Proboštov",
+    "value": "3067461",
+    "population": 2333
+  },
+  {
+    "label": "Chabařovice",
+    "value": "3077862",
+    "population": 2329
+  },
+  {
+    "label": "Ostravice",
+    "value": "3068797",
+    "population": 2324
+  },
+  {
+    "label": "Líně",
+    "value": "3071844",
+    "population": 2311
+  },
+  {
+    "label": "Buštěhrad",
+    "value": "3078358",
+    "population": 2295
+  },
+  {
+    "label": "Kvasice",
+    "value": "3072451",
+    "population": 2282
+  },
+  {
+    "label": "Horní Planá",
+    "value": "3075262",
+    "population": 2278
+  },
+  {
+    "label": "Dolní Bousov",
+    "value": "3076918",
+    "population": 2275
+  },
+  {
+    "label": "Velké Poříčí",
+    "value": "3063190",
+    "population": 2275
+  },
+  {
+    "label": "Sobotka",
+    "value": "3065626",
+    "population": 2274
+  },
+  {
+    "label": "Hranice",
+    "value": "3074889",
+    "population": 2268
+  },
+  {
+    "label": "Mnichovice",
+    "value": "3070452",
+    "population": 2256
+  },
+  {
+    "label": "Dolní Černilov",
+    "value": "3076901",
+    "population": 2255
+  },
+  {
+    "label": "Psáry",
+    "value": "3067368",
+    "population": 2243
+  },
+  {
+    "label": "Valašská Bystřice",
+    "value": "3063451",
+    "population": 2240
+  },
+  {
+    "label": "Boršice",
+    "value": "3078933",
+    "population": 2239
+  },
+  {
+    "label": "Mirošov",
+    "value": "3070584",
+    "population": 2237
+  },
+  {
+    "label": "Černilov",
+    "value": "3078038",
+    "population": 2233
+  },
+  {
+    "label": "Mladé Buky",
+    "value": "3070537",
+    "population": 2232
+  },
+  {
+    "label": "Zlonice",
+    "value": "3061360",
+    "population": 2232
+  },
+  {
+    "label": "Hovorany",
+    "value": "3075023",
+    "population": 2232
+  },
+  {
+    "label": "Kopidlno",
+    "value": "3073261",
+    "population": 2231
+  },
+  {
+    "label": "Klobouky",
+    "value": "3073583",
+    "population": 2227
+  },
+  {
+    "label": "Drnovice",
+    "value": "3076403",
+    "population": 2225
+  },
+  {
+    "label": "Povrly",
+    "value": "3067733",
+    "population": 2219
+  },
+  {
+    "label": "Opatovice nad Labem",
+    "value": "3068933",
+    "population": 2218
+  },
+  {
+    "label": "Svoboda nad Úpou",
+    "value": "3064449",
+    "population": 2216
+  },
+  {
+    "label": "Horoměřice",
+    "value": "3075127",
+    "population": 2212
+  },
+  {
+    "label": "Šardice",
+    "value": "3066399",
+    "population": 2205
+  },
+  {
+    "label": "Novosedlice",
+    "value": "3069398",
+    "population": 2204
+  },
+  {
+    "label": "Moravský Písek",
+    "value": "3070308",
+    "population": 2201
+  },
+  {
+    "label": "Šťáhlavy",
+    "value": "3065453",
+    "population": 2200
+  },
+  {
+    "label": "Ledenice",
+    "value": "3072234",
+    "population": 2193
+  },
+  {
+    "label": "Chlum u Třeboně",
+    "value": "3077741",
+    "population": 2183
+  },
+  {
+    "label": "Nechanice",
+    "value": "3069980",
+    "population": 2183
+  },
+  {
+    "label": "Staré Nechanice",
+    "value": "3065325",
+    "population": 2180
+  },
+  {
+    "label": "Velká Hleďsebe",
+    "value": "3063261",
+    "population": 2164
+  },
+  {
+    "label": "Dolany",
+    "value": "3076960",
+    "population": 2162
+  },
+  {
+    "label": "Rudník",
+    "value": "3066595",
+    "population": 2161
+  },
+  {
+    "label": "Vacenovice",
+    "value": "3063491",
+    "population": 2157
+  },
+  {
+    "label": "Dolní Počernice",
+    "value": "3076735",
+    "population": 2157
+  },
+  {
+    "label": "Čeladná",
+    "value": "3078161",
+    "population": 2152
+  },
+  {
+    "label": "Borohrádek",
+    "value": "3078973",
+    "population": 2152
+  },
+  {
+    "label": "Velký Osek",
+    "value": "3063141",
+    "population": 2150
+  },
+  {
+    "label": "Velký Týnec",
+    "value": "3063127",
+    "population": 2150
+  },
+  {
+    "label": "Prušánky",
+    "value": "3067379",
+    "population": 2145
+  },
+  {
+    "label": "Tuchlovice",
+    "value": "3063896",
+    "population": 2141
+  },
+  {
+    "label": "Jince",
+    "value": "3074166",
+    "population": 2139
+  },
+  {
+    "label": "Rakvice",
+    "value": "3067047",
+    "population": 2134
+  },
+  {
+    "label": "Chýnov",
+    "value": "3077457",
+    "population": 2121
+  },
+  {
+    "label": "Trojanovice",
+    "value": "3063955",
+    "population": 2114
+  },
+  {
+    "label": "Peruc",
+    "value": "3068411",
+    "population": 2109
+  },
+  {
+    "label": "Horka nad Moravou",
+    "value": "3075471",
+    "population": 2101
+  },
+  {
+    "label": "Solnice",
+    "value": "3065607",
+    "population": 2099
+  },
+  {
+    "label": "Proseč",
+    "value": "3067443",
+    "population": 2098
+  },
+  {
+    "label": "Železná Ruda",
+    "value": "3061567",
+    "population": 2096
+  },
+  {
+    "label": "Píšť",
+    "value": "3068279",
+    "population": 2096
+  },
+  {
+    "label": "Němčice nad Hanou",
+    "value": "3069900",
+    "population": 2095
+  },
+  {
+    "label": "Bánov",
+    "value": "3079671",
+    "population": 2095
+  },
+  {
+    "label": "Plesná",
+    "value": "3068191",
+    "population": 2077
+  },
+  {
+    "label": "Bečov",
+    "value": "3079611",
+    "population": 2072
+  },
+  {
+    "label": "Kardašova Řečice",
+    "value": "3073850",
+    "population": 2071
+  },
+  {
+    "label": "Satalice",
+    "value": "3066392",
+    "population": 2069
+  },
+  {
+    "label": "Vikýřovice",
+    "value": "3062909",
+    "population": 2064
+  },
+  {
+    "label": "Kobylí",
+    "value": "3073483",
+    "population": 2058
+  },
+  {
+    "label": "Zdounky",
+    "value": "3061637",
+    "population": 2055
+  },
+  {
+    "label": "Břasy",
+    "value": "3078807",
+    "population": 2055
+  },
+  {
+    "label": "Staré Město",
+    "value": "3065330",
+    "population": 2054
+  },
+  {
+    "label": "Milín",
+    "value": "3070661",
+    "population": 2053
+  },
+  {
+    "label": "Janovice nad Úhlavou",
+    "value": "3074491",
+    "population": 2049
+  },
+  {
+    "label": "Štíty",
+    "value": "3065118",
+    "population": 2049
+  },
+  {
+    "label": "Tvrdonice",
+    "value": "3063828",
+    "population": 2042
+  },
+  {
+    "label": "Blučina",
+    "value": "3079199",
+    "population": 2040
+  },
+  {
+    "label": "Hošťálková",
+    "value": "3075091",
+    "population": 2036
+  },
+  {
+    "label": "Stará Paka",
+    "value": "3065392",
+    "population": 2026
+  },
+  {
+    "label": "Velim",
+    "value": "3063286",
+    "population": 2021
+  },
+  {
+    "label": "Hrob",
+    "value": "3074817",
+    "population": 2020
+  },
+  {
+    "label": "Všetaty",
+    "value": "3062342",
+    "population": 2019
+  },
+  {
+    "label": "Pozořice",
+    "value": "3067723",
+    "population": 2016
+  },
+  {
+    "label": "Okříšky",
+    "value": "3069098",
+    "population": 2016
+  },
+  {
+    "label": "Průhonice",
+    "value": "3067383",
+    "population": 2007
+  },
+  {
+    "label": "Jistebnice",
+    "value": "3074102",
+    "population": 2007
+  },
+  {
+    "label": "Jablůnka",
+    "value": "3074594",
+    "population": 2004
+  },
+  {
+    "label": "Kamenný Újezd",
+    "value": "3073892",
+    "population": 2002
+  },
+  {
+    "label": "Kunčice pod Ondřejníkem",
+    "value": "3072531",
+    "population": 1995
+  },
+  {
+    "label": "Troubky",
+    "value": "3063939",
+    "population": 1993
+  },
+  {
+    "label": "Velký Šenov",
+    "value": "3063131",
+    "population": 1978
+  },
+  {
+    "label": "Bochov",
+    "value": "3079174",
+    "population": 1973
+  },
+  {
+    "label": "Brodek u Přerova",
+    "value": "3078584",
+    "population": 1972
+  },
+  {
+    "label": "Jablonec nad Jizerou",
+    "value": "3074604",
+    "population": 1968
+  },
+  {
+    "label": "Lešná",
+    "value": "3072184",
+    "population": 1965
+  },
+  {
+    "label": "Budyně nad Ohří",
+    "value": "3078458",
+    "population": 1964
+  },
+  {
+    "label": "Dolní Újezd",
+    "value": "3076650",
+    "population": 1963
+  },
+  {
+    "label": "Horní Jiřetín",
+    "value": "3075356",
+    "population": 1963
+  },
+  {
+    "label": "Šitbořice",
+    "value": "3066095",
+    "population": 1958
+  },
+  {
+    "label": "Velké Březno",
+    "value": "3063215",
+    "population": 1957
+  },
+  {
+    "label": "Loučovice",
+    "value": "3071532",
+    "population": 1955
+  },
+  {
+    "label": "Skalná",
+    "value": "3066045",
+    "population": 1950
+  },
+  {
+    "label": "Loučná nad Desnou",
+    "value": "3071536",
+    "population": 1949
+  },
+  {
+    "label": "Milotice",
+    "value": "3070640",
+    "population": 1941
+  },
+  {
+    "label": "Polešovice",
+    "value": "3067892",
+    "population": 1941
+  },
+  {
+    "label": "Dolní Poustevna",
+    "value": "3076726",
+    "population": 1941
+  },
+  {
+    "label": "Veřovice",
+    "value": "3063082",
+    "population": 1936
+  },
+  {
+    "label": "Nýdek",
+    "value": "3069238",
+    "population": 1934
+  },
+  {
+    "label": "Vranovice",
+    "value": "3062511",
+    "population": 1934
+  },
+  {
+    "label": "Velké Popovice",
+    "value": "3063191",
+    "population": 1926
+  },
+  {
+    "label": "Doudleby nad Orlicí",
+    "value": "3076522",
+    "population": 1926
+  },
+  {
+    "label": "Hukvaldy",
+    "value": "3074733",
+    "population": 1924
+  },
+  {
+    "label": "Vrané nad Vltavou",
+    "value": "3062533",
+    "population": 1922
+  },
+  {
+    "label": "Dobronín",
+    "value": "3077001",
+    "population": 1913
+  },
+  {
+    "label": "Vysehrad",
+    "value": "8643889",
+    "population": 1913
+  },
+  {
+    "label": "Měřín",
+    "value": "3070847",
+    "population": 1910
+  },
+  {
+    "label": "Žebrák",
+    "value": "3061625",
+    "population": 1909
+  },
+  {
+    "label": "Oloví",
+    "value": "3069007",
+    "population": 1909
+  },
+  {
+    "label": "Žandov",
+    "value": "3061867",
+    "population": 1907
+  },
+  {
+    "label": "Staříč",
+    "value": "3065300",
+    "population": 1906
+  },
+  {
+    "label": "Klecany",
+    "value": "3073652",
+    "population": 1904
+  },
+  {
+    "label": "Černá Hora",
+    "value": "3078085",
+    "population": 1903
+  },
+  {
+    "label": "Hrochův Týnec",
+    "value": "3074808",
+    "population": 1899
+  },
+  {
+    "label": "Dolní Roveň",
+    "value": "3076701",
+    "population": 1899
+  },
+  {
+    "label": "Jeseník nad Odrou",
+    "value": "3074280",
+    "population": 1898
+  },
+  {
+    "label": "Vroutek",
+    "value": "3062405",
+    "population": 1898
+  },
+  {
+    "label": "Zbůch",
+    "value": "3061748",
+    "population": 1890
+  },
+  {
+    "label": "Mikulčice",
+    "value": "3070724",
+    "population": 1881
+  },
+  {
+    "label": "Dalovice",
+    "value": "3077291",
+    "population": 1880
+  },
+  {
+    "label": "Stráž nad Nisou",
+    "value": "3064997",
+    "population": 1877
+  },
+  {
+    "label": "Lidečko",
+    "value": "3071863",
+    "population": 1873
+  },
+  {
+    "label": "Náměšť na Hané",
+    "value": "3070054",
+    "population": 1872
+  },
+  {
+    "label": "Týnec nad Labem",
+    "value": "3063805",
+    "population": 1868
+  },
+  {
+    "label": "Horní Cerekev",
+    "value": "3075423",
+    "population": 1866
+  },
+  {
+    "label": "Kostice",
+    "value": "3073130",
+    "population": 1864
+  },
+  {
+    "label": "Černovice",
+    "value": "3078021",
+    "population": 1863
+  },
+  {
+    "label": "Krmelín",
+    "value": "3072661",
+    "population": 1853
+  },
+  {
+    "label": "Bystřany",
+    "value": "3078309",
+    "population": 1840
+  },
+  {
+    "label": "Křižanov",
+    "value": "3072693",
+    "population": 1832
+  },
+  {
+    "label": "Lysice",
+    "value": "3071302",
+    "population": 1831
+  },
+  {
+    "label": "Senice na Hané",
+    "value": "3066195",
+    "population": 1824
+  },
+  {
+    "label": "Troubsko",
+    "value": "3063938",
+    "population": 1822
+  },
+  {
+    "label": "Bělá nad Radbuzou",
+    "value": "3079557",
+    "population": 1812
+  },
+  {
+    "label": "Kunín",
+    "value": "3072503",
+    "population": 1811
+  },
+  {
+    "label": "Horní Jelení",
+    "value": "3075361",
+    "population": 1811
+  },
+  {
+    "label": "Kozmice",
+    "value": "3073000",
+    "population": 1808
+  },
+  {
+    "label": "Bukovany",
+    "value": "3078421",
+    "population": 1808
+  },
+  {
+    "label": "Libiš",
+    "value": "3071937",
+    "population": 1807
+  },
+  {
+    "label": "Lužná",
+    "value": "3071319",
+    "population": 1806
+  },
+  {
+    "label": "Dolní Bečva",
+    "value": "3076934",
+    "population": 1805
+  },
+  {
+    "label": "Teplice nad Metují",
+    "value": "3064285",
+    "population": 1805
+  },
+  {
+    "label": "Troubelice",
+    "value": "3063941",
+    "population": 1802
+  },
+  {
+    "label": "Horní Branná",
+    "value": "3075436",
+    "population": 1798
+  },
+  {
+    "label": "Dašice",
+    "value": "3077264",
+    "population": 1797
+  },
+  {
+    "label": "Heřmanova Huť",
+    "value": "3075843",
+    "population": 1794
+  },
+  {
+    "label": "Chodová Planá",
+    "value": "3077705",
+    "population": 1793
+  },
+  {
+    "label": "Dolní Břežany",
+    "value": "3076915",
+    "population": 1790
+  },
+  {
+    "label": "Smečno",
+    "value": "3065751",
+    "population": 1781
+  },
+  {
+    "label": "Hrotovice",
+    "value": "3074803",
+    "population": 1780
+  },
+  {
+    "label": "Nový Knín",
+    "value": "3069300",
+    "population": 1779
+  },
+  {
+    "label": "Město Touškov",
+    "value": "3070814",
+    "population": 1777
+  },
+  {
+    "label": "Písek",
+    "value": "3068292",
+    "population": 1776
+  },
+  {
+    "label": "Kouřim",
+    "value": "3073084",
+    "population": 1772
+  },
+  {
+    "label": "Libouchec",
+    "value": "3071895",
+    "population": 1772
+  },
+  {
+    "label": "Raškovice",
+    "value": "3067023",
+    "population": 1771
+  },
+  {
+    "label": "Lhenice",
+    "value": "3072111",
+    "population": 1771
+  },
+  {
+    "label": "Stonava",
+    "value": "3065098",
+    "population": 1771
+  },
+  {
+    "label": "Strážná",
+    "value": "3064999",
+    "population": 1770
+  },
+  {
+    "label": "Pěnčín",
+    "value": "3068437",
+    "population": 1769
+  },
+  {
+    "label": "Markvartovice",
+    "value": "3070995",
+    "population": 1766
+  },
+  {
+    "label": "Šumice",
+    "value": "3064677",
+    "population": 1764
+  },
+  {
+    "label": "Zásmuky",
+    "value": "3061834",
+    "population": 1763
+  },
+  {
+    "label": "Sokolnice",
+    "value": "3065618",
+    "population": 1761
+  },
+  {
+    "label": "Kamenice",
+    "value": "3073948",
+    "population": 1760
+  },
+  {
+    "label": "Olešnice",
+    "value": "3069029",
+    "population": 1757
+  },
+  {
+    "label": "Babice",
+    "value": "3079732",
+    "population": 1754
+  },
+  {
+    "label": "Hrádek",
+    "value": "3074955",
+    "population": 1753
+  },
+  {
+    "label": "Dubá",
+    "value": "3076363",
+    "population": 1753
+  },
+  {
+    "label": "Radnice",
+    "value": "3067174",
+    "population": 1749
+  },
+  {
+    "label": "Hustopeče Nad Bečvou",
+    "value": "3074676",
+    "population": 1748
+  },
+  {
+    "label": "Doubrava",
+    "value": "3076555",
+    "population": 1744
+  },
+  {
+    "label": "Pchery",
+    "value": "3068494",
+    "population": 1743
+  },
+  {
+    "label": "Horní Sloupnice",
+    "value": "3075206",
+    "population": 1742
+  },
+  {
+    "label": "Vinařice",
+    "value": "3062883",
+    "population": 1739
+  },
+  {
+    "label": "Křenovice",
+    "value": "3072771",
+    "population": 1738
+  },
+  {
+    "label": "Petřvald",
+    "value": "3068330",
+    "population": 1735
+  },
+  {
+    "label": "Studenec",
+    "value": "3064811",
+    "population": 1734
+  },
+  {
+    "label": "Dolní Sloupnice",
+    "value": "3076685",
+    "population": 1729
+  },
+  {
+    "label": "Hostavice",
+    "value": "3075086",
+    "population": 1729
+  },
+  {
+    "label": "Lukov",
+    "value": "3071374",
+    "population": 1725
+  },
+  {
+    "label": "Třebenice",
+    "value": "3064114",
+    "population": 1723
+  },
+  {
+    "label": "Hroznětín",
+    "value": "3074797",
+    "population": 1721
+  },
+  {
+    "label": "Ratiboř",
+    "value": "3066995",
+    "population": 1719
+  },
+  {
+    "label": "Dolní Dunajovice",
+    "value": "3076876",
+    "population": 1717
+  },
+  {
+    "label": "Jalubí",
+    "value": "3074558",
+    "population": 1708
+  },
+  {
+    "label": "Poběžovice",
+    "value": "3068150",
+    "population": 1707
+  },
+  {
+    "label": "Moravany",
+    "value": "3070354",
+    "population": 1706
+  },
+  {
+    "label": "Malšice",
+    "value": "3071099",
+    "population": 1702
+  },
+  {
+    "label": "Říčany",
+    "value": "3066879",
+    "population": 1702
+  },
+  {
+    "label": "Halenkovice",
+    "value": "3075996",
+    "population": 1701
+  },
+  {
+    "label": "Harrachov",
+    "value": "3075953",
+    "population": 1700
+  },
+  {
+    "label": "Chrást",
+    "value": "3077598",
+    "population": 1700
+  },
+  {
+    "label": "Svitávka",
+    "value": "3064456",
+    "population": 1700
+  },
+  {
+    "label": "Hodslavice",
+    "value": "3075643",
+    "population": 1699
+  },
+  {
+    "label": "Drahanovice",
+    "value": "3076508",
+    "population": 1699
+  },
+  {
+    "label": "Janovice",
+    "value": "3074500",
+    "population": 1693
+  },
+  {
+    "label": "Spytihněv",
+    "value": "3065497",
+    "population": 1692
+  },
+  {
+    "label": "Seč",
+    "value": "3066342",
+    "population": 1686
+  },
+  {
+    "label": "Slavkov",
+    "value": "3065831",
+    "population": 1686
+  },
+  {
+    "label": "Bystré",
+    "value": "3078306",
+    "population": 1681
+  },
+  {
+    "label": "Brandýsek",
+    "value": "3078839",
+    "population": 1679
+  },
+  {
+    "label": "Drnholec",
+    "value": "3076408",
+    "population": 1676
+  },
+  {
+    "label": "Velké Hoštice",
+    "value": "3063205",
+    "population": 1675
+  },
+  {
+    "label": "Vlachovo Březí",
+    "value": "3062775",
+    "population": 1672
+  },
+  {
+    "label": "Košťálov",
+    "value": "3073172",
+    "population": 1671
+  },
+  {
+    "label": "Prostřední Bečva",
+    "value": "3067416",
+    "population": 1661
+  },
+  {
+    "label": "Jesenice",
+    "value": "3074284",
+    "population": 1660
+  },
+  {
+    "label": "Lomnice nad Lužnicí",
+    "value": "3071607",
+    "population": 1660
+  },
+  {
+    "label": "Lány",
+    "value": "3072325",
+    "population": 1659
+  },
+  {
+    "label": "Mirovice",
+    "value": "3070575",
+    "population": 1658
+  },
+  {
+    "label": "Měnín",
+    "value": "3070853",
+    "population": 1657
+  },
+  {
+    "label": "Velké Němčice",
+    "value": "3063195",
+    "population": 1654
+  },
+  {
+    "label": "Horní Bludovice",
+    "value": "3075447",
+    "population": 1652
+  },
+  {
+    "label": "Plánice",
+    "value": "3068237",
+    "population": 1649
+  },
+  {
+    "label": "Rožďalovice",
+    "value": "3066680",
+    "population": 1648
+  },
+  {
+    "label": "Hodonice",
+    "value": "3075656",
+    "population": 1648
+  },
+  {
+    "label": "Libáň",
+    "value": "3071990",
+    "population": 1648
+  },
+  {
+    "label": "Lázně Kynžvart",
+    "value": "3072265",
+    "population": 1647
+  },
+  {
+    "label": "Ronov nad Doubravou",
+    "value": "3066765",
+    "population": 1645
+  },
+  {
+    "label": "Chvalčov",
+    "value": "3077508",
+    "population": 1644
+  },
+  {
+    "label": "Předměřice nad Labem",
+    "value": "3067627",
+    "population": 1638
+  },
+  {
+    "label": "Lučany nad Nisou",
+    "value": "3071447",
+    "population": 1636
+  },
+  {
+    "label": "Bílovice",
+    "value": "3079334",
+    "population": 1634
+  },
+  {
+    "label": "Ostrožská Lhota",
+    "value": "3068751",
+    "population": 1633
+  },
+  {
+    "label": "Veltrusy",
+    "value": "3063111",
+    "population": 1632
+  },
+  {
+    "label": "Čebín",
+    "value": "3078211",
+    "population": 1632
+  },
+  {
+    "label": "Krucemburk",
+    "value": "3072675",
+    "population": 1630
+  },
+  {
+    "label": "Bělotín",
+    "value": "3079532",
+    "population": 1630
+  },
+  {
+    "label": "Stěžery",
+    "value": "3065157",
+    "population": 1625
+  },
+  {
+    "label": "Zborovice",
+    "value": "3061768",
+    "population": 1619
+  },
+  {
+    "label": "Červené Pečky",
+    "value": "3077968",
+    "population": 1617
+  },
+  {
+    "label": "Zdíkov",
+    "value": "3061657",
+    "population": 1616
+  },
+  {
+    "label": "Francova Lhota",
+    "value": "3076153",
+    "population": 1615
+  },
+  {
+    "label": "Zeleneč",
+    "value": "3061588",
+    "population": 1615
+  },
+  {
+    "label": "Vidče",
+    "value": "3062934",
+    "population": 1614
+  },
+  {
+    "label": "Častolovice",
+    "value": "3078223",
+    "population": 1614
+  },
+  {
+    "label": "Velké Heraltice",
+    "value": "3063208",
+    "population": 1613
+  },
+  {
+    "label": "Kamenné Žehrovice",
+    "value": "3073899",
+    "population": 1606
+  },
+  {
+    "label": "České Meziříčí",
+    "value": "3077906",
+    "population": 1603
+  },
+  {
+    "label": "Velká Polom",
+    "value": "3063238",
+    "population": 1597
+  },
+  {
+    "label": "Bartošovice",
+    "value": "3079653",
+    "population": 1596
+  },
+  {
+    "label": "Malé Svatoňovice",
+    "value": "3071148",
+    "population": 1587
+  },
+  {
+    "label": "Tichá",
+    "value": "3064226",
+    "population": 1585
+  },
+  {
+    "label": "Hradec nad Svitavou",
+    "value": "3074961",
+    "population": 1584
+  },
+  {
+    "label": "Hazlov",
+    "value": "3075905",
+    "population": 1583
+  },
+  {
+    "label": "Švihov",
+    "value": "3064492",
+    "population": 1582
+  },
+  {
+    "label": "Řepiště",
+    "value": "3066917",
+    "population": 1581
+  },
+  {
+    "label": "Horní Moštěnice",
+    "value": "3075289",
+    "population": 1581
+  },
+  {
+    "label": "Pustiměř",
+    "value": "3067314",
+    "population": 1580
+  },
+  {
+    "label": "Chotoviny",
+    "value": "3077625",
+    "population": 1578
+  },
+  {
+    "label": "Svatava",
+    "value": "3064597",
+    "population": 1577
+  },
+  {
+    "label": "Smržice",
+    "value": "3065689",
+    "population": 1575
+  },
+  {
+    "label": "Želetava",
+    "value": "3061577",
+    "population": 1573
+  },
+  {
+    "label": "Dřevohostice",
+    "value": "3076428",
+    "population": 1569
+  },
+  {
+    "label": "Zlechov",
+    "value": "3061378",
+    "population": 1567
+  },
+  {
+    "label": "Loděnice",
+    "value": "3071643",
+    "population": 1564
+  },
+  {
+    "label": "Vrbátky",
+    "value": "3062477",
+    "population": 1562
+  },
+  {
+    "label": "Kašperské Hory",
+    "value": "3073769",
+    "population": 1562
+  },
+  {
+    "label": "Starý Kolín",
+    "value": "3065259",
+    "population": 1561
+  },
+  {
+    "label": "Lipov",
+    "value": "3071782",
+    "population": 1560
+  },
+  {
+    "label": "Hrdějovice",
+    "value": "3074864",
+    "population": 1560
+  },
+  {
+    "label": "Bohuslavice",
+    "value": "3079108",
+    "population": 1560
+  },
+  {
+    "label": "Horní Stropnice",
+    "value": "3075191",
+    "population": 1560
+  },
+  {
+    "label": "Medlov",
+    "value": "3070886",
+    "population": 1560
+  },
+  {
+    "label": "Tršice",
+    "value": "3063927",
+    "population": 1559
+  },
+  {
+    "label": "Březolupy",
+    "value": "3078672",
+    "population": 1559
+  },
+  {
+    "label": "Chyňava",
+    "value": "3077461",
+    "population": 1550
+  },
+  {
+    "label": "Nižbor",
+    "value": "3069738",
+    "population": 1549
+  },
+  {
+    "label": "Topolná",
+    "value": "3064157",
+    "population": 1545
+  },
+  {
+    "label": "Václavovice",
+    "value": "3063471",
+    "population": 1544
+  },
+  {
+    "label": "Bohutín",
+    "value": "3079099",
+    "population": 1544
+  },
+  {
+    "label": "Lubenec",
+    "value": "3071467",
+    "population": 1541
+  },
+  {
+    "label": "Štoky",
+    "value": "3065103",
+    "population": 1540
+  },
+  {
+    "label": "Stařeč",
+    "value": "3065367",
+    "population": 1539
+  },
+  {
+    "label": "Březí",
+    "value": "3078732",
+    "population": 1539
+  },
+  {
+    "label": "Svratka",
+    "value": "3064415",
+    "population": 1539
+  },
+  {
+    "label": "Všestary",
+    "value": "3062347",
+    "population": 1537
+  },
+  {
+    "label": "Šilheřovice",
+    "value": "3066137",
+    "population": 1534
+  },
+  {
+    "label": "Metylovice",
+    "value": "3070800",
+    "population": 1534
+  },
+  {
+    "label": "Vlachovice",
+    "value": "3062777",
+    "population": 1532
+  },
+  {
+    "label": "Nasavrky",
+    "value": "3070030",
+    "population": 1526
+  },
+  {
+    "label": "Smidary",
+    "value": "3065741",
+    "population": 1523
+  },
+  {
+    "label": "Prachovice",
+    "value": "3067707",
+    "population": 1522
+  },
+  {
+    "label": "Dvorce",
+    "value": "3076284",
+    "population": 1518
+  },
+  {
+    "label": "Březová nad Svitavou",
+    "value": "3078659",
+    "population": 1518
+  },
+  {
+    "label": "Strančice",
+    "value": "3065054",
+    "population": 1505
+  },
+  {
+    "label": "Nedakonice",
+    "value": "3069966",
+    "population": 1505
+  },
+  {
+    "label": "Jindřichov",
+    "value": "3074161",
+    "population": 1504
+  },
+  {
+    "label": "Včelná",
+    "value": "3063349",
+    "population": 1504
+  },
+  {
+    "label": "Městečko Trnávka",
+    "value": "3070823",
+    "population": 1502
+  },
+  {
+    "label": "Žabčice",
+    "value": "3062156",
+    "population": 1492
+  },
+  {
+    "label": "Hnojník",
+    "value": "3075684",
+    "population": 1492
+  },
+  {
+    "label": "Hostomice",
+    "value": "3075044",
+    "population": 1491
+  },
+  {
+    "label": "Cerhenice",
+    "value": "3078114",
+    "population": 1491
+  },
+  {
+    "label": "Bouzov",
+    "value": "3078885",
+    "population": 1490
+  },
+  {
+    "label": "Hostěradice",
+    "value": "3075079",
+    "population": 1488
+  },
+  {
+    "label": "Dub nad Moravou",
+    "value": "3076330",
+    "population": 1485
+  },
+  {
+    "label": "Holoubkov",
+    "value": "3075587",
+    "population": 1485
+  },
+  {
+    "label": "Kunžak",
+    "value": "3072483",
+    "population": 1484
+  },
+  {
+    "label": "Litvínovice",
+    "value": "3071664",
+    "population": 1483
+  },
+  {
+    "label": "Lelekovice",
+    "value": "3072224",
+    "population": 1476
+  },
+  {
+    "label": "Valdice",
+    "value": "3063437",
+    "population": 1474
+  },
+  {
+    "label": "Hošťka",
+    "value": "3075049",
+    "population": 1473
+  },
+  {
+    "label": "Dolní Bukovsko",
+    "value": "3076907",
+    "population": 1473
+  },
+  {
+    "label": "Oskava",
+    "value": "3068837",
+    "population": 1471
+  },
+  {
+    "label": "Kněžmost",
+    "value": "3073526",
+    "population": 1470
+  },
+  {
+    "label": "Plaňany",
+    "value": "3068244",
+    "population": 1467
+  },
+  {
+    "label": "Čkyně",
+    "value": "3077349",
+    "population": 1466
+  },
+  {
+    "label": "Šestajovice",
+    "value": "3066169",
+    "population": 1465
+  },
+  {
+    "label": "Brumovice",
+    "value": "3078547",
+    "population": 1464
+  },
+  {
+    "label": "Vrbice",
+    "value": "3062465",
+    "population": 1464
+  },
+  {
+    "label": "Jistebník",
+    "value": "3074099",
+    "population": 1461
+  },
+  {
+    "label": "Tišice",
+    "value": "3064213",
+    "population": 1460
+  },
+  {
+    "label": "Valdice",
+    "value": "3063436",
+    "population": 1459
+  },
+  {
+    "label": "Slatinice",
+    "value": "3065872",
+    "population": 1457
+  },
+  {
+    "label": "Kněžice",
+    "value": "3073535",
+    "population": 1455
+  },
+  {
+    "label": "Chřibská",
+    "value": "3077558",
+    "population": 1453
+  },
+  {
+    "label": "Luštěnice",
+    "value": "3071351",
+    "population": 1447
+  },
+  {
+    "label": "Předklášteří",
+    "value": "3067631",
+    "population": 1446
+  },
+  {
+    "label": "Všenory",
+    "value": "3062356",
+    "population": 1438
+  },
+  {
+    "label": "Božice",
+    "value": "3078872",
+    "population": 1436
+  },
+  {
+    "label": "Zaječí",
+    "value": "3061979",
+    "population": 1435
+  },
+  {
+    "label": "Kovářov",
+    "value": "3073059",
+    "population": 1435
+  },
+  {
+    "label": "Brandýs nad Orlicí",
+    "value": "3078836",
+    "population": 1435
+  },
+  {
+    "label": "Nedašov",
+    "value": "3069960",
+    "population": 1428
+  },
+  {
+    "label": "Dolní Bohdíkov",
+    "value": "3076925",
+    "population": 1427
+  },
+  {
+    "label": "Velemín",
+    "value": "3063318",
+    "population": 1427
+  },
+  {
+    "label": "Kralice na Hané",
+    "value": "3072954",
+    "population": 1427
+  },
+  {
+    "label": "Náklo",
+    "value": "3070071",
+    "population": 1425
+  },
+  {
+    "label": "Vidnava",
+    "value": "3062924",
+    "population": 1425
+  },
+  {
+    "label": "Dýšina",
+    "value": "3076234",
+    "population": 1424
+  },
+  {
+    "label": "Mohelno",
+    "value": "3070404",
+    "population": 1424
+  },
+  {
+    "label": "Černčice",
+    "value": "3078065",
+    "population": 1423
+  },
+  {
+    "label": "Rokytnice",
+    "value": "3066786",
+    "population": 1422
+  },
+  {
+    "label": "Kladruby",
+    "value": "3073692",
+    "population": 1419
+  },
+  {
+    "label": "Letonice",
+    "value": "3072133",
+    "population": 1419
+  },
+  {
+    "label": "Žihle",
+    "value": "3061462",
+    "population": 1419
+  },
+  {
+    "label": "Mšeno",
+    "value": "3070223",
+    "population": 1417
+  },
+  {
+    "label": "Otnice",
+    "value": "3068706",
+    "population": 1411
+  },
+  {
+    "label": "Čechtice",
+    "value": "3078203",
+    "population": 1410
+  },
+  {
+    "label": "Hrušky",
+    "value": "3074773",
+    "population": 1409
+  },
+  {
+    "label": "Žitenice",
+    "value": "3061431",
+    "population": 1407
+  },
+  {
+    "label": "Brněnec",
+    "value": "3078620",
+    "population": 1405
+  },
+  {
+    "label": "Liptál",
+    "value": "3071762",
+    "population": 1403
+  },
+  {
+    "label": "Řevničov",
+    "value": "3066889",
+    "population": 1403
+  },
+  {
+    "label": "Štěnovice",
+    "value": "3065191",
+    "population": 1401
+  },
+  {
+    "label": "Bavorov",
+    "value": "3079632",
+    "population": 1401
+  },
+  {
+    "label": "Liběšice",
+    "value": "3071955",
+    "population": 1401
+  },
+  {
+    "label": "Strmilov",
+    "value": "3064877",
+    "population": 1399
+  },
+  {
+    "label": "Moravský Žižkov",
+    "value": "3070306",
+    "population": 1396
+  },
+  {
+    "label": "Pustá Polom",
+    "value": "3067324",
+    "population": 1394
+  },
+  {
+    "label": "Dřiteň",
+    "value": "3076413",
+    "population": 1392
+  },
+  {
+    "label": "Ropice",
+    "value": "3066763",
+    "population": 1390
+  },
+  {
+    "label": "Kolinec",
+    "value": "3073369",
+    "population": 1388
+  },
+  {
+    "label": "Grygov",
+    "value": "3076084",
+    "population": 1385
+  },
+  {
+    "label": "Mýto",
+    "value": "3070136",
+    "population": 1384
+  },
+  {
+    "label": "Horní Lideč",
+    "value": "3075316",
+    "population": 1379
+  },
+  {
+    "label": "Rybitví",
+    "value": "3066536",
+    "population": 1379
+  },
+  {
+    "label": "Zbraslavice",
+    "value": "3061750",
+    "population": 1378
+  },
+  {
+    "label": "Štěchovice",
+    "value": "3065210",
+    "population": 1377
+  },
+  {
+    "label": "Kožlany",
+    "value": "3073025",
+    "population": 1374
+  },
+  {
+    "label": "Vacov",
+    "value": "3063466",
+    "population": 1372
+  },
+  {
+    "label": "Dolní Čermná",
+    "value": "3076902",
+    "population": 1371
+  },
+  {
+    "label": "Křešice",
+    "value": "3072748",
+    "population": 1371
+  },
+  {
+    "label": "Šakvice",
+    "value": "3066439",
+    "population": 1369
+  },
+  {
+    "label": "Ostroměř",
+    "value": "3068785",
+    "population": 1368
+  },
+  {
+    "label": "Divišov",
+    "value": "3077148",
+    "population": 1367
+  },
+  {
+    "label": "Ostopovice",
+    "value": "3068805",
+    "population": 1367
+  },
+  {
+    "label": "Jirny",
+    "value": "3074107",
+    "population": 1366
+  },
+  {
+    "label": "Holasovice",
+    "value": "3075620",
+    "population": 1366
+  },
+  {
+    "label": "Hevlín",
+    "value": "3075827",
+    "population": 1366
+  },
+  {
+    "label": "Opařany",
+    "value": "3068950",
+    "population": 1365
+  },
+  {
+    "label": "Bukovec",
+    "value": "3078417",
+    "population": 1364
+  },
+  {
+    "label": "Hřebeč",
+    "value": "3074853",
+    "population": 1364
+  },
+  {
+    "label": "Řečany nad Labem",
+    "value": "3066974",
+    "population": 1364
+  },
+  {
+    "label": "Přimda",
+    "value": "3067499",
+    "population": 1364
+  },
+  {
+    "label": "Vysoké nad Jizerou",
+    "value": "3062213",
+    "population": 1363
+  },
+  {
+    "label": "Petrovice",
+    "value": "3068366",
+    "population": 1362
+  },
+  {
+    "label": "Červenka",
+    "value": "3077965",
+    "population": 1361
+  },
+  {
+    "label": "Mostek",
+    "value": "3070282",
+    "population": 1360
+  },
+  {
+    "label": "Oldřišov",
+    "value": "3069059",
+    "population": 1358
+  },
+  {
+    "label": "Brniště",
+    "value": "3078613",
+    "population": 1358
+  },
+  {
+    "label": "Petrov",
+    "value": "3068383",
+    "population": 1354
+  },
+  {
+    "label": "Nezvěstice",
+    "value": "3069758",
+    "population": 1353
+  },
+  {
+    "label": "Krouna",
+    "value": "3072638",
+    "population": 1352
+  },
+  {
+    "label": "Sviadnov",
+    "value": "3064501",
+    "population": 1352
+  },
+  {
+    "label": "Křinec",
+    "value": "3072717",
+    "population": 1351
+  },
+  {
+    "label": "Zadní Mostek",
+    "value": "3062081",
+    "population": 1350
+  },
+  {
+    "label": "Kvasiny",
+    "value": "3072449",
+    "population": 1349
+  },
+  {
+    "label": "Lužec nad Vltavou",
+    "value": "3071333",
+    "population": 1347
+  },
+  {
+    "label": "Bílá Třemešná",
+    "value": "3079368",
+    "population": 1345
+  },
+  {
+    "label": "Sepekov",
+    "value": "3066180",
+    "population": 1343
+  },
+  {
+    "label": "Zaječov",
+    "value": "3061970",
+    "population": 1341
+  },
+  {
+    "label": "Újezd",
+    "value": "3063683",
+    "population": 1341
+  },
+  {
+    "label": "Husinec",
+    "value": "3074686",
+    "population": 1339
+  },
+  {
+    "label": "Dolní Rychnov",
+    "value": "3076694",
+    "population": 1337
+  },
+  {
+    "label": "Lichnov (o. Nový Jičín)",
+    "value": "3071875",
+    "population": 1335
+  },
+  {
+    "label": "Vřesina",
+    "value": "3062416",
+    "population": 1334
+  },
+  {
+    "label": "Žulová",
+    "value": "3061321",
+    "population": 1332
+  },
+  {
+    "label": "Nedvědice",
+    "value": "3069952",
+    "population": 1330
+  },
+  {
+    "label": "Stěbořice",
+    "value": "3065213",
+    "population": 1330
+  },
+  {
+    "label": "Dobroměřice",
+    "value": "3077006",
+    "population": 1329
+  },
+  {
+    "label": "Valašská Polanka",
+    "value": "3063450",
+    "population": 1328
+  },
+  {
+    "label": "Sedlnice",
+    "value": "3066276",
+    "population": 1327
+  },
+  {
+    "label": "Strážov",
+    "value": "3064989",
+    "population": 1326
+  },
+  {
+    "label": "Frymburk",
+    "value": "3076120",
+    "population": 1324
+  },
+  {
+    "label": "Rosice",
+    "value": "3066757",
+    "population": 1323
+  },
+  {
+    "label": "Velehrad",
+    "value": "3063321",
+    "population": 1323
+  },
+  {
+    "label": "Čížkovice",
+    "value": "3077359",
+    "population": 1323
+  },
+  {
+    "label": "Žiželice",
+    "value": "3061416",
+    "population": 1322
+  },
+  {
+    "label": "Hrádek",
+    "value": "3074956",
+    "population": 1321
+  },
+  {
+    "label": "Hradištko",
+    "value": "3074909",
+    "population": 1320
+  },
+  {
+    "label": "Kasejovice",
+    "value": "3073780",
+    "population": 1320
+  },
+  {
+    "label": "Kovářská",
+    "value": "3073052",
+    "population": 1320
+  },
+  {
+    "label": "Višňova",
+    "value": "3062836",
+    "population": 1319
+  },
+  {
+    "label": "Chuchelná",
+    "value": "3077533",
+    "population": 1315
+  },
+  {
+    "label": "Hlohovec",
+    "value": "3075756",
+    "population": 1315
+  },
+  {
+    "label": "Abertamy",
+    "value": "3079843",
+    "population": 1315
+  },
+  {
+    "label": "Zdiby",
+    "value": "3061659",
+    "population": 1314
+  },
+  {
+    "label": "Nelahozeves",
+    "value": "3069927",
+    "population": 1313
+  },
+  {
+    "label": "Mostkovice",
+    "value": "3070276",
+    "population": 1313
+  },
+  {
+    "label": "Libice nad Cidlinou",
+    "value": "3071947",
+    "population": 1310
+  },
+  {
+    "label": "Dolní Lhota",
+    "value": "3076800",
+    "population": 1308
+  },
+  {
+    "label": "Březová",
+    "value": "3078669",
+    "population": 1307
+  },
+  {
+    "label": "Věrovany",
+    "value": "3063083",
+    "population": 1306
+  },
+  {
+    "label": "Určice",
+    "value": "3063578",
+    "population": 1305
+  },
+  {
+    "label": "Habry",
+    "value": "3076053",
+    "population": 1305
+  },
+  {
+    "label": "Špindlerův Mlýn",
+    "value": "3065522",
+    "population": 1302
+  },
+  {
+    "label": "Veltruby",
+    "value": "3063112",
+    "population": 1301
+  },
+  {
+    "label": "Lomnice",
+    "value": "3071611",
+    "population": 1300
+  },
+  {
+    "label": "Hostouň",
+    "value": "3075042",
+    "population": 1299
+  },
+  {
+    "label": "Lenešice",
+    "value": "3072221",
+    "population": 1298
+  },
+  {
+    "label": "Dolní Beřkovice",
+    "value": "3076930",
+    "population": 1298
+  },
+  {
+    "label": "Mukařov",
+    "value": "3070204",
+    "population": 1297
+  },
+  {
+    "label": "Bořetice",
+    "value": "3078997",
+    "population": 1297
+  },
+  {
+    "label": "Telnice",
+    "value": "3064307",
+    "population": 1296
+  },
+  {
+    "label": "Hýskov",
+    "value": "3074621",
+    "population": 1296
+  },
+  {
+    "label": "Ševětín",
+    "value": "3066160",
+    "population": 1294
+  },
+  {
+    "label": "Otice",
+    "value": "3068719",
+    "population": 1292
+  },
+  {
+    "label": "Milíkov",
+    "value": "3070666",
+    "population": 1291
+  },
+  {
+    "label": "Přáslavice",
+    "value": "3067676",
+    "population": 1290
+  },
+  {
+    "label": "Líbeznice",
+    "value": "3071951",
+    "population": 1290
+  },
+  {
+    "label": "Kájov",
+    "value": "3074004",
+    "population": 1290
+  },
+  {
+    "label": "Moravany",
+    "value": "3070356",
+    "population": 1286
+  },
+  {
+    "label": "Želešice",
+    "value": "3061578",
+    "population": 1284
+  },
+  {
+    "label": "Katovice",
+    "value": "3073754",
+    "population": 1279
+  },
+  {
+    "label": "Dolní Studénky",
+    "value": "3076671",
+    "population": 1278
+  },
+  {
+    "label": "Nezamyslice",
+    "value": "3069773",
+    "population": 1278
+  },
+  {
+    "label": "Příšovice",
+    "value": "3067485",
+    "population": 1277
+  },
+  {
+    "label": "Otaslavice",
+    "value": "3068727",
+    "population": 1275
+  },
+  {
+    "label": "Tečovice",
+    "value": "3064321",
+    "population": 1272
+  },
+  {
+    "label": "Vápenná",
+    "value": "3063385",
+    "population": 1271
+  },
+  {
+    "label": "Klenčí pod Čerchovem",
+    "value": "3073644",
+    "population": 1270
+  },
+  {
+    "label": "Herálec",
+    "value": "3075877",
+    "population": 1269
+  },
+  {
+    "label": "Velký Beranov",
+    "value": "3063171",
+    "population": 1269
+  },
+  {
+    "label": "Přemyslovice",
+    "value": "3067587",
+    "population": 1268
+  },
+  {
+    "label": "Žleby",
+    "value": "3061379",
+    "population": 1267
+  },
+  {
+    "label": "Rovensko pod Troskami",
+    "value": "3066703",
+    "population": 1267
+  },
+  {
+    "label": "Velká Dobrá",
+    "value": "3063263",
+    "population": 1264
+  },
+  {
+    "label": "Sedliště",
+    "value": "3066284",
+    "population": 1263
+  },
+  {
+    "label": "Trhový Štěpánov",
+    "value": "3064014",
+    "population": 1260
+  },
+  {
+    "label": "Bernartice",
+    "value": "3079476",
+    "population": 1260
+  },
+  {
+    "label": "Benešov nad Černou",
+    "value": "3079501",
+    "population": 1259
+  },
+  {
+    "label": "Dambořice",
+    "value": "3077285",
+    "population": 1258
+  },
+  {
+    "label": "Pecka",
+    "value": "3068478",
+    "population": 1254
+  },
+  {
+    "label": "Křepice",
+    "value": "3072760",
+    "population": 1254
+  },
+  {
+    "label": "Šanov",
+    "value": "3066410",
+    "population": 1253
+  },
+  {
+    "label": "Hroznová Lhota",
+    "value": "3074795",
+    "population": 1253
+  },
+  {
+    "label": "Černožice",
+    "value": "3078012",
+    "population": 1253
+  },
+  {
+    "label": "Dlouhá Třebová",
+    "value": "3077119",
+    "population": 1250
+  },
+  {
+    "label": "Jaroslavice",
+    "value": "3074452",
+    "population": 1250
+  },
+  {
+    "label": "Pyšely",
+    "value": "3067296",
+    "population": 1250
+  },
+  {
+    "label": "Poniklá",
+    "value": "3067834",
+    "population": 1247
+  },
+  {
+    "label": "Leština",
+    "value": "3072155",
+    "population": 1246
+  },
+  {
+    "label": "Staré Křečany",
+    "value": "3065340",
+    "population": 1244
+  },
+  {
+    "label": "Jaroměřice",
+    "value": "3074461",
+    "population": 1242
+  },
+  {
+    "label": "Manětín",
+    "value": "3071046",
+    "population": 1240
+  },
+  {
+    "label": "Hostomice",
+    "value": "3075043",
+    "population": 1240
+  },
+  {
+    "label": "Nové Veselí",
+    "value": "3069422",
+    "population": 1236
+  },
+  {
+    "label": "Doloplazy",
+    "value": "3076615",
+    "population": 1235
+  },
+  {
+    "label": "Blížkovice",
+    "value": "3079209",
+    "population": 1235
+  },
+  {
+    "label": "Dolní Dvořiště",
+    "value": "3076873",
+    "population": 1235
+  },
+  {
+    "label": "Bořitov",
+    "value": "3078982",
+    "population": 1234
+  },
+  {
+    "label": "Čejč",
+    "value": "3078187",
+    "population": 1232
+  },
+  {
+    "label": "Strunkovice nad Blanicí",
+    "value": "3064856",
+    "population": 1230
+  },
+  {
+    "label": "Nosislav",
+    "value": "3069720",
+    "population": 1230
+  },
+  {
+    "label": "Provodov-Šonov",
+    "value": "11280829",
+    "population": 1225
+  },
+  {
+    "label": "Vladislav",
+    "value": "3062773",
+    "population": 1225
+  },
+  {
+    "label": "Příkazy",
+    "value": "3067514",
+    "population": 1224
+  },
+  {
+    "label": "Ráječko",
+    "value": "3067079",
+    "population": 1222
+  },
+  {
+    "label": "Doubravice nad Svitavou",
+    "value": "3076531",
+    "population": 1222
+  },
+  {
+    "label": "Stachy",
+    "value": "3065459",
+    "population": 1222
+  },
+  {
+    "label": "Tasovice",
+    "value": "3064352",
+    "population": 1221
+  },
+  {
+    "label": "Čelechovice na Hané",
+    "value": "3078155",
+    "population": 1220
+  },
+  {
+    "label": "Sedlice",
+    "value": "3066299",
+    "population": 1220
+  },
+  {
+    "label": "Březno",
+    "value": "3078675",
+    "population": 1220
+  },
+  {
+    "label": "Staré Hradiště",
+    "value": "3065353",
+    "population": 1219
+  },
+  {
+    "label": "Sedlice",
+    "value": "3066298",
+    "population": 1219
+  },
+  {
+    "label": "Brantice",
+    "value": "3078812",
+    "population": 1215
+  },
+  {
+    "label": "Potštát",
+    "value": "3067752",
+    "population": 1214
+  },
+  {
+    "label": "Město Libavá",
+    "value": "3070816",
+    "population": 1213
+  },
+  {
+    "label": "Těšetice",
+    "value": "3064257",
+    "population": 1212
+  },
+  {
+    "label": "Zbraslav",
+    "value": "3061754",
+    "population": 1211
+  },
+  {
+    "label": "Darkovice",
+    "value": "3077268",
+    "population": 1210
+  },
+  {
+    "label": "Okrouhlice",
+    "value": "3069092",
+    "population": 1210
+  },
+  {
+    "label": "Chroustovice",
+    "value": "3077543",
+    "population": 1208
+  },
+  {
+    "label": "Prusinovice",
+    "value": "3067375",
+    "population": 1207
+  },
+  {
+    "label": "Jimramov",
+    "value": "3074170",
+    "population": 1207
+  },
+  {
+    "label": "Sudoměřice",
+    "value": "3064708",
+    "population": 1206
+  },
+  {
+    "label": "Hudlice",
+    "value": "3074737",
+    "population": 1206
+  },
+  {
+    "label": "Miřetice",
+    "value": "3070603",
+    "population": 1205
+  },
+  {
+    "label": "Staré Město",
+    "value": "3065334",
+    "population": 1205
+  },
+  {
+    "label": "Rajhradice",
+    "value": "3067077",
+    "population": 1204
+  },
+  {
+    "label": "Dolní Žandov",
+    "value": "3076627",
+    "population": 1204
+  },
+  {
+    "label": "Újezd",
+    "value": "3063695",
+    "population": 1202
+  },
+  {
+    "label": "Hněvotín",
+    "value": "3075690",
+    "population": 1201
+  },
+  {
+    "label": "Šatov",
+    "value": "3066390",
+    "population": 1200
+  },
+  {
+    "label": "Dolní Podluží",
+    "value": "3076734",
+    "population": 1199
+  },
+  {
+    "label": "Hovorčovice",
+    "value": "3075022",
+    "population": 1198
+  },
+  {
+    "label": "Poříčany",
+    "value": "3067789",
+    "population": 1197
+  },
+  {
+    "label": "Kunčina",
+    "value": "3072527",
+    "population": 1191
+  },
+  {
+    "label": "Radonice",
+    "value": "3067157",
+    "population": 1190
+  },
+  {
+    "label": "Pozlovice",
+    "value": "3067724",
+    "population": 1189
+  },
+  {
+    "label": "Hartmanice",
+    "value": "3075949",
+    "population": 1189
+  },
+  {
+    "label": "Kosova Hora",
+    "value": "3073178",
+    "population": 1188
+  },
+  {
+    "label": "Úsov",
+    "value": "3063561",
+    "population": 1186
+  },
+  {
+    "label": "Janov nad Nisou",
+    "value": "3074482",
+    "population": 1186
+  },
+  {
+    "label": "Sudkov",
+    "value": "3064713",
+    "population": 1185
+  },
+  {
+    "label": "Hrabyně",
+    "value": "3075005",
+    "population": 1184
+  },
+  {
+    "label": "Moravičany",
+    "value": "3070344",
+    "population": 1184
+  },
+  {
+    "label": "Lučina",
+    "value": "7602675",
+    "population": 1181
+  },
+  {
+    "label": "Žďár",
+    "value": "3061709",
+    "population": 1181
+  },
+  {
+    "label": "Polepy",
+    "value": "3067897",
+    "population": 1178
+  },
+  {
+    "label": "Davle",
+    "value": "3077258",
+    "population": 1176
+  },
+  {
+    "label": "Obecnice",
+    "value": "3069221",
+    "population": 1174
+  },
+  {
+    "label": "Dolní Cerekev",
+    "value": "3076903",
+    "population": 1173
+  },
+  {
+    "label": "Štítina",
+    "value": "3065125",
+    "population": 1173
+  },
+  {
+    "label": "Braňany",
+    "value": "3078845",
+    "population": 1172
+  },
+  {
+    "label": "Byšice",
+    "value": "3078322",
+    "population": 1170
+  },
+  {
+    "label": "Kačice",
+    "value": "3074031",
+    "population": 1169
+  },
+  {
+    "label": "Mistřice",
+    "value": "3070557",
+    "population": 1169
+  },
+  {
+    "label": "Zátor",
+    "value": "3061816",
+    "population": 1169
+  },
+  {
+    "label": "Budišov",
+    "value": "3078472",
+    "population": 1168
+  },
+  {
+    "label": "Podolí",
+    "value": "3068020",
+    "population": 1165
+  },
+  {
+    "label": "Paseka",
+    "value": "3068564",
+    "population": 1162
+  },
+  {
+    "label": "Jevišovice",
+    "value": "3074239",
+    "population": 1162
+  },
+  {
+    "label": "Novosedly",
+    "value": "3069395",
+    "population": 1162
+  },
+  {
+    "label": "Tvarožná",
+    "value": "3063835",
+    "population": 1159
+  },
+  {
+    "label": "Chvalšiny",
+    "value": "3077478",
+    "population": 1159
+  },
+  {
+    "label": "Osek",
+    "value": "3068861",
+    "population": 1159
+  },
+  {
+    "label": "Stará Huť",
+    "value": "3065404",
+    "population": 1158
+  },
+  {
+    "label": "Borek",
+    "value": "3079023",
+    "population": 1157
+  },
+  {
+    "label": "Doksy",
+    "value": "3076973",
+    "population": 1156
+  },
+  {
+    "label": "Těšany",
+    "value": "3064260",
+    "population": 1155
+  },
+  {
+    "label": "Želiv",
+    "value": "3061556",
+    "population": 1152
+  },
+  {
+    "label": "Nesovice",
+    "value": "3069832",
+    "population": 1152
+  },
+  {
+    "label": "Bechlín",
+    "value": "3079620",
+    "population": 1150
+  },
+  {
+    "label": "Radomyšl",
+    "value": "3067162",
+    "population": 1149
+  },
+  {
+    "label": "Mrákov",
+    "value": "3070251",
+    "population": 1144
+  },
+  {
+    "label": "Dolní Životice",
+    "value": "3076621",
+    "population": 1143
+  },
+  {
+    "label": "Vestec",
+    "value": "3063001",
+    "population": 1143
+  },
+  {
+    "label": "Benecko",
+    "value": "3079511",
+    "population": 1142
+  },
+  {
+    "label": "Dubné",
+    "value": "3076328",
+    "population": 1141
+  },
+  {
+    "label": "Horní Počaply",
+    "value": "3075259",
+    "population": 1141
+  },
+  {
+    "label": "Kout na Šumavě",
+    "value": "3073082",
+    "population": 1140
+  },
+  {
+    "label": "Traplice",
+    "value": "3064140",
+    "population": 1139
+  },
+  {
+    "label": "Moutnice",
+    "value": "3070264",
+    "population": 1139
+  },
+  {
+    "label": "Lomnice",
+    "value": "3071609",
+    "population": 1138
+  },
+  {
+    "label": "Dolní Újezd",
+    "value": "3076651",
+    "population": 1138
+  },
+  {
+    "label": "Višňové",
+    "value": "3062835",
+    "population": 1138
+  },
+  {
+    "label": "Drásov",
+    "value": "3076470",
+    "population": 1138
+  },
+  {
+    "label": "Samotíšky",
+    "value": "3066416",
+    "population": 1137
+  },
+  {
+    "label": "Církvice",
+    "value": "3077391",
+    "population": 1136
+  },
+  {
+    "label": "Březnice",
+    "value": "3078685",
+    "population": 1136
+  },
+  {
+    "label": "Osoblaha",
+    "value": "3068818",
+    "population": 1136
+  },
+  {
+    "label": "Lipůvka",
+    "value": "3071759",
+    "population": 1135
+  },
+  {
+    "label": "Malonty",
+    "value": "3071110",
+    "population": 1135
+  },
+  {
+    "label": "Mníšek",
+    "value": "3070447",
+    "population": 1133
+  },
+  {
+    "label": "Vintířov",
+    "value": "3062857",
+    "population": 1132
+  },
+  {
+    "label": "Řehlovice",
+    "value": "3066958",
+    "population": 1129
+  },
+  {
+    "label": "Drnovice",
+    "value": "3076402",
+    "population": 1129
+  },
+  {
+    "label": "Postřekov",
+    "value": "3067766",
+    "population": 1129
+  },
+  {
+    "label": "Karlovice",
+    "value": "3073811",
+    "population": 1128
+  },
+  {
+    "label": "Velké Svatoňovice",
+    "value": "3063182",
+    "population": 1125
+  },
+  {
+    "label": "Kamenný Přívoz",
+    "value": "3073893",
+    "population": 1124
+  },
+  {
+    "label": "Opatov",
+    "value": "3068946",
+    "population": 1124
+  },
+  {
+    "label": "Vrbice",
+    "value": "3062470",
+    "population": 1121
+  },
+  {
+    "label": "Lukavec",
+    "value": "3071388",
+    "population": 1120
+  },
+  {
+    "label": "Postupice",
+    "value": "3067761",
+    "population": 1120
+  },
+  {
+    "label": "Komorní Lhotka",
+    "value": "3073322",
+    "population": 1119
+  },
+  {
+    "label": "Měčín",
+    "value": "3070902",
+    "population": 1118
+  },
+  {
+    "label": "Trnava",
+    "value": "3063984",
+    "population": 1118
+  },
+  {
+    "label": "Merklín",
+    "value": "3070844",
+    "population": 1117
+  },
+  {
+    "label": "Tupesy",
+    "value": "3063862",
+    "population": 1117
+  },
+  {
+    "label": "Radiměř",
+    "value": "3067204",
+    "population": 1117
+  },
+  {
+    "label": "Býšť",
+    "value": "3078316",
+    "population": 1115
+  },
+  {
+    "label": "Mirotice",
+    "value": "3070580",
+    "population": 1114
+  },
+  {
+    "label": "Zvole",
+    "value": "3061293",
+    "population": 1114
+  },
+  {
+    "label": "Krumvíř",
+    "value": "3072605",
+    "population": 1112
+  },
+  {
+    "label": "Dolní Loućky",
+    "value": "3076780",
+    "population": 1111
+  },
+  {
+    "label": "Dobřív",
+    "value": "3077023",
+    "population": 1110
+  },
+  {
+    "label": "Pilníkov",
+    "value": "3068311",
+    "population": 1110
+  },
+  {
+    "label": "Radslavice",
+    "value": "3067110",
+    "population": 1110
+  },
+  {
+    "label": "Machov",
+    "value": "3071289",
+    "population": 1109
+  },
+  {
+    "label": "Březová",
+    "value": "3078671",
+    "population": 1109
+  },
+  {
+    "label": "Olšany",
+    "value": "3068997",
+    "population": 1108
+  },
+  {
+    "label": "Zabrušany",
+    "value": "3062105",
+    "population": 1108
+  },
+  {
+    "label": "Srubec",
+    "value": "3065467",
+    "population": 1107
+  },
+  {
+    "label": "Velké Přílepy",
+    "value": "3063189",
+    "population": 1105
+  },
+  {
+    "label": "Vrbovec",
+    "value": "3062444",
+    "population": 1103
+  },
+  {
+    "label": "Kokory",
+    "value": "3073389",
+    "population": 1099
+  },
+  {
+    "label": "Sedlec",
+    "value": "3066323",
+    "population": 1098
+  },
+  {
+    "label": "Černošín",
+    "value": "3078028",
+    "population": 1097
+  },
+  {
+    "label": "Osek nad Bečvou",
+    "value": "3068856",
+    "population": 1097
+  },
+  {
+    "label": "Nová Cerekev",
+    "value": "3069705",
+    "population": 1097
+  },
+  {
+    "label": "Železnice",
+    "value": "3061563",
+    "population": 1094
+  },
+  {
+    "label": "Ptení",
+    "value": "3067351",
+    "population": 1093
+  },
+  {
+    "label": "Rouchovany",
+    "value": "3066735",
+    "population": 1093
+  },
+  {
+    "label": "Únanov",
+    "value": "3063611",
+    "population": 1093
+  },
+  {
+    "label": "Bílá Lhota",
+    "value": "3079374",
+    "population": 1091
+  },
+  {
+    "label": "Popovice",
+    "value": "3067816",
+    "population": 1091
+  },
+  {
+    "label": "Radvanice",
+    "value": "3067101",
+    "population": 1090
+  },
+  {
+    "label": "Kněžpole",
+    "value": "3073523",
+    "population": 1089
+  },
+  {
+    "label": "Lichnov",
+    "value": "3071874",
+    "population": 1088
+  },
+  {
+    "label": "Majetín",
+    "value": "3071272",
+    "population": 1087
+  },
+  {
+    "label": "Ondřejov",
+    "value": "3068969",
+    "population": 1086
+  },
+  {
+    "label": "Mokré Lazce",
+    "value": "3070383",
+    "population": 1085
+  },
+  {
+    "label": "Lochovice",
+    "value": "3071645",
+    "population": 1085
+  },
+  {
+    "label": "Bystřec",
+    "value": "3078303",
+    "population": 1084
+  },
+  {
+    "label": "Kněždub",
+    "value": "3073541",
+    "population": 1084
+  },
+  {
+    "label": "Měšice",
+    "value": "3070834",
+    "population": 1083
+  },
+  {
+    "label": "Verneřice",
+    "value": "3063091",
+    "population": 1083
+  },
+  {
+    "label": "Dubicko",
+    "value": "3076342",
+    "population": 1082
+  },
+  {
+    "label": "Loučeň",
+    "value": "3071571",
+    "population": 1082
+  },
+  {
+    "label": "Skrbeň",
+    "value": "3065976",
+    "population": 1081
+  },
+  {
+    "label": "Herálec",
+    "value": "3075878",
+    "population": 1080
+  },
+  {
+    "label": "Chyšky",
+    "value": "3077453",
+    "population": 1080
+  },
+  {
+    "label": "Ostrov u Macochy",
+    "value": "3068753",
+    "population": 1078
+  },
+  {
+    "label": "Suchá Loz",
+    "value": "3064753",
+    "population": 1078
+  },
+  {
+    "label": "Protivanov",
+    "value": "3067398",
+    "population": 1077
+  },
+  {
+    "label": "Plavy",
+    "value": "3068215",
+    "population": 1077
+  },
+  {
+    "label": "Blažovice",
+    "value": "3079220",
+    "population": 1076
+  },
+  {
+    "label": "Hvozdná",
+    "value": "3074636",
+    "population": 1075
+  },
+  {
+    "label": "Bohdalov",
+    "value": "3079159",
+    "population": 1074
+  },
+  {
+    "label": "Bošovice",
+    "value": "3078903",
+    "population": 1071
+  },
+  {
+    "label": "Velký Újezd",
+    "value": "3063124",
+    "population": 1068
+  },
+  {
+    "label": "Chlebičov",
+    "value": "3077828",
+    "population": 1068
+  },
+  {
+    "label": "Malá Skála",
+    "value": "3071223",
+    "population": 1067
+  },
+  {
+    "label": "Přerov nad Labem",
+    "value": "3067577",
+    "population": 1067
+  },
+  {
+    "label": "Jarošov nad Nežárkou",
+    "value": "3074444",
+    "population": 1067
+  },
+  {
+    "label": "Lukavice",
+    "value": "3071381",
+    "population": 1066
+  },
+  {
+    "label": "Suchdol",
+    "value": "3064745",
+    "population": 1065
+  },
+  {
+    "label": "Viničné Šumice",
+    "value": "3062866",
+    "population": 1065
+  },
+  {
+    "label": "Písečná",
+    "value": "3068298",
+    "population": 1063
+  },
+  {
+    "label": "Albrechtice nad Orlicí",
+    "value": "3079817",
+    "population": 1063
+  },
+  {
+    "label": "Meclov",
+    "value": "3070899",
+    "population": 1062
+  },
+  {
+    "label": "Třebotov",
+    "value": "3064073",
+    "population": 1062
+  },
+  {
+    "label": "Všemina",
+    "value": "3062360",
+    "population": 1061
+  },
+  {
+    "label": "Skuhrov nad Bělou",
+    "value": "3065930",
+    "population": 1060
+  },
+  {
+    "label": "Netvořice",
+    "value": "3069796",
+    "population": 1060
+  },
+  {
+    "label": "Záhorovice",
+    "value": "3062011",
+    "population": 1058
+  },
+  {
+    "label": "Stráž",
+    "value": "3065018",
+    "population": 1057
+  },
+  {
+    "label": "Ohrazenice",
+    "value": "3069118",
+    "population": 1055
+  },
+  {
+    "label": "Jakartovice",
+    "value": "3074577",
+    "population": 1054
+  },
+  {
+    "label": "Jeneč",
+    "value": "3074322",
+    "population": 1054
+  },
+  {
+    "label": "Vlkoš",
+    "value": "3062685",
+    "population": 1052
+  },
+  {
+    "label": "Osík",
+    "value": "3068844",
+    "population": 1051
+  },
+  {
+    "label": "Chotěbuz",
+    "value": "3077665",
+    "population": 1050
+  },
+  {
+    "label": "Olbramovice",
+    "value": "3069082",
+    "population": 1048
+  },
+  {
+    "label": "Dobratice",
+    "value": "3077071",
+    "population": 1047
+  },
+  {
+    "label": "Rybí",
+    "value": "3066537",
+    "population": 1047
+  },
+  {
+    "label": "Poříčí nad Sázavou",
+    "value": "3067783",
+    "population": 1045
+  },
+  {
+    "label": "Lipovec",
+    "value": "3071771",
+    "population": 1045
+  },
+  {
+    "label": "Nehvizdy",
+    "value": "3069938",
+    "population": 1045
+  },
+  {
+    "label": "Louka",
+    "value": "3071529",
+    "population": 1045
+  },
+  {
+    "label": "Čimelice",
+    "value": "3077407",
+    "population": 1045
+  },
+  {
+    "label": "Načeradec",
+    "value": "3070129",
+    "population": 1044
+  },
+  {
+    "label": "Žeravice",
+    "value": "3061534",
+    "population": 1043
+  },
+  {
+    "label": "Brloh",
+    "value": "3078633",
+    "population": 1039
+  },
+  {
+    "label": "Údlice",
+    "value": "3063762",
+    "population": 1039
+  },
+  {
+    "label": "Merklín",
+    "value": "3070845",
+    "population": 1034
+  },
+  {
+    "label": "Tuchoměřice",
+    "value": "3063894",
+    "population": 1032
+  },
+  {
+    "label": "Vojkovice",
+    "value": "3062628",
+    "population": 1032
+  },
+  {
+    "label": "Rataje",
+    "value": "3067004",
+    "population": 1031
+  },
+  {
+    "label": "Pomezí",
+    "value": "3067846",
+    "population": 1031
+  },
+  {
+    "label": "Blížejov",
+    "value": "3079212",
+    "population": 1029
+  },
+  {
+    "label": "Vilémov",
+    "value": "3062899",
+    "population": 1029
+  },
+  {
+    "label": "Hněvošice",
+    "value": "3075691",
+    "population": 1028
+  },
+  {
+    "label": "Cítov",
+    "value": "3077366",
+    "population": 1028
+  },
+  {
+    "label": "Měcholupy",
+    "value": "3070906",
+    "population": 1026
+  },
+  {
+    "label": "Josefův Důl",
+    "value": "3074049",
+    "population": 1024
+  },
+  {
+    "label": "Řež",
+    "value": "3066885",
+    "population": 1022
+  },
+  {
+    "label": "Týnec",
+    "value": "3063814",
+    "population": 1021
+  },
+  {
+    "label": "Lípa",
+    "value": "3071839",
+    "population": 1020
+  },
+  {
+    "label": "Domanín",
+    "value": "3076604",
+    "population": 1020
+  },
+  {
+    "label": "Hromnice",
+    "value": "3074807",
+    "population": 1018
+  },
+  {
+    "label": "Všeruby",
+    "value": "3062351",
+    "population": 1017
+  },
+  {
+    "label": "Perštejn",
+    "value": "3068415",
+    "population": 1017
+  },
+  {
+    "label": "Morávka",
+    "value": "3070339",
+    "population": 1017
+  },
+  {
+    "label": "Horní Čermná",
+    "value": "3075422",
+    "population": 1016
+  },
+  {
+    "label": "Sadov",
+    "value": "3066448",
+    "population": 1016
+  },
+  {
+    "label": "Vilémov",
+    "value": "3062902",
+    "population": 1014
+  },
+  {
+    "label": "Kořenov",
+    "value": "3073241",
+    "population": 1014
+  },
+  {
+    "label": "Pavlíkov",
+    "value": "3068522",
+    "population": 1013
+  },
+  {
+    "label": "Suchohrdly",
+    "value": "3064736",
+    "population": 1010
+  },
+  {
+    "label": "Jedlová",
+    "value": "3074373",
+    "population": 1010
+  },
+  {
+    "label": "Kunvald",
+    "value": "3072484",
+    "population": 1009
+  },
+  {
+    "label": "Horní Město",
+    "value": "3075296",
+    "population": 1009
+  },
+  {
+    "label": "Vilémov",
+    "value": "3062897",
+    "population": 1008
+  },
+  {
+    "label": "Nové Syrovice",
+    "value": "3069429",
+    "population": 1007
+  },
+  {
+    "label": "Pražmo",
+    "value": "3067660",
+    "population": 1007
+  },
+  {
+    "label": "Roztoky",
+    "value": "3066637",
+    "population": 1006
+  },
+  {
+    "label": "Osečná",
+    "value": "3068867",
+    "population": 1004
+  },
+  {
+    "label": "Český Rudolec",
+    "value": "3077884",
+    "population": 1004
+  },
+  {
+    "label": "Bezdružice",
+    "value": "3079403",
+    "population": 1004
+  },
+  {
+    "label": "Horní Štěpánov",
+    "value": "3075193",
+    "population": 1002
+  },
+  {
+    "label": "Krásná Hora nad Vltavou",
+    "value": "3072894",
+    "population": 1002
+  },
+  {
+    "label": "Bedihošť",
+    "value": "3079605",
+    "population": 1002
+  },
+  {
+    "label": "Žlutava",
+    "value": "3061351",
+    "population": 1001
+  },
+  {
+    "label": "Klobuky",
+    "value": "3073582",
+    "population": 1001
+  },
+  {
+    "label": "Libavské Údolí",
+    "value": "3071986",
+    "population": 590
+  },
+  {
+    "label": "Nemanice",
+    "value": "3069923",
+    "population": 322
+  },
+  {
+    "label": "Borová Lada",
+    "value": "3078958",
+    "population": 276
+  }
+]

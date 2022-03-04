@@ -14,6 +14,7 @@ import {
 import { ButtonDefault } from "../Buttons";
 import ModalPortal from "../../helpers/Portal";
 import { useState } from "react";
+import { Dropdown } from "../Dropdown";
 
 const SingleFilter = ({
   value,
@@ -23,6 +24,9 @@ const SingleFilter = ({
 }) => {
   const [visible, setFilterVisible] = useState(false);
   const [val, setVal] = useState(value);
+  const chosenItem = () =>
+    console.log("call this function when an item is chosen!");
+
   return (
     <Filter>
       {visible && (
@@ -53,30 +57,16 @@ const SingleFilter = ({
                 {name}
               </FilterBoxHeader>
               <View style={styles.content}>
-                <select
-                  onChange={(e) => {
-                    if (e.target.value !== "Wybierz...") {
-                      setVal(e.target.value);
-                    } else {
-                      setVal(null);
-                    }
-                  }}
-                  style={{ height: "40px" }}
-                >
-                  <option value={null} selected={val === null}>
-                    Wybierz...
-                  </option>
-                  {options.map((option, index) => (
-                    // TODO: fix index key
-                    <option
-                      key={index}
-                      selected={val == option.value}
-                      value={option.value}
-                    >
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                <Dropdown
+                  direction={"to-top"}
+                  searchable={true}
+                  data={options}
+                  placeholder={"wybierz coś plis"}
+                  label={"labelka"}
+                  itemPressFunction={chosenItem}
+                  selected={value}
+                  error={!!"error!!!"}
+                />
               </View>
               <FilterBoxFooter>
                 <TouchableOpacity
