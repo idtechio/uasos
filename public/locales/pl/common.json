@@ -115,7 +115,7 @@
   },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",
-  "shareLocation": "Zarejestruj się",
+  "shareLocation": "Załóz konto w serwisie",
   "registerGuest": "Znajdź lokum",
   "more": "więcej",
   "register1": "Zarejestruj się",
@@ -134,7 +134,8 @@
       "animals": "Jestem razem ze swoim zwierzakiem",
       "toddler": "Dziecko jest poniżej 2 roku życia",
       "oldPerson": "Jestem lub jest ze mną osoba starsza",
-      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością"
+      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+      "pregnant": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)"
     },
     "refugeesCountOptions": {
       "alone": "Jestem sam",
@@ -210,5 +211,28 @@
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
   "accomodationPhotoReset": "Usuń",
-  "accomodationPhotoLabel": "Prześlij"
+  "accomodationPhotoLabel": "Prześlij",
+  "dropdownChoose": "Wybierz...",
+  "dropdownSearch": "Szukaj",
+  "heroImageAlt": "Sława Ukrajini!",
+  "hostAdd": {
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "addButton": "Zatwierdź/Dodaj",
+    "additionalInformationHeader": "Dodatkowe informacje",
+    "animalReady": "Przyjmę osobę ze zwierzakiem",
+    "any": "Dowolne",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "city": "Miasto",
+    "country": "Kraj",
+    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
+    "transportReady": "Oferuję możliwość transportu",
+    "type": "Typ noclegu",
+    "ukraine": "Ukraina"
+  }
 }

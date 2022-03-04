@@ -134,7 +134,8 @@
       "animals": "",
       "toddler": "",
       "oldPerson": "",
-      "disability": ""
+      "disability": "",
+      "pregnant": ""
     },
     "refugeesCountOptions": {
       "alone": "",
@@ -210,5 +211,28 @@
   },
   "accomodationPhoto": "",
   "accomodationPhotoReset": "",
-  "accomodationPhotoLabel": ""
+  "accomodationPhotoLabel": "",
+  "dropdownChoose": "",
+  "dropdownSearch": "",
+  "heroImageAlt": "",
+  "hostAdd": {
+    "accommodationTime": "",
+    "addButton": "",
+    "additionalInformationHeader": "",
+    "animalReady": "",
+    "any": "",
+    "basicInfoHeader": "",
+    "childBedCount": "",
+    "city": "",
+    "country": "",
+    "dissabilityReady": "",
+    "fullBedCount": "",
+    "groupsTypes": "",
+    "nationality": "",
+    "pregnantReady": "",
+    "prolongationReady": "",
+    "transportReady": "",
+    "type": "",
+    "ukraine": ""
+  }
 }

@@ -1,37 +1,37 @@
 {
-  "test": "",
+  "test": "Test message EN",
   "navigationDrawer": {
-    "profile": "",
-    "placesList": "",
-    "logout": ""
+    "profile": "User profile",
+    "placesList": "Your list of accomodations",
+    "logout": "Log out"
   },
   "labels": {
-    "location": "",
-    "numberOfGuests": "",
-    "timePeriod": "",
-    "withKids": "",
-    "name": "",
-    "email": "",
-    "phone": "",
-    "town": ""
+    "location": "Location",
+    "numberOfGuests": "Number of guests",
+    "timePeriod": "Length of stay",
+    "withKids": "I am with a child",
+    "name": "Name",
+    "email": "e-mail",
+    "phone": "phone",
+    "town": "town"
   },
   "validations": {
-    "requiredName": "",
-    "invalidEmail": "",
-    "invalidPhoneNumber": "",
-    "requiredTown": "",
-    "requiredTime": "",
-    "requiredPeopleQuantity": "",
-    "requiredLivingConditions": "",
-    "requiredFloor": ""
+    "requiredName": "Please enter a name",
+    "invalidEmail": "Please enter a correct e-mail address",
+    "invalidPhoneNumber": "Please enter a correct phone number",
+    "requiredTown": "Please enter a city",
+    "requiredTime": "Please provide the information on how long they can stay",
+    "requiredPeopleQuantity": "Please provide the amount of people you can host",
+    "requiredLivingConditions": "Please provide information on living conditions",
+    "requiredFloor": "Please provide a floor level"
   },
   "staticValues": {
     "timePeriod": {
       "lessThanAWeek": "",
-      "week": "",
-      "twoWeeks": "",
-      "month": "",
-      "longer": ""
+      "week": "One week",
+      "twoWeeks": "2 weeks",
+      "month": "One month",
+      "longer": "Longer than a month"
     },
     "groupRelations": {
       "single_man": "",
@@ -49,119 +49,120 @@
       "public_shared_space": ""
     },
     "boolean": {
-      "yes": "",
-      "no": ""
+      "yes": "yes",
+      "no": "no"
     },
-    "anyLocation": "",
-    "withElevator": ""
+    "anyLocation": "Any",
+    "withElevator": "with elevator"
   },
   "accommodationOffer": {
-    "canAccommodate": "",
-    "duration": "",
-    "acceptAnimals": "",
-    "disabledSupport": "",
-    "includesFood": "",
+    "canAccommodate": "Place for <1>{{count}} people</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "pets accepted",
+    "disabledSupport": "Facilities for disabled guests",
+    "includesFood": "Food",
     "author": {
-      "owner": ""
+      "owner": "Host"
     }
   },
   "guestOffer": {
-    "arrivalToPoland": "",
-    "peopleToAccommodate": "",
-    "preferredLocation": "",
-    "withAnimals": "",
-    "withKids": "",
-    "withDisabled": "",
-    "withElder": "",
-    "invite": ""
+    "arrivalToPoland": "Arrival date: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} people",
+    "preferredLocation": "preferred location: <1>{{location}}</1>",
+    "withAnimals": "living with a pet: <1>{{animals}}</1>",
+    "withKids": "living with a child: <1>{{age}}</1>",
+    "withDisabled": "living with a person with a disability",
+    "withElder": "living with an elder person",
+    "invite": "Send an invitation"
   },
   "addAccommodation": {
     "hostPreferences": {
-      "label": "",
-      "acceptAnimals": "",
-      "disabledSupport": "",
-      "kidsUnder2": "",
-      "foodIncluded": ""
+      "label": "Please share your preferences - whom can you help:",
+      "acceptAnimals": "pets accepted",
+      "disabledSupport": "person with a disability",
+      "kidsUnder2": "child under 2 years old",
+      "foodIncluded": "food provided"
     },
-    "peopleQuantity": "",
-    "forHowLong": "",
+    "peopleQuantity": "How many people can you host?",
+    "forHowLong": "For how long?",
     "livingConditions": {
-      "label": "",
+      "label": "Which living conditions can you propose?",
       "options": {
-        "flat": "",
-        "room": "",
-        "mattress": "",
-        "other": ""
+        "flat": "I have a free flat",
+        "room": "I have a free room",
+        "mattress": "I have a free mattress",
+        "other": "other"
       }
     },
     "floor": {
-      "label": "",
-      "hint": ""
+      "label": "On which floor will they live?",
+      "hint": "Elder people can have trouble living on a higher floor"
     },
-    "submit": ""
+    "submit": "Submit offer"
   },
   "flags": {
-    "cz": "",
-    "en": "",
-    "es": "",
-    "fr": "",
-    "hu": "",
-    "it": "",
-    "pl": "",
-    "ro": "",
-    "sk": "",
-    "ua": "",
-    "de": ""
+    "cz": "Czech flag",
+    "en": "UK flag",
+    "es": "Spanish flag",
+    "fr": "French flag",
+    "hu": "Hungarian flag",
+    "it": "Italian flag",
+    "pl": "Polish flag",
+    "ro": "Romanian flag",
+    "sk": "Slovakian flag",
+    "ua": "Ukrainian flag",
+    "de": "German flag"
   },
-  "logout": "",
-  "backToHomePage": "",
-  "shareLocation": "",
-  "registerGuest": "",
-  "more": "",
-  "register1": "",
-  "register2": "",
-  "privacyPolicy": "",
+  "logout": "log out",
+  "backToHomePage": "Back to home page",
+  "shareLocation": "Create an account",
+  "registerGuest": "Find a location",
+  "more": "more",
+  "register1": "Register",
+  "register2": "Registration",
+  "privacyPolicy": "Privacy Policy",
   "termsOfService": "",
-  "patrons": "",
-  "rodo": "",
+  "patrons": "Patrons",
+  "rodo": "GDPR",
   "thankfulnessModal": {
-    "thankYou": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": ""
+    "thankYou": "Thank you!",
+    "applicationSent": "Your application was sent. We are verifying several times a day our volunteer database in order to find the best place for you.",
+    "informWhenAccomodationFound": "As soon as we will find a shelter for you, we will inform you via email."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
-      "animals": "",
-      "toddler": "",
-      "oldPerson": "",
-      "disability": ""
+      "animals": "I am travelling with a pet",
+      "toddler": "Child under 2 years old",
+      "oldPerson": "I am / I am travelling with an elder person",
+      "disability": "I am / I am travelling with a person with a disability",
+      "pregnant": ""
     },
     "refugeesCountOptions": {
-      "alone": "",
-      "more": ""
+      "alone": "I am alone",
+      "more": "More"
     },
     "errors": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "required": "",
-      "location": ""
+      "name": "Please enter a name",
+      "email": "Please enter a correct e-mail address",
+      "phoneNumber": "Please enter a correct phone number",
+      "required": "This field is mandatory",
+      "location": "Please enter a preferred location"
     },
     "labels": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "refugeesCount": "",
-      "refugee": "",
-      "refugeeDetails": "",
-      "refugeesAnimal": "",
-      "isGDPRAccepted": "",
-      "submitButton": "",
-      "location": "",
-      "anyLocation": "",
-      "prefferedLocation": "",
-      "city": "",
-      "addRefugee": ""
+      "name": "Name",
+      "email": "e-mail",
+      "phoneNumber": "Phone number",
+      "refugeesCount": "For how many people are you searching for a shelter?",
+      "refugee": "Refugee {{number}}",
+      "refugeeDetails": "Add additional information, in order to choose better a suitable place for you:",
+      "refugeesAnimal": "Breed (name of the pet)",
+      "isGDPRAccepted": "I accept the terms of the Privacy Policy",
+      "submitButton": "Get help",
+      "location": "Where would you like to stay?",
+      "anyLocation": "Any location",
+      "prefferedLocation": "Preferred location",
+      "city": "City",
+      "addRefugee": "Add a person"
     }
   },
   "refugeeAddForm": {
@@ -210,5 +211,28 @@
   },
   "accomodationPhoto": "",
   "accomodationPhotoReset": "",
-  "accomodationPhotoLabel": ""
+  "accomodationPhotoLabel": "",
+  "dropdownChoose": "",
+  "dropdownSearch": "",
+  "heroImageAlt": "",
+  "hostAdd": {
+    "accommodationTime": "",
+    "addButton": "",
+    "additionalInformationHeader": "",
+    "animalReady": "",
+    "any": "",
+    "basicInfoHeader": "",
+    "childBedCount": "",
+    "city": "",
+    "country": "",
+    "dissabilityReady": "",
+    "fullBedCount": "",
+    "groupsTypes": "",
+    "nationality": "",
+    "pregnantReady": "",
+    "prolongationReady": "",
+    "transportReady": "",
+    "type": "",
+    "ukraine": ""
+  }
 }
