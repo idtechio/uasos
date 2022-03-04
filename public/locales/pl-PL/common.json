@@ -173,5 +173,14 @@
         "currentOffers": "aktualnie dostępnych ofert"
       }
     }
+  },
+  "loginForm": {
+    "logInWith": "zaloguj się za pomocą",
+    "or": "lub",
+    "lostPass": "nie pamiętasz hasła?",
+    "click": "kliknij tutaj",
+    "logIn": "zaloguj się",
+    "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
+    "register": "zarejestruj się"
   }
 }
