@@ -40,7 +40,7 @@ const LandingFooter = () => {
           </FooterContentRow>
           <FooterContentRow>
             <Link href="/regulamin.pdf" passHref>
-              <FooterItem>Regulamin</FooterItem>
+              <FooterItem>{t("termsOfService")}</FooterItem>
             </Link>
           </FooterContentRow>
         </FooterContentWrapper>
