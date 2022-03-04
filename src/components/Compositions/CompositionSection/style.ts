@@ -13,4 +13,5 @@ export const PageSection = styled.View<SectionProps>`
       ? props.backgroundColor
       : props.theme.pageSection.backgroundColor};
   flex-direction: column;
+  z-index: ${(props) => props.zIndex || "0"};
 `;
