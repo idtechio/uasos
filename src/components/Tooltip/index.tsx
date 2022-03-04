@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { View } from "react-native";
 import styled from "styled-components/native";
+import InfoIcon from "../../style/svgs/info.svg";
 
 type Props = {
-  visible: boolean;
   children: React.ReactNode;
 };
 
@@ -21,9 +22,19 @@ export const TooltipContainer = styled.View`
   border-width: 1px;
 `;
 
-export const Tooltip = ({ visible, children }: Props) => {
-  if (!visible) {
-    return null;
-  }
-  return <TooltipContainer>{children}</TooltipContainer>;
+export const Tooltip = ({ children }: Props) => {
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+  return (
+    <>
+      <View
+        // @ts-ignore
+        onMouseEnter={() => setTooltipVisible(true)}
+        onMouseLeave={() => setTooltipVisible(false)}
+      >
+        <InfoIcon />
+      </View>
+      {tooltipVisible && <TooltipContainer>{children}</TooltipContainer>}
+    </>
+  );
 };

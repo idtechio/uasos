@@ -22,7 +22,6 @@ import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnancyIcon from "../../style/svgs/pregnancy.svg";
 import CarIcon from "../../style/svgs/car.svg";
 import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
-import InfoIcon from "../../style/svgs/info.svg";
 
 import { CompositionSection } from "../Compositions";
 import { Tooltip } from "../Tooltip";
@@ -55,8 +54,6 @@ const TooltipIcon = styled.View`
 `;
 
 export default function AddAccommodationAdvancedForm() {
-  const [cityTooltipVisible, setCityTooltipVisible] = useState(false);
-
   const { t } = useTranslation();
 
   const additionalHostsFeats: Data[] = useMemo(
@@ -174,19 +171,12 @@ export default function AddAccommodationAdvancedForm() {
           <InputControlLabel>
             {t("hostAdd.town")}
             <View style={{ marginHorizontal: 10 }}>
-              <Tooltip visible={cityTooltipVisible}>
+              <Tooltip>
                 <Text>
                   Jezeli nie znajdziesz swojej miejscowości, wybierz najblizsze
                   duze miasto.
                 </Text>
               </Tooltip>
-              <View
-                // @ts-ignore
-                onMouseEnter={() => setCityTooltipVisible(true)}
-                onMouseLeave={() => setCityTooltipVisible(false)}
-              >
-                <InfoIcon />
-              </View>
             </View>
           </InputControlLabel>
           <FormDropdown
