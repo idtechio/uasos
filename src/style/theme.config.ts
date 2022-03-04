@@ -29,6 +29,7 @@ export const primary = {
     desktopSpacing: "35px",
     mobileSpacing: "35px",
     backgroundColor: "#FFF",
+    backgroundColorAlt: "#F2F2F2",
   },
 };
 

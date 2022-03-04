@@ -1,8 +1,6 @@
 import React from "react";
-import { View, Text } from "react-native";
 import Link from "next/link";
 
-import styled from "styled-components/native";
 import FooterLogo from "../../style/svgs/footer_logo.svg";
 import { FooterWrapper, Icon, LinkText } from "./styled";
 

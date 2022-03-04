@@ -7,6 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Header from "../src/components/Header";
 import LoginForm from "../src/components/LoginForm";
 import AppFooter from "../src/components/AppFooter";
+import AppBack from "../src/components/AppBack";
 
 export const FormHeader = styled.h2`
   color: ${({ theme }) => theme.colors.textOnCta};
@@ -17,23 +18,11 @@ export const FormHeader = styled.h2`
 `;
 
 const SignIn = ({ providers, csrfToken }) => {
-  console.log({ providers, csrfToken });
-
   const styles = StyleSheet.create({
     container: {
       width: "100%",
       height: "100%",
       flexDirection: "column",
-    },
-    error: {
-      color: "#D8000C",
-      marginTop: 10,
-    },
-    containerWrapper: {
-      width: "100%",
-    },
-    input: {
-      marginTop: 20,
     },
   });
 
@@ -41,9 +30,9 @@ const SignIn = ({ providers, csrfToken }) => {
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
-      // style={styles.containerWrapper}
     >
       <Header />
+      <AppBack to={"/"} />
       <LoginForm providers={providers} csrfToken={csrfToken} />
       <AppFooter />
     </ScrollView>

@@ -91,6 +91,7 @@
     "ru": "flaga rosji"
   },
   "logout": "wyloguj",
+  "back": "wróć",
   "backToHomePage": "Powrót do strony głównej",
   "shareLocation": "Zarejestruj się",
   "registerGuest": "Znajdź lokum",
@@ -175,7 +176,7 @@
     }
   },
   "loginForm": {
-    "logInWith": "zaloguj się za pomocą",
+    "logInWith": "Zaloguj się za pomocą",
     "or": "lub",
     "lostPass": "nie pamiętasz hasła?",
     "click": "kliknij tutaj",
