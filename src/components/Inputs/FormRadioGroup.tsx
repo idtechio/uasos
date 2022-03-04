@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";

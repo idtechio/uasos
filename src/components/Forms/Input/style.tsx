@@ -24,13 +24,15 @@ export const Label = styled.Text<InputProps>`
   padding: 3px 5px;
   line-height: 100%;
   z-index: 2;
-  color: ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.5)`)};
+  color: ${(props) =>
+    props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.5)`};
 `;
 
 export const TextInput = styled.TextInput`
-  border: 2px solid
-    ${(props) => (props.error ? `#D8000C` : `rgba(28, 27, 37, 0.3)`)};
-  background-color: transparent;
+  border: ${(props) => props.theme.forms.borderWidth} solid
+    ${(props) =>
+      props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.3)`};
+  background-color: ${(props) => props.theme.pageSection.backgroundColor};
   padding: 20px;
   border-radius: 4px;
   font-size: 16px;
@@ -41,5 +43,5 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Error = styled.Text`
-  color: #d8000c;
+  color: ${(props) => props.theme.colors.error};
 `;

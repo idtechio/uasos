@@ -2,13 +2,13 @@
   "supportingPartners": "Partnerzy wspierający akcję",
   "hero": {
     "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
-    "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc. \nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
+    "description": "Pomagamy uchodźcom znaleźć bezpłatne schronienie oferowane przez osoby i instytucje chcące nieść pomoc.\nNasz portal ma za zadanie automatycznie połączyć potencjalne lokum z szukającym schronienia na podstawie określonych potrzeb",
     "lookingForHelp": "Szukam schronienia",
     "shareHelp": "Oferuję pomoc"
   },
   "likeToHelp": {
     "title": "Chcesz pomóc?",
-    "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie \n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako \n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu. \n \n Nasza aplikacja pomoże automatycznie dopasować \n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
+    "details": "Jesli dysponujsz lokalem, pokojem, miejscem które możesz nieodpłatnie\n udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako\n wolontariusz, wypełniając kwestionariusz dotyczący Twojego lokalu.\n\n Nasza aplikacja pomoże automatycznie dopasować\n zarejestrowanych potrzebujących na podstawie udostępnionych informacji."
   },
   "weMatched": {
     "title": "Udało nam się dopasować już...",

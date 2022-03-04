@@ -27,10 +27,26 @@
   },
   "staticValues": {
     "timePeriod": {
+      "lessThanAWeek": "mniej niż tydzień",
       "week": "tydzień",
       "twoWeeks": "2 tygodnie",
       "month": "miesiąc",
       "longer": "dłużej"
+    },
+    "groupRelations": {
+      "single_man": "Singiel",
+      "single_woman": "Singielka",
+      "spouses": "Małżonkowie",
+      "mother_with_children": "Matka z dziećmi",
+      "family_with_children": "Rodzina z dziećmi",
+      "unrelated_group": "Niepowiązana grupa"
+    },
+    "accommodationTypes": {
+      "bed": "Łóźko w współdzielonym pokoju",
+      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "flat": "Mieszkanie na wyłączność",
+      "house": "Dom na wyłączność",
+      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
     },
     "boolean": {
       "yes": "tak",
@@ -48,6 +64,10 @@
     "author": {
       "owner": "Gospodarz"
     }
+  },
+  "forms": {
+    "chooseFromList": "Wybierz z listy",
+    "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
   },
   "guestOffer": {
     "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
@@ -97,14 +117,45 @@
     "ua": "flaga Ukrainy",
     "de": "flaga Niemiec"
   },
+  "hostAdd": {
+    "country": "Kraj",
+    "town": "Miasto",
+    "type": "Typ noclegu",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "ukraine": "Ukraina",
+    "any": "Dowolne",
+    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "transportReady": "Oferuję możliwość transportu",
+    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "animalReady": "Przyjmę osobę ze zwierzakiem",
+    "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
+    "additionalInformationHeader": "Dodatkowe informacje",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "addButton": "Zatwierdź/Dodaj",
+    "errors": {
+      "country": "Kraj jest wymagany",
+      "town": "Miasto jest wymagane",
+      "type": "Typ noclegu jest wymagany",
+      "fullBedCount": "",
+      "childBedCount": "",
+      "accommodationTime": "",
+      "nationality": "",
+      "groupsTypes": ""
+    }
+  },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",
-  "shareLocation": "Zarejestruj się",
+  "shareLocation": "Załóz konto w serwisie",
   "registerGuest": "Znajdź lokum",
   "more": "więcej",
   "register1": "Zarejestruj się",
   "register2": "Rejestracja",
   "privacyPolicy": "Polityka prywatności",
+  "termsOfService": "Regulamin",
   "patrons": "Patroni",
   "rodo": "RODO",
   "thankfulnessModal": {
@@ -117,7 +168,8 @@
       "animals": "Jestem razem ze swoim zwierzakiem",
       "toddler": "Dziecko jest poniżej 2 roku życia",
       "oldPerson": "Jestem lub jest ze mną osoba starsza",
-      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością"
+      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+      "pregnant": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)"
     },
     "refugeesCountOptions": {
       "alone": "Jestem sam",
@@ -146,5 +198,75 @@
       "city": "Miejscowość",
       "addRefugee": "Dodaj osobę"
     }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
+    "addButton": "Wyślij aplikację",
+    "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
+    "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+    "animalReady": "Jest ze mną mój zwierzak",
+    "elderReady": "Jestem lub jest ze mną osoba starsza",
+    "ageLabel": "Wiek",
+    "genderLabel": "Płeć",
+    "genderPlaceholder": "Podaj płeć",
+    "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
+    "fullBedCountLabel": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
+    "placeOfRefuge": "Gdzie szukasz schronienia?",
+    "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
+    "countryOfRefugePlaceholder": "Wybierz kraj",
+    "cityOfRefugeLabel": "Wybierz miasto:",
+    "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
+    "cityOfRefugePlaceholder": "Wybierz obszar",
+    "nameLabel": "Imię (Podaj tylko pierwsze imię)",
+    "namePlaceholder": "Imię",
+    "emailLabel": "Podaj adres e-mail:",
+    "emailPlaceholder": "e-mail",
+    "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
+    "selectPlaceholder": "Wybierz z listy",
+    "accommodationType": "Jakiego typu noclegu szukasz?",
+    "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
+    "countryOfGroupUA": "Ukraina",
+    "countryOfGroupOthers": "Inne",
+    "accompanyingPerson": "Osoba towarzysząca",
+    "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "gender": "Uzupełnij płeć z którą się utożsamiasz",
+      "cityOfRefuge": "Wybierz miasto",
+      "phoneNumber": "Podaj numer telefonu",
+      "countryOfRefuge": "Wybierz kraj",
+      "childBedCount": "Podaj ilość miejsc",
+      "fullBedCountsaas": "Podaj ilość miejsc",
+      "groupRelations": "Wybierz relacje",
+      "overnightDuration": "Wybierz typ noclegu",
+      "accommodationType": "Wybierz narodowość"
+    }
+  },
+  "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
+  "accomodationPhotoReset": "Usuń",
+  "accomodationPhotoLabel": "Prześlij",
+  "dropdownChoose": "Wybierz...",
+  "dropdownSearch": "Szukaj",
+  "heroImageAlt": "Sława Ukrajini!",
+  "hostAdd": {
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "addButton": "Zatwierdź/Dodaj",
+    "additionalInformationHeader": "Dodatkowe informacje",
+    "animalReady": "Przyjmę osobę ze zwierzakiem",
+    "any": "Dowolne",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "city": "Miasto",
+    "country": "Kraj",
+    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
+    "transportReady": "Oferuję możliwość transportu",
+    "type": "Typ noclegu",
+    "ukraine": "Ukraina"
   }
 }

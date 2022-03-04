@@ -15,3 +15,10 @@ export const PageSection = styled.View<SectionProps>`
   flex-direction: column;
   z-index: ${(props) => props.zIndex || "0"};
 `;
+
+export const SectionHeader = styled.Text<SectionProps>`
+  color: ${(props) => props.theme.colors.headings};
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 24px;
+`;
