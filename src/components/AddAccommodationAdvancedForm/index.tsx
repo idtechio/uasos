@@ -1,12 +1,10 @@
 import React, { ReactNode, useState, useMemo } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import Tooltip from "react-native-walkthrough-tooltip";
 import { useTranslation } from "react-i18next";
 import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableHighlight,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -14,7 +12,6 @@ import styled from "styled-components/native";
 import {
   AccommodationType,
   AccomodationTime,
-  FormKey,
   FormType,
   HostType,
 } from "../../helpers/FormTypes";
@@ -25,11 +22,12 @@ import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnancyIcon from "../../style/svgs/pregnancy.svg";
 import CarIcon from "../../style/svgs/car.svg";
 import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
+import InfoIcon from "../../style/svgs/info.svg";
 
 import { CompositionSection } from "../Compositions";
+import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import UploadInput from "../Forms/UploadInput/index.web";
-import FormChoiceButton from "../Inputs/FormChoiceButton";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -175,16 +173,21 @@ export default function AddAccommodationAdvancedForm() {
           />
           <InputControlLabel>
             {t("hostAdd.town")}
-            {/* <Tooltip
-              isVisible={cityTooltipVisible}
-              content={<Text>{t("advancedHost.tooltipText")}</Text>}
-              placement="top"
-              onClose={() => setCityTooltipVisible((visible) => !visible)}
-            >
-              <TouchableHighlight>
-                <Text>!</Text>
-              </TouchableHighlight>
-            </Tooltip> */}
+            <View style={{ marginHorizontal: 10 }}>
+              <Tooltip visible={cityTooltipVisible}>
+                <Text>
+                  Jezeli nie znajdziesz swojej miejscowości, wybierz najblizsze
+                  duze miasto.
+                </Text>
+              </Tooltip>
+              <View
+                // @ts-ignore
+                onMouseEnter={() => setCityTooltipVisible(true)}
+                onMouseLeave={() => setCityTooltipVisible(false)}
+              >
+                <InfoIcon />
+              </View>
+            </View>
           </InputControlLabel>
           <FormDropdown
             zIndex={13}
