@@ -22,6 +22,7 @@ type PeopleDetails = {
   toddler: boolean;
   oldPerson: boolean;
   disability: boolean;
+  pregnant?: boolean;
 };
 
 export type FormType = {
@@ -78,6 +79,25 @@ export type FormType = {
     animalReady: boolean;
     prolongationReady: boolean;
     accomodationPhoto: Blob;
+  };
+  advancedRefugee: {
+    name: string;
+    email: string;
+    country: string;
+    cityOfRefuge: string;
+    fullBedCount: number;
+    childBedCount: number;
+    phoneNumber: string;
+    preferences: {
+      animal: string;
+      peopleDetails: PeopleDetails;
+    };
+    gender: string;
+    age: number;
+    nationality: string;
+    overnightDuration: string;
+    groupRelations: string;
+    accommodationType: string;
   };
 };
 
