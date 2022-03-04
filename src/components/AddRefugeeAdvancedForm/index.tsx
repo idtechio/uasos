@@ -18,7 +18,7 @@ import AnimalsIcon from "../../style/svgs/animals.svg";
 import KidsIcon from "../../style/svgs/kids.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
-import PregnantIcon from "../../style/svgs/account.svg";
+import PregnantIcon from "../../style/svgs/pregnant.svg";
 
 export default function AddAccommodationAdvancedForm() {
   const { t } = useTranslation();
@@ -338,6 +338,7 @@ export default function AddAccommodationAdvancedForm() {
               data={ACCOMMODATION_TYPES}
               name="advancedRefugee.accommodationType"
               placeholder={t("refugeeAddForm.selectPlaceholder")}
+              multiSelect
               rules={{
                 required: true,
               }}
