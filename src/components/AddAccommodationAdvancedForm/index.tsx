@@ -35,6 +35,7 @@ import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCheckbox from "../Inputs/FormCheckbox";
+import Footer from "../Footer";
 
 const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 1", value: "Item 1" },
@@ -371,6 +372,7 @@ export default function AddAccommodationAdvancedForm() {
             />
           </InputControl>
         </CompositionSection>
+        <Footer />
       </ScrollView>
     </FormProvider>
   );
