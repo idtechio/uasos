@@ -1,5 +1,5 @@
 import { getSession } from "next-auth/react";
-import { publishMessage } from "../../../src/helpers/PubSub";
+import { publishMessage } from "../../../../src/helpers/PubSub";
 
 //TODO: DRY pages/api/hosts/matchesconfirm/{matchesId}.js
 export default async function sendMatchesDecision(req, res) {
