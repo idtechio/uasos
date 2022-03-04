@@ -172,10 +172,7 @@ export default function AddAccommodationAdvancedForm() {
             {t("hostAdd.town")}
             <View style={{ marginHorizontal: 10 }}>
               <Tooltip>
-                <Text>
-                  Jezeli nie znajdziesz swojej miejscowości, wybierz najblizsze
-                  duze miasto.
-                </Text>
+                <Text>{t("advancedHost.advancedHost.tooltipText")}</Text>
               </Tooltip>
             </View>
           </InputControlLabel>
