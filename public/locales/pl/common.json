@@ -99,7 +99,7 @@
       }
     },
     "floor": {
-      "label": "Na którym piętrze zamieszkają?",
+      "label": "Na którym piętrze znajduje się lokal?",
       "hint": "*Osoby starsze mogą mieć problem z wejściem na wysokie piętro"
     },
     "submit": "Zgłoś swoją gotowość"
