@@ -12,6 +12,11 @@ export enum LivingConditions {
   OTHER = "other",
 }
 
+export enum Nationality {
+  UKRAINIAN = "ukrainian",
+  ANY = "any",
+}
+
 type PeopleDetails = {
   animals: boolean;
   toddler: boolean;
@@ -56,6 +61,23 @@ export type FormType = {
       };
     };
     isGDPRAccepted: boolean;
+  };
+
+  advancedHost: {
+    town: string;
+    country: string;
+    accommodationType: string;
+    fullBedCount: number;
+    childBedCount: number;
+    accommodationTime: number;
+    nationality: Nationality;
+    groupsTypes: string;
+    transportReady: boolean;
+    pregnantReady: boolean;
+    dissabilityReady: boolean;
+    animalReady: boolean;
+    prolongationReady: boolean;
+    accomodationPhoto: Blob;
   };
 };
 
