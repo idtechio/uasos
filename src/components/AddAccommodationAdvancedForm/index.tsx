@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import {
+  AccommodationType,
   AccomodationTime,
   FormKey,
   FormType,
@@ -86,23 +87,23 @@ export default function AddAccommodationAdvancedForm() {
     () => [
       {
         label: t("advancedHost.accommodationTypeOptions.bed"),
-        value: "bed",
+        value: AccommodationType.BED,
       },
       {
         label: t("advancedHost.accommodationTypeOptions.room"),
-        value: "room",
+        value: AccommodationType.ROOM,
       },
       {
         label: t("advancedHost.accommodationTypeOptions.flat"),
-        value: "flat",
+        value: AccommodationType.FLAT,
       },
       {
         label: t("advancedHost.accommodationTypeOptions.house"),
-        value: "house",
+        value: AccommodationType.HOUSE,
       },
       {
         label: t("advancedHost.accommodationTypeOptions.collective"),
-        value: "collective",
+        value: AccommodationType.COLLECTIVE,
       },
     ],
     [t]
@@ -128,8 +129,8 @@ export default function AddAccommodationAdvancedForm() {
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
-      watchAccomodationTypeFieldValue === "bed" ||
-      watchAccomodationTypeFieldValue === "room",
+      watchAccomodationTypeFieldValue === AccommodationType.BED ||
+      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
     [watchAccomodationTypeFieldValue]
   );
 
@@ -165,7 +166,7 @@ export default function AddAccommodationAdvancedForm() {
           <InputControlLabel>{t("hostAdd.town")}</InputControlLabel>
           <FormDropdown
             zIndex={13}
-            data={DUMMY_DROPDOWN_ITEMS}
+            data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
             name="advancedHost.town"
             placeholder={t("hostAdd.town")}
             rules={{
