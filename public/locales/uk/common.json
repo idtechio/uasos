@@ -65,6 +65,10 @@
       "owner": "Власник"
     }
   },
+  "forms": {
+    "chooseFromList": "вибрати зі списку",
+    "chooseFromListMulti": "Виберіть зі списку (ви можете вибрати кілька варіантів)"
+  },
   "guestOffer": {
     "arrivalToPoland": "Дата прибуття",
     "peopleToAccommodate": "+ {{count}} осіб",
@@ -113,6 +117,26 @@
     "ua": "Прапор України",
     "de": "Прапор Німеччини"
   },
+  "hostAdd": {
+    "accommodationTime": "Як довго ви можете ховатися (тижні)?",
+    "addButton": "Подати / Додати",
+    "additionalInformationHeader": "Додаткова інформація",
+    "animalReady": "Прийму людину з домашнім улюбленцем",
+    "any": "Будь-який",
+    "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
+    "childBedCount": "Кількість спальних місць для дітей",
+    "city": "Місто",
+    "country": "Країна",
+    "dissabilityReady": "Прийму людину з інвалідністю",
+    "fullBedCount": "Кількість повнорозмірних спальних місць",
+    "groupsTypes": "Які типи груп ви візьмете?",
+    "nationality": "Яке громадянство біженця ви можете прийняти?",
+    "pregnantReady": "Прийму людину в запущеному стані вагітності (більше 6 місяців)",
+    "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
+    "transportReady": "Пропоную можливість транспортування",
+    "type": "Тип розміщення",
+    "ukraine": "Україна"
+  },
   "logout": "Вийти",
   "backToHomePage": "Повернутися на головну сторінку",
   "shareLocation": "Зареєструватися",
@@ -135,7 +159,7 @@
       "toddler": "Дитина меньше 2 років",
       "oldPerson": "я / зі мною особа похилого віку",
       "disability": "я / зі мною особа з обмеженими можливостями",
-      "pregnant": ""
+      "pregnant": "Я перебуваю або перебуваю зі мною на пізніх термінах вагітності (більше 6 місяців)"
     },
     "refugeesCountOptions": {
       "alone": "Я один/одна",
@@ -209,30 +233,10 @@
       "accommodationType": "Будь ласка, виберіть національність"
     }
   },
-  "accomodationPhoto": "",
-  "accomodationPhotoReset": "",
-  "accomodationPhotoLabel": "",
-  "dropdownChoose": "",
-  "dropdownSearch": "",
-  "heroImageAlt": "",
-  "hostAdd": {
-    "accommodationTime": "",
-    "addButton": "",
-    "additionalInformationHeader": "",
-    "animalReady": "",
-    "any": "",
-    "basicInfoHeader": "",
-    "childBedCount": "",
-    "city": "",
-    "country": "",
-    "dissabilityReady": "",
-    "fullBedCount": "",
-    "groupsTypes": "",
-    "nationality": "",
-    "pregnantReady": "",
-    "prolongationReady": "",
-    "transportReady": "",
-    "type": "",
-    "ukraine": ""
-  }
+  "accomodationPhoto": "Додайте фотографію пропонованого притулку",
+  "accomodationPhotoReset": "видаляти",
+  "accomodationPhotoLabel": "подати",
+  "dropdownChoose": "Виберіть ...",
+  "dropdownSearch": "Пошук",
+  "heroImageAlt": "Слава України!"
 }

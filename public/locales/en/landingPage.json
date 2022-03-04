@@ -33,28 +33,28 @@
   },
   "instructions": {
     "0": {
-      "title": "",
-      "text": ""
+      "title": "Registration on the portal",
+      "text": "The user registers on the portal as offering accommodation / needing shelter"
     },
     "1": {
-      "title": "",
-      "text": ""
+      "title": "Filling the form",
+      "text": "The user fills in a suitable form regarding the offered accommodation or the accommodation sought"
     },
     "2": {
-      "title": "",
-      "text": ""
+      "title": "Automatic pairing",
+      "text": "The algorithm searches the database of advertisements and the database of people in need and, based on the information provided, selects the best connection."
     },
     "3": {
-      "title": "",
-      "text": ""
+      "title": "Information to the user",
+      "text": "After the correct match, users receive an email. An additional description of connected users is visible in the application."
     },
     "4": {
-      "title": "",
-      "text": ""
+      "title": "User contact",
+      "text": "After the connection, it is possible to contact the users by e-mail or telephone in order to discuss the details"
     },
     "5": {
-      "title": "",
-      "text": ""
+      "title": "Confirmation or rejection of the offer",
+      "text": "The last step is to confirm or decline the offer in the app. If the offer is rejected, the ads are returned to the pool."
     }
   }
 }

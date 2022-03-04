@@ -65,6 +65,10 @@
       "owner": "Хозяин"
     }
   },
+  "forms": {
+    "chooseFromList": "Выберите из списка",
+    "chooseFromListMulti": "Выберите из списка (можно выбрать несколько вариантов)"
+  },
   "guestOffer": {
     "arrivalToPoland": "Дата прибытия",
     "peopleToAccommodate": "+ {{count}} человек",
@@ -113,6 +117,26 @@
     "ua": "Флаг Украины",
     "de": "Флаг Германии"
   },
+  "hostAdd": {
+    "accommodationTime": "Как долго вы можете приютить (недели)?",
+    "addButton": "Отправить/Добавить",
+    "additionalInformationHeader": "Дополнительная информация",
+    "animalReady": "Я приму человека с домашним животным",
+    "any": "любой",
+    "basicInfoHeader": "Предоставьте информацию о жилье, которое вы предлагаете",
+    "childBedCount": "Количество спальных мест для детей",
+    "city": "город",
+    "country": "Страна",
+    "dissabilityReady": "Я приму человека с инвалидностью",
+    "fullBedCount": "Количество полноценных спальных мест",
+    "groupsTypes": "Какие типы групп вы примете?",
+    "nationality": "Какое гражданство беженца вы можете принять?",
+    "pregnantReady": "Приму женщину на позднем сроке беременности (свыше 6 месяцев)",
+    "prolongationReady": "Предлагаю возможность продления пребывания (за отдельную плату)",
+    "transportReady": "Я предлагаю возможность транспорта",
+    "type": "тип размещения",
+    "ukraine": "Украина"
+  },
   "logout": "Выйти",
   "backToHomePage": "Вернуться к главной странице",
   "shareLocation": "Зарегистрироваться",
@@ -135,7 +159,7 @@
       "toddler": "ребенок младше 2 лет",
       "oldPerson": "со мной пожилой человек / я сам пожилой человек",
       "disability": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями",
-      "pregnant": ""
+      "pregnant": "Я нахожусь или находится со мной на позднем сроке беременности (более 6 месяцев)"
     },
     "refugeesCountOptions": {
       "alone": "Я один/одна",
@@ -209,30 +233,10 @@
       "accommodationType": "Пожалуйста, выберите национальность"
     }
   },
-  "accomodationPhoto": "",
-  "accomodationPhotoReset": "",
-  "accomodationPhotoLabel": "",
-  "dropdownChoose": "",
-  "dropdownSearch": "",
-  "heroImageAlt": "",
-  "hostAdd": {
-    "accommodationTime": "",
-    "addButton": "",
-    "additionalInformationHeader": "",
-    "animalReady": "",
-    "any": "",
-    "basicInfoHeader": "",
-    "childBedCount": "",
-    "city": "",
-    "country": "",
-    "dissabilityReady": "",
-    "fullBedCount": "",
-    "groupsTypes": "",
-    "nationality": "",
-    "pregnantReady": "",
-    "prolongationReady": "",
-    "transportReady": "",
-    "type": "",
-    "ukraine": ""
-  }
+  "accomodationPhoto": "Добавьте фото предлагаемого приюта",
+  "accomodationPhotoReset": "удалять",
+  "accomodationPhotoLabel": "ПРЕДСТАВЛЯТЬ НА РАССМОТРЕНИЕ",
+  "dropdownChoose": "Выберите...",
+  "dropdownSearch": "Поиск",
+  "heroImageAlt": "Слава Украины!"
 }
