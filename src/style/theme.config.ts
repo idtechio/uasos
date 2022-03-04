@@ -20,6 +20,7 @@ export const primary = {
     textOnCta: "#003566",
     blue: "#003566",
     secondaryBlue: "#0057B8",
+    error: "#d8000c",
   },
   fonts: {
     headings: "'Roboto', sans-serif",
@@ -29,6 +30,15 @@ export const primary = {
     desktopSpacing: "35px",
     mobileSpacing: "35px",
     backgroundColor: "#FFF",
+  },
+  forms: {
+    border: "#BBBBBC",
+    borderWidth: "1px",
+    borderRadius: "4px",
+    placeholderColor: "#BBBBBC",
+    placeholderSize: "14px",
+    labelColor: "#003566",
+    labelSize: "12px",
   },
 };
 
