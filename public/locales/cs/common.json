@@ -65,6 +65,10 @@
       "owner": ""
     }
   },
+  "forms": {
+    "chooseFromList": "",
+    "chooseFromListMulti": ""
+  },
   "guestOffer": {
     "arrivalToPoland": "",
     "peopleToAccommodate": "",
@@ -112,6 +116,26 @@
     "sk": "",
     "ua": "",
     "de": ""
+  },
+  "hostAdd": {
+    "accommodationTime": "",
+    "addButton": "",
+    "additionalInformationHeader": "",
+    "animalReady": "",
+    "any": "",
+    "basicInfoHeader": "",
+    "childBedCount": "",
+    "city": "",
+    "country": "",
+    "dissabilityReady": "",
+    "fullBedCount": "",
+    "groupsTypes": "",
+    "nationality": "",
+    "pregnantReady": "",
+    "prolongationReady": "",
+    "transportReady": "",
+    "type": "",
+    "ukraine": ""
   },
   "logout": "",
   "backToHomePage": "",
@@ -214,25 +238,5 @@
   "accomodationPhotoLabel": "",
   "dropdownChoose": "",
   "dropdownSearch": "",
-  "heroImageAlt": "",
-  "hostAdd": {
-    "accommodationTime": "",
-    "addButton": "",
-    "additionalInformationHeader": "",
-    "animalReady": "",
-    "any": "",
-    "basicInfoHeader": "",
-    "childBedCount": "",
-    "city": "",
-    "country": "",
-    "dissabilityReady": "",
-    "fullBedCount": "",
-    "groupsTypes": "",
-    "nationality": "",
-    "pregnantReady": "",
-    "prolongationReady": "",
-    "transportReady": "",
-    "type": "",
-    "ukraine": ""
-  }
+  "heroImageAlt": ""
 }
