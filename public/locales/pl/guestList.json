@@ -1,0 +1,11 @@
+{
+  "arrival": "Arrival date",
+  "persons": "Number of guests",
+  "locationPreference": "Preferred location",
+  "anyLocation": "Any",
+  "travelingWithAnimal": "Travelling with a pet",
+  "travelingWithOlderPerson": "Travelling with an elder person",
+  "travelingWithDisabledPerson": "Travelling with a person with a disability",
+  "travelingWithToddler": "Travelling with a small child",
+  "inviteGuest": "Send an invitation"
+}

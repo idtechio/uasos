@@ -30,7 +30,7 @@ const ElipseEffect = styled.View`
 `;
 
 function Landing() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
 
   return (
     <ScrollView>
@@ -40,7 +40,7 @@ function Landing() {
         <ElipseEffect />
       </HeroImageWrapper>
       <Section bgColor="#fff">
-        <SectionTitle title={t("landingPage.supportingPartners")} />
+        <SectionTitle title={t("supportingPartners")} />
         <View style={{ alignItems: "center" }}>
           <PartnersCarousel />
         </View>

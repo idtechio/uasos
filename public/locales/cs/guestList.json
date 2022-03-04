@@ -1,0 +1,11 @@
+{
+  "arrival": "Příjezd do České republiky",
+  "persons": "Počet osob",
+  "locationPreference": "Preferovaná lokalita",
+  "anyLocation": "Libovolná",
+  "travelingWithAnimal": "Cestuji s domácím mazlíčkem",
+  "travelingWithOlderPerson": "Jsem nebo cestuji s postarší osobou",
+  "travelingWithDisabledPerson": "Jsem nebo cestuji s osobou s postižením",
+  "travelingWithToddler": "Cestuji s dítětem do 2 let věku",
+  "inviteGuest": "Pozvat k sobě"
+}
