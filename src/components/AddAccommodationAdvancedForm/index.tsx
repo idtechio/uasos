@@ -240,7 +240,7 @@ export default function AddAccommodationAdvancedForm() {
             data={(
               Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
             ).map((key: keyof AccomodationTime) => ({
-              value: key,
+              value: key as AccomodationTime,
               label: t(
                 `hostAdd.accommodationTimeLabel.${String(
                   AccomodationTime[key]
@@ -286,7 +286,7 @@ export default function AddAccommodationAdvancedForm() {
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <FormCheckbox
             rules={{
-              required: true, // TODO
+              required: true, // TODO Make sure it's required
             }}
             error={errors?.refugee?.isGDPRAccepted}
             errorMsg={t("hostAdd.errors.required")}

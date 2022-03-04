@@ -8,7 +8,6 @@ import { useSession, signIn } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ButtonCta } from "../src/components/Buttons";
 import { useTranslation } from "next-i18next";
-import AddAccommodationAdvancedForm from "../src/components/AddAccommodationAdvancedForm";
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -23,7 +22,7 @@ export default function Account(props) {
   return (
     <CompositionAppBody>
       {session ? (
-        <AddAccommodationAdvancedForm />
+        <AddAccommodationForm />
       ) : (
         <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
       )}
