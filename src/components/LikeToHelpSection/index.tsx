@@ -95,12 +95,16 @@ export function LikeToHelpSection() {
               <>
                 <Link href="/guest">
                   <a>
-                    <ButtonCta anchor={t("landingPage.hero.lookingForHelp")} />
+                    <ButtonCta
+                      anchor={t("landingPage.projectIntention.lookingForHelp")}
+                    />
                   </a>
                 </Link>
                 <Link href="/host">
                   <a style={{ marginLeft: 10 }}>
-                    <ButtonCta anchor={t("landingPage.hero.shareHelp")} />
+                    <ButtonCta
+                      anchor={t("landingPage.projectIntention.shareHelp")}
+                    />
                   </a>
                 </Link>
               </>
