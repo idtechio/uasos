@@ -27,10 +27,26 @@
   },
   "staticValues": {
     "timePeriod": {
+      "lessThanAWeek": "Менше тижня",
       "week": "Один тиждень",
       "twoWeeks": "Два тижні",
       "month": "Місяць",
       "longer": "Довше ніж місяць"
+    },
+    "groupRelations": {
+      "single_man": "Неодружений",
+      "single_woman": "Неодружений",
+      "spouses": "Подружжя",
+      "mother_with_children": "Мама з дітьми",
+      "family_with_children": "Сім'я з дітьми",
+      "unrelated_group": "Неспоріднена група"
+    },
+    "accommodationTypes": {
+      "bed": "Ліжко в загальній кімнаті",
+      "room": "Кімната в загальній квартирі/будинку",
+      "flat": "Квартира ексклюзивна",
+      "house": "Будинок ексклюзивного користування",
+      "public_shared_space": "Колективна кімната (наприклад, шкільна кімната)"
     },
     "boolean": {
       "yes": "так",
@@ -145,6 +161,50 @@
       "prefferedLocation": "Бажане місце",
       "city": "Місто",
       "addRefugee": "Додати особу"
+    }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Надайте основну інформацію про себе та людей, з якими ви подорожуєте",
+    "addButton": "Надішліть заявку",
+    "pregnantReady": "Я перебуваю або перебуваю зі мною на пізніх термінах вагітності (більше 6 місяців)",
+    "dissabilityReady": "Я є або є зі мною людиною з інвалідністю",
+    "animalReady": "Мій вихованець зі мною",
+    "elderReady": "Я чи є зі мною літня людина",
+    "ageLabel": "Вік",
+    "genderLabel": "секс",
+    "genderPlaceholder": "Введіть свою стать",
+    "travelCompanions": "Інформація про людей, з якими ви подорожуєте",
+    "fullBedCountLabel": "Кількість повнорозмірних спальних місць",
+    "childBedCountLabel": "Кількість спальних місць для дітей",
+    "placeOfRefuge": "Де ти шукаєш притулок?",
+    "countryOfRefugeLabel": "В якій країні ти шукаєш притулку?",
+    "countryOfRefugePlaceholder": "вибрати країну",
+    "cityOfRefugeLabel": "Виберіть місто:",
+    "overnightDurationLabel": "На який період Ви шукаєте житло?",
+    "cityOfRefugePlaceholder": "Виберіть область",
+    "nameLabel": "Ім'я (введіть лише ім'я)",
+    "namePlaceholder": "ім'я",
+    "emailLabel": "Дайте мені свою електронну адресу:",
+    "emailPlaceholder": "Адреса електронної пошти",
+    "groupRelations": "Який рівень стосунків між учасниками групи?",
+    "selectPlaceholder": "вибрати зі списку",
+    "accommodationType": "Який тип житла ви шукаєте?",
+    "countryOfGroup": "Яка країна походження групи?",
+    "countryOfGroupUA": "Україна",
+    "countryOfGroupOthers": "Інший",
+    "accompanyingPerson": "Супроводжувальна особа",
+    "errors": {
+      "name": "Дайте своє ім'я",
+      "email": "Введіть дійсну адресу електронної пошти",
+      "gender": "Укажіть стать, з якою ви ідентифікуєтеся",
+      "cityOfRefuge": "Будь ласка, виберіть місто",
+      "phoneNumber": "Дайте мені свій номер телефону",
+      "countryOfRefuge": "вибрати країну",
+      "childBedCount": "Введіть кількість місць",
+      "fullBedCountsaas": "Введіть кількість місць",
+      "groupRelations": "Виберіть відносини",
+      "overnightDuration": "Виберіть тип проживання",
+      "accommodationType": "Будь ласка, виберіть національність"
     }
   }
 }
