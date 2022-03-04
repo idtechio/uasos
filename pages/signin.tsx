@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Header from "../src/components/Header";
 import LoginForm from "../src/components/LoginForm";
+import AppFooter from "../src/components/AppFooter";
 
 export const FormHeader = styled.h2`
   color: ${({ theme }) => theme.colors.textOnCta};
@@ -21,6 +22,7 @@ const SignIn = ({ providers, csrfToken }) => {
   const styles = StyleSheet.create({
     container: {
       width: "100%",
+      height: "100%",
       flexDirection: "column",
     },
     error: {
@@ -39,10 +41,11 @@ const SignIn = ({ providers, csrfToken }) => {
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
-      style={styles.containerWrapper}
+      // style={styles.containerWrapper}
     >
       <Header />
       <LoginForm providers={providers} csrfToken={csrfToken} />
+      <AppFooter />
     </ScrollView>
   );
 };

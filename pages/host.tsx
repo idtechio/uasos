@@ -21,7 +21,7 @@ export default function Account(props) {
 
   return (
     <CompositionAppBody>
-      {{} ? (
+      {session ? (
         <AddAccommodationForm />
       ) : (
         <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
