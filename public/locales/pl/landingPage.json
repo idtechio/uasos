@@ -30,5 +30,31 @@
     "rollup": "Zwiń",
     "description": "Portal łączy osoby potrzebujące wsparcia z osobami i instytucjami oferującymi pomoc.",
     "howItWorks": "Jak to działa?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Rejestracja na portalu",
+      "text": "Użytkownik rejestruje się na portalu jako oferujący lokum / potrzebujący schronienia"
+    },
+    "1": {
+      "title": "Wypełnienie formularza",
+      "text": "Użytkownik wypełnia dopasowany formularz dotyczący oferowanego lokum lub poszukiwanego zakwaterowania"
+    },
+    "2": {
+      "title": "Automatyczne parowanie",
+      "text": "Algorytm przeszukuje bazę ogłoszeń oraz bazę potrzebujących i na podstawie dostarczonych informacji dobiera najlepsze połączenie."
+    },
+    "3": {
+      "title": "Informacja do użytkownika",
+      "text": "Po poprawnym dopasowaniu użytkownicy otrzymują wiadomość e-mail. W aplikacji widoczny jest dodatkowy opis połączonych użytkowników."
+    },
+    "4": {
+      "title": "Kontakt użytkowników",
+      "text": "Po połączeniu, możliwy jest kontakt mailowy lub telefonicznych użytkowników w celu omówienia szczegółów"
+    },
+    "5": {
+      "title": "Potwierdzenie lub odrzucenie oferty",
+      "text": "Ostatnim krokiem jest potwierdzenie lub odrzucenie oferty w aplikacji. Jeśli oferta zostanie odrzucona, ogłoszenia wracają do puli."
+    }
   }
 }

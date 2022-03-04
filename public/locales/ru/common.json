@@ -1,150 +1,150 @@
 {
-  "test": "",
+  "test": "Сообщение тест РУ",
   "navigationDrawer": {
-    "profile": "",
-    "placesList": "",
-    "logout": ""
+    "profile": "Профиль пользователя",
+    "placesList": "Твой список квартир",
+    "logout": "Выйти"
   },
   "labels": {
-    "location": "",
-    "numberOfGuests": "",
-    "timePeriod": "",
-    "withKids": "",
-    "name": "",
-    "email": "",
-    "phone": "",
-    "town": ""
+    "location": "Местонахождение",
+    "numberOfGuests": "Количество гостей",
+    "timePeriod": "Срок пребывания",
+    "withKids": "Я с ребёнком/детьми",
+    "name": "Имя",
+    "email": "Электронная почта",
+    "phone": "Номер телефона",
+    "town": "Город"
   },
   "validations": {
-    "requiredName": "",
-    "invalidEmail": "",
-    "invalidPhoneNumber": "",
-    "requiredTown": "",
-    "requiredTime": "",
-    "requiredPeopleQuantity": "",
-    "requiredLivingConditions": "",
-    "requiredFloor": ""
+    "requiredName": "Подайте своё имя",
+    "invalidEmail": "Подайте правильный адрес электронной почты",
+    "invalidPhoneNumber": "Подайте правильный номер телефона",
+    "requiredTown": "Подайте город",
+    "requiredTime": "Подайте срок",
+    "requiredPeopleQuantity": "Подайте количество людей которых можете принять у себя",
+    "requiredLivingConditions": "Подайте жилищние условия",
+    "requiredFloor": "Подайте этаж"
   },
   "staticValues": {
     "timePeriod": {
-      "week": "",
-      "twoWeeks": "",
-      "month": "",
-      "longer": ""
+      "week": "Одна неделя",
+      "twoWeeks": "Две недели",
+      "month": "Месяц",
+      "longer": "Больше месяца"
     },
     "boolean": {
-      "yes": "",
-      "no": ""
+      "yes": "да",
+      "no": "нет"
     },
-    "anyLocation": "",
-    "withElevator": ""
+    "anyLocation": "Любая",
+    "withElevator": "Есть лифт"
   },
   "accommodationOffer": {
-    "canAccommodate": "",
-    "duration": "",
-    "acceptAnimals": "",
-    "disabledSupport": "",
-    "includesFood": "",
+    "canAccommodate": "место для <1>{{count}} человек</1>",
+    "duration": "макс. <1> {{time}} </1>",
+    "acceptAnimals": "Животные приветствуются",
+    "disabledSupport": "Услуги для людей с ограниченными возможностями",
+    "includesFood": "Питание",
     "author": {
-      "owner": ""
+      "owner": "Хозяин"
     }
   },
   "guestOffer": {
-    "arrivalToPoland": "",
-    "peopleToAccommodate": "",
-    "preferredLocation": "",
-    "withAnimals": "",
-    "withKids": "",
-    "withDisabled": "",
-    "withElder": "",
-    "invite": ""
+    "arrivalToPoland": "Дата прибытия",
+    "peopleToAccommodate": "+ {{count}} человек",
+    "preferredLocation": "Предпочтительная локализация: <1>{{location}}</1>",
+    "withAnimals": "С нами домашнее животное: <1>{{animals}}</1>",
+    "withKids": "С нами ребёнок: <1>{{age}}</1>",
+    "withDisabled": "С нами человек с ограниченными возможностями",
+    "withElder": "С нами пожилой человек",
+    "invite": "Пригласить гостя"
   },
   "addAccommodation": {
     "hostPreferences": {
-      "label": "",
-      "acceptAnimals": "",
-      "disabledSupport": "",
-      "kidsUnder2": "",
-      "foodIncluded": ""
+      "label": "Определите свои предпочтения - кому вы можете помочь",
+      "acceptAnimals": "животные приветствуются",
+      "disabledSupport": "Люди с ограниченными возможностями",
+      "kidsUnder2": "Дети до двух лет",
+      "foodIncluded": "Питание включено"
     },
-    "peopleQuantity": "",
-    "forHowLong": "",
+    "peopleQuantity": "Сколько человек вы можете принять?",
+    "forHowLong": "На какой срок?",
     "livingConditions": {
-      "label": "",
+      "label": "Какие жилищные условия вы можете предоставить?",
       "options": {
-        "flat": "",
-        "room": "",
-        "mattress": "",
-        "other": ""
+        "flat": "У меня свободная квартира",
+        "room": "У меня свободная комната",
+        "mattress": "У меня дополнительный матрас",
+        "other": "Другие"
       }
     },
     "floor": {
-      "label": "",
-      "hint": ""
+      "label": "На каком этаже находится жилье?",
+      "hint": "Пожилые люди могут испытывать трудности с доступом на верхний этаж"
     },
-    "submit": ""
+    "submit": "Подтвердить предложение"
   },
   "flags": {
-    "cz": "",
-    "en": "",
-    "es": "",
-    "fr": "",
-    "hu": "",
-    "it": "",
-    "pl": "",
-    "ro": "",
-    "sk": "",
-    "ua": "",
-    "de": ""
+    "cz": "Флаг Чехии",
+    "en": "Флаг Великобритании",
+    "es": "Флаг Испании",
+    "fr": "Флаг Франции",
+    "hu": "Флаг Венгрии",
+    "it": "Флаг Италии",
+    "pl": "Флаг Польши",
+    "ro": "Флаг Румынии",
+    "sk": "Флаг Словакии",
+    "ua": "Флаг Украины",
+    "de": "Флаг Германии"
   },
-  "logout": "",
-  "backToHomePage": "",
-  "shareLocation": "",
-  "registerGuest": "",
-  "more": "",
-  "register1": "",
-  "register2": "",
-  "privacyPolicy": "",
-  "patrons": "",
-  "rodo": "",
+  "logout": "Выйти",
+  "backToHomePage": "Вернуться к главной странице",
+  "shareLocation": "Зарегистрироваться",
+  "registerGuest": "Найти квартиру",
+  "more": "Больше",
+  "register1": "Зарегистрироваться",
+  "register2": "Регистрация",
+  "privacyPolicy": "Политика конфиденциальности",
+  "patrons": "Меценаты",
+  "rodo": "GDPR",
   "thankfulnessModal": {
-    "thankYou": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": ""
+    "thankYou": "Спасибо!",
+    "applicationSent": "Ваша просьба отправлена. Несколько раз в день мы проверяем нашу базу данных, чтобы вам найти подходящий выбор.",
+    "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
-      "animals": "",
-      "toddler": "",
-      "oldPerson": "",
-      "disability": ""
+      "animals": "Я с животным",
+      "toddler": "ребенок младше 2 лет",
+      "oldPerson": "со мной пожилой человек / я сам пожилой человек",
+      "disability": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями"
     },
     "refugeesCountOptions": {
-      "alone": "",
-      "more": ""
+      "alone": "Я один/одна",
+      "more": "Дополнительно"
     },
     "errors": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "required": "",
-      "location": ""
+      "name": "Подайте своё имя",
+      "email": "Подайте правильный адрес электронной почты",
+      "phoneNumber": "Подайте правильный номер телефона",
+      "required": "Это поле обязательно",
+      "location": "Подайте предпочтительный город"
     },
     "labels": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "refugeesCount": "",
-      "refugee": "",
-      "refugeeDetails": "",
-      "refugeesAnimal": "",
-      "isGDPRAccepted": "",
-      "submitButton": "",
-      "location": "",
-      "anyLocation": "",
-      "prefferedLocation": "",
-      "city": "",
-      "addRefugee": ""
+      "name": "Имя",
+      "email": "Электронная почта",
+      "phoneNumber": "Номер телефона",
+      "refugeesCount": "Для скольких человек вы ищете убежище?",
+      "refugee": "Беженец {{number}}",
+      "refugeeDetails": "Предоставьте дополнительную информацию, чтобы выбрать лучшее место для вас:",
+      "refugeesAnimal": "Порода и имя",
+      "isGDPRAccepted": "Я принимаю политику конфиденциальности",
+      "submitButton": "Получить помощь",
+      "location": "Где вы хотели бы остановиться?",
+      "anyLocation": "Любая локализация",
+      "prefferedLocation": "Предпочтительная локализация",
+      "city": "Город",
+      "addRefugee": "Добавить человека"
     }
   }
 }

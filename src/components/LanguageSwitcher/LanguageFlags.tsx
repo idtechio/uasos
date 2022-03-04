@@ -22,7 +22,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.pl", "PL")}
         />
       );
-    case "ua":
+    case "uk":
       return (
         <Image
           width={SIZE.width}
@@ -85,7 +85,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.es", "ES")}
         />
       );
-    case "cz":
+    case "cs":
       return (
         <Image
           width={SIZE.width}
@@ -110,6 +110,15 @@ export const LanguageFlags = ({ locale }: Props) => {
           height={SIZE.height}
           src="/assets/IT_flag.svg"
           alt={t("flags.it", "IT")}
+        />
+      );
+    case "ru":
+      return (
+        <Image
+          width={SIZE.width}
+          height={SIZE.height}
+          src="/assets/RU_flag.svg"
+          alt={t("flags.ru", "RU")}
         />
       );
     default:
