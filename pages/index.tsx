@@ -11,6 +11,7 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import Footer from "../src/components/Footer";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
+import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -53,8 +54,8 @@ function Landing() {
         </Section>
         {/* TODO: Remove commented sections & translations etc */}
         {/*<WhatWeDoSection />*/}
-        {/*<LikeToHelpSection />*/}
         <HowDoesItWorkSection />
+        <LikeToHelpSection />
         <Footer />
       </StyledScrollView>
     </CompositionAppBody>
