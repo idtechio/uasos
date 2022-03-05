@@ -20,6 +20,7 @@ export const TooltipContainer = styled.View`
   min-width: 200px;
   border-color: rgba(0, 0, 0, 0.05);
   border-width: 1px;
+  z-index: 100 !important;
 `;
 
 export const Tooltip = ({ children }: Props) => {
@@ -28,7 +29,6 @@ export const Tooltip = ({ children }: Props) => {
   return (
     <>
       <View
-        style={{ zIndex: 1000 }}
         // @ts-ignore
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}

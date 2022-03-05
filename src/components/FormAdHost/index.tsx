@@ -27,6 +27,7 @@ import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
   GROUP_RELATIONS,
+  hostCountries,
 } from "./FormAddHost.data";
 import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 import { InputWraper } from "../Forms/InputControl/style";
@@ -37,6 +38,7 @@ const PreviewsWrapper = styled.View`
   margin-top: 10px;
   flex-direction: row;
   align-items: center;
+  z-index: 10;
 `;
 
 const TooltipIcon = styled.View`
@@ -97,7 +99,10 @@ export default function FormAdHost() {
           <InputWraper>
             <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
             <FormDropdown
-              data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
+              data={hostCountries.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               placeholder={t("hostAdd.country")}
               name="advancedHost.country"
               rules={{
@@ -106,6 +111,8 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.country}
               errorMsg={t("hostAdd.errors.country")}
             />
+          </InputWraper>
+          <InputWraper>
             <InputControlLabel>
               {t("hostAdd.town")}
               <View style={{ marginHorizontal: 10 }}>
@@ -125,7 +132,6 @@ export default function FormAdHost() {
             />
           </InputWraper>
         </CompositionSection>
-        {/* TODO: Image Picker usage here */}
         <CompositionSection
           padding={[35, 30, 8, 30]}
           backgroundColor="#F5F4F4"
@@ -154,7 +160,6 @@ export default function FormAdHost() {
             {shouldIncludeHostTypeField && (
               <>
                 <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
-                {/* TODO: ADD validation */}
                 <FormDropdown
                   data={(Object.keys(HostType) as Array<keyof HostType>).map(
                     (key) => ({
