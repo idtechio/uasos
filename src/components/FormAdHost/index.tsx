@@ -30,7 +30,6 @@ import {
   hostCountries,
 } from "./FormAddHost.data";
 import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
-import { InputWraper } from "../Forms/InputControl/style";
 
 const MAX_PHOTOS_COUNT = 3;
 
@@ -39,6 +38,14 @@ const PreviewsWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   z-index: 10;
+  margin-bottom: 26px;
+`;
+
+export const SectionContent = styled.View`
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const TooltipIcon = styled.View`
@@ -96,7 +103,7 @@ export default function FormAdHost() {
           header={t("hostAdd.basicInfoHeader")}
           zIndex={3}
         >
-          <InputWraper>
+          <SectionContent>
             <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
             <FormDropdown
               data={hostCountries.map(({ label, ...rest }) => ({
@@ -111,8 +118,6 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.country}
               errorMsg={t("hostAdd.errors.country")}
             />
-          </InputWraper>
-          <InputWraper>
             <InputControlLabel>
               {t("hostAdd.town")}
               <View style={{ marginHorizontal: 10 }}>
@@ -130,14 +135,14 @@ export default function FormAdHost() {
               errorMsg={t("validations.requiredTown")}
               label={t("hostAdd.town")}
             />
-          </InputWraper>
+          </SectionContent>
         </CompositionSection>
         <CompositionSection
           padding={[35, 30, 8, 30]}
           backgroundColor="#F5F4F4"
           zIndex={2}
         >
-          <InputWraper>
+          <SectionContent>
             <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
             {/* TODO: use Dropdown here */}
             <FormDropdown
@@ -180,9 +185,6 @@ export default function FormAdHost() {
                 />
               </>
             )}
-          </InputWraper>
-
-          <InputWraper>
             <InputControlLabel>
               {t("hostAdd.accomodationPhoto")}
             </InputControlLabel>
@@ -233,8 +235,6 @@ export default function FormAdHost() {
                 );
               }}
             />
-          </InputWraper>
-          <InputWraper>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
             <FormNumericInput
               name="advancedHost.guestCount"
@@ -266,14 +266,14 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.accommodationTime}
               errorMsg={t("hostAdd.errors.accommodationTime")}
             />
-          </InputWraper>
+          </SectionContent>
         </CompositionSection>
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
           zIndex={1}
         >
-          <InputWraper>
+          <SectionContent>
             <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
             <FormRadioGroup<string | string>
               name="advancedHost.nationality"
@@ -309,7 +309,7 @@ export default function FormAdHost() {
                 ...rest,
               }))}
             />
-          </InputWraper>
+          </SectionContent>
         </CompositionSection>
 
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">

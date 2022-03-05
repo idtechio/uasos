@@ -11,7 +11,6 @@ export const TooltipContainer = styled.View`
   position: absolute;
   bottom: 15;
   left: 15;
-  zindex: 20;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
