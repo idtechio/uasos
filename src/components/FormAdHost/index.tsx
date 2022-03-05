@@ -31,7 +31,7 @@ import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
-import FormCheckbox from "../Inputs/FormCheckbox";
+// import FormCheckbox from "../Inputs/FormCheckbox";
 import Footer from "../Footer";
 
 const DUMMY_DROPDOWN_ITEMS = [
@@ -339,7 +339,7 @@ export default function FormAdHost() {
           <FormButtonsVertical data={additionalHostsFeats} />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
-          <FormCheckbox
+          {/* <FormCheckbox
             rules={{
               required: true, // TODO Make sure it's required
             }}
@@ -347,7 +347,7 @@ export default function FormAdHost() {
             errorMsg={t("hostAdd.errors.required")}
             name={t("hostAdd.volunteerVisitAcceptance")}
             label={t("hostAdd.volunteerVisitAcceptance")}
-          />
+          /> */}
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <InputControl>
