@@ -7,20 +7,24 @@ import { CompositionSection } from "../Compositions";
 import { FormHeader } from "../../../pages/signin";
 import { FormType } from "../../helpers/FormTypes";
 import { useTranslation } from "next-i18next";
-// import styled from "styled-components";
-import styled from "styled-components/native";
 import ButtonSM from "../Buttons/ButtonSM";
 import { Text, View } from "react-native";
 
 const LoginForm = ({ providers, csrfToken }) => {
+  const { t } = useTranslation();
   const formFields = useForm<FormType>();
   const {
     handleSubmit,
     formState: { errors },
   } = formFields;
 
-  const { t } = useTranslation();
-  console.log("providers", providers);
+  const onSubmit = (data) => {
+    console.log("form submit:", data);
+  };
+  const onError = (error) => {
+    console.log("form error:", error);
+  };
+
   return (
     <CompositionSection padding={[35, 30, 8, 30]}>
       <FormHeader>{t("loginForm.logInWith")}</FormHeader>
@@ -28,9 +32,9 @@ const LoginForm = ({ providers, csrfToken }) => {
         <div key={provider.name}>
           <div key={provider.name}>
             <ButtonSM
+              id={provider.id}
               onPress={() => signIn(provider.id)}
               anchor={`${t("loginForm.logInWith")} ${provider.name}`}
-              colorOposite={true}
             />
           </div>
         </div>
@@ -38,27 +42,30 @@ const LoginForm = ({ providers, csrfToken }) => {
       <Text> ---- lub -----</Text>
       <FormProvider {...formFields}>
         <FormTextInput
-          name={"host.core.email"}
+          name={"login.email"}
           label={t("labels.email")}
           rules={{
             required: true,
             maxLength: 50,
           }}
-          error={errors?.host?.core?.name}
+          error={errors?.login?.email}
           errorMsg={t("validations.requiredName")}
         />
         <FormTextInput
-          name={"host.core.email"}
-          label={t("labels.email")}
+          name={"login.password"}
+          label={t("labels.password")}
           rules={{
             required: true,
             maxLength: 50,
           }}
-          error={errors?.host?.core?.name}
+          error={errors?.login?.password}
           errorMsg={t("validations.requiredName")}
         />
 
-        <ButtonCta anchor={t("loginForm.logIn")} />
+        <ButtonCta
+          anchor={t("loginForm.logIn")}
+          onPress={handleSubmit(onSubmit, onError)}
+        />
       </FormProvider>
       <View>
         <Text>{t("loginForm.doNotHaveAcc")}</Text>

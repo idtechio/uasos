@@ -127,6 +127,7 @@
     "labels": {
       "name": "Imię",
       "email": "Email",
+      "password": "Hasło",
       "phoneNumber": "Numer telefonu",
       "refugeesCount": "Dla ilu osób szukasz schronienia",
       "refugee": "Uchodźca {{number}}",

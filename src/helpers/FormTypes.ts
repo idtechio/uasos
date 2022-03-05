@@ -57,6 +57,10 @@ export type FormType = {
     };
     isGDPRAccepted: boolean;
   };
+  login: {
+    email: string;
+    password: string;
+  };
 };
 
 type PathsToStringProps<T> = T extends string | number | Date | boolean
