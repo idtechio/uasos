@@ -106,7 +106,7 @@ export default function FormAdHost() {
       transportReady, // present in form but not used
     } = advancedHost;
     addHostToApi({
-      name: "TODO", // don't have this data... maybe from session?
+      name: "",
       country: country,
       phone_num: "TODO",
       email: "TODO",
@@ -119,7 +119,7 @@ export default function FormAdHost() {
       pietro: 0, // No such field in Form...
       listing_country: country,
       shelter_type: accommodationType,
-      beds: "TODO", // No such field in Form...
+      beds: 999, // No such field in Form...
       acceptable_group_relations: "TODO",
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
