@@ -1,5 +1,7 @@
 import * as React from "react";
 import { ScrollView, Image } from "react-native";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Card from "../src/components/Card";
 import Header from "../src/components/Header";
 import Section from "../src/components/Section";
@@ -90,7 +92,7 @@ const YellowDotContainer = styled.View`
   position: absolute;
   right: 0;
   top: 0;
-  backgroundcolor: transparent;
+  background-color: transparent;
   overflow: hidden;
 `;
 
@@ -116,7 +118,7 @@ const BlueDotContainer = styled.View`
         position: absolute;
         right: 0;
         bottom: 0;
-        backgroundcolor: transparent;
+        background-color: transparent;
         overflow: hidden;
       `,
     })}
@@ -151,7 +153,6 @@ const PartnersContainer = styled.View`
 
 const Item = styled(Card)`
   position: relative;
-  height: 100%;
   height: 70px;
 
   ${({ theme }) =>
@@ -163,6 +164,8 @@ const Item = styled(Card)`
 `;
 
 const PartnersPage = () => {
+  const { t } = useTranslation("landingPage");
+
   return (
     <ScrollView contentContainerStyle={{ flex: 1 }}>
       <Header />
@@ -179,7 +182,7 @@ const PartnersPage = () => {
       </YellowDotContainer>
 
       <Section>
-        <SectionTitle title="Partnerzy wspierający akcję" />
+        <SectionTitle title={t("supportingPartners")} />
 
         <PartnersContainer>
           {PARTNERS.map((partner) => (
@@ -205,5 +208,13 @@ const PartnersPage = () => {
     </ScrollView>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale)),
+    },
+  };
+}
 
 export default PartnersPage;
