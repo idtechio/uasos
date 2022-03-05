@@ -13,6 +13,8 @@ import LandingMatchedSection from "../src/components/LandingMatchedSection/Landi
 import SectionTitle from "../src/components/SectionTitle";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 import { css } from "styled-components";
+import { CompositionAppBody } from "../src/components/Compositions";
+import Footer from "../src/components/Footer";
 
 const HeroImageWrapper = styled.View`
   flex-direction: column;
@@ -42,26 +44,32 @@ const ElipseEffect = styled.View`
   border-top-left-radius: 50%;
 `;
 
+const StyledScrollView = styled.ScrollView`
+  flex: 1;
+  width: 100%;
+`;
+
 function Landing() {
   const { t } = useTranslation("landingPage");
 
   return (
-    <ScrollView>
-      <Header />
-      <HeroImageWrapper>
-        <HeroImage />
-        <ElipseEffect />
-      </HeroImageWrapper>
-      <Section bgColor="#fff">
-        <SectionTitle title={t("supportingPartners")} />
-        <PartnersCarouselWrapper>
-          <PartnersCarousel />
-        </PartnersCarouselWrapper>
-      </Section>
-      <WhatWeDoSection />
-      <LikeToHelpSection />
-      <LandingFooter />
-    </ScrollView>
+    <CompositionAppBody>
+      <StyledScrollView>
+        <HeroImageWrapper>
+          <HeroImage />
+          <ElipseEffect />
+        </HeroImageWrapper>
+        <Section bgColor="#fff">
+          <SectionTitle title={t("supportingPartners")} />
+          <PartnersCarouselWrapper>
+            <PartnersCarousel />
+          </PartnersCarouselWrapper>
+        </Section>
+        <WhatWeDoSection />
+        <LikeToHelpSection />
+        <Footer />
+      </StyledScrollView>
+    </CompositionAppBody>
   );
 }
 

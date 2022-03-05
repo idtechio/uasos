@@ -6,8 +6,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Header from "../src/components/Header";
 import LoginForm from "../src/components/FormLogin";
-import AppFooter from "../src/components/AppFooter";
 import AppBack from "../src/components/AppBack";
+import Footer from "../src/components/Footer";
 
 const SignIn = ({ providers, csrfToken }) => {
   const styles = StyleSheet.create({
@@ -26,7 +26,7 @@ const SignIn = ({ providers, csrfToken }) => {
       <Header />
       <AppBack to={"/"} />
       <LoginForm providers={providers} csrfToken={csrfToken} />
-      <AppFooter />
+      <Footer />
     </ScrollView>
   );
 };

@@ -135,6 +135,9 @@
     },
     "guestCount": "Ile osób możesz przyjąć?",
     "accommodationTime": "Na jaki okres możesz udzielić schronienia?",
+    "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
+    "accomodationPhotoLabel": "Dodaj zdjęcie",
+    "accomodationPhotoReset": "Usuń",
     "accommodationTimeLabel": {
       "less_than_week": "Poniej tygodnia",
       "week": "Tydzień",
@@ -165,7 +168,8 @@
       "guestCount": "",
       "accommodationTime": "Okres trwania pobytu jest wymagany",
       "nationality": "",
-      "groupsTypes": ""
+      "groupsTypes": "",
+      "nationalityError": "Narodowość uchodźców jest wymagana"
     },
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
     "transportReady": "Oferuję możliwość transportu"
@@ -179,7 +183,7 @@
   "register2": "Rejestracja",
   "privacyPolicy": "Polityka prywatności",
   "termsOfService": "Regulamin",
-  "patrons": "Patroni",
+  "patrons": "Partnerzy",
   "rodo": "RODO",
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",

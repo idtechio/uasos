@@ -12,7 +12,8 @@ export const base = {
 export const primary = {
   ...base,
   colors: {
-    accent: "red",
+    primary: "#FFD700",
+    accent: "#0057B8",
     textOnAccent: "#FFFFFF",
     headings: "#003566",
     text: "#003566",

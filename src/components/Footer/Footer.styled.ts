@@ -1,25 +1,18 @@
 import styled from "styled-components/native";
 import styledWeb, { css } from "styled-components";
 
-import { mediaQuery } from "../../style/breakpoints";
-
 export const FooterWrapper = styled.View`
   align-self: stretch;
+  background-color: ${({ theme }) => theme.colors.accent};
+  padding: 23px;
+  display: flex;
 
   ${({ theme }) =>
     theme.getBreakPoint({
       lg: css`
-        display: flex;
-        flex-direction: row-reverse
-        justify-content: space-between;
+        flex-direction: row;
       `,
     })}
-`;
-
-export const CreatedByWrapper = styled.View`
-  padding-vertical: 5;
-  border-radius: 5;
-  background-color: #fff;
 `;
 
 export const FooterContentWrapper = styled.View`
@@ -32,31 +25,42 @@ export const FooterContentWrapper = styled.View`
     })}
 `;
 
-export const FooterContentRow = styled.View`
-  margin-top: 8px;
-  flex-direction: row;
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        width: auto;
-        min-width: auto;
-      `,
-    })}
-`;
-
-export const FooteItem = styled.View`
-  padding-horizontal: 15;
-`;
-
-export const FooterLink = styledWeb.a`
+export const FooterLink = styledWeb.a<{ active?: boolean }>`
   color: white;
   flex: 1;
   font-size: 12px;
   line-height: 24px;
-  text-decoration-line: underline;
-  ${mediaQuery.lg} {
-    white-space: nowrap;
-    margin-right: 30px;
-    font-size: 16px;
-  }
+  text-decoration-line: ${({ active }) => (active ? "none" : "underline")};
+  color: ${({ active, theme }) => (active ? theme.colors.primary : "white")};
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        white-space: nowrap;
+        margin-right: 15px;
+        margin-left: 15px;
+        font-size: 16px;
+        white-space: nowrap;
+      `,
+    })}
+`;
+
+export const FooterHeaderWrapper = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const HorizontalLine = styled.View`
+  margin: 10px 0;
+  border: 0 solid #fff;
+  border-bottom-width: 2px;
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        margin: 0 10px;
+        border-left-width: 2px;
+      `,
+    })}
 `;
