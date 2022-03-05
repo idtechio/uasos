@@ -9,7 +9,11 @@ const ButtonCta = ({
 }: ButtonProps) => {
   return (
     <Button style={style} onPress={onPress} colorOposite={colorOposite}>
-      <Text colorOposite={colorOposite}>{anchor}</Text>
+      {typeof anchor === "string" ? (
+        <Text colorOposite={colorOposite}>{anchor}</Text>
+      ) : (
+        anchor
+      )}
     </Button>
   );
 };

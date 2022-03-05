@@ -10,7 +10,8 @@
   },
   "likeToHelp": {
     "title": "Chcesz pomóc?",
-    "details": "Jeśli dysponujesz miejscem, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie, zarejestruj się jako wolontariusz i wypełnij kwestionariusz opisujący miejsce, które chcesz udostępnić. \\n \\n Nasza aplikacja pomoże Ci automatycznie znaleźć potrzebujących Twojej pomocy."
+    "details": "Zgłoś lokal, pokój lub miejsce które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie.",
+    "cta": "Zgłoś lokal"
   },
   "weMatched": {
     "title": "Udało nam się dopasować już...",
