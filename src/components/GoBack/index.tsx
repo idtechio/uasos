@@ -2,6 +2,7 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import { Pressable } from "react-native";
 import styled from "styled-components/native";
+import { useTranslation } from "next-i18next";
 
 const Container = styled.View`
   display: flex;
@@ -11,7 +12,7 @@ const Container = styled.View`
 const GoBackIcon = styled.Image`
   width: 8px;
   height: 14px;
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 const Text = styled.Text`
@@ -22,13 +23,13 @@ const Text = styled.Text`
 
 const GoBack = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   return (
     <Pressable onPress={router.back}>
       <Container>
         <GoBackIcon source="/goBack.svg" />
-
-        <Text>Wstecz</Text>
+        <Text>{t("back")}</Text>
       </Container>
     </Pressable>
   );
