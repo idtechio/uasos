@@ -13,7 +13,6 @@ type Props = {
   error?: FieldError;
   multiSelect?: boolean;
   errorMsg?: string;
-  onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput: VFC<Props> = (props) => {
@@ -26,7 +25,6 @@ const FormTextInput: VFC<Props> = (props) => {
     zIndex,
     placeholder,
     multiSelect,
-    onChange,
   } = props;
   const { control } = useFormContext();
   return (
@@ -44,7 +42,6 @@ const FormTextInput: VFC<Props> = (props) => {
           label={label}
           errorMsg={errorMsg}
           multiSelect={multiSelect}
-          onChange={onChange}
         />
       )}
       name={name}
