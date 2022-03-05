@@ -25,7 +25,7 @@ export interface GuestProps {
   is_with_animal: Boolean;
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
-  duration_category: s;
+  duration_category: string;
 }
 
 export default async function addGuest(req, res) {
