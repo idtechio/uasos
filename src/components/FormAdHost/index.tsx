@@ -17,6 +17,7 @@ import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import UploadInput from "../Forms/UploadInput/index.web";
 import UploadPreview from "../Forms/UploadPreview";
+import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -142,6 +143,56 @@ export default function FormAdHost() {
       >
         <CompositionSection
           padding={[35, 30, 8, 30]}
+          zIndex={6}
+          header={t("refugeeAddForm.basicInfoHeader")}
+        >
+          <SectionContent>
+            <InputControlLabel>
+              {t("refugeeAddForm.nameLabel")}
+            </InputControlLabel>
+            <FormTextInput
+              name="advancedRefugee.name"
+              label={t("refugeeAddForm.namePlaceholder")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedRefugee?.name}
+              errorMsg={t("refugeeAddForm.errors.name")}
+            />
+            <InputControlLabel>
+              {t("refugeeAddForm.emailLabel")}
+            </InputControlLabel>
+            <FormTextInput
+              name="advancedRefugee.email"
+              label={t("refugeeAddForm.emailPlaceholder")}
+              rules={{
+                required: true,
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: t("validations.invalidEmail"),
+                },
+              }}
+              error={errors?.advancedRefugee?.email}
+              errorMsg={t("refugeeAddForm.errors.email")}
+            />
+            <InputControlLabel>{t("Numer telefonu")}</InputControlLabel>
+            <FormTextInput
+              name="advancedRefugee.phoneNumber"
+              label={t("refugeeForm.labels.phoneNumber")}
+              rules={{
+                required: true,
+                pattern: {
+                  value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+                  message: t("refugeeForm.errors.phoneNumber"),
+                },
+              }}
+              error={errors?.advancedRefugee?.phoneNumber}
+              errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            />
+          </SectionContent>
+        </CompositionSection>
+        <CompositionSection
+          padding={[35, 30, 8, 30]}
           header={t("hostAdd.basicInfoHeader")}
           zIndex={3}
         >
@@ -227,56 +278,6 @@ export default function FormAdHost() {
                 />
               </>
             )}
-            <InputControlLabel>
-              {t("hostAdd.accomodationPhoto")}
-            </InputControlLabel>
-            <Controller
-              control={control}
-              rules={{
-                required: false,
-              }}
-              name="advancedHost.accomodationPhotos"
-              render={({ field: { onChange, onBlur, value } }) => {
-                return (
-                  <PreviewsWrapper>
-                    <UploadInput
-                      disabled={value?.length >= MAX_PHOTOS_COUNT}
-                      accept="image/*"
-                      onFileChange={(file, dataUri) => {
-                        onChange(value ? [...value, file] : [file]);
-                        setUploadPreviews(
-                          uploadPreviews
-                            ? [...uploadPreviews, dataUri]
-                            : [dataUri]
-                        );
-                        onBlur();
-                      }}
-                    >
-                      {t("hostAdd.accomodationPhotoLabel")}
-                    </UploadInput>
-
-                    {!!value &&
-                      value.map((photo, index) => {
-                        if (!uploadPreviews || !uploadPreviews[index]) {
-                          return null;
-                        }
-                        return (
-                          <UploadPreview
-                            key={`uploadPreview-${index}`}
-                            onDelete={() => {
-                              onChange(value.filter((_, idx) => idx !== index));
-                              setUploadPreviews(
-                                uploadPreviews.filter((_, idx) => idx !== index)
-                              );
-                            }}
-                            preview={uploadPreviews[index]}
-                          />
-                        );
-                      })}
-                  </PreviewsWrapper>
-                );
-              }}
-            />
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
             <FormNumericInput
               name="advancedHost.guestCount"

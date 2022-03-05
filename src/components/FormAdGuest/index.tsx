@@ -214,8 +214,6 @@ export default function FormAdGuest() {
               error={errors?.advancedRefugee?.name}
               errorMsg={t("refugeeAddForm.errors.name")}
             />
-          </InputControl>
-          <InputControl>
             <InputCotrolLabel>
               {t("refugeeAddForm.emailLabel")}
             </InputCotrolLabel>
@@ -231,21 +229,6 @@ export default function FormAdGuest() {
               }}
               error={errors?.advancedRefugee?.email}
               errorMsg={t("refugeeAddForm.errors.email")}
-            />
-          </InputControl>
-          <InputControl>
-            <FormTextInput
-              name="advancedRefugee.phoneNumber"
-              label={t("refugeeForm.labels.phoneNumber")}
-              rules={{
-                required: true,
-                pattern: {
-                  value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                  message: t("refugeeForm.errors.phoneNumber"),
-                },
-              }}
-              error={errors?.advancedRefugee?.phoneNumber}
-              errorMsg={t("refugeeAddForm.errors.phoneNumber")}
             />
           </InputControl>
         </CompositionSection>
