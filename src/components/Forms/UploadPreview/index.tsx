@@ -10,7 +10,6 @@ const DeletePhotoText = styled.Text`
 `;
 const PreviewWrapper = styled.View`
   align-items: center;
-  // padding: 12px 20px;
   width: 100px;
   max-height: 100px;
   overflow: hidden;
@@ -18,8 +17,8 @@ const PreviewWrapper = styled.View`
   border-radius: 10px;
   flex-direction: column;
   background: #fff;
-  margin-horizontal: 10px;
-  // max-width: 100px;
+  margin-top: 5px;
+  margin-horizontal: 5px;
 `;
 
 const UploadPreview = ({ preview, onDelete }) => {
@@ -31,8 +30,8 @@ const UploadPreview = ({ preview, onDelete }) => {
         src={preview}
         alt=""
         style={{
-          maxWidth: 100,
-          maxHeight: 80,
+          width: 100,
+          height: 80,
           borderRadius: 8,
           overflow: "hidden",
         }}

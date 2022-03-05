@@ -11,11 +11,13 @@ type Props = {
   label: string;
   error?: FieldError;
   errorMsg?: string;
+  value?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput: VFC<Props> = (props) => {
-  const { name, label, errorMsg, rules, error } = props;
+const FormCheckbox: VFC<Props> = (props) => {
+  const { name, label, errorMsg, rules, error, value } = props;
   const { control } = useFormContext();
+  console.log("value", value);
   return (
     <InputControl>
       <CenteredView>
@@ -23,7 +25,12 @@ const FormTextInput: VFC<Props> = (props) => {
           control={control}
           rules={rules}
           render={({ field: { onChange } }) => (
-            <CheckboxField error={!!error} text={label} onChange={onChange} />
+            <CheckboxField
+              error={!!error}
+              text={label}
+              onChange={onChange}
+              value={value}
+            />
           )}
           name={name}
         />
@@ -32,4 +39,4 @@ const FormTextInput: VFC<Props> = (props) => {
     </InputControl>
   );
 };
-export default FormTextInput;
+export default FormCheckbox;

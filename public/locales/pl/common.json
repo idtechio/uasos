@@ -168,7 +168,8 @@
       "guestCount": "",
       "accommodationTime": "Okres trwania pobytu jest wymagany",
       "nationality": "",
-      "groupsTypes": ""
+      "groupsTypes": "",
+      "nationalityError": "Narodowość uchodźców jest wymagana"
     },
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
     "transportReady": "Oferuję możliwość transportu"

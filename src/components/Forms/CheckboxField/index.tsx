@@ -6,16 +6,30 @@ import { CheckboxFieldProps } from "./type";
 import { InputCotrolLabel } from "../";
 import { Label } from "./style";
 
-const CheckboxField = ({ text, onChange, error }: CheckboxFieldProps) => {
+const CheckboxField = ({
+  text,
+  onChange,
+  error,
+  value,
+}: CheckboxFieldProps) => {
+  console.log("value @ CheckboxField", value);
   return (
     <InputCotrolLabel>
       {Platform.OS === "web" ? (
-        <input type="checkbox" onChange={onChange} />
+        <>
+          <input
+            type="checkbox"
+            onChange={onChange}
+            checked={value}
+            id={`checkboxField-${text}`}
+          />
+          <label htmlFor={`checkboxField-${text}`}>{text}</label>
+        </>
       ) : (
         <CheckBox onValueChange={onChange} />
       )}
 
-      <Label error={error}>{text}</Label>
+      {Platform.OS !== "web" && <Label error={error}>{text}</Label>}
     </InputCotrolLabel>
   );
 };

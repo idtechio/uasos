@@ -1,13 +1,7 @@
 import React, { ReactNode, useState, useMemo } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
 import {
   AccommodationType,
@@ -123,6 +117,7 @@ export default function FormAdHost() {
       advancedHost: {
         guestCount: 0,
         country: "poland",
+        volunteerVisitAcceptance: "true",
       },
     },
   });
@@ -135,6 +130,12 @@ export default function FormAdHost() {
   const watchAccomodationTypeFieldValue = form.watch(
     "advancedHost.accommodationType"
   );
+
+  const volunteerVisitAcceptance = form.watch(
+    "advancedHost.volunteerVisitAcceptance"
+  ) as unknown as boolean;
+
+  console.log("volunteerVisitAcceptance", volunteerVisitAcceptance);
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -226,7 +227,7 @@ export default function FormAdHost() {
                 name="advancedHost.hostType"
                 placeholder={t("forms.chooseFromList")}
                 rules={{
-                  required: true,
+                  required: shouldIncludeHostTypeField,
                 }}
                 error={errors?.advancedHost?.hostType}
                 errorMsg={t("hostAdd.errors.hostType")}
@@ -336,7 +337,7 @@ export default function FormAdHost() {
               { label: t("hostAdd.ukraine"), value: "ukraine" },
               { label: t("hostAdd.any"), value: "any" },
             ]}
-            errorMsg={t("validations.nationalityError")}
+            errorMsg={t("hostAdd.errors.nationalityError")}
           />
           <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
           <FormDropdown
@@ -356,11 +357,10 @@ export default function FormAdHost() {
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <FormCheckbox
             rules={{
-              required: true, // TODO Make sure it's required
+              required: false,
             }}
-            error={errors?.refugee?.isGDPRAccepted}
-            errorMsg={t("hostAdd.errors.required")}
-            name={t("hostAdd.volunteerVisitAcceptance")}
+            value={volunteerVisitAcceptance}
+            name="advancedHost.volunteerVisitAcceptance"
             label={t("hostAdd.volunteerVisitAcceptance")}
           />
         </CompositionSection>

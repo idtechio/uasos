@@ -22,6 +22,8 @@ const UploadButton = styled.TouchableOpacity`
   width: 100px;
   height: 100px;
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
+  margin-top: 5px;
+  margin-horizontal: 5px;
 `;
 
 const ButtonLabelText = styled.Text`
