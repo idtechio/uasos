@@ -46,6 +46,6 @@ export function useBreakPointGetter() {
           return params.default ?? null;
       }
     },
-    [parsedWidth]
+    [width, parsedWidth]
   );
 }
