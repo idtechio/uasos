@@ -11,11 +11,6 @@ import {
 } from "../../helpers/FormTypes";
 import { primary } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
-import AnimalsIcon from "../../style/svgs/animals.svg";
-import DisabilityIcon from "../../style/svgs/disability.svg";
-import PregnancyIcon from "../../style/svgs/pregnancy.svg";
-import CarIcon from "../../style/svgs/car.svg";
-import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
 
 import { CompositionSection } from "../Compositions";
 import { Tooltip } from "../Tooltip";
@@ -28,6 +23,11 @@ import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import Footer from "../Footer";
+import {
+  accomodationTypeDropdownFields,
+  additionalHostsFeats,
+  GROUP_RELATIONS,
+} from "./FormAddHost.data";
 
 const MAX_PHOTOS_COUNT = 3;
 const DUMMY_DROPDOWN_ITEMS = [
@@ -54,64 +54,6 @@ const TooltipIcon = styled.View`
 export default function FormAdHost() {
   const { t } = useTranslation();
 
-  const additionalHostsFeats: Data[] = useMemo(
-    () => [
-      {
-        id: "advancedHost.transportReady",
-        label: t("hostAdd.transportReady"),
-        icon: <CarIcon width="30" height="30" />,
-      },
-      {
-        id: "advancedHost.pregnantReady",
-        label: t("hostAdd.pregnantReady"),
-        icon: <PregnancyIcon width="30" height="30" />,
-      },
-      {
-        id: "advancedHost.elderReady",
-        label: t("hostAdd.elderReady"),
-        icon: <ElderSittingIcon width="30" height="30" />,
-      },
-      {
-        id: "advancedHost.dissabilityReady",
-        label: t("hostAdd.dissabilityReady"),
-        icon: <DisabilityIcon width="30" height="30" />,
-      },
-      {
-        id: "advancedHost.animalReady",
-        label: t("hostAdd.animalReady"),
-        icon: <AnimalsIcon width="30" height="30" />,
-      },
-    ],
-    [t]
-  );
-
-  // todo: make sure values are consistent with API
-  const accomodationTypeDropdownFields = useMemo(
-    () => [
-      {
-        label: t("advancedHost.accommodationTypeOptions.bed"),
-        value: AccommodationType.BED,
-      },
-      {
-        label: t("advancedHost.accommodationTypeOptions.room"),
-        value: AccommodationType.ROOM,
-      },
-      {
-        label: t("advancedHost.accommodationTypeOptions.flat"),
-        value: AccommodationType.FLAT,
-      },
-      {
-        label: t("advancedHost.accommodationTypeOptions.house"),
-        value: AccommodationType.HOUSE,
-      },
-      {
-        label: t("advancedHost.accommodationTypeOptions.collective"),
-        value: AccommodationType.COLLECTIVE,
-      },
-    ],
-    [t]
-  );
-
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
@@ -134,8 +76,6 @@ export default function FormAdHost() {
   const volunteerVisitAcceptance = form.watch(
     "advancedHost.volunteerVisitAcceptance"
   ) as unknown as boolean;
-
-  console.log("volunteerVisitAcceptance", volunteerVisitAcceptance);
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -203,7 +143,10 @@ export default function FormAdHost() {
           {/* TODO: use Dropdown here */}
           <FormDropdown
             zIndex={12}
-            data={accomodationTypeDropdownFields}
+            data={accomodationTypeDropdownFields.map(({ label, ...rest }) => ({
+              label: t(label),
+              ...rest,
+            }))}
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
             rules={{
@@ -340,10 +283,14 @@ export default function FormAdHost() {
             errorMsg={t("hostAdd.errors.nationalityError")}
           />
           <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
+
           <FormDropdown
             multiSelect
             zIndex={11}
-            data={DUMMY_DROPDOWN_ITEMS}
+            data={GROUP_RELATIONS.map(({ label, value }) => ({
+              label: t(label),
+              value,
+            }))}
             name="advancedHost.groupsTypes"
             placeholder={t("forms.chooseFromListMulti")}
             rules={{
@@ -352,7 +299,12 @@ export default function FormAdHost() {
             error={errors?.advancedHost?.groupsTypes}
             errorMsg={t("hostAdd.errors.groupsTypes")}
           />
-          <FormButtonsVertical data={additionalHostsFeats} />
+          <FormButtonsVertical
+            data={additionalHostsFeats.map(({ label, ...rest }) => ({
+              label: t(label),
+              ...rest,
+            }))}
+          />
         </CompositionSection>
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <FormCheckbox
