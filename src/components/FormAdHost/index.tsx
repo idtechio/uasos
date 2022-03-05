@@ -30,6 +30,8 @@ import {
   hostCountries,
 } from "./FormAddHost.data";
 import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
+import addHostToApi from "../../helpers/addHostToApi";
+import { Boolean } from "../FormAdGuest";
 
 const MAX_PHOTOS_COUNT = 3;
 
@@ -86,9 +88,49 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = (data) => {
-    console.log("Handle submit", data);
+  const onSubmit = ({ advancedHost }) => {
+    const {
+      accommodationTime,
+      accommodationType,
+      accomodationPhoto, // present in form but not used
+      animalReady,
+      country,
+      dissabilityReady,
+      elderReady,
+      groupsTypes, // present in form but not used
+      guestCount,
+      hostType, // present in form but not used
+      nationality,
+      pregnantReady,
+      town,
+      transportReady, // present in form but not used
+    } = advancedHost;
+    addHostToApi({
+      name: "TODO", // don't have this data... maybe from session?
+      country: country,
+      phone_num: "TODO",
+      email: "TODO",
+      city: town,
+      children_allowed: Boolean.TRUE, // No such field in Form...
+      pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
+      handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
+      num_people: guestCount,
+      period: accommodationTime, // how to map AccomodationTime Enum to number??
+      pietro: 0, // No such field in Form...
+      listing_country: country,
+      shelter_type: accommodationType,
+      beds: "TODO", // No such field in Form...
+      acceptable_group_relations: "TODO",
+      ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_any_nationality:
+        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+      duration_category: "TODO",
+    });
   };
+
   const [uploadPreviews, setUploadPreviews] = useState<string[]>();
 
   return (
@@ -129,7 +171,7 @@ export default function FormAdHost() {
             <FormAutocompleteInput
               name="advancedHost.town"
               rules={{
-                required: true,
+                required: false,
               }}
               error={errors?.advancedHost?.town}
               errorMsg={t("validations.requiredTown")}
