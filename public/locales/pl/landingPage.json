@@ -58,5 +58,15 @@
       "title": "Potwierdzenie lub odrzucenie oferty",
       "text": "Ostatnim krokiem jest potwierdzenie lub odrzucenie oferty w aplikacji. Jeśli oferta zostanie odrzucona, ogłoszenia wracają do puli dostępnych ogłoszeń."
     }
+  },
+  "howDoesItWork": {
+    "title": "Jak to działa?",
+    "points": {
+      "0": "Zgłoś mieszkanie\nlub potrzebę",
+      "1": "Uzupełnij\nniezbędne dane",
+      "2": "Poczekaj\nna najlepszą ofertę",
+      "3": "Skontaktuj się\nz gospodarzem/gościem",
+      "4": "Potwierdź lub\nodrzuć ofertę"
+    }
   }
 }
