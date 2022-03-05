@@ -8,7 +8,7 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../../src/components/Compositions";
-import AddRefugeeAdvancedForm from "../../src/components/AddRefugeeAdvancedForm";
+import FormAdGuest from "../../src/components/FormAdGuest";
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -24,7 +24,7 @@ export default function Account(props) {
       {session ? (
         <CompositionContainer>
           <ContainerWrapper>
-            <AddRefugeeAdvancedForm />
+            <FormAdGuest />
           </ContainerWrapper>
         </CompositionContainer>
       ) : (

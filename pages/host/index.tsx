@@ -1,5 +1,5 @@
 import { CompositionAppBody } from "../../src/components/Compositions";
-import AddAccommodationAdvancedForm from "../../src/components/AddAccommodationAdvancedForm";
+import FormAdHost from "../../src/components/FormAdHost";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export const getServerSideProps = async ({ locale }) => ({
@@ -11,7 +11,7 @@ export const getServerSideProps = async ({ locale }) => ({
 export default function Account() {
   return (
     <CompositionAppBody>
-      <AddAccommodationAdvancedForm />
+      <FormAdHost />
     </CompositionAppBody>
   );
 }
