@@ -30,6 +30,17 @@ const LoginForm = ({ providers, csrfToken }) => {
     console.log("form error:", error);
   };
 
+  const handlePassErrorMsg = (type: string): string => {
+    switch (type) {
+      case "minLength":
+        return t("validations.toShortPassword");
+      case "required":
+        return t("validations.invalidPassword");
+      default:
+        return t("validations.invalidPassword");
+    }
+  };
+
   return (
     <>
       <CompositionSection padding={[5, 15, 0, 15]}>
@@ -60,12 +71,14 @@ const LoginForm = ({ providers, csrfToken }) => {
           <FormTextInput
             name={"login.password"}
             label={t("labels.password")}
+            secureTextEntry
             rules={{
               required: true,
               maxLength: 50,
+              minLength: 8,
             }}
             error={errors?.login?.password}
-            errorMsg={t("validations.invalidPassword")}
+            errorMsg={`${handlePassErrorMsg(errors?.login?.password.type)}`}
           />
           <LostPass />
           <ButtonCta

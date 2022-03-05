@@ -20,6 +20,7 @@
     "requiredName": "Podaj swoję imię",
     "invalidEmail": "Podaj porawny e-mail",
     "invalidPassword": "Podaj porawne hasło",
+    "toShortPassword": "Za krótkie hasło. min: 8 znaków",
     "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
     "requiredTown": "Podaj miejscowość",
     "requiredTime": "Podaj na jak długo",

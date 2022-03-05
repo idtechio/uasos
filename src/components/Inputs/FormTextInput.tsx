@@ -13,11 +13,20 @@ type Props = {
   errorMsg?: string;
   extra?: ReactNode;
   labelsBackgroundColor?: string;
+  secureTextEntry?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput: VFC<Props> = (props) => {
-  const { name, label, errorMsg, rules, error, extra, labelsBackgroundColor } =
-    props;
+  const {
+    name,
+    label,
+    errorMsg,
+    rules,
+    error,
+    extra,
+    labelsBackgroundColor,
+    secureTextEntry,
+  } = props;
   const { control } = useFormContext();
   return (
     <Controller
@@ -31,6 +40,7 @@ const FormTextInput: VFC<Props> = (props) => {
             onBlur={onBlur}
             error={error}
             extra={extra}
+            secureTextEntry={secureTextEntry}
             labelsBackgroundColor={labelsBackgroundColor}
           />
           {error && <Error>{errorMsg}</Error>}
