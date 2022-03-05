@@ -44,7 +44,7 @@ const FormLogin = ({ providers, csrfToken }) => {
 
   return (
     <>
-      <CompositionSection padding={[5, 15, 0, 15]}>
+      <CompositionSection padding={[40, 15, 0, 15]}>
         <FormContainer>
           <FormHeader>{t("loginForm.logInWith")}</FormHeader>
           {Object.values(providers).map((provider: any) => (
@@ -58,8 +58,8 @@ const FormLogin = ({ providers, csrfToken }) => {
               </div>
             </div>
           ))}
-          <Separation />
-          <FormProvider {...formFields}>
+          <div style={{ marginBottom: 60 }}></div>
+          {/* <<FormProvider {...formFields}>
             <FormTextInput
               name={"login.email"}
               label={t("labels.email")}
@@ -94,10 +94,10 @@ const FormLogin = ({ providers, csrfToken }) => {
               anchor={t("loginForm.logIn")}
               onPress={handleSubmit(onSubmit, onError)}
             />
-          </FormProvider>
+          </FormProvider> */}
         </FormContainer>
       </CompositionSection>
-      <GoToRegister />
+      {/* <GoToRegister /> */}
     </>
   );
 };

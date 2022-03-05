@@ -175,7 +175,9 @@ export default function FormAdHost() {
               error={errors?.advancedRefugee?.email}
               errorMsg={t("refugeeAddForm.errors.email")}
             />
-            <InputControlLabel>{t("Numer telefonu")}</InputControlLabel>
+            <InputControlLabel>
+              {t("refugeeForm.labels.phoneNumber")}
+            </InputControlLabel>
             <FormTextInput
               name="advancedRefugee.phoneNumber"
               label={t("refugeeForm.labels.phoneNumber")}
