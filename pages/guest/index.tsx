@@ -22,11 +22,7 @@ export default function Account(props) {
   return (
     <CompositionAppBody>
       {session ? (
-        <CompositionContainer>
-          <ContainerWrapper>
-            <FormAdGuest />
-          </ContainerWrapper>
-        </CompositionContainer>
+        <FormAdGuest />
       ) : (
         <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
       )}

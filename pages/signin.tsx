@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Header from "../src/components/Header";
-import LoginForm from "../src/components/LoginForm";
+import LoginForm from "../src/components/FormLogin";
 import AppFooter from "../src/components/AppFooter";
 import AppBack from "../src/components/AppBack";
 
