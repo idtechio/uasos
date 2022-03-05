@@ -2,7 +2,6 @@ import React from "react";
 import { signIn } from "next-auth/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
-import { Text, View } from "react-native";
 
 import { FormType } from "../../helpers/FormTypes";
 
@@ -13,6 +12,7 @@ import { CompositionSection } from "../Compositions";
 import Separation from "./Separation";
 import LostPass from "./LostPass";
 import styled from "styled-components";
+import GoToRegister from "./GoToRegister";
 
 const LoginForm = ({ providers, csrfToken }) => {
   const { t } = useTranslation();
@@ -31,59 +31,58 @@ const LoginForm = ({ providers, csrfToken }) => {
   };
 
   return (
-    <CompositionSection padding={[0, 30, 8, 30]}>
-      <FormHeader>{t("loginForm.logInWith")}</FormHeader>
-      {Object.values(providers).map((provider: any) => (
-        <div key={provider.name}>
+    <>
+      <CompositionSection padding={[5, 15, 0, 15]}>
+        <FormHeader>{t("loginForm.logInWith")}</FormHeader>
+        {Object.values(providers).map((provider: any) => (
           <div key={provider.name}>
-            <ButtonSM
-              id={provider.id}
-              onPress={() => signIn(provider.id)}
-              anchor={`${t("loginForm.logInWith")} ${provider.name}`}
-            />
+            <div key={provider.name}>
+              <ButtonSM
+                id={provider.id}
+                onPress={() => signIn(provider.id)}
+                anchor={`${t("loginForm.logInWith")} ${provider.name}`}
+              />
+            </div>
           </div>
-        </div>
-      ))}
-      <Separation />
-      <FormProvider {...formFields}>
-        <FormTextInput
-          name={"login.email"}
-          label={t("labels.email")}
-          rules={{
-            required: true,
-            maxLength: 50,
-          }}
-          error={errors?.login?.email}
-          errorMsg={t("validations.invalidEmail")}
-        />
-        <FormTextInput
-          name={"login.password"}
-          label={t("labels.password")}
-          rules={{
-            required: true,
-            maxLength: 50,
-          }}
-          error={errors?.login?.password}
-          errorMsg={t("validations.invalidPassword")}
-        />
-        <LostPass />
-        <ButtonCta
-          style={{
-            width: "130px",
-            textTransform: "capitalize",
-            height: "43px",
-            display: "flex",
-            marginBottom: "30px",
-          }}
-          anchor={t("loginForm.logIn")}
-          onPress={handleSubmit(onSubmit, onError)}
-        />
-      </FormProvider>
-      <View>
-        <Text>{t("loginForm.doNotHaveAcc")}</Text>
-        <ButtonCta anchor={t("loginForm.register")} />
-      </View>
-    </CompositionSection>
+        ))}
+        <Separation />
+        <FormProvider {...formFields}>
+          <FormTextInput
+            name={"login.email"}
+            label={t("labels.email")}
+            rules={{
+              required: true,
+              maxLength: 50,
+            }}
+            error={errors?.login?.email}
+            errorMsg={t("validations.invalidEmail")}
+          />
+          <FormTextInput
+            name={"login.password"}
+            label={t("labels.password")}
+            rules={{
+              required: true,
+              maxLength: 50,
+            }}
+            error={errors?.login?.password}
+            errorMsg={t("validations.invalidPassword")}
+          />
+          <LostPass />
+          <ButtonCta
+            style={{
+              width: "130px",
+              textTransform: "capitalize",
+              height: "43px",
+              display: "flex",
+              marginBottom: "30px",
+            }}
+            anchor={t("loginForm.logIn")}
+            onPress={handleSubmit(onSubmit, onError)}
+          />
+        </FormProvider>
+      </CompositionSection>
+      <GoToRegister />
+    </>
   );
 };
 

@@ -22,12 +22,10 @@ export const FooterWrapper = styled(View)`
   background-color: ${({ theme }) => theme.colors.secondaryBlue};
   display: flex;
   flex-direction: row;
-  padding: 5px 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 34px;
   justify-content: space-between;
   align-items: center;
+
+  padding: 5px 20px;
+  width: 100%;
+  height: 34px;
 `;
