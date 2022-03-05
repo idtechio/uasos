@@ -22,7 +22,11 @@ import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
 import AdGuestToApi from "../../helpers/AdGuestToApi";
-import { Boolean } from "../../../pages/api/guests/add";
+
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 
 const enum Location {
   Any,
