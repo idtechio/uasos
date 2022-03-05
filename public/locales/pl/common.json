@@ -118,24 +118,57 @@
     "de": "flaga Niemiec"
   },
   "hostAdd": {
-    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
-    "addButton": "Zatwierdź/Dodaj",
+    "country": "Kraj",
+    "countries": {
+      "poland": "Polska"
+    },
+    "town": "Miasto",
+    "type": "Typ noclegu",
+    "hostType": "Typ gospodarza",
+    "hostTypeLabel": {
+      "host_type_men": "Męczyzna (sam)",
+      "host_type_women": "Kobieta (sama)",
+      "host_type_couple": "Para / małżonkowie",
+      "host_type_family": "Rodzina z dzieckiem/dziećmi",
+      "host_type_elder_people": "Osoby starsze",
+      "host_type_friends_group": "Grupa znajomych"
+    },
+    "guestCount": "Ile osób możesz przyjąć?",
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia?",
+    "accommodationTimeLabel": {
+      "less_than_week": "Poniej tygodnia",
+      "week": "Tydzień",
+      "two_weeks": "2 tygodnie",
+      "month": "Miesiąc",
+      "longer": "Dłużej"
+    },
+    "volunteerVisitAcceptance": "Zgadzam się na weryfikację mieszkania (wizytę wolontariusza)",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "ukraine": "Ukraina",
     "additionalInformationHeader": "Dodatkowe informacje",
-    "animalReady": "Przyjmę osobę ze zwierzakiem",
     "any": "Dowolne",
-    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
     "city": "Miasto",
-    "country": "Kraj",
-    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
     "groupsTypes": "Jakie typy grup przyjmiesz?",
-    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "elderReady": "Przyjmę osobę/osoby starsze",
+    "animalReady": "Przyjmę osobę ze zwierzakiem",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "addButton": "Zatwierdź/Dodaj",
+    "errors": {
+      "country": "Kraj jest wymagany",
+      "town": "Miasto jest wymagane",
+      "type": "Typ noclegu jest wymagany",
+      "hostType": "Typ gospodarza jest wymagany",
+      "guestCount": "",
+      "accommodationTime": "Okres trwania pobytu jest wymagany",
+      "nationality": "",
+      "groupsTypes": ""
+    },
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
-    "transportReady": "Oferuję możliwość transportu",
-    "type": "Typ noclegu",
-    "ukraine": "Ukraina"
+    "transportReady": "Oferuję możliwość transportu"
   },
   "logout": "wyloguj",
   "backToHomePage": "Powrót do strony głównej",
@@ -238,5 +271,15 @@
   "accomodationPhotoLabel": "Prześlij",
   "dropdownChoose": "Wybierz...",
   "dropdownSearch": "Szukaj",
-  "heroImageAlt": "Sława Ukrajini!"
+  "heroImageAlt": "Sława Ukrajini!",
+  "advancedHost": {
+    "advancedHost.tooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
+    "accommodationTypeOptions": {
+      "bed": "Łóźko w współdzielonym pokoju",
+      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "flat": "Mieszkanie na wyłączność",
+      "house": "Dom na wyłączność",
+      "collective": "Pokój zbiorowy (np. szkolna sala)"
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { FormKey } from "../../helpers/FormTypes";
 import { ChoiceButton, InputControl } from "../Forms";
@@ -8,9 +9,10 @@ type Props = {
   name: FormKey;
   error?: FieldError;
   errorMsg?: string;
+  icon?: React.ReactNode;
 };
 
-const FormChoiceButton = ({ text, name, error, errorMsg }: Props) => {
+const FormChoiceButton = ({ text, name, error, errorMsg, icon }: Props) => {
   const { control } = useFormContext();
   return (
     <Controller
@@ -28,6 +30,7 @@ const FormChoiceButton = ({ text, name, error, errorMsg }: Props) => {
               onChange(!value);
               onBlur();
             }}
+            icon={icon}
           />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>

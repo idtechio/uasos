@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     name: build-docker
     runs-on: ubuntu-latest
-    environment: 'dev-cloud'
+    environment: "dev-cloud"
     steps:
       - uses: actions/checkout@v2
       - name: Set outputs
