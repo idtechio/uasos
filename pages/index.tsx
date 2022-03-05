@@ -12,11 +12,24 @@ import LandingFooter from "../src/components/LandingFooter/LandingFooter";
 import LandingMatchedSection from "../src/components/LandingMatchedSection/LandingMatchedSection";
 import SectionTitle from "../src/components/SectionTitle";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
+import { css } from "styled-components";
 
 const HeroImageWrapper = styled.View`
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+`;
+
+const PartnersCarouselWrapper = styled.View`
+  width: 100%;
+  max-width: 100%;
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+      width: auto,
+      max-width: auto
+    `,
+    })}
 `;
 
 const ElipseEffect = styled.View`
@@ -30,7 +43,7 @@ const ElipseEffect = styled.View`
 `;
 
 function Landing() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
 
   return (
     <ScrollView>
@@ -40,10 +53,10 @@ function Landing() {
         <ElipseEffect />
       </HeroImageWrapper>
       <Section bgColor="#fff">
-        <SectionTitle title={t("landingPage.supportingPartners")} />
-        <View style={{ alignItems: "center" }}>
+        <SectionTitle title={t("supportingPartners")} />
+        <PartnersCarouselWrapper>
           <PartnersCarousel />
-        </View>
+        </PartnersCarouselWrapper>
       </Section>
       <WhatWeDoSection />
       <LikeToHelpSection />

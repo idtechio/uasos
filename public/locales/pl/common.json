@@ -1,0 +1,242 @@
+{
+  "test": "testowa wiadomość  PL",
+  "navigationDrawer": {
+    "profile": "Profil użytkownika",
+    "placesList": "Twoja lista mieszkań",
+    "logout": "Wyloguj"
+  },
+  "labels": {
+    "location": "Lokalizacja",
+    "numberOfGuests": "Liczba gości",
+    "timePeriod": "Okres",
+    "withKids": "Jestem z dzieckiem",
+    "name": "imię",
+    "email": "e-mail",
+    "phone": "phone",
+    "town": "miejscowość"
+  },
+  "validations": {
+    "requiredName": "Podaj swoję imię",
+    "invalidEmail": "Podaj poprawny e-mail",
+    "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
+    "requiredTown": "Podaj miejscowość",
+    "requiredTime": "Podaj na jak długo",
+    "requiredPeopleQuantity": "Podaj liczbę osób, które mozesz przyjąć",
+    "requiredLivingConditions": "Podaj warunki lokalowe",
+    "requiredFloor": "Podaj piętro"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "mniej niż tydzień",
+      "week": "tydzień",
+      "twoWeeks": "2 tygodnie",
+      "month": "miesiąc",
+      "longer": "dłużej"
+    },
+    "groupRelations": {
+      "single_man": "Singiel",
+      "single_woman": "Singielka",
+      "spouses": "Małżonkowie",
+      "mother_with_children": "Matka z dziećmi",
+      "family_with_children": "Rodzina z dziećmi",
+      "unrelated_group": "Niepowiązana grupa"
+    },
+    "accommodationTypes": {
+      "bed": "Łóźko w współdzielonym pokoju",
+      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "flat": "Mieszkanie na wyłączność",
+      "house": "Dom na wyłączność",
+      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
+    },
+    "boolean": {
+      "yes": "tak",
+      "no": "nie"
+    },
+    "anyLocation": "Dowolna",
+    "withElevator": "jest winda"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "miejsce dla <1>{{count}} osób</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "zwierzęta mile widziane",
+    "disabledSupport": "udogodnienia dla niepełnosprawnych",
+    "includesFood": "wyżywienie",
+    "author": {
+      "owner": "Gospodarz"
+    }
+  },
+  "forms": {
+    "chooseFromList": "Wybierz z listy",
+    "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} osoby",
+    "preferredLocation": "preferowana lokalizacja: <1>{{location}}</1>",
+    "withAnimals": "jest z nami zwierzak: <1>{{animals}}</1>",
+    "withKids": "jest ze mną dziecko: <1>{{age}}</1>",
+    "withDisabled": "jest ze mną osoba niepełnosprawna",
+    "withElder": "jest ze mną osoba starsza",
+    "invite": "Przyjmij do siebie"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Określ swoje preferencje, kogo chcesz przyjąć:",
+      "acceptAnimals": "zwierzęta mile widziane",
+      "disabledSupport": "osoby z niepełnosprawnością",
+      "kidsUnder2": "dzieci poniźej 2 lat",
+      "foodIncluded": "zapewnię wyżywienie"
+    },
+    "peopleQuantity": "Ile osób możesz przyjąć?",
+    "forHowLong": "Na jak długo?",
+    "livingConditions": {
+      "label": "Jakie warunki lokalowe możesz zapewnić?",
+      "options": {
+        "flat": "mam wolne mieszkanie",
+        "room": "mam wolny pokój",
+        "mattress": "mogę \"dostawić materac\"",
+        "other": "inne"
+      }
+    },
+    "floor": {
+      "label": "Na którym piętrze znajduje się lokal?",
+      "hint": "*Osoby starsze mogą mieć problem z wejściem na wysokie piętro"
+    },
+    "submit": "Zgłoś swoją gotowość"
+  },
+  "flags": {
+    "cz": "flaga Czech",
+    "en": "flaga Wielkiej Brytanii",
+    "es": "flaga Hiszpanii",
+    "fr": "flaga Francji",
+    "hu": "flaga Węgier",
+    "it": "flaga Włoch",
+    "pl": "flaga Polski",
+    "ro": "flaga Rumunii",
+    "sk": "flaga Słowacji",
+    "ua": "flaga Ukrainy",
+    "de": "flaga Niemiec"
+  },
+  "hostAdd": {
+    "accommodationTime": "Na jaki okres możesz udzielić schronienia (tygodnie)?",
+    "addButton": "Zatwierdź/Dodaj",
+    "additionalInformationHeader": "Dodatkowe informacje",
+    "animalReady": "Przyjmę osobę ze zwierzakiem",
+    "any": "Dowolne",
+    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "childBedCount": "Liczba miejsc do spania dla dzieci",
+    "city": "Miasto",
+    "country": "Kraj",
+    "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+    "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
+    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
+    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
+    "transportReady": "Oferuję możliwość transportu",
+    "type": "Typ noclegu",
+    "ukraine": "Ukraina"
+  },
+  "logout": "wyloguj",
+  "backToHomePage": "Powrót do strony głównej",
+  "shareLocation": "Załóz konto w serwisie",
+  "registerGuest": "Znajdź lokum",
+  "more": "więcej",
+  "register1": "Zarejestruj się",
+  "register2": "Rejestracja",
+  "privacyPolicy": "Polityka prywatności",
+  "termsOfService": "Regulamin",
+  "patrons": "Patroni",
+  "rodo": "RODO",
+  "thankfulnessModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o tym za pomocą maila."
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "Jestem razem ze swoim zwierzakiem",
+      "toddler": "Dziecko jest poniżej 2 roku życia",
+      "oldPerson": "Jestem lub jest ze mną osoba starsza",
+      "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+      "pregnant": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)"
+    },
+    "refugeesCountOptions": {
+      "alone": "Jestem sam",
+      "more": "Więcej"
+    },
+    "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "phoneNumber": "Podaj poprawny numer telefonu",
+      "required": "To pole jest wymagane",
+      "location": "Podaj preferowaną miejscowość"
+    },
+    "labels": {
+      "name": "Imię",
+      "email": "Email",
+      "phoneNumber": "Numer telefonu",
+      "refugeesCount": "Dla ilu osób szukasz schronienia?",
+      "refugee": "Uchodźca {{number}}",
+      "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie:",
+      "refugeesAnimal": "Rasa (imię zwierzaka)",
+      "isGDPRAccepted": "Akceptuję politykę prywatności",
+      "submitButton": "Skorzystaj z pomocy",
+      "location": "Gdzie chciałbyś się zatrzymać?",
+      "anyLocation": "Dowolna lokalizacja",
+      "prefferedLocation": "Preferowana lokalizacja",
+      "city": "Miejscowość",
+      "addRefugee": "Dodaj osobę"
+    }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
+    "addButton": "Wyślij aplikację",
+    "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
+    "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
+    "animalReady": "Jest ze mną mój zwierzak",
+    "elderReady": "Jestem lub jest ze mną osoba starsza",
+    "ageLabel": "Wiek",
+    "genderLabel": "Płeć",
+    "genderPlaceholder": "Podaj płeć",
+    "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
+    "fullBedCountLabel": "Liczba pełnowymiarowych miejsc do spania",
+    "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
+    "placeOfRefuge": "Gdzie szukasz schronienia?",
+    "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
+    "countryOfRefugePlaceholder": "Wybierz kraj",
+    "cityOfRefugeLabel": "Wybierz miasto:",
+    "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
+    "cityOfRefugePlaceholder": "Wybierz obszar",
+    "nameLabel": "Imię (Podaj tylko pierwsze imię)",
+    "namePlaceholder": "Imię",
+    "emailLabel": "Podaj adres e-mail:",
+    "emailPlaceholder": "e-mail",
+    "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
+    "selectPlaceholder": "Wybierz z listy",
+    "accommodationType": "Jakiego typu noclegu szukasz?",
+    "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
+    "countryOfGroupUA": "Ukraina",
+    "countryOfGroupOthers": "Inne",
+    "accompanyingPerson": "Osoba towarzysząca",
+    "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "gender": "Uzupełnij płeć z którą się utożsamiasz",
+      "cityOfRefuge": "Wybierz miasto",
+      "phoneNumber": "Podaj numer telefonu",
+      "countryOfRefuge": "Wybierz kraj",
+      "childBedCount": "Podaj ilość miejsc",
+      "fullBedCountsaas": "Podaj ilość miejsc",
+      "groupRelations": "Wybierz relacje",
+      "overnightDuration": "Wybierz typ noclegu",
+      "accommodationType": "Wybierz narodowość"
+    }
+  },
+  "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
+  "accomodationPhotoReset": "Usuń",
+  "accomodationPhotoLabel": "Prześlij",
+  "dropdownChoose": "Wybierz...",
+  "dropdownSearch": "Szukaj",
+  "heroImageAlt": "Sława Ukrajini!"
+}

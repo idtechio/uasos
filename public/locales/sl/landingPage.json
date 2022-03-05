@@ -1,0 +1,60 @@
+{
+  "supportingPartners": "",
+  "hero": {
+    "title": "",
+    "description": "",
+    "lookingForHelp": "",
+    "shareHelp": ""
+  },
+  "likeToHelp": {
+    "title": "",
+    "details": ""
+  },
+  "weMatched": {
+    "title": "",
+    "cards": {
+      "helpedPeople": "",
+      "lookingForHelp": "",
+      "currentOffers": ""
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "",
+    "bulletPoints": {
+      "0": "",
+      "1": "",
+      "2": ""
+    },
+    "algorithmExplanation": "",
+    "rolldown": "",
+    "rollup": "",
+    "description": "",
+    "howItWorks": ""
+  },
+  "instructions": {
+    "0": {
+      "title": "",
+      "text": ""
+    },
+    "1": {
+      "title": "",
+      "text": ""
+    },
+    "2": {
+      "title": "",
+      "text": ""
+    },
+    "3": {
+      "title": "",
+      "text": ""
+    },
+    "4": {
+      "title": "",
+      "text": ""
+    },
+    "5": {
+      "title": "",
+      "text": ""
+    }
+  }
+}

@@ -43,6 +43,7 @@ const ContentContainer = styled.View`
     theme.getBreakPoint({
       lg: css`
         padding-left: 40px;
+        max-width: 50%;
       `,
     })}
 `;
@@ -81,14 +82,14 @@ const ButtonContainer = styled.View`
 `;
 
 export function LikeToHelpSection() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
   return (
     <Container>
       <ContentContainer>
-        <SectionTitle title={t("landingPage.likeToHelp.title")} />
+        <SectionTitle title={t("likeToHelp.title")} />
         <View>
-          {t("landingPage.likeToHelp.details")}
+          {t("likeToHelp.details")}
           <ButtonContainer>
             {session ? (
               <>
@@ -104,7 +105,10 @@ export function LikeToHelpSection() {
                 </Link>
               </>
             ) : (
-              <ButtonCta anchor={t("register1")} onPress={() => signIn()} />
+              <ButtonCta
+                anchor={t("common:register1")}
+                onPress={() => signIn()}
+              />
             )}
           </ButtonContainer>
         </View>

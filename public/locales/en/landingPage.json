@@ -1,0 +1,60 @@
+{
+  "supportingPartners": "Partners supporting the initiative",
+  "hero": {
+    "title": "This site is a database of accomodation points and types of help offered by people of good will to Ukrainian refugees fleeing the war.",
+    "description": "We help refugees find a free shelter provided by private people or institutions who are willing to help. Our portal's mission is to automatically connect potential places to stay with people in search based on defined needs.",
+    "lookingForHelp": "I am looking for a shelter",
+    "shareHelp": "I offer help"
+  },
+  "likeToHelp": {
+    "title": "Would you like to help?",
+    "details": "If you have a home, room of place that you could make available for free to the refugees from the war in Ukraine, register as a volunteer by filling in the form regarding your accomodation.\n\nOur application will automatically match registered people looking for help based on shared information."
+  },
+  "weMatched": {
+    "title": "We were already able to match...",
+    "cards": {
+      "helpedPeople": "people in need",
+      "lookingForHelp": "still looking for help",
+      "currentOffers": "currently available offers"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "What SOS-UA does?",
+    "bulletPoints": {
+      "0": "Volunteers and institutions propose and describe available locations (type of accomodation, maximum amount of people, length of stay)",
+      "1": "People searching a shelter define their needs and minimum requirements (e.g., number of people, accomodation location)",
+      "2": "SOS-UA automatically connects people searching for shelters with the best fitting location"
+    },
+    "algorithmExplanation": "The algorithm optimizes the process in order to help as many people as possible find shelters.",
+    "rolldown": "Expand",
+    "rollup": "Less",
+    "description": "The portal connects people in need with institutions and people proposing their help.",
+    "howItWorks": "How it works?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Registration on the portal",
+      "text": "The user registers on the portal as either offering accommodation or needing shelter."
+    },
+    "1": {
+      "title": "Filling the form",
+      "text": ""
+    },
+    "2": {
+      "title": "Automatic pairing",
+      "text": "The algorithm searches the database of advertisements and the database of people in need and, based on the information provided, selects the best connection."
+    },
+    "3": {
+      "title": "Information sent to the user",
+      "text": "After the correct match, users receive an email. An additional description of connected users is visible in the application."
+    },
+    "4": {
+      "title": "User contact",
+      "text": "After the connection, it is possible to contact the users by e-mail or telephone in order to discuss the details."
+    },
+    "5": {
+      "title": "Confirmation or rejection of the offer",
+      "text": "The last step is to confirm or decline the offer in the app. If the offer is rejected, the ads are returned to the pool of available ads."
+    }
+  }
+}

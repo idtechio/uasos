@@ -1,0 +1,51 @@
+name: Build and deploy dev
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  reg_project_id: "ukrn-hlpr"
+  deploy_project_id: "ukrn-hlpr-dev"
+  image_name: "sosua"
+  publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
+
+jobs:
+  build-docker:
+    if: ${{ github.event_name == 'push' }}
+    name: build-docker
+    runs-on: ubuntu-latest
+    environment: 'dev-cloud'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - id: auth
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "${{ secrets.DEPLOYER_SA_KEY }}"
+      - uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{env.reg_project_id}}
+      - name: auth gcr.io
+        run: gcloud auth configure-docker
+      - name: build and push docker images
+        run: docker build -t $IMAGE_PROJECT_ID . && docker push $IMAGE_PROJECT_ID
+        env:
+          IMAGE_PROJECT_ID: eu.gcr.io/${{ env.reg_project_id }}/${{ env.image_name }}:${{ steps.vars.outputs.sha_short }}
+      - id: auth2
+        uses: "google-github-actions/auth@v0"
+        with:
+          credentials_json: "${{ secrets.DEV_DEPLOYER_SA_KEY }}"
+      - uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{env.deploy_project_id}}
+      - name: Deploy to Cloud Run Dev Env
+        id: deploy-service
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          image: eu.gcr.io/${{ env.reg_project_id }}/${{ env.image_name }}:${{ steps.vars.outputs.sha_short }}
+          service: cloudrun-srv
+          region: europe-central2
+          project_id: ${{env.deploy_project_id}}

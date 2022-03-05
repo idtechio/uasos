@@ -1,0 +1,15 @@
+{
+  "location": "Lokacija",
+  "numberOfGuests": "Broj gostiju",
+  "timeframe": "Vrijeme boravka",
+  "oneWeek": "Jedan tjedan",
+  "twoWeeks": "Dva tjedna",
+  "month": "Jedan mjesec",
+  "longerThanMonth": "Dulje Od Jednog Mjeseca",
+  "food": "Hrana",
+  "disabledPerson": "Osoba s invaliditetom",
+  "kidsBelow2yo": "S djetetom sam",
+  "animalsWelcome": "Kućni ljubimci dobrodošli",
+  "yes": "Da",
+  "no": "Ne"
+}

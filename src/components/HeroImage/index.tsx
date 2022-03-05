@@ -104,7 +104,7 @@ const ButtonStyle = styled(ButtonCta)`
 `;
 
 const HeroImage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
   return (
     <Container>
@@ -113,31 +113,29 @@ const HeroImage = () => {
         <ContentWrapper>
           <TextContainer>
             <Title accessibilityRole="heading" accessibilityLevel={1}>
-              {t("landingPage.hero.title")}
+              {t("hero.title")}
             </Title>
 
-            <SubTitle>{t("landingPage.hero.description")}</SubTitle>
+            <SubTitle>{t("hero.description")}</SubTitle>
 
             <ButtonContainer>
               {session ? (
                 <>
                   <Link href="/guest">
                     <a>
-                      <ButtonStyle
-                        anchor={t("landingPage.hero.lookingForHelp")}
-                      />
+                      <ButtonStyle anchor={t("hero.lookingForHelp")} />
                     </a>
                   </Link>
                   <Link href="/host">
                     <a>
-                      <ButtonStyle anchor={t("landingPage.hero.shareHelp")} />
+                      <ButtonStyle anchor={t("hero.shareHelp")} />
                     </a>
                   </Link>
                 </>
               ) : (
                 <ButtonStyle
                   first
-                  anchor={t("shareLocation")}
+                  anchor={t("common:shareLocation")}
                   onPress={() => signIn()}
                 />
               )}

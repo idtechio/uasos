@@ -24,6 +24,7 @@ import FormButtonsGrid from "../Inputs/FormButtonsGrid";
 import { useTranslation } from "next-i18next";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useState } from "react";
+import { primary } from "../../style/theme.config";
 
 // TODO: all file to revalidaete !!!!
 
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   error: {
-    color: "#D8000C",
+    color: primary.colors.error,
     marginTop: 10,
   },
   containerWraper: {
