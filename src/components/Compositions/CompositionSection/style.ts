@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import type { SectionProps } from "./types";
 
 export const PageSection = styled.View<SectionProps>`
@@ -21,4 +21,10 @@ export const SectionHeader = styled.Text<SectionProps>`
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 24px;
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        text-align: center;
+      `,
+    })}
 `;

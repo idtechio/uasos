@@ -29,17 +29,9 @@ import {
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
 import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
+import { InputWraper } from "../Forms/InputControl/style";
 
 const MAX_PHOTOS_COUNT = 3;
-const DUMMY_DROPDOWN_ITEMS = [
-  { label: "Item 1", value: "Item 1" },
-  { label: "Item 2", value: "Item 2" },
-  { label: "Item 3", value: "Item 3" },
-  { label: "Item 4", value: "Item 4" },
-  { label: "Item 5", value: "Item 5" },
-  { label: "Item 6", value: "Item 6" },
-  { label: "Item 7", value: "Item 7" },
-];
 
 const PreviewsWrapper = styled.View`
   margin-top: 10px;
@@ -102,47 +94,36 @@ export default function FormAdHost() {
           header={t("hostAdd.basicInfoHeader")}
           zIndex={3}
         >
-          <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
-          <FormDropdown
-            data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
-            placeholder={t("hostAdd.country")}
-            name="advancedHost.country"
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.country}
-            errorMsg={t("hostAdd.errors.country")}
-          />
-
-          <InputControlLabel>
-            {t("hostAdd.town")}
-            <View style={{ marginHorizontal: 10 }}>
-              <Tooltip>
-                <Text>{t("advancedHost.advancedHost.tooltipText")}</Text>
-              </Tooltip>
-            </View>
-          </InputControlLabel>
-          {/* <FormDropdown
-            zIndex={13}
-            data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
-            name="advancedHost.town"
-            placeholder={t("hostAdd.town")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.town}
-            errorMsg={t("validations.requiredTown")}
-          /> */}
-
-          <FormAutocompleteInput
-            name="advancedHost.town"
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.town}
-            errorMsg={t("validations.requiredTown")}
-            label={t("hostAdd.town")}
-          />
+          <InputWraper>
+            <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
+            <FormDropdown
+              data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
+              placeholder={t("hostAdd.country")}
+              name="advancedHost.country"
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.country}
+              errorMsg={t("hostAdd.errors.country")}
+            />
+            <InputControlLabel>
+              {t("hostAdd.town")}
+              <View style={{ marginHorizontal: 10 }}>
+                <Tooltip>
+                  <Text>{t("advancedHost.advancedHost.tooltipText")}</Text>
+                </Tooltip>
+              </View>
+            </InputControlLabel>
+            <FormAutocompleteInput
+              name="advancedHost.town"
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.town}
+              errorMsg={t("validations.requiredTown")}
+              label={t("hostAdd.town")}
+            />
+          </InputWraper>
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
         <CompositionSection
@@ -150,51 +131,56 @@ export default function FormAdHost() {
           backgroundColor="#F5F4F4"
           zIndex={2}
         >
-          <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
-          {/* TODO: use Dropdown here */}
-          <FormDropdown
-            zIndex={12}
-            data={accomodationTypeDropdownFields.map(({ label, ...rest }) => ({
-              label: t(label),
-              ...rest,
-            }))}
-            name="advancedHost.accommodationType"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.accommodationType}
-            errorMsg={t("hostAdd.errors.type")}
-          />
+          <InputWraper>
+            <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
+            {/* TODO: use Dropdown here */}
+            <FormDropdown
+              zIndex={12}
+              data={accomodationTypeDropdownFields.map(
+                ({ label, ...rest }) => ({
+                  label: t(label),
+                  ...rest,
+                })
+              )}
+              name="advancedHost.accommodationType"
+              placeholder={t("forms.chooseFromList")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.accommodationType}
+              errorMsg={t("hostAdd.errors.type")}
+            />
 
-          {shouldIncludeHostTypeField && (
-            <>
-              <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
-              {/* TODO: ADD validation */}
-              <FormDropdown
-                data={(Object.keys(HostType) as Array<keyof HostType>).map(
-                  (key) => ({
-                    value: key,
-                    label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
-                  })
-                )}
-                name="advancedHost.hostType"
-                placeholder={t("forms.chooseFromList")}
-                rules={{
-                  required: shouldIncludeHostTypeField,
-                }}
-                error={errors?.advancedHost?.hostType}
-                errorMsg={t("hostAdd.errors.hostType")}
-                zIndex={11}
-              />
-            </>
-          )}
+            {shouldIncludeHostTypeField && (
+              <>
+                <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
+                {/* TODO: ADD validation */}
+                <FormDropdown
+                  data={(Object.keys(HostType) as Array<keyof HostType>).map(
+                    (key) => ({
+                      value: key,
+                      label: t(
+                        `hostAdd.hostTypeLabel.${String(HostType[key])}`
+                      ),
+                    })
+                  )}
+                  name="advancedHost.hostType"
+                  placeholder={t("forms.chooseFromList")}
+                  rules={{
+                    required: shouldIncludeHostTypeField,
+                  }}
+                  error={errors?.advancedHost?.hostType}
+                  errorMsg={t("hostAdd.errors.hostType")}
+                  zIndex={11}
+                />
+              </>
+            )}
+          </InputWraper>
 
-          <InputControlLabel>
-            {t("hostAdd.accomodationPhoto")}
-          </InputControlLabel>
-
-          <View style={{ marginBottom: 16 }}>
+          <InputWraper>
+            <InputControlLabel>
+              {t("hostAdd.accomodationPhoto")}
+            </InputControlLabel>
             <Controller
               control={control}
               rules={{
@@ -242,81 +228,85 @@ export default function FormAdHost() {
                 );
               }}
             />
-          </View>
+          </InputWraper>
+          <InputWraper>
+            <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
+            <FormNumericInput
+              name="advancedHost.guestCount"
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.guestCount}
+              errorMsg={t("hostAdd.errors.guestCount")}
+            />
 
-          <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
-          <FormNumericInput
-            name="advancedHost.guestCount"
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.guestCount}
-            errorMsg={t("hostAdd.errors.guestCount")}
-          />
-
-          <InputControlLabel>
-            {t("hostAdd.accommodationTime")}
-          </InputControlLabel>
-          <FormRadioGroup<AccomodationTime>
-            name={t("advancedHost.accommodationTime")}
-            rules={{
-              required: true,
-            }}
-            data={(
-              Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
-            ).map((key: keyof AccomodationTime) => ({
-              value: key as AccomodationTime,
-              label: t(
-                `hostAdd.accommodationTimeLabel.${String(
-                  AccomodationTime[key]
-                )}`
-              ),
-            }))}
-            error={errors?.advancedHost?.accommodationTime}
-            errorMsg={t("hostAdd.errors.accommodationTime")}
-          />
+            <InputControlLabel>
+              {t("hostAdd.accommodationTime")}
+            </InputControlLabel>
+            <FormRadioGroup<AccomodationTime>
+              name={t("advancedHost.accommodationTime")}
+              rules={{
+                required: true,
+              }}
+              data={(
+                Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
+              ).map((key: keyof AccomodationTime) => ({
+                value: key as AccomodationTime,
+                label: t(
+                  `hostAdd.accommodationTimeLabel.${String(
+                    AccomodationTime[key]
+                  )}`
+                ),
+              }))}
+              error={errors?.advancedHost?.accommodationTime}
+              errorMsg={t("hostAdd.errors.accommodationTime")}
+            />
+          </InputWraper>
         </CompositionSection>
         <CompositionSection
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
           zIndex={1}
         >
-          <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
-          <FormRadioGroup<string | string>
-            name="advancedHost.nationality"
-            rules={{
-              required: true,
-            }}
-            data={[
-              { label: t("hostAdd.ukraine"), value: "ukraine" },
-              { label: t("hostAdd.any"), value: "any" },
-            ]}
-            errorMsg={t("hostAdd.errors.nationalityError")}
-          />
-          <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
+          <InputWraper>
+            <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
+            <FormRadioGroup<string | string>
+              name="advancedHost.nationality"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: t("hostAdd.ukraine"), value: "ukraine" },
+                { label: t("hostAdd.any"), value: "any" },
+              ]}
+              errorMsg={t("hostAdd.errors.nationalityError")}
+            />
+            <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
 
-          <FormDropdown
-            multiSelect
-            zIndex={11}
-            data={GROUP_RELATIONS.map(({ label, value }) => ({
-              label: t(label),
-              value,
-            }))}
-            name="advancedHost.groupsTypes"
-            placeholder={t("forms.chooseFromListMulti")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.groupsTypes}
-            errorMsg={t("hostAdd.errors.groupsTypes")}
-          />
-          <FormButtonsVertical
-            data={additionalHostsFeats.map(({ label, ...rest }) => ({
-              label: t(label),
-              ...rest,
-            }))}
-          />
+            <FormDropdown
+              multiSelect
+              zIndex={11}
+              data={GROUP_RELATIONS.map(({ label, value }) => ({
+                label: t(label),
+                value,
+              }))}
+              name="advancedHost.groupsTypes"
+              placeholder={t("forms.chooseFromListMulti")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.groupsTypes}
+              errorMsg={t("hostAdd.errors.groupsTypes")}
+            />
+            <FormButtonsVertical
+              data={additionalHostsFeats.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
+            />
+          </InputWraper>
         </CompositionSection>
+
         <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
           <FormCheckbox
             rules={{
