@@ -14,7 +14,6 @@ import {
 } from "../Forms";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import AnimalsIcon from "../../style/svgs/animals.svg";
@@ -91,48 +90,40 @@ export default function FormAdGuest() {
     const guest = data.advancedRefugee;
     console.log(guest);
 
-    fetch("/api/hosts/add", {
-      method: "post",
-      body: JSON.stringify({
-        name: guest.name,
-        country: guest.country,
-        phone_num: guest.phoneNumber,
-        email: guest.email,
-        city: guest.town,
-        is_children: guest.preferences.peopleDetails.toddler
-          ? Boolean.TRUE
-          : Boolean.FALSE,
-        is_pet: guest.preferences.peopleDetails.animals
-          ? Boolean.TRUE
-          : Boolean.FALSE,
-        is_handicapped: guest.preferences.peopleDetails.disability
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        num_people: guest.fullBedCount + guest.childBedCount,
-        period: guest.overnightDuration,
-        listing_country: "poland",
-        acceptable_shelter_types: guest.accommodationType,
-        beds: guest.fullBedCount,
-        is_pregnant: guest.preferences.peopleDetails.pregnant
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_disability: guest.preferences.peopleDetails.disability
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_animal: guest.preferences.peopleDetails.animals
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_elderly: guest.preferences.peopleDetails.oldPerson
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_ukrainian_nationality:
-          guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
-      }),
-    }).then(function (res) {
-      if (res.status === 200) {
-        return true;
-      }
-      return false;
+    AdGuestToApi({
+      name: guest.name,
+      country: guest.country,
+      phone_num: guest.phoneNumber,
+      email: guest.email,
+      city: guest.town,
+      is_children: guest.preferences.peopleDetails.toddler
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_pet: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_handicapped: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      num_people: guest.fullBedCount + guest.childBedCount,
+      period: guest.overnightDuration,
+      listing_country: "poland",
+      acceptable_shelter_types: guest.accommodationType,
+      beds: guest.fullBedCount,
+      is_pregnant: guest.preferences.peopleDetails.pregnant
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_disability: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_animal: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_elderly: guest.preferences.peopleDetails.oldPerson
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_ukrainian_nationality:
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
     });
   };
 

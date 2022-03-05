@@ -123,7 +123,7 @@ export type FormType = {
     gender: string;
     age: number;
     nationality: string;
-    overnightDuration: string;
+    overnightDuration: number;
     groupRelations: string;
     accommodationType: string;
   };
