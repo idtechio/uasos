@@ -1,11 +1,9 @@
 import * as React from "react";
 import styled, { css } from "styled-components/native";
-import { ButtonCta } from "../Buttons";
-import splashYellowImage from "../../../public/splash_yellow.png";
-import splashBlueImage from "../../../public/splash_blue.png";
+import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import { ButtonCta } from "../Buttons";
 
 const Container = styled.View`
   width: 100%;
@@ -76,40 +74,6 @@ const BoldSubTitle = styled(SubTitle)`
   font-weight: 700;
 `;
 
-const ImageSplashYellow = styled.Image`
-  position: absolute;
-  width: 100%;
-  height: 650px;
-  top: -220px;
-  left: -175px;
-
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        justify-content: center;
-        align-items: flex-start;
-        top: -100px;
-        left: -300px;
-      `,
-    })}
-`;
-
-const ImageSplashBlue = styled.Image`
-  position: absolute;
-  width: 100%;
-  height: 440px;
-  top: 300px;
-  right: -50%;
-
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        justify-content: center;
-        align-items: flex-start;
-      `,
-    })}
-`;
-
 const ButtonContainer = styled.View`
   align-items: flex-start;
   margin-top: 50px;
@@ -143,8 +107,6 @@ const LandingProjectIntention = () => {
   const { data: session } = useSession();
   return (
     <Container>
-      <ImageSplashYellow source={splashYellowImage.src} resizeMode="contain" />
-      <ImageSplashBlue source={splashBlueImage.src} resizeMode="contain" />
       <ContentWrapper>
         <TextContainer>
           <Title accessibilityRole="heading" accessibilityLevel={1}>
@@ -181,7 +143,7 @@ const LandingProjectIntention = () => {
               <ButtonStyle
                 first
                 colorOposite
-                anchor={t("shareLocation")}
+                anchor={t("common:shareLocation")}
                 onPress={() => signIn()}
               />
             )}
