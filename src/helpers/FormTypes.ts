@@ -102,7 +102,7 @@ export type FormType = {
     dissabilityReady: boolean;
     animalReady: boolean;
     prolongationReady: boolean;
-    accomodationPhoto: Blob;
+    accomodationPhotos: [Blob];
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;

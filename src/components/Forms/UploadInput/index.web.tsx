@@ -7,16 +7,23 @@ type UploadInputProps = {
   accept: string;
   children: React.ReactNode;
   onFileChange(file: File, dataUri: string): void;
+  disabled: boolean;
 };
 
 const UploadButton = styled.TouchableOpacity`
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   padding: 12px 20px;
-  border: 1.5px #003566 solid;
-  border-radius: 50px;
+  border: 1.5px #c8c8c8 dashed;
+  border-radius: 10px;
+  flex-direction: column;
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  opacity: ${(props) => (props.disabled ? 0.3 : 1)};
+  margin-top: 5px;
+  margin-horizontal: 5px;
 `;
 
 const ButtonLabelText = styled.Text`
@@ -24,9 +31,16 @@ const ButtonLabelText = styled.Text`
   font-weight: 700;
   font-size: 14px;
   line-height: 16.5px;
+  margin-top: 10px;
+  text-align: center;
 `;
 
-const UploadInput = ({ accept, children, onFileChange }: UploadInputProps) => {
+const UploadInput = ({
+  accept,
+  children,
+  onFileChange,
+  disabled,
+}: UploadInputProps) => {
   const inputRef = useRef<HTMLInputElement>();
   const [isLoading, toggleLoading] = useState(false);
 
@@ -69,13 +83,13 @@ const UploadInput = ({ accept, children, onFileChange }: UploadInputProps) => {
 
   return (
     <>
-      <UploadButton onPress={handleClick}>
-        <ButtonLabelText>
-          {isLoading ? <ActivityIndicator /> : children}
-        </ButtonLabelText>
+      <UploadButton disabled={disabled} onPress={handleClick}>
         <UploadIcon
           style={{ marginLeft: "4px", width: "15px", height: "15px" }}
         />
+        <ButtonLabelText>
+          {isLoading ? <ActivityIndicator /> : children}
+        </ButtonLabelText>
       </UploadButton>
       <input
         type="file"
