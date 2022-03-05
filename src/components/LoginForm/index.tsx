@@ -24,6 +24,7 @@ const LoginForm = ({ providers, csrfToken }) => {
 
   const onSubmit = (data) => {
     console.log("form submit:", data);
+    console.log("form submit:csrfToken", csrfToken);
   };
   const onError = (error) => {
     console.log("form error:", error);
@@ -53,7 +54,7 @@ const LoginForm = ({ providers, csrfToken }) => {
             maxLength: 50,
           }}
           error={errors?.login?.email}
-          errorMsg={t("validations.requiredName")}
+          errorMsg={t("validations.invalidEmail")}
         />
         <FormTextInput
           name={"login.password"}
@@ -63,10 +64,17 @@ const LoginForm = ({ providers, csrfToken }) => {
             maxLength: 50,
           }}
           error={errors?.login?.password}
-          errorMsg={t("validations.requiredName")}
+          errorMsg={t("validations.invalidPassword")}
         />
         <LostPass />
         <ButtonCta
+          style={{
+            width: "130px",
+            textTransform: "capitalize",
+            height: "43px",
+            display: "flex",
+            marginBottom: "30px",
+          }}
           anchor={t("loginForm.logIn")}
           onPress={handleSubmit(onSubmit, onError)}
         />

@@ -19,6 +19,7 @@
   "validations": {
     "requiredName": "Podaj swoję imię",
     "invalidEmail": "Podaj porawny e-mail",
+    "invalidPassword": "Podaj porawne hasło",
     "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
     "requiredTown": "Podaj miejscowość",
     "requiredTime": "Podaj na jak długo",
