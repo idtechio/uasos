@@ -53,7 +53,7 @@ const TooltipIcon = styled.View`
   color: "white";
 `;
 
-export default function AddAccommodationAdvancedForm() {
+export default function FormAdHost() {
   const { t } = useTranslation();
 
   const additionalHostsFeats: Data[] = useMemo(

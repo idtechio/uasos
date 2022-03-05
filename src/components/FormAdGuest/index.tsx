@@ -28,7 +28,7 @@ const enum Location {
   Preffered,
 }
 
-export default function AddAccommodationAdvancedForm() {
+export default function FormAdGuest() {
   const { t } = useTranslation();
 
   const formFields = useForm<FormType>({

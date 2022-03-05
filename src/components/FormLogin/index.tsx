@@ -15,7 +15,7 @@ import LostPass from "./LostPass";
 import GoToRegister from "./GoToRegister";
 import FormContainer from "./FormContainer";
 
-const LoginForm = ({ providers, csrfToken }) => {
+const FormLogin = ({ providers, csrfToken }) => {
   const { t } = useTranslation();
   const formFields = useForm<FormType>();
   const {
@@ -102,7 +102,7 @@ const LoginForm = ({ providers, csrfToken }) => {
   );
 };
 
-export default LoginForm;
+export default FormLogin;
 
 export const FormHeader = styled.h2`
   color: ${({ theme }) => theme.colors.textOnCta};
