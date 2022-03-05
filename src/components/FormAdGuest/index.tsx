@@ -22,6 +22,7 @@ import KidsIcon from "../../style/svgs/kids.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
+import AdGuestToApi from "../../helpers/AdGuestToApi";
 
 const enum Location {
   Any,
@@ -87,13 +88,7 @@ export default function FormAdGuest() {
 
   const onSubmit = (data) => {
     // TODO: implement
-    console.log("Handle submit", {
-      ...data.advancedRefugee,
-      city:
-        location === Location.Any
-          ? undefined
-          : data.advancedRefugee.cityOfRefuge,
-    });
+    console.log(data);
   };
 
   const onError = (error) => {
