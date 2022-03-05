@@ -27,6 +27,7 @@ import { CompositionSection } from "../Compositions";
 import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import UploadInput from "../Forms/UploadInput/index.web";
+import UploadPreview from "../Forms/UploadPreview";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -34,6 +35,7 @@ import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import Footer from "../Footer";
 
+const MAX_PHOTOS_COUNT = 3;
 const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 1", value: "Item 1" },
   { label: "Item 2", value: "Item 2" },
@@ -44,8 +46,10 @@ const DUMMY_DROPDOWN_ITEMS = [
   { label: "Item 7", value: "Item 7" },
 ];
 
-const DeletePhotoText = styled.Text`
-  color: ${(props) => props.theme.colors.error};
+const PreviewsWrapper = styled.View`
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const TooltipIcon = styled.View`
@@ -142,7 +146,7 @@ export default function FormAdHost() {
   const onSubmit = (data) => {
     console.log("Handle submit", data);
   };
-  const [uploadPreview, setUploadPreview] = useState<string>();
+  const [uploadPreviews, setUploadPreviews] = useState<string[]>();
 
   return (
     <FormProvider {...form}>
@@ -241,34 +245,45 @@ export default function FormAdHost() {
               rules={{
                 required: false,
               }}
-              name="advancedHost.accomodationPhoto"
+              name="advancedHost.accomodationPhotos"
               render={({ field: { onChange, onBlur, value } }) => {
-                return value ? (
-                  <>
-                    <img src={uploadPreview} alt="" />
-                    <TouchableOpacity
-                      onPress={() => {
-                        onChange(undefined);
-                        setUploadPreview(undefined);
+                return (
+                  <PreviewsWrapper>
+                    <UploadInput
+                      disabled={value?.length >= MAX_PHOTOS_COUNT}
+                      accept="image/*"
+                      onFileChange={(file, dataUri) => {
+                        onChange(value ? [...value, file] : [file]);
+                        setUploadPreviews(
+                          uploadPreviews
+                            ? [...uploadPreviews, dataUri]
+                            : [dataUri]
+                        );
+                        onBlur();
                       }}
                     >
-                      <DeletePhotoText>
-                        {t("hostAdd.accomodationPhotoReset")}
-                      </DeletePhotoText>
-                    </TouchableOpacity>
-                  </>
-                ) : (
-                  <UploadInput
-                    accept="image/*"
-                    onFileChange={(file, dataUri) => {
-                      onChange(file);
-                      setUploadPreview(dataUri);
+                      {t("hostAdd.accomodationPhotoLabel")}
+                    </UploadInput>
 
-                      onBlur();
-                    }}
-                  >
-                    {t("hostAdd.accomodationPhotoLabel")}
-                  </UploadInput>
+                    {!!value &&
+                      value.map((photo, index) => {
+                        if (!uploadPreviews || !uploadPreviews[index]) {
+                          return null;
+                        }
+                        return (
+                          <UploadPreview
+                            key={`uploadPreview-${index}`}
+                            onDelete={() => {
+                              onChange(value.filter((_, idx) => idx !== index));
+                              setUploadPreviews(
+                                uploadPreviews.filter((_, idx) => idx !== index)
+                              );
+                            }}
+                            preview={uploadPreviews[index]}
+                          />
+                        );
+                      })}
+                  </PreviewsWrapper>
                 );
               }}
             />
