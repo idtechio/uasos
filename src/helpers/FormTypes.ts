@@ -126,6 +126,10 @@ export type FormType = {
     groupRelations: string;
     accommodationType: string;
   };
+  login: {
+    email: string;
+    password: string;
+  };
 };
 
 type PathsToStringProps<T> = T extends string | number | Date | boolean
