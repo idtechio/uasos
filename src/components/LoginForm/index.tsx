@@ -9,6 +9,8 @@ import { FormType } from "../../helpers/FormTypes";
 import { useTranslation } from "next-i18next";
 import ButtonSM from "../Buttons/ButtonSM";
 import { Text, View } from "react-native";
+import Link from "next/link";
+import Separation from "./Separation";
 
 const LoginForm = ({ providers, csrfToken }) => {
   const { t } = useTranslation();
@@ -26,7 +28,7 @@ const LoginForm = ({ providers, csrfToken }) => {
   };
 
   return (
-    <CompositionSection padding={[35, 30, 8, 30]}>
+    <CompositionSection padding={[0, 30, 8, 30]}>
       <FormHeader>{t("loginForm.logInWith")}</FormHeader>
       {Object.values(providers).map((provider: any) => (
         <div key={provider.name}>
@@ -39,7 +41,7 @@ const LoginForm = ({ providers, csrfToken }) => {
           </div>
         </div>
       ))}
-      <Text> ---- lub -----</Text>
+      <Separation />
       <FormProvider {...formFields}>
         <FormTextInput
           name={"login.email"}
@@ -61,7 +63,12 @@ const LoginForm = ({ providers, csrfToken }) => {
           error={errors?.login?.password}
           errorMsg={t("validations.requiredName")}
         />
-
+        <View>
+          <Text>
+            Nie pamiętasz hasła?{" "}
+            <Link href={"/pass-resset"}>Kliknij tutaj</Link>
+          </Text>
+        </View>
         <ButtonCta
           anchor={t("loginForm.logIn")}
           onPress={handleSubmit(onSubmit, onError)}

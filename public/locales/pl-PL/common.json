@@ -12,6 +12,7 @@
     "withKids": "Jestem z dzieckiem",
     "name": "imię",
     "email": "e-mail",
+    "password": "Hasło",
     "phone": "phone",
     "town": "miejscowość"
   },
@@ -127,7 +128,6 @@
     "labels": {
       "name": "Imię",
       "email": "Email",
-      "password": "Hasło",
       "phoneNumber": "Numer telefonu",
       "refugeesCount": "Dla ilu osób szukasz schronienia",
       "refugee": "Uchodźca {{number}}",
