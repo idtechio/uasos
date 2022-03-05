@@ -1,13 +1,9 @@
 import { signIn, useSession } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { ContainerWrapper } from "./style";
 import { ButtonCta } from "../../src/components/Buttons";
 import { useTranslation } from "next-i18next";
 
-import {
-  CompositionAppBody,
-  CompositionContainer,
-} from "../../src/components/Compositions";
+import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdGuest from "../../src/components/FormAdGuest";
 
 export const getServerSideProps = async ({ locale }) => ({

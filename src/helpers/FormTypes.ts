@@ -108,9 +108,10 @@ export type FormType = {
     elderReady: string;
   };
   advancedRefugee: {
+    town: string;
+    country: string;
     name: string;
     email: string;
-    country: string;
     cityOfRefuge: string;
     fullBedCount: number;
     childBedCount: number;
@@ -122,7 +123,7 @@ export type FormType = {
     gender: string;
     age: number;
     nationality: string;
-    overnightDuration: string;
+    overnightDuration: number;
     groupRelations: string;
     accommodationType: string;
   };

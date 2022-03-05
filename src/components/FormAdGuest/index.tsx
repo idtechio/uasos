@@ -14,7 +14,6 @@ import {
 } from "../Forms";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import AnimalsIcon from "../../style/svgs/animals.svg";
@@ -22,6 +21,12 @@ import KidsIcon from "../../style/svgs/kids.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
+import AdGuestToApi from "../../helpers/AdGuestToApi";
+
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 
 const enum Location {
   Any,
@@ -34,7 +39,7 @@ export default function FormAdGuest() {
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
-        fullBedCount: 0,
+        fullBedCount: 1,
         childBedCount: 0,
         age: 18,
       },
@@ -86,13 +91,43 @@ export default function FormAdGuest() {
   } = formFields;
 
   const onSubmit = (data) => {
-    // TODO: implement
-    console.log("Handle submit", {
-      ...data.advancedRefugee,
-      city:
-        location === Location.Any
-          ? undefined
-          : data.advancedRefugee.cityOfRefuge,
+    const guest = data.advancedRefugee;
+    console.log(guest);
+
+    AdGuestToApi({
+      name: guest.name,
+      country: guest.country,
+      phone_num: guest.phoneNumber,
+      email: guest.email,
+      city: guest.town,
+      is_children: guest.preferences.peopleDetails.toddler
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_pet: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_handicapped: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      num_people: guest.fullBedCount + guest.childBedCount,
+      period: guest.overnightDuration,
+      listing_country: "poland",
+      acceptable_shelter_types: guest.accommodationType,
+      beds: guest.fullBedCount,
+      is_pregnant: guest.preferences.peopleDetails.pregnant
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_disability: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_animal: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_elderly: guest.preferences.peopleDetails.oldPerson
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_ukrainian_nationality:
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
     });
   };
 
@@ -135,15 +170,25 @@ export default function FormAdGuest() {
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "lessThanAWeek",
+      value: 10,
     },
-    { label: t("staticValues.timePeriod.week"), value: "week" },
+    { label: t("staticValues.timePeriod.week"), value: 20 },
     {
       label: t("staticValues.timePeriod.twoWeeks"),
-      value: "twoWeeks",
+      value: 30,
     },
-    { label: t("staticValues.timePeriod.month"), value: "month" },
-    { label: t("staticValues.timePeriod.longer"), value: "longer" },
+    { label: t("staticValues.timePeriod.month"), value: 40 },
+    { label: t("staticValues.timePeriod.longer"), value: 50 },
+  ];
+
+  const DUMMY_DROPDOWN_ITEMS = [
+    { label: "Item 1", value: "Item 1" },
+    { label: "Item 2", value: "Item 2" },
+    { label: "Item 3", value: "Item 3" },
+    { label: "Item 4", value: "Item 4" },
+    { label: "Item 5", value: "Item 5" },
+    { label: "Item 6", value: "Item 6" },
+    { label: "Item 7", value: "Item 7" },
   ];
 
   return (
@@ -208,6 +253,7 @@ export default function FormAdGuest() {
           zIndex={5}
           padding={[35, 30, 8, 30]}
           header={t("refugeeAddForm.placeOfRefuge")}
+          backgroundColor="#F5F4F4"
         >
           <InputControl zIndex={13}>
             <InputCotrolLabel>
@@ -230,18 +276,30 @@ export default function FormAdGuest() {
           </InputControl>
 
           {location === Location.Preffered && (
-            <InputControl zIndex={12}>
-              <InputCotrolLabel>
-                {t("refugeeAddForm.cityOfRefugeLabel")}
-              </InputCotrolLabel>
-              <FormAutocompleteInput
-                error={errors?.advancedRefugee?.cityOfRefuge}
-                errorMsg={t("refugeeAddForm.errors.cityOfRefuge")}
-                name="advancedRefugee.cityOfRefuge"
-                label={t("refugeeAddForm.cityOfRefugePlaceholder")}
+            <InputControl>
+              {/* <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
+              <FormDropdown
+                zIndex={14}
+                data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
+                placeholder={t("hostAdd.country")}
+                name="refugeeAddForm.country"
                 rules={{
                   required: true,
                 }}
+                error={errors?.advancedHost?.country}
+                errorMsg={t("hostAdd.errors.country")}
+              /> */}
+              <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
+              <FormDropdown
+                zIndex={13}
+                data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
+                name="advancedRefugee.town"
+                placeholder={t("hostAdd.town")}
+                rules={{
+                  required: true,
+                }}
+                error={errors?.advancedHost?.town}
+                errorMsg={t("validations.requiredTown")}
               />
             </InputControl>
           )}
@@ -261,7 +319,7 @@ export default function FormAdGuest() {
           </InputControl>
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
-        <CompositionSection
+        {/* <CompositionSection
           padding={[35, 30, 8, 30]}
           zIndex={4}
           backgroundColor="#F5F4F4"
@@ -293,8 +351,8 @@ export default function FormAdGuest() {
               errorMsg={t("refugeeAddForm.errors.childBedCount")}
             />
           </InputControl>
-        </CompositionSection>
-        <CompositionSection
+        </CompositionSection> */}
+        {/* <CompositionSection
           padding={[35, 30, 8, 30]}
           zIndex={3}
           backgroundColor="#F5F4F4"
@@ -327,12 +385,25 @@ export default function FormAdGuest() {
               errorMsg={t("hostAdd.errors.childBedCount")}
             />
           </InputControl>
-        </CompositionSection>
+        </CompositionSection> */}
         <CompositionSection
           zIndex={2}
           padding={[35, 30, 8, 30]}
           header={t("hostAdd.additionalInformationHeader")}
         >
+          <InputControl>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.fullBedCountLabel")}
+            </InputCotrolLabel>
+            <FormNumericInput
+              name="advancedRefugee.fullBedCount"
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedRefugee?.fullBedCount}
+              errorMsg={t("refugeeAddForm.errors.fullBedCount")}
+            />
+          </InputControl>
           <FormButtonsVertical
             label={t("refugeeForm.labels.refugeeDetails")}
             data={refugeeDetailsOptions}
