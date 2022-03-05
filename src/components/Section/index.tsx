@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledSection = styled.section<{ bgColor: string }>`
   background-color: ${(props) => props.bgColor};
   padding: 30px 0;
+  z-index: 1;
 `;
 
 const Container = styled.div`
