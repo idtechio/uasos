@@ -1,11 +1,6 @@
 import * as React from "react";
-import { ScrollView } from "react-native";
 import styled, { css } from "styled-components/native";
-import Header from "../src/components/Header";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import SectionTitle from "../src/components/SectionTitle";
-// import { css } from "styled-components";
 import { CompositionAppBody } from "../src/components/Compositions";
 import Footer from "../src/components/Footer";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
@@ -166,8 +161,6 @@ function Landing() {
           <LandingProjectIntention />
         </LandingProjectIntentionWrapper>
         <PartnersSection />
-        {/* TODO: Remove commented section & translations etc */}
-        {/*<WhatWeDoSection />*/}
         <HowDoesItWorkSection />
         <LikeToHelpSection />
         <Footer />
