@@ -63,7 +63,6 @@ export type FormType = {
     };
     isGDPRAccepted: boolean;
   };
-
   advancedHost: {
     town: string;
     country: string;

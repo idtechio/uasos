@@ -1,0 +1,3602 @@
+[
+  {
+    "label": "Zagreb",
+    "value": "3186886",
+    "population": 698966
+  },
+  {
+    "label": "Split",
+    "value": "3190261",
+    "population": 176314
+  },
+  {
+    "label": "Rijeka",
+    "value": "3191648",
+    "population": 141172
+  },
+  {
+    "label": "Osijek",
+    "value": "3193935",
+    "population": 88140
+  },
+  {
+    "label": "Zadar",
+    "value": "3186952",
+    "population": 71258
+  },
+  {
+    "label": "Slavonski Brod",
+    "value": "3190586",
+    "population": 60742
+  },
+  {
+    "label": "Pula",
+    "value": "3192224",
+    "population": 59078
+  },
+  {
+    "label": "Sesvete",
+    "value": "3190966",
+    "population": 52411
+  },
+  {
+    "label": "Karlovac",
+    "value": "3345300",
+    "population": 46833
+  },
+  {
+    "label": "Varaždin",
+    "value": "3188383",
+    "population": 41808
+  },
+  {
+    "label": "Šibenik",
+    "value": "3190941",
+    "population": 37112
+  },
+  {
+    "label": "Centar",
+    "value": "6618983",
+    "population": 37000
+  },
+  {
+    "label": "Sisak",
+    "value": "3190813",
+    "population": 35748
+  },
+  {
+    "label": "Vinkovci",
+    "value": "3187719",
+    "population": 33314
+  },
+  {
+    "label": "Velika Gorica",
+    "value": "3188244",
+    "population": 31553
+  },
+  {
+    "label": "Vukovar",
+    "value": "3187047",
+    "population": 29584
+  },
+  {
+    "label": "Dubrovnik",
+    "value": "3201047",
+    "population": 28428
+  },
+  {
+    "label": "Bjelovar",
+    "value": "3203982",
+    "population": 28275
+  },
+  {
+    "label": "Koprivnica",
+    "value": "3197728",
+    "population": 25579
+  },
+  {
+    "label": "Požega",
+    "value": "3190589",
+    "population": 21153
+  },
+  {
+    "label": "Solin",
+    "value": "3190359",
+    "population": 20212
+  },
+  {
+    "label": "Zaprešić",
+    "value": "3186781",
+    "population": 19664
+  },
+  {
+    "label": "Đakovo",
+    "value": "3202220",
+    "population": 19491
+  },
+  {
+    "label": "Samobor",
+    "value": "3191316",
+    "population": 15956
+  },
+  {
+    "label": "Čakovec",
+    "value": "3202888",
+    "population": 15867
+  },
+  {
+    "label": "Petrinja",
+    "value": "3193420",
+    "population": 15683
+  },
+  {
+    "label": "Virovitica",
+    "value": "3187694",
+    "population": 15665
+  },
+  {
+    "label": "Kutina",
+    "value": "3196864",
+    "population": 14886
+  },
+  {
+    "label": "Metković",
+    "value": "3195222",
+    "population": 13941
+  },
+  {
+    "label": "Županja",
+    "value": "3186294",
+    "population": 13842
+  },
+  {
+    "label": "Rovinj",
+    "value": "3191518",
+    "population": 13533
+  },
+  {
+    "label": "Makarska",
+    "value": "3195890",
+    "population": 13426
+  },
+  {
+    "label": "Nova Gradiška",
+    "value": "3194449",
+    "population": 13329
+  },
+  {
+    "label": "Popovača",
+    "value": "3192724",
+    "population": 12000
+  },
+  {
+    "label": "Križevci",
+    "value": "3197230",
+    "population": 11597
+  },
+  {
+    "label": "Sinj",
+    "value": "3190865",
+    "population": 11524
+  },
+  {
+    "label": "Pušćine",
+    "value": "3192199",
+    "population": 11289
+  },
+  {
+    "label": "Knin",
+    "value": "3197986",
+    "population": 11182
+  },
+  {
+    "label": "Slatina",
+    "value": "3192932",
+    "population": 10973
+  },
+  {
+    "label": "Trogir",
+    "value": "3188763",
+    "population": 10960
+  },
+  {
+    "label": "Poreč",
+    "value": "3192699",
+    "population": 10499
+  },
+  {
+    "label": "Dugo Selo",
+    "value": "3201009",
+    "population": 10453
+  },
+  {
+    "label": "Daruvar",
+    "value": "3202184",
+    "population": 9863
+  },
+  {
+    "label": "Čepin",
+    "value": "3202743",
+    "population": 9548
+  },
+  {
+    "label": "Donji Miholjac",
+    "value": "3201432",
+    "population": 9491
+  },
+  {
+    "label": "Ivanić-Grad",
+    "value": "3199069",
+    "population": 9379
+  },
+  {
+    "label": "Podstrana",
+    "value": "3192910",
+    "population": 9129
+  },
+  {
+    "label": "Ogulin",
+    "value": "3194183",
+    "population": 8755
+  },
+  {
+    "label": "Beli Manastir",
+    "value": "3204320",
+    "population": 8713
+  },
+  {
+    "label": "Našice",
+    "value": "3194581",
+    "population": 8213
+  },
+  {
+    "label": "Labin",
+    "value": "3196834",
+    "population": 7943
+  },
+  {
+    "label": "Valpovo",
+    "value": "3188395",
+    "population": 7943
+  },
+  {
+    "label": "Opatija",
+    "value": "3194099",
+    "population": 7888
+  },
+  {
+    "label": "Umag",
+    "value": "3188498",
+    "population": 7807
+  },
+  {
+    "label": "Drenova",
+    "value": "3201217",
+    "population": 7638
+  },
+  {
+    "label": "Tenja",
+    "value": "3189161",
+    "population": 7376
+  },
+  {
+    "label": "Belišće",
+    "value": "3204317",
+    "population": 7232
+  },
+  {
+    "label": "Crikvenica",
+    "value": "3202507",
+    "population": 7156
+  },
+  {
+    "label": "Kaštel Stari",
+    "value": "3198212",
+    "population": 7052
+  },
+  {
+    "label": "Novska",
+    "value": "3194319",
+    "population": 7028
+  },
+  {
+    "label": "Ivankovo",
+    "value": "3199051",
+    "population": 6728
+  },
+  {
+    "label": "Višnjevac",
+    "value": "3187657",
+    "population": 6680
+  },
+  {
+    "label": "Omiš",
+    "value": "3194114",
+    "population": 6597
+  },
+  {
+    "label": "Kaštel Novi",
+    "value": "3198214",
+    "population": 6411
+  },
+  {
+    "label": "Đurđevac",
+    "value": "3200961",
+    "population": 6349
+  },
+  {
+    "label": "Vodice",
+    "value": "3187489",
+    "population": 6146
+  },
+  {
+    "label": "Gospić",
+    "value": "3199873",
+    "population": 6118
+  },
+  {
+    "label": "Buzet",
+    "value": "3202942",
+    "population": 6059
+  },
+  {
+    "label": "Ploče",
+    "value": "3193150",
+    "population": 6013
+  },
+  {
+    "label": "Ilok",
+    "value": "3199128",
+    "population": 5926
+  },
+  {
+    "label": "Otok",
+    "value": "3193781",
+    "population": 5887
+  },
+  {
+    "label": "Pitomača",
+    "value": "3193305",
+    "population": 5740
+  },
+  {
+    "label": "Senj",
+    "value": "3191055",
+    "population": 5518
+  },
+  {
+    "label": "Jastrebarsko",
+    "value": "3198799",
+    "population": 5493
+  },
+  {
+    "label": "Ivanec",
+    "value": "3199076",
+    "population": 5461
+  },
+  {
+    "label": "Kaštel Lukšić",
+    "value": "3198215",
+    "population": 5425
+  },
+  {
+    "label": "Darda",
+    "value": "3202186",
+    "population": 5420
+  },
+  {
+    "label": "Biograd na Moru",
+    "value": "3204121",
+    "population": 5285
+  },
+  {
+    "label": "Novi Vinodolski",
+    "value": "3194355",
+    "population": 5282
+  },
+  {
+    "label": "Gunja",
+    "value": "3199473",
+    "population": 5058
+  },
+  {
+    "label": "Borovo",
+    "value": "3203670",
+    "population": 5056
+  },
+  {
+    "label": "Kaštel Kambelovac",
+    "value": "3198216",
+    "population": 5027
+  },
+  {
+    "label": "Pazin",
+    "value": "3193561",
+    "population": 5010
+  },
+  {
+    "label": "Novi Zagreb",
+    "value": "3209408",
+    "population": 5000
+  },
+  {
+    "label": "Jankomir",
+    "value": "3209379",
+    "population": 5000
+  },
+  {
+    "label": "Vrbovec",
+    "value": "3187265",
+    "population": 4886
+  },
+  {
+    "label": "Kaštel Gomilica",
+    "value": "3198218",
+    "population": 4881
+  },
+  {
+    "label": "Pakrac",
+    "value": "3193706",
+    "population": 4795
+  },
+  {
+    "label": "Krapina",
+    "value": "3197369",
+    "population": 4725
+  },
+  {
+    "label": "Glina",
+    "value": "3200600",
+    "population": 4680
+  },
+  {
+    "label": "Bošnjaci",
+    "value": "3203631",
+    "population": 4676
+  },
+  {
+    "label": "Delnice",
+    "value": "3202104",
+    "population": 4473
+  },
+  {
+    "label": "Vela Luka",
+    "value": "3188326",
+    "population": 4380
+  },
+  {
+    "label": "Otočac",
+    "value": "3193788",
+    "population": 4375
+  },
+  {
+    "label": "Imotski",
+    "value": "3199111",
+    "population": 4368
+  },
+  {
+    "label": "Popovača",
+    "value": "3217624",
+    "population": 4333
+  },
+  {
+    "label": "Prelog",
+    "value": "3192532",
+    "population": 4324
+  },
+  {
+    "label": "Nedelišće",
+    "value": "3194559",
+    "population": 4320
+  },
+  {
+    "label": "Orahovica",
+    "value": "3194064",
+    "population": 4283
+  },
+  {
+    "label": "Garešnica",
+    "value": "3200711",
+    "population": 4273
+  },
+  {
+    "label": "Cerna",
+    "value": "3202702",
+    "population": 4169
+  },
+  {
+    "label": "Lepoglava",
+    "value": "3196657",
+    "population": 4104
+  },
+  {
+    "label": "Josipovac",
+    "value": "3198576",
+    "population": 4101
+  },
+  {
+    "label": "Bibinje",
+    "value": "3204237",
+    "population": 3942
+  },
+  {
+    "label": "Dalj",
+    "value": "3202215",
+    "population": 3937
+  },
+  {
+    "label": "Strmec",
+    "value": "3189712",
+    "population": 3907
+  },
+  {
+    "label": "Marinići",
+    "value": "3195482",
+    "population": 3894
+  },
+  {
+    "label": "Preko",
+    "value": "3215759",
+    "population": 3871
+  },
+  {
+    "label": "Privlaka",
+    "value": "3192345",
+    "population": 3794
+  },
+  {
+    "label": "Pleternica",
+    "value": "3193187",
+    "population": 3757
+  },
+  {
+    "label": "Sračinec",
+    "value": "3190176",
+    "population": 3743
+  },
+  {
+    "label": "Krk",
+    "value": "3197208",
+    "population": 3730
+  },
+  {
+    "label": "Virje",
+    "value": "3187699",
+    "population": 3702
+  },
+  {
+    "label": "Hvar",
+    "value": "3199180",
+    "population": 3690
+  },
+  {
+    "label": "Nuštar",
+    "value": "3194310",
+    "population": 3624
+  },
+  {
+    "label": "Ludbreg",
+    "value": "3196120",
+    "population": 3603
+  },
+  {
+    "label": "Blato",
+    "value": "3203943",
+    "population": 3593
+  },
+  {
+    "label": "Matulji",
+    "value": "3195362",
+    "population": 3587
+  },
+  {
+    "label": "Kloštar Ivanić",
+    "value": "3198019",
+    "population": 3583
+  },
+  {
+    "label": "Podvinje",
+    "value": "3192892",
+    "population": 3575
+  },
+  {
+    "label": "Bedekovčina",
+    "value": "3204387",
+    "population": 3503
+  },
+  {
+    "label": "Mursko Središće",
+    "value": "3194626",
+    "population": 3444
+  },
+  {
+    "label": "Vodnjan",
+    "value": "3187477",
+    "population": 3423
+  },
+  {
+    "label": "Mali Lošinj",
+    "value": "3195674",
+    "population": 3400
+  },
+  {
+    "label": "Gradište",
+    "value": "3199680",
+    "population": 3399
+  },
+  {
+    "label": "Oroslavje",
+    "value": "3193962",
+    "population": 3368
+  },
+  {
+    "label": "Drniš",
+    "value": "3201162",
+    "population": 3348
+  },
+  {
+    "label": "Velika Mlaka",
+    "value": "3188204",
+    "population": 3334
+  },
+  {
+    "label": "Mirkovci",
+    "value": "3195046",
+    "population": 3283
+  },
+  {
+    "label": "Bilje",
+    "value": "3204145",
+    "population": 3282
+  },
+  {
+    "label": "Lovran",
+    "value": "3196175",
+    "population": 3257
+  },
+  {
+    "label": "Brnaze",
+    "value": "3203262",
+    "population": 3239
+  },
+  {
+    "label": "Kotoriba",
+    "value": "3197536",
+    "population": 3224
+  },
+  {
+    "label": "Žrnovnica",
+    "value": "3186334",
+    "population": 3222
+  },
+  {
+    "label": "Otok",
+    "value": "3193782",
+    "population": 3153
+  },
+  {
+    "label": "Pribislavec",
+    "value": "3192452",
+    "population": 3136
+  },
+  {
+    "label": "Okrug Gornji",
+    "value": "3199954",
+    "population": 3081
+  },
+  {
+    "label": "Viškovo",
+    "value": "8505066",
+    "population": 3068
+  },
+  {
+    "label": "Fažana",
+    "value": "3200862",
+    "population": 3065
+  },
+  {
+    "label": "Kaštel Štafilić",
+    "value": "3198213",
+    "population": 3042
+  },
+  {
+    "label": "Supetar",
+    "value": "3189492",
+    "population": 3031
+  },
+  {
+    "label": "Strmec",
+    "value": "3189713",
+    "population": 3027
+  },
+  {
+    "label": "Buje",
+    "value": "3203090",
+    "population": 3016
+  },
+  {
+    "label": "Lučko",
+    "value": "3196123",
+    "population": 3010
+  },
+  {
+    "label": "Stobreč",
+    "value": "3189844",
+    "population": 2978
+  },
+  {
+    "label": "Vrbanja",
+    "value": "3187301",
+    "population": 2966
+  },
+  {
+    "label": "Baška Voda",
+    "value": "3204439",
+    "population": 2924
+  },
+  {
+    "label": "Zlatar",
+    "value": "3186406",
+    "population": 2903
+  },
+  {
+    "label": "Čazma",
+    "value": "3202820",
+    "population": 2892
+  },
+  {
+    "label": "Grubišno Polje",
+    "value": "3199515",
+    "population": 2890
+  },
+  {
+    "label": "Suhopolje",
+    "value": "3189543",
+    "population": 2879
+  },
+  {
+    "label": "Zabok",
+    "value": "3186984",
+    "population": 2873
+  },
+  {
+    "label": "Kraljevica",
+    "value": "3197390",
+    "population": 2857
+  },
+  {
+    "label": "Korčula",
+    "value": "3197710",
+    "population": 2856
+  },
+  {
+    "label": "Kutjevo",
+    "value": "3196855",
+    "population": 2840
+  },
+  {
+    "label": "Goričan",
+    "value": "3200328",
+    "population": 2823
+  },
+  {
+    "label": "Brdovec",
+    "value": "3203487",
+    "population": 2801
+  },
+  {
+    "label": "Lipovljani",
+    "value": "3215502",
+    "population": 2791
+  },
+  {
+    "label": "Strizivojna",
+    "value": "3189718",
+    "population": 2771
+  },
+  {
+    "label": "Sveti Ivan Zelina",
+    "value": "3186604",
+    "population": 2764
+  },
+  {
+    "label": "Opuzen",
+    "value": "3194075",
+    "population": 2743
+  },
+  {
+    "label": "Sibinj",
+    "value": "3190934",
+    "population": 2736
+  },
+  {
+    "label": "Pag",
+    "value": "3193726",
+    "population": 2714
+  },
+  {
+    "label": "Gračac",
+    "value": "3199790",
+    "population": 2702
+  },
+  {
+    "label": "Hrvatski Leskovac",
+    "value": "3199229",
+    "population": 2687
+  },
+  {
+    "label": "Dugopolje",
+    "value": "3201011",
+    "population": 2687
+  },
+  {
+    "label": "Rešetari",
+    "value": "3191720",
+    "population": 2685
+  },
+  {
+    "label": "Strahoninec",
+    "value": "3189782",
+    "population": 2682
+  },
+  {
+    "label": "Novigrad",
+    "value": "3194379",
+    "population": 2642
+  },
+  {
+    "label": "Jarmina",
+    "value": "3198852",
+    "population": 2640
+  },
+  {
+    "label": "Benkovac",
+    "value": "3204293",
+    "population": 2635
+  },
+  {
+    "label": "Jakovlje",
+    "value": "3198924",
+    "population": 2635
+  },
+  {
+    "label": "Štitar",
+    "value": "3189858",
+    "population": 2621
+  },
+  {
+    "label": "Medulin",
+    "value": "3195307",
+    "population": 2593
+  },
+  {
+    "label": "Klis",
+    "value": "3198062",
+    "population": 2569
+  },
+  {
+    "label": "Brodarica",
+    "value": "3213267",
+    "population": 2534
+  },
+  {
+    "label": "Davor",
+    "value": "3202172",
+    "population": 2525
+  },
+  {
+    "label": "Veliki Drvenik",
+    "value": "3188089",
+    "population": 2500
+  },
+  {
+    "label": "Mošćenica",
+    "value": "3194858",
+    "population": 2470
+  },
+  {
+    "label": "Šenkovec",
+    "value": "3191048",
+    "population": 2466
+  },
+  {
+    "label": "Petrijevci",
+    "value": "3193424",
+    "population": 2451
+  },
+  {
+    "label": "Bregana",
+    "value": "3203478",
+    "population": 2440
+  },
+  {
+    "label": "Bestovje",
+    "value": "3209381",
+    "population": 2402
+  },
+  {
+    "label": "Trilj",
+    "value": "3188830",
+    "population": 2393
+  },
+  {
+    "label": "Čačinci",
+    "value": "3202922",
+    "population": 2360
+  },
+  {
+    "label": "Tovarnik",
+    "value": "3188946",
+    "population": 2337
+  },
+  {
+    "label": "Lipik",
+    "value": "3196534",
+    "population": 2311
+  },
+  {
+    "label": "Gundinci",
+    "value": "3199474",
+    "population": 2305
+  },
+  {
+    "label": "Rakitje",
+    "value": "3192016",
+    "population": 2301
+  },
+  {
+    "label": "Antunovac",
+    "value": "3204799",
+    "population": 2294
+  },
+  {
+    "label": "Cres",
+    "value": "3202523",
+    "population": 2289
+  },
+  {
+    "label": "Bizovac",
+    "value": "3204022",
+    "population": 2285
+  },
+  {
+    "label": "Belica",
+    "value": "3204322",
+    "population": 2278
+  },
+  {
+    "label": "Velika",
+    "value": "3188279",
+    "population": 2260
+  },
+  {
+    "label": "Privlaka",
+    "value": "3192346",
+    "population": 2253
+  },
+  {
+    "label": "Hreljin",
+    "value": "3199279",
+    "population": 2206
+  },
+  {
+    "label": "Vrgorac",
+    "value": "3187230",
+    "population": 2199
+  },
+  {
+    "label": "Andrijaševci",
+    "value": "3204817",
+    "population": 2176
+  },
+  {
+    "label": "Donji Vinjani",
+    "value": "3214667",
+    "population": 2169
+  },
+  {
+    "label": "Cavtat",
+    "value": "3202825",
+    "population": 2153
+  },
+  {
+    "label": "Marčelji",
+    "value": "3195513",
+    "population": 2148
+  },
+  {
+    "label": "Zmijavci",
+    "value": "3281556",
+    "population": 2140
+  },
+  {
+    "label": "Hrvatska Kostajnica",
+    "value": "3197594",
+    "population": 2127
+  },
+  {
+    "label": "Pakoštane",
+    "value": "3193710",
+    "population": 2123
+  },
+  {
+    "label": "Vođinci",
+    "value": "3187482",
+    "population": 2123
+  },
+  {
+    "label": "Vrpolje",
+    "value": "3187153",
+    "population": 2120
+  },
+  {
+    "label": "Dražice",
+    "value": "3201233",
+    "population": 2093
+  },
+  {
+    "label": "Ivanovec",
+    "value": "3199044",
+    "population": 2093
+  },
+  {
+    "label": "Jesenice",
+    "value": "3198650",
+    "population": 2089
+  },
+  {
+    "label": "Novalja",
+    "value": "3194422",
+    "population": 2088
+  },
+  {
+    "label": "Runović",
+    "value": "3191411",
+    "population": 2081
+  },
+  {
+    "label": "Murter",
+    "value": "3194643",
+    "population": 2078
+  },
+  {
+    "label": "Kastav",
+    "value": "3198227",
+    "population": 2047
+  },
+  {
+    "label": "Brodski Varoš",
+    "value": "3203231",
+    "population": 2035
+  },
+  {
+    "label": "Oriovac",
+    "value": "3194010",
+    "population": 2031
+  },
+  {
+    "label": "Rokovci",
+    "value": "3191553",
+    "population": 2029
+  },
+  {
+    "label": "Jakšić",
+    "value": "3198922",
+    "population": 2013
+  },
+  {
+    "label": "Gornji Stupnik",
+    "value": "3209376",
+    "population": 2003
+  },
+  {
+    "label": "Ferdinandovac",
+    "value": "3200856",
+    "population": 1994
+  },
+  {
+    "label": "Mala Subotica",
+    "value": "3195786",
+    "population": 1986
+  },
+  {
+    "label": "Sikirevci",
+    "value": "3190906",
+    "population": 1979
+  },
+  {
+    "label": "Orebić",
+    "value": "3194029",
+    "population": 1979
+  },
+  {
+    "label": "Gornji Bogičevci",
+    "value": "3200050",
+    "population": 1975
+  },
+  {
+    "label": "Bijelo Brdo",
+    "value": "3204182",
+    "population": 1961
+  },
+  {
+    "label": "Novi Marof",
+    "value": "3194367",
+    "population": 1956
+  },
+  {
+    "label": "Šodolovci",
+    "value": "3190392",
+    "population": 1955
+  },
+  {
+    "label": "Okučani",
+    "value": "3194145",
+    "population": 1950
+  },
+  {
+    "label": "Mokošica",
+    "value": "3194919",
+    "population": 1924
+  },
+  {
+    "label": "Donja Dubrava",
+    "value": "3201696",
+    "population": 1920
+  },
+  {
+    "label": "Lički Osik",
+    "value": "3196595",
+    "population": 1914
+  },
+  {
+    "label": "Križ",
+    "value": "3197242",
+    "population": 1914
+  },
+  {
+    "label": "Nijemci",
+    "value": "3194499",
+    "population": 1914
+  },
+  {
+    "label": "Piškorevci",
+    "value": "3193314",
+    "population": 1907
+  },
+  {
+    "label": "Banjol",
+    "value": "3204530",
+    "population": 1907
+  },
+  {
+    "label": "Stari Grad",
+    "value": "3216885",
+    "population": 1906
+  },
+  {
+    "label": "Vrbovsko",
+    "value": "3187257",
+    "population": 1903
+  },
+  {
+    "label": "Lekenik",
+    "value": "3196697",
+    "population": 1897
+  },
+  {
+    "label": "Stari Grad",
+    "value": "3189965",
+    "population": 1885
+  },
+  {
+    "label": "Sarvaš",
+    "value": "3191265",
+    "population": 1884
+  },
+  {
+    "label": "Vrsar",
+    "value": "3187145",
+    "population": 1881
+  },
+  {
+    "label": "Domašinec",
+    "value": "3201734",
+    "population": 1880
+  },
+  {
+    "label": "Voloder",
+    "value": "3187415",
+    "population": 1871
+  },
+  {
+    "label": "Omišalj",
+    "value": "3194112",
+    "population": 1868
+  },
+  {
+    "label": "Bukovlje",
+    "value": "3203026",
+    "population": 1867
+  },
+  {
+    "label": "Odra",
+    "value": "3194216",
+    "population": 1866
+  },
+  {
+    "label": "Feričanci",
+    "value": "3200855",
+    "population": 1863
+  },
+  {
+    "label": "Gradići",
+    "value": "3199732",
+    "population": 1860
+  },
+  {
+    "label": "Cernik",
+    "value": "3202698",
+    "population": 1848
+  },
+  {
+    "label": "Trpinja",
+    "value": "3188730",
+    "population": 1846
+  },
+  {
+    "label": "Stubičke Toplice",
+    "value": "8505062",
+    "population": 1845
+  },
+  {
+    "label": "Repušnica",
+    "value": "3191723",
+    "population": 1838
+  },
+  {
+    "label": "Gornja Bistra",
+    "value": "3200286",
+    "population": 1836
+  },
+  {
+    "label": "Sali",
+    "value": "3191335",
+    "population": 1820
+  },
+  {
+    "label": "Jelsa",
+    "value": "3198673",
+    "population": 1807
+  },
+  {
+    "label": "Ivanja Reka",
+    "value": "3199065",
+    "population": 1800
+  },
+  {
+    "label": "Punat",
+    "value": "3192219",
+    "population": 1793
+  },
+  {
+    "label": "Slunj",
+    "value": "3190523",
+    "population": 1785
+  },
+  {
+    "label": "Tučepi",
+    "value": "3188675",
+    "population": 1772
+  },
+  {
+    "label": "Kamen",
+    "value": "3281054",
+    "population": 1769
+  },
+  {
+    "label": "Varaždinske Toplice",
+    "value": "3188380",
+    "population": 1765
+  },
+  {
+    "label": "Bribir",
+    "value": "3203315",
+    "population": 1762
+  },
+  {
+    "label": "Kistanje",
+    "value": "3198135",
+    "population": 1761
+  },
+  {
+    "label": "Košute",
+    "value": "3197556",
+    "population": 1740
+  },
+  {
+    "label": "Kali",
+    "value": "3198457",
+    "population": 1739
+  },
+  {
+    "label": "Donja Lomnica",
+    "value": "3201668",
+    "population": 1732
+  },
+  {
+    "label": "Rubeši",
+    "value": "3191490",
+    "population": 1730
+  },
+  {
+    "label": "Ježdovec",
+    "value": "3198635",
+    "population": 1728
+  },
+  {
+    "label": "Brinje",
+    "value": "3203298",
+    "population": 1715
+  },
+  {
+    "label": "Koška",
+    "value": "3197621",
+    "population": 1699
+  },
+  {
+    "label": "Vis",
+    "value": "3187685",
+    "population": 1672
+  },
+  {
+    "label": "Orehovica",
+    "value": "3194020",
+    "population": 1669
+  },
+  {
+    "label": "Veliko Polje",
+    "value": "12212815",
+    "population": 1668
+  },
+  {
+    "label": "Budaševo",
+    "value": "3203138",
+    "population": 1664
+  },
+  {
+    "label": "Pregrada",
+    "value": "3192545",
+    "population": 1662
+  },
+  {
+    "label": "Raša",
+    "value": "3191963",
+    "population": 1661
+  },
+  {
+    "label": "Bol",
+    "value": "3203765",
+    "population": 1655
+  },
+  {
+    "label": "Komletinci",
+    "value": "3197831",
+    "population": 1649
+  },
+  {
+    "label": "Hrvace",
+    "value": "3199235",
+    "population": 1645
+  },
+  {
+    "label": "Gornji Kneginec",
+    "value": "3199998",
+    "population": 1637
+  },
+  {
+    "label": "Sveti Filip i Jakov",
+    "value": "3200845",
+    "population": 1635
+  },
+  {
+    "label": "Primošten",
+    "value": "3192383",
+    "population": 1631
+  },
+  {
+    "label": "Čibača",
+    "value": "3202630",
+    "population": 1630
+  },
+  {
+    "label": "Mravince",
+    "value": "3194762",
+    "population": 1628
+  },
+  {
+    "label": "Valbandon",
+    "value": "11071349",
+    "population": 1626
+  },
+  {
+    "label": "Brela",
+    "value": "3201712",
+    "population": 1626
+  },
+  {
+    "label": "Vir",
+    "value": "3187702",
+    "population": 1616
+  },
+  {
+    "label": "Pirovac",
+    "value": "3193331",
+    "population": 1616
+  },
+  {
+    "label": "Sirač",
+    "value": "3190835",
+    "population": 1614
+  },
+  {
+    "label": "Bistrinci",
+    "value": "3204035",
+    "population": 1598
+  },
+  {
+    "label": "Sveta Marija",
+    "value": "3189391",
+    "population": 1594
+  },
+  {
+    "label": "Ladimirevci",
+    "value": "3196816",
+    "population": 1587
+  },
+  {
+    "label": "Markovac Našički",
+    "value": "3195462",
+    "population": 1586
+  },
+  {
+    "label": "Kuršanec",
+    "value": "3196893",
+    "population": 1584
+  },
+  {
+    "label": "Vidovci",
+    "value": "3238625",
+    "population": 1582
+  },
+  {
+    "label": "Kalinovac",
+    "value": "3198450",
+    "population": 1581
+  },
+  {
+    "label": "Plaški",
+    "value": "3193237",
+    "population": 1580
+  },
+  {
+    "label": "Korenica",
+    "value": "3296403",
+    "population": 1578
+  },
+  {
+    "label": "Odranski Obrež",
+    "value": "3194258",
+    "population": 1578
+  },
+  {
+    "label": "Kaptol",
+    "value": "3198298",
+    "population": 1578
+  },
+  {
+    "label": "Bakar",
+    "value": "3204612",
+    "population": 1574
+  },
+  {
+    "label": "Semeljci",
+    "value": "3191075",
+    "population": 1566
+  },
+  {
+    "label": "Duće",
+    "value": "3201045",
+    "population": 1561
+  },
+  {
+    "label": "Donji Kraljevec",
+    "value": "3201454",
+    "population": 1560
+  },
+  {
+    "label": "Slobodnica",
+    "value": "3190544",
+    "population": 1557
+  },
+  {
+    "label": "Selce",
+    "value": "3191130",
+    "population": 1553
+  },
+  {
+    "label": "Molve",
+    "value": "3194889",
+    "population": 1544
+  },
+  {
+    "label": "Brckovljani",
+    "value": "3203520",
+    "population": 1542
+  },
+  {
+    "label": "Podgora",
+    "value": "3263332",
+    "population": 1541
+  },
+  {
+    "label": "Peteranec",
+    "value": "3193447",
+    "population": 1538
+  },
+  {
+    "label": "Tribunj",
+    "value": "3188837",
+    "population": 1536
+  },
+  {
+    "label": "Pučišća",
+    "value": "3192231",
+    "population": 1529
+  },
+  {
+    "label": "Buzdohanj",
+    "value": "3214494",
+    "population": 1517
+  },
+  {
+    "label": "Vrsi",
+    "value": "3187142",
+    "population": 1515
+  },
+  {
+    "label": "Reka",
+    "value": "3191749",
+    "population": 1507
+  },
+  {
+    "label": "Kašina",
+    "value": "3198236",
+    "population": 1494
+  },
+  {
+    "label": "Bobota",
+    "value": "3203880",
+    "population": 1491
+  },
+  {
+    "label": "Karojba",
+    "value": "3198253",
+    "population": 1489
+  },
+  {
+    "label": "Nedeljanec",
+    "value": "3194558",
+    "population": 1485
+  },
+  {
+    "label": "Grabovci",
+    "value": "3282309",
+    "population": 1480
+  },
+  {
+    "label": "Rabac",
+    "value": "3192174",
+    "population": 1479
+  },
+  {
+    "label": "Remetinec",
+    "value": "3191742",
+    "population": 1477
+  },
+  {
+    "label": "Horvati",
+    "value": "3199346",
+    "population": 1477
+  },
+  {
+    "label": "Jagodnjak",
+    "value": "3198943",
+    "population": 1476
+  },
+  {
+    "label": "Negoslavci",
+    "value": "3194552",
+    "population": 1473
+  },
+  {
+    "label": "Petrijanec",
+    "value": "3193425",
+    "population": 1471
+  },
+  {
+    "label": "Pridraga",
+    "value": "3192438",
+    "population": 1470
+  },
+  {
+    "label": "Cerić",
+    "value": "3202726",
+    "population": 1458
+  },
+  {
+    "label": "Kuče",
+    "value": "3197033",
+    "population": 1453
+  },
+  {
+    "label": "Podhum",
+    "value": "3193006",
+    "population": 1446
+  },
+  {
+    "label": "Oštarije",
+    "value": "3193871",
+    "population": 1444
+  },
+  {
+    "label": "Novo Selo Rok",
+    "value": "3194323",
+    "population": 1441
+  },
+  {
+    "label": "Donja Bistra",
+    "value": "3201716",
+    "population": 1438
+  },
+  {
+    "label": "Kerestinec",
+    "value": "3198172",
+    "population": 1433
+  },
+  {
+    "label": "Postira",
+    "value": "3192674",
+    "population": 1429
+  },
+  {
+    "label": "Ždralovi",
+    "value": "3186662",
+    "population": 1423
+  },
+  {
+    "label": "Sunja",
+    "value": "3189498",
+    "population": 1412
+  },
+  {
+    "label": "Dvor",
+    "value": "3200917",
+    "population": 1406
+  },
+  {
+    "label": "Donji Vidovec",
+    "value": "3201373",
+    "population": 1399
+  },
+  {
+    "label": "Cernik",
+    "value": "3202697",
+    "population": 1397
+  },
+  {
+    "label": "Komiža",
+    "value": "3197834",
+    "population": 1397
+  },
+  {
+    "label": "Vratišinec",
+    "value": "3187320",
+    "population": 1392
+  },
+  {
+    "label": "Kućan Marof",
+    "value": "3197034",
+    "population": 1388
+  },
+  {
+    "label": "Tisno",
+    "value": "3189120",
+    "population": 1384
+  },
+  {
+    "label": "Mihovljan",
+    "value": "3195175",
+    "population": 1380
+  },
+  {
+    "label": "Jablanovec",
+    "value": "3198994",
+    "population": 1378
+  },
+  {
+    "label": "Donji Stupnik",
+    "value": "8740364",
+    "population": 1375
+  },
+  {
+    "label": "Žrnovo",
+    "value": "3186331",
+    "population": 1368
+  },
+  {
+    "label": "Podturen",
+    "value": "3192904",
+    "population": 1365
+  },
+  {
+    "label": "Novoselec",
+    "value": "3194344",
+    "population": 1362
+  },
+  {
+    "label": "Veliki Grđevac",
+    "value": "3188075",
+    "population": 1358
+  },
+  {
+    "label": "Galižana",
+    "value": "3200734",
+    "population": 1356
+  },
+  {
+    "label": "Krasica",
+    "value": "3197353",
+    "population": 1353
+  },
+  {
+    "label": "Rezovac",
+    "value": "3191701",
+    "population": 1348
+  },
+  {
+    "label": "Viljevo",
+    "value": "3187750",
+    "population": 1347
+  },
+  {
+    "label": "Prigorje Brdovečko",
+    "value": "3192426",
+    "population": 1345
+  },
+  {
+    "label": "Kozinščak",
+    "value": "3197459",
+    "population": 1345
+  },
+  {
+    "label": "Škrljevo",
+    "value": "3190672",
+    "population": 1344
+  },
+  {
+    "label": "Bršadin",
+    "value": "3203221",
+    "population": 1341
+  },
+  {
+    "label": "Sveta Nedjelja",
+    "value": "3189386",
+    "population": 1338
+  },
+  {
+    "label": "Novaki",
+    "value": "3209378",
+    "population": 1338
+  },
+  {
+    "label": "Mačkovec",
+    "value": "3195971",
+    "population": 1326
+  },
+  {
+    "label": "Jalkovec",
+    "value": "3198918",
+    "population": 1309
+  },
+  {
+    "label": "Ljubešćica",
+    "value": "3196375",
+    "population": 1306
+  },
+  {
+    "label": "Radoboj",
+    "value": "3192111",
+    "population": 1301
+  },
+  {
+    "label": "Gornje Vratno",
+    "value": "3200069",
+    "population": 1301
+  },
+  {
+    "label": "Hlebine",
+    "value": "3199376",
+    "population": 1297
+  },
+  {
+    "label": "Posedarje",
+    "value": "3192679",
+    "population": 1292
+  },
+  {
+    "label": "Zadvorsko",
+    "value": "3186941",
+    "population": 1288
+  },
+  {
+    "label": "Osljak",
+    "value": "3192541",
+    "population": 1286
+  },
+  {
+    "label": "Mičevec",
+    "value": "3195199",
+    "population": 1286
+  },
+  {
+    "label": "Hrašćica",
+    "value": "8741097",
+    "population": 1283
+  },
+  {
+    "label": "Dubrava",
+    "value": "3186884",
+    "population": 1281
+  },
+  {
+    "label": "Ugljan",
+    "value": "3188538",
+    "population": 1278
+  },
+  {
+    "label": "Rovišće",
+    "value": "3191514",
+    "population": 1278
+  },
+  {
+    "label": "Vinica",
+    "value": "3187735",
+    "population": 1275
+  },
+  {
+    "label": "Hercegovac",
+    "value": "3199391",
+    "population": 1273
+  },
+  {
+    "label": "Velika Ostrna",
+    "value": "3188195",
+    "population": 1271
+  },
+  {
+    "label": "Podgora",
+    "value": "3193060",
+    "population": 1268
+  },
+  {
+    "label": "Jelisavac",
+    "value": "3198695",
+    "population": 1265
+  },
+  {
+    "label": "Retkovci",
+    "value": "3191704",
+    "population": 1263
+  },
+  {
+    "label": "Budrovci",
+    "value": "3203108",
+    "population": 1260
+  },
+  {
+    "label": "Novo Čiče",
+    "value": "3194352",
+    "population": 1255
+  },
+  {
+    "label": "Predavac",
+    "value": "3192563",
+    "population": 1254
+  },
+  {
+    "label": "Hodošan",
+    "value": "3199360",
+    "population": 1254
+  },
+  {
+    "label": "Čavle",
+    "value": "3202831",
+    "population": 1254
+  },
+  {
+    "label": "Vladislavci",
+    "value": "3187547",
+    "population": 1245
+  },
+  {
+    "label": "Soljani",
+    "value": "3190347",
+    "population": 1245
+  },
+  {
+    "label": "Komin",
+    "value": "3197837",
+    "population": 1243
+  },
+  {
+    "label": "Mihovljan",
+    "value": "3195176",
+    "population": 1236
+  },
+  {
+    "label": "Lumbarda",
+    "value": "3196039",
+    "population": 1227
+  },
+  {
+    "label": "Jadranovo",
+    "value": "3198964",
+    "population": 1224
+  },
+  {
+    "label": "Vinež",
+    "value": "3187740",
+    "population": 1219
+  },
+  {
+    "label": "Peklenica",
+    "value": "3193522",
+    "population": 1217
+  },
+  {
+    "label": "Savska Ves",
+    "value": "12212330",
+    "population": 1217
+  },
+  {
+    "label": "Pojatno",
+    "value": "3192865",
+    "population": 1213
+  },
+  {
+    "label": "Viškovci",
+    "value": "3187666",
+    "population": 1212
+  },
+  {
+    "label": "Sigetec",
+    "value": "3190918",
+    "population": 1212
+  },
+  {
+    "label": "Turanj",
+    "value": "3188635",
+    "population": 1207
+  },
+  {
+    "label": "Zdenci Brdovečki",
+    "value": "3186670",
+    "population": 1204
+  },
+  {
+    "label": "Hrašće Turopoljsko",
+    "value": "3199320",
+    "population": 1202
+  },
+  {
+    "label": "Srinjine",
+    "value": "3190088",
+    "population": 1201
+  },
+  {
+    "label": "Lopar",
+    "value": "3196212",
+    "population": 1197
+  },
+  {
+    "label": "Galovac",
+    "value": "3200731",
+    "population": 1196
+  },
+  {
+    "label": "Brijest",
+    "value": "3315388",
+    "population": 1187
+  },
+  {
+    "label": "Parag",
+    "value": "12200243",
+    "population": 1187
+  },
+  {
+    "label": "Klana",
+    "value": "3198111",
+    "population": 1182
+  },
+  {
+    "label": "Gorjani",
+    "value": "3200304",
+    "population": 1174
+  },
+  {
+    "label": "Kampor",
+    "value": "3217900",
+    "population": 1173
+  },
+  {
+    "label": "Kruševica",
+    "value": "3197086",
+    "population": 1173
+  },
+  {
+    "label": "Lovas",
+    "value": "3196189",
+    "population": 1173
+  },
+  {
+    "label": "Ozalj",
+    "value": "3193754",
+    "population": 1170
+  },
+  {
+    "label": "Voćin",
+    "value": "3187503",
+    "population": 1167
+  },
+  {
+    "label": "Donje Ladanje",
+    "value": "3201562",
+    "population": 1166
+  },
+  {
+    "label": "Markušica",
+    "value": "3195447",
+    "population": 1166
+  },
+  {
+    "label": "Vojnić",
+    "value": "3187451",
+    "population": 1162
+  },
+  {
+    "label": "Rogoznica",
+    "value": "3191561",
+    "population": 1157
+  },
+  {
+    "label": "Ernestinovo",
+    "value": "3200881",
+    "population": 1148
+  },
+  {
+    "label": "Drnje",
+    "value": "3201160",
+    "population": 1146
+  },
+  {
+    "label": "Poličnik",
+    "value": "3192830",
+    "population": 1141
+  },
+  {
+    "label": "Starigrad",
+    "value": "3189964",
+    "population": 1140
+  },
+  {
+    "label": "Lukavec",
+    "value": "3196072",
+    "population": 1140
+  },
+  {
+    "label": "Turjaci",
+    "value": "3188620",
+    "population": 1138
+  },
+  {
+    "label": "Ruščica",
+    "value": "3191402",
+    "population": 1135
+  },
+  {
+    "label": "Rakov Potok",
+    "value": "3191985",
+    "population": 1134
+  },
+  {
+    "label": "Nin",
+    "value": "3216446",
+    "population": 1132
+  },
+  {
+    "label": "Rude",
+    "value": "3191470",
+    "population": 1131
+  },
+  {
+    "label": "Velimirovac",
+    "value": "3187912",
+    "population": 1129
+  },
+  {
+    "label": "Gračec",
+    "value": "3199773",
+    "population": 1127
+  },
+  {
+    "label": "Gornji Karin",
+    "value": "3200001",
+    "population": 1125
+  },
+  {
+    "label": "Stari Perkovci",
+    "value": "3189945",
+    "population": 1123
+  },
+  {
+    "label": "Polača",
+    "value": "3192848",
+    "population": 1122
+  },
+  {
+    "label": "Marina",
+    "value": "3195491",
+    "population": 1117
+  },
+  {
+    "label": "Njivice",
+    "value": "3194475",
+    "population": 1115
+  },
+  {
+    "label": "Čeminac",
+    "value": "3202763",
+    "population": 1113
+  },
+  {
+    "label": "Kruševo",
+    "value": "3197071",
+    "population": 1112
+  },
+  {
+    "label": "Vranjic",
+    "value": "3186233",
+    "population": 1110
+  },
+  {
+    "label": "Marija Bistrica",
+    "value": "3195499",
+    "population": 1107
+  },
+  {
+    "label": "Slatine",
+    "value": "3190610",
+    "population": 1106
+  },
+  {
+    "label": "Supetarska Draga",
+    "value": "3189489",
+    "population": 1099
+  },
+  {
+    "label": "Gudovac",
+    "value": "3199480",
+    "population": 1095
+  },
+  {
+    "label": "Vrginmost",
+    "value": "3187232",
+    "population": 1095
+  },
+  {
+    "label": "Kopčevec",
+    "value": "12212651",
+    "population": 1093
+  },
+  {
+    "label": "Lupoglav",
+    "value": "3196019",
+    "population": 1086
+  },
+  {
+    "label": "Brezovac",
+    "value": "3203360",
+    "population": 1080
+  },
+  {
+    "label": "Laslovo",
+    "value": "3196758",
+    "population": 1079
+  },
+  {
+    "label": "Martin",
+    "value": "3195440",
+    "population": 1077
+  },
+  {
+    "label": "Selnica",
+    "value": "3191096",
+    "population": 1076
+  },
+  {
+    "label": "Mraclin",
+    "value": "3194779",
+    "population": 1074
+  },
+  {
+    "label": "Jalžabet",
+    "value": "3198913",
+    "population": 1070
+  },
+  {
+    "label": "Karanac",
+    "value": "3198286",
+    "population": 1070
+  },
+  {
+    "label": "Velika Pisanica",
+    "value": "3188188",
+    "population": 1065
+  },
+  {
+    "label": "Vuka",
+    "value": "3187070",
+    "population": 1064
+  },
+  {
+    "label": "Zdenci",
+    "value": "3186671",
+    "population": 1063
+  },
+  {
+    "label": "Obrovac",
+    "value": "3194245",
+    "population": 1060
+  },
+  {
+    "label": "Beretinec",
+    "value": "3204277",
+    "population": 1059
+  },
+  {
+    "label": "Lužani",
+    "value": "3196000",
+    "population": 1058
+  },
+  {
+    "label": "Dežanovac",
+    "value": "3202046",
+    "population": 1058
+  },
+  {
+    "label": "Klenovnik",
+    "value": "3198078",
+    "population": 1056
+  },
+  {
+    "label": "Mihotići",
+    "value": "8741104",
+    "population": 1050
+  },
+  {
+    "label": "Garčin",
+    "value": "3200714",
+    "population": 1044
+  },
+  {
+    "label": "Orešje",
+    "value": "3194018",
+    "population": 1043
+  },
+  {
+    "label": "Kuševac",
+    "value": "3196886",
+    "population": 1028
+  },
+  {
+    "label": "Seget Vranjica",
+    "value": "3187360",
+    "population": 1027
+  },
+  {
+    "label": "Gala",
+    "value": "3200745",
+    "population": 1021
+  },
+  {
+    "label": "Lukarišće",
+    "value": "12213020",
+    "population": 1020
+  },
+  {
+    "label": "Lonjica",
+    "value": "3196215",
+    "population": 1020
+  },
+  {
+    "label": "Marčana",
+    "value": "3195515",
+    "population": 1020
+  },
+  {
+    "label": "Karlobag",
+    "value": "3198261",
+    "population": 1019
+  },
+  {
+    "label": "Smokvica",
+    "value": "3190465",
+    "population": 1017
+  },
+  {
+    "label": "Tužno",
+    "value": "3188581",
+    "population": 1016
+  },
+  {
+    "label": "Sveti Lovreč",
+    "value": "3196172",
+    "population": 1015
+  },
+  {
+    "label": "Greda",
+    "value": "3282009",
+    "population": 1015
+  },
+  {
+    "label": "Široko Polje",
+    "value": "3190819",
+    "population": 1012
+  },
+  {
+    "label": "Grubine",
+    "value": "3284794",
+    "population": 1012
+  },
+  {
+    "label": "Donja Zdenčina",
+    "value": "3201589",
+    "population": 1009
+  },
+  {
+    "label": "Ražanac",
+    "value": "3191800",
+    "population": 1007
+  },
+  {
+    "label": "Batrina",
+    "value": "3204398",
+    "population": 1005
+  },
+  {
+    "label": "Gola",
+    "value": "3200501",
+    "population": 1000
+  },
+  {
+    "label": "Josipdol",
+    "value": "3198578",
+    "population": 998
+  },
+  {
+    "label": "Ližnjan",
+    "value": "3196408",
+    "population": 994
+  },
+  {
+    "label": "Končanica",
+    "value": "3197809",
+    "population": 991
+  },
+  {
+    "label": "Gradina",
+    "value": "3190016",
+    "population": 977
+  },
+  {
+    "label": "Zagvozd",
+    "value": "3186876",
+    "population": 970
+  },
+  {
+    "label": "Erdut",
+    "value": "3200884",
+    "population": 969
+  },
+  {
+    "label": "Perušić",
+    "value": "3193476",
+    "population": 962
+  },
+  {
+    "label": "Podgorač",
+    "value": "3193051",
+    "population": 961
+  },
+  {
+    "label": "Oprisavci",
+    "value": "3194079",
+    "population": 960
+  },
+  {
+    "label": "Selca",
+    "value": "3191134",
+    "population": 957
+  },
+  {
+    "label": "Legrad",
+    "value": "3196699",
+    "population": 956
+  },
+  {
+    "label": "Lopatinec",
+    "value": "3196201",
+    "population": 952
+  },
+  {
+    "label": "Vrbnik",
+    "value": "3187275",
+    "population": 949
+  },
+  {
+    "label": "Topusko",
+    "value": "3188970",
+    "population": 945
+  },
+  {
+    "label": "Marjanci",
+    "value": "3195471",
+    "population": 940
+  },
+  {
+    "label": "Mrkopalj",
+    "value": "3194722",
+    "population": 928
+  },
+  {
+    "label": "Mikleuš",
+    "value": "3195159",
+    "population": 918
+  },
+  {
+    "label": "Baška",
+    "value": "3204441",
+    "population": 905
+  },
+  {
+    "label": "Breznica",
+    "value": "3203378",
+    "population": 895
+  },
+  {
+    "label": "Bale",
+    "value": "3204586",
+    "population": 890
+  },
+  {
+    "label": "Tar",
+    "value": "3189204",
+    "population": 890
+  },
+  {
+    "label": "Rasinja",
+    "value": "3191948",
+    "population": 876
+  },
+  {
+    "label": "Milna",
+    "value": "3195095",
+    "population": 866
+  },
+  {
+    "label": "Lovreć",
+    "value": "3196173",
+    "population": 860
+  },
+  {
+    "label": "Šandrovac",
+    "value": "3191304",
+    "population": 855
+  },
+  {
+    "label": "Ivanska",
+    "value": "3199038",
+    "population": 852
+  },
+  {
+    "label": "Vidovec",
+    "value": "3187793",
+    "population": 851
+  },
+  {
+    "label": "Skrad",
+    "value": "3190694",
+    "population": 840
+  },
+  {
+    "label": "Tordinci",
+    "value": "3188966",
+    "population": 840
+  },
+  {
+    "label": "Funtana",
+    "value": "3200806",
+    "population": 835
+  },
+  {
+    "label": "Brtonigla",
+    "value": "3203206",
+    "population": 831
+  },
+  {
+    "label": "Fužine",
+    "value": "3200799",
+    "population": 818
+  },
+  {
+    "label": "Bogdanovci",
+    "value": "3203837",
+    "population": 807
+  },
+  {
+    "label": "Petlovac",
+    "value": "3193436",
+    "population": 805
+  },
+  {
+    "label": "Grožnjan",
+    "value": "3199519",
+    "population": 785
+  },
+  {
+    "label": "Dekanovec",
+    "value": "3202110",
+    "population": 774
+  },
+  {
+    "label": "Velika Ludina",
+    "value": "3188206",
+    "population": 751
+  },
+  {
+    "label": "Rugvica",
+    "value": "3191443",
+    "population": 722
+  },
+  {
+    "label": "Martinska Ves",
+    "value": "3196578",
+    "population": 683
+  },
+  {
+    "label": "Žminj",
+    "value": "3186367",
+    "population": 676
+  },
+  {
+    "label": "Prgomet",
+    "value": "3192467",
+    "population": 673
+  },
+  {
+    "label": "Jasenovac",
+    "value": "3198815",
+    "population": 653
+  },
+  {
+    "label": "Skradin",
+    "value": "3190692",
+    "population": 622
+  },
+  {
+    "label": "Ston",
+    "value": "3189810",
+    "population": 594
+  },
+  {
+    "label": "Lasinja",
+    "value": "3196761",
+    "population": 573
+  },
+  {
+    "label": "Klanjec",
+    "value": "3198103",
+    "population": 565
+  },
+  {
+    "label": "Rab",
+    "value": "3192178",
+    "population": 557
+  },
+  {
+    "label": "Kravarsko",
+    "value": "3197338",
+    "population": 557
+  },
+  {
+    "label": "Kanfanar",
+    "value": "3198348",
+    "population": 535
+  },
+  {
+    "label": "Motovun",
+    "value": "3194802",
+    "population": 531
+  },
+  {
+    "label": "Cestica",
+    "value": "3202654",
+    "population": 504
+  },
+  {
+    "label": "Gradec",
+    "value": "3199737",
+    "population": 490
+  },
+  {
+    "label": "Štrigova",
+    "value": "3189728",
+    "population": 443
+  },
+  {
+    "label": "Sveti Martin na Muri",
+    "value": "3189310",
+    "population": 435
+  },
+  {
+    "label": "Martijanec",
+    "value": "3195441",
+    "population": 423
+  },
+  {
+    "label": "Luka",
+    "value": "3196094",
+    "population": 416
+  },
+  {
+    "label": "Lastovo",
+    "value": "3196754",
+    "population": 350
+  },
+  {
+    "label": "Majur",
+    "value": "3197591",
+    "population": 324
+  },
+  {
+    "label": "Donji Kukuruzari",
+    "value": "3215199",
+    "population": 297
+  },
+  {
+    "label": "Gornji Mihaljevec",
+    "value": "3199964",
+    "population": 283
+  },
+  {
+    "label": "Pokupsko",
+    "value": "3192850",
+    "population": 235
+  },
+  {
+    "label": "Janjina",
+    "value": "3198884",
+    "population": 203
+  },
+  {
+    "label": "Orle",
+    "value": "3194003",
+    "population": 107
+  },
+  {
+    "label": "Donji Andrijevci",
+    "value": "3201513",
+    "population": 4
+  },
+  {
+    "label": "Drenovci",
+    "value": "3201207",
+    "population": 4
+  },
+  {
+    "label": "Kneževi Vinogradi",
+    "value": "3197997",
+    "population": 4
+  },
+  {
+    "label": "Ðurđenovac",
+    "value": "3200962",
+    "population": 4
+  },
+  {
+    "label": "Babina Greda",
+    "value": "3204725",
+    "population": 4
+  },
+  {
+    "label": "Borovo Selo",
+    "value": "3244782",
+    "population": 4
+  },
+  {
+    "label": "Velika Kopanica",
+    "value": "3188222",
+    "population": 4
+  },
+  {
+    "label": "Stari Jankovci",
+    "value": "3189959",
+    "population": 4
+  },
+  {
+    "label": "Vrbje",
+    "value": "3187282",
+    "population": 0
+  },
+  {
+    "label": "Sopje",
+    "value": "3190329",
+    "population": 0
+  },
+  {
+    "label": "Nerežišće",
+    "value": "3194524",
+    "population": 0
+  },
+  {
+    "label": "Kloštar Podravski",
+    "value": "3198018",
+    "population": 0
+  },
+  {
+    "label": "Gračišće",
+    "value": "3199770",
+    "population": 0
+  },
+  {
+    "label": "Drenje",
+    "value": "3201223",
+    "population": 0
+  },
+  {
+    "label": "Vlaka",
+    "value": "3287406",
+    "population": 0
+  },
+  {
+    "label": "Vrhovine",
+    "value": "3187195",
+    "population": 0
+  },
+  {
+    "label": "Kraljevec na Sutli",
+    "value": "3197394",
+    "population": 0
+  },
+  {
+    "label": "Dubravica",
+    "value": "3201056",
+    "population": 0
+  },
+  {
+    "label": "Bilice",
+    "value": "3204158",
+    "population": 0
+  },
+  {
+    "label": "Bedenica",
+    "value": "3204383",
+    "population": 0
+  },
+  {
+    "label": "Visignano",
+    "value": "3187662",
+    "population": 0
+  },
+  {
+    "label": "Tinjan",
+    "value": "3189108",
+    "population": 0
+  },
+  {
+    "label": "Satnica Ðakovačka",
+    "value": "3191249",
+    "population": 0
+  },
+  {
+    "label": "Popovac",
+    "value": "3192725",
+    "population": 0
+  },
+  {
+    "label": "Lišane Ostrovičke",
+    "value": "3196464",
+    "population": 0
+  },
+  {
+    "label": "Breznički Hum",
+    "value": "3199202",
+    "population": 0
+  },
+  {
+    "label": "Generalski Stol",
+    "value": "3200677",
+    "population": 0
+  },
+  {
+    "label": "Vižinada",
+    "value": "3187565",
+    "population": 0
+  },
+  {
+    "label": "Donja Stubica",
+    "value": "3201621",
+    "population": 0
+  },
+  {
+    "label": "Donja Pušća",
+    "value": "3201636",
+    "population": 0
+  },
+  {
+    "label": "Donja Motičina",
+    "value": "3201656",
+    "population": 0
+  },
+  {
+    "label": "Čađavica",
+    "value": "3202918",
+    "population": 0
+  },
+  {
+    "label": "Brestovac",
+    "value": "3203434",
+    "population": 0
+  },
+  {
+    "label": "Babino Polje",
+    "value": "3204712",
+    "population": 0
+  },
+  {
+    "label": "Veliko Trojstvo",
+    "value": "3187919",
+    "population": 0
+  },
+  {
+    "label": "Trpanj",
+    "value": "3188734",
+    "population": 0
+  },
+  {
+    "label": "Lokvičič",
+    "value": "3196245",
+    "population": 0
+  },
+  {
+    "label": "Lećevica",
+    "value": "3196715",
+    "population": 0
+  },
+  {
+    "label": "Kolan",
+    "value": "3197902",
+    "population": 0
+  },
+  {
+    "label": "Draganići",
+    "value": "3201320",
+    "population": 0
+  },
+  {
+    "label": "Brod Moravice",
+    "value": "3203235",
+    "population": 0
+  },
+  {
+    "label": "Tuhelj",
+    "value": "3188668",
+    "population": 0
+  },
+  {
+    "label": "Trnava",
+    "value": "3188813",
+    "population": 0
+  },
+  {
+    "label": "Stankovci",
+    "value": "3190036",
+    "population": 0
+  },
+  {
+    "label": "Špišić-Bukovica",
+    "value": "3190264",
+    "population": 0
+  },
+  {
+    "label": "Mali Bukovec",
+    "value": "3195731",
+    "population": 0
+  },
+  {
+    "label": "Kumrovec",
+    "value": "3196954",
+    "population": 0
+  },
+  {
+    "label": "Krnjak",
+    "value": "3197174",
+    "population": 0
+  },
+  {
+    "label": "Jelenje",
+    "value": "3198705",
+    "population": 0
+  },
+  {
+    "label": "Dobrinj",
+    "value": "3201934",
+    "population": 0
+  },
+  {
+    "label": "Koprivnički Bregi",
+    "value": "3203473",
+    "population": 0
+  },
+  {
+    "label": "Netretić",
+    "value": "3215000",
+    "population": 0
+  },
+  {
+    "label": "Novigrad Podravski",
+    "value": "3194374",
+    "population": 0
+  },
+  {
+    "label": "Novi Golubovec",
+    "value": "3194383",
+    "population": 0
+  },
+  {
+    "label": "Marija Gorica",
+    "value": "3195498",
+    "population": 0
+  },
+  {
+    "label": "Civljane",
+    "value": "3202553",
+    "population": 0
+  },
+  {
+    "label": "Budinšćina",
+    "value": "3203123",
+    "population": 0
+  },
+  {
+    "label": "Barban",
+    "value": "3204500",
+    "population": 0
+  },
+  {
+    "label": "Gradac",
+    "value": "3199753",
+    "population": 0
+  },
+  {
+    "label": "Podbablje",
+    "value": "3200097",
+    "population": 0
+  },
+  {
+    "label": "Draž",
+    "value": "3201250",
+    "population": 0
+  },
+  {
+    "label": "Mače",
+    "value": "3195989",
+    "population": 0
+  },
+  {
+    "label": "Duga Resa",
+    "value": "3201030",
+    "population": 0
+  },
+  {
+    "label": "Novo Virje",
+    "value": "3201203",
+    "population": 0
+  },
+  {
+    "label": "Donji Lapac",
+    "value": "3201450",
+    "population": 0
+  },
+  {
+    "label": "Veliko Trgovišće",
+    "value": "3187920",
+    "population": 0
+  },
+  {
+    "label": "Sveti Ilija",
+    "value": "3189341",
+    "population": 0
+  },
+  {
+    "label": "Škabrnje",
+    "value": "3190764",
+    "population": 0
+  },
+  {
+    "label": "Povljana",
+    "value": "3192622",
+    "population": 0
+  },
+  {
+    "label": "Nova Rača",
+    "value": "3194414",
+    "population": 0
+  },
+  {
+    "label": "Krašić",
+    "value": "3197354",
+    "population": 0
+  },
+  {
+    "label": "Klakar",
+    "value": "3198116",
+    "population": 0
+  },
+  {
+    "label": "Hum na Sutli",
+    "value": "3199194",
+    "population": 0
+  },
+  {
+    "label": "Ervenik",
+    "value": "3200879",
+    "population": 0
+  },
+  {
+    "label": "Zemunik Donji",
+    "value": "3201363",
+    "population": 0
+  },
+  {
+    "label": "Donji Proložac",
+    "value": "3201412",
+    "population": 0
+  },
+  {
+    "label": "Kukljica",
+    "value": "3215728",
+    "population": 0
+  },
+  {
+    "label": "Sveti Ivan Žabno",
+    "value": "3186987",
+    "population": 0
+  },
+  {
+    "label": "Staro Petrovo Selo",
+    "value": "3189930",
+    "population": 0
+  },
+  {
+    "label": "Kula Norinska",
+    "value": "3196969",
+    "population": 0
+  },
+  {
+    "label": "Klinča Sela",
+    "value": "3198070",
+    "population": 0
+  },
+  {
+    "label": "Donja Voća",
+    "value": "3201595",
+    "population": 0
+  },
+  {
+    "label": "Bednja",
+    "value": "3204378",
+    "population": 0
+  },
+  {
+    "label": "Velika Trnovitica",
+    "value": "3188155",
+    "population": 0
+  },
+  {
+    "label": "Sutivan",
+    "value": "3189438",
+    "population": 0
+  },
+  {
+    "label": "Punitovci",
+    "value": "3192217",
+    "population": 0
+  },
+  {
+    "label": "Oklaj",
+    "value": "3194172",
+    "population": 0
+  },
+  {
+    "label": "Sveti Križ Začretje",
+    "value": "3186954",
+    "population": 0
+  },
+  {
+    "label": "Poljanica Bistranska",
+    "value": "3192812",
+    "population": 0
+  },
+  {
+    "label": "Ðulovac",
+    "value": "3195069",
+    "population": 0
+  },
+  {
+    "label": "Lokve",
+    "value": "3196251",
+    "population": 0
+  },
+  {
+    "label": "Cerovlje",
+    "value": "3202681",
+    "population": 0
+  },
+  {
+    "label": "Novigrad",
+    "value": "3194381",
+    "population": 0
+  },
+  {
+    "label": "Lobor",
+    "value": "3196301",
+    "population": 0
+  },
+  {
+    "label": "Dragalić",
+    "value": "3201326",
+    "population": 0
+  },
+  {
+    "label": "Konjšćina",
+    "value": "11136870",
+    "population": 0
+  },
+  {
+    "label": "Kapela",
+    "value": "3198321",
+    "population": 0
+  },
+  {
+    "label": "Kamanje",
+    "value": "3198428",
+    "population": 0
+  },
+  {
+    "label": "Kalnik",
+    "value": "3198440",
+    "population": 0
+  },
+  {
+    "label": "Gornje Jesenje",
+    "value": "3200124",
+    "population": 0
+  },
+  {
+    "label": "Crnac",
+    "value": "3202474",
+    "population": 0
+  },
+  {
+    "label": "Cetingrad",
+    "value": "3202642",
+    "population": 0
+  },
+  {
+    "label": "Barilović",
+    "value": "3204470",
+    "population": 0
+  },
+  {
+    "label": "Sveti Petar u Šumi",
+    "value": "3189285",
+    "population": 0
+  },
+  {
+    "label": "Stari Mikanovci",
+    "value": "3189951",
+    "population": 0
+  },
+  {
+    "label": "Stara Gradiška",
+    "value": "3190015",
+    "population": 0
+  },
+  {
+    "label": "Slavonski Šamac",
+    "value": "3191326",
+    "population": 0
+  },
+  {
+    "label": "Mošćenička Draga",
+    "value": "3194856",
+    "population": 0
+  },
+  {
+    "label": "Dubrava",
+    "value": "3201067",
+    "population": 0
+  },
+  {
+    "label": "Zadvarje",
+    "value": "3186943",
+    "population": 0
+  },
+  {
+    "label": "Tompojevci",
+    "value": "3188998",
+    "population": 0
+  },
+  {
+    "label": "Podravske Sesvete",
+    "value": "3192930",
+    "population": 0
+  },
+  {
+    "label": "Nova Bukovica",
+    "value": "3194459",
+    "population": 0
+  },
+  {
+    "label": "Slano",
+    "value": "3190641",
+    "population": 0
+  },
+  {
+    "label": "Primorski Dolac",
+    "value": "3192386",
+    "population": 0
+  },
+  {
+    "label": "Bebrina",
+    "value": "3204391",
+    "population": 0
+  },
+  {
+    "label": "Unešić",
+    "value": "3188482",
+    "population": 0
+  },
+  {
+    "label": "Sokolovac",
+    "value": "3190371",
+    "population": 0
+  },
+  {
+    "label": "Ravna Gora",
+    "value": "3191856",
+    "population": 0
+  },
+  {
+    "label": "Hrašćina",
+    "value": "3199319",
+    "population": 0
+  },
+  {
+    "label": "Cista Provo",
+    "value": "3202567",
+    "population": 0
+  },
+  {
+    "label": "Tounj",
+    "value": "3188951",
+    "population": 0
+  },
+  {
+    "label": "Svetvinčenat",
+    "value": "3189267",
+    "population": 0
+  },
+  {
+    "label": "Ružić",
+    "value": "3191386",
+    "population": 0
+  },
+  {
+    "label": "Rakovica",
+    "value": "3191990",
+    "population": 0
+  },
+  {
+    "label": "Pašman",
+    "value": "3193599",
+    "population": 0
+  },
+  {
+    "label": "Lukač",
+    "value": "3196089",
+    "population": 0
+  },
+  {
+    "label": "Gornja Vrba",
+    "value": "3200153",
+    "population": 0
+  },
+  {
+    "label": "Udbina",
+    "value": "3188554",
+    "population": 0
+  },
+  {
+    "label": "Sveti Ðurđ",
+    "value": "3189350",
+    "population": 0
+  },
+  {
+    "label": "Saborsko",
+    "value": "3191369",
+    "population": 0
+  },
+  {
+    "label": "Farkaševac",
+    "value": "3216383",
+    "population": 0
+  },
+  {
+    "label": "Korenica",
+    "value": "3189076",
+    "population": 0
+  },
+  {
+    "label": "Pićan",
+    "value": "3193377",
+    "population": 0
+  },
+  {
+    "label": "Petrovsko",
+    "value": "3193384",
+    "population": 0
+  },
+  {
+    "label": "Lanišće",
+    "value": "3196777",
+    "population": 0
+  },
+  {
+    "label": "Krapinske Toplice",
+    "value": "3197364",
+    "population": 0
+  },
+  {
+    "label": "Kaštelir",
+    "value": "3198217",
+    "population": 0
+  },
+  {
+    "label": "Ðurmanec",
+    "value": "3200943",
+    "population": 0
+  },
+  {
+    "label": "Donji Seget",
+    "value": "3201395",
+    "population": 0
+  },
+  {
+    "label": "Rakovec",
+    "value": "3191993",
+    "population": 0
+  },
+  {
+    "label": "Nova Kapela",
+    "value": "3194446",
+    "population": 0
+  },
+  {
+    "label": "Levanjska Varoš",
+    "value": "3196621",
+    "population": 0
+  },
+  {
+    "label": "Kostrena",
+    "value": "3197564",
+    "population": 0
+  },
+  {
+    "label": "Kijevo",
+    "value": "3198157",
+    "population": 0
+  },
+  {
+    "label": "Desinić",
+    "value": "3202071",
+    "population": 0
+  },
+  {
+    "label": "Ðelekovec",
+    "value": "3202109",
+    "population": 0
+  },
+  {
+    "label": "Otrić-Seoci",
+    "value": "3214497",
+    "population": 0
+  },
+  {
+    "label": "Visoko",
+    "value": "3187607",
+    "population": 0
+  },
+  {
+    "label": "Šestanovac",
+    "value": "3190980",
+    "population": 0
+  },
+  {
+    "label": "Oprtalj",
+    "value": "3194078",
+    "population": 0
+  },
+  {
+    "label": "Nedeščina",
+    "value": "3194557",
+    "population": 0
+  },
+  {
+    "label": "Maruševec",
+    "value": "3195415",
+    "population": 0
+  },
+  {
+    "label": "Kaštel Sućurac",
+    "value": "3198210",
+    "population": 0
+  },
+  {
+    "label": "Jesenice",
+    "value": "3198649",
+    "population": 0
+  },
+  {
+    "label": "Hrvatska Dubica",
+    "value": "3201110",
+    "population": 0
+  },
+  {
+    "label": "Čaglin",
+    "value": "3202905",
+    "population": 0
+  },
+  {
+    "label": "Žumberak",
+    "value": "3186303",
+    "population": 0
+  },
+  {
+    "label": "Žakanje",
+    "value": "3186859",
+    "population": 0
+  },
+  {
+    "label": "Veliki Bukovec",
+    "value": "3188101",
+    "population": 0
+  },
+  {
+    "label": "Štefanje",
+    "value": "3189897",
+    "population": 0
+  },
+  {
+    "label": "Srebreno",
+    "value": "3190156",
+    "population": 0
+  },
+  {
+    "label": "Podcrkavlje",
+    "value": "3193074",
+    "population": 0
+  },
+  {
+    "label": "Sveti Petar Orehovec",
+    "value": "3194024",
+    "population": 0
+  },
+  {
+    "label": "Kršan",
+    "value": "3197157",
+    "population": 0
+  },
+  {
+    "label": "Berek",
+    "value": "3204278",
+    "population": 0
+  },
+  {
+    "label": "Zagorska Sela",
+    "value": "3213523",
+    "population": 0
+  },
+  {
+    "label": "Koprivnički Ivanec",
+    "value": "3215881",
+    "population": 0
+  },
+  {
+    "label": "Sućuraj",
+    "value": "3189587",
+    "population": 0
+  },
+  {
+    "label": "Pisarovina",
+    "value": "3193325",
+    "population": 0
+  },
+  {
+    "label": "Lovinac",
+    "value": "3196182",
+    "population": 0
+  },
+  {
+    "label": "Gornja Stubica",
+    "value": "3200183",
+    "population": 0
+  },
+  {
+    "label": "Brodski Stupnik",
+    "value": "3203232",
+    "population": 0
+  },
+  {
+    "label": "Trnovec Bartolovečki",
+    "value": "3188785",
+    "population": 0
+  },
+  {
+    "label": "Sukošan",
+    "value": "3189531",
+    "population": 0
+  },
+  {
+    "label": "Ribnik",
+    "value": "3191677",
+    "population": 0
+  },
+  {
+    "label": "Dugi Rat",
+    "value": "3201021",
+    "population": 0
+  },
+  {
+    "label": "Bosiljevo",
+    "value": "3203639",
+    "population": 0
+  },
+  {
+    "label": "Biskupija",
+    "value": "3204086",
+    "population": 0
+  }
+]

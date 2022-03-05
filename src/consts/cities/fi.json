@@ -1,0 +1,2317 @@
+[
+  {
+    "label": "Helsinki",
+    "value": "658225",
+    "population": 558457
+  },
+  {
+    "label": "Espoo",
+    "value": "660158",
+    "population": 256760
+  },
+  {
+    "label": "Tampere",
+    "value": "634963",
+    "population": 202687
+  },
+  {
+    "label": "Vantaa",
+    "value": "632453",
+    "population": 190058
+  },
+  {
+    "label": "Turku",
+    "value": "633679",
+    "population": 175945
+  },
+  {
+    "label": "Oulu",
+    "value": "643492",
+    "population": 128618
+  },
+  {
+    "label": "Lahti",
+    "value": "649360",
+    "population": 98826
+  },
+  {
+    "label": "Kuopio",
+    "value": "650224",
+    "population": 89104
+  },
+  {
+    "label": "Jyväskylä",
+    "value": "655194",
+    "population": 85026
+  },
+  {
+    "label": "Pori",
+    "value": "640999",
+    "population": 76772
+  },
+  {
+    "label": "Lappeenranta",
+    "value": "648900",
+    "population": 59276
+  },
+  {
+    "label": "Vaasa",
+    "value": "632978",
+    "population": 57014
+  },
+  {
+    "label": "Kotka",
+    "value": "650946",
+    "population": 54616
+  },
+  {
+    "label": "Joensuu",
+    "value": "655808",
+    "population": 53388
+  },
+  {
+    "label": "Hämeenlinna",
+    "value": "659180",
+    "population": 47261
+  },
+  {
+    "label": "Porvoo",
+    "value": "660561",
+    "population": 47192
+  },
+  {
+    "label": "Mikkeli",
+    "value": "646005",
+    "population": 46550
+  },
+  {
+    "label": "Hyvinge",
+    "value": "656913",
+    "population": 43515
+  },
+  {
+    "label": "Järvenpää",
+    "value": "655958",
+    "population": 38148
+  },
+  {
+    "label": "Nurmijärvi",
+    "value": "644171",
+    "population": 37073
+  },
+  {
+    "label": "Rauma",
+    "value": "639734",
+    "population": 36550
+  },
+  {
+    "label": "Mellunkylä",
+    "value": "646218",
+    "population": 36360
+  },
+  {
+    "label": "Lohja",
+    "value": "647751",
+    "population": 35960
+  },
+  {
+    "label": "Vuosaari",
+    "value": "631077",
+    "population": 35826
+  },
+  {
+    "label": "Kokkola",
+    "value": "651943",
+    "population": 35586
+  },
+  {
+    "label": "Kajaani",
+    "value": "654899",
+    "population": 35375
+  },
+  {
+    "label": "Rovaniemi",
+    "value": "638936",
+    "population": 34781
+  },
+  {
+    "label": "Tuusula",
+    "value": "633591",
+    "population": 34725
+  },
+  {
+    "label": "Kirkkonummi",
+    "value": "649630",
+    "population": 32920
+  },
+  {
+    "label": "Seinäjoki",
+    "value": "637219",
+    "population": 32149
+  },
+  {
+    "label": "Kerava",
+    "value": "653185",
+    "population": 31347
+  },
+  {
+    "label": "Kouvola",
+    "value": "650859",
+    "population": 31133
+  },
+  {
+    "label": "Imatra",
+    "value": "656688",
+    "population": 29615
+  },
+  {
+    "label": "Nokia",
+    "value": "644450",
+    "population": 28676
+  },
+  {
+    "label": "Savonlinna",
+    "value": "637292",
+    "population": 27353
+  },
+  {
+    "label": "Kallio",
+    "value": "654706",
+    "population": 27051
+  },
+  {
+    "label": "Riihimäki",
+    "value": "639406",
+    "population": 26451
+  },
+  {
+    "label": "Kaarela",
+    "value": "655143",
+    "population": 26414
+  },
+  {
+    "label": "Vihti",
+    "value": "631707",
+    "population": 26280
+  },
+  {
+    "label": "Salo",
+    "value": "637948",
+    "population": 24900
+  },
+  {
+    "label": "Kangasala",
+    "value": "654440",
+    "population": 24291
+  },
+  {
+    "label": "Raisio",
+    "value": "640124",
+    "population": 23597
+  },
+  {
+    "label": "Karhula",
+    "value": "654137",
+    "population": 22867
+  },
+  {
+    "label": "Kemi",
+    "value": "653281",
+    "population": 22641
+  },
+  {
+    "label": "Iisalmi",
+    "value": "656820",
+    "population": 22588
+  },
+  {
+    "label": "Varkaus",
+    "value": "632370",
+    "population": 22365
+  },
+  {
+    "label": "Raahe",
+    "value": "640276",
+    "population": 22217
+  },
+  {
+    "label": "Ylöjärvi",
+    "value": "630752",
+    "population": 22140
+  },
+  {
+    "label": "Hamina",
+    "value": "659169",
+    "population": 21712
+  },
+  {
+    "label": "Kaarina",
+    "value": "655130",
+    "population": 21684
+  },
+  {
+    "label": "Tornio",
+    "value": "634093",
+    "population": 21236
+  },
+  {
+    "label": "Heinola",
+    "value": "658288",
+    "population": 20849
+  },
+  {
+    "label": "Hollola",
+    "value": "657530",
+    "population": 20405
+  },
+  {
+    "label": "Valkeakoski",
+    "value": "632672",
+    "population": 20376
+  },
+  {
+    "label": "Siilinjärvi",
+    "value": "636947",
+    "population": 20209
+  },
+  {
+    "label": "Lauttasaari",
+    "value": "648635",
+    "population": 20000
+  },
+  {
+    "label": "Sibbo",
+    "value": "637067",
+    "population": 19430
+  },
+  {
+    "label": "Jakobstad",
+    "value": "656130",
+    "population": 19238
+  },
+  {
+    "label": "Lempäälä",
+    "value": "648366",
+    "population": 18096
+  },
+  {
+    "label": "Mäntsälä",
+    "value": "646723",
+    "population": 18074
+  },
+  {
+    "label": "Forssa",
+    "value": "659935",
+    "population": 17852
+  },
+  {
+    "label": "Kuusamo",
+    "value": "649924",
+    "population": 17400
+  },
+  {
+    "label": "Munkkiniemi",
+    "value": "645691",
+    "population": 17334
+  },
+  {
+    "label": "Haukipudas",
+    "value": "658629",
+    "population": 17298
+  },
+  {
+    "label": "Korsholm",
+    "value": "651299",
+    "population": 17176
+  },
+  {
+    "label": "Laukaa",
+    "value": "648738",
+    "population": 17093
+  },
+  {
+    "label": "Anjala",
+    "value": "661164",
+    "population": 16779
+  },
+  {
+    "label": "Uusikaupunki",
+    "value": "633221",
+    "population": 16226
+  },
+  {
+    "label": "Loimaa",
+    "value": "647731",
+    "population": 15834
+  },
+  {
+    "label": "Janakkala",
+    "value": "656073",
+    "population": 15698
+  },
+  {
+    "label": "Pirkkala",
+    "value": "641489",
+    "population": 15615
+  },
+  {
+    "label": "Väståboland",
+    "value": "7911309",
+    "population": 15498
+  },
+  {
+    "label": "Lovisa",
+    "value": "647571",
+    "population": 15466
+  },
+  {
+    "label": "Jämsä",
+    "value": "656083",
+    "population": 15261
+  },
+  {
+    "label": "Lieto",
+    "value": "648056",
+    "population": 15258
+  },
+  {
+    "label": "Vammala",
+    "value": "632542",
+    "population": 14982
+  },
+  {
+    "label": "Nastola",
+    "value": "645035",
+    "population": 14911
+  },
+  {
+    "label": "Orimattila",
+    "value": "643644",
+    "population": 14603
+  },
+  {
+    "label": "Kauhajoki",
+    "value": "653627",
+    "population": 14526
+  },
+  {
+    "label": "Ekenäs",
+    "value": "660325",
+    "population": 14377
+  },
+  {
+    "label": "Kempele",
+    "value": "653252",
+    "population": 14293
+  },
+  {
+    "label": "Lapua",
+    "value": "648855",
+    "population": 14091
+  },
+  {
+    "label": "Lieksa",
+    "value": "648090",
+    "population": 13703
+  },
+  {
+    "label": "Naantali",
+    "value": "645211",
+    "population": 13607
+  },
+  {
+    "label": "Äänekoski",
+    "value": "662095",
+    "population": 13406
+  },
+  {
+    "label": "Ylivieska",
+    "value": "630768",
+    "population": 13159
+  },
+  {
+    "label": "Kontiolahti",
+    "value": "651659",
+    "population": 12411
+  },
+  {
+    "label": "Kankaanpää",
+    "value": "654363",
+    "population": 12381
+  },
+  {
+    "label": "Ulvila",
+    "value": "633395",
+    "population": 12314
+  },
+  {
+    "label": "Pieksämäki",
+    "value": "641869",
+    "population": 12167
+  },
+  {
+    "label": "Kiiminki",
+    "value": "652858",
+    "population": 12069
+  },
+  {
+    "label": "Pargas",
+    "value": "642673",
+    "population": 11962
+  },
+  {
+    "label": "Ilmajoki",
+    "value": "656739",
+    "population": 11693
+  },
+  {
+    "label": "Liperi",
+    "value": "647851",
+    "population": 11386
+  },
+  {
+    "label": "Keuruu",
+    "value": "652977",
+    "population": 10942
+  },
+  {
+    "label": "Leppävirta",
+    "value": "648227",
+    "population": 10936
+  },
+  {
+    "label": "Kurikka",
+    "value": "650095",
+    "population": 10628
+  },
+  {
+    "label": "Nivala",
+    "value": "644499",
+    "population": 10610
+  },
+  {
+    "label": "Joutseno",
+    "value": "655563",
+    "population": 10603
+  },
+  {
+    "label": "Pedersöre",
+    "value": "642455",
+    "population": 10436
+  },
+  {
+    "label": "Sotkamo",
+    "value": "636173",
+    "population": 10368
+  },
+  {
+    "label": "Älajärvi",
+    "value": "11593510",
+    "population": 10308
+  },
+  {
+    "label": "Kuhmo",
+    "value": "650705",
+    "population": 10214
+  },
+  {
+    "label": "Paimio",
+    "value": "643153",
+    "population": 10126
+  },
+  {
+    "label": "Saarijärvi",
+    "value": "638321",
+    "population": 10011
+  },
+  {
+    "label": "Hämeenkyrö",
+    "value": "659184",
+    "population": 9996
+  },
+  {
+    "label": "Suomussalmi",
+    "value": "635696",
+    "population": 9974
+  },
+  {
+    "label": "Hanko",
+    "value": "659101",
+    "population": 9962
+  },
+  {
+    "label": "Somero",
+    "value": "636345",
+    "population": 9840
+  },
+  {
+    "label": "Kitee",
+    "value": "652615",
+    "population": 9777
+  },
+  {
+    "label": "Kiuruvesi",
+    "value": "652559",
+    "population": 9730
+  },
+  {
+    "label": "Oulunsalo",
+    "value": "643481",
+    "population": 9556
+  },
+  {
+    "label": "Pudasjärvi",
+    "value": "640803",
+    "population": 9459
+  },
+  {
+    "label": "Alavus",
+    "value": "661352",
+    "population": 9422
+  },
+  {
+    "label": "Halikko",
+    "value": "659350",
+    "population": 9344
+  },
+  {
+    "label": "Eura",
+    "value": "660077",
+    "population": 9338
+  },
+  {
+    "label": "Keminmaa",
+    "value": "653280",
+    "population": 8980
+  },
+  {
+    "label": "Huittinen",
+    "value": "657180",
+    "population": 8952
+  },
+  {
+    "label": "Sodankylä",
+    "value": "636464",
+    "population": 8942
+  },
+  {
+    "label": "Kemijärvi",
+    "value": "653272",
+    "population": 8883
+  },
+  {
+    "label": "Kalajoki",
+    "value": "654837",
+    "population": 8869
+  },
+  {
+    "label": "Karis",
+    "value": "654047",
+    "population": 8853
+  },
+  {
+    "label": "Orivesi",
+    "value": "643629",
+    "population": 8846
+  },
+  {
+    "label": "Muurame",
+    "value": "645385",
+    "population": 8826
+  },
+  {
+    "label": "Karkkila",
+    "value": "653960",
+    "population": 8811
+  },
+  {
+    "label": "Nurmes",
+    "value": "644187",
+    "population": 8804
+  },
+  {
+    "label": "Alajärvi",
+    "value": "661576",
+    "population": 8793
+  },
+  {
+    "label": "Elimäki",
+    "value": "660294",
+    "population": 8751
+  },
+  {
+    "label": "Kauniainen",
+    "value": "653559",
+    "population": 8688
+  },
+  {
+    "label": "Jalasjärvi",
+    "value": "656117",
+    "population": 8662
+  },
+  {
+    "label": "Asikkala",
+    "value": "660949",
+    "population": 8540
+  },
+  {
+    "label": "Laitila",
+    "value": "649302",
+    "population": 8403
+  },
+  {
+    "label": "Kokemäki",
+    "value": "651980",
+    "population": 8390
+  },
+  {
+    "label": "Oulainen",
+    "value": "643497",
+    "population": 8300
+  },
+  {
+    "label": "Toijala",
+    "value": "7910855",
+    "population": 8300
+  },
+  {
+    "label": "Akaa",
+    "value": "634317",
+    "population": 8258
+  },
+  {
+    "label": "Muhos",
+    "value": "645765",
+    "population": 8232
+  },
+  {
+    "label": "Hausjärvi",
+    "value": "658581",
+    "population": 8151
+  },
+  {
+    "label": "Kauhava",
+    "value": "653616",
+    "population": 7896
+  },
+  {
+    "label": "Laihia",
+    "value": "649348",
+    "population": 7782
+  },
+  {
+    "label": "Loppi",
+    "value": "647660",
+    "population": 7768
+  },
+  {
+    "label": "Outokumpu",
+    "value": "643453",
+    "population": 7738
+  },
+  {
+    "label": "Haapavesi",
+    "value": "659554",
+    "population": 7717
+  },
+  {
+    "label": "Kristinestad",
+    "value": "650769",
+    "population": 7712
+  },
+  {
+    "label": "Virrat",
+    "value": "631376",
+    "population": 7707
+  },
+  {
+    "label": "Haapajärvi",
+    "value": "659681",
+    "population": 7627
+  },
+  {
+    "label": "Harjavalta",
+    "value": "658921",
+    "population": 7572
+  },
+  {
+    "label": "Suonenjoki",
+    "value": "635692",
+    "population": 7568
+  },
+  {
+    "label": "Viitasaari",
+    "value": "631560",
+    "population": 7511
+  },
+  {
+    "label": "Jämsänkoski",
+    "value": "656076",
+    "population": 7442
+  },
+  {
+    "label": "Lapinlahti",
+    "value": "648953",
+    "population": 7350
+  },
+  {
+    "label": "Nykarleby",
+    "value": "644100",
+    "population": 7338
+  },
+  {
+    "label": "Ikaalinen",
+    "value": "656789",
+    "population": 7309
+  },
+  {
+    "label": "Iitti",
+    "value": "656807",
+    "population": 7246
+  },
+  {
+    "label": "Parkano",
+    "value": "642657",
+    "population": 7213
+  },
+  {
+    "label": "Pyhäselkä",
+    "value": "640398",
+    "population": 7210
+  },
+  {
+    "label": "Juva",
+    "value": "655253",
+    "population": 7165
+  },
+  {
+    "label": "Liminka",
+    "value": "647930",
+    "population": 7058
+  },
+  {
+    "label": "Inari",
+    "value": "656657",
+    "population": 7049
+  },
+  {
+    "label": "Eno",
+    "value": "660242",
+    "population": 6891
+  },
+  {
+    "label": "Mäntyharju",
+    "value": "646699",
+    "population": 6871
+  },
+  {
+    "label": "Ähtäri",
+    "value": "661896",
+    "population": 6835
+  },
+  {
+    "label": "Kronoby",
+    "value": "650754",
+    "population": 6813
+  },
+  {
+    "label": "Piikkiö",
+    "value": "641651",
+    "population": 6553
+  },
+  {
+    "label": "Ii",
+    "value": "656851",
+    "population": 6546
+  },
+  {
+    "label": "Tammela",
+    "value": "634992",
+    "population": 6519
+  },
+  {
+    "label": "Nilsiä",
+    "value": "644632",
+    "population": 6474
+  },
+  {
+    "label": "Mänttä",
+    "value": "646705",
+    "population": 6459
+  },
+  {
+    "label": "Ilomantsi",
+    "value": "656709",
+    "population": 6408
+  },
+  {
+    "label": "Mynämäki",
+    "value": "645243",
+    "population": 6271
+  },
+  {
+    "label": "Kangasniemi",
+    "value": "654405",
+    "population": 6211
+  },
+  {
+    "label": "Vuokatti",
+    "value": "631204",
+    "population": 6183
+  },
+  {
+    "label": "Pyhäjärvi",
+    "value": "640441",
+    "population": 6138
+  },
+  {
+    "label": "Pyhäjärvi",
+    "value": "640440",
+    "population": 6094
+  },
+  {
+    "label": "Teuva",
+    "value": "634561",
+    "population": 6092
+  },
+  {
+    "label": "Noormarkku",
+    "value": "644436",
+    "population": 6076
+  },
+  {
+    "label": "Juuka",
+    "value": "655312",
+    "population": 6035
+  },
+  {
+    "label": "Masku",
+    "value": "646486",
+    "population": 5974
+  },
+  {
+    "label": "Kannus",
+    "value": "654314",
+    "population": 5968
+  },
+  {
+    "label": "Kerimäki",
+    "value": "653180",
+    "population": 5841
+  },
+  {
+    "label": "Perniö",
+    "value": "642113",
+    "population": 5809
+  },
+  {
+    "label": "Nakkila",
+    "value": "645148",
+    "population": 5792
+  },
+  {
+    "label": "Ruokolahti",
+    "value": "638803",
+    "population": 5780
+  },
+  {
+    "label": "Kittilä",
+    "value": "652590",
+    "population": 5713
+  },
+  {
+    "label": "Eurajoki",
+    "value": "660073",
+    "population": 5656
+  },
+  {
+    "label": "Tyrnävä",
+    "value": "633541",
+    "population": 5636
+  },
+  {
+    "label": "Lammi",
+    "value": "649223",
+    "population": 5634
+  },
+  {
+    "label": "Jokioinen",
+    "value": "655692",
+    "population": 5568
+  },
+  {
+    "label": "Urjala",
+    "value": "633332",
+    "population": 5542
+  },
+  {
+    "label": "Joroinen",
+    "value": "655626",
+    "population": 5536
+  },
+  {
+    "label": "Pielavesi",
+    "value": "641861",
+    "population": 5521
+  },
+  {
+    "label": "Malax",
+    "value": "646875",
+    "population": 5517
+  },
+  {
+    "label": "Juankoski",
+    "value": "655533",
+    "population": 5514
+  },
+  {
+    "label": "Viiala",
+    "value": "631693",
+    "population": 5472
+  },
+  {
+    "label": "Vilppula",
+    "value": "631459",
+    "population": 5422
+  },
+  {
+    "label": "Suolahti",
+    "value": "635745",
+    "population": 5399
+  },
+  {
+    "label": "Hankasalmi",
+    "value": "659024",
+    "population": 5372
+  },
+  {
+    "label": "Vuores",
+    "value": "12238466",
+    "population": 5316
+  },
+  {
+    "label": "Ruovesi",
+    "value": "638691",
+    "population": 5314
+  },
+  {
+    "label": "Luumäki",
+    "value": "647288",
+    "population": 5305
+  },
+  {
+    "label": "Sievi",
+    "value": "637035",
+    "population": 5281
+  },
+  {
+    "label": "Pohja",
+    "value": "641124",
+    "population": 5257
+  },
+  {
+    "label": "Siuntio",
+    "value": "636608",
+    "population": 5229
+  },
+  {
+    "label": "Ingå",
+    "value": "656652",
+    "population": 5205
+  },
+  {
+    "label": "Ristiina",
+    "value": "639248",
+    "population": 5171
+  },
+  {
+    "label": "Ylitornio",
+    "value": "630779",
+    "population": 5104
+  },
+  {
+    "label": "Korpilahti",
+    "value": "651350",
+    "population": 5050
+  },
+  {
+    "label": "Isokyrö",
+    "value": "656456",
+    "population": 5040
+  },
+  {
+    "label": "Pyhtää",
+    "value": "640384",
+    "population": 4964
+  },
+  {
+    "label": "Polvijärvi",
+    "value": "641055",
+    "population": 4937
+  },
+  {
+    "label": "Äetsä",
+    "value": "846664",
+    "population": 4929
+  },
+  {
+    "label": "Alahärmä",
+    "value": "661601",
+    "population": 4915
+  },
+  {
+    "label": "Tohmajärvi",
+    "value": "634331",
+    "population": 4911
+  },
+  {
+    "label": "Säkylä",
+    "value": "638104",
+    "population": 4870
+  },
+  {
+    "label": "Kärkölä",
+    "value": "653952",
+    "population": 4853
+  },
+  {
+    "label": "Ranua",
+    "value": "639888",
+    "population": 4833
+  },
+  {
+    "label": "Sonkajärvi",
+    "value": "636301",
+    "population": 4819
+  },
+  {
+    "label": "Pornainen",
+    "value": "640973",
+    "population": 4813
+  },
+  {
+    "label": "Taipalsaari",
+    "value": "635150",
+    "population": 4778
+  },
+  {
+    "label": "Pihtipudas",
+    "value": "641660",
+    "population": 4777
+  },
+  {
+    "label": "Tervakoski",
+    "value": "634651",
+    "population": 4753
+  },
+  {
+    "label": "Karstula",
+    "value": "653852",
+    "population": 4718
+  },
+  {
+    "label": "Hietalahti",
+    "value": "7779096",
+    "population": 4700
+  },
+  {
+    "label": "Taivalkoski",
+    "value": "635141",
+    "population": 4678
+  },
+  {
+    "label": "Vähäkyrö",
+    "value": "632923",
+    "population": 4638
+  },
+  {
+    "label": "Sysmä",
+    "value": "635336",
+    "population": 4570
+  },
+  {
+    "label": "Pello",
+    "value": "642367",
+    "population": 4542
+  },
+  {
+    "label": "Askola",
+    "value": "660927",
+    "population": 4515
+  },
+  {
+    "label": "Nousiainen",
+    "value": "644326",
+    "population": 4461
+  },
+  {
+    "label": "Heinävesi",
+    "value": "658318",
+    "population": 4457
+  },
+  {
+    "label": "Jurva",
+    "value": "655363",
+    "population": 4450
+  },
+  {
+    "label": "Kälviä",
+    "value": "654533",
+    "population": 4449
+  },
+  {
+    "label": "Rantasalmi",
+    "value": "639906",
+    "population": 4443
+  },
+  {
+    "label": "Kaustinen",
+    "value": "653482",
+    "population": 4404
+  },
+  {
+    "label": "Salla",
+    "value": "638074",
+    "population": 4401
+  },
+  {
+    "label": "Ruukki",
+    "value": "638622",
+    "population": 4386
+  },
+  {
+    "label": "Larsmo",
+    "value": "648847",
+    "population": 4331
+  },
+  {
+    "label": "Rautjärvi",
+    "value": "639666",
+    "population": 4316
+  },
+  {
+    "label": "Kellokoski",
+    "value": "653333",
+    "population": 4300
+  },
+  {
+    "label": "Parikkala",
+    "value": "642666",
+    "population": 4274
+  },
+  {
+    "label": "Pälkäne",
+    "value": "642976",
+    "population": 4262
+  },
+  {
+    "label": "Kuortane",
+    "value": "650166",
+    "population": 4219
+  },
+  {
+    "label": "Savitaipale",
+    "value": "637312",
+    "population": 4195
+  },
+  {
+    "label": "Vieremä",
+    "value": "631778",
+    "population": 4100
+  },
+  {
+    "label": "Joutsa",
+    "value": "655581",
+    "population": 4060
+  },
+  {
+    "label": "Ivalo",
+    "value": "656220",
+    "population": 3998
+  },
+  {
+    "label": "Punkaharju",
+    "value": "640693",
+    "population": 3984
+  },
+  {
+    "label": "Vesilahti",
+    "value": "631856",
+    "population": 3949
+  },
+  {
+    "label": "Koria",
+    "value": "651514",
+    "population": 3948
+  },
+  {
+    "label": "Pernå",
+    "value": "642118",
+    "population": 3938
+  },
+  {
+    "label": "Kolari",
+    "value": "651889",
+    "population": 3908
+  },
+  {
+    "label": "Paltamo",
+    "value": "642750",
+    "population": 3844
+  },
+  {
+    "label": "Hauho",
+    "value": "658670",
+    "population": 3755
+  },
+  {
+    "label": "Pertteli",
+    "value": "642093",
+    "population": 3740
+  },
+  {
+    "label": "Rusko",
+    "value": "638670",
+    "population": 3702
+  },
+  {
+    "label": "Aura",
+    "value": "660873",
+    "population": 3693
+  },
+  {
+    "label": "Hartola",
+    "value": "658757",
+    "population": 3676
+  },
+  {
+    "label": "Rautalampi",
+    "value": "639709",
+    "population": 3665
+  },
+  {
+    "label": "Vaala",
+    "value": "633096",
+    "population": 3652
+  },
+  {
+    "label": "Pöytyä",
+    "value": "640828",
+    "population": 3650
+  },
+  {
+    "label": "Maaninka",
+    "value": "647202",
+    "population": 3638
+  },
+  {
+    "label": "Pyhäjoki",
+    "value": "640437",
+    "population": 3615
+  },
+  {
+    "label": "Petäjävesi",
+    "value": "641974",
+    "population": 3610
+  },
+  {
+    "label": "Lappajärvi",
+    "value": "648919",
+    "population": 3588
+  },
+  {
+    "label": "Simo",
+    "value": "636802",
+    "population": 3582
+  },
+  {
+    "label": "Merikarvia",
+    "value": "646192",
+    "population": 3547
+  },
+  {
+    "label": "Kaavi",
+    "value": "655069",
+    "population": 3538
+  },
+  {
+    "label": "Tervola",
+    "value": "634592",
+    "population": 3538
+  },
+  {
+    "label": "Veteli",
+    "value": "631825",
+    "population": 3523
+  },
+  {
+    "label": "Otaniemi",
+    "value": "643522",
+    "population": 3496
+  },
+  {
+    "label": "Punkalaidun",
+    "value": "640689",
+    "population": 3492
+  },
+  {
+    "label": "Toholampi",
+    "value": "634324",
+    "population": 3481
+  },
+  {
+    "label": "Padasjoki",
+    "value": "643260",
+    "population": 3473
+  },
+  {
+    "label": "Vimpeli",
+    "value": "631448",
+    "population": 3418
+  },
+  {
+    "label": "Vörå",
+    "value": "631254",
+    "population": 3416
+  },
+  {
+    "label": "Kalvola",
+    "value": "654521",
+    "population": 3406
+  },
+  {
+    "label": "Ylikiiminki",
+    "value": "630918",
+    "population": 3386
+  },
+  {
+    "label": "Karttula",
+    "value": "653841",
+    "population": 3383
+  },
+  {
+    "label": "Kiukainen",
+    "value": "652578",
+    "population": 3358
+  },
+  {
+    "label": "Säynätsalo",
+    "value": "637247",
+    "population": 3322
+  },
+  {
+    "label": "Dragsfjärd",
+    "value": "660374",
+    "population": 3309
+  },
+  {
+    "label": "Puolanka",
+    "value": "640658",
+    "population": 3304
+  },
+  {
+    "label": "Kimito",
+    "value": "652776",
+    "population": 3287
+  },
+  {
+    "label": "Vihanti",
+    "value": "631758",
+    "population": 3270
+  },
+  {
+    "label": "Luvia",
+    "value": "647260",
+    "population": 3260
+  },
+  {
+    "label": "Utajärvi",
+    "value": "633295",
+    "population": 3243
+  },
+  {
+    "label": "Sulkava",
+    "value": "635844",
+    "population": 3212
+  },
+  {
+    "label": "Lappi",
+    "value": "648886",
+    "population": 3212
+  },
+  {
+    "label": "Posio",
+    "value": "640893",
+    "population": 3174
+  },
+  {
+    "label": "Töysä",
+    "value": "634008",
+    "population": 3144
+  },
+  {
+    "label": "Himanka",
+    "value": "657838",
+    "population": 3136
+  },
+  {
+    "label": "Konnevesi",
+    "value": "651696",
+    "population": 3132
+  },
+  {
+    "label": "Uurainen",
+    "value": "633242",
+    "population": 3104
+  },
+  {
+    "label": "Hyrynsalmi",
+    "value": "656949",
+    "population": 3087
+  },
+  {
+    "label": "Reisjärvi",
+    "value": "639576",
+    "population": 3052
+  },
+  {
+    "label": "Lohtaja",
+    "value": "647741",
+    "population": 3043
+  },
+  {
+    "label": "Lemi",
+    "value": "648387",
+    "population": 3034
+  },
+  {
+    "label": "Varpaisjärvi",
+    "value": "632361",
+    "population": 3007
+  },
+  {
+    "label": "Perho",
+    "value": "642139",
+    "population": 2974
+  },
+  {
+    "label": "Kärsämäki",
+    "value": "653880",
+    "population": 2966
+  },
+  {
+    "label": "Mouhijärvi",
+    "value": "645800",
+    "population": 2961
+  },
+  {
+    "label": "Sauvo",
+    "value": "637400",
+    "population": 2941
+  },
+  {
+    "label": "Lapinjärvi",
+    "value": "648965",
+    "population": 2937
+  },
+  {
+    "label": "Köyliö",
+    "value": "650805",
+    "population": 2901
+  },
+  {
+    "label": "Karvia",
+    "value": "653813",
+    "population": 2889
+  },
+  {
+    "label": "Alavieska",
+    "value": "661363",
+    "population": 2883
+  },
+  {
+    "label": "Evijärvi",
+    "value": "660065",
+    "population": 2878
+  },
+  {
+    "label": "Rääkkylä",
+    "value": "640271",
+    "population": 2855
+  },
+  {
+    "label": "Ylihärmä",
+    "value": "630956",
+    "population": 2836
+  },
+  {
+    "label": "Ruotsinpyhtää",
+    "value": "638711",
+    "population": 2836
+  },
+  {
+    "label": "Tuusniemi",
+    "value": "633593",
+    "population": 2833
+  },
+  {
+    "label": "Keitele",
+    "value": "653387",
+    "population": 2832
+  },
+  {
+    "label": "Kuhmoinen",
+    "value": "650703",
+    "population": 2824
+  },
+  {
+    "label": "Valtimo",
+    "value": "632552",
+    "population": 2729
+  },
+  {
+    "label": "Kiihtelysvaara",
+    "value": "652891",
+    "population": 2723
+  },
+  {
+    "label": "Kuru",
+    "value": "650014",
+    "population": 2701
+  },
+  {
+    "label": "Puumala",
+    "value": "640504",
+    "population": 2693
+  },
+  {
+    "label": "Soini",
+    "value": "636393",
+    "population": 2665
+  },
+  {
+    "label": "Kesälahti",
+    "value": "653129",
+    "population": 2665
+  },
+  {
+    "label": "Ypäjä",
+    "value": "630736",
+    "population": 2659
+  },
+  {
+    "label": "Kylmäkoski",
+    "value": "649728",
+    "population": 2647
+  },
+  {
+    "label": "Isojoki",
+    "value": "656517",
+    "population": 2585
+  },
+  {
+    "label": "Humppila",
+    "value": "657112",
+    "population": 2559
+  },
+  {
+    "label": "Vuolijoki",
+    "value": "631191",
+    "population": 2557
+  },
+  {
+    "label": "Vesanto",
+    "value": "631873",
+    "population": 2537
+  },
+  {
+    "label": "Hirvensalmi",
+    "value": "657730",
+    "population": 2517
+  },
+  {
+    "label": "Miehikkälä",
+    "value": "646079",
+    "population": 2506
+  },
+  {
+    "label": "Pomarkku",
+    "value": "641044",
+    "population": 2499
+  },
+  {
+    "label": "Karinainen",
+    "value": "654059",
+    "population": 2497
+  },
+  {
+    "label": "Vehmaa",
+    "value": "632062",
+    "population": 2435
+  },
+  {
+    "label": "Muonio",
+    "value": "645672",
+    "population": 2412
+  },
+  {
+    "label": "Kortesjärvi",
+    "value": "651245",
+    "population": 2400
+  },
+  {
+    "label": "Luopioinen",
+    "value": "647383",
+    "population": 2381
+  },
+  {
+    "label": "Renko",
+    "value": "639534",
+    "population": 2376
+  },
+  {
+    "label": "Pyhäranta",
+    "value": "640405",
+    "population": 2355
+  },
+  {
+    "label": "Toivakka",
+    "value": "634297",
+    "population": 2349
+  },
+  {
+    "label": "Kihniö",
+    "value": "652896",
+    "population": 2305
+  },
+  {
+    "label": "Koski Tl",
+    "value": "651077",
+    "population": 2301
+  },
+  {
+    "label": "Haukivuori",
+    "value": "658617",
+    "population": 2256
+  },
+  {
+    "label": "Jämijärvi",
+    "value": "656090",
+    "population": 2241
+  },
+  {
+    "label": "Yli-Ii",
+    "value": "630952",
+    "population": 2235
+  },
+  {
+    "label": "Korsnäs",
+    "value": "651294",
+    "population": 2194
+  },
+  {
+    "label": "Hämeenkoski",
+    "value": "651073",
+    "population": 2149
+  },
+  {
+    "label": "Yläne",
+    "value": "630998",
+    "population": 2148
+  },
+  {
+    "label": "Enontekiö",
+    "value": "660229",
+    "population": 2145
+  },
+  {
+    "label": "Sahalahti",
+    "value": "638210",
+    "population": 2141
+  },
+  {
+    "label": "Oravais",
+    "value": "643681",
+    "population": 2141
+  },
+  {
+    "label": "Viljakkala",
+    "value": "631511",
+    "population": 2125
+  },
+  {
+    "label": "Marttila",
+    "value": "646511",
+    "population": 2125
+  },
+  {
+    "label": "Juupajoki",
+    "value": "655307",
+    "population": 2110
+  },
+  {
+    "label": "Lavia",
+    "value": "648613",
+    "population": 2109
+  },
+  {
+    "label": "Replot",
+    "value": "639522",
+    "population": 2100
+  },
+  {
+    "label": "Pertunmaa",
+    "value": "642077",
+    "population": 2089
+  },
+  {
+    "label": "Rautavaara",
+    "value": "639700",
+    "population": 2066
+  },
+  {
+    "label": "Tuupovaara",
+    "value": "633611",
+    "population": 2059
+  },
+  {
+    "label": "Rantsila",
+    "value": "639895",
+    "population": 2048
+  },
+  {
+    "label": "Myrskylä",
+    "value": "645233",
+    "population": 2043
+  },
+  {
+    "label": "Kilo",
+    "value": "6295613",
+    "population": 2000
+  },
+  {
+    "label": "Sandsund",
+    "value": "637782",
+    "population": 1998
+  },
+  {
+    "label": "Multia",
+    "value": "645710",
+    "population": 1991
+  },
+  {
+    "label": "Rymättylä",
+    "value": "638582",
+    "population": 1987
+  },
+  {
+    "label": "Pukkila",
+    "value": "640749",
+    "population": 1985
+  },
+  {
+    "label": "Kuivaniemi",
+    "value": "650628",
+    "population": 1979
+  },
+  {
+    "label": "Tarvasjoki",
+    "value": "634851",
+    "population": 1961
+  },
+  {
+    "label": "Kisko",
+    "value": "652629",
+    "population": 1958
+  },
+  {
+    "label": "Siikainen",
+    "value": "637020",
+    "population": 1917
+  },
+  {
+    "label": "Vahto",
+    "value": "632860",
+    "population": 1916
+  },
+  {
+    "label": "Jaala",
+    "value": "656183",
+    "population": 1893
+  },
+  {
+    "label": "Vehmersalmi",
+    "value": "632041",
+    "population": 1889
+  },
+  {
+    "label": "Kinnula",
+    "value": "652736",
+    "population": 1883
+  },
+  {
+    "label": "Lumijoki",
+    "value": "647471",
+    "population": 1871
+  },
+  {
+    "label": "Tervo",
+    "value": "634604",
+    "population": 1847
+  },
+  {
+    "label": "Kyyjärvi",
+    "value": "649582",
+    "population": 1817
+  },
+  {
+    "label": "Mietoinen",
+    "value": "646031",
+    "population": 1785
+  },
+  {
+    "label": "Pyhäntä",
+    "value": "640409",
+    "population": 1779
+  },
+  {
+    "label": "Kuusjoki",
+    "value": "649825",
+    "population": 1775
+  },
+  {
+    "label": "Kiikala",
+    "value": "652888",
+    "population": 1771
+  },
+  {
+    "label": "Ytteresse",
+    "value": "630704",
+    "population": 1758
+  },
+  {
+    "label": "Vampula",
+    "value": "632539",
+    "population": 1743
+  },
+  {
+    "label": "Lemu",
+    "value": "648350",
+    "population": 1738
+  },
+  {
+    "label": "Enonkoski",
+    "value": "660235",
+    "population": 1714
+  },
+  {
+    "label": "Taivassalo",
+    "value": "635130",
+    "population": 1702
+  },
+  {
+    "label": "Pulkkila",
+    "value": "640718",
+    "population": 1661
+  },
+  {
+    "label": "Karjalohja",
+    "value": "654012",
+    "population": 1657
+  },
+  {
+    "label": "Längelmäki",
+    "value": "649121",
+    "population": 1636
+  },
+  {
+    "label": "Karijoki",
+    "value": "654075",
+    "population": 1621
+  },
+  {
+    "label": "Ristijärvi",
+    "value": "639234",
+    "population": 1621
+  },
+  {
+    "label": "Kangaslampi",
+    "value": "654413",
+    "population": 1596
+  },
+  {
+    "label": "Kannonkoski",
+    "value": "654318",
+    "population": 1591
+  },
+  {
+    "label": "Kestilä",
+    "value": "653039",
+    "population": 1576
+  },
+  {
+    "label": "Merimasku",
+    "value": "646179",
+    "population": 1538
+  },
+  {
+    "label": "Artjärvi",
+    "value": "660974",
+    "population": 1536
+  },
+  {
+    "label": "Kaskinen",
+    "value": "653758",
+    "population": 1514
+  },
+  {
+    "label": "Jäppilä",
+    "value": "656015",
+    "population": 1501
+  },
+  {
+    "label": "Ristinummi",
+    "value": "7779093",
+    "population": 1500
+  },
+  {
+    "label": "Teeriniemi",
+    "value": "7779094",
+    "population": 1500
+  },
+  {
+    "label": "Kullaa",
+    "value": "650469",
+    "population": 1494
+  },
+  {
+    "label": "Muurla",
+    "value": "645370",
+    "population": 1486
+  },
+  {
+    "label": "Tuulos",
+    "value": "633619",
+    "population": 1466
+  },
+  {
+    "label": "Liljendal",
+    "value": "647978",
+    "population": 1455
+  },
+  {
+    "label": "Piippola",
+    "value": "641612",
+    "population": 1450
+  },
+  {
+    "label": "Kivijärvi",
+    "value": "652432",
+    "population": 1427
+  },
+  {
+    "label": "Ylämaa",
+    "value": "631003",
+    "population": 1415
+  },
+  {
+    "label": "Nagu",
+    "value": "645165",
+    "population": 1410
+  },
+  {
+    "label": "Utsjoki",
+    "value": "633268",
+    "population": 1401
+  },
+  {
+    "label": "Halsua",
+    "value": "659231",
+    "population": 1393
+  },
+  {
+    "label": "Savukoski",
+    "value": "637284",
+    "population": 1357
+  },
+  {
+    "label": "Oripää",
+    "value": "643640",
+    "population": 1351
+  },
+  {
+    "label": "Virojoki",
+    "value": "631393",
+    "population": 1328
+  },
+  {
+    "label": "Merijärvi",
+    "value": "646195",
+    "population": 1326
+  },
+  {
+    "label": "Saari",
+    "value": "638398",
+    "population": 1326
+  },
+  {
+    "label": "Suomusjärvi",
+    "value": "635698",
+    "population": 1310
+  },
+  {
+    "label": "Auttoinen",
+    "value": "660838",
+    "population": 1300
+  },
+  {
+    "label": "Siikajoki",
+    "value": "637002",
+    "population": 1293
+  },
+  {
+    "label": "Suodenniemi",
+    "value": "635780",
+    "population": 1274
+  },
+  {
+    "label": "Savonranta",
+    "value": "637288",
+    "population": 1255
+  },
+  {
+    "label": "Sumiainen",
+    "value": "635826",
+    "population": 1251
+  },
+  {
+    "label": "Kiikoinen",
+    "value": "652878",
+    "population": 1248
+  },
+  {
+    "label": "Pelkosenniemi",
+    "value": "642377",
+    "population": 1221
+  },
+  {
+    "label": "Nuijamaa",
+    "value": "644307",
+    "population": 1199
+  },
+  {
+    "label": "Gumböle",
+    "value": "659735",
+    "population": 1178
+  },
+  {
+    "label": "Sammatti",
+    "value": "637835",
+    "population": 1171
+  },
+  {
+    "label": "Kuhmalahti",
+    "value": "650707",
+    "population": 1143
+  },
+  {
+    "label": "Mellilä",
+    "value": "646220",
+    "population": 1141
+  },
+  {
+    "label": "Leivonmäki",
+    "value": "648397",
+    "population": 1138
+  },
+  {
+    "label": "Virtasalmi",
+    "value": "631358",
+    "population": 1123
+  },
+  {
+    "label": "Kållby",
+    "value": "654738",
+    "population": 1083
+  },
+  {
+    "label": "Ullava",
+    "value": "633413",
+    "population": 1048
+  },
+  {
+    "label": "Koukkuniemi",
+    "value": "7647230",
+    "population": 1038
+  },
+  {
+    "label": "Askainen",
+    "value": "660940",
+    "population": 1004
+  },
+  {
+    "label": "Pylkönmäki",
+    "value": "640372",
+    "population": 981
+  },
+  {
+    "label": "Hailuoto",
+    "value": "659431",
+    "population": 955
+  },
+  {
+    "label": "Kustavi",
+    "value": "649998",
+    "population": 951
+  },
+  {
+    "label": "Lestijärvi",
+    "value": "648178",
+    "population": 924
+  },
+  {
+    "label": "Luhanka",
+    "value": "647522",
+    "population": 905
+  },
+  {
+    "label": "Västanfjärd",
+    "value": "632225",
+    "population": 783
+  },
+  {
+    "label": "Houtskär",
+    "value": "657305",
+    "population": 626
+  },
+  {
+    "label": "Iniö",
+    "value": "656636",
+    "population": 279
+  },
+  {
+    "label": "Velkua",
+    "value": "631994",
+    "population": 217
+  },
+  {
+    "label": "Nickby",
+    "value": "644930",
+    "population": 0
+  },
+  {
+    "label": "Karvia",
+    "value": "653812",
+    "population": 0
+  },
+  {
+    "label": "Honkajoki",
+    "value": "657479",
+    "population": 0
+  },
+  {
+    "label": "Oitti",
+    "value": "644002",
+    "population": 0
+  },
+  {
+    "label": "Parola",
+    "value": "642622",
+    "population": 0
+  },
+  {
+    "label": "Alastaro",
+    "value": "661410",
+    "population": 0
+  },
+  {
+    "label": "Järvelä",
+    "value": "655988",
+    "population": 0
+  },
+  {
+    "label": "Smedsby",
+    "value": "636493",
+    "population": 0
+  },
+  {
+    "label": "Muhos",
+    "value": "645766",
+    "population": 0
+  },
+  {
+    "label": "Virolahti",
+    "value": "631388",
+    "population": 0
+  },
+  {
+    "label": "Taavetti",
+    "value": "635243",
+    "population": 0
+  },
+  {
+    "label": "Särkisalo",
+    "value": "637586",
+    "population": 0
+  },
+  {
+    "label": "Kyrö",
+    "value": "649625",
+    "population": 0
+  },
+  {
+    "label": "Vinkkilä",
+    "value": "631441",
+    "population": 0
+  },
+  {
+    "label": "Närpes",
+    "value": "645081",
+    "population": 0
+  },
+  {
+    "label": "Kärkölä",
+    "value": "653951",
+    "population": 0
+  },
+  {
+    "label": "Saukkola",
+    "value": "637462",
+    "population": 0
+  },
+  {
+    "label": "Bennäs",
+    "value": "660735",
+    "population": 0
+  },
+  {
+    "label": "Simpele",
+    "value": "636777",
+    "population": 0
+  },
+  {
+    "label": "Kinnula",
+    "value": "652737",
+    "population": 0
+  },
+  {
+    "label": "Pyhäsalmi",
+    "value": "640403",
+    "population": 0
+  },
+  {
+    "label": "Broby",
+    "value": "636835",
+    "population": 0
+  },
+  {
+    "label": "Turenki",
+    "value": "633700",
+    "population": 0
+  },
+  {
+    "label": "Hollola",
+    "value": "657531",
+    "population": 0
+  }
+]
