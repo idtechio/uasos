@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import { ColumnBulletPoint, PointColumn, Row, ColumnText } from "./style";
+import { Row, ColumnBulletPoint, ColumnText } from "./style";
 
 interface Props {
   texts: string[];
