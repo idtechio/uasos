@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { ButtonCta } from "../Buttons";
-import splashYellowImage from "../../../public/splash_yellow1.png";
+import splashYellowImage from "../../../public/splash_yellow.png";
 import splashBlueImage from "../../../public/splash_blue.png";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
