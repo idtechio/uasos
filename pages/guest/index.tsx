@@ -8,7 +8,7 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../../src/components/Compositions";
-import FormAdGuest from "../../src/components/FormAdGuest";
+import AddAccommodationForm from "../../src/components/AddAccommodationForm";
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -22,7 +22,7 @@ export default function Account(props) {
   return (
     <CompositionAppBody>
       {session ? (
-        <FormAdGuest />
+        <AddAccommodationForm />
       ) : (
         <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
       )}
