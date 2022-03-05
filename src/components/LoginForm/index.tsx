@@ -1,16 +1,18 @@
 import React from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import FormTextInput from "../Inputs/FormTextInput";
-import { ButtonCta, ButtonDefault } from "../Buttons";
 import { signIn } from "next-auth/react";
-import { CompositionSection } from "../Compositions";
-import { FormHeader } from "../../../pages/signin";
-import { FormType } from "../../helpers/FormTypes";
+import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
-import ButtonSM from "../Buttons/ButtonSM";
 import { Text, View } from "react-native";
-import Link from "next/link";
+
+import { FormType } from "../../helpers/FormTypes";
+
+import FormTextInput from "../Inputs/FormTextInput";
+import { ButtonCta, ButtonSM } from "../Buttons";
+import { CompositionSection } from "../Compositions";
+
 import Separation from "./Separation";
+import LostPass from "./LostPass";
+import styled from "styled-components";
 
 const LoginForm = ({ providers, csrfToken }) => {
   const { t } = useTranslation();
@@ -63,12 +65,7 @@ const LoginForm = ({ providers, csrfToken }) => {
           error={errors?.login?.password}
           errorMsg={t("validations.requiredName")}
         />
-        <View>
-          <Text>
-            Nie pamiętasz hasła?{" "}
-            <Link href={"/pass-resset"}>Kliknij tutaj</Link>
-          </Text>
-        </View>
+        <LostPass />
         <ButtonCta
           anchor={t("loginForm.logIn")}
           onPress={handleSubmit(onSubmit, onError)}
@@ -83,3 +80,11 @@ const LoginForm = ({ providers, csrfToken }) => {
 };
 
 export default LoginForm;
+
+export const FormHeader = styled.h2`
+  color: ${({ theme }) => theme.colors.textOnCta};
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+`;

@@ -9,14 +9,6 @@ import LoginForm from "../src/components/LoginForm";
 import AppFooter from "../src/components/AppFooter";
 import AppBack from "../src/components/AppBack";
 
-export const FormHeader = styled.h2`
-  color: ${({ theme }) => theme.colors.textOnCta};
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-`;
-
 const SignIn = ({ providers, csrfToken }) => {
   const styles = StyleSheet.create({
     container: {
