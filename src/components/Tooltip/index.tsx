@@ -28,6 +28,7 @@ export const Tooltip = ({ children }: Props) => {
   return (
     <>
       <View
+        style={{ zIndex: 1000 }}
         // @ts-ignore
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}

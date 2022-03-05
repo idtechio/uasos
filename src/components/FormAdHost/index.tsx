@@ -28,6 +28,7 @@ import {
   additionalHostsFeats,
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
+import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 
 const MAX_PHOTOS_COUNT = 3;
 const DUMMY_DROPDOWN_ITEMS = [
@@ -103,7 +104,6 @@ export default function FormAdHost() {
         >
           <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
           <FormDropdown
-            zIndex={14}
             data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
             placeholder={t("hostAdd.country")}
             name="advancedHost.country"
@@ -113,6 +113,7 @@ export default function FormAdHost() {
             error={errors?.advancedHost?.country}
             errorMsg={t("hostAdd.errors.country")}
           />
+
           <InputControlLabel>
             {t("hostAdd.town")}
             <View style={{ marginHorizontal: 10 }}>
@@ -121,7 +122,7 @@ export default function FormAdHost() {
               </Tooltip>
             </View>
           </InputControlLabel>
-          <FormDropdown
+          {/* <FormDropdown
             zIndex={13}
             data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
             name="advancedHost.town"
@@ -131,6 +132,16 @@ export default function FormAdHost() {
             }}
             error={errors?.advancedHost?.town}
             errorMsg={t("validations.requiredTown")}
+          /> */}
+
+          <FormAutocompleteInput
+            name="advancedHost.town"
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedHost?.town}
+            errorMsg={t("validations.requiredTown")}
+            label={t("hostAdd.town")}
           />
         </CompositionSection>
         {/* TODO: Image Picker usage here */}
