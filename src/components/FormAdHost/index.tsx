@@ -116,7 +116,7 @@ export default function FormAdHost() {
       pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
       handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
       num_people: guestCount,
-      period: accommodationTime, // how to map AccomodationTime Enum to number??
+      period: 10, // how to map AccomodationTime Enum to number??
       pietro: 0, // No such field in Form...
       listing_country: country,
       shelter_type: accommodationType,
@@ -221,7 +221,7 @@ export default function FormAdHost() {
                 </Tooltip>
               </View>
             </InputControlLabel>
-            <FormAutocompleteInput
+            {/* <FormAutocompleteInput
               name="advancedHost.town"
               rules={{
                 required: false,
@@ -229,7 +229,7 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.town}
               errorMsg={t("validations.requiredTown")}
               label={t("hostAdd.town")}
-            />
+            /> */}
           </SectionContent>
         </CompositionSection>
         <CompositionSection
