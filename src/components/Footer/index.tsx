@@ -1,39 +1,41 @@
 import * as React from "react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { Text } from "react-native";
-
-import Section from "../Section";
 import {
-  FooterContentRow,
   FooterContentWrapper,
   FooterLink,
   FooterWrapper,
-  CreatedByWrapper,
-  FooteItem,
+  FooterHeaderWrapper,
+  HorizontalLine,
 } from "./Footer.styled";
+import SosuaLogoWhite from "../../../src/style/svgs/sosua_logo_white.svg";
+import { useRouter } from "next/router";
 
-const LandingFooter = () => {
+const Footer = () => {
   const { t } = useTranslation();
+  const router = useRouter();
 
   return (
-    <Section bgColor="#0057B8">
-      <FooterWrapper>
-        <FooterContentWrapper>
-          <FooterContentRow>
-            <Link href="/polityka-prywatnosci.pdf" passHref>
-              <FooterLink>{t("gdpr").toUpperCase()}</FooterLink>
-            </Link>
-            <CreatedByWrapper>
-              <FooteItem>
-                <Text>created with ❤️ for 🇺🇦</Text>
-              </FooteItem>
-            </CreatedByWrapper>
-          </FooterContentRow>
-        </FooterContentWrapper>
-      </FooterWrapper>
-    </Section>
+    <FooterWrapper>
+      <FooterHeaderWrapper>
+        <SosuaLogoWhite />
+      </FooterHeaderWrapper>
+      <HorizontalLine />
+      <FooterContentWrapper>
+        <Link href="/regulamin.pdf" passHref>
+          <FooterLink>{t("termsOfService")}</FooterLink>
+        </Link>
+        <Link href="/polityka-prywatnosci.pdf" passHref>
+          <FooterLink>{t("privacyPolicy")}</FooterLink>
+        </Link>
+        <Link href="/partners" passHref>
+          <FooterLink active={router.pathname === "/partners"}>
+            {t("patrons")}
+          </FooterLink>
+        </Link>
+      </FooterContentWrapper>
+    </FooterWrapper>
   );
 };
 
-export default LandingFooter;
+export default Footer;
