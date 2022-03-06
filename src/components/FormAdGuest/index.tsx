@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, ActivityIndicator, View } from "react-native";
+import { ScrollView, StyleSheet, ActivityIndicator } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
@@ -17,11 +17,10 @@ import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import AnimalsIcon from "../../style/svgs/animals.svg";
-import KidsIcon from "../../style/svgs/kids.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
-import AdGuestToApi from "../../helpers/AdGuestToApi";
+import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 
@@ -105,7 +104,7 @@ export default function FormAdGuest() {
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
     try {
-      await AdGuestToApi({
+      await addGuestToApi({
         name: guest.name,
         country: guest.country,
         phone_num: guest.phoneNumber,
@@ -213,9 +212,7 @@ export default function FormAdGuest() {
     <FormProvider {...formFields}>
       {submitRequstState.loading && (
         <CardModal closeable={false}>
-          <View style={styles.overlay}>
-            <ActivityIndicator size="large" />
-          </View>
+          <ActivityIndicator size="large" />
         </CardModal>
       )}
 
@@ -530,12 +527,5 @@ const styles = StyleSheet.create({
   },
   containerWraper: {
     width: "100%",
-  },
-  overlay: {
-    display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
   },
 });

@@ -118,6 +118,14 @@
     "de": "German flag"
   },
   "hostAdd": {
+    "nameLabel": "First name (only enter first name)",
+    "namePlaceholder": "Name",
+    "emailLabel": "Give me your e-mail address:",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Phone number (format +XXYYYYYYYYY)",
+    "phonePlaceholder": "Phone number (format +XXYYYYYYYYY)",
+    "cityLabel": "Please choose the city in or around which you are proposing a place to stay.",
+    "cityPlaceholder": "City",
     "accommodationTime": "How long can you shelter (weeks)?",
     "addButton": "Submit / Add",
     "additionalInformationHeader": "Additional Information",

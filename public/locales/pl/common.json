@@ -122,7 +122,14 @@
     "countries": {
       "poland": "Polska"
     },
-    "town": "Miasto",
+    "nameLabel": "Imię (Podaj tylko pierwsze imię)",
+    "namePlaceholder": "Imię",
+    "emailLabel": "Podaj adres e-mail:",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
+    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
+    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
+    "cityPlaceholder": "Miasto",
     "type": "Typ noclegu",
     "hostType": "Typ gospodarza",
     "hostTypeLabel": {
@@ -139,7 +146,7 @@
     "accomodationPhotoLabel": "Dodaj zdjęcie",
     "accomodationPhotoReset": "Usuń",
     "accommodationTimeLabel": {
-      "less_than_week": "Poniej tygodnia",
+      "less_than_week": "Poniżej tygodnia",
       "week": "Tydzień",
       "two_weeks": "2 tygodnie",
       "month": "Miesiąc",

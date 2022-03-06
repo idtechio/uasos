@@ -118,6 +118,14 @@
     "de": "Прапор Німеччини"
   },
   "hostAdd": {
+    "nameLabel": "Ім'я (введіть лише ім'я)",
+    "namePlaceholder": "ім'я",
+    "emailLabel": "я / зі мною особа похилого віку",
+    "emailPlaceholder": "електронна пошта",
+    "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
+    "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
+    "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
+    "cityPlaceholder": "Місто",
     "accommodationTime": "Як довго ви можете ховатися (тижні)?",
     "addButton": "Подати / Додати",
     "additionalInformationHeader": "Додаткова інформація",
