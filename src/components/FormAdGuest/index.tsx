@@ -94,13 +94,10 @@ export default function FormAdGuest() {
     const guest = data.advancedRefugee;
     console.log(data);
 
-    AdGuestToApi({
+    let apiObject = {
       name: guest.name,
-      country: guest.country,
       phone_num: guest.phoneNumber,
       email: guest.email,
-      city: guest.town,
-      listing_country: "poland",
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
       group_relations: [guest.groupRelations],
@@ -119,7 +116,13 @@ export default function FormAdGuest() {
       is_ukrainian_nationality:
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
       duration_category: [guest.overnightDuration],
-    });
+    };
+    if (guest.town) {
+      (apiObject["city"] = guest.town),
+        (apiObject[`country`] = "poland"),
+        (apiObject[`listing_country`] = "poland");
+    }
+    AdGuestToApi(apiObject);
   };
 
   const onError = (error) => {
