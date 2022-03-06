@@ -246,7 +246,7 @@ export default function FormAdHost() {
         </CompositionSection>
         <CompositionSection
           padding={[35, 30, 8, 30]}
-          header={t("hostAdd.basicInfoHeader")}
+          header={t("hostAdd.refugeInfoHeader")}
           zIndex={3}
         >
           <SectionContent>
