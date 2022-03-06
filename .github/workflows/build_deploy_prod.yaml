@@ -37,7 +37,7 @@ jobs:
       - id: auth2
         uses: "google-github-actions/auth@v0"
         with:
-          credentials_json: "${{ secrets.TEST_DEPLOYER_SA_KEY }}"
+          credentials_json: "${{ secrets.DEPLOYER_SA_KEY }}"
       - uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{env.deploy_project_id}}
