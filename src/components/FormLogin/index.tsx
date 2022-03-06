@@ -44,7 +44,7 @@ const FormLogin = ({ providers, csrfToken }) => {
 
   return (
     <>
-      <CompositionSection padding={[40, 15, 0, 15]}>
+      <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
           <FormHeader>{t("loginForm.logInWith")}</FormHeader>
           {Object.values(providers).map((provider: any) => (
