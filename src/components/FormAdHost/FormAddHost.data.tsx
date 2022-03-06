@@ -62,23 +62,23 @@ export const additionalHostsFeats: Data[] = [
 // todo: make sure values are consistent with API
 export const accomodationTypeDropdownFields = [
   {
-    label: "advancedHost.accommodationTypeOptions.bed",
+    label: "staticValues.accommodationTypes.bed",
     value: AccommodationType.BED,
   },
   {
-    label: "advancedHost.accommodationTypeOptions.room",
+    label: "staticValues.accommodationTypes.room",
     value: AccommodationType.ROOM,
   },
   {
-    label: "advancedHost.accommodationTypeOptions.flat",
+    label: "staticValues.accommodationTypes.flat",
     value: AccommodationType.FLAT,
   },
   {
-    label: "advancedHost.accommodationTypeOptions.house",
+    label: "staticValues.accommodationTypes.house",
     value: AccommodationType.HOUSE,
   },
   {
-    label: "advancedHost.accommodationTypeOptions.collective",
+    label: "staticValues.accommodationTypes.collective",
     value: AccommodationType.COLLECTIVE,
   },
 ];

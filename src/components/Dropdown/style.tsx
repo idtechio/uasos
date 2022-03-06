@@ -25,6 +25,7 @@ export const Select = styled.Pressable`
 export const SelectText = styled.Text`
   font-size: 14px;
   line-height: 24px;
+  display: contents;
 `;
 
 export const PlaceholderText = styled.Text`

@@ -166,6 +166,7 @@
     "elderReady": "Przyjmę osobę/osoby starsze",
     "animalReady": "Przyjmę osobę ze zwierzakiem",
     "basicInfoHeader": "Podaj podstawowe informacje",
+    "refugeInfoHeader": "Podaj informacje o noclegu",
     "addButton": "Zatwierdź/Dodaj",
     "errors": {
       "country": "Kraj jest wymagany",
