@@ -1,12 +1,12 @@
-name: Build and deploy test
+name: Build and deploy prod
 on:
   push:
     branches:
-      - test
+      - main
 
 env:
   reg_project_id: "ukrn-hlpr"
-  deploy_project_id: "ukrn-hlpr-test"
+  deploy_project_id: "ukrn-hlpr"
   image_name: "sosua"
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
 
@@ -15,7 +15,7 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     name: build-docker
     runs-on: ubuntu-latest
-    environment: "test-cloud"
+    environment: "prod-cloud"
     steps:
       - uses: actions/checkout@v2
       - name: Set outputs
@@ -41,7 +41,7 @@ jobs:
       - uses: google-github-actions/setup-gcloud@v0
         with:
           project_id: ${{env.deploy_project_id}}
-      - name: Deploy to Cloud Run Test Env
+      - name: Deploy to Cloud Run Test Prod
         id: deploy-service
         uses: google-github-actions/deploy-cloudrun@v0
         with:
