@@ -1,7 +1,13 @@
 import React, { ReactNode, useState, useMemo } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  ActivityIndicator,
+  View,
+} from "react-native";
 import styled from "styled-components/native";
 import {
   AccommodationType,
@@ -29,6 +35,8 @@ import {
 } from "./FormAddHost.data";
 import addHostToApi from "../../helpers/addHostToApi";
 import { Boolean } from "../FormAdGuest";
+import CardModal from "../CardModal";
+import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
 const MAX_PHOTOS_COUNT = 3;
@@ -53,6 +61,17 @@ const TooltipIcon = styled.View`
   color: "white";
 `;
 
+type SubmitRequestState = {
+  loading: boolean;
+  error: Error | null;
+  succeeded: boolean;
+};
+const submitRequestDefualtState = {
+  loading: false,
+  error: null,
+  succeeded: false,
+};
+
 export default function FormAdHost() {
   const { t } = useTranslation();
 
@@ -65,6 +84,10 @@ export default function FormAdHost() {
       },
     },
   });
+
+  const [submitRequstState, setSubmitRequstState] =
+    useState<SubmitRequestState>(submitRequestDefualtState);
+
   const {
     control,
     handleSubmit,
@@ -86,7 +109,7 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = ({ advancedHost }) => {
+  const onSubmit = async ({ advancedHost }) => {
     const {
       accommodationTime,
       accommodationType,
@@ -107,24 +130,33 @@ export default function FormAdHost() {
       transportReady, // present in form but not used
     } = advancedHost;
     console.log(advancedHost);
-    addHostToApi({
-      name: name,
-      country: country,
-      phone_num: phoneNumber,
-      email: email,
-      city: town,
-      listing_country: country,
-      shelter_type: [accommodationType],
-      acceptable_group_relations: groupsTypes,
-      beds: guestCount,
-      ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-      ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
-      ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
-      ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
-      ok_for_any_nationality:
-        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
-      duration_category: [accommodationTime],
-    });
+    setSubmitRequstState((state) => ({ ...state, loading: true }));
+    try {
+      await addHostToApi({
+        name: name,
+        country: country,
+        phone_num: phoneNumber,
+        email: email,
+        city: town,
+        listing_country: country,
+        shelter_type: [accommodationType],
+        acceptable_group_relations: groupsTypes,
+        beds: guestCount,
+        ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_any_nationality:
+          nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+        duration_category: [accommodationTime],
+      });
+
+      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+    } catch (error) {
+      setSubmitRequstState((state) => ({ ...state, error }));
+    } finally {
+      setSubmitRequstState((state) => ({ ...state, loading: false }));
+    }
   };
 
   const [uploadPreviews, setUploadPreviews] = useState<string[]>();
@@ -145,6 +177,22 @@ export default function FormAdHost() {
 
   return (
     <FormProvider {...form}>
+      {submitRequstState.loading && (
+        <CardModal closeable={false}>
+          <ActivityIndicator size="large" />
+        </CardModal>
+      )}
+
+      {/* TODO: Form error handling submitRequstState.error && ... */}
+
+      {submitRequstState.succeeded && (
+        <ThankfulnessModal
+          onClose={() =>
+            setSubmitRequstState((state) => submitRequestDefualtState)
+          }
+        />
+      )}
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.container}
@@ -180,9 +228,7 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.email}
               errorMsg={t("hostAdd.errors.email")}
             />
-            <InputControlLabel>
-              {t("hostAdd.labels.phoneNumber")}
-            </InputControlLabel>
+            <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
             <FormTextInput
               name="advancedHost.phoneNumber"
               label={t("hostAdd.phonePlaceholder")}
@@ -204,22 +250,25 @@ export default function FormAdHost() {
           zIndex={3}
         >
           <SectionContent>
-            <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
-            <FormDropdown
-              data={hostCountries.map(({ label, ...rest }) => ({
-                label: t(label),
-                ...rest,
-              }))}
-              placeholder={t("hostAdd.country")}
-              name="advancedHost.country"
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedHost?.country}
-              errorMsg={t("hostAdd.errors.country")}
-            />
+            {/* Temporarly disabled 
+              <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
+              <FormDropdown
+                data={hostCountries.map(({ label, ...rest }) => ({
+                  label: t(label),
+                  ...rest,
+                }))}
+                placeholder={t("hostAdd.country")}
+                name="advancedHost.country"
+                rules={{
+                  required: true,
+                }}
+                error={errors?.advancedHost?.country}
+                errorMsg={t("hostAdd.errors.country")}
+              />
+            */}
+
             <InputControlLabel>
-              {t("hostAdd.town")}
+              {t("hostAdd.cityLabel")}
               <View style={{ marginHorizontal: 10 }}>
                 <Tooltip>
                   <Text>{t("advancedHost.advancedHost.tooltipText")}</Text>
@@ -230,7 +279,7 @@ export default function FormAdHost() {
               zIndex={13}
               data={CITY_DROPDOWN_LIST} // todo: google places api
               name="advancedHost.town"
-              placeholder={t("hostAdd.town")}
+              placeholder={t("hostAdd.cityPlaceholder")}
               rules={{
                 required: true,
               }}
@@ -300,7 +349,7 @@ export default function FormAdHost() {
             <InputControlLabel>
               {t("hostAdd.accommodationTime")}
             </InputControlLabel>
-            <FormRadioGroup<AccomodationTime>
+            <FormRadioGroup
               name={t("advancedHost.accommodationTime")}
               rules={{
                 required: true,

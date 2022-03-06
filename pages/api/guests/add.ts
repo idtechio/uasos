@@ -7,11 +7,11 @@ export enum Boolean {
 }
 export interface GuestProps {
   name: string;
-  country: string;
+  country?: string;
   phone_num: string;
   email: string;
-  city: string;
-  listing_country: string;
+  city?: string;
+  listing_country?: string;
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relations: Array<string>;

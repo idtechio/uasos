@@ -12,7 +12,12 @@ import CrossIcon from "../../style/svgs/cross.svg";
 import { CenterBox, CloseIconWrapper } from "./style";
 import { CardModalProps } from "./types";
 
-const CardModal = ({ cardStyle, children, onModalClose }: CardModalProps) => {
+const CardModal = ({
+  cardStyle,
+  children,
+  onModalClose,
+  closeable = true,
+}: CardModalProps) => {
   const [modalVisible, setModalVisible] = useState(true);
   const { width: screenWidth } = useWindowDimensions();
   return (
@@ -20,10 +25,12 @@ const CardModal = ({ cardStyle, children, onModalClose }: CardModalProps) => {
       <Modal
         animationType="fade"
         transparent
-        visible={modalVisible}
+        visible={modalVisible || !closeable}
         onRequestClose={() => {
-          setModalVisible(false);
-          onModalClose();
+          if (closeable) {
+            setModalVisible(false);
+            onModalClose();
+          }
         }}
       >
         <TouchableWithoutFeedback
