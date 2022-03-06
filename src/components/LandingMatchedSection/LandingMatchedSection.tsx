@@ -10,26 +10,20 @@ import {
 } from "./LandingMatchedSection.styled";
 
 const LandingMatchedSection = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landingPage");
 
   return (
     <Section bgColor={colors.yellow}>
-      <MatchedCardTitle>{t("landingPage.weMatched.title")}</MatchedCardTitle>
+      <MatchedCardTitle>{t("weMatched.title")}</MatchedCardTitle>
 
       <MatchedCardsWrapper>
-        <Tile
-          value="4 329"
-          text={t("landingPage.weMatched.cards.helpedPeople")}
-        />
+        <Tile value="4 329" text={t("weMatched.cards.helpedPeople")} />
         <Tile
           value="51 329"
-          text={t("landingPage.weMatched.cards.lookingForHelp")}
+          text={t("weMatched.cards.lookingForHelp")}
           spaced
         />
-        <Tile
-          value="1 731"
-          text={t("landingPage.weMatched.cards.currentOffers")}
-        />
+        <Tile value="1 731" text={t("weMatched.cards.currentOffers")} />
       </MatchedCardsWrapper>
     </Section>
   );

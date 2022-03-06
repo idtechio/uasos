@@ -1,119 +1,73 @@
 import { useTranslation } from "next-i18next";
-import { View } from "react-native";
 import styled, { css } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
-import image1 from "../../../public/image1.png";
 import { ButtonCta } from "../Buttons";
-import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
+import Section from "../Section";
+import { useRouter } from "next/router";
 
-const Image = styled.Image`
-  flex: 1;
-
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        aspect-ratio: 1.4;
-        flex: 1;
-      `,
-    })}
-`;
-
-const Container = styled.View`
-  width: 100%;
-  margin: 0 auto;
-  max-width: ${({ theme }) => `${theme.maxContainerWidth}px`};
+const ContentWrapper = styled.View`
+  margin-bottom: 80px;
 
   ${({ theme }) =>
     theme.getBreakPoint({
       lg: css`
-        flex-direction: row-reverse;
+        width: 100%;
         align-items: center;
-        padding: 100px 16px;
+        justify-content: center;
       `,
     })}
 `;
 
-const ContentContainer = styled.View`
-  position: relative;
-  padding: 30px 16px;
-  align-items: flex-start;
-
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        padding-left: 40px;
-      `,
-    })}
-`;
-
-const ImageContainer = styled.View`
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        flex: 1;
-        aspect-ratio: 1.4;
-        padding-right: 80px;
-      `,
-    })}
-`;
-
-const ImageSize = styled.View`
-  background-color: ${({ theme }) => theme.colors.secondaryBlue};
-  height: 260px;
-  padding: 20px;
-
-  ${({ theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        height: auto;
-        aspect-ratio: 1.4;
-        flex: 1;
-        border-radius: 10px;
-      `,
-    })}
-`;
-
-const ButtonContainer = styled.View`
+const DetailsText = styled.Text`
+  font-size: 14px;
   margin-top: 25px;
-  align-items: flex-start;
-  flex-direction: row;
+  margin-bottom: 50px;
+  max-width: 340px;
+  color: ${({ theme }) => theme.colors.text};
+
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 40px;
+      `,
+    })}
+`;
+
+const CTAText = styled.Text`
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const StyledButton = styled(ButtonCta)`
+  align-self: flex-start;
+  ${({ theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        align-self: center;
+      `,
+    })}
 `;
 
 export function LikeToHelpSection() {
-  const { t } = useTranslation();
-  const { data: session } = useSession();
+  const { t } = useTranslation("landingPage");
+  const router = useRouter();
+
+  const onCTAPress = () => {
+    router.push("/host");
+  };
+
   return (
-    <Container>
-      <ContentContainer>
-        <SectionTitle title={t("landingPage.likeToHelp.title")} />
-        <View>
-          {t("landingPage.likeToHelp.details")}
-          <ButtonContainer>
-            {session ? (
-              <>
-                <Link href="/guest">
-                  <a>
-                    <ButtonCta anchor={t("landingPage.hero.lookingForHelp")} />
-                  </a>
-                </Link>
-                <Link href="/host">
-                  <a style={{ marginLeft: 10 }}>
-                    <ButtonCta anchor={t("landingPage.hero.shareHelp")} />
-                  </a>
-                </Link>
-              </>
-            ) : (
-              <ButtonCta anchor={t("register1")} onPress={() => signIn()} />
-            )}
-          </ButtonContainer>
-        </View>
-      </ContentContainer>
-      <ImageContainer>
-        <ImageSize>
-          <Image source={image1.src} resizeMode="cover" alt="infographic" />
-        </ImageSize>
-      </ImageContainer>
-    </Container>
+    <Section>
+      <ContentWrapper>
+        <SectionTitle title={t("likeToHelp.title")} />
+        <DetailsText>{t("likeToHelp.details")}</DetailsText>
+        <StyledButton
+          onPress={onCTAPress}
+          anchor={<CTAText>{t("likeToHelp.cta")}</CTAText>}
+        />
+      </ContentWrapper>
+    </Section>
   );
 }

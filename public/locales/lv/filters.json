@@ -1,0 +1,15 @@
+{
+  "location": "Atrašanās vieta",
+  "numberOfGuests": "Cilvēku skaits",
+  "timeframe": "Uzturēšanās ilgums",
+  "oneWeek": "Viena nedēļa",
+  "twoWeeks": "Divas nedēļas",
+  "month": "Viens mēnesis",
+  "longerThanMonth": "Ilgāk par vienu mēnesi",
+  "food": "Ēdiens",
+  "disabledPerson": "Cilvēks, ar īpašām vajadzībām",
+  "kidsBelow2yo": "Esmu ar mazu bērnu",
+  "animalsWelcome": "Atļauts ar dzīvniekiem",
+  "yes": "jā",
+  "no": "nē"
+}

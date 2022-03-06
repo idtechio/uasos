@@ -4,6 +4,7 @@ import styled from "styled-components";
 const StyledSection = styled.section<{ bgColor: string }>`
   background-color: ${(props) => props.bgColor};
   padding: 30px 0;
+  z-index: 1;
 `;
 
 const Container = styled.div`
@@ -19,12 +20,13 @@ const Container = styled.div`
 type SectionProps = {
   bgColor?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
-function Section({ bgColor, children }: SectionProps) {
+function Section({ bgColor, children, style }: SectionProps) {
   return (
     <StyledSection bgColor={bgColor}>
-      <Container>{children}</Container>
+      <Container style={style}>{children}</Container>
     </StyledSection>
   );
 }

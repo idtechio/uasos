@@ -1,0 +1,15 @@
+{
+  "location": "Vieta",
+  "numberOfGuests": "Svečių skaičius",
+  "timeframe": "Trukmė",
+  "oneWeek": "Viena savaitė",
+  "twoWeeks": "Dvi savaitės",
+  "month": "Mėnuo",
+  "longerThanMonth": "Ilgiau nei mėnuo",
+  "food": "Maitinimas",
+  "disabledPerson": "Žmogus su negalia",
+  "kidsBelow2yo": "Aš esu su mažu vaiku",
+  "animalsWelcome": "Priimate su gyvūnais",
+  "yes": "Taip",
+  "no": "Ne"
+}

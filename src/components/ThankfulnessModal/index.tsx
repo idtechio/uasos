@@ -11,11 +11,12 @@ import {
 import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { ThankfulnessModalProps } from "./types";
 
-export const ThankfulnessModal = () => {
+export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
   const { t } = useTranslation();
   return (
-    <CardModal>
+    <CardModal onModalClose={onClose}>
       <ThankfulnessModalContentWrapper>
         <View
           style={{

@@ -12,12 +12,43 @@ export enum LivingConditions {
   OTHER = "other",
 }
 
+export enum Nationality {
+  UKRAINIAN = "ukrainian",
+  ANY = "any",
+}
+
 type PeopleDetails = {
   animals: boolean;
   toddler: boolean;
   oldPerson: boolean;
   disability: boolean;
+  pregnant?: boolean;
 };
+
+export enum HostType {
+  MALE = "host_type_men",
+  WOMEN = "host_type_women",
+  COUPLE = "host_type_couple",
+  FAMILY = "host_type_family",
+  ELDER = "host_type_elder_people",
+  FRIENDS = "host_type_friends_group",
+}
+
+export enum AccomodationTime {
+  LESS_THAN_WEEK = "less_than_week",
+  WEEK = "week",
+  TWO_WEEKS = "two_weeks",
+  MONTH = "month",
+  LONGER = "longer",
+}
+
+export enum AccommodationType {
+  ROOM = "room",
+  BED = "bed",
+  FLAT = "flat",
+  HOUSE = "house",
+  COLLECTIVE = "collective",
+}
 
 export type FormType = {
   host: {
@@ -56,6 +87,52 @@ export type FormType = {
       };
     };
     isGDPRAccepted: boolean;
+  };
+  advancedHost: {
+    name: string;
+    email: string;
+    phoneNumber: string;
+    town: string;
+    country: string;
+    accommodationType: string;
+    guestCount: number;
+    childBedCount: number;
+    accommodationTime: AccomodationTime;
+    nationality: Nationality;
+    groupsTypes: string;
+    transportReady: boolean;
+    pregnantReady: boolean;
+    dissabilityReady: boolean;
+    animalReady: boolean;
+    prolongationReady: boolean;
+    accomodationPhotos: [Blob];
+    hostType: HostType;
+    volunteerVisitAcceptance: string;
+    elderReady: string;
+  };
+  advancedRefugee: {
+    town: string;
+    country: string;
+    name: string;
+    email: string;
+    cityOfRefuge: string;
+    fullBedCount: number;
+    childBedCount: number;
+    phoneNumber: string;
+    preferences: {
+      animal: string;
+      peopleDetails: PeopleDetails;
+    };
+    gender: string;
+    age: number;
+    nationality: string;
+    overnightDuration: number;
+    groupRelations: string;
+    accommodationType: string;
+  };
+  login: {
+    email: string;
+    password: string;
   };
 };
 

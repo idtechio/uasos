@@ -1,9 +1,4 @@
-import styled from "styled-components/native";
-
-export const Column = styled.View`
-  display: flex;
-  flex-direction: column;
-`;
+import styled, { css } from "styled-components/native";
 
 export const ColumnBulletPoint = styled.Text`
   align-self: flex-start;

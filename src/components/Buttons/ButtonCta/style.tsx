@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 
 export const Button = styled.Pressable`
-	background-color: ${({ theme }) => theme.colors.cta};
+	background-color: ${({ theme, colorOposite }) =>
+    colorOposite ? theme.colors.textOnCta : theme.colors.cta};
 	border-radius: 50px;
-	padding: 20px 25px,
+	padding: 16px 25px,
 	text-align: center;
 	display: inline-block;
 	justify-content: center;
@@ -16,7 +17,8 @@ export const Button = styled.Pressable`
 export const Text = styled.Text`
   font-weight: 700;
   text-align: center;
-  color: ${({ theme }) => theme.colors.textOnCta};
+  color: ${({ theme, colorOposite }) =>
+    colorOposite ? theme.colors.cta : theme.colors.textOnCta};
   width: 100%;
   justify-content: center;
   display: flex;

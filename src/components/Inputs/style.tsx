@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Error = styled.Text`
-  color: #d8000c;
+  color: ${(props) => props.theme.colors.error};
   margin-bottom: 10px;
 `;
 

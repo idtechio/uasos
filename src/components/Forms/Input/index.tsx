@@ -9,6 +9,7 @@ const Input = ({
   error,
   extra,
   labelsBackgroundColor,
+  secureTextEntry,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
 
@@ -38,6 +39,7 @@ const Input = ({
           onFocus={(e) => hendleOnFocus(e)}
           onBlur={(e) => hendleOnBlur(e)}
           error={error}
+          secureTextEntry={secureTextEntry}
         />
 
         {extra && extra}

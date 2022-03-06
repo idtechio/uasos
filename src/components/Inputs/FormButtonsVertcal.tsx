@@ -15,7 +15,7 @@ export type Data = {
 };
 
 type Props = {
-  label: string;
+  label?: string;
   data: Data[];
 };
 
@@ -41,7 +41,7 @@ const FormButtonsVertical = ({ data, label }: Props) => {
 
   return (
     <InputControl>
-      <InputCotrolLabel>{label}</InputCotrolLabel>
+      {!!label && <InputCotrolLabel>{label}</InputCotrolLabel>}
       {data.map(({ id, label, icon, extra }) => {
         return (
           <Controller

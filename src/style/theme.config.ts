@@ -12,7 +12,8 @@ export const base = {
 export const primary = {
   ...base,
   colors: {
-    accent: "red",
+    primary: "#FFD700",
+    accent: "#0057B8",
     textOnAccent: "#FFFFFF",
     headings: "#003566",
     text: "#003566",
@@ -20,6 +21,7 @@ export const primary = {
     textOnCta: "#003566",
     blue: "#003566",
     secondaryBlue: "#0057B8",
+    error: "#d8000c",
   },
   fonts: {
     headings: "'Roboto', sans-serif",
@@ -29,6 +31,16 @@ export const primary = {
     desktopSpacing: "35px",
     mobileSpacing: "35px",
     backgroundColor: "#FFF",
+    backgroundColorAlt: "#F2F2F2",
+  },
+  forms: {
+    border: "#BBBBBC",
+    borderWidth: "1px",
+    borderRadius: "4px",
+    placeholderColor: "#BBBBBC",
+    placeholderSize: "14px",
+    labelColor: "#003566",
+    labelSize: "12px",
   },
 };
 

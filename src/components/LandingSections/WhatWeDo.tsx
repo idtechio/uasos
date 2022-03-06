@@ -20,7 +20,7 @@ const WhatWeDoSection = () => {
   const { getBreakPoint } = useTheme();
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("landingPage");
 
   const [isOpen, setOpen] = useState(false);
 
@@ -54,9 +54,17 @@ const WhatWeDoSection = () => {
             <TextBold>{t("whatSosUaDoesSection.howItWorks")}</TextBold>
 
             <UnorderedList
-              texts={t("whatSosUaDoesSection.bulletPoints", {
-                returnObjects: true,
-              })}
+              texts={[
+                t("whatSosUaDoesSection.bulletPoints.0", {
+                  returnObjects: true,
+                }),
+                t("whatSosUaDoesSection.bulletPoints.1", {
+                  returnObjects: true,
+                }),
+                t("whatSosUaDoesSection.bulletPoints.2", {
+                  returnObjects: true,
+                }),
+              ]}
             ></UnorderedList>
             <View style={{ marginTop: "10px" }} />
 

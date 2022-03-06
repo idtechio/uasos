@@ -6,6 +6,16 @@ export const CenterBox = styled.View`
   align-items: center;
 `;
 
+export const Curtain = styled.View`
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  background-color: #000;
+  left: 0;
+  top: 0;
+  opacity: 40%;
+`;
+
 export const CloseIconWrapper = styled.TouchableOpacity`
   position: absolute;
   right: 8px;

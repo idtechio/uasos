@@ -1,0 +1,707 @@
+[
+  {
+    "label": "Luxembourg",
+    "value": "2960316",
+    "population": 76684
+  },
+  {
+    "label": "Esch-sur-Alzette",
+    "value": "2960596",
+    "population": 28228
+  },
+  {
+    "label": "Dudelange",
+    "value": "2960634",
+    "population": 18013
+  },
+  {
+    "label": "Schifflange",
+    "value": "2960102",
+    "population": 8155
+  },
+  {
+    "label": "Bettembourg",
+    "value": "2960777",
+    "population": 7437
+  },
+  {
+    "label": "Pétange",
+    "value": "2960187",
+    "population": 7187
+  },
+  {
+    "label": "Ettelbruck",
+    "value": "2960589",
+    "population": 6364
+  },
+  {
+    "label": "Merl",
+    "value": "2960277",
+    "population": 6264
+  },
+  {
+    "label": "Diekirch",
+    "value": "2960657",
+    "population": 6242
+  },
+  {
+    "label": "Strassen",
+    "value": "2960054",
+    "population": 6006
+  },
+  {
+    "label": "Bertrange",
+    "value": "2960782",
+    "population": 5615
+  },
+  {
+    "label": "Rodange",
+    "value": "2960143",
+    "population": 5505
+  },
+  {
+    "label": "Belvaux",
+    "value": "2960800",
+    "population": 5313
+  },
+  {
+    "label": "Differdange",
+    "value": "2960651",
+    "population": 5296
+  },
+  {
+    "label": "Mamer",
+    "value": "2960299",
+    "population": 5017
+  },
+  {
+    "label": "Soleuvre",
+    "value": "2960067",
+    "population": 4988
+  },
+  {
+    "label": "Wiltz",
+    "value": "2959977",
+    "population": 4816
+  },
+  {
+    "label": "Echternach",
+    "value": "2960630",
+    "population": 4787
+  },
+  {
+    "label": "Obercorn",
+    "value": "2960207",
+    "population": 4666
+  },
+  {
+    "label": "Bascharage",
+    "value": "2960815",
+    "population": 4645
+  },
+  {
+    "label": "Kayl",
+    "value": "2960391",
+    "population": 4396
+  },
+  {
+    "label": "Uebersyren",
+    "value": "2960026",
+    "population": 4144
+  },
+  {
+    "label": "Grevenmacher",
+    "value": "2960515",
+    "population": 3958
+  },
+  {
+    "label": "Béreldange",
+    "value": "2960795",
+    "population": 3627
+  },
+  {
+    "label": "Kirchberg",
+    "value": "2960380",
+    "population": 3534
+  },
+  {
+    "label": "Mersch",
+    "value": "2960276",
+    "population": 3464
+  },
+  {
+    "label": "Mondercange",
+    "value": "2960258",
+    "population": 3306
+  },
+  {
+    "label": "Remich",
+    "value": "2960154",
+    "population": 3187
+  },
+  {
+    "label": "Niedercorn",
+    "value": "2960228",
+    "population": 3164
+  },
+  {
+    "label": "Mondorf-les-Bains",
+    "value": "2960257",
+    "population": 3113
+  },
+  {
+    "label": "Tétange",
+    "value": "2960042",
+    "population": 2929
+  },
+  {
+    "label": "Bissen",
+    "value": "2960759",
+    "population": 2547
+  },
+  {
+    "label": "Sandweiler",
+    "value": "2960117",
+    "population": 2522
+  },
+  {
+    "label": "Sanem",
+    "value": "2960115",
+    "population": 2489
+  },
+  {
+    "label": "Lamadelaine",
+    "value": "2960358",
+    "population": 2428
+  },
+  {
+    "label": "Bridel",
+    "value": "2960720",
+    "population": 2404
+  },
+  {
+    "label": "Junglinster",
+    "value": "2960400",
+    "population": 2358
+  },
+  {
+    "label": "Wasserbillig",
+    "value": "2960007",
+    "population": 2327
+  },
+  {
+    "label": "Steinfort",
+    "value": "2960061",
+    "population": 2225
+  },
+  {
+    "label": "Helmsange",
+    "value": "2960468",
+    "population": 2193
+  },
+  {
+    "label": "Hesperange",
+    "value": "2960457",
+    "population": 1937
+  },
+  {
+    "label": "Leudelange",
+    "value": "2960335",
+    "population": 1924
+  },
+  {
+    "label": "Steinsel",
+    "value": "2960058",
+    "population": 1879
+  },
+  {
+    "label": "Itzig",
+    "value": "2960410",
+    "population": 1836
+  },
+  {
+    "label": "Clemency",
+    "value": "2960687",
+    "population": 1821
+  },
+  {
+    "label": "Colmar",
+    "value": "2960680",
+    "population": 1776
+  },
+  {
+    "label": "Lintgen",
+    "value": "2960328",
+    "population": 1752
+  },
+  {
+    "label": "Gonderange",
+    "value": "2960532",
+    "population": 1735
+  },
+  {
+    "label": "Senningerberg",
+    "value": "6696266",
+    "population": 1663
+  },
+  {
+    "label": "Kehlen",
+    "value": "2960389",
+    "population": 1658
+  },
+  {
+    "label": "Vianden",
+    "value": "2960021",
+    "population": 1626
+  },
+  {
+    "label": "Heisdorf",
+    "value": "2960472",
+    "population": 1586
+  },
+  {
+    "label": "Eischen",
+    "value": "2960618",
+    "population": 1559
+  },
+  {
+    "label": "Niederanven",
+    "value": "2960231",
+    "population": 1508
+  },
+  {
+    "label": "Canach",
+    "value": "2960699",
+    "population": 1496
+  },
+  {
+    "label": "Hautcharage",
+    "value": "2960485",
+    "population": 1495
+  },
+  {
+    "label": "Bergem",
+    "value": "2960791",
+    "population": 1490
+  },
+  {
+    "label": "Mertzig",
+    "value": "2960270",
+    "population": 1482
+  },
+  {
+    "label": "Olm",
+    "value": "2960197",
+    "population": 1459
+  },
+  {
+    "label": "Troisvierges",
+    "value": "2960030",
+    "population": 1457
+  },
+  {
+    "label": "Rollingen",
+    "value": "2960133",
+    "population": 1448
+  },
+  {
+    "label": "Beaufort",
+    "value": "2960809",
+    "population": 1418
+  },
+  {
+    "label": "Larochette",
+    "value": "2960350",
+    "population": 1410
+  },
+  {
+    "label": "Schieren",
+    "value": "2960104",
+    "population": 1397
+  },
+  {
+    "label": "Alzingen",
+    "value": "2960832",
+    "population": 1376
+  },
+  {
+    "label": "Dalheim",
+    "value": "2960665",
+    "population": 1364
+  },
+  {
+    "label": "Frisange",
+    "value": "2960556",
+    "population": 1355
+  },
+  {
+    "label": "Capellen",
+    "value": "2960697",
+    "population": 1330
+  },
+  {
+    "label": "Moutfort",
+    "value": "2960252",
+    "population": 1306
+  },
+  {
+    "label": "Fentange",
+    "value": "2960584",
+    "population": 1302
+  },
+  {
+    "label": "Crauthem",
+    "value": "2960672",
+    "population": 1278
+  },
+  {
+    "label": "Consdorf",
+    "value": "2960675",
+    "population": 1241
+  },
+  {
+    "label": "Warken",
+    "value": "2960008",
+    "population": 1188
+  },
+  {
+    "label": "Redange-sur-Attert",
+    "value": "2960160",
+    "population": 1164
+  },
+  {
+    "label": "Mertert",
+    "value": "2960271",
+    "population": 1163
+  },
+  {
+    "label": "Niederfeulen",
+    "value": "2960577",
+    "population": 1125
+  },
+  {
+    "label": "Clervaux",
+    "value": "2960684",
+    "population": 1103
+  },
+  {
+    "label": "Schouweiler",
+    "value": "2960085",
+    "population": 1090
+  },
+  {
+    "label": "Contern",
+    "value": "2960673",
+    "population": 1083
+  },
+  {
+    "label": "Bettendorf",
+    "value": "2960775",
+    "population": 1072
+  },
+  {
+    "label": "Koerich",
+    "value": "2960367",
+    "population": 1066
+  },
+  {
+    "label": "Hobscheid",
+    "value": "2960453",
+    "population": 1051
+  },
+  {
+    "label": "Schrassig",
+    "value": "2960084",
+    "population": 1051
+  },
+  {
+    "label": "Müllendorf",
+    "value": "2960250",
+    "population": 1024
+  },
+  {
+    "label": "Pontpierre",
+    "value": "2960174",
+    "population": 1017
+  },
+  {
+    "label": "Aspelt",
+    "value": "2960823",
+    "population": 1013
+  },
+  {
+    "label": "Medernach",
+    "value": "2960283",
+    "population": 907
+  },
+  {
+    "label": "Berdorf",
+    "value": "2960796",
+    "population": 900
+  },
+  {
+    "label": "Erpeldange",
+    "value": "2960601",
+    "population": 845
+  },
+  {
+    "label": "Schuttrange",
+    "value": "2960082",
+    "population": 841
+  },
+  {
+    "label": "Garnich",
+    "value": "2960549",
+    "population": 824
+  },
+  {
+    "label": "Hosingen",
+    "value": "2960429",
+    "population": 811
+  },
+  {
+    "label": "Dippach",
+    "value": "2960648",
+    "population": 808
+  },
+  {
+    "label": "Wormeldange",
+    "value": "2959959",
+    "population": 786
+  },
+  {
+    "label": "Lorentzweiler",
+    "value": "2960322",
+    "population": 772
+  },
+  {
+    "label": "Vichten",
+    "value": "2960019",
+    "population": 764
+  },
+  {
+    "label": "Stadtbredimus",
+    "value": "2960063",
+    "population": 749
+  },
+  {
+    "label": "Walferdange",
+    "value": "2960010",
+    "population": 740
+  },
+  {
+    "label": "Roeser",
+    "value": "2960135",
+    "population": 708
+  },
+  {
+    "label": "Weiswampach",
+    "value": "2959989",
+    "population": 691
+  },
+  {
+    "label": "Rosport",
+    "value": "2960127",
+    "population": 681
+  },
+  {
+    "label": "Beckerich",
+    "value": "2960806",
+    "population": 672
+  },
+  {
+    "label": "Useldange",
+    "value": "2960022",
+    "population": 657
+  },
+  {
+    "label": "Kopstal",
+    "value": "2960363",
+    "population": 657
+  },
+  {
+    "label": "Grosbous",
+    "value": "2960510",
+    "population": 656
+  },
+  {
+    "label": "Biwer",
+    "value": "2960757",
+    "population": 653
+  },
+  {
+    "label": "Heffingen",
+    "value": "2960481",
+    "population": 623
+  },
+  {
+    "label": "Tuntange",
+    "value": "2960027",
+    "population": 605
+  },
+  {
+    "label": "Boevange-sur-Attert",
+    "value": "2960747",
+    "population": 576
+  },
+  {
+    "label": "Reckange-sur-Mess",
+    "value": "2960164",
+    "population": 571
+  },
+  {
+    "label": "Bous",
+    "value": "2960732",
+    "population": 560
+  },
+  {
+    "label": "Reisdorf",
+    "value": "2960156",
+    "population": 493
+  },
+  {
+    "label": "Weiler-la-Tour",
+    "value": "2959996",
+    "population": 484
+  },
+  {
+    "label": "Schengen",
+    "value": "2960107",
+    "population": 470
+  },
+  {
+    "label": "Manternach",
+    "value": "2960296",
+    "population": 443
+  },
+  {
+    "label": "Waldbredimus",
+    "value": "2960013",
+    "population": 416
+  },
+  {
+    "label": "Waldbillig",
+    "value": "2960014",
+    "population": 408
+  },
+  {
+    "label": "Rambrouch",
+    "value": "2960167",
+    "population": 401
+  },
+  {
+    "label": "Boulaide",
+    "value": "2960737",
+    "population": 396
+  },
+  {
+    "label": "Bech",
+    "value": "2960807",
+    "population": 380
+  },
+  {
+    "label": "Septfontaines",
+    "value": "2960070",
+    "population": 363
+  },
+  {
+    "label": "Ell",
+    "value": "2960616",
+    "population": 359
+  },
+  {
+    "label": "Flaxweiler",
+    "value": "2960568",
+    "population": 358
+  },
+  {
+    "label": "Lenningen",
+    "value": "2960337",
+    "population": 338
+  },
+  {
+    "label": "Esch-sur-Sûre",
+    "value": "2960595",
+    "population": 333
+  },
+  {
+    "label": "Saeul",
+    "value": "2960120",
+    "population": 316
+  },
+  {
+    "label": "Bourscheid",
+    "value": "2960734",
+    "population": 275
+  },
+  {
+    "label": "Nommern",
+    "value": "2960216",
+    "population": 272
+  },
+  {
+    "label": "Goesdorf",
+    "value": "2960534",
+    "population": 251
+  },
+  {
+    "label": "Wilwerwiltz",
+    "value": "2959972",
+    "population": 249
+  },
+  {
+    "label": "Betzdorf",
+    "value": "2960774",
+    "population": 248
+  },
+  {
+    "label": "Wahl",
+    "value": "2960017",
+    "population": 235
+  },
+  {
+    "label": "Bettborn",
+    "value": "2960780",
+    "population": 231
+  },
+  {
+    "label": "Wincrange",
+    "value": "2959971",
+    "population": 210
+  },
+  {
+    "label": "Fischbach",
+    "value": "2960571",
+    "population": 184
+  },
+  {
+    "label": "Bavigne",
+    "value": "2960811",
+    "population": 132
+  },
+  {
+    "label": "Winseler",
+    "value": "2959968",
+    "population": 126
+  },
+  {
+    "label": "Mompach",
+    "value": "2960259",
+    "population": 100
+  },
+  {
+    "label": "Tandel",
+    "value": "2960045",
+    "population": 89
+  },
+  {
+    "label": "Putscheid",
+    "value": "2960168",
+    "population": 38
+  },
+  {
+    "label": "Rumelange",
+    "value": "2960123",
+    "population": 0
+  }
+]

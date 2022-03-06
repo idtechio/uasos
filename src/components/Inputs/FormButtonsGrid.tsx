@@ -1,16 +1,9 @@
 import { useCallback, useState } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import ChoiceButton from "../Forms/ChoiceButton";
 import CompositionGrid from "../Compositions/CompositionGrid";
-
-const styles = StyleSheet.create({
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-});
 
 type Data = {
   id: FormKey;

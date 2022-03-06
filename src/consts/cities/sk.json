@@ -1,0 +1,807 @@
+[
+  {
+    "label": "Bratislava",
+    "value": "3060972",
+    "population": 423737
+  },
+  {
+    "label": "Košice",
+    "value": "724443",
+    "population": 236563
+  },
+  {
+    "label": "Prešov",
+    "value": "723819",
+    "population": 94718
+  },
+  {
+    "label": "Nitra",
+    "value": "3058531",
+    "population": 86329
+  },
+  {
+    "label": "Žilina",
+    "value": "3056508",
+    "population": 85985
+  },
+  {
+    "label": "Banská Bystrica",
+    "value": "3061186",
+    "population": 82336
+  },
+  {
+    "label": "Trnava",
+    "value": "3057124",
+    "population": 69785
+  },
+  {
+    "label": "Trenčín",
+    "value": "3057140",
+    "population": 58278
+  },
+  {
+    "label": "Poprad",
+    "value": "723846",
+    "population": 57431
+  },
+  {
+    "label": "Martin",
+    "value": "3058780",
+    "population": 54618
+  },
+  {
+    "label": "Prievidza",
+    "value": "3058000",
+    "population": 52987
+  },
+  {
+    "label": "Zvolen",
+    "value": "3056459",
+    "population": 44502
+  },
+  {
+    "label": "Považská Bystrica",
+    "value": "3058060",
+    "population": 43936
+  },
+  {
+    "label": "Michalovce",
+    "value": "724144",
+    "population": 40360
+  },
+  {
+    "label": "Spišská Nová Ves",
+    "value": "723526",
+    "population": 39195
+  },
+  {
+    "label": "Nové Zámky",
+    "value": "3058472",
+    "population": 37899
+  },
+  {
+    "label": "Levice",
+    "value": "3059101",
+    "population": 37574
+  },
+  {
+    "label": "Humenné",
+    "value": "724627",
+    "population": 35367
+  },
+  {
+    "label": "Komárno",
+    "value": "3059436",
+    "population": 33927
+  },
+  {
+    "label": "Bardejov",
+    "value": "725168",
+    "population": 33060
+  },
+  {
+    "label": "Liptovský Mikuláš",
+    "value": "3059050",
+    "population": 31194
+  },
+  {
+    "label": "Ružomberok",
+    "value": "3057789",
+    "population": 30806
+  },
+  {
+    "label": "Piešťany",
+    "value": "3058202",
+    "population": 30000
+  },
+  {
+    "label": "Lučenec",
+    "value": "3058986",
+    "population": 28159
+  },
+  {
+    "label": "Rimavská Sobota",
+    "value": "723736",
+    "population": 25235
+  },
+  {
+    "label": "Čadca",
+    "value": "3060835",
+    "population": 24670
+  },
+  {
+    "label": "Šaľa",
+    "value": "3057769",
+    "population": 24513
+  },
+  {
+    "label": "Partizánske",
+    "value": "3058268",
+    "population": 24370
+  },
+  {
+    "label": "Hlohovec",
+    "value": "3060095",
+    "population": 23930
+  },
+  {
+    "label": "Dubnica nad Váhom",
+    "value": "3060346",
+    "population": 23762
+  },
+  {
+    "label": "Vranov nad Topľou",
+    "value": "723195",
+    "population": 23246
+  },
+  {
+    "label": "Trebišov",
+    "value": "723358",
+    "population": 22947
+  },
+  {
+    "label": "Dunajská Streda",
+    "value": "3060308",
+    "population": 22730
+  },
+  {
+    "label": "Snina",
+    "value": "723559",
+    "population": 22221
+  },
+  {
+    "label": "Senica",
+    "value": "3057691",
+    "population": 21741
+  },
+  {
+    "label": "Nové Mesto nad Váhom",
+    "value": "3058477",
+    "population": 21527
+  },
+  {
+    "label": "Pezinok",
+    "value": "3058210",
+    "population": 21343
+  },
+  {
+    "label": "Brezno",
+    "value": "3060950",
+    "population": 21331
+  },
+  {
+    "label": "Žiar nad Hronom",
+    "value": "3056523",
+    "population": 19392
+  },
+  {
+    "label": "Rožňava",
+    "value": "723713",
+    "population": 19261
+  },
+  {
+    "label": "Dolný Kubín",
+    "value": "3060405",
+    "population": 18995
+  },
+  {
+    "label": "Bánovce nad Bebravou",
+    "value": "3061188",
+    "population": 18933
+  },
+  {
+    "label": "Púchov",
+    "value": "3057963",
+    "population": 18833
+  },
+  {
+    "label": "Handlová",
+    "value": "3060139",
+    "population": 18018
+  },
+  {
+    "label": "Malacky",
+    "value": "3058897",
+    "population": 17773
+  },
+  {
+    "label": "Kysucké Nové Mesto",
+    "value": "3059179",
+    "population": 16558
+  },
+  {
+    "label": "Kežmarok",
+    "value": "724503",
+    "population": 16381
+  },
+  {
+    "label": "Stará Ľubovňa",
+    "value": "723505",
+    "population": 16000
+  },
+  {
+    "label": "Zlaté Moravce",
+    "value": "3056495",
+    "population": 15618
+  },
+  {
+    "label": "Stupava",
+    "value": "3057384",
+    "population": 15095
+  },
+  {
+    "label": "Galanta",
+    "value": "3060219",
+    "population": 15013
+  },
+  {
+    "label": "Skalica",
+    "value": "3057630",
+    "population": 15013
+  },
+  {
+    "label": "Detva",
+    "value": "3060589",
+    "population": 14686
+  },
+  {
+    "label": "Senec",
+    "value": "3057692",
+    "population": 14673
+  },
+  {
+    "label": "Levoča",
+    "value": "724294",
+    "population": 14511
+  },
+  {
+    "label": "Revúca",
+    "value": "723747",
+    "population": 13466
+  },
+  {
+    "label": "Šamorín",
+    "value": "3057757",
+    "population": 13314
+  },
+  {
+    "label": "Veľký Krtíš",
+    "value": "3056825",
+    "population": 12608
+  },
+  {
+    "label": "Svidník",
+    "value": "723417",
+    "population": 12428
+  },
+  {
+    "label": "Nová Dubnica",
+    "value": "3058496",
+    "population": 12358
+  },
+  {
+    "label": "Sabinov",
+    "value": "723674",
+    "population": 12290
+  },
+  {
+    "label": "Myjava",
+    "value": "3058611",
+    "population": 11591
+  },
+  {
+    "label": "Moldava nad Bodvou",
+    "value": "724111",
+    "population": 11332
+  },
+  {
+    "label": "Bytča",
+    "value": "3060852",
+    "population": 11279
+  },
+  {
+    "label": "Holíč",
+    "value": "3060077",
+    "population": 11174
+  },
+  {
+    "label": "Stropkov",
+    "value": "723455",
+    "population": 10874
+  },
+  {
+    "label": "Kolárovo",
+    "value": "3059448",
+    "population": 10546
+  },
+  {
+    "label": "Štúrovo",
+    "value": "3057379",
+    "population": 10279
+  },
+  {
+    "label": "Fiľakovo",
+    "value": "3060242",
+    "population": 10198
+  },
+  {
+    "label": "Banská Štiavnica",
+    "value": "3061184",
+    "population": 10191
+  },
+  {
+    "label": "Šurany",
+    "value": "3057339",
+    "population": 9782
+  },
+  {
+    "label": "Tvrdošín",
+    "value": "3057063",
+    "population": 9544
+  },
+  {
+    "label": "Modra",
+    "value": "3058663",
+    "population": 9042
+  },
+  {
+    "label": "Veľké Kapušany",
+    "value": "723265",
+    "population": 8940
+  },
+  {
+    "label": "Stará Turá",
+    "value": "3057480",
+    "population": 8832
+  },
+  {
+    "label": "Krompachy",
+    "value": "724377",
+    "population": 8763
+  },
+  {
+    "label": "Veľký Meder",
+    "value": "3056816",
+    "population": 8611
+  },
+  {
+    "label": "Vráble",
+    "value": "3056711",
+    "population": 8567
+  },
+  {
+    "label": "Sečovce",
+    "value": "723637",
+    "population": 8453
+  },
+  {
+    "label": "Námestovo",
+    "value": "3058579",
+    "population": 8135
+  },
+  {
+    "label": "Chlmec",
+    "value": "724969",
+    "population": 8031
+  },
+  {
+    "label": "Krupina",
+    "value": "3059244",
+    "population": 7991
+  },
+  {
+    "label": "Svit",
+    "value": "723411",
+    "population": 7790
+  },
+  {
+    "label": "Vrútky",
+    "value": "3056683",
+    "population": 7762
+  },
+  {
+    "label": "Liptovský Hrádok",
+    "value": "3059053",
+    "population": 7572
+  },
+  {
+    "label": "Turzovka",
+    "value": "3057069",
+    "population": 7565
+  },
+  {
+    "label": "Hriňová",
+    "value": "3059870",
+    "population": 7484
+  },
+  {
+    "label": "Hurbanovo",
+    "value": "3059821",
+    "population": 7472
+  },
+  {
+    "label": "Trstená",
+    "value": "3057108",
+    "population": 7360
+  },
+  {
+    "label": "Nová Baňa",
+    "value": "3058498",
+    "population": 7319
+  },
+  {
+    "label": "Šahy",
+    "value": "3057772",
+    "population": 7238
+  },
+  {
+    "label": "Tornaľa",
+    "value": "723365",
+    "population": 7177
+  },
+  {
+    "label": "Želiezovce",
+    "value": "3056547",
+    "population": 6772
+  },
+  {
+    "label": "Spišská Belá",
+    "value": "723529",
+    "population": 6680
+  },
+  {
+    "label": "Žarnovica",
+    "value": "3056589",
+    "population": 6596
+  },
+  {
+    "label": "Medzilaborce",
+    "value": "724156",
+    "population": 6541
+  },
+  {
+    "label": "Lipany",
+    "value": "724286",
+    "population": 6521
+  },
+  {
+    "label": "Gelnica",
+    "value": "724800",
+    "population": 6404
+  },
+  {
+    "label": "Sobrance",
+    "value": "723554",
+    "population": 6262
+  },
+  {
+    "label": "Ivanka pri Dunaji",
+    "value": "3059767",
+    "population": 6245
+  },
+  {
+    "label": "Nemšová",
+    "value": "3058546",
+    "population": 6136
+  },
+  {
+    "label": "Poltár",
+    "value": "3058083",
+    "population": 6099
+  },
+  {
+    "label": "Vrbové",
+    "value": "3056697",
+    "population": 5947
+  },
+  {
+    "label": "Rajec",
+    "value": "3057910",
+    "population": 5777
+  },
+  {
+    "label": "Svätý Jur",
+    "value": "3057304",
+    "population": 5700
+  },
+  {
+    "label": "Dobšiná",
+    "value": "724893",
+    "population": 5639
+  },
+  {
+    "label": "Brezová pod Bradlom",
+    "value": "3060942",
+    "population": 5567
+  },
+  {
+    "label": "Bratislava - Vajnory",
+    "value": "3060280",
+    "population": 5484
+  },
+  {
+    "label": "Ilava",
+    "value": "3059796",
+    "population": 5411
+  },
+  {
+    "label": "Kremnica",
+    "value": "3059282",
+    "population": 5356
+  },
+  {
+    "label": "Gabčíkovo",
+    "value": "3060224",
+    "population": 5343
+  },
+  {
+    "label": "Čierny Balog",
+    "value": "3060665",
+    "population": 5234
+  },
+  {
+    "label": "Sládkovičovo",
+    "value": "3057602",
+    "population": 5219
+  },
+  {
+    "label": "Gbely",
+    "value": "3060208",
+    "population": 5139
+  },
+  {
+    "label": "Sliač",
+    "value": "3057576",
+    "population": 4986
+  },
+  {
+    "label": "Bojnice",
+    "value": "3061015",
+    "population": 4934
+  },
+  {
+    "label": "Vysoké Tatry",
+    "value": "723119",
+    "population": 4700
+  },
+  {
+    "label": "Čierna nad Tisou",
+    "value": "724941",
+    "population": 4645
+  },
+  {
+    "label": "Dunajská Lužná",
+    "value": "8436244",
+    "population": 4482
+  },
+  {
+    "label": "Strážske",
+    "value": "723470",
+    "population": 4474
+  },
+  {
+    "label": "Medzev",
+    "value": "724159",
+    "population": 4446
+  },
+  {
+    "label": "Trenčianske Teplice",
+    "value": "3057141",
+    "population": 4438
+  },
+  {
+    "label": "Nováky",
+    "value": "3058493",
+    "population": 4402
+  },
+  {
+    "label": "Tlmače",
+    "value": "3057191",
+    "population": 4305
+  },
+  {
+    "label": "Leopoldov",
+    "value": "3059111",
+    "population": 4144
+  },
+  {
+    "label": "Tisovec",
+    "value": "3057197",
+    "population": 4127
+  },
+  {
+    "label": "Giraltovce",
+    "value": "724784",
+    "population": 4108
+  },
+  {
+    "label": "Terchová",
+    "value": "3057212",
+    "population": 4073
+  },
+  {
+    "label": "Nižná",
+    "value": "3058515",
+    "population": 4020
+  },
+  {
+    "label": "Spišské Podhradie",
+    "value": "723519",
+    "population": 4013
+  },
+  {
+    "label": "Ľubica",
+    "value": "724265",
+    "population": 4000
+  },
+  {
+    "label": "Lehota pod Vtáčnikom",
+    "value": "3056917",
+    "population": 3929
+  },
+  {
+    "label": "Čachtice",
+    "value": "3060839",
+    "population": 3626
+  },
+  {
+    "label": "Štrba",
+    "value": "723468",
+    "population": 3600
+  },
+  {
+    "label": "Oravská Lesná",
+    "value": "6559492",
+    "population": 3500
+  },
+  {
+    "label": "Smolenice",
+    "value": "3057552",
+    "population": 3287
+  },
+  {
+    "label": "Jelšava",
+    "value": "724561",
+    "population": 3219
+  },
+  {
+    "label": "Podolínec",
+    "value": "723866",
+    "population": 3192
+  },
+  {
+    "label": "Svodín",
+    "value": "3057273",
+    "population": 2649
+  },
+  {
+    "label": "Žehra",
+    "value": "723077",
+    "population": 2360
+  },
+  {
+    "label": "Jarovce",
+    "value": "3059704",
+    "population": 2200
+  },
+  {
+    "label": "Lúčky",
+    "value": "3058981",
+    "population": 1787
+  },
+  {
+    "label": "Marianka",
+    "value": "3058786",
+    "population": 1700
+  },
+  {
+    "label": "Vinné",
+    "value": "723224",
+    "population": 1608
+  },
+  {
+    "label": "Kováčová",
+    "value": "3059340",
+    "population": 1552
+  },
+  {
+    "label": "Hybe",
+    "value": "3059803",
+    "population": 1548
+  },
+  {
+    "label": "Nová Lesná",
+    "value": "724026",
+    "population": 1520
+  },
+  {
+    "label": "Hrochoť",
+    "value": "3059865",
+    "population": 1500
+  },
+  {
+    "label": "Vrbov",
+    "value": "723191",
+    "population": 1455
+  },
+  {
+    "label": "Dudince",
+    "value": "3060317",
+    "population": 1421
+  },
+  {
+    "label": "Pribylina",
+    "value": "3058012",
+    "population": 1360
+  },
+  {
+    "label": "Ždiar",
+    "value": "723082",
+    "population": 1330
+  },
+  {
+    "label": "Oravský Podzámok",
+    "value": "3058368",
+    "population": 1319
+  },
+  {
+    "label": "Kavečany",
+    "value": "724516",
+    "population": 1310
+  },
+  {
+    "label": "Vinosady",
+    "value": "11903690",
+    "population": 1300
+  },
+  {
+    "label": "Vyšné Ružbachy",
+    "value": "723143",
+    "population": 1296
+  },
+  {
+    "label": "Krasňany",
+    "value": "3059292",
+    "population": 1231
+  },
+  {
+    "label": "Svätý Anton",
+    "value": "3057311",
+    "population": 1172
+  },
+  {
+    "label": "Turčianske Teplice",
+    "value": "3057086",
+    "population": 0
+  },
+  {
+    "label": "Komárno",
+    "value": "3059435",
+    "population": 0
+  },
+  {
+    "label": "Topoľčany",
+    "value": "3057174",
+    "population": 0
+  }
+]
