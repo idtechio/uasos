@@ -7,7 +7,7 @@ import { Error } from "./style";
 
 type Data<T> = {
   label: string;
-  value: T | number;
+  value: string;
 };
 
 type Props<T> = {

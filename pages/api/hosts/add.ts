@@ -11,22 +11,16 @@ export interface HostProps {
   phone_num: string;
   email: string;
   city: string;
-  children_allowed: Boolean;
-  pet_allowed: Boolean;
-  handicapped_allowed: Boolean;
-  num_people: number;
-  period: number;
-  pietro: number;
   listing_country: string;
-  shelter_type: string;
+  shelter_type: Array<string>;
   beds: number;
-  acceptable_group_relations: string;
+  acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: string;
+  duration_category: Array<string>;
 }
 
 export default async function addHost(req, res) {

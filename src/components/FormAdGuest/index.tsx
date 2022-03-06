@@ -23,6 +23,7 @@ import PregnantIcon from "../../style/svgs/pregnant.svg";
 import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
+import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
 export enum Boolean {
   FALSE = "FALSE",
@@ -101,45 +102,40 @@ export default function FormAdGuest() {
 
   const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
+
+    let apiObject = {
+      name: guest.name,
+      phone_num: guest.phoneNumber,
+      email: guest.email,
+      acceptable_shelter_types: guest.accommodationType,
+      beds: guest.fullBedCount,
+      group_relations: [guest.groupRelations],
+      is_pregnant: guest.preferences.peopleDetails.pregnant
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_disability: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_animal: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_with_elderly: guest.preferences.peopleDetails.oldPerson
+        ? Boolean.TRUE
+        : Boolean.TRUE,
+      is_ukrainian_nationality:
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
+      duration_category: [guest.overnightDuration],
+    };
+    if (guest.town) {
+      (apiObject["city"] = guest.town),
+        (apiObject[`country`] = "poland"),
+        (apiObject[`listing_country`] = "poland");
+    }
+
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
     try {
-      await addGuestToApi({
-        name: guest.name,
-        country: guest.country,
-        phone_num: guest.phoneNumber,
-        email: guest.email,
-        city: guest.town,
-        is_children: guest.preferences.peopleDetails.toddler
-          ? Boolean.TRUE
-          : Boolean.FALSE,
-        is_pet: guest.preferences.peopleDetails.animals
-          ? Boolean.TRUE
-          : Boolean.FALSE,
-        is_handicapped: guest.preferences.peopleDetails.disability
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        num_people: guest.fullBedCount + guest.childBedCount,
-        period: guest.overnightDuration,
-        listing_country: "poland",
-        acceptable_shelter_types: guest.accommodationType,
-        beds: guest.fullBedCount,
-        is_pregnant: guest.preferences.peopleDetails.pregnant
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_disability: guest.preferences.peopleDetails.disability
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_animal: guest.preferences.peopleDetails.animals
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_with_elderly: guest.preferences.peopleDetails.oldPerson
-          ? Boolean.TRUE
-          : Boolean.TRUE,
-        is_ukrainian_nationality:
-          guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
-      });
-
+      await addGuestToApi(apiObject);
       setSubmitRequstState((state) => ({ ...state, succeeded: true }));
     } catch (error) {
       setSubmitRequstState((state) => ({ ...state, error }));
@@ -187,25 +183,15 @@ export default function FormAdGuest() {
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: 10,
+      value: "less_than_1_week",
     },
-    { label: t("staticValues.timePeriod.week"), value: 20 },
+    { label: t("staticValues.timePeriod.week"), value: "1_week" },
     {
       label: t("staticValues.timePeriod.twoWeeks"),
-      value: 30,
+      value: "2_3_weeks",
     },
-    { label: t("staticValues.timePeriod.month"), value: 40 },
-    { label: t("staticValues.timePeriod.longer"), value: 50 },
-  ];
-
-  const DUMMY_DROPDOWN_ITEMS = [
-    { label: "Item 1", value: "Item 1" },
-    { label: "Item 2", value: "Item 2" },
-    { label: "Item 3", value: "Item 3" },
-    { label: "Item 4", value: "Item 4" },
-    { label: "Item 5", value: "Item 5" },
-    { label: "Item 6", value: "Item 6" },
-    { label: "Item 7", value: "Item 7" },
+    { label: t("staticValues.timePeriod.month"), value: "month" },
+    { label: t("staticValues.timePeriod.longer"), value: "longer" },
   ];
 
   return (
@@ -309,7 +295,7 @@ export default function FormAdGuest() {
           </InputControl>
 
           {location === Location.Preffered && (
-            <InputControl>
+            <InputControl zIndex={13}>
               {/* <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
               <FormDropdown
                 zIndex={14}
@@ -326,8 +312,7 @@ export default function FormAdGuest() {
                 {t("refugeeAddForm.cityLabel")}
               </InputCotrolLabel>
               <FormDropdown
-                zIndex={13}
-                data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
+                data={CITY_DROPDOWN_LIST} // todo: google places api
                 name="advancedRefugee.town"
                 placeholder={t("refugeeAddForm.cityPlaceholder")}
                 rules={{
@@ -353,74 +338,6 @@ export default function FormAdGuest() {
             />
           </InputControl>
         </CompositionSection>
-        {/* TODO: Image Picker usage here */}
-        {/* <CompositionSection
-          padding={[35, 30, 8, 30]}
-          zIndex={4}
-          backgroundColor="#F5F4F4"
-          header={t("refugeeAddForm.travelCompanions")}
-        >
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.fullBedCountLabel")}
-            </InputCotrolLabel>
-            <FormNumericInput
-              name="advancedRefugee.fullBedCount"
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.fullBedCount}
-              errorMsg={t("refugeeAddForm.errors.fullBedCount")}
-            />
-          </InputControl>
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.childBedCountLabel")}
-            </InputCotrolLabel>
-            <FormNumericInput
-              name="advancedRefugee.childBedCount"
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.childBedCount}
-              errorMsg={t("refugeeAddForm.errors.childBedCount")}
-            />
-          </InputControl>
-        </CompositionSection> */}
-        {/* <CompositionSection
-          padding={[35, 30, 8, 30]}
-          zIndex={3}
-          backgroundColor="#F5F4F4"
-          header={t("refugeeAddForm.accompanyingPerson")}
-        >
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.genderLabel")}
-            </InputCotrolLabel>
-            <FormTextInput
-              name="advancedRefugee.gender"
-              label={t("refugeeAddForm.genderPlaceholder")}
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.gender}
-              errorMsg={t("refugeeAddForm.errors.gender")}
-            />
-          </InputControl>
-          <InputControl>
-            <InputCotrolLabel>{t("refugeeAddForm.ageLabel")}</InputCotrolLabel>
-            <FormNumericInput
-              name="advancedRefugee.age"
-              rules={{
-                required: true,
-              }}
-              min={0}
-              max={150}
-              error={errors?.advancedRefugee?.childBedCount}
-              errorMsg={t("hostAdd.errors.childBedCount")}
-            />
-          </InputControl>
-        </CompositionSection> */}
         <CompositionSection
           zIndex={2}
           padding={[35, 30, 8, 30]}

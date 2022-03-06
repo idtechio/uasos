@@ -33,11 +33,11 @@ import {
   GROUP_RELATIONS,
   hostCountries,
 } from "./FormAddHost.data";
-import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 import addHostToApi from "../../helpers/addHostToApi";
 import { Boolean } from "../FormAdGuest";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
+import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
 const MAX_PHOTOS_COUNT = 3;
 
@@ -109,7 +109,7 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = async (data) => {
+  const onSubmit = async ({ advancedHost }) => {
     const {
       accommodationTime,
       accommodationType,
@@ -123,37 +123,32 @@ export default function FormAdHost() {
       hostType, // present in form but not used
       nationality,
       name,
-      emial,
+      email,
       phoneNumber,
       pregnantReady,
       town,
       transportReady, // present in form but not used
-    } = data.advancedHost;
+    } = advancedHost;
+    console.log(advancedHost);
     setSubmitRequstState((state) => ({ ...state, loading: true }));
     try {
       await addHostToApi({
         name: name,
         country: country,
         phone_num: phoneNumber,
-        email: emial,
+        email: email,
         city: town,
-        children_allowed: Boolean.TRUE, // No such field in Form...
-        pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
-        handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
-        num_people: guestCount,
-        period: 10, // how to map AccomodationTime Enum to number??
-        pietro: 0, // No such field in Form...
         listing_country: country,
-        shelter_type: accommodationType,
-        beds: 999, // No such field in Form...
-        acceptable_group_relations: "TODO",
+        shelter_type: [accommodationType],
+        acceptable_group_relations: groupsTypes,
+        beds: guestCount,
         ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_any_nationality:
           nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
-        duration_category: "TODO",
+        duration_category: [accommodationTime],
       });
 
       setSubmitRequstState((state) => ({ ...state, succeeded: true }));
@@ -165,6 +160,20 @@ export default function FormAdHost() {
   };
 
   const [uploadPreviews, setUploadPreviews] = useState<string[]>();
+
+  const OVERNIGHT_DURATION_TYPES = [
+    {
+      label: t("staticValues.timePeriod.lessThanAWeek"),
+      value: "less_than_1_week",
+    },
+    { label: t("staticValues.timePeriod.week"), value: "1_week" },
+    {
+      label: t("staticValues.timePeriod.twoWeeks"),
+      value: "2_3_weeks",
+    },
+    { label: t("staticValues.timePeriod.month"), value: "month" },
+    { label: t("staticValues.timePeriod.longer"), value: "longer" },
+  ];
 
   return (
     <FormProvider {...form}>
@@ -202,7 +211,7 @@ export default function FormAdHost() {
               rules={{
                 required: true,
               }}
-              error={errors?.advancedRefugee?.name}
+              error={errors?.advancedHost?.name}
               errorMsg={t("hostAdd.errors.name")}
             />
             <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
@@ -216,7 +225,7 @@ export default function FormAdHost() {
                   message: t("validations.invalidEmail"),
                 },
               }}
-              error={errors?.advancedRefugee?.email}
+              error={errors?.advancedHost?.email}
               errorMsg={t("hostAdd.errors.email")}
             />
             <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
@@ -230,7 +239,7 @@ export default function FormAdHost() {
                   message: t("hostAdd.errors.phoneNumber"),
                 },
               }}
-              error={errors?.advancedRefugee?.phoneNumber}
+              error={errors?.advancedHost?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
             />
           </SectionContent>
@@ -266,14 +275,16 @@ export default function FormAdHost() {
                 </Tooltip>
               </View>
             </InputControlLabel>
-            <FormAutocompleteInput
+            <FormDropdown
+              zIndex={13}
+              data={CITY_DROPDOWN_LIST} // todo: google places api
               name="advancedHost.town"
+              placeholder={t("hostAdd.cityPlaceholder")}
               rules={{
-                required: false,
+                required: true,
               }}
               error={errors?.advancedHost?.town}
               errorMsg={t("validations.requiredTown")}
-              label={t("hostAdd.cityPlaceholder")}
             />
           </SectionContent>
         </CompositionSection>
@@ -338,21 +349,12 @@ export default function FormAdHost() {
             <InputControlLabel>
               {t("hostAdd.accommodationTime")}
             </InputControlLabel>
-            <FormRadioGroup<AccomodationTime>
+            <FormRadioGroup
               name={t("advancedHost.accommodationTime")}
               rules={{
                 required: true,
               }}
-              data={(
-                Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
-              ).map((key: keyof AccomodationTime) => ({
-                value: key as AccomodationTime,
-                label: t(
-                  `hostAdd.accommodationTimeLabel.${String(
-                    AccomodationTime[key]
-                  )}`
-                ),
-              }))}
+              data={OVERNIGHT_DURATION_TYPES}
               error={errors?.advancedHost?.accommodationTime}
               errorMsg={t("hostAdd.errors.accommodationTime")}
             />
