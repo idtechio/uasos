@@ -110,7 +110,7 @@ export default function FormAdHost() {
       hostType, // present in form but not used
       nationality,
       name,
-      emial,
+      email,
       phoneNumber,
       pregnantReady,
       town,
@@ -121,15 +121,10 @@ export default function FormAdHost() {
       name: name,
       country: country,
       phone_num: phoneNumber,
-      email: emial,
+      email: email,
       city: town,
-      children_allowed: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-      pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
-      handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
-      num_people: guestCount,
-      period: accommodationTime,
       listing_country: country,
-      shelter_type: accommodationType,
+      shelter_type: [accommodationType],
       acceptable_group_relations: groupsTypes,
       beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -138,6 +133,7 @@ export default function FormAdHost() {
       ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_any_nationality:
         nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+      duration_category: [accommodationTime],
     });
   };
 
@@ -146,15 +142,15 @@ export default function FormAdHost() {
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: 10,
+      value: "less_than_1_week",
     },
-    { label: t("staticValues.timePeriod.week"), value: 20 },
+    { label: t("staticValues.timePeriod.week"), value: "1_week" },
     {
       label: t("staticValues.timePeriod.twoWeeks"),
-      value: 30,
+      value: "2_3_weeks",
     },
-    { label: t("staticValues.timePeriod.month"), value: 40 },
-    { label: t("staticValues.timePeriod.longer"), value: 50 },
+    { label: t("staticValues.timePeriod.month"), value: "month" },
+    { label: t("staticValues.timePeriod.longer"), value: "longer" },
   ];
 
   return (

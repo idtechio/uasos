@@ -92,7 +92,7 @@ export default function FormAdGuest() {
 
   const onSubmit = (data) => {
     const guest = data.advancedRefugee;
-    console.log(guest);
+    console.log(data);
 
     AdGuestToApi({
       name: guest.name,
@@ -100,20 +100,10 @@ export default function FormAdGuest() {
       phone_num: guest.phoneNumber,
       email: guest.email,
       city: guest.town,
-      is_children: guest.preferences.peopleDetails.toddler
-        ? Boolean.TRUE
-        : Boolean.FALSE,
-      is_pet: guest.preferences.peopleDetails.animals
-        ? Boolean.TRUE
-        : Boolean.FALSE,
-      is_handicapped: guest.preferences.peopleDetails.disability
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      num_people: guest.fullBedCount + guest.childBedCount,
-      period: guest.overnightDuration,
       listing_country: "poland",
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
+      group_relations: [guest.groupRelations],
       is_pregnant: guest.preferences.peopleDetails.pregnant
         ? Boolean.TRUE
         : Boolean.TRUE,
@@ -128,6 +118,7 @@ export default function FormAdGuest() {
         : Boolean.TRUE,
       is_ukrainian_nationality:
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
+      duration_category: [guest.overnightDuration],
     });
   };
 
@@ -170,15 +161,15 @@ export default function FormAdGuest() {
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: 10,
+      value: "less_than_1_week",
     },
-    { label: t("staticValues.timePeriod.week"), value: 20 },
+    { label: t("staticValues.timePeriod.week"), value: "1_week" },
     {
       label: t("staticValues.timePeriod.twoWeeks"),
-      value: 30,
+      value: "2_3_weeks",
     },
-    { label: t("staticValues.timePeriod.month"), value: 40 },
-    { label: t("staticValues.timePeriod.longer"), value: 50 },
+    { label: t("staticValues.timePeriod.month"), value: "month" },
+    { label: t("staticValues.timePeriod.longer"), value: "longer" },
   ];
 
   const DUMMY_DROPDOWN_ITEMS = [
