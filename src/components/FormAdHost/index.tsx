@@ -27,9 +27,9 @@ import {
   GROUP_RELATIONS,
   hostCountries,
 } from "./FormAddHost.data";
-import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 import addHostToApi from "../../helpers/addHostToApi";
 import { Boolean } from "../FormAdGuest";
+import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
 const MAX_PHOTOS_COUNT = 3;
 
@@ -85,16 +85,6 @@ export default function FormAdHost() {
       watchAccomodationTypeFieldValue === AccommodationType.ROOM,
     [watchAccomodationTypeFieldValue]
   );
-
-  const DUMMY_DROPDOWN_ITEMS = [
-    { label: "Item 1", value: "Item 1" },
-    { label: "Item 2", value: "Item 2" },
-    { label: "Item 3", value: "Item 3" },
-    { label: "Item 4", value: "Item 4" },
-    { label: "Item 5", value: "Item 5" },
-    { label: "Item 6", value: "Item 6" },
-    { label: "Item 7", value: "Item 7" },
-  ];
 
   const onSubmit = ({ advancedHost }) => {
     const {
@@ -238,7 +228,7 @@ export default function FormAdHost() {
             </InputControlLabel>
             <FormDropdown
               zIndex={13}
-              data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
+              data={CITY_DROPDOWN_LIST} // todo: google places api
               name="advancedHost.town"
               placeholder={t("hostAdd.town")}
               rules={{

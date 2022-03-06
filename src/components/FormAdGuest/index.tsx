@@ -22,6 +22,7 @@ import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
 import AdGuestToApi from "../../helpers/AdGuestToApi";
+import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
 export enum Boolean {
   FALSE = "FALSE",
@@ -175,16 +176,6 @@ export default function FormAdGuest() {
     { label: t("staticValues.timePeriod.longer"), value: "longer" },
   ];
 
-  const DUMMY_DROPDOWN_ITEMS = [
-    { label: "Item 1", value: "Item 1" },
-    { label: "Item 2", value: "Item 2" },
-    { label: "Item 3", value: "Item 3" },
-    { label: "Item 4", value: "Item 4" },
-    { label: "Item 5", value: "Item 5" },
-    { label: "Item 6", value: "Item 6" },
-    { label: "Item 7", value: "Item 7" },
-  ];
-
   return (
     <FormProvider {...formFields}>
       <ScrollView
@@ -270,7 +261,7 @@ export default function FormAdGuest() {
           </InputControl>
 
           {location === Location.Preffered && (
-            <InputControl>
+            <InputControl zIndex={13}>
               {/* <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
               <FormDropdown
                 zIndex={14}
@@ -285,8 +276,7 @@ export default function FormAdGuest() {
               /> */}
               <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
               <FormDropdown
-                zIndex={13}
-                data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
+                data={CITY_DROPDOWN_LIST} // todo: google places api
                 name="advancedRefugee.town"
                 placeholder={t("hostAdd.town")}
                 rules={{
