@@ -286,5 +286,14 @@
       "house": "Dom na wyłączność",
       "collective": "Pokój zbiorowy (np. szkolna sala)"
     }
+  },
+  "loginForm": {
+    "logInWith": "Zaloguj się za pomocą",
+    "or": "lub",
+    "lostPass": "nie pamiętasz hasła?",
+    "click": "kliknij tutaj",
+    "logIn": "zaloguj się",
+    "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
+    "register": "zarejestruj się"
   }
 }
