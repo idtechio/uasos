@@ -89,6 +89,9 @@ export type FormType = {
     isGDPRAccepted: boolean;
   };
   advancedHost: {
+    name: string;
+    email: string;
+    phoneNumber: string;
     town: string;
     country: string;
     accommodationType: string;
