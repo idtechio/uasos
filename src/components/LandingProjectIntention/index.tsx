@@ -115,7 +115,7 @@ const LandingProjectIntention = () => {
 
           <SubTitleWrapper>
             <SubTitle>{t("projectIntention.description_part1")}</SubTitle>
-            <BoldSubTitle>{t("projectIntention.freeOfCharge")}</BoldSubTitle>
+            <BoldSubTitle> {t("projectIntention.freeOfCharge")} </BoldSubTitle>
             <SubTitle>{t("projectIntention.description_part2")}</SubTitle>
           </SubTitleWrapper>
 

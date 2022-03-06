@@ -84,10 +84,6 @@
     "value": "Bytom"
   },
   {
-    "label": "Praga Południe",
-    "value": "Praga Południe"
-  },
-  {
     "label": "Bielsko-Biała",
     "value": "Bielsko-Biała"
   },
@@ -98,10 +94,6 @@
   {
     "label": "Rzeszów",
     "value": "Rzeszów"
-  },
-  {
-    "label": "Ursynów",
-    "value": "Ursynów"
   },
   {
     "label": "Ruda Śląska",
@@ -116,20 +108,8 @@
     "value": "Wola"
   },
   {
-    "label": "Bielany",
-    "value": "Bielany"
-  },
-  {
-    "label": "Śródmieście",
-    "value": "Śródmieście"
-  },
-  {
     "label": "Tychy",
     "value": "Tychy"
-  },
-  {
-    "label": "Białołeka",
-    "value": "Białołeka"
   },
   {
     "label": "Opole",
@@ -150,10 +130,6 @@
   {
     "label": "Gorzów Wielkopolski",
     "value": "Gorzów Wielkopolski"
-  },
-  {
-    "label": "Targówek",
-    "value": "Targówek"
   },
   {
     "label": "Włocławek",
@@ -186,9 +162,5 @@
   {
     "label": "Legnica",
     "value": "Legnica"
-  },
-  {
-    "label": "Bemowo",
-    "value": "Bemowo"
   }
 ]

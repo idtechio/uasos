@@ -120,30 +120,32 @@
   "hostAdd": {
     "nameLabel": "Ім'я (введіть лише ім'я)",
     "namePlaceholder": "ім'я",
-    "emailLabel": "я / зі мною особа похилого віку",
+    "emailLabel": "Електронна пошта",
     "emailPlaceholder": "електронна пошта",
     "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
     "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
     "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
     "cityPlaceholder": "Місто",
-    "accommodationTime": "Як довго ви можете ховатися (тижні)?",
+    "elderReady": "Прийму особу/особи похилого віку",
+    "accommodationTime": "Як довго?",
     "addButton": "Подати / Додати",
     "additionalInformationHeader": "Додаткова інформація",
-    "animalReady": "Прийму людину з домашнім улюбленцем",
+    "animalReady": "Прийму людину з твариною",
     "any": "Будь-який",
     "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
     "childBedCount": "Кількість спальних місць для дітей",
     "city": "Місто",
     "country": "Країна",
-    "dissabilityReady": "Прийму людину з інвалідністю",
+    "dissabilityReady": "Прийму людину з обмеженими можливостями",
     "fullBedCount": "Кількість повнорозмірних спальних місць",
     "groupsTypes": "Які типи груп ви візьмете?",
     "nationality": "Яке громадянство біженця ви можете прийняти?",
-    "pregnantReady": "Прийму людину в запущеному стані вагітності (більше 6 місяців)",
+    "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
     "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
     "transportReady": "Пропоную можливість транспортування",
     "type": "Тип розміщення",
-    "ukraine": "Україна"
+    "ukraine": "Україна",
+    "guestCount": "Скільки осіб ви можете в себе прийняти?"
   },
   "logout": "Вийти",
   "backToHomePage": "Повернутися на головну сторінку",
@@ -167,7 +169,7 @@
       "toddler": "Дитина меньше 2 років",
       "oldPerson": "я / зі мною особа похилого віку",
       "disability": "я / зі мною особа з обмеженими можливостями",
-      "pregnant": "Я перебуваю або перебуваю зі мною на пізніх термінах вагітності (більше 6 місяців)"
+      "pregnant": "я / зі мною жінка на пізньому терміні вагітності (більше 6 місяців)"
     },
     "refugeesCountOptions": {
       "alone": "Я один/одна",
@@ -191,7 +193,7 @@
       "isGDPRAccepted": "Я приймаю політику конфіденційності",
       "submitButton": "Попросити про допомогу",
       "location": "В якому місці ви бажаете зупинитись?",
-      "anyLocation": "Будь яка місцевість",
+      "anyLocation": "Будь яке місце",
       "prefferedLocation": "Бажане місце",
       "city": "Місто",
       "addRefugee": "Додати особу"
@@ -208,7 +210,7 @@
     "genderLabel": "Стать",
     "genderPlaceholder": "Вкажіть свою стать",
     "travelCompanions": "Інформація про людей, з якими ви подорожуєте",
-    "fullBedCountLabel": "Кількість повнорозмірних спальних місць",
+    "fullBedCountLabel": "Скільки людей їде з вами?",
     "childBedCountLabel": "Кількість спальних місць для дітей",
     "placeOfRefuge": "В якому місці ви бажаете зупинитись?",
     "countryOfRefugeLabel": "В якій країні ви шукаєте притулку?",
@@ -218,7 +220,7 @@
     "cityOfRefugePlaceholder": "Виберіть область",
     "nameLabel": "Ім'я (введіть лише ім'я)",
     "namePlaceholder": "ім'я",
-    "emailLabel": "я / зі мною особа похилого віку",
+    "emailLabel": "Електронна пошта",
     "emailPlaceholder": "електронна пошта",
     "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
     "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
@@ -246,18 +248,19 @@
     }
   },
   "loginForm": {
-    "logInWith": "Зайти с помощью",
-    "or": "или",
-    "lostPass": "Не помните пароль?",
-    "click": "кликните сюда",
-    "logIn": "Войти",
-    "doNotHaveAcc": "Создать аккаунт если у вас его нет",
-    "register": "Зарегистрироваться"
+    "logInWith": "Увійти з допомогою",
+    "or": "або",
+    "lostPass": "Забули пароль?",
+    "click": "натисніть тут",
+    "logIn": "Увійти",
+    "doNotHaveAcc": "Створити аккаунт якщо немає",
+    "register": "Зареєструватися"
   },
   "accomodationPhoto": "Додайте фотографію пропонованого притулку",
   "accomodationPhotoReset": "видаляти",
   "accomodationPhotoLabel": "подати",
   "dropdownChoose": "Виберіть ...",
   "dropdownSearch": "Пошук",
-  "heroImageAlt": "Слава України!"
+  "heroImageAlt": "Слава України!",
+  "back": "Повернутись"
 }
