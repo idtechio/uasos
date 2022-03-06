@@ -11,7 +11,7 @@ export default async function sendMatchesDecision(req, res) {
   } = req;
 
   if (session) {
-    const topicNameOrId = "projects/ukrn-hlpr/topics/matches_status_changes";
+    const topicNameOrId = process.env.TOPIC_MATCH_HOST;
     const matches = {
       matches_id: matchesId,
       is_host: false,

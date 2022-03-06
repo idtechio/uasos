@@ -29,7 +29,7 @@ export default async function addHost(req, res) {
   if (session) {
     const body = JSON.parse(req.body);
     console.log(body);
-    const topicNameOrId = "projects/ukrn-hlpr/topics/hosts";
+    const topicNameOrId = process.env.TOPIC_HOST;
     const data = JSON.stringify(body);
     res.status(200).json(await publishMessage(topicNameOrId, data));
   } else {
