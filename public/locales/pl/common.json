@@ -10,10 +10,10 @@
     "numberOfGuests": "Liczba gości",
     "timePeriod": "Okres",
     "withKids": "Jestem z dzieckiem",
-    "name": "imię",
+    "name": "Imię",
     "email": "e-mail",
-    "phone": "phone",
-    "town": "miejscowość"
+    "phone": "Telefon",
+    "town": "Miejscowość"
   },
   "validations": {
     "requiredName": "Podaj swoję imię",
@@ -250,9 +250,13 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
+    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
+    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
+    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
+    "cityPlaceholder": "Miasto",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
     "selectPlaceholder": "Wybierz z listy",
-    "accommodationType": "Jakiego typu noclegu szukasz?",
+    "accommodationType": "Wybierz wszystkie intersujące Cię opcje noclegu (wybór wielu jest możliwy)",
     "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
     "countryOfGroupUA": "Ukraina",
     "countryOfGroupOthers": "Inne",

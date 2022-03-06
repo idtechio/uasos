@@ -12,8 +12,8 @@
     "withKids": "I am with a child",
     "name": "Name",
     "email": "e-mail",
-    "phone": "phone",
-    "town": "town"
+    "phone": "Phone",
+    "town": "Town"
   },
   "validations": {
     "requiredName": "Please enter a name",
@@ -213,9 +213,13 @@
     "namePlaceholder": "Name",
     "emailLabel": "Give me your e-mail address:",
     "emailPlaceholder": "e-mail",
+    "phoneLabel": "Phone number (format +XXYYYYYYYYY)",
+    "phonePlaceholder": "Phone number (format +XXYYYYYYYYY)",
+    "cityLabel": "Please choose the city in or around which you are looking for help.",
+    "cityPlaceholder": "City",
     "groupRelations": "What is the level of relationship between group members?",
     "selectPlaceholder": "Select from list",
-    "accommodationType": "What type of accommodation are you looking for?",
+    "accommodationType": "Please choose all options of stay you would like (multiple options possible)",
     "countryOfGroup": "What is the group's country of origin?",
     "countryOfGroupUA": "Ukraine",
     "countryOfGroupOthers": "Other",

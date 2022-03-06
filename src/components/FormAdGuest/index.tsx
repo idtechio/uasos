@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, ActivityIndicator, View } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
@@ -22,6 +22,8 @@ import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
 import AdGuestToApi from "../../helpers/AdGuestToApi";
+import CardModal from "../CardModal";
+import { ThankfulnessModal } from "../ThankfulnessModal";
 
 export enum Boolean {
   FALSE = "FALSE",
@@ -32,6 +34,17 @@ const enum Location {
   Any,
   Preffered,
 }
+
+type SubmitRequestState = {
+  loading: boolean;
+  error: Error | null;
+  succeeded: boolean;
+};
+const submitRequestDefualtState = {
+  loading: false,
+  error: null,
+  succeeded: false,
+};
 
 export default function FormAdGuest() {
   const { t } = useTranslation();
@@ -47,6 +60,8 @@ export default function FormAdGuest() {
   });
 
   const [location, setLocation] = useState<Location>(Location.Any);
+  const [submitRequstState, setSubmitRequstState] =
+    useState<SubmitRequestState>(submitRequestDefualtState);
 
   const refugeeDetailsOptions: Data[] = useMemo(
     () => [
@@ -67,11 +82,6 @@ export default function FormAdGuest() {
         icon: <PregnantIcon width="26" height="25" />,
       },
       {
-        id: "advancedRefugee.preferences.peopleDetails.toddler",
-        label: t("refugeeForm.refugeeDetailsOptions.toddler"),
-        icon: <KidsIcon width="26" height="25" />,
-      },
-      {
         id: "advancedRefugee.preferences.peopleDetails.oldPerson",
         label: t("refugeeForm.refugeeDetailsOptions.oldPerson"),
         icon: <ElderIcon width="26" height="25" />,
@@ -90,45 +100,53 @@ export default function FormAdGuest() {
     formState: { errors },
   } = formFields;
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
-    console.log(guest);
+    setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    AdGuestToApi({
-      name: guest.name,
-      country: guest.country,
-      phone_num: guest.phoneNumber,
-      email: guest.email,
-      city: guest.town,
-      is_children: guest.preferences.peopleDetails.toddler
-        ? Boolean.TRUE
-        : Boolean.FALSE,
-      is_pet: guest.preferences.peopleDetails.animals
-        ? Boolean.TRUE
-        : Boolean.FALSE,
-      is_handicapped: guest.preferences.peopleDetails.disability
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      num_people: guest.fullBedCount + guest.childBedCount,
-      period: guest.overnightDuration,
-      listing_country: "poland",
-      acceptable_shelter_types: guest.accommodationType,
-      beds: guest.fullBedCount,
-      is_pregnant: guest.preferences.peopleDetails.pregnant
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      is_with_disability: guest.preferences.peopleDetails.disability
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      is_with_animal: guest.preferences.peopleDetails.animals
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      is_with_elderly: guest.preferences.peopleDetails.oldPerson
-        ? Boolean.TRUE
-        : Boolean.TRUE,
-      is_ukrainian_nationality:
-        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
-    });
+    try {
+      await AdGuestToApi({
+        name: guest.name,
+        country: guest.country,
+        phone_num: guest.phoneNumber,
+        email: guest.email,
+        city: guest.town,
+        is_children: guest.preferences.peopleDetails.toddler
+          ? Boolean.TRUE
+          : Boolean.FALSE,
+        is_pet: guest.preferences.peopleDetails.animals
+          ? Boolean.TRUE
+          : Boolean.FALSE,
+        is_handicapped: guest.preferences.peopleDetails.disability
+          ? Boolean.TRUE
+          : Boolean.TRUE,
+        num_people: guest.fullBedCount + guest.childBedCount,
+        period: guest.overnightDuration,
+        listing_country: "poland",
+        acceptable_shelter_types: guest.accommodationType,
+        beds: guest.fullBedCount,
+        is_pregnant: guest.preferences.peopleDetails.pregnant
+          ? Boolean.TRUE
+          : Boolean.TRUE,
+        is_with_disability: guest.preferences.peopleDetails.disability
+          ? Boolean.TRUE
+          : Boolean.TRUE,
+        is_with_animal: guest.preferences.peopleDetails.animals
+          ? Boolean.TRUE
+          : Boolean.TRUE,
+        is_with_elderly: guest.preferences.peopleDetails.oldPerson
+          ? Boolean.TRUE
+          : Boolean.TRUE,
+        is_ukrainian_nationality:
+          guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
+      });
+
+      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+    } catch (error) {
+      setSubmitRequstState((state) => ({ ...state, error }));
+    } finally {
+      setSubmitRequstState((state) => ({ ...state, loading: false }));
+    }
   };
 
   const onError = (error) => {
@@ -193,6 +211,24 @@ export default function FormAdGuest() {
 
   return (
     <FormProvider {...formFields}>
+      {submitRequstState.loading && (
+        <CardModal closeable={false}>
+          <View style={styles.overlay}>
+            <ActivityIndicator size="large" />
+          </View>
+        </CardModal>
+      )}
+
+      {/* TODO: Form error handling submitRequstState.error && ... */}
+
+      {submitRequstState.succeeded && (
+        <ThankfulnessModal
+          onClose={() =>
+            setSubmitRequstState((state) => submitRequestDefualtState)
+          }
+        />
+      )}
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.container}
@@ -232,11 +268,11 @@ export default function FormAdGuest() {
               errorMsg={t("refugeeAddForm.errors.email")}
             />
             <InputCotrolLabel>
-              {t("refugeeForm.labels.phoneNumber")}
+              {t("refugeeAddForm.phoneLabel")}
             </InputCotrolLabel>
             <FormTextInput
               name="advancedRefugee.phoneNumber"
-              label={t("refugeeForm.labels.phoneNumber")}
+              label={t("refugeeAddForm.phonePlaceholder")}
               rules={{
                 required: true,
                 pattern: {
@@ -289,12 +325,14 @@ export default function FormAdGuest() {
                 error={errors?.advancedHost?.country}
                 errorMsg={t("hostAdd.errors.country")}
               /> */}
-              <InputCotrolLabel>{t("hostAdd.town")}</InputCotrolLabel>
+              <InputCotrolLabel>
+                {t("refugeeAddForm.cityLabel")}
+              </InputCotrolLabel>
               <FormDropdown
                 zIndex={13}
                 data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
                 name="advancedRefugee.town"
-                placeholder={t("hostAdd.town")}
+                placeholder={t("refugeeAddForm.cityPlaceholder")}
                 rules={{
                   required: true,
                 }}
@@ -441,15 +479,23 @@ export default function FormAdGuest() {
           </InputControl>
 
           <InputControl>
-            <InputCotrolLabel>{t("hostAdd.nationality")}</InputCotrolLabel>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.countryOfGroup")}
+            </InputCotrolLabel>
             <FormRadioGroup<string | string>
               name="advancedRefugee.nationality"
               rules={{
                 required: true,
               }}
               data={[
-                { label: t("hostAdd.ukraine"), value: "ukraine" },
-                { label: t("hostAdd.any"), value: "any" },
+                {
+                  label: t("refugeeAddForm.countryOfGroupUA"),
+                  value: "ukraine",
+                },
+                {
+                  label: t("refugeeAddForm.countryOfGroupOthers"),
+                  value: "any",
+                },
               ]}
               error={errors?.advancedRefugee?.nationality}
               errorMsg={t("refugeeAddForm.errors.accommodationType")}
@@ -484,5 +530,12 @@ const styles = StyleSheet.create({
   },
   containerWraper: {
     width: "100%",
+  },
+  overlay: {
+    display: "flex",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
   },
 });
