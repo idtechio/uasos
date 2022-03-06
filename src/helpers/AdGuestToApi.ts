@@ -1,6 +1,6 @@
 import type { GuestProps } from "../../pages/api/guests/add";
 
-export default function AdGuestToApi(guest: GuestProps) {
+export default function AdGuestToApi(guest) {
   fetch("/api/guests/add", {
     method: "post",
     body: JSON.stringify(guest),
