@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useMemo } from "react";
-import { Controller, FormProvider, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
@@ -15,14 +15,11 @@ import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
-import UploadInput from "../Forms/UploadInput/index.web";
-import UploadPreview from "../Forms/UploadPreview";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
-// import FormCheckbox from "../Inputs/FormCheckbox";
 import Footer from "../Footer";
 import {
   accomodationTypeDropdownFields,
@@ -89,7 +86,7 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = ({ advancedHost }) => {
+  const onSubmit = (data) => {
     const {
       accommodationTime,
       accommodationType,
@@ -102,21 +99,25 @@ export default function FormAdHost() {
       guestCount,
       hostType, // present in form but not used
       nationality,
+      name,
+      emial,
+      phoneNumber,
       pregnantReady,
       town,
       transportReady, // present in form but not used
-    } = advancedHost;
+    } = data.advancedHost;
+    console.log(data);
     addHostToApi({
-      name: "",
+      name: name,
       country: country,
-      phone_num: "TODO",
-      email: "TODO",
+      phone_num: phoneNumber,
+      email: emial,
       city: town,
       children_allowed: Boolean.TRUE, // No such field in Form...
       pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
       handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
       num_people: guestCount,
-      period: accommodationTime, // how to map AccomodationTime Enum to number??
+      period: 10, // how to map AccomodationTime Enum to number??
       pietro: 0, // No such field in Form...
       listing_country: country,
       shelter_type: accommodationType,
@@ -144,27 +145,23 @@ export default function FormAdHost() {
         <CompositionSection
           padding={[35, 30, 8, 30]}
           zIndex={6}
-          header={t("refugeeAddForm.basicInfoHeader")}
+          header={t("hostAdd.basicInfoHeader")}
         >
           <SectionContent>
-            <InputControlLabel>
-              {t("refugeeAddForm.nameLabel")}
-            </InputControlLabel>
+            <InputControlLabel>{t("hostAdd.nameLabel")}</InputControlLabel>
             <FormTextInput
-              name="advancedRefugee.name"
-              label={t("refugeeAddForm.namePlaceholder")}
+              name="advancedHost.name"
+              label={t("hostAdd.namePlaceholder")}
               rules={{
                 required: true,
               }}
               error={errors?.advancedRefugee?.name}
-              errorMsg={t("refugeeAddForm.errors.name")}
+              errorMsg={t("hostAdd.errors.name")}
             />
-            <InputControlLabel>
-              {t("refugeeAddForm.emailLabel")}
-            </InputControlLabel>
+            <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
             <FormTextInput
-              name="advancedRefugee.email"
-              label={t("refugeeAddForm.emailPlaceholder")}
+              name="advancedHost.email"
+              label={t("hostAdd.emailPlaceholder")}
               rules={{
                 required: true,
                 pattern: {
@@ -173,23 +170,23 @@ export default function FormAdHost() {
                 },
               }}
               error={errors?.advancedRefugee?.email}
-              errorMsg={t("refugeeAddForm.errors.email")}
+              errorMsg={t("hostAdd.errors.email")}
             />
             <InputControlLabel>
-              {t("refugeeForm.labels.phoneNumber")}
+              {t("hostAdd.labels.phoneNumber")}
             </InputControlLabel>
             <FormTextInput
-              name="advancedRefugee.phoneNumber"
-              label={t("refugeeForm.labels.phoneNumber")}
+              name="advancedHost.phoneNumber"
+              label={t("hostAdd.phonePlaceholder")}
               rules={{
                 required: true,
                 pattern: {
                   value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                  message: t("refugeeForm.errors.phoneNumber"),
+                  message: t("hostAdd.errors.phoneNumber"),
                 },
               }}
               error={errors?.advancedRefugee?.phoneNumber}
-              errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+              errorMsg={t("hostAdd.errors.phoneNumber")}
             />
           </SectionContent>
         </CompositionSection>
@@ -221,7 +218,7 @@ export default function FormAdHost() {
                 </Tooltip>
               </View>
             </InputControlLabel>
-            <FormAutocompleteInput
+            {/* <FormAutocompleteInput
               name="advancedHost.town"
               rules={{
                 required: false,
@@ -229,7 +226,7 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.town}
               errorMsg={t("validations.requiredTown")}
               label={t("hostAdd.town")}
-            />
+            /> */}
           </SectionContent>
         </CompositionSection>
         <CompositionSection
