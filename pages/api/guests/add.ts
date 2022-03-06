@@ -18,6 +18,7 @@ export interface GuestProps {
   period: number;
   listing_country: string;
   acceptable_shelter_types: string;
+  acceptable_group_relations?: string;
   beds: number;
   group_relation?: string;
   is_pregnant: Boolean;
