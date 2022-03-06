@@ -86,7 +86,17 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = (data) => {
+  const DUMMY_DROPDOWN_ITEMS = [
+    { label: "Item 1", value: "Item 1" },
+    { label: "Item 2", value: "Item 2" },
+    { label: "Item 3", value: "Item 3" },
+    { label: "Item 4", value: "Item 4" },
+    { label: "Item 5", value: "Item 5" },
+    { label: "Item 6", value: "Item 6" },
+    { label: "Item 7", value: "Item 7" },
+  ];
+
+  const onSubmit = ({ advancedHost }) => {
     const {
       accommodationTime,
       accommodationType,
@@ -105,35 +115,47 @@ export default function FormAdHost() {
       pregnantReady,
       town,
       transportReady, // present in form but not used
-    } = data.advancedHost;
-    console.log(data);
+    } = advancedHost;
+    console.log(advancedHost);
     addHostToApi({
       name: name,
       country: country,
       phone_num: phoneNumber,
       email: emial,
       city: town,
-      children_allowed: Boolean.TRUE, // No such field in Form...
+      children_allowed: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
       pet_allowed: animalReady ? Boolean.TRUE : Boolean.FALSE,
       handicapped_allowed: dissabilityReady ? Boolean.TRUE : Boolean.FALSE, // What's the difference between this and "ok_for_disabilities"??
       num_people: guestCount,
-      period: 10, // how to map AccomodationTime Enum to number??
-      pietro: 0, // No such field in Form...
+      period: accommodationTime,
       listing_country: country,
       shelter_type: accommodationType,
-      beds: 999, // No such field in Form...
-      acceptable_group_relations: "TODO",
+      acceptable_group_relations: groupsTypes,
+      beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_any_nationality:
         nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
-      duration_category: "TODO",
     });
   };
 
   const [uploadPreviews, setUploadPreviews] = useState<string[]>();
+
+  const OVERNIGHT_DURATION_TYPES = [
+    {
+      label: t("staticValues.timePeriod.lessThanAWeek"),
+      value: 10,
+    },
+    { label: t("staticValues.timePeriod.week"), value: 20 },
+    {
+      label: t("staticValues.timePeriod.twoWeeks"),
+      value: 30,
+    },
+    { label: t("staticValues.timePeriod.month"), value: 40 },
+    { label: t("staticValues.timePeriod.longer"), value: 50 },
+  ];
 
   return (
     <FormProvider {...form}>
@@ -155,7 +177,7 @@ export default function FormAdHost() {
               rules={{
                 required: true,
               }}
-              error={errors?.advancedRefugee?.name}
+              error={errors?.advancedHost?.name}
               errorMsg={t("hostAdd.errors.name")}
             />
             <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
@@ -169,7 +191,7 @@ export default function FormAdHost() {
                   message: t("validations.invalidEmail"),
                 },
               }}
-              error={errors?.advancedRefugee?.email}
+              error={errors?.advancedHost?.email}
               errorMsg={t("hostAdd.errors.email")}
             />
             <InputControlLabel>
@@ -185,7 +207,7 @@ export default function FormAdHost() {
                   message: t("hostAdd.errors.phoneNumber"),
                 },
               }}
-              error={errors?.advancedRefugee?.phoneNumber}
+              error={errors?.advancedHost?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
             />
           </SectionContent>
@@ -218,15 +240,17 @@ export default function FormAdHost() {
                 </Tooltip>
               </View>
             </InputControlLabel>
-            {/* <FormAutocompleteInput
+            <FormDropdown
+              zIndex={13}
+              data={DUMMY_DROPDOWN_ITEMS} // todo: google places api
               name="advancedHost.town"
+              placeholder={t("hostAdd.town")}
               rules={{
-                required: false,
+                required: true,
               }}
               error={errors?.advancedHost?.town}
               errorMsg={t("validations.requiredTown")}
-              label={t("hostAdd.town")}
-            /> */}
+            />
           </SectionContent>
         </CompositionSection>
         <CompositionSection
@@ -295,16 +319,7 @@ export default function FormAdHost() {
               rules={{
                 required: true,
               }}
-              data={(
-                Object.keys(AccomodationTime) as Array<keyof AccomodationTime>
-              ).map((key: keyof AccomodationTime) => ({
-                value: key as AccomodationTime,
-                label: t(
-                  `hostAdd.accommodationTimeLabel.${String(
-                    AccomodationTime[key]
-                  )}`
-                ),
-              }))}
+              data={OVERNIGHT_DURATION_TYPES}
               error={errors?.advancedHost?.accommodationTime}
               errorMsg={t("hostAdd.errors.accommodationTime")}
             />
