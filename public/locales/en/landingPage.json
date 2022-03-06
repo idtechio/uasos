@@ -1,5 +1,24 @@
 {
   "supportingPartners": "Partners supporting the initiative",
+  "showMorePartners": "See all partners",
+  "projectIntention": {
+    "title": "We help to find shelter for the victims of the war in Ukraine",
+    "description_part1": "We help refugees find automatically",
+    "freeOfCharge": "free",
+    "description_part2": "accommodation offered by people and institutions willing to help.",
+    "lookingForHelp": "I'm looking for a shelter",
+    "shareHelp": "I offer help"
+  },
+  "howDoesItWork": {
+    "title": "How does it work?",
+    "points": {
+      "0": "Submit an apartment \nor need",
+      "1": "Fill in \n the necessary data",
+      "2": "Wait \nfor the best offer",
+      "3": "Contact the host / guest",
+      "4": "Confirm or \ndeny offer"
+    }
+  },
   "hero": {
     "title": "This site is a database of accomodation points and types of help offered by people of good will to Ukrainian refugees fleeing the war.",
     "description": "We help refugees find a free shelter provided by private people or institutions who are willing to help. Our portal's mission is to automatically connect potential places to stay with people in search based on defined needs.",
@@ -8,7 +27,8 @@
   },
   "likeToHelp": {
     "title": "Would you like to help?",
-    "details": "If you have a home, room of place that you could make available for free to the refugees from the war in Ukraine, register as a volunteer by filling in the form regarding your accomodation.\n\nOur application will automatically match registered people looking for help based on shared information."
+    "details": "If you have a home, room of place that you could make available for free to the refugees from the war in Ukraine, register as a volunteer by filling in the form regarding your accomodation.\n\nOur application will automatically match registered people looking for help based on shared information.",
+    "cta": "Propose a shelter"
   },
   "weMatched": {
     "title": "We were already able to match...",

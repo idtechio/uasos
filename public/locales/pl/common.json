@@ -156,7 +156,7 @@
     "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "ukraine": "Ukraina",
     "additionalInformationHeader": "Dodatkowe informacje",
-    "any": "Dowolne",
+    "any": "Inne",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
     "city": "Miasto",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
@@ -165,7 +165,7 @@
     "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
     "elderReady": "Przyjmę osobę/osoby starsze",
     "animalReady": "Przyjmę osobę ze zwierzakiem",
-    "basicInfoHeader": "Podaj informacje na temat noclegu który oferujesz",
+    "basicInfoHeader": "Podaj podstawowe informacje",
     "addButton": "Zatwierdź/Dodaj",
     "errors": {
       "country": "Kraj jest wymagany",
