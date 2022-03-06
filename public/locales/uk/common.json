@@ -245,6 +245,15 @@
       "accommodationType": "Будь ласка, виберіть національність"
     }
   },
+  "loginForm": {
+    "logInWith": "Зайти с помощью",
+    "or": "или",
+    "lostPass": "Не помните пароль?",
+    "click": "кликните сюда",
+    "logIn": "Войти",
+    "doNotHaveAcc": "Создать аккаунт если у вас его нет",
+    "register": "Зарегистрироваться"
+  },
   "accomodationPhoto": "Додайте фотографію пропонованого притулку",
   "accomodationPhotoReset": "видаляти",
   "accomodationPhotoLabel": "подати",
