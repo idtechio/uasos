@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
@@ -105,6 +106,8 @@ const ButtonStyle = styled(ButtonCta)`
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
+  const router = useRouter();
+  console.log(router);
   return (
     <Container>
       <ContentWrapper>
@@ -144,7 +147,10 @@ const LandingProjectIntention = () => {
                 first
                 colorOposite
                 anchor={t("common:shareLocation")}
-                onPress={() => signIn()}
+                onPress={(event) => {
+                  event.preventDefault();
+                  router.push(`/${router?.locale}/signin`);
+                }}
               />
             )}
           </ButtonContainer>

@@ -6,4 +6,5 @@ export type SectionProps = {
   padding?: [number, number, number, number];
   header?: string;
   zIndex?: number;
+  flexGrow?: string;
 };
