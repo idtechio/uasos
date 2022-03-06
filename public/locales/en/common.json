@@ -246,6 +246,15 @@
       "accommodationType": "Please select a nationality"
     }
   },
+  "loginForm": {
+    "logInWith": "Log IN",
+    "or": "or",
+    "lostPass": "Lost Password?",
+    "click": "click",
+    "logIn": "LogIn",
+    "doNotHaveAcc": "Do you want to have access ?",
+    "register": "Register"
+  },
   "accomodationPhoto": "Add a photo of the shelter on offer",
   "accomodationPhotoReset": "Delete",
   "accomodationPhotoLabel": "Submit",
