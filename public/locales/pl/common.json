@@ -27,7 +27,7 @@
   },
   "staticValues": {
     "timePeriod": {
-      "lessThanAWeek": "mniej niż tydzień",
+      "lessThanAWeek": "poniżej tygodnia",
       "week": "tydzień",
       "twoWeeks": "2 tygodnie",
       "month": "miesiąc",
@@ -141,8 +141,8 @@
       "host_type_friends_group": "Grupa znajomych"
     },
     "guestCount": "Ile osób możesz przyjąć?",
-    "accommodationTime": "Na jaki okres możesz udzielić schronienia?",
-    "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
+    "accommodationTime": "Na jaki okres możesz udzielić noclegu?",
+    "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoLabel": "Dodaj zdjęcie",
     "accomodationPhotoReset": "Usuń",
     "accommodationTimeLabel": {
@@ -196,11 +196,11 @@
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
-    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie schronienie, poinformujemy Cię o tym za pomocą maila."
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
-      "animals": "Jestem razem ze swoim zwierzakiem",
+      "animals": "Jest ze mną mój zwierzak",
       "toddler": "Dziecko jest poniżej 2 roku życia",
       "oldPerson": "Jestem lub jest ze mną osoba starsza",
       "disability": "Jestem lub jest ze mną osoba z niepełnosprawnością",
@@ -221,7 +221,7 @@
       "name": "Imię",
       "email": "Email",
       "phoneNumber": "Numer telefonu",
-      "refugeesCount": "Dla ilu osób szukasz schronienia?",
+      "refugeesCount": "Dla ilu osób szukasz noclegu?",
       "refugee": "Uchodźca {{number}}",
       "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie:",
       "refugeesAnimal": "Rasa (imię zwierzaka)",
@@ -245,10 +245,10 @@
     "genderLabel": "Płeć",
     "genderPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
-    "fullBedCountLabel": "Liczba pełnowymiarowych miejsc do spania",
+    "fullBedCountLabel": "Ile osób z tobą podróżuje?",
     "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
-    "placeOfRefuge": "Gdzie szukasz schronienia?",
-    "countryOfRefugeLabel": "W jakim kraju szukasz schronienia?",
+    "placeOfRefuge": "Gdzie szukasz noclegu?",
+    "countryOfRefugeLabel": "W jakim kraju szukasz noclegu?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
     "cityOfRefugeLabel": "Wybierz miasto:",
     "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
@@ -282,7 +282,7 @@
       "accommodationType": "Wybierz narodowość"
     }
   },
-  "accomodationPhoto": "Dodaj zdjęcie oferowanego schronienia",
+  "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
   "accomodationPhotoLabel": "Prześlij",
   "dropdownChoose": "Wybierz...",
