@@ -11,22 +11,16 @@ export interface GuestProps {
   phone_num: string;
   email: string;
   city: string;
-  is_children: Boolean;
-  is_pet: Boolean;
-  is_handicapped: Boolean;
-  num_people: number;
-  period: number;
   listing_country: string;
-  acceptable_shelter_types: string;
-  acceptable_group_relations?: string;
+  acceptable_shelter_types: Array<string>;
   beds: number;
-  group_relation?: string;
+  group_relations: Array<string>;
   is_pregnant: Boolean;
   is_with_disability: Boolean;
   is_with_animal: Boolean;
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
-  duration_category?: string;
+  duration_category: Array<string>;
 }
 
 export default async function addGuest(req, res) {
