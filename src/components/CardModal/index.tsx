@@ -7,9 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import Card from "../Card";
-import CrossIcon from "../../style/svgs/cross.svg";
 
-import { CenterBox, CloseIconWrapper } from "./style";
+import { CenterBox, Curtain } from "./style";
 import { CardModalProps } from "./types";
 
 const CardModal = ({
@@ -47,6 +46,7 @@ const CardModal = ({
               },
             ]}
           >
+            <Curtain onClick={(event) => event.stopPropagation()} />
             <Card
               width={screenWidth - 30}
               style={[{ maxWidth: 600 }, cardStyle]}
