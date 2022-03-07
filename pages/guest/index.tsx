@@ -4,7 +4,8 @@ import { useTranslation } from "next-i18next";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdGuest from "../../src/components/FormAdGuest";
 import { withSession } from "../../src/helpers/withSession";
-import { Routes } from "../../src/consts/router";
+import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
+import { GetServerSideProps } from "next";
 
 export default function Account(props) {
   const { t } = useTranslation();
@@ -16,20 +17,12 @@ export default function Account(props) {
   );
 }
 
-export const getServerSideProps = withSession(async ({ locale }, session) => {
-  if (!session) {
-    return {
-      redirect: {
-        destination: Routes.SIGN_IN,
-        permanent: false,
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) =>
+    redirectIfUnauthorized(session, {
+      props: {
+        session,
+        ...(await serverSideTranslations(locale)),
       },
-    };
-  }
-
-  return {
-    props: {
-      session,
-      ...(await serverSideTranslations(locale)),
-    },
-  };
-});
+    })
+);

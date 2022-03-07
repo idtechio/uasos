@@ -16,6 +16,7 @@ import Footer from "../src/components/Footer";
 import { BuiltInProviderType } from "next-auth/providers";
 import { Routes } from "../src/consts/router";
 import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
 
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
@@ -49,18 +50,20 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
   );
 };
 
-export const getServerSideProps = withSession(async ({ locale }, session) => {
-  const providers = await getProviders();
-  const csrfToken = await getCsrfToken();
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => {
+    const providers = await getProviders();
+    const csrfToken = await getCsrfToken();
 
-  return {
-    props: {
-      session,
-      providers,
-      csrfToken,
-      ...(await serverSideTranslations(locale)),
-    },
-  };
-});
+    return {
+      props: {
+        session,
+        providers,
+        csrfToken,
+        ...(await serverSideTranslations(locale)),
+      },
+    };
+  }
+);
 
 export default SignIn;

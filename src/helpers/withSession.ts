@@ -1,4 +1,12 @@
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+  PreviewData,
+} from "next";
+import { Session } from "next-auth";
 import { getSession } from "next-auth/react";
+import { ParsedUrlQuery } from "querystring";
 
 /*
  * Facing issue with combination of `next-auth` and `next-18next`
@@ -7,7 +15,12 @@ import { getSession } from "next-auth/react";
  * Using workaround https://github.com/isaachinman/next-i18next/issues/1680#issuecomment-1039649501
  */
 
-export const withSession = (gssp) => {
+export const withSession = <P>(
+  gssp: (
+    context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>,
+    session: Session
+  ) => Promise<GetServerSidePropsResult<P>>
+): GetServerSideProps => {
   return async (context) => {
     const session = await getSession({ req: context.req });
     return gssp(context, session);
