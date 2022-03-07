@@ -170,13 +170,11 @@ function Landing() {
   );
 }
 
-export const getServerSideProps = withSession(async ({ locale }, session) => {
-  return {
-    props: {
-      session,
-      ...(await serverSideTranslations(locale)),
-    },
-  };
-});
+export const getServerSideProps = withSession(async ({ locale }, session) => ({
+  props: {
+    session,
+    ...(await serverSideTranslations(locale)),
+  },
+}));
 
 export default Landing;

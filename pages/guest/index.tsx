@@ -1,15 +1,13 @@
-import { signIn, useSession } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { ButtonCta } from "../../src/components/Buttons";
 import { useTranslation } from "next-i18next";
 
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdGuest from "../../src/components/FormAdGuest";
 import { withSession } from "../../src/helpers/withSession";
+import { SIGN_IN_ROUTE } from "../../src/consts/router";
 
 export default function Account(props) {
   const { t } = useTranslation();
-  const { data: session } = useSession();
 
   return (
     <CompositionAppBody>
@@ -19,6 +17,15 @@ export default function Account(props) {
 }
 
 export const getServerSideProps = withSession(async ({ locale }, session) => {
+  if (!session) {
+    return {
+      redirect: {
+        destination: SIGN_IN_ROUTE,
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       session,

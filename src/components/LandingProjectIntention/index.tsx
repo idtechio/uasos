@@ -5,6 +5,7 @@ import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
+import { SIGN_IN_ROUTE } from "../../consts/router";
 
 const Container = styled.View`
   width: 100%;
@@ -107,7 +108,7 @@ const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
   const router = useRouter();
-  console.log(router);
+
   return (
     <Container>
       <ContentWrapper>
@@ -123,7 +124,7 @@ const LandingProjectIntention = () => {
           </SubTitleWrapper>
 
           <ButtonContainer>
-            {session ? (
+            {!!session ? (
               <>
                 <Link href="/guest">
                   <a>
@@ -149,7 +150,7 @@ const LandingProjectIntention = () => {
                 anchor={t("common:shareLocation")}
                 onPress={(event) => {
                   event.preventDefault();
-                  router.push(`/${router?.locale}/signin`);
+                  router.push(`/${router?.locale}${SIGN_IN_ROUTE}`);
                 }}
               />
             )}
