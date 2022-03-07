@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import ChevronIcon from "../../style/svgs/chevron-down.svg";
 import { LinkContent, StyledText, Wrapper } from "./styled";
-import { HOMEPAGE_ROUTE } from "../../consts/router";
+import { Routes } from "../../consts/router";
 
 interface Props {
   to: string;
@@ -15,7 +15,7 @@ const AppBack = ({ to }: Props) => {
 
   return (
     <Wrapper>
-      <Link href={to || HOMEPAGE_ROUTE} passHref>
+      <Link href={to || Routes.HOMEPAGE} passHref>
         <LinkContent>
           <ChevronIcon
             style={{

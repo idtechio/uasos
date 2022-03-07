@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
-import { HOMEPAGE_ROUTE, SIGN_IN_ROUTE } from "../../../src/consts/router";
+import { Routes } from "../../../src/consts/router";
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -17,7 +17,7 @@ export default NextAuth({
   ],
   secret: process.env.SECRET,
   pages: {
-    signIn: SIGN_IN_ROUTE,
+    signIn: Routes.SIGN_IN,
   },
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
@@ -26,7 +26,7 @@ export default NextAuth({
   },
   callbacks: {
     redirect({ url }) {
-      return url ?? HOMEPAGE_ROUTE;
+      return url ?? Routes.HOMEPAGE;
     },
   },
 });

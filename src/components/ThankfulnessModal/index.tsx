@@ -12,7 +12,7 @@ import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { ThankfulnessModalProps } from "./types";
-import { HOMEPAGE_ROUTE } from "../../consts/router";
+import { Routes } from "../../consts/router";
 
 export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
   const { t } = useTranslation();
@@ -44,7 +44,7 @@ export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href={HOMEPAGE_ROUTE}>
+          <Link href={Routes.HOMEPAGE}>
             <a>
               <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
             </a>

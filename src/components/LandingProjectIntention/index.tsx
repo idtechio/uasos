@@ -5,7 +5,7 @@ import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
-import { SIGN_IN_ROUTE } from "../../consts/router";
+import { Routes } from "../../consts/router";
 
 const Container = styled.View`
   width: 100%;
@@ -150,7 +150,7 @@ const LandingProjectIntention = () => {
                 anchor={t("common:shareLocation")}
                 onPress={(event) => {
                   event.preventDefault();
-                  router.push(`/${router?.locale}${SIGN_IN_ROUTE}`);
+                  router.push(`/${router?.locale}${Routes.SIGN_IN}`);
                 }}
               />
             )}

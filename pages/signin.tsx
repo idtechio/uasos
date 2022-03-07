@@ -14,7 +14,7 @@ import LoginForm from "../src/components/FormLogin";
 import AppBack from "../src/components/AppBack";
 import Footer from "../src/components/Footer";
 import { BuiltInProviderType } from "next-auth/providers";
-import { HOMEPAGE_ROUTE } from "../src/consts/router";
+import { Routes } from "../src/consts/router";
 import { withSession } from "../src/helpers/withSession";
 
 type Providers = Record<
@@ -42,7 +42,7 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
       contentContainerStyle={styles.container}
     >
       <Header />
-      <AppBack to={HOMEPAGE_ROUTE} />
+      <AppBack to={Routes.HOMEPAGE} />
       <LoginForm providers={providers} csrfToken={csrfToken} />
       <Footer />
     </ScrollView>

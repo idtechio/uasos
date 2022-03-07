@@ -1,2 +1,4 @@
-export const HOMEPAGE_ROUTE = "/";
-export const SIGN_IN_ROUTE = "/signin";
+export enum Routes {
+  HOMEPAGE = "/",
+  SIGN_IN = "/signin",
+}
