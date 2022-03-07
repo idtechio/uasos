@@ -192,9 +192,7 @@ export default function FormAdGuest() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() =>
-            setSubmitRequstState((_state) => submitRequestDefualtState)
-          }
+          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
         />
       )}
       <CompositionSection
