@@ -8,6 +8,7 @@ import {
   PlaceholderText,
   SelectText,
   Pill,
+  PillContainer,
 } from "./style";
 import { Platform, View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
@@ -99,9 +100,11 @@ export const Dropdown = ({
           <SelectText>
             {selectedItems.length > 0 ? (
               multiselect ? (
-                selectedItems.map(({ label, value }) => (
-                  <Pill key={value}>{label}</Pill>
-                ))
+                <PillContainer>
+                  {selectedItems.map(({ label, value }) => (
+                    <Pill key={value}>{label}</Pill>
+                  ))}
+                </PillContainer>
               ) : (
                 selectedItems[0].label
               )
