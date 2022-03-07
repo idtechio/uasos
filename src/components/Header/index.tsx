@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { View, StyleSheet } from "react-native";
+import { HOMEPAGE_ROUTE } from "../../consts/router";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
@@ -19,7 +20,7 @@ const Header = () => {
     <>
       <HeaderPage>
         <ServiceLogo>
-          <Link href="/">
+          <Link href={HOMEPAGE_ROUTE}>
             <a>
               <Logo />
             </a>

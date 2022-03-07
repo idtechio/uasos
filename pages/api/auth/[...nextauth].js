@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
+import { HOMEPAGE_ROUTE } from "../../../src/consts/router";
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -25,7 +26,7 @@ export default NextAuth({
   },
   callbacks: {
     redirect({ url }) {
-      return url ?? "/";
+      return url ?? HOMEPAGE_ROUTE;
     },
   },
 });

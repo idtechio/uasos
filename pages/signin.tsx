@@ -14,6 +14,7 @@ import LoginForm from "../src/components/FormLogin";
 import AppBack from "../src/components/AppBack";
 import Footer from "../src/components/Footer";
 import { BuiltInProviderType } from "next-auth/providers";
+import { HOMEPAGE_ROUTE } from "../src/consts/router";
 
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
@@ -40,7 +41,7 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
       contentContainerStyle={styles.container}
     >
       <Header />
-      <AppBack to="/" />
+      <AppBack to={HOMEPAGE_ROUTE} />
       <LoginForm providers={providers} csrfToken={csrfToken} />
       <Footer />
     </ScrollView>
