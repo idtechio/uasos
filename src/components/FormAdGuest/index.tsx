@@ -105,13 +105,11 @@ export default function FormAdGuest() {
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
       group_relations: [guest.groupRelations],
-      is_pregnant: guest.preferences.peopleDetails.pregnant ? true : true,
-      is_with_disability: guest.preferences.peopleDetails.disability
-        ? true
-        : true,
-      is_with_animal: guest.preferences.peopleDetails.animals ? true : true,
-      is_with_elderly: guest.preferences.peopleDetails.oldPerson ? true : true,
-      is_ukrainian_nationality: guest.nationality === "ukraine" ? true : true,
+      is_pregnant: !!guest.preferences.peopleDetails.pregnant,
+      is_with_disability: !!guest.preferences.peopleDetails.disability,
+      is_with_animal: !!guest.preferences.peopleDetails.animals,
+      is_with_elderly: !!guest.preferences.peopleDetails.oldPerson,
+      is_ukrainian_nationality: guest.nationality === "ukraine",
       duration_category: [guest.overnightDuration],
     };
     if (guest.town) {
