@@ -22,7 +22,7 @@ const Header = () => {
         <ServiceLogo>
           <Link href={Routes.HOMEPAGE}>
             <a>
-              <Logo />
+              <Logo width={129} height={40} />
             </a>
           </Link>
         </ServiceLogo>
