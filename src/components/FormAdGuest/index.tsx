@@ -175,8 +175,8 @@ export default function FormAdGuest() {
     { label: t("staticValues.accommodationTypes.flat"), value: "flat" },
     { label: t("staticValues.accommodationTypes.house"), value: "house" },
     {
-      label: t("staticValues.accommodationTypes.public_shared_space"),
-      value: "public_shared_space",
+      label: t("staticValues.accommodationTypes.collective"),
+      value: "collective",
     },
   ];
 
@@ -412,7 +412,7 @@ export default function FormAdGuest() {
                 },
               ]}
               error={errors?.advancedRefugee?.nationality}
-              errorMsg={t("refugeeAddForm.errors.accommodationType")}
+              errorMsg={t("refugeeAddForm.errors.countryOfGroup")}
             />
           </InputControl>
         </CompositionSection>

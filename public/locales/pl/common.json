@@ -46,7 +46,7 @@
       "room": "Pokój w współdzielonym mieszkaniu/domu",
       "flat": "Mieszkanie na wyłączność",
       "house": "Dom na wyłączność",
-      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
+      "collective": "Pokój zbiorowy (np. szkolna sala)"
     },
     "boolean": {
       "yes": "tak",
@@ -128,7 +128,8 @@
     "emailPlaceholder": "e-mail",
     "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
     "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
-    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
+    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy oferujesz nocleg.",
+    "cityTooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "cityPlaceholder": "Miasto",
     "type": "Typ noclegu",
     "hostType": "Typ gospodarza",
@@ -156,7 +157,7 @@
     "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "ukraine": "Ukraina",
     "additionalInformationHeader": "Dodatkowe informacje",
-    "any": "Inne",
+    "any": "Dowolne",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
     "city": "Miasto",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
@@ -169,6 +170,9 @@
     "refugeInfoHeader": "Podaj informacje o noclegu",
     "addButton": "Zatwierdź/Dodaj",
     "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "phoneNumber": "Podaj numer telefonu",
       "country": "Kraj jest wymagany",
       "town": "Miasto jest wymagane",
       "type": "Typ noclegu jest wymagany",
@@ -246,10 +250,10 @@
     "genderLabel": "Płeć",
     "genderPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
-    "fullBedCountLabel": "Ile osób z tobą podróżuje?",
+    "fullBedCountLabel": "Ile osób z Tobą podróżuje? (wliczając Ciebie)",
     "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
     "placeOfRefuge": "Gdzie szukasz noclegu?",
-    "countryOfRefugeLabel": "W jakim kraju szukasz noclegu?",
+    "countryOfRefugeLabel": "W jakiej lokalizacji szukasz noclegu?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
     "cityOfRefugeLabel": "Wybierz miasto:",
     "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
@@ -279,8 +283,9 @@
       "childBedCount": "Podaj ilość miejsc",
       "fullBedCountsaas": "Podaj ilość miejsc",
       "groupRelations": "Wybierz relacje",
-      "overnightDuration": "Wybierz typ noclegu",
-      "accommodationType": "Wybierz narodowość"
+      "overnightDuration": "Wybierz okres trwania noclegu",
+      "accommodationType": "Wybierz typ noclegu",
+      "countryOfGroup": "Wybierz narodowość"
     }
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
@@ -289,16 +294,6 @@
   "dropdownChoose": "Wybierz...",
   "dropdownSearch": "Szukaj",
   "heroImageAlt": "Sława Ukrajini!",
-  "advancedHost": {
-    "advancedHost.tooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
-    "accommodationTypeOptions": {
-      "bed": "Łóźko w współdzielonym pokoju",
-      "room": "Pokój w współdzielonym mieszkaniu/domu",
-      "flat": "Mieszkanie na wyłączność",
-      "house": "Dom na wyłączność",
-      "collective": "Pokój zbiorowy (np. szkolna sala)"
-    }
-  },
   "loginForm": {
     "logInWith": "Zaloguj się za pomocą",
     "or": "lub",

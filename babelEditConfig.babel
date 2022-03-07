@@ -11514,7 +11514,7 @@
                                         </translations>
                                     </concept_node>
                                     <concept_node>
-                                        <name>public_shared_space</name>
+                                        <name>collective</name>
                                         <definition_loaded>false</definition_loaded>
                                         <description/>
                                         <comment/>
