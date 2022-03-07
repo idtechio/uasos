@@ -3,7 +3,7 @@ import Logo from "./image/Logo";
 import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useSession } from "next-auth/react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { View, StyleSheet } from "react-native";
@@ -33,7 +33,7 @@ const Header = () => {
           {session ? (
             <HamburgerButton onPress={toggleNavigationDrawer} />
           ) : (
-            <></>
+            <Fragment />
           )}
         </ActionBar>
       </HeaderPage>
