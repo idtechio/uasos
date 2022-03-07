@@ -1,4 +1,3 @@
-import type { GuestProps } from "../../pages/api/guests/add";
 import { HostProps } from "../../pages/api/hosts/add";
 
 export default async function addHostToApi(host: HostProps) {

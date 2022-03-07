@@ -8,6 +8,8 @@ import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesI
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 import { PartnersSection } from "../src/components/PartnersSection";
 import { Splash } from "../src/components/Slash";
+import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -169,8 +171,13 @@ function Landing() {
   );
 }
 
-export const getServerSideProps = async ({ locale }) => ({
-  props: { ...(await serverSideTranslations(locale)) },
-});
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => ({
+    props: {
+      session,
+      ...(await serverSideTranslations(locale)),
+    },
+  })
+);
 
 export default Landing;

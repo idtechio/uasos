@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useMemo } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
@@ -19,6 +19,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
+  const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
+  
   return (
     <>
       <GlobalStyles />

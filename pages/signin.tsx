@@ -14,6 +14,9 @@ import LoginForm from "../src/components/FormLogin";
 import AppBack from "../src/components/AppBack";
 import Footer from "../src/components/Footer";
 import { BuiltInProviderType } from "next-auth/providers";
+import { Routes } from "../src/consts/router";
+import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
 
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
@@ -40,19 +43,27 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
       contentContainerStyle={styles.container}
     >
       <Header />
-      <AppBack to="/" />
+      <AppBack to={Routes.HOMEPAGE} />
       <LoginForm providers={providers} csrfToken={csrfToken} />
       <Footer />
     </ScrollView>
   );
 };
 
-export async function getServerSideProps({ locale }) {
-  const providers = await getProviders();
-  const csrfToken = await getCsrfToken();
-  return {
-    props: { providers, csrfToken, ...(await serverSideTranslations(locale)) },
-  };
-}
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => {
+    const providers = await getProviders();
+    const csrfToken = await getCsrfToken();
+
+    return {
+      props: {
+        session,
+        providers,
+        csrfToken,
+        ...(await serverSideTranslations(locale)),
+      },
+    };
+  }
+);
 
 export default SignIn;
