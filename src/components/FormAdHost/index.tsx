@@ -178,9 +178,7 @@ export default function FormAdHost() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() =>
-            setSubmitRequstState((_state) => submitRequestDefualtState)
-          }
+          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
         />
       )}
 
