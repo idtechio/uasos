@@ -15,12 +15,7 @@ interface Props {
 export function PartnerCard({ source, alt, style }: Props) {
   return (
     <Card style={style}>
-      <StyledImage
-        // @ts-ignore
-        source={source}
-        alt={alt}
-        resizeMode="contain"
-      />
+      <StyledImage source={source} alt={alt} resizeMode="contain" />
     </Card>
   );
 }

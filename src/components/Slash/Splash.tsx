@@ -1,6 +1,6 @@
 import { ViewStyle } from "react-native";
 
-import styled, { css } from "styled-components/native";
+import styled from "styled-components/native";
 
 const SPLASH = {
   blue: "/assets/splash_blue.png",
