@@ -47,11 +47,10 @@ const FormLogin = ({ providers, csrfToken }: FormLoginProps) => {
     }
   };
 
-  const handleSignIn = async (provideId: string) => {
-    await signIn(provideId, {
+  const handleSignIn = (provideId: string) =>
+    signIn(provideId, {
       callbackUrl: !!locale ? `/${locale}` : undefined,
     });
-  };
 
   return (
     <>

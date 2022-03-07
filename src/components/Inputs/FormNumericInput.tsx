@@ -22,7 +22,13 @@ const FormTextInput: VFC<Props> = (props) => {
       rules={rules}
       render={({ field: { onChange, value } }) => (
         <InputControl>
-          <NumericInput onChange={onChange} value={value} error={error} />
+          <NumericInput
+            onChange={onChange}
+            value={value}
+            error={error}
+            min={min}
+            max={max}
+          />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>
       )}

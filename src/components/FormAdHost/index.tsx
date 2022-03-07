@@ -78,7 +78,7 @@ export default function FormAdHost() {
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
-        guestCount: 0,
+        guestCount: 1,
         country: "poland",
         volunteerVisitAcceptance: "true",
       },
@@ -271,7 +271,7 @@ export default function FormAdHost() {
               {t("hostAdd.cityLabel")}
               <View style={{ marginHorizontal: 10 }}>
                 <Tooltip>
-                  <Text>{t("advancedHost.advancedHost.tooltipText")}</Text>
+                  <Text>{t("hostAdd.cityTooltipText")}</Text>
                 </Tooltip>
               </View>
             </InputControlLabel>
@@ -342,6 +342,7 @@ export default function FormAdHost() {
               rules={{
                 required: true,
               }}
+              min={1}
               error={errors?.advancedHost?.guestCount}
               errorMsg={t("hostAdd.errors.guestCount")}
             />

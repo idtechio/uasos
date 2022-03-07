@@ -46,7 +46,7 @@
       "room": "Room in a shared flat / house",
       "flat": "The apartment is exclusive",
       "house": "House for exclusive use",
-      "public_shared_space": "Collective room (e.g. school room)"
+      "collective": "Collective room (e.g. school room)"
     },
     "boolean": {
       "yes": "yes",
