@@ -22,7 +22,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.pl", "PL")}
         />
       );
-    case "uk":
+    case "ua":
       return (
         <Image
           width={SIZE.width}

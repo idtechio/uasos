@@ -7,6 +7,13 @@ export const Pill = styled.Text`
   margin-right: 4px;
 `;
 
+export const PillContainer = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 90%;
+  row-gap: 4px;
+`;
+
 export const Select = styled.Pressable`
   color: ${(props) => props.theme.colors.text};
   border-width: ${(props) => props.theme.forms.borderWidth};
