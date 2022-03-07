@@ -74,7 +74,6 @@ export default function FormAdHost() {
     useState<SubmitRequestState>(submitRequestDefualtState);
 
   const {
-    control: _control,
     handleSubmit,
     formState: { errors },
   } = form;
