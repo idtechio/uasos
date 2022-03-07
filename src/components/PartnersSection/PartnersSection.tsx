@@ -1,6 +1,5 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
-import { View } from "react-native";
 import styled, { css } from "styled-components/native";
 import PARTNERS from "../../consts/partners.json";
 import { ButtonCta } from "../Buttons";
@@ -73,9 +72,7 @@ const ShowMoreContainer = styled.View`
     })}
 `;
 
-interface Props {}
-
-export function PartnersSection({}: Props) {
+export function PartnersSection() {
   const { t } = useTranslation("landingPage");
   return (
     <StyledSection bgColor="#fff">

@@ -6,7 +6,6 @@ import {
   ClientSafeProvider,
 } from "next-auth/react";
 import { ScrollView, StyleSheet } from "react-native";
-import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Header from "../src/components/Header";

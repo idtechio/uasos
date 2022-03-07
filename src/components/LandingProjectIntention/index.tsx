@@ -2,7 +2,7 @@ import * as React from "react";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
@@ -124,7 +124,7 @@ const LandingProjectIntention = () => {
           </SubTitleWrapper>
 
           <ButtonContainer>
-            {!!session ? (
+            {session ? (
               <>
                 <Link href="/guest">
                   <a>

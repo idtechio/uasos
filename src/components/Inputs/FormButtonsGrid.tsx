@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { TouchableOpacity } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import ChoiceButton from "../Forms/ChoiceButton";
 import CompositionGrid from "../Compositions/CompositionGrid";
@@ -22,7 +21,7 @@ const FormButtonsGrid = ({ data }: Props) => {
   const [buttonsState, setButtonsState] = useState<string[]>([]);
 
   const onTilePress = useCallback(
-    (id: string, onChange: (...event: any[]) => void) => {
+    (id: string, onChange: (..._event: any[]) => void) => {
       setButtonsState((prevState) => {
         const newState = [...prevState];
         if (prevState.includes(id)) {

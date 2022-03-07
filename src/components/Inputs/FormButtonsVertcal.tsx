@@ -24,7 +24,7 @@ const FormButtonsVertical = ({ data, label }: Props) => {
   const [buttonsState, setButtonsState] = useState<string[]>([]);
 
   const onTilePress = useCallback(
-    (id: string, onChange: (...event: any[]) => void) => {
+    (id: string, onChange: (..._event: any[]) => void) => {
       setButtonsState((prevState) => {
         const newState = [...prevState];
         if (prevState.includes(id)) {
@@ -42,12 +42,12 @@ const FormButtonsVertical = ({ data, label }: Props) => {
   return (
     <InputControl>
       {!!label && <InputCotrolLabel>{label}</InputCotrolLabel>}
-      {data.map(({ id, label, icon, extra }) => {
+      {data.map(({ id, label, icon }) => {
         return (
           <Controller
             key={id}
             control={control}
-            render={({ field: { onChange, value } }) => (
+            render={({ field: { onChange } }) => (
               <View key={id}>
                 <ChoiceButton
                   key={id}
