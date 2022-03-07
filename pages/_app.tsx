@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useMemo } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
@@ -10,10 +10,8 @@ import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const getBreakPoint = useBreakPointGetter();
-  const theme = React.useMemo(
-    () => ({ ...primary, getBreakPoint }),
-    [getBreakPoint]
-  );
+  const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
+
   return (
     <>
       <GlobalStyles />

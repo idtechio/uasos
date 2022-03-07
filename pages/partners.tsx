@@ -9,6 +9,8 @@ import SectionTitle from "../src/components/SectionTitle";
 import GoBack from "../src/components/GoBack";
 import { PartnerCard } from "../src/components/PartnerCard";
 import PARTNERS from "../src/consts/partners.json";
+import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
 
 const PartnersContainer = styled.View`
   width: 100%;
@@ -60,12 +62,13 @@ const PartnersPage = () => {
   );
 };
 
-export async function getStaticProps({ locale }) {
-  return {
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => ({
     props: {
+      session,
       ...(await serverSideTranslations(locale)),
     },
-  };
-}
+  })
+);
 
 export default PartnersPage;
