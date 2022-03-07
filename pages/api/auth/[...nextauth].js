@@ -22,7 +22,7 @@ export default NextAuth({
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
     brandColor: "#1A3764", // Hex color code
-    logo: "https://sosua.help/logo.svg", // Absolute URL to image
+    logo: "https://uasos.org/logo.svg", // Absolute URL to image
   },
   callbacks: {
     redirect({ url }) {
