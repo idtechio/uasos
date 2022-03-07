@@ -15,6 +15,7 @@ import AppBack from "../src/components/AppBack";
 import Footer from "../src/components/Footer";
 import { BuiltInProviderType } from "next-auth/providers";
 import { HOMEPAGE_ROUTE } from "../src/consts/router";
+import { withSession } from "../src/helpers/withSession";
 
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
@@ -48,12 +49,18 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
   );
 };
 
-export async function getServerSideProps({ locale }) {
+export const getServerSideProps = withSession(async ({ locale }, session) => {
   const providers = await getProviders();
   const csrfToken = await getCsrfToken();
+
   return {
-    props: { providers, csrfToken, ...(await serverSideTranslations(locale)) },
+    props: {
+      session,
+      providers,
+      csrfToken,
+      ...(await serverSideTranslations(locale)),
+    },
   };
-}
+});
 
 export default SignIn;
