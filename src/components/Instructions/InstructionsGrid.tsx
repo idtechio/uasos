@@ -9,6 +9,7 @@ export const InstructionsGrid = () => {
 
   return (
     <View
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       /** @ts-ignore */
       style={{
         display: "grid",

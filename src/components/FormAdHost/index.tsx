@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
@@ -9,12 +9,7 @@ import {
   View,
 } from "react-native";
 import styled from "styled-components/native";
-import {
-  AccommodationType,
-  AccomodationTime,
-  FormType,
-  HostType,
-} from "../../helpers/FormTypes";
+import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
 import { primary } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 
@@ -25,29 +20,27 @@ import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
+import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
 import Footer from "../Footer";
 import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
   GROUP_RELATIONS,
-  hostCountries,
 } from "./FormAddHost.data";
 import addHostToApi from "../../helpers/addHostToApi";
-import { Boolean } from "../FormAdGuest";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
-const MAX_PHOTOS_COUNT = 3;
+// const MAX_PHOTOS_COUNT = 3;
 
-const PreviewsWrapper = styled.View`
-  margin-top: 10px;
-  flex-direction: row;
-  align-items: center;
-  z-index: 10;
-  margin-bottom: 26px;
-`;
+// const PreviewsWrapper = styled.View`
+//   margin-top: 10px;
+//   flex-direction: row;
+//   align-items: center;
+//   z-index: 10;
+//   margin-bottom: 26px;
+// `;
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -56,10 +49,10 @@ export const SectionContent = styled.View`
   margin-left: auto;
 `;
 
-const TooltipIcon = styled.View`
-  background: "black";
-  color: "white";
-`;
+// const TooltipIcon = styled.View`
+//   background: "black";
+//   color: "white";
+// `;
 
 type SubmitRequestState = {
   loading: boolean;
@@ -89,7 +82,7 @@ export default function FormAdHost() {
     useState<SubmitRequestState>(submitRequestDefualtState);
 
   const {
-    control,
+    control: _control,
     handleSubmit,
     formState: { errors },
   } = form;
@@ -98,9 +91,9 @@ export default function FormAdHost() {
     "advancedHost.accommodationType"
   );
 
-  const volunteerVisitAcceptance = form.watch(
-    "advancedHost.volunteerVisitAcceptance"
-  ) as unknown as boolean;
+  // const volunteerVisitAcceptance = form.watch(
+  //   "advancedHost.volunteerVisitAcceptance"
+  // ) as unknown as boolean;
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -113,23 +106,22 @@ export default function FormAdHost() {
     const {
       accommodationTime,
       accommodationType,
-      accomodationPhoto, // present in form but not used
+      accomodationPhoto: _accomodationPhoto, // present in form but not used
       animalReady,
       country,
       dissabilityReady,
       elderReady,
       groupsTypes, // present in form but not used
       guestCount,
-      hostType, // present in form but not used
+      hostType: _hostType, // present in form but not used
       nationality,
       name,
       email,
       phoneNumber,
       pregnantReady,
       town,
-      transportReady, // present in form but not used
+      transportReady: _transportReady, // present in form but not used
     } = advancedHost;
-    console.log(advancedHost);
     setSubmitRequstState((state) => ({ ...state, loading: true }));
     try {
       await addHostToApi({
@@ -142,12 +134,11 @@ export default function FormAdHost() {
         shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
-        ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_any_nationality:
-          nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_pregnant: !!pregnantReady,
+        ok_for_disabilities: !!dissabilityReady,
+        ok_for_animals: !!animalReady,
+        ok_for_elderly: !!elderReady,
+        ok_for_any_nationality: nationality === "any",
         duration_category: [accommodationTime],
       });
 
@@ -159,7 +150,7 @@ export default function FormAdHost() {
     }
   };
 
-  const [uploadPreviews, setUploadPreviews] = useState<string[]>();
+  // const [uploadPreviews, setUploadPreviews] = useState<string[]>();
 
   const OVERNIGHT_DURATION_TYPES = [
     {
@@ -188,7 +179,7 @@ export default function FormAdHost() {
       {submitRequstState.succeeded && (
         <ThankfulnessModal
           onClose={() =>
-            setSubmitRequstState((state) => submitRequestDefualtState)
+            setSubmitRequstState((_state) => submitRequestDefualtState)
           }
         />
       )}
@@ -368,7 +359,7 @@ export default function FormAdHost() {
         >
           <SectionContent>
             <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
-            <FormRadioGroup<string | string>
+            <FormRadioGroup
               name="advancedHost.nationality"
               rules={{
                 required: true,
