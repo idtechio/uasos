@@ -24,8 +24,8 @@ export default NextAuth({
     logo: "https://sosua.help/logo.svg", // Absolute URL to image
   },
   callbacks: {
-    redirect({ url, baseUrl }) {
-      return `/`;
+    redirect({ url }) {
+      return url ?? "/";
     },
   },
 });
