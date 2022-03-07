@@ -42,8 +42,8 @@
       "unrelated_group": "Niepowiązana grupa"
     },
     "accommodationTypes": {
-      "bed": "Łóżko w współdzielonym pokoju",
-      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "bed": "Łóżko we współdzielonym pokoju",
+      "room": "Pokój we współdzielonym mieszkaniu/domu",
       "flat": "Mieszkanie na wyłączność",
       "house": "Dom na wyłączność",
       "collective": "Pokój zbiorowy (np. szkolna sala)"
@@ -268,7 +268,7 @@
     "cityPlaceholder": "Miasto",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
     "selectPlaceholder": "Wybierz z listy",
-    "accommodationType": "Wybierz wszystkie intersujące Cię opcje noclegu (wybór wielu jest możliwy)",
+    "accommodationType": "Wybierz wszystkie interesujące Cię opcje noclegu (wybór wielu jest możliwy)",
     "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
     "countryOfGroupUA": "Ukraina",
     "countryOfGroupOthers": "Inne",
