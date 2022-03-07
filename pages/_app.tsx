@@ -12,15 +12,10 @@ import { init } from "./../src/helpers/ga";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const getBreakPoint = useBreakPointGetter();
-  const theme = React.useMemo(
-    () => ({ ...primary, getBreakPoint }),
-    [getBreakPoint]
-  );
+  const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
-  const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
-  
   return (
     <>
       <GlobalStyles />
