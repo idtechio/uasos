@@ -1,7 +1,27 @@
 module.exports = {
-  extends: ["next/core-web-vitals", "prettier"],
-  plugins: ["prettier"],
+  parser: "@typescript-eslint/parser",
+  extends: [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+  ],
+  plugins: ["prettier", "@typescript-eslint", "unused-imports"],
   rules: {
-    "prettier/prettier": 2,
+    "prettier/prettier": "error",
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": "off", // enable when developing
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_",
+      },
+    ],
   },
 };
