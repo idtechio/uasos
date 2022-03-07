@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 import { FormType } from "../../helpers/FormTypes";
 
@@ -14,9 +15,13 @@ import Separation from "./Separation";
 import LostPass from "./LostPass";
 import GoToRegister from "./GoToRegister";
 import FormContainer from "./FormContainer";
+import { SignInProps } from "../../../pages/signin";
 
-const FormLogin = ({ providers, csrfToken }) => {
+type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
+
+const FormLogin = ({ providers, csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
   const formFields = useForm<FormType>();
   const {
     handleSubmit,
@@ -42,21 +47,24 @@ const FormLogin = ({ providers, csrfToken }) => {
     }
   };
 
+  const handleSignIn = async (provideId: string) => {
+    await signIn(provideId, {
+      callbackUrl: !!locale ? `/${locale}` : undefined,
+    });
+  };
+
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
           <FormHeader>{t("loginForm.logInWith")}</FormHeader>
-          {Object.values(providers).map((provider: any) => (
-            <div key={provider.name}>
-              <div key={provider.name}>
-                <ButtonSM
-                  id={provider.id}
-                  onPress={() => signIn(provider.id)}
-                  anchor={`${t("loginForm.logInWith")} ${provider.name}`}
-                />
-              </div>
-            </div>
+          {Object.values(providers).map(({ id, name }) => (
+            <ButtonSM
+              key={name}
+              id={id}
+              onPress={() => handleSignIn(id)}
+              anchor={`${t("loginForm.logInWith")} ${name}`}
+            />
           ))}
           <div style={{ marginBottom: 60 }}></div>
           {/* <<FormProvider {...formFields}>

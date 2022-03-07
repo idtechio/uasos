@@ -1,5 +1,10 @@
 import React from "react";
-import { getProviders, getCsrfToken } from "next-auth/react";
+import {
+  getProviders,
+  getCsrfToken,
+  LiteralUnion,
+  ClientSafeProvider,
+} from "next-auth/react";
 import { ScrollView, StyleSheet } from "react-native";
 import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,8 +13,19 @@ import Header from "../src/components/Header";
 import LoginForm from "../src/components/FormLogin";
 import AppBack from "../src/components/AppBack";
 import Footer from "../src/components/Footer";
+import { BuiltInProviderType } from "next-auth/providers";
 
-const SignIn = ({ providers, csrfToken }) => {
+type Providers = Record<
+  LiteralUnion<BuiltInProviderType, string>,
+  ClientSafeProvider
+>;
+
+export type SignInProps = {
+  providers: Providers;
+  csrfToken: string;
+};
+
+const SignIn = ({ providers, csrfToken }: SignInProps) => {
   const styles = StyleSheet.create({
     container: {
       width: "100%",
@@ -24,7 +40,7 @@ const SignIn = ({ providers, csrfToken }) => {
       contentContainerStyle={styles.container}
     >
       <Header />
-      <AppBack to={"/"} />
+      <AppBack to="/" />
       <LoginForm providers={providers} csrfToken={csrfToken} />
       <Footer />
     </ScrollView>
@@ -38,4 +54,5 @@ export async function getServerSideProps({ locale }) {
     props: { providers, csrfToken, ...(await serverSideTranslations(locale)) },
   };
 }
+
 export default SignIn;
