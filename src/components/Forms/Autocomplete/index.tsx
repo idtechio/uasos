@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import useFetch from "react-fetch-hook";
 import { ActivityIndicator, FlatList } from "react-native";
 import debounce from "lodash.debounce";

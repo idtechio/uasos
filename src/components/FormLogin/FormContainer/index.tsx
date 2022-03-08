@@ -1,8 +1,11 @@
-import React, { FC } from "react";
 import styled from "styled-components/native";
 import { css } from "styled-components";
 
-const FormContainer: FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const FormContainer = ({ children }: Props) => {
   return <FormContainerWrapper>{children}</FormContainerWrapper>;
 };
 

@@ -1,4 +1,3 @@
-import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { Error } from "./style";
@@ -13,9 +12,13 @@ type Props = {
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormAutocompleteInput: VFC<Props> = (props) => {
-  const { name, label, errorMsg, rules, error } = props;
-
+const FormAutocompleteInput = ({
+  name,
+  label,
+  errorMsg,
+  rules,
+  error,
+}: Props) => {
   const { control } = useFormContext();
   return (
     <Controller
