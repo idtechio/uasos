@@ -44,6 +44,7 @@ export const Tooltip = ({ children }: Props) => {
   return (
     <>
       <View
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}

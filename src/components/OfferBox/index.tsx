@@ -9,13 +9,7 @@ import Animals from "./image/Animals";
 import Disability from "./image/Disability";
 import { Trans, useTranslation } from "next-i18next";
 
-const OfferBox = ({
-  location,
-  host,
-  conditions,
-  preferences,
-  resources,
-}: any) => {
+const OfferBox = ({ location, host, preferences }) => {
   const { t } = useTranslation();
   return (
     <View style={styles.box}>

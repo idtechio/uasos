@@ -28,10 +28,10 @@ const TopLeftYellowSplash = styled(Splash)`
     })}
 `;
 
-const StyledScrollView = styled.ScrollView`
-  flex: 1;
-  width: 100%;
-`;
+// const StyledScrollView = styled.ScrollView`
+//   flex: 1;
+//   width: 100%;
+// `;
 
 const TopLeftYellowSplashPosition = css`
   width: 180%;

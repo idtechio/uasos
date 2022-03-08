@@ -32,7 +32,7 @@ const FormTextInput: VFC<Props> = (props) => {
     <Controller
       control={control}
       rules={rules}
-      render={({ field: { onChange, onBlur, value } }) => (
+      render={({ field: { onChange, onBlur } }) => (
         <InputControl>
           <Input
             placeholder={label}

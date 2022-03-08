@@ -144,7 +144,7 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (error) => {
+  const onError = (_error) => {
     // TODO: handle error case
   };
 
@@ -206,9 +206,7 @@ export default function FormAdGuest() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() =>
-            setSubmitRequstState((state) => submitRequestDefualtState)
-          }
+          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
         />
       )}
       <CompositionSection
@@ -315,7 +313,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.overnightDurationLabel")}
           </InputCotrolLabel>
-          <FormRadioGroup<string | string>
+          <FormRadioGroup
             name="advancedRefugee.overnightDuration"
             rules={{
               required: true,
@@ -384,7 +382,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.countryOfGroup")}
           </InputCotrolLabel>
-          <FormRadioGroup<string | string>
+          <FormRadioGroup
             name="advancedRefugee.nationality"
             rules={{
               required: true,

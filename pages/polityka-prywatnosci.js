@@ -2,9 +2,9 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
 
-export default function App(props) {
+export default function App() {
   return (
     <CompositionAppBody>
       <CompositionContainer>
@@ -31,8 +31,8 @@ export default function App(props) {
         <h3>Informacje kontaktowe</h3>
         <Text>
           Kontakt z Administratorem jest możliwy drogą korespondencyjną pod ww.
-          adresem siedziby lub poprzez kontakt pocztą elektroniczną na
-          adres: iod@idadviasory.pl.
+          adresem siedziby lub poprzez kontakt pocztą elektroniczną na adres:
+          iod@idadviasory.pl.
         </Text>
         <h2>Zakres, okres i cele przetwarzania danych osobowych</h2>
         <h3>Informacje ogólne</h3>
@@ -155,11 +155,11 @@ export default function App(props) {
           tj. Google Inc.
         </Text>
         <Text>
-          Dane te stanowią informacje dotyczącą urządzenia, a nie konkretnej
+          Dane te stanowią informacje dotyczącą urządzenia, a nie konkretnej
           osoby. Nie będziemy podejmować żadnych czynności zmierzających do
           identyfikacji tej osoby.Szczegóły polityki prywatności Google
-          Analytics dostępne są pod
-          adresem: http://www.google.com/analytics/learn/privacy.html
+          Analytics dostępne są pod adresem:
+          http://www.google.com/analytics/learn/privacy.html
         </Text>
         <h2>Prawa osoby, której dane dotyczą</h2>
         <Text>
@@ -218,26 +218,26 @@ export default function App(props) {
           każdym czasie, jeśli będzie to niezbędne w wyniku wprowadzenia
           modyfikacji w polityce lub zarządzaniu spółki, prawie bądź
           jurysdykcji. Zmiany będą obowiązywać od dnia opublikowania ich na
-          stronie wraz ze wskazaniem daty ich wprowadzenia.
+          stronie wraz ze wskazaniem daty ich wprowadzenia.
         </Text>
       </CompositionContainer>
     </CompositionAppBody>
   );
 }
 
-const styles = StyleSheet.create({
-  titleText: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginTop: 20,
-  },
-  comming: {
-    textAlign: "center",
-    marginTop: "30vh",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   titleText: {
+//     fontSize: 20,
+//     fontWeight: "bold",
+//     marginTop: 20,
+//   },
+//   comming: {
+//     textAlign: "center",
+//     marginTop: "30vh",
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+// });
 
 /**
  * Temporary dumy data

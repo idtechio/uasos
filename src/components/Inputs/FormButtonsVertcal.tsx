@@ -42,12 +42,12 @@ const FormButtonsVertical = ({ data, label }: Props) => {
   return (
     <InputControl>
       {!!label && <InputCotrolLabel>{label}</InputCotrolLabel>}
-      {data.map(({ id, label, icon, extra }) => {
+      {data.map(({ id, label, icon }) => {
         return (
           <Controller
             key={id}
             control={control}
-            render={({ field: { onChange, value } }) => (
+            render={({ field: { onChange } }) => (
               <View key={id}>
                 <ChoiceButton
                   key={id}

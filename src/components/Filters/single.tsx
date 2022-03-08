@@ -20,10 +20,10 @@ const SingleFilter = ({
   value,
   name,
   options = [],
-  onSubmit = (value: any) => {},
+  onSubmit = (_value) => undefined,
 }) => {
   const [visible, setFilterVisible] = useState(false);
-  const [val, setVal] = useState(value);
+  const [val, _setVal] = useState(value);
   const chosenItem = () => {
     // TODO: handle item pressed here
   };
