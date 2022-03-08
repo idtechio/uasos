@@ -25,7 +25,11 @@ const ChoiceButton = ({
           </Icon>
         ) : null}
         {text ? (
-          <Text isVertical={isVertical} isSelected={isSelected}>
+          <Text
+            isVertical={isVertical}
+            isSelected={isSelected}
+            isSmall={isSmall}
+          >
             {text}
           </Text>
         ) : null}
