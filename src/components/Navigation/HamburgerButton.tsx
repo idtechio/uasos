@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonContainer, Stripe } from "./style";
 
 interface Props {

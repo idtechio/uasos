@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native";
-import React from "react";
+
 import styled from "styled-components/native";
 import { useTranslation } from "react-i18next";
 

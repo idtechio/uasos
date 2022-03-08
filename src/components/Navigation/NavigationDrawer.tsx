@@ -1,4 +1,3 @@
-import React from "react";
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 import { useTranslation } from "next-i18next";
 
