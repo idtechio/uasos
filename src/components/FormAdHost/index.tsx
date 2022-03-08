@@ -20,10 +20,10 @@ import {
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
 import addHostToApi from "../../helpers/addHostToApi";
-import { Boolean } from "../FormAdGuest";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { Boolean } from "../../../pages/api/hosts/add";
 
 // const MAX_PHOTOS_COUNT = 3;
 
