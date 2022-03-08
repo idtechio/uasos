@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
-export enum Boolean {
+enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }

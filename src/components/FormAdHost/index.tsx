@@ -20,7 +20,6 @@ import {
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
 import addHostToApi from "../../helpers/addHostToApi";
-import { Boolean } from "../FormAdGuest";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
@@ -47,11 +46,17 @@ export const SectionContent = styled.View`
 //   color: "white";
 // `;
 
+enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
+
 type SubmitRequestState = {
   loading: boolean;
   error: Error | null;
   succeeded: boolean;
 };
+
 const submitRequestDefualtState = {
   loading: false,
   error: null,
