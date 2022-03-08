@@ -31,6 +31,7 @@ import addHostToApi from "../../helpers/addHostToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { Boolean } from "../../../pages/api/hosts/add";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -133,11 +134,12 @@ export default function FormAdHost() {
         shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
-        ok_for_pregnant: !!pregnantReady,
-        ok_for_disabilities: !!dissabilityReady,
-        ok_for_animals: !!animalReady,
-        ok_for_elderly: !!elderReady,
-        ok_for_any_nationality: nationality === "any",
+        ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_any_nationality:
+          nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
         duration_category: [accommodationTime],
       });
 
