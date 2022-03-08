@@ -113,7 +113,7 @@ export default function FormAdGuest() {
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
-      group_relations: [guest.groupRelations],
+      group_relation: [guest.groupRelations],
       is_pregnant: guest.preferences.peopleDetails.pregnant
         ? Boolean.TRUE
         : Boolean.FALSE,

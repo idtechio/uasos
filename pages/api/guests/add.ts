@@ -14,7 +14,7 @@ export interface GuestProps {
   listing_country?: string;
   acceptable_shelter_types: Array<string>;
   beds: number;
-  group_relations: Array<string>;
+  group_relation: Array<string>;
   is_pregnant: Boolean;
   is_with_disability: Boolean;
   is_with_animal: Boolean;
