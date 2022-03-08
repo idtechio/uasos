@@ -117,7 +117,7 @@ export default function FormAdHost() {
       phoneNumber,
       pregnantReady,
       town,
-      transportReady: _transportReady, // present in form but not used
+      transportReady: transportReady,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
@@ -139,6 +139,7 @@ export default function FormAdHost() {
         ok_for_any_nationality:
           nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
         duration_category: [accommodationTime],
+        transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
       });
 
       setSubmitRequstState((state) => ({ ...state, succeeded: true }));

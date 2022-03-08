@@ -21,6 +21,7 @@ export interface HostProps {
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
+  transport_included: Boolean;
 }
 
 export default async function addHost(req, res) {
