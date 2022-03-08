@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 export interface GuestProps {
   name: string;
   country?: string;
@@ -11,11 +16,11 @@ export interface GuestProps {
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relations: Array<string>;
-  is_pregnant: boolean;
-  is_with_disability: boolean;
-  is_with_animal: boolean;
-  is_with_elderly: boolean;
-  is_ukrainian_nationality: boolean;
+  is_pregnant: Boolean;
+  is_with_disability: Boolean;
+  is_with_animal: Boolean;
+  is_with_elderly: Boolean;
+  is_ukrainian_nationality: Boolean;
   duration_category: Array<string>;
 }
 
