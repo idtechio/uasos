@@ -30,11 +30,12 @@ const FormTextInput = ({
     <Controller
       control={control}
       rules={rules}
-      render={({ field: { onChange, onBlur } }) => (
+      render={({ field: { onChange, onBlur, value } }) => (
         <InputControl>
           <Input
             placeholder={label}
             onChange={onChange}
+            value={value}
             onBlur={onBlur}
             error={error}
             extra={extra}

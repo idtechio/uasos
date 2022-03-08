@@ -23,6 +23,7 @@ import addHostToApi from "../../helpers/addHostToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { useSessionUserData } from "../../hooks/useSessionUserData";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -65,10 +66,13 @@ const submitRequestDefualtState = {
 
 export default function FormAdHost() {
   const { t } = useTranslation();
+  const { name: sessionName, email: sessionEmail } = useSessionUserData();
 
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
+        name: sessionName,
+        email: sessionEmail,
         guestCount: 1,
         country: "poland",
         volunteerVisitAcceptance: "true",
@@ -231,7 +235,7 @@ export default function FormAdHost() {
         zIndex={3}
       >
         <SectionContent>
-          {/* Temporarly disabled 
+          {/* Temporarly disabled
               <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
               <FormDropdown
                 data={hostCountries.map(({ label, ...rest }) => ({

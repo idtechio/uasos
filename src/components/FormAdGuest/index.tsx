@@ -24,6 +24,7 @@ import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { useSessionUserData } from "../../hooks/useSessionUserData";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -48,10 +49,13 @@ const submitRequestDefualtState = {
 
 export default function FormAdGuest() {
   const { t } = useTranslation();
+  const { name: sessionName, email: sessionEmail } = useSessionUserData();
 
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
+        name: sessionName,
+        email: sessionEmail,
         fullBedCount: 1,
         childBedCount: 0,
         age: 18,
