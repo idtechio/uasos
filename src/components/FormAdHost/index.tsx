@@ -1,14 +1,9 @@
-import React, { ReactNode, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Text, ActivityIndicator, View } from "react-native";
 import styled from "styled-components/native";
-import {
-  AccommodationType,
-  AccomodationTime,
-  FormType,
-  HostType,
-} from "../../helpers/FormTypes";
+import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
@@ -18,12 +13,11 @@ import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
+import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
 import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
   GROUP_RELATIONS,
-  hostCountries,
 } from "./FormAddHost.data";
 import addHostToApi from "../../helpers/addHostToApi";
 import { Boolean } from "../FormAdGuest";

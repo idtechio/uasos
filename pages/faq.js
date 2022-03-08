@@ -2,7 +2,7 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 export default function App(props) {
   return (

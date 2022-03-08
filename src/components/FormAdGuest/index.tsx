@@ -103,7 +103,7 @@ export default function FormAdGuest() {
   const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
 
-    let apiObject = {
+    const apiObject = {
       name: guest.name,
       phone_num: guest.phoneNumber,
       email: guest.email,

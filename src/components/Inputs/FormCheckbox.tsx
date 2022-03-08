@@ -1,4 +1,4 @@
-import { VFC, ReactNode } from "react";
+import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { Error, CenteredView } from "./style";
@@ -17,7 +17,7 @@ type Props = {
 const FormCheckbox: VFC<Props> = (props) => {
   const { name, label, errorMsg, rules, error, value } = props;
   const { control } = useFormContext();
-  console.log("value", value);
+
   return (
     <InputControl>
       <CenteredView>

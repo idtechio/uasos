@@ -1,5 +1,4 @@
 import { View, Text } from "react-native";
-import { ButtonCta } from "../Buttons";
 import Avatar from "../Avatar";
 import { styles } from "./style";
 import Marker from "./image/Marker";

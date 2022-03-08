@@ -12,7 +12,6 @@ const CheckboxField = ({
   error,
   value,
 }: CheckboxFieldProps) => {
-  console.log("value @ CheckboxField", value);
   return (
     <InputCotrolLabel>
       {Platform.OS === "web" ? (
