@@ -37,8 +37,10 @@ export default class MyDocument extends Document {
     return (
       <Html style={{ height: "100%" }}>
         <Head>
+          <link href="https://fonts.googleapis.com" rel="preconnect" />
+          <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
             rel="stylesheet"
           />
         </Head>
