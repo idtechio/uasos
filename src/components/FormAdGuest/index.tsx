@@ -145,7 +145,7 @@ export default function FormAdGuest() {
   };
 
   const onError = (error) => {
-    console.log("error:", error);
+    // TODO: handle error case
   };
 
   const GROUP_RELATIONS = [

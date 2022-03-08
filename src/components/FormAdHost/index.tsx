@@ -115,7 +115,7 @@ export default function FormAdHost() {
       town,
       transportReady, // present in form but not used
     } = advancedHost;
-    console.log(advancedHost);
+
     setSubmitRequstState((state) => ({ ...state, loading: true }));
     try {
       await addHostToApi({
