@@ -125,6 +125,7 @@
     "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
     "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
     "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
+    "cityTooltipText": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
     "cityPlaceholder": "Місто",
     "elderReady": "Прийму особу/особи похилого віку",
     "accommodationTime": "Як довго?",
@@ -145,8 +146,29 @@
     "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
     "transportReady": "Пропоную можливість транспортування",
     "type": "Тип розміщення",
+    "hostType": "Тип власника житла",
+    "hostTypeLabel": {
+      "host_type_men": "Чоловiк",
+      "host_type_women": "Жiнка",
+      "host_type_couple": "Пара",
+      "host_type_family": "Родина",
+      "host_type_elder_people": "Люди похилого вiку",
+      "host_type_friends_group": "Група друзiв/знайомих"
+    },
     "ukraine": "Україна",
-    "guestCount": "Скільки осіб ви можете в себе прийняти?"
+    "guestCount": "Скільки осіб ви можете в себе прийняти?",
+    "errors": {
+      "name": "Вкажіть своє ім'я",
+      "email": "Вкажіть правильну адресу електронної пошти",
+      "phoneNumber": "Вкажіть номер телефону",
+      "type": "Вкажiть тип розмiщення",
+      "hostType": "Вкажiть тип власника житла",
+      "guestCount": "",
+      "accommodationTime": "Вкажiть максимальну тривалість перебування гостя-бiженця",
+      "nationality": "",
+      "groupsTypes": "",
+      "nationalityError": "Потрібно вказати громадянство біженців, яких ви готові прийняти"
+    }
   },
   "logout": "Вийти",
   "backToHomePage": "Повернутися на головну сторінку",
@@ -244,8 +266,9 @@
       "childBedCount": "Введіть кількість місць",
       "fullBedCountsaas": "Введіть кількість місць",
       "groupRelations": "Виберіть відносини",
-      "overnightDuration": "Виберіть тип проживання",
-      "accommodationType": "Будь ласка, виберіть національність"
+      "overnightDuration": "Вкажiть на який термін перебування ви шукаєте житло?",
+      "accommodationType": "Виберіть тип проживання",
+      "countryOfGroup": "Будь ласка, виберіть національність"
     }
   },
   "loginForm": {
