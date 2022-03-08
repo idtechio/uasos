@@ -72,7 +72,9 @@ const ShowMoreContainer = styled.View`
     })}
 `;
 
-export function PartnersSection() {
+interface Props {}
+
+export function PartnersSection({}: Props) {
   const { t } = useTranslation("landingPage");
   const router = useRouter();
 

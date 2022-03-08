@@ -1,4 +1,5 @@
 import { View, Text } from "react-native";
+import { ButtonCta } from "../Buttons";
 import Avatar from "../Avatar";
 import { styles } from "./style";
 import Marker from "./image/Marker";
@@ -9,7 +10,13 @@ import Animals from "./image/Animals";
 import Disability from "./image/Disability";
 import { Trans, useTranslation } from "next-i18next";
 
-const OfferBox = ({ location, host, preferences }) => {
+const OfferBox = ({
+  location,
+  host,
+  conditions,
+  preferences,
+  resources,
+}: any) => {
   const { t } = useTranslation();
   return (
     <View style={styles.box}>

@@ -12,7 +12,7 @@ export async function init(G) {
 
       logPageViews();
     } catch (error) {
-      // TODO: handle error case
+      console.error(error);
     }
   }
 }

@@ -1,50 +1,55 @@
+import React from "react";
 import { signIn } from "next-auth/react";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import { FormType } from "../../helpers/FormTypes";
 
-import { ButtonSM } from "../Buttons";
+import FormTextInput from "../Inputs/FormTextInput";
+import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 
+import Separation from "./Separation";
+import LostPass from "./LostPass";
+import GoToRegister from "./GoToRegister";
 import FormContainer from "./FormContainer";
 import { SignInProps } from "../../../pages/signin";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
-const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
+const FormLogin = ({ providers, csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
   const formFields = useForm<FormType>();
   const {
-    handleSubmit: _handleSubmit,
-    formState: { errors: _errors },
+    handleSubmit,
+    formState: { errors },
   } = formFields;
 
-  // const onSubmit = (data) => {
-  //   console.log("form submit:", data);
-  //   console.log("form submit:csrfToken", csrfToken);
-  // };
-  // const onError = (error) => {
-  //   console.log("form error:", error);
-  // };
+  const onSubmit = (data) => {
+    console.log("form submit:", data);
+    console.log("form submit:csrfToken", csrfToken);
+  };
+  const onError = (error) => {
+    console.log("form error:", error);
+  };
 
-  // const handlePassErrorMsg = (type: string): string => {
-  //   switch (type) {
-  //     case "minLength":
-  //       return t("validations.toShortPassword");
-  //     case "required":
-  //       return t("validations.invalidPassword");
-  //     default:
-  //       return t("validations.invalidPassword");
-  //   }
-  // };
+  const handlePassErrorMsg = (type: string): string => {
+    switch (type) {
+      case "minLength":
+        return t("validations.toShortPassword");
+      case "required":
+        return t("validations.invalidPassword");
+      default:
+        return t("validations.invalidPassword");
+    }
+  };
 
   const handleSignIn = (provideId: string) =>
     signIn(provideId, {
-      callbackUrl: locale ? `/${locale}` : undefined,
+      callbackUrl: !!locale ? `/${locale}` : undefined,
     });
 
   return (

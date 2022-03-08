@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
 import pathSVG from "../../../public/how-does-it-work-path.png";
+import { signIn, useSession } from "next-auth/react";
 import { useMemo } from "react";
 import Section from "../Section";
 
@@ -135,6 +136,7 @@ const PathItemDesktopContainer = styled.View`
 export function HowDoesItWorkSection() {
   const { getBreakPoint } = useTheme();
   const { t } = useTranslation("landingPage");
+  const { data: session } = useSession();
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const points = useMemo(() => {

@@ -5,19 +5,24 @@ import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";
 import { Error } from "./style";
 
-type Data = {
+type Data<T> = {
   label: string;
   value: string;
 };
 
-type Props = {
+type Props<T> = {
   name: FormKey;
-  data: Data[];
+  data: Data<T>[];
   error?: FieldError;
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
+const FormRadioGroup = <T extends Object>({
+  name,
+  rules,
+  data,
+  errorMsg,
+}: Props<T>) => {
   const { control, formState } = useFormContext();
   const [markedCheckbox, setMarkedCheckbox] = useState<string>();
 
