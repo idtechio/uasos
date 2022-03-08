@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { ViewStyle, StyleProp } from "react-native";
 
 export type InputProps = {
   placeholder: string;

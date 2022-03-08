@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator } from "react-native";
@@ -25,7 +25,7 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 
-export enum Boolean {
+enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
@@ -103,7 +103,7 @@ export default function FormAdGuest() {
   const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
 
-    let apiObject = {
+    const apiObject = {
       name: guest.name,
       phone_num: guest.phoneNumber,
       email: guest.email,
@@ -112,18 +112,18 @@ export default function FormAdGuest() {
       group_relations: [guest.groupRelations],
       is_pregnant: guest.preferences.peopleDetails.pregnant
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_disability: guest.preferences.peopleDetails.disability
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_animal: guest.preferences.peopleDetails.animals
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_elderly: guest.preferences.peopleDetails.oldPerson
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_ukrainian_nationality:
-        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
     };
     if (guest.town) {
@@ -144,8 +144,8 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (error) => {
-    console.log("error:", error);
+  const onError = (_error) => {
+    // TODO: handle error case
   };
 
   const GROUP_RELATIONS = [
@@ -206,9 +206,7 @@ export default function FormAdGuest() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() =>
-            setSubmitRequstState((state) => submitRequestDefualtState)
-          }
+          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
         />
       )}
       <CompositionSection
@@ -315,7 +313,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.overnightDurationLabel")}
           </InputCotrolLabel>
-          <FormRadioGroup<string | string>
+          <FormRadioGroup
             name="advancedRefugee.overnightDuration"
             rules={{
               required: true,
@@ -384,7 +382,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.countryOfGroup")}
           </InputCotrolLabel>
-          <FormRadioGroup<string | string>
+          <FormRadioGroup
             name="advancedRefugee.nationality"
             rules={{
               required: true,

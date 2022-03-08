@@ -1,5 +1,3 @@
-import React from "react";
-
 export type DropdownProps = {
   data: { label: React.ReactNode; value: any }[];
   direction?: "to-bottom" | "to-top";

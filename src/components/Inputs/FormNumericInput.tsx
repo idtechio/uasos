@@ -1,4 +1,3 @@
-import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import NumericInput from "../Forms/NumericInput";
 import InputControl from "../Forms/InputControl";
@@ -13,8 +12,7 @@ type Props = {
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput: VFC<Props> = (props) => {
-  const { name, errorMsg, rules, error, max, min } = props;
+const FormTextInput = ({ name, errorMsg, rules, error, max, min }: Props) => {
   const { control } = useFormContext();
   return (
     <Controller

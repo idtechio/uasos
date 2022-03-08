@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
@@ -8,7 +7,7 @@ import FormContainer from "../FormContainer";
 
 import { StyledText, Wrapper } from "./styled";
 
-const GoToRegister: FC = () => {
+const GoToRegister = () => {
   const { t } = useTranslation();
   return (
     <Wrapper>
