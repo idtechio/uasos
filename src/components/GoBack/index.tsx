@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useRouter } from "next/router";
 import { Pressable } from "react-native";
 import styled from "styled-components/native";

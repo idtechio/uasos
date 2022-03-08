@@ -1,4 +1,3 @@
-import React from "react";
 import ChevronIcon from "../../../style/svgs/chevron-down.svg";
 
 const Chevron = ({ upsideDown }) => {

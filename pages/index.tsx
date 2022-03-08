@@ -1,4 +1,3 @@
-import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CompositionAppBody } from "../src/components/Compositions";

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";

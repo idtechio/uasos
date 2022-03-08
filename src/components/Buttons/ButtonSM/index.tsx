@@ -1,5 +1,3 @@
-import React from "react";
-
 import IconFB from "../../../style/svgs/iconFB.svg";
 import IconGoogle from "../../../style/svgs/iconGoogle.svg";
 

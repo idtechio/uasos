@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Pressable } from "react-native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";

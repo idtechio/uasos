@@ -1,4 +1,3 @@
-import React from "react";
 import { signIn } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";

@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import * as React from "react";
+
 import { View } from "react-native";
 import { DATA } from "./config";
 import ListItem from "./ListItem";

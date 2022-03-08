@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Touchable, View, Text } from "./style";
 import { ItemProps } from "./types";
 
