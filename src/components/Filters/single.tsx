@@ -27,7 +27,7 @@ const SingleFilter = ({
   const [visible, setFilterVisible] = useState(false);
   const [val, _setVal] = useState(value);
   const chosenItem = () => {
-    // console.log("call this function when an item is chosen!");
+    // TODO: handle item press
   };
 
   return (
