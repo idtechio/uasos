@@ -24,6 +24,7 @@ import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { Boolean, GuestProps } from "../../../pages/api/guests/add";
 
 const enum Location {
   Any,
@@ -98,18 +99,27 @@ export default function FormAdGuest() {
   const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
 
-    const apiObject = {
+    const apiObject: GuestProps = {
       name: guest.name,
       phone_num: guest.phoneNumber,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
       group_relations: [guest.groupRelations],
-      is_pregnant: !!guest.preferences.peopleDetails.pregnant,
-      is_with_disability: !!guest.preferences.peopleDetails.disability,
-      is_with_animal: !!guest.preferences.peopleDetails.animals,
-      is_with_elderly: !!guest.preferences.peopleDetails.oldPerson,
-      is_ukrainian_nationality: guest.nationality === "ukraine",
+      is_pregnant: guest.preferences.peopleDetails.pregnant
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_with_disability: guest.preferences.peopleDetails.disability
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_with_animal: guest.preferences.peopleDetails.animals
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_with_elderly: guest.preferences.peopleDetails.oldPerson
+        ? Boolean.TRUE
+        : Boolean.FALSE,
+      is_ukrainian_nationality:
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
     };
     if (guest.town) {
