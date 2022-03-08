@@ -24,7 +24,11 @@ import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
-import { Boolean, GuestProps } from "../../../pages/api/guests/add";
+
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 
 const enum Location {
   Any,
@@ -99,7 +103,7 @@ export default function FormAdGuest() {
   const onSubmit = async (data) => {
     const guest = data.advancedRefugee;
 
-    const apiObject: GuestProps = {
+    let apiObject = {
       name: guest.name,
       phone_num: guest.phoneNumber,
       email: guest.email,
@@ -108,18 +112,18 @@ export default function FormAdGuest() {
       group_relations: [guest.groupRelations],
       is_pregnant: guest.preferences.peopleDetails.pregnant
         ? Boolean.TRUE
-        : Boolean.FALSE,
+        : Boolean.TRUE,
       is_with_disability: guest.preferences.peopleDetails.disability
         ? Boolean.TRUE
-        : Boolean.FALSE,
+        : Boolean.TRUE,
       is_with_animal: guest.preferences.peopleDetails.animals
         ? Boolean.TRUE
-        : Boolean.FALSE,
+        : Boolean.TRUE,
       is_with_elderly: guest.preferences.peopleDetails.oldPerson
         ? Boolean.TRUE
-        : Boolean.FALSE,
+        : Boolean.TRUE,
       is_ukrainian_nationality:
-        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
       duration_category: [guest.overnightDuration],
     };
     if (guest.town) {
@@ -140,8 +144,8 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (_error) => {
-    // TODO: handle error case
+  const onError = (error) => {
+    console.log("error:", error);
   };
 
   const GROUP_RELATIONS = [
@@ -202,7 +206,9 @@ export default function FormAdGuest() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          onClose={() =>
+            setSubmitRequstState((state) => submitRequestDefualtState)
+          }
         />
       )}
       <CompositionSection
@@ -309,7 +315,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.overnightDurationLabel")}
           </InputCotrolLabel>
-          <FormRadioGroup
+          <FormRadioGroup<string | string>
             name="advancedRefugee.overnightDuration"
             rules={{
               required: true,
@@ -378,7 +384,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.countryOfGroup")}
           </InputCotrolLabel>
-          <FormRadioGroup
+          <FormRadioGroup<string | string>
             name="advancedRefugee.nationality"
             rules={{
               required: true,

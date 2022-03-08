@@ -20,15 +20,12 @@ const SingleFilter = ({
   value,
   name,
   options = [],
-  onSubmit = (_value: any) => {
-    // empty
-  },
+  onSubmit = (value: any) => {},
 }) => {
   const [visible, setFilterVisible] = useState(false);
-  const [val, _setVal] = useState(value);
-  const chosenItem = () => {
-    // TODO: handle item press
-  };
+  const [val, setVal] = useState(value);
+  const chosenItem = () =>
+    console.log("call this function when an item is chosen!");
 
   return (
     <Filter>

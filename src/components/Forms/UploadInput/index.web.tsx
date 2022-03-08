@@ -41,7 +41,7 @@ const UploadInput = ({
   onFileChange,
   disabled,
 }: UploadInputProps) => {
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement>();
   const [isLoading, toggleLoading] = useState(false);
 
   const handleClick = useCallback(() => {
@@ -66,10 +66,14 @@ const UploadInput = ({
       reader.readAsDataURL(file);
     };
 
-    inputRef.current?.addEventListener("change", handleChange);
+    if (inputRef.current) {
+      inputRef.current.addEventListener("change", handleChange);
+    }
 
     return () => {
-      inputRef.current?.removeEventListener("change", handleChange);
+      if (inputRef.current) {
+        inputRef.current.removeEventListener("change", handleChange);
+      }
     };
   });
 

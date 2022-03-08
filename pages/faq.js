@@ -2,9 +2,9 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
-import { Text } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
-export default function App() {
+export default function App(props) {
   return (
     <CompositionAppBody>
       <CompositionContainer>
@@ -16,19 +16,19 @@ export default function App() {
   );
 }
 
-// const styles = StyleSheet.create({
-//   titleText: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     marginTop: 20,
-//   },
-//   comming: {
-//     textAlign: "center",
-//     marginTop: "30vh",
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-// });
+const styles = StyleSheet.create({
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 20,
+  },
+  comming: {
+    textAlign: "center",
+    marginTop: "30vh",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 /**
  * Temporary dumy data

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { VFC, ReactNode } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { Error } from "./style";
@@ -16,22 +16,23 @@ type Props = {
   secureTextEntry?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput = ({
-  name,
-  label,
-  errorMsg,
-  rules,
-  error,
-  extra,
-  labelsBackgroundColor,
-  secureTextEntry,
-}: Props) => {
+const FormTextInput: VFC<Props> = (props) => {
+  const {
+    name,
+    label,
+    errorMsg,
+    rules,
+    error,
+    extra,
+    labelsBackgroundColor,
+    secureTextEntry,
+  } = props;
   const { control } = useFormContext();
   return (
     <Controller
       control={control}
       rules={rules}
-      render={({ field: { onChange, onBlur } }) => (
+      render={({ field: { onChange, onBlur, value } }) => (
         <InputControl>
           <Input
             placeholder={label}

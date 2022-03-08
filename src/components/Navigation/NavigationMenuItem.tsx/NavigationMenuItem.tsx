@@ -1,3 +1,4 @@
+import React from "react";
 import { Container, Title } from "./style";
 
 interface Props {

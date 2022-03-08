@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
-export enum Boolean {
+enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
@@ -26,8 +25,10 @@ export interface HostProps {
 
 export default async function addHost(req, res) {
   const session = await getSession({ req });
+  console.log(session);
   if (session) {
     const body = JSON.parse(req.body);
+    console.log(body);
     const topicNameOrId = process.env.TOPIC_HOST;
     const data = JSON.stringify(body);
     res.status(200).json(await publishMessage(topicNameOrId, data));

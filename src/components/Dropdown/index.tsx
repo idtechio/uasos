@@ -53,7 +53,7 @@ export const Dropdown = ({
       title={item.label}
       value={item.value}
       itemPressFunction={handleItemPress}
-      setShowOptions={multiselect ? () => undefined : setShowOptions}
+      setShowOptions={multiselect ? () => {} : setShowOptions}
       selected={multiselect && selectedValues.includes(item.value)}
     />
   );

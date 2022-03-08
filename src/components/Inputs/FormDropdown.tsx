@@ -1,4 +1,10 @@
-import { Controller, FieldError, useFormContext } from "react-hook-form";
+import { VFC } from "react";
+import {
+  Controller,
+  FieldError,
+  useForm,
+  useFormContext,
+} from "react-hook-form";
 import InputControl from "../Forms/InputControl";
 import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
@@ -17,17 +23,18 @@ type Props = {
   zIndex?: number;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormDropdown = ({
-  name,
-  label,
-  errorMsg,
-  rules,
-  error,
-  data,
-  placeholder,
-  zIndex,
-  multiSelect = false,
-}: Props) => {
+const FormDropdown: VFC<Props> = (props) => {
+  const {
+    name,
+    label,
+    errorMsg,
+    rules,
+    error,
+    data,
+    placeholder,
+    zIndex,
+    multiSelect = false,
+  } = props;
   const { control } = useFormContext();
 
   return (
