@@ -11,7 +11,7 @@
   },
   "likeToHelp": {
     "title": "Chcesz pomóc?",
-    "details": "Zgłoś lokal, pokój lub miejsce, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie.",
+    "details": "Zgłoś lokal, pokój lub miejsce, które możesz <bold>nieodpłatnie</bold> udostępnić <bold>ofiarom wojny w Ukrainie</bold>",
     "cta": "Zgłoś lokal"
   },
   "weMatched": {
@@ -70,5 +70,11 @@
       "3": "Skontaktuj się\nz gospodarzem/gościem",
       "4": "Potwierdź lub\nodrzuć ofertę"
     }
+  },
+  "hero": {
+    "description": "",
+    "lookingForHelp": "",
+    "shareHelp": "",
+    "title": ""
   }
 }

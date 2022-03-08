@@ -286,7 +286,8 @@
       "overnightDuration": "Wybierz okres trwania noclegu",
       "accommodationType": "Wybierz typ noclegu",
       "countryOfGroup": "Wybierz narodowość"
-    }
+    },
+    "refugeInfoHeader": ""
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
@@ -302,5 +303,6 @@
     "logIn": "zaloguj się",
     "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
     "register": "zarejestruj się"
-  }
+  },
+  "gdpr": ""
 }
