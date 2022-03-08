@@ -118,6 +118,10 @@
     "de": "Прапор Німеччини"
   },
   "hostAdd": {
+    "country": "Країна",
+    "countries": {
+      "poland": ""
+    },
     "nameLabel": "Ім'я (введіть лише ім'я)",
     "namePlaceholder": "ім'я",
     "emailLabel": "Електронна пошта",
@@ -127,24 +131,6 @@
     "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
     "cityTooltipText": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
     "cityPlaceholder": "Місто",
-    "elderReady": "Прийму особу/особи похилого віку",
-    "accommodationTime": "Як довго?",
-    "addButton": "Подати / Додати",
-    "refugeInfoHeader": "Надайте інформацію про своє житло",
-    "additionalInformationHeader": "Додаткова інформація",
-    "animalReady": "Прийму людину з твариною",
-    "any": "Будь-який",
-    "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
-    "childBedCount": "Кількість спальних місць для дітей",
-    "city": "Місто",
-    "country": "Країна",
-    "dissabilityReady": "Прийму людину з обмеженими можливостями",
-    "fullBedCount": "Кількість повнорозмірних спальних місць",
-    "groupsTypes": "Які типи груп ви візьмете?",
-    "nationality": "Яке громадянство біженця ви можете прийняти?",
-    "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
-    "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
-    "transportReady": "Пропоную можливість транспортування",
     "type": "Тип розміщення",
     "hostType": "Тип власника житла",
     "hostTypeLabel": {
@@ -155,12 +141,40 @@
       "host_type_elder_people": "Люди похилого вiку",
       "host_type_friends_group": "Група друзiв/знайомих"
     },
-    "ukraine": "Україна",
     "guestCount": "Скільки осіб ви можете в себе прийняти?",
+    "accommodationTime": "Як довго?",
+    "accomodationPhoto": "",
+    "accomodationPhotoLabel": "",
+    "accomodationPhotoReset": "",
+    "accommodationTimeLabel": {
+      "less_than_week": "",
+      "week": "",
+      "two_weeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "volunteerVisitAcceptance": "",
+    "nationality": "Яке громадянство біженця ви можете прийняти?",
+    "ukraine": "Україна",
+    "additionalInformationHeader": "Додаткова інформація",
+    "any": "Будь-який",
+    "childBedCount": "Кількість спальних місць для дітей",
+    "city": "Місто",
+    "fullBedCount": "Кількість повнорозмірних спальних місць",
+    "groupsTypes": "Які типи груп ви візьмете?",
+    "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
+    "dissabilityReady": "Прийму людину з обмеженими можливостями",
+    "elderReady": "Прийму особу/особи похилого віку",
+    "animalReady": "Прийму людину з твариною",
+    "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
+    "refugeInfoHeader": "Надайте інформацію про своє житло",
+    "addButton": "Подати / Додати",
     "errors": {
       "name": "Вкажіть своє ім'я",
       "email": "Вкажіть правильну адресу електронної пошти",
       "phoneNumber": "Вкажіть номер телефону",
+      "country": "",
+      "town": "",
       "type": "Вкажiть тип розмiщення",
       "hostType": "Вкажiть тип власника житла",
       "guestCount": "",
@@ -168,9 +182,12 @@
       "nationality": "",
       "groupsTypes": "",
       "nationalityError": "Потрібно вказати громадянство біженців, яких ви готові прийняти"
-    }
+    },
+    "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
+    "transportReady": "Пропоную можливість транспортування"
   },
   "logout": "Вийти",
+  "back": "Повернутись",
   "backToHomePage": "Повернутися на головну сторінку",
   "shareLocation": "Зареєструватися",
   "registerGuest": "Знайти квартиру",
@@ -269,8 +286,15 @@
       "overnightDuration": "Вкажiть на який термін перебування ви шукаєте житло?",
       "accommodationType": "Виберіть тип проживання",
       "countryOfGroup": "Будь ласка, виберіть національність"
-    }
+    },
+    "refugeInfoHeader": ""
   },
+  "accomodationPhoto": "Додайте фотографію пропонованого притулку",
+  "accomodationPhotoReset": "видаляти",
+  "accomodationPhotoLabel": "подати",
+  "dropdownChoose": "Виберіть ...",
+  "dropdownSearch": "Пошук",
+  "heroImageAlt": "Слава України!",
   "loginForm": {
     "logInWith": "Увійти з допомогою",
     "or": "або",
@@ -280,11 +304,5 @@
     "doNotHaveAcc": "Створити аккаунт якщо немає",
     "register": "Зареєструватися"
   },
-  "accomodationPhoto": "Додайте фотографію пропонованого притулку",
-  "accomodationPhotoReset": "видаляти",
-  "accomodationPhotoLabel": "подати",
-  "dropdownChoose": "Виберіть ...",
-  "dropdownSearch": "Пошук",
-  "heroImageAlt": "Слава України!",
-  "back": "Повернутись"
+  "gdpr": ""
 }
