@@ -3,7 +3,7 @@ import { Session } from "next-auth";
 import { Routes } from "../consts/router";
 
 export const redirectIfUnauthorized = async <P>(
-  session: Session,
+  session: Session | null,
   authorizedProps: GetServerSidePropsResult<P>
 ): Promise<GetServerSidePropsResult<P>> => {
   if (!session) {

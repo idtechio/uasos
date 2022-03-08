@@ -11,12 +11,14 @@ export default class Portal extends Component {
     this.setState(
       { el: document.createElement("div"), target: document.body },
       () => {
+        // @ts-expect-error TODO fix type or code
         this.state.target.appendChild(this.state.el);
       }
     );
   }
 
   componentWillUnmount() {
+    // @ts-expect-error TODO fix type or code
     this.state.target && this.state.target.removeChild(this.state.el);
   }
 

@@ -28,7 +28,7 @@ const CardModal = ({
         onRequestClose={() => {
           if (closeable) {
             setModalVisible(false);
-            onModalClose();
+            onModalClose?.();
           }
         }}
       >
