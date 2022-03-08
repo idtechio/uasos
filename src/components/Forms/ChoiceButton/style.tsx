@@ -15,7 +15,7 @@ export const Button = styled.View<ChoiceButtonProps>`
   width: fit-content;
   flex-direction: ${(props) => (props.isSmall ? `row` : `column`)};
   align-items: center;
-  justify-content: center;
+  justify-content: ${(props) => (props.isVertical ? `flex-left` : `center`)};
   text-align: center;
   margin-right: ${(props) =>
     props.isSmall ? (props.isVertical ? `0` : `10px`) : `0`};
@@ -25,7 +25,6 @@ export const Button = styled.View<ChoiceButtonProps>`
 `;
 
 export const Text = styled.Text`
-  width: ${(props) => (props.isVertical ? `245px` : `uset`)};
   text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>
     props.isChoice
