@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
@@ -25,10 +26,8 @@ export interface GuestProps {
 
 export default async function addGuest(req, res) {
   const session = await getSession({ req });
-  console.log(session);
   if (session) {
     const body = JSON.parse(req.body);
-    console.log(body);
     const topicNameOrId = process.env.TOPIC_GUEST;
     const data = JSON.stringify(body);
     res.status(200).json(await publishMessage(topicNameOrId, data));

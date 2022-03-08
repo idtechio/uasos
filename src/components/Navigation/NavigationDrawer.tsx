@@ -1,13 +1,9 @@
-import React from "react";
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 import { useTranslation } from "next-i18next";
 
-import UserIcon from "../../style/svgs/user.svg";
-import ListIcon from "../../style/svgs/list.svg";
 import KeyIcon from "../../style/svgs/key.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { ButtonCta } from "../Buttons";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 interface Props {
@@ -23,7 +19,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const handleSignOut = () => {
     return signOut({
       redirect: true,
-      callbackUrl: !!locale ? `/${locale}` : undefined,
+      callbackUrl: locale ? `/${locale}` : undefined,
     });
   };
 

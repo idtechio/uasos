@@ -46,7 +46,7 @@ export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
         <ThankfulnessModalButtonCtaWrapper>
           <Link href={Routes.HOMEPAGE}>
             <a>
-              <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
+              <ButtonCta anchor={t("backToHomePage")} />
             </a>
           </Link>
         </ThankfulnessModalButtonCtaWrapper>

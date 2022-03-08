@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components/native";
+import styled from "styled-components/native";
 
 export const ColumnBulletPoint = styled.Text`
   align-self: flex-start;

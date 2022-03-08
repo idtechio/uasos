@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Platform, useWindowDimensions, View } from "react-native";
 import styled from "styled-components/native";
 import InfoIcon from "../../style/svgs/info.svg";
@@ -44,6 +44,7 @@ export const Tooltip = ({ children }: Props) => {
   return (
     <>
       <View
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
