@@ -1,6 +1,6 @@
 import type { InputProps } from "./types";
 import { Controls, Icon, InputWraper, TextInput } from "./style";
-import React from "react";
+
 import MinusIcon from "../../../style/svgs/minus.svg";
 import PlusIcon from "../../../style/svgs/plus.svg";
 
