@@ -1,4 +1,4 @@
-import { HeaderPage, ActionBar, ServiceLogo } from "./style";
+import { HeaderPage, ActionBar, ServiceLogo, Container } from "./style";
 import Logo from "./image/Logo";
 import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
@@ -17,7 +17,7 @@ const Header = () => {
     setNavigationDrawerOpen(!navigationDrawerOpen);
 
   return (
-    <>
+    <Container>
       <HeaderPage>
         <ServiceLogo>
           <Link href={Routes.HOMEPAGE}>
@@ -41,7 +41,7 @@ const Header = () => {
         isOpen={navigationDrawerOpen}
         hideDrawer={toggleNavigationDrawer}
       />
-    </>
+    </Container>
   );
 };
 

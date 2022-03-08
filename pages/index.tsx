@@ -142,31 +142,28 @@ const BottomLeftBlueSplashPosition = css`
 function Landing() {
   return (
     <CompositionAppBody>
-      <StyledScrollView>
-        <TopLeftYellowSplash
-          color="yellow"
-          splashPosition={TopLeftYellowSplashPosition}
-        />
-        <TopRightBlueSplash
-          color="blue"
-          splashPosition={TopRightBlueSplashPosition}
-        />
-        <MiddleRightYellowSplash
-          color="yellow"
-          splashPosition={MiddleRightYellowSplashPosition}
-        />
-        <BottomLeftBlueSplash
-          color="blue"
-          splashPosition={BottomLeftBlueSplashPosition}
-        />
-        <LandingProjectIntentionWrapper>
-          <LandingProjectIntention />
-        </LandingProjectIntentionWrapper>
-        <PartnersSection />
-        <HowDoesItWorkSection />
-        <LikeToHelpSection />
-        <Footer />
-      </StyledScrollView>
+      <TopLeftYellowSplash
+        color="yellow"
+        splashPosition={TopLeftYellowSplashPosition}
+      />
+      <TopRightBlueSplash
+        color="blue"
+        splashPosition={TopRightBlueSplashPosition}
+      />
+      <MiddleRightYellowSplash
+        color="yellow"
+        splashPosition={MiddleRightYellowSplashPosition}
+      />
+      <BottomLeftBlueSplash
+        color="blue"
+        splashPosition={BottomLeftBlueSplashPosition}
+      />
+      <LandingProjectIntentionWrapper>
+        <LandingProjectIntention />
+      </LandingProjectIntentionWrapper>
+      <PartnersSection />
+      <HowDoesItWorkSection />
+      <LikeToHelpSection />
     </CompositionAppBody>
   );
 }
