@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
     redirectIfUnauthorized(session, {
       props: {
         session,
-        ...(await serverSideTranslations(locale)),
+        ...(locale && (await serverSideTranslations(locale))),
       },
     })
 );

@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
         session,
         providers,
         csrfToken,
-        ...(await serverSideTranslations(locale)),
+        ...(locale && (await serverSideTranslations(locale))),
       },
     };
   }

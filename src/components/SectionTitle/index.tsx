@@ -1,6 +1,7 @@
 import { ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
 import { colors } from "../../style/landingPageStyle";
+import { Theme } from "../../style/theme.config";
 
 const TitleWrapper = styled.View`
   position: relative;
@@ -15,7 +16,7 @@ const Title = styled.Text`
   font-weight: 700;
   line-height: 56px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         font-size: 30px;
@@ -30,7 +31,7 @@ const YellowHighlight = styled.View`
   width: 130px;
   background-color: ${colors.yellow};
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         width: 220px;
@@ -49,6 +50,8 @@ function SectionTitle({ title, style }: SectionProps) {
     <>
       {title !== undefined ? (
         <TitleWrapper style={style}>
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+          {/* @ts-ignore */}
           <Title accessibilityRole="heading" accessibilityLevel={1}>
             {title}
           </Title>

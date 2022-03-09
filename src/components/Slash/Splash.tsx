@@ -18,7 +18,10 @@ const ImageSplashBlue = styled.Image`
   aspect-ratio: 1.46;
   position: absolute;
 
-  ${({ splashPosition }) => splashPosition}
+  ${(
+    // @ts-expect-error TODO: fix prop types
+    { splashPosition }
+  ) => splashPosition}
 `;
 
 interface Props {
@@ -31,6 +34,7 @@ export function Splash({ color, style, splashPosition }: Props) {
   return (
     <SpriteContainer style={style}>
       <ImageSplashBlue
+        // @ts-expect-error TODO: fix prop types
         source={SPLASH[color]}
         resizeMode="contain"
         splashPosition={splashPosition}

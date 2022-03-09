@@ -1,12 +1,13 @@
+import { BaseSyntheticEvent } from "react";
 import { NativeTouchEvent } from "react-native";
 
 export type ButtonProps = {
   style?: Record<string, unknown>;
   anchor: React.ReactNode;
-  onPress?: any;
+  onPress?: (e?: BaseSyntheticEvent) => void;
   chevronVisible?: boolean;
   chevronUpsideDown?: boolean;
-  colorOposite?: boolean;
+  colorOpposite?: boolean;
 
   // next-link params for routing
   onMouseEnter?: (event: NativeTouchEvent) => void;

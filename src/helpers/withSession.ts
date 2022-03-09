@@ -18,7 +18,7 @@ import { ParsedUrlQuery } from "querystring";
 export const withSession = <P>(
   gssp: (
     context: GetServerSidePropsContext<ParsedUrlQuery, PreviewData>,
-    session: Session
+    session: Session | null
   ) => Promise<GetServerSidePropsResult<P>>
 ): GetServerSideProps => {
   return async (context) => {

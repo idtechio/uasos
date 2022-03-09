@@ -1,3 +1,4 @@
+import { FieldError } from "react-hook-form";
 import styled from "styled-components/native";
 
 export const Dropdown = styled.View`
@@ -14,7 +15,7 @@ export const Separator = styled.View`
   background-color: rgba(28, 27, 37, 0.3)
 `;
 
-export const InputRow = styled.View`
+export const InputRow = styled.View<{ error?: boolean }>`
   align-items: center;
   border-radius: 4px;
   border: 2px solid
@@ -25,7 +26,7 @@ export const InputRow = styled.View`
   }
 `;
 
-export const TextInput = styled.TextInput`
+export const TextInput = styled.TextInput<{ error?: FieldError }>`
   background-color: transparent;
   border: 0;
   padding: 20px;

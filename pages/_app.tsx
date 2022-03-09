@@ -9,13 +9,16 @@ import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { useEffect } from "react";
 import { init } from "./../src/helpers/ga";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
+
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
+
   return (
     <>
       <GlobalStyles />

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components/native";
 import { colors } from "../../style/landingPageStyle";
+import { Theme } from "../../style/theme.config";
 
 const ListItemWrapper = styled.View`
   background-color: #fff;
@@ -14,7 +15,7 @@ const ListItemWrapper = styled.View`
   overflow: hidden;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.13);
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         height: 100%;
@@ -27,13 +28,13 @@ const Title = styled.Text`
   text-align: center;
   margin-bottom: 7px;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
 `;
 
 const Text = styled.Text`
   font-size: 12px;
   line-height: 17px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   line-height: 17px;
   text-align: center;
 `;
@@ -68,7 +69,7 @@ const ContentContainer = styled.View`
   margin-top: 20px;
   height: 100%;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin: 0;
@@ -90,6 +91,7 @@ const ListItem = ({ title, text, image, index }: ListItemProps) => {
       </SlideBadge>
 
       <ContentContainer>
+        {/* @ts-expect-error TODO: fix prop types */}
         <Image source={image} alt={title} resizeMode="contain" />
         <Title>{title}</Title>
         <Text>{text}</Text>

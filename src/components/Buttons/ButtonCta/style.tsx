@@ -1,8 +1,12 @@
 import styled from "styled-components/native";
+import { Theme } from "../../../style/theme.config";
 
-export const Button = styled.Pressable`
-	background-color: ${({ theme, colorOposite }) =>
-    colorOposite ? theme.colors.textOnCta : theme.colors.cta};
+export const Button = styled.Pressable<{
+  colorOpposite?: boolean;
+  theme: Theme;
+}>`
+	background-color: ${({ theme, colorOpposite }) =>
+    colorOpposite ? theme.colors.textOnCta : theme.colors.cta};
 	border-radius: 50px;
 	padding: 16px 25px,
 	text-align: center;
@@ -14,11 +18,11 @@ export const Button = styled.Pressable`
 	}
 `;
 
-export const Text = styled.Text`
+export const Text = styled.Text<{ colorOpposite?: boolean; theme: Theme }>`
   font-weight: 700;
   text-align: center;
-  color: ${({ theme, colorOposite }) =>
-    colorOposite ? theme.colors.cta : theme.colors.textOnCta};
+  color: ${({ theme, colorOpposite }) =>
+    colorOpposite ? theme.colors.cta : theme.colors.textOnCta};
   width: 100%;
   justify-content: center;
   display: flex;

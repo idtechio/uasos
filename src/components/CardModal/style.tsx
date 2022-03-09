@@ -6,7 +6,7 @@ export const CenterBox = styled.View`
   align-items: center;
 `;
 
-export const Curtain = styled.View`
+export const Curtain = styled.View<{ onClick?: (e: Event) => void }>`
   min-height: 100vh;
   min-width: 100vw;
   position: fixed;

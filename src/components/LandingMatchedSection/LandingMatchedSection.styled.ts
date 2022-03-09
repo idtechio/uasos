@@ -2,13 +2,14 @@ import { css } from "styled-components";
 import styled from "styled-components/native";
 
 import { colors } from "../../style/landingPageStyle";
+import { Theme } from "../../style/theme.config";
 
 export const MatchedCardTitle = styled.Text`
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: ${colors.blue};
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin-top: 70px;
@@ -27,7 +28,7 @@ export const MatchedCardsWrapper = styled.View`
   padding-right: 16px;
   margin-top: 16px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       md: css`
         padding: 0;

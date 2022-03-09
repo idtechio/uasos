@@ -1,13 +1,14 @@
 import styled from "styled-components/native";
 import styledWeb, { css } from "styled-components";
+import { Theme } from "../../style/theme.config";
 
 export const FooterWrapper = styled.View`
   align-self: stretch;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }: { theme: Theme }) => theme.colors.accent};
   padding: 23px;
   display: flex;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         flex-direction: row;
@@ -17,7 +18,7 @@ export const FooterWrapper = styled.View`
 
 export const FooterContentWrapper = styled.View`
   flex-direction: column;
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         flex-direction: row;
@@ -25,7 +26,7 @@ export const FooterContentWrapper = styled.View`
     })}
 `;
 
-export const FooterLink = styledWeb.a<{ active?: boolean }>`
+export const FooterLink = styledWeb.a<{ active?: boolean; theme: Theme }>`
   color: white;
   flex: 1;
   font-size: 12px;
@@ -33,7 +34,7 @@ export const FooterLink = styledWeb.a<{ active?: boolean }>`
   text-decoration-line: ${({ active }) => (active ? "none" : "underline")};
   color: ${({ active, theme }) => (active ? theme.colors.primary : "white")};
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         white-space: nowrap;
@@ -56,7 +57,7 @@ export const HorizontalLine = styled.View`
   border: 0 solid #fff;
   border-bottom-width: 2px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin: 0 10px;

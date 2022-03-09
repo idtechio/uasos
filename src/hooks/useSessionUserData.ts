@@ -1,18 +1,12 @@
 import { useSession } from "next-auth/react";
 
-export type AuthSessionUserData = {
-  name: string;
-  email: string;
-  image: string;
-};
-
-export const useSessionUserData = (): AuthSessionUserData => {
+export const useSessionUserData = () => {
   const session = useSession();
-  const { name, email, image } = session.data.user;
+  const { name, email, image } = session.data?.user ?? {};
 
   return {
-    name,
-    email,
+    name: name ?? undefined,
+    email: email ?? undefined,
     image,
   };
 };

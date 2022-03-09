@@ -169,6 +169,7 @@
     "basicInfoHeader": "Podaj podstawowe informacje",
     "refugeInfoHeader": "Podaj informacje o noclegu",
     "addButton": "Zatwierdź/Dodaj",
+    "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
     "errors": {
       "name": "Podaj swoję imię",
       "email": "Podaj poprawny email",
@@ -200,8 +201,10 @@
   "rodo": "RODO",
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
+    "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
-    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila."
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
+    "backToMainPage": "Wróć do strony głównej"
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -242,6 +245,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
     "addButton": "Wyślij aplikację",
+    "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
     "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
     "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
     "animalReady": "Jest ze mną mój zwierzak",

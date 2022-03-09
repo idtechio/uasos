@@ -1,7 +1,12 @@
 import type { ChoiceButtonProps } from "./type";
 import styled from "styled-components/native";
+import { Theme } from "../../../style/theme.config";
 
-export const Button = styled.View<ChoiceButtonProps>`
+type ButtonType = Pick<
+  ChoiceButtonProps,
+  "error" | "isSelected" | "isSmall" | "isVertical"
+> & { isChoice?: boolean; theme: Theme };
+export const Button = styled.View<ButtonType>`
   border: ${(props) =>
     props.isChoice
       ? `${props.theme.forms.borderWidth} solid #38B000`
@@ -24,7 +29,14 @@ export const Button = styled.View<ChoiceButtonProps>`
   width: ${(props) => (props.isSmall ? `unset` : `100%`)};
 `;
 
-export const Text = styled.Text`
+type TextProps = {
+  isVertical?: boolean;
+  isSelected?: boolean;
+  isSmall?: boolean;
+  isChoice?: boolean;
+  theme: Theme;
+};
+export const Text = styled.Text<TextProps>`
   text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>
     props.isChoice
@@ -32,7 +44,9 @@ export const Text = styled.Text`
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.7)`};
 `;
 
-export const Icon = styled.View<ChoiceButtonProps>`
+export const Icon = styled.View<
+  Pick<ChoiceButtonProps, "isVertical" | "isSelected">
+>`
   margin-bottom: ${(props) => (props.isVertical ? `0` : `12px`)};
   margin-right: ${(props) => (props.isVertical ? `12px` : `0`)};
   color: ${(props) =>

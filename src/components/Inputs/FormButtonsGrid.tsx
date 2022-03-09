@@ -21,7 +21,7 @@ const FormButtonsGrid = ({ data }: Props) => {
   const [buttonsState, setButtonsState] = useState<string[]>([]);
 
   const onTilePress = useCallback(
-    (id: string, onChange: (...event: any[]) => void) => {
+    (id: string, onChange: (...event: unknown[]) => void) => {
       setButtonsState((prevState) => {
         const newState = [...prevState];
         if (prevState.includes(id)) {
@@ -37,7 +37,7 @@ const FormButtonsGrid = ({ data }: Props) => {
   );
 
   return (
-    <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
+    <CompositionGrid spacing={[16, 16]} itemsPerRow={2} disableRwd>
       {data.map(({ id, label, icon }) => {
         return (
           <Controller

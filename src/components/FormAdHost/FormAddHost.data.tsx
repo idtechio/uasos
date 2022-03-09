@@ -48,7 +48,7 @@ export const additionalHostsFeats: Data[] = [
     icon: <ElderSittingIcon width="30" height="30" />,
   },
   {
-    id: "advancedHost.dissabilityReady",
+    id: "advancedHost.disabilityReady",
     label: "hostAdd.dissabilityReady",
     icon: <DisabilityIcon width="30" height="30" />,
   },

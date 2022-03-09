@@ -169,6 +169,7 @@
     "basicInfoHeader": "",
     "refugeInfoHeader": "",
     "addButton": "",
+    "addButtomErrorMessage": "",
     "errors": {
       "name": "",
       "email": "",
@@ -242,6 +243,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "",
     "addButton": "",
+    "addButtomErrorMessage": "",
     "pregnantReady": "",
     "dissabilityReady": "",
     "animalReady": "",

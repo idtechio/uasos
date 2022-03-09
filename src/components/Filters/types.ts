@@ -1,13 +1,13 @@
-type FilterOption = {
+type FilterOption<T> = {
   label: string;
-  value: string;
+  value: T;
 };
 
-export type FiltersProps = {
-  filters: Array<{
+export type FiltersProps<T> = {
+  filters: {
     name: string;
-    onSubmit: (e: any) => void;
-    options: Array<FilterOption>;
-    value: any;
-  }>;
+    onSubmit: (value: T | null) => void;
+    options: FilterOption<T>[];
+    value: T;
+  }[];
 };

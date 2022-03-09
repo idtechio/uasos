@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Text, ActivityIndicator, View } from "react-native";
+import { Text, ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
@@ -24,6 +24,7 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
+import { Error } from "../Inputs/style";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -54,7 +55,7 @@ enum Boolean {
 
 type SubmitRequestState = {
   loading: boolean;
-  error: Error | null;
+  error: Error | null | unknown;
   succeeded: boolean;
 };
 
@@ -76,6 +77,8 @@ export default function FormAdHost() {
         guestCount: 1,
         country: "poland",
         volunteerVisitAcceptance: "true",
+        groupsTypes: [],
+        accommodationType: [],
       },
     },
   });
@@ -85,7 +88,7 @@ export default function FormAdHost() {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, isSubmitted },
   } = form;
 
   const watchAccomodationTypeFieldValue = form.watch(
@@ -98,23 +101,21 @@ export default function FormAdHost() {
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
-      watchAccomodationTypeFieldValue === AccommodationType.BED ||
-      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
+      watchAccomodationTypeFieldValue.includes(AccommodationType.BED) ||
+      watchAccomodationTypeFieldValue.includes(AccommodationType.ROOM),
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = async ({ advancedHost }) => {
+  const onSubmit: SubmitHandler<FormType> = async ({ advancedHost }) => {
     const {
       accommodationTime,
       accommodationType,
-      accomodationPhoto: _accomodationPhoto, // present in form but not used
       animalReady,
       country,
-      dissabilityReady,
+      disabilityReady,
       elderReady,
-      groupsTypes, // present in form but not used
+      groupsTypes,
       guestCount,
-      hostType: _hostType, // present in form but not used
       nationality,
       name,
       email,
@@ -133,11 +134,11 @@ export default function FormAdHost() {
         email: email,
         city: town,
         listing_country: country,
-        shelter_type: [accommodationType],
+        shelter_type: accommodationType,
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
         ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_any_nationality:
@@ -281,13 +282,13 @@ export default function FormAdHost() {
       >
         <SectionContent>
           <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
-          {/* TODO: use Dropdown here */}
           <FormDropdown
             zIndex={12}
             data={accomodationTypeDropdownFields.map(({ label, ...rest }) => ({
               label: t(label),
               ...rest,
             }))}
+            multiSelect
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
             rules={{
@@ -301,12 +302,12 @@ export default function FormAdHost() {
             <>
               <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
               <FormDropdown
-                data={(Object.keys(HostType) as Array<keyof HostType>).map(
-                  (key) => ({
-                    value: key,
-                    label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
-                  })
-                )}
+                data={(
+                  Object.keys(HostType) as Array<keyof typeof HostType>
+                ).map((key: keyof typeof HostType) => ({
+                  value: key,
+                  label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
+                }))}
                 name="advancedHost.hostType"
                 placeholder={t("forms.chooseFromList")}
                 rules={{
@@ -363,7 +364,7 @@ export default function FormAdHost() {
           />
           <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
 
-          <FormDropdown
+          <FormDropdown<string>
             multiSelect
             zIndex={11}
             data={GROUP_RELATIONS.map(({ label, value }) => ({
@@ -402,14 +403,27 @@ export default function FormAdHost() {
           <ButtonCta
             onPress={handleSubmit(onSubmit)}
             anchor={t("hostAdd.addButton")}
-            style={{
-              alignSelf: "flex-end",
-              paddingHorizontal: 20,
-              cursor: "pointer",
-            }}
+            style={styles.addButton}
           />
+          {isSubmitted && !isValid ? (
+            <View style={styles.errorWrapper}>
+              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+            </View>
+          ) : null}
         </InputControl>
       </CompositionSection>
     </FormProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  addButton: {
+    alignSelf: "flex-end",
+    paddingHorizontal: 20,
+    cursor: "pointer",
+  },
+  errorWrapper: {
+    marginTop: 5,
+    alignSelf: "flex-end",
+  },
+});

@@ -1,4 +1,5 @@
 export type SectionProps = {
+  id?: string;
   children: React.ReactNode;
   backgroundColor?: string;
   zeroPadding?: boolean;
