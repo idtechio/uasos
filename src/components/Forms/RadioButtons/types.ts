@@ -1,3 +1,3 @@
 export type RadioButtonsProps = {
-  children?: any;
+  children: React.ReactNode;
 };

@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
-export type InputProps = {
+export type InputProps<T = string> = {
   placeholder: string;
-  onChange?: any;
-  onBlur?: any;
-  value?: any;
-  error?: any;
+  onChange?: (value: T) => void;
+  onBlur?: () => void;
+  value?: T;
+  error?: unknown;
   type?: string;
   extra?: ReactNode;
   labelsBackgroundColor?: string;

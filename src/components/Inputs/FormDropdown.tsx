@@ -6,18 +6,16 @@ import { DropdownProps } from "../Dropdown/types";
 import { Dropdown } from "../Dropdown";
 import { Error } from "./style";
 
-type Props = {
+type Props<T> = {
   name: FormKey;
-  label?: DropdownProps["label"];
-  placeholder?: DropdownProps["placeholder"];
   error?: FieldError;
-  data: DropdownProps["data"];
   errorMsg?: string;
   multiSelect?: boolean;
   zIndex?: number;
-} & Pick<React.ComponentProps<typeof Controller>, "rules">;
+} & Pick<DropdownProps<T>, "label" | "placeholder" | "data"> &
+  Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormDropdown = ({
+function FormDropdown<T>({
   name,
   label,
   errorMsg,
@@ -27,7 +25,7 @@ const FormDropdown = ({
   placeholder,
   zIndex,
   multiSelect = false,
-}: Props) => {
+}: Props<T>) {
   const { control } = useFormContext();
 
   return (
@@ -52,7 +50,7 @@ const FormDropdown = ({
         return (
           <View style={{ zIndex }}>
             <InputControl>
-              <Dropdown
+              <Dropdown<T>
                 multiselect={multiSelect}
                 data={data}
                 placeholder={placeholder}
@@ -70,6 +68,6 @@ const FormDropdown = ({
       name={name}
     />
   );
-};
+}
 
 export default FormDropdown;

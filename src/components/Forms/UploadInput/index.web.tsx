@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ActivityIndicator, Platform } from "react-native";
 import styled from "styled-components/native";
 import UploadIcon from "../../../style/svgs/upload.svg";

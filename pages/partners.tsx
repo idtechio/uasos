@@ -94,7 +94,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
   async ({ locale }, session) => ({
     props: {
       session,
-      ...(await serverSideTranslations(locale as string)),
+      ...(locale && (await serverSideTranslations(locale))),
     },
   })
 );

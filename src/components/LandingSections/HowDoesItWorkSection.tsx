@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
 import pathSVG from "../../../public/how-does-it-work-path.png";
-import React, { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import Section from "../Section";
 
 const Image = styled.Image`
@@ -156,7 +156,7 @@ export function HowDoesItWorkSection() {
     return (
       <>
         {Array.from({ length: 5 }).map((_, index, arr) => (
-          <React.Fragment key={index}>
+          <Fragment key={index}>
             <PathItemMobileContainer>
               <PathItemDot>
                 <Text>{index + 1}</Text>
@@ -164,7 +164,7 @@ export function HowDoesItWorkSection() {
               <PathItemText>{t(`howDoesItWork.points.${index}`)}</PathItemText>
             </PathItemMobileContainer>
             {index !== arr.length - 1 && <PathDotConnector />}
-          </React.Fragment>
+          </Fragment>
         ))}
       </>
     );

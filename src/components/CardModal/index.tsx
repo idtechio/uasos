@@ -42,7 +42,7 @@ const CardModal = ({
               {
                 backgroundColor: "rgba(255, 255, 255, 0.75)",
                 ...StyleSheet.absoluteFillObject,
-                position: Platform.OS === "web" ? ("fixed" as any) : "absolute",
+                position: Platform.OS === "web" ? "fixed" : "absolute",
               },
             ]}
           >

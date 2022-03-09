@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
 
 export const Button = styled.Pressable`
-	background-color: ${({ theme, colorOposite }) =>
-    colorOposite ? theme.colors.textOnCta : theme.colors.cta};
+	background-color: ${({ theme, colorOpposite }) =>
+    colorOpposite ? theme.colors.textOnCta : theme.colors.cta};
 	border-radius: 50px;
 	padding: 16px 25px,
 	text-align: center;
@@ -17,8 +17,8 @@ export const Button = styled.Pressable`
 export const Text = styled.Text`
   font-weight: 700;
   text-align: center;
-  color: ${({ theme, colorOposite }) =>
-    colorOposite ? theme.colors.cta : theme.colors.textOnCta};
+  color: ${({ theme, colorOpposite }) =>
+    colorOpposite ? theme.colors.cta : theme.colors.textOnCta};
   width: 100%;
   justify-content: center;
   display: flex;

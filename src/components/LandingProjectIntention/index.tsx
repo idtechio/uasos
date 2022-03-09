@@ -128,7 +128,7 @@ const LandingProjectIntention = () => {
                 <Link href="/guest">
                   <a>
                     <ButtonStyle
-                      colorOposite
+                      colorOpposite
                       anchor={t("projectIntention.lookingForHelp")}
                     />
                   </a>
@@ -136,7 +136,7 @@ const LandingProjectIntention = () => {
                 <Link href="/host">
                   <a>
                     <ButtonStyle
-                      colorOposite
+                      colorOpposite
                       anchor={t("projectIntention.shareHelp")}
                     />
                   </a>
@@ -145,7 +145,7 @@ const LandingProjectIntention = () => {
             ) : (
               <ButtonStyle
                 first
-                colorOposite
+                colorOpposite
                 anchor={t("common:shareLocation")}
                 onPress={(event) => {
                   event.preventDefault();
