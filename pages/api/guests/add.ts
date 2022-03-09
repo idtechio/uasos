@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
@@ -23,7 +24,10 @@ export interface GuestProps {
   duration_category: Array<string>;
 }
 
-export default async function addGuest(req, res) {
+export default async function addGuest(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const session = await getSession({ req });
   if (session) {
     const body = JSON.parse(req.body);

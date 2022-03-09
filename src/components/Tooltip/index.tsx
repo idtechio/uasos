@@ -51,6 +51,7 @@ export const Tooltip = ({ children }: Props) => {
       >
         <InfoIcon />
         {tooltipVisible && (
+          // @ts-expect-error TODO: fix ref type
           <TooltipContainer style={{ left: leftOffset }} ref={containerRef}>
             {children}
           </TooltipContainer>

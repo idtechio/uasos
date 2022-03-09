@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
@@ -25,6 +25,7 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
+import type { GuestProps } from "../../../pages/api/guests/add";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -104,10 +105,10 @@ export default function FormAdGuest() {
     formState: { errors },
   } = formFields;
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FormType> = async (data) => {
     const guest = data.advancedRefugee;
 
-    const apiObject = {
+    let apiObject: GuestProps = {
       name: guest.name,
       phone_num: guest.phoneNumber,
       email: guest.email,
@@ -148,7 +149,7 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (_error) => {
+  const onError = (_error: unknown) => {
     // TODO: handle error case
   };
 
@@ -370,7 +371,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.accommodationType")}
           </InputCotrolLabel>
-          <FormDropdown
+          <FormDropdown<string>
             data={ACCOMMODATION_TYPES}
             name="advancedRefugee.accommodationType"
             placeholder={t("refugeeAddForm.selectPlaceholder")}

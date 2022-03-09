@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
@@ -24,7 +25,10 @@ export interface HostProps {
   transport_included: Boolean;
 }
 
-export default async function addHost(req, res) {
+export default async function addHost(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const session = await getSession({ req });
   if (session) {
     const body = JSON.parse(req.body);

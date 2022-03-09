@@ -1,5 +1,5 @@
 export type DropdownProps<T> = {
-  data: { label: React.ReactNode; value: T }[];
+  data: { label: string; value: T }[];
   direction?: "to-bottom" | "to-top";
   selected: T;
   label?: string;

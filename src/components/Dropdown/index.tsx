@@ -10,7 +10,7 @@ import {
   Pill,
   PillContainer,
 } from "./style";
-import { Platform, View } from "react-native";
+import { ListRenderItem, Platform, View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
@@ -28,7 +28,7 @@ export function Dropdown<T>({
   onBlur,
   searchable = false,
 }: DropdownProps<T>) {
-  const containerRef = useRef<any>();
+  const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
   const [selectHeight, setSelectHeight] = useState(0);
@@ -48,17 +48,21 @@ export function Dropdown<T>({
     onBlur?.();
   };
 
-  const renderItem = ({ item }) => (
+  const renderItem: ListRenderItem<unknown> = ({ item }) => (
     <Item<T>
-      title={item.label}
-      value={item.value}
+      title={(item as typeof data[number]).label}
+      value={(item as typeof data[number]).value}
       itemPressFunction={handleItemPress}
       setShowOptions={multiselect ? () => undefined : setShowOptions}
-      selected={multiselect && selectedValues.includes(item.value)}
+      selected={
+        multiselect &&
+        selectedValues.includes((item as typeof data[number]).value)
+      }
     />
   );
 
   useEffect(() => {
+    // @ts-expect-error TODO: fix event type
     const handleClickOutside = (ev) => {
       if (containerRef.current && !containerRef.current?.contains(ev.target)) {
         setShowOptions(false);
@@ -84,6 +88,7 @@ export function Dropdown<T>({
           setSelectWidth(event.nativeEvent.layout.width);
           setSelectHeight(event.nativeEvent.layout.height);
         }}
+        // @ts-expect-error TODO: fix ref type
         ref={containerRef}
       >
         <Select
@@ -102,7 +107,7 @@ export function Dropdown<T>({
               multiselect ? (
                 <PillContainer>
                   {selectedItems.map(({ label, value }) => (
-                    <Pill key={value}>{label}</Pill>
+                    <Pill key={String(value)}>{label}</Pill>
                   ))}
                 </PillContainer>
               ) : (
@@ -132,7 +137,9 @@ export function Dropdown<T>({
               <ItemList
                 data={filteredData}
                 renderItem={renderItem}
-                keyExtractor={(item) => item.value}
+                keyExtractor={(item) => {
+                  return String((item as typeof filteredData[number]).value);
+                }}
               />
             </Options>
           </>

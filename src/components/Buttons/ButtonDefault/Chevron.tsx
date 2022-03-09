@@ -1,6 +1,10 @@
 import ChevronIcon from "../../../style/svgs/chevron-down.svg";
 
-const Chevron = ({ upsideDown }) => {
+type Props = {
+  upsideDown?: boolean;
+};
+
+const Chevron = ({ upsideDown }: Props) => {
   return (
     <ChevronIcon
       style={{

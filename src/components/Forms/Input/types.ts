@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export type InputProps<T = string> = {
   placeholder: string;
   onChange?: (value: T) => void;
-  onBlur?: () => void;
+  onBlur?: (e: unknown) => void;
   value?: T;
   error?: unknown;
   type?: string;

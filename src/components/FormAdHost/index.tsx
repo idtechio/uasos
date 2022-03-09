@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Text, ActivityIndicator, View } from "react-native";
 import styled from "styled-components/native";
@@ -103,18 +103,16 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
-  const onSubmit = async ({ advancedHost }) => {
+  const onSubmit: SubmitHandler<FormType> = async ({ advancedHost }) => {
     const {
       accommodationTime,
       accommodationType,
-      accomodationPhoto: _accomodationPhoto, // present in form but not used
       animalReady,
       country,
-      dissabilityReady,
+      disabilityReady,
       elderReady,
-      groupsTypes, // present in form but not used
+      groupsTypes,
       guestCount,
-      hostType: _hostType, // present in form but not used
       nationality,
       name,
       email,
@@ -137,7 +135,7 @@ export default function FormAdHost() {
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
         ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_disabilities: dissabilityReady ? Boolean.TRUE : Boolean.FALSE,
+        ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
         ok_for_any_nationality:
@@ -301,12 +299,12 @@ export default function FormAdHost() {
             <>
               <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
               <FormDropdown
-                data={(Object.keys(HostType) as Array<keyof HostType>).map(
-                  (key) => ({
-                    value: key,
-                    label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
-                  })
-                )}
+                data={(
+                  Object.keys(HostType) as Array<keyof typeof HostType>
+                ).map((key: keyof typeof HostType) => ({
+                  value: key,
+                  label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
+                }))}
                 name="advancedHost.hostType"
                 placeholder={t("forms.chooseFromList")}
                 rules={{
@@ -363,7 +361,7 @@ export default function FormAdHost() {
           />
           <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
 
-          <FormDropdown
+          <FormDropdown<string>
             multiSelect
             zIndex={11}
             data={GROUP_RELATIONS.map(({ label, value }) => ({
