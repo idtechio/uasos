@@ -94,12 +94,12 @@ export type FormType = {
     phoneNumber: string;
     town: string;
     country: string;
-    accommodationType: string;
+    accommodationType: string[];
     guestCount: number;
     childBedCount: number;
     accommodationTime: AccommodationTime;
     nationality: Nationality;
-    groupsTypes: string;
+    groupsTypes: string[];
     transportReady: boolean;
     pregnantReady: boolean;
     disabilityReady: boolean;
@@ -126,9 +126,9 @@ export type FormType = {
     gender: string;
     age: number;
     nationality: string;
-    overnightDuration: number;
+    overnightDuration: string;
     groupRelations: string;
-    accommodationType: string;
+    accommodationType: string[];
   };
   login: {
     email: string;

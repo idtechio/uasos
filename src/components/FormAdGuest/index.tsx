@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, StyleSheet } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
@@ -26,6 +26,7 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
+import { Error } from "../Inputs/style";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -60,6 +61,7 @@ export default function FormAdGuest() {
         fullBedCount: 1,
         childBedCount: 0,
         age: 18,
+        accommodationType: [],
       },
     },
   });
@@ -102,7 +104,7 @@ export default function FormAdGuest() {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, isSubmitted },
   } = formFields;
 
   const onSubmit: SubmitHandler<FormType> = async (data) => {
@@ -131,10 +133,14 @@ export default function FormAdGuest() {
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
     };
+
     if (guest.town) {
-      (apiObject["city"] = guest.town),
-        (apiObject[`country`] = "poland"),
-        (apiObject[`listing_country`] = "poland");
+      apiObject = {
+        ...apiObject,
+        city: guest.town,
+        country: "poland",
+        listing_country: "poland",
+      };
     }
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
@@ -417,9 +423,19 @@ export default function FormAdGuest() {
           <ButtonCta
             onPress={handleSubmit(onSubmit, onError)}
             anchor={t("refugeeAddForm.addButton")}
+            style={styles.addButton}
           />
+          {isSubmitted && !isValid ? (
+            <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+          ) : null}
         </InputControl>
       </CompositionSection>
     </FormProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  addButton: {
+    marginBottom: 5,
+  },
+});
