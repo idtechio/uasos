@@ -16,7 +16,7 @@ import { Routes } from "../../consts/router";
 
 export const ThankfulnessModal = ({
   onClose,
-  conntent,
+  content,
 }: ThankfulnessModalProps) => {
   const { t } = useTranslation();
   return (
@@ -36,19 +36,19 @@ export const ThankfulnessModal = ({
         </View>
         <ThankfulnessModalTextWrapper>
           <ThankfulnessHeader>
-            {conntent && conntent.title
-              ? conntent.title
+            {typeof content?.title === "string"
+              ? content.title
               : t("thankfulnessModal.thankYou")}
           </ThankfulnessHeader>
           <ThankfulnessText>
-            {conntent && conntent.subTitle
-              ? conntent.subTitle
+            {typeof content?.subTitle === "string"
+              ? content.subTitle
               : t("thankfulnessModal.applicationSent")}
           </ThankfulnessText>
 
           <ThankfulnessText style={{ marginTop: 24 }}>
-            {conntent && conntent.text
-              ? conntent.text
+            {typeof content?.text === "string"
+              ? content.text
               : "thankfulnessModal.informWhenAccomodationFound"}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
@@ -57,8 +57,8 @@ export const ThankfulnessModal = ({
             <a>
               <ButtonCta
                 anchor={
-                  conntent && conntent.buttonText
-                    ? conntent.buttonText
+                  typeof content?.buttonText === "string"
+                    ? content.buttonText
                     : t("backToHomePage")
                 }
               />

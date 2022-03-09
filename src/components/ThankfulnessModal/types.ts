@@ -1,6 +1,6 @@
 export type ThankfulnessModalProps = {
   onClose: () => void;
-  conntent?: {
+  content?: {
     title: string;
     subTitle?: string;
     text?: string;

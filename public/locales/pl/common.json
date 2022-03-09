@@ -200,8 +200,10 @@
   "rodo": "RODO",
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
+    "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
-    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila."
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
+    "backToMainPage": "Wróć do strony głównej"
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
