@@ -94,12 +94,12 @@ export type FormType = {
     phoneNumber: string;
     town: string;
     country: string;
-    accommodationType: string;
+    accommodationType: string[];
     guestCount: number;
     childBedCount: number;
     accommodationTime: AccomodationTime;
     nationality: Nationality;
-    groupsTypes: string;
+    groupsTypes: string[];
     transportReady: boolean;
     pregnantReady: boolean;
     dissabilityReady: boolean;
@@ -126,9 +126,9 @@ export type FormType = {
     gender: string;
     age: number;
     nationality: string;
-    overnightDuration: number;
+    overnightDuration: string;
     groupRelations: string;
-    accommodationType: string;
+    accommodationType: string[];
   };
   login: {
     email: string;
@@ -136,7 +136,12 @@ export type FormType = {
   };
 };
 
-type PathsToStringProps<T> = T extends string | number | Date | boolean
+type PathsToStringProps<T> = T extends
+  | string
+  | number
+  | Date
+  | boolean
+  | string[]
   ? []
   : {
       [K in Extract<keyof T, unknown>]: [K, ...PathsToStringProps<T[K]>];
