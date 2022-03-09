@@ -8,7 +8,7 @@ import { Error } from "./style";
 
 type Props<T> = {
   name: FormKey;
-  error?: FieldError;
+  error?: FieldError | FieldError[];
   errorMsg?: string;
   multiSelect?: boolean;
   zIndex?: number;

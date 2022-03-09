@@ -76,6 +76,8 @@ export default function FormAdHost() {
         guestCount: 1,
         country: "poland",
         volunteerVisitAcceptance: "true",
+        groupsTypes: [],
+        accommodationType: [],
       },
     },
   });
@@ -98,8 +100,8 @@ export default function FormAdHost() {
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
-      watchAccomodationTypeFieldValue === AccommodationType.BED ||
-      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
+      watchAccomodationTypeFieldValue.includes(AccommodationType.BED) ||
+      watchAccomodationTypeFieldValue.includes(AccommodationType.ROOM),
     [watchAccomodationTypeFieldValue]
   );
 
@@ -133,7 +135,7 @@ export default function FormAdHost() {
         email: email,
         city: town,
         listing_country: country,
-        shelter_type: [accommodationType],
+        shelter_type: accommodationType,
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
         ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -281,13 +283,13 @@ export default function FormAdHost() {
       >
         <SectionContent>
           <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
-          {/* TODO: use Dropdown here */}
           <FormDropdown
             zIndex={12}
             data={accomodationTypeDropdownFields.map(({ label, ...rest }) => ({
               label: t(label),
               ...rest,
             }))}
+            multiSelect
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
             rules={{
