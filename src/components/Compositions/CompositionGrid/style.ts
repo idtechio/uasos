@@ -6,7 +6,7 @@ export const Grid = styled.div<{
   childrenCount: number;
   mobileReverse: boolean;
   alignItems: string;
-  disableRwd: boolean;
+  disableRwd: boolean | undefined;
 }>`
   display: flex;
   flex-wrap: wrap;

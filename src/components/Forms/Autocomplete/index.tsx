@@ -29,7 +29,7 @@ const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
     !isOpen && setIsOpen(true);
   };
 
-  const onItemSelected = (newValue: string) => {
+  const onItemSelected = (newValue: string | undefined) => {
     onChange && onChange(newValue);
     setInputValue(newValue);
     setText(newValue);

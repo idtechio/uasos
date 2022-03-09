@@ -14,6 +14,7 @@ const Filters = ({ filters }: FiltersProps) => {
     >
       {filters.map((filter, index) => {
         // TODO: fix index key
+        // @ts-expect-error TODO fix type or code
         return <SingleFilter {...filter} key={index} />;
       })}
     </FiltersWraper>

@@ -54,7 +54,7 @@ enum Boolean {
 
 type SubmitRequestState = {
   loading: boolean;
-  error: Error | null;
+  error: Error | null | unknown;
   succeeded: boolean;
 };
 

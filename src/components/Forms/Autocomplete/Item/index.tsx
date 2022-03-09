@@ -2,7 +2,7 @@ import { Touchable, View, Text } from "./style";
 import { ItemProps } from "./types";
 
 const Autocomplete = ({ disabled, value, label, onPress }: ItemProps) => {
-  const onItemPress = () => onPress && onPress(value);
+  const onItemPress = () => onPress?.(value);
 
   return (
     <View>
