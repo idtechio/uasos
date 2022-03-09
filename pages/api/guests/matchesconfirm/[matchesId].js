@@ -1,4 +1,3 @@
-import { getSession } from "next-auth/react";
 import { publishMessage } from "../../../../src/helpers/PubSub";
 
 //TODO: DRY pages/api/guests/matchesconfirm/{matchesId}.js
