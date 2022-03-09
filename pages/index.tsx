@@ -1,8 +1,6 @@
-import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CompositionAppBody } from "../src/components/Compositions";
-import Footer from "../src/components/Footer";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
@@ -29,10 +27,10 @@ const TopLeftYellowSplash = styled(Splash)`
     })}
 `;
 
-const StyledScrollView = styled.ScrollView`
-  flex: 1;
-  width: 100%;
-`;
+// const StyledScrollView = styled.ScrollView`
+//   flex: 1;
+//   width: 100%;
+// `;
 
 const TopLeftYellowSplashPosition = css`
   width: 180%;
@@ -142,31 +140,28 @@ const BottomLeftBlueSplashPosition = css`
 function Landing() {
   return (
     <CompositionAppBody>
-      <StyledScrollView>
-        <TopLeftYellowSplash
-          color="yellow"
-          splashPosition={TopLeftYellowSplashPosition}
-        />
-        <TopRightBlueSplash
-          color="blue"
-          splashPosition={TopRightBlueSplashPosition}
-        />
-        <MiddleRightYellowSplash
-          color="yellow"
-          splashPosition={MiddleRightYellowSplashPosition}
-        />
-        <BottomLeftBlueSplash
-          color="blue"
-          splashPosition={BottomLeftBlueSplashPosition}
-        />
-        <LandingProjectIntentionWrapper>
-          <LandingProjectIntention />
-        </LandingProjectIntentionWrapper>
-        <PartnersSection />
-        <HowDoesItWorkSection />
-        <LikeToHelpSection />
-        <Footer />
-      </StyledScrollView>
+      <TopLeftYellowSplash
+        color="yellow"
+        splashPosition={TopLeftYellowSplashPosition}
+      />
+      <TopRightBlueSplash
+        color="blue"
+        splashPosition={TopRightBlueSplashPosition}
+      />
+      <MiddleRightYellowSplash
+        color="yellow"
+        splashPosition={MiddleRightYellowSplashPosition}
+      />
+      <BottomLeftBlueSplash
+        color="blue"
+        splashPosition={BottomLeftBlueSplashPosition}
+      />
+      <LandingProjectIntentionWrapper>
+        <LandingProjectIntention />
+      </LandingProjectIntentionWrapper>
+      <PartnersSection />
+      <HowDoesItWorkSection />
+      <LikeToHelpSection />
     </CompositionAppBody>
   );
 }

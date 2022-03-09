@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { View } from "react-native";
 import { UnorderedList } from "../UnorderedList/UnorderedList";

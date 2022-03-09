@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import {
@@ -22,10 +21,10 @@ const Footer = () => {
       </FooterHeaderWrapper>
       <HorizontalLine />
       <FooterContentWrapper>
-        <Link href="/regulamin.pdf" passHref>
+        <Link href="/regulamin.pdf" passHref locale={false}>
           <FooterLink>{t("termsOfService")}</FooterLink>
         </Link>
-        <Link href="/polityka-prywatnosci.pdf" passHref>
+        <Link href="/polityka-prywatnosci.pdf" passHref locale={false}>
           <FooterLink>{t("privacyPolicy")}</FooterLink>
         </Link>
         <Link href="/partners" passHref>

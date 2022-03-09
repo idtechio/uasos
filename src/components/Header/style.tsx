@@ -9,10 +9,18 @@ export const HeaderPage = styled.View`
   align-items: center;
   flex-direction: row;
   z-index: 3;
+  height: 72px;
 `;
 
 export const ActionBar = styled.View`
   flex-direction: row;
+`;
+
+export const Container = styled.View`
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 `;
 
 export const ServiceLogo = styled.View``;

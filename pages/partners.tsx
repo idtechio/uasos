@@ -1,18 +1,15 @@
-import * as React from "react";
-import { Pressable, ScrollView } from "react-native";
+import { Pressable } from "react-native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
-import Header from "../src/components/Header";
 import Section from "../src/components/Section";
 import SectionTitle from "../src/components/SectionTitle";
-import GoBack from "../src/components/GoBack";
 import { PartnerCard } from "../src/components/PartnerCard";
+import { CompositionAppBody } from "../src/components/Compositions";
 import PARTNERS from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import Container from "../src/components/Container";
 
 const PartnersContainer = styled.View`
   width: 100%;
@@ -71,9 +68,7 @@ const PartnersPage = () => {
   const { t } = useTranslation("landingPage");
 
   return (
-    <ScrollView contentContainerStyle={{ flex: 1 }}>
-      <Header />
-
+    <CompositionAppBody>
       <Section>
         <BackToMainPage />
       </Section>
@@ -91,7 +86,7 @@ const PartnersPage = () => {
           ))}
         </PartnersContainer>
       </Section>
-    </ScrollView>
+    </CompositionAppBody>
   );
 };
 

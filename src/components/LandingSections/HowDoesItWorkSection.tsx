@@ -3,8 +3,7 @@ import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
 import pathSVG from "../../../public/how-does-it-work-path.png";
-import { signIn, useSession } from "next-auth/react";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import Section from "../Section";
 
 const Image = styled.Image`
@@ -136,7 +135,6 @@ const PathItemDesktopContainer = styled.View`
 export function HowDoesItWorkSection() {
   const { getBreakPoint } = useTheme();
   const { t } = useTranslation("landingPage");
-  const { data: session } = useSession();
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const points = useMemo(() => {
@@ -158,15 +156,15 @@ export function HowDoesItWorkSection() {
     return (
       <>
         {Array.from({ length: 5 }).map((_, index, arr) => (
-          <>
-            <PathItemMobileContainer key={index}>
+          <React.Fragment key={index}>
+            <PathItemMobileContainer>
               <PathItemDot>
                 <Text>{index + 1}</Text>
               </PathItemDot>
               <PathItemText>{t(`howDoesItWork.points.${index}`)}</PathItemText>
             </PathItemMobileContainer>
             {index !== arr.length - 1 && <PathDotConnector />}
-          </>
+          </React.Fragment>
         ))}
       </>
     );

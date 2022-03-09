@@ -34,8 +34,8 @@
       "longer": "dłużej"
     },
     "groupRelations": {
-      "single_man": "Singiel",
-      "single_woman": "Singielka",
+      "single_man": "Jestem sam",
+      "single_woman": "Jestem sama",
       "spouses": "Małżonkowie",
       "mother_with_children": "Matka z dziećmi",
       "family_with_children": "Rodzina z dziećmi",
@@ -126,15 +126,15 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
+    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
     "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy oferujesz nocleg.",
     "cityTooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "cityPlaceholder": "Miasto",
     "type": "Typ noclegu",
     "hostType": "Typ gospodarza",
     "hostTypeLabel": {
-      "host_type_men": "Męczyzna (sam)",
+      "host_type_men": "Mężczyzna (sam)",
       "host_type_women": "Kobieta (sama)",
       "host_type_couple": "Para / małżonkowie",
       "host_type_family": "Rodzina z dzieckiem/dziećmi",
@@ -262,8 +262,8 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
+    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
     "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
     "cityPlaceholder": "Miasto",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
@@ -286,7 +286,8 @@
       "overnightDuration": "Wybierz okres trwania noclegu",
       "accommodationType": "Wybierz typ noclegu",
       "countryOfGroup": "Wybierz narodowość"
-    }
+    },
+    "refugeInfoHeader": ""
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
@@ -302,5 +303,6 @@
     "logIn": "zaloguj się",
     "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
     "register": "zarejestruj się"
-  }
+  },
+  "gdpr": ""
 }

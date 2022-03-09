@@ -1,6 +1,5 @@
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
-import { View } from "react-native";
+import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import PARTNERS from "../../consts/partners.json";
 import { ButtonCta } from "../Buttons";
@@ -73,10 +72,14 @@ const ShowMoreContainer = styled.View`
     })}
 `;
 
-interface Props {}
-
-export function PartnersSection({}: Props) {
+export function PartnersSection() {
   const { t } = useTranslation("landingPage");
+  const router = useRouter();
+
+  const onCTAPress = () => {
+    router.push("/partners");
+  };
+
   return (
     <StyledSection bgColor="#fff">
       <StyledSectionTitle title={t("supportingPartners")} />
@@ -88,9 +91,7 @@ export function PartnersSection({}: Props) {
         ))}
       </Container>
       <ShowMoreContainer>
-        <Link href="/partners" passHref>
-          <ButtonCta anchor={t("showMorePartners")} />
-        </Link>
+        <ButtonCta anchor={t("showMorePartners")} onPress={onCTAPress} />
       </ShowMoreContainer>
     </StyledSection>
   );

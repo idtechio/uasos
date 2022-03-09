@@ -1,6 +1,6 @@
 import type { InputProps } from "./types";
 import { InputWraper, Label, TextInput, InputRow } from "./style";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Input = ({
   placeholder,
