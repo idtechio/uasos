@@ -342,6 +342,7 @@ export default function FormAdGuest() {
             rules={{
               required: true,
             }}
+            min={1}
             error={errors?.advancedRefugee?.fullBedCount}
             errorMsg={t("refugeeAddForm.errors.fullBedCount")}
           />
