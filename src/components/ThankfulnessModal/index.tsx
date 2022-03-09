@@ -14,7 +14,10 @@ import Link from "next/link";
 import { ThankfulnessModalProps } from "./types";
 import { Routes } from "../../consts/router";
 
-export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
+export const ThankfulnessModal = ({
+  onClose,
+  conntent,
+}: ThankfulnessModalProps) => {
   const { t } = useTranslation();
   return (
     <CardModal onModalClose={onClose}>
@@ -33,20 +36,32 @@ export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
         </View>
         <ThankfulnessModalTextWrapper>
           <ThankfulnessHeader>
-            {t("thankfulnessModal.thankYou")}
+            {conntent && conntent.title
+              ? conntent.title
+              : t("thankfulnessModal.thankYou")}
           </ThankfulnessHeader>
           <ThankfulnessText>
-            {t("thankfulnessModal.applicationSent")}
+            {conntent && conntent.subTitle
+              ? conntent.subTitle
+              : t("thankfulnessModal.applicationSent")}
           </ThankfulnessText>
 
           <ThankfulnessText style={{ marginTop: 24 }}>
-            {t("thankfulnessModal.informWhenAccomodationFound")}
+            {conntent && conntent.text
+              ? conntent.text
+              : "thankfulnessModal.informWhenAccomodationFound"}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
           <Link href={Routes.HOMEPAGE}>
             <a>
-              <ButtonCta anchor={t("backToHomePage")} />
+              <ButtonCta
+                anchor={
+                  conntent && conntent.buttonText
+                    ? conntent.buttonText
+                    : t("backToHomePage")
+                }
+              />
             </a>
           </Link>
         </ThankfulnessModalButtonCtaWrapper>
