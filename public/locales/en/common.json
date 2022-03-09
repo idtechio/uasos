@@ -169,6 +169,7 @@
     "basicInfoHeader": "Provide information about the accommodation you offer",
     "refugeInfoHeader": "",
     "addButton": "Submit / Add",
+    "addButtomErrorMessage": "",
     "errors": {
       "name": "",
       "email": "",
@@ -242,6 +243,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Provide basic information about yourself and the people you travel with",
     "addButton": "Send the application",
+    "addButtomErrorMessage": "",
     "pregnantReady": "I am or is with me in an advanced pregnancy (over 6 months)",
     "dissabilityReady": "I am or is with me a person with a disability",
     "animalReady": "My pet is with me",
