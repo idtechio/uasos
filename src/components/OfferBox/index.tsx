@@ -8,8 +8,15 @@ import Dish from "./image/Dish";
 import Animals from "./image/Animals";
 import Disability from "./image/Disability";
 import { Trans, useTranslation } from "next-i18next";
+import { Fragment } from "react";
 
-const OfferBox = ({ location, host, preferences }) => {
+type Props = {
+  location: { city: string; state: string };
+  host: { name: string };
+  preferences: ("animals" | "disability" | "foof")[];
+};
+
+const OfferBox = ({ location, host, preferences }: Props) => {
   const { t } = useTranslation();
   return (
     <View style={styles.box}>
@@ -78,7 +85,7 @@ const OfferBox = ({ location, host, preferences }) => {
                     </View>
                   );
                 default:
-                  return <></>;
+                  return <Fragment />;
               }
             })
           : null}

@@ -4,6 +4,7 @@ import SectionTitle from "../SectionTitle";
 import { ButtonCta } from "../Buttons";
 import Section from "../Section";
 import { useRouter } from "next/router";
+import { Theme } from "../../style/theme.config";
 
 const ContentWrapper = styled.View`
   margin-bottom: 80px;
@@ -14,9 +15,9 @@ const DetailsText = styled.Text`
   margin-top: 25px;
   margin-bottom: 50px;
   max-width: 340px;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         font-size: 16px;
@@ -28,7 +29,7 @@ const DetailsText = styled.Text`
 const CTAText = styled.Text`
   font-size: 16px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   padding: 0 10px;
 `;
 

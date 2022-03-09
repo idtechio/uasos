@@ -33,9 +33,9 @@ function FormDropdown<T>({
       control={control}
       rules={rules}
       render={({ field: { onChange, onBlur, value } }) => {
-        const handleChange = (selected) => {
+        const handleChange = (selected: T) => {
           if (multiSelect) {
-            const items = value ?? [];
+            const items: T[] = value ?? [];
 
             if (items.includes(selected)) {
               onChange(items.filter((v) => v !== selected));

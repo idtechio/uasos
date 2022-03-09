@@ -1,12 +1,13 @@
 import { css } from "styled-components";
 import styled from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 import Card from "../Card";
 
 const Value = styled.Text`
   font-size: 36px;
   font-weight: 800;
-  color: ${({ theme }) => theme.colors.text};
-  ${({ theme }) =>
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       xxl: css`
         font-size: 72px;
@@ -24,12 +25,12 @@ const Value = styled.Text`
 `;
 
 const Text = styled.Text`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   font-weight: 600;
   font-size: 12px;
   text-align: center;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         font-size: 22px;
@@ -37,7 +38,7 @@ const Text = styled.Text`
     })}
 `;
 
-const TileCard = styled<{ spaced?: boolean }>(Card)`
+const TileCard = styled(Card)<{ spaced?: boolean }>`
   width: 172px;
   height: 90px;
   margin-top: 15px;

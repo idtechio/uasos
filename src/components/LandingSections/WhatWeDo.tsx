@@ -15,9 +15,10 @@ import { ButtonDefault } from "../Buttons";
 import { InstructionsCarousel, InstructionsGrid } from "../Instructions";
 import SectionTitle from "../SectionTitle";
 import { useTheme } from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 const WhatWeDoSection = () => {
-  const { getBreakPoint } = useTheme();
+  const { getBreakPoint } = useTheme() as Theme;
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const { t } = useTranslation("landingPage");

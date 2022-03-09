@@ -37,7 +37,7 @@ const FormButtonsGrid = ({ data }: Props) => {
   );
 
   return (
-    <CompositionGrid spaceing={[16, 16]} itemsPerRow={2} disableRwd>
+    <CompositionGrid spacing={[16, 16]} itemsPerRow={2} disableRwd>
       {data.map(({ id, label, icon }) => {
         return (
           <Controller

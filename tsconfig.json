@@ -14,8 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "noImplicitAny": false
+    "noImplicitAny": true
   },
+  "types": ["styled-components-react-native"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

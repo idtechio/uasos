@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 export const Pill = styled.Text`
   border-radius: 4px;
-  border: 1px ${(props) => props.theme.forms.border} solid;
+  border: 1px ${({ theme }: { theme: Theme }) => theme.forms.border} solid;
   padding: 4px 6px;
   margin-right: 4px;
 `;
@@ -14,19 +15,21 @@ export const PillContainer = styled.View`
   row-gap: 4px;
 `;
 
-export const Select = styled.Pressable`
-  color: ${(props) => props.theme.colors.text};
-  border-width: ${(props) => props.theme.forms.borderWidth};
-  border-radius: ${(props) => props.theme.forms.borderRadius};
-  border-color: ${(props) =>
+type SelectProps = { isInvalid?: boolean; showOptions?: boolean; theme: Theme };
+export const Select = styled.Pressable<SelectProps>`
+  color: ${({ theme }) => theme.colors.text};
+  border-width: ${({ theme }) => theme.forms.borderWidth};
+  border-radius: ${({ theme }) => theme.forms.borderRadius};
+  border-color: ${(props: SelectProps) =>
     props.isInvalid ? props.theme.colors.error : props.theme.forms.border};
-  background-color: ${(props) => props.theme.pageSection.backgroundColor};
+  background-color: ${({ theme }) => theme.pageSection.backgroundColor};
   padding: 10px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  box-shadow: ${(props) => (props.showOptions ? `0 0 15px #cccccc` : `none`)};
+  box-shadow: ${(props: SelectProps) =>
+    props.showOptions ? `0 0 15px #cccccc` : `none`};
 `;
 
 export const SelectText = styled.Text`
@@ -36,20 +39,28 @@ export const SelectText = styled.Text`
 `;
 
 export const PlaceholderText = styled.Text`
-  color: ${(props) => props.theme.forms.placeholderColor};
+  color: ${({ theme }: { theme: Theme }) => theme.forms.placeholderColor};
 `;
 
 export const SelectLabel = styled.Pressable`
-  color: ${(props) => props.theme.forms.labelColor};
-  font-size: ${(props) => props.theme.forms.labelSize};
+  color: ${({ theme }: { theme: Theme }) => theme.forms.labelColor};
+  font-size: ${({ theme }: { theme: Theme }) => theme.forms.labelSize};
 `;
 
-export const Options = styled.View`
+type OptionsProps = {
+  selectWidth?: number;
+  selectHeight?: number;
+  direction?: "to-bottom" | "to-top";
+  theme: Theme;
+};
+
+export const Options = styled.View<OptionsProps>`
   color: "#000000";
   position: absolute;
-  background-color: ${(props) => props.theme.pageSection.backgroundColor};
-  border-color: ${(props) => props.theme.forms.border};
-  border-width: ${(props) => props.theme.forms.borderWidth};
+  background-color: ${({ theme }: { theme: Theme }) =>
+    theme.pageSection.backgroundColor};
+  border-color: ${({ theme }: { theme: Theme }) => theme.forms.border};
+  border-width: ${({ theme }: { theme: Theme }) => theme.forms.borderWidth};
   width: ${(props) => props.selectWidth + `px`};
   top: ${(props) =>
     props.direction === "to-bottom" ? props.selectHeight : `unset`};
@@ -60,19 +71,23 @@ export const Options = styled.View`
 
 export const ItemList = styled.FlatList`
   max-height: 200px;
-  background-color: ${(props) => props.theme.pageSection.backgroundColor};
+  background-color: ${({ theme }: { theme: Theme }) =>
+    theme.pageSection.backgroundColor};
 `;
 
-export const Icon = styled.View`
+export const Icon = styled.View<{ showOptions?: boolean }>`
   transform: ${(props) => (props.showOptions ? `rotate(180deg)` : ``)};
 `;
 
-export const SelectItem = styled.Pressable`
+export const SelectItem = styled.Pressable<{
+  selected?: boolean;
+  theme: Theme;
+}>`
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 12px;
   border-bottom-width: 1px;
-  border-color: ${(props) => props.theme.forms.border};
+  border-color: ${({ theme }) => theme.forms.border};
   background-color: ${(props) =>
     props.selected ? "rgba(56, 176, 0, 0.1)" : "#fff"};
 

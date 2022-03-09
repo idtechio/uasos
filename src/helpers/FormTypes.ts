@@ -34,7 +34,7 @@ export enum HostType {
   FRIENDS = "host_type_friends_group",
 }
 
-export enum AccomodationTime {
+export enum AccommodationTime {
   LESS_THAN_WEEK = "less_than_week",
   WEEK = "week",
   TWO_WEEKS = "two_weeks",
@@ -97,15 +97,15 @@ export type FormType = {
     accommodationType: string[];
     guestCount: number;
     childBedCount: number;
-    accommodationTime: AccomodationTime;
+    accommodationTime: AccommodationTime;
     nationality: Nationality;
     groupsTypes: string[];
     transportReady: boolean;
     pregnantReady: boolean;
-    dissabilityReady: boolean;
+    disabilityReady: boolean;
     animalReady: boolean;
     prolongationReady: boolean;
-    accomodationPhotos: [Blob];
+    accommodationPhotos: [Blob];
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;

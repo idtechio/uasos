@@ -38,13 +38,14 @@ const CardModal = ({
           }}
         >
           <CenterBox
-            style={[
-              {
-                backgroundColor: "rgba(255, 255, 255, 0.75)",
-                ...StyleSheet.absoluteFillObject,
-                position: Platform.OS === "web" ? "fixed" : "absolute",
-              },
-            ]}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.75)",
+              ...StyleSheet.absoluteFillObject,
+              position:
+                Platform.OS === "web"
+                  ? ("fixed" as unknown as "relative")
+                  : "absolute",
+            }}
           >
             <Curtain onClick={(event) => event.stopPropagation()} />
             <Card

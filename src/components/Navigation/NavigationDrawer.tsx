@@ -5,6 +5,7 @@ import KeyIcon from "../../style/svgs/key.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import { Fragment } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -49,7 +50,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             />
           </>
         ) : (
-          <></>
+          <Fragment />
         )}
       </DrawerContainer>
       <DrawerEmptySpace onPress={hideDrawer} />

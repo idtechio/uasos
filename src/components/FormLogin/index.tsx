@@ -8,6 +8,7 @@ import { CompositionSection } from "../Compositions";
 
 import FormContainer from "./FormContainer";
 import { SignInProps } from "../../../pages/signin";
+import { Theme } from "../../style/theme.config";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -104,7 +105,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
 export default FormLogin;
 
 export const FormHeader = styled.h2`
-  color: ${({ theme }) => theme.colors.textOnCta};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.textOnCta};
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;

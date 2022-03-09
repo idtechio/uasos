@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, StyleSheet } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
@@ -107,7 +107,7 @@ export default function FormAdGuest() {
     formState: { errors, isValid, isSubmitted },
   } = formFields;
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FormType> = async (data) => {
     const guest = data.advancedRefugee;
 
     let apiObject: GuestProps = {
@@ -155,7 +155,7 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (_error) => {
+  const onError = (_error: unknown) => {
     // TODO: handle error case
   };
 
@@ -377,7 +377,7 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.accommodationType")}
           </InputCotrolLabel>
-          <FormDropdown
+          <FormDropdown<string>
             data={ACCOMMODATION_TYPES}
             name="advancedRefugee.accommodationType"
             placeholder={t("refugeeAddForm.selectPlaceholder")}
