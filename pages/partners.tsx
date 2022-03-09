@@ -10,6 +10,7 @@ import PARTNERS from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import { Theme } from "../src/style/theme.config";
 
 const PartnersContainer = styled.View`
   width: 100%;
@@ -20,7 +21,7 @@ const PartnersContainer = styled.View`
   row-gap: 10px;
   margin-top: 66px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin-top: 60px;
@@ -57,6 +58,7 @@ const BackToMainPage = () => {
   return (
     <Pressable onPress={() => router.push("/")}>
       <BackContainer>
+        {/* @ts-expect-error TODO: fix prop type */}
         <GoBackIcon source="/goBack.svg" />
         <Text>{t("back")}</Text>
       </BackContainer>

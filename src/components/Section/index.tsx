@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Theme } from "../../style/theme.config";
 
 const StyledSection = styled.section<{ bgColor?: string }>`
   background-color: ${(props) => props.bgColor};
@@ -13,7 +14,7 @@ const Container = styled.div`
   position: relative;
   padding: 0 16px;
   margin: 0 auto;
-  max-width: ${({ theme }) => `${theme.maxContainerWidth}px`};
+  max-width: ${({ theme }: { theme: Theme }) => `${theme.maxContainerWidth}px`};
 `;
 
 type SectionProps = {

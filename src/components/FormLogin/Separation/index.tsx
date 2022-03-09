@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { useTranslation } from "next-i18next";
+import { Theme } from "../../../style/theme.config";
 
 const Separation = () => {
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ const StyledText = styled.Text`
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
-  color: ${({ theme }) => theme.colors.blue};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
   background-color: #fff;
   display: block;
   padding: 0 15px;

@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 export const ColumnBulletPoint = styled.Text`
   align-self: flex-start;
@@ -20,7 +21,7 @@ export const PointColumn = styled.View`
 `;
 
 export const ColumnText = styled.Text`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   font-size: 14px;
   line-height: 20px;
 `;

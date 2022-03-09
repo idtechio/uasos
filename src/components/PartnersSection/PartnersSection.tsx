@@ -2,11 +2,13 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import PARTNERS from "../../consts/partners.json";
+import { Theme } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 import { PartnerCard } from "../PartnerCard";
 import SectionTitle from "../SectionTitle";
 
-const StyledSection = styled.View`
+type StyledSectionProps = { bgColor?: string; theme: Theme };
+const StyledSection = styled.View<StyledSectionProps>`
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -24,7 +26,7 @@ const Container = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         margin-top: 35px;
@@ -36,7 +38,7 @@ const PartnerCardWrapper = styled.View`
   width: 33%;
   padding: 8px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         width: 16.66%;
@@ -48,12 +50,12 @@ const StyledPartnerCard = styled(PartnerCard)`
   width: 100%;
   aspect-ratio: 1.2;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       default: css`
         border: 0;
       `,
-      lg: true,
+      lg: css``,
     })}
 `;
 
@@ -63,7 +65,7 @@ const ShowMoreContainer = styled.View`
 
   padding-top: 48px;
   padding-bottom: 50px;
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         padding-top: 64px;

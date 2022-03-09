@@ -1,13 +1,14 @@
 import styled from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
-export const Container = styled.View`
+export const Container = styled.View<{ isOpen: boolean }>`
   position: relative;
   overflow: hidden;
   max-height: ${({ isOpen }) => (isOpen ? "100%" : "140px;")};
 `;
 
 export const Text = styled.Text`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   margin-bottom: 24px;
 `;
 
