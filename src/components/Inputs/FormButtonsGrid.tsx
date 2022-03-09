@@ -21,7 +21,7 @@ const FormButtonsGrid = ({ data }: Props) => {
   const [buttonsState, setButtonsState] = useState<string[]>([]);
 
   const onTilePress = useCallback(
-    (id: string, onChange: (...event: any[]) => void) => {
+    (id: string, onChange: (...event: unknown[]) => void) => {
       setButtonsState((prevState) => {
         const newState = [...prevState];
         if (prevState.includes(id)) {

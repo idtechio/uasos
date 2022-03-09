@@ -16,7 +16,7 @@ import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
 import { DropdownProps } from "./types";
 
-export const Dropdown = ({
+export function Dropdown<T>({
   data,
   direction = "to-bottom",
   label,
@@ -27,7 +27,7 @@ export const Dropdown = ({
   error,
   onBlur,
   searchable = false,
-}: DropdownProps) => {
+}: DropdownProps<T>) {
   const containerRef = useRef<any>();
   const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
@@ -43,13 +43,13 @@ export const Dropdown = ({
     selectedValues.includes(value)
   );
 
-  const handleItemPress = (value: any) => {
+  const handleItemPress = (value: T) => {
     itemPressFunction(value);
     onBlur?.();
   };
 
   const renderItem = ({ item }) => (
-    <Item
+    <Item<T>
       title={item.label}
       value={item.value}
       itemPressFunction={handleItemPress}
@@ -140,4 +140,4 @@ export const Dropdown = ({
       </View>
     </>
   );
-};
+}

@@ -15,13 +15,16 @@ import { ButtonDefault } from "../Buttons";
 import ModalPortal from "../../helpers/Portal";
 import { useState } from "react";
 import { Dropdown } from "../Dropdown";
+import { DropdownProps } from "../Dropdown/types";
 
-const SingleFilter = ({
-  value,
-  name,
-  options = [],
-  onSubmit = (_value) => undefined,
-}) => {
+type Props<T> = {
+  value: T;
+  name: string;
+  options: DropdownProps<T>["data"];
+  onSubmit: (value: T | null) => void;
+};
+
+function SingleFilter<T>({ value, name, options = [], onSubmit }: Props<T>) {
   const [visible, setFilterVisible] = useState(false);
   const [val, _setVal] = useState(value);
   const chosenItem = () => {
@@ -58,12 +61,12 @@ const SingleFilter = ({
                 {name}
               </FilterBoxHeader>
               <View style={styles.content}>
-                <Dropdown
-                  direction={"to-top"}
-                  searchable={true}
+                <Dropdown<T>
+                  direction="to-top"
+                  searchable
                   data={options}
-                  placeholder={"wybierz coś plis"}
-                  label={"labelka"}
+                  placeholder="wybierz coś plis"
+                  label="labelka"
                   itemPressFunction={chosenItem}
                   selected={value}
                   error={!!"error!!!"}
@@ -72,7 +75,7 @@ const SingleFilter = ({
               <FilterBoxFooter>
                 <TouchableOpacity
                   onPress={() => {
-                    onSubmit(val);
+                    onSubmit?.(val);
                     setFilterVisible(false);
                   }}
                 >
@@ -83,7 +86,7 @@ const SingleFilter = ({
                 {value && (
                   <TouchableOpacity
                     onPress={() => {
-                      onSubmit(null);
+                      onSubmit?.(null);
                       setFilterVisible(false);
                     }}
                   >
@@ -103,6 +106,6 @@ const SingleFilter = ({
       />
     </Filter>
   );
-};
+}
 
 export default SingleFilter;

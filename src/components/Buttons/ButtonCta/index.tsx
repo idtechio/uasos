@@ -6,7 +6,7 @@ const ButtonCta = ({
   style,
   anchor,
   onPress,
-  colorOposite = false,
+  colorOpposite = false,
   onClick,
 }: ButtonProps) => {
   const handlePress = useCallback(
@@ -18,9 +18,9 @@ const ButtonCta = ({
   );
 
   return (
-    <Button style={style} onPress={handlePress} colorOposite={colorOposite}>
+    <Button style={style} onPress={handlePress} colorOpposite={colorOpposite}>
       {typeof anchor === "string" ? (
-        <Text colorOposite={colorOposite}>{anchor}</Text>
+        <Text colorOpposite={colorOpposite}>{anchor}</Text>
       ) : (
         anchor
       )}

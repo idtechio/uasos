@@ -139,8 +139,8 @@ export type FormType = {
 type PathsToStringProps<T> = T extends string | number | Date | boolean
   ? []
   : {
-      [K in Extract<keyof T, any>]: [K, ...PathsToStringProps<T[K]>];
-    }[Extract<keyof T, any>];
+      [K in Extract<keyof T, unknown>]: [K, ...PathsToStringProps<T[K]>];
+    }[Extract<keyof T, unknown>];
 
 type JoinTuple<T extends (string | number)[], D extends string> = T extends []
   ? never

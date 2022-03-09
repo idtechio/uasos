@@ -12,9 +12,9 @@ type Response = {
 };
 
 const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = useState<string | undefined>(value);
   const [query, setQuery] = useState(value);
-  const [text, setText] = useState(value);
+  const [text, setText] = useState<string | undefined>(value);
   const [isOpen, setIsOpen] = useState(false);
 
   const { isLoading, data } = useFetch<Response>(
