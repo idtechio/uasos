@@ -40,7 +40,7 @@ function SingleFilter<T>({ value, name, options = [], onSubmit }: Props<T>) {
               <FilterBoxHeader>
                 <TouchableOpacity
                   onPress={() => setFilterVisible(false)}
-                  style={{ position: "absolute" }}
+                  style={styles.touchable}
                 >
                   <svg
                     width="20"

@@ -9,7 +9,7 @@ type ButtonType = Pick<
 export const Button = styled.View<ButtonType>`
   border: ${(props) =>
     props.isChoice
-      ? `${props.theme.forms.borderWidth} solid #38B000`
+      ? `${props.theme.forms.borderWidth} solid ${props.theme.colors.positive}`
       : props.error
       ? `${props.theme.forms.borderWidth} solid ${props.theme.colors.error}`
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.3)`};
@@ -40,15 +40,17 @@ export const Text = styled.Text<TextProps>`
   text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>
     props.isChoice
-      ? `#38B000`
+      ? props.theme.colors.positive
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.7)`};
 `;
 
 export const Icon = styled.View<
-  Pick<ChoiceButtonProps, "isVertical" | "isSelected">
+  Pick<ChoiceButtonProps, "isVertical" | "isSelected"> & { theme: Theme }
 >`
   margin-bottom: ${(props) => (props.isVertical ? `0` : `12px`)};
   margin-right: ${(props) => (props.isVertical ? `12px` : `0`)};
   color: ${(props) =>
-    props.isSelected ? `#38B000` : `2px solid rgba(28, 27, 37, 0.7)`};
+    props.isSelected
+      ? props.theme.colors.positive
+      : `2px solid rgba(28, 27, 37, 0.7)`};
 `;

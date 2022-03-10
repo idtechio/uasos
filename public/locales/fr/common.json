@@ -13,7 +13,8 @@
     "name": "",
     "email": "",
     "phone": "",
-    "town": ""
+    "town": "",
+    "phoneNumber": ""
   },
   "validations": {
     "requiredName": "",
@@ -46,7 +47,8 @@
       "room": "",
       "flat": "",
       "house": "",
-      "collective": ""
+      "collective": "",
+      "public_shared_space": ""
     },
     "boolean": {
       "yes": "",
@@ -201,8 +203,10 @@
   "rodo": "",
   "thankfulnessModal": {
     "thankYou": "",
+    "thanksForYourDecision": "",
     "applicationSent": "",
-    "informWhenAccomodationFound": ""
+    "informWhenAccomodationFound": "",
+    "backToMainPage": ""
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {

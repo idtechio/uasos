@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Platform } from "react-native";
+import { ActivityIndicator, Platform, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import UploadIcon from "../../../style/svgs/upload.svg";
 
@@ -84,21 +84,25 @@ const UploadInput = ({
   return (
     <>
       <UploadButton disabled={disabled} onPress={handleClick}>
-        <UploadIcon
-          style={{ marginLeft: "4px", width: "15px", height: "15px" }}
-        />
+        <UploadIcon style={styles.icon} />
         <ButtonLabelText>
           {isLoading ? <ActivityIndicator /> : children}
         </ButtonLabelText>
       </UploadButton>
-      <input
-        type="file"
-        accept={accept}
-        ref={inputRef}
-        style={{ display: "none" }}
-      />
+      <input type="file" accept={accept} ref={inputRef} style={styles.input} />
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  icon: {
+    marginLeft: "4px",
+    width: "15px",
+    height: "15px",
+  },
+  input: {
+    display: "none",
+  },
+});
 
 export default UploadInput;

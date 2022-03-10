@@ -91,11 +91,11 @@ const ButtonContainer = styled.View`
     })}
 `;
 
-const ButtonStyle = styled(ButtonCta)<{ first?: boolean }>`
+const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
   margin-top: 17px;
   font-size: 16px;
 
-  ${({ theme, first }: { theme: Theme; first?: boolean }) =>
+  ${({ theme, first }) =>
     !first &&
     theme.getBreakPoint({
       lg: css`

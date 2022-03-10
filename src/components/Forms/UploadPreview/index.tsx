@@ -1,4 +1,4 @@
-import { TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import styled from "styled-components/native";
 import { useTranslation } from "react-i18next";
@@ -31,21 +31,21 @@ const UploadPreview = ({ preview, onDelete }: Props) => {
 
   return (
     <PreviewWrapper>
-      <img
-        src={preview}
-        alt=""
-        style={{
-          width: 100,
-          height: 80,
-          borderRadius: 8,
-          overflow: "hidden",
-        }}
-      />
+      <img src={preview} alt="" style={styles.image} />
       <TouchableOpacity onPress={onDelete}>
         <DeletePhotoText>{t("hostAdd.accomodationPhotoReset")}</DeletePhotoText>
       </TouchableOpacity>
     </PreviewWrapper>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    width: 100,
+    height: 80,
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+});
 
 export default UploadPreview;
