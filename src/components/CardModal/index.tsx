@@ -32,26 +32,10 @@ const CardModal = ({
           }
         }}
       >
-        <TouchableWithoutFeedback
-          onPress={() => {
-            setModalVisible(false);
-          }}
-        >
-          <CenterBox
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.75)",
-              ...StyleSheet.absoluteFillObject,
-              position:
-                Platform.OS === "web"
-                  ? ("fixed" as unknown as "relative")
-                  : "absolute",
-            }}
-          >
+        <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+          <CenterBox style={styles.wrapper}>
             <Curtain onClick={(event) => event.stopPropagation()} />
-            <Card
-              width={screenWidth - 30}
-              style={[{ maxWidth: 600 }, cardStyle]}
-            >
+            <Card width={screenWidth - 30} style={[styles.card, cardStyle]}>
               {/* <CloseIconWrapper onPress={() => setModalVisible(false)}>
                 <CrossIcon />
               </CloseIconWrapper> */}
@@ -63,5 +47,17 @@ const CardModal = ({
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  card: {
+    maxWidth: 600,
+  },
+  wrapper: {
+    backgroundColor: "rgba(255, 255, 255, 0.75)",
+    ...StyleSheet.absoluteFillObject,
+    position:
+      Platform.OS === "web" ? ("fixed" as unknown as "relative") : "absolute",
+  },
+});
 
 export default CardModal;

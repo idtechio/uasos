@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -22,12 +22,7 @@ export const ThankfulnessModal = ({
   return (
     <CardModal onModalClose={onClose}>
       <ThankfulnessModalContentWrapper>
-        <View
-          style={{
-            minWidth: 160 * 1.25,
-            minHeight: 105 * 1.25,
-          }}
-        >
+        <View style={styles.wrapper}>
           <FormSentIcon
             width={160 * 1.25}
             height={105 * 1.25}
@@ -46,7 +41,7 @@ export const ThankfulnessModal = ({
               : t("thankfulnessModal.applicationSent")}
           </ThankfulnessText>
 
-          <ThankfulnessText style={{ marginTop: 24 }}>
+          <ThankfulnessText style={styles.textContainer}>
             {typeof content?.text === "string"
               ? content.text
               : t("thankfulnessModal.informWhenAccomodationFound")}
@@ -69,3 +64,13 @@ export const ThankfulnessModal = ({
     </CardModal>
   );
 };
+
+const styles = StyleSheet.create({
+  textContainer: {
+    marginTop: 24,
+  },
+  wrapper: {
+    minWidth: 160 * 1.25,
+    minHeight: 105 * 1.25,
+  },
+});

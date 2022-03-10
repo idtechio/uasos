@@ -58,7 +58,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               anchor={`${t("loginForm.logInWith")} ${name}`}
             />
           ))}
-          <div style={{ marginBottom: 60 }}></div>
+          <Spacer />
           {/* <<FormProvider {...formFields}>
             <FormTextInput
               name={"login.email"}
@@ -110,4 +110,8 @@ export const FormHeader = styled.h2`
   font-size: 24px;
   line-height: 24px;
   letter-spacing: 0.5px;
+`;
+
+export const Spacer = styled.div`
+  margin-bottom: 60px;
 `;
