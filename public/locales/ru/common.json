@@ -136,7 +136,7 @@
     "type": "тип размещения",
     "hostType": "Тип хозяина жилья",
     "hostTypeLabel": {
-      "host_type_men": "Мужчина ",
+      "host_type_men": "Мужчина",
       "host_type_women": "Женщина",
       "host_type_couple": "Пара",
       "host_type_family": "Семья",

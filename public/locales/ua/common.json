@@ -11,10 +11,10 @@
     "timePeriod": "Термін перебування",
     "withKids": "Я з дитиною",
     "name": "Ім'я",
-    "email": "Eлектронна пошта",
+    "email": "електронна пошта",
     "phone": "Номер телефону",
     "town": "Місто",
-    "phoneNumber": ""
+    "phoneNumber": "Номер телефону"
   },
   "validations": {
     "requiredName": "Вкажіть ім'я",
@@ -48,7 +48,7 @@
       "flat": "Квартира",
       "house": "Дім",
       "collective": "Колективна кімната (наприклад, шкільна кімната)",
-      "public_shared_space": ""
+      "public_shared_space": "Колективна кімната (наприклад, шкільна кімната)"
     },
     "boolean": {
       "yes": "так",
@@ -101,8 +101,8 @@
       }
     },
     "floor": {
-      "label": "На якому поверсі будуть жити?",
-      "hint": "Для осіб похилого віку може бути проблемою проживання на верхніх поверхах"
+      "label": "На якому поверсі знаходиться житло?",
+      "hint": "Люди похилого вiку можуть мати труднощі з доступом на верхній поверх"
     },
     "submit": "Підтвердити"
   },
@@ -130,8 +130,8 @@
     "emailPlaceholder": "електронна пошта",
     "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
     "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
-    "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
-    "cityTooltipText": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
+    "cityLabel": "Місто",
+    "cityTooltipText": "Виберіть найближче велике місто якщо вашого міста немає у списку",
     "cityPlaceholder": "Місто",
     "type": "Тип розміщення",
     "hostType": "Тип власника житла",
@@ -144,7 +144,7 @@
       "host_type_friends_group": "Група друзiв/знайомих"
     },
     "guestCount": "Скільки осіб ви можете в себе прийняти?",
-    "accommodationTime": "Як довго?",
+    "accommodationTime": "Як довго ви можете приймати гостей-біженців (тижнi)?",
     "accomodationPhoto": "",
     "accomodationPhotoLabel": "",
     "accomodationPhotoReset": "",
@@ -164,7 +164,7 @@
     "city": "Місто",
     "fullBedCount": "Кількість повнорозмірних спальних місць",
     "groupsTypes": "Які типи груп ви візьмете?",
-    "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
+    "pregnantReady": "Прийму жінку на пізньому терміні вагітності (більше 6 місяців)",
     "dissabilityReady": "Прийму людину з обмеженими можливостями",
     "elderReady": "Прийму особу/особи похилого віку",
     "animalReady": "Прийму людину з твариною",
@@ -214,7 +214,7 @@
       "toddler": "Дитина меньше 2 років",
       "oldPerson": "я / зі мною особа похилого віку",
       "disability": "я / зі мною особа з обмеженими можливостями",
-      "pregnant": "я / зі мною жінка на пізньому терміні вагітності (більше 6 місяців)"
+      "pregnant": "Я перебуваю або перебуваю зі мною на пізніх термінах вагітності (більше 6 місяців)"
     },
     "refugeesCountOptions": {
       "alone": "Я один/одна",
@@ -238,7 +238,7 @@
       "isGDPRAccepted": "Я приймаю політику конфіденційності",
       "submitButton": "Попросити про допомогу",
       "location": "В якому місці ви бажаете зупинитись?",
-      "anyLocation": "Будь яке місце",
+      "anyLocation": "Будь яка місцевість",
       "prefferedLocation": "Бажане місце",
       "city": "Місто",
       "addRefugee": "Додати особу"
@@ -247,8 +247,8 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Надайте основну інформацію про себе та людей, з якими ви подорожуєте",
     "addButton": "Послати заявку",
-    "addButtomErrorMessage": "",
-    "pregnantReady": "я / зі мною жінка на пізному терміні вагітності (більше 6 місяців)",
+    "addButtomErrorMessage": "Будь ласка, заповніть необхідні поля",
+    "pregnantReady": "я / зі мною жінка на пізньому терміні вагітності (більше 6 місяців)",
     "dissabilityReady": "я / зі мною особа з обмеженими можливостями",
     "animalReady": "я зі своєю домашньою твариною",
     "elderReady": "Я чи є зі мною літня людина",
@@ -256,7 +256,7 @@
     "genderLabel": "Стать",
     "genderPlaceholder": "Вкажіть свою стать",
     "travelCompanions": "Інформація про людей, з якими ви подорожуєте",
-    "fullBedCountLabel": "Скільки людей їде з вами?",
+    "fullBedCountLabel": "Кількість повнорозмірних спальних місць",
     "childBedCountLabel": "Кількість спальних місць для дітей",
     "placeOfRefuge": "В якому місці ви бажаете зупинитись?",
     "countryOfRefugeLabel": "В якій країні ви шукаєте притулку?",
@@ -266,7 +266,7 @@
     "cityOfRefugePlaceholder": "Виберіть область",
     "nameLabel": "Ім'я (введіть лише ім'я)",
     "namePlaceholder": "ім'я",
-    "emailLabel": "Електронна пошта",
+    "emailLabel": "я / зі мною особа похилого віку",
     "emailPlaceholder": "електронна пошта",
     "phoneLabel": "Номер телефону (формат + XXYYYYYYYYYY)",
     "phonePlaceholder": "Номер телефону (формат + XXYYYYYYYYYY)",
@@ -274,7 +274,7 @@
     "cityPlaceholder": "Місто",
     "groupRelations": "Яки в вас стосунки між учасниками групи?",
     "selectPlaceholder": "вибрати зі списку",
-    "accommodationType": "Будь ласка, виберіть усі варіанти проживання, які бажаєте (можливі кілька варіантів)",
+    "accommodationType": "Які умови проживання ви шукаєте?",
     "countryOfGroup": "Яка країна походження групи?",
     "countryOfGroupUA": "Україна",
     "countryOfGroupOthers": "Інша",
@@ -296,11 +296,11 @@
     "refugeInfoHeader": ""
   },
   "accomodationPhoto": "Додайте фотографію пропонованого притулку",
-  "accomodationPhotoReset": "видаляти",
+  "accomodationPhotoReset": "видалити",
   "accomodationPhotoLabel": "подати",
   "dropdownChoose": "Виберіть ...",
   "dropdownSearch": "Пошук",
-  "heroImageAlt": "Слава України!",
+  "heroImageAlt": "Слава Україні!",
   "loginForm": {
     "logInWith": "Увійти з допомогою",
     "or": "або",
