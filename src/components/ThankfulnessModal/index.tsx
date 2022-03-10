@@ -49,7 +49,7 @@ export const ThankfulnessModal = ({
           <ThankfulnessText style={{ marginTop: 24 }}>
             {typeof content?.text === "string"
               ? content.text
-              : "thankfulnessModal.informWhenAccomodationFound"}
+              : t("thankfulnessModal.informWhenAccomodationFound")}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
