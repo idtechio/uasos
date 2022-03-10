@@ -6,14 +6,15 @@
     "logout": "Wyloguj"
   },
   "labels": {
-    "location": "Lokalizacja",
+    "location": "Preferowana lokalizacja",
     "numberOfGuests": "Liczba gości",
     "timePeriod": "Okres",
     "withKids": "Jestem z dzieckiem",
     "name": "Imię",
-    "email": "e-mail",
+    "email": "Email",
     "phone": "Telefon",
-    "town": "Miejscowość"
+    "town": "Miejscowość",
+    "phoneNumber": "Numer telefonu"
   },
   "validations": {
     "requiredName": "Podaj swoję imię",
@@ -34,8 +35,8 @@
       "longer": "dłużej"
     },
     "groupRelations": {
-      "single_man": "Jestem sam",
-      "single_woman": "Jestem sama",
+      "single_man": "Singiel",
+      "single_woman": "Singielka",
       "spouses": "Małżonkowie",
       "mother_with_children": "Matka z dziećmi",
       "family_with_children": "Rodzina z dziećmi",
@@ -46,7 +47,8 @@
       "room": "Pokój we współdzielonym mieszkaniu/domu",
       "flat": "Mieszkanie na wyłączność",
       "house": "Dom na wyłączność",
-      "collective": "Pokój zbiorowy (np. szkolna sala)"
+      "collective": "Pokój zbiorowy (np. szkolna sala)",
+      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
     },
     "boolean": {
       "yes": "tak",
@@ -70,7 +72,7 @@
     "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
   },
   "guestOffer": {
-    "arrivalToPoland": "Przyjazd do Polski: {{arrival}}",
+    "arrivalToPoland": "Przyjazd do Polski",
     "peopleToAccommodate": "+ {{count}} osoby",
     "preferredLocation": "preferowana lokalizacja: <1>{{location}}</1>",
     "withAnimals": "jest z nami zwierzak: <1>{{animals}}</1>",
@@ -81,7 +83,7 @@
   },
   "addAccommodation": {
     "hostPreferences": {
-      "label": "Określ swoje preferencje, kogo chcesz przyjąć:",
+      "label": "Określ swoje preferencje, kogo chcesz przyjąć",
       "acceptAnimals": "zwierzęta mile widziane",
       "disabledSupport": "osoby z niepełnosprawnością",
       "kidsUnder2": "dzieci poniźej 2 lat",
@@ -128,7 +130,7 @@
     "emailPlaceholder": "e-mail",
     "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
     "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
-    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy oferujesz nocleg.",
+    "cityLabel": "Wskaż miasto, w którym lub w którego najbliższej okolicy oferujesz nocleg.",
     "cityTooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "cityPlaceholder": "Miasto",
     "type": "Typ noclegu",
@@ -162,7 +164,7 @@
     "city": "Miasto",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
     "groupsTypes": "Jakie typy grup przyjmiesz? (możesz wybrać kilka opcji)",
-    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
+    "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca",
     "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
     "elderReady": "Przyjmę osobę/osoby starsze",
     "animalReady": "Przyjmę osobę ze zwierzakiem",
@@ -187,10 +189,10 @@
     "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
     "transportReady": "Oferuję możliwość transportu"
   },
-  "logout": "wyloguj",
+  "logout": "Wyloguj",
   "back": "Wstecz",
   "backToHomePage": "Powrót do strony głównej",
-  "shareLocation": "Załóz konto w serwisie",
+  "shareLocation": "Załóż konto w serwisie",
   "registerGuest": "Znajdź lokum",
   "more": "więcej",
   "register1": "Zarejestruj się",
@@ -202,7 +204,7 @@
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
     "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
-    "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
+    "applicationSent": "Your application has been sent. We search our host database several times a day to find the best place for you.",
     "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
     "backToMainPage": "Wróć do strony głównej"
   },
@@ -231,7 +233,7 @@
       "phoneNumber": "Numer telefonu",
       "refugeesCount": "Dla ilu osób szukasz noclegu?",
       "refugee": "Uchodźca {{number}}",
-      "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie:",
+      "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie",
       "refugeesAnimal": "Rasa (imię zwierzaka)",
       "isGDPRAccepted": "Akceptuję politykę prywatności",
       "submitButton": "Skorzystaj z pomocy",
@@ -259,12 +261,12 @@
     "placeOfRefuge": "Gdzie szukasz noclegu?",
     "countryOfRefugeLabel": "W jakiej lokalizacji szukasz noclegu?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
-    "cityOfRefugeLabel": "Wybierz miasto:",
+    "cityOfRefugeLabel": "Wybierz miasto",
     "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
     "cityOfRefugePlaceholder": "Wybierz obszar",
     "nameLabel": "Imię (Podaj tylko pierwsze imię)",
     "namePlaceholder": "Imię",
-    "emailLabel": "Podaj adres e-mail:",
+    "emailLabel": "Podaj adres e-mail",
     "emailPlaceholder": "e-mail",
     "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
     "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
@@ -295,10 +297,10 @@
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
-  "accomodationPhotoLabel": "Prześlij",
+  "accomodationPhotoLabel": "Dodaj zdjęcie",
   "dropdownChoose": "Wybierz...",
   "dropdownSearch": "Szukaj",
-  "heroImageAlt": "Sława Ukrajini!",
+  "heroImageAlt": "Slava Ukraini!",
   "loginForm": {
     "logInWith": "Zaloguj się za pomocą",
     "or": "lub",

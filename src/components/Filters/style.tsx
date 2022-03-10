@@ -68,6 +68,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: "#CCCCCC",
     borderBottomWidth: 1,
   },
+  touchable: { position: "absolute" },
 });
 
 export const FilterBoxButton = styled.View`

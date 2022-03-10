@@ -3,9 +3,9 @@
   "persons": "Number of guests",
   "locationPreference": "Preferred location",
   "anyLocation": "Any",
-  "travelingWithAnimal": "Travelling with a pet",
-  "travelingWithOlderPerson": "Travelling with an elder person",
-  "travelingWithDisabledPerson": "Travelling with a person with a disability",
-  "travelingWithToddler": "Travelling with a small child",
+  "travelingWithAnimal": "I am accompanied by a pet",
+  "travelingWithOlderPerson": "I am accompanied by an elder person",
+  "travelingWithDisabledPerson": "I am accompanied by a person with disability",
+  "travelingWithToddler": "I am accompanied by a child",
   "inviteGuest": "Send an invitation"
 }

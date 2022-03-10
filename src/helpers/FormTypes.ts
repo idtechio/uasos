@@ -94,7 +94,7 @@ export type FormType = {
     phoneNumber: string;
     town: string;
     country: string;
-    accommodationType: string[];
+    accommodationType: string;
     guestCount: number;
     childBedCount: number;
     accommodationTime: AccommodationTime;

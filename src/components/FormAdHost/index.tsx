@@ -78,7 +78,6 @@ export default function FormAdHost() {
         country: "poland",
         volunteerVisitAcceptance: "true",
         groupsTypes: [],
-        accommodationType: [],
       },
     },
   });
@@ -101,8 +100,8 @@ export default function FormAdHost() {
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
-      watchAccomodationTypeFieldValue.includes(AccommodationType.BED) ||
-      watchAccomodationTypeFieldValue.includes(AccommodationType.ROOM),
+      watchAccomodationTypeFieldValue === AccommodationType.BED ||
+      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
     [watchAccomodationTypeFieldValue]
   );
 
@@ -134,7 +133,7 @@ export default function FormAdHost() {
         email: email,
         city: town,
         listing_country: country,
-        shelter_type: accommodationType,
+        shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
         ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -256,7 +255,7 @@ export default function FormAdHost() {
 
           <InputControlLabel>
             {t("hostAdd.cityLabel")}
-            <View style={{ marginHorizontal: 10 }}>
+            <View style={styles.tooltipText}>
               <Tooltip>
                 <Text>{t("hostAdd.cityTooltipText")}</Text>
               </Tooltip>
@@ -288,7 +287,6 @@ export default function FormAdHost() {
               label: t(label),
               ...rest,
             }))}
-            multiSelect
             name="advancedHost.accommodationType"
             placeholder={t("forms.chooseFromList")}
             rules={{
@@ -426,4 +424,5 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignSelf: "flex-end",
   },
+  tooltipText: { marginHorizontal: 10 },
 });
