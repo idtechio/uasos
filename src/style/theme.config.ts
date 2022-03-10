@@ -28,6 +28,8 @@ export const primary = {
     blue: "#003566",
     secondaryBlue: "#0057B8",
     error: "#d8000c",
+    positive: "#38B000",
+    alert: "#F44336",
   },
   fonts: {
     headings: "'Roboto', sans-serif",

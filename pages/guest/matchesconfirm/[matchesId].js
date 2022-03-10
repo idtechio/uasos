@@ -1,6 +1,6 @@
 import { CompositionAppBody } from "../../../src/components/Compositions";
 import Section from "../../../src/components/Section";
-import { ThankfulnessModal } from "../../../src/components/ThankfulnessModal";
+import { AfterDecisionModal } from "../../../src/components/AfterDecisionModal";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { withSession } from "../../../src/helpers/withSession";
@@ -22,7 +22,7 @@ const Matchesconfirm = () => {
   return (
     <CompositionAppBody>
       <Section>
-        <ThankfulnessModal />
+        <AfterDecisionModal />
       </Section>
     </CompositionAppBody>
   );

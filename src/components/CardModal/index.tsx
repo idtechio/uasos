@@ -18,7 +18,8 @@ const CardModal = ({
   closeable = true,
 }: CardModalProps) => {
   const [modalVisible, setModalVisible] = useState(true);
-  const { width: screenWidth } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
+
   return (
     <>
       <Modal
@@ -35,7 +36,16 @@ const CardModal = ({
         <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
           <CenterBox style={styles.wrapper}>
             <Curtain onClick={(event) => event.stopPropagation()} />
-            <Card width={screenWidth - 30} style={[styles.card, cardStyle]}>
+            <Card
+              style={[
+                styles.card,
+                {
+                  width: width - 30,
+                  maxHeight: height - 40,
+                },
+                cardStyle,
+              ]}
+            >
               {/* <CloseIconWrapper onPress={() => setModalVisible(false)}>
                 <CrossIcon />
               </CloseIconWrapper> */}
@@ -51,6 +61,7 @@ const CardModal = ({
 const styles = StyleSheet.create({
   card: {
     maxWidth: 600,
+    overflowY: "auto",
   },
   wrapper: {
     backgroundColor: "rgba(255, 255, 255, 0.75)",
