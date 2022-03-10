@@ -35,8 +35,8 @@
       "longer": "dłużej"
     },
     "groupRelations": {
-      "single_man": "Singiel",
-      "single_woman": "Singielka",
+      "single_man": "Mężczyzna(sam)",
+      "single_woman": "Kobieta(sama)",
       "spouses": "Małżonkowie",
       "mother_with_children": "Matka z dziećmi",
       "family_with_children": "Rodzina z dziećmi",
