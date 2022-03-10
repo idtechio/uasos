@@ -1,9 +1,11 @@
-import * as React from "react";
+import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
+import { Routes } from "../../consts/router";
+import { Theme } from "../../style/theme.config";
 
 const Container = styled.View`
   width: 100%;
@@ -12,7 +14,7 @@ const Container = styled.View`
 const ContentWrapper = styled.View`
   width: 100%;
   margin: 0 auto;
-  max-width: ${({ theme }) => `${theme.maxContainerWidth}px`};
+  max-width: ${({ theme }: { theme: Theme }) => `${theme.maxContainerWidth}px`};
 `;
 
 const TextContainer = styled.View`
@@ -21,14 +23,14 @@ const TextContainer = styled.View`
 `;
 
 const Title = styled.Text`
-  color: ${({ theme }) => `${theme.colors.text}`};
+  color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   margin-top: 130px;
   max-width: 300px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         font-size: 44px;
@@ -44,7 +46,7 @@ const SubTitleWrapper = styled.View`
   display: inline-block;
   max-width: 300px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin-top: 40px;
@@ -57,10 +59,10 @@ const SubTitle = styled.Text`
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: ${({ theme }) => `${theme.colors.text}`};
+  color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
   margin-top: 30px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         font-size: 20px;
@@ -79,7 +81,7 @@ const ButtonContainer = styled.View`
   margin-top: 50px;
   margin-bottom: 145px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin-top: 28px;
@@ -89,11 +91,11 @@ const ButtonContainer = styled.View`
     })}
 `;
 
-const ButtonStyle = styled(ButtonCta)`
+const ButtonStyle = styled(ButtonCta)<{ first?: boolean }>`
   margin-top: 17px;
   font-size: 16px;
 
-  ${({ theme, first }) =>
+  ${({ theme, first }: { theme: Theme; first?: boolean }) =>
     !first &&
     theme.getBreakPoint({
       lg: css`
@@ -105,10 +107,13 @@ const ButtonStyle = styled(ButtonCta)`
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
   const { data: session } = useSession();
+  const router = useRouter();
+
   return (
     <Container>
       <ContentWrapper>
         <TextContainer>
+          {/* @ts-expect-error TODO: fix prop types */}
           <Title accessibilityRole="heading" accessibilityLevel={1}>
             {t("projectIntention.title")}
           </Title>
@@ -125,7 +130,7 @@ const LandingProjectIntention = () => {
                 <Link href="/guest">
                   <a>
                     <ButtonStyle
-                      colorOposite
+                      colorOpposite
                       anchor={t("projectIntention.lookingForHelp")}
                     />
                   </a>
@@ -133,7 +138,7 @@ const LandingProjectIntention = () => {
                 <Link href="/host">
                   <a>
                     <ButtonStyle
-                      colorOposite
+                      colorOpposite
                       anchor={t("projectIntention.shareHelp")}
                     />
                   </a>
@@ -142,9 +147,12 @@ const LandingProjectIntention = () => {
             ) : (
               <ButtonStyle
                 first
-                colorOposite
+                colorOpposite
                 anchor={t("common:shareLocation")}
-                onPress={() => signIn()}
+                onPress={(event) => {
+                  event?.preventDefault();
+                  router.push(`/${router?.locale}${Routes.SIGN_IN}`);
+                }}
               />
             )}
           </ButtonContainer>

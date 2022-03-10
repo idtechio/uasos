@@ -1,7 +1,8 @@
 import styled from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 export const ThankfulnessText = styled.Text`
-  color: ${(props) => props.theme.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -9,7 +10,7 @@ export const ThankfulnessText = styled.Text`
 `;
 
 export const ThankfulnessHeader = styled.Text`
-  color: ${(props) => props.theme.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 14px;

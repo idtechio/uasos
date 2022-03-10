@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 import { LostPassWrapper, StyledLink, StyledText } from "./styled";

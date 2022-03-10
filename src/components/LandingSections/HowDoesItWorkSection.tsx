@@ -3,9 +3,9 @@ import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
 import pathSVG from "../../../public/how-does-it-work-path.png";
-import { signIn, useSession } from "next-auth/react";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import Section from "../Section";
+import { Theme } from "../../style/theme.config";
 
 const Image = styled.Image`
   flex: 1;
@@ -16,7 +16,7 @@ const ContentContainer = styled.View`
   padding-left: 16px;
   margin: 0 auto;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         flex-direction: row;
@@ -30,7 +30,7 @@ const ContentContainer = styled.View`
 `;
 
 const ImageSize = styled.View`
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         height: auto;
@@ -43,15 +43,15 @@ const ImageSize = styled.View`
 const PathItemDot = styled.View`
   justify-content: center;
   align-items: center;
-  color: ${({ theme }) => theme.colors.text};
-  border: 3px solid ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
+  border: 3px solid ${({ theme }: { theme: Theme }) => theme.colors.text};
   border-radius: 50%;
   width: 42px;
   height: 42px;
   background: #fff;
   margin-right: 20px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         width: 50px;
@@ -64,7 +64,7 @@ const PathItemDot = styled.View`
 const PathItemDotText = styled.Text`
   font-size: 22px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         font-size: 25px;
@@ -73,7 +73,7 @@ const PathItemDotText = styled.Text`
 `;
 
 const PathDotConnector = styled.View`
-  border: 0 dashed ${({ theme }) => theme.colors.cta};
+  border: 0 dashed ${({ theme }: { theme: Theme }) => theme.colors.cta};
   border-left-width: 3px;
   height: 55px;
   width: 1px;
@@ -81,10 +81,10 @@ const PathDotConnector = styled.View`
 `;
 
 const PathItemText = styled.Text`
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
   font-size: 16px;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         margin-top: 20px;
@@ -99,7 +99,7 @@ const PathItemMobileContainer = styled.View`
   align-items: center;
 `;
 
-const PathItemDesktopContainer = styled.View`
+const PathItemDesktopContainer = styled.View<{ number?: number }>`
   align-items: center;
   position: absolute;
   ${(props) => {
@@ -134,9 +134,8 @@ const PathItemDesktopContainer = styled.View`
 `;
 
 export function HowDoesItWorkSection() {
-  const { getBreakPoint } = useTheme();
+  const { getBreakPoint } = useTheme() as Theme;
   const { t } = useTranslation("landingPage");
-  const { data: session } = useSession();
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const points = useMemo(() => {
@@ -158,15 +157,15 @@ export function HowDoesItWorkSection() {
     return (
       <>
         {Array.from({ length: 5 }).map((_, index, arr) => (
-          <>
-            <PathItemMobileContainer key={index}>
+          <Fragment key={index}>
+            <PathItemMobileContainer>
               <PathItemDot>
                 <Text>{index + 1}</Text>
               </PathItemDot>
               <PathItemText>{t(`howDoesItWork.points.${index}`)}</PathItemText>
             </PathItemMobileContainer>
             {index !== arr.length - 1 && <PathDotConnector />}
-          </>
+          </Fragment>
         ))}
       </>
     );
@@ -177,6 +176,7 @@ export function HowDoesItWorkSection() {
       <ContentContainer>
         {isDesktop && (
           <ImageSize>
+            {/* @ts-expect-error TODO: fix prop types */}
             <Image source={pathSVG.src} resizeMode="cover" alt="infographic" />
           </ImageSize>
         )}

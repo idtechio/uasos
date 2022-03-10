@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useRouter } from "next/router";
 import { Pressable } from "react-native";
 import styled from "styled-components/native";
@@ -28,6 +27,7 @@ const GoBack = () => {
   return (
     <Pressable onPress={router.back}>
       <Container>
+        {/* @ts-expect-error TODO: fix prop type */}
         <GoBackIcon source="/goBack.svg" />
         <Text>{t("back")}</Text>
       </Container>

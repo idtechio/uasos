@@ -34,19 +34,19 @@
       "longer": "dłużej"
     },
     "groupRelations": {
-      "single_man": "Singiel",
-      "single_woman": "Singielka",
+      "single_man": "Jestem sam",
+      "single_woman": "Jestem sama",
       "spouses": "Małżonkowie",
       "mother_with_children": "Matka z dziećmi",
       "family_with_children": "Rodzina z dziećmi",
       "unrelated_group": "Niepowiązana grupa"
     },
     "accommodationTypes": {
-      "bed": "Łóżko w współdzielonym pokoju",
-      "room": "Pokój w współdzielonym mieszkaniu/domu",
+      "bed": "Łóżko we współdzielonym pokoju",
+      "room": "Pokój we współdzielonym mieszkaniu/domu",
       "flat": "Mieszkanie na wyłączność",
       "house": "Dom na wyłączność",
-      "public_shared_space": "Pokój zbiorowy (np. szkolna sala)"
+      "collective": "Pokój zbiorowy (np. szkolna sala)"
     },
     "boolean": {
       "yes": "tak",
@@ -126,14 +126,15 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
-    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
+    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
+    "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy oferujesz nocleg.",
+    "cityTooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "cityPlaceholder": "Miasto",
     "type": "Typ noclegu",
     "hostType": "Typ gospodarza",
     "hostTypeLabel": {
-      "host_type_men": "Męczyzna (sam)",
+      "host_type_men": "Mężczyzna (sam)",
       "host_type_women": "Kobieta (sama)",
       "host_type_couple": "Para / małżonkowie",
       "host_type_family": "Rodzina z dzieckiem/dziećmi",
@@ -156,11 +157,11 @@
     "nationality": "Jakiej narodowości uchodźców jesteś w stanie przyjąć?",
     "ukraine": "Ukraina",
     "additionalInformationHeader": "Dodatkowe informacje",
-    "any": "Inne",
+    "any": "Dowolne",
     "childBedCount": "Liczba miejsc do spania dla dzieci",
     "city": "Miasto",
     "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
-    "groupsTypes": "Jakie typy grup przyjmiesz?",
+    "groupsTypes": "Jakie typy grup przyjmiesz? (możesz wybrać kilka opcji)",
     "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca)",
     "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
     "elderReady": "Przyjmę osobę/osoby starsze",
@@ -168,7 +169,11 @@
     "basicInfoHeader": "Podaj podstawowe informacje",
     "refugeInfoHeader": "Podaj informacje o noclegu",
     "addButton": "Zatwierdź/Dodaj",
+    "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
     "errors": {
+      "name": "Podaj swoję imię",
+      "email": "Podaj poprawny email",
+      "phoneNumber": "Podaj numer telefonu",
       "country": "Kraj jest wymagany",
       "town": "Miasto jest wymagane",
       "type": "Typ noclegu jest wymagany",
@@ -196,8 +201,10 @@
   "rodo": "RODO",
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
+    "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
     "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
-    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila."
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
+    "backToMainPage": "Wróć do strony głównej"
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -238,6 +245,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
     "addButton": "Wyślij aplikację",
+    "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
     "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
     "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
     "animalReady": "Jest ze mną mój zwierzak",
@@ -246,10 +254,10 @@
     "genderLabel": "Płeć",
     "genderPlaceholder": "Podaj płeć",
     "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
-    "fullBedCountLabel": "Ile osób z tobą podróżuje?",
+    "fullBedCountLabel": "Ile osób z Tobą podróżuje? (wliczając Ciebie)",
     "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
     "placeOfRefuge": "Gdzie szukasz noclegu?",
-    "countryOfRefugeLabel": "W jakim kraju szukasz noclegu?",
+    "countryOfRefugeLabel": "W jakiej lokalizacji szukasz noclegu?",
     "countryOfRefugePlaceholder": "Wybierz kraj",
     "cityOfRefugeLabel": "Wybierz miasto:",
     "overnightDurationLabel": "Na jaki okres poszukujesz noclegu?",
@@ -258,13 +266,13 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Numer telefonu (format +XXYYYYYYYYY)",
+    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
     "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
     "cityPlaceholder": "Miasto",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
     "selectPlaceholder": "Wybierz z listy",
-    "accommodationType": "Wybierz wszystkie intersujące Cię opcje noclegu (wybór wielu jest możliwy)",
+    "accommodationType": "Wybierz wszystkie interesujące Cię opcje noclegu (wybór wielu jest możliwy)",
     "countryOfGroup": "Jaki jest kraj pochodzenia grupy?",
     "countryOfGroupUA": "Ukraina",
     "countryOfGroupOthers": "Inne",
@@ -279,9 +287,11 @@
       "childBedCount": "Podaj ilość miejsc",
       "fullBedCountsaas": "Podaj ilość miejsc",
       "groupRelations": "Wybierz relacje",
-      "overnightDuration": "Wybierz typ noclegu",
-      "accommodationType": "Wybierz narodowość"
-    }
+      "overnightDuration": "Wybierz okres trwania noclegu",
+      "accommodationType": "Wybierz typ noclegu",
+      "countryOfGroup": "Wybierz narodowość"
+    },
+    "refugeInfoHeader": ""
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
@@ -289,16 +299,6 @@
   "dropdownChoose": "Wybierz...",
   "dropdownSearch": "Szukaj",
   "heroImageAlt": "Sława Ukrajini!",
-  "advancedHost": {
-    "advancedHost.tooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
-    "accommodationTypeOptions": {
-      "bed": "Łóźko w współdzielonym pokoju",
-      "room": "Pokój w współdzielonym mieszkaniu/domu",
-      "flat": "Mieszkanie na wyłączność",
-      "house": "Dom na wyłączność",
-      "collective": "Pokój zbiorowy (np. szkolna sala)"
-    }
-  },
   "loginForm": {
     "logInWith": "Zaloguj się za pomocą",
     "or": "lub",
@@ -307,5 +307,6 @@
     "logIn": "zaloguj się",
     "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
     "register": "zarejestruj się"
-  }
+  },
+  "gdpr": ""
 }

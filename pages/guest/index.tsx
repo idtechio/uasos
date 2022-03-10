@@ -1,27 +1,25 @@
-import { signIn, useSession } from "next-auth/react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { ButtonCta } from "../../src/components/Buttons";
-import { useTranslation } from "next-i18next";
 
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdGuest from "../../src/components/FormAdGuest";
+import { withSession } from "../../src/helpers/withSession";
+import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
+import { GetServerSideProps } from "next";
 
-export const getServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale)),
-  },
-});
-export default function Account(props) {
-  const { t } = useTranslation();
-  const { data: session } = useSession();
-
+export default function Account() {
   return (
     <CompositionAppBody>
-      {session ? (
-        <FormAdGuest />
-      ) : (
-        <ButtonCta anchor={t("shareLocation")} onPress={() => signIn()} />
-      )}
+      <FormAdGuest />
     </CompositionAppBody>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) =>
+    redirectIfUnauthorized(session, {
+      props: {
+        session,
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    })
+);

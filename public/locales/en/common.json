@@ -46,7 +46,7 @@
       "room": "Room in a shared flat / house",
       "flat": "The apartment is exclusive",
       "house": "House for exclusive use",
-      "public_shared_space": "Collective room (e.g. school room)"
+      "collective": "Collective room (e.g. school room)"
     },
     "boolean": {
       "yes": "yes",
@@ -118,34 +118,77 @@
     "de": "German flag"
   },
   "hostAdd": {
+    "country": "country",
+    "countries": {
+      "poland": ""
+    },
     "nameLabel": "First name (only enter first name)",
     "namePlaceholder": "Name",
     "emailLabel": "Give me your e-mail address:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Phone number (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Phone number (format +XXYYYYYYYYY)",
+    "phoneLabel": "Phone number (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Phone number (format +XX YYY YYY YYY)",
     "cityLabel": "Please choose the city in or around which you are proposing a place to stay.",
+    "cityTooltipText": "",
     "cityPlaceholder": "City",
+    "type": "accommodation type",
+    "hostType": "",
+    "hostTypeLabel": {
+      "host_type_men": "",
+      "host_type_women": "",
+      "host_type_couple": "",
+      "host_type_family": "",
+      "host_type_elder_people": "",
+      "host_type_friends_group": ""
+    },
+    "guestCount": "",
     "accommodationTime": "How long can you shelter (weeks)?",
-    "addButton": "Submit / Add",
+    "accomodationPhoto": "",
+    "accomodationPhotoLabel": "",
+    "accomodationPhotoReset": "",
+    "accommodationTimeLabel": {
+      "less_than_week": "",
+      "week": "",
+      "two_weeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "volunteerVisitAcceptance": "",
+    "nationality": "What refugee nationality are you able to accept?",
+    "ukraine": "Ukraine",
     "additionalInformationHeader": "Additional Information",
-    "animalReady": "I will accept a person with a pet",
     "any": "Any",
-    "basicInfoHeader": "Provide information about the accommodation you offer",
     "childBedCount": "Number of sleeping places for children",
     "city": "city",
-    "country": "country",
-    "dissabilityReady": "I will accept a person with a disability",
     "fullBedCount": "Number of full-size sleeping places",
     "groupsTypes": "What types of groups will you adopt?",
-    "nationality": "What refugee nationality are you able to accept?",
     "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months)",
+    "dissabilityReady": "I will accept a person with a disability",
+    "elderReady": "",
+    "animalReady": "I will accept a person with a pet",
+    "basicInfoHeader": "Provide information about the accommodation you offer",
+    "refugeInfoHeader": "",
+    "addButton": "Submit / Add",
+    "addButtomErrorMessage": "",
+    "errors": {
+      "name": "",
+      "email": "",
+      "phoneNumber": "",
+      "country": "",
+      "town": "",
+      "type": "",
+      "hostType": "",
+      "guestCount": "",
+      "accommodationTime": "",
+      "nationality": "",
+      "groupsTypes": "",
+      "nationalityError": ""
+    },
     "prolongationReady": "I offer the possibility of extending the stay (for a fee)",
-    "transportReady": "I offer the possibility of transport",
-    "type": "accommodation type",
-    "ukraine": "Ukraine"
+    "transportReady": "I offer the possibility of transport"
   },
   "logout": "log out",
+  "back": "",
   "backToHomePage": "Back to home page",
   "shareLocation": "Create an account",
   "registerGuest": "Find a location",
@@ -153,7 +196,6 @@
   "register1": "Register",
   "register2": "Registration",
   "privacyPolicy": "Privacy Policy",
-  "gdpr": "RODO",
   "termsOfService": "Regulations",
   "patrons": "Patrons",
   "rodo": "GDPR",
@@ -201,7 +243,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Provide basic information about yourself and the people you travel with",
     "addButton": "Send the application",
-    "refugeInfoHeader": "Provide information about your accommodation",
+    "addButtomErrorMessage": "",
     "pregnantReady": "I am or is with me in an advanced pregnancy (over 6 months)",
     "dissabilityReady": "I am or is with me a person with a disability",
     "animalReady": "My pet is with me",
@@ -222,8 +264,8 @@
     "namePlaceholder": "Name",
     "emailLabel": "Give me your e-mail address:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Phone number (format +XXYYYYYYYYY)",
-    "phonePlaceholder": "Phone number (format +XXYYYYYYYYY)",
+    "phoneLabel": "Phone number (format +XX YYY YYY YYY)",
+    "phonePlaceholder": "Phone number (format +XX YYY YYY YYY)",
     "cityLabel": "Please choose the city in or around which you are looking for help.",
     "cityPlaceholder": "City",
     "groupRelations": "What is the level of relationship between group members?",
@@ -244,9 +286,17 @@
       "fullBedCountsaas": "Enter the number of places",
       "groupRelations": "Choose Relationships",
       "overnightDuration": "Select the type of accommodation",
-      "accommodationType": "Please select a nationality"
-    }
+      "accommodationType": "Please select a nationality",
+      "countryOfGroup": ""
+    },
+    "refugeInfoHeader": "Provide information about your accommodation"
   },
+  "accomodationPhoto": "Add a photo of the shelter on offer",
+  "accomodationPhotoReset": "Delete",
+  "accomodationPhotoLabel": "Submit",
+  "dropdownChoose": "choose ...",
+  "dropdownSearch": "Search",
+  "heroImageAlt": "Fame of the Ukrayina!",
   "loginForm": {
     "logInWith": "Log IN",
     "or": "or",
@@ -256,10 +306,5 @@
     "doNotHaveAcc": "Do you want to have access ?",
     "register": "Register"
   },
-  "accomodationPhoto": "Add a photo of the shelter on offer",
-  "accomodationPhotoReset": "Delete",
-  "accomodationPhotoLabel": "Submit",
-  "dropdownChoose": "choose ...",
-  "dropdownSearch": "Search",
-  "heroImageAlt": "Fame of the Ukrayina!"
+  "gdpr": "RODO"
 }

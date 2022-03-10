@@ -10,21 +10,19 @@ const Wrapper = styled.View`
 function LanguageSwitcher() {
   const { locales, asPath } = useRouter();
 
-  return (
+  return locales ? (
     <>
-      {locales
-        ? locales.map((locale, i) => (
-            <Wrapper key={i}>
-              <Link href={asPath} locale={locale}>
-                <a>
-                  <LanguageFlags locale={locale} />
-                </a>
-              </Link>
-            </Wrapper>
-          ))
-        : null}
+      {locales.map((locale) => (
+        <Wrapper key={locale}>
+          <Link passHref href={asPath} locale={locale}>
+            <a>
+              <LanguageFlags locale={locale} />
+            </a>
+          </Link>
+        </Wrapper>
+      ))}
     </>
-  );
+  ) : null;
 }
 
 export default LanguageSwitcher;

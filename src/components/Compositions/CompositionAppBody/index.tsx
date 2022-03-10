@@ -1,5 +1,5 @@
 import type { AppBodyProps } from "./types";
-import { AppBodyWraper } from "./style";
+import { AppBodyWraper, Content, StyledScrollView } from "./style";
 import Header from "../../Header";
 import Footer from "../../Footer";
 
@@ -7,7 +7,16 @@ const CompositionAppBody = ({ children }: AppBodyProps) => {
   return (
     <AppBodyWraper>
       <Header />
-      {children}
+      <StyledScrollView
+        contentContainerStyle={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <Content>{children}</Content>
+        <Footer />
+      </StyledScrollView>
     </AppBodyWraper>
   );
 };

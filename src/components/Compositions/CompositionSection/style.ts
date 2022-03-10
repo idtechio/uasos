@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components/native";
+import { Theme } from "../../../style/theme.config";
 import type { SectionProps } from "./types";
 
-export const PageSection = styled.View<SectionProps>`
+export const PageSection = styled.View<SectionProps & { theme: Theme }>`
   padding: ${(props) =>
     props.zeroPadding
       ? "0 0"
@@ -14,10 +15,11 @@ export const PageSection = styled.View<SectionProps>`
       : props.theme.pageSection.backgroundColor};
   flex-direction: column;
   z-index: ${({ zIndex }) => zIndex || "0"};
+  flex-grow: ${(props) => props.flexGrow};
 `;
 
-export const SectionHeader = styled.Text<SectionProps>`
-  color: ${(props) => props.theme.colors.headings};
+export const SectionHeader = styled.Text<SectionProps & { theme: Theme }>`
+  color: ${({ theme }) => theme.colors.headings};
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 24px;

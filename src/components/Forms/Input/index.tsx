@@ -1,6 +1,6 @@
 import type { InputProps } from "./types";
 import { InputWraper, Label, TextInput, InputRow } from "./style";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Input = ({
   placeholder,
@@ -12,13 +12,14 @@ const Input = ({
   secureTextEntry,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
-
+  // @ts-expect-error TODO: add event type
   const hendleOnBlur = (e) => {
     e.target.placeholder = placeholder;
     if (value === "") {
       setHideLabel(true);
     }
   };
+  // @ts-expect-error TODO: add event type
   const hendleOnFocus = (e) => {
     e.target.placeholder = "";
     setHideLabel(false);

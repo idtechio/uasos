@@ -3,7 +3,20 @@ import { Search } from "./style";
 import { TextInput } from "react-native";
 import { useTranslation } from "next-i18next";
 
-export const SearchHeader = ({ data, searchable, setFilteredData }) => {
+type Props<T> = {
+  searchable: boolean;
+  data: {
+    label: string;
+    value: T;
+  }[];
+  setFilteredData: (data: Props<T>["data"]) => void;
+};
+
+export function SearchHeader<T>({
+  data,
+  searchable,
+  setFilteredData,
+}: Props<T>) {
   const [text, onChangeText] = useState("");
   const { t } = useTranslation();
 
@@ -15,17 +28,13 @@ export const SearchHeader = ({ data, searchable, setFilteredData }) => {
     setFilteredData(filteredArray);
   }, [data, setFilteredData, text]);
 
-  return (
-    <>
-      {searchable ? (
-        <Search>
-          <TextInput
-            placeholder={t("dropdownSearch")}
-            onChangeText={onChangeText}
-            value={text}
-          />
-        </Search>
-      ) : null}
-    </>
-  );
-};
+  return searchable ? (
+    <Search>
+      <TextInput
+        placeholder={t("dropdownSearch")}
+        onChangeText={onChangeText}
+        value={text}
+      />
+    </Search>
+  ) : null;
+}

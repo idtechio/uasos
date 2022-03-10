@@ -1,12 +1,9 @@
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdHost from "../../src/components/FormAdHost";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-export const getServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale)),
-  },
-});
+import { withSession } from "../../src/helpers/withSession";
+import { GetServerSideProps } from "next";
+import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 
 export default function Account() {
   return (
@@ -15,3 +12,13 @@ export default function Account() {
     </CompositionAppBody>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) =>
+    redirectIfUnauthorized(session, {
+      props: {
+        session,
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    })
+);

@@ -1,11 +1,11 @@
-import { View, TouchableOpacity } from "react-native";
-import React from "react";
+import { TouchableOpacity } from "react-native";
+
 import styled from "styled-components/native";
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
+import { Theme } from "../../../style/theme.config";
 
 const DeletePhotoText = styled.Text`
-  color: ${(props) => props.theme.colors.error};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.error};
   margin-top: 5px;
 `;
 const PreviewWrapper = styled.View`
@@ -21,7 +21,12 @@ const PreviewWrapper = styled.View`
   margin-horizontal: 5px;
 `;
 
-const UploadPreview = ({ preview, onDelete }) => {
+type Props = {
+  preview: string;
+  onDelete: () => void;
+};
+
+const UploadPreview = ({ preview, onDelete }: Props) => {
   const { t } = useTranslation();
 
   return (

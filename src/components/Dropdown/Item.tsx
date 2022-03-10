@@ -1,19 +1,21 @@
 import { SelectItem } from "./style";
 import { Text } from "react-native";
 
-export const Item = ({
+type Props<T> = {
+  value: T;
+  title: string;
+  itemPressFunction: (value: T) => void;
+  setShowOptions: (isVisible: boolean) => void;
+  selected?: boolean;
+};
+
+export function Item<T>({
   value,
   title,
   itemPressFunction,
   setShowOptions,
   selected = false,
-}: {
-  value: any;
-  title: string;
-  itemPressFunction(value: any): void;
-  setShowOptions(isVisible: boolean): void;
-  selected?: boolean;
-}) => {
+}: Props<T>) {
   const handleClick = () => {
     itemPressFunction(value);
     setShowOptions(false);
@@ -23,4 +25,4 @@ export const Item = ({
       <Text>{title}</Text>
     </SelectItem>
   );
-};
+}

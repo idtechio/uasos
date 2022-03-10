@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useMemo } from "react";
 import Head from "next/head";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
@@ -7,13 +7,18 @@ import { primary } from "../src/style/theme.config";
 import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
+import { useEffect } from "react";
+import { init } from "./../src/helpers/ga";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
-  const theme = React.useMemo(
-    () => ({ ...primary, getBreakPoint }),
-    [getBreakPoint]
-  );
+  const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
+
+  useEffect(() => {
+    init(process.env.NEXT_PUBLIC_G);
+  }, []);
+
   return (
     <>
       <GlobalStyles />

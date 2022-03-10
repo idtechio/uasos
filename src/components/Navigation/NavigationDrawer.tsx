@@ -1,13 +1,11 @@
-import React from "react";
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 import { useTranslation } from "next-i18next";
 
-import UserIcon from "../../style/svgs/user.svg";
-import ListIcon from "../../style/svgs/list.svg";
 import KeyIcon from "../../style/svgs/key.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { ButtonCta } from "../Buttons";
+import { signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { Fragment } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -15,14 +13,20 @@ interface Props {
 }
 
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
+  const { locale } = useRouter();
   const { t } = useTranslation("common");
   const { data: session } = useSession();
+
+  const handleSignOut = () => {
+    return signOut({
+      redirect: true,
+      callbackUrl: locale ? `/${locale}` : undefined,
+    });
+  };
 
   if (!isOpen) {
     return null;
   }
-
-  const noop = () => {};
 
   return (
     <>
@@ -42,11 +46,11 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
               Icon={KeyIcon}
-              onPress={() => signOut()}
+              onPress={handleSignOut}
             />
           </>
         ) : (
-          <></>
+          <Fragment />
         )}
       </DrawerContainer>
       <DrawerEmptySpace onPress={hideDrawer} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Modal,
   StyleSheet,
@@ -7,9 +7,8 @@ import {
   useWindowDimensions,
 } from "react-native";
 import Card from "../Card";
-import CrossIcon from "../../style/svgs/cross.svg";
 
-import { CenterBox, CloseIconWrapper } from "./style";
+import { CenterBox, Curtain } from "./style";
 import { CardModalProps } from "./types";
 
 const CardModal = ({
@@ -29,7 +28,7 @@ const CardModal = ({
         onRequestClose={() => {
           if (closeable) {
             setModalVisible(false);
-            onModalClose();
+            onModalClose?.();
           }
         }}
       >
@@ -39,14 +38,16 @@ const CardModal = ({
           }}
         >
           <CenterBox
-            style={[
-              {
-                backgroundColor: "rgba(255, 255, 255, 0.75)",
-                ...StyleSheet.absoluteFillObject,
-                position: Platform.OS === "web" ? ("fixed" as any) : "absolute",
-              },
-            ]}
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.75)",
+              ...StyleSheet.absoluteFillObject,
+              position:
+                Platform.OS === "web"
+                  ? ("fixed" as unknown as "relative")
+                  : "absolute",
+            }}
           >
+            <Curtain onClick={(event) => event.stopPropagation()} />
             <Card
               width={screenWidth - 30}
               style={[{ maxWidth: 600 }, cardStyle]}

@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
 import { base } from "../style/theme.config";
 
@@ -19,14 +19,17 @@ const BREAK_POINTS = {
   xxl: base.breakPoints.xxl,
 };
 
+const useIsomorphicEffect =
+  typeof window === "undefined" ? useEffect : useLayoutEffect;
+
 export function useBreakPointGetter() {
   const { width } = useWindowDimensions();
-  const [_width, setWidth] = useState(undefined);
+  const [_width, setWidth] = useState<number | undefined>(undefined);
   const parsedWidth = _width ? width : undefined;
 
   /** This is a workaround for different class names on Server and Client */
-  useLayoutEffect(() => {
-    setWidth((current) => (current ? current : width));
+  useIsomorphicEffect(() => {
+    setWidth((current) => current ?? width);
   }, [width]);
 
   return useCallback(
@@ -36,11 +39,11 @@ export function useBreakPointGetter() {
           return params.xxl;
         case params.xl && width >= BREAK_POINTS.xl:
           return params.xl;
-        case params.lg && parsedWidth >= base.breakPoints.lg:
+        case params.lg && parsedWidth && parsedWidth >= base.breakPoints.lg:
           return params.lg;
-        case params.md && parsedWidth >= base.breakPoints.md:
+        case params.md && parsedWidth && parsedWidth >= base.breakPoints.md:
           return params.md;
-        case params.sm && parsedWidth >= base.breakPoints.sm:
+        case params.sm && parsedWidth && parsedWidth >= base.breakPoints.sm:
           return params.sm;
         default:
           return params.default ?? null;

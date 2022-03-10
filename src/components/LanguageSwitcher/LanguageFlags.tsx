@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import { Fragment } from "react";
 
 interface Props {
   locale: string;
@@ -22,7 +23,7 @@ export const LanguageFlags = ({ locale }: Props) => {
           alt={t("flags.pl", "PL")}
         />
       );
-    case "uk":
+    case "ua":
       return (
         <Image
           width={SIZE.width}
@@ -122,6 +123,6 @@ export const LanguageFlags = ({ locale }: Props) => {
         />
       );
     default:
-      return <></>;
+      return <Fragment />;
   }
 };

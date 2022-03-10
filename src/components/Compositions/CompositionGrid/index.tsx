@@ -3,7 +3,7 @@ import { Grid } from "./style";
 
 const CompositionGrid = ({
   children,
-  spaceing = [0, 0],
+  spacing = [0, 0],
   mobileReverse = false,
   itemsPerRow,
   alignItems = "unset",
@@ -11,7 +11,7 @@ const CompositionGrid = ({
 }: CompositionGridProps) => {
   return (
     <Grid
-      spaceing={spaceing}
+      spacing={spacing}
       disableRwd={disableRwd}
       childrenCount={
         itemsPerRow
