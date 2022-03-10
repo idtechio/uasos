@@ -56,7 +56,7 @@ export default function FormAdGuest() {
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
-        name: sessionName,
+        name: sessionName ? sessionName.split(" ")[0] : "",
         email: sessionEmail,
         fullBedCount: 1,
         childBedCount: 0,

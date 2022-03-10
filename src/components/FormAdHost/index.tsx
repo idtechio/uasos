@@ -72,7 +72,7 @@ export default function FormAdHost() {
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
-        name: sessionName,
+        name: sessionName ? sessionName.split(" ")[0] : "",
         email: sessionEmail,
         guestCount: 1,
         country: "poland",
