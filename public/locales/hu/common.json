@@ -208,6 +208,11 @@
     "informWhenAccomodationFound": "",
     "backToMainPage": ""
   },
+  "thankfulnessHostModal": {
+    "thankYou": "",
+    "applicationSent": "",
+    "informWhenAccomodationFound": ""
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "",

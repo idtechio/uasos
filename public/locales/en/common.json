@@ -208,6 +208,11 @@
     "informWhenAccomodationFound": "As soon as we find accommodation for you, we will inform you via e-mail",
     "backToMainPage": "Go back to home page"
   },
+  "thankfulnessHostModal": {
+    "thankYou": "Thank you!",
+    "applicationSent": "Your offer has been sent. We search our database several times a day to find the best match with to your offer. ",
+    "informWhenAccomodationFound": "As soon as we find a potential guest for you, we will inform you about it by e-mail."
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "I am accompanied by a pet",

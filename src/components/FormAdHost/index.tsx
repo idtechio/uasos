@@ -181,6 +181,9 @@ export default function FormAdHost() {
       {submitRequstState.succeeded && (
         <ThankfulnessModal
           onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          headerText={t("thankfulnessHostModal.thankYou")}
+          subHeaderText={t("thankfulnessHostModal.applicationSent")}
+          contentText={t("thankfulnessHostModal.informWhenAccomodationFound")}
         />
       )}
 

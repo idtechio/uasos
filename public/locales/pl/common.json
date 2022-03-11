@@ -208,6 +208,11 @@
     "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
     "backToMainPage": "Wróć do strony głównej"
   },
+  "thankfulnessHostModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja oferta została wysłana. Kilka razy dziennie przeszukujemy naszą bazę, żeby jak najefektywniej dopasować osoby potrzebujące.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie potencjalnego gościa, poinformujemy Cię o tym za pomocą maila."
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "Jest ze mną mój zwierzak",

@@ -218,6 +218,9 @@ export default function FormAdGuest() {
       {submitRequstState.succeeded && (
         <ThankfulnessModal
           onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          headerText={t("thankfulnessModal.thankYou")}
+          subHeaderText={t("thankfulnessModal.applicationSent")}
+          contentText={t("thankfulnessModal.informWhenAccomodationFound")}
         />
       )}
       <CompositionSection
