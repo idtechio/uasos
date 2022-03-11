@@ -208,6 +208,11 @@
     "informWhenAccomodationFound": "Як тільки ми знайдемо для вас помешкання, ми повідомимо електронною поштою.",
     "backToMainPage": ""
   },
+  "thankfulnessHostModal": {
+    "thankYou": "",
+    "applicationSent": "",
+    "informWhenAccomodationFound": ""
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "я зі своєю домашньою твариною",
