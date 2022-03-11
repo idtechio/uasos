@@ -3,15 +3,15 @@
   "showMorePartners": "Zobacz wszystkich partnerów akcji",
   "projectIntention": {
     "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
-    "description_part1": "Pomagamy uchodźcom automatycznie znaleźć ",
+    "description_part1": "Pomagamy uchodźcom automatycznie znaleźć",
     "freeOfCharge": "bezpłatne",
-    "description_part2": " miejsce noclegowe oferowane przez osoby i instytucje chcące nieść pomoc.",
+    "description_part2": "miejsce noclegowe oferowane przez osoby i instytucje chcące nieść pomoc.",
     "lookingForHelp": "Szukam schronienia",
     "shareHelp": "Oferuję pomoc"
   },
   "likeToHelp": {
     "title": "Chcesz pomóc?",
-    "details": "Zgłoś lokal, pokój lub miejsce, które możesz <bold>nieodpłatnie</bold> udostępnić <bold>ofiarom wojny w Ukrainie</bold>",
+    "details": "Zgłoś lokal, pokój lub miejsce, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie.",
     "cta": "Zgłoś lokal"
   },
   "weMatched": {
@@ -27,7 +27,7 @@
     "bulletPoints": {
       "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna liczba osób, długość pobytu)",
       "1": "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",
-      "2": "SOS-UA automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
+      "2": "UA-SOS automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
     },
     "algorithmExplanation": "Algorytm optymalizuje dopasowania tak, aby jak najwięcej potrzebujących znalazło schronienie.",
     "rolldown": "Rozwiń",
@@ -64,17 +64,17 @@
   "howDoesItWork": {
     "title": "Jak to działa?",
     "points": {
-      "0": "Zgłoś mieszkanie\nlub potrzebę",
-      "1": "Uzupełnij\nniezbędne dane",
-      "2": "Poczekaj\nna najlepszą ofertę",
-      "3": "Skontaktuj się\nz gospodarzem/gościem",
-      "4": "Potwierdź lub\nodrzuć ofertę"
+      "0": "Zgłoś mieszkanie\n lub potrzebę",
+      "1": "Uzupełnij\n niezbędne dane",
+      "2": "Poczekaj\n na najlepszą ofertę",
+      "3": "Skontaktuj się\n z gospodarzem/gościem",
+      "4": "Potwierdź lub\n odrzuć ofertę"
     }
   },
   "hero": {
-    "description": "",
-    "lookingForHelp": "",
-    "shareHelp": "",
-    "title": ""
+    "description": "Pomagamy uchodźcom automatycznie znaleźć miejsce noclegowe oferowane przez osoby i instytucje chcące nieść pomoc.",
+    "lookingForHelp": "Szukam schronienia",
+    "shareHelp": "Oferuję pomoc",
+    "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie"
   }
 }

@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { DATA } from "./config";
 import ListItem from "./ListItem";
 
@@ -19,7 +19,7 @@ export const InstructionsGrid = () => {
       }}
     >
       {DATA.map((item, index) => (
-        <View key={index} style={{ width: "225px", height: "225px" }}>
+        <View key={index} style={styles.item}>
           <ListItem
             title={t(item.title)}
             image={item.image}
@@ -31,3 +31,10 @@ export const InstructionsGrid = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  item: {
+    width: "225px",
+    height: "225px",
+  },
+});

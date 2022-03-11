@@ -13,7 +13,8 @@
     "name": "Ім'я",
     "email": "Eлектронна пошта",
     "phone": "Номер телефону",
-    "town": "Місто"
+    "town": "Місто",
+    "phoneNumber": ""
   },
   "validations": {
     "requiredName": "Вкажіть ім'я",
@@ -46,7 +47,8 @@
       "room": "Кімната в загальній квартирі/будинку",
       "flat": "Квартира",
       "house": "Дім",
-      "collective": "Колективна кімната (наприклад, шкільна кімната)"
+      "collective": "Колективна кімната (наприклад, шкільна кімната)",
+      "public_shared_space": ""
     },
     "boolean": {
       "yes": "так",
@@ -201,8 +203,10 @@
   "rodo": "GDPR",
   "thankfulnessModal": {
     "thankYou": "Дякуємо!",
+    "thanksForYourDecision": "",
     "applicationSent": "Ваше прохання відправлено. Кілька разів на день ми перевіряемо базу даних, щоб знайти для вас оптимальний варіант.",
-    "informWhenAccomodationFound": "Як тільки ми знайдемо для вас помешкання, ми повідомимо електронною поштою."
+    "informWhenAccomodationFound": "Як тільки ми знайдемо для вас помешкання, ми повідомимо електронною поштою.",
+    "backToMainPage": ""
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {

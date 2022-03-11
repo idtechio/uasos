@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import Card from "../Card";
 
 const StyledImage = styled(Image)`
-  height: 100%;
+  flex: 1;
 `;
 
 interface Props {
