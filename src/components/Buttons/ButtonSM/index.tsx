@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { StyleSheet } from "react-native";
 import IconFB from "../../../style/svgs/iconFB.svg";
 import IconGoogle from "../../../style/svgs/iconGoogle.svg";
 
@@ -21,7 +20,7 @@ const ButtonSM = ({ anchor, onPress, id }: Props) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = {
   fbIcon: {
     height: 32,
     width: 40,
@@ -32,6 +31,6 @@ const styles = StyleSheet.create({
     width: 40,
     marginLeft: 10,
   },
-});
+};
 
 export default ButtonSM;
