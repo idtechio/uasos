@@ -73,7 +73,7 @@
   },
   "guestOffer": {
     "arrivalToPoland": "Дата прибытия",
-    "peopleToAccommodate": "+{{count}} человек",
+    "peopleToAccommodate": "+ {{count}} человек",
     "preferredLocation": "Предпочтительная локализация: <1>{{location}}</1>",
     "withAnimals": "С нами домашнее животное: <1>{{animals}}</1>",
     "withKids": "С нами ребёнок: <1>{{age}}</1>",
