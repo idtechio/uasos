@@ -73,7 +73,7 @@
   },
   "guestOffer": {
     "arrivalToPoland": "Дата прибытия",
-    "peopleToAccommodate": "+{{count}} человек",
+    "peopleToAccommodate": "+ {{count}} человек",
     "preferredLocation": "Предпочтительная локализация: <1>{{location}}</1>",
     "withAnimals": "С нами домашнее животное: <1>{{animals}}</1>",
     "withKids": "С нами ребёнок: <1>{{age}}</1>",
@@ -136,7 +136,7 @@
     "type": "тип размещения",
     "hostType": "Тип хозяина жилья",
     "hostTypeLabel": {
-      "host_type_men": "Мужчина ",
+      "host_type_men": "Мужчина",
       "host_type_women": "Женщина",
       "host_type_couple": "Пара",
       "host_type_family": "Семья",
@@ -207,6 +207,11 @@
     "applicationSent": "Ваша просьба отправлена. Несколько раз в день мы проверяем нашу базу данных, чтобы вам найти подходящий выбор.",
     "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте.",
     "backToMainPage": ""
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Спасибо!",
+    "applicationSent": "Ваше предложение отправлено. Мы просматриваем нашу базу данных несколько раз в день, чтобы максимально эффективно находить людей, которые нуждаются тому, что вы предлагаете.",
+    "informWhenAccomodationFound": "Как только мы найдем для вас потенциального гостя, мы сообщим вам по электронной почте."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {

@@ -11,7 +11,7 @@
   },
   "likeToHelp": {
     "title": "Would you like to help?",
-    "details": "Register any type of accomodation that you can offer free of charge to the victims of the war in Ukraine.\n \n\n Our application will automatically match registered people looking for help based on information provided ",
+    "details": "Register any type of accomodation that you can offer free of charge to the victims of the war in Ukraine.\n\n\n\n\n  Our application will automatically match registered people looking for help based on information provided",
     "cta": "Propose a shelter"
   },
   "weMatched": {
@@ -64,11 +64,11 @@
   "howDoesItWork": {
     "title": "How does it work?",
     "points": {
-      "0": "Submit an apartment \nor need",
-      "1": "Fill in \n the necessary data",
-      "2": "Wait \nfor the best offer",
+      "0": "Submit an apartment\n or need",
+      "1": "Fill in\n  the necessary data",
+      "2": "Wait\n for the best offer",
       "3": "Contact the host / guest",
-      "4": "Confirm or \ndeny offer"
+      "4": "Confirm or\n deny offer"
     }
   },
   "hero": {

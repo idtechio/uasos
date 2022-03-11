@@ -1,5 +1,5 @@
 {
-  "test": "testowa wiadomość  PL",
+  "test": "testowa wiadomość PL",
   "navigationDrawer": {
     "profile": "Profil użytkownika",
     "placesList": "Twoja lista mieszkań",
@@ -35,8 +35,8 @@
       "longer": "dłużej"
     },
     "groupRelations": {
-      "single_man": "Singiel",
-      "single_woman": "Singielka",
+      "single_man": "Mężczyzna(sam)",
+      "single_woman": "Kobieta(sama)",
       "spouses": "Małżonkowie",
       "mother_with_children": "Matka z dziećmi",
       "family_with_children": "Rodzina z dziećmi",
@@ -204,9 +204,14 @@
   "thankfulnessModal": {
     "thankYou": "Dziękujemy!",
     "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
-    "applicationSent": "Your application has been sent. We search our host database several times a day to find the best place for you.",
+    "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
     "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
     "backToMainPage": "Wróć do strony głównej"
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja oferta została wysłana. Kilka razy dziennie przeszukujemy naszą bazę, żeby jak najefektywniej dopasować osoby potrzebujące.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie potencjalnego gościa, poinformujemy Cię o tym za pomocą maila."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -310,5 +315,5 @@
     "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
     "register": "zarejestruj się"
   },
-  "gdpr": ""
+  "gdpr": "RODO"
 }

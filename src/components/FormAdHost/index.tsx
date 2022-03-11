@@ -72,7 +72,7 @@ export default function FormAdHost() {
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
-        name: sessionName,
+        name: sessionName ? sessionName.split(" ")[0] : "",
         email: sessionEmail,
         guestCount: 1,
         country: "poland",
@@ -181,6 +181,9 @@ export default function FormAdHost() {
       {submitRequstState.succeeded && (
         <ThankfulnessModal
           onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          headerText={t("thankfulnessHostModal.thankYou")}
+          subHeaderText={t("thankfulnessHostModal.applicationSent")}
+          contentText={t("thankfulnessHostModal.informWhenAccomodationFound")}
         />
       )}
 

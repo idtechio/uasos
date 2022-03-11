@@ -19,7 +19,12 @@ const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
 const ICON_BASE_HEIGHT = 105;
 const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
-export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
+export const ThankfulnessModal = ({
+  onClose,
+  headerText,
+  contentText,
+  subHeaderText,
+}: ThankfulnessModalProps) => {
   const { t } = useTranslation();
   return (
     <CardModal onModalClose={onClose}>
@@ -32,15 +37,11 @@ export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
           />
         </View>
         <ThankfulnessModalTextWrapper>
-          <ThankfulnessHeader>
-            {t("thankfulnessModal.thankYou")}
-          </ThankfulnessHeader>
-          <ThankfulnessText>
-            {t("thankfulnessModal.applicationSent")}
-          </ThankfulnessText>
+          <ThankfulnessHeader>{headerText}</ThankfulnessHeader>
+          <ThankfulnessText>{subHeaderText}</ThankfulnessText>
 
           <ThankfulnessText style={styles.textContainer}>
-            {t("thankfulnessModal.informWhenAccomodationFound")}
+            {contentText}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
