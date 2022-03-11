@@ -209,9 +209,9 @@
     "backToMainPage": ""
   },
   "thankfulnessHostModal": {
-    "thankYou": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": ""
+    "thankYou": "Спасибо!",
+    "applicationSent": "Ваше предложение отправлено. Мы просматриваем нашу базу данных несколько раз в день, чтобы максимально эффективно находить людей, которые нуждаются тому, что вы предлагаете.",
+    "informWhenAccomodationFound": "Как только мы найдем для вас потенциального гостя, мы сообщим вам по электронной почте."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {

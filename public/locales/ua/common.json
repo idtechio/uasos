@@ -209,9 +209,9 @@
     "backToMainPage": ""
   },
   "thankfulnessHostModal": {
-    "thankYou": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": ""
+    "thankYou": "Дякуємо!",
+    "applicationSent": "Ваша пропозиція відправлена. Ми шукаємо в нашій базі даних кілька разів на день, щоб якомога ефективніше знайти людей, які потребують того, що ви пропонуєте.",
+    "informWhenAccomodationFound": "Як тільки ми знайдемо для вас потенційного гостя, ми повідомимо вам електронною поштою."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
