@@ -122,7 +122,7 @@
   "hostAdd": {
     "country": "Country",
     "countries": {
-      "poland": ""
+      "poland": "Poland"
     },
     "nameLabel": "First name (only enter first name)",
     "namePlaceholder": "Name",
@@ -143,19 +143,19 @@
       "host_type_elder_people": "Elderly",
       "host_type_friends_group": "Non-related"
     },
-    "guestCount": "",
+    "guestCount": "How many guests are you able to host?",
     "accommodationTime": "How long can you host (weeks)?",
-    "accomodationPhoto": "",
-    "accomodationPhotoLabel": "",
-    "accomodationPhotoReset": "",
+    "accomodationPhoto": "Add accommodation photo",
+    "accomodationPhotoLabel": "Add photo",
+    "accomodationPhotoReset": "Remove",
     "accommodationTimeLabel": {
-      "less_than_week": "",
-      "week": "",
-      "two_weeks": "",
-      "month": "",
-      "longer": ""
+      "less_than_week": "Less than a week",
+      "week": "Week",
+      "two_weeks": "2 weeks",
+      "month": "Month",
+      "longer": "Longer"
     },
-    "volunteerVisitAcceptance": "",
+    "volunteerVisitAcceptance": "I agree for the verification of the place (volunteer visit)",
     "nationality": "What refugee nationality are you willing to accept?",
     "ukraine": "Ukraine",
     "additionalInformationHeader": "Additional Information",
@@ -166,18 +166,18 @@
     "groupsTypes": "What types of groups are you willing to host? (you can choose multiple options)",
     "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months",
     "dissabilityReady": "I will accept a person with a disability",
-    "elderReady": "",
+    "elderReady": "I will accept elderly person",
     "animalReady": "I will accept a person with a pet",
     "basicInfoHeader": "Provide basic information",
     "refugeInfoHeader": "",
     "addButton": "Submit / Add",
     "addButtomErrorMessage": "Please fill in the required fields",
     "errors": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "country": "",
-      "town": "",
+      "name": "Provide your name",
+      "email": "Provide a valid e-mail",
+      "phoneNumber": "Provide your phone number",
+      "country": "Country is required",
+      "town": "City is required",
       "type": "Accommodation type is required",
       "hostType": "Host type is required",
       "guestCount": "",
@@ -206,7 +206,7 @@
     "thanksForYourDecision": "",
     "applicationSent": "Your application was sent. We are verifying several times a day our volunteer database in order to find the best place for you",
     "informWhenAccomodationFound": "As soon as we find accommodation for you, we will inform you via e-mail",
-    "backToMainPage": ""
+    "backToMainPage": "Go back to home page"
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -289,7 +289,7 @@
       "childBedCount": "Enter the number of beds",
       "fullBedCountsaas": "Enter the number of beds",
       "groupRelations": "Choose relationship",
-      "overnightDuration": "Select duration of stay ",
+      "overnightDuration": "Select duration of stay",
       "accommodationType": "Select the type of accommodation",
       "countryOfGroup": "Please select nationality"
     },
@@ -310,5 +310,5 @@
     "doNotHaveAcc": "Do you want to have access ?",
     "register": "Register"
   },
-  "gdpr": "RODO"
+  "gdpr": "GDPR"
 }
