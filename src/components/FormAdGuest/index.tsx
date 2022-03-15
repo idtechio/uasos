@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
+import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import { CompositionSection } from "../Compositions";
+import { Tooltip } from "../Tooltip";
 import {
   InputControl,
   InputCotrolLabel,
@@ -69,13 +71,6 @@ export default function FormAdGuest() {
   const [location, setLocation] = useState<Location>(Location.Any);
   const [submitRequstState, setSubmitRequstState] =
     useState<SubmitRequestState>(submitRequestDefualtState);
-
-  const countryDropdownList = [
-    { label: t("hostAdd.countries.poland"), value: "poland" },
-    { label: t("hostAdd.countries.hungary"), value: "hungary" },
-    { label: t("hostAdd.countries.czechia"), value: "czechia" },
-    { label: t("hostAdd.countries.slovakia"), value: "slovakia" },
-  ];
 
   const refugeeDetailsOptions: Data[] = useMemo(
     () => [
@@ -290,9 +285,8 @@ export default function FormAdGuest() {
           <InputCotrolLabel>
             {t("refugeeAddForm.countryOfRefugePlaceholder")}
           </InputCotrolLabel>
-          <FormDropdown
+          <FormCountryDropdown
             zIndex={14}
-            data={countryDropdownList}
             placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
             name="advancedRefugee.country"
             rules={{
@@ -324,7 +318,14 @@ export default function FormAdGuest() {
 
         {location === Location.Preffered && (
           <InputControl zIndex={13}>
-            <InputCotrolLabel>{t("refugeeAddForm.cityLabel")}</InputCotrolLabel>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.cityLabel")}
+              <View style={styles.tooltipText}>
+                <Tooltip>
+                  <Text>{t("hostAdd.cityTooltipText")}</Text>
+                </Tooltip>
+              </View>
+            </InputCotrolLabel>
             <FormCityDropdown
               country={watchCountry}
               name="advancedRefugee.town"
@@ -455,4 +456,5 @@ const styles = StyleSheet.create({
   addButton: {
     marginBottom: 5,
   },
+  tooltipText: { marginHorizontal: 10 },
 });

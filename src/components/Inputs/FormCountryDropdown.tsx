@@ -2,15 +2,11 @@ import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { FormKey } from "../../helpers/FormTypes";
+import { useTranslation } from "react-i18next";
 import FormDropdown from "./FormDropdown";
-import CITY_LIST_CZ from "../../consts/cities/cz.json";
-import CITY_LIST_HU from "../../consts/cities/hu.json";
-import CITY_LIST_PL from "../../consts/cities/pl.json";
-import CITY_LIST_SK from "../../consts/cities/sk.json";
 
 type Props = {
   name: FormKey;
-  country: string;
   label?: string;
   zIndex?: number;
   placeholder?: string;
@@ -24,7 +20,6 @@ const FormTextInput: VFC<Props> = (props) => {
   const {
     name,
     label,
-    country,
     errorMsg,
     rules,
     error,
@@ -32,24 +27,17 @@ const FormTextInput: VFC<Props> = (props) => {
     placeholder,
     multiSelect,
   } = props;
+
+  const { t } = useTranslation();
+
+  const countryDropdownList = [
+    { label: t("hostAdd.countries.poland"), value: "poland" },
+    { label: t("hostAdd.countries.hungary"), value: "hungary" },
+    { label: t("hostAdd.countries.czechia"), value: "czechia" },
+    { label: t("hostAdd.countries.slovakia"), value: "slovakia" },
+  ];
+
   const { control } = useFormContext();
-  let cityList: { label: string; value: unknown }[] = [];
-
-  switch (country) {
-    case "czechia":
-      cityList = CITY_LIST_CZ;
-      break;
-    case "hungary":
-      cityList = CITY_LIST_HU;
-      break;
-    case "poland":
-      cityList = CITY_LIST_PL;
-      break;
-    case "slovakia":
-      cityList = CITY_LIST_SK;
-      break;
-  }
-
   return (
     <Controller
       control={control}
@@ -57,7 +45,7 @@ const FormTextInput: VFC<Props> = (props) => {
       render={() => (
         <FormDropdown
           zIndex={zIndex}
-          data={cityList}
+          data={countryDropdownList}
           name={name}
           placeholder={placeholder}
           rules={rules}

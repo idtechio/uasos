@@ -12,6 +12,7 @@ import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
+import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
@@ -91,7 +92,7 @@ export default function FormAdHost() {
     formState: { errors, isValid, isSubmitted },
   } = form;
 
-  const watchCountry = watch("advancedRefugee.country", "");
+  const watchCountry = watch("advancedHost.country", "");
 
   const watchAccomodationTypeFieldValue = form.watch(
     "advancedHost.accommodationType"
@@ -100,13 +101,6 @@ export default function FormAdHost() {
   // const volunteerVisitAcceptance = form.watch(
   //   "advancedHost.volunteerVisitAcceptance"
   // ) as unknown as boolean;
-
-  const countryDropdownList = [
-    { label: t("hostAdd.countries.poland"), value: "poland" },
-    { label: t("hostAdd.countries.hungary"), value: "hungary" },
-    { label: t("hostAdd.countries.czechia"), value: "czechia" },
-    { label: t("hostAdd.countries.slovakia"), value: "slovakia" },
-  ];
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -253,9 +247,8 @@ export default function FormAdHost() {
             <InputControlLabel>
               {t("refugeeAddForm.countryOfRefugePlaceholder")}
             </InputControlLabel>
-            <FormDropdown
+            <FormCountryDropdown
               zIndex={14}
-              data={countryDropdownList}
               placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
               name="advancedHost.country"
               rules={{
