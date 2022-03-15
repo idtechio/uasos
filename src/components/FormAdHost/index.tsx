@@ -11,6 +11,7 @@ import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
+import FormCityDropdown from "../Inputs/FormCityDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
@@ -22,7 +23,6 @@ import {
 import addHostToApi from "../../helpers/addHostToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 
@@ -87,8 +87,11 @@ export default function FormAdHost() {
 
   const {
     handleSubmit,
+    watch,
     formState: { errors, isValid, isSubmitted },
   } = form;
+
+  const watchCountry = watch("advancedRefugee.country", "");
 
   const watchAccomodationTypeFieldValue = form.watch(
     "advancedHost.accommodationType"
@@ -97,6 +100,13 @@ export default function FormAdHost() {
   // const volunteerVisitAcceptance = form.watch(
   //   "advancedHost.volunteerVisitAcceptance"
   // ) as unknown as boolean;
+
+  const countryDropdownList = [
+    { label: t("hostAdd.countries.poland"), value: "poland" },
+    { label: t("hostAdd.countries.hungary"), value: "hungary" },
+    { label: t("hostAdd.countries.czechia"), value: "czechia" },
+    { label: t("hostAdd.countries.slovakia"), value: "slovakia" },
+  ];
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -239,23 +249,22 @@ export default function FormAdHost() {
         zIndex={3}
       >
         <SectionContent>
-          {/* Temporarly disabled
-              <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
-              <FormDropdown
-                data={hostCountries.map(({ label, ...rest }) => ({
-                  label: t(label),
-                  ...rest,
-                }))}
-                placeholder={t("hostAdd.country")}
-                name="advancedHost.country"
-                rules={{
-                  required: true,
-                }}
-                error={errors?.advancedHost?.country}
-                errorMsg={t("hostAdd.errors.country")}
-              />
-            */}
-
+          <InputControl zIndex={14}>
+            <InputControlLabel>
+              {t("refugeeAddForm.countryOfRefugePlaceholder")}
+            </InputControlLabel>
+            <FormDropdown
+              zIndex={14}
+              data={countryDropdownList}
+              placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
+              name="advancedHost.country"
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.country}
+              errorMsg={t("hostAdd.errors.country")}
+            />
+          </InputControl>
           <InputControlLabel>
             {t("hostAdd.cityLabel")}
             <View style={styles.tooltipText}>
@@ -264,9 +273,9 @@ export default function FormAdHost() {
               </Tooltip>
             </View>
           </InputControlLabel>
-          <FormDropdown
+          <FormCityDropdown
             zIndex={13}
-            data={CITY_DROPDOWN_LIST} // todo: google places api
+            country={watchCountry}
             name="advancedHost.town"
             placeholder={t("hostAdd.cityPlaceholder")}
             rules={{
