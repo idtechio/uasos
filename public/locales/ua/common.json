@@ -122,7 +122,10 @@
   "hostAdd": {
     "country": "Країна",
     "countries": {
-      "poland": ""
+      "poland": "Польща",
+      "hungary": "Угорщина",
+      "czechia": "чешка",
+      "slovakia": "словаччина"
     },
     "nameLabel": "Ім'я (введіть лише ім'я)",
     "namePlaceholder": "ім'я",

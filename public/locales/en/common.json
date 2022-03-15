@@ -122,7 +122,10 @@
   "hostAdd": {
     "country": "Country",
     "countries": {
-      "poland": "Poland"
+      "poland": "Poland",
+      "hungary": "Hungary",
+      "czechia": "Czech",
+      "slovakia": "Slovakia"
     },
     "nameLabel": "First name (only enter first name)",
     "namePlaceholder": "Name",
