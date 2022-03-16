@@ -18,6 +18,7 @@ type Props = {
   extra?: React.ReactNode;
   labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
+  data: { label: JSX.Element; value: string }[];
 };
 
 function FormPhoneInput({

@@ -6,7 +6,7 @@ export type DropdownStylesProps = {
 };
 
 export type DropdownProps<T> = {
-  data: { label: string; value: T }[];
+  data: { label: string | JSX.Element; value: T }[];
   direction?: "to-bottom" | "to-top";
   selected: T;
   label?: string;

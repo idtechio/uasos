@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 type Props<T> = {
   searchable: boolean;
   data: {
-    label: string;
+    label: string | JSX.Element;
     value: T;
   }[];
   setFilteredData: (data: Props<T>["data"]) => void;
