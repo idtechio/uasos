@@ -29,6 +29,8 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
+import { addGuestPhonePrefixDropdownList } from "./AddGuestPhonePrefixList.data";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -260,18 +262,13 @@ export default function FormAdGuest() {
             errorMsg={t("refugeeAddForm.errors.email")}
           />
           <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
-          <FormTextInput
+          <FormPhoneInput
             name="advancedRefugee.phoneNumber"
-            label={t("refugeeAddForm.phonePlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                message: t("refugeeForm.errors.phoneNumber"),
-              },
-            }}
+            phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
+            phoneLabel={t("refugeeAddForm.phonePlaceholder")}
             error={errors?.advancedRefugee?.phoneNumber}
             errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            data={addGuestPhonePrefixDropdownList}
           />
         </InputControl>
       </CompositionSection>

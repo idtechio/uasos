@@ -26,6 +26,8 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
+import { addHostPhonePrefixDropdownList } from "./AddHostPhonePrefixList.data";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -222,18 +224,13 @@ export default function FormAdHost() {
             errorMsg={t("hostAdd.errors.email")}
           />
           <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
-          <FormTextInput
+          <FormPhoneInput
             name="advancedHost.phoneNumber"
-            label={t("hostAdd.phonePlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                message: t("hostAdd.errors.phoneNumber"),
-              },
-            }}
+            phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
+            phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
             errorMsg={t("hostAdd.errors.phoneNumber")}
+            data={addHostPhonePrefixDropdownList}
           />
         </SectionContent>
       </CompositionSection>

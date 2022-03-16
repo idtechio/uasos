@@ -6,7 +6,7 @@ export const redirectIfUnauthorized = async <P>(
   session: Session | null,
   authorizedProps: GetServerSidePropsResult<P>
 ): Promise<GetServerSidePropsResult<P>> => {
-  if (!session) {
+  if (session) {
     return {
       redirect: {
         destination: Routes.SIGN_IN,
