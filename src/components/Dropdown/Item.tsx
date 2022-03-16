@@ -3,7 +3,7 @@ import { Text } from "react-native";
 
 type Props<T> = {
   value: T;
-  title: string;
+  title: string | JSX.Element;
   itemPressFunction: (value: T) => void;
   setShowOptions: (isVisible: boolean) => void;
   selected?: boolean;

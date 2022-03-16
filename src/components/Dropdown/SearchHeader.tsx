@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 type Props<T> = {
   searchable: boolean;
   data: {
-    label: string;
+    label: string | JSX.Element;
     value: T;
   }[];
   setFilteredData: (data: Props<T>["data"]) => void;
@@ -23,7 +23,10 @@ export function SearchHeader<T>({
   useEffect(() => {
     const textToSearch = text || "";
     const filteredArray = data.filter(({ label }) => {
-      return label.toLocaleLowerCase().includes(textToSearch);
+      if (typeof label === "string") {
+        return label.toLocaleLowerCase().includes(textToSearch);
+      }
+      return label;
     });
     setFilteredData(filteredArray);
   }, [data, setFilteredData, text]);

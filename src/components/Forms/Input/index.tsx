@@ -10,6 +10,8 @@ const Input = ({
   extra,
   labelsBackgroundColor,
   secureTextEntry,
+  withoutLabel,
+  styles,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
   // @ts-expect-error TODO: add event type
@@ -26,8 +28,8 @@ const Input = ({
   };
 
   return (
-    <InputWraper>
-      {hideLabel ? null : (
+    <InputWraper style={styles?.wrapper}>
+      {hideLabel || withoutLabel ? null : (
         <Label labelsBackgroundColor={labelsBackgroundColor}>
           {placeholder}
         </Label>
@@ -41,6 +43,7 @@ const Input = ({
           onBlur={(e) => hendleOnBlur(e)}
           error={error}
           secureTextEntry={secureTextEntry}
+          style={styles?.textInput}
         />
 
         {extra && extra}
