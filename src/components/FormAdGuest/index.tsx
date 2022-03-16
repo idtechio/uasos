@@ -119,7 +119,7 @@ export default function FormAdGuest() {
 
     let apiObject: GuestProps = {
       name: guest.name,
-      phone_num: guest.phoneNumber,
+      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
@@ -263,7 +263,8 @@ export default function FormAdGuest() {
           />
           <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
           <FormPhoneInput
-            name="advancedRefugee.phoneNumber"
+            prefixName="advancedRefugee.phonePrefix"
+            numberName="advancedRefugee.phoneNumber"
             phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
             phoneLabel={t("refugeeAddForm.phonePlaceholder")}
             error={errors?.advancedRefugee?.phoneNumber}

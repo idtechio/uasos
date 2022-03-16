@@ -124,6 +124,7 @@ export default function FormAdHost() {
       nationality,
       name,
       email,
+      phonePrefix,
       phoneNumber,
       pregnantReady,
       town,
@@ -135,7 +136,7 @@ export default function FormAdHost() {
       await addHostToApi({
         name: name,
         country: country,
-        phone_num: phoneNumber,
+        phone_num: `${phonePrefix}${phoneNumber}`,
         email: email,
         city: town,
         listing_country: country,
@@ -225,7 +226,8 @@ export default function FormAdHost() {
           />
           <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
           <FormPhoneInput
-            name="advancedHost.phoneNumber"
+            prefixName="advancedHost.phonePrefix"
+            numberName="advancedHost.phoneNumber"
             phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
             phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}

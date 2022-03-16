@@ -6,7 +6,7 @@ interface Props {
   locale: string;
 }
 
-export const SIZE = {
+const SIZE = {
   width: 26,
   height: 17,
 };

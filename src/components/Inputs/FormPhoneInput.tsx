@@ -9,7 +9,8 @@ import { CompositionRow } from "../Compositions/CompositionRow";
 import { StyleSheet } from "react-native";
 
 type Props = {
-  name: FormKey;
+  prefixName: FormKey;
+  numberName: FormKey;
   phoneLabel: string;
   phonePrefixLabel: string;
   error?: FieldError;
@@ -20,7 +21,8 @@ type Props = {
 };
 
 function FormPhoneInput({
-  name,
+  prefixName,
+  numberName,
   phoneLabel,
   phonePrefixLabel,
   errorMsg,
@@ -51,14 +53,15 @@ function FormPhoneInput({
             {error && <Error>{errorMsg}</Error>}
           </InputControl>
         )}
-        name={name}
+        name={prefixName}
       />
       <Controller
         control={control}
         rules={{
           required: true,
           pattern: {
-            value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+            // https://en.wikipedia.org/wiki/Telephone_numbers_in_Europe
+            value: /^[0-9]{3,13}$/,
             message: errorMsg,
           },
         }}
@@ -78,7 +81,7 @@ function FormPhoneInput({
             />
           </InputControl>
         )}
-        name={name}
+        name={numberName}
       />
     </CompositionRow>
   );
