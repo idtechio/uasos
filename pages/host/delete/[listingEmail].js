@@ -11,7 +11,14 @@ const Deactivateconfirm = () => {
   const query = useRouter().query;
 
   useEffect(() => {
-    fetch(`/api/host/deactivate/${query.hash}`, { method: "get" });
+    fetch(`/api/listing/delete/`, {
+      method: "post",
+      body: JSON.stringify({
+        listingType: "host",
+        listingEmail: query.listingEmail,
+        listingId: query.listing_id,
+      }),
+    });
   }, [query]);
 
   return (
