@@ -14,9 +14,9 @@ const Deactivateconfirm = () => {
     fetch(`/api/listing/delete/`, {
       method: "post",
       body: JSON.stringify({
-        listingType: "guest",
-        listingEmail: query.listingEmail,
-        listingId: query.listing_id,
+        listing_type: "guest",
+        listing_id: query.listing_id,
+        listing_email: query.listingEmail,
       }),
     });
   }, [query]);

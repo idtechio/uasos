@@ -1,15 +1,13 @@
 import { publishMessage } from "../../../src/helpers/PubSub";
 
 export default async function listingDelete(req, res) {
-  const {
-    body: { listingType, listingId, listingEmail },
-  } = req;
+  const body = JSON.parse(req.body);
 
   const topicNameOrId = process.env.TOPIC_DELETE_LISTING;
   const params = {
-    listingType,
-    listingId,
-    listingEmail,
+    listing_type: body.listing_type,
+    listing_id: body.listing_id,
+    listing_email: body.listing_email,
   };
 
   // eslint-disable-next-line no-console
