@@ -17,7 +17,7 @@ const Deactivateconfirm = () => {
   return (
     <CompositionAppBody>
       <Section>
-        <AfterDeactivateModal />
+        <AfterDeactivateModal isHost={false} />
       </Section>
     </CompositionAppBody>
   );

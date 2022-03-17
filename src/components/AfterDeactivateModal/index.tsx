@@ -20,6 +20,7 @@ const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
 export const AfterDeactivateModal = ({
   onClose,
+  isHost,
 }: AfterDeactivateModalProps) => {
   return (
     <CardModal onModalClose={onClose} closeable={false} cardStyle={styles.card}>
@@ -33,33 +34,31 @@ export const AfterDeactivateModal = ({
         </View>
 
         <DeactivateModalTextWrapper>
-          <DeactivateHeader>Dziękujemy za Twoją decyzję.</DeactivateHeader>
+          <DeactivateHeader>Dziękujemy za informację</DeactivateHeader>
           <DeactivateText>
-            Jeśli zaakceptowałeś, poczekaj na decyzję drugiej strony. Po
-            zaakceptowaniu przez drugą stronę, otrzymasz e-mail z danymi
-            kontatkowymi.
+            {isHost && "Przyjęliśmy Twoją prośbę o usunięcie oferty."}
+            {!isHost && "Przyjęliśmy Twoją prośbę o usunięcie zgłoszenia."}
           </DeactivateText>
         </DeactivateModalTextWrapper>
 
         <View style={styles.divider} />
 
         <DeactivateModalTextWrapper>
-          <DeactivateHeader>Дякую за ваше рішення.</DeactivateHeader>
+          <DeactivateHeader>Спасибі за інформацію</DeactivateHeader>
           <DeactivateText>
-            Якщо ви погодилися, дочекайтеся рішення іншої сторони. Після
-            погодження іншої сторони ви отримаєте електронний лист з контактними
-            даними.
+            {isHost && "Ми прийняли запит на видалення пропозиції."}
+            {!isHost && "Ми прийняли запит на видалення програми."}
           </DeactivateText>
         </DeactivateModalTextWrapper>
 
         <View style={styles.divider} />
 
         <DeactivateModalTextWrapper>
-          <DeactivateHeader>Thank you for your decision</DeactivateHeader>
+          <DeactivateHeader>Thank you for the information</DeactivateHeader>
           <DeactivateText>
-            If you have accepted, wait for the other person{"'"}s decision. Once
-            the other side accepts, you will receive an email with contact
-            information.
+            {isHost && "We have accepted the request to remove the offer."}
+            {!isHost &&
+              "We have accepted the request to remove the application."}
           </DeactivateText>
         </DeactivateModalTextWrapper>
 
