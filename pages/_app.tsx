@@ -10,6 +10,7 @@ import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { useEffect } from "react";
 import { init } from "./../src/helpers/ga";
 import { AppProps } from "next/app";
+import { initializeApp } from "firebase/app";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
@@ -18,6 +19,18 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDMkJxobsqjQOKeOgZh0bLOwTptF3DfTyM",
+    authDomain: "ukrn-hlpr-dev.firebaseapp.com",
+    projectId: "ukrn-hlpr-dev",
+    storageBucket: "ukrn-hlpr-dev.appspot.com",
+    messagingSenderId: "727398461288",
+    appId: "1:727398461288:web:af67d40f717ab97143b0dd",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
   return (
     <>

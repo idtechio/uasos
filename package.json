@@ -12,7 +12,7 @@
     "@artsy/detect-responsive-traits": "^0.1.0",
     "@google-cloud/pubsub": "^2.19.0",
     "@react-native-community/checkbox": "^0.5.11",
-    "firebase": "^9.6.7",
+    "firebase": "^9.6.8",
     "firebase-admin": "^10.0.2",
     "ga-4-react": "^0.1.281",
     "lodash.debounce": "^4.0.8",
