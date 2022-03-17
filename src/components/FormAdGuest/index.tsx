@@ -29,8 +29,9 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput";
-import { addGuestPhonePrefixDropdownList } from "./AddGuestPhonePrefixList.data";
+import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
+import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -269,7 +270,7 @@ export default function FormAdGuest() {
             phoneLabel={t("refugeeAddForm.phonePlaceholder")}
             error={errors?.advancedRefugee?.phoneNumber}
             errorMsg={t("refugeeAddForm.errors.phoneNumber")}
-            data={addGuestPhonePrefixDropdownList}
+            data={generatePhonePrefixDropdownList(addGuestPhonePrefixList)}
           />
         </InputControl>
       </CompositionSection>
