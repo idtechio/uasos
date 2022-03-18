@@ -1,13 +1,14 @@
-import { app } from "../../../lib/firebase";
-import { getAuth, verifyIdToken } from "firebase/auth";
+import { decodeToken } from "../../../lib/firebase-admin";
 
-//TODO: DRY pages/api/guests/matchesconfirm/{matchesId}.js
-export default async function sendMatchesDecision(req, res) {
-  const {
-    body: { idToken },
-  } = req;
+export default async function testToken(req, res) {
+  const body = JSON.parse(req.body);
 
-  const decodedToken = await getAuth(app).verifyIdToken(idToken);
+  const decodedToken = await decodeToken(body.token);
+  if (!decodedToken) {
+    res.status(400).json({ ok: "not ok" });
+    res.end();
+    return;
+  }
 
   res.status(200).json({ ok: "ok", uid: decodedToken.uid });
   res.end();
