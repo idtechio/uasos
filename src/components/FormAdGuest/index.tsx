@@ -29,6 +29,9 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
+import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
+import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -117,7 +120,7 @@ export default function FormAdGuest() {
 
     let apiObject: GuestProps = {
       name: guest.name,
-      phone_num: guest.phoneNumber,
+      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
@@ -260,18 +263,14 @@ export default function FormAdGuest() {
             errorMsg={t("refugeeAddForm.errors.email")}
           />
           <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
-          <FormTextInput
-            name="advancedRefugee.phoneNumber"
-            label={t("refugeeAddForm.phonePlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                message: t("refugeeForm.errors.phoneNumber"),
-              },
-            }}
+          <FormPhoneInput
+            prefixName="advancedRefugee.phonePrefix"
+            numberName="advancedRefugee.phoneNumber"
+            phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
+            phoneLabel={t("refugeeAddForm.phonePlaceholder")}
             error={errors?.advancedRefugee?.phoneNumber}
             errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            data={generatePhonePrefixDropdownList(addGuestPhonePrefixList)}
           />
         </InputControl>
       </CompositionSection>

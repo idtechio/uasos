@@ -27,6 +27,7 @@ export function Dropdown<T>({
   error,
   onBlur,
   searchable = false,
+  styles,
 }: DropdownProps<T>) {
   const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
@@ -101,6 +102,7 @@ export function Dropdown<T>({
 
             setShowOptions(!showOptions);
           }}
+          style={styles?.select}
         >
           <SelectText>
             {selectedItems.length > 0 ? (

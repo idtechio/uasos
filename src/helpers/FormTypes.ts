@@ -91,6 +91,7 @@ export type FormType = {
   advancedHost: {
     name: string;
     email: string;
+    phonePrefix: string;
     phoneNumber: string;
     town: string;
     country: string;
@@ -118,6 +119,7 @@ export type FormType = {
     cityOfRefuge: string;
     fullBedCount: number;
     childBedCount: number;
+    phonePrefix: string;
     phoneNumber: string;
     preferences: {
       animal: string;
