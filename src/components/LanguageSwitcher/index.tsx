@@ -2,10 +2,16 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
-import { DropDownWrapper, ArrowDown } from "./style";
 import { useMemo } from "react";
 import { Dropdown } from "../Dropdown";
 import { getLocaleFullName } from "./getCountryName";
+import {
+  DropDownListItemObject,
+  DropDownWrapperObject,
+  LanguageLabel,
+  InnerLink,
+  WrapperObject,
+} from "./style";
 const Wrapper = styled.View`
   margin-left: 6px;
 `;
@@ -18,9 +24,9 @@ function LanguageSwitcher() {
       locales?.map((locale) => ({
         label: (
           <Link passHref href={asPath} locale={locale}>
-            <a>
+            <a style={InnerLink}>
               <LanguageFlags locale={locale} />
-              {getLocaleFullName(locale)}
+              <LanguageLabel>{getLocaleFullName(locale)}</LanguageLabel>
             </a>
           </Link>
         ),
@@ -39,6 +45,10 @@ function LanguageSwitcher() {
       selected={locale}
       data={dropdownData}
       itemListAutoHeight
+      styles={{
+        select: DropDownWrapperObject,
+        item: DropDownListItemObject,
+      }}
     />
   );
 }

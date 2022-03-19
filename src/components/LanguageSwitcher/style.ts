@@ -15,9 +15,9 @@ export const DropDownWrapperObject: ViewStyle = {
   width: "170px",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-between",
+  justifyContent: "space-around",
   alignItems: "center",
-  padding: "10px",
+  padding: 0,
 };
 
 export const DropDownWrapperMobile = styled(DropDownWrapper)`
@@ -63,15 +63,16 @@ export const DropDownListItem = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-export const DropDownListItemObject = {
+export const DropDownListItemObject: ViewStyle = {
+  height: "100%",
   width: "100%",
-  padding: "10px",
   display: "flex",
   justifyContent: "space-between",
   flexDirection: "row",
   alignItems: "center",
+  padding: 0,
 };
-export const DropDownListItemActiove = styled(DropDownListItem)`
+export const DropDownListItemActive = styled(DropDownListItem)`
   background-color: rgba(0, 61, 128, 0.05);
 `;
 export const LanguageInfo = styled.View`
@@ -85,6 +86,7 @@ export const LanguageLabel = styled.Text`
   color: #003566;
   font-size: 16px;
   line-height: 24px;
+  margin-left: 10px;
 `;
 export const Tick = styled.View`
   border: 0 solid #003566;
@@ -95,3 +97,7 @@ export const Tick = styled.View`
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 `;
+export const InnerLink = {
+  padding: "10px",
+  display: "block",
+};
