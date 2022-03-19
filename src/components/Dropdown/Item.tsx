@@ -32,7 +32,7 @@ export function Item<T>({
       style={[style, selected && selectedStyle]}
     >
       <Text>{title}</Text>
-      {selected && selectedStyle && <CheckIcon />}
+      {selected && selectedStyle && <CheckIcon style={{ marginRight: 14 }} />}
     </SelectItem>
   );
 }
