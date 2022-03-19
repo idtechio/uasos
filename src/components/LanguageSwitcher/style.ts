@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-
+import { ViewStyle } from "react-native";
 export const DropDownWrapper = styled.Pressable`
   border: 1px solid #dedede;
   width: 170px;
@@ -9,12 +9,28 @@ export const DropDownWrapper = styled.Pressable`
   align-items: center;
   padding: 10px;
 `;
+export const DropDownWrapperObject: ViewStyle = {
+  borderWidth: 1,
+  borderColor: "#dedede",
+  width: "170px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "10px",
+};
 
 export const DropDownWrapperMobile = styled(DropDownWrapper)`
   border: none;
   width: 20px;
   padding: 0;
 `;
+export const DropDownWrapperMobileObject: ViewStyle = {
+  ...DropDownWrapperObject,
+  borderWidth: 0,
+  width: 20,
+  padding: 0,
+};
 
 export const ArrowDown = styled.View`
   border: 0 solid #003566;
@@ -32,6 +48,12 @@ export const DropDownList = styled.View`
   background: #ffffff;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);
 `;
+export const DropDownListObject = {
+  width: "200px",
+  borderRadius: "3px",
+  background: "#ffffff",
+  boxShadow: "0px 1px 5px rgba(0, 0, 0, 0.14)",
+};
 
 export const DropDownListItem = styled.View`
   width: 100%;
@@ -41,6 +63,14 @@ export const DropDownListItem = styled.View`
   flex-direction: row;
   align-items: center;
 `;
+export const DropDownListItemObject = {
+  width: "100%",
+  padding: "10px",
+  display: "flex",
+  justifyContent: "space-between",
+  flexDirection: "row",
+  alignItems: "center",
+};
 export const DropDownListItemActiove = styled(DropDownListItem)`
   background-color: rgba(0, 61, 128, 0.05);
 `;
