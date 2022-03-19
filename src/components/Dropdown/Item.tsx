@@ -1,5 +1,6 @@
 import { SelectItem } from "./style";
 import { Text, ViewStyle } from "react-native";
+import CheckIcon from "../../style/svgs/check.svg";
 
 type Props<T> = {
   value: T;
@@ -31,7 +32,7 @@ export function Item<T>({
       style={[style, selected && selectedStyle]}
     >
       <Text>{title}</Text>
-      {selected && selectedStyle && "XD"}
+      {selected && selectedStyle && <CheckIcon />}
     </SelectItem>
   );
 }

@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
 import { useMemo } from "react";
 import { Dropdown } from "../Dropdown";
@@ -10,12 +9,8 @@ import {
   DropDownWrapperObject,
   LanguageLabel,
   InnerLink,
-  WrapperObject,
   DropDownListItemObjectSelected,
 } from "./style";
-const Wrapper = styled.View`
-  margin-left: 6px;
-`;
 
 function LanguageSwitcher() {
   const { locales, asPath, locale } = useRouter();
