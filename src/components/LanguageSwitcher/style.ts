@@ -20,11 +20,6 @@ export const DropDownWrapperObject: ViewStyle = {
   padding: 0,
 };
 
-export const DropDownWrapperMobile = styled(DropDownWrapper)`
-  border: none;
-  width: 20px;
-  padding: 0;
-`;
 export const DropDownWrapperMobileObject: ViewStyle = {
   ...DropDownWrapperObject,
   borderWidth: 0,
@@ -32,18 +27,14 @@ export const DropDownWrapperMobileObject: ViewStyle = {
   padding: 0,
 };
 
-export const ArrowDown = styled.View`
-  border: 0 solid #003566;
-  border-right-width: 3px;
-  border-bottom-width: 3px;
-  display: inline-block;
-  padding: 4px;
-
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-`;
 export const DropDownList = styled.View`
   width: 200px;
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);
+`;
+export const DropDownListMobile = styled.View`
+  width: 180px;
   border-radius: 3px;
   background: #ffffff;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);

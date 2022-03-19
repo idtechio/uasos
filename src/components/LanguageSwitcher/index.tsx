@@ -11,9 +11,13 @@ import {
   InnerLink,
   DropDownListItemObjectSelected,
 } from "./style";
+import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
 function LanguageSwitcher() {
   const { locales, asPath, locale } = useRouter();
+  const getBreakPoint = useBreakPointGetter();
+
+  const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const dropdownData = useMemo(
     () =>
@@ -22,13 +26,17 @@ function LanguageSwitcher() {
           <Link passHref href={asPath} locale={locale}>
             <a style={InnerLink}>
               <LanguageFlags locale={locale} />
-              <LanguageLabel>{getLocaleFullName(locale)}</LanguageLabel>
+              {isDesktop && (
+                <LanguageLabel>
+                  {locale ? getLocaleFullName(locale) : locale}
+                </LanguageLabel>
+              )}
             </a>
           </Link>
         ),
         value: locale,
       })),
-    [locales, asPath]
+    [locales, asPath, isDesktop]
   );
 
   if (!dropdownData) {
