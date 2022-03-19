@@ -3,29 +3,44 @@ import Link from "next/link";
 import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
 import { DropDownWrapper, ArrowDown } from "./style";
+import { useCallback, useMemo } from "react";
+import { Dropdown } from "../Dropdown";
 const Wrapper = styled.View`
   margin-left: 6px;
 `;
 
 function LanguageSwitcher() {
-  const { locales, asPath } = useRouter();
+  const { locales, asPath, locale } = useRouter();
 
-  return locales ? (
-    <>
-      {locales.map((locale) => (
-        <Wrapper key={locale}>
-          <Link passHref href={asPath} locale={locale}>
-            <a>
-              <DropDownWrapper>
-                <LanguageFlags locale={locale} />
-                <ArrowDown></ArrowDown>
-              </DropDownWrapper>
-            </a>
-          </Link>
-        </Wrapper>
-      ))}
-    </>
-  ) : null;
+  const dropdownData = useMemo(
+    () =>
+      locales?.map((locale) => ({
+        label: (
+          <>
+            <LanguageFlags locale={locale} />
+            {locale}
+          </>
+        ),
+        value: locale,
+      })),
+    [locales]
+  );
+
+  const onItemPress = useCallback((value: string) => {
+    console.log(value);
+  }, []);
+
+  if (!dropdownData) {
+    return null;
+  }
+
+  return (
+    <Dropdown
+      itemPressFunction={onItemPress}
+      selected={locale}
+      data={dropdownData}
+    />
+  );
 }
 
 export default LanguageSwitcher;

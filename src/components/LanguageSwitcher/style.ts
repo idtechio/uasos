@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const DropDownWrapper = styled.View`
+export const DropDownWrapper = styled.Pressable`
   border: 1px solid #dedede;
   width: 170px;
   display: flex;
@@ -14,7 +14,7 @@ export const ArrowDown = styled.View`
   border-right-width: 3px;
   border-bottom-width: 3px;
   display: inline-block;
-  padding: 4:px;
+  padding: 4px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 `;
