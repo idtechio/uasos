@@ -9,12 +9,59 @@ export const DropDownWrapper = styled.Pressable`
   align-items: center;
   padding: 10px;
 `;
+
+export const DropDownWrapperMobile = styled(DropDownWrapper)`
+  border: none;
+  width: 20px;
+  padding: 0;
+`;
+
 export const ArrowDown = styled.View`
-  border: 0 solid black;
+  border: 0 solid #003566;
   border-right-width: 3px;
   border-bottom-width: 3px;
   display: inline-block;
   padding: 4px;
+
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+`;
+export const DropDownList = styled.View`
+  width: 200px;
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.14);
+`;
+
+export const DropDownListItem = styled.View`
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+`;
+export const DropDownListItemActiove = styled(DropDownListItem)`
+  background-color: rgba(0, 61, 128, 0.05);
+`;
+export const LanguageInfo = styled.View`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+export const LanguageLabel = styled.Text`
+  font-family: Roboto;
+  font-weight: 700;
+  color: #003566;
+  font-size: 16px;
+  line-height: 24px;
+`;
+export const Tick = styled.View`
+  border: 0 solid #003566;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+  display: inline-block;
+  padding: 3px 2px 7px 3px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 `;
