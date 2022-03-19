@@ -8,6 +8,7 @@ type Props<T> = {
   setShowOptions: (isVisible: boolean) => void;
   selected?: boolean;
   style?: ViewStyle;
+  selectedStyle?: ViewStyle;
 };
 
 export function Item<T>({
@@ -17,13 +18,18 @@ export function Item<T>({
   setShowOptions,
   selected = false,
   style,
+  selectedStyle,
 }: Props<T>) {
   const handleClick = () => {
     itemPressFunction(value);
     setShowOptions(false);
   };
   return (
-    <SelectItem onPress={handleClick} selected={selected} style={style}>
+    <SelectItem
+      onPress={handleClick}
+      selected={selected}
+      style={[style, selected && selectedStyle]}
+    >
       <Text>{title}</Text>
     </SelectItem>
   );

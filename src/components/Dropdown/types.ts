@@ -3,6 +3,7 @@ import { ViewStyle } from "react-native";
 export type DropdownStylesProps = {
   select?: ViewStyle;
   item?: ViewStyle;
+  itemSelected?: ViewStyle;
   wrapper?: ViewStyle;
 };
 
@@ -20,4 +21,5 @@ export type DropdownProps<T> = {
   /* TODO: Styles should be changed in a certain styled-component in accordance with new design  */
   styles?: DropdownStylesProps;
   itemListAutoHeight?: boolean;
+  highlightSelectedItem?: boolean; // Use this prop only if multiselect === false
 };

@@ -11,6 +11,7 @@ import {
   LanguageLabel,
   InnerLink,
   WrapperObject,
+  DropDownListItemObjectSelected,
 } from "./style";
 const Wrapper = styled.View`
   margin-left: 6px;
@@ -48,6 +49,7 @@ function LanguageSwitcher() {
       styles={{
         select: DropDownWrapperObject,
         item: DropDownListItemObject,
+        itemSelected: DropDownListItemObjectSelected,
       }}
     />
   );

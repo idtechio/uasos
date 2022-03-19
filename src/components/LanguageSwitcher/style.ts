@@ -101,3 +101,6 @@ export const InnerLink = {
   padding: "10px",
   display: "block",
 };
+export const DropDownListItemObjectSelected: ViewStyle = {
+  backgroundColor: "pink",
+};

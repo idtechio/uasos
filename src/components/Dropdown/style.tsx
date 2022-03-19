@@ -1,3 +1,4 @@
+import { ViewStyle } from "react-native";
 import styled from "styled-components/native";
 import { Theme } from "../../style/theme.config";
 
@@ -89,6 +90,7 @@ export const Icon = styled.View<{ showOptions?: boolean }>`
 
 export const SelectItem = styled.Pressable<{
   selected?: boolean;
+  activeStyle?: ViewStyle;
   theme: Theme;
 }>`
   padding-top: 10px;

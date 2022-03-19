@@ -29,6 +29,7 @@ export function Dropdown<T>({
   searchable = false,
   styles,
   itemListAutoHeight = false,
+  highlightSelectedItem = false,
 }: DropdownProps<T>) {
   const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
@@ -50,19 +51,27 @@ export function Dropdown<T>({
     onBlur?.();
   };
 
-  const renderItem: ListRenderItem<unknown> = ({ item }) => (
-    <Item<T>
-      title={(item as typeof data[number]).label}
-      value={(item as typeof data[number]).value}
-      itemPressFunction={handleItemPress}
-      setShowOptions={multiselect ? () => undefined : setShowOptions}
-      style={styles?.item}
-      selected={
-        multiselect &&
-        selectedValues.includes((item as typeof data[number]).value)
-      }
-    />
-  );
+  const renderItem: ListRenderItem<unknown> = ({ item }) => {
+    const selectedValuesIncludeItem = selectedValues.includes(
+      (item as typeof data[number]).value
+    );
+
+    const isItemSelected =
+      (multiselect && selectedValuesIncludeItem) ||
+      (!multiselect && highlightSelectedItem && selectedValuesIncludeItem);
+
+    return (
+      <Item<T>
+        title={(item as typeof data[number]).label}
+        value={(item as typeof data[number]).value}
+        itemPressFunction={handleItemPress}
+        setShowOptions={multiselect ? () => undefined : setShowOptions}
+        style={styles?.item}
+        selectedStyle={styles?.itemSelected}
+        selected={isItemSelected}
+      />
+    );
+  };
 
   useEffect(() => {
     // @ts-expect-error TODO: fix event type
