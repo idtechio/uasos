@@ -10,6 +10,7 @@ import {
   LanguageLabel,
   InnerLink,
   DropDownListItemObjectSelected,
+  DropDownWrapperMobileObject,
 } from "./style";
 import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
@@ -51,7 +52,7 @@ function LanguageSwitcher() {
       itemListAutoHeight
       highlightSelectedItem
       styles={{
-        select: DropDownWrapperObject,
+        select: isDesktop ? DropDownWrapperObject : DropDownWrapperMobileObject,
         item: DropDownListItemObject,
         itemSelected: DropDownListItemObjectSelected,
       }}
