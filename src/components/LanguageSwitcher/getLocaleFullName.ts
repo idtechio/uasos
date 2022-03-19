@@ -1,10 +1,10 @@
 const LocaleNames: { [key: string]: string } = {
   pl: "Polska",
-  ua: "українська",
-  ru: "русский",
-  hu: "magyar",
-  sk: "slovenský",
-  cs: "český",
+  ua: "Yкраїнська",
+  ru: "Pусский",
+  hu: "Magyar",
+  sk: "Slovenský",
+  cs: "Český",
   en: "English",
 };
 

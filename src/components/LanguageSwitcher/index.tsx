@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LanguageFlags } from "./LanguageFlags";
 import { useMemo } from "react";
 import { Dropdown } from "../Dropdown";
-import { getLocaleFullName } from "./getCountryName";
+import { getLocaleFullName } from "./getLocaleFullName";
 import {
   DropDownListItemObject,
   DropDownWrapperObject,
