@@ -1,5 +1,5 @@
 import { SelectItem } from "./style";
-import { Text } from "react-native";
+import { Text, ViewStyle } from "react-native";
 
 type Props<T> = {
   value: T;
@@ -7,6 +7,7 @@ type Props<T> = {
   itemPressFunction: (value: T) => void;
   setShowOptions: (isVisible: boolean) => void;
   selected?: boolean;
+  style?: ViewStyle;
 };
 
 export function Item<T>({
@@ -15,13 +16,14 @@ export function Item<T>({
   itemPressFunction,
   setShowOptions,
   selected = false,
+  style,
 }: Props<T>) {
   const handleClick = () => {
     itemPressFunction(value);
     setShowOptions(false);
   };
   return (
-    <SelectItem onPress={handleClick} selected={selected}>
+    <SelectItem onPress={handleClick} selected={selected} style={style}>
       <Text>{title}</Text>
     </SelectItem>
   );

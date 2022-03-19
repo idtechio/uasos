@@ -1,8 +1,9 @@
+import { ViewStyle } from "react-native";
+
 export type DropdownStylesProps = {
-  select?: {
-    paddingTop?: string;
-    paddingBottom?: string;
-  };
+  select?: ViewStyle;
+  item?: ViewStyle;
+  wrapper?: ViewStyle;
 };
 
 export type DropdownProps<T> = {

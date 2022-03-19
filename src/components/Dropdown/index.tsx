@@ -55,6 +55,7 @@ export function Dropdown<T>({
       value={(item as typeof data[number]).value}
       itemPressFunction={handleItemPress}
       setShowOptions={multiselect ? () => undefined : setShowOptions}
+      style={styles?.item}
       selected={
         multiselect &&
         selectedValues.includes((item as typeof data[number]).value)
@@ -91,6 +92,7 @@ export function Dropdown<T>({
         }}
         // @ts-expect-error TODO: fix ref type
         ref={containerRef}
+        style={styles?.wrapper}
       >
         <Select
           isInvalid={!!error}
