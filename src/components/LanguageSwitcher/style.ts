@@ -63,9 +63,7 @@ export const DropDownListItemObject: ViewStyle = {
   alignItems: "center",
   padding: 0,
 };
-export const DropDownListItemActive = styled(DropDownListItem)`
-  background-color: rgba(0, 61, 128, 0.05);
-`;
+export const DropDownListItemActive = styled(DropDownListItem)``;
 export const LanguageInfo = styled.View`
   display: flex;
   flex-direction: row;
@@ -93,5 +91,5 @@ export const InnerLink = {
   display: "block",
 };
 export const DropDownListItemObjectSelected: ViewStyle = {
-  backgroundColor: "pink",
+  backgroundColor: "rgba(0, 61, 128, 0.05)",
 };
