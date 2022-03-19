@@ -19,4 +19,5 @@ export type DropdownProps<T> = {
   error?: React.ReactNode;
   /* TODO: Styles should be changed in a certain styled-component in accordance with new design  */
   styles?: DropdownStylesProps;
+  itemListAutoHeight?: boolean;
 };

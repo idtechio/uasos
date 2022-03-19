@@ -28,6 +28,7 @@ export function Dropdown<T>({
   onBlur,
   searchable = false,
   styles,
+  itemListAutoHeight = false,
 }: DropdownProps<T>) {
   const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
@@ -141,6 +142,7 @@ export function Dropdown<T>({
               <ItemList
                 data={filteredData}
                 renderItem={renderItem}
+                autoHeight={itemListAutoHeight}
                 keyExtractor={(item) => {
                   return String((item as typeof filteredData[number]).value);
                 }}

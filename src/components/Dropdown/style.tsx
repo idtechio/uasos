@@ -69,8 +69,16 @@ export const Options = styled.View<OptionsProps>`
   z-index: 100;
 `;
 
-export const ItemList = styled.FlatList`
-  max-height: 200px;
+type ItemListProps = {
+  autoHeight?: boolean;
+  theme: Theme;
+};
+
+export const ItemList = styled.FlatList<ItemListProps>`
+  max-height: ${(props) => {
+    return props.autoHeight ? "auto" : "200px";
+  }};
+
   background-color: ${({ theme }: { theme: Theme }) =>
     theme.pageSection.backgroundColor};
 `;

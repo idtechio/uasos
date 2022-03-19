@@ -3,9 +3,8 @@ import Link from "next/link";
 import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
 import { DropDownWrapper, ArrowDown } from "./style";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import { Dropdown } from "../Dropdown";
-import { useTranslation } from "next-i18next";
 import { getLocaleFullName } from "./getCountryName";
 const Wrapper = styled.View`
   margin-left: 6px;
@@ -13,7 +12,6 @@ const Wrapper = styled.View`
 
 function LanguageSwitcher() {
   const { locales, asPath, locale } = useRouter();
-  const { t } = useTranslation();
 
   const dropdownData = useMemo(
     () =>
@@ -31,19 +29,16 @@ function LanguageSwitcher() {
     [locales, asPath]
   );
 
-  const onItemPress = useCallback((value: string) => {
-    console.log(value);
-  }, []);
-
   if (!dropdownData) {
     return null;
   }
 
   return (
     <Dropdown
-      itemPressFunction={onItemPress}
+      itemPressFunction={() => null}
       selected={locale}
       data={dropdownData}
+      itemListAutoHeight
     />
   );
 }
