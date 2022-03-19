@@ -5,12 +5,15 @@ import { LanguageFlags } from "./LanguageFlags";
 import { DropDownWrapper, ArrowDown } from "./style";
 import { useCallback, useMemo } from "react";
 import { Dropdown } from "../Dropdown";
+import { useTranslation } from "next-i18next";
+import { getLocaleFullName } from "./getCountryName";
 const Wrapper = styled.View`
   margin-left: 6px;
 `;
 
 function LanguageSwitcher() {
   const { locales, asPath, locale } = useRouter();
+  const { t } = useTranslation();
 
   const dropdownData = useMemo(
     () =>
@@ -19,7 +22,7 @@ function LanguageSwitcher() {
           <Link passHref href={asPath} locale={locale}>
             <a>
               <LanguageFlags locale={locale} />
-              {locale}
+              {getLocaleFullName(locale)}
             </a>
           </Link>
         ),
