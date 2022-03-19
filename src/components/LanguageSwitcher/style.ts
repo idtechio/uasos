@@ -1,12 +1,12 @@
 import styled from "styled-components/native";
-import { ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 export const DropDownWrapperObject: ViewStyle = {
   borderWidth: 1,
   borderColor: "#dedede",
   width: "190px",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-around",
+  justifyContent: "space-between",
   alignItems: "center",
   paddingLeft: 0,
   paddingRight: 12,
@@ -48,8 +48,13 @@ export const InnerLink = {
   display: "inline-flex",
   alignItems: "center",
   minWidth: 32,
+  width: "100%",
 };
 
 export const DropDownListItemObjectSelected: ViewStyle = {
   backgroundColor: "rgba(0, 61, 128, 0.05)",
+};
+
+export const ItemTextStyle: TextStyle = {
+  width: "100%",
 };

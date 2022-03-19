@@ -1,9 +1,10 @@
-import { ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 
 export type DropdownStylesProps = {
   select?: ViewStyle;
   item?: ViewStyle;
   itemSelected?: ViewStyle;
+  itemTextStyle?: TextStyle;
   wrapper?: ViewStyle;
 };
 

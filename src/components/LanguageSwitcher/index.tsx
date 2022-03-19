@@ -11,6 +11,7 @@ import {
   InnerLink,
   DropDownListItemObjectSelected,
   DropDownWrapperMobileObject,
+  ItemTextStyle,
 } from "./style";
 import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
@@ -55,6 +56,7 @@ function LanguageSwitcher() {
         select: isDesktop ? DropDownWrapperObject : DropDownWrapperMobileObject,
         item: DropDownListItemObject,
         itemSelected: DropDownListItemObjectSelected,
+        itemTextStyle: ItemTextStyle,
       }}
     />
   );

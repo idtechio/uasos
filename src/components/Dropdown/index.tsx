@@ -67,6 +67,7 @@ export function Dropdown<T>({
         itemPressFunction={handleItemPress}
         setShowOptions={multiselect ? () => undefined : setShowOptions}
         style={styles?.item}
+        textStyle={styles?.itemTextStyle}
         selectedStyle={styles?.itemSelected}
         selected={isItemSelected}
       />
