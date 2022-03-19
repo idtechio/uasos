@@ -1,5 +1,6 @@
 import { SelectItem } from "./style";
-import { Text } from "react-native";
+import { Text, TextStyle, ViewStyle } from "react-native";
+import CheckIcon from "../../style/svgs/check.svg";
 
 type Props<T> = {
   value: T;
@@ -7,6 +8,9 @@ type Props<T> = {
   itemPressFunction: (value: T) => void;
   setShowOptions: (isVisible: boolean) => void;
   selected?: boolean;
+  style?: ViewStyle;
+  selectedStyle?: ViewStyle;
+  textStyle?: TextStyle;
 };
 
 export function Item<T>({
@@ -15,14 +19,22 @@ export function Item<T>({
   itemPressFunction,
   setShowOptions,
   selected = false,
+  style,
+  selectedStyle,
+  textStyle,
 }: Props<T>) {
   const handleClick = () => {
     itemPressFunction(value);
     setShowOptions(false);
   };
   return (
-    <SelectItem onPress={handleClick} selected={selected}>
-      <Text>{title}</Text>
+    <SelectItem
+      onPress={handleClick}
+      selected={selected}
+      style={[style, selected && selectedStyle]}
+    >
+      <Text style={textStyle}>{title}</Text>
+      {selected && selectedStyle && <CheckIcon style={{ marginRight: 14 }} />}
     </SelectItem>
   );
 }

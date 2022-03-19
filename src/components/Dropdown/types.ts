@@ -1,8 +1,11 @@
+import { TextStyle, ViewStyle } from "react-native";
+
 export type DropdownStylesProps = {
-  select?: {
-    paddingTop?: string;
-    paddingBottom?: string;
-  };
+  select?: ViewStyle;
+  item?: ViewStyle;
+  itemSelected?: ViewStyle;
+  itemTextStyle?: TextStyle;
+  wrapper?: ViewStyle;
 };
 
 export type DropdownProps<T> = {
@@ -18,4 +21,6 @@ export type DropdownProps<T> = {
   error?: React.ReactNode;
   /* TODO: Styles should be changed in a certain styled-component in accordance with new design  */
   styles?: DropdownStylesProps;
+  itemListAutoHeight?: boolean;
+  highlightSelectedItem?: boolean; // Use this prop only if multiselect === false
 };
