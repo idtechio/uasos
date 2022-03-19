@@ -46,6 +46,7 @@ function LanguageSwitcher() {
       selected={locale}
       data={dropdownData}
       itemListAutoHeight
+      highlightSelectedItem
       styles={{
         select: DropDownWrapperObject,
         item: DropDownListItemObject,
