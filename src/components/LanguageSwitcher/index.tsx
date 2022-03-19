@@ -16,14 +16,16 @@ function LanguageSwitcher() {
     () =>
       locales?.map((locale) => ({
         label: (
-          <>
-            <LanguageFlags locale={locale} />
-            {locale}
-          </>
+          <Link passHref href={asPath} locale={locale}>
+            <a>
+              <LanguageFlags locale={locale} />
+              {locale}
+            </a>
+          </Link>
         ),
         value: locale,
       })),
-    [locales]
+    [locales, asPath]
   );
 
   const onItemPress = useCallback((value: string) => {
