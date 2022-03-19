@@ -15,7 +15,7 @@ export const DropDownWrapperObject: ViewStyle = {
 };
 export const DropDownWrapperMobileObject: ViewStyle = {
   ...DropDownWrapperObject,
-  width: "70px",
+  width: "90px",
 };
 export const DropDownListObject = {
   width: "200px",
