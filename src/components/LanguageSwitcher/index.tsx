@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
-
+import { DropDownWrapper, ArrowDown } from "./style";
 const Wrapper = styled.View`
   margin-left: 6px;
 `;
@@ -16,7 +16,10 @@ function LanguageSwitcher() {
         <Wrapper key={locale}>
           <Link passHref href={asPath} locale={locale}>
             <a>
-              <LanguageFlags locale={locale} />
+              <DropDownWrapper>
+                <LanguageFlags locale={locale} />
+                <ArrowDown></ArrowDown>
+              </DropDownWrapper>
             </a>
           </Link>
         </Wrapper>
