@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet } from "react-native";
+import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
+import FormCityDropdown from "../Inputs/FormCityDropdown";
+import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import { CompositionSection } from "../Compositions";
+import { Tooltip } from "../Tooltip";
 import {
   InputControl,
   InputCotrolLabel,
@@ -23,10 +26,12 @@ import PregnantIcon from "../../style/svgs/pregnant.svg";
 import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
+import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
+import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -104,15 +109,18 @@ export default function FormAdGuest() {
 
   const {
     handleSubmit,
+    watch,
     formState: { errors, isValid, isSubmitted },
   } = formFields;
+
+  const watchCountry = watch("advancedRefugee.country", "");
 
   const onSubmit: SubmitHandler<FormType> = async (data) => {
     const guest = data.advancedRefugee;
 
     let apiObject: GuestProps = {
       name: guest.name,
-      phone_num: guest.phoneNumber,
+      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
@@ -132,14 +140,14 @@ export default function FormAdGuest() {
       is_ukrainian_nationality:
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
+      country: guest.country,
+      listing_country: guest.country,
     };
 
     if (guest.town) {
       apiObject = {
         ...apiObject,
         city: guest.town,
-        country: "poland",
-        listing_country: "poland",
       };
     }
 
@@ -218,6 +226,9 @@ export default function FormAdGuest() {
       {submitRequstState.succeeded && (
         <ThankfulnessModal
           onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          headerText={t("thankfulnessModal.thankYou")}
+          subHeaderText={t("thankfulnessModal.applicationSent")}
+          contentText={t("thankfulnessModal.informWhenAccomodationFound")}
         />
       )}
       <CompositionSection
@@ -252,18 +263,14 @@ export default function FormAdGuest() {
             errorMsg={t("refugeeAddForm.errors.email")}
           />
           <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
-          <FormTextInput
-            name="advancedRefugee.phoneNumber"
-            label={t("refugeeAddForm.phonePlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                message: t("refugeeForm.errors.phoneNumber"),
-              },
-            }}
+          <FormPhoneInput
+            prefixName="advancedRefugee.phonePrefix"
+            numberName="advancedRefugee.phoneNumber"
+            phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
+            phoneLabel={t("refugeeAddForm.phonePlaceholder")}
             error={errors?.advancedRefugee?.phoneNumber}
             errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            data={generatePhonePrefixDropdownList(addGuestPhonePrefixList)}
           />
         </InputControl>
       </CompositionSection>
@@ -273,6 +280,21 @@ export default function FormAdGuest() {
         header={t("refugeeAddForm.placeOfRefuge")}
         backgroundColor="#F5F4F4"
       >
+        <InputControl zIndex={14}>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.countryOfRefugePlaceholder")}
+          </InputCotrolLabel>
+          <FormCountryDropdown
+            zIndex={14}
+            placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
+            name="advancedRefugee.country"
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedHost?.country}
+            errorMsg={t("hostAdd.errors.country")}
+          />
+        </InputControl>
         <InputControl zIndex={13}>
           <InputCotrolLabel>
             {t("refugeeAddForm.countryOfRefugeLabel")}
@@ -295,21 +317,16 @@ export default function FormAdGuest() {
 
         {location === Location.Preffered && (
           <InputControl zIndex={13}>
-            {/* <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
-              <FormDropdown
-                zIndex={14}
-                data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
-                placeholder={t("hostAdd.country")}
-                name="refugeeAddForm.country"
-                rules={{
-                  required: true,
-                }}
-                error={errors?.advancedHost?.country}
-                errorMsg={t("hostAdd.errors.country")}
-              /> */}
-            <InputCotrolLabel>{t("refugeeAddForm.cityLabel")}</InputCotrolLabel>
-            <FormDropdown
-              data={CITY_DROPDOWN_LIST} // todo: google places api
+            <InputCotrolLabel>
+              {t("refugeeAddForm.cityLabel")}
+              <View style={styles.tooltipText}>
+                <Tooltip>
+                  <Text>{t("hostAdd.cityTooltipText")}</Text>
+                </Tooltip>
+              </View>
+            </InputCotrolLabel>
+            <FormCityDropdown
+              country={watchCountry}
               name="advancedRefugee.town"
               placeholder={t("refugeeAddForm.cityPlaceholder")}
               rules={{
@@ -438,4 +455,5 @@ const styles = StyleSheet.create({
   addButton: {
     marginBottom: 5,
   },
+  tooltipText: { marginHorizontal: 10 },
 });

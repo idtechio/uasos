@@ -117,19 +117,40 @@
     "ro": "Флаг Румынии",
     "sk": "Флаг Словакии",
     "ua": "Флаг Украины",
-    "de": "Флаг Германии"
+    "de": "Флаг Германии",
+    "at": "Флаг Австрии",
+    "be": "Флаг Бельгии",
+    "bg": "Флаг Болгарии",
+    "hr": "Флаг Хорватии",
+    "cy": "Флаг Кипра",
+    "dk": "Флаг Дании",
+    "ee": "Флаг Эстонии",
+    "fi": "Флаг Финляндии",
+    "lv": "Флаг Латвии",
+    "li": "Флаг Лихтенштейна",
+    "lt": "Флаг Литвы",
+    "mt": "Флаг Мальты",
+    "nl": "Флаг Нидерландов",
+    "no": "Флаг Норвегии",
+    "pt": "Флаг Португалии",
+    "si": "Флаг Словении",
+    "se": "Флаг Швеции"
   },
   "hostAdd": {
     "country": "Страна",
     "countries": {
-      "poland": ""
+      "poland": "Польша",
+      "hungary": "Венгрия",
+      "czechia": "чешский",
+      "slovakia": "Словакия"
     },
     "nameLabel": "Имя (введите только имя)",
     "namePlaceholder": "имя",
     "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
-    "phoneLabel": "Номер телефона (формат +XX YYY YYY YYY)",
-    "phonePlaceholder": "Номер телефона (формат +XX YYY YYY YYY)",
+    "phoneLabel": "Номер телефона",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Страна",
     "cityLabel": "город",
     "cityTooltipText": "Выберите ближайший крупный город если вашего города нет в списке",
     "cityPlaceholder": "город",
@@ -208,6 +229,11 @@
     "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте.",
     "backToMainPage": ""
   },
+  "thankfulnessHostModal": {
+    "thankYou": "Спасибо!",
+    "applicationSent": "Ваше предложение отправлено. Мы просматриваем нашу базу данных несколько раз в день, чтобы максимально эффективно находить людей, которые нуждаются тому, что вы предлагаете.",
+    "informWhenAccomodationFound": "Как только мы найдем для вас потенциального гостя, мы сообщим вам по электронной почте."
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "Я с животным",
@@ -266,10 +292,11 @@
     "cityOfRefugePlaceholder": "Выберите район",
     "nameLabel": "Имя (введите только имя)",
     "namePlaceholder": "имя",
-    "emailLabel": "со мной пожилой человек / я сам пожилой человек",
+    "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
-    "phoneLabel": "Номер телефона (формат +XX YYY YYY YYY)",
-    "phonePlaceholder": "Номер телефона (формат +XX YYY YYY YYY)",
+    "phoneLabel": "Номер телефона",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Страна",
     "cityLabel": "Выберите город, в котором или вблизи которого вы ищете помощь.",
     "cityPlaceholder": "город",
     "groupRelations": "Какие у вас отношения между членами группы?",
@@ -310,5 +337,9 @@
     "doNotHaveAcc": "Создать аккаунт если у вас его нет",
     "register": "Зарегистрироваться"
   },
-  "gdpr": ""
+  "gdpr": "",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

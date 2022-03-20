@@ -8,6 +8,7 @@ export const InputWraper = styled.View<InputControlProps>`
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 26px;
+  z-index: ${({ zIndex }) => zIndex || "0"};
 `;
 
 export const InputCotrolLabel = styled.Text`

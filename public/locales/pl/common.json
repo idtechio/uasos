@@ -117,19 +117,40 @@
     "ro": "flaga Rumunii",
     "sk": "flaga Słowacji",
     "ua": "flaga Ukrainy",
-    "de": "flaga Niemiec"
+    "de": "flaga Niemiec",
+    "at": "flaga Austrii",
+    "be": "flaga Belgii",
+    "bg": "flaga Bułgarii",
+    "hr": "flaga Chorwacji",
+    "cy": "flaga Cypru",
+    "dk": "flaga Danii",
+    "ee": "flaga Estonii",
+    "fi": "flaga Finlandii",
+    "lv": "flaga Łotwy",
+    "li": "flaga Liechtensteinu",
+    "lt": "flaga Litwy",
+    "mt": "flaga Malty",
+    "nl": "flaga Holandii",
+    "no": "flaga Norwegii",
+    "pt": "flaga Portugalii",
+    "si": "flaga Słowenii",
+    "se": "flaga Szwecji"
   },
   "hostAdd": {
     "country": "Kraj",
     "countries": {
-      "poland": "Polska"
+      "poland": "Polska",
+      "hungary": "Węgry",
+      "czechia": "Czechy",
+      "slovakia": "Słowacja"
     },
     "nameLabel": "Imię (Podaj tylko pierwsze imię)",
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
-    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phoneLabel": "Numer telefonu",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Kraj",
     "cityLabel": "Wskaż miasto, w którym lub w którego najbliższej okolicy oferujesz nocleg.",
     "cityTooltipText": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "cityPlaceholder": "Miasto",
@@ -208,6 +229,11 @@
     "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
     "backToMainPage": "Wróć do strony głównej"
   },
+  "thankfulnessHostModal": {
+    "thankYou": "Dziękujemy!",
+    "applicationSent": "Twoja oferta została wysłana. Kilka razy dziennie przeszukujemy naszą bazę, żeby jak najefektywniej dopasować osoby potrzebujące.",
+    "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie potencjalnego gościa, poinformujemy Cię o tym za pomocą maila."
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "Jest ze mną mój zwierzak",
@@ -268,8 +294,9 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Podaj adres e-mail",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Numer telefonu (format +XX YYY YYY YYY)",
-    "phonePlaceholder": "Numer telefonu (format +XX YYY YYY YYY)",
+    "phoneLabel": "Numer telefonu",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Kraj",
     "cityLabel": "Wskaż miasto, w którym lub w którego najbliżej okolicy poszukujesz noclegu.",
     "cityPlaceholder": "Miasto",
     "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
@@ -310,5 +337,9 @@
     "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
     "register": "zarejestruj się"
   },
-  "gdpr": "RODO"
+  "gdpr": "RODO",
+  "ogMeta": {
+    "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
+    "description": "Platforma UASOS.org we współpracy z wiodącymi organizacjami dobroczynnymi automatycznie i bezpłatniełączyuchodźców wojny w Ukrainie z osobami, które są w stanie udzielić im schronienia. Dołącz do pomagających lub zgłoś swoje potrzeby jużdziś!"
+  }
 }

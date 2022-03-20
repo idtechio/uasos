@@ -117,19 +117,40 @@
     "ro": "Romanian flag",
     "sk": "Slovakian flag",
     "ua": "Ukrainian flag",
-    "de": "German flag"
+    "de": "German flag",
+    "at": "Austrian flag",
+    "be": "Belgian flag",
+    "bg": "Bulgarian flag",
+    "hr": "Croatian flag",
+    "cy": "Cyprus flag",
+    "dk": "Denmark flag",
+    "ee": "Estonian flag",
+    "fi": "Finnish flag",
+    "lv": "Latvian flag",
+    "li": "Liechtenstein flag",
+    "lt": "Lithuanian flag",
+    "mt": "Malta flag",
+    "nl": "Dutch flag",
+    "no": "Norwegian flag",
+    "pt": "Portugal flag",
+    "si": "Slovenian flag",
+    "se": "Sweden flag"
   },
   "hostAdd": {
     "country": "Country",
     "countries": {
-      "poland": "Poland"
+      "poland": "Poland",
+      "hungary": "Hungary",
+      "czechia": "Czech",
+      "slovakia": "Slovakia"
     },
     "nameLabel": "First name (only enter first name)",
     "namePlaceholder": "Name",
     "emailLabel": "Give me your e-mail address:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Phone number (format +XX YYY YYY YYY)",
-    "phonePlaceholder": "Phone number (format +XX YYY YYY YYY)",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Country",
     "cityLabel": "Select the city in which or in the closest vicinity you offer accommodation.",
     "cityTooltipText": "If you cannot find your city, choose the closest big city or town",
     "cityPlaceholder": "City",
@@ -208,6 +229,11 @@
     "informWhenAccomodationFound": "As soon as we find accommodation for you, we will inform you via e-mail",
     "backToMainPage": "Go back to home page"
   },
+  "thankfulnessHostModal": {
+    "thankYou": "Thank you!",
+    "applicationSent": "Your offer has been sent. We search our database several times a day to find the best match with to your offer. ",
+    "informWhenAccomodationFound": "As soon as we find a potential guest for you, we will inform you about it by e-mail."
+  },
   "refugeeForm": {
     "refugeeDetailsOptions": {
       "animals": "I am accompanied by a pet",
@@ -268,8 +294,9 @@
     "namePlaceholder": "Name",
     "emailLabel": "Provode your e-mail address:",
     "emailPlaceholder": "e-mail",
-    "phoneLabel": "Phone number (format +XX YYY YYY YYY)",
-    "phonePlaceholder": "Phone number (format +XX YYY YYY YYY)",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Country",
     "cityLabel": "Please choose the city in or around which you are looking for help.",
     "cityPlaceholder": "City",
     "groupRelations": "What is the type of relationship between group members?",
@@ -310,5 +337,9 @@
     "doNotHaveAcc": "Do you want to have access ?",
     "register": "Register"
   },
-  "gdpr": "GDPR"
+  "gdpr": "GDPR",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }
