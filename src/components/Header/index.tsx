@@ -1,12 +1,13 @@
-import { HeaderPage, ActionBar, ServiceLogo } from "./style";
+import { HeaderPage, ActionBar, ServiceLogo, Container } from "./style";
 import Logo from "./image/Logo";
 import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useSession } from "next-auth/react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { View, StyleSheet } from "react-native";
+import { Routes } from "../../consts/router";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
@@ -16,12 +17,12 @@ const Header = () => {
     setNavigationDrawerOpen(!navigationDrawerOpen);
 
   return (
-    <>
+    <Container>
       <HeaderPage>
         <ServiceLogo>
-          <Link href="/">
+          <Link href={Routes.HOMEPAGE}>
             <a>
-              <Logo />
+              <Logo width={129} height={40} />
             </a>
           </Link>
         </ServiceLogo>
@@ -32,7 +33,7 @@ const Header = () => {
           {session ? (
             <HamburgerButton onPress={toggleNavigationDrawer} />
           ) : (
-            <></>
+            <Fragment />
           )}
         </ActionBar>
       </HeaderPage>
@@ -40,7 +41,7 @@ const Header = () => {
         isOpen={navigationDrawerOpen}
         hideDrawer={toggleNavigationDrawer}
       />
-    </>
+    </Container>
   );
 };
 

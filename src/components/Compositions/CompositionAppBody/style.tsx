@@ -8,3 +8,11 @@ export const AppBodyWraper = styled.View<AppBodyProps>`
   flex: 1;
   width: 100%;
 `;
+
+export const StyledScrollView = styled.ScrollView`
+  width: 100%;
+`;
+
+export const Content = styled.View`
+  padding-top: 72px;
+`;

@@ -1,8 +1,13 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 
-export default class Portal extends Component {
-  state = {
+type State = {
+  el: HTMLDivElement | null;
+  target: HTMLElement | null;
+};
+
+export default class Portal extends Component<{}, State> {
+  state: State = {
     el: null,
     target: null,
   };
@@ -11,13 +16,14 @@ export default class Portal extends Component {
     this.setState(
       { el: document.createElement("div"), target: document.body },
       () => {
-        this.state.target.appendChild(this.state.el);
+        this.state.el &&
+          this.state.target?.appendChild<HTMLDivElement>(this.state.el);
       }
     );
   }
 
   componentWillUnmount() {
-    this.state.target && this.state.target.removeChild(this.state.el);
+    this.state.el && this.state.target?.removeChild(this.state.el);
   }
 
   render() {

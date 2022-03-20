@@ -1,23 +1,27 @@
 import type { FiltersProps } from "./types";
 import { FiltersWraper } from "./style";
 import SingleFilter from "./single";
+import { StyleSheet } from "react-native";
 
-const Filters = ({ filters }: FiltersProps) => {
+function Filters<T>({ filters }: FiltersProps<T>) {
   return (
     <FiltersWraper
-      horizontal={true}
+      horizontal
       centerContent={false}
-      contentContainerStyle={{
-        justifyContent: "flex-start",
-        flexDirection: "row",
-      }}
+      contentContainerStyle={styles.wrapper}
     >
-      {filters.map((filter, index) => {
-        // TODO: fix index key
-        return <SingleFilter {...filter} key={index} />;
-      })}
+      {filters.map((filter) => (
+        <SingleFilter {...filter} key={filter.name} />
+      ))}
     </FiltersWraper>
   );
-};
+}
+
+const styles = StyleSheet.create({
+  wrapper: {
+    justifyContent: "flex-start",
+    flexDirection: "row",
+  },
+});
 
 export default Filters;

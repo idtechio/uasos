@@ -13,7 +13,8 @@
     "name": "",
     "email": "",
     "phone": "",
-    "town": ""
+    "town": "",
+    "phoneNumber": ""
   },
   "validations": {
     "requiredName": "",
@@ -46,6 +47,7 @@
       "room": "",
       "flat": "",
       "house": "",
+      "collective": "",
       "public_shared_space": ""
     },
     "boolean": {
@@ -115,29 +117,98 @@
     "ro": "",
     "sk": "",
     "ua": "",
-    "de": ""
+    "de": "",
+    "at": "",
+    "be": "",
+    "bg": "",
+    "hr": "",
+    "cy": "",
+    "dk": "",
+    "ee": "",
+    "fi": "",
+    "lv": "",
+    "li": "",
+    "lt": "",
+    "mt": "",
+    "nl": "",
+    "no": "",
+    "pt": "",
+    "si": "",
+    "se": ""
   },
   "hostAdd": {
+    "country": "",
+    "countries": {
+      "poland": ""
+    },
+    "nameLabel": "",
+    "namePlaceholder": "",
+    "emailLabel": "",
+    "emailPlaceholder": "",
+    "phoneLabel": "",
+    "phonePlaceholder": "",
+    "phonePrefixPlaceholder": "",
+    "cityLabel": "",
+    "cityTooltipText": "",
+    "cityPlaceholder": "",
+    "type": "",
+    "hostType": "",
+    "hostTypeLabel": {
+      "host_type_men": "",
+      "host_type_women": "",
+      "host_type_couple": "",
+      "host_type_family": "",
+      "host_type_elder_people": "",
+      "host_type_friends_group": ""
+    },
+    "guestCount": "",
     "accommodationTime": "",
-    "addButton": "",
+    "accomodationPhoto": "",
+    "accomodationPhotoLabel": "",
+    "accomodationPhotoReset": "",
+    "accommodationTimeLabel": {
+      "less_than_week": "",
+      "week": "",
+      "two_weeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "volunteerVisitAcceptance": "",
+    "nationality": "",
+    "ukraine": "",
     "additionalInformationHeader": "",
-    "animalReady": "",
     "any": "",
-    "basicInfoHeader": "",
     "childBedCount": "",
     "city": "",
-    "country": "",
-    "dissabilityReady": "",
     "fullBedCount": "",
     "groupsTypes": "",
-    "nationality": "",
     "pregnantReady": "",
+    "dissabilityReady": "",
+    "elderReady": "",
+    "animalReady": "",
+    "basicInfoHeader": "",
+    "refugeInfoHeader": "",
+    "addButton": "",
+    "addButtomErrorMessage": "",
+    "errors": {
+      "name": "",
+      "email": "",
+      "phoneNumber": "",
+      "country": "",
+      "town": "",
+      "type": "",
+      "hostType": "",
+      "guestCount": "",
+      "accommodationTime": "",
+      "nationality": "",
+      "groupsTypes": "",
+      "nationalityError": ""
+    },
     "prolongationReady": "",
-    "transportReady": "",
-    "type": "",
-    "ukraine": ""
+    "transportReady": ""
   },
   "logout": "",
+  "back": "",
   "backToHomePage": "",
   "shareLocation": "",
   "registerGuest": "",
@@ -149,6 +220,13 @@
   "patrons": "",
   "rodo": "",
   "thankfulnessModal": {
+    "thankYou": "",
+    "thanksForYourDecision": "",
+    "applicationSent": "",
+    "informWhenAccomodationFound": "",
+    "backToMainPage": ""
+  },
+  "thankfulnessHostModal": {
     "thankYou": "",
     "applicationSent": "",
     "informWhenAccomodationFound": ""
@@ -192,6 +270,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "",
     "addButton": "",
+    "addButtomErrorMessage": "",
     "pregnantReady": "",
     "dissabilityReady": "",
     "animalReady": "",
@@ -212,6 +291,11 @@
     "namePlaceholder": "",
     "emailLabel": "",
     "emailPlaceholder": "",
+    "phoneLabel": "",
+    "phonePlaceholder": "",
+    "phonePrefixPlaceholder": "",
+    "cityLabel": "",
+    "cityPlaceholder": "",
     "groupRelations": "",
     "selectPlaceholder": "",
     "accommodationType": "",
@@ -230,13 +314,29 @@
       "fullBedCountsaas": "",
       "groupRelations": "",
       "overnightDuration": "",
-      "accommodationType": ""
-    }
+      "accommodationType": "",
+      "countryOfGroup": ""
+    },
+    "refugeInfoHeader": ""
   },
   "accomodationPhoto": "",
   "accomodationPhotoReset": "",
   "accomodationPhotoLabel": "",
   "dropdownChoose": "",
   "dropdownSearch": "",
-  "heroImageAlt": ""
+  "heroImageAlt": "",
+  "loginForm": {
+    "logInWith": "",
+    "or": "",
+    "lostPass": "",
+    "click": "",
+    "logIn": "",
+    "doNotHaveAcc": "",
+    "register": ""
+  },
+  "gdpr": "",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

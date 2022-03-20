@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -12,40 +12,42 @@ import CardModal from "../CardModal";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { ThankfulnessModalProps } from "./types";
+import { Routes } from "../../consts/router";
 
-export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
+const ICON_BASE_WIDTH = 160;
+const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
+const ICON_BASE_HEIGHT = 105;
+const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
+
+export const ThankfulnessModal = ({
+  onClose,
+  headerText,
+  contentText,
+  subHeaderText,
+}: ThankfulnessModalProps) => {
   const { t } = useTranslation();
   return (
     <CardModal onModalClose={onClose}>
       <ThankfulnessModalContentWrapper>
-        <View
-          style={{
-            minWidth: 160 * 1.25,
-            minHeight: 105 * 1.25,
-          }}
-        >
+        <View style={styles.wrapper}>
           <FormSentIcon
-            width={160 * 1.25}
-            height={105 * 1.25}
-            viewBox="0 0 160 105"
+            width={ICON_WIDTH}
+            height={ICON_HEIGHT}
+            viewBox={`0 0 ${ICON_BASE_WIDTH} ${ICON_BASE_HEIGHT}`}
           />
         </View>
         <ThankfulnessModalTextWrapper>
-          <ThankfulnessHeader>
-            {t("thankfulnessModal.thankYou")}
-          </ThankfulnessHeader>
-          <ThankfulnessText>
-            {t("thankfulnessModal.applicationSent")}
-          </ThankfulnessText>
+          <ThankfulnessHeader>{headerText}</ThankfulnessHeader>
+          <ThankfulnessText>{subHeaderText}</ThankfulnessText>
 
-          <ThankfulnessText style={{ marginTop: 24 }}>
-            {t("thankfulnessModal.informWhenAccomodationFound")}
+          <ThankfulnessText style={styles.textContainer}>
+            {contentText}
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href="/">
+          <Link href={Routes.HOMEPAGE}>
             <a>
-              <ButtonCta anchor={t("backToHomePage")} onPress={() => {}} />
+              <ButtonCta anchor={t("backToHomePage")} />
             </a>
           </Link>
         </ThankfulnessModalButtonCtaWrapper>
@@ -53,3 +55,13 @@ export const ThankfulnessModal = ({ onClose }: ThankfulnessModalProps) => {
     </CardModal>
   );
 };
+
+const styles = StyleSheet.create({
+  textContainer: {
+    marginTop: 24,
+  },
+  wrapper: {
+    minWidth: ICON_WIDTH,
+    minHeight: ICON_HEIGHT,
+  },
+});

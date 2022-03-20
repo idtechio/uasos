@@ -1,6 +1,6 @@
 import type { InputProps } from "./types";
 import { InputWraper, Label, TextInput, InputRow } from "./style";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Input = ({
   placeholder,
@@ -10,23 +10,26 @@ const Input = ({
   extra,
   labelsBackgroundColor,
   secureTextEntry,
+  withoutLabel,
+  styles,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
-
+  // @ts-expect-error TODO: add event type
   const hendleOnBlur = (e) => {
     e.target.placeholder = placeholder;
     if (value === "") {
       setHideLabel(true);
     }
   };
+  // @ts-expect-error TODO: add event type
   const hendleOnFocus = (e) => {
     e.target.placeholder = "";
     setHideLabel(false);
   };
 
   return (
-    <InputWraper>
-      {hideLabel ? null : (
+    <InputWraper style={styles?.wrapper}>
+      {hideLabel || withoutLabel ? null : (
         <Label labelsBackgroundColor={labelsBackgroundColor}>
           {placeholder}
         </Label>
@@ -40,6 +43,7 @@ const Input = ({
           onBlur={(e) => hendleOnBlur(e)}
           error={error}
           secureTextEntry={secureTextEntry}
+          style={styles?.textInput}
         />
 
         {extra && extra}

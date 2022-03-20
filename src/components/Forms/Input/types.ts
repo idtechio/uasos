@@ -1,14 +1,26 @@
 import { ReactNode } from "react";
-import { ViewStyle, StyleProp } from "react-native";
 
-export type InputProps = {
+export type InputStylesProps = {
+  wrapper?: {
+    height: string;
+  };
+  textInput?: {
+    paddingTop: string;
+    paddingBottom: string;
+    height: string;
+  };
+};
+
+export type InputProps<T = string> = {
   placeholder: string;
-  onChange?: any;
-  onBlur?: any;
-  value?: any;
-  error?: any;
+  onChange?: (value: T) => void;
+  onBlur?: (e: unknown) => void;
+  value?: T;
+  error?: unknown;
   type?: string;
   extra?: ReactNode;
   labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
+  withoutLabel?: boolean;
+  styles?: InputStylesProps;
 };

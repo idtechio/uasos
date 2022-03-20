@@ -1,6 +1,6 @@
 export type ItemProps = {
   disabled?: boolean;
   label: string;
-  onPress?: (value: string) => void;
+  onPress?: (value: string | undefined) => void;
   value?: string;
 };

@@ -13,7 +13,8 @@
     "name": "Имя",
     "email": "Электронная почта",
     "phone": "Номер телефона",
-    "town": "Город"
+    "town": "Город",
+    "phoneNumber": "Номер телефона"
   },
   "validations": {
     "requiredName": "Подайте своё имя",
@@ -27,7 +28,7 @@
   },
   "staticValues": {
     "timePeriod": {
-      "lessThanAWeek": "Меньше недели",
+      "lessThanAWeek": "меньше недели",
       "week": "Одна неделя",
       "twoWeeks": "Две недели",
       "month": "Месяц",
@@ -46,6 +47,7 @@
       "room": "Комната в коммунальной квартире/доме",
       "flat": "Квартира",
       "house": "Дом",
+      "collective": "Коллективная комната (например, школьная комната)",
       "public_shared_space": "Коллективная комната (например, школьная комната)"
     },
     "boolean": {
@@ -115,40 +117,101 @@
     "ro": "Флаг Румынии",
     "sk": "Флаг Словакии",
     "ua": "Флаг Украины",
-    "de": "Флаг Германии"
+    "de": "Флаг Германии",
+    "at": "Флаг Австрии",
+    "be": "Флаг Бельгии",
+    "bg": "Флаг Болгарии",
+    "hr": "Флаг Хорватии",
+    "cy": "Флаг Кипра",
+    "dk": "Флаг Дании",
+    "ee": "Флаг Эстонии",
+    "fi": "Флаг Финляндии",
+    "lv": "Флаг Латвии",
+    "li": "Флаг Лихтенштейна",
+    "lt": "Флаг Литвы",
+    "mt": "Флаг Мальты",
+    "nl": "Флаг Нидерландов",
+    "no": "Флаг Норвегии",
+    "pt": "Флаг Португалии",
+    "si": "Флаг Словении",
+    "se": "Флаг Швеции"
   },
   "hostAdd": {
+    "country": "Страна",
+    "countries": {
+      "poland": "Польша",
+      "hungary": "Венгрия",
+      "czechia": "чешский",
+      "slovakia": "Словакия"
+    },
     "nameLabel": "Имя (введите только имя)",
-    "elderReady": "Я приму пожилого человека / пожилых людей",
     "namePlaceholder": "имя",
     "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
-    "phoneLabel": "Номер телефона (формат +XXYYYYYYYYY)",
-    "phonePlaceholder": "Номер телефона (формат +XXYYYYYYYYY)",
-    "cityLabel": "Пожалуйста, выберите город, в котором или вблизи которого вы предлагаете остановиться.",
+    "phoneLabel": "Номер телефона",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Страна",
+    "cityLabel": "город",
+    "cityTooltipText": "Выберите ближайший крупный город если вашего города нет в списке",
     "cityPlaceholder": "город",
-    "accommodationTime": "Как долго вы можете приютить (недели)?",
-    "addButton": "Отправить/Добавить",
-    "refugeInfoHeader": "Предоставьте информацию о своем жилье",
+    "type": "тип размещения",
+    "hostType": "Тип хозяина жилья",
+    "hostTypeLabel": {
+      "host_type_men": "Мужчина",
+      "host_type_women": "Женщина",
+      "host_type_couple": "Пара",
+      "host_type_family": "Семья",
+      "host_type_elder_people": "Люди пожилого возраста",
+      "host_type_friends_group": "Группа друзей/знакомых"
+    },
+    "guestCount": "Сколько человек вы можете принять?",
+    "accommodationTime": "Как долго вы можете принимать гостей-беженцев (недели)?",
+    "accomodationPhoto": "",
+    "accomodationPhotoLabel": "",
+    "accomodationPhotoReset": "",
+    "accommodationTimeLabel": {
+      "less_than_week": "",
+      "week": "",
+      "two_weeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "volunteerVisitAcceptance": "",
+    "nationality": "Какое гражданство беженца вы можете принять?",
+    "ukraine": "Украина",
     "additionalInformationHeader": "Дополнительная информация",
-    "animalReady": "Я приму человека с домашним животным",
-    "any": "Любое",
-    "basicInfoHeader": "Предоставьте информацию о жилье, которое вы предлагаете",
+    "any": "любой",
     "childBedCount": "Количество спальных мест для детей",
     "city": "город",
-    "country": "Страна",
-    "dissabilityReady": "Я приму человека с ограниченными возможностями",
     "fullBedCount": "Количество полноценных спальных мест",
     "groupsTypes": "Какие типы групп вы примете?",
-    "nationality": "Какое гражданство беженца вы можете принять?",
-    "pregnantReady": "Я приму женщину на позднем сроке беременности (более 6 месяцев)",
+    "pregnantReady": "Приму женщину на позднем сроке беременности (свыше 6 месяцев)",
+    "dissabilityReady": "Я приму человека с инвалидностью",
+    "elderReady": "Я приму пожилого человека / пожилых людей",
+    "animalReady": "Я приму человека с домашним животным",
+    "basicInfoHeader": "Предоставьте информацию о жилье, которое вы предлагаете",
+    "refugeInfoHeader": "Предоставьте информацию о своем жилье",
+    "addButton": "Отправить/Добавить",
+    "addButtomErrorMessage": "",
+    "errors": {
+      "name": "Подайте своё имя",
+      "email": "Подайте правильный адрес электронной почты",
+      "phoneNumber": "Подайте свой номер телефона",
+      "country": "",
+      "town": "",
+      "type": "Укажите тип размещения",
+      "hostType": "Укажите тип хозяина жилья",
+      "guestCount": "",
+      "accommodationTime": "Укажите максимальную длительность пребывания гостя-беженца",
+      "nationality": "",
+      "groupsTypes": "",
+      "nationalityError": "Требуется указать гражданство беженцев, которых вы готовы принять"
+    },
     "prolongationReady": "Предлагаю возможность продления пребывания (за отдельную плату)",
-    "transportReady": "Я предлагаю возможность транспорта",
-    "type": "Тип размещения",
-    "ukraine": "Украина",
-    "guestCount": "Сколько человек вы можете принять?"
+    "transportReady": "Я предлагаю возможность транспорта"
   },
   "logout": "Выйти",
+  "back": "Вернуться",
   "backToHomePage": "Вернуться к главной странице",
   "shareLocation": "Зарегистрироваться",
   "registerGuest": "Найти квартиру",
@@ -161,8 +224,15 @@
   "rodo": "GDPR",
   "thankfulnessModal": {
     "thankYou": "Спасибо!",
+    "thanksForYourDecision": "",
     "applicationSent": "Ваша просьба отправлена. Несколько раз в день мы проверяем нашу базу данных, чтобы вам найти подходящий выбор.",
-    "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте."
+    "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте.",
+    "backToMainPage": ""
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Спасибо!",
+    "applicationSent": "Ваше предложение отправлено. Мы просматриваем нашу базу данных несколько раз в день, чтобы максимально эффективно находить людей, которые нуждаются тому, что вы предлагаете.",
+    "informWhenAccomodationFound": "Как только мы найдем для вас потенциального гостя, мы сообщим вам по электронной почте."
   },
   "refugeeForm": {
     "refugeeDetailsOptions": {
@@ -170,7 +240,7 @@
       "toddler": "ребенок младше 2 лет",
       "oldPerson": "со мной пожилой человек / я сам пожилой человек",
       "disability": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями",
-      "pregnant": "со мной женщина на позднем сроке беременности / я сама на позднем сроке беременности (более 6 месяцев)"
+      "pregnant": "Я нахожусь или находится со мной на позднем сроке беременности (более 6 месяцев)"
     },
     "refugeesCountOptions": {
       "alone": "Я один/одна",
@@ -203,6 +273,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Предоставьте основную информацию о себе и людях, с которыми вы путешествуете",
     "addButton": "Отправить заявку",
+    "addButtomErrorMessage": "Пожалуйста, заполните необходимые поля",
     "pregnantReady": "я / со мной женщина в позднем сроке беременности (более 6 месяцев)",
     "dissabilityReady": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями",
     "animalReady": "Я с животным",
@@ -211,7 +282,7 @@
     "genderLabel": "Пол",
     "genderPlaceholder": "Введите свой пол",
     "travelCompanions": "Информация о людях, с которыми вы путешествуете",
-    "fullBedCountLabel": "Сколько людей едет с вами?",
+    "fullBedCountLabel": "Количество полноценных спальных мест",
     "childBedCountLabel": "Количество спальных мест для детей",
     "placeOfRefuge": "В какой локализацие вы ищете убежище?",
     "countryOfRefugeLabel": "В какой стране вы ищете убежище?",
@@ -223,13 +294,14 @@
     "namePlaceholder": "имя",
     "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
-    "phoneLabel": "Номер телефона (формат +XXYYYYYYYYY)",
-    "phonePlaceholder": "Номер телефона (формат +XXYYYYYYYYY)",
+    "phoneLabel": "Номер телефона",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "phonePrefixPlaceholder": "Страна",
     "cityLabel": "Выберите город, в котором или вблизи которого вы ищете помощь.",
     "cityPlaceholder": "город",
     "groupRelations": "Какие у вас отношения между членами группы?",
     "selectPlaceholder": "Выберите из списка",
-    "accommodationType": "Пожалуйста, выберите все варианты проживания (возможны несколько вариантов)",
+    "accommodationType": "Какие жилищные условия вы ищете?",
     "countryOfGroup": "Какая страна происхождения группы?",
     "countryOfGroupUA": "Украина",
     "countryOfGroupOthers": "другая",
@@ -244,10 +316,18 @@
       "childBedCount": "Введите количество мест",
       "fullBedCountsaas": "Введите количество мест",
       "groupRelations": "Выберите отношения",
-      "overnightDuration": "Выберите тип размещения",
-      "accommodationType": "Пожалуйста, выберите национальность"
-    }
+      "overnightDuration": "Укажите на какой срок пребывания вы ищете жилье?",
+      "accommodationType": "Выберите тип размещения",
+      "countryOfGroup": "Пожалуйста, выберите национальность"
+    },
+    "refugeInfoHeader": ""
   },
+  "accomodationPhoto": "Добавьте фото предлагаемого приюта",
+  "accomodationPhotoReset": "удалить",
+  "accomodationPhotoLabel": "ПРЕДСТАВЛЯТЬ НА РАССМОТРЕНИЕ",
+  "dropdownChoose": "Выберите...",
+  "dropdownSearch": "Поиск",
+  "heroImageAlt": "Слава Украине!",
   "loginForm": {
     "logInWith": "Зайти с помощью",
     "or": "или",
@@ -257,11 +337,9 @@
     "doNotHaveAcc": "Создать аккаунт если у вас его нет",
     "register": "Зарегистрироваться"
   },
-  "accomodationPhoto": "Добавьте фото предлагаемого приюта",
-  "accomodationPhotoReset": "удалять",
-  "accomodationPhotoLabel": "ПРЕДСТАВЛЯТЬ НА РАССМОТРЕНИЕ",
-  "dropdownChoose": "Выберите...",
-  "dropdownSearch": "Поиск",
-  "back": "Вернуться",
-  "heroImageAlt": "Слава Украины!"
+  "gdpr": "",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

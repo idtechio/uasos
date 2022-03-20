@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Theme } from "../../../style/theme.config";
 import { InputProps } from "./types";
 
 export const InputWraper = styled.View`
@@ -15,7 +16,10 @@ export const InputRow = styled.View`
   align-items: center;
 `;
 
-export const Label = styled.Text<InputProps>`
+type LabelProps = Pick<InputProps, "labelsBackgroundColor" | "error"> & {
+  theme: Theme;
+};
+export const Label = styled.Text<LabelProps>`
   margin-bottom: -10px;
   margin-left: 15px;
   background-color: ${(props) =>
@@ -28,8 +32,9 @@ export const Label = styled.Text<InputProps>`
     props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.5)`};
 `;
 
-export const TextInput = styled.TextInput`
-  border: ${(props) => props.theme.forms.borderWidth} solid
+type TextInputProps = InputProps & { theme: Theme };
+export const TextInput = styled.TextInput<TextInputProps>`
+  border: ${({ theme }) => theme.forms.borderWidth} solid
     ${(props) =>
       props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
@@ -43,5 +48,5 @@ export const TextInput = styled.TextInput`
 `;
 
 export const Error = styled.Text`
-  color: ${(props) => props.theme.colors.error};
+  color: ${({ theme }: { theme: Theme }) => theme.colors.error};
 `;

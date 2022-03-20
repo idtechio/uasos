@@ -9,6 +9,7 @@ const CompositionSection = ({
   padding,
   header,
   zIndex,
+  flexGrow,
 }: SectionProps) => {
   return (
     <PageSection
@@ -17,6 +18,7 @@ const CompositionSection = ({
       zeroPadding={zeroPadding}
       padding={padding}
       zIndex={zIndex}
+      flexGrow={flexGrow}
     >
       {header ? <SectionHeader>{header}</SectionHeader> : null}
       {children}

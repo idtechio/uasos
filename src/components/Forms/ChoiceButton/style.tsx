@@ -1,10 +1,15 @@
 import type { ChoiceButtonProps } from "./type";
 import styled from "styled-components/native";
+import { Theme } from "../../../style/theme.config";
 
-export const Button = styled.View<ChoiceButtonProps>`
+type ButtonType = Pick<
+  ChoiceButtonProps,
+  "error" | "isSelected" | "isSmall" | "isVertical"
+> & { isChoice?: boolean; theme: Theme };
+export const Button = styled.View<ButtonType>`
   border: ${(props) =>
     props.isChoice
-      ? `${props.theme.forms.borderWidth} solid #38B000`
+      ? `${props.theme.forms.borderWidth} solid ${props.theme.colors.positive}`
       : props.error
       ? `${props.theme.forms.borderWidth} solid ${props.theme.colors.error}`
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.3)`};
@@ -15,7 +20,7 @@ export const Button = styled.View<ChoiceButtonProps>`
   width: fit-content;
   flex-direction: ${(props) => (props.isSmall ? `row` : `column`)};
   align-items: center;
-  justify-content: center;
+  justify-content: ${(props) => (props.isVertical ? `flex-left` : `center`)};
   text-align: center;
   margin-right: ${(props) =>
     props.isSmall ? (props.isVertical ? `0` : `10px`) : `0`};
@@ -24,18 +29,28 @@ export const Button = styled.View<ChoiceButtonProps>`
   width: ${(props) => (props.isSmall ? `unset` : `100%`)};
 `;
 
-export const Text = styled.Text`
-  width: ${(props) => (props.isVertical ? `245px` : `uset`)};
+type TextProps = {
+  isVertical?: boolean;
+  isSelected?: boolean;
+  isSmall?: boolean;
+  isChoice?: boolean;
+  theme: Theme;
+};
+export const Text = styled.Text<TextProps>`
   text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>
     props.isChoice
-      ? `#38B000`
+      ? props.theme.colors.positive
       : `${props.theme.forms.borderWidth} solid rgba(28, 27, 37, 0.7)`};
 `;
 
-export const Icon = styled.View<ChoiceButtonProps>`
+export const Icon = styled.View<
+  Pick<ChoiceButtonProps, "isVertical" | "isSelected"> & { theme: Theme }
+>`
   margin-bottom: ${(props) => (props.isVertical ? `0` : `12px`)};
   margin-right: ${(props) => (props.isVertical ? `12px` : `0`)};
   color: ${(props) =>
-    props.isSelected ? `#38B000` : `2px solid rgba(28, 27, 37, 0.7)`};
+    props.isSelected
+      ? props.theme.colors.positive
+      : `2px solid rgba(28, 27, 37, 0.7)`};
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Modal,
   StyleSheet,
@@ -18,7 +18,8 @@ const CardModal = ({
   closeable = true,
 }: CardModalProps) => {
   const [modalVisible, setModalVisible] = useState(true);
-  const { width: screenWidth } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
+
   return (
     <>
       <Modal
@@ -28,28 +29,22 @@ const CardModal = ({
         onRequestClose={() => {
           if (closeable) {
             setModalVisible(false);
-            onModalClose();
+            onModalClose?.();
           }
         }}
       >
-        <TouchableWithoutFeedback
-          onPress={() => {
-            setModalVisible(false);
-          }}
-        >
-          <CenterBox
-            style={[
-              {
-                backgroundColor: "rgba(255, 255, 255, 0.75)",
-                ...StyleSheet.absoluteFillObject,
-                position: Platform.OS === "web" ? ("fixed" as any) : "absolute",
-              },
-            ]}
-          >
+        <TouchableWithoutFeedback onPress={() => setModalVisible(false)}>
+          <CenterBox style={styles.wrapper}>
             <Curtain onClick={(event) => event.stopPropagation()} />
             <Card
-              width={screenWidth - 30}
-              style={[{ maxWidth: 600 }, cardStyle]}
+              style={[
+                styles.card,
+                {
+                  width: width - 30,
+                  maxHeight: height - 40,
+                },
+                cardStyle,
+              ]}
             >
               {/* <CloseIconWrapper onPress={() => setModalVisible(false)}>
                 <CrossIcon />
@@ -62,5 +57,18 @@ const CardModal = ({
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  card: {
+    maxWidth: 600,
+    overflowY: "auto",
+  },
+  wrapper: {
+    backgroundColor: "rgba(255, 255, 255, 0.75)",
+    ...StyleSheet.absoluteFillObject,
+    position:
+      Platform.OS === "web" ? ("fixed" as unknown as "relative") : "absolute",
+  },
+});
 
 export default CardModal;

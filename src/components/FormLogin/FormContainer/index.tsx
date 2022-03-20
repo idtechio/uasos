@@ -1,8 +1,12 @@
-import React, { FC } from "react";
 import styled from "styled-components/native";
 import { css } from "styled-components";
+import { Theme } from "../../../style/theme.config";
 
-const FormContainer: FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const FormContainer = ({ children }: Props) => {
   return <FormContainerWrapper>{children}</FormContainerWrapper>;
 };
 
@@ -10,7 +14,7 @@ export default FormContainer;
 
 const FormContainerWrapper = styled.View`
   display: flex;
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       sm: css`
         width: 400px;

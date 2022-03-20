@@ -1,11 +1,14 @@
-import React, { useMemo, useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useMemo, useState } from "react";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ScrollView, StyleSheet, ActivityIndicator } from "react-native";
+import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import FormDropdown from "../Inputs/FormDropdown";
+import FormCityDropdown from "../Inputs/FormCityDropdown";
+import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import { CompositionSection } from "../Compositions";
+import { Tooltip } from "../Tooltip";
 import {
   InputControl,
   InputCotrolLabel,
@@ -23,9 +26,14 @@ import PregnantIcon from "../../style/svgs/pregnant.svg";
 import addGuestToApi from "../../helpers/addGuestToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import CITY_DROPDOWN_LIST from "../../consts/cityDropdown.json";
+import { useSessionUserData } from "../../hooks/useSessionUserData";
+import type { GuestProps } from "../../../pages/api/guests/add";
+import { Error } from "../Inputs/style";
+import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
+import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
-export enum Boolean {
+enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
@@ -37,7 +45,7 @@ const enum Location {
 
 type SubmitRequestState = {
   loading: boolean;
-  error: Error | null;
+  error: Error | null | unknown;
   succeeded: boolean;
 };
 const submitRequestDefualtState = {
@@ -48,13 +56,17 @@ const submitRequestDefualtState = {
 
 export default function FormAdGuest() {
   const { t } = useTranslation();
+  const { name: sessionName, email: sessionEmail } = useSessionUserData();
 
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
+        name: sessionName ? sessionName.split(" ")[0] : "",
+        email: sessionEmail,
         fullBedCount: 1,
         childBedCount: 0,
         age: 18,
+        accommodationType: [],
       },
     },
   });
@@ -97,39 +109,46 @@ export default function FormAdGuest() {
 
   const {
     handleSubmit,
-    formState: { errors },
+    watch,
+    formState: { errors, isValid, isSubmitted },
   } = formFields;
 
-  const onSubmit = async (data) => {
+  const watchCountry = watch("advancedRefugee.country", "");
+
+  const onSubmit: SubmitHandler<FormType> = async (data) => {
     const guest = data.advancedRefugee;
 
-    let apiObject = {
+    let apiObject: GuestProps = {
       name: guest.name,
-      phone_num: guest.phoneNumber,
+      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
-      group_relations: [guest.groupRelations],
+      group_relation: [guest.groupRelations],
       is_pregnant: guest.preferences.peopleDetails.pregnant
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_disability: guest.preferences.peopleDetails.disability
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_animal: guest.preferences.peopleDetails.animals
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_with_elderly: guest.preferences.peopleDetails.oldPerson
         ? Boolean.TRUE
-        : Boolean.TRUE,
+        : Boolean.FALSE,
       is_ukrainian_nationality:
-        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.TRUE,
+        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
+      country: guest.country,
+      listing_country: guest.country,
     };
+
     if (guest.town) {
-      (apiObject["city"] = guest.town),
-        (apiObject[`country`] = "poland"),
-        (apiObject[`listing_country`] = "poland");
+      apiObject = {
+        ...apiObject,
+        city: guest.town,
+      };
     }
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
@@ -144,8 +163,8 @@ export default function FormAdGuest() {
     }
   };
 
-  const onError = (error) => {
-    console.log("error:", error);
+  const onError = (_error: unknown) => {
+    // TODO: handle error case
   };
 
   const GROUP_RELATIONS = [
@@ -175,8 +194,8 @@ export default function FormAdGuest() {
     { label: t("staticValues.accommodationTypes.flat"), value: "flat" },
     { label: t("staticValues.accommodationTypes.house"), value: "house" },
     {
-      label: t("staticValues.accommodationTypes.public_shared_space"),
-      value: "public_shared_space",
+      label: t("staticValues.accommodationTypes.collective"),
+      value: "collective",
     },
   ];
 
@@ -206,243 +225,235 @@ export default function FormAdGuest() {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() =>
-            setSubmitRequstState((state) => submitRequestDefualtState)
-          }
+          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          headerText={t("thankfulnessModal.thankYou")}
+          subHeaderText={t("thankfulnessModal.applicationSent")}
+          contentText={t("thankfulnessModal.informWhenAccomodationFound")}
         />
       )}
-
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.container}
-        style={styles.containerWraper}
+      <CompositionSection
+        padding={[35, 30, 8, 30]}
+        zIndex={6}
+        header={t("refugeeAddForm.basicInfoHeader")}
       >
-        <CompositionSection
-          padding={[35, 30, 8, 30]}
-          zIndex={6}
-          header={t("refugeeAddForm.basicInfoHeader")}
-        >
-          <InputControl>
-            <InputCotrolLabel>{t("refugeeAddForm.nameLabel")}</InputCotrolLabel>
-            <FormTextInput
-              name="advancedRefugee.name"
-              label={t("refugeeAddForm.namePlaceholder")}
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.name}
-              errorMsg={t("refugeeAddForm.errors.name")}
-            />
+        <InputControl>
+          <InputCotrolLabel>{t("refugeeAddForm.nameLabel")}</InputCotrolLabel>
+          <FormTextInput
+            name="advancedRefugee.name"
+            label={t("refugeeAddForm.namePlaceholder")}
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedRefugee?.name}
+            errorMsg={t("refugeeAddForm.errors.name")}
+          />
 
-            <InputCotrolLabel>
-              {t("refugeeAddForm.emailLabel")}
-            </InputCotrolLabel>
-            <FormTextInput
-              name="advancedRefugee.email"
-              label={t("refugeeAddForm.emailPlaceholder")}
-              rules={{
-                required: true,
-                pattern: {
-                  value: /\S+@\S+\.\S+/,
-                  message: t("validations.invalidEmail"),
-                },
-              }}
-              error={errors?.advancedRefugee?.email}
-              errorMsg={t("refugeeAddForm.errors.email")}
+          <InputCotrolLabel>{t("refugeeAddForm.emailLabel")}</InputCotrolLabel>
+          <FormTextInput
+            name="advancedRefugee.email"
+            label={t("refugeeAddForm.emailPlaceholder")}
+            rules={{
+              required: true,
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: t("validations.invalidEmail"),
+              },
+            }}
+            error={errors?.advancedRefugee?.email}
+            errorMsg={t("refugeeAddForm.errors.email")}
+          />
+          <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
+          <FormPhoneInput
+            prefixName="advancedRefugee.phonePrefix"
+            numberName="advancedRefugee.phoneNumber"
+            phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
+            phoneLabel={t("refugeeAddForm.phonePlaceholder")}
+            error={errors?.advancedRefugee?.phoneNumber}
+            errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            data={generatePhonePrefixDropdownList(addGuestPhonePrefixList)}
+          />
+        </InputControl>
+      </CompositionSection>
+      <CompositionSection
+        zIndex={5}
+        padding={[35, 30, 8, 30]}
+        header={t("refugeeAddForm.placeOfRefuge")}
+        backgroundColor="#F5F4F4"
+      >
+        <InputControl zIndex={14}>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.countryOfRefugePlaceholder")}
+          </InputCotrolLabel>
+          <FormCountryDropdown
+            zIndex={14}
+            placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
+            name="advancedRefugee.country"
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedHost?.country}
+            errorMsg={t("hostAdd.errors.country")}
+          />
+        </InputControl>
+        <InputControl zIndex={13}>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.countryOfRefugeLabel")}
+          </InputCotrolLabel>
+          <RadioButtons>
+            <ChoiceButton
+              text={t("refugeeForm.labels.anyLocation")}
+              isSmall
+              onPress={() => setLocation(Location.Any)}
+              isSelected={location === Location.Any}
             />
-            <InputCotrolLabel>
-              {t("refugeeAddForm.phoneLabel")}
-            </InputCotrolLabel>
-            <FormTextInput
-              name="advancedRefugee.phoneNumber"
-              label={t("refugeeAddForm.phonePlaceholder")}
-              rules={{
-                required: true,
-                pattern: {
-                  value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
-                  message: t("refugeeForm.errors.phoneNumber"),
-                },
-              }}
-              error={errors?.advancedRefugee?.phoneNumber}
-              errorMsg={t("refugeeAddForm.errors.phoneNumber")}
+            <ChoiceButton
+              text={t("refugeeForm.labels.prefferedLocation")}
+              isSmall
+              onPress={() => setLocation(Location.Preffered)}
+              isSelected={location === Location.Preffered}
             />
-          </InputControl>
-        </CompositionSection>
-        <CompositionSection
-          zIndex={5}
-          padding={[35, 30, 8, 30]}
-          header={t("refugeeAddForm.placeOfRefuge")}
-          backgroundColor="#F5F4F4"
-        >
+          </RadioButtons>
+        </InputControl>
+
+        {location === Location.Preffered && (
           <InputControl zIndex={13}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.countryOfRefugeLabel")}
+              {t("refugeeAddForm.cityLabel")}
+              <View style={styles.tooltipText}>
+                <Tooltip>
+                  <Text>{t("hostAdd.cityTooltipText")}</Text>
+                </Tooltip>
+              </View>
             </InputCotrolLabel>
-            <RadioButtons>
-              <ChoiceButton
-                text={t("refugeeForm.labels.anyLocation")}
-                isSmall
-                onPress={() => setLocation(Location.Any)}
-                isSelected={location === Location.Any}
-              />
-              <ChoiceButton
-                text={t("refugeeForm.labels.prefferedLocation")}
-                isSmall
-                onPress={() => setLocation(Location.Preffered)}
-                isSelected={location === Location.Preffered}
-              />
-            </RadioButtons>
-          </InputControl>
-
-          {location === Location.Preffered && (
-            <InputControl zIndex={13}>
-              {/* <InputCotrolLabel>{t("hostAdd.country")}</InputCotrolLabel>
-              <FormDropdown
-                zIndex={14}
-                data={[{ label: t("hostAdd.countries.poland"), value: "poland" }]}
-                placeholder={t("hostAdd.country")}
-                name="refugeeAddForm.country"
-                rules={{
-                  required: true,
-                }}
-                error={errors?.advancedHost?.country}
-                errorMsg={t("hostAdd.errors.country")}
-              /> */}
-              <InputCotrolLabel>
-                {t("refugeeAddForm.cityLabel")}
-              </InputCotrolLabel>
-              <FormDropdown
-                data={CITY_DROPDOWN_LIST} // todo: google places api
-                name="advancedRefugee.town"
-                placeholder={t("refugeeAddForm.cityPlaceholder")}
-                rules={{
-                  required: true,
-                }}
-                error={errors?.advancedHost?.town}
-                errorMsg={t("validations.requiredTown")}
-              />
-            </InputControl>
-          )}
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.overnightDurationLabel")}
-            </InputCotrolLabel>
-            <FormRadioGroup<string | string>
-              name="advancedRefugee.overnightDuration"
+            <FormCityDropdown
+              country={watchCountry}
+              name="advancedRefugee.town"
+              placeholder={t("refugeeAddForm.cityPlaceholder")}
               rules={{
                 required: true,
               }}
-              data={OVERNIGHT_DURATION_TYPES}
-              error={errors?.advancedRefugee?.overnightDuration}
-              errorMsg={t("refugeeAddForm.errors.overnightDuration")}
+              error={errors?.advancedHost?.town}
+              errorMsg={t("validations.requiredTown")}
             />
           </InputControl>
-        </CompositionSection>
-        <CompositionSection
-          zIndex={2}
-          padding={[35, 30, 8, 30]}
-          header={t("hostAdd.additionalInformationHeader")}
-        >
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.fullBedCountLabel")}
-            </InputCotrolLabel>
-            <FormNumericInput
-              name="advancedRefugee.fullBedCount"
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.fullBedCount}
-              errorMsg={t("refugeeAddForm.errors.fullBedCount")}
-            />
-          </InputControl>
-          <FormButtonsVertical
-            label={t("refugeeForm.labels.refugeeDetails")}
-            data={refugeeDetailsOptions}
+        )}
+        <InputControl>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.overnightDurationLabel")}
+          </InputCotrolLabel>
+          <FormRadioGroup
+            name="advancedRefugee.overnightDuration"
+            rules={{
+              required: true,
+            }}
+            data={OVERNIGHT_DURATION_TYPES}
+            error={errors?.advancedRefugee?.overnightDuration}
+            errorMsg={t("refugeeAddForm.errors.overnightDuration")}
           />
-          <InputControl zIndex={11}>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.groupRelations")}
-            </InputCotrolLabel>
-            <FormDropdown
-              data={GROUP_RELATIONS}
-              name="advancedRefugee.groupRelations"
-              placeholder={t("refugeeAddForm.selectPlaceholder")}
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.groupRelations}
-              errorMsg={t("refugeeAddForm.errors.groupRelations")}
-            />
-          </InputControl>
-          <InputControl zIndex={10}>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.accommodationType")}
-            </InputCotrolLabel>
-            <FormDropdown
-              data={ACCOMMODATION_TYPES}
-              name="advancedRefugee.accommodationType"
-              placeholder={t("refugeeAddForm.selectPlaceholder")}
-              multiSelect
-              rules={{
-                required: true,
-              }}
-              error={errors?.advancedRefugee?.accommodationType}
-              errorMsg={t("refugeeAddForm.errors.accommodationType")}
-            />
-          </InputControl>
+        </InputControl>
+      </CompositionSection>
+      <CompositionSection
+        zIndex={2}
+        padding={[35, 30, 8, 30]}
+        header={t("hostAdd.additionalInformationHeader")}
+      >
+        <InputControl>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.fullBedCountLabel")}
+          </InputCotrolLabel>
+          <FormNumericInput
+            name="advancedRefugee.fullBedCount"
+            rules={{
+              required: true,
+            }}
+            min={1}
+            error={errors?.advancedRefugee?.fullBedCount}
+            errorMsg={t("refugeeAddForm.errors.fullBedCount")}
+          />
+        </InputControl>
+        <FormButtonsVertical
+          label={t("refugeeForm.labels.refugeeDetails")}
+          data={refugeeDetailsOptions}
+        />
+        <InputControl zIndex={11}>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.groupRelations")}
+          </InputCotrolLabel>
+          <FormDropdown
+            data={GROUP_RELATIONS}
+            name="advancedRefugee.groupRelations"
+            placeholder={t("refugeeAddForm.selectPlaceholder")}
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedRefugee?.groupRelations}
+            errorMsg={t("refugeeAddForm.errors.groupRelations")}
+          />
+        </InputControl>
+        <InputControl zIndex={10}>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.accommodationType")}
+          </InputCotrolLabel>
+          <FormDropdown<string>
+            data={ACCOMMODATION_TYPES}
+            name="advancedRefugee.accommodationType"
+            placeholder={t("refugeeAddForm.selectPlaceholder")}
+            multiSelect
+            rules={{
+              required: true,
+            }}
+            error={errors?.advancedRefugee?.accommodationType}
+            errorMsg={t("refugeeAddForm.errors.accommodationType")}
+          />
+        </InputControl>
 
-          <InputControl>
-            <InputCotrolLabel>
-              {t("refugeeAddForm.countryOfGroup")}
-            </InputCotrolLabel>
-            <FormRadioGroup<string | string>
-              name="advancedRefugee.nationality"
-              rules={{
-                required: true,
-              }}
-              data={[
-                {
-                  label: t("refugeeAddForm.countryOfGroupUA"),
-                  value: "ukraine",
-                },
-                {
-                  label: t("refugeeAddForm.countryOfGroupOthers"),
-                  value: "any",
-                },
-              ]}
-              error={errors?.advancedRefugee?.nationality}
-              errorMsg={t("refugeeAddForm.errors.accommodationType")}
-            />
-          </InputControl>
-        </CompositionSection>
-        <CompositionSection
-          zIndex={1}
-          padding={[35, 30, 8, 30]}
-          backgroundColor="#F5F4F4"
-        >
-          <InputControl>
-            <ButtonCta
-              onPress={handleSubmit(onSubmit, onError)}
-              anchor={t("refugeeAddForm.addButton")}
-            />
-          </InputControl>
-        </CompositionSection>
-      </ScrollView>
+        <InputControl>
+          <InputCotrolLabel>
+            {t("refugeeAddForm.countryOfGroup")}
+          </InputCotrolLabel>
+          <FormRadioGroup
+            name="advancedRefugee.nationality"
+            rules={{
+              required: true,
+            }}
+            data={[
+              {
+                label: t("refugeeAddForm.countryOfGroupUA"),
+                value: "ukraine",
+              },
+              {
+                label: t("refugeeAddForm.countryOfGroupOthers"),
+                value: "any",
+              },
+            ]}
+            error={errors?.advancedRefugee?.nationality}
+            errorMsg={t("refugeeAddForm.errors.countryOfGroup")}
+          />
+        </InputControl>
+      </CompositionSection>
+      <CompositionSection
+        zIndex={1}
+        padding={[35, 30, 8, 30]}
+        backgroundColor="#F5F4F4"
+      >
+        <InputControl>
+          <ButtonCta
+            onPress={handleSubmit(onSubmit, onError)}
+            anchor={t("refugeeAddForm.addButton")}
+            style={styles.addButton}
+          />
+          {isSubmitted && !isValid ? (
+            <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+          ) : null}
+        </InputControl>
+      </CompositionSection>
     </FormProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    flexDirection: "column",
+  addButton: {
+    marginBottom: 5,
   },
-  error: {
-    color: "#D8000C",
-    marginTop: 10,
-  },
-  containerWraper: {
-    width: "100%",
-  },
+  tooltipText: { marginHorizontal: 10 },
 });

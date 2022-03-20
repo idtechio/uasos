@@ -1,4 +1,3 @@
-import React from "react";
 import type { ChoiceButtonProps } from "./type";
 import { Button, Text, Icon } from "./style";
 import { TouchableOpacity } from "react-native";
@@ -26,7 +25,11 @@ const ChoiceButton = ({
           </Icon>
         ) : null}
         {text ? (
-          <Text isVertical={isVertical} isSelected={isSelected}>
+          <Text
+            isVertical={isVertical}
+            isSelected={isSelected}
+            isSmall={isSmall}
+          >
             {text}
           </Text>
         ) : null}

@@ -34,7 +34,7 @@ export enum HostType {
   FRIENDS = "host_type_friends_group",
 }
 
-export enum AccomodationTime {
+export enum AccommodationTime {
   LESS_THAN_WEEK = "less_than_week",
   WEEK = "week",
   TWO_WEEKS = "two_weeks",
@@ -91,21 +91,22 @@ export type FormType = {
   advancedHost: {
     name: string;
     email: string;
+    phonePrefix: string;
     phoneNumber: string;
     town: string;
     country: string;
     accommodationType: string;
     guestCount: number;
     childBedCount: number;
-    accommodationTime: AccomodationTime;
+    accommodationTime: AccommodationTime;
     nationality: Nationality;
-    groupsTypes: string;
+    groupsTypes: string[];
     transportReady: boolean;
     pregnantReady: boolean;
-    dissabilityReady: boolean;
+    disabilityReady: boolean;
     animalReady: boolean;
     prolongationReady: boolean;
-    accomodationPhotos: [Blob];
+    accommodationPhotos: [Blob];
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;
@@ -118,6 +119,7 @@ export type FormType = {
     cityOfRefuge: string;
     fullBedCount: number;
     childBedCount: number;
+    phonePrefix: string;
     phoneNumber: string;
     preferences: {
       animal: string;
@@ -126,9 +128,9 @@ export type FormType = {
     gender: string;
     age: number;
     nationality: string;
-    overnightDuration: number;
+    overnightDuration: string;
     groupRelations: string;
-    accommodationType: string;
+    accommodationType: string[];
   };
   login: {
     email: string;
@@ -136,11 +138,16 @@ export type FormType = {
   };
 };
 
-type PathsToStringProps<T> = T extends string | number | Date | boolean
+type PathsToStringProps<T> = T extends
+  | string
+  | number
+  | Date
+  | boolean
+  | string[]
   ? []
   : {
-      [K in Extract<keyof T, any>]: [K, ...PathsToStringProps<T[K]>];
-    }[Extract<keyof T, any>];
+      [K in Extract<keyof T, unknown>]: [K, ...PathsToStringProps<T[K]>];
+    }[Extract<keyof T, unknown>];
 
 type JoinTuple<T extends (string | number)[], D extends string> = T extends []
   ? never

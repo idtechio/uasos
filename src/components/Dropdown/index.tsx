@@ -8,14 +8,15 @@ import {
   PlaceholderText,
   SelectText,
   Pill,
+  PillContainer,
 } from "./style";
-import { Platform, View } from "react-native";
+import { ListRenderItem, Platform, View } from "react-native";
 import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Item } from "./Item";
 import { SearchHeader } from "./SearchHeader";
 import { DropdownProps } from "./types";
 
-export const Dropdown = ({
+export function Dropdown<T>({
   data,
   direction = "to-bottom",
   label,
@@ -26,8 +27,11 @@ export const Dropdown = ({
   error,
   onBlur,
   searchable = false,
-}: DropdownProps) => {
-  const containerRef = useRef<any>();
+  styles,
+  itemListAutoHeight = false,
+  highlightSelectedItem = false,
+}: DropdownProps<T>) {
+  const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
   const [selectWidth, setSelectWidth] = useState(0);
   const [selectHeight, setSelectHeight] = useState(0);
@@ -42,22 +46,36 @@ export const Dropdown = ({
     selectedValues.includes(value)
   );
 
-  const handleItemPress = (value: any) => {
+  const handleItemPress = (value: T) => {
     itemPressFunction(value);
     onBlur?.();
   };
 
-  const renderItem = ({ item }) => (
-    <Item
-      title={item.label}
-      value={item.value}
-      itemPressFunction={handleItemPress}
-      setShowOptions={multiselect ? () => {} : setShowOptions}
-      selected={multiselect && selectedValues.includes(item.value)}
-    />
-  );
+  const renderItem: ListRenderItem<unknown> = ({ item }) => {
+    const selectedValuesIncludeItem = selectedValues.includes(
+      (item as typeof data[number]).value
+    );
+
+    const isItemSelected =
+      (multiselect && selectedValuesIncludeItem) ||
+      (!multiselect && highlightSelectedItem && selectedValuesIncludeItem);
+
+    return (
+      <Item<T>
+        title={(item as typeof data[number]).label}
+        value={(item as typeof data[number]).value}
+        itemPressFunction={handleItemPress}
+        setShowOptions={multiselect ? () => undefined : setShowOptions}
+        style={styles?.item}
+        textStyle={styles?.itemTextStyle}
+        selectedStyle={styles?.itemSelected}
+        selected={isItemSelected}
+      />
+    );
+  };
 
   useEffect(() => {
+    // @ts-expect-error TODO: fix event type
     const handleClickOutside = (ev) => {
       if (containerRef.current && !containerRef.current?.contains(ev.target)) {
         setShowOptions(false);
@@ -83,7 +101,9 @@ export const Dropdown = ({
           setSelectWidth(event.nativeEvent.layout.width);
           setSelectHeight(event.nativeEvent.layout.height);
         }}
+        // @ts-expect-error TODO: fix ref type
         ref={containerRef}
+        style={styles?.wrapper}
       >
         <Select
           isInvalid={!!error}
@@ -95,13 +115,16 @@ export const Dropdown = ({
 
             setShowOptions(!showOptions);
           }}
+          style={styles?.select}
         >
           <SelectText>
             {selectedItems.length > 0 ? (
               multiselect ? (
-                selectedItems.map(({ label, value }) => (
-                  <Pill key={value}>{label}</Pill>
-                ))
+                <PillContainer>
+                  {selectedItems.map(({ label, value }) => (
+                    <Pill key={String(value)}>{label}</Pill>
+                  ))}
+                </PillContainer>
               ) : (
                 selectedItems[0].label
               )
@@ -129,7 +152,10 @@ export const Dropdown = ({
               <ItemList
                 data={filteredData}
                 renderItem={renderItem}
-                keyExtractor={(item) => item.value}
+                autoHeight={itemListAutoHeight}
+                keyExtractor={(item) => {
+                  return String((item as typeof filteredData[number]).value);
+                }}
               />
             </Options>
           </>
@@ -137,4 +163,4 @@ export const Dropdown = ({
       </View>
     </>
   );
-};
+}

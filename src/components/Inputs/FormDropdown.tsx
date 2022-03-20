@@ -1,10 +1,4 @@
-import { VFC } from "react";
-import {
-  Controller,
-  FieldError,
-  useForm,
-  useFormContext,
-} from "react-hook-form";
+import { Controller, FieldError, useFormContext } from "react-hook-form";
 import InputControl from "../Forms/InputControl";
 import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
@@ -12,29 +6,26 @@ import { DropdownProps } from "../Dropdown/types";
 import { Dropdown } from "../Dropdown";
 import { Error } from "./style";
 
-type Props = {
+type Props<T> = {
   name: FormKey;
-  label?: DropdownProps["label"];
-  placeholder?: DropdownProps["placeholder"];
-  error?: FieldError;
-  data: DropdownProps["data"];
+  error?: FieldError | FieldError[];
   errorMsg?: string;
   multiSelect?: boolean;
   zIndex?: number;
-} & Pick<React.ComponentProps<typeof Controller>, "rules">;
+} & Pick<DropdownProps<T>, "label" | "placeholder" | "data"> &
+  Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormDropdown: VFC<Props> = (props) => {
-  const {
-    name,
-    label,
-    errorMsg,
-    rules,
-    error,
-    data,
-    placeholder,
-    zIndex,
-    multiSelect = false,
-  } = props;
+function FormDropdown<T>({
+  name,
+  label,
+  errorMsg,
+  rules,
+  error,
+  data,
+  placeholder,
+  zIndex,
+  multiSelect = false,
+}: Props<T>) {
   const { control } = useFormContext();
 
   return (
@@ -42,9 +33,9 @@ const FormDropdown: VFC<Props> = (props) => {
       control={control}
       rules={rules}
       render={({ field: { onChange, onBlur, value } }) => {
-        const handleChange = (selected) => {
+        const handleChange = (selected: T) => {
           if (multiSelect) {
-            const items = value ?? [];
+            const items: T[] = value ?? [];
 
             if (items.includes(selected)) {
               onChange(items.filter((v) => v !== selected));
@@ -59,7 +50,7 @@ const FormDropdown: VFC<Props> = (props) => {
         return (
           <View style={{ zIndex }}>
             <InputControl>
-              <Dropdown
+              <Dropdown<T>
                 multiselect={multiSelect}
                 data={data}
                 placeholder={placeholder}
@@ -77,6 +68,6 @@ const FormDropdown: VFC<Props> = (props) => {
       name={name}
     />
   );
-};
+}
 
 export default FormDropdown;

@@ -1,5 +1,4 @@
 import { View, Text } from "react-native";
-import { ButtonCta } from "../Buttons";
 import Avatar from "../Avatar";
 import { styles } from "./style";
 import Marker from "./image/Marker";
@@ -9,14 +8,15 @@ import Dish from "./image/Dish";
 import Animals from "./image/Animals";
 import Disability from "./image/Disability";
 import { Trans, useTranslation } from "next-i18next";
+import { Fragment } from "react";
 
-const OfferBox = ({
-  location,
-  host,
-  conditions,
-  preferences,
-  resources,
-}: any) => {
+type Props = {
+  location: { city: string; state: string };
+  host: { name: string };
+  preferences: ("animals" | "disability" | "foof")[];
+};
+
+const OfferBox = ({ location, host, preferences }: Props) => {
   const { t } = useTranslation();
   return (
     <View style={styles.box}>
@@ -85,7 +85,7 @@ const OfferBox = ({
                     </View>
                   );
                 default:
-                  return <></>;
+                  return <Fragment />;
               }
             })
           : null}

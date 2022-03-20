@@ -1,4 +1,3 @@
-import { VFC, ReactNode } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { Error } from "./style";
@@ -11,22 +10,21 @@ type Props = {
   label: string;
   error?: FieldError;
   errorMsg?: string;
-  extra?: ReactNode;
+  extra?: React.ReactNode;
   labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput: VFC<Props> = (props) => {
-  const {
-    name,
-    label,
-    errorMsg,
-    rules,
-    error,
-    extra,
-    labelsBackgroundColor,
-    secureTextEntry,
-  } = props;
+const FormTextInput = ({
+  name,
+  label,
+  errorMsg,
+  rules,
+  error,
+  extra,
+  labelsBackgroundColor,
+  secureTextEntry,
+}: Props) => {
   const { control } = useFormContext();
   return (
     <Controller
@@ -37,6 +35,7 @@ const FormTextInput: VFC<Props> = (props) => {
           <Input
             placeholder={label}
             onChange={onChange}
+            value={value}
             onBlur={onBlur}
             error={error}
             extra={extra}

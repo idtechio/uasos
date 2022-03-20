@@ -6,10 +6,6 @@ import CarIcon from "../../style/svgs/car.svg";
 import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
 import { AccommodationType } from "../../helpers/FormTypes";
 
-export const hostCountries = [
-  { label: "hostAdd.countries.poland", value: "poland" },
-];
-
 export const GROUP_RELATIONS = [
   { label: "staticValues.groupRelations.single_man", value: "single_man" },
   {
@@ -48,7 +44,7 @@ export const additionalHostsFeats: Data[] = [
     icon: <ElderSittingIcon width="30" height="30" />,
   },
   {
-    id: "advancedHost.dissabilityReady",
+    id: "advancedHost.disabilityReady",
     label: "hostAdd.dissabilityReady",
     icon: <DisabilityIcon width="30" height="30" />,
   },

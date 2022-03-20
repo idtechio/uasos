@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import useFetch from "react-fetch-hook";
-import { ActivityIndicator, FlatList, Text } from "react-native";
+import { ActivityIndicator, FlatList } from "react-native";
 import debounce from "lodash.debounce";
 
 import type { InputProps } from "./types";
@@ -12,9 +12,9 @@ type Response = {
 };
 
 const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = useState<string | undefined>(value);
   const [query, setQuery] = useState(value);
-  const [text, setText] = useState(value);
+  const [text, setText] = useState<string | undefined>(value);
   const [isOpen, setIsOpen] = useState(false);
 
   const { isLoading, data } = useFetch<Response>(
@@ -29,7 +29,7 @@ const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
     !isOpen && setIsOpen(true);
   };
 
-  const onItemSelected = (newValue: string) => {
+  const onItemSelected = (newValue: string | undefined) => {
     onChange && onChange(newValue);
     setInputValue(newValue);
     setText(newValue);

@@ -1,4 +1,5 @@
 export type SectionProps = {
+  id?: string;
   children: React.ReactNode;
   backgroundColor?: string;
   zeroPadding?: boolean;
@@ -6,4 +7,5 @@ export type SectionProps = {
   padding?: [number, number, number, number];
   header?: string;
   zIndex?: number;
+  flexGrow?: string;
 };

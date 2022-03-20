@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Platform } from "react-native";
+import { ActivityIndicator, Platform, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import UploadIcon from "../../../style/svgs/upload.svg";
 
 type UploadInputProps = {
   accept: string;
   children: React.ReactNode;
-  onFileChange(file: File, dataUri: string): void;
+  onFileChange(file: File, dataUri: string | undefined): void;
   disabled: boolean;
 };
 
@@ -41,7 +41,7 @@ const UploadInput = ({
   onFileChange,
   disabled,
 }: UploadInputProps) => {
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [isLoading, toggleLoading] = useState(false);
 
   const handleClick = useCallback(() => {
@@ -51,13 +51,13 @@ const UploadInput = ({
   }, [isLoading]);
 
   useEffect(() => {
-    const handleChange = (event) => {
-      const file = (event.target as HTMLInputElement).files[0];
+    const handleChange = (event: Event) => {
+      const file = (event.target as HTMLInputElement)?.files?.[0] as File;
       const reader = new FileReader();
       toggleLoading(true);
 
       reader.onload = (ev) => {
-        onFileChange(file, ev.target.result as string);
+        onFileChange(file, ev.target?.result as string);
         toggleLoading(false);
       };
       reader.onerror = () => toggleLoading(false);
@@ -75,7 +75,7 @@ const UploadInput = ({
         inputRef.current.removeEventListener("change", handleChange);
       }
     };
-  });
+  }, [onFileChange]);
 
   if (Platform.OS !== "web") {
     return null;
@@ -84,21 +84,25 @@ const UploadInput = ({
   return (
     <>
       <UploadButton disabled={disabled} onPress={handleClick}>
-        <UploadIcon
-          style={{ marginLeft: "4px", width: "15px", height: "15px" }}
-        />
+        <UploadIcon style={styles.icon} />
         <ButtonLabelText>
           {isLoading ? <ActivityIndicator /> : children}
         </ButtonLabelText>
       </UploadButton>
-      <input
-        type="file"
-        accept={accept}
-        ref={inputRef}
-        style={{ display: "none" }}
-      />
+      <input type="file" accept={accept} ref={inputRef} style={styles.input} />
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  icon: {
+    marginLeft: "4px",
+    width: "15px",
+    height: "15px",
+  },
+  input: {
+    display: "none",
+  },
+});
 
 export default UploadInput;

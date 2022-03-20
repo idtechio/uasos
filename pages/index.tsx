@@ -1,13 +1,14 @@
-import * as React from "react";
 import styled, { css } from "styled-components/native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CompositionAppBody } from "../src/components/Compositions";
-import Footer from "../src/components/Footer";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 import { PartnersSection } from "../src/components/PartnersSection";
 import { Splash } from "../src/components/Slash";
+import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
+import { Theme } from "../src/style/theme.config";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -19,7 +20,7 @@ const LandingProjectIntentionWrapper = styled.View`
 
 const TopLeftYellowSplash = styled(Splash)`
   max-width: 512px;
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         max-width: 1512px;
@@ -27,17 +28,12 @@ const TopLeftYellowSplash = styled(Splash)`
     })}
 `;
 
-const StyledScrollView = styled.ScrollView`
-  flex: 1;
-  width: 100%;
-`;
-
 const TopLeftYellowSplashPosition = css`
   width: 180%;
   left: -60%;
   top: -50%;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         width: 100%;
@@ -53,7 +49,7 @@ const TopRightBlueSplash = styled(Splash)`
   top: 412px;
   right: 0;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       default: css`
         max-width: 512px;
@@ -67,7 +63,7 @@ const TopRightBlueSplash = styled(Splash)`
 const TopRightBlueSplashPosition = css`
   right: -50%;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         width: 50%;
@@ -82,7 +78,7 @@ const MiddleRightYellowSplash = styled(Splash)`
   top: 1557px;
   right: 0;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       default: css`
         max-width: 512px;
@@ -96,7 +92,7 @@ const MiddleRightYellowSplash = styled(Splash)`
 const MiddleRightYellowSplashPosition = css`
   right: -55%;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
         width: 60%;
@@ -111,7 +107,7 @@ const BottomLeftBlueSplash = styled(Splash)`
   bottom: 0;
   right: 0;
 
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       default: css`
         max-width: 512px;
@@ -123,7 +119,7 @@ const BottomLeftBlueSplash = styled(Splash)`
     })}
 `;
 const BottomLeftBlueSplashPosition = css`
-  ${({ theme }) =>
+  ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       default: css`
         right: -20%;
@@ -140,37 +136,43 @@ const BottomLeftBlueSplashPosition = css`
 function Landing() {
   return (
     <CompositionAppBody>
-      <StyledScrollView>
-        <TopLeftYellowSplash
-          color="yellow"
-          splashPosition={TopLeftYellowSplashPosition}
-        />
-        <TopRightBlueSplash
-          color="blue"
-          splashPosition={TopRightBlueSplashPosition}
-        />
-        <MiddleRightYellowSplash
-          color="yellow"
-          splashPosition={MiddleRightYellowSplashPosition}
-        />
-        <BottomLeftBlueSplash
-          color="blue"
-          splashPosition={BottomLeftBlueSplashPosition}
-        />
-        <LandingProjectIntentionWrapper>
-          <LandingProjectIntention />
-        </LandingProjectIntentionWrapper>
-        <PartnersSection />
-        <HowDoesItWorkSection />
-        <LikeToHelpSection />
-        <Footer />
-      </StyledScrollView>
+      <TopLeftYellowSplash
+        color="yellow"
+        // @ts-expect-error TODO: fix prop types
+        splashPosition={TopLeftYellowSplashPosition}
+      />
+      <TopRightBlueSplash
+        color="blue"
+        // @ts-expect-error TODO: fix prop types
+        splashPosition={TopRightBlueSplashPosition}
+      />
+      <MiddleRightYellowSplash
+        color="yellow"
+        // @ts-expect-error TODO: fix prop types
+        splashPosition={MiddleRightYellowSplashPosition}
+      />
+      <BottomLeftBlueSplash
+        color="blue"
+        // @ts-expect-error TODO: fix prop types
+        splashPosition={BottomLeftBlueSplashPosition}
+      />
+      <LandingProjectIntentionWrapper>
+        <LandingProjectIntention />
+      </LandingProjectIntentionWrapper>
+      <PartnersSection />
+      <HowDoesItWorkSection />
+      <LikeToHelpSection />
     </CompositionAppBody>
   );
 }
 
-export const getServerSideProps = async ({ locale }) => ({
-  props: { ...(await serverSideTranslations(locale)) },
-});
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => ({
+    props: {
+      session,
+      ...(locale && (await serverSideTranslations(locale))),
+    },
+  })
+);
 
 export default Landing;

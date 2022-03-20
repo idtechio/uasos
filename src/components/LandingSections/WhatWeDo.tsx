@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { UnorderedList } from "../UnorderedList/UnorderedList";
 import Section from "../Section";
 import {
@@ -15,9 +15,10 @@ import { ButtonDefault } from "../Buttons";
 import { InstructionsCarousel, InstructionsGrid } from "../Instructions";
 import SectionTitle from "../SectionTitle";
 import { useTheme } from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 const WhatWeDoSection = () => {
-  const { getBreakPoint } = useTheme();
+  const { getBreakPoint } = useTheme() as Theme;
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const { t } = useTranslation("landingPage");
@@ -33,19 +34,20 @@ const WhatWeDoSection = () => {
   return (
     <Section bgColor="#F8F8F8">
       <View
-        style={{
-          flexDirection: isDesktop ? "row" : "column",
-          justifyContent: "space-between",
-          width: "100%",
-          paddingTop: "100px",
-          paddingBottom: "50px",
-        }}
+        style={[
+          {
+            flexDirection: isDesktop ? "row" : "column",
+          },
+          styles.section,
+        ]}
       >
         <View
-          style={{
-            alignItems: "flex-start",
-            width: isDesktop ? "33%" : "auto",
-          }}
+          style={[
+            styles.wrapper,
+            {
+              width: isDesktop ? "33%" : "auto",
+            },
+          ]}
         >
           <SectionTitle title={t("whatSosUaDoesSection.title")} />
           <Container isOpen={isOpen}>
@@ -66,7 +68,7 @@ const WhatWeDoSection = () => {
                 }),
               ]}
             ></UnorderedList>
-            <View style={{ marginTop: "10px" }} />
+            <View style={styles.spacer} />
 
             <Text>{t("whatSosUaDoesSection.algorithmExplanation")}</Text>
             {!isOpen && <GradientBackground source={{ uri: gradient.src }} />}
@@ -88,7 +90,10 @@ const WhatWeDoSection = () => {
         </View>
 
         <View
-          style={{ alignSelf: "stretch", width: isDesktop ? "60%" : "auto" }}
+          style={[
+            styles.instructionsWrapper,
+            { width: isDesktop ? "60%" : "auto" },
+          ]}
         >
           {isDesktop ? <InstructionsGrid /> : <InstructionsCarousel />}
         </View>
@@ -96,5 +101,23 @@ const WhatWeDoSection = () => {
     </Section>
   );
 };
+
+const styles = StyleSheet.create({
+  section: {
+    justifyContent: "space-between",
+    width: "100%",
+    paddingTop: "100px",
+    paddingBottom: "50px",
+  },
+  wrapper: {
+    alignItems: "flex-start",
+  },
+  spacer: {
+    marginTop: "10px",
+  },
+  instructionsWrapper: {
+    alignSelf: "stretch",
+  },
+});
 
 export default WhatWeDoSection;

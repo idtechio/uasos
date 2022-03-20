@@ -1,3 +1,5 @@
+import { useBreakPointGetter } from "../hooks/useBreakPointGetter";
+
 export const base = {
   breakPoints: {
     sm: 576,
@@ -7,6 +9,10 @@ export const base = {
     xxl: 1500,
   },
   maxContainerWidth: 1200,
+};
+
+export type Theme = typeof primary & {
+  getBreakPoint: ReturnType<typeof useBreakPointGetter>;
 };
 
 export const primary = {
@@ -22,6 +28,8 @@ export const primary = {
     blue: "#003566",
     secondaryBlue: "#0057B8",
     error: "#d8000c",
+    positive: "#38B000",
+    alert: "#F44336",
   },
   fonts: {
     headings: "'Roboto', sans-serif",
@@ -45,7 +53,7 @@ export const primary = {
 };
 
 // TODO: DarkMode
-export const secendary = {
+export const secondary = {
   ...base,
   colors: {
     accent: "red",
