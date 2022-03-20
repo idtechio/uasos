@@ -35,8 +35,8 @@
       "longer": "Longer than a month"
     },
     "groupRelations": {
-      "single_man": "Single",
-      "single_woman": "Single",
+      "single_man": "Single Man",
+      "single_woman": "Single Woman",
       "spouses": "Spouses/Couple",
       "mother_with_children": "Mother with children",
       "family_with_children": "Family with children",
