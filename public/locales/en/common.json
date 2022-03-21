@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "User profile",
     "placesList": "Your list of accomodations",
+    "logIn": "LogIn",
     "logout": "Log out"
   },
   "labels": {
