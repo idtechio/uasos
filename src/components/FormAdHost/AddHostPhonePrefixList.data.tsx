@@ -1,5 +1,9 @@
 export const addHostPhonePrefixList = [
   {
+    locale: "ua",
+    countryCode: "+380",
+  },
+  {
     locale: "pl",
     countryCode: "+48",
   },
@@ -110,9 +114,5 @@ export const addHostPhonePrefixList = [
   {
     locale: "se",
     countryCode: "+46",
-  },
-  {
-    locale: "ua",
-    countryCode: "+380",
   },
 ];
