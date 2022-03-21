@@ -35,8 +35,8 @@
       "longer": "Longer than a month"
     },
     "groupRelations": {
-      "single_man": "Single",
-      "single_woman": "Single",
+      "single_man": "Single Man",
+      "single_woman": "Single Woman",
       "spouses": "Spouses/Couple",
       "mother_with_children": "Mother with children",
       "family_with_children": "Family with children",
@@ -337,5 +337,9 @@
     "doNotHaveAcc": "Do you want to have access ?",
     "register": "Register"
   },
-  "gdpr": "GDPR"
+  "gdpr": "GDPR",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

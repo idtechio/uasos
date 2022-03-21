@@ -1,11 +1,10 @@
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-
-import { Error } from "./style";
-import Input from "../Forms/Input";
-import InputControl from "../Forms/InputControl";
-import { FormKey } from "../../helpers/FormTypes";
-import { Dropdown } from "../Dropdown";
-import { CompositionRow } from "../Compositions/CompositionRow";
+import { Error } from "../style";
+import Input from "../../Forms/Input";
+import InputControl from "../../Forms/InputControl";
+import { FormKey } from "../../../helpers/FormTypes";
+import { Dropdown } from "../../Dropdown";
+import { CompositionRow } from "../../Compositions/CompositionRow";
 import { StyleSheet } from "react-native";
 
 type Props = {

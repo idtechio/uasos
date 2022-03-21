@@ -1,28 +1,65 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styled from "styled-components/native";
 import { LanguageFlags } from "./LanguageFlags";
-
-const Wrapper = styled.View`
-  margin-left: 6px;
-`;
+import { useMemo } from "react";
+import { Dropdown } from "../Dropdown";
+import { getLocaleFullName } from "./getLocaleFullName";
+import {
+  DropDownListItemObject,
+  DropDownWrapperObject,
+  LanguageLabel,
+  InnerLink,
+  DropDownListItemObjectSelected,
+  DropDownWrapperMobileObject,
+  ItemTextStyle,
+} from "./style";
+import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
 function LanguageSwitcher() {
-  const { locales, asPath } = useRouter();
+  const { locales, asPath, locale } = useRouter();
+  const getBreakPoint = useBreakPointGetter();
 
-  return locales ? (
-    <>
-      {locales.map((locale) => (
-        <Wrapper key={locale}>
+  const isDesktop = getBreakPoint({ default: false, lg: true });
+
+  const dropdownData = useMemo(
+    () =>
+      locales?.map((locale) => ({
+        label: (
           <Link passHref href={asPath} locale={locale}>
-            <a>
+            <a style={InnerLink}>
               <LanguageFlags locale={locale} />
+              {isDesktop && (
+                <LanguageLabel>
+                  {locale ? getLocaleFullName(locale) : locale}
+                </LanguageLabel>
+              )}
             </a>
           </Link>
-        </Wrapper>
-      ))}
-    </>
-  ) : null;
+        ),
+        value: locale,
+      })),
+    [locales, asPath, isDesktop]
+  );
+
+  if (!dropdownData) {
+    return null;
+  }
+
+  return (
+    <Dropdown
+      itemPressFunction={() => null}
+      selected={locale}
+      data={dropdownData}
+      itemListAutoHeight
+      highlightSelectedItem
+      styles={{
+        select: isDesktop ? DropDownWrapperObject : DropDownWrapperMobileObject,
+        item: DropDownListItemObject,
+        itemSelected: DropDownListItemObjectSelected,
+        itemTextStyle: ItemTextStyle,
+      }}
+    />
+  );
 }
 
 export default LanguageSwitcher;

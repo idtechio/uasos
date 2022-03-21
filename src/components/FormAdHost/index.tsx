@@ -26,8 +26,9 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput";
-import { addHostPhonePrefixDropdownList } from "./AddHostPhonePrefixList.data";
+import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import { addHostPhonePrefixList } from "./AddHostPhonePrefixList.data";
+import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -232,7 +233,7 @@ export default function FormAdHost() {
             phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
             errorMsg={t("hostAdd.errors.phoneNumber")}
-            data={addHostPhonePrefixDropdownList}
+            data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
           />
         </SectionContent>
       </CompositionSection>
