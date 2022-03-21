@@ -6,7 +6,7 @@ import Section from "../src/components/Section";
 import SectionTitle from "../src/components/SectionTitle";
 import { PartnerCard } from "../src/components/PartnerCard";
 import { CompositionAppBody } from "../src/components/Compositions";
-import PARTNERS from "../src/consts/partners.json";
+import { NGO, INITIATORS, PARTNERS } from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
@@ -19,12 +19,11 @@ const PartnersContainer = styled.View`
   align-items: center;
   column-gap: 15px;
   row-gap: 10px;
-  margin-top: 66px;
 
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
-        margin-top: 60px;
+        margin-top: 10px;
         grid-template-columns: repeat(8, minmax(0, 1fr));
       `,
     })}
@@ -76,8 +75,33 @@ const PartnersPage = () => {
       </Section>
 
       <Section>
-        <SectionTitle title={t("supportingPartners")} />
+        <SectionTitle title={t("ngoPartners")} />
+        <PartnersContainer>
+          {NGO.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              source={partner.image}
+              alt={partner.alt}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
 
+      <Section>
+        <SectionTitle title={t("projectInitiators")} />
+        <PartnersContainer>
+          {INITIATORS.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              source={partner.image}
+              alt={partner.alt}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
+
+      <Section>
+        <SectionTitle title={t("partners")} />
         <PartnersContainer>
           {PARTNERS.map((partner, index) => (
             <StyledPartnerCard

@@ -4,6 +4,10 @@ export const addGuestPhonePrefixList = [
     countryCode: "+380",
   },
   {
+    locale: "pl",
+    countryCode: "+48",
+  },
+  {
     locale: "at",
     countryCode: "+43",
   },
@@ -90,10 +94,6 @@ export const addGuestPhonePrefixList = [
   {
     locale: "no",
     countryCode: "+47",
-  },
-  {
-    locale: "pl",
-    countryCode: "+48",
   },
   {
     locale: "pt",

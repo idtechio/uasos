@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "Профіль користувача",
     "placesList": "Твій перелік квартир",
+    "logIn": "Увійти",
     "logout": "Вийти"
   },
   "labels": {
