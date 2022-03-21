@@ -291,7 +291,7 @@ export default function FormAdGuest() {
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.country}
+            error={errors?.advancedRefugee?.country}
             errorMsg={t("hostAdd.errors.country")}
           />
         </InputControl>
@@ -332,7 +332,7 @@ export default function FormAdGuest() {
               rules={{
                 required: true,
               }}
-              error={errors?.advancedHost?.town}
+              error={errors?.advancedRefugee?.town}
               errorMsg={t("validations.requiredTown")}
             />
           </InputControl>

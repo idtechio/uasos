@@ -9,6 +9,7 @@ export const Stripe = styled.View`
 export const ButtonContainer = styled.Pressable`
   display: flex;
   gap: 4px;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -25,7 +26,7 @@ export const DrawerContainer = styled.View`
 export const DrawerEmptySpace = styled.Pressable`
   width: calc(100vw - 275px);
   height: 100vh;
-  background: transparent;
+  background-color: rgba(0, 87, 184, 0.9);
   position: absolute;
   left: 0;
   z-index: 2;

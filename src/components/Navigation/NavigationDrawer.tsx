@@ -1,11 +1,12 @@
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 import { useTranslation } from "next-i18next";
 
-import KeyIcon from "../../style/svgs/key.svg";
+import LogoutIcon from "../../style/svgs/logout.svg";
+import UserIcon from "../../style/svgs/user.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { Fragment } from "react";
+import { Routes } from "../../consts/router";
 
 interface Props {
   isOpen: boolean;
@@ -13,14 +14,14 @@ interface Props {
 }
 
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
-  const { locale } = useRouter();
+  const router = useRouter();
   const { t } = useTranslation("common");
   const { data: session } = useSession();
 
   const handleSignOut = () => {
     return signOut({
       redirect: true,
-      callbackUrl: locale ? `/${locale}` : undefined,
+      callbackUrl: router.locale ? `/${router.locale}` : undefined,
     });
   };
 
@@ -45,12 +46,18 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             /> */}
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
-              Icon={KeyIcon}
+              Icon={LogoutIcon}
               onPress={handleSignOut}
             />
           </>
         ) : (
-          <Fragment />
+          <NavigationMenuItem
+            title={t("navigationDrawer.logIn")}
+            Icon={UserIcon}
+            onPress={() => {
+              router.push(`/${router?.locale}${Routes.SIGN_IN}`);
+            }}
+          />
         )}
       </DrawerContainer>
       <DrawerEmptySpace onPress={hideDrawer} />

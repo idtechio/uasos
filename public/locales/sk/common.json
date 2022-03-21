@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "Užívateľský profil",
     "placesList": "Váš zoznam ubytovania",
+    "logIn": "Prihlásiť sa",
     "logout": "Odhlásiť sa"
   },
   "labels": {

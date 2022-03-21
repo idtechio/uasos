@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
-import PARTNERS from "../../consts/partners.json";
+import { NGO } from "../../consts/partners.json";
 import { Theme } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 import { PartnerCard } from "../PartnerCard";
@@ -86,7 +86,7 @@ export function PartnersSection() {
     <StyledSection bgColor="#fff">
       <StyledSectionTitle title={t("supportingPartners")} />
       <Container>
-        {PARTNERS.slice(0, 6).map((item, index) => (
+        {NGO.slice(0, 6).map((item, index) => (
           <PartnerCardWrapper key={index}>
             <StyledPartnerCard source={item.image} alt={item.alt} />
           </PartnerCardWrapper>
