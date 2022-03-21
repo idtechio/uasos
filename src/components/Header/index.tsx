@@ -3,15 +3,13 @@ import Logo from "./image/Logo";
 import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
-import { Fragment, useState } from "react";
-import { useSession } from "next-auth/react";
+import { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { View, StyleSheet } from "react-native";
 import { Routes } from "../../consts/router";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
-  const { data: session } = useSession();
 
   const toggleNavigationDrawer = () =>
     setNavigationDrawerOpen(!navigationDrawerOpen);
@@ -30,11 +28,10 @@ const Header = () => {
           <View style={styles.flags}>
             <LanguageSwitcher />
           </View>
-          {session ? (
-            <HamburgerButton onPress={toggleNavigationDrawer} />
-          ) : (
-            <Fragment />
-          )}
+          <HamburgerButton
+            isOpen={navigationDrawerOpen}
+            onPress={toggleNavigationDrawer}
+          />
         </ActionBar>
       </HeaderPage>
       <NavigationDrawer

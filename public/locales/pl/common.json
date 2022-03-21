@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "Profil użytkownika",
     "placesList": "Twoja lista mieszkań",
+    "logIn": "Zaloguj się",
     "logout": "Wyloguj"
   },
   "labels": {

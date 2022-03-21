@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "Felhasználói profil",
     "placesList": "Szállások listája",
+    "logIn": "Bejelentkezés",
     "logout": "Kijelentkezés"
   },
   "labels": {

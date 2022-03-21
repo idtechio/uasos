@@ -3,6 +3,7 @@
   "navigationDrawer": {
     "profile": "Profil uživatele",
     "placesList": "Váš seznam ubytování",
+    "logIn": "Přihlásit se",
     "logout": "Odhlásit se"
   },
   "labels": {
