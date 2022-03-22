@@ -1,15 +1,15 @@
 {
-  "location": "Locație",
-  "numberOfGuests": "Număr persoane",
-  "timeframe": "Durata șederii",
-  "oneWeek": "O săptămână",
-  "twoWeeks": "Două săptămâni",
-  "month": "O lună",
-  "longerThanMonth": "Mai mult de o lună",
-  "food": "Doresc masă",
-  "disabledPerson": "Persoană cu disabilitate",
-  "kidsBelow2yo": "Copil sub doi ani",
-  "animalsWelcome": "Călătoresc cu animal de companie",
-  "yes": "Da",
-  "no": "Nu"
+    "numberOfGuests": "",
+    "timeframe": "",
+    "oneWeek": "",
+    "twoWeeks": "",
+    "month": "",
+    "longerThanMonth": "",
+    "disabledPerson": "",
+    "kidsBelow2yo": "",
+    "yes": "",
+    "no": "",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
 }

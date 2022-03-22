@@ -1,15 +1,15 @@
 {
-  "location": "Локализация",
-  "numberOfGuests": "Количество гостей",
-  "timeframe": "Срок пребывания",
-  "oneWeek": "Одна неделя",
-  "twoWeeks": "Две недели",
-  "month": "Месяц",
-  "longerThanMonth": "Больше месяца",
-  "food": "Питание",
-  "disabledPerson": "Люди с ограниченными возможностями",
-  "kidsBelow2yo": "Я с ребёнком/детьми",
-  "animalsWelcome": "Животные приветствуются",
-  "yes": "Да",
-  "no": "Нет"
+    "numberOfGuests": "Количество гостей",
+    "timeframe": "Срок пребывания",
+    "oneWeek": "Одна неделя",
+    "twoWeeks": "Две недели",
+    "month": "Месяц",
+    "longerThanMonth": "Больше месяца",
+    "disabledPerson": "Люди с ограниченными возможностями",
+    "kidsBelow2yo": "Я с ребёнком\/детьми",
+    "yes": "Да",
+    "no": "Нет",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
 }
