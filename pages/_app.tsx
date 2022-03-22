@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
@@ -7,18 +8,29 @@ import { primary } from "../src/style/theme.config";
 import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
-import { useEffect } from "react";
-import { init } from "./../src/helpers/ga";
 import { AppProps } from "next/app";
+import * as gtag from "../lib/gtag";
+import Gtag from "./gtag";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
+  const router = useRouter();
 
   useEffect(() => {
-    init(process.env.NEXT_PUBLIC_G);
-  }, []);
+    if (!gtag.GA_TRACKING_ID) {
+      return;
+    }
+
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -34,6 +46,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
           />
           <meta property="og:image:type" content="image/png" />
         </Head>
+        {gtag.GA_TRACKING_ID && <Gtag id={gtag.GA_TRACKING_ID} />}
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
             <Component {...pageProps} />
