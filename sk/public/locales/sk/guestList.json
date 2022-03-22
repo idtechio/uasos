@@ -1,0 +1,11 @@
+{
+    "arrival": "Príchod na Slovensko",
+    "persons": "Počet ľudí",
+    "locationPreference": "Preferovaná lokalita",
+    "travelingWithAnimal": "Cestujem s domácim zvieraťom",
+    "travelingWithToddler": "Cestujem s dieťaťom mladším než 2 roky",
+    "inviteGuest": "Pozvať hosťa",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": ""
+}

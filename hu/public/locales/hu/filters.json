@@ -1,0 +1,15 @@
+{
+    "numberOfGuests": "Elszállásolandó személyek száma",
+    "timeframe": "Szállásigény hossza",
+    "oneWeek": "Egy hét",
+    "twoWeeks": "Két hét",
+    "month": "Egy hónap",
+    "longerThanMonth": "Több, mint egy hónap",
+    "disabledPerson": "Fogyatékossággal élők",
+    "kidsBelow2yo": "Kisgyermekkel (2 évesnél fiatalabb) utazok",
+    "yes": "Igen",
+    "no": "Nem",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
+}

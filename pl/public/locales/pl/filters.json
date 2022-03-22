@@ -1,0 +1,15 @@
+{
+    "numberOfGuests": "Liczba gości",
+    "timeframe": "Długosć pobytu",
+    "oneWeek": "tydzień",
+    "twoWeeks": "Dwa tygodnie",
+    "month": "Miesiąc",
+    "longerThanMonth": "Więcej",
+    "disabledPerson": "Osoby z niepełnosprawnością",
+    "kidsBelow2yo": "Jestem z dzieckiem",
+    "yes": "tak",
+    "no": "nie",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
+}

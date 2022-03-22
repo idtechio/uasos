@@ -1,0 +1,11 @@
+{
+    "arrival": "Data przyjazdu",
+    "persons": "Liczba gości",
+    "locationPreference": "Preferowana lokalizacja",
+    "travelingWithAnimal": "jest z nami zwierzak",
+    "travelingWithToddler": "jest z nami dziecko",
+    "inviteGuest": "Przyjmij do siebie",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": ""
+}
