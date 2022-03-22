@@ -6755,11 +6755,6 @@ react-fetch-hook@^1.8.5:
   resolved "https://registry.npmjs.org/react-fetch-hook/-/react-fetch-hook-1.8.5.tgz"
   integrity sha512-HRkfFAGGS6u3xknFWvgNQBUBRkM0ZZnUlyv4yVy2e+ZijUDOPJ+CwgpZ5nvrNd6QVU8++KcV/9WSe3TyW/N/rA==
 
-react-ga4@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.npmjs.org/react-ga4/-/react-ga4-1.4.1.tgz"
-  integrity sha512-ioBMEIxd4ePw4YtaloTUgqhQGqz5ebDdC4slEpLgy2sLx1LuZBC9iYCwDymTXzcntw6K1dHX183ulP32nNdG7w==
-
 react-hook-form@^7.27.1:
   version "7.27.1"
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.27.1.tgz"
