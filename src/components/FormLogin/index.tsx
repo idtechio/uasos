@@ -3,23 +3,28 @@ import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import { ButtonSM } from "../Buttons";
+import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 
 import FormContainer from "./FormContainer";
 import { SignInProps } from "../../../pages/signin";
 import { Theme } from "../../style/theme.config";
+import { FormProvider, useForm } from "react-hook-form";
+import { FormType } from "../../helpers/FormTypes";
+import GoToRegister from "./GoToRegister";
+import FormTextInput from "../Inputs/FormTextInput";
+import LostPass from "./LostPass";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
-  // const formFields = useForm<FormType>();
-  // const {
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = formFields;
+  const formFields = useForm<FormType>();
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = formFields;
 
   // const onSubmit = (data) => {
   //   console.log("form submit:", data);
@@ -29,16 +34,16 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   //   console.log("form error:", error);
   // };
 
-  // const handlePassErrorMsg = (type: string): string => {
-  //   switch (type) {
-  //     case "minLength":
-  //       return t("validations.toShortPassword");
-  //     case "required":
-  //       return t("validations.invalidPassword");
-  //     default:
-  //       return t("validations.invalidPassword");
-  //   }
-  // };
+  const handlePassErrorMsg = (type: string): string => {
+    switch (type) {
+      case "minLength":
+        return t("validations.toShortPassword");
+      case "required":
+        return t("validations.invalidPassword");
+      default:
+        return t("validations.invalidPassword");
+    }
+  };
 
   const handleSignIn = (provideId: string) =>
     signIn(provideId, {
@@ -59,7 +64,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             />
           ))}
           <Spacer />
-          {/* <<FormProvider {...formFields}>
+          <FormProvider {...formFields}>
             <FormTextInput
               name={"login.email"}
               label={t("labels.email")}
@@ -70,7 +75,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               error={errors?.login?.email}
               errorMsg={t("validations.invalidEmail")}
             />
-            <FormTextInput
+            {/* <FormTextInput
               name={"login.password"}
               label={t("labels.password")}
               secureTextEntry
@@ -81,7 +86,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               }}
               error={errors?.login?.password}
               errorMsg={`${handlePassErrorMsg(errors?.login?.password.type)}`}
-            />
+            /> */}
             <LostPass />
             <ButtonCta
               style={{
@@ -90,14 +95,15 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 height: "43px",
                 display: "flex",
                 marginBottom: "30px",
+                alignSelf: "flex-end",
               }}
               anchor={t("loginForm.logIn")}
-              onPress={handleSubmit(onSubmit, onError)}
+              // onPress={handleSubmit(onSubmit, onError)}
             />
-          </FormProvider> */}
+          </FormProvider>
         </FormContainer>
       </CompositionSection>
-      {/* <GoToRegister /> */}
+      <GoToRegister />
     </>
   );
 };

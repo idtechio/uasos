@@ -7,6 +7,7 @@ import {
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import LoginForm from "../src/components/FormLogin";
+import FormRegisterWithSocials from "../src/components/FormRegisterWithSocials";
 import AppBack from "../src/components/AppBack";
 import { BuiltInProviderType } from "next-auth/providers";
 import { Routes } from "../src/consts/router";
@@ -28,7 +29,8 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />
-      <LoginForm providers={providers} csrfToken={csrfToken} />
+      <FormRegisterWithSocials></FormRegisterWithSocials>
+      {/* <LoginForm providers={providers} csrfToken={csrfToken} /> */}
     </CompositionAppBody>
   );
 };
