@@ -1,83 +1,83 @@
 {
-  "showMorePartners": "Az összes partner megtekintése",
-  "ngoPartners": "Nem kormányzati szervezetek (NGO-k)",
-  "projectInitiators": "Projekt kezdeményezők",
-  "partners": "Partnerek",
-  "supportingPartners": "A kezdeményezést támogató partnerek",
-  "projectIntention": {
-    "description_part1": "Segítünk a menekülteknek automatikusan",
-    "description_part2": "szállást találni a segíteni akaró embereken és intézményeken keresztül.",
-    "freeOfCharge": "ingyenes",
-    "lookingForHelp": "Szállást keresek",
-    "shareHelp": "Segíteni szeretnék",
-    "title": "Segítünk menedéket találni az ukrajnai háború áldozatainak"
-  },
-  "likeToHelp": {
-    "cta": "Szállás felajánlása",
-    "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak.\n  \n \n\n  \n \n\n  Alkalmazásunk automatikusan párosítja a szállást a segítséget kereső, regisztrált személyekkel a megadott információk alapján",
-    "title": "Szeretnél segíteni?"
-  },
-  "weMatched": {
-    "title": "Már ennyi sikeres párosítást hajtottunk végre...",
-    "cards": {
-      "currentOffers": "Jelenleg elérhető ajánlatok",
-      "helpedPeople": "segítséget keresők",
-      "lookingForHelp": "továbbra is segítséget keres"
+    "supportingPartners": "A kezdeményezést támogató partnerek",
+    "ngoPartners": "Nem kormányzati szervezetek (NGO-k)",
+    "projectInitiators": "Projekt kezdeményezők",
+    "partners": "Partnerek",
+    "showMorePartners": "Az összes partner megtekintése",
+    "projectIntention": {
+        "title": "Segítünk menedéket találni az ukrajnai háború áldozatainak",
+        "description_part1": "Segítünk a menekülteknek automatikusan",
+        "freeOfCharge": "ingyenes",
+        "description_part2": "szállást találni a segíteni akaró embereken és intézményeken keresztül.",
+        "lookingForHelp": "Szállást keresek",
+        "shareHelp": "Segíteni szeretnék"
+    },
+    "likeToHelp": {
+        "title": "Szeretnél segíteni?",
+        "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak.\n  \n \n\n  \n \n\n  Alkalmazásunk automatikusan párosítja a szállást a segítséget kereső, regisztrált személyekkel a megadott információk alapján",
+        "cta": "Szállás felajánlása"
+    },
+    "weMatched": {
+        "title": "Már ennyi sikeres párosítást hajtottunk végre...",
+        "cards": {
+            "helpedPeople": "segítséget keresők",
+            "lookingForHelp": "továbbra is segítséget keres",
+            "currentOffers": "Jelenleg elérhető ajánlatok"
+        }
+    },
+    "whatSosUaDoesSection": {
+        "title": "Mit csinál az SOS-UA?",
+        "bulletPoints": {
+            "0": "Az önkéntesek és az intézmények ismertetik a kínált szállást (típus, maximális kapacitás, tartózkodási idő)",
+            "1": "A szállást keresők meghatározzák igényeiket és minimális követelményeiket (pl. csoportlétszám, elhelyezkedés)",
+            "2": "Az UA-SOS automatikusan összekapcsolja a szállást keresőket a házigazdák által kínált legmegfelelőbb opcióval"
+        },
+        "algorithmExplanation": "Az algoritmus optimalizálja a párosításokat, hogy minél több rászoruló találjon szállást",
+        "rolldown": "Mutass többet",
+        "rollup": "Kevesebb",
+        "description": "A portál összeköti a segítségre szorulókat a támogató intézményekkel és önkéntes segítőkkel",
+        "howItWorks": "Hogyan működik?"
+    },
+    "instructions": {
+        "0": {
+            "title": "Regisztráció",
+            "text": "A felhasználó szállás felajánlásán vagy keresésén keresztül regisztrál a portálra"
+        },
+        "1": {
+            "title": "Űrlap kitöltése",
+            "text": "A felhasználó kitölt egy űrlapot a felkínált vagy keresett szállásról."
+        },
+        "2": {
+            "title": "Automatikus párosítás",
+            "text": "Az algoritmus átnézi a kínált szállások és szálláskeresők adatbázisát, és a kapott információk alapján kiválasztja a legmegfelelőbbet"
+        },
+        "3": {
+            "title": "Információ a felhasználónak elküldve",
+            "text": "A párosításról a felhasználók e-mailben kapnak értesítést. Csatlakozott felhasználók számára további leírás elérhető az alkalmazásban."
+        },
+        "4": {
+            "title": "A felhasználók kapcsolatba lépnek egymással",
+            "text": "A kapcsolat létrejötte után lehetőség van egymással e-mailben vagy telefonon felvenni a kapcsolatot a részletek megbeszélése érdekében"
+        },
+        "5": {
+            "title": "Az ajánlat megerősítése vagy elutasítása",
+            "text": "Az utolsó lépés az ajánlat megerősítése vagy elutasítása az alkalmazásban. Ha az ajánlatot elutasítják, az visszakerül a poolba"
+        }
+    },
+    "howDoesItWork": {
+        "title": "Hogyan működik?",
+        "points": {
+            "0": "Lakás vagy igény rögzítése",
+            "1": "Töltse ki a szükséges adatokat",
+            "2": "Várjon a legjobb ajánlatra",
+            "3": "Vegye fel a kapcsolatot a házigazdával\/vendéggel",
+            "4": "Ajánlat elfogadása\/elutasítása"
+        }
+    },
+    "hero": {
+        "description": "Menekülteknek segítünk automatikusan szállást találni az önkéntes felajánlásokat biztosító emberek és intézmények által.",
+        "lookingForHelp": "Szállást keresek",
+        "shareHelp": "Segíteni szeretnék",
+        "title": "Segítünk szállást találni az ukrajnai háború áldozatainak"
     }
-  },
-  "whatSosUaDoesSection": {
-    "title": "Mit csinál az SOS-UA?",
-    "bulletPoints": {
-      "0": "Az önkéntesek és az intézmények ismertetik a kínált szállást (típus, maximális kapacitás, tartózkodási idő)",
-      "1": "A szállást keresők meghatározzák igényeiket és minimális követelményeiket (pl. csoportlétszám, elhelyezkedés)",
-      "2": "Az UA-SOS automatikusan összekapcsolja a szállást keresőket a házigazdák által kínált legmegfelelőbb opcióval"
-    },
-    "algorithmExplanation": "Az algoritmus optimalizálja a párosításokat, hogy minél több rászoruló találjon szállást",
-    "description": "A portál összeköti a segítségre szorulókat a támogató intézményekkel és önkéntes segítőkkel",
-    "howItWorks": "Hogyan működik?",
-    "rolldown": "Mutass többet",
-    "rollup": "Kevesebb"
-  },
-  "instructions": {
-    "0": {
-      "text": "A felhasználó szállás felajánlásán vagy keresésén keresztül regisztrál a portálra",
-      "title": "Regisztráció"
-    },
-    "1": {
-      "text": "A felhasználó kitölt egy űrlapot a felkínált vagy keresett szállásról.",
-      "title": "Űrlap kitöltése"
-    },
-    "2": {
-      "text": "Az algoritmus átnézi a kínált szállások és szálláskeresők adatbázisát, és a kapott információk alapján kiválasztja a legmegfelelőbbet",
-      "title": "Automatikus párosítás"
-    },
-    "3": {
-      "text": "A párosításról a felhasználók e-mailben kapnak értesítést. Csatlakozott felhasználók számára további leírás elérhető az alkalmazásban.",
-      "title": "Információ a felhasználónak elküldve"
-    },
-    "4": {
-      "text": "A kapcsolat létrejötte után lehetőség van egymással e-mailben vagy telefonon felvenni a kapcsolatot a részletek megbeszélése érdekében",
-      "title": "A felhasználók kapcsolatba lépnek egymással"
-    },
-    "5": {
-      "text": "Az utolsó lépés az ajánlat megerősítése vagy elutasítása az alkalmazásban. Ha az ajánlatot elutasítják, az visszakerül a poolba",
-      "title": "Az ajánlat megerősítése vagy elutasítása"
-    }
-  },
-  "howDoesItWork": {
-    "title": "Hogyan működik?",
-    "points": {
-      "0": "Lakás vagy igény rögzítése",
-      "1": "Töltse ki a szükséges adatokat",
-      "2": "Várjon a legjobb ajánlatra",
-      "3": "Vegye fel a kapcsolatot a házigazdával/vendéggel",
-      "4": "Ajánlat elfogadása/elutasítása"
-    }
-  },
-  "hero": {
-    "description": "Menekülteknek segítünk automatikusan szállást találni az önkéntes felajánlásokat biztosító emberek és intézmények által.",
-    "lookingForHelp": "Szállást keresek",
-    "shareHelp": "Segíteni szeretnék",
-    "title": "Segítünk szállást találni az ukrajnai háború áldozatainak"
-  }
 }

@@ -1,15 +1,15 @@
 {
-  "location": "Lokacija",
-  "numberOfGuests": "Broj gostiju",
-  "timeframe": "Vrijeme boravka",
-  "oneWeek": "Jedan tjedan",
-  "twoWeeks": "Dva tjedna",
-  "month": "Jedan mjesec",
-  "longerThanMonth": "Dulje Od Jednog Mjeseca",
-  "food": "Hrana",
-  "disabledPerson": "Osoba s invaliditetom",
-  "kidsBelow2yo": "S djetetom sam",
-  "animalsWelcome": "Kućni ljubimci dobrodošli",
-  "yes": "Da",
-  "no": "Ne"
+    "numberOfGuests": "Broj gostiju",
+    "timeframe": "Vrijeme boravka",
+    "oneWeek": "jedan tjedan",
+    "twoWeeks": "dva tjedna",
+    "month": "mjesec",
+    "longerThanMonth": "dulje od jednog mjeseca",
+    "disabledPerson": "Osoba s invaliditetom",
+    "kidsBelow2yo": "S djetetom sam",
+    "yes": "Da",
+    "no": "Ne",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
 }

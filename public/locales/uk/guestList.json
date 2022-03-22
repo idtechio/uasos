@@ -1,0 +1,11 @@
+{
+    "arrival": "Дата прибуття",
+    "persons": "Кількість гостей",
+    "locationPreference": "Бажане місце",
+    "travelingWithAnimal": "з нами домашня тварина",
+    "travelingWithToddler": "з нами дитина",
+    "inviteGuest": "Прийняти до себе",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": ""
+}

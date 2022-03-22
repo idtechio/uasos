@@ -1,15 +1,15 @@
 {
-  "animalsWelcome": "Kisállat hozható",
-  "disabledPerson": "Fogyatékossággal élők",
-  "food": "Étel biztosított",
-  "kidsBelow2yo": "Kisgyermekkel (2 évesnél fiatalabb) utazok",
-  "location": "Helyszín",
-  "longerThanMonth": "Több, mint egy hónap",
-  "month": "Egy hónap",
-  "no": "Nem",
-  "numberOfGuests": "Elszállásolandó személyek száma",
-  "oneWeek": "Egy hét",
-  "timeframe": "Szállásigény hossza",
-  "twoWeeks": "Két hét",
-  "yes": "Igen"
+    "numberOfGuests": "Elszállásolandó személyek száma",
+    "timeframe": "Szállásigény hossza",
+    "oneWeek": "Egy hét",
+    "twoWeeks": "Két hét",
+    "month": "Egy hónap",
+    "longerThanMonth": "Több, mint egy hónap",
+    "disabledPerson": "Fogyatékossággal élők",
+    "kidsBelow2yo": "Kisgyermekkel (2 évesnél fiatalabb) utazok",
+    "yes": "Igen",
+    "no": "Nem",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
 }
