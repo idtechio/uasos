@@ -10,7 +10,7 @@ const ToastWrapper = styled.View<{ color: string }>`
   width: 100%;
   border-radius: 5px;
   background-color: ${(props) => `${hexToRGB(props.color, 0.1)}`};
-  border-width: 1;
+  border-width: 1px;
   border-style: solid;
   border-color: ${(props) => `${props.color}`};
   padding: 10px 15px 10px 10px;
