@@ -36,7 +36,7 @@ const LinkText = styled.Text`
 
 type ToastProps = {
   color: string;
-  icon?: any;
+  icon?: React.ReactElement;
   label: string;
   cta?: { label: string; href: string };
   contaierStyle?: StyleProp<ViewStyle>;
