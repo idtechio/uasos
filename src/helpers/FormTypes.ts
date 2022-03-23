@@ -135,6 +135,7 @@ export type FormType = {
   login: {
     email: string;
     password: string;
+    phoneOrEmail: string;
   };
   registerWithSocials: {
     email: string;

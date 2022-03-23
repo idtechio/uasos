@@ -1,4 +1,5 @@
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -20,19 +21,28 @@ type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
+  const [passwordInput, setPasswordInput] = useState(false);
   const formFields = useForm<FormType>();
   const {
     handleSubmit,
     formState: { errors },
   } = formFields;
+  const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const PHONE_REGEX = /([^\d]*\d){8}/;
+  const EMAIL_OR_PHONE_REGEX =
+    /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|(([^\d]*\d){8})/;
 
-  // const onSubmit = (data) => {
-  //   console.log("form submit:", data);
-  //   console.log("form submit:csrfToken", csrfToken);
-  // };
-  // const onError = (error) => {
-  //   console.log("form error:", error);
-  // };
+  const onSubmit = (data: { login: { phoneOrEmail: string } }) => {
+    if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
+      setPasswordInput(true);
+      console.log("logging with email");
+    } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
+      console.log("logging with phone");
+    }
+  };
+  const onError = (error) => {
+    console.log("form error:", error);
+  };
 
   const handlePassErrorMsg = (type: string): string => {
     switch (type) {
@@ -66,28 +76,35 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           <Spacer />
           <FormProvider {...formFields}>
             <FormTextInput
-              name={"login.email"}
-              label={t("labels.email")}
+              name={"login.phoneOrEmail"}
+              label={"Phone or Email"}
               rules={{
                 required: true,
                 maxLength: 50,
+                pattern: EMAIL_OR_PHONE_REGEX,
               }}
-              error={errors?.login?.email}
-              errorMsg={t("validations.invalidEmail")}
+              error={errors?.login?.phoneOrEmail}
+              errorMsg={"Enter phone or email"}
             />
-            {/* <FormTextInput
-              name={"login.password"}
-              label={t("labels.password")}
-              secureTextEntry
-              rules={{
-                required: true,
-                maxLength: 50,
-                minLength: 8,
-              }}
-              error={errors?.login?.password}
-              errorMsg={`${handlePassErrorMsg(errors?.login?.password.type)}`}
-            /> */}
-            <LostPass />
+            {passwordInput ? (
+              <>
+                <FormTextInput
+                  name={"login.password"}
+                  label={t("labels.password")}
+                  secureTextEntry
+                  rules={{
+                    required: true,
+                    maxLength: 50,
+                    minLength: 8,
+                  }}
+                  error={errors?.login?.password}
+                  errorMsg={`${errors?.login?.password}`}
+                />
+                <LostPass />
+              </>
+            ) : (
+              <></>
+            )}
             <ButtonCta
               style={{
                 width: "130px",
@@ -98,7 +115,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 alignSelf: "flex-end",
               }}
               anchor={t("loginForm.logIn")}
-              // onPress={handleSubmit(onSubmit, onError)}
+              onPress={handleSubmit(onSubmit, onError)}
             />
           </FormProvider>
         </FormContainer>
