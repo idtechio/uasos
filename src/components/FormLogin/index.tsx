@@ -1,5 +1,4 @@
-import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -15,35 +14,47 @@ import { FormType } from "../../helpers/FormTypes";
 import GoToRegister from "./GoToRegister";
 import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
+import { Authorization } from "../../hooks/useAuth";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
+
   const [passwordInput, setPasswordInput] = useState(false);
+  const [loginMethod, setLoginMethod] = useState("");
+
   const formFields = useForm<FormType>();
+
   const {
     handleSubmit,
     formState: { errors },
   } = formFields;
+
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const PHONE_REGEX = /([^\d]*\d){8}/;
   const EMAIL_OR_PHONE_REGEX =
     /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|(([^\d]*\d){8})/;
 
-  const onSubmit = (data: {
+  const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
   }) => {
     /* eslint-disable-next-line */
-    if (data.login.hasOwnProperty("password")) {
-      console.log("logging in");
+    if (data.login.hasOwnProperty("password") && data.login.password) {
+      Authorization.signInWithEmail(
+        data.login.phoneOrEmail,
+        data.login.password
+      );
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
         setPasswordInput(true);
         console.log("logging with email");
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
-        console.log("logging with phone");
+        await Authorization.signInWithPhone(
+          data.login.phoneOrEmail,
+          Authorization.initCaptcha("captcha__container")
+        );
       }
     }
   };
@@ -62,10 +73,24 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     }
   };
 
-  const handleSignIn = (provideId: string) =>
-    signIn(provideId, {
-      callbackUrl: locale ? `/${locale}` : undefined,
-    });
+  enum PROVIDERS {
+    FACEBOOK = "facebook",
+    GOOGLE = "google",
+  }
+  const handleSignIn = async (providerId: string) => {
+    switch (providerId) {
+      case PROVIDERS.FACEBOOK:
+        // await Authorization.signInWithFacebook();
+        Authorization.sendPasswordResetEmail("jakub.jarzabekk@gmail.com");
+        break;
+      case PROVIDERS.GOOGLE:
+        await Authorization.signInWithGoogle();
+        break;
+    }
+  };
+  // signIn(provideId, {
+  //   callbackUrl: locale ? `/${locale}` : undefined,
+  // });
 
   return (
     <>
@@ -126,6 +151,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               anchor={t("loginForm.logIn")}
               onPress={handleSubmit(onSubmit, onError)}
             />
+            <div id="captcha__container"></div>
           </FormProvider>
         </FormContainer>
       </CompositionSection>

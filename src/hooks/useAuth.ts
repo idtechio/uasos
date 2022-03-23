@@ -11,10 +11,10 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   RecaptchaVerifier,
-  Auth,
   ConfirmationResult,
+  sendPasswordResetEmail,
 } from "firebase/auth";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 
 // TODO Delete afterwards only for test purposes
 let app;
@@ -51,12 +51,12 @@ interface Authorization {
   signInWithGoogle: () => Promise<void>;
   signInWithFacebook: () => Promise<void>;
   signInWithPhone: (
-    auth: Auth,
     phoneNumber: string,
     recaptcha: any
   ) => Promise<ConfirmationResult>;
   initCaptcha: (containerId: string) => RecaptchaVerifier;
   signInWithEmail: (email: string, password: string) => Promise<void>;
+  sendPasswordResetEmail: (email: string) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -68,7 +68,7 @@ const Authorization: Authorization = {
   async signInWithFacebook() {
     signInWithRedirect(auth, new FacebookAuthProvider());
   },
-  async signInWithPhone(auth, phoneNumber, recaptcha) {
+  async signInWithPhone(phoneNumber, recaptcha) {
     return await signInWithPhoneNumber(auth, phoneNumber, recaptcha);
   },
   async signInWithEmail(email, password) {
@@ -79,11 +79,17 @@ const Authorization: Authorization = {
       containerId,
       {
         size: "invisible",
-        callback: () => null,
-        "expired-callback": () => null,
+        callback: () => console.log("success"),
+        "expired-callback": () => console.log("failier"),
       },
       auth
     );
+  },
+  async sendPasswordResetEmail(email) {
+    await sendPasswordResetEmail(auth, email, {
+      url: "https://localhost:300",
+      handleCodeInApp: false,
+    });
   },
 };
 

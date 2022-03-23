@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, createContext } from "react";
 import Head from "next/head";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
@@ -10,12 +10,15 @@ import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { useEffect } from "react";
 import { init } from "./../src/helpers/ga";
 import { AppProps } from "next/app";
+import useAuth from "../src/hooks/useAuth";
+import { User } from "firebase/auth";
+export const AuthContext = createContext<null | User | undefined>(null);
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
-
+  const { identity } = useAuth();
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
@@ -36,7 +39,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         </Head>
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
-            <Component {...pageProps} />
+            <AuthContext.Provider value={identity}>
+              <Component {...pageProps} />
+            </AuthContext.Provider>
           </ThemeProviderNative>
         </ThemeProviderWeb>
       </SessionProvider>
