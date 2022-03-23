@@ -7,5 +7,20 @@
   "overviewOfYourOffers": "",
   "addOffer": "",
   "yourSubmission": "",
-  "addSubmission": ""
+  "addSubmission": "",
+  "city": "",
+  "duration": "",
+  "numberOfPeople": "",
+  "max": "",
+  "less_than_week": "",
+  "week": "",
+  "two_weeks": "",
+  "month": "",
+  "longer": "",
+  "inactive": "",
+  "looking": "",
+  "matched": "",
+  "beingConfirmed": "",
+  "confirmed": "",
+  "details": ""
 }

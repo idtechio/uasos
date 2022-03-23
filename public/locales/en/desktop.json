@@ -7,5 +7,20 @@
   "overviewOfYourOffers": "Overview of your offers",
   "addOffer": "Add offer",
   "yourSubmission": "Your submission",
-  "addSubmission": "Add submission"
+  "addSubmission": "Add submission",
+  "city": "City",
+  "duration": "Duration",
+  "numberOfPeople": "Number of people",
+  "max": "Max",
+  "less_than_week": "less than 2 weeks",
+  "week": "one week",
+  "two_weeks": "2 weeks",
+  "month": "one month",
+  "longer": "more than one month",
+  "inactive": "Inactive",
+  "looking": "Looking for a match",
+  "matched": "We found a match",
+  "beingConfirmed": "Being confirmed",
+  "confirmed": "Confirmed",
+  "details": "Details"
 }

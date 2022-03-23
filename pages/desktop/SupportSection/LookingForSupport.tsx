@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { Routes } from "../../../src/consts/router";
 import CardAdd from "./CardAdd";
 import { SupportCard, SupportWrapper, Title } from "./style";
 
@@ -17,7 +18,10 @@ export default function LookingForSupport({
   const { t } = useTranslation("desktop");
   const router = useRouter();
   const NoOffer = () => (
-    <CardAdd label={t("addSubmission")} onPress={() => router.push("/guest")} />
+    <CardAdd
+      label={t("addSubmission")}
+      onPress={() => router.push(Routes.GUEST)}
+    />
   );
   const Offers = () => (
     <>
