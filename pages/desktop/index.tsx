@@ -1,17 +1,21 @@
-import { useState } from "react";
-import styled from "styled-components/native";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { CompositionAppBody } from "../../src/components/Compositions";
-import { withSession } from "../../src/helpers/withSession";
 import { GetServerSideProps } from "next";
-import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useState } from "react";
+import { StyleProp, ViewStyle } from "react-native";
+import styled from "styled-components/native";
+import { CompositionAppBody } from "../../src/components/Compositions";
 import Container from "../../src/components/Container";
-import VerifySection, { Verifications } from "./VerifySection";
+import SupportSection from "../../src/components/SupportSection";
 import Tags from "../../src/components/Tags";
-import SupportSection from "./SupportSection";
-import { bottomMarginStyle } from "./style";
+import VerifySection, {
+  Verifications,
+} from "../../src/components/VerifySection/VerifySection";
+import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
+import { withSession } from "../../src/helpers/withSession";
 
 const ListingWrapper = styled(Container)``;
+
+const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 type DesktopStatus = { tags: string[]; verifications: Verifications };
 

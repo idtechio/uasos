@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { Routes } from "../../../src/consts/router";
+import { Routes } from "../../consts/router";
 import CardAdd from "./CardAdd";
 import { SupportCard, SupportWrapper, Title } from "./style";
 
@@ -26,8 +26,8 @@ export default function LookingForSupport({
   const Offers = () => (
     <>
       {requests.map((_) => (
-        <SupportCard>
-          <span>i'm an guest</span>
+        <SupportCard key={_.id}>
+          <span>{"I'm an guest"}</span>
         </SupportCard>
       ))}
     </>

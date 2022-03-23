@@ -1,8 +1,8 @@
 import styled, { useTheme } from "styled-components/native";
-import { Theme } from "../../src/style/theme.config";
-import Toast from "../../src/components/Toast";
-import EmailIcon from "../../src/style/svgs/email.svg";
-import PhoneIcon from "../../src/style/svgs/phone.svg";
+import { Theme } from "../../style/theme.config";
+import Toast from "../Toast";
+import EmailIcon from "../../style/svgs/email.svg";
+import PhoneIcon from "../../style/svgs/phone.svg";
 import { StyleProp, ViewStyle } from "react-native";
 import { useTranslation } from "next-i18next";
 
@@ -23,7 +23,7 @@ export default function VerifySection({
   const { t } = useTranslation("desktop");
   return (
     <VerifySectionWrapper style={containerStyle}>
-      {needEmail ? (
+      {needEmail && (
         <Toast
           color={theme.colors.error}
           label={t("emailNotVerified")}
@@ -31,10 +31,8 @@ export default function VerifySection({
           icon={<EmailIcon />}
           contaierStyle={{ marginBottom: 10 }}
         />
-      ) : (
-        <></>
       )}
-      {needPhone ? (
+      {needPhone && (
         <Toast
           color={theme.colors.error}
           label={t("phoneNotVerified")}
@@ -42,8 +40,6 @@ export default function VerifySection({
           icon={<PhoneIcon />}
           contaierStyle={{ marginBottom: 0 }}
         />
-      ) : (
-        <></>
       )}
     </VerifySectionWrapper>
   );

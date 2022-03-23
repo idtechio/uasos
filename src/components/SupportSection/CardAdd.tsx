@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
-import Card from "../../../src/components/Card";
+import Card from "../Card";
 import PlusCircleIcon from "../../../src/style/svgs/plus_circle.svg";
-import { Theme } from "../../../src/style/theme.config";
+import { Theme } from "../../style/theme.config";
 
 const CardAddWrapper = styled(Card)`
   display: flex;

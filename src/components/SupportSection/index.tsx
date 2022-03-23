@@ -1,8 +1,9 @@
-import TabPanel from "../../../src/components/TabPanel";
-import ProvidingSupport, { MatchState, Offer } from "./ProvidingSupport";
-import LookingForSupport from "./LookingForSupport";
 import { useTranslation } from "next-i18next";
-import { AccommodationTime } from "../../../src/helpers/FormTypes";
+import { useMemo } from "react";
+import TabPanel from "../TabPanel";
+import { AccommodationTime } from "../../helpers/FormTypes";
+import LookingForSupport from "./LookingForSupport";
+import ProvidingSupport, { MatchState, Offer } from "./ProvidingSupport";
 
 const fakeOffers: Offer[] = [
   {
@@ -29,21 +30,20 @@ const fakeOffers: Offer[] = [
 
 export default function SupportSection() {
   const { t } = useTranslation("desktop");
-  return (
-    <TabPanel
-      items={[
-        {
-          key: "1",
-          title: t("providingSupport"),
-          content: ProvidingSupport({ offers: fakeOffers }),
-        },
-        {
-          key: "2",
-          title: t("lookingForSupport"),
-          content: LookingForSupport({ requests: [] }),
-        },
-      ]}
-      initialSelectedIndex={0}
-    />
-  );
+  const items = useMemo(() => {
+    return [
+      {
+        key: "1",
+        title: t("providingSupport"),
+        content: <ProvidingSupport offers={fakeOffers} />,
+      },
+      {
+        key: "2",
+        title: t("lookingForSupport"),
+        content: <LookingForSupport requests={[]} />,
+      },
+    ];
+  }, [t]);
+
+  return <TabPanel items={items} initialSelectedIndex={0} />;
 }

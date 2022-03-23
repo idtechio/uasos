@@ -1,15 +1,15 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import styled from "styled-components/native";
-import { AccommodationTime } from "../../../src/helpers/FormTypes";
+import { AccommodationTime } from "../../helpers/FormTypes";
 import CardAdd from "./CardAdd";
 import { SupportWrapper, SupportCard, Title } from "./style";
 import MarkerIcon from "../../../src/style/svgs/marker.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
 import ClockIcon from "../../../src/style/svgs/clock.svg";
 import ArrowIcon from "../../../src/style/svgs/arrow.svg";
-import { Theme } from "../../../src/style/theme.config";
-import { Routes } from "../../../src/consts/router";
+import { Theme } from "../../style/theme.config";
+import { Routes } from "../../consts/router";
 
 export enum MatchState {
   inactive = "inactive",
