@@ -13,6 +13,7 @@ type Props = {
   extra?: React.ReactNode;
   labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
+  readonly?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput = ({
@@ -24,6 +25,7 @@ const FormTextInput = ({
   extra,
   labelsBackgroundColor,
   secureTextEntry,
+  readonly,
 }: Props) => {
   const { control } = useFormContext();
   return (
@@ -41,6 +43,7 @@ const FormTextInput = ({
             extra={extra}
             secureTextEntry={secureTextEntry}
             labelsBackgroundColor={labelsBackgroundColor}
+            readonly={readonly}
           />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>

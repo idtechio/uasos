@@ -6,6 +6,8 @@ export const FormFooter = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  z-index: -1;
+  margin-bottom: 50px;
 `;
 export const styles = StyleSheet.create({
   backButton: {

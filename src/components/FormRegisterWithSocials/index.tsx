@@ -13,22 +13,28 @@ import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helper
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
 import { FormFooter } from "./styles";
-import FormDropdown from "../Inputs/FormDropdown";
 import { styles } from "./styles";
+import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 
-export default function FromRegisterWithSocials() {
+export default function FromRegisterWithSocials({ registerWith = "google" }) {
   const { t } = useTranslation();
   const { name: sessionName, email: sessionEmail } = useSessionUserData();
   const form = useForm<FormType>({
     defaultValues: {
-      advancedHost: {
+      registerWithSocials: {
         name: sessionName ? sessionName.split(" ")[0] : "",
         email: sessionEmail,
-        country: "poland",
+        language: "Poland",
       },
     },
   });
-
+  const { handleSubmit } = form;
+  const onSubmit = (e: any) => {
+    console.log(e);
+  };
+  const onError = (e: any) => {
+    console.log(e);
+  };
   const {
     formState: { errors, isValid, isSubmitted },
   } = form;
@@ -37,7 +43,7 @@ export default function FromRegisterWithSocials() {
       <FormContainer>
         <FormHeader>{"Fill in the missing data"}</FormHeader>
         <ButtonSM
-          id={"google"}
+          id={registerWith}
           onPress={() => null}
           anchor={`${t("loginForm.logInWith")} with Google`}
         />
@@ -45,31 +51,30 @@ export default function FromRegisterWithSocials() {
         <FormProvider {...form}>
           <InputControlLabel>{"Name"}</InputControlLabel>
           <FormTextInput
-            name="advancedHost.name"
+            name="registerWithSocials.name"
             label={t("hostAdd.namePlaceholder")}
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.name}
+            error={errors?.registerWithSocials?.name}
             errorMsg={t("hostAdd.errors.name")}
           />
           <InputControlLabel>
             {"Preffered language of communication"}
           </InputControlLabel>
-          <FormDropdown
+          <FormLanguageDropdown
             zIndex={12}
-            data={[]}
-            name="advancedHost.accommodationType"
+            name="registerWithSocials.language"
             placeholder={t("forms.chooseFromList")}
             rules={{
               required: true,
             }}
-            error={errors?.advancedHost?.accommodationType}
+            error={errors?.registerWithSocials?.language}
             errorMsg={t("hostAdd.errors.type")}
           />
           <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
           <FormTextInput
-            name="advancedHost.email"
+            name="registerWithSocials.email"
             label={t("hostAdd.emailPlaceholder")}
             rules={{
               required: true,
@@ -78,13 +83,14 @@ export default function FromRegisterWithSocials() {
                 message: t("validations.invalidEmail"),
               },
             }}
-            error={errors?.advancedHost?.email}
+            error={errors?.registerWithSocials?.email}
             errorMsg={t("hostAdd.errors.email")}
+            readonly={true}
           />
           <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
           <FormPhoneInput
-            prefixName="advancedHost.phonePrefix"
-            numberName="advancedHost.phoneNumber"
+            prefixName="registerWithSocials.phonePrefix"
+            numberName="registerWithSocials.phoneNumber"
             phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
             phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
@@ -92,14 +98,13 @@ export default function FromRegisterWithSocials() {
             data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
           />
           <FormFooter>
-            {" "}
             <ButtonCta
               onPress={() => null}
               anchor={"Back"}
               style={styles.backButton}
             />
             <ButtonCta
-              onPress={() => null}
+              onPress={handleSubmit(onSubmit, onError)}
               anchor={"Verify"}
               style={styles.verifyButton}
             />

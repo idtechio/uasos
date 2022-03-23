@@ -136,6 +136,13 @@ export type FormType = {
     email: string;
     password: string;
   };
+  registerWithSocials: {
+    email: string;
+    name: string;
+    language: string;
+    phonePrefix: string;
+    phoneNumber: string;
+  };
 };
 
 type PathsToStringProps<T> = T extends
