@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
@@ -40,13 +41,21 @@ export default function ProvidingSupport({ offers }: OfferProps) {
     <>
       {offers.map((o) => (
         <SupportCard key={o.id}>
-          <img
-            src={o.imageUrl}
-            alt="Announcement image"
-            width={80}
-            height={80}
-            style={{ borderRadius: 4 }}
-          />
+          <HeaderWrapper>
+            <ImageWrapper>
+              <img
+                src={o.imageUrl}
+                alt="Announcement image"
+                width={80}
+                height={80}
+                style={{ borderRadius: 4 }}
+              />
+            </ImageWrapper>
+            <TextWrapper>
+              <IdContainer>Id: xxxx</IdContainer>
+              <OfferTitle>Housing</OfferTitle>
+            </TextWrapper>
+          </HeaderWrapper>
 
           <AnnouncementHighlights data={o} />
 
@@ -62,3 +71,43 @@ export default function ProvidingSupport({ offers }: OfferProps) {
     </SupportWrapper>
   );
 }
+
+const HeaderWrapper = styled.View`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ImageWrapper = styled.View`
+  height: 80px;
+  flex: 0 0 80px;
+`;
+
+const TextWrapper = styled.View`
+  flex: 1 1 100%;
+  padding-left: 12.7px;
+`;
+
+const IdContainer = styled.Text`
+  letter-spacing: 0.5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+`;
+
+const OfferTitle = styled.Text`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: 0.5px;
+
+  color: #003566;
+
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #f2f2f2;
+  padding-bottom: 8px;
+`;
