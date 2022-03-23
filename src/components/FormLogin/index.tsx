@@ -32,12 +32,19 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const EMAIL_OR_PHONE_REGEX =
     /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|(([^\d]*\d){8})/;
 
-  const onSubmit = (data: { login: { phoneOrEmail: string } }) => {
-    if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
-      setPasswordInput(true);
-      console.log("logging with email");
-    } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
-      console.log("logging with phone");
+  const onSubmit = (data: {
+    login: { phoneOrEmail: string; password?: string };
+  }) => {
+    /* eslint-disable-next-line */
+    if (data.login.hasOwnProperty("password")) {
+      console.log("logging in");
+    } else {
+      if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
+        setPasswordInput(true);
+        console.log("logging with email");
+      } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
+        console.log("logging with phone");
+      }
     }
   };
   const onError = (error) => {
@@ -98,7 +105,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={`${errors?.login?.password}`}
+                  errorMsg={`${handlePassErrorMsg(
+                    errors?.login?.password?.types
+                  )}`}
                 />
                 <LostPass />
               </>
