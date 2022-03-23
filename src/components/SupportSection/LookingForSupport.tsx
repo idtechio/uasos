@@ -1,15 +1,14 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
+import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
+import DetailsLink from "./DetailsLink";
+import { Offer } from "./ProvidingSupport";
 import { SupportCard, SupportWrapper, Title } from "./style";
 
-type Request = {
-  id: string;
-};
-
 type RequestProps = {
-  requests: Request[];
+  requests: Offer[];
 };
 
 export default function LookingForSupport({
@@ -28,6 +27,8 @@ export default function LookingForSupport({
       {requests.map((_) => (
         <SupportCard key={_.id}>
           <span>{"I'm an guest"}</span>
+          <AnnouncementHighlights data={_} />
+          <DetailsLink href={Routes.OFFER_DETAILS} />
         </SupportCard>
       ))}
     </>
