@@ -26,6 +26,7 @@ const Label = styled.Text<{ color: string }>`
   color: ${(props) => `${props.color}`};
   display: flex;
   align-items: center;
+  font-weight: 700;
 `;
 
 const LinkText = styled.Text`

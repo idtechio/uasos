@@ -1,17 +1,18 @@
 import { StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
-import { bottomMarginStyle } from "../../../pages/desktop/const";
+import { Theme } from "../../style/theme.config";
 
 const TagsLineWrapper = styled.View`
   display: flex;
   flex-direction: row;
 `;
 const Tag = styled.Text`
-  color: #ffffff;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.textOnAccent};
+  font-size: 11px;
   margin: 0px 6px;
   padding: 6px 12px;
-  background: #003566;
-  border: 1px solid #003566;
+  background-color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+  border: 1px solid ${({ theme }: { theme: Theme }) => theme.colors.blue};
   box-sizing: border-box;
   border-radius: 50px;
 `;
@@ -21,9 +22,9 @@ type TagsProps = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 
-export default function Tags({ tags }: TagsProps) {
+export default function Tags({ tags, containerStyle }: TagsProps) {
   return (
-    <TagsLineWrapper style={[{ marginTop: 20 }, bottomMarginStyle]}>
+    <TagsLineWrapper style={containerStyle}>
       {tags.map((tag) => (
         <Tag key={tag}>{tag}</Tag>
       ))}

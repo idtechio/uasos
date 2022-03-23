@@ -3,26 +3,33 @@ import { Theme } from "../../src/style/theme.config";
 import Toast from "../../src/components/Toast";
 import EmailIcon from "../../src/style/svgs/email.svg";
 import PhoneIcon from "../../src/style/svgs/phone.svg";
-import { bottomMarginStyle } from "./const";
+import { StyleProp, ViewStyle } from "react-native";
+import { useTranslation } from "next-i18next";
 
 const VerifySectionWrapper = styled.View``;
 
 export type Verifications = {
   needEmail: boolean;
   needPhone: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
-export default function VerifySection({ needEmail, needPhone }: Verifications) {
+export default function VerifySection({
+  needEmail,
+  needPhone,
+  containerStyle,
+}: Verifications) {
   const theme = useTheme() as Theme;
+  const { t } = useTranslation("desktop");
   return (
-    <VerifySectionWrapper>
+    <VerifySectionWrapper style={containerStyle}>
       {needEmail ? (
         <Toast
           color={theme.colors.error}
-          label={"Email not verified"}
-          cta={{ href: "/", label: "Verify" }}
+          label={t("emailNotVerified")}
+          cta={{ href: "/", label: t("verify") }}
           icon={<EmailIcon />}
-          contaierStyle={bottomMarginStyle}
+          contaierStyle={{ marginBottom: 10 }}
         />
       ) : (
         <></>
@@ -30,10 +37,10 @@ export default function VerifySection({ needEmail, needPhone }: Verifications) {
       {needPhone ? (
         <Toast
           color={theme.colors.error}
-          label={"Phone not verified"}
-          cta={{ href: "/", label: "Verify" }}
+          label={t("phoneNotVerified")}
+          cta={{ href: "/", label: t("verify") }}
           icon={<PhoneIcon />}
-          contaierStyle={bottomMarginStyle}
+          contaierStyle={{ marginBottom: 0 }}
         />
       ) : (
         <></>

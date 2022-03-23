@@ -9,7 +9,7 @@ import Container from "../../src/components/Container";
 import VerifySection, { Verifications } from "./VerifySection";
 import Tags from "../../src/components/Tags";
 import SupportSection from "./SupportSection";
-import { bottomMarginStyle } from "./const";
+import { bottomMarginStyle } from "./style";
 
 const ListingWrapper = styled(Container)``;
 
@@ -19,18 +19,18 @@ export default function Desktop() {
   const [desktopStatus, _] = useState<DesktopStatus>({
     tags: ["Sheller"],
     verifications: {
-      needEmail: false,
+      needEmail: true,
       needPhone: true,
     },
   });
   return (
     <CompositionAppBody>
       <ListingWrapper>
-        <Tags
-          tags={desktopStatus.tags}
+        <VerifySection
+          {...desktopStatus.verifications}
           containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
         />
-        <VerifySection {...desktopStatus.verifications} />
+        <Tags tags={desktopStatus.tags} containerStyle={[bottomMarginStyle]} />
         <SupportSection />
       </ListingWrapper>
     </CompositionAppBody>

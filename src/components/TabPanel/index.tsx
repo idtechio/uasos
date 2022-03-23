@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { StyleProp, ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
+import { Theme } from "../../style/theme.config";
 
 const TabPanelContainer = styled.View``;
 const TabHeader = styled.View`
@@ -7,8 +9,8 @@ const TabHeader = styled.View`
   flex-direction: row;
 `;
 const TabItems = styled.View`
-  background: #ffffff;
-  padding-top: 33px;
+  background: ${({ theme }: { theme: Theme }) => theme.colors.textOnAccent};
+  padding-top: 13px;
   padding-bottom: 112px;
   border-radius: 6px;
   top: -3px;
@@ -19,8 +21,8 @@ const Button = styled.Pressable<{ selected: boolean }>`
   ${(props) =>
     props.selected
       ? css`
-          background-color: #ffffff;
-          /* border-radius: 10px 6px; */
+          background-color: ${({ theme }: { theme: Theme }) =>
+            theme.colors.textOnAccent};
           border-top-left-radius: 6px;
           border-top-right-radius: 6px;
         `
@@ -37,8 +39,15 @@ const Button = styled.Pressable<{ selected: boolean }>`
   }
 `;
 
-const Text = styled.Text`
-  color: #003566;
+const Text = styled.Text<{ selected: boolean; theme: Theme }>`
+  ${(props) =>
+    props.selected
+      ? css`
+          color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+        `
+      : css`
+          color: ${({ theme }: { theme: Theme }) => theme.colors.disabled};
+        `}
   font-weight: 700;
   line-height: 33px;
 `;
@@ -49,11 +58,16 @@ type TabPanel = {
   content: React.ReactNode;
 };
 
-export type TabPanelProps = { items: TabPanel[]; initialSelectedIndex: number };
+export type TabPanelProps = {
+  items: TabPanel[];
+  initialSelectedIndex: number;
+  tabItemsContainerStyle?: StyleProp<ViewStyle>;
+};
 
 export default function TabPanel({
   items,
   initialSelectedIndex,
+  tabItemsContainerStyle,
 }: TabPanelProps) {
   const [selectedIndex, setSelectedIndex] = useState(initialSelectedIndex);
   return (
@@ -65,11 +79,11 @@ export default function TabPanel({
             selected={selectedIndex === index}
             onPress={() => setSelectedIndex(index)}
           >
-            <Text>{item.title}</Text>
+            <Text selected={selectedIndex === index}>{item.title}</Text>
           </Button>
         ))}
       </TabHeader>
-      <TabItems>
+      <TabItems style={tabItemsContainerStyle}>
         {items
           .filter((_, index) => index === selectedIndex)
           .map((item) => (
