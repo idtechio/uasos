@@ -12,28 +12,29 @@ import DurationIcon from "../../style/svgs/calendar.svg";
 import { useTranslation } from "react-i18next";
 
 interface HostCardContentProps {
-  offer: {
-    type: string;
-    name: string;
-    country: string;
-    phone_num: string;
-    email: string;
-    city: string;
-    listing_country: string;
-    shelter_type: string;
-    group_relation: string;
-    acceptable_group_relations: string;
-    beds: string;
-    ok_for_pregnant: boolean;
-    ok_for_disabilities: boolean;
-    ok_for_animals: boolean;
-    ok_for_elderly: boolean;
-    ok_for_any_nationality: boolean;
-    duration_category: string;
-    transport_included: boolean;
-    attachments: any;
-    matchedRequest: any;
-  };
+  // offer: {
+  //   type: string;
+  //   name: string;
+  //   country: string;
+  //   phone_num: string;
+  //   email: string;
+  //   city: string;
+  //   listing_country: string;
+  //   shelter_type: string;
+  //   group_relation: string;
+  //   acceptable_group_relations: string;
+  //   beds: string;
+  //   ok_for_pregnant: boolean;
+  //   ok_for_disabilities: boolean;
+  //   ok_for_animals: boolean;
+  //   ok_for_elderly: boolean;
+  //   ok_for_any_nationality: boolean;
+  //   duration_category: string;
+  //   transport_included: boolean;
+  //   attachments: any;
+  //   matchedRequest: any;
+  // };
+  offer: any;
 }
 
 export default function HostCardContent({ offer }: HostCardContentProps) {

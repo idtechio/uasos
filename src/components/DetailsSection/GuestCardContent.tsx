@@ -10,24 +10,25 @@ import DurationIcon from "../../style/svgs/calendar.svg";
 import { useTranslation } from "react-i18next";
 
 interface GuestCardContentProps {
-  offer: {
-    type: string;
-    name: string;
-    phone_num: string;
-    email: string;
-    acceptable_shelter_types: string;
-    beds: string;
-    group_relation: string;
-    is_pregnant: boolean;
-    is_with_disability: boolean;
-    is_with_animal: boolean;
-    is_with_elderly: boolean;
-    is_ukrainian_nationality: string;
-    duration_category: string;
-    country: string;
-    searched_city: string;
-    matchedOffer: any;
-  };
+  // offer: {
+  //   type: string;
+  //   name: string;
+  //   phone_num: string;
+  //   email: string;
+  //   acceptable_shelter_types: string;
+  //   beds: string;
+  //   group_relation: string;
+  //   is_pregnant: boolean;
+  //   is_with_disability: boolean;
+  //   is_with_animal: boolean;
+  //   is_with_elderly: boolean;
+  //   is_ukrainian_nationality: string;
+  //   duration_category: string;
+  //   country: string;
+  //   searched_city: string;
+  //   matchedOffer: any;
+  // };
+  offer: any;
 }
 
 export default function GuestCardContent({ offer }: GuestCardContentProps) {

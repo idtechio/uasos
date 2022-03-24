@@ -67,6 +67,7 @@ const offer = {
   duration_category: "month",
   transport_included: true,
   attachments: [],
+  matchedOffer: null,
   matchedRequest: {
     type: "guest",
     name: "Karina",

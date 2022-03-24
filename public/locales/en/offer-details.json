@@ -26,5 +26,12 @@
   "hostAddress": "Address:",
   "accomType": "Accommodation type:",
   "maxPeople": "Maximum number of persons:",
-  "durationHost": "Duration of stay"
+  "durationHost": "Duration of stay",
+
+  "thankYou": "Thank you",
+  "confirmFeedback": " Thank you very much for confirming the proposal received. As soon as we receive both confirmations, we will let you know.",
+  "backToProfile": "Back to profile",
+
+  "longThanks": "Thank you for confirming your decision.",
+  "rejectFeedback": "Your submission will go back into the pool, we will let you know about the next proposal as soon as we can find one."
 }
