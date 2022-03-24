@@ -28,11 +28,10 @@ export type SignInProps = {
 
 const SignIn = ({ providers, csrfToken }: SignInProps) => {
   const { identity } = useContext(AuthContext);
-  console.log(identity);
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />
-      {identity ? (
+      {identity && !identity.phoneNumber ? (
         <FormRegisterWithSocials></FormRegisterWithSocials>
       ) : (
         <LoginForm providers={providers} csrfToken={csrfToken} />

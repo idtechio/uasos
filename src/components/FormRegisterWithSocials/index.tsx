@@ -1,7 +1,6 @@
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
-import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { CompositionSection } from "../Compositions";
 import { FormHeader, Spacer } from "../FormLogin";
 import FormContainer from "../FormLogin/FormContainer";
@@ -17,6 +16,7 @@ import { styles } from "./styles";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
+import { Authorization } from "../../hooks/useAuth";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -32,22 +32,27 @@ export default function FromRegisterWithSocials() {
       },
     },
   });
-  console.log(identity);
+
   const { handleSubmit } = form;
+
   const onSubmit = (e: any) => {
     console.log(e);
   };
+
   const onError = (e: any) => {
     console.log(e);
   };
+
   const {
     formState: { errors, isValid, isSubmitted },
   } = form;
+
   const provider = identity?.providerData
     .map((provider) => provider.providerId)
     .includes("google.com")
     ? "google"
     : "facebook";
+
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
       <FormContainer>
@@ -109,7 +114,7 @@ export default function FromRegisterWithSocials() {
           />
           <FormFooter>
             <ButtonCta
-              onPress={() => null}
+              onPress={() => Authorization.logOut()}
               anchor={"Back"}
               style={styles.backButton}
             />

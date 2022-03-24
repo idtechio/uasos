@@ -86,10 +86,7 @@ const Authorization: Authorization = {
     );
   },
   async sendPasswordResetEmail(email) {
-    await sendPasswordResetEmail(auth, email, {
-      url: "https://localhost:300",
-      handleCodeInApp: false,
-    });
+    await sendPasswordResetEmail(auth, email);
   },
 };
 

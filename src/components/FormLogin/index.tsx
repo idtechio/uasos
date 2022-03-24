@@ -15,7 +15,8 @@ import GoToRegister from "./GoToRegister";
 import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
 import { Authorization } from "../../hooks/useAuth";
-import { AuthContext } from "../../../pages/_app";
+import { ConfirmationResult } from "firebase/auth";
+import { View } from "react-native";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -24,7 +25,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { locale } = useRouter();
 
   const [passwordInput, setPasswordInput] = useState(false);
-  const [loginMethod, setLoginMethod] = useState("");
+  const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
+    useState<ConfirmationResult | null>(null);
 
   const formFields = useForm<FormType>();
 
@@ -34,9 +36,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   } = formFields;
 
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  const PHONE_REGEX = /([^\d]*\d){8}/;
+  const PHONE_REGEX = /[+]([^\d]*\d){8}/;
   const EMAIL_OR_PHONE_REGEX =
-    /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|(([^\d]*\d){8})/;
+    /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|([+]([^\d]*\d){8})/;
 
   const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
@@ -47,24 +49,35 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       data.login.password &&
       PHONE_REGEX.test(data.login.phoneOrEmail)
     ) {
+      setPasswordInput(false);
       delete data.login.password;
     }
     /* eslint-disable-next-line */
     if (data.login.hasOwnProperty("password") && data.login.password) {
-      Authorization.signInWithEmail(
-        data.login.phoneOrEmail,
-        data.login.password
-      );
+      try {
+        await Authorization.signInWithEmail(
+          data.login.phoneOrEmail,
+          data.login.password
+        );
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
         setPasswordInput(true);
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
-        await Authorization.signInWithPhone(
-          data.login.phoneOrEmail,
-          Authorization.initCaptcha("captcha__container")
-        );
+        try {
+          const confirmation = await Authorization.signInWithPhone(
+            data.login.phoneOrEmail,
+            Authorization.initCaptcha("captcha__container")
+          );
+          setPhoneLoginConfirmation(confirmation);
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
+    console.log(data);
   };
   const onError = (error) => null;
 
@@ -136,7 +149,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                   }}
                   error={errors?.login?.password}
                   errorMsg={`${handlePassErrorMsg(
-                    errors?.login?.password?.types
+                    errors?.login?.password?.type
                   )}`}
                 />
                 <LostPass />
@@ -156,8 +169,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               anchor={t("loginForm.logIn")}
               onPress={handleSubmit(onSubmit, onError)}
             />
-            <div id="captcha__container"></div>
+            <div id="captcha__container" style={{ display: "none" }}></div>
           </FormProvider>
+          {phoneLoginConfirmation ? <View>PhoneVerify</View> : <></>}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />
