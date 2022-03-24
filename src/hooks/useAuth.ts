@@ -6,7 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
   signInWithRedirect,
-  // getIdToken,
+  getIdToken,
   signOut,
   GoogleAuthProvider,
   FacebookAuthProvider,
@@ -15,6 +15,7 @@ import {
   sendPasswordResetEmail,
   confirmPasswordReset,
 } from "firebase/auth";
+import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
 
 // TODO Delete afterwards only for test purposes
@@ -37,14 +38,16 @@ auth.useDeviceLanguage();
 
 const useAuth = () => {
   const [identity, setIdentity] = useState<null | User>();
-  const [account, setAccount] = useState();
+  const [account, setAccount] = useState<null | getAccountDTO>(null);
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       setIdentity(user);
-      // TODO add account fetch when api will be done
+      setAccount(
+        user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
+      );
     });
   }, []);
-  return { identity };
+  return { identity, account };
 };
 
 interface Authorization {
