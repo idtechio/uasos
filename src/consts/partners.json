@@ -41,10 +41,6 @@
       "image": "/partners/kik-warszawa.png"
     },
     {
-      "alt": "auschwitz pledge foundation",
-      "image": "/partners/auschwitz-pledge-foundation.png"
-    },
-    {
       "alt": "techsoup",
       "image": "/partners/techsoup.png"
     }
@@ -61,6 +57,10 @@
     {
       "alt": "clevsoft",
       "image": "/partners/clevsoft-development.png"
+    },
+    {
+      "alt": "auschwitz pledge foundation",
+      "image": "/partners/auschwitz-pledge-foundation.png"
     }
   ],
   "PARTNERS": [
