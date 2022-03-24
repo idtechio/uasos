@@ -9,11 +9,23 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import FormTextInput from "../Inputs/FormTextInput";
 import { Authorization } from "../../hooks/useAuth";
-import { StyledText, StyledHeader, ButtonContainer, styles } from "./styles";
+import {
+  StyledText,
+  StyledHeader,
+  ButtonContainer,
+  styles,
+  ModalContainer,
+  StyledModalText,
+} from "./styles";
 import { Routes } from "../../consts/router";
+import Image from "next/image";
+import ModalPicture from "../../../public/assets/PasswordReset.png";
+import CardModal from "../CardModal";
+import { useState } from "react";
 
 const FormInitPasswordReset = () => {
   const { t } = useTranslation();
+  const [resetInitPassword, setResetInitPassword] = useState<boolean>(false);
   const router = useRouter();
   // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -23,9 +35,10 @@ const FormInitPasswordReset = () => {
     formState: { errors },
   } = formFields;
 
-  const onSubmit = (data: { login: { email: string } }) => {
+  const onSubmit = async (data: { login: { email: string } }) => {
     try {
-      Authorization.sendPasswordResetEmail(data.login.email);
+      await Authorization.sendPasswordResetEmail(data.login.email);
+      setResetInitPassword(true);
     } catch (e) {
       return null;
     }
@@ -54,7 +67,6 @@ const FormInitPasswordReset = () => {
             />
           </FormProvider>
           <ButtonContainer>
-            {" "}
             <ButtonCta
               onPress={() => router.push(Routes.SIGN_IN)}
               anchor={"Back"}
@@ -67,6 +79,23 @@ const FormInitPasswordReset = () => {
             />
           </ButtonContainer>
         </FormContainer>
+        {resetInitPassword ? (
+          <CardModal>
+            <ModalContainer>
+              <Image src={ModalPicture} />
+              <StyledModalText>
+                Password reset email sent - check your mailbox
+              </StyledModalText>
+              <ButtonCta
+                onPress={() => router.push(Routes.SIGN_IN)}
+                anchor={"Continue"}
+                style={styles.confirmButton}
+              />
+            </ModalContainer>
+          </CardModal>
+        ) : (
+          <></>
+        )}
       </CompositionSection>
     </>
   );

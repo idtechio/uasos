@@ -15,11 +15,19 @@ export const StyledHeader = styled.Text`
 `;
 export const StyledText = styled.Text`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 24px;
   display: flex;
   letter-spacing: 0.5px;
   margin: 35px 0;
+`;
+export const ModalContainer = styled.View`
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+export const StyledModalText = styled(StyledText)`
+  text-align: center;
 `;
 export const styles = StyleSheet.create({
   backButton: {
@@ -32,4 +40,5 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFD700",
     width: 150,
   },
+  confirmButton: {},
 });

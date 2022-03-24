@@ -15,7 +15,7 @@ export const StyledHeader = styled.Text`
 `;
 export const StyledText = styled.Text`
   font-weight: bold;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 24px;
   display: flex;
   letter-spacing: 0.5px;
