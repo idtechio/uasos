@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import withApiAuth, {
-  ApiAuthTokenDetails,
+import {
+  /* withApiAuth, */ ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
 enum Boolean {
