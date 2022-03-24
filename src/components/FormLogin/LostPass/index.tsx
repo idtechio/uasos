@@ -7,7 +7,7 @@ const LostPass = () => {
     <LostPassWrapper>
       <StyledText>
         Nie pamiętasz hasła?{" "}
-        <Link href={"/pass-resset"} passHref>
+        <Link href={"/password-reset-init"} passHref>
           <StyledLink>Kliknij tutaj</StyledLink>
         </Link>
       </StyledText>
