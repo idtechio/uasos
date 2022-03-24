@@ -75,6 +75,7 @@ export default function ProvidingSupport({ offers }: OfferProps) {
 const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
+  margin-bottom: 15px;
 `;
 
 const ImageWrapper = styled.View`

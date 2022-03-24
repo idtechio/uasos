@@ -13,7 +13,18 @@ import VerifySection, {
 import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 import { withSession } from "../../src/helpers/withSession";
 
-const ListingWrapper = styled(Container)``;
+const ListingWrapper = styled(Container)`
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const InnerWrapper = styled.View`
+  width: 100%;
+  max-width: 450px;
+`;
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
@@ -30,12 +41,17 @@ export default function Desktop() {
   return (
     <CompositionAppBody>
       <ListingWrapper>
-        <VerifySection
-          {...desktopStatus.verifications}
-          containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
-        />
-        <Tags tags={desktopStatus.tags} containerStyle={[bottomMarginStyle]} />
-        <SupportSection />
+        <InnerWrapper>
+          <VerifySection
+            {...desktopStatus.verifications}
+            containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
+          />
+          <Tags
+            tags={desktopStatus.tags}
+            containerStyle={[bottomMarginStyle]}
+          />
+          <SupportSection />
+        </InnerWrapper>
       </ListingWrapper>
     </CompositionAppBody>
   );

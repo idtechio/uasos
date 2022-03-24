@@ -46,4 +46,5 @@ const LinkWrapper = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  padding-top: 28px;
 `;
