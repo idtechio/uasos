@@ -38,12 +38,15 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
               title={t("navigationDrawer.profile")}
               Icon={UserIcon}
               onPress={noop} // TODO implement
-            />
+            /> */}
             <NavigationMenuItem
               title={t("navigationDrawer.placesList")}
-              Icon={ListIcon}
-              onPress={noop} // TODO implement
-            /> */}
+              Icon={UserIcon}
+              onPress={() => {
+                router.push("/desktop");
+                hideDrawer();
+              }}
+            />
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
               Icon={LogoutIcon}

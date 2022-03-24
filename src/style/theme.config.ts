@@ -30,6 +30,9 @@ export const primary = {
     error: "#d8000c",
     positive: "#38B000",
     alert: "#F44336",
+    disabled: "#9A9A9A",
+    darkgray: "#C8C8C8",
+    lightgray: "#F8F8F8",
   },
   fonts: {
     headings: "'Roboto', sans-serif",
