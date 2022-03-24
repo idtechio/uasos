@@ -21,6 +21,14 @@ export const StyledText = styled.Text`
   letter-spacing: 0.5px;
   margin: 35px 0;
 `;
+export const ModalContainer = styled.View`
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+export const StyledModalText = styled(StyledText)`
+  text-align: center;
+`;
 export const styles = StyleSheet.create({
   backButton: {
     backgroundColor: "#fff",
@@ -32,4 +40,5 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFD700",
     width: 190,
   },
+  confirmButton: {},
 });

@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -10,10 +10,22 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import FormTextInput from "../Inputs/FormTextInput";
 import { Authorization } from "../../hooks/useAuth";
-import { StyledText, StyledHeader, ButtonContainer, styles } from "./styles";
+import {
+  StyledText,
+  StyledHeader,
+  ButtonContainer,
+  styles,
+  ModalContainer,
+  StyledModalText,
+} from "./styles";
+import CardModal from "../CardModal";
+import ModalPicture from "../../../public/assets/PasswordReset.png";
+import Image from "next/image";
+import { Routes } from "../../consts/router";
 
 const FormPasswordReset = () => {
   const { t } = useTranslation();
+  const [resetSuccess, setResetSucces] = useState<boolean>(false);
   const router = useRouter();
   // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -25,17 +37,19 @@ const FormPasswordReset = () => {
     watch,
   } = formFields;
   firstInputRef.current = watch("resetPassword.password", "");
-  const onSubmit = (data: { resetPassword: { passwordRepeat: string } }) => {
+  const onSubmit = async (data: {
+    resetPassword: { passwordRepeat: string };
+  }) => {
     if (oobCodeRef.current) {
-      console.log(oobCodeRef.current);
-      // try {
-      //   Authorization.confirmPasswordResetEmail(
-      //     oobCodeRef.current,
-      //     data.resetPassword.passwordRepeat
-      //   );
-      // } catch (e) {
-      //   return null;
-      // }
+      try {
+        await Authorization.confirmPasswordResetEmail(
+          oobCodeRef.current,
+          data.resetPassword.passwordRepeat
+        );
+        setResetSucces(true);
+      } catch (e) {
+        return null;
+      }
     }
   };
   const oobCodeRef = useRef<null | string>(null);
@@ -85,6 +99,23 @@ const FormPasswordReset = () => {
             />
           </ButtonContainer>
         </FormContainer>
+        {resetSuccess ? (
+          <CardModal>
+            <ModalContainer>
+              <Image src={ModalPicture} />
+              <StyledModalText>
+                Your password has been successfully changed
+              </StyledModalText>
+              <ButtonCta
+                onPress={() => router.push(Routes.SIGN_IN)}
+                anchor={"Continue"}
+                style={styles.confirmButton}
+              />
+            </ModalContainer>
+          </CardModal>
+        ) : (
+          <></>
+        )}
       </CompositionSection>
     </>
   );
