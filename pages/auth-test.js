@@ -8,7 +8,13 @@ import UserProfile from "../src/components/AuthTest/UserProfile";
 import useAuth from "../src/components/AuthTest/useAuth";
 
 export default function App() {
-  const [identityUser, account, getTokenForAPI] = useAuth();
+  const [
+    identityUser,
+    account,
+    getTokenForAPI,
+    sendEmailVer,
+    sendPasswordReset,
+  ] = useAuth();
 
   return (
     <CompositionAppBody>
@@ -19,6 +25,8 @@ export default function App() {
               getTokenForAPI={getTokenForAPI}
               identityUser={identityUser}
               account={account}
+              sendEmailVer={sendEmailVer}
+              sendPasswordReset={sendPasswordReset}
             />
 
             {account && account.verified && (

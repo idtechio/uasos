@@ -177,7 +177,6 @@ const PhoneLogin = function ({ initRecaptcha, signInWithPhone, onError }) {
   const sendCode = async function (phone) {
     try {
       const r = await signInWithPhone(phone, recaptchaVerifier);
-      console.log("!!", r);
       setConfirmationResult(r);
     } catch (e) {
       onError(e.message); // Error; SMS not sent

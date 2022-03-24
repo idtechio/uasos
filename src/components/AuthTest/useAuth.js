@@ -10,6 +10,8 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   RecaptchaVerifier,
+  sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import AuthAPI from "./authAPI";
@@ -35,7 +37,32 @@ const useAuth = function () {
 
   const getTokenForAPI = async () => await getIdToken(identityUser, true);
 
-  return [identityUser, account, getTokenForAPI];
+  const sendPasswordReset = async () => {
+    const actionCodeSettings = {
+      url: "https://dev.uasos.org/auth-test",
+      handleCodeInApp: true,
+    };
+    await sendPasswordResetEmail(
+      auth,
+      auth.currentUser.email,
+      actionCodeSettings
+    );
+  };
+  const sendEmailVer = async () => {
+    const actionCodeSettings = {
+      url: "https://dev.uasos.org/auth-test",
+      handleCodeInApp: true,
+    };
+    await sendEmailVerification(auth.currentUser, actionCodeSettings);
+  };
+
+  return [
+    identityUser,
+    account,
+    getTokenForAPI,
+    sendPasswordReset,
+    sendEmailVer,
+  ];
 };
 
 const logOut = async () => {
@@ -51,10 +78,10 @@ const signWithFacebook = () => {
   signInWithRedirect(auth, provider);
 };
 const signInWithEmail = async (email, password) => {
-  await signInWithEmailAndPassword(auth, email, password);
+  return await signInWithEmailAndPassword(auth, email, password);
 };
 const signInWithPhone = async (phone, recaptchaVerifier) => {
-  await signInWithPhoneNumber(auth, phone, recaptchaVerifier);
+  return await signInWithPhoneNumber(auth, phone, recaptchaVerifier);
 };
 const initRecaptcha = (containerId) => {
   return new RecaptchaVerifier(

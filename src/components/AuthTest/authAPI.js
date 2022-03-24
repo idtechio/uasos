@@ -30,6 +30,15 @@ const AuthAPI = {
       }),
     });
   },
+  addPhoneNumber: async function (token, phone) {
+    await fetch(`/api/auth-test/add-phone`, {
+      method: "post",
+      body: JSON.stringify({
+        token,
+        phone,
+      }),
+    });
+  },
 };
 
 export default AuthAPI;
