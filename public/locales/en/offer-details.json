@@ -1,0 +1,30 @@
+{
+  "warningHeader": "For safety purposes, keep your relatives informed about who you are sheltering.",
+  "justInCase": "Just in case:",
+  "verifyIdentity": "verify the identity of the person you are sheltering,",
+  "verifyGroup": "make sure the group composition matches the original description",
+
+  "groupExtraInfo": "Additional group information",
+  "disabilityPresent": "There is a person with a disability in the group",
+  "pregnancyPresent": "The group includes a person with an advanced pregnancy (over 6 months)",
+  "diversityPresent": "The group includes people from different nationalities",
+
+  "accommodationExtraInfo": "Additional information on accommodation",
+  "transportOffered": "I offer transport",
+  "petsAccepted": "Pets accepted",
+  "disabilityAccepted": "Facilities for people with disabilities",
+
+  "guestProfile": "Guest profile",
+  "guest": "Guest:",
+  "duration": "Duration of stay:",
+  "address": "Search address:",
+  "peopleNumber": "Number of people in the group:",
+  "groupType": "Group type:",
+
+  "hostProfile": "Host profile",
+  "host": "Host:",
+  "hostAddress": "Address:",
+  "accomType": "Accommodation type:",
+  "maxPeople": "Maximum number of persons:",
+  "durationHost": "Duration of stay"
+}
