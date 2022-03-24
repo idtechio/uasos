@@ -46,7 +46,7 @@ export default function ProvidingSupport({ offers }: ProvidingSupportProps) {
                 style={{
                   alignSelf: "flex-start",
                   justifySelf: "flex-end",
-                  marginTop: 12,
+                  marginTop: 14,
                 }}
               >
                 <StatusBadge state={o.state} />

@@ -16,16 +16,17 @@ export const StyledText = styled.Text`
   line-height: 16px;
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
   width: 100%;
-  margin-left: 20px;
+  margin-left: 10px;
 `;
 
 export const Wrapper = styled.View`
-  height: 50px;
+  margin-top: 18px;
+  margin-bottom: 15px;
   background-color: ${({ theme }: { theme: Theme }) =>
     theme.pageSection.backgroundColorAlt};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding-left: 30px;
+  padding-left: 6px;
 `;

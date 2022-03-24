@@ -38,7 +38,7 @@ export const TextInput = styled.TextInput<TextInputProps>`
     ${(props) =>
       props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.3)`};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
-  padding: 20px;
+  padding: 13px 20px 14px;
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
