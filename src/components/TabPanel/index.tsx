@@ -11,7 +11,8 @@ const TabHeader = styled.View`
 const TabItems = styled.View`
   background: ${({ theme }: { theme: Theme }) => theme.colors.textOnAccent};
   padding-top: 13px;
-  padding-bottom: 112px;
+  padding-bottom: 13px;
+  margin-bottom: 16px;
   border-radius: 6px;
   top: -3px;
 `;

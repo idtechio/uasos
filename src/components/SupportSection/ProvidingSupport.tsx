@@ -3,35 +3,19 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
-import { AccommodationTime } from "../../helpers/FormTypes";
+import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
 import { SupportCard, SupportWrapper, Title } from "./style";
+import { Offer } from "./types";
 
-export enum MatchState {
-  inactive = "inactive",
-  looking = "lookingForAMatch",
-  matched = "weFoundAMatch",
-  beingConfirmed = "beingConfirmed",
-  confirmed = "confirmed",
-}
-
-export type Offer = {
-  id: string;
-  name: string;
-  imageUrl: string;
-  city: string;
-  beds: number;
-  duration: AccommodationTime;
-  state: MatchState;
-};
-
-type OfferProps = {
+type ProvidingSupportProps = {
   offers: Offer[];
 };
 
-export default function ProvidingSupport({ offers }: OfferProps) {
+export default function ProvidingSupport({ offers }: ProvidingSupportProps) {
   const { t } = useTranslation("desktop");
   const router = useRouter();
   const NoOffer = () => (
@@ -42,6 +26,10 @@ export default function ProvidingSupport({ offers }: OfferProps) {
       {offers.map((o) => (
         <SupportCard key={o.id}>
           <HeaderWrapper>
+            <MoreButtonWrapper>
+              <EditOfferButton />
+            </MoreButtonWrapper>
+
             <ImageWrapper>
               <img
                 src={o.imageUrl}
@@ -54,6 +42,15 @@ export default function ProvidingSupport({ offers }: OfferProps) {
             <TextWrapper>
               <IdContainer>Id: xxxx</IdContainer>
               <OfferTitle>Housing</OfferTitle>
+              <div
+                style={{
+                  alignSelf: "flex-start",
+                  justifySelf: "flex-end",
+                  marginTop: 12,
+                }}
+              >
+                <StatusBadge state={o.state} />
+              </div>
             </TextWrapper>
           </HeaderWrapper>
 
@@ -76,6 +73,14 @@ const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+  position: relative;
+`;
+
+const MoreButtonWrapper = styled.View`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9999999;
 `;
 
 const ImageWrapper = styled.View`

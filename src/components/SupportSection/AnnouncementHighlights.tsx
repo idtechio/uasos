@@ -36,7 +36,10 @@ export const AnnouncementHighlights = ({ data }: { data: Offer }) => {
   );
 };
 
-const SectionInfo = styled.View``;
+const SectionInfo = styled.View`
+  z-index: -1;
+`;
+
 const Info = styled.View`
   display: flex;
   align-items: center;
@@ -44,6 +47,7 @@ const Info = styled.View`
   flex-direction: row;
   padding-bottom: 7px;
 `;
+
 const Label = styled.Text`
   font-size: 14px;
   line-height: 18px;
