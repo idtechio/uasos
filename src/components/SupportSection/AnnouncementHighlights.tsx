@@ -4,7 +4,7 @@ import ClockIcon from "../../../src/style/svgs/clock.svg";
 import MarkerIcon from "../../../src/style/svgs/marker2.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
 import { Theme } from "../../style/theme.config";
-import { Offer } from "./ProvidingSupport";
+import { Offer } from "./types";
 
 export const AnnouncementHighlights = ({ data }: { data: Offer }) => {
   const { t } = useTranslation("desktop");
