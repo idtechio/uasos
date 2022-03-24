@@ -41,11 +41,12 @@ async function getOffers(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
-  if (!req.decodedToken) {
-    res.status(400).json({ ok: "not ok" });
-    res.end();
-    return;
-  }
+  // TODO turn on auth
+  // if (!req.decodedToken) {
+  //   res.status(400).json({ ok: "not ok" });
+  //   res.end();
+  //   return;
+  // }
 
   // TODO get offers details from backend for user req.decodedToken.uid
 
@@ -123,4 +124,6 @@ async function getOffers(
   res.end();
 }
 
-export default withApiAuth(getOffers);
+// TODO turn on auth
+// export default withApiAuth(getOffers);
+export default getOffers;

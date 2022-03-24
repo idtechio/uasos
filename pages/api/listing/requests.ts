@@ -40,11 +40,12 @@ async function getRequests(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
-  if (!req.decodedToken) {
-    res.status(400).json({ ok: "not ok" });
-    res.end();
-    return;
-  }
+  // TODO turn on auth
+  // if (!req.decodedToken) {
+  //   res.status(400).json({ ok: "not ok" });
+  //   res.end();
+  //   return;
+  // }
 
   // TODO get requests details from backend for user req.decodedToken.uid
 
@@ -114,4 +115,6 @@ async function getRequests(
   res.end();
 }
 
-export default withApiAuth(getRequests);
+// TODO turn on auth
+// export default withApiAuth(getRequests);
+export default getRequests;
