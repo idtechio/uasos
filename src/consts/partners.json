@@ -43,6 +43,10 @@
     {
       "alt": "auschwitz pledge foundation",
       "image": "/partners/auschwitz-pledge-foundation.png"
+    },
+    {
+      "alt": "techsoup",
+      "image": "/partners/techsoup.png"
     }
   ],
   "INITIATORS": [
@@ -153,10 +157,6 @@
       "image": "/partners/inpost.png"
     },
     {
-      "alt": "techsoup",
-      "image": "/partners/techsoup.png"
-    },
-    {
       "alt": "le pont",
       "image": "/partners/le-pont.png"
     },
@@ -179,6 +179,10 @@
     {
       "alt": "m",
       "image": "/partners/m.png"
+    },
+    {
+      "alt": "blesu",
+      "image": "/partners/blesu.png"
     }
   ]
 }
