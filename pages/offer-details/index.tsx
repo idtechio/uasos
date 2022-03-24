@@ -56,7 +56,7 @@ export default function OfferDetails() {
         <InnerWrapper>
           <BackWrapper
             onPress={() => {
-              router.push("/desktop");
+              router.push("/dashboard");
             }}
           >
             <ArrowLeftIcon />
