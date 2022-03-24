@@ -70,7 +70,7 @@ export const CardWrapper = styled.View`
   flex-direction: column;
   border-radius: 5px;
   padding: 18px 9.5px;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: ${({ theme }: { theme: Theme }) =>
     theme.colors.textOnAccent};
 `;

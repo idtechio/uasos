@@ -5,6 +5,7 @@ import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
 import styled from "styled-components/native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import Container from "../../src/components/Container";
+import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
 import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
@@ -45,7 +46,7 @@ const isMatch = true;
 
 const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
 
-const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
+const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
 
 export default function OfferDetails() {
   const router = useRouter();
@@ -64,6 +65,7 @@ export default function OfferDetails() {
           </BackWrapper>
           {isMatch ? <WarningSection containerStyle={topMarginStyle} /> : null}
           <DetailsSection containerStyle={bottomMarginStyle} />
+          <DetailsDecisionButtons />
         </InnerWrapper>
       </ListingWrapper>
     </CompositionAppBody>
