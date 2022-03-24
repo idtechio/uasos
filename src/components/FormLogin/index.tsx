@@ -34,10 +34,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     handleSubmit,
     formState: { errors },
   } = formFields;
-
+  // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  // eslint-disable-next-line
   const PHONE_REGEX = /[+]([^\d]*\d){8}/;
   const EMAIL_OR_PHONE_REGEX =
+    // eslint-disable-next-line
     /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|([+]([^\d]*\d){8})/;
 
   const onSubmit = async (data: {

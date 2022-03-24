@@ -144,6 +144,10 @@ export type FormType = {
     phonePrefix: string;
     phoneNumber: string;
   };
+  resetPassword: {
+    password: string;
+    passwordRepeat: string;
+  };
 };
 
 type PathsToStringProps<T> = T extends

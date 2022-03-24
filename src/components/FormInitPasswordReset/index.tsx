@@ -1,9 +1,7 @@
-import { useState, useContext } from "react";
 import { useTranslation } from "next-i18next";
-import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import { ButtonCta, ButtonSM } from "../Buttons";
+import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 
 import FormContainer from "../FormLogin/FormContainer";
@@ -11,19 +9,36 @@ import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import FormTextInput from "../Inputs/FormTextInput";
 import { Authorization } from "../../hooks/useAuth";
+import { StyledText, StyledHeader, ButtonContainer, styles } from "./styles";
+import { Routes } from "../../consts/router";
 
 const FormInitPasswordReset = () => {
   const { t } = useTranslation();
-  const { locale } = useRouter();
+  const router = useRouter();
+  // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const formFields = useForm<FormType>();
   const {
     handleSubmit,
     formState: { errors },
   } = formFields;
+
+  const onSubmit = (data: { login: { email: string } }) => {
+    try {
+      Authorization.sendPasswordResetEmail(data.login.email);
+    } catch (e) {
+      return null;
+    }
+  };
+  const onError = () => null;
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
+        <StyledHeader>Reset Password</StyledHeader>
+        <StyledText>
+          If you do not remember your password, enter your email address. We
+          will send you a link to the password reset form.
+        </StyledText>
         <FormContainer>
           <FormProvider {...formFields}>
             <FormTextInput
@@ -38,6 +53,19 @@ const FormInitPasswordReset = () => {
               errorMsg={"Enter email"}
             />
           </FormProvider>
+          <ButtonContainer>
+            {" "}
+            <ButtonCta
+              onPress={() => router.push(Routes.SIGN_IN)}
+              anchor={"Back"}
+              style={styles.backButton}
+            />
+            <ButtonCta
+              onPress={handleSubmit(onSubmit, onError)}
+              anchor={"Reset password"}
+              style={styles.verifyButton}
+            />
+          </ButtonContainer>
         </FormContainer>
       </CompositionSection>
     </>

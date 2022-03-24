@@ -13,6 +13,7 @@ import {
   RecaptchaVerifier,
   ConfirmationResult,
   sendPasswordResetEmail,
+  confirmPasswordReset,
 } from "firebase/auth";
 import { useState, useEffect } from "react";
 
@@ -57,6 +58,10 @@ interface Authorization {
   initCaptcha: (containerId: string) => RecaptchaVerifier;
   signInWithEmail: (email: string, password: string) => Promise<void>;
   sendPasswordResetEmail: (email: string) => Promise<void>;
+  confirmPasswordResetEmail: (
+    oobCode: string,
+    password: string
+  ) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -87,6 +92,9 @@ const Authorization: Authorization = {
   },
   async sendPasswordResetEmail(email) {
     await sendPasswordResetEmail(auth, email);
+  },
+  async confirmPasswordResetEmail(oobCode, password) {
+    await confirmPasswordReset(auth, oobCode, password);
   },
 };
 
