@@ -22,7 +22,7 @@ async function getAccount(
     return;
   }
 
-  // TODO get account details from backfunction verifyToken(req, res, next) {
+  // TODO get account details from backend for req.decodedToken.uid
 
   const account: AccountProps = {
     uid: req.decodedToken.uid,
