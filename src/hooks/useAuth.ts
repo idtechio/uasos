@@ -1,4 +1,3 @@
-import { initializeApp, getApp } from "firebase/app";
 import {
   getAuth,
   onAuthStateChanged,
@@ -17,21 +16,7 @@ import {
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
-
-// TODO Delete afterwards only for test purposes
-let app;
-try {
-  app = getApp();
-} catch (e) {
-  app = initializeApp({
-    apiKey: "AIzaSyDMkJxobsqjQOKeOgZh0bLOwTptF3DfTyM",
-    authDomain: "ukrn-hlpr-dev.firebaseapp.com",
-    projectId: "ukrn-hlpr-dev",
-    storageBucket: "ukrn-hlpr-dev.appspot.com",
-    messagingSenderId: "727398461288",
-    appId: "1:727398461288:web:af67d40f717ab97143b0dd",
-  });
-}
+import { app } from "../../lib/firebase-app";
 
 const auth = getAuth(app);
 auth.useDeviceLanguage();
