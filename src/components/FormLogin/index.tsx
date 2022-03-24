@@ -15,6 +15,7 @@ import GoToRegister from "./GoToRegister";
 import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
 import { Authorization } from "../../hooks/useAuth";
+import { AuthContext } from "../../../pages/_app";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -40,6 +41,14 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
   }) => {
+    if (
+      /* eslint-disable-next-line */
+      data.login.hasOwnProperty("password") &&
+      data.login.password &&
+      PHONE_REGEX.test(data.login.phoneOrEmail)
+    ) {
+      delete data.login.password;
+    }
     /* eslint-disable-next-line */
     if (data.login.hasOwnProperty("password") && data.login.password) {
       Authorization.signInWithEmail(
@@ -49,7 +58,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
         setPasswordInput(true);
-        console.log("logging with email");
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
         await Authorization.signInWithPhone(
           data.login.phoneOrEmail,
@@ -58,9 +66,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       }
     }
   };
-  const onError = (error) => {
-    console.log("form error:", error);
-  };
+  const onError = (error) => null;
 
   const handlePassErrorMsg = (type: string): string => {
     switch (type) {
@@ -80,8 +86,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const handleSignIn = async (providerId: string) => {
     switch (providerId) {
       case PROVIDERS.FACEBOOK:
-        // await Authorization.signInWithFacebook();
-        Authorization.sendPasswordResetEmail("jakub.jarzabekk@gmail.com");
+        await Authorization.signInWithFacebook();
         break;
       case PROVIDERS.GOOGLE:
         await Authorization.signInWithGoogle();

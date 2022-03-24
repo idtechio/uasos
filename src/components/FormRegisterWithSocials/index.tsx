@@ -15,19 +15,24 @@ import { InputCotrolLabel as InputControlLabel } from "../Forms";
 import { FormFooter } from "./styles";
 import { styles } from "./styles";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
-
-export default function FromRegisterWithSocials({ registerWith = "google" }) {
+import { useContext } from "react";
+import { AuthContext } from "../../../pages/_app";
+export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { name: sessionName, email: sessionEmail } = useSessionUserData();
+  const { identity } = useContext(AuthContext);
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
-        name: sessionName ? sessionName.split(" ")[0] : "",
-        email: sessionEmail,
+        name:
+          identity && identity.displayName
+            ? identity?.displayName.split(" ")[0]
+            : "",
+        email: identity && identity.email ? identity?.email : "",
         language: "Poland",
       },
     },
   });
+  console.log(identity);
   const { handleSubmit } = form;
   const onSubmit = (e: any) => {
     console.log(e);
@@ -38,14 +43,19 @@ export default function FromRegisterWithSocials({ registerWith = "google" }) {
   const {
     formState: { errors, isValid, isSubmitted },
   } = form;
+  const provider = identity?.providerData
+    .map((provider) => provider.providerId)
+    .includes("google.com")
+    ? "google"
+    : "facebook";
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
       <FormContainer>
         <FormHeader>{"Fill in the missing data"}</FormHeader>
         <ButtonSM
-          id={registerWith}
+          id={provider}
           onPress={() => null}
-          anchor={`${t("loginForm.logInWith")} with Google`}
+          anchor={`${t("loginForm.logInWith")} with ${provider}`}
         />
         <Spacer />
         <FormProvider {...form}>

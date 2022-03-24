@@ -12,7 +12,9 @@ import { init } from "./../src/helpers/ga";
 import { AppProps } from "next/app";
 import useAuth from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
-export const AuthContext = createContext<null | User | undefined>(null);
+export const AuthContext = createContext<{ identity: null | User | undefined }>(
+  { identity: null }
+);
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
@@ -39,7 +41,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         </Head>
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
-            <AuthContext.Provider value={identity}>
+            <AuthContext.Provider value={{ identity: identity }}>
               <Component {...pageProps} />
             </AuthContext.Provider>
           </ThemeProviderNative>

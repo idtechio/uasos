@@ -14,7 +14,7 @@ import {
   ConfirmationResult,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 
 // TODO Delete afterwards only for test purposes
 let app;
