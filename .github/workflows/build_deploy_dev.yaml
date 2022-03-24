@@ -9,6 +9,7 @@ env:
   deploy_project_id: "ukrn-hlpr-dev"
   image_name: "sosua"
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
+  ga_id: "G-0000000000"
 
 jobs:
   build-docker:
@@ -31,7 +32,7 @@ jobs:
       - name: auth gcr.io
         run: gcloud auth configure-docker
       - name: build and push docker images
-        run: docker build -t $IMAGE_PROJECT_ID . && docker push $IMAGE_PROJECT_ID
+        run: docker build --build-arg NEXT_PUBLIC_GA_ID=${{ env.ga_id }} -t $IMAGE_PROJECT_ID . && docker push $IMAGE_PROJECT_ID
         env:
           IMAGE_PROJECT_ID: eu.gcr.io/${{ env.reg_project_id }}/${{ env.image_name }}:${{ steps.vars.outputs.sha_short }}
       - id: auth2
