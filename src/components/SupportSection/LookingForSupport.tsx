@@ -5,8 +5,10 @@ import { Routes } from "../../consts/router";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
-import { Offer } from "./ProvidingSupport";
+import { Offer } from "./types";
 import { SupportCard, SupportWrapper, Title } from "./style";
+import StatusBadge from "../StatusBadge";
+import EditOfferButton from "../EditOfferOptions/EditOfferButton";
 
 type RequestProps = {
   requests: Offer[];
@@ -25,15 +27,22 @@ export default function LookingForSupport({
   );
   const Offers = () => (
     <>
-      {requests.map((_) => (
-        <SupportCard key={_.id}>
+      {requests.map((o) => (
+        <SupportCard key={o.id}>
           <HeaderWrapper>
+            <MoreButtonWrapper>
+              <EditOfferButton />
+            </MoreButtonWrapper>
+
             <TextWrapper>
               <IdContainer>Id: xxxx</IdContainer>
               <OfferTitle>Housing</OfferTitle>
             </TextWrapper>
           </HeaderWrapper>
-          <AnnouncementHighlights data={_} />
+          <StatusBadgeContainer>
+            <StatusBadge state={o.state} />
+          </StatusBadgeContainer>
+          <AnnouncementHighlights data={o} />
           <DetailsLink href={Routes.OFFER_DETAILS} />
         </SupportCard>
       ))}
@@ -47,10 +56,23 @@ export default function LookingForSupport({
   );
 }
 
+const MoreButtonWrapper = styled.View`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9999999;
+`;
+
+const StatusBadgeContainer = styled.View`
+  align-self: flex-start;
+  margin-bottom: 15px;
+`;
+
 const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  position: relative;
 `;
 
 const TextWrapper = styled.View`
