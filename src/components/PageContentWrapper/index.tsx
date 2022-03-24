@@ -1,3 +1,4 @@
+import { ViewStyle } from "react-native";
 import styled from "styled-components/native";
 
 const OuterWrapper = styled.View`
@@ -15,11 +16,15 @@ const InnerWrapper = styled.View`
 
 const PageContentWrapper = ({
   children,
+  outerStyles,
+  innerStyles,
 }: {
   children: JSX.Element | JSX.Element[];
+  outerStyles?: ViewStyle;
+  innerStyles?: ViewStyle;
 }) => (
-  <OuterWrapper>
-    <InnerWrapper>{children}</InnerWrapper>
+  <OuterWrapper style={outerStyles}>
+    <InnerWrapper style={innerStyles}>{children}</InnerWrapper>
   </OuterWrapper>
 );
 

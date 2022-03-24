@@ -26,7 +26,7 @@ export default function Dashboard() {
   });
   return (
     <CompositionAppBody>
-      <PageContentWrapper>
+      <PageContentWrapper outerStyles={{ paddingHorizontal: 16 }}>
         <VerifySection
           {...desktopStatus.verifications}
           containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
