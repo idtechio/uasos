@@ -18,8 +18,9 @@ const AppBack = ({ to }: Props) => {
         <LinkContent>
           <ChevronIcon
             style={{
-              height: 17,
               transform: "rotate(90deg) translateX(-1px)",
+              width: 24,
+              height: 24,
             }}
           />
           <StyledText>{t("back")}</StyledText>

@@ -30,7 +30,7 @@ const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 type DesktopStatus = { tags: string[]; verifications: Verifications };
 
-export default function Desktop() {
+export default function Dashboard() {
   const [desktopStatus, _] = useState<DesktopStatus>({
     tags: ["Sheller"],
     verifications: {
