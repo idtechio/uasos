@@ -71,7 +71,7 @@ const StatusBadgeContainer = styled.View`
 const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   position: relative;
 `;
 
