@@ -1,7 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import CountrySelect from "../../Forms/CountrySelect";
-import PhoneNumberPrefixSelect from "../../Forms/PhoneNumberPrefixSelect";
 import { EditProfileForm } from "../types";
 import { InputWrapper } from "./style";
 
@@ -23,20 +22,6 @@ export default function PreferredLanguageInput() {
             placeholder="Preferred language of communication"
             error={error}
             errorMsg={error?.message}
-          />
-        )}
-      />
-
-      <Controller
-        control={control}
-        name="phonePrefix"
-        render={({ field: { value, onChange }, fieldState: { error } }) => (
-          <PhoneNumberPrefixSelect
-            value={value || ""}
-            onChange={onChange}
-            error={error}
-            errorMsg={error?.message}
-            placeholder="Prefix"
           />
         )}
       />

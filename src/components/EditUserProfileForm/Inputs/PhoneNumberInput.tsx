@@ -1,15 +1,15 @@
 import React from "react";
-import { TextInput } from "../../Forms/Input/style";
-import { InputWrapper } from "./style";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import Input from "../../Forms/Input";
-import InputControl from "../../Forms/InputControl";
-import { Dropdown } from "../../Dropdown";
-import { CompositionRow } from "../../Compositions/CompositionRow";
 import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { Theme } from "../../../style/theme.config";
+import { CompositionRow } from "../../Compositions/CompositionRow";
+import { Dropdown } from "../../Dropdown";
+import Input from "../../Forms/Input";
+import InputControl from "../../Forms/InputControl";
+import PhoneNumberPrefixSelect from "../../Forms/PhoneNumberPrefixSelect";
 import { EditProfileForm } from "../types";
+import { InputWrapper } from "./style";
 
 export const Error = styled.Text`
   color: ${({ theme }: { theme: Theme }) => theme.colors.error};
@@ -17,9 +17,23 @@ export const Error = styled.Text`
 `;
 
 export default function PhoneNumberInput() {
+  const { control } = useFormContext<EditProfileForm>();
+
   return (
-    <InputWrapper label="Phone number">
-      <TextInput placeholder="Phone number" />
+    <InputWrapper label="Phone number" styles={{ container: { zIndex: 999 } }}>
+      <Controller
+        control={control}
+        name="phonePrefix"
+        render={({ field: { value, onChange }, fieldState: { error } }) => (
+          <PhoneNumberPrefixSelect
+            value={value || ""}
+            onChange={onChange}
+            error={error}
+            errorMsg={error?.message}
+            placeholder="Prefix"
+          />
+        )}
+      />
     </InputWrapper>
   );
 }

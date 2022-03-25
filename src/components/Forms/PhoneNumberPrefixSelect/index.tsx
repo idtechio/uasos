@@ -43,8 +43,8 @@ const PhoneNumberPrefixSelect: VFC<NumberPrefixSelectProps> = (props) => {
         wrapper: {
           width: "100%",
           maxWidth: "initial",
-          zIndex: 99,
           marginBottom: 0,
+          zIndex: 0,
         },
       }}
     >
