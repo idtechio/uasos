@@ -31,7 +31,7 @@ export default function EditUserProfileForm() {
 
         <FormFooter>
           <ButtonCta color="primary" variant="outlined" anchor="Cancel" />
-          <ButtonCta anchor="Update" />
+          <ButtonCta anchor="Update" onPress={handleSubmit(onSubmit)} />
         </FormFooter>
       </ContentContainer>
     </FormProvider>

@@ -7,9 +7,20 @@ import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 import InputControl from "../InputControl";
 import { CountryDropdownItemType, CountrySelectProps } from "./types";
 
-export const Error = styled.Text`
+const Error = styled.Text`
   color: ${({ theme }: { theme: Theme }) => theme.colors.error};
   margin-bottom: 10px;
+`;
+
+const LabelContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const LabelText = styled.Text`
+  margin-left: 8px;
 `;
 
 const useCountriesList = (data?: CountryDropdownItemType[]) => {
@@ -20,33 +31,37 @@ const useCountriesList = (data?: CountryDropdownItemType[]) => {
       data || [
         {
           label: (
-            <span>
-              <LanguageFlags locale="pl" /> {t("hostAdd.countries.poland")}
-            </span>
+            <LabelContainer>
+              <LanguageFlags locale="pl" />{" "}
+              <LabelText>{t("hostAdd.countries.poland")}</LabelText>
+            </LabelContainer>
           ),
           value: "poland",
         },
         {
           label: (
-            <span>
-              <LanguageFlags locale="hu" /> {t("hostAdd.countries.hungary")}
-            </span>
+            <LabelContainer>
+              <LanguageFlags locale="hu" />{" "}
+              <LabelText>{t("hostAdd.countries.hungary")}</LabelText>
+            </LabelContainer>
           ),
           value: "hungary",
         },
         {
           label: (
-            <span>
-              <LanguageFlags locale="cs" /> {t("hostAdd.countries.czechia")}
-            </span>
+            <LabelContainer>
+              <LanguageFlags locale="cs" />{" "}
+              <LabelText>{t("hostAdd.countries.czechia")}</LabelText>
+            </LabelContainer>
           ),
           value: "czechia",
         },
         {
           label: (
-            <span>
-              <LanguageFlags locale="sk" /> {t("hostAdd.countries.slovakia")}
-            </span>
+            <LabelContainer>
+              <LanguageFlags locale="sk" />{" "}
+              <LabelText>{t("hostAdd.countries.slovakia")}</LabelText>
+            </LabelContainer>
           ),
           value: "slovakia",
         },

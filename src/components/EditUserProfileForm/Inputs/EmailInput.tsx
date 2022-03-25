@@ -5,7 +5,11 @@ import { InputWrapper } from "./style";
 export default function EmailInput() {
   return (
     <InputWrapper label="Email">
-      <Input placeholder="" />
+      <Input
+        placeholder="Email"
+        styles={{ wrapper: { margin: 0, height: "auto" } }}
+        withoutLabel
+      />
     </InputWrapper>
   );
 }

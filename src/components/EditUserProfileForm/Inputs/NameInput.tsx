@@ -16,8 +16,9 @@ export default function NameInput() {
           <Input
             value={value || ""}
             onChange={onChange}
-            placeholder="Preferred language of communication"
+            placeholder=""
             error={error}
+            styles={{ wrapper: { margin: 0, height: 52 } }}
           />
         )}
       />

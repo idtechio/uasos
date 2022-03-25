@@ -56,6 +56,7 @@ const PhoneNumberPrefixSelect: VFC<NumberPrefixSelectProps> = (props) => {
         error={error}
         label={label}
         multiselect={multiSelect}
+        styles={{ select: { paddingTop: 10, paddingBottom: 11 } }}
       />
       {error && <Error>{errorMsg}</Error>}
     </InputControl>
