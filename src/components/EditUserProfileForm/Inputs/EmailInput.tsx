@@ -1,11 +1,11 @@
 import React from "react";
-import { TextInput } from "../../Forms/Input/style";
+import { Input } from "../../Forms";
 import { InputWrapper } from "./style";
 
 export default function EmailInput() {
   return (
     <InputWrapper label="Email">
-      <TextInput placeholder="Email" />
+      <Input placeholder="" />
     </InputWrapper>
   );
 }

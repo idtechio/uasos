@@ -9,7 +9,7 @@ export default function Inputs() {
   return (
     <>
       <NameInput />
-      <PreferredLanguageInput />
+      <PreferredLanguageInput zIndex={99} />
       <PhoneNumberInput />
       <SmsNotificationInput />
       <EmailInput />

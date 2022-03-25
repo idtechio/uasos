@@ -2,12 +2,12 @@ import { FieldError } from "react-hook-form";
 
 export type CountrySelectProps = {
   label?: string;
-  placeholder?: string;
+  placeholder: string;
   error?: FieldError;
   multiSelect?: boolean;
   errorMsg?: string;
-  onChange?: (selected: string | string[]) => void;
-  zIndex?: number;
+  value: string | string[];
+  onChange: (selected: string | string[]) => void;
   data?: CountryDropdownItemType[];
 };
 
