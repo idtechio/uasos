@@ -1,4 +1,4 @@
-import { publishMessage } from "../../../../src/helpers/PubSub";
+import { publishMessage, PublishStatus } from "../../../../src/helpers/PubSub";
 
 //TODO: DRY pages/api/guests/matchesconfirm/{matchesId}.js
 export default async function sendMatchesDecision(req, res) {
@@ -14,7 +14,9 @@ export default async function sendMatchesDecision(req, res) {
   };
   // eslint-disable-next-line no-console
   console.log(topicNameOrId, matches);
-  publishMessage(topicNameOrId, JSON.stringify(matches));
-  res.status(200).json({ ok: "ok" });
+
+  const pubResult = await publishMessage(topicNameOrId, matches);
+
+  res.status(pubResult.status === PublishStatus.OK ? 200 : 400).json(pubResult);
   res.end();
 }
