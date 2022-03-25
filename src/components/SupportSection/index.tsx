@@ -3,7 +3,8 @@ import { useMemo } from "react";
 import TabPanel from "../TabPanel";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import LookingForSupport from "./LookingForSupport";
-import ProvidingSupport, { MatchState, Offer } from "./ProvidingSupport";
+import ProvidingSupport from "./ProvidingSupport";
+import { Offer } from "./types";
 
 const fakeOffers: Offer[] = [
   {
@@ -14,7 +15,7 @@ const fakeOffers: Offer[] = [
     city: "Warsaw",
     duration: AccommodationTime.TWO_WEEKS,
     name: "housing",
-    state: MatchState.beingConfirmed,
+    state: "BEING_CONFIRMED",
   },
   {
     id: "o2",
@@ -24,7 +25,17 @@ const fakeOffers: Offer[] = [
     city: "Gdańsk",
     duration: AccommodationTime.LONGER,
     name: "housing",
-    state: MatchState.confirmed,
+    state: "CONFIRMED",
+  },
+  {
+    id: "o3",
+    imageUrl:
+      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg",
+    beds: 2,
+    city: "Gdańsk",
+    duration: AccommodationTime.LONGER,
+    name: "Housing 3",
+    state: "INACTIVE",
   },
 ];
 
