@@ -19,7 +19,7 @@ import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity } = useContext(AuthContext);
+  const { identity, getIdToken } = useContext(AuthContext);
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {

@@ -12,15 +12,18 @@ import { init } from "./../src/helpers/ga";
 import { AppProps } from "next/app";
 import useAuth from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
-export const AuthContext = createContext<{ identity: null | User | undefined }>(
-  { identity: null }
-);
+import { getAccountDTO } from "../src/client-api/account";
+export const AuthContext = createContext<{
+  identity: null | User | undefined;
+  account: null | getAccountDTO;
+  getTokenForAPI: null | (() => Promise<string>);
+}>({ identity: null, getTokenForAPI: null, account: null });
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
-  const { identity } = useAuth();
+  const { identity, account, getTokenForAPI } = useAuth();
   useEffect(() => {
     init(process.env.NEXT_PUBLIC_G);
   }, []);
@@ -41,7 +44,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         </Head>
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
-            <AuthContext.Provider value={{ identity: identity }}>
+            <AuthContext.Provider value={{ identity, account, getTokenForAPI }}>
               <Component {...pageProps} />
             </AuthContext.Provider>
           </ThemeProviderNative>

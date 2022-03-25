@@ -13,6 +13,7 @@ import {
   ConfirmationResult,
   sendPasswordResetEmail,
   confirmPasswordReset,
+  sendEmailVerification,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -24,9 +25,7 @@ auth.useDeviceLanguage();
 const useAuth = () => {
   const [identity, setIdentity] = useState<null | User>();
   const [account, setAccount] = useState<null | getAccountDTO>(null);
-  const [getTokenForApi, setGetTokenForApi] = useState<Promise<string> | null>(
-    null
-  );
+
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       setIdentity(user);
@@ -39,7 +38,7 @@ const useAuth = () => {
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
-  return { identity, account, getTokenForApi };
+  return { identity, account, getTokenForAPI };
 };
 
 interface Authorization {
@@ -57,6 +56,7 @@ interface Authorization {
     oobCode: string,
     password: string
   ) => Promise<void>;
+  sendVerificationEmail: (user: User) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -90,6 +90,9 @@ const Authorization: Authorization = {
   },
   async confirmPasswordResetEmail(oobCode, password) {
     await confirmPasswordReset(auth, oobCode, password);
+  },
+  async sendVerificationEmail(user) {
+    await sendEmailVerification(user);
   },
 };
 

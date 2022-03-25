@@ -26,7 +26,7 @@ const GoToRegister = () => {
 
 const styles = StyleSheet.create({
   button: {
-    width: "115px",
+    width: "150px",
     textTransform: "capitalize",
     height: "43px",
     display: "flex",

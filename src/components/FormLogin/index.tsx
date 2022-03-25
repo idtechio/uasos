@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -62,7 +62,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           data.login.password
         );
       } catch (error) {
-        console.log(error);
+        return null;
       }
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
@@ -75,13 +75,13 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           );
           setPhoneLoginConfirmation(confirmation);
         } catch (error) {
-          console.log(error);
+          return null;
         }
       }
     }
     console.log(data);
   };
-  const onError = (error) => null;
+  const onError = (error: any) => null;
 
   const handlePassErrorMsg = (type: string): string => {
     switch (type) {
@@ -151,6 +151,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                   }}
                   error={errors?.login?.password}
                   errorMsg={`${handlePassErrorMsg(
+                    // eslint-disable-next-line
+                    // @ts-ignore
                     errors?.login?.password?.type
                   )}`}
                 />
