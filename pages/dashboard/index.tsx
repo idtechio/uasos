@@ -27,12 +27,17 @@ export default function Dashboard() {
   return (
     <CompositionAppBody>
       <PageContentWrapper outerStyles={{ paddingHorizontal: 16 }}>
-        <VerifySection
-          {...desktopStatus.verifications}
-          containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
-        />
-        <Tags tags={desktopStatus.tags} containerStyle={[bottomMarginStyle]} />
-        <SupportSection />
+        <>
+          <VerifySection
+            {...desktopStatus.verifications}
+            containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
+          />
+          <Tags
+            tags={desktopStatus.tags}
+            containerStyle={[bottomMarginStyle]}
+          />
+          <SupportSection />
+        </>
       </PageContentWrapper>
     </CompositionAppBody>
   );

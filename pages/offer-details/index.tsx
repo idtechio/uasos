@@ -9,11 +9,11 @@ import WarningSection from "../../src/components/WarningSection/WarningSection";
 import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 import { withSession } from "../../src/helpers/withSession";
 import ArrowLeftIcon from "../../src/style/svgs/chevron-left.svg";
-import { InnerWrapper, ListingWrapper } from "../dashboard";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
 import { Theme } from "../../src/style/theme.config";
+import PageContentWrapper from "../../src/components/PageContentWrapper";
 
 const isMatch = true;
 
@@ -42,8 +42,8 @@ export default function OfferDetails() {
 
   return (
     <CompositionAppBody>
-      <ListingWrapper>
-        <InnerWrapper>
+      <PageContentWrapper>
+        <>
           <BackWrapper
             onPress={() => {
               router.push("/dashboard");
@@ -55,8 +55,8 @@ export default function OfferDetails() {
           {isMatch ? <WarningSection containerStyle={topMarginStyle} /> : null}
           <DetailsSection containerStyle={bottomMarginStyle} />
           {isMatch ? <DetailsDecisionButtons /> : null}
-        </InnerWrapper>
-      </ListingWrapper>
+        </>
+      </PageContentWrapper>
     </CompositionAppBody>
   );
 }

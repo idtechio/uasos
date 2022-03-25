@@ -19,7 +19,7 @@ const PageContentWrapper = ({
   outerStyles,
   innerStyles,
 }: {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | null;
   outerStyles?: ViewStyle;
   innerStyles?: ViewStyle;
 }) => (
