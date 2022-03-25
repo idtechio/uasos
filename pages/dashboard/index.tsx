@@ -13,7 +13,7 @@ import VerifySection, {
 import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 import { withSession } from "../../src/helpers/withSession";
 
-const ListingWrapper = styled(Container)`
+export const ListingWrapper = styled(Container)`
   width: 100%;
   margin: auto;
   display: flex;
@@ -21,7 +21,7 @@ const ListingWrapper = styled(Container)`
   justify-content: center;
 `;
 
-const InnerWrapper = styled.View`
+export const InnerWrapper = styled.View`
   width: 100%;
   max-width: 450px;
 `;
