@@ -19,7 +19,7 @@ import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity, getIdToken } = useContext(AuthContext);
+  const { identity } = useContext(AuthContext);
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -35,7 +35,7 @@ export default function FromRegisterWithSocials() {
 
   const { handleSubmit } = form;
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     console.log(e);
   };
 

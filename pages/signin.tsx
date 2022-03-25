@@ -16,6 +16,7 @@ import { GetServerSideProps } from "next";
 import { CompositionAppBody } from "../src/components/Compositions";
 import { useContext } from "react";
 import { AuthContext } from "./_app";
+import Redirect from "../src/components/Redirect";
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
   ClientSafeProvider
@@ -31,8 +32,12 @@ const SignIn = ({ providers, csrfToken }: SignInProps) => {
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />
-      {identity && !identity.phoneNumber ? (
-        <FormRegisterWithSocials></FormRegisterWithSocials>
+      {identity ? (
+        identity?.phoneNumber ? (
+          <Redirect path="/dashboard"></Redirect>
+        ) : (
+          <FormRegisterWithSocials></FormRegisterWithSocials>
+        )
       ) : (
         <LoginForm providers={providers} csrfToken={csrfToken} />
       )}
