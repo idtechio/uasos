@@ -4504,6 +4504,7 @@
   "resolved" "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz"
   "version" "1.0.1"
 
+<<<<<<< HEAD
 "ga-4-react@^0.1.281":
   "integrity" "sha512-LBvn8digT3gS8Iw8/XN3Z60c/JlFjMreLrZEneeQr+N/3+Ymv8yOsuK6qFAX2VPS6TscLbSlgtb/mriJ2P17Ow=="
   "resolved" "https://registry.npmjs.org/ga-4-react/-/ga-4-react-0.1.281.tgz"
@@ -4513,6 +4514,12 @@
   "integrity" "sha512-T+ap6GM6UZ0c4E6yb1y/hy2UB6hTrqhglp3XfmU9qbLCGRYhLVV5aRPpC4EmoG8N8zOnkYCgoBz+ScvGAARY6Q=="
   "resolved" "https://registry.npmjs.org/gaxios/-/gaxios-4.3.2.tgz"
   "version" "4.3.2"
+=======
+gaxios@^4.0.0:
+  version "4.3.2"
+  resolved "https://registry.npmjs.org/gaxios/-/gaxios-4.3.2.tgz"
+  integrity sha512-T+ap6GM6UZ0c4E6yb1y/hy2UB6hTrqhglp3XfmU9qbLCGRYhLVV5aRPpC4EmoG8N8zOnkYCgoBz+ScvGAARY6Q==
+>>>>>>> test
   dependencies:
     "abort-controller" "^3.0.0"
     "extend" "^3.0.2"
@@ -7019,6 +7026,10 @@
   "integrity" "sha512-ioBMEIxd4ePw4YtaloTUgqhQGqz5ebDdC4slEpLgy2sLx1LuZBC9iYCwDymTXzcntw6K1dHX183ulP32nNdG7w=="
   "resolved" "https://registry.npmjs.org/react-ga4/-/react-ga4-1.4.1.tgz"
   "version" "1.4.1"
+react-hook-form@^7.27.1:
+  version "7.27.1"
+  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.27.1.tgz"
+  integrity sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w==
 
 "react-hook-form@^7.27.1":
   "integrity" "sha512-N3a7A6zIQ8DJeThisVZGtOUabTbJw+7DHJidmB9w8m3chckv2ZWKb5MHps9d2pPJqmCDoWe53Bos56bYmJms5w=="
