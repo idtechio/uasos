@@ -25,19 +25,24 @@ async function updateAccount(
     return;
   }
 
-  const user: UserRecord | false = await getUser(req.decodedToken.uid);
-  if (!user) {
+  const user: UserRecord | Boolean = await getUser(req.decodedToken.uid);
+  if (!(user instanceof UserRecord)) {
     res.status(400).json({ ok: "not ok" });
     res.end();
     return;
   }
 
-  const body = JSON.parse(req.body);
+  let body;
+  try {
+    body = JSON.parse(req.body);
+  } catch (e) {
+    body = {};
+  }
 
   const data: AccountProps = {
     uid: user.uid,
-    name: body.name,
-    prefferedLang: body.prefferedLang,
+    name: body?.name,
+    prefferedLang: body?.prefferedLang,
     confirmedEmail: user.emailVerified,
     confirmedPhone: !!user.phoneNumber,
   };
