@@ -24,7 +24,7 @@ export default function ReportOffer({ close }: { close(): void }) {
 
       <SelectProblemDropdown />
 
-      <FormFooter style={{ marginTop: 88 }}>
+      <FormFooter style={{ marginTop: 53 }}>
         <ButtonCta variant="outlined" anchor="Cancel" onPress={close} />
         <ButtonCta anchor="Report" />
       </FormFooter>

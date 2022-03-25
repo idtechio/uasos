@@ -6,6 +6,7 @@ import BinIcon from "../../../style/svgs/bin.svg";
 import ClockIcon from "../../../style/svgs/clock.svg";
 import EditIcon from "../../../style/svgs/edit.svg";
 import MoreIcon from "../../../style/svgs/more.svg";
+import { Theme } from "../../../style/theme.config";
 
 const StyledButton = styled.Pressable`
   display: flex;
@@ -17,6 +18,7 @@ const OptionsWrapper = styled.View`
   position: absolute;
   top: -2px;
   right: 28px;
+  z-index: 999;
 
   background: #ffffff;
 
@@ -86,8 +88,10 @@ const TextContainer = styled.Text<{ textColor: TextColor }>`
   line-height: 16px;
   letter-spacing: 0.5px;
   white-space: nowrap;
-  color: ${({ textColor }) =>
-    textColor === "secondary" ? "#F44336" : "#003566"};
+  color: ${({ textColor, theme }) =>
+    textColor === "secondary"
+      ? (theme as Theme).colors.figmaPalette.alert
+      : (theme as Theme).colors.figmaPalette.fontMain};
 `;
 
 export const CardModalStyle: ViewStyle = {
@@ -96,12 +100,13 @@ export const CardModalStyle: ViewStyle = {
   width: "auto",
   borderColor: "transparent",
   backgroundColor: "transparent",
+  overflow: "visible",
 };
 
 export const ButtonContainer = styled.View`
   display: flex;
   position: relative;
-  z-index: 2;
+  z-index: 9999;
 `;
 
 export const TriggerButton = (props: Omit<PressableProps, "children">) => (
