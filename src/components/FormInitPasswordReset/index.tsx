@@ -22,7 +22,7 @@ import Image from "next/image";
 import ModalPicture from "../../../public/assets/PasswordReset.png";
 import CardModal from "../CardModal";
 import { useState } from "react";
-
+import SmsVerificationModal from "../SmsVerificationModal";
 const FormInitPasswordReset = () => {
   const { t } = useTranslation();
   const [resetInitPassword, setResetInitPassword] = useState<boolean>(false);
@@ -96,6 +96,7 @@ const FormInitPasswordReset = () => {
         ) : (
           <></>
         )}
+        <SmsVerificationModal phoneNumber="1" />
       </CompositionSection>
     </>
   );

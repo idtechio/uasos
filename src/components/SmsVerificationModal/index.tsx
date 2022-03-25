@@ -154,6 +154,7 @@ export default function SmsVerificationModal({ phoneNumber }: Props) {
         <ButtonCta
           onPress={handleSubmit(onSubmit, onError)}
           anchor={"Verify"}
+          style={{ width: "100px", marginTop: "30px" }}
         />
         <TouchableOpacity onPress={() => null}>
           <StyledText>Re-send code</StyledText>
