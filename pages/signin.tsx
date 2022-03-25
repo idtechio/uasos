@@ -7,13 +7,16 @@ import {
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import LoginForm from "../src/components/FormLogin";
+import FormRegisterWithSocials from "../src/components/FormRegisterWithSocials";
 import AppBack from "../src/components/AppBack";
 import { BuiltInProviderType } from "next-auth/providers";
 import { Routes } from "../src/consts/router";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { CompositionAppBody } from "../src/components/Compositions";
-
+import { useContext } from "react";
+import { AuthContext } from "./_app";
+import Redirect from "../src/components/Redirect";
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
   ClientSafeProvider
@@ -25,10 +28,19 @@ export type SignInProps = {
 };
 
 const SignIn = ({ providers, csrfToken }: SignInProps) => {
+  const { identity } = useContext(AuthContext);
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />
-      <LoginForm providers={providers} csrfToken={csrfToken} />
+      {identity ? (
+        identity?.phoneNumber ? (
+          <Redirect path="/dashboard"></Redirect>
+        ) : (
+          <FormRegisterWithSocials></FormRegisterWithSocials>
+        )
+      ) : (
+        <LoginForm providers={providers} csrfToken={csrfToken} />
+      )}
     </CompositionAppBody>
   );
 };

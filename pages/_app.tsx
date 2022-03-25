@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo, createContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { appWithTranslation, useTranslation } from "next-i18next";
@@ -9,6 +9,14 @@ import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { AppProps } from "next/app";
+import useAuth from "../src/hooks/useAuth";
+import { User } from "firebase/auth";
+import { getAccountDTO } from "../src/client-api/account";
+export const AuthContext = createContext<{
+  identity: null | User | undefined;
+  account: null | getAccountDTO;
+  getTokenForAPI: null | (() => Promise<string>);
+}>({ identity: null, getTokenForAPI: null, account: null });
 import * as gtag from "../lib/gtag";
 import Gtag from "./gtag";
 
@@ -16,6 +24,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
+  const { identity, account, getTokenForAPI } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -49,7 +58,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         {gtag.GA_TRACKING_ID && <Gtag id={gtag.GA_TRACKING_ID} />}
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
-            <Component {...pageProps} />
+            <AuthContext.Provider value={{ identity, account, getTokenForAPI }}>
+              <Component {...pageProps} />
+            </AuthContext.Provider>
           </ThemeProviderNative>
         </ThemeProviderWeb>
       </SessionProvider>
