@@ -7,6 +7,7 @@ export type InputStylesProps = {
 };
 
 export type InputProps<T = string> = {
+  readonly?: boolean;
   placeholder: string;
   onChange?: (value: T) => void;
   onBlur?: (e: unknown) => void;

@@ -33,6 +33,9 @@ export const primary = {
     disabled: "#9A9A9A",
     darkgray: "#C8C8C8",
     lightgray: "#F8F8F8",
+    warning: "#f443361a",
+    borderGray: "#F2F2F2",
+    borderLightGray: "#F5F4F4",
     figmaPalette: {
       ukYellow: "#FFD700",
       ukBlue: "#0057B8",

@@ -12,6 +12,7 @@ const Input = ({
   secureTextEntry,
   withoutLabel,
   styles,
+  readonly,
 }: InputProps) => {
   const [hideLabel, setHideLabel] = useState(true);
   // @ts-expect-error TODO: add event type
@@ -44,6 +45,7 @@ const Input = ({
           error={error}
           secureTextEntry={secureTextEntry}
           style={styles?.textInput}
+          editable={!readonly}
         />
 
         {extra && extra}
