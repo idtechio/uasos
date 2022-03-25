@@ -95,7 +95,7 @@ export const ItemsColumn = styled.View`
 
 export const ItemsRow = styled.View`
   display: flex;
-  flex-direction: "row";
+  flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
 `;

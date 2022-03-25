@@ -5,8 +5,10 @@ import { CardModalStyle } from "../EditOfferOptions/EditOfferButton/style";
 import { FormFooter } from "../EditOfferOptions/style";
 import ModalOnConfirm from "./ModalOnConfirm";
 import ModalOnReject from "./ModalOnReject";
+import { useTranslation } from "react-i18next";
 
 export default function DetailsDecisionButtons() {
+  const { t } = useTranslation("offer-details");
   const [modalOpened, setModalOpened] = useState<"accept" | "reject" | null>(
     null
   );
@@ -40,10 +42,13 @@ export default function DetailsDecisionButtons() {
       <Modal />
       <ButtonCta
         variant="outlined"
-        anchor="Reject"
+        anchor={t("reject")}
         onPress={() => setModalOpened("reject")}
       />
-      <ButtonCta anchor="Confirm" onPress={() => setModalOpened("accept")} />
+      <ButtonCta
+        anchor={t("confirm")}
+        onPress={() => setModalOpened("accept")}
+      />
     </FormFooter>
   );
 }
