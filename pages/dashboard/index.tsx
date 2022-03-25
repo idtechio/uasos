@@ -1,5 +1,5 @@
-import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { GetServerSideProps } from "next";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
@@ -10,8 +10,8 @@ import Tags from "../../src/components/Tags";
 import VerifySection, {
   Verifications,
 } from "../../src/components/VerifySection/VerifySection";
-import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
-import { withSession } from "../../src/helpers/withSession";
+// import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
+// import { withSession } from "../../src/helpers/withSession";
 
 export const ListingWrapper = styled(Container)`
   width: 100%;
@@ -38,6 +38,7 @@ export default function Dashboard() {
       needPhone: true,
     },
   });
+
   return (
     <CompositionAppBody>
       <ListingWrapper>
@@ -57,12 +58,12 @@ export default function Dashboard() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) =>
-    redirectIfUnauthorized(session, {
-      props: {
-        session,
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    })
-);
+// export const getServerSideProps: GetServerSideProps = withSession(
+//   async ({ locale }, session) =>
+//     redirectIfUnauthorized(session, {
+//       props: {
+//         session,
+//         ...(locale && (await serverSideTranslations(locale))),
+//       },
+//     })
+// );

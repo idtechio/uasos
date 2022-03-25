@@ -1,13 +1,13 @@
-import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { GetServerSideProps } from "next";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components/native";
 import AppBack from "../src/components/AppBack";
 import { CompositionAppBody } from "../src/components/Compositions";
 import { TextInput } from "../src/components/Forms/Input/style";
-import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
-import { withSession } from "../src/helpers/withSession";
+// import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
+// import { withSession } from "../src/helpers/withSession";
 import { Theme } from "../src/style/theme.config";
 
 const ContentContainer = styled.View`
@@ -69,12 +69,12 @@ export default function UserProfile() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) =>
-    redirectIfUnauthorized(session, {
-      props: {
-        session,
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    })
-);
+// export const getServerSideProps: GetServerSideProps = withSession(
+//   async ({ locale }, session) =>
+//     redirectIfUnauthorized(session, {
+//       props: {
+//         session,
+//         ...(locale && (await serverSideTranslations(locale))),
+//       },
+//     })
+// );

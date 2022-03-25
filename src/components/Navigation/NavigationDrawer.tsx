@@ -1,12 +1,14 @@
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 import { useTranslation } from "next-i18next";
-
+import { AuthContext } from "../../../pages/_app";
+import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
 import UserIcon from "../../style/svgs/user.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
+import { useContext } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -17,8 +19,10 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
   const { t } = useTranslation("common");
   const { data: session } = useSession();
+  const { identity } = useContext(AuthContext);
 
   const handleSignOut = () => {
+    Authorization.logOut();
     return signOut({
       redirect: true,
       callbackUrl: router.locale ? `/${router.locale}` : undefined,
@@ -32,12 +36,13 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   return (
     <>
       <DrawerContainer>
-        {session ? (
+        {identity ? (
           <>
             <NavigationMenuItem
               title={"Dashboard"}
               Icon={UserIcon}
               onPress={() => {
+                console.log("ON PRESS");
                 router.push("/dashboard");
                 hideDrawer();
               }}
