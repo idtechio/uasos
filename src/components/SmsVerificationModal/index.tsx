@@ -127,7 +127,7 @@ export default function SmsVerificationModal({ phoneNumber }: Props) {
                 <StyledInput
                   ref={ref5}
                   onChange={(newValue) => {
-                    onChange(value);
+                    onChange(newValue);
                     ref6.current.focus();
                   }}
                 />
