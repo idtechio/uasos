@@ -34,16 +34,23 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
       <DrawerContainer>
         {session ? (
           <>
-            {/* <NavigationMenuItem
-              title={t("navigationDrawer.profile")}
+            <NavigationMenuItem
+              title={"Dashboard"}
               Icon={UserIcon}
-              onPress={noop} // TODO implement
+              onPress={() => {
+                router.push("/dashboard");
+                hideDrawer();
+              }}
             />
             <NavigationMenuItem
-              title={t("navigationDrawer.placesList")}
-              Icon={ListIcon}
-              onPress={noop} // TODO implement
-            /> */}
+              title={t("navigationDrawer.profile")}
+              Icon={UserIcon}
+              onPress={() => {
+                router.push("/user-profile");
+                hideDrawer();
+              }}
+            />
+
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
               Icon={LogoutIcon}

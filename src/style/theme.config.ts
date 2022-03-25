@@ -30,6 +30,17 @@ export const primary = {
     error: "#d8000c",
     positive: "#38B000",
     alert: "#F44336",
+    disabled: "#9A9A9A",
+    darkgray: "#C8C8C8",
+    lightgray: "#F8F8F8",
+    figmaPalette: {
+      ukYellow: "#FFD700",
+      ukBlue: "#0057B8",
+      fontMain: "#003566",
+      alert: "#F44336",
+      positive: "#38B000",
+      positiveButtonFill: "rgba(56, 176, 0, 0.1)",
+    },
   },
   fonts: {
     headings: "'Roboto', sans-serif",
