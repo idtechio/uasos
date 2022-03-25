@@ -4,7 +4,7 @@ import { UserRecord } from "firebase-admin/auth";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import { getUser } from "../../../lib/firebase-admin";
+import { getUser } from "../../../lib/firebase-admin-app";
 import { publishMessage } from "../../../src/helpers/PubSub";
 
 interface AccountProps {
@@ -26,7 +26,7 @@ async function updateAccount(
   }
 
   const user: UserRecord | Boolean = await getUser(req.decodedToken.uid);
-  if (!(user instanceof UserRecord)) {
+  if (user instanceof Boolean) {
     res.status(400).json({ ok: "not ok" });
     res.end();
     return;
