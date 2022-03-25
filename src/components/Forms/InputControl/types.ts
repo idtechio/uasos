@@ -1,8 +1,7 @@
+import { ViewStyle } from "react-native";
+
 export type InputControlStylesProps = {
-  wrapper?: {
-    maxWidth?: string;
-    width?: string;
-  };
+  wrapper?: ViewStyle;
 };
 
 export type InputControlProps = {
