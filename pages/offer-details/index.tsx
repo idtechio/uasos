@@ -10,13 +10,32 @@ import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized
 import { withSession } from "../../src/helpers/withSession";
 import ArrowLeftIcon from "../../src/style/svgs/chevron-left.svg";
 import { InnerWrapper, ListingWrapper } from "../dashboard";
-import { BackWrapper, BackText } from "./style";
+import { TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+
+import { Theme } from "../../src/style/theme.config";
 
 const isMatch = true;
 
 const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
+
+const BackWrapper = styled(TouchableOpacity)`
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+`;
+
+const BackText = styled.Text`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+  text-align: left;
+`;
 
 export default function OfferDetails() {
   const router = useRouter();
