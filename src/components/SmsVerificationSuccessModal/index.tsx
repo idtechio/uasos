@@ -5,7 +5,7 @@ import Image from "next/image";
 import SmsSent from "../../../public/assets/PasswordReset.png";
 import { useRouter } from "next/router";
 
-export default function SmsVerificationModal() {
+export default function SmsVerificationSuccessModal() {
   const router = useRouter();
   return (
     <CardModal closeable={false}>

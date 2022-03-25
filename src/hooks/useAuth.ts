@@ -14,6 +14,8 @@ import {
   sendPasswordResetEmail,
   confirmPasswordReset,
   sendEmailVerification,
+  updatePhoneNumber,
+  PhoneAuthProvider,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -57,6 +59,12 @@ interface Authorization {
     password: string
   ) => Promise<void>;
   sendVerificationEmail: (user: User) => Promise<void>;
+  updatePhone: (
+    user: User,
+    phoneNumber: string,
+    recapcha: RecaptchaVerifier,
+    verificationCode: string
+  ) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -93,6 +101,18 @@ const Authorization: Authorization = {
   },
   async sendVerificationEmail(user) {
     await sendEmailVerification(user);
+  },
+  async updatePhone(user, phoneNumber, recaptcha, verificationCode) {
+    const provider = new PhoneAuthProvider(auth);
+    const verificationId = await provider.verifyPhoneNumber(
+      phoneNumber,
+      recaptcha
+    );
+    const phoneCredential = PhoneAuthProvider.credential(
+      verificationId,
+      verificationCode
+    );
+    await updatePhoneNumber(user, phoneCredential);
   },
 };
 

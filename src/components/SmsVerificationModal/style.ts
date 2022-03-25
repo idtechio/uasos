@@ -31,5 +31,4 @@ export const Wrapper = styled.View`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 480;
 `;
