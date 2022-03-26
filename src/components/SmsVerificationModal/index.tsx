@@ -7,6 +7,7 @@ import {
   StyledHeader,
   StyledInput,
   InputWrapper,
+  ErrorText,
 } from "./style";
 import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
@@ -29,17 +30,19 @@ export default function SmsVerificationModal({
   const [resendConfirmation, setResendConfirmation] =
     useState<ConfirmationResult | null>(null);
 
+  const [error, setError] = useState<string | null>(null);
+  const [apiError, setApiError] = useState<boolean>(false);
+
   const handleResend = async () => {
     setResending(true);
     try {
-      console.log("resending");
       const confirm = await Authorization.signInWithPhone(
         phoneNumber,
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
     } catch (err) {
-      return null;
+      setApiError(true);
     }
   };
   const ref1 = useRef<any>(null);
@@ -84,12 +87,12 @@ export default function SmsVerificationModal({
         await confirmation.confirm(code);
         setVerificationSuccess(true);
       } catch (err) {
-        return null;
+        setApiError(true);
       }
     }
   };
-  const onError = (error) => {
-    console.log(error);
+  const onError = (error: any) => {
+    setError("Must be a digit");
   };
   return (
     <CardModal closeable={false}>
@@ -106,13 +109,21 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref1}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
-                    ref2.current.focus();
+                    if (newValue.nativeEvent.text) {
+                      ref2.current.focus();
+                    }
                   }}
                 />
               )}
@@ -122,13 +133,21 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref2}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
-                    ref3.current.focus();
+                    if (newValue.nativeEvent.text) {
+                      ref3.current.focus();
+                    }
                   }}
                 />
               )}
@@ -138,13 +157,21 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref3}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
-                    ref4.current.focus();
+                    if (newValue.nativeEvent.text) {
+                      ref4.current.focus();
+                    }
                   }}
                 />
               )}
@@ -154,13 +181,21 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref4}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
-                    ref5.current.focus();
+                    if (newValue.nativeEvent.text) {
+                      ref5.current.focus();
+                    }
                   }}
                 />
               )}
@@ -170,13 +205,21 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref5}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
-                    ref6.current.focus();
+                    if (newValue.nativeEvent.text) {
+                      ref6.current.focus();
+                    }
                   }}
                 />
               )}
@@ -186,11 +229,16 @@ export default function SmsVerificationModal({
               control={control}
               rules={{
                 maxLength: 100,
+                pattern: /\d/,
               }}
               render={({ field: { onChange, onBlur, value } }) => (
                 <StyledInput
+                  // eslint-disable-next-line
+                  // @ts-ignore
                   ref={ref6}
                   onChange={(newValue) => {
+                    setError(null);
+                    setApiError(false);
                     onChange(newValue);
                   }}
                 />
@@ -199,6 +247,7 @@ export default function SmsVerificationModal({
             />
           </FormProvider>
         </InputWrapper>
+        {apiError ? <ErrorText>Invalid Code</ErrorText> : <></>}
         <ButtonCta
           onPress={handleSubmit(onSubmit, onError)}
           anchor={"Verify"}

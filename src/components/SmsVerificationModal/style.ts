@@ -26,9 +26,14 @@ export const StyledInput = styled.TextInput`
   font-size: 24px;
   text-align: center;
   margin: 0 5px;
+  ${(props: any) =>
+    props.borderColor ? `border-color: ${props.borderColor}` : ""}
 `;
 export const Wrapper = styled.View`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+export const ErrorText = styled(StyledText)`
+  color: red;
 `;
