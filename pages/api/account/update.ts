@@ -47,7 +47,7 @@ async function updateAccount(
     confirmedPhone: !!user.phoneNumber,
   };
 
-  const topicNameOrId = process.env.TOPIC_USER;
+  const topicNameOrId = process.env.TOPIC_ACCOUNT;
   const pubResult = await publishMessage(topicNameOrId, accountData);
   res.status(pubResult.status === PublishStatus.OK ? 200 : 400).json(pubResult);
   res.end();
