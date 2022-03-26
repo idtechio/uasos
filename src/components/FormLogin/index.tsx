@@ -111,9 +111,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         break;
     }
   };
-  // signIn(provideId, {
-  //   callbackUrl: locale ? `/${locale}` : undefined,
-  // });
 
   return (
     <>

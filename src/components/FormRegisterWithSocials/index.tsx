@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import { CompositionSection } from "../Compositions";
@@ -17,9 +17,16 @@ import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
+import { ConfirmationResult } from "firebase/auth";
+import SmsVerificationModal from "../SmsVerificationModal";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
+  const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
+    useState<ConfirmationResult | null>(null);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [smsVerificationSuccess, setSmsVerificationSuccess] =
+    useState<boolean>(false);
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -37,6 +44,22 @@ export default function FromRegisterWithSocials() {
 
   const onSubmit = async (e: any) => {
     console.log(e);
+    console.log(
+      e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
+    );
+    // Verify phone Number
+    try {
+      const confirmation = await Authorization.signInWithPhone(
+        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
+        Authorization.initCaptcha("captcha__container")
+      );
+      setPhoneLoginConfirmation(confirmation);
+      setPhoneNumber(
+        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
+      );
+    } catch (error) {
+      return null;
+    }
   };
 
   const onError = (e: any) => {
@@ -55,6 +78,7 @@ export default function FromRegisterWithSocials() {
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
+      <div style={{ display: "none" }} id="captcha__container"></div>
       <FormContainer>
         <FormHeader>{"Fill in the missing data"}</FormHeader>
         <ButtonSM
@@ -125,6 +149,16 @@ export default function FromRegisterWithSocials() {
             />
           </FormFooter>
         </FormProvider>
+        {phoneLoginConfirmation ? (
+          <SmsVerificationModal
+            phoneNumber={phoneNumber}
+            confirmation={phoneLoginConfirmation}
+            setVerificationSuccess={setSmsVerificationSuccess}
+          />
+        ) : (
+          <></>
+        )}
+        {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
       </FormContainer>
     </CompositionSection>
   );
