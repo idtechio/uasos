@@ -4,6 +4,7 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
+import { LandingMatchedSection } from "../src/components/LandingMatchedSection";
 import { PartnersSection } from "../src/components/PartnersSection";
 import { Splash } from "../src/components/Slash";
 import { withSession } from "../src/helpers/withSession";
@@ -161,7 +162,9 @@ function Landing() {
       </LandingProjectIntentionWrapper>
       <PartnersSection />
       <HowDoesItWorkSection />
-      <LikeToHelpSection />
+      <LikeToHelpSection>
+        <LandingMatchedSection />
+      </LikeToHelpSection>
     </CompositionAppBody>
   );
 }
