@@ -16,14 +16,6 @@ env:
   firebase_storage_bucket: "ukrn-hlpr-dev.appspot.com"
   firebase_messaging_sender_id: "727398461288"
   firebase_app_id: "1:727398461288:web:af67d40f717ab97143b0dd"
-  docker_build_args: >
-    --build-arg NEXT_PUBLIC_GA_ID=${{ env.ga_id }}
-    --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=${{ env.firebase_api_key }}
-    --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ env.firebase_auth_domain }}
-    --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ env.firebase_project_id }}
-    --build-arg NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=${{ env.firebase_storage_bucket }}
-    --build-arg NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${{ env.firebase_messaging_sender_id }}
-    --build-arg NEXT_PUBLIC_FIREBASE_APP_ID=${{ env.firebase_app_id }}
 
 jobs:
   build-docker:
@@ -46,9 +38,17 @@ jobs:
       - name: auth gcr.io
         run: gcloud auth configure-docker
       - name: build and push docker images
-        run: docker build ${{ env.docker_build_args }} -t $IMAGE_PROJECT_ID . && docker push $IMAGE_PROJECT_ID
+        run: docker build $BUILD_ARGS -t $IMAGE_PROJECT_ID . && docker push $IMAGE_PROJECT_ID
         env:
           IMAGE_PROJECT_ID: eu.gcr.io/${{ env.reg_project_id }}/${{ env.image_name }}:${{ steps.vars.outputs.sha_short }}
+          BUILD_ARGS: >
+            --build-arg NEXT_PUBLIC_GA_ID=${{ env.ga_id }}
+            --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=${{ env.firebase_api_key }}
+            --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ env.firebase_auth_domain }}
+            --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ env.firebase_project_id }}
+            --build-arg NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=${{ env.firebase_storage_bucket }}
+            --build-arg NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${{ env.firebase_messaging_sender_id }}
+            --build-arg NEXT_PUBLIC_FIREBASE_APP_ID=${{ env.firebase_app_id }}
       - id: auth2
         uses: "google-github-actions/auth@v0"
         with:
