@@ -7,6 +7,7 @@ type Props = {
 export default function Redirect({ path }: Props) {
   const router = useRouter();
   useEffect(() => {
+    console.log("redirecting to" + path);
     router.push(path);
   }, []);
   return <></>;
