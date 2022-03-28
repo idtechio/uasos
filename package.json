@@ -20,6 +20,8 @@
     "next-auth": "^4.2.1",
     "next-i18next": "^10.5.0",
     "next-transpile-modules": "^9.0.0",
+    "pg": "^8.7.3",
+    "pg-pool": "^3.5.1",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
