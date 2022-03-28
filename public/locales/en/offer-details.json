@@ -35,5 +35,7 @@
   "longThanks": "Thank you for confirming your decision.",
   "rejectFeedback": "Your submission will go back into the pool, we will let you know about the next proposal as soon as we can find one.",
   "reject": "Reject",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+
+  "back": "Back"
 }

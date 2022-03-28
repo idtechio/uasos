@@ -34,8 +34,8 @@ const useAuth = () => {
       setAccount(
         user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
       );
+      setLoaded(true);
     });
-    setLoaded(true);
   }, []);
   let getTokenForAPI = null;
   if (identity) {
