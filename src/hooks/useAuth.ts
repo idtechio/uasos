@@ -16,7 +16,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { app } from "../../lib/firebase-app";
 
 const auth = getAuth(app);
@@ -38,6 +38,10 @@ const useAuth = () => {
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
+  React.useEffect(() => {
+    console.log("W USE AUTH");
+    console.log({ identity });
+  }, [identity]);
   return { identity, account, getTokenForAPI };
 };
 

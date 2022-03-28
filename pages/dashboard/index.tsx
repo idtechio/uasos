@@ -1,6 +1,6 @@
 // import { GetServerSideProps } from "next";
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
 import { CompositionAppBody } from "../../src/components/Compositions";

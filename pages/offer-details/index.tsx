@@ -7,8 +7,10 @@ import { StyleProp, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
+import Redirect from "../../src/components/Redirect";
 // import Redirect from "../../src/components/Redirect";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
+import useAuth from "../../src/hooks/useAuth";
 // import { Routes } from "../../src/consts/router";
 // import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 // import { withSession } from "../../src/helpers/withSession";
@@ -27,27 +29,36 @@ const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
 export default function OfferDetails() {
   const router = useRouter();
   const { t } = useTranslation("offer-details");
-  const { identity } = useContext(AuthContext);
+  // const { identity } = useContext(AuthContext);
+  const { identity } = useAuth();
   console.log({ identity });
 
   return (
-    <CompositionAppBody>
-      <ListingWrapper>
-        <InnerWrapper>
-          <BackWrapper
-            onPress={() => {
-              router.push("/dashboard");
-            }}
-          >
-            <ArrowLeftIcon />
-            <BackText>{t("back")}</BackText>
-          </BackWrapper>
-          {isMatch ? <WarningSection containerStyle={topMarginStyle} /> : null}
-          <DetailsSection containerStyle={bottomMarginStyle} />
-          {isMatch ? <DetailsDecisionButtons /> : null}
-        </InnerWrapper>
-      </ListingWrapper>
-    </CompositionAppBody>
+    <>
+      {identity ? (
+        <CompositionAppBody>
+          <ListingWrapper>
+            <InnerWrapper>
+              <BackWrapper
+                onPress={() => {
+                  router.push("/dashboard");
+                }}
+              >
+                <ArrowLeftIcon />
+                <BackText>{t("back")}</BackText>
+              </BackWrapper>
+              {isMatch ? (
+                <WarningSection containerStyle={topMarginStyle} />
+              ) : null}
+              <DetailsSection containerStyle={bottomMarginStyle} />
+              {isMatch ? <DetailsDecisionButtons /> : null}
+            </InnerWrapper>
+          </ListingWrapper>
+        </CompositionAppBody>
+      ) : (
+        <Redirect path="/signin" />
+      )}
+    </>
   );
 }
 
