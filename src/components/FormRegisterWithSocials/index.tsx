@@ -19,6 +19,7 @@ import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
+import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -43,10 +44,6 @@ export default function FromRegisterWithSocials() {
   const { handleSubmit } = form;
 
   const onSubmit = async (e: any) => {
-    console.log(e);
-    console.log(
-      e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
-    );
     // Verify phone Number
     try {
       const confirmation = await Authorization.signInWithPhone(
