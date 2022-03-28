@@ -29,6 +29,7 @@
     "react-native-modal": "^13.0.0",
     "react-native-web": "^0.17.6",
     "react-native-web-lottie": "^1.4.4",
+    "react-query": "^3.34.19",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",

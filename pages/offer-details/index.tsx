@@ -17,7 +17,6 @@ import { GetServerSideProps } from "next";
 import { completeTranslation } from "../../src/helpers/completeTranslation";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { withSession } from "../../src/helpers/withSession";
-// import Loader from "../../src/components/Loader/Loader";
 
 const isMatch = true;
 
