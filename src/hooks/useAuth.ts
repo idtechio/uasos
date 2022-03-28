@@ -1,5 +1,4 @@
 import {
-  getAuth,
   onAuthStateChanged,
   User,
   signInWithEmailAndPassword,
@@ -20,9 +19,8 @@ import {
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
-import { app } from "../../lib/firebase-app";
+import { auth } from "../../lib/firebase-app";
 
-const auth = getAuth(app);
 auth.useDeviceLanguage();
 
 const useAuth = () => {

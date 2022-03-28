@@ -34,9 +34,10 @@ export const Label = styled.Text<LabelProps>`
 
 type TextInputProps = InputProps & { theme: Theme };
 export const TextInput = styled.TextInput<TextInputProps>`
-  border: ${({ theme }) => theme.forms.borderWidth} solid
-    ${(props) =>
-      props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.3)`};
+  border: ${({ theme, error }) =>
+    `${theme.forms.borderWidth} solid ${
+      error ? theme.colors.error : "rgba(28, 27, 37, 0.3)"
+    }`};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
   padding: 13px 20px 14px;
   border-radius: 4px;

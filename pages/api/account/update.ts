@@ -5,7 +5,7 @@ import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 import { getUser } from "../../../lib/firebase-admin-app";
-import { publishMessage } from "../../../src/helpers/PubSub";
+import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 
 interface AccountProps {
   uid: string;
@@ -39,7 +39,7 @@ async function updateAccount(
     body = {};
   }
 
-  const data: AccountProps = {
+  const accountData: AccountProps = {
     uid: user.uid,
     name: body?.name,
     prefferedLang: body?.prefferedLang,
@@ -47,8 +47,9 @@ async function updateAccount(
     confirmedPhone: !!user.phoneNumber,
   };
 
-  const topicNameOrId = process.env.TOPIC_USER;
-  res.status(200).json(await publishMessage(topicNameOrId, data));
+  const topicNameOrId = process.env.TOPIC_ACCOUNT;
+  const pubResult = await publishMessage(topicNameOrId, accountData);
+  res.status(pubResult.status === PublishStatus.OK ? 200 : 400).json(pubResult);
   res.end();
 }
 

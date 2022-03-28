@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
-import { publishMessage } from "../../../src/helpers/PubSub";
+import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -29,13 +29,16 @@ export default async function addGuest(
   res: NextApiResponse
 ) {
   const session = await getSession({ req });
-  if (session) {
-    const body = JSON.parse(req.body);
-    const topicNameOrId = process.env.TOPIC_GUEST;
-    const data = JSON.stringify(body);
-    res.status(200).json(await publishMessage(topicNameOrId, data));
-  } else {
+  if (!session) {
     res.status(401);
+    res.end();
+    return;
   }
+
+  const body = JSON.parse(req.body);
+  const topicNameOrId = process.env.TOPIC_GUEST;
+
+  const pubResult = await publishMessage(topicNameOrId, body);
+  res.status(pubResult.status === PublishStatus.OK ? 200 : 400).json(pubResult);
   res.end();
 }
