@@ -1,15 +1,15 @@
 {
-  "location": "",
-  "numberOfGuests": "",
-  "timeframe": "",
-  "oneWeek": "",
-  "twoWeeks": "",
-  "month": "",
-  "longerThanMonth": "",
-  "food": "",
-  "disabledPerson": "",
-  "kidsBelow2yo": "",
-  "animalsWelcome": "",
-  "yes": "",
-  "no": ""
+    "numberOfGuests": "",
+    "timeframe": "",
+    "oneWeek": "",
+    "twoWeeks": "",
+    "month": "",
+    "longerThanMonth": "",
+    "disabledPerson": "",
+    "kidsBelow2yo": "",
+    "yes": "",
+    "no": "",
+    "location": "",
+    "food": "",
+    "animalsWelcome": ""
 }

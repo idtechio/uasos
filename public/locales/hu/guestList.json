@@ -1,11 +1,11 @@
 {
-  "anyLocation": "Bármelyik",
-  "arrival": "Érkezési dátum",
-  "inviteGuest": "Vendég meghívása",
-  "locationPreference": "Előnyben részesített hely",
-  "persons": "Vendégek száma",
-  "travelingWithAnimal": "Állattal utazom",
-  "travelingWithDisabledPerson": "Fogyatékkal élővel utazom",
-  "travelingWithOlderPerson": "Idős emberrel utazom",
-  "travelingWithToddler": "Gyermekkel utazom"
+    "arrival": "Érkezési dátum",
+    "persons": "Vendégek száma",
+    "locationPreference": "Előnyben részesített hely",
+    "travelingWithAnimal": "Állattal utazom",
+    "travelingWithToddler": "Gyermekkel utazom",
+    "inviteGuest": "Vendég meghívása",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "Idős személlyel utazok",
+    "travelingWithDisabledPerson": "Fogyatékkal élő személlyel utazok"
 }
