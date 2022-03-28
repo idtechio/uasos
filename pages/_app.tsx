@@ -9,7 +9,7 @@ import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { AppProps } from "next/app";
-import useAuth from "../src/hooks/useAuth";
+import useAuth, { Authorization } from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 export const AuthContext = createContext<{
@@ -26,7 +26,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const { t } = useTranslation();
   const { identity, account, getTokenForAPI } = useAuth();
   const router = useRouter();
-
   useEffect(() => {
     if (!gtag.GA_TRACKING_ID) {
       return;

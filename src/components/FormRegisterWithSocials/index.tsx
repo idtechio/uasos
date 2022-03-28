@@ -63,7 +63,7 @@ export default function FromRegisterWithSocials() {
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
     } catch (error) {
-      return null;
+      console.log(error);
     }
   };
   const updateAccount = async () => {

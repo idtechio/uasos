@@ -37,7 +37,7 @@ export default function SmsVerificationModal({
     useState<ConfirmationResult | null>(null);
 
   const [error, setError] = useState<string | null>(null);
-  const [apiError, setApiError] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<string>("");
 
   const handleResendLogin = async () => {
     setResending(true);
@@ -48,7 +48,7 @@ export default function SmsVerificationModal({
       );
       setResendConfirmation(confirm);
     } catch (err) {
-      setApiError(true);
+      setApiError(err.message);
     }
   };
   const handleResendLink = async () => {
@@ -63,7 +63,7 @@ export default function SmsVerificationModal({
         setResendConfirmation(confirm);
       }
     } catch (err) {
-      setApiError(true);
+      setApiError(err.message);
     }
   };
 
@@ -111,7 +111,7 @@ export default function SmsVerificationModal({
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
       } catch (err) {
-        return null;
+        setApiError(err.message);
       }
     } else {
       try {
@@ -119,7 +119,7 @@ export default function SmsVerificationModal({
         setVerificationSuccess(true);
         callback();
       } catch (err) {
-        setApiError(true);
+        setApiError(err.message);
       }
     }
   };
@@ -151,7 +151,7 @@ export default function SmsVerificationModal({
                   ref={ref1}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref2.current.focus();
@@ -175,7 +175,7 @@ export default function SmsVerificationModal({
                   ref={ref2}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref3.current.focus();
@@ -199,7 +199,7 @@ export default function SmsVerificationModal({
                   ref={ref3}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref4.current.focus();
@@ -223,7 +223,7 @@ export default function SmsVerificationModal({
                   ref={ref4}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref5.current.focus();
@@ -247,7 +247,7 @@ export default function SmsVerificationModal({
                   ref={ref5}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref6.current.focus();
@@ -270,7 +270,7 @@ export default function SmsVerificationModal({
                   ref={ref6}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                   }}
                 />
