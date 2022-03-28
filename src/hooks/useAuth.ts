@@ -16,6 +16,7 @@ import {
   sendEmailVerification,
   updatePhoneNumber,
   PhoneAuthProvider,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -65,6 +66,7 @@ interface Authorization {
     recapcha: RecaptchaVerifier,
     verificationCode: string
   ) => Promise<void>;
+  createUser: (email: string, password: string) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -113,6 +115,9 @@ const Authorization: Authorization = {
       verificationCode
     );
     await updatePhoneNumber(user, phoneCredential);
+  },
+  async createUser(email, password) {
+    await createUserWithEmailAndPassword(auth, email, password);
   },
 };
 
