@@ -35,6 +35,7 @@ export interface OfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
+  status: string;
   match_status?: string;
   matchedRequest?: MatchedRequestProps;
 }
@@ -111,6 +112,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: h.duration_category,
     transport_included: h.transport_included,
+    status: h.host_status,
     match_status: h.match_status,
     matchedRequest: h.match_id
       ? {
@@ -144,6 +146,8 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
+      status: "",
+      match_status: "",
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -170,6 +174,7 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
+      status: "",
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -193,6 +198,7 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       transport_included: Boolean.FALSE,
+      status: "",
     },
   ];
 }
