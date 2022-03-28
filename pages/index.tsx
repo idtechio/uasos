@@ -9,7 +9,9 @@ import { PartnersSection } from "../src/components/PartnersSection";
 import { Splash } from "../src/components/Slash";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
+import { NumbersProps } from "./api/listing/numbers";
 import { Theme } from "../src/style/theme.config";
+import { getNumberList } from "../src/client-api/numbers";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -134,7 +136,11 @@ const BottomLeftBlueSplashPosition = css`
     })};
 `;
 
-function Landing() {
+export type LandingProps = {
+  numberList: NumbersProps;
+};
+
+function Landing({ numberList }: LandingProps) {
   return (
     <CompositionAppBody>
       <TopLeftYellowSplash
@@ -163,19 +169,24 @@ function Landing() {
       <PartnersSection />
       <HowDoesItWorkSection />
       <LikeToHelpSection>
-        <LandingMatchedSection />
+        <LandingMatchedSection numberList={numberList} />
       </LikeToHelpSection>
     </CompositionAppBody>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => ({
-    props: {
-      session,
-      ...(locale && (await serverSideTranslations(locale))),
-    },
-  })
+  async ({ locale }, session) => {
+    const numberList = await getNumberList();
+
+    return {
+      props: {
+        session,
+        numberList: numberList.numbers,
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    };
+  }
 );
 
 export default Landing;

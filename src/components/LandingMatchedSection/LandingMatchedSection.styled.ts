@@ -1,7 +1,6 @@
 import { css } from "styled-components";
 import styled from "styled-components/native";
 
-import { colors } from "../../style/landingPageStyle";
 import { Theme } from "../../style/theme.config";
 
 export const MatchedCardsWrapper = styled.View`

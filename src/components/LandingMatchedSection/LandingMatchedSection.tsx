@@ -3,8 +3,15 @@ import { useTranslation } from "next-i18next";
 import Tile from "../Tile";
 import SectionTitle from "../SectionTitle";
 import { MatchedCardsWrapper } from "./LandingMatchedSection.styled";
+import { NumbersProps } from "../../../pages/api/listing/numbers";
 
-export const LandingMatchedSection = () => {
+export type LandingMatchedSectionProps = {
+  numberList: NumbersProps;
+};
+
+export const LandingMatchedSection = ({
+  numberList,
+}: LandingMatchedSectionProps) => {
   const { t } = useTranslation("landingPage");
 
   return (
@@ -12,13 +19,19 @@ export const LandingMatchedSection = () => {
       <SectionTitle title={t("weMatched.title")} />
 
       <MatchedCardsWrapper>
-        <Tile value="4 329" text={t("weMatched.cards.helpedPeople")} />
         <Tile
-          value="51 329"
+          value={numberList.matched_beds}
+          text={t("weMatched.cards.helpedPeople")}
+        />
+        <Tile
+          value={numberList.available_beds}
           text={t("weMatched.cards.lookingForHelp")}
           spaced
         />
-        <Tile value="1 731" text={t("weMatched.cards.currentOffers")} />
+        <Tile
+          value={numberList.requested_beds}
+          text={t("weMatched.cards.currentOffers")}
+        />
       </MatchedCardsWrapper>
     </>
   );
