@@ -1,14 +1,14 @@
 {
-  "placeFor": "Место для",
-  "people": "человек",
-  "maximum": "макс.",
-  "oneWeek": "Одна неделя",
-  "twoWeeks": "Две недели",
-  "month": "Месяц",
-  "longerThanMonth": "Больше месяца",
-  "food": "Питание",
-  "petsWelcome": "Домашние животные приветствуются",
-  "disabledReady": "Услуги для людей с ограниченными возможностями",
-  "locationOwner": "Хозяин",
-  "use": "Выбрать"
+    "placeFor": "Место для",
+    "people": "человек",
+    "maximum": "макс.",
+    "petsWelcome": "Домашние животные приветствуются",
+    "locationOwner": "Хозяин",
+    "use": "Выбрать",
+    "oneWeek": "",
+    "twoWeeks": "",
+    "month": "",
+    "longerThanMonth": "",
+    "food": "",
+    "disabledReady": ""
 }
