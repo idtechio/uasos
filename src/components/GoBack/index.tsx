@@ -27,8 +27,7 @@ const GoBack = () => {
   return (
     <Pressable onPress={router.back}>
       <Container>
-        {/* @ts-expect-error TODO: fix prop type */}
-        <GoBackIcon source="/goBack.svg" />
+        <GoBackIcon source={{ uri: "/goBack.svg" }} />
         <Text>{t("back")}</Text>
       </Container>
     </Pressable>
