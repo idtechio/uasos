@@ -2,9 +2,8 @@
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useContext, useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
-import styled from "styled-components/native";
 import { CompositionAppBody } from "../../src/components/Compositions";
-import Container from "../../src/components/Container";
+import PageContentWrapper from "../../src/components/PageContentWrapper";
 import SupportSection from "../../src/components/SupportSection";
 import Tags from "../../src/components/Tags";
 import VerifySection, {
@@ -12,19 +11,6 @@ import VerifySection, {
 } from "../../src/components/VerifySection/VerifySection";
 // import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
 // import { withSession } from "../../src/helpers/withSession";
-
-export const ListingWrapper = styled(Container)`
-  width: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const InnerWrapper = styled.View`
-  width: 100%;
-  max-width: 450px;
-`;
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
@@ -41,8 +27,8 @@ export default function Dashboard() {
 
   return (
     <CompositionAppBody>
-      <ListingWrapper>
-        <InnerWrapper>
+      <PageContentWrapper outerStyles={{ paddingHorizontal: 16 }}>
+        <>
           <VerifySection
             {...desktopStatus.verifications}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
@@ -52,8 +38,8 @@ export default function Dashboard() {
             containerStyle={[bottomMarginStyle]}
           />
           <SupportSection />
-        </InnerWrapper>
-      </ListingWrapper>
+        </>
+      </PageContentWrapper>
     </CompositionAppBody>
   );
 }

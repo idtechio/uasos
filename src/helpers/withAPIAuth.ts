@@ -1,7 +1,7 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { DecodedIdToken } from "firebase-admin/auth";
 
-import { decodeToken } from "../../lib/firebase-admin";
+import { decodeToken } from "../../lib/firebase-admin-app";
 
 export interface ApiAuthTokenDetails {
   token?: String;
@@ -21,8 +21,10 @@ const withApiAuth = (handler: NextApiHandler) => {
     }
 
     const bearerToken = bearerHeader.split(" ")[1];
-    const decodedToken = await decodeToken(bearerToken);
-    if (!decodedToken) {
+    const decodedToken: DecodedIdToken | Boolean = await decodeToken(
+      bearerToken
+    );
+    if (decodedToken instanceof Boolean) {
       res.status(401).json({ ok: "not ok" });
       res.end();
       return;

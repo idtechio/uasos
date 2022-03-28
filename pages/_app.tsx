@@ -16,7 +16,8 @@ export const AuthContext = createContext<{
   identity: null | User | undefined;
   account: null | getAccountDTO;
   getTokenForAPI: null | (() => Promise<string>);
-}>({ identity: null, getTokenForAPI: null, account: null });
+  loaded: boolean;
+}>({ identity: null, getTokenForAPI: null, account: null, loaded: false });
 import * as gtag from "../lib/gtag";
 import Gtag from "./gtag";
 
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
-  const { identity, account, getTokenForAPI } = useAuth();
+  const { identity, account, getTokenForAPI, loaded } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -58,7 +59,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
         {gtag.GA_TRACKING_ID && <Gtag id={gtag.GA_TRACKING_ID} />}
         <ThemeProviderWeb theme={theme}>
           <ThemeProviderNative theme={theme}>
-            <AuthContext.Provider value={{ identity, account, getTokenForAPI }}>
+            <AuthContext.Provider
+              value={{ identity, account, getTokenForAPI, loaded }}
+            >
               <Component {...pageProps} />
             </AuthContext.Provider>
           </ThemeProviderNative>

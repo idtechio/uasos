@@ -16,7 +16,8 @@ import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
-import { View } from "react-native";
+import SmsVerificationModal from "../SmsVerificationModal";
+import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -27,6 +28,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const [passwordInput, setPasswordInput] = useState(false);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [smsVerificationSuccess, setSmsVerificationSuccess] =
+    useState<boolean>(false);
 
   const formFields = useForm<FormType>();
 
@@ -41,7 +45,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const EMAIL_OR_PHONE_REGEX =
     // eslint-disable-next-line
     /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|([+]([^\d]*\d){8})/;
-
   const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
   }) => {
@@ -74,12 +77,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             Authorization.initCaptcha("captcha__container")
           );
           setPhoneLoginConfirmation(confirmation);
+          setPhoneNumber(data.login.phoneOrEmail);
         } catch (error) {
           return null;
         }
       }
     }
-    console.log(data);
   };
   const onError = (error: any) => null;
 
@@ -108,9 +111,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         break;
     }
   };
-  // signIn(provideId, {
-  //   callbackUrl: locale ? `/${locale}` : undefined,
-  // });
 
   return (
     <>
@@ -175,7 +175,16 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
           </FormProvider>
-          {phoneLoginConfirmation ? <View>PhoneVerify</View> : <></>}
+          {phoneLoginConfirmation ? (
+            <SmsVerificationModal
+              phoneNumber={phoneNumber}
+              confirmation={phoneLoginConfirmation}
+              setVerificationSuccess={setSmsVerificationSuccess}
+            />
+          ) : (
+            <></>
+          )}
+          {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />

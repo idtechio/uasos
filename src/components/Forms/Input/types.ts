@@ -1,14 +1,9 @@
 import { ReactNode } from "react";
+import { ViewStyle } from "react-native";
 
 export type InputStylesProps = {
-  wrapper?: {
-    height: string;
-  };
-  textInput?: {
-    paddingTop: string;
-    paddingBottom: string;
-    height: string;
-  };
+  wrapper?: ViewStyle;
+  textInput?: ViewStyle;
 };
 
 export type InputProps<T = string> = {

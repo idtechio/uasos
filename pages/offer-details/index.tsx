@@ -3,22 +3,19 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, Text, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
-import Redirect from "../../src/components/Redirect";
-// import Redirect from "../../src/components/Redirect";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
-import useAuth from "../../src/hooks/useAuth";
-// import { Routes } from "../../src/consts/router";
-// import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
-// import { withSession } from "../../src/helpers/withSession";
 import ArrowLeftIcon from "../../src/style/svgs/chevron-left.svg";
-import { InnerWrapper, ListingWrapper } from "../dashboard";
+import { TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+import { Theme } from "../../src/style/theme.config";
+import PageContentWrapper from "../../src/components/PageContentWrapper";
 import { AuthContext } from "../_app";
-// import { InnerWrapper, ListingWrapper } from "../dashboard";
-import { BackWrapper, BackText } from "./style";
+import Redirect from "../../src/components/Redirect";
+// import Loader from "../../src/components/Loader/Loader";
 
 const isMatch = true;
 
@@ -26,40 +23,60 @@ const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
 
+const BackWrapper = styled(TouchableOpacity)`
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-top: 18px;
+`;
+
+const BackText = styled.Text`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+  text-align: left;
+`;
+
 export default function OfferDetails() {
   const router = useRouter();
   const { t } = useTranslation("offer-details");
-  // const { identity } = useContext(AuthContext);
-  const { identity } = useAuth();
+  const { identity, loaded } = useContext(AuthContext);
+
+  console.log({ loaded });
   console.log({ identity });
 
-  return (
-    <>
-      {identity ? (
+  if (loaded) {
+    if (identity) {
+      return (
         <CompositionAppBody>
-          <ListingWrapper>
-            <InnerWrapper>
+          <PageContentWrapper>
+            <>
               <BackWrapper
                 onPress={() => {
                   router.push("/dashboard");
                 }}
               >
                 <ArrowLeftIcon />
-                <BackText>{t("back")}</BackText>
+                <BackText>Back</BackText>
               </BackWrapper>
               {isMatch ? (
                 <WarningSection containerStyle={topMarginStyle} />
               ) : null}
               <DetailsSection containerStyle={bottomMarginStyle} />
               {isMatch ? <DetailsDecisionButtons /> : null}
-            </InnerWrapper>
-          </ListingWrapper>
+            </>
+          </PageContentWrapper>
         </CompositionAppBody>
-      ) : (
-        <Redirect path="/signin" />
-      )}
-    </>
-  );
+      );
+    } else {
+      return <Redirect path="/signin"></Redirect>;
+    }
+  } else {
+    // <Loader />;
+    return <Text>Loading</Text>;
+  }
 }
 
 // export const getServerSideProps: GetServerSideProps = withSession(

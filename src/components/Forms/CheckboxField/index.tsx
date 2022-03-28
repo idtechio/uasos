@@ -10,9 +10,11 @@ const CheckboxField = ({
   onChange,
   error,
   value,
+  textStyle,
+  wrapperStyle,
 }: CheckboxFieldProps) => {
   return (
-    <InputCotrolLabel>
+    <InputCotrolLabel styleOverrides={wrapperStyle}>
       {Platform.OS === "web" ? (
         <>
           <input
@@ -21,13 +23,15 @@ const CheckboxField = ({
             checked={value}
             id={`checkboxField-${text}`}
           />
-          <label htmlFor={`checkboxField-${text}`}>{text}</label>
+          <label htmlFor={`checkboxField-${text}`}>
+            <Label>{text}</Label>
+          </label>
         </>
       ) : (
         <CheckBox onValueChange={onChange} />
       )}
 
-      {Platform.OS !== "web" && <Label error={error}>{text}</Label>}
+      {Platform.OS !== "web" && <Label>{text}</Label>}
     </InputCotrolLabel>
   );
 };

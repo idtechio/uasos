@@ -1,14 +1,19 @@
 // import { GetServerSideProps } from "next";
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useCallback } from "react";
-import { useForm } from "react-hook-form";
+
 import styled from "styled-components/native";
 import AppBack from "../src/components/AppBack";
 import { CompositionAppBody } from "../src/components/Compositions";
-import { TextInput } from "../src/components/Forms/Input/style";
 // import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
 // import { withSession } from "../src/helpers/withSession";
 import { Theme } from "../src/style/theme.config";
+// import { GetServerSideProps } from "next";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+import EditUserProfileForm from "../src/components/EditUserProfileForm";
+import PageContentWrapper from "../src/components/PageContentWrapper";
+// import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
+// import { withSession } from "../src/helpers/withSession";
 
 const ContentContainer = styled.View`
   background-color: white;
@@ -50,21 +55,12 @@ interface EditProfileDTO {
 }
 
 export default function UserProfile() {
-  const { control, handleSubmit } = useForm<EditProfileDTO>();
-
-  const onSubmit = useCallback((data: EditProfileDTO) => {
-    console.log(data);
-  }, []);
   return (
     <CompositionAppBody>
-      <AppBack to={"/dashboard"} />
-      <ContentContainer>
-        <ScreenHeader>User profile edit</ScreenHeader>
-        <FormHeader>Enter your details</FormHeader>
-        <TextInput placeholder="XD"></TextInput>
-        <TextInput placeholder="XD"></TextInput>
-        <TextInput placeholder="XD"></TextInput>
-      </ContentContainer>
+      <PageContentWrapper>
+        <AppBack to={"/dashboard"} />
+        <EditUserProfileForm />
+      </PageContentWrapper>
     </CompositionAppBody>
   );
 }
