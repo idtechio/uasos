@@ -20,14 +20,16 @@ import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
+import { AccountApi } from "../../client-api/account";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity } = useContext(AuthContext);
+  const { identity, getTokenForAPI } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [data, setData] = useState<{ name: string; prefferedLang: string }>();
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -40,24 +42,34 @@ export default function FromRegisterWithSocials() {
       },
     },
   });
-
   const { handleSubmit } = form;
 
   const onSubmit = async (e: any) => {
-    // Verify phone Number
-    console.log(e);
-    // try {
-    //   const confirmation = await Authorization.signInWithPhone(
-    //     e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
-    //     Authorization.initCaptcha("captcha__container")
-    //   );
-    //   setPhoneLoginConfirmation(confirmation);
-    //   setPhoneNumber(
-    //     e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
-    //   );
-    // } catch (error) {
-    //   return null;
-    // }
+    setData({
+      name: e.registerWithSocials.name,
+      prefferedLang: e.registerWithSocials.prefferedLanguage,
+    });
+    try {
+      let confirmation = null;
+      if (identity) {
+        confirmation = await Authorization.linkWithPhone(
+          identity,
+          e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
+          Authorization.initCaptcha("captcha__container")
+        );
+      }
+      setPhoneLoginConfirmation(confirmation);
+      setPhoneNumber(
+        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
+      );
+    } catch (error) {
+      return null;
+    }
+  };
+  const updateAccount = async () => {
+    if (getTokenForAPI && data) {
+      await AccountApi.updateAccount(data, await getTokenForAPI());
+    }
   };
 
   const onError = (e: any) => {
@@ -141,6 +153,8 @@ export default function FromRegisterWithSocials() {
         </FormProvider>
         {phoneLoginConfirmation ? (
           <SmsVerificationModal
+            callback={updateAccount}
+            mode="LINK"
             phoneNumber={phoneNumber}
             confirmation={phoneLoginConfirmation}
             setVerificationSuccess={setSmsVerificationSuccess}

@@ -16,6 +16,7 @@ import {
   updatePhoneNumber,
   PhoneAuthProvider,
   createUserWithEmailAndPassword,
+  linkWithPhoneNumber,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -51,7 +52,7 @@ interface Authorization {
   signInWithFacebook: () => Promise<void>;
   signInWithPhone: (
     phoneNumber: string,
-    recaptcha: any
+    recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
   initCaptcha: (containerId: string) => RecaptchaVerifier;
   signInWithEmail: (email: string, password: string) => Promise<void>;
@@ -68,6 +69,11 @@ interface Authorization {
     verificationCode: string
   ) => Promise<void>;
   createUser: (email: string, password: string) => Promise<void>;
+  linkWithPhone: (
+    user: User,
+    phoneNumber: string,
+    recaptcha: RecaptchaVerifier
+  ) => Promise<ConfirmationResult>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -119,6 +125,9 @@ const Authorization: Authorization = {
   },
   async createUser(email, password) {
     await createUserWithEmailAndPassword(auth, email, password);
+  },
+  async linkWithPhone(user, phoneNumber, recaptcha) {
+    return await linkWithPhoneNumber(user, phoneNumber, recaptcha);
   },
 };
 

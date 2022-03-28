@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { TouchableOpacity } from "react-native";
 import {
@@ -15,17 +15,23 @@ import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
 import { ConfirmationResult } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
+import { AuthContext } from "../../../pages/_app";
 
 interface Props {
   phoneNumber: string;
   confirmation: ConfirmationResult;
   setVerificationSuccess: (success: boolean) => void;
+  mode: "LOGIN" | "UPDATE" | "LINK";
+  callback: () => void;
 }
 export default function SmsVerificationModal({
   phoneNumber,
   confirmation,
   setVerificationSuccess,
+  mode,
+  callback,
 }: Props) {
+  const { identity } = useContext(AuthContext);
   const [resending, setResending] = useState<boolean>(false);
   const [resendConfirmation, setResendConfirmation] =
     useState<ConfirmationResult | null>(null);
@@ -33,7 +39,7 @@ export default function SmsVerificationModal({
   const [error, setError] = useState<string | null>(null);
   const [apiError, setApiError] = useState<boolean>(false);
 
-  const handleResend = async () => {
+  const handleResendLogin = async () => {
     setResending(true);
     try {
       const confirm = await Authorization.signInWithPhone(
@@ -45,6 +51,31 @@ export default function SmsVerificationModal({
       setApiError(true);
     }
   };
+  const handleResendLink = async () => {
+    setResending(true);
+    try {
+      if (identity) {
+        const confirm = await Authorization.linkWithPhone(
+          identity,
+          phoneNumber,
+          Authorization.initCaptcha("recaptcha__container")
+        );
+        setResendConfirmation(confirm);
+      }
+    } catch (err) {
+      setApiError(true);
+    }
+  };
+
+  const handleResendUpdate = () => {
+    return null;
+  };
+  const handleResend =
+    mode === "LINK"
+      ? handleResendLink
+      : mode === "LOGIN"
+      ? handleResendLogin
+      : handleResendUpdate;
   const ref1 = useRef<any>(null);
   const ref2 = useRef<any>(null);
   const ref3 = useRef<any>(null);
@@ -86,6 +117,7 @@ export default function SmsVerificationModal({
       try {
         await confirmation.confirm(code);
         setVerificationSuccess(true);
+        callback();
       } catch (err) {
         setApiError(true);
       }

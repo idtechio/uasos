@@ -29,6 +29,7 @@ export const AccountApi: AccountApi = {
       method: "post",
       headers: {
         Authorization: `Bearer ${token}`,
+        "content-type": "application/json",
       },
       body: JSON.stringify(data),
     });

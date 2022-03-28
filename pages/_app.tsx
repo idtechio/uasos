@@ -40,7 +40,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
   return (
     <>
       <GlobalStyles />
