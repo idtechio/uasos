@@ -1,19 +1,13 @@
-// import { GetServerSideProps } from "next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
 import styled from "styled-components/native";
 import AppBack from "../src/components/AppBack";
 import { CompositionAppBody } from "../src/components/Compositions";
-// import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
-// import { withSession } from "../src/helpers/withSession";
 import { Theme } from "../src/style/theme.config";
-// import { GetServerSideProps } from "next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
 import EditUserProfileForm from "../src/components/EditUserProfileForm";
 import PageContentWrapper from "../src/components/PageContentWrapper";
-// import { redirectIfUnauthorized } from "../src/helpers/redirectIfUnauthorized";
-// import { withSession } from "../src/helpers/withSession";
+import { AuthContext } from "./_app";
+import { useContext } from "react";
+import Redirect from "../src/components/Redirect";
+import { Text } from "react-native";
 
 const ContentContainer = styled.View`
   background-color: white;
@@ -55,14 +49,26 @@ interface EditProfileDTO {
 }
 
 export default function UserProfile() {
-  return (
-    <CompositionAppBody>
-      <PageContentWrapper>
-        <AppBack to={"/dashboard"} />
-        <EditUserProfileForm />
-      </PageContentWrapper>
-    </CompositionAppBody>
-  );
+  const { identity, loaded } = useContext(AuthContext);
+  if (loaded) {
+    if (identity) {
+      return (
+        <CompositionAppBody>
+          <PageContentWrapper>
+            <AppBack to={"/dashboard"} />
+            <EditUserProfileForm />
+          </PageContentWrapper>
+        </CompositionAppBody>
+      );
+    } else {
+      return <Redirect path="/signin"></Redirect>;
+    }
+  } else {
+    // TODO: add nice spinner
+    return (
+      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
+    );
+  }
 }
 
 // export const getServerSideProps: GetServerSideProps = withSession(

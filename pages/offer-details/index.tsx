@@ -44,9 +44,6 @@ export default function OfferDetails() {
   const { t } = useTranslation("offer-details");
   const { identity, loaded } = useContext(AuthContext);
 
-  console.log({ loaded });
-  console.log({ identity });
-
   if (loaded) {
     if (identity) {
       return (
@@ -59,7 +56,7 @@ export default function OfferDetails() {
                 }}
               >
                 <ArrowLeftIcon />
-                <BackText>Back</BackText>
+                <BackText>{t("back")}</BackText>
               </BackWrapper>
               {isMatch ? (
                 <WarningSection containerStyle={topMarginStyle} />
@@ -74,8 +71,10 @@ export default function OfferDetails() {
       return <Redirect path="/signin"></Redirect>;
     }
   } else {
-    // <Loader />;
-    return <Text>Loading</Text>;
+    // TODO: add nice spinner
+    return (
+      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
+    );
   }
 }
 
