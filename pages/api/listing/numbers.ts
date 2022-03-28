@@ -5,9 +5,9 @@ async function getNumbers(req: NextApiRequest, res: NextApiResponse) {
   try {
     const numbers: false | any[] = await select(
       `SELECT
-        m_beds AS matched_beds,
-        h_beds AS available_beds,
-        g_beds AS requested_beds
+        coalesce(m_beds, 0) AS matched_beds,
+        coalesce(h_beds, 0) AS available_beds,
+        coalesce(g_beds, 0) AS requested_beds
       FROM beds_statistics
       LIMIT 1`
     );
