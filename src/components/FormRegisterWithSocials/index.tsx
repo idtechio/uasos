@@ -11,7 +11,7 @@ import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
-import { FormFooter } from "./styles";
+import { FormFooter, ErrorText } from "./styles";
 import { styles } from "./styles";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
@@ -21,6 +21,7 @@ import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
 import { AccountApi } from "../../client-api/account";
+
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
   const { identity, getTokenForAPI } = useContext(AuthContext);
@@ -30,6 +31,7 @@ export default function FromRegisterWithSocials() {
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
   const [data, setData] = useState<{ name: string; prefferedLang: string }>();
+  const [apiError, setApiError] = useState<string>("");
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -63,7 +65,7 @@ export default function FromRegisterWithSocials() {
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
     } catch (error) {
-      console.log(error);
+      setApiError(error.message);
     }
   };
   const updateAccount = async () => {
@@ -163,6 +165,7 @@ export default function FromRegisterWithSocials() {
           <></>
         )}
         {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+        {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
       </FormContainer>
     </CompositionSection>
   );
