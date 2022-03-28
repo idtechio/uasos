@@ -8,34 +8,28 @@ import AddressIcon from "../../style/svgs/marker.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
 import { useTranslation } from "react-i18next";
+import { RequestProps } from "../../../pages/api/listing/requests";
+import { MatchedRequestProps } from "../../../pages/api/listing/offers";
 
 interface GuestCardContentProps {
-  // offer: {
-  //   type: string;
-  //   name: string;
-  //   phone_num: string;
-  //   email: string;
-  //   acceptable_shelter_types: string;
-  //   beds: string;
-  //   group_relation: string;
-  //   is_pregnant: boolean;
-  //   is_with_disability: boolean;
-  //   is_with_animal: boolean;
-  //   is_with_elderly: boolean;
-  //   is_ukrainian_nationality: string;
-  //   duration_category: string;
-  //   country: string;
-  //   searched_city: string;
-  //   matchedOffer: any;
-  // };
-  offer: any;
+  request: RequestProps | MatchedRequestProps | null;
 }
 
-export default function GuestCardContent({ offer }: GuestCardContentProps) {
-  const { t } = useTranslation("offer-details");
+export default function GuestCardContent({ request }: GuestCardContentProps) {
+  const { t } = useTranslation(["offer-details", "common"]);
+
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
-  const additionalInfo = { diversity: true, pregnancy: true, disability: true };
+
+  const additionalInfo = {
+    diversity: !request?.is_ukrainian_nationality,
+    pregnancy: request?.is_pregnant,
+    disability: request?.is_with_disability,
+    elderly: request?.is_with_elderly,
+    animals: request?.is_with_animal,
+  };
+
+  console.log({ request });
   return (
     <>
       <Header>
@@ -52,41 +46,85 @@ export default function GuestCardContent({ offer }: GuestCardContentProps) {
         ) : null}
       </Header>
       <FlexWrapper>
-        <DataField
-          Icon={GuestsIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("guest")}
-          value={offer.name}
-        />
-        <DataField
-          Icon={DurationIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("duration")}
-          value={offer.duration_category}
-        />
-        <DataField
-          Icon={AddressIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("address")}
-          value={offer.searched_city}
-        />
-        <DataField
-          Icon={GuestsIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("peopleNumber")}
-          value={offer.beds}
-        />
-        <DataField
-          Icon={GuestsIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("groupType")}
-          value={offer.group_relation}
-        />
+        {request?.name && (
+          <DataField
+            Icon={GuestsIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("guest")}
+            value={request?.name}
+          />
+        )}
+
+        {request?.status &&
+          request.status === "acceptedByboth" &&
+          request?.email && (
+            <DataField
+              isBlue={true}
+              Icon={DurationIcon}
+              iconWidth={15}
+              iconHeight={15}
+              label={t("emailAddress")}
+              value={request?.email}
+            />
+          )}
+
+        {request?.status &&
+          request.status === "acceptedByboth" &&
+          request?.phone_num && (
+            <DataField
+              isBlue={true}
+              Icon={DurationIcon}
+              iconWidth={15}
+              iconHeight={15}
+              label={t("phoneNumber")}
+              value={request?.phone_num}
+            />
+          )}
+
+        {request?.duration_category && (
+          <DataField
+            Icon={DurationIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("duration")}
+            value={request?.duration_category
+              .map((el: string) => t(`${el}`))
+              .join(", ")}
+          />
+        )}
+
+        {request?.city && (
+          <DataField
+            Icon={AddressIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("address")}
+            value={t(`${request?.city}`)}
+          />
+        )}
+
+        {request?.beds && (
+          <DataField
+            Icon={GuestsIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("peopleNumber")}
+            value={request?.beds}
+          />
+        )}
+
+        {request?.group_relation && (
+          <DataField
+            Icon={GuestsIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("groupType")}
+            value={request?.group_relation
+              .map((el: string) => t(`${el}`))
+              .join(", ")}
+          />
+        )}
       </FlexWrapper>
       {showAdditionalInfo ? (
         <GuestAdditionalInfo info={additionalInfo} />

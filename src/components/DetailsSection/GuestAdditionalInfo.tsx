@@ -5,7 +5,13 @@ import { StyleProp, ViewStyle } from "react-native";
 import { useTranslation } from "react-i18next";
 
 interface GuestAdditionalInfoProps {
-  info: { disability: boolean; pregnancy: boolean; diversity: boolean };
+  info: {
+    disability: boolean;
+    pregnancy: boolean;
+    diversity: boolean;
+    animals: boolean;
+    elderly: boolean;
+  };
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {
   borderTopWidth: 3,
@@ -39,6 +45,20 @@ export default function GuestAdditionalInfo({
           <ListItem>
             <Bullet />
             <Info>{t("diversityPresent")}</Info>
+          </ListItem>
+        )}
+
+        {info.animals && (
+          <ListItem>
+            <Bullet />
+            <Info>{t("animalsPresent")}</Info>
+          </ListItem>
+        )}
+
+        {info.elderly && (
+          <ListItem>
+            <Bullet />
+            <Info>{t("elderPresent")}</Info>
           </ListItem>
         )}
       </ItemsColumn>

@@ -15,6 +15,16 @@ export interface MatchedOfferProps {
   email: string;
   city: string;
   listing_country: string;
+  shelter_type: Array<string>;
+  beds: number;
+  acceptable_group_relations: Array<string>;
+  ok_for_pregnant: Boolean;
+  ok_for_disabilities: Boolean;
+  ok_for_animals: Boolean;
+  ok_for_elderly: Boolean;
+  ok_for_any_nationality: Boolean;
+  duration_category: Array<string>;
+  transport_included: Boolean;
 }
 
 export interface RequestProps {
@@ -73,6 +83,16 @@ async function getRequests(
         listing_country: "poland",
         phone_num: "+48111222333",
         email: "host1@example.com",
+        shelter_type: ["room"],
+        beds: 1,
+        acceptable_group_relations: ["single_woman", "family_with_children"],
+        ok_for_pregnant: Boolean.TRUE,
+        ok_for_disabilities: Boolean.TRUE,
+        ok_for_animals: Boolean.TRUE,
+        ok_for_elderly: Boolean.TRUE,
+        ok_for_any_nationality: Boolean.TRUE,
+        duration_category: ["month"],
+        transport_included: Boolean.TRUE,
       },
     },
     {

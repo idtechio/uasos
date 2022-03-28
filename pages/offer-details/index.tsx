@@ -19,6 +19,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { withSession } from "../../src/helpers/withSession";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
+import { OfferProps } from "../api/listing/offers";
+import { RequestProps } from "../api/listing/requests";
 
 const isMatch = true;
 
@@ -43,16 +45,36 @@ const BackText = styled.Text`
 `;
 
 export default function OfferDetails() {
+  const [dataToShow, setDataToShow] = React.useState<
+    OfferProps | RequestProps | null
+  >(null);
+  const [isOffer, setIsOffer] = React.useState<boolean>(false);
+
   const { t } = useTranslation("offer-details");
   const { identity, loaded } = useContext(AuthContext);
   const router = useRouter();
   // const { id } = router.query;
   const id = "1114e25e-aae4-11ec-9a20-1726ed50bb17";
-  const offers = useOffersList();
-  const requests = useRequestsList();
+  const { data: offers } = useOffersList();
+  const { data: requests } = useRequestsList();
 
   console.log({ offers });
   console.log({ requests });
+
+  React.useEffect(() => {
+    const data = offers?.offers.filter((el) => el.id === id)[0];
+    if (data) {
+      setDataToShow(data);
+      setIsOffer(true);
+    }
+  }, [offers]);
+
+  React.useEffect(() => {
+    const data = requests?.requests.filter((el) => el.id === id)[0];
+    if (data) {
+      setDataToShow(data);
+    }
+  }, [requests]);
 
   if (loaded) {
     if (identity) {
@@ -71,7 +93,11 @@ export default function OfferDetails() {
               {isMatch ? (
                 <WarningSection containerStyle={topMarginStyle} />
               ) : null}
-              <DetailsSection containerStyle={bottomMarginStyle} />
+              <DetailsSection
+                isOffer={isOffer}
+                data={dataToShow}
+                containerStyle={bottomMarginStyle}
+              />
               {isMatch ? <DetailsDecisionButtons /> : null}
             </>
           </PageContentWrapper>

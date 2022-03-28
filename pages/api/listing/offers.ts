@@ -15,6 +15,16 @@ export interface MatchedRequestProps {
   email: string;
   city: string;
   listing_country: string;
+  acceptable_shelter_types: Array<string>;
+  beds: number;
+  group_relation: Array<string>;
+  is_pregnant: Boolean;
+  is_with_disability: Boolean;
+  is_with_animal: Boolean;
+  is_with_elderly: Boolean;
+  is_ukrainian_nationality: Boolean;
+  duration_category: Array<string>;
+  status?: string;
 }
 
 export interface OfferProps {
@@ -35,6 +45,7 @@ export interface OfferProps {
   duration_category: Array<string>;
   transport_included: Boolean;
   matchedRequest?: MatchedRequestProps;
+  status?: string;
 }
 
 async function getOffers(
@@ -68,6 +79,7 @@ async function getOffers(
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
+      status: "acceptedByBoth",
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -75,6 +87,16 @@ async function getOffers(
         listing_country: "poland",
         phone_num: "+48999888777",
         email: "guest3@example.com",
+        acceptable_shelter_types: ["room", "flat", "house"],
+        beds: 1,
+        group_relation: ["family_with_children"],
+        is_pregnant: Boolean.TRUE,
+        is_with_disability: Boolean.TRUE,
+        is_with_animal: Boolean.TRUE,
+        is_with_elderly: Boolean.TRUE,
+        is_ukrainian_nationality: Boolean.TRUE,
+        duration_category: ["longer"],
+        status: "acceptedByboth",
       },
     },
     {

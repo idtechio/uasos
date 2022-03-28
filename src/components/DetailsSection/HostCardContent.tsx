@@ -10,39 +10,25 @@ import AccommodationIcon from "../../style/svgs/home.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
 import { useTranslation } from "react-i18next";
-
+import { MatchedOfferProps } from "../../../pages/api/listing/requests";
+import { OfferProps } from "../../../pages/api/listing/offers";
 interface HostCardContentProps {
-  // offer: {
-  //   type: string;
-  //   name: string;
-  //   country: string;
-  //   phone_num: string;
-  //   email: string;
-  //   city: string;
-  //   listing_country: string;
-  //   shelter_type: string;
-  //   group_relation: string;
-  //   acceptable_group_relations: string;
-  //   beds: string;
-  //   ok_for_pregnant: boolean;
-  //   ok_for_disabilities: boolean;
-  //   ok_for_animals: boolean;
-  //   ok_for_elderly: boolean;
-  //   ok_for_any_nationality: boolean;
-  //   duration_category: string;
-  //   transport_included: boolean;
-  //   attachments: any;
-  //   matchedRequest: any;
-  // };
-  offer: any;
+  offer: OfferProps | MatchedOfferProps | null;
 }
 
 export default function HostCardContent({ offer }: HostCardContentProps) {
   const { t } = useTranslation("offer-details");
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
-  const additionalInfo = { animals: true, transport: true, disability: true };
-
+  const additionalInfo = {
+    animals: offer?.ok_for_animals,
+    transport: offer?.transport_included,
+    disability: offer?.ok_for_disabilities,
+    elderly: offer?.ok_for_elderly,
+    diversity: offer?.ok_for_any_nationality,
+    pregnancy: offer?.ok_for_pregnancy,
+  };
+  console.log({ offer });
   return (
     <>
       <Header>
@@ -59,41 +45,83 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
         ) : null}
       </Header>
       <FlexWrapper>
-        <DataField
-          Icon={HostIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("host")}
-          value={offer.name}
-        />
-        <DataField
-          Icon={AddressIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("hostAddress")}
-          value={offer.city}
-        />
-        <DataField
-          Icon={AccommodationIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("accomType")}
-          value={offer.shelter_type}
-        />
-        <DataField
-          Icon={GuestsIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("maxPeople")}
-          value={offer.beds}
-        />
-        <DataField
-          Icon={DurationIcon}
-          iconWidth={15}
-          iconHeight={15}
-          label={t("durationHost")}
-          value={offer.duration_category}
-        />
+        {offer?.name && (
+          <DataField
+            Icon={HostIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("host")}
+            value={offer?.name}
+          />
+        )}
+        {offer?.status &&
+          offer?.status === "acceptedByboth" &&
+          offer?.email && (
+            <DataField
+              isBlue={true}
+              Icon={DurationIcon}
+              iconWidth={15}
+              iconHeight={15}
+              label={t("emailAddress")}
+              value={offer?.email}
+            />
+          )}
+
+        {offer?.status &&
+          offer?.status === "acceptedByboth" &&
+          offer?.phone_num && (
+            <DataField
+              isBlue={true}
+              Icon={DurationIcon}
+              iconWidth={15}
+              iconHeight={15}
+              label={t("phoneNumber")}
+              value={offer?.phone_num}
+            />
+          )}
+
+        {offer?.city && (
+          <DataField
+            Icon={AddressIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("hostAddress")}
+            value={offer?.city}
+          />
+        )}
+
+        {offer?.shelter_type && offer?.shelter_type.length && (
+          <DataField
+            Icon={AccommodationIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("accomType")}
+            value={offer?.shelter_type
+              .map((el: string) => t(`${el}`))
+              .join(", ")}
+          />
+        )}
+        {offer?.beds && (
+          <DataField
+            Icon={GuestsIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("maxPeople")}
+            value={offer?.beds}
+          />
+        )}
+        {offer?.duration_category && offer?.duration_category.length && (
+          <DataField
+            Icon={DurationIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("durationHost")}
+            value={offer?.duration_category
+              .map((el: string) => t(`${el}`))
+              .join(", ")}
+          />
+        )}
+
         {/* TODO: display attached photos */}
       </FlexWrapper>
       {showAdditionalInfo ? <HostAdditionalInfo info={additionalInfo} /> : null}

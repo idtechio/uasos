@@ -8,11 +8,15 @@
   "disabilityPresent": "There is a person with a disability in the group",
   "pregnancyPresent": "The group includes a person with an advanced pregnancy (over 6 months)",
   "diversityPresent": "The group includes people from different nationalities",
+  "animalsPresent": "The group is accompanied by a pet",
+  "elderPresent": "There is an elder in the group",
 
   "accommodationExtraInfo": "Additional information on accommodation",
   "transportOffered": "I offer transport",
   "petsAccepted": "Pets accepted",
   "disabilityAccepted": "Facilities for people with disabilities",
+  "elderlyAccepted": "Suitable for elders",
+  "diversityAccepted": "Different nationalities accepted",
 
   "guestProfile": "Guest profile",
   "guest": "Guest:",
@@ -20,6 +24,8 @@
   "address": "Search address:",
   "peopleNumber": "Number of people in the group:",
   "groupType": "Group type:",
+  "emailAddress": "E-mail address",
+  "phoneNumber": "Phone number",
 
   "hostProfile": "Host profile",
   "host": "Host:",
