@@ -15,10 +15,12 @@ export const InputWraper = styled.View<InputControlProps>`
 type InputControlLabelProps = {
   styleOverrides?: FlattenSimpleInterpolation;
   theme: Theme;
+  marginBottom?: string;
 };
 export const InputCotrolLabel = styled.Text<InputControlLabelProps>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.headings};
-  margin-bottom: 16px;
+  margin-bottom: ${(props) =>
+    props.marginBottom ? props.marginBottom : `16px`};
   align-items: center;
   display: flex;
   ${({ styleOverrides }) => styleOverrides || undefined}

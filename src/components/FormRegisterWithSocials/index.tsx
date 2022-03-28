@@ -13,13 +13,13 @@ import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.dat
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
 import { FormFooter } from "./styles";
 import { styles } from "./styles";
-import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -45,18 +45,19 @@ export default function FromRegisterWithSocials() {
 
   const onSubmit = async (e: any) => {
     // Verify phone Number
-    try {
-      const confirmation = await Authorization.signInWithPhone(
-        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
-        Authorization.initCaptcha("captcha__container")
-      );
-      setPhoneLoginConfirmation(confirmation);
-      setPhoneNumber(
-        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
-      );
-    } catch (error) {
-      return null;
-    }
+    console.log(e);
+    // try {
+    //   const confirmation = await Authorization.signInWithPhone(
+    //     e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
+    //     Authorization.initCaptcha("captcha__container")
+    //   );
+    //   setPhoneLoginConfirmation(confirmation);
+    //   setPhoneNumber(
+    //     e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
+    //   );
+    // } catch (error) {
+    //   return null;
+    // }
   };
 
   const onError = (e: any) => {
@@ -85,7 +86,7 @@ export default function FromRegisterWithSocials() {
         />
         <Spacer />
         <FormProvider {...form}>
-          <InputControlLabel>{"Name"}</InputControlLabel>
+          <InputControlLabel marginBottom="10px">{"Name"}</InputControlLabel>
           <FormTextInput
             name="registerWithSocials.name"
             label={t("hostAdd.namePlaceholder")}
@@ -98,18 +99,10 @@ export default function FromRegisterWithSocials() {
           <InputControlLabel>
             {"Preffered language of communication"}
           </InputControlLabel>
-          <FormLanguageDropdown
-            zIndex={12}
-            name="registerWithSocials.language"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.registerWithSocials?.language}
-            errorMsg={t("hostAdd.errors.type")}
-          />
+          <PreferredLanguageInput></PreferredLanguageInput>
           <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
           <FormTextInput
+            styles={{ wrapper: { height: "auto", marginBottom: "15px" } }}
             name="registerWithSocials.email"
             label={t("hostAdd.emailPlaceholder")}
             rules={{
