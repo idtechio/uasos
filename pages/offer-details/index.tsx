@@ -1,19 +1,22 @@
-import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
-import { StyleProp, ViewStyle } from "react-native";
+import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
+import { StyleProp, Text, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
-import { redirectIfUnauthorized } from "../../src/helpers/redirectIfUnauthorized";
-import { withSession } from "../../src/helpers/withSession";
 import ArrowLeftIcon from "../../src/style/svgs/chevron-left.svg";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-
 import { Theme } from "../../src/style/theme.config";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
+import { AuthContext } from "../_app";
+import Redirect from "../../src/components/Redirect";
+import { GetServerSideProps } from "next";
+import { completeTranslation } from "../../src/helpers/completeTranslation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { withSession } from "../../src/helpers/withSession";
 
 const isMatch = true;
 
@@ -39,33 +42,47 @@ const BackText = styled.Text`
 
 export default function OfferDetails() {
   const router = useRouter();
+  const { t } = useTranslation("offer-details");
+  const { identity, loaded } = useContext(AuthContext);
 
-  return (
-    <CompositionAppBody>
-      <PageContentWrapper>
-        <>
-          <BackWrapper
-            onPress={() => {
-              router.push("/dashboard");
-            }}
-          >
-            <ArrowLeftIcon />
-            <BackText>Back</BackText>
-          </BackWrapper>
-          {isMatch ? <WarningSection containerStyle={topMarginStyle} /> : null}
-          <DetailsSection containerStyle={bottomMarginStyle} />
-          {isMatch ? <DetailsDecisionButtons /> : null}
-        </>
-      </PageContentWrapper>
-    </CompositionAppBody>
-  );
+  if (loaded) {
+    if (identity) {
+      return (
+        <CompositionAppBody>
+          <PageContentWrapper>
+            <>
+              <BackWrapper
+                onPress={() => {
+                  router.push("/dashboard");
+                }}
+              >
+                <ArrowLeftIcon />
+                <BackText>{t("back")}</BackText>
+              </BackWrapper>
+              {isMatch ? (
+                <WarningSection containerStyle={topMarginStyle} />
+              ) : null}
+              <DetailsSection containerStyle={bottomMarginStyle} />
+              {isMatch ? <DetailsDecisionButtons /> : null}
+            </>
+          </PageContentWrapper>
+        </CompositionAppBody>
+      );
+    } else {
+      return <Redirect path="/signin"></Redirect>;
+    }
+  } else {
+    // TODO: add nice spinner
+    return (
+      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
+    );
+  }
 }
 
 export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) =>
-    redirectIfUnauthorized(session, {
+  async ({ locale }) =>
+    completeTranslation({
       props: {
-        session,
         ...(locale && (await serverSideTranslations(locale))),
       },
     })
