@@ -18,7 +18,6 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import EmailVerificationModal from "../EmailVerificationModal";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -186,7 +185,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
-          <EmailVerificationModal />
         </FormContainer>
       </CompositionSection>
       <GoToRegister />
