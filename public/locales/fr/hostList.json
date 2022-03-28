@@ -1,14 +1,14 @@
 {
-  "placeFor": "",
-  "people": "",
-  "maximum": "",
-  "oneWeek": "",
-  "twoWeeks": "",
-  "month": "",
-  "longerThanMonth": "",
-  "food": "",
-  "petsWelcome": "",
-  "disabledReady": "",
-  "locationOwner": "",
-  "use": ""
+    "placeFor": "",
+    "people": "",
+    "maximum": "",
+    "petsWelcome": "",
+    "locationOwner": "",
+    "use": "",
+    "oneWeek": "",
+    "twoWeeks": "",
+    "month": "",
+    "longerThanMonth": "",
+    "food": "",
+    "disabledReady": ""
 }

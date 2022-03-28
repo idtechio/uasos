@@ -1,11 +1,11 @@
 {
-  "arrival": "Data przyjazdu",
-  "persons": "Liczba gości",
-  "locationPreference": "Preferowana lokalizacja",
-  "anyLocation": "Dowolna",
-  "travelingWithAnimal": "jest z nami zwierzak",
-  "travelingWithOlderPerson": "jest z nami starsza osoba",
-  "travelingWithDisabledPerson": "jest z nami osoba niepełnosprawna",
-  "travelingWithToddler": "jest z nami dziecko",
-  "inviteGuest": "Przyjmij do siebie"
+    "arrival": "Data przyjazdu",
+    "persons": "Liczba gości",
+    "locationPreference": "Preferowana lokalizacja",
+    "travelingWithAnimal": "jest z nami zwierzak",
+    "travelingWithToddler": "jest z nami dziecko",
+    "inviteGuest": "Przyjmij do siebie",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": ""
 }

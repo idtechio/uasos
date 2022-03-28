@@ -1,11 +1,11 @@
 {
-  "arrival": "Ierašanās datums",
-  "persons": "Cilveku skaits",
-  "locationPreference": "Vēlamā atrašanās vieta",
-  "anyLocation": "Jebkura vieta",
-  "travelingWithAnimal": "Mums ir dzīvnieks",
-  "travelingWithOlderPerson": "Mums ir cilveks gados",
-  "travelingWithDisabledPerson": "Mums ir cilvēks ar īpašām vajadzībām",
-  "travelingWithToddler": "Mums ir bērns",
-  "inviteGuest": "Uzaicināt"
+    "arrival": "",
+    "persons": "",
+    "locationPreference": "",
+    "travelingWithAnimal": "",
+    "travelingWithToddler": "",
+    "inviteGuest": "",
+    "anyLocation": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": ""
 }

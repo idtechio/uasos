@@ -1,11 +1,11 @@
 {
-  "arrival": "Data sosirii",
-  "persons": "Număr persoane",
-  "locationPreference": "Locație preferată",
-  "anyLocation": "Orice locație",
-  "travelingWithAnimal": "Călătoresc cu animal de companie",
-  "travelingWithOlderPerson": "Călătoresc cu persoane în vârstă",
-  "travelingWithDisabledPerson": "Călătoresc cu persoane cu disabilități locomotorii",
-  "travelingWithToddler": "Călătoresc cu copii",
-  "inviteGuest": "Invită persoane"
+    "arrival": "Data sosirii",
+    "persons": "Număr de oaspeți",
+    "locationPreference": "Locație preferată",
+    "travelingWithAnimal": "Am un animal de companie",
+    "travelingWithToddler": "Călătoresc cu un copil",
+    "inviteGuest": "Trimite o invitație",
+    "anyLocation": "Oricare",
+    "travelingWithOlderPerson": "Călătoresc alături de o persoană vârstnică",
+    "travelingWithDisabledPerson": " Călătoresc cu o persoană cu dizabilități"
 }

@@ -1,14 +1,14 @@
 {
-  "disabledReady": "Fogyatékkal élők számára alkalmas",
-  "food": "Étel biztosított",
-  "locationOwner": "Szállásadó",
-  "longerThanMonth": "Több, mint egy hónap",
-  "maximum": "max.",
-  "month": "Egy hónap",
-  "oneWeek": "Egy hét",
-  "people": "személyek",
-  "petsWelcome": "Kisállat hozható",
-  "placeFor": "Hely",
-  "twoWeeks": "két hét",
-  "use": "Foglal"
+    "placeFor": "Hely",
+    "people": "személyek",
+    "maximum": "max.",
+    "petsWelcome": "Kisállat hozható",
+    "locationOwner": "Szállásadó",
+    "use": "Foglal",
+    "oneWeek": "",
+    "twoWeeks": "",
+    "month": "Egy hónapra",
+    "longerThanMonth": "Egy hónapnál hosszabb időre",
+    "food": "",
+    "disabledReady": ""
 }

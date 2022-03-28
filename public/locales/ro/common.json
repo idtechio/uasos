@@ -1,343 +1,346 @@
 {
-  "test": "",
-  "navigationDrawer": {
-    "profile": "",
-    "placesList": "",
-    "logIn": "",
-    "logout": ""
-  },
-  "labels": {
-    "location": "",
-    "numberOfGuests": "",
-    "timePeriod": "",
-    "withKids": "",
-    "name": "",
-    "email": "",
-    "phone": "",
-    "town": "",
-    "phoneNumber": ""
-  },
-  "validations": {
-    "requiredName": "",
-    "invalidEmail": "",
-    "invalidPhoneNumber": "",
-    "requiredTown": "",
-    "requiredTime": "",
-    "requiredPeopleQuantity": "",
-    "requiredLivingConditions": "",
-    "requiredFloor": ""
-  },
-  "staticValues": {
-    "timePeriod": {
-      "lessThanAWeek": "",
-      "week": "",
-      "twoWeeks": "",
-      "month": "",
-      "longer": ""
-    },
-    "groupRelations": {
-      "single_man": "",
-      "single_woman": "",
-      "spouses": "",
-      "mother_with_children": "",
-      "family_with_children": "",
-      "unrelated_group": ""
-    },
-    "accommodationTypes": {
-      "bed": "",
-      "room": "",
-      "flat": "",
-      "house": "",
-      "collective": "",
-      "public_shared_space": ""
-    },
-    "boolean": {
-      "yes": "",
-      "no": ""
-    },
-    "anyLocation": "",
-    "withElevator": ""
-  },
-  "accommodationOffer": {
-    "canAccommodate": "",
-    "duration": "",
-    "acceptAnimals": "",
-    "disabledSupport": "",
-    "includesFood": "",
-    "author": {
-      "owner": ""
-    }
-  },
-  "forms": {
-    "chooseFromList": "",
-    "chooseFromListMulti": ""
-  },
-  "guestOffer": {
-    "arrivalToPoland": "",
-    "peopleToAccommodate": "",
-    "preferredLocation": "",
-    "withAnimals": "",
-    "withKids": "",
-    "withDisabled": "",
-    "withElder": "",
-    "invite": ""
-  },
-  "addAccommodation": {
-    "hostPreferences": {
-      "label": "",
-      "acceptAnimals": "",
-      "disabledSupport": "",
-      "kidsUnder2": "",
-      "foodIncluded": ""
-    },
-    "peopleQuantity": "",
-    "forHowLong": "",
-    "livingConditions": {
-      "label": "",
-      "options": {
-        "flat": "",
-        "room": "",
-        "mattress": "",
-        "other": ""
-      }
-    },
-    "floor": {
-      "label": "",
-      "hint": ""
-    },
-    "submit": ""
-  },
-  "flags": {
-    "cz": "",
-    "en": "",
-    "es": "",
-    "fr": "",
-    "hu": "",
-    "it": "",
-    "pl": "",
-    "ro": "",
-    "sk": "",
-    "ua": "",
-    "de": "",
-    "at": "",
-    "be": "",
-    "bg": "",
-    "hr": "",
-    "cy": "",
-    "dk": "",
-    "ee": "",
-    "fi": "",
-    "lv": "",
-    "li": "",
-    "lt": "",
-    "mt": "",
-    "nl": "",
-    "no": "",
-    "pt": "",
-    "si": "",
-    "se": ""
-  },
-  "hostAdd": {
-    "country": "",
-    "countries": {
-      "poland": ""
-    },
-    "nameLabel": "",
-    "namePlaceholder": "",
-    "emailLabel": "",
-    "emailPlaceholder": "",
-    "phoneLabel": "",
-    "phonePlaceholder": "",
-    "phonePrefixPlaceholder": "",
-    "cityLabel": "",
-    "cityTooltipText": "",
-    "cityPlaceholder": "",
-    "type": "",
-    "hostType": "",
-    "hostTypeLabel": {
-      "host_type_men": "",
-      "host_type_women": "",
-      "host_type_couple": "",
-      "host_type_family": "",
-      "host_type_elder_people": "",
-      "host_type_friends_group": ""
-    },
-    "guestCount": "",
-    "accommodationTime": "",
-    "accomodationPhoto": "",
-    "accomodationPhotoLabel": "",
-    "accomodationPhotoReset": "",
-    "accommodationTimeLabel": {
-      "less_than_week": "",
-      "week": "",
-      "two_weeks": "",
-      "month": "",
-      "longer": ""
-    },
-    "volunteerVisitAcceptance": "",
-    "nationality": "",
-    "ukraine": "",
-    "additionalInformationHeader": "",
-    "any": "",
-    "childBedCount": "",
-    "city": "",
-    "fullBedCount": "",
-    "groupsTypes": "",
-    "pregnantReady": "",
-    "dissabilityReady": "",
-    "elderReady": "",
-    "animalReady": "",
-    "basicInfoHeader": "",
-    "refugeInfoHeader": "",
-    "addButton": "",
-    "addButtomErrorMessage": "",
-    "errors": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "country": "",
-      "town": "",
-      "type": "",
-      "hostType": "",
-      "guestCount": "",
-      "accommodationTime": "",
-      "nationality": "",
-      "groupsTypes": "",
-      "nationalityError": ""
-    },
-    "prolongationReady": "",
-    "transportReady": ""
-  },
-  "logout": "",
-  "back": "",
-  "backToHomePage": "",
-  "shareLocation": "",
-  "registerGuest": "",
-  "more": "",
-  "register1": "",
-  "register2": "",
-  "privacyPolicy": "",
-  "termsOfService": "",
-  "patrons": "",
-  "rodo": "",
-  "thankfulnessModal": {
-    "thankYou": "",
-    "thanksForYourDecision": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": "",
-    "backToMainPage": ""
-  },
-  "thankfulnessHostModal": {
-    "thankYou": "",
-    "applicationSent": "",
-    "informWhenAccomodationFound": ""
-  },
-  "refugeeForm": {
-    "refugeeDetailsOptions": {
-      "animals": "",
-      "toddler": "",
-      "oldPerson": "",
-      "disability": "",
-      "pregnant": ""
-    },
-    "refugeesCountOptions": {
-      "alone": "",
-      "more": ""
-    },
-    "errors": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "required": "",
-      "location": ""
+    "test": "Mesaj testare EN",
+    "navigationDrawer": {
+        "profile": "Profilul utilizatorului",
+        "placesList": "Lista ta de cazări",
+        "logIn": "Logare",
+        "logout": "Deconectați-vă"
     },
     "labels": {
-      "name": "",
-      "email": "",
-      "phoneNumber": "",
-      "refugeesCount": "",
-      "refugee": "",
-      "refugeeDetails": "",
-      "refugeesAnimal": "",
-      "isGDPRAccepted": "",
-      "submitButton": "",
-      "location": "",
-      "anyLocation": "",
-      "prefferedLocation": "",
-      "city": "",
-      "addRefugee": ""
-    }
-  },
-  "refugeeAddForm": {
-    "basicInfoHeader": "",
-    "addButton": "",
-    "addButtomErrorMessage": "",
-    "pregnantReady": "",
-    "dissabilityReady": "",
-    "animalReady": "",
-    "elderReady": "",
-    "ageLabel": "",
-    "genderLabel": "",
-    "genderPlaceholder": "",
-    "travelCompanions": "",
-    "fullBedCountLabel": "",
-    "childBedCountLabel": "",
-    "placeOfRefuge": "",
-    "countryOfRefugeLabel": "",
-    "countryOfRefugePlaceholder": "",
-    "cityOfRefugeLabel": "",
-    "overnightDurationLabel": "",
-    "cityOfRefugePlaceholder": "",
-    "nameLabel": "",
-    "namePlaceholder": "",
-    "emailLabel": "",
-    "emailPlaceholder": "",
-    "phoneLabel": "",
-    "phonePlaceholder": "",
-    "phonePrefixPlaceholder": "",
-    "cityLabel": "",
-    "cityPlaceholder": "",
-    "groupRelations": "",
-    "selectPlaceholder": "",
-    "accommodationType": "",
-    "countryOfGroup": "",
-    "countryOfGroupUA": "",
-    "countryOfGroupOthers": "",
-    "accompanyingPerson": "",
-    "errors": {
-      "name": "",
-      "email": "",
-      "gender": "",
-      "cityOfRefuge": "",
-      "phoneNumber": "",
-      "countryOfRefuge": "",
-      "childBedCount": "",
-      "fullBedCountsaas": "",
-      "groupRelations": "",
-      "overnightDuration": "",
-      "accommodationType": "",
-      "countryOfGroup": ""
+        "location": "Locație preferată",
+        "numberOfGuests": "Număr de oaspeți",
+        "timePeriod": "Durata șederii",
+        "withKids": "Călătoresc cu un copil",
+        "name": "Nume",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "town": "Oraș\/localitate",
+        "phoneNumber": "Telefon"
     },
-    "refugeInfoHeader": ""
-  },
-  "accomodationPhoto": "",
-  "accomodationPhotoReset": "",
-  "accomodationPhotoLabel": "",
-  "dropdownChoose": "",
-  "dropdownSearch": "",
-  "heroImageAlt": "",
-  "loginForm": {
-    "logInWith": "",
-    "or": "",
-    "lostPass": "",
-    "click": "",
-    "logIn": "",
-    "doNotHaveAcc": "",
-    "register": ""
-  },
-  "gdpr": "",
-  "ogMeta": {
-    "title": "We help war refugees from Ukraine find shelter",
-    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-  }
+    "validations": {
+        "requiredName": "Adăugați numele dvs",
+        "invalidEmail": "Adăugați o adresă de e-mail validă",
+        "invalidPhoneNumber": "",
+        "requiredTown": "",
+        "requiredTime": "",
+        "requiredPeopleQuantity": "",
+        "requiredLivingConditions": "",
+        "requiredFloor": ""
+    },
+    "staticValues": {
+        "timePeriod": {
+            "lessThanAWeek": "",
+            "week": "",
+            "twoWeeks": "",
+            "month": "",
+            "longer": ""
+        },
+        "groupRelations": {
+            "single_man": "",
+            "single_woman": "",
+            "spouses": "",
+            "mother_with_children": "",
+            "family_with_children": "",
+            "unrelated_group": ""
+        },
+        "accommodationTypes": {
+            "bed": "",
+            "room": "",
+            "flat": "",
+            "house": "",
+            "collective": "",
+            "public_shared_space": ""
+        },
+        "boolean": {
+            "yes": "",
+            "no": ""
+        },
+        "anyLocation": "",
+        "withElevator": ""
+    },
+    "accommodationOffer": {
+        "canAccommodate": "",
+        "duration": "",
+        "acceptAnimals": "",
+        "disabledSupport": "",
+        "includesFood": "",
+        "author": {
+            "owner": ""
+        }
+    },
+    "forms": {
+        "chooseFromList": "",
+        "chooseFromListMulti": ""
+    },
+    "guestOffer": {
+        "arrivalToPoland": "",
+        "peopleToAccommodate": "",
+        "preferredLocation": "",
+        "withAnimals": "",
+        "withKids": "",
+        "withDisabled": "",
+        "withElder": "",
+        "invite": ""
+    },
+    "addAccommodation": {
+        "hostPreferences": {
+            "label": "",
+            "acceptAnimals": "",
+            "disabledSupport": "",
+            "kidsUnder2": "",
+            "foodIncluded": ""
+        },
+        "peopleQuantity": "",
+        "forHowLong": "",
+        "livingConditions": {
+            "label": "",
+            "options": {
+                "flat": "",
+                "room": "",
+                "mattress": "",
+                "other": ""
+            }
+        },
+        "floor": {
+            "label": "",
+            "hint": ""
+        },
+        "submit": ""
+    },
+    "flags": {
+        "cz": "",
+        "en": "",
+        "es": "",
+        "fr": "",
+        "hu": "",
+        "it": "",
+        "pl": "",
+        "ro": "",
+        "sk": "",
+        "ua": "",
+        "de": "",
+        "at": "",
+        "be": "",
+        "bg": "",
+        "hr": "",
+        "cy": "",
+        "dk": "",
+        "ee": "",
+        "fi": "",
+        "lv": "",
+        "li": "",
+        "lt": "",
+        "mt": "",
+        "nl": "",
+        "no": "",
+        "pt": "",
+        "si": "",
+        "se": ""
+    },
+    "hostAdd": {
+        "country": "",
+        "countries": {
+            "poland": "",
+            "hungary": "",
+            "czechia": "",
+            "slovakia": ""
+        },
+        "nameLabel": "",
+        "namePlaceholder": "",
+        "emailLabel": "",
+        "emailPlaceholder": "",
+        "phoneLabel": "",
+        "phonePlaceholder": "",
+        "phonePrefixPlaceholder": "",
+        "cityLabel": "",
+        "cityTooltipText": "",
+        "cityPlaceholder": "",
+        "type": "",
+        "hostType": "",
+        "hostTypeLabel": {
+            "host_type_men": "",
+            "host_type_women": "",
+            "host_type_couple": "",
+            "host_type_family": "",
+            "host_type_elder_people": "",
+            "host_type_friends_group": ""
+        },
+        "guestCount": "",
+        "accommodationTime": "",
+        "accomodationPhoto": "",
+        "accomodationPhotoLabel": "",
+        "accomodationPhotoReset": "",
+        "accommodationTimeLabel": {
+            "less_than_week": "",
+            "week": "",
+            "two_weeks": "",
+            "month": "",
+            "longer": ""
+        },
+        "volunteerVisitAcceptance": "",
+        "nationality": "",
+        "ukraine": "",
+        "additionalInformationHeader": "",
+        "any": "",
+        "childBedCount": "",
+        "city": "",
+        "fullBedCount": "",
+        "groupsTypes": "",
+        "pregnantReady": "",
+        "dissabilityReady": "",
+        "elderReady": "",
+        "animalReady": "",
+        "basicInfoHeader": "",
+        "refugeInfoHeader": "",
+        "addButton": "",
+        "addButtomErrorMessage": "",
+        "errors": {
+            "name": "",
+            "email": "",
+            "phoneNumber": "",
+            "country": "",
+            "town": "",
+            "type": "",
+            "hostType": "",
+            "guestCount": "Gol",
+            "accommodationTime": "Durata șederii este obligatorie",
+            "nationality": "Gol",
+            "groupsTypes": "Gol",
+            "nationalityError": ""
+        },
+        "prolongationReady": "Posibilitate de prelungire a șederii",
+        "transportReady": "Posibilitate de transport"
+    },
+    "logout": "Deconectați-vă",
+    "back": "Înapoi",
+    "backToHomePage": "Înapoi la pagina principală",
+    "shareLocation": "Creați un cont",
+    "registerGuest": "Găsește un adăpost",
+    "register1": "Înregistrează",
+    "register2": "Înregistrare",
+    "termsOfService": "Legislație",
+    "patrons": "Patroni",
+    "rodo": "GDPR",
+    "thankfulnessModal": {
+        "thankYou": "Mulțumesc!",
+        "thanksForYourDecision": "Gol",
+        "applicationSent": "",
+        "informWhenAccomodationFound": "",
+        "backToMainPage": "Reveniți la pagina de pornire"
+    },
+    "thankfulnessHostModal": {
+        "thankYou": "Mulțumesc!",
+        "applicationSent": "",
+        "informWhenAccomodationFound": ""
+    },
+    "refugeeForm": {
+        "refugeeDetailsOptions": {
+            "animals": "Călătoresc cu un animal de companie",
+            "toddler": "Copil mai mic de 2 ani",
+            "oldPerson": "",
+            "disability": "",
+            "pregnant": ""
+        },
+        "refugeesCountOptions": {
+            "alone": "",
+            "more": ""
+        },
+        "errors": {
+            "name": "",
+            "email": "",
+            "phoneNumber": "",
+            "required": "",
+            "location": ""
+        },
+        "labels": {
+            "name": "",
+            "email": "",
+            "phoneNumber": "",
+            "refugeesCount": "",
+            "refugee": "",
+            "refugeeDetails": "",
+            "refugeesAnimal": "",
+            "isGDPRAccepted": "",
+            "submitButton": "",
+            "location": "",
+            "anyLocation": "",
+            "prefferedLocation": "",
+            "city": "",
+            "addRefugee": ""
+        }
+    },
+    "refugeeAddForm": {
+        "basicInfoHeader": "",
+        "addButton": "",
+        "addButtomErrorMessage": "",
+        "pregnantReady": "",
+        "dissabilityReady": "",
+        "animalReady": "",
+        "elderReady": "",
+        "ageLabel": "",
+        "genderLabel": "",
+        "genderPlaceholder": "",
+        "travelCompanions": "",
+        "fullBedCountLabel": "",
+        "childBedCountLabel": "",
+        "placeOfRefuge": "",
+        "countryOfRefugeLabel": "",
+        "countryOfRefugePlaceholder": "",
+        "cityOfRefugeLabel": "",
+        "overnightDurationLabel": "",
+        "cityOfRefugePlaceholder": "",
+        "nameLabel": "",
+        "namePlaceholder": "",
+        "emailLabel": "",
+        "emailPlaceholder": "",
+        "phoneLabel": "",
+        "phonePlaceholder": "",
+        "phonePrefixPlaceholder": "",
+        "cityLabel": "",
+        "cityPlaceholder": "Oraș",
+        "groupRelations": "Care este tipul de relație dintre membrii grupului?",
+        "selectPlaceholder": "Selectați din listă",
+        "accommodationType": "Ce fel de cazare căutați?",
+        "countryOfGroup": "Care este țara de origine a grupului?",
+        "countryOfGroupUA": "Ucraina",
+        "countryOfGroupOthers": "Altele",
+        "accompanyingPerson": "Informații despre persoana cu care călătoriți",
+        "errors": {
+            "name": "Adăugați numele",
+            "email": "Vă rugăm adăugați o adresă de e-mail validă",
+            "gender": "Completați sexul cu care vă identificați",
+            "cityOfRefuge": "Vă rugăm selectați un oraș\/localitate",
+            "phoneNumber": "Adăugați numărul de telefon",
+            "countryOfRefuge": "Alegeți o țara",
+            "childBedCount": "Adăugați numărul de paturi",
+            "fullBedCountsaas": "Adăugați numărul de paturi",
+            "groupRelations": "Alegeți relația",
+            "overnightDuration": "Selectați durata șederii",
+            "accommodationType": "Selectați tipul de cazare",
+            "countryOfGroup": "Vă rugăm selectați naționalitatea"
+        },
+        "refugeInfoHeader": "Adăugați informații cu privire la cazare"
+    },
+    "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
+    "accomodationPhotoReset": "Ștergeți",
+    "accomodationPhotoLabel": "Trimiteți",
+    "dropdownChoose": "Selectați",
+    "dropdownSearch": "Căutare",
+    "heroImageAlt": "Slava Ukraini!",
+    "loginForm": {
+        "logInWith": "Autentificare",
+        "or": "sau",
+        "lostPass": "Ați uitat parola?",
+        "click": "click",
+        "logIn": "Logare",
+        "doNotHaveAcc": "Doriți să aveți acces?",
+        "register": "Înregistrare"
+    },
+    "gdpr": "GDPR",
+    "ogMeta": {
+        "title": "Ajutăm refugiații din Ucraina să găsească adăpost",
+        "description": "UASOS.org în colaborare cu organizațiile de caritate conectează automat și gratuit refugiații din Ucraina cu persoanele care oferă adăpost. Ajută-ne să putem ajuta sau aplică pentru adăpost azi!"
+    },
+    "more": "Vezi mai multe",
+    "privacyPolicy": "Politica de confidențialitate"
 }
