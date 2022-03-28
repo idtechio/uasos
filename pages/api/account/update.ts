@@ -7,7 +7,7 @@ import withApiAuth, {
 import { getUser } from "../../../lib/firebase-admin-app";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 
-interface AccountProps {
+export interface AccountProps {
   uid: string;
   name: string;
   prefferedLang: string;
