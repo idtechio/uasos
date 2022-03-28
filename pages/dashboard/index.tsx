@@ -1,3 +1,5 @@
+import { GetServerSideProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useContext, useState } from "react";
 import { StyleProp, Text, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
@@ -8,6 +10,8 @@ import Tags from "../../src/components/Tags";
 import VerifySection, {
   Verifications,
 } from "../../src/components/VerifySection/VerifySection";
+import { completeTranslation } from "../../src/helpers/completeTranslation";
+import { withSession } from "../../src/helpers/withSession";
 import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
@@ -55,12 +59,11 @@ export default function Dashboard() {
   }
 }
 
-// export const getServerSideProps: GetServerSideProps = withSession(
-//   async ({ locale }, session) =>
-//     redirectIfUnauthorized(session, {
-//       props: {
-//         session,
-//         ...(locale && (await serverSideTranslations(locale))),
-//       },
-//     })
-// );
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }) =>
+    completeTranslation({
+      props: {
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    })
+);

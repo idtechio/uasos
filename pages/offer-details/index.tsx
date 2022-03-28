@@ -1,5 +1,3 @@
-// import { GetServerSideProps } from "next";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
@@ -15,6 +13,10 @@ import { Theme } from "../../src/style/theme.config";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
 import { AuthContext } from "../_app";
 import Redirect from "../../src/components/Redirect";
+import { GetServerSideProps } from "next";
+import { completeTranslation } from "../../src/helpers/completeTranslation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { withSession } from "../../src/helpers/withSession";
 // import Loader from "../../src/components/Loader/Loader";
 
 const isMatch = true;
@@ -78,12 +80,11 @@ export default function OfferDetails() {
   }
 }
 
-// export const getServerSideProps: GetServerSideProps = withSession(
-//   async ({ locale }, session) =>
-//     redirectIfUnauthorized(session, {
-//       props: {
-//         session,
-//         ...(locale && (await serverSideTranslations(locale))),
-//       },
-//     })
-// );
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }) =>
+    completeTranslation({
+      props: {
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    })
+);

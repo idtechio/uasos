@@ -8,6 +8,10 @@ import { AuthContext } from "./_app";
 import { useContext } from "react";
 import Redirect from "../src/components/Redirect";
 import { Text } from "react-native";
+import { completeTranslation } from "../src/helpers/completeTranslation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { withSession } from "../src/helpers/withSession";
+import { GetServerSideProps } from "next";
 
 const ContentContainer = styled.View`
   background-color: white;
@@ -71,12 +75,11 @@ export default function UserProfile() {
   }
 }
 
-// export const getServerSideProps: GetServerSideProps = withSession(
-//   async ({ locale }, session) =>
-//     redirectIfUnauthorized(session, {
-//       props: {
-//         session,
-//         ...(locale && (await serverSideTranslations(locale))),
-//       },
-//     })
-// );
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }) =>
+    completeTranslation({
+      props: {
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    })
+);
