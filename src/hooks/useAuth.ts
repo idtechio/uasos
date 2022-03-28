@@ -26,8 +26,9 @@ const auth = getAuth(app);
 auth.useDeviceLanguage();
 
 const useAuth = () => {
-  const [identity, setIdentity] = useState<null | User>();
+  const [identity, setIdentity] = useState<null | User>(null);
   const [account, setAccount] = useState<null | getAccountDTO>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
@@ -36,12 +37,14 @@ const useAuth = () => {
         user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
       );
     });
+    setLoaded(true);
   }, []);
   let getTokenForAPI = null;
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
-  return { identity, account, getTokenForAPI };
+
+  return { identity, account, getTokenForAPI, loaded };
 };
 
 interface Authorization {
