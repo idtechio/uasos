@@ -9,7 +9,7 @@ import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { AppProps } from "next/app";
-import useAuth, { Authorization } from "../src/hooks/useAuth";
+import useAuth from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
