@@ -19,13 +19,11 @@ async function updateAccount(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
-  console.log("XXXX IS DECODED");
   if (!req.decodedToken) {
     res.status(400).json({ ok: "not ok" });
     res.end();
     return;
   }
-  console.log("XXXX GET USER");
 
   const user: UserRecord | Boolean = await getUser(req.decodedToken.uid);
   if (user instanceof Boolean) {
