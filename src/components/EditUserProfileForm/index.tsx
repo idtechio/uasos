@@ -35,14 +35,17 @@ const getPhonePrefix = (phone: string) =>
     .reverse()
     .join("");
 
-const getFormDefaultValues = (account: getAccountDTO, identity: User) => ({
-  email: identity.email || "",
-  phone: identity.phoneNumber
+const getFormDefaultValues = (
+  account: getAccountDTO | null,
+  identity: User | null | undefined
+) => ({
+  email: identity?.email || undefined,
+  phone: identity?.phoneNumber
     ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
     : undefined,
-  name: account.name,
-  preferredLanguage: account.prefferedLang,
-  phonePrefix: identity.phoneNumber
+  name: account?.name || undefined,
+  preferredLanguage: account?.prefferedLang || undefined,
+  phonePrefix: identity?.phoneNumber
     ? getPhonePrefix(identity.phoneNumber)
     : undefined,
 });
@@ -52,8 +55,8 @@ export default function EditUserProfileForm({
   identity,
   getTokenKey,
 }: {
-  account: getAccountDTO;
-  identity: User;
+  account: getAccountDTO | null;
+  identity?: User | null;
   getTokenKey: () => Promise<string>;
 }) {
   const { mutate, isLoading } = useEditAccount();

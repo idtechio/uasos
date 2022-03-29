@@ -18,7 +18,7 @@ export default function UserProfile() {
     );
   }
 
-  if (!account || !identity || !getTokenForAPI) {
+  if (!getTokenForAPI) {
     return <Redirect path="/signin"></Redirect>;
   }
 
