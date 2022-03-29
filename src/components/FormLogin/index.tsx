@@ -18,6 +18,7 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import { ErrorText } from "../FormRegisterWithSocials/styles";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -31,6 +32,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const formFields = useForm<FormType>();
 
@@ -79,7 +81,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           setPhoneLoginConfirmation(confirmation);
           setPhoneNumber(data.login.phoneOrEmail);
         } catch (error) {
-          return null;
+          // eslint-disable-next-line
+          // @ts-ignore
+          setError(error.message);
         }
       }
     }
@@ -191,6 +195,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+          {error ? <ErrorText>{error}</ErrorText> : <></>}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />
