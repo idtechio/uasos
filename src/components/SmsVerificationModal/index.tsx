@@ -16,6 +16,7 @@ import SmsSent from "../../../public/assets/SmsSent.png";
 import { ConfirmationResult } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   phoneNumber: string;
@@ -31,6 +32,7 @@ export default function SmsVerificationModal({
   mode,
   callback,
 }: Props) {
+  const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
   const [resending, setResending] = useState<boolean>(false);
   const [resendConfirmation, setResendConfirmation] =
@@ -48,7 +50,7 @@ export default function SmsVerificationModal({
       );
       setResendConfirmation(confirm);
     } catch (err: any) {
-      setApiError(err?.message);
+      setApiError(t("others:common.sms.verificationFail"));
     }
   };
   const handleResendLink = async () => {
@@ -63,7 +65,7 @@ export default function SmsVerificationModal({
         setResendConfirmation(confirm);
       }
     } catch (err: any) {
-      setApiError(err?.message);
+      setApiError(t("others:common.sms.verificationFail"));
     }
   };
 
@@ -111,7 +113,7 @@ export default function SmsVerificationModal({
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
       } catch (err: any) {
-        setApiError(err?.message);
+        setApiError(t("others:common.sms.verificationFail"));
       }
     } else {
       try {
@@ -119,7 +121,7 @@ export default function SmsVerificationModal({
         setVerificationSuccess(true);
         callback();
       } catch (err: any) {
-        setApiError(err?.message);
+        setApiError(t("others:common.sms.verificationFail"));
       }
     }
   };
@@ -131,9 +133,9 @@ export default function SmsVerificationModal({
       <div style={{ display: "none" }} id="recaptcha__container"></div>
       <Wrapper>
         <Image src={SmsSent}></Image>
-        <StyledHeader>SMS verification</StyledHeader>
+        <StyledHeader>{t("others:common.sms.verification")}</StyledHeader>
         <StyledText>
-          Enter the verification code sent to the phone number {phoneNumber}.
+          {t("others:common.sms.sentInfo", { phoneNumber })}
         </StyledText>
         <InputWrapper>
           <FormProvider {...formFields}>
@@ -282,11 +284,11 @@ export default function SmsVerificationModal({
         {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
         <ButtonCta
           onPress={handleSubmit(onSubmit, onError)}
-          anchor={"Verify"}
+          anchor={t("others:common.buttons.verify")}
           style={{ width: "100px", marginTop: "30px" }}
         />
         <TouchableOpacity onPress={handleResend}>
-          <StyledText>Re-send code</StyledText>
+          <StyledText>{t("others:common.links.re-sendCode")}</StyledText>
         </TouchableOpacity>
       </Wrapper>
     </CardModal>

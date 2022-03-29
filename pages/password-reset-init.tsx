@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import AppBack from "../src/components/AppBack";
 import {
   CompositionAppBody,
@@ -5,7 +6,7 @@ import {
 } from "../src/components/Compositions";
 import FormInitPasswordReset from "../src/components/FormInitPasswordReset";
 import { Routes } from "../src/consts/router";
-
+import { GetServerSideProps } from "next";
 export default function App() {
   return (
     <CompositionAppBody>
@@ -16,3 +17,8 @@ export default function App() {
     </CompositionAppBody>
   );
 }
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});
