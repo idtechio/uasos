@@ -70,7 +70,10 @@ export default function FromRegisterWithSocials() {
   };
   const updateAccount = async () => {
     if (getTokenForAPI && data) {
-      await AccountApi.updateAccount(data, await getTokenForAPI());
+      await AccountApi.updateAccount({
+        payload: data,
+        token: await getTokenForAPI(),
+      });
     }
   };
 
