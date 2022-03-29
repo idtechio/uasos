@@ -86,7 +86,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     FROM hosts h
     JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id
     LEFT JOIN matches m ON m.fnc_hosts_id = h.db_hosts_id
-    LEFT JOIN guests g ON g.db_guests_id = m.fnc_guest_id
+    LEFT JOIN guests g ON g.db_guests_id = m.fnc_guests_id
     WHERE a.uid = $1`,
     [uid]
   );
