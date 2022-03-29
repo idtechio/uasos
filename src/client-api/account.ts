@@ -6,6 +6,10 @@ export interface getAccountDTO {
   confirmedPhone: Boolean;
   verified?: Boolean;
 }
+export interface updateAccountReqDTO {
+  name: string;
+  prefferedLang: string;
+}
 interface AccountApi {
   getAccount: (token: string) => Promise<getAccountDTO>;
   updateAccount: (options: { payload: object; token: string }) => Promise<any>;
@@ -25,6 +29,7 @@ export const AccountApi: AccountApi = {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
+        "content-type": "application/json",
       },
       body: JSON.stringify(payload),
     });
