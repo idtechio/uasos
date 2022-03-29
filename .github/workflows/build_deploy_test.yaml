@@ -16,6 +16,7 @@ env:
   firebase_storage_bucket: "ukrn-hlpr-dev.appspot.com"
   firebase_messaging_sender_id: "727398461288"
   firebase_app_id: "1:727398461288:web:af67d40f717ab97143b0dd"
+  domain: "https://test.uasos.org/"
 
 jobs:
   build-docker:
@@ -49,6 +50,7 @@ jobs:
             --build-arg NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=${{ env.firebase_storage_bucket }}
             --build-arg NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${{ env.firebase_messaging_sender_id }}
             --build-arg NEXT_PUBLIC_FIREBASE_APP_ID=${{ env.firebase_app_id }}
+            --build-arg NEXT_PUBLIC_DOMAIN=${{ env.domain }}
       - id: auth2
         uses: "google-github-actions/auth@v0"
         with:
