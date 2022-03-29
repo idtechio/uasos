@@ -1,11 +1,11 @@
+import { User } from "firebase/auth";
 import React, { useCallback } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import styled from "styled-components/native";
-import { AccountApi, getAccountDTO } from "../../client-api/account";
+import { getAccountDTO } from "../../client-api/account";
+import { useEditAccount } from "../../queries/useAccount";
 import ButtonCta from "../EditOfferOptions/ButtonCta";
 import Inputs from "./Inputs";
-import { User } from "firebase/auth";
-
 import { ContentContainer, FormHeader, ScreenHeader } from "./style";
 import { EditProfileForm } from "./types";
 
@@ -56,26 +56,33 @@ export default function EditUserProfileForm({
   identity: User;
   getTokenKey: () => Promise<string>;
 }) {
+  const { mutate, isLoading } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
   });
   const { handleSubmit } = form;
 
-  const onSubmit = useCallback(async (data: EditProfileForm) => {
-    const payload = {
-      name: data.name,
-      email: data.email,
-      phone: `${data.phonePrefix}${data.phone}`,
-      prefferedLang: data.preferredLanguage,
-    };
+  const onSubmit = useCallback(
+    async (data: EditProfileForm) => {
+      const payload = {
+        name: data.name,
+        email: data.email,
+        phone: `${data.phonePrefix}${data.phone}`,
+        prefferedLang: data.preferredLanguage,
+      };
 
-    try {
       const token = await getTokenKey();
-      await AccountApi.updateAccount(token, payload);
-    } catch (err) {
-      console.log({ err });
-    }
-  }, []);
+      mutate(
+        { token, payload },
+        {
+          onError: () => {
+            // Set error message
+          },
+        }
+      );
+    },
+    [getTokenKey, mutate]
+  );
 
   return (
     <FormProvider {...form}>
@@ -85,8 +92,17 @@ export default function EditUserProfileForm({
         <Inputs />
 
         <FormFooter>
-          <ButtonCta color="primary" variant="outlined" anchor="Cancel" />
-          <ButtonCta anchor="Update" onPress={handleSubmit(onSubmit)} />
+          <ButtonCta
+            color="primary"
+            variant="outlined"
+            anchor="Cancel"
+            disabled={isLoading}
+          />
+          <ButtonCta
+            disabled={isLoading}
+            anchor="Update"
+            onPress={handleSubmit(onSubmit)}
+          />
         </FormFooter>
       </ContentContainer>
     </FormProvider>

@@ -8,7 +8,7 @@ export interface getAccountDTO {
 }
 interface AccountApi {
   getAccount: (token: string) => Promise<getAccountDTO>;
-  updateAccount: (token: string, payload: object) => Promise<any>;
+  updateAccount: (options: { payload: object; token: string }) => Promise<any>;
 }
 export const AccountApi: AccountApi = {
   getAccount: async function (token) {
@@ -20,7 +20,7 @@ export const AccountApi: AccountApi = {
     });
     return (await res.json()).account;
   },
-  updateAccount: async function (token, payload) {
+  updateAccount: async function ({ token, payload }) {
     const res = await fetch("/api/account/update", {
       method: "POST",
       headers: {

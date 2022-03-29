@@ -13,7 +13,9 @@ const ButtonCta = ({
   onClick,
   variant = "contained",
   color = "primary",
+  disabled = false,
 }: ButtonProps & {
+  disabled?: boolean;
   textStyle?: TextStyle;
   variant?: ButtonVariant;
   color?: ButtonColor;
@@ -32,6 +34,7 @@ const ButtonCta = ({
       style={style}
       onPress={handlePress}
       colorOpposite={colorOpposite}
+      disabled={disabled}
     >
       {typeof anchor === "string" ? (
         <Text variant={variant} colorOpposite={colorOpposite}>
