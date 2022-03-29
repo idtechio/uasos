@@ -279,7 +279,7 @@ export default function SmsVerificationModal({
             />
           </FormProvider>
         </InputWrapper>
-        {apiError ? <ErrorText>Invalid Code</ErrorText> : <></>}
+        {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
         <ButtonCta
           onPress={handleSubmit(onSubmit, onError)}
           anchor={"Verify"}
