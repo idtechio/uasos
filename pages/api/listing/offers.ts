@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { select } from "../../../lib/db";
 import {
   /* withApiAuth, */ ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
@@ -34,6 +35,8 @@ export interface OfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
+  status: string;
+  match_status?: string;
   matchedRequest?: MatchedRequestProps;
 }
 
@@ -48,9 +51,84 @@ async function getOffers(
   //   return;
   // }
 
-  // TODO get offers details from backend for user req.decodedToken.uid
+  let offers: OfferProps[];
 
-  const offers: OfferProps[] = [
+  if (req.decodedToken?.uid) {
+    offers = await getOffersFromDB(req.decodedToken.uid);
+  } else {
+    offers = getMockOffers();
+  }
+
+  res.status(200).json({ ok: "ok", offers });
+  res.end();
+}
+
+async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
+  const hostsList: false | any[] = await select(
+    `SELECT
+      h.db_hosts_id as host_id,
+      h.city, h.country, h.listing_country,
+      h.phone_num, h.email,
+      h.shelter_type, h.beds,
+      h.acceptable_group_relations,
+      h.ok_for_pregnant, h.ok_for_disabilities, h.ok_for_animals,
+      h.ok_for_elderly, h.ok_for_any_nationality,
+      h.duration_category, h.transport_included,
+      h.fnc_status as host_status,
+      m.db_matches_id as match_id,
+      m.fnc_status as match_status,
+      g.db_guests_id as guest_id,
+      g.city as guest_city,
+      g.country as guest_country,
+      g.listing_country as guest_listing_country,
+      g.phone_num as guest_phone_num,
+      g.email as guest_email
+    FROM hosts h
+    JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id
+    LEFT JOIN matches m ON m.fnc_hosts_id = h.db_hosts_id
+    LEFT JOIN guests g ON g.db_guests_id = m.fnc_guests_id
+    WHERE a.uid = $1`,
+    [uid]
+  );
+
+  if (!hostsList) {
+    return [];
+  }
+
+  return hostsList.map((h) => ({
+    id: h.host_id,
+    city: h.city,
+    country: h.country,
+    listing_country: h.listing_country,
+    phone_num: h.phone_num,
+    email: h.email,
+    shelter_type: h.shelter_type,
+    beds: h.beds,
+    acceptable_group_relations: h.acceptable_group_relations,
+    ok_for_pregnant: h.ok_for_pregnant,
+    ok_for_disabilities: h.ok_for_disabilities,
+    ok_for_animals: h.ok_for_animals,
+    ok_for_elderly: h.ok_for_elderly,
+    ok_for_any_nationality: h.ok_for_any_nationality,
+    duration_category: h.duration_category,
+    transport_included: h.transport_included,
+    status: h.host_status,
+    match_status: h.match_status,
+    matchedRequest: h.match_id
+      ? {
+          id: h.guest_id,
+          city: h.guest_city,
+          country: h.guest_country,
+          listing_country: h.guest_listing_country,
+          phone_num: h.guest_phone_num,
+          email: h.guest_email,
+        }
+      : undefined,
+  }));
+}
+
+function getMockOffers(): OfferProps[] {
+  return [
     {
       id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Warszawa",
@@ -68,6 +146,8 @@ async function getOffers(
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
+      status: "",
+      match_status: "",
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -94,6 +174,7 @@ async function getOffers(
       ok_for_any_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
+      status: "",
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -117,11 +198,9 @@ async function getOffers(
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       transport_included: Boolean.FALSE,
+      status: "",
     },
   ];
-
-  res.status(200).json({ ok: "ok", offers });
-  res.end();
 }
 
 // TODO turn on auth
