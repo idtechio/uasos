@@ -1,6 +1,6 @@
 import { OfferProps } from "../../pages/api/listing/offers";
 
-type GetOffersListDTO = {
+export type GetOffersListDTO = {
   ok: "ok";
   offers: OfferProps[];
 };

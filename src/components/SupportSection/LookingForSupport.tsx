@@ -1,105 +1,145 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
-import { Offer } from "./types";
-import { SupportCard, SupportWrapper, Title } from "./style";
+import { Request } from "./types";
+import { Error } from "../Inputs/style";
+import {
+  HeaderWrapper,
+  MoreButtonWrapper,
+  SupportCard,
+  SupportWrapper,
+  TextWrapper,
+  Title,
+  Label,
+} from "./style";
 import StatusBadge from "../StatusBadge";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { LoadingCards } from "./LoadingCards";
+import styled from "styled-components/native";
 
 type RequestProps = {
-  requests: Offer[];
+  requests?: Request[];
+  isError: boolean;
+  isLoading: boolean;
+  readonly: boolean;
 };
 
 export default function LookingForSupport({
   requests,
+  isError,
+  isLoading,
+  readonly,
 }: RequestProps): JSX.Element {
   const { t } = useTranslation("desktop");
-  const router = useRouter();
-  const NoOffer = () => (
-    <CardAdd
-      label={t("addSubmission")}
-      onPress={() => router.push(Routes.GUEST)}
-    />
-  );
-  const Offers = () => (
-    <>
-      {requests.map((o) => (
-        <SupportCard key={o.id}>
-          <HeaderWrapper>
-            <MoreButtonWrapper>
-              <EditOfferButton />
-            </MoreButtonWrapper>
+  if (!isLoading && (isError || !requests)) {
+    return (
+      <SupportWrapper>
+        <Error>{t("could_not_fetch_requests_list")}</Error>
+      </SupportWrapper>
+    );
+  }
 
-            <TextWrapper>
-              <IdContainer>Id: xxxx</IdContainer>
-              <OfferTitle>Housing</OfferTitle>
-            </TextWrapper>
-          </HeaderWrapper>
-          <StatusBadgeContainer>
-            <StatusBadge state={o.state} />
-          </StatusBadgeContainer>
-          <AnnouncementHighlights data={o} />
-          <DetailsLink href={Routes.OFFER_DETAILS} />
-        </SupportCard>
-      ))}
-    </>
-  );
   return (
     <SupportWrapper>
-      <Title>{t("yourSubmission")}</Title>
-      {requests.length > 0 ? <Offers /> : <NoOffer />}
+      <Title>{t("overviewOfYourOffers")}</Title>
+      <Content isLoading={isLoading} requests={requests} readonly={readonly} />
     </SupportWrapper>
   );
 }
 
-const MoreButtonWrapper = styled.View`
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: 9999999;
-`;
+const Content = ({
+  isLoading,
+  readonly,
+  requests,
+}: {
+  isLoading: boolean;
+  readonly: boolean;
+  requests?: Request[];
+}) => {
+  if (isLoading || requests === undefined) {
+    return <LoadingCards count={3} showImage={false} />;
+  }
+  if (requests.length === 0) {
+    return <NoOffer readonly={readonly} />;
+  }
+  return <Requests requests={requests} readonly={readonly} />;
+};
 
-const StatusBadgeContainer = styled.View`
-  align-self: flex-start;
-  margin-bottom: 15px;
-`;
+const NoOffer = ({ readonly }: { readonly: boolean }) => {
+  const { t } = useTranslation("desktop");
 
-const HeaderWrapper = styled.View`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 14px;
-  position: relative;
-`;
+  const router = useRouter();
+  return (
+    <CardAdd
+      label={t("addRequest")}
+      readonly={readonly}
+      onPress={() => {
+        if (!readonly) router.push(Routes.HOST);
+      }}
+    />
+  );
+};
 
-const TextWrapper = styled.View`
-  flex: 1 1 100%;
-`;
-
-const IdContainer = styled.Text`
-  letter-spacing: 0.5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-`;
-
-const OfferTitle = styled.Text`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-
-  letter-spacing: 0.5px;
-
-  color: #003566;
-
+const RequestTextWrapper = styled(TextWrapper)`
   border-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #f2f2f2;
   padding-bottom: 8px;
 `;
+
+const RequestFirstLine = styled(Label)`
+  font-size: 10px;
+`;
+const RequestSecondLine = styled(Label)`
+  font-weight: 700;
+  font-size: 14px;
+`;
+
+const Requests = ({
+  requests,
+  readonly,
+}: {
+  requests: Request[];
+  readonly: boolean;
+}) => {
+  const { t } = useTranslation("desktop");
+
+  return (
+    <>
+      {requests.map((r) => (
+        <SupportCard key={r.id}>
+          <HeaderWrapper>
+            <MoreButtonWrapper>
+              {!readonly && <EditOfferButton />}
+            </MoreButtonWrapper>
+            <RequestTextWrapper>
+              <RequestFirstLine>{t("submission")}</RequestFirstLine>
+              <RequestSecondLine>{t("accomodationSearch")}</RequestSecondLine>
+            </RequestTextWrapper>
+          </HeaderWrapper>
+          <div
+            style={{
+              alignSelf: "flex-start",
+              justifySelf: "flex-end",
+              marginBottom: 14,
+            }}
+          >
+            <StatusBadge state={r.state} />
+          </div>
+          <AnnouncementHighlights
+            beds={r.beds}
+            city={r.city}
+            duration={r.duration}
+          />
+
+          {!readonly && (
+            <DetailsLink href={`${Routes.OFFER_DETAILS}/${r.id}`} />
+          )}
+        </SupportCard>
+      ))}
+    </>
+  );
+};

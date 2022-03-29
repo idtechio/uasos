@@ -16,3 +16,11 @@ export type Offer = {
   duration: AccommodationTime;
   state: MatchState;
 };
+
+export type Request = {
+  id: string;
+  city: string;
+  beds: number;
+  duration: AccommodationTime;
+  state: MatchState;
+};
