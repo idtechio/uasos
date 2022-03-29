@@ -36,19 +36,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       })
   );
 
-  console.log("API_KEY");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
-  console.log("AUTH_DOMAIN");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN);
-  console.log("PROJECT_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
-  console.log("STORAGE_BUCKET");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET);
-  console.log("SENDER_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID);
-  console.log("APP_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_APP_ID);
-
   useEffect(() => {
     if (!gtag.GA_TRACKING_ID) {
       return;
