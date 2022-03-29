@@ -12,7 +12,7 @@ export interface updateAccountReqDTO {
 }
 interface AccountApi {
   getAccount: (token: string) => Promise<getAccountDTO>;
-  updateAccount: (data: updateAccountReqDTO, token: string) => Promise<any>;
+  updateAccount: (options: { payload: object; token: string }) => Promise<any>;
 }
 export const AccountApi: AccountApi = {
   getAccount: async function (token) {
@@ -24,15 +24,16 @@ export const AccountApi: AccountApi = {
     });
     return (await res.json()).account;
   },
-  updateAccount: async function (data, token) {
-    const res = await fetch(`/api/account/update`, {
-      method: "post",
+  updateAccount: async function ({ token, payload }) {
+    const res = await fetch("/api/account/update", {
+      method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     });
+
     return await res.json();
   },
 };

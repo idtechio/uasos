@@ -13,6 +13,8 @@ import useAuth from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import * as gtag from "../lib/gtag";
+import Gtag from "./gtag";
 
 export const AuthContext = createContext<{
   identity: null | User | undefined;
@@ -20,8 +22,6 @@ export const AuthContext = createContext<{
   getTokenForAPI: null | (() => Promise<string>);
   loaded: boolean;
 }>({ identity: null, getTokenForAPI: null, account: null, loaded: false });
-import * as gtag from "../lib/gtag";
-import Gtag from "./gtag";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();

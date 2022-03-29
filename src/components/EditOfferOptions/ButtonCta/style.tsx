@@ -2,11 +2,12 @@ import styled from "styled-components/native";
 import { Theme } from "../../../style/theme.config";
 import type { ButtonVariant } from "./types";
 
-export const Button = styled.Pressable<{
+type ButtonProps = {
   colorOpposite?: boolean;
   theme: Theme;
   variant: "contained" | "outlined";
-}>`
+};
+export const Button = styled.Pressable<ButtonProps>`
 	background-color: ${({ theme, colorOpposite, variant }) =>
     variant === "outlined"
       ? "transparent"
@@ -30,11 +31,12 @@ export const Button = styled.Pressable<{
 	}
 `;
 
-export const Text = styled.Text<{
+type TextProps = {
   colorOpposite?: boolean;
   theme: Theme;
   variant: ButtonVariant;
-}>`
+};
+export const Text = styled.Text<TextProps>`
   font-weight: 700;
   text-align: center;
   color: ${({ theme, colorOpposite, variant }) =>
