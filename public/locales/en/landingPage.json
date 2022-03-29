@@ -18,10 +18,10 @@
     "cta": "Propose a shelter"
   },
   "weMatched": {
-    "title": "We were already able to match...",
+    "title": "So far...",
     "cards": {
-      "helpedPeople": "people in need",
-      "lookingForHelp": "still looking for help",
+      "helpedPeople": "refugees supported",
+      "lookingForHelp": "refugees still looking for help",
       "currentOffers": "currently available offers"
     }
   },
