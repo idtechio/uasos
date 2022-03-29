@@ -64,8 +64,8 @@ export default function FromRegisterWithSocials() {
       setPhoneNumber(
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
-    } catch (error) {
-      setApiError(error.message);
+    } catch (error: any) {
+      setApiError(error?.message);
     }
   };
   const updateAccount = async () => {

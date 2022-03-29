@@ -47,8 +47,8 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch (err) {
-      setApiError(err.message);
+    } catch (err: any) {
+      setApiError(err?.message);
     }
   };
   const handleResendLink = async () => {
@@ -62,8 +62,8 @@ export default function SmsVerificationModal({
         );
         setResendConfirmation(confirm);
       }
-    } catch (err) {
-      setApiError(err.message);
+    } catch (err: any) {
+      setApiError(err?.message);
     }
   };
 
@@ -110,16 +110,16 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch (err) {
-        setApiError(err.message);
+      } catch (err: any) {
+        setApiError(err?.message);
       }
     } else {
       try {
         await confirmation.confirm(code);
         setVerificationSuccess(true);
         callback();
-      } catch (err) {
-        setApiError(err.message);
+      } catch (err: any) {
+        setApiError(err?.message);
       }
     }
   };
