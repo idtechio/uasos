@@ -27,7 +27,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
 
   const [passwordInput, setPasswordInput] = useState(false);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
-    useState<ConfirmationResult | null>(null);
+    useState<ConfirmationResult | null>(" ");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);

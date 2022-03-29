@@ -150,13 +150,20 @@ export default function SmsVerificationModal({
                   // eslint-disable-next-line
                   // @ts-ignore
                   borderColor={error ? "red" : ""}
+                  value={value}
                   ref={ref1}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref2.current.focus();
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref2.current.focus();
+                      }
                     }
                   }}
                 />
@@ -175,12 +182,19 @@ export default function SmsVerificationModal({
                   // @ts-ignore
                   borderColor={error ? "red" : ""}
                   ref={ref2}
+                  keyboardType="numeric"
+                  value={value}
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref3.current.focus();
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref3.current.focus();
+                      }
                     }
                   }}
                 />
@@ -198,13 +212,20 @@ export default function SmsVerificationModal({
                   // eslint-disable-next-line
                   // @ts-ignore
                   borderColor={error ? "red" : ""}
+                  value={value}
                   ref={ref3}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref4.current.focus();
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref4.current.focus();
+                      }
                     }
                   }}
                 />
@@ -222,13 +243,20 @@ export default function SmsVerificationModal({
                   // eslint-disable-next-line
                   // @ts-ignore
                   borderColor={error ? "red" : ""}
+                  value={value}
                   ref={ref4}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref5.current.focus();
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref5.current.focus();
+                      }
                     }
                   }}
                 />
@@ -246,13 +274,20 @@ export default function SmsVerificationModal({
                   // eslint-disable-next-line
                   // @ts-ignore
                   borderColor={error ? "red" : ""}
+                  value={value}
                   ref={ref5}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref6.current.focus();
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref6.current.focus();
+                      }
                     }
                   }}
                 />
@@ -269,12 +304,20 @@ export default function SmsVerificationModal({
                 <StyledInput
                   // eslint-disable-next-line
                   // @ts-ignore
+                  borderColor={error ? "red" : ""}
                   ref={ref6}
+                  value={value}
                   onChange={(newValue) => {
                     setError(null);
                     setApiError("");
-                    onChange(newValue);
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                    }
                   }}
+                  keyboardType="numeric"
                 />
               )}
               name="6"
