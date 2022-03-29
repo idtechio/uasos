@@ -1,31 +1,38 @@
 import { useTranslation } from "next-i18next";
 
-import { colors } from "../../style/landingPageStyle";
-import Section from "../Section";
 import Tile from "../Tile";
-import {
-  MatchedCardsWrapper,
-  MatchedCardTitle,
-} from "./LandingMatchedSection.styled";
+import SectionTitle from "../SectionTitle";
+import { MatchedCardsWrapper } from "./LandingMatchedSection.styled";
+import { NumbersProps } from "../../../pages/api/listing/numbers";
 
-const LandingMatchedSection = () => {
+export type LandingMatchedSectionProps = {
+  numberList: NumbersProps;
+};
+
+export const LandingMatchedSection = ({
+  numberList,
+}: LandingMatchedSectionProps) => {
   const { t } = useTranslation("landingPage");
 
   return (
-    <Section bgColor={colors.yellow}>
-      <MatchedCardTitle>{t("weMatched.title")}</MatchedCardTitle>
+    <>
+      <SectionTitle title={t("weMatched.title")} />
 
       <MatchedCardsWrapper>
-        <Tile value="4 329" text={t("weMatched.cards.helpedPeople")} />
         <Tile
-          value="51 329"
+          value={numberList.matched_beds}
+          text={t("weMatched.cards.helpedPeople")}
+        />
+        <Tile
+          value={numberList.available_beds}
           text={t("weMatched.cards.lookingForHelp")}
           spaced
         />
-        <Tile value="1 731" text={t("weMatched.cards.currentOffers")} />
+        <Tile
+          value={numberList.requested_beds}
+          text={t("weMatched.cards.currentOffers")}
+        />
       </MatchedCardsWrapper>
-    </Section>
+    </>
   );
 };
-
-export default LandingMatchedSection;

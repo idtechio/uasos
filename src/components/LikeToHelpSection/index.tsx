@@ -1,6 +1,7 @@
 import { Trans, useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
+import { LikeToHelpSectionProps } from "./types";
 import { ButtonCta } from "../Buttons";
 import Section from "../Section";
 import { useRouter } from "next/router";
@@ -26,6 +27,19 @@ const DetailsText = styled.Text`
     })}
 `;
 
+const SectionInner = styled.Text`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  ${({ theme }: { theme: Theme }) =>
+    theme.getBreakPoint({
+      lg: css`
+        flex-direction: row;
+      `,
+    })}
+`;
+
 const CTAText = styled.Text`
   font-size: 16px;
   font-weight: bold;
@@ -37,7 +51,7 @@ const StyledButton = styled(ButtonCta)`
   align-self: flex-start;
 `;
 
-export function LikeToHelpSection() {
+export function LikeToHelpSection({ children }: LikeToHelpSectionProps) {
   const { t } = useTranslation("landingPage");
   const router = useRouter();
 
@@ -47,26 +61,29 @@ export function LikeToHelpSection() {
 
   return (
     <Section>
-      <ContentWrapper>
-        <SectionTitle title={t("likeToHelp.title")} />
-        <DetailsText>
-          <Trans
-            t={t}
-            i18nKey="likeToHelp.details"
-            components={{
-              bold: <strong />,
-            }}
-          >
-            Zgłoś lokal, pokój lub miejsce, które możesz{" "}
-            <strong>nieodpłatnie</strong> udostępnić{" "}
-            <strong>ofiarom wojny w Ukrainie</strong>
-          </Trans>
-        </DetailsText>
-        <StyledButton
-          onPress={onCTAPress}
-          anchor={<CTAText>{t("likeToHelp.cta")}</CTAText>}
-        />
-      </ContentWrapper>
+      <SectionInner>
+        <ContentWrapper>
+          <SectionTitle title={t("likeToHelp.title")} />
+          <DetailsText>
+            <Trans
+              t={t}
+              i18nKey="likeToHelp.details"
+              components={{
+                bold: <strong />,
+              }}
+            >
+              Zgłoś lokal, pokój lub miejsce, które możesz{" "}
+              <strong>nieodpłatnie</strong> udostępnić{" "}
+              <strong>ofiarom wojny w Ukrainie</strong>
+            </Trans>
+          </DetailsText>
+          <StyledButton
+            onPress={onCTAPress}
+            anchor={<CTAText>{t("likeToHelp.cta")}</CTAText>}
+          />
+        </ContentWrapper>
+        {children && <ContentWrapper>{children}</ContentWrapper>}
+      </SectionInner>
     </Section>
   );
 }
