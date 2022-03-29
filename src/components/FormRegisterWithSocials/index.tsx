@@ -11,23 +11,27 @@ import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
-import { FormFooter } from "./styles";
+import { FormFooter, ErrorText } from "./styles";
 import { styles } from "./styles";
-import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
+import { AccountApi } from "../../client-api/account";
+
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity } = useContext(AuthContext);
+  const { identity, getTokenForAPI } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [data, setData] = useState<{ name: string; prefferedLang: string }>();
+  const [apiError, setApiError] = useState<string>("");
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -40,22 +44,33 @@ export default function FromRegisterWithSocials() {
       },
     },
   });
-
   const { handleSubmit } = form;
 
   const onSubmit = async (e: any) => {
-    // Verify phone Number
+    setData({
+      name: e.registerWithSocials.name,
+      prefferedLang: e.registerWithSocials.prefferedLanguage,
+    });
     try {
-      const confirmation = await Authorization.signInWithPhone(
-        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
-        Authorization.initCaptcha("captcha__container")
-      );
+      let confirmation = null;
+      if (identity) {
+        confirmation = await Authorization.linkWithPhone(
+          identity,
+          e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
+          Authorization.initCaptcha("captcha__container")
+        );
+      }
       setPhoneLoginConfirmation(confirmation);
       setPhoneNumber(
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
-    } catch (error) {
-      return null;
+    } catch (error: any) {
+      setApiError(error?.message);
+    }
+  };
+  const updateAccount = async () => {
+    if (getTokenForAPI && data) {
+      await AccountApi.updateAccount(data, await getTokenForAPI());
     }
   };
 
@@ -85,7 +100,7 @@ export default function FromRegisterWithSocials() {
         />
         <Spacer />
         <FormProvider {...form}>
-          <InputControlLabel>{"Name"}</InputControlLabel>
+          <InputControlLabel marginBottom="10px">{"Name"}</InputControlLabel>
           <FormTextInput
             name="registerWithSocials.name"
             label={t("hostAdd.namePlaceholder")}
@@ -98,18 +113,10 @@ export default function FromRegisterWithSocials() {
           <InputControlLabel>
             {"Preffered language of communication"}
           </InputControlLabel>
-          <FormLanguageDropdown
-            zIndex={12}
-            name="registerWithSocials.language"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.registerWithSocials?.language}
-            errorMsg={t("hostAdd.errors.type")}
-          />
+          <PreferredLanguageInput></PreferredLanguageInput>
           <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
           <FormTextInput
+            styles={{ wrapper: { height: "auto", marginBottom: "15px" } }}
             name="registerWithSocials.email"
             label={t("hostAdd.emailPlaceholder")}
             rules={{
@@ -148,6 +155,8 @@ export default function FromRegisterWithSocials() {
         </FormProvider>
         {phoneLoginConfirmation ? (
           <SmsVerificationModal
+            callback={updateAccount}
+            mode="LINK"
             phoneNumber={phoneNumber}
             confirmation={phoneLoginConfirmation}
             setVerificationSuccess={setSmsVerificationSuccess}
@@ -156,6 +165,7 @@ export default function FromRegisterWithSocials() {
           <></>
         )}
         {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+        {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
       </FormContainer>
     </CompositionSection>
   );

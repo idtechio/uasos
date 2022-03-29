@@ -180,6 +180,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               phoneNumber={phoneNumber}
               confirmation={phoneLoginConfirmation}
               setVerificationSuccess={setSmsVerificationSuccess}
+              mode="LOGIN"
+              callback={() => null}
             />
           ) : (
             <></>

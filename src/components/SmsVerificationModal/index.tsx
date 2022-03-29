@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { TouchableOpacity } from "react-native";
 import {
@@ -15,25 +15,31 @@ import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
 import { ConfirmationResult } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
+import { AuthContext } from "../../../pages/_app";
 
 interface Props {
   phoneNumber: string;
   confirmation: ConfirmationResult;
   setVerificationSuccess: (success: boolean) => void;
+  mode: "LOGIN" | "UPDATE" | "LINK";
+  callback: () => void;
 }
 export default function SmsVerificationModal({
   phoneNumber,
   confirmation,
   setVerificationSuccess,
+  mode,
+  callback,
 }: Props) {
+  const { identity } = useContext(AuthContext);
   const [resending, setResending] = useState<boolean>(false);
   const [resendConfirmation, setResendConfirmation] =
     useState<ConfirmationResult | null>(null);
 
   const [error, setError] = useState<string | null>(null);
-  const [apiError, setApiError] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<string>("");
 
-  const handleResend = async () => {
+  const handleResendLogin = async () => {
     setResending(true);
     try {
       const confirm = await Authorization.signInWithPhone(
@@ -41,10 +47,35 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch (err) {
-      setApiError(true);
+    } catch (err: any) {
+      setApiError(err?.message);
     }
   };
+  const handleResendLink = async () => {
+    setResending(true);
+    try {
+      if (identity) {
+        const confirm = await Authorization.linkWithPhone(
+          identity,
+          phoneNumber,
+          Authorization.initCaptcha("recaptcha__container")
+        );
+        setResendConfirmation(confirm);
+      }
+    } catch (err: any) {
+      setApiError(err?.message);
+    }
+  };
+
+  const handleResendUpdate = () => {
+    return null;
+  };
+  const handleResend =
+    mode === "LINK"
+      ? handleResendLink
+      : mode === "LOGIN"
+      ? handleResendLogin
+      : handleResendUpdate;
   const ref1 = useRef<any>(null);
   const ref2 = useRef<any>(null);
   const ref3 = useRef<any>(null);
@@ -79,15 +110,16 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch (err) {
-        return null;
+      } catch (err: any) {
+        setApiError(err?.message);
       }
     } else {
       try {
         await confirmation.confirm(code);
         setVerificationSuccess(true);
-      } catch (err) {
-        setApiError(true);
+        callback();
+      } catch (err: any) {
+        setApiError(err?.message);
       }
     }
   };
@@ -119,7 +151,7 @@ export default function SmsVerificationModal({
                   ref={ref1}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref2.current.focus();
@@ -143,7 +175,7 @@ export default function SmsVerificationModal({
                   ref={ref2}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref3.current.focus();
@@ -167,7 +199,7 @@ export default function SmsVerificationModal({
                   ref={ref3}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref4.current.focus();
@@ -191,7 +223,7 @@ export default function SmsVerificationModal({
                   ref={ref4}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref5.current.focus();
@@ -215,7 +247,7 @@ export default function SmsVerificationModal({
                   ref={ref5}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                     if (newValue.nativeEvent.text) {
                       ref6.current.focus();
@@ -238,7 +270,7 @@ export default function SmsVerificationModal({
                   ref={ref6}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
+                    setApiError("");
                     onChange(newValue);
                   }}
                 />

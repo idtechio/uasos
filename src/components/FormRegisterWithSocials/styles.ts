@@ -9,6 +9,13 @@ export const FormFooter = styled.View`
   z-index: -1;
   margin-bottom: 50px;
 `;
+export const ErrorText = styled.Text`
+  font-size: 16px;
+  font-weight: 400;
+  color: red;
+  margin: 20px 0;
+  text-align: center;
+`;
 export const styles = StyleSheet.create({
   backButton: {
     backgroundColor: "#fff",

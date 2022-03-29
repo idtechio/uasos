@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const { t } = useTranslation();
   const { identity, account, getTokenForAPI, loaded } = useAuth();
   const router = useRouter();
+
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -49,7 +50,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
   return (
     <>
       <QueryClientProvider client={queryClient}>

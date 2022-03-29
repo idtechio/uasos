@@ -4,6 +4,7 @@ import { Error } from "./style";
 import Input from "../Forms/Input";
 import InputControl from "../Forms/InputControl";
 import { FormKey } from "../../helpers/FormTypes";
+import { InputStylesProps } from "../Forms/Input/types";
 
 type Props = {
   name: FormKey;
@@ -14,6 +15,7 @@ type Props = {
   labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
   readonly?: boolean;
+  styles?: InputStylesProps;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput = ({
@@ -26,6 +28,7 @@ const FormTextInput = ({
   labelsBackgroundColor,
   secureTextEntry,
   readonly,
+  styles,
 }: Props) => {
   const { control } = useFormContext();
   return (
@@ -44,6 +47,7 @@ const FormTextInput = ({
             secureTextEntry={secureTextEntry}
             labelsBackgroundColor={labelsBackgroundColor}
             readonly={readonly}
+            styles={styles}
           />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>
