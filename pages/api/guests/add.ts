@@ -1,18 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/react";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
+import withApiAuth, {
+  ApiAuthTokenDetails,
+} from "../../../src/helpers/withAPIAuth";
 
 enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
 export interface GuestProps {
+  id?: string;
+  uid: string;
   name: string;
   country?: string;
   phone_num: string;
   email: string;
   city?: string;
-  listing_country?: string;
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relation: Array<string>;
@@ -24,21 +27,33 @@ export interface GuestProps {
   duration_category: Array<string>;
 }
 
-export default async function addGuest(
-  req: NextApiRequest,
+async function addGuest(
+  req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req });
-  if (!session) {
-    res.status(401);
+  try {
+    if (!req.decodedToken) {
+      throw new Error("token is required");
+    }
+
+    const body = JSON.parse(req.body);
+    const guestData: GuestProps = {
+      ...body,
+      uid: req.decodedToken.uid,
+    };
+    const topicNameOrId = process.env.TOPIC_GUEST;
+    const pubResult = await publishMessage(topicNameOrId, guestData);
+
+    res
+      .status(pubResult.status === PublishStatus.OK ? 200 : 400)
+      .json(pubResult);
     res.end();
-    return;
+  } catch (e) {
+    res
+      .status(400)
+      .json({ ok: "not ok", error: e instanceof Error ? e.message : "" });
+    res.end();
   }
-
-  const body = JSON.parse(req.body);
-  const topicNameOrId = process.env.TOPIC_GUEST;
-
-  const pubResult = await publishMessage(topicNameOrId, body);
-  res.status(pubResult.status === PublishStatus.OK ? 200 : 400).json(pubResult);
-  res.end();
 }
+
+export default withApiAuth(addGuest);

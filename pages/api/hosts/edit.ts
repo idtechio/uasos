@@ -31,7 +31,7 @@ export interface HostProps {
   transport_included: Boolean;
 }
 
-async function addHost(
+async function editHost(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
@@ -60,4 +60,4 @@ async function addHost(
   }
 }
 
-export default withApiAuth(addHost);
+export default withApiAuth(editHost);
