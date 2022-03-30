@@ -50,6 +50,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+  console.log(identity);
   return (
     <>
       <QueryClientProvider client={queryClient}>

@@ -339,5 +339,32 @@
   "ogMeta": {
     "title": "We help war refugees from Ukraine find shelter",
     "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  },
+  "registrationUserForm": {
+    "header": "Registrácia používateľa",
+    "subheader": "Zadajte svoje údaje",
+    "nameLabel": "Meno",
+    "namePlaceholder": "Meno",
+    "preferredLanguageLabel": "Preferovaný jazyk komunikácie",
+    "preferredLanguagePlaceholder": "Jazyk",
+    "phoneLabel": "Telefónne číslo",
+    "phonePrefixPlaceholder": "Krajina",
+    "phoneNumberPlaceholder": "_ _ _  _ _ _  _ _ _",
+    "smsNotificationLabel": "Chcem dostávať upozornenia prostredníctvom SMS o potenciálnych ponukách",
+    "emailLabel": "E-mailová adresa",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Heslo",
+    "passwordConfirmLabel": "Potvrdiť heslo",
+    "passwordConfirmPlaceholder": "Potvrdiť heslo",
+    "showPasswordLabel": "Zobraziť heslo",
+    "backButtonLabel": "Späť",
+    "nextButtonLabel": "Ďalej",
+    "errors": {
+      "name": "Uveďte svoje meno",
+      "phoneNumber": "Uveďte svoje telefónne číslo",
+      "email": "Zadajte platný e-mail",
+      "password": "Zadajte platné heslo",
+      "passwordConfirm": "Heslá sú rôzne"
+    }
   }
 }
