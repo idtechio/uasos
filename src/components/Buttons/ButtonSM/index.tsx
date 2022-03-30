@@ -28,7 +28,12 @@ const ButtonSM = ({ anchor, onPress, id }: Props) => {
     return (
       <FacebookButtonContainer onPress={onPress}>
         <div style={{ marginLeft: 5, marginRight: 0 }}>
-          <Image src={FacebookLogo.src} width={40} height={40} />
+          <Image
+            src={FacebookLogo.src}
+            width={40}
+            height={40}
+            alt="login with facebook"
+          />
         </div>
         <Text>{anchor}</Text>
       </FacebookButtonContainer>
