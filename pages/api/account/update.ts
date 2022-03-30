@@ -54,9 +54,6 @@ async function updateAccount(
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)
       .json(pubResult);
     res.end();
-
-    res.status(200).json({ ok: "ok" });
-    res.end();
   } catch (e) {
     res.status(400).json({ ok: "not ok" });
     res.end();

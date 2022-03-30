@@ -7,7 +7,7 @@ import FormContainer from "../FormLogin/FormContainer";
 import FormTextInput from "../Inputs/FormTextInput";
 import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
@@ -87,7 +87,11 @@ export default function FromRegisterWithSocials() {
     .map((provider) => provider.providerId)
     .includes("google.com")
     ? "google"
-    : "facebook";
+    : identity?.providerData
+        .map((provider) => provider.providerId)
+        .includes("facebook.com")
+    ? "facebook"
+    : "";
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -96,15 +100,19 @@ export default function FromRegisterWithSocials() {
         <FormHeader>
           {t("others:forms.userRegistration.userRegistration")}
         </FormHeader>
-        <ButtonSM
-          id={provider}
-          onPress={() => null}
-          anchor={
-            provider === "facebook"
-              ? t("others:forms.login.signInFacebook")
-              : t("others:forms.login.signInGoogle")
-          }
-        />
+        {provider === "facebook" || provider === "google" ? (
+          <ButtonSM
+            id={provider}
+            onPress={() => null}
+            anchor={
+              provider === "facebook"
+                ? t("others:forms.login.signInFacebook")
+                : t("others:forms.login.signInGoogle")
+            }
+          />
+        ) : (
+          <></>
+        )}
         <Spacer />
         <FormProvider {...form}>
           <InputControlLabel marginBottom="10px">
