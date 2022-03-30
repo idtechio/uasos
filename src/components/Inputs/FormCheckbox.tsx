@@ -1,6 +1,6 @@
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
-import { Error, CenteredView } from "./style";
+import { Error, Wrapper } from "./style";
 import { FormKey } from "../../helpers/FormTypes";
 import CheckboxField from "../Forms/CheckboxField";
 import InputControl from "../Forms/InputControl";
@@ -11,6 +11,7 @@ type Props = {
   error?: FieldError;
   errorMsg?: string;
   value?: boolean;
+  isCentered?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormCheckbox = ({
@@ -20,12 +21,13 @@ const FormCheckbox = ({
   rules,
   error,
   value,
+  isCentered = true,
 }: Props) => {
   const { control } = useFormContext();
 
   return (
     <InputControl>
-      <CenteredView>
+      <Wrapper isCentered={isCentered}>
         <Controller
           control={control}
           rules={rules}
@@ -40,7 +42,7 @@ const FormCheckbox = ({
           name={name}
         />
         {error && <Error>{errorMsg}</Error>}
-      </CenteredView>
+      </Wrapper>
     </InputControl>
   );
 };

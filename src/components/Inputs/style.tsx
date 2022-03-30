@@ -6,7 +6,8 @@ export const Error = styled.Text`
   margin-bottom: 10px;
 `;
 
-export const CenteredView = styled.View`
+type WrapperProps = { isCentered?: boolean };
+export const Wrapper = styled.View<WrapperProps>`
   display: flex;
-  align-items: center;
+  align-items: ${({ isCentered }) => (isCentered ? "center" : "normal")};
 `;

@@ -323,5 +323,32 @@
   "ogMeta": {
     "title": "We help war refugees from Ukraine find shelter",
     "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  },
+  "registrationUserForm": {
+    "header": "User registration",
+    "subheader": "Enter your details",
+    "nameLabel": "Name",
+    "namePlaceholder": "Name",
+    "preferredLanguageLabel": "Preferred language of communication",
+    "preferredLanguagePlaceholder": "Language",
+    "phoneLabel": "Phone number",
+    "phonePrefixPlaceholder": "Country",
+    "phoneNumberPlaceholder": "_ _ _  _ _ _  _ _ _",
+    "smsNotificationLabel": "I want to get notified via SMS about potential match offers ",
+    "emailLabel": "E-mail address",
+    "emailPlaceholder": "Email",
+    "passwordLabel": "Password",
+    "passwordConfirmLabel": "Confirm password",
+    "passwordConfirmPlaceholder": "Confirm password",
+    "showPasswordLabel": "Show password",
+    "backButtonLabel": "Back",
+    "nextButtonLabel": "Next",
+    "errors": {
+      "name": "Provide your name",
+      "phoneNumber": "Provide your phone number",
+      "email": "Please enter a valid e-mail",
+      "password": "Please enter a valid password",
+      "passwordConfirm": "Passwords are different"
+    }
   }
 }

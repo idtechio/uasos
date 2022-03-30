@@ -342,5 +342,32 @@
   "ogMeta": {
     "title": "Ми допомагаємо знайти притулок жертвам війни в Україні",
     "description": "Портал UASOS.org у співпраці з провідними благодійними організаціями автоматично та безкоштовно обмінює контактами біженців з України з людьми, які можуть дати житло.  Долучайтесь до тих, хто може поділитись житлом, або подайте заявку на прихисток прямо зараз"
+  },
+  "registrationUserForm": {
+    "header": "",
+    "subheader": "",
+    "nameLabel": "",
+    "namePlaceholder": "",
+    "preferredLanguageLabel": "",
+    "preferredLanguagePlaceholder": "",
+    "phoneLabel": "",
+    "phonePrefixPlaceholder": "",
+    "phoneNumberPlaceholder": "",
+    "smsNotificationLabel": "",
+    "emailLabel": "",
+    "emailPlaceholder": "",
+    "passwordLabel": "",
+    "passwordConfirmLabel": "",
+    "passwordConfirmPlaceholder": "",
+    "showPasswordLabel": "",
+    "backButtonLabel": "",
+    "nextButtonLabel": "",
+    "errors": {
+      "name": "",
+      "phoneNumber": "",
+      "email": "",
+      "password": "",
+      "passwordConfirm": ""
+    }
   }
 }

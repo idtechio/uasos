@@ -16,7 +16,7 @@ type Props = {
   onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput: VFC<Props> = (props) => {
+const FormLanguageDropdown: VFC<Props> = (props) => {
   const {
     name,
     label,
@@ -59,4 +59,4 @@ const FormTextInput: VFC<Props> = (props) => {
     />
   );
 };
-export default FormTextInput;
+export default FormLanguageDropdown;
