@@ -31,6 +31,7 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
+      console.log(user);
       setIdentity(user);
       setAccount(
         user ? await AccountApi.getAccount(await getIdToken(user, true)) : null

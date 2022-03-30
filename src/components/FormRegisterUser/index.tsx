@@ -12,7 +12,7 @@ import CardModal from "../CardModal";
 import { Error } from "../Inputs/style";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
-import { StyledHeader, StyledSubheader } from "./styles";
+import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { AccountApi } from "../../client-api/account";
 import { AuthContext } from "../../../pages/_app";
@@ -116,9 +116,8 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
-    } catch (err) {
-      setSubmitRequstState((state) => ({ ...state, err }));
-      console.log(err);
+    } catch (error) {
+      setSubmitRequstState((state) => ({ ...state, error }));
     } finally {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
     }
@@ -277,6 +276,9 @@ export default function FormRegisterUser() {
             name="registrationUserForm.showPassword"
             label={` ${t("registrationUserForm.showPasswordLabel")}`}
           />
+          {(submitRequstState.error || mutation.error) && (
+            <StyledErrorMessage>Oops something went wrong!</StyledErrorMessage>
+          )}
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[35, 30, 8, 30]}>
