@@ -40,6 +40,8 @@ async function editHost(
       throw new Error("token is required");
     }
 
+    // TODO check permission to edit hosts with db_hosts_id=body.id for user req.decodedToken.uid
+
     const body = JSON.parse(req.body);
     const hostData: HostProps = {
       ...body,

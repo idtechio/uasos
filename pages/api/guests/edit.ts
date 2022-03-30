@@ -36,6 +36,8 @@ async function editGuest(
       throw new Error("token is required");
     }
 
+    // TODO check permission to edit guests with db_guests_id=body.id for user req.decodedToken.uid
+
     const body = JSON.parse(req.body);
     const guestData: GuestProps = {
       ...body,
