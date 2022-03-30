@@ -41,7 +41,7 @@ async function addGuest(
       ...body,
       uid: req.decodedToken.uid,
     };
-    const topicNameOrId = process.env.TOPIC_GUEST;
+    const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, guestData);
 
     res

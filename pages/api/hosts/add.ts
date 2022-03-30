@@ -45,7 +45,7 @@ async function addHost(
       ...body,
       uid: req.decodedToken.uid,
     };
-    const topicNameOrId = process.env.TOPIC_HOST;
+    const topicNameOrId = process.env.TOPIC_HOST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, hostData);
 
     res

@@ -45,7 +45,7 @@ async function editHost(
       ...body,
       uid: req.decodedToken.uid,
     };
-    const topicNameOrId = process.env.TOPIC_HOST;
+    const topicNameOrId = process.env.TOPIC_HOST_UPDATE;
     const pubResult = await publishMessage(topicNameOrId, hostData);
 
     res
