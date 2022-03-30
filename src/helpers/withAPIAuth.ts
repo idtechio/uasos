@@ -47,7 +47,7 @@ const readAndCheckToken = async function (
     if (_token) {
       token = _token;
       const _decodedToken = await decodeToken(token);
-      if (_decodedToken) {
+      if (_decodedToken !== false) {
         decodedToken = _decodedToken;
       }
     }
