@@ -26,7 +26,7 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { addHostPhonePrefixList } from "./AddHostPhonePrefixList.data";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 

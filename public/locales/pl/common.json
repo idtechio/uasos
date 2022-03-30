@@ -342,5 +342,32 @@
   "ogMeta": {
     "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
     "description": "Platforma UASOS.org we współpracy z wiodącymi organizacjami dobroczynnymi automatycznie i bezpłatniełączyuchodźców wojny w Ukrainie z osobami, które są w stanie udzielić im schronienia. Dołącz do pomagających lub zgłoś swoje potrzeby jużdziś!"
+  },
+  "registrationUserForm": {
+    "header": "Rejestracja Użytkownika",
+    "subheader": "Wprowadź swoje dane",
+    "nameLabel": "Imię",
+    "namePlaceholder": "Imię",
+    "preferredLanguageLabel": "Preferowany język komunikacji",
+    "preferredLanguagePlaceholder": "Język",
+    "phoneLabel": "Numer telefonu",
+    "phonePrefixPlaceholder": "Kraj",
+    "phoneNumberPlaceholder": "_ _ _  _ _ _  _ _ _",
+    "smsNotificationLabel": "Chcę otrzymywać powiadomienia SMS o potencjalnych ofertach",
+    "emailLabel": "Adres e-mail",
+    "emailPlaceholder": "E-mail",
+    "passwordLabel": "Hasło",
+    "passwordConfirmLabel": "Potwierdź hasło",
+    "passwordConfirmPlaceholder": "Potwierdź hasło",
+    "showPasswordLabel": "Pokaż hasło",
+    "backButtonLabel": "Wstecz",
+    "nextButtonLabel": "Dalej",
+    "errors": {
+      "name": "Podaj swoje imię",
+      "phoneNumber": "Podaj swój numer telefonu",
+      "email": "Proszę podać poprawny adres e-mail",
+      "password": "Proszę podać prawidłowe hasło",
+      "passwordConfirm": "Hasła są różne"
+    }
   }
 }

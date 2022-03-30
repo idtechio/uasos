@@ -29,7 +29,7 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 
