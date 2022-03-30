@@ -1,3 +1,4 @@
 export const QueryKeys = {
   GET_OFFERS_LIST: "GET_OFFERS_LIST",
+  GET_REQUESTS_LIST: "GET_REQUESTS_LIST",
 };

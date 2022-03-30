@@ -17,3 +17,60 @@ export const Title = styled.Text`
   font-weight: 700;
   line-height: 33px;
 `;
+
+export const HeaderWrapper = styled.View`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  position: relative;
+`;
+
+export const MoreButtonWrapper = styled.View`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9999999;
+`;
+
+export const ImageWrapper = styled.View`
+  height: 80px;
+  flex: 0 0 80px;
+`;
+
+export const TextWrapper = styled.View`
+  flex: 1 1 100%;
+  padding-left: 12.7px;
+`;
+
+export const IdContainer = styled.Text`
+  letter-spacing: 0.5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+`;
+
+export const OfferTitle = styled.Text`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: 0.5px;
+
+  color: #003566;
+
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #f2f2f2;
+  padding-bottom: 8px;
+`;
+
+export const Label = styled.Text`
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  padding-right: 5px;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+`;
