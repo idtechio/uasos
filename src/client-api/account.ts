@@ -1,3 +1,5 @@
+import { getFirebaseToken } from "../helpers/getFirebaseToken";
+
 export interface getAccountDTO {
   uid: string;
   name: string;
@@ -11,11 +13,12 @@ export interface updateAccountReqDTO {
   prefferedLang: string;
 }
 interface AccountApi {
-  getAccount: (token: string) => Promise<getAccountDTO>;
-  updateAccount: (options: { payload: object; token: string }) => Promise<any>;
+  getAccount: () => Promise<getAccountDTO>;
+  updateAccount: (options: { payload: object }) => Promise<any>;
 }
 export const AccountApi: AccountApi = {
-  getAccount: async function (token) {
+  getAccount: async function () {
+    const token = await getFirebaseToken();
     const res = await fetch(`/api/account/get`, {
       method: "post",
       headers: {
@@ -24,7 +27,8 @@ export const AccountApi: AccountApi = {
     });
     return (await res.json()).account;
   },
-  updateAccount: async function ({ token, payload }) {
+  updateAccount: async function ({ payload }) {
+    const token = await getFirebaseToken();
     const res = await fetch("/api/account/update", {
       method: "POST",
       headers: {

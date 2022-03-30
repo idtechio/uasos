@@ -7,7 +7,7 @@ import { useEditAccount } from "../../../queries/useAccount";
 import ButtonCta from "../../EditOfferOptions/ButtonCta";
 import Inputs from "./Inputs";
 import { ContentContainer, FormHeader, ScreenHeader } from "./style";
-import { EditProfileForm } from "../types";
+import { EditProfileForm } from "./types";
 
 const FormFooter = styled.View`
   display: flex;
@@ -53,12 +53,10 @@ const getFormDefaultValues = (
 export default function UserDetailsForm({
   account,
   identity,
-  getTokenKey,
   onSuccess,
 }: {
   account: getAccountDTO | null;
   identity?: User | null;
-  getTokenKey: () => Promise<string>;
   onSuccess(): void;
 }) {
   const { mutate, isLoading } = useEditAccount();
@@ -76,18 +74,17 @@ export default function UserDetailsForm({
         prefferedLang: data.preferredLanguage,
       };
 
-      const token = await getTokenKey();
-      // mutate(
-      //   { token, payload },
-      //   {
-      //     onError: () => {
-      //       // Set error message
-      //     },
-      //   }
-      // );
+      mutate(
+        { payload },
+        {
+          onError: () => {
+            // Set error message
+          },
+        }
+      );
       onSuccess();
     },
-    [getTokenKey, mutate, onSuccess]
+    [mutate, onSuccess]
   );
 
   return (

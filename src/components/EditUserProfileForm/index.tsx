@@ -8,11 +8,9 @@ import UserDetailsForm from "./DetailsForm";
 export default function EditUserProfileForm({
   account,
   identity,
-  getTokenKey,
 }: {
   account: getAccountDTO | null;
   identity?: User | null;
-  getTokenKey: () => Promise<string>;
 }) {
   const { t } = useTranslation();
   const [detailsUpdated, setDetailsUpdated] = useState(false);
@@ -29,12 +27,10 @@ export default function EditUserProfileForm({
       <UserDetailsForm
         account={account}
         identity={identity}
-        getTokenKey={getTokenKey}
         onSuccess={() => console.log("SUSSS")}
       />
       {detailsUpdated && confirmation && (
         <SmsVerificationModal
-          // confirmation={null}
           confirmation={confirmation}
           phoneNumber={"535200006"}
           setVerificationSuccess={onPhoneConfirmationSuccess}

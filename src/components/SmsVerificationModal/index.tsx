@@ -78,9 +78,22 @@ export default function SmsVerificationModal({
     }
   };
 
-  const handleResendUpdate = () => {
-    return null;
+  const handleResendUpdate = async () => {
+    setResending(true);
+    try {
+      if (identity) {
+        const update = await Authorization.updatePhone(
+          identity,
+          phoneNumber,
+          Authorization.initCaptcha("recaptcha__container"),
+          "32313"
+        );
+      }
+    } catch (err) {
+      setApiError(t("others:common.sms.verificationFail"));
+    }
   };
+
   const handleResend =
     mode === "LINK"
       ? handleResendLink

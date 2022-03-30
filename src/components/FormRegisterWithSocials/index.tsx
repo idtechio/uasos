@@ -69,10 +69,9 @@ export default function FromRegisterWithSocials() {
     }
   };
   const updateAccount = async () => {
-    if (getTokenForAPI && data) {
+    if (data) {
       await AccountApi.updateAccount({
         payload: data,
-        token: await getTokenForAPI(),
       });
     }
   };
