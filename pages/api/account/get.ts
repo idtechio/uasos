@@ -74,8 +74,17 @@ async function getAccount(
 }
 
 async function getAccountFromDB(uid: string): Promise<false | AccountDBProps> {
-  const dbAccount: false | any[] = await select(
-    `SELECT * FROM accounts_info WHERE uid = $1`,
+  const dbAccount: false | AccountDBProps[] = await select(
+    `SELECT
+      uid,
+      name,
+      email,
+      phone_num,
+      fnc_msisdn_status,
+      fnc_email_status,
+      preferred_lang
+    FROM accounts_info
+    WHERE uid = $1`,
     [uid]
   );
 

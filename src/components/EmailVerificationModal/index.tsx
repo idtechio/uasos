@@ -16,7 +16,7 @@ export default function EmailVerificationModal({ onClose }: Props) {
   return (
     <CardModal closeable={false}>
       <Wrapper>
-        <Image src={SmsSent}></Image>
+        <Image src={SmsSent} alt=""></Image>
         <StyledHeader>SMS verification successfully completed</StyledHeader>
         <StyledText>
           we have sent a verification code to your email address. Click link to

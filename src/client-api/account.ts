@@ -12,7 +12,10 @@ export interface updateAccountReqDTO {
 }
 interface AccountApi {
   getAccount: (token: string) => Promise<getAccountDTO>;
-  updateAccount: (options: { payload: object; token: string }) => Promise<any>;
+  updateAccount: (options: {
+    payload: object;
+    token: string;
+  }) => Promise<unknown>;
 }
 export const AccountApi: AccountApi = {
   getAccount: async function (token) {

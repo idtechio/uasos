@@ -96,7 +96,9 @@ const Authorization: Authorization = {
       containerId,
       {
         size: "invisible",
+        // eslint-disable-next-line no-console
         callback: () => console.log("success"),
+        // eslint-disable-next-line no-console
         "expired-callback": () => console.log("failier"),
       },
       auth

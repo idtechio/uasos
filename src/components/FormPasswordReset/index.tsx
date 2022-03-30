@@ -104,7 +104,7 @@ const FormPasswordReset = () => {
         {resetSuccess ? (
           <CardModal>
             <ModalContainer>
-              <Image src={ModalPicture} />
+              <Image src={ModalPicture} alt="" />
               <StyledModalText>
                 {t("others:common.resetPassword.success")}
               </StyledModalText>

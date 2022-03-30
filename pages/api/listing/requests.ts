@@ -77,9 +77,46 @@ async function getRequests(
   res.end();
 }
 
+type GuestListItem = RequestProps & {
+  guest_id: string;
+  guest_status: GuestHostStatus;
+  match_id?: string;
+  host_id: string;
+  host_city: string;
+  host_country: string;
+  host_phone_num: string;
+  host_email: string;
+};
+
 async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
-  const guestsList: false | any[] = await select(
-    `SELECT * FROM requests WHERE account_uid = $1`,
+  const guestsList: false | GuestListItem[] = await select(
+    `SELECT
+      guest_id,
+      guest_status,
+
+      city,
+      country,
+      phone_num,
+      email,
+      beds,
+      acceptable_shelter_types,
+      group_relation,
+      duration_category,
+      is_pregnant,
+      is_with_disability,
+      is_with_animal,
+      is_with_elderly,
+      is_ukrainian_nationality,
+      
+      match_id,
+      match_status,
+
+      host_id,
+      host_city,
+      host_country,
+      host_phone_num,
+      host_email
+    FROM requests WHERE account_uid = $1`,
     [uid]
   );
 
@@ -109,7 +146,6 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           id: g.host_id,
           city: g.host_city,
           country: g.host_country,
-          listing_country: g.host_listing_country,
           phone_num: g.host_phone_num,
           email: g.host_email,
         }
