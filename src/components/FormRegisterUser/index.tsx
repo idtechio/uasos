@@ -15,13 +15,18 @@ import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader } from "./styles";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
-// import { AccountApi } from "../../client-api/account";
+import { AccountApi } from "../../client-api/account";
 import { AuthContext } from "../../../pages/_app";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import { CompositionRow } from "../Compositions/CompositionRow";
 import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
+import { Authorization } from "../../hooks/useAuth";
+import { ConfirmationResult, User } from "firebase/auth";
+import SmsVerificationModal from "../SmsVerificationModal";
+import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import { useMutation } from "react-query";
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -43,6 +48,16 @@ const submitRequestDefualtState = {
 };
 
 export default function FormRegisterUser() {
+  const mutation = useMutation(
+    (data: { identity: User; phonePrefix: string; phoneNumber: string }) =>
+      Authorization.linkWithPhone(
+        data.identity,
+        data.phonePrefix + data.phoneNumber,
+        Authorization.initCaptcha("recaptcha__container")
+      ),
+    { retry: 5, retryDelay: 1000 }
+  );
+  const { identity, loaded } = useContext(AuthContext);
   const { t } = useTranslation();
   const { name: sessionName, email: sessionEmail } = useSessionUserData();
   const { getTokenForAPI } = useContext(AuthContext);
@@ -62,6 +77,13 @@ export default function FormRegisterUser() {
 
   const [submitRequstState, setSubmitRequstState] =
     useState<SubmitRequestState>(submitRequestDefualtState);
+  const [phoneConfirmation, setPhoneConfirmation] =
+    useState<null | ConfirmationResult>(null);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [updateData, setUpdateData] =
+    useState<{ name: string; preferredLang: string }>();
+  const [smsVerificationSuccess, setSmsVerificationSuccess] =
+    useState<boolean>(false);
 
   const {
     handleSubmit,
@@ -74,10 +96,34 @@ export default function FormRegisterUser() {
   const onSubmit: SubmitHandler<FormType> = async ({
     registrationUserForm,
   }) => {
-    const { name, email, phonePrefix, phoneNumber, smsNotification } =
-      registrationUserForm;
-
-    console.log(registrationUserForm);
+    const {
+      name,
+      email,
+      phonePrefix,
+      phoneNumber,
+      smsNotification,
+      password,
+      preferredLanguage,
+    } = registrationUserForm;
+    setUpdateData({ name, preferredLang: preferredLanguage });
+    try {
+      setSubmitRequstState((state) => ({ ...state, loading: true }));
+      await Authorization.createUser(email, password);
+      setSubmitRequstState((state) => ({ ...state, loading: false }));
+      const res = await mutation.mutateAsync({
+        identity: identity as User,
+        phonePrefix,
+        phoneNumber,
+      });
+      setSubmitRequstState((state) => ({ ...state, loading: false }));
+      setPhoneConfirmation(res);
+      setPhoneNumber(phonePrefix + phoneNumber);
+      setPhoneConfirmation(null);
+    } catch (err) {
+      setSubmitRequstState((state) => ({ ...state, err }));
+    } finally {
+      setSubmitRequstState((state) => ({ ...state, loading: false }));
+    }
     // setSubmitRequstState((state) => ({ ...state, loading: true }));
     // try {
     //   if (getTokenForAPI) {
@@ -99,6 +145,14 @@ export default function FormRegisterUser() {
     // }
   };
 
+  const updateAccount = async () => {
+    if (getTokenForAPI && updateData) {
+      await AccountApi.updateAccount({
+        payload: updateData,
+        token: await getTokenForAPI(),
+      });
+    }
+  };
   return (
     <FormProvider {...form}>
       {submitRequstState.loading && (
@@ -244,6 +298,19 @@ export default function FormRegisterUser() {
               />
             </InputControl>
           </CompositionRow>
+          <div style={{ display: "none" }} id="recaptcha__container"></div>
+          {phoneConfirmation ? (
+            <SmsVerificationModal
+              callback={updateAccount}
+              mode="LINK"
+              phoneNumber={phoneNumber}
+              confirmation={phoneConfirmation}
+              setVerificationSuccess={setSmsVerificationSuccess}
+            />
+          ) : (
+            <></>
+          )}
+          {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
         </SectionContent>
       </CompositionSection>
     </FormProvider>

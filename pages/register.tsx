@@ -10,9 +10,9 @@ import { Routes } from "../src/consts/router";
 import FormRegisterUser from "../src/components/FormRegisterUser";
 
 export default function Account() {
-  const { identity } = useContext(AuthContext);
+  const { identity, account, loaded } = useContext(AuthContext);
 
-  if (identity) {
+  if (identity && identity.phoneNumber && account?.prefferedLang && loaded) {
     return <Redirect path={Routes.HOMEPAGE} />;
   } else {
     return (
