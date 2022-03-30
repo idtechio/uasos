@@ -56,7 +56,7 @@ async function getAccount(
   } catch (e) {
     res
       .status(400)
-      .json({ ok: "not ok", error: e instanceof Error ? ` ${e.message}` : "" });
+      .json({ ok: "not ok", error: e instanceof Error ? e.message : "" });
     res.end();
   }
 }

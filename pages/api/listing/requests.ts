@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { select } from "../../../lib/db";
-import {
-  /* withApiAuth, */ ApiAuthTokenDetails,
+import withApiAuth, {
+  ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
 enum Boolean {
@@ -15,7 +15,6 @@ export interface MatchedOfferProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
 }
 
 export interface RequestProps {
@@ -24,7 +23,6 @@ export interface RequestProps {
   phone_num: string;
   email: string;
   city?: string;
-  listing_country: string;
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relation: Array<string>;
@@ -66,7 +64,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
   const guestsList: false | any[] = await select(
     `SELECT
       g.db_guests_id as guest_id,
-      g.city, g.country, g.listing_country,
+      g.city, g.country,
       g.phone_num, g.email,
       g.beds,
       g.acceptable_shelter_types,
@@ -81,7 +79,6 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       h.db_hosts_id as host_id,
       h.city as host_city,
       h.country as host_country,
-      h.listing_country as host_listing_country,
       h.phone_num as host_phone_num,
       h.email as host_email
     FROM guests g
@@ -100,7 +97,6 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     id: g.guest_id,
     city: g.city,
     country: g.country,
-    listing_country: g.listing_country,
     phone_num: g.phone_num,
     email: g.email,
     acceptable_shelter_types: g.acceptable_shelter_types,
@@ -133,7 +129,6 @@ function getMockRequests(): RequestProps[] {
       id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Warszawa",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48999888777",
       email: "guest3@example.com",
       acceptable_shelter_types: ["room", "flat", "house"],
@@ -151,7 +146,6 @@ function getMockRequests(): RequestProps[] {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
         country: "poland",
-        listing_country: "poland",
         phone_num: "+48111222333",
         email: "host1@example.com",
       },
@@ -160,7 +154,6 @@ function getMockRequests(): RequestProps[] {
       id: "bbb4e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48888777666",
       email: "guest3@example.com",
       acceptable_shelter_types: ["flat", "room"],
@@ -178,7 +171,6 @@ function getMockRequests(): RequestProps[] {
       id: "ccc4e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Debrecen",
       country: "hungary",
-      listing_country: "hungary",
       phone_num: "+36777666555",
       email: "guest3@example.com",
       acceptable_shelter_types: ["house"],
@@ -195,6 +187,5 @@ function getMockRequests(): RequestProps[] {
   ];
 }
 
-// TODO turn on auth
-// export default withApiAuth(getRequests);
-export default getRequests;
+// TODO set auth as required
+export default withApiAuth(getRequests, true);
