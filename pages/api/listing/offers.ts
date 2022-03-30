@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { select } from "../../../lib/db";
-import {
-  /* withApiAuth, */ ApiAuthTokenDetails,
+import withApiAuth, {
+  ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
 enum Boolean {
@@ -15,7 +15,6 @@ export interface MatchedRequestProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
 }
 
 export interface OfferProps {
@@ -24,7 +23,6 @@ export interface OfferProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
   shelter_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -67,20 +65,19 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
   const hostsList: false | any[] = await select(
     `SELECT
       h.db_hosts_id as host_id,
-      h.city, h.country, h.listing_country,
+      h.city, h.country,
       h.phone_num, h.email,
       h.shelter_type, h.beds,
       h.acceptable_group_relations,
       h.ok_for_pregnant, h.ok_for_disabilities, h.ok_for_animals,
       h.ok_for_elderly, h.ok_for_any_nationality,
-      h.duration_category, h.transport_included,
+      h.duration_category, null as transport_included, -- h.transport_included,
       h.fnc_status as host_status,
       m.db_matches_id as match_id,
       m.fnc_status as match_status,
       g.db_guests_id as guest_id,
       g.city as guest_city,
       g.country as guest_country,
-      g.listing_country as guest_listing_country,
       g.phone_num as guest_phone_num,
       g.email as guest_email
     FROM hosts h
@@ -99,7 +96,6 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     id: h.host_id,
     city: h.city,
     country: h.country,
-    listing_country: h.listing_country,
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: h.shelter_type,
@@ -119,7 +115,6 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
           id: h.guest_id,
           city: h.guest_city,
           country: h.guest_country,
-          listing_country: h.guest_listing_country,
           phone_num: h.guest_phone_num,
           email: h.guest_email,
         }
@@ -133,7 +128,6 @@ function getMockOffers(): OfferProps[] {
       id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Warszawa",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
@@ -152,7 +146,6 @@ function getMockOffers(): OfferProps[] {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
         country: "poland",
-        listing_country: "poland",
         phone_num: "+48999888777",
         email: "guest3@example.com",
       },
@@ -161,7 +154,6 @@ function getMockOffers(): OfferProps[] {
       id: "2224e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Wrocław",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
@@ -180,7 +172,6 @@ function getMockOffers(): OfferProps[] {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Budapest",
       country: "hungary",
-      listing_country: "hungary",
       phone_num: "+36333444555",
       email: "host1@example.com",
       shelter_type: ["flat"],
@@ -203,6 +194,5 @@ function getMockOffers(): OfferProps[] {
   ];
 }
 
-// TODO turn on auth
-// export default withApiAuth(getOffers);
-export default getOffers;
+// TODO set auth as required
+export default withApiAuth(getOffers, true);
