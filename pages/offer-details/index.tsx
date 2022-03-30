@@ -72,7 +72,7 @@ export default function OfferDetails() {
       return <Redirect path="/signin"></Redirect>;
     }
   } else {
-    // TODO: add nice spinner
+    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
     return (
       <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
     );

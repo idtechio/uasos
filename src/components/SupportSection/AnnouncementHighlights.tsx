@@ -3,10 +3,17 @@ import styled from "styled-components/native";
 import ClockIcon from "../../../src/style/svgs/clock.svg";
 import MarkerIcon from "../../../src/style/svgs/marker2.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
-import { Theme } from "../../style/theme.config";
-import { Offer } from "./types";
+import { Label } from "./style";
 
-export const AnnouncementHighlights = ({ data }: { data: Offer }) => {
+export const AnnouncementHighlights = ({
+  city,
+  beds,
+  duration,
+}: {
+  city: string;
+  beds: number;
+  duration: string;
+}) => {
   const { t } = useTranslation("desktop");
 
   return (
@@ -16,21 +23,21 @@ export const AnnouncementHighlights = ({ data }: { data: Offer }) => {
           <MarkerIcon />
         </IconWrapper>
         <Label>{t("city")}:</Label>
-        <Label>{data.city}</Label>
+        <Label>{city}</Label>
       </Info>
       <Info>
         <IconWrapper>
           <UsersIcon />
         </IconWrapper>
         <Label>{t("numberOfPeople")}:</Label>
-        <Label>{data.beds}</Label>
+        <Label>{beds}</Label>
       </Info>
       <Info>
         <IconWrapper>
           <ClockIcon />
         </IconWrapper>
         <Label>{t("duration")}:</Label>
-        <Label>{t(data.duration)}</Label>
+        <Label>{t(duration)}</Label>
       </Info>
     </SectionInfo>
   );
@@ -46,14 +53,6 @@ const Info = styled.View`
   justify-content: flex-start;
   flex-direction: row;
   padding-bottom: 7px;
-`;
-
-const Label = styled.Text`
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 400;
-  padding-right: 5px;
-  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
 `;
 
 const IconWrapper = styled.View`
