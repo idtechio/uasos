@@ -42,25 +42,12 @@ const ButtonSM = ({ anchor, onPress, id }: Props) => {
   if (id === "google") {
     return (
       <GoogleButtonContainer onPress={onPress}>
-        <IconGoogle style={styles.googleIcon} />
+        <IconGoogle />
         <Text>{anchor}</Text>
       </GoogleButtonContainer>
     );
   }
   return <></>;
-};
-
-const styles = {
-  // fbIcon: {
-  //   height: 32,
-  //   width: 40,
-  //   marginLeft: 10,
-  // },
-  googleIcon: {
-    // height: 32,
-    // width: 40,
-    // marginLeft: 10,
-  },
 };
 
 export default ButtonSM;
