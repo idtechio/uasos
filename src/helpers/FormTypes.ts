@@ -143,10 +143,22 @@ export type FormType = {
     language: string;
     phonePrefix: string;
     phoneNumber: string;
+    prefferedLanguage: string;
   };
   resetPassword: {
     password: string;
     passwordRepeat: string;
+  };
+  registrationUserForm: {
+    name: string;
+    preferredLanguage: string;
+    phonePrefix: string;
+    phoneNumber: string;
+    smsNotification: boolean;
+    email: string;
+    password: string;
+    passwordConfirm: string;
+    showPassword: boolean;
   };
 };
 

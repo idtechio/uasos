@@ -13,6 +13,8 @@ import useAuth from "../src/hooks/useAuth";
 import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import * as gtag from "../lib/gtag";
+import Gtag from "./gtag";
 
 export const AuthContext = createContext<{
   identity: null | User | undefined;
@@ -20,8 +22,6 @@ export const AuthContext = createContext<{
   getTokenForAPI: null | (() => Promise<string>);
   loaded: boolean;
 }>({ identity: null, getTokenForAPI: null, account: null, loaded: false });
-import * as gtag from "../lib/gtag";
-import Gtag from "./gtag";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
@@ -29,25 +29,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const { t } = useTranslation();
   const { identity, account, getTokenForAPI, loaded } = useAuth();
   const router = useRouter();
+
   const [queryClient] = useState(
     () =>
       new QueryClient({
         defaultOptions: { queries: { staleTime: 2 * 60 * 1000, retry: false } },
       })
   );
-
-  console.log("API_KEY");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
-  console.log("AUTH_DOMAIN");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN);
-  console.log("PROJECT_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
-  console.log("STORAGE_BUCKET");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET);
-  console.log("SENDER_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID);
-  console.log("APP_ID");
-  console.log(process.env.NEXT_PUBLIC_FIREBASE_APP_ID);
 
   useEffect(() => {
     if (!gtag.GA_TRACKING_ID) {
@@ -62,7 +50,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
+  console.log(identity);
   return (
     <>
       <QueryClientProvider client={queryClient}>

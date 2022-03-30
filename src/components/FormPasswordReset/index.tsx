@@ -61,13 +61,13 @@ const FormPasswordReset = () => {
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
-        <StyledHeader>Reset Password</StyledHeader>
-        <StyledText>Provide new password for your accout</StyledText>
+        <StyledHeader>{t("others:common.links.resetPassword")}</StyledHeader>
+        <StyledText>{t("others:forms.resetPassword.header")}</StyledText>
         <FormContainer>
           <FormProvider {...formFields}>
             <FormTextInput
               name={"resetPassword.password"}
-              label={"Password"}
+              label={t("others:forms.resetPassword.setNewPassword")}
               secureTextEntry
               rules={{
                 required: true,
@@ -79,7 +79,7 @@ const FormPasswordReset = () => {
             />
             <FormTextInput
               name={"resetPassword.passwordRepeat"}
-              label={"Repeat password"}
+              label={t("others:forms.userRegistration.confirmPassword")}
               secureTextEntry
               rules={{
                 required: true,
@@ -88,7 +88,9 @@ const FormPasswordReset = () => {
                 validate: (value) => value === firstInputRef.current,
               }}
               error={errors?.resetPassword?.passwordRepeat}
-              errorMsg={"Passwords must be identical"}
+              errorMsg={t(
+                "others:common.forms.userRegistration.validations.passowordMismatch"
+              )}
             />
           </FormProvider>
           <ButtonContainer>
@@ -102,9 +104,9 @@ const FormPasswordReset = () => {
         {resetSuccess ? (
           <CardModal>
             <ModalContainer>
-              <Image src={ModalPicture} />
+              <Image src={ModalPicture} alt="" />
               <StyledModalText>
-                Your password has been successfully changed
+                {t("others:common.resetPassword.success")}
               </StyledModalText>
               <ButtonCta
                 onPress={() => router.push(Routes.SIGN_IN)}

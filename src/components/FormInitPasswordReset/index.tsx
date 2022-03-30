@@ -22,7 +22,7 @@ import Image from "next/image";
 import ModalPicture from "../../../public/assets/PasswordReset.png";
 import CardModal from "../CardModal";
 import { useState } from "react";
-import SmsVerificationModal from "../SmsVerificationSuccessModal";
+
 const FormInitPasswordReset = () => {
   const { t } = useTranslation();
   const [resetInitPassword, setResetInitPassword] = useState<boolean>(false);
@@ -47,11 +47,8 @@ const FormInitPasswordReset = () => {
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
-        <StyledHeader>Reset Password</StyledHeader>
-        <StyledText>
-          If you do not remember your password, enter your email address. We
-          will send you a link to the password reset form.
-        </StyledText>
+        <StyledHeader>{t("others:common.links.resetPassword")}</StyledHeader>
+        <StyledText>{t("others:forms.resetPassword.detail")}</StyledText>
         <FormContainer>
           <FormProvider {...formFields}>
             <FormTextInput
@@ -69,12 +66,12 @@ const FormInitPasswordReset = () => {
           <ButtonContainer>
             <ButtonCta
               onPress={() => router.push(Routes.SIGN_IN)}
-              anchor={"Back"}
+              anchor={t("others:common.buttons.back")}
               style={styles.backButton}
             />
             <ButtonCta
               onPress={handleSubmit(onSubmit, onError)}
-              anchor={"Reset password"}
+              anchor={t("others:common.links.resetPassword")}
               style={styles.verifyButton}
             />
           </ButtonContainer>
@@ -82,9 +79,9 @@ const FormInitPasswordReset = () => {
         {resetInitPassword ? (
           <CardModal>
             <ModalContainer>
-              <Image src={ModalPicture} />
+              <Image src={ModalPicture} alt="" />
               <StyledModalText>
-                Password reset email sent - check your mailbox
+                {t("others:forms.resetPassword.emailSent")}
               </StyledModalText>
               <ButtonCta
                 onPress={() => router.push(Routes.SIGN_IN)}
@@ -96,7 +93,6 @@ const FormInitPasswordReset = () => {
         ) : (
           <></>
         )}
-        <SmsVerificationModal />
       </CompositionSection>
     </>
   );

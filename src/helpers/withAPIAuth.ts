@@ -8,33 +8,52 @@ export interface ApiAuthTokenDetails {
   decodedToken?: DecodedIdToken;
 }
 
-const withApiAuth = (handler: NextApiHandler) => {
+const withApiAuth = (handler: NextApiHandler, isOptional?: Boolean) => {
   return async (
     req: NextApiRequest & ApiAuthTokenDetails,
     res: NextApiResponse
   ) => {
-    const bearerHeader = req.headers["authorization"];
-    if (!bearerHeader) {
-      res.status(403).json({ ok: "not ok" });
+    const { token, decodedToken } = await readAndCheckToken(req);
+
+    if (!token && isOptional !== true) {
+      res.status(403).json({ ok: "not ok", error: "there is no bearer token" });
+      res.end();
+      return;
+    }
+    if (!decodedToken && isOptional !== true) {
+      res.status(401).json({ ok: "not ok", error: "wrong bearer token" });
       res.end();
       return;
     }
 
-    const bearerToken = bearerHeader.split(" ")[1];
-    const decodedToken: DecodedIdToken | Boolean = await decodeToken(
-      bearerToken
-    );
-    if (decodedToken instanceof Boolean) {
-      res.status(401).json({ ok: "not ok" });
-      res.end();
-      return;
+    if (token && decodedToken) {
+      req.token = token;
+      req.decodedToken = decodedToken;
     }
-
-    req.token = bearerToken;
-    req.decodedToken = decodedToken;
 
     return handler(req, res);
   };
+};
+
+const readAndCheckToken = async function (
+  req: NextApiRequest & ApiAuthTokenDetails
+): Promise<ApiAuthTokenDetails> {
+  let token: string | undefined = undefined;
+  let decodedToken: DecodedIdToken | undefined = undefined;
+
+  const bearerHeader = req.headers["authorization"];
+  if (bearerHeader) {
+    const _token = bearerHeader.split(" ")[1];
+    if (_token) {
+      token = _token;
+      const _decodedToken = await decodeToken(token);
+      if (!(_decodedToken instanceof Boolean)) {
+        decodedToken = _decodedToken;
+      }
+    }
+  }
+
+  return { token, decodedToken };
 };
 
 export default withApiAuth;

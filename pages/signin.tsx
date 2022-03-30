@@ -29,9 +29,6 @@ export type SignInProps = {
 
 const SignIn = ({ providers, csrfToken }: SignInProps) => {
   const { identity } = useContext(AuthContext);
-  console.log("IDENTITY W SIGNIN");
-  console.log({ identity });
-
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />

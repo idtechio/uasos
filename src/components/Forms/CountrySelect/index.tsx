@@ -32,7 +32,7 @@ const useCountriesList = (data?: CountryDropdownItemType[]) => {
         {
           label: (
             <LabelContainer>
-              <LanguageFlags locale="pl" />{" "}
+              <LanguageFlags locale="pl" />
               <LabelText>{t("hostAdd.countries.poland")}</LabelText>
             </LabelContainer>
           ),
@@ -41,7 +41,7 @@ const useCountriesList = (data?: CountryDropdownItemType[]) => {
         {
           label: (
             <LabelContainer>
-              <LanguageFlags locale="hu" />{" "}
+              <LanguageFlags locale="hu" />
               <LabelText>{t("hostAdd.countries.hungary")}</LabelText>
             </LabelContainer>
           ),
@@ -50,7 +50,7 @@ const useCountriesList = (data?: CountryDropdownItemType[]) => {
         {
           label: (
             <LabelContainer>
-              <LanguageFlags locale="cs" />{" "}
+              <LanguageFlags locale="cs" />
               <LabelText>{t("hostAdd.countries.czechia")}</LabelText>
             </LabelContainer>
           ),
@@ -59,7 +59,7 @@ const useCountriesList = (data?: CountryDropdownItemType[]) => {
         {
           label: (
             <LabelContainer>
-              <LanguageFlags locale="sk" />{" "}
+              <LanguageFlags locale="sk" />
               <LabelText>{t("hostAdd.countries.slovakia")}</LabelText>
             </LabelContainer>
           ),

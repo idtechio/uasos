@@ -16,6 +16,7 @@ import {
   updatePhoneNumber,
   PhoneAuthProvider,
   createUserWithEmailAndPassword,
+  linkWithPhoneNumber,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -30,6 +31,7 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
+      console.log(user);
       setIdentity(user);
       setAccount(
         user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
@@ -51,7 +53,7 @@ interface Authorization {
   signInWithFacebook: () => Promise<void>;
   signInWithPhone: (
     phoneNumber: string,
-    recaptcha: any
+    recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
   initCaptcha: (containerId: string) => RecaptchaVerifier;
   signInWithEmail: (email: string, password: string) => Promise<void>;
@@ -68,6 +70,11 @@ interface Authorization {
     verificationCode: string
   ) => Promise<void>;
   createUser: (email: string, password: string) => Promise<void>;
+  linkWithPhone: (
+    user: User,
+    phoneNumber: string,
+    recaptcha: RecaptchaVerifier
+  ) => Promise<ConfirmationResult>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -90,7 +97,9 @@ const Authorization: Authorization = {
       containerId,
       {
         size: "invisible",
+        // eslint-disable-next-line no-console
         callback: () => console.log("success"),
+        // eslint-disable-next-line no-console
         "expired-callback": () => console.log("failier"),
       },
       auth
@@ -119,6 +128,9 @@ const Authorization: Authorization = {
   },
   async createUser(email, password) {
     await createUserWithEmailAndPassword(auth, email, password);
+  },
+  async linkWithPhone(user, phoneNumber, recaptcha) {
+    return await linkWithPhoneNumber(user, phoneNumber, recaptcha);
   },
 };
 

@@ -7,27 +7,31 @@ import FormContainer from "../FormLogin/FormContainer";
 import FormTextInput from "../Inputs/FormTextInput";
 import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
-import { FormFooter } from "./styles";
+import { FormFooter, ErrorText } from "./styles";
 import { styles } from "./styles";
-import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { useContext } from "react";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
+import { AccountApi } from "../../client-api/account";
+
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity } = useContext(AuthContext);
+  const { identity, getTokenForAPI } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [data, setData] = useState<{ name: string; prefferedLang: string }>();
+  const [apiError, setApiError] = useState<string>("");
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -40,55 +44,83 @@ export default function FromRegisterWithSocials() {
       },
     },
   });
-
   const { handleSubmit } = form;
 
-  const onSubmit = async (e: any) => {
-    // Verify phone Number
+  const onSubmit = async (e: Pick<FormType, "registerWithSocials">) => {
+    setData({
+      name: e.registerWithSocials.name,
+      prefferedLang: e.registerWithSocials.prefferedLanguage,
+    });
     try {
-      const confirmation = await Authorization.signInWithPhone(
-        e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
-        Authorization.initCaptcha("captcha__container")
-      );
+      let confirmation = null;
+      if (identity) {
+        confirmation = await Authorization.linkWithPhone(
+          identity,
+          e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
+          Authorization.initCaptcha("captcha__container")
+        );
+      }
       setPhoneLoginConfirmation(confirmation);
       setPhoneNumber(
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
-    } catch (error) {
-      return null;
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setApiError(error?.message);
+      }
+    }
+  };
+  const updateAccount = async () => {
+    if (getTokenForAPI && data) {
+      await AccountApi.updateAccount({
+        payload: data,
+        token: await getTokenForAPI(),
+      });
     }
   };
 
-  const onError = (e: any) => {
-    console.log(e);
-  };
-
   const {
-    formState: { errors, isValid, isSubmitted },
+    formState: { errors },
   } = form;
 
   const provider = identity?.providerData
     .map((provider) => provider.providerId)
     .includes("google.com")
     ? "google"
-    : "facebook";
+    : identity?.providerData
+        .map((provider) => provider.providerId)
+        .includes("facebook.com")
+    ? "facebook"
+    : "";
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
       <div style={{ display: "none" }} id="captcha__container"></div>
       <FormContainer>
-        <FormHeader>{"Fill in the missing data"}</FormHeader>
-        <ButtonSM
-          id={provider}
-          onPress={() => null}
-          anchor={`${t("loginForm.logInWith")} with ${provider}`}
-        />
+        <FormHeader>
+          {t("others:forms.userRegistration.userRegistration")}
+        </FormHeader>
+        {provider === "facebook" || provider === "google" ? (
+          <ButtonSM
+            id={provider}
+            onPress={() => null}
+            anchor={
+              provider === "facebook"
+                ? t("others:forms.login.signInFacebook")
+                : t("others:forms.login.signInGoogle")
+            }
+          />
+        ) : (
+          <></>
+        )}
         <Spacer />
         <FormProvider {...form}>
-          <InputControlLabel>{"Name"}</InputControlLabel>
+          <InputControlLabel marginBottom="10px">
+            {t("others:forms.generic.name")}
+          </InputControlLabel>
           <FormTextInput
             name="registerWithSocials.name"
-            label={t("hostAdd.namePlaceholder")}
+            label={t("others:forms.generic.name")}
             rules={{
               required: true,
             }}
@@ -96,22 +128,16 @@ export default function FromRegisterWithSocials() {
             errorMsg={t("hostAdd.errors.name")}
           />
           <InputControlLabel>
-            {"Preffered language of communication"}
+            {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
-          <FormLanguageDropdown
-            zIndex={12}
-            name="registerWithSocials.language"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.registerWithSocials?.language}
-            errorMsg={t("hostAdd.errors.type")}
-          />
-          <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
+          <PreferredLanguageInput></PreferredLanguageInput>
+          <InputControlLabel>
+            {t("others:forms.generic.email")}
+          </InputControlLabel>
           <FormTextInput
+            styles={{ wrapper: { height: "auto", marginBottom: "15px" } }}
             name="registerWithSocials.email"
-            label={t("hostAdd.emailPlaceholder")}
+            label={t("others:forms.generic.email")}
             rules={{
               required: true,
               pattern: {
@@ -123,11 +149,13 @@ export default function FromRegisterWithSocials() {
             errorMsg={t("hostAdd.errors.email")}
             readonly={true}
           />
-          <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
+          <InputControlLabel>
+            {t("others:forms.generic.phoneNumber")}
+          </InputControlLabel>
           <FormPhoneInput
             prefixName="registerWithSocials.phonePrefix"
             numberName="registerWithSocials.phoneNumber"
-            phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
+            phonePrefixLabel={t("others:forms.generic.country")}
             phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
             errorMsg={t("hostAdd.errors.phoneNumber")}
@@ -136,18 +164,20 @@ export default function FromRegisterWithSocials() {
           <FormFooter>
             <ButtonCta
               onPress={() => Authorization.logOut()}
-              anchor={"Back"}
+              anchor={t("others:common.buttons.back")}
               style={styles.backButton}
             />
             <ButtonCta
-              onPress={handleSubmit(onSubmit, onError)}
-              anchor={"Verify"}
+              onPress={handleSubmit(onSubmit, () => {})}
+              anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}
             />
           </FormFooter>
         </FormProvider>
         {phoneLoginConfirmation ? (
           <SmsVerificationModal
+            callback={updateAccount}
+            mode="LINK"
             phoneNumber={phoneNumber}
             confirmation={phoneLoginConfirmation}
             setVerificationSuccess={setSmsVerificationSuccess}
@@ -156,6 +186,7 @@ export default function FromRegisterWithSocials() {
           <></>
         )}
         {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+        {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
       </FormContainer>
     </CompositionSection>
   );

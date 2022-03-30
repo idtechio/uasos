@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -18,12 +17,12 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import { ErrorText } from "../FormRegisterWithSocials/styles";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
-  const { locale } = useRouter();
 
   const [passwordInput, setPasswordInput] = useState(false);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
@@ -31,6 +30,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const formFields = useForm<FormType>();
 
@@ -79,23 +79,24 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           setPhoneLoginConfirmation(confirmation);
           setPhoneNumber(data.login.phoneOrEmail);
         } catch (error) {
-          return null;
+          // eslint-disable-next-line
+          // @ts-ignore
+          setError(error.message);
         }
       }
     }
   };
-  const onError = (error: any) => null;
 
-  const handlePassErrorMsg = (type: string): string => {
-    switch (type) {
-      case "minLength":
-        return t("validations.toShortPassword");
-      case "required":
-        return t("validations.invalidPassword");
-      default:
-        return t("validations.invalidPassword");
-    }
-  };
+  // const handlePassErrorMsg = (type: string): string => {
+  //   switch (type) {
+  //     case "minLength":
+  //       return t("validations.toShortPassword");
+  //     case "required":
+  //       return t("validations.invalidPassword");
+  //     default:
+  //       return t("validations.invalidPassword");
+  //   }
+  // };
 
   enum PROVIDERS {
     FACEBOOK = "facebook",
@@ -116,33 +117,37 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
-          <FormHeader>{t("loginForm.logInWith")}</FormHeader>
+          <FormHeader>{t("others:forms.login.login")}</FormHeader>
           {Object.values(providers).map(({ id, name }) => (
             <ButtonSM
               key={name}
               id={id}
               onPress={() => handleSignIn(id)}
-              anchor={`${t("loginForm.logInWith")} ${name}`}
+              anchor={
+                name === "Facebook"
+                  ? t("others:forms.login.signInFacebook")
+                  : t("others:forms.login.signInGoogle")
+              }
             />
           ))}
           <Spacer />
           <FormProvider {...formFields}>
             <FormTextInput
               name={"login.phoneOrEmail"}
-              label={"Phone or Email"}
+              label={t("others:forms.login.emailOrPhone")}
               rules={{
                 required: true,
                 maxLength: 50,
                 pattern: EMAIL_OR_PHONE_REGEX,
               }}
               error={errors?.login?.phoneOrEmail}
-              errorMsg={"Enter phone or email"}
+              errorMsg={t("others:forms.login.emailOrPhoneDetails")}
             />
             {passwordInput ? (
               <>
                 <FormTextInput
                   name={"login.password"}
-                  label={t("labels.password")}
+                  label={t("others:forms.generic.password")}
                   secureTextEntry
                   rules={{
                     required: true,
@@ -150,11 +155,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={`${handlePassErrorMsg(
-                    // eslint-disable-next-line
-                    // @ts-ignore
-                    errors?.login?.password?.type
-                  )}`}
+                  // errorMsg={`${handlePassErrorMsg(
+                  //   // eslint-disable-next-line
+                  //   // @ts-ignore
+                  //   errors?.login?.password?.type
+                  // )}`}
                 />
                 <LostPass />
               </>
@@ -170,8 +175,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 marginBottom: "30px",
                 alignSelf: "flex-end",
               }}
-              anchor={t("loginForm.logIn")}
-              onPress={handleSubmit(onSubmit, onError)}
+              anchor={t("common:loginForm.logIn")}
+              onPress={handleSubmit(onSubmit, () => {})}
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
           </FormProvider>
@@ -180,11 +185,14 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               phoneNumber={phoneNumber}
               confirmation={phoneLoginConfirmation}
               setVerificationSuccess={setSmsVerificationSuccess}
+              mode="LOGIN"
+              callback={() => null}
             />
           ) : (
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+          {error ? <ErrorText>{error}</ErrorText> : <></>}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />

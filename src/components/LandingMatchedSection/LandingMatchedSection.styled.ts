@@ -1,23 +1,7 @@
 import { css } from "styled-components";
 import styled from "styled-components/native";
 
-import { colors } from "../../style/landingPageStyle";
 import { Theme } from "../../style/theme.config";
-
-export const MatchedCardTitle = styled.Text`
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: ${colors.blue};
-  ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        margin-top: 70px;
-        margin-bottom: 70px;
-        font-size: 40px;
-      `,
-    })}
-`;
 
 export const MatchedCardsWrapper = styled.View`
   flex-direction: row;

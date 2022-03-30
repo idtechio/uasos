@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { TouchableOpacity } from "react-native";
+import { TextInput, TouchableOpacity } from "react-native";
 import {
   StyledText,
   Wrapper,
@@ -15,25 +15,33 @@ import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
 import { ConfirmationResult } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
+import { AuthContext } from "../../../pages/_app";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   phoneNumber: string;
   confirmation: ConfirmationResult;
   setVerificationSuccess: (success: boolean) => void;
+  mode: "LOGIN" | "UPDATE" | "LINK";
+  callback: () => void;
 }
 export default function SmsVerificationModal({
   phoneNumber,
   confirmation,
   setVerificationSuccess,
+  mode,
+  callback,
 }: Props) {
+  const { t } = useTranslation();
+  const { identity } = useContext(AuthContext);
   const [resending, setResending] = useState<boolean>(false);
   const [resendConfirmation, setResendConfirmation] =
     useState<ConfirmationResult | null>(null);
 
   const [error, setError] = useState<string | null>(null);
-  const [apiError, setApiError] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<string>("");
 
-  const handleResend = async () => {
+  const handleResendLogin = async () => {
     setResending(true);
     try {
       const confirm = await Authorization.signInWithPhone(
@@ -41,16 +49,41 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch (err) {
-      setApiError(true);
+    } catch {
+      setApiError(t("others:common.sms.verificationFail"));
     }
   };
-  const ref1 = useRef<any>(null);
-  const ref2 = useRef<any>(null);
-  const ref3 = useRef<any>(null);
-  const ref4 = useRef<any>(null);
-  const ref5 = useRef<any>(null);
-  const ref6 = useRef<any>(null);
+  const handleResendLink = async () => {
+    setResending(true);
+    try {
+      if (identity) {
+        const confirm = await Authorization.linkWithPhone(
+          identity,
+          phoneNumber,
+          Authorization.initCaptcha("recaptcha__container")
+        );
+        setResendConfirmation(confirm);
+      }
+    } catch {
+      setApiError(t("others:common.sms.verificationFail"));
+    }
+  };
+
+  const handleResendUpdate = () => {
+    return null;
+  };
+  const handleResend =
+    mode === "LINK"
+      ? handleResendLink
+      : mode === "LOGIN"
+      ? handleResendLogin
+      : handleResendUpdate;
+  const ref1 = useRef<TextInput>(null);
+  const ref2 = useRef<TextInput>(null);
+  const ref3 = useRef<TextInput>(null);
+  const ref4 = useRef<TextInput>(null);
+  const ref5 = useRef<TextInput>(null);
+  const ref6 = useRef<TextInput>(null);
   const formFields = useForm<{
     "1": string;
     "2": string;
@@ -61,9 +94,9 @@ export default function SmsVerificationModal({
   }>();
   const {
     handleSubmit,
-    register,
+    // register,
     control,
-    formState: { errors },
+    // formState,
   } = formFields;
   const onSubmit = async (data: {
     "1": string;
@@ -79,29 +112,30 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch (err) {
-        return null;
+      } catch {
+        setApiError(t("others:common.sms.verificationFail"));
       }
     } else {
       try {
         await confirmation.confirm(code);
         setVerificationSuccess(true);
-      } catch (err) {
-        setApiError(true);
+        callback();
+      } catch {
+        setApiError(t("others:common.sms.verificationFail"));
       }
     }
   };
-  const onError = (error: any) => {
+  const onError = () => {
     setError("Must be a digit");
   };
   return (
     <CardModal closeable={false}>
       <div style={{ display: "none" }} id="recaptcha__container"></div>
       <Wrapper>
-        <Image src={SmsSent}></Image>
-        <StyledHeader>SMS verification</StyledHeader>
+        <Image src={SmsSent} alt=""></Image>
+        <StyledHeader>{t("others:common.sms.verification")}</StyledHeader>
         <StyledText>
-          Enter the verification code sent to the phone number {phoneNumber}.
+          {t("others:common.sms.sentInfo", { phoneNumber })}
         </StyledText>
         <InputWrapper>
           <FormProvider {...formFields}>
@@ -111,18 +145,24 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref1}
+                  value={value}
+                  // eslint-disable-next-line
+                  ref={ref1 as any}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref2.current.focus();
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref2.current?.focus();
+                      }
                     }
                   }}
                 />
@@ -135,18 +175,24 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref2}
+                  // eslint-disable-next-line
+                  ref={ref2 as any}
+                  keyboardType="numeric"
+                  value={value}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref3.current.focus();
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref3.current?.focus();
+                      }
                     }
                   }}
                 />
@@ -159,18 +205,24 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref3}
+                  value={value}
+                  // eslint-disable-next-line
+                  ref={ref3 as any}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref4.current.focus();
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref4.current?.focus();
+                      }
                     }
                   }}
                 />
@@ -183,18 +235,24 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref4}
+                  value={value}
+                  // eslint-disable-next-line
+                  ref={ref4 as any}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref5.current.focus();
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref5.current?.focus();
+                      }
                     }
                   }}
                 />
@@ -207,18 +265,24 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref5}
+                  value={value}
+                  // eslint-disable-next-line
+                  ref={ref5 as any}
+                  keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
-                    if (newValue.nativeEvent.text) {
-                      ref6.current.focus();
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                      if (newValue.nativeEvent.text) {
+                        ref6.current?.focus();
+                      }
                     }
                   }}
                 />
@@ -231,30 +295,37 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
+                  borderColor={error ? "red" : ""}
                   // eslint-disable-next-line
-                  // @ts-ignore
-                  ref={ref6}
+                  ref={ref6 as any}
+                  value={value}
                   onChange={(newValue) => {
                     setError(null);
-                    setApiError(false);
-                    onChange(newValue);
+                    setApiError("");
+                    if (
+                      !isNaN(Number(newValue.nativeEvent.text)) &&
+                      newValue.nativeEvent.text.length < 2
+                    ) {
+                      onChange(newValue);
+                    }
                   }}
+                  keyboardType="numeric"
                 />
               )}
               name="6"
             />
           </FormProvider>
         </InputWrapper>
-        {apiError ? <ErrorText>Invalid Code</ErrorText> : <></>}
+        {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
         <ButtonCta
           onPress={handleSubmit(onSubmit, onError)}
-          anchor={"Verify"}
+          anchor={t("others:common.buttons.verify")}
           style={{ width: "100px", marginTop: "30px" }}
         />
         <TouchableOpacity onPress={handleResend}>
-          <StyledText>Re-send code</StyledText>
+          <StyledText>{t("others:common.links.re-sendCode")}</StyledText>
         </TouchableOpacity>
       </Wrapper>
     </CardModal>

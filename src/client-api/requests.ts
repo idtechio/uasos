@@ -1,6 +1,6 @@
 import { RequestProps } from "../../pages/api/listing/requests";
 
-type GetRequestsListDTO = {
+export type GetRequestsListDTO = {
   ok: "ok";
   requests: RequestProps[];
 };

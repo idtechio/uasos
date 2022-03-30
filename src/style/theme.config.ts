@@ -2,6 +2,8 @@ import { useBreakPointGetter } from "../hooks/useBreakPointGetter";
 
 export const base = {
   breakPoints: {
+    mobile: 320,
+    tablet: 481,
     sm: 576,
     md: 768,
     lg: 992,
