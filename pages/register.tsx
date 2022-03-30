@@ -14,6 +14,8 @@ export default function Account() {
 
   if (identity && identity.phoneNumber && account?.prefferedLang && loaded) {
     return <Redirect path={Routes.HOMEPAGE} />;
+  } else if (identity && !identity.phoneNumber) {
+    return <Redirect path={Routes.SIGN_IN} />;
   } else {
     return (
       <CompositionAppBody>
