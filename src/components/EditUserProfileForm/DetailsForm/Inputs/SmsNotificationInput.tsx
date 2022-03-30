@@ -1,8 +1,8 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import styled, { css } from "styled-components/native";
-import CheckboxField from "../../Forms/CheckboxField";
-import { EditProfileForm } from "../types";
+import CheckboxField from "../../../Forms/CheckboxField";
+import { EditProfileForm } from "../../types";
 
 const Wrapper = styled.View`
   margin-top: 35px;

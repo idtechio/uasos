@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "../../Forms";
+import { Input } from "../../../Forms";
 import { InputWrapper } from "./style";
 
 export default function EmailInput() {

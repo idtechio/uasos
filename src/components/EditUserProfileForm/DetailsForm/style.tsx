@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../style/theme.config";
 
 export const ContentContainer = styled.View`
   background-color: white;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import CountrySelect from "../../Forms/CountrySelect";
-import { EditProfileForm } from "../types";
+import CountrySelect from "../../../Forms/CountrySelect";
+import { EditProfileForm } from "../../types";
 import { InputWrapper } from "./style";
 
 export default function PreferredLanguageInput() {

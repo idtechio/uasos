@@ -18,6 +18,15 @@ import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
 
+type FormType = {
+  "1": string;
+  "2": string;
+  "3": string;
+  "4": string;
+  "5": string;
+  "6": string;
+};
+
 interface Props {
   phoneNumber: string;
   confirmation: ConfirmationResult;
@@ -84,28 +93,14 @@ export default function SmsVerificationModal({
   const ref4 = useRef<any>(null);
   const ref5 = useRef<any>(null);
   const ref6 = useRef<any>(null);
-  const formFields = useForm<{
-    "1": string;
-    "2": string;
-    "3": string;
-    "4": string;
-    "5": string;
-    "6": string;
-  }>();
+  const formFields = useForm<FormType>();
   const {
     handleSubmit,
     register,
     control,
     formState: { errors },
   } = formFields;
-  const onSubmit = async (data: {
-    "1": string;
-    "2": string;
-    "3": string;
-    "4": string;
-    "5": string;
-    "6": string;
-  }) => {
+  const onSubmit = async (data: FormType) => {
     const code =
       data["1"] + data["2"] + data["3"] + data["4"] + data["5"] + data["6"];
     if (resending) {

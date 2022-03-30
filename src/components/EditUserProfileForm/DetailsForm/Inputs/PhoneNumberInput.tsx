@@ -1,10 +1,10 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
-import Input from "../../Forms/Input";
-import PhoneNumberPrefixSelect from "../../Forms/PhoneNumberPrefixSelect";
-import { EditProfileForm } from "../types";
+import { Theme } from "../../../../style/theme.config";
+import Input from "../../../Forms/Input";
+import PhoneNumberPrefixSelect from "../../../Forms/PhoneNumberPrefixSelect";
+import { EditProfileForm } from "../../types";
 import { InputWrapper } from "./style";
 
 export const Error = styled.Text`

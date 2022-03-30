@@ -24,6 +24,10 @@ export interface GuestProps {
   duration_category: Array<string>;
 }
 
+type AddGuestBodyType = {
+  zipCode?: string;
+};
+
 export default async function addGuest(
   req: NextApiRequest,
   res: NextApiResponse

@@ -1,54 +1,9 @@
-import { User } from "firebase/auth";
-import React, { useCallback } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import styled from "styled-components/native";
+import { ConfirmationResult, User } from "firebase/auth";
+import { useTranslation } from "next-i18next";
+import React, { useState } from "react";
 import { getAccountDTO } from "../../client-api/account";
-import { useEditAccount } from "../../queries/useAccount";
-import ButtonCta from "../EditOfferOptions/ButtonCta";
-import Inputs from "./Inputs";
-import { ContentContainer, FormHeader, ScreenHeader } from "./style";
-import { EditProfileForm } from "./types";
-
-const FormFooter = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 119px;
-`;
-
-const getPhoneNumberWithoutPrefix = (phone: string) =>
-  phone
-    .split("")
-    .reverse()
-    .join("")
-    .substring(0, 9)
-    .split("")
-    .reverse()
-    .join("");
-
-const getPhonePrefix = (phone: string) =>
-  phone
-    .split("")
-    .reverse()
-    .filter((_, index) => index >= 9)
-    .reverse()
-    .join("");
-
-const getFormDefaultValues = (
-  account: getAccountDTO | null,
-  identity: User | null | undefined
-) => ({
-  email: identity?.email || undefined,
-  phone: identity?.phoneNumber
-    ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
-    : undefined,
-  name: account?.name || undefined,
-  preferredLanguage: account?.prefferedLang || undefined,
-  phonePrefix: identity?.phoneNumber
-    ? getPhonePrefix(identity.phoneNumber)
-    : undefined,
-});
+import SmsVerificationModal from "../SmsVerificationModal";
+import UserDetailsForm from "./DetailsForm";
 
 export default function EditUserProfileForm({
   account,
@@ -59,55 +14,34 @@ export default function EditUserProfileForm({
   identity?: User | null;
   getTokenKey: () => Promise<string>;
 }) {
-  const { mutate, isLoading } = useEditAccount();
-  const form = useForm<EditProfileForm>({
-    defaultValues: getFormDefaultValues(account, identity),
-  });
-  const { handleSubmit } = form;
-
-  const onSubmit = useCallback(
-    async (data: EditProfileForm) => {
-      const payload = {
-        name: data.name,
-        email: data.email,
-        phone: `${data.phonePrefix}${data.phone}`,
-        prefferedLang: data.preferredLanguage,
-      };
-
-      const token = await getTokenKey();
-      mutate(
-        { token, payload },
-        {
-          onError: () => {
-            // Set error message
-          },
-        }
-      );
-    },
-    [getTokenKey, mutate]
+  const { t } = useTranslation();
+  const [detailsUpdated, setDetailsUpdated] = useState(false);
+  const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
+    null
   );
 
+  const onPhoneConfirmationSuccess = (success: boolean) => {
+    console.log({ success });
+  };
   return (
-    <FormProvider {...form}>
-      <ContentContainer>
-        <ScreenHeader>User profile edit</ScreenHeader>
-        <FormHeader>Enter your details</FormHeader>
-        <Inputs />
-
-        <FormFooter>
-          <ButtonCta
-            color="primary"
-            variant="outlined"
-            anchor="Cancel"
-            disabled={isLoading}
-          />
-          <ButtonCta
-            disabled={isLoading}
-            anchor="Update"
-            onPress={handleSubmit(onSubmit)}
-          />
-        </FormFooter>
-      </ContentContainer>
-    </FormProvider>
+    <>
+      <p>{t("hostAdd.country")}</p>
+      <UserDetailsForm
+        account={account}
+        identity={identity}
+        getTokenKey={getTokenKey}
+        onSuccess={() => console.log("SUSSS")}
+      />
+      {detailsUpdated && confirmation && (
+        <SmsVerificationModal
+          // confirmation={null}
+          confirmation={confirmation}
+          phoneNumber={"535200006"}
+          setVerificationSuccess={onPhoneConfirmationSuccess}
+          callback={() => console.log("SMS")}
+          mode="UPDATE"
+        />
+      )}
+    </>
   );
 }
