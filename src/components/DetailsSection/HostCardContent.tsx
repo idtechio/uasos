@@ -34,7 +34,13 @@ interface HostCardContentProps {
   //   attachments: any;
   //   matchedRequest: any;
   // };
-  offer: any;
+  offer: {
+    name: string;
+    city: string;
+    shelter_type: string;
+    beds: string;
+    duration_category: string;
+  };
 }
 
 export default function HostCardContent({ offer }: HostCardContentProps) {

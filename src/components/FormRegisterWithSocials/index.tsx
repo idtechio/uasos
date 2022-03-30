@@ -46,7 +46,7 @@ export default function FromRegisterWithSocials() {
   });
   const { handleSubmit } = form;
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: Pick<FormType, "registerWithSocials">) => {
     setData({
       name: e.registerWithSocials.name,
       prefferedLang: e.registerWithSocials.prefferedLanguage,
@@ -64,8 +64,10 @@ export default function FromRegisterWithSocials() {
       setPhoneNumber(
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
-    } catch (error: any) {
-      setApiError(error?.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setApiError(error?.message);
+      }
     }
   };
   const updateAccount = async () => {
@@ -77,12 +79,8 @@ export default function FromRegisterWithSocials() {
     }
   };
 
-  const onError = (e: any) => {
-    console.log(e);
-  };
-
   const {
-    formState: { errors, isValid, isSubmitted },
+    formState: { errors },
   } = form;
 
   const provider = identity?.providerData
@@ -170,7 +168,7 @@ export default function FromRegisterWithSocials() {
               style={styles.backButton}
             />
             <ButtonCta
-              onPress={handleSubmit(onSubmit, onError)}
+              onPress={handleSubmit(onSubmit, () => {})}
               anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}
             />
