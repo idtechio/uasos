@@ -18,6 +18,7 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+import { ErrorText } from "../FormRegisterWithSocials/styles";
 
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
@@ -31,6 +32,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const formFields = useForm<FormType>();
 
@@ -79,7 +81,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           setPhoneLoginConfirmation(confirmation);
           setPhoneNumber(data.login.phoneOrEmail);
         } catch (error) {
-          return null;
+          // eslint-disable-next-line
+          // @ts-ignore
+          setError(error.message);
         }
       }
     }
@@ -116,33 +120,37 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
-          <FormHeader>{t("loginForm.logInWith")}</FormHeader>
+          <FormHeader>{t("others:forms.login.login")}</FormHeader>
           {Object.values(providers).map(({ id, name }) => (
             <ButtonSM
               key={name}
               id={id}
               onPress={() => handleSignIn(id)}
-              anchor={`${t("loginForm.logInWith")} ${name}`}
+              anchor={
+                name === "Facebook"
+                  ? t("others:forms.login.signInFacebook")
+                  : t("others:forms.login.signInGoogle")
+              }
             />
           ))}
           <Spacer />
           <FormProvider {...formFields}>
             <FormTextInput
               name={"login.phoneOrEmail"}
-              label={"Phone or Email"}
+              label={t("others:forms.login.emailOrPhone")}
               rules={{
                 required: true,
                 maxLength: 50,
                 pattern: EMAIL_OR_PHONE_REGEX,
               }}
               error={errors?.login?.phoneOrEmail}
-              errorMsg={"Enter phone or email"}
+              errorMsg={t("others:forms.login.emailOrPhoneDetails")}
             />
             {passwordInput ? (
               <>
                 <FormTextInput
                   name={"login.password"}
-                  label={t("labels.password")}
+                  label={t("others:forms.generic.password")}
                   secureTextEntry
                   rules={{
                     required: true,
@@ -170,7 +178,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 marginBottom: "30px",
                 alignSelf: "flex-end",
               }}
-              anchor={t("loginForm.logIn")}
+              anchor={t("common:loginForm.logIn")}
               onPress={handleSubmit(onSubmit, onError)}
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
@@ -187,6 +195,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
+          {error ? <ErrorText>{error}</ErrorText> : <></>}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />

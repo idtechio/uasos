@@ -21,8 +21,7 @@ const BadgeContent: Record<
 };
 
 export default function StatusBadge({ state }: { state: MatchState }) {
-  const { style, label, value } = BadgeContent[state] || {
-    value: "",
+  const { style, label } = BadgeContent[state] || {
     label: "",
     color: "",
   };

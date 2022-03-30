@@ -30,7 +30,10 @@ async function getNumbers(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ ok: "ok", numbers: numbers[0] } as GetNumberList);
     res.end();
   } catch (error) {
-    res.status(400).json({ ok: "not ok" });
+    res.status(400).json({
+      ok: "not ok",
+      error: error instanceof Error ? error.message : "",
+    });
     res.end();
   }
 }

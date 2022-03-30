@@ -1,33 +1,108 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { Error } from "../Inputs/style";
 import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
-import { SupportCard, SupportWrapper, Title } from "./style";
+import {
+  HeaderWrapper,
+  IdContainer,
+  ImageWrapper,
+  MoreButtonWrapper,
+  OfferTitle,
+  SupportCard,
+  SupportWrapper,
+  TextWrapper,
+  Title,
+} from "./style";
 import { Offer } from "./types";
+import "react-loading-skeleton/dist/skeleton.css";
+import { LoadingCards } from "./LoadingCards";
 
 type ProvidingSupportProps = {
-  offers: Offer[];
+  offers?: Offer[];
+  isError: boolean;
+  isLoading: boolean;
+  readonly: boolean;
 };
 
-export default function ProvidingSupport({ offers }: ProvidingSupportProps) {
+export default function ProvidingSupport({
+  offers,
+  isLoading,
+  isError,
+  readonly,
+}: ProvidingSupportProps) {
   const { t } = useTranslation("desktop");
-  const router = useRouter();
-  const NoOffer = () => (
-    <CardAdd label={t("addOffer")} onPress={() => router.push(Routes.HOST)} />
+
+  if (!isLoading && (isError || !offers)) {
+    return (
+      <SupportWrapper>
+        <Error>{t("could_not_fetch_offers_list")}</Error>
+      </SupportWrapper>
+    );
+  }
+
+  return (
+    <SupportWrapper>
+      <Title>{t("overviewOfYourOffers")}</Title>
+      <Content isLoading={isLoading} offers={offers} readonly={readonly} />
+    </SupportWrapper>
   );
-  const Offers = () => (
+}
+
+const Content = ({
+  isLoading,
+  readonly,
+  offers,
+}: {
+  isLoading: boolean;
+  readonly: boolean;
+  offers?: Offer[];
+}) => {
+  if (isLoading || offers === undefined) {
+    return <LoadingCards count={3} showImage={true} />;
+  }
+  if (offers.length === 0) {
+    return <NoOffer readonly={readonly} />;
+  }
+  return <Offers offers={offers} readonly={readonly} />;
+};
+
+const NoOffer = ({ readonly }: { readonly: boolean }) => {
+  const { t } = useTranslation("desktop");
+
+  const router = useRouter();
+  return (
+    <CardAdd
+      label={t("addOffer")}
+      readonly={readonly}
+      onPress={() => {
+        if (!readonly) router.push(Routes.HOST);
+      }}
+    />
+  );
+};
+
+const Offers = ({
+  offers,
+  readonly,
+}: {
+  offers: Offer[];
+  readonly: boolean;
+}) => {
+  const { t } = useTranslation();
+
+  return (
     <>
       {offers.map((o) => (
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              <EditOfferButton />
+              {!readonly && <EditOfferButton />}
             </MoreButtonWrapper>
 
             <ImageWrapper>
@@ -40,8 +115,10 @@ export default function ProvidingSupport({ offers }: ProvidingSupportProps) {
               />
             </ImageWrapper>
             <TextWrapper>
-              <IdContainer>Id: xxxx</IdContainer>
-              <OfferTitle>Housing</OfferTitle>
+              <IdContainer>Id: {o.id}</IdContainer>
+              <OfferTitle>
+                {t(`common:staticValues.accommodationTypes.${o.name}`)}
+              </OfferTitle>
               <div
                 style={{
                   alignSelf: "flex-start",
@@ -54,66 +131,17 @@ export default function ProvidingSupport({ offers }: ProvidingSupportProps) {
             </TextWrapper>
           </HeaderWrapper>
 
-          <AnnouncementHighlights data={o} />
+          <AnnouncementHighlights
+            beds={o.beds}
+            city={o.city}
+            duration={o.duration}
+          />
 
-          <DetailsLink href={Routes.OFFER_DETAILS} />
+          {!readonly && (
+            <DetailsLink href={`${Routes.OFFER_DETAILS}/${o.id}`} />
+          )}
         </SupportCard>
       ))}
     </>
   );
-  return (
-    <SupportWrapper>
-      <Title>{t("overviewOfYourOffers")}</Title>
-      {offers.length > 0 ? <Offers /> : <NoOffer />}
-    </SupportWrapper>
-  );
-}
-
-const HeaderWrapper = styled.View`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 15px;
-  position: relative;
-`;
-
-const MoreButtonWrapper = styled.View`
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: 9999999;
-`;
-
-const ImageWrapper = styled.View`
-  height: 80px;
-  flex: 0 0 80px;
-`;
-
-const TextWrapper = styled.View`
-  flex: 1 1 100%;
-  padding-left: 12.7px;
-`;
-
-const IdContainer = styled.Text`
-  letter-spacing: 0.5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-`;
-
-const OfferTitle = styled.Text`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-
-  letter-spacing: 0.5px;
-
-  color: #003566;
-
-  border-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #f2f2f2;
-  padding-bottom: 8px;
-`;
+};
