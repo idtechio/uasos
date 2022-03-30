@@ -14,14 +14,26 @@ interface AccountProps {
   confirmedPhone: Boolean;
 }
 
+enum EmailStatus {
+  ACCEPTED = "accepted", // verified
+  REJECTED = "rejected", // for future moderation purpose
+  DEFAULT = "default", // not verified
+}
+
+enum PhoneStatus {
+  ACCEPTED = "accepted", // verified
+  REJECTED = "rejected", // for future moderation purpose
+  SUSPENDED = "suspended", // for future moderation purpose
+  DEFAULT = "default", // not verified
+}
 interface AccountDBProps {
   uid: string;
   name: string;
   email: string;
   phone_num: string;
   preferred_lang: string;
-  fnc_email_status: string;
-  fnc_msisdn_status: string;
+  email_status: EmailStatus;
+  phone_status: PhoneStatus;
 }
 
 async function getAccount(
@@ -47,8 +59,8 @@ async function getAccount(
       email: dbAccount.email,
       phoneNumber: dbAccount.phone_num,
       prefferedLang: dbAccount.preferred_lang,
-      confirmedEmail: dbAccount.fnc_email_status === "065",
-      confirmedPhone: dbAccount.fnc_msisdn_status === "065",
+      confirmedEmail: dbAccount.email_status === "accepted",
+      confirmedPhone: dbAccount.phone_status === "accepted",
     };
 
     res.status(200).json({ ok: "ok", account });
@@ -63,16 +75,7 @@ async function getAccount(
 
 async function getAccountFromDB(uid: string): Promise<false | AccountDBProps> {
   const dbAccount: false | any[] = await select(
-    `SELECT
-      uid,
-      name,
-      email,
-      phone_num,
-      fnc_msisdn_status,
-      fnc_email_status,
-      preferred_lang
-    FROM accounts a
-    WHERE a.uid = $1`,
+    `SELECT * FROM accounts_info WHERE uid = $1`,
     [uid]
   );
 

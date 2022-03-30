@@ -9,6 +9,23 @@ enum Boolean {
   TRUE = "TRUE",
 }
 
+enum GuestHostStatus {
+  ACCEPTED = "accepted", // default status after creation
+  REJECTED = "rejected", // for future moderation purpose
+  BEING_PROCESS = "being_processed", // during matching process
+  MATCHED = "matched", // matched with guest/hosts and awaiting for response
+  MATCH_ACCEPTED = "match_accepted", // match accepted by host and guest
+  DEFAULT = "default",
+}
+
+enum MatchStatus {
+  ACCEPTED = "accepted", // match accepted by guest and by host
+  REJECTED = "rejected", // match rejected by guest or by host
+  TIMEOUT = "timeout", // timeout during awaiting for guest and host response
+  AWAITING_RESPONSE = "awaiting_response", // match awaiting for guest and host response
+  DEFAULT = "default",
+}
+
 export interface MatchedOfferProps {
   id: string;
   country: string;
@@ -19,6 +36,7 @@ export interface MatchedOfferProps {
 
 export interface RequestProps {
   id: string;
+  status: GuestHostStatus;
   country: string;
   phone_num: string;
   email: string;
@@ -32,8 +50,7 @@ export interface RequestProps {
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string>;
-  status: string;
-  match_status?: string;
+  match_status?: MatchStatus;
   matchedOffer?: MatchedOfferProps;
 }
 
@@ -62,30 +79,7 @@ async function getRequests(
 
 async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
   const guestsList: false | any[] = await select(
-    `SELECT
-      g.db_guests_id as guest_id,
-      g.city, g.country,
-      g.phone_num, g.email,
-      g.beds,
-      g.acceptable_shelter_types,
-      g.group_relation,
-      g.duration_category,
-      g.is_pregnant, g.is_with_disability, g.is_with_animal,
-      g.is_with_elderly, g.is_ukrainian_nationality,
-      g.duration_category,
-      g.fnc_status as guest_status,
-      m.db_matches_id as match_id,
-      m.fnc_status as match_status,
-      h.db_hosts_id as host_id,
-      h.city as host_city,
-      h.country as host_country,
-      h.phone_num as host_phone_num,
-      h.email as host_email
-    FROM guests g
-    JOIN accounts a ON a.db_accounts_id = g.fnc_accounts_id
-    LEFT JOIN matches m ON m.fnc_hosts_id = g.db_guests_id
-    LEFT JOIN hosts h ON h.db_hosts_id = m.fnc_hosts_id
-    WHERE a.uid = $1`,
+    `SELECT * FROM requests WHERE account_uid = $1`,
     [uid]
   );
 
@@ -95,12 +89,13 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
 
   return guestsList.map((g) => ({
     id: g.guest_id,
+    status: g.guest_status,
     city: g.city,
     country: g.country,
     phone_num: g.phone_num,
     email: g.email,
-    acceptable_shelter_types: g.acceptable_shelter_types,
     beds: g.beds,
+    acceptable_shelter_types: g.acceptable_shelter_types,
     group_relation: g.group_relation,
     is_pregnant: g.is_pregnant,
     is_with_disability: g.is_with_disability,
@@ -108,7 +103,6 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     is_with_elderly: g.is_with_elderly,
     is_ukrainian_nationality: g.is_ukrainian_nationality,
     duration_category: g.duration_category,
-    status: g.guest_status,
     match_status: g.match_status,
     matchedOffer: g.match_id
       ? {
@@ -140,8 +134,8 @@ function getMockRequests(): RequestProps[] {
       is_with_elderly: Boolean.TRUE,
       is_ukrainian_nationality: Boolean.TRUE,
       duration_category: ["longer"],
-      status: "",
-      match_status: "",
+      status: GuestHostStatus.MATCHED,
+      match_status: MatchStatus.AWAITING_RESPONSE,
       matchedOffer: {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -165,7 +159,7 @@ function getMockRequests(): RequestProps[] {
       is_with_elderly: Boolean.FALSE,
       is_ukrainian_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
-      status: "",
+      status: GuestHostStatus.ACCEPTED,
     },
     {
       id: "ccc4e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -182,7 +176,7 @@ function getMockRequests(): RequestProps[] {
       is_with_elderly: Boolean.TRUE,
       is_ukrainian_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
-      status: "",
+      status: GuestHostStatus.BEING_PROCESS,
     },
   ];
 }
