@@ -54,7 +54,7 @@ export default function FormRegisterUser() {
         data.phonePrefix + data.phoneNumber,
         Authorization.initCaptcha("recaptcha__container")
       ),
-    { retry: 5, retryDelay: 1000 }
+    { retry: 10, retryDelay: 1000 }
   );
   const { identity, loaded } = useContext(AuthContext);
   const { t } = useTranslation();
@@ -116,9 +116,9 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
-      setPhoneConfirmation(null);
     } catch (err) {
       setSubmitRequstState((state) => ({ ...state, err }));
+      console.log(err);
     } finally {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
     }
@@ -144,6 +144,7 @@ export default function FormRegisterUser() {
   };
 
   const updateAccount = async () => {
+    setPhoneConfirmation(null);
     if (getTokenForAPI && updateData) {
       await AccountApi.updateAccount({
         payload: updateData,
