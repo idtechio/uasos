@@ -10,7 +10,7 @@ enum Boolean {
 }
 export interface HostProps {
   id?: string;
-  uid: string;
+  uid?: string;
   country: string;
   phone_num: string;
   email: string;

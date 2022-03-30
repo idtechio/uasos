@@ -135,12 +135,11 @@ export default function FormAdHost() {
     setSubmitRequstState((state) => ({ ...state, loading: true }));
     try {
       await addHostToApi({
-        name: name,
+        // name: name,
         country: country,
         phone_num: `${phonePrefix}${phoneNumber}`,
         email: email,
         city: town,
-        listing_country: country,
         shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,

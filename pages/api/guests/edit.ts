@@ -10,7 +10,7 @@ enum Boolean {
 }
 export interface GuestProps {
   id?: string;
-  uid: string;
+  uid?: string;
   name: string;
   country?: string;
   phone_num: string;
