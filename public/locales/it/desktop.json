@@ -22,5 +22,9 @@
   "matched": "",
   "beingConfirmed": "",
   "confirmed": "",
-  "details": ""
+  "details": "",
+  "could_not_fetch_offers_list": "",
+  "could_not_fetch_requests_list": "",
+  "submission": "",
+  "accomodationSearch": ""
 }

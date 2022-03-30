@@ -15,7 +15,7 @@ import { Theme } from "../src/style/theme.config";
 const PartnersContainer = styled.View`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   align-items: center;
   column-gap: 15px;
   row-gap: 10px;
@@ -25,6 +25,18 @@ const PartnersContainer = styled.View`
       lg: css`
         margin-top: 10px;
         grid-template-columns: repeat(8, minmax(0, 1fr));
+      `,
+      md: css`
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      `,
+      sm: css`
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      `,
+      tablet: css`
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      `,
+      mobile: css`
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       `,
     })}
 `;

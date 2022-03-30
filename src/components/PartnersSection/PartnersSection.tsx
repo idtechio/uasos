@@ -35,13 +35,22 @@ const Container = styled.View`
 `;
 
 const PartnerCardWrapper = styled.View`
-  width: 33%;
+  width: 100%;
   padding: 8px;
 
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint?.({
       lg: css`
         width: 16.66%;
+      `,
+      md: css`
+        width: 33%;
+      `,
+      sm: css`
+        width: 50%;
+      `,
+      tablet: css`
+        width: 50%;
       `,
     })}
 `;

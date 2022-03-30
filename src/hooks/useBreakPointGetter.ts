@@ -4,6 +4,8 @@ import { base } from "../style/theme.config";
 
 interface Params<T> {
   default?: T;
+  mobile?: T;
+  tablet?: T;
   sm?: T;
   md?: T;
   lg?: T;
@@ -12,6 +14,8 @@ interface Params<T> {
 }
 
 const BREAK_POINTS = {
+  mobile: base.breakPoints.mobile,
+  tablet: base.breakPoints.tablet,
   sm: base.breakPoints.sm,
   md: base.breakPoints.md,
   lg: base.breakPoints.lg,
@@ -45,6 +49,14 @@ export function useBreakPointGetter() {
           return params.md;
         case params.sm && parsedWidth && parsedWidth >= base.breakPoints.sm:
           return params.sm;
+        case params.tablet &&
+          parsedWidth &&
+          parsedWidth >= base.breakPoints.tablet:
+          return params.tablet;
+        case params.mobile &&
+          parsedWidth &&
+          parsedWidth >= base.breakPoints.mobile:
+          return params.mobile;
         default:
           return params.default ?? null;
       }
