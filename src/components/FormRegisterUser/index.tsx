@@ -9,9 +9,8 @@ import { CompositionSection } from "../Compositions";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import CardModal from "../CardModal";
-import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader } from "./styles";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
@@ -44,7 +43,6 @@ const submitRequestDefualtState = {
 
 export default function FormRegisterUser() {
   const { t } = useTranslation();
-  const { name: sessionName, email: sessionEmail } = useSessionUserData();
   const { getTokenForAPI } = useContext(AuthContext);
   const passwordInputRef = useRef<string | null>(null);
   const router = useRouter();
@@ -52,10 +50,9 @@ export default function FormRegisterUser() {
   const form = useForm<FormType>({
     defaultValues: {
       registrationUserForm: {
-        name: sessionName ? sessionName.split(" ")[0] : "",
-        email: sessionEmail,
         smsNotification: false,
-        showPasswordLabel: false,
+        showPassword: false,
+        preferredLanguage: "pl",
       },
     },
   });
@@ -70,6 +67,7 @@ export default function FormRegisterUser() {
   } = form;
 
   passwordInputRef.current = watch("registrationUserForm.password", "");
+  const isShowPasswordChecked = watch("registrationUserForm.showPassword");
 
   const onSubmit: SubmitHandler<FormType> = async ({
     registrationUserForm,
@@ -151,18 +149,18 @@ export default function FormRegisterUser() {
           />
         </SectionContent>
       </CompositionSection>
-      <CompositionSection padding={[0, 30, 0, 30]}>
-        <SectionContent>
-          <FormCheckbox
-            isCentered={false}
-            rules={{
-              required: false,
-            }}
-            name="registrationUserForm.smsNotification"
-            label={` ${t("registrationUserForm.smsNotificationLabel")}`}
-          />
-        </SectionContent>
-      </CompositionSection>
+      {/*<CompositionSection padding={[0, 30, 0, 30]}>*/}
+      {/*  <SectionContent>*/}
+      {/*    <FormCheckbox*/}
+      {/*      isCentered={false}*/}
+      {/*      rules={{*/}
+      {/*        required: false,*/}
+      {/*      }}*/}
+      {/*      name="registrationUserForm.smsNotification"*/}
+      {/*      label={` ${t("registrationUserForm.smsNotificationLabel")}`}*/}
+      {/*    />*/}
+      {/*  </SectionContent>*/}
+      {/*</CompositionSection>*/}
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
@@ -191,7 +189,7 @@ export default function FormRegisterUser() {
           <FormTextInput
             name={"registrationUserForm.password"}
             label={t("registrationUserForm.passwordLabel")}
-            secureTextEntry
+            secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
               maxLength: 50,
@@ -206,7 +204,7 @@ export default function FormRegisterUser() {
           <FormTextInput
             name={"registrationUserForm.passwordConfirm"}
             label={t("registrationUserForm.passwordConfirmLabel")}
-            secureTextEntry
+            secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
               maxLength: 50,
@@ -221,7 +219,7 @@ export default function FormRegisterUser() {
             rules={{
               required: false,
             }}
-            name="registrationUserForm.showPasswordLabel"
+            name="registrationUserForm.showPassword"
             label={` ${t("registrationUserForm.showPasswordLabel")}`}
           />
         </SectionContent>

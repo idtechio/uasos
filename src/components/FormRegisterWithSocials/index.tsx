@@ -7,7 +7,7 @@ import FormContainer from "../FormLogin/FormContainer";
 import FormTextInput from "../Inputs/FormTextInput";
 import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";

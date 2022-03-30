@@ -158,7 +158,7 @@ export type FormType = {
     email: string;
     password: string;
     passwordConfirm: string;
-    showPasswordLabel: boolean;
+    showPassword: boolean;
   };
 };
 
