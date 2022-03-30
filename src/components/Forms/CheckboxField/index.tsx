@@ -8,9 +8,7 @@ import { Label } from "./style";
 const CheckboxField = ({
   text,
   onChange,
-  error,
   value,
-  textStyle,
   wrapperStyle,
 }: CheckboxFieldProps) => {
   return (

@@ -62,7 +62,7 @@ async function getAccount(
 }
 
 async function getAccountFromDB(uid: string): Promise<false | AccountDBProps> {
-  const dbAccount: false | any[] = await select(
+  const dbAccount: false | AccountDBProps[] = await select(
     `SELECT
       uid,
       name,

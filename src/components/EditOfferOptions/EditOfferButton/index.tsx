@@ -72,7 +72,9 @@ export default function EditOfferButton() {
         </ListButton>
         <ListButton
           icon={<EditIcon />}
-          onPress={() => console.log("Edit")}
+          onPress={() => {
+            /*console.log("Edit")*/
+          }}
           withBottomBorder
         >
           Edit

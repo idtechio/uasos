@@ -61,8 +61,20 @@ async function getOffers(
   res.end();
 }
 
+type HostListitem = OfferProps & {
+  host_id: string;
+  host_status: string;
+  match_status: string;
+  match_id?: string;
+  guest_id: string;
+  guest_city: string;
+  guest_country: string;
+  guest_phone_num: string;
+  guest_email: string;
+};
+
 async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
-  const hostsList: false | any[] = await select(
+  const hostsList: false | HostListitem[] = await select(
     `SELECT
       h.db_hosts_id as host_id,
       h.city, h.country,

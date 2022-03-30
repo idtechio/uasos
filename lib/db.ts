@@ -11,7 +11,7 @@ const pool = new Pool({
   database: process.env.DB_NAME || "postgres",
 });
 
-const select = async function (text: string, params?: Array<any>) {
+const select = async function (text: string, params?: Array<unknown>) {
   try {
     DEBUG && logger.debug(text);
 
@@ -37,7 +37,7 @@ const select = async function (text: string, params?: Array<any>) {
 const selectColumn = async function (
   column: string,
   text: string,
-  params?: Array<any>
+  params?: Array<unknown>
 ) {
   try {
     DEBUG && logger.debug(text);
@@ -60,7 +60,7 @@ const selectColumn = async function (
   }
 };
 
-const selectOne = async function (text: string, params?: Array<any>) {
+const selectOne = async function (text: string, params?: Array<unknown>) {
   try {
     DEBUG && logger.debug(text);
 
@@ -82,7 +82,7 @@ const selectOne = async function (text: string, params?: Array<any>) {
   }
 };
 
-const query = async function (text: string, params?: Array<any>) {
+const query = async function (text: string, params?: Array<unknown>) {
   try {
     DEBUG && logger.debug(text);
 
@@ -102,8 +102,8 @@ const query = async function (text: string, params?: Array<any>) {
 
 const insert = async function (
   table: string,
-  cols: Array<any>,
-  values: Array<any>
+  cols: Array<string>,
+  values: Array<string>
 ) {
   let text;
   try {

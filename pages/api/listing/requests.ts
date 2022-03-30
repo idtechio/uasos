@@ -60,8 +60,21 @@ async function getRequests(
   res.end();
 }
 
+type GuestListItem = RequestProps & {
+  guest_id: string;
+  guest_status: string;
+  match_id?: string;
+
+  host_id: string;
+  host_city: string;
+  host_country: string;
+  host_listing_country: string;
+  host_phone_num: string;
+  host_email: string;
+};
+
 async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
-  const guestsList: false | any[] = await select(
+  const guestsList: false | GuestListItem[] = await select(
     `SELECT
       g.db_guests_id as guest_id,
       g.city, g.country,

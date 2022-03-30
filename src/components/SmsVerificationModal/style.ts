@@ -19,15 +19,14 @@ export const InputWrapper = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `;
-export const StyledInput = styled.TextInput`
+export const StyledInput = styled.TextInput<{ borderColor?: string }>`
   width: 35;
   height: 50;
   border: 1px solid lightgrey;
   font-size: 24px;
   text-align: center;
   margin: 0 5px;
-  ${(props: any) =>
-    props.borderColor ? `border-color: ${props.borderColor}` : ""}
+  ${(props) => (props.borderColor ? `border-color: ${props.borderColor}` : "")}
 `;
 export const Wrapper = styled.View`
   display: flex;
