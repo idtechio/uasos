@@ -1,13 +1,12 @@
 import { useState, useMemo } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Text, ActivityIndicator, View, StyleSheet } from "react-native";
+import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
-import { Tooltip } from "../Tooltip";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import FormDropdown from "../Inputs/FormDropdown";
@@ -26,9 +25,8 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
-import { addHostPhonePrefixList } from "./AddHostPhonePrefixList.data";
-import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
+import FormCheckbox from "../Inputs/FormCheckbox";
+// import FormCheckbox from "../Inputs/FormCheckbox";
 
 // const MAX_PHOTOS_COUNT = 3;
 
@@ -41,6 +39,8 @@ import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helper
 // `;
 
 export const SectionContent = styled.View`
+  display: flex;
+  gap: 30px 0px;
   max-width: 400px;
   width: 100%;
   margin-right: auto;
@@ -95,15 +95,15 @@ export default function FormAdHost() {
     formState: { errors, isValid, isSubmitted },
   } = form;
 
-  const watchCountry = watch("advancedHost.country", "");
+  const watchCountry = watch("advancedHost.country");
 
   const watchAccomodationTypeFieldValue = form.watch(
     "advancedHost.accommodationType"
   );
 
-  // const volunteerVisitAcceptance = form.watch(
-  //   "advancedHost.volunteerVisitAcceptance"
-  // ) as unknown as boolean;
+  const volunteerVisitAcceptance = form.watch(
+    "advancedHost.volunteerVisitAcceptance"
+  ) as unknown as boolean;
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
@@ -196,60 +196,20 @@ export default function FormAdHost() {
       )}
 
       <CompositionSection
-        padding={[35, 30, 8, 30]}
-        zIndex={6}
-        header={t("hostAdd.basicInfoHeader")}
-      >
-        <SectionContent>
-          <InputControlLabel>{t("hostAdd.nameLabel")}</InputControlLabel>
-          <FormTextInput
-            name="advancedHost.name"
-            label={t("hostAdd.namePlaceholder")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedHost?.name}
-            errorMsg={t("hostAdd.errors.name")}
-          />
-          <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
-          <FormTextInput
-            name="advancedHost.email"
-            label={t("hostAdd.emailPlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: t("validations.invalidEmail"),
-              },
-            }}
-            error={errors?.advancedHost?.email}
-            errorMsg={t("hostAdd.errors.email")}
-          />
-          <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
-          <FormPhoneInput
-            prefixName="advancedHost.phonePrefix"
-            numberName="advancedHost.phoneNumber"
-            phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
-            phoneLabel={t("hostAdd.phonePlaceholder")}
-            error={errors?.advancedHost?.phoneNumber}
-            errorMsg={t("hostAdd.errors.phoneNumber")}
-            data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
-          />
-        </SectionContent>
-      </CompositionSection>
-      <CompositionSection
-        padding={[35, 30, 8, 30]}
-        header={t("hostAdd.refugeInfoHeader")}
+        padding={[35, 30, 20, 30]}
+        header={t("others:forms.createShelter.accommodationHeader")}
         zIndex={3}
       >
         <SectionContent>
-          <InputControl zIndex={14}>
-            <InputControlLabel>
-              {t("refugeeAddForm.countryOfRefugePlaceholder")}
-            </InputControlLabel>
+          <View
+            style={{
+              zIndex: 2,
+            }}
+          >
+            <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
             <FormCountryDropdown
               zIndex={14}
-              placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
+              placeholder={t("hostAdd.country")}
               name="advancedHost.country"
               rules={{
                 required: true,
@@ -257,52 +217,122 @@ export default function FormAdHost() {
               error={errors?.advancedHost?.country}
               errorMsg={t("hostAdd.errors.country")}
             />
-          </InputControl>
-          <InputControlLabel>
-            {t("hostAdd.cityLabel")}
-            <View style={styles.tooltipText}>
-              <Tooltip>
-                <Text>{t("hostAdd.cityTooltipText")}</Text>
-              </Tooltip>
-            </View>
-          </InputControlLabel>
-          <FormCityDropdown
-            zIndex={13}
-            country={watchCountry}
-            name="advancedHost.town"
-            placeholder={t("hostAdd.cityPlaceholder")}
-            rules={{
-              required: true,
+          </View>
+
+          <View
+            style={{
+              zIndex: 1,
             }}
-            error={errors?.advancedHost?.town}
-            errorMsg={t("validations.requiredTown")}
-          />
+          >
+            <InputControlLabel>
+              {t("others:forms.generic.closestLargeCity")}
+            </InputControlLabel>
+            <FormCityDropdown
+              zIndex={13}
+              country={watchCountry}
+              name="advancedHost.town"
+              placeholder={t("refugeeAddForm.cityPlaceholder")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.town}
+              errorMsg={t("validations.requiredTown")}
+            />
+          </View>
+
+          <View style={styles.flexInputs}>
+            <View style={styles.inputWrapper}>
+              <InputControlLabel>
+                {t("others:forms.generic.zipCode")}
+              </InputControlLabel>
+              <FormTextInput
+                name="advancedHost.zipCode"
+                label={t("others:forms.generic.zipCode")}
+                error={errors?.advancedHost?.zipCode}
+              />
+            </View>
+            <View style={styles.inputWrapper}>
+              <InputControlLabel>{t("hostAdd.city")}</InputControlLabel>
+              <FormTextInput
+                name="advancedHost.city"
+                label={t("refugeeAddForm.cityPlaceholder")}
+                error={errors?.advancedHost?.city}
+              />
+            </View>
+          </View>
+
+          <View>
+            <InputControlLabel>
+              {t("others:forms.createShelter.street")}
+            </InputControlLabel>
+            <FormTextInput
+              name="advancedHost.street"
+              label={t("others:forms.createShelter.street")}
+              error={errors?.advancedHost?.street}
+            />
+          </View>
+
+          <View style={styles.flexInputs}>
+            <View style={styles.inputWrapper}>
+              <InputControlLabel>
+                {t("others:forms.createShelter.buildingNo")}
+              </InputControlLabel>
+              <FormTextInput
+                name="advancedHost.buildingNumber"
+                label={t("others:forms.createShelter.buildingNo")}
+                error={errors?.advancedHost?.buildingNumber}
+              />
+            </View>
+            <View style={styles.inputWrapper}>
+              <InputControlLabel>
+                {t("others:forms.createShelter.apartmentNo")}
+              </InputControlLabel>
+              <FormTextInput
+                name="advancedHost.apartmentNumber"
+                label={t("others:forms.createShelter.apartmentNo")}
+                error={errors?.advancedHost?.apartmentNumber}
+              />
+            </View>
+          </View>
         </SectionContent>
       </CompositionSection>
+
       <CompositionSection
         padding={[35, 30, 8, 30]}
         backgroundColor="#F5F4F4"
         zIndex={2}
       >
         <SectionContent>
-          <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
-          <FormDropdown
-            zIndex={12}
-            data={accomodationTypeDropdownFields.map(({ label, ...rest }) => ({
-              label: t(label),
-              ...rest,
-            }))}
-            name="advancedHost.accommodationType"
-            placeholder={t("forms.chooseFromList")}
-            rules={{
-              required: true,
+          <View
+            style={{
+              zIndex: 100,
             }}
-            error={errors?.advancedHost?.accommodationType}
-            errorMsg={t("hostAdd.errors.type")}
-          />
+          >
+            <InputControlLabel>{t("hostAdd.type")}</InputControlLabel>
+            <FormDropdown
+              zIndex={12}
+              data={accomodationTypeDropdownFields.map(
+                ({ label, ...rest }) => ({
+                  label: t(label),
+                  ...rest,
+                })
+              )}
+              name="advancedHost.accommodationType"
+              placeholder={t("forms.chooseFromList")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.accommodationType}
+              errorMsg={t("hostAdd.errors.type")}
+            />
+          </View>
 
           {shouldIncludeHostTypeField && (
-            <>
+            <View
+              style={{
+                zIndex: 1,
+              }}
+            >
               <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
               <FormDropdown
                 data={(
@@ -320,68 +350,83 @@ export default function FormAdHost() {
                 errorMsg={t("hostAdd.errors.hostType")}
                 zIndex={11}
               />
-            </>
+            </View>
           )}
-          <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
-          <FormNumericInput
-            name="advancedHost.guestCount"
-            rules={{
-              required: true,
-            }}
-            min={1}
-            error={errors?.advancedHost?.guestCount}
-            errorMsg={t("hostAdd.errors.guestCount")}
-          />
 
-          <InputControlLabel>
-            {t("hostAdd.accommodationTime")}
-          </InputControlLabel>
-          <FormRadioGroup
-            name={t("advancedHost.accommodationTime")}
-            rules={{
-              required: true,
-            }}
-            data={OVERNIGHT_DURATION_TYPES}
-            error={errors?.advancedHost?.accommodationTime}
-            errorMsg={t("hostAdd.errors.accommodationTime")}
-          />
+          <View>
+            <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
+            <FormNumericInput
+              name="advancedHost.guestCount"
+              rules={{
+                required: true,
+              }}
+              min={1}
+              error={errors?.advancedHost?.guestCount}
+              errorMsg={t("hostAdd.errors.guestCount")}
+            />{" "}
+          </View>
+
+          <View>
+            <InputControlLabel>
+              {t("hostAdd.accommodationTime")}
+            </InputControlLabel>
+            <FormRadioGroup
+              name={t("advancedHost.accommodationTime")}
+              rules={{
+                required: true,
+              }}
+              data={OVERNIGHT_DURATION_TYPES}
+              error={errors?.advancedHost?.accommodationTime}
+              errorMsg={t("hostAdd.errors.accommodationTime")}
+            />
+          </View>
         </SectionContent>
       </CompositionSection>
+
       <CompositionSection
         padding={[35, 30, 8, 30]}
         header={t("hostAdd.additionalInformationHeader")}
         zIndex={1}
       >
         <SectionContent>
-          <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
-          <FormRadioGroup
-            name="advancedHost.nationality"
-            rules={{
-              required: true,
-            }}
-            data={[
-              { label: t("hostAdd.ukraine"), value: "ukraine" },
-              { label: t("hostAdd.any"), value: "any" },
-            ]}
-            errorMsg={t("hostAdd.errors.nationalityError")}
-          />
-          <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
+          <View>
+            <InputControlLabel>{t("hostAdd.nationality")}</InputControlLabel>
+            <FormRadioGroup
+              name="advancedHost.nationality"
+              rules={{
+                required: true,
+              }}
+              data={[
+                { label: t("hostAdd.ukraine"), value: "ukraine" },
+                { label: t("hostAdd.any"), value: "any" },
+              ]}
+              errorMsg={t("hostAdd.errors.nationalityError")}
+            />
+          </View>
 
-          <FormDropdown<string>
-            multiSelect
-            zIndex={11}
-            data={GROUP_RELATIONS.map(({ label, value }) => ({
-              label: t(label),
-              value,
-            }))}
-            name="advancedHost.groupsTypes"
-            placeholder={t("forms.chooseFromListMulti")}
-            rules={{
-              required: true,
+          <View
+            style={{
+              zIndex: 1,
             }}
-            error={errors?.advancedHost?.groupsTypes}
-            errorMsg={t("hostAdd.errors.groupsTypes")}
-          />
+          >
+            <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
+            <FormDropdown<string>
+              multiSelect
+              zIndex={11}
+              data={GROUP_RELATIONS.map(({ label, value }) => ({
+                label: t(label),
+                value,
+              }))}
+              name="advancedHost.groupsTypes"
+              placeholder={t("forms.chooseFromListMulti")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedHost?.groupsTypes}
+              errorMsg={t("hostAdd.errors.groupsTypes")}
+            />
+          </View>
+
           <FormButtonsVertical
             data={additionalHostsFeats.map(({ label, ...rest }) => ({
               label: t(label),
@@ -392,20 +437,20 @@ export default function FormAdHost() {
       </CompositionSection>
 
       <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
-        {/* <FormCheckbox
-            rules={{
-              required: false,
-            }}
-            value={volunteerVisitAcceptance}
-            name="advancedHost.volunteerVisitAcceptance"
-            label={t("hostAdd.volunteerVisitAcceptance")}
-          /> */}
+        <FormCheckbox
+          rules={{
+            required: false,
+          }}
+          value={volunteerVisitAcceptance}
+          name="advancedHost.volunteerVisitAcceptance"
+          label={t("hostAdd.volunteerVisitAcceptance")}
+        />
       </CompositionSection>
-      <CompositionSection padding={[35, 30, 8, 30]} backgroundColor="#F5F4F4">
+      <CompositionSection padding={[0, 30, 31, 30]} backgroundColor="#F5F4F4">
         <InputControl>
           <ButtonCta
             onPress={handleSubmit(onSubmit)}
-            anchor={t("hostAdd.addButton")}
+            anchor={t("refugeeAddForm.addButton")}
             style={styles.addButton}
           />
           {isSubmitted && !isValid ? (
@@ -429,5 +474,17 @@ const styles = StyleSheet.create({
     marginTop: 5,
     alignSelf: "flex-end",
   },
+  formWrapper: {
+    maxWidth: "500px",
+    width: "100%",
+  },
   tooltipText: { marginHorizontal: 10 },
+  flexInputs: {
+    display: "flex",
+    flexDirection: "row",
+    gap: "0px 15px",
+  },
+  inputWrapper: {
+    flexShrink: 1,
+  },
 });
