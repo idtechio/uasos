@@ -5,6 +5,14 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+enum MatchStatus {
+  ACCEPTED = "accepted", // match accepted by guest and by host
+  REJECTED = "rejected", // match rejected by guest or by host
+  TIMEOUT = "timeout", // timeout during awaiting for guest and host response
+  AWAITING_RESPONSE = "awaiting_response", // match awaiting for guest and host response
+  DEFAULT = "default",
+}
+
 export const toOffers: (xs: GetOffersListDTO) => Offer[] = (xs) =>
   xs.offers.map(toOffer);
 
@@ -23,8 +31,21 @@ const toOffer = (o: OfferProps) => ({
   state: toMatchOfferState(o), //TODO: check match state algo
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
-  if (o.matchedRequest !== undefined) {
-    return "FOUND_MATCH";
+  const matchStatus = o.match_status;
+  if (!matchStatus) {
+    return "LOOKING_FOR_A_MATCH";
+  }
+  switch (matchStatus) {
+    case MatchStatus.ACCEPTED:
+      return "CONFIRMED";
+    case MatchStatus.AWAITING_RESPONSE:
+      return "FOUND_MATCH";
+    case MatchStatus.DEFAULT:
+      return "LOOKING_FOR_A_MATCH";
+    case MatchStatus.REJECTED:
+      return "INACTIVE";
+    case MatchStatus.TIMEOUT:
+      return "INACTIVE";
   }
   return "LOOKING_FOR_A_MATCH";
 };
@@ -65,8 +86,21 @@ const toAccomodationTime: (duration_category: string[]) => AccommodationTime = (
   );
 };
 const toMatchRequestState: (o: RequestProps) => MatchState = (r) => {
-  if (r.matchedOffer !== undefined) {
-    return "FOUND_MATCH";
+  const matchStatus = r.match_status;
+  if (!matchStatus) {
+    return "LOOKING_FOR_A_MATCH";
+  }
+  switch (matchStatus) {
+    case MatchStatus.ACCEPTED:
+      return "CONFIRMED";
+    case MatchStatus.AWAITING_RESPONSE:
+      return "FOUND_MATCH";
+    case MatchStatus.DEFAULT:
+      return "LOOKING_FOR_A_MATCH";
+    case MatchStatus.REJECTED:
+      return "INACTIVE";
+    case MatchStatus.TIMEOUT:
+      return "INACTIVE";
   }
   return "LOOKING_FOR_A_MATCH";
 };
