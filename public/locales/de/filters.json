@@ -1,15 +1,14 @@
 {
-  "location": "Ort",
-  "numberOfGuests": "Anzahl Gäste",
-  "timeframe": "Aufenthaltsdauer",
-  "oneWeek": "Eine Woche",
-  "twoWeeks": "Zwei Wochen",
-  "month": "Ein Monat",
-  "longerThanMonth": "Länger als ein Monat",
-  "food": "Verpflegung",
-  "disabledPerson": "Personen mit körperlichen Einschränkungen",
-  "kidsBelow2yo": "Mit Kleinkind",
-  "animalsWelcome": "Haustiere akzeptiert",
-  "yes": "ja",
-  "no": "nein"
+    "location": "Ort",
+    "numberOfGuests": "Anzahl Gäste",
+    "timeframe": "Aufenthaltsdauer",
+    "twoWeeks": "Zwei Wochen",
+    "month": "Ein Monat",
+    "longerThanMonth": "Länger als ein Monat",
+    "food": "Lebensmittel",
+    "disabledPerson": "Personen mit körperlichen Einschränkungen",
+    "kidsBelow2yo": "Mit Kleinkind",
+    "animalsWelcome": "Haustiere akzeptiert",
+    "yes": "ja",
+    "no": "nein"
 }
