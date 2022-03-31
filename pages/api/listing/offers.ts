@@ -33,7 +33,7 @@ export interface MatchedRequestProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
+
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relation: Array<string>;
@@ -43,7 +43,8 @@ export interface MatchedRequestProps {
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string>;
-  status?: string;
+
+  status: MatchStatus;
 }
 
 export interface OfferProps {
@@ -83,10 +84,8 @@ async function getOffers(
   let offers: OfferProps[];
 
   if (req.decodedToken?.uid) {
-    console.log("from db");
     offers = await getOffersFromDB(req.decodedToken.uid);
   } else {
-    console.log("mock");
     offers = getMockOffers();
   }
 
@@ -96,9 +95,11 @@ async function getOffers(
 
 type HostListitem = OfferProps & {
   host_id: string;
+  host_name: string;
   host_status: GuestHostStatus;
   match_id?: string;
   guest_id: string;
+  guest_name: string;
   guest_city: string;
   guest_country: string;
   guest_phone_num: string;
@@ -110,6 +111,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     `SELECT
       host_id,
       host_status,
+      host_name,
 
       city,
       country,
@@ -130,6 +132,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       match_status,
 
       guest_id,
+      guest_name,
       guest_city,
       guest_country,
       guest_phone_num,
@@ -144,7 +147,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
 
   return hostsList.map((h) => ({
     id: h.host_id,
-    name: h.host.name,
+    name: h.host_name,
     status: h.host_status,
     city: h.city,
     country: h.country,
@@ -165,10 +168,21 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
+          name: h.guest_name,
           city: h.guest_city,
           country: h.guest_country,
           phone_num: h.guest_phone_num,
           email: h.guest_email,
+          acceptable_shelter_types: [],
+          beds: 0,
+          group_relation: [],
+          is_pregnant: Boolean.TRUE,
+          is_with_disability: Boolean.TRUE,
+          is_with_animal: Boolean.TRUE,
+          is_with_elderly: Boolean.TRUE,
+          is_ukrainian_nationality: Boolean.TRUE,
+          duration_category: [],
+          status: MatchStatus.ACCEPTED,
         }
       : undefined,
   }));
@@ -178,6 +192,7 @@ function getMockOffers(): OfferProps[] {
   return [
     {
       id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Jan Kowalski",
       city: "Warszawa",
       country: "poland",
       phone_num: "+48111222333",
@@ -197,7 +212,7 @@ function getMockOffers(): OfferProps[] {
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
-        name: "Karina",
+        name: "Zenon Nowak",
         city: "Warszawa",
         country: "poland",
         phone_num: "+48999888777",
@@ -211,12 +226,12 @@ function getMockOffers(): OfferProps[] {
         is_with_elderly: Boolean.TRUE,
         is_ukrainian_nationality: Boolean.TRUE,
         duration_category: ["longer"],
-        status: "acceptedByboth",
+        status: MatchStatus.ACCEPTED,
       },
     },
     {
       id: "2224e25e-aae4-11ec-9a20-1726ed50bb17",
-      name: "Alina",
+      name: "Jan Kowalski",
       city: "Wrocław",
       country: "poland",
       phone_num: "+48222333444",
@@ -238,6 +253,7 @@ function getMockOffers(): OfferProps[] {
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Jan Kowalski",
       city: "Budapest",
       country: "hungary",
       phone_num: "+36333444555",

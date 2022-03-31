@@ -135,6 +135,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <FormTextInput
               name={"login.phoneOrEmail"}
               label={t("others:forms.login.emailOrPhone")}
+              styles={{ wrapper: { marginBottom: 12 } }}
               rules={{
                 required: true,
                 maxLength: 50,
@@ -170,6 +171,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 display: "flex",
                 marginBottom: "30px",
                 alignSelf: "flex-end",
+                marginTop: 50,
               }}
               anchor={t("common:loginForm.logIn")}
               onPress={handleSubmit(onSubmit, () => {})}
