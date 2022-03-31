@@ -1,83 +1,83 @@
 {
-  "supportingPartners": "",
-  "ngoPartners": "",
-  "projectInitiators": "",
-  "partners": "",
-  "showMorePartners": "",
-  "projectIntention": {
-    "title": "",
-    "description_part1": "",
-    "freeOfCharge": "",
-    "description_part2": "",
-    "lookingForHelp": "",
-    "shareHelp": ""
-  },
-  "likeToHelp": {
-    "title": "",
-    "details": "",
-    "cta": ""
-  },
-  "weMatched": {
-    "title": "",
-    "cards": {
-      "helpedPeople": "",
-      "lookingForHelp": "",
-      "currentOffers": ""
+    "supportingPartners": "Parteneri care sprijină inițiativa",
+    "ngoPartners": "Organizații Non Guvernamentale (ONG-uri)",
+    "projectInitiators": "Inițiatorii proiectului",
+    "partners": "Parteneri",
+    "showMorePartners": "Vezi toți partenerii",
+    "projectIntention": {
+        "title": "Ajutăm la găsirea unui adăpost pentru victimele războiului din Ucraina",
+        "description_part1": "Ajutăm refugiații să găsească automat",
+        "freeOfCharge": "gratuit",
+        "description_part2": "Cazare oferită de persoanele și instituțiile care vor să ajute",
+        "lookingForHelp": "Caut o cazare",
+        "shareHelp": "Ofer ajutor"
+    },
+    "likeToHelp": {
+        "title": "Vreți să ajutați?",
+        "details": "Înregistrați orice tip de cazare pe care o puteți oferi gratuit pentru victimele războiului din Ucraina.",
+        "cta": "Propuneți o cazare"
+    },
+    "weMatched": {
+        "title": "Am găsit deja o potrivire",
+        "cards": {
+            "helpedPeople": "persoane care caută ajutor",
+            "lookingForHelp": "Ajutor",
+            "currentOffers": "Oferte disponibile momentan"
+        }
+    },
+    "whatSosUaDoesSection": {
+        "title": "Ce face SOS-UA?",
+        "bulletPoints": {
+            "0": "Voluntarii și instituțiile descriu cazările oferite (tip, capacitate maximă, durata șederii)",
+            "1": "Persoanele care caută adăpost își definesc nevoile și cerințele minime (de exemplu, mărimea grupului, locația)",
+            "2": "UA-SOS conectează automat persoanele în căutare de adăpost cu cele mai bune cazări oferite de gazde"
+        },
+        "algorithmExplanation": "Algoritmul optimizează potrivirile, astfel încât cât mai multe persoane aflate în nevoie să găsească adăpost.",
+        "rolldown": "Vezi mai multe",
+        "rollup": "Mai puțin",
+        "description": "Portalul pune în legătură persoanele aflate în dificultate cu instituțiile și persoanele care își oferă ajutorul",
+        "howItWorks": "Cum funcționează?"
+    },
+    "instructions": {
+        "0": {
+            "title": "Înregistrarea",
+            "text": "Utilizatorul se înregistrează pe portal fie ca persoană care oferă cazare, fie ca persoană care are nevoie de adăpost"
+        },
+        "1": {
+            "title": "Completarea formularului",
+            "text": "Utilizatorul completează un formular cu privire la cazarea oferită sau la cazarea căutată."
+        },
+        "2": {
+            "title": "Potrivire automată",
+            "text": "Algoritmul caută în baza de date a locuințelor oferite și a persoanelor aflate la nevoie și, pe baza informațiilor furnizate, selectează cea mai bună potrivire."
+        },
+        "3": {
+            "title": "Informațiile sunt trimise utilizatorului",
+            "text": "După ce se relizează o conexiune, utilizatorii primesc un e-mail. O descriere suplimentară a utilizatorilor conectați este disponibilă în aplicație."
+        },
+        "4": {
+            "title": "Utilizatorii se conectează",
+            "text": "După realizarea conexiunii, este posibil să vă luați legătura prin e-mail sau telefonic pentru a discuta detaliile."
+        },
+        "5": {
+            "title": "Confirmarea sau respingerea ofertei",
+            "text": "Ultimul pas este să confirmați sau să refuzați oferta în aplicație. În cazul în care oferta este respinsă, aceasta este returnată în baza de date"
+        }
+    },
+    "howDoesItWork": {
+        "title": "Cum funcționează?",
+        "points": {
+            "0": "Trimiteți un apartament sau o nevoie de cazare",
+            "1": "Completați\n  datele necesare",
+            "2": "Așteptați pentru cea mai bună ofertă",
+            "3": "Contactați gazda \/ oaspetele",
+            "4": "Confirmați sau refuzați oferta"
+        }
+    },
+    "hero": {
+        "description": "Îi ajutăm pe refugiați să găsească în mod automat locuințe oferite de persoane și instituții dispuse să ajute.",
+        "lookingForHelp": "Caut un adăpost",
+        "shareHelp": "Ofer ajutor",
+        "title": "Ajutăm la găsirea unui adăpost pentru victimele războiului din Ucraina"
     }
-  },
-  "whatSosUaDoesSection": {
-    "title": "",
-    "bulletPoints": {
-      "0": "",
-      "1": "",
-      "2": ""
-    },
-    "algorithmExplanation": "",
-    "rolldown": "",
-    "rollup": "",
-    "description": "",
-    "howItWorks": ""
-  },
-  "instructions": {
-    "0": {
-      "title": "",
-      "text": ""
-    },
-    "1": {
-      "title": "",
-      "text": ""
-    },
-    "2": {
-      "title": "",
-      "text": ""
-    },
-    "3": {
-      "title": "",
-      "text": ""
-    },
-    "4": {
-      "title": "",
-      "text": ""
-    },
-    "5": {
-      "title": "",
-      "text": ""
-    }
-  },
-  "howDoesItWork": {
-    "title": "",
-    "points": {
-      "0": "",
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": ""
-    }
-  },
-  "hero": {
-    "description": "",
-    "lookingForHelp": "",
-    "shareHelp": "",
-    "title": ""
-  }
 }
