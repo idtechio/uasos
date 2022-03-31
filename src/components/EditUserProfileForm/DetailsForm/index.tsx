@@ -76,15 +76,16 @@ export default function UserDetailsForm({
         prefferedLang: data.preferredLanguage,
       };
 
-      mutate(
-        { payload },
-        {
-          onError: () => {
-            // Set error message
-          },
-        }
-      );
       onSuccess();
+
+      // mutate(
+      //   { payload },
+      //   {
+      //     onError: () => {
+      //       // Set error message
+      //     },
+      //   }
+      // );
     },
     [mutate, onSuccess]
   );

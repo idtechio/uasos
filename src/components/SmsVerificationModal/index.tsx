@@ -83,7 +83,6 @@ export default function SmsVerificationModal({
     try {
       if (identity) {
         const update = await Authorization.updatePhone(
-          identity,
           phoneNumber,
           Authorization.initCaptcha("recaptcha__container"),
           "32313"

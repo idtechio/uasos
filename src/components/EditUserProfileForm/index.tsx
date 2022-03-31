@@ -1,7 +1,8 @@
 import { ConfirmationResult, User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
-import React, { useState } from "react";
-import { getAccountDTO } from "../../client-api/account";
+import React, { useEffect, useState } from "react";
+import { AccountApi, getAccountDTO } from "../../client-api/account";
+import { Authorization } from "../../hooks/useAuth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import UserDetailsForm from "./DetailsForm";
 
@@ -21,22 +22,38 @@ export default function EditUserProfileForm({
   const onPhoneConfirmationSuccess = (success: boolean) => {
     console.log({ success });
   };
+
+  const checkIfPhoneIsVerified = async () => {
+    const acocunt = await AccountApi.getAccount();
+
+    // const confirmation = await Authorization.signInWithPhone(
+    //   data.login.phoneOrEmail,
+    //   Authorization.initCaptcha("captcha__container")
+    // );
+  };
+
+  useEffect(() => {
+    if (detailsUpdated) {
+      checkIfPhoneIsVerified();
+    }
+  }, [detailsUpdated]);
   return (
     <>
       <p>{t("hostAdd.country")}</p>
       <UserDetailsForm
         account={account}
         identity={identity}
-        onSuccess={() => console.log("SUSSS")}
+        onSuccess={() => setDetailsUpdated(true)}
       />
-      {detailsUpdated && confirmation && (
-        <SmsVerificationModal
-          confirmation={confirmation}
-          phoneNumber={"535200006"}
-          setVerificationSuccess={onPhoneConfirmationSuccess}
-          callback={() => console.log("SMS")}
-          mode="UPDATE"
-        />
+      {detailsUpdated && (
+        // <SmsVerificationModal
+        //   confirmation={confirmation}
+        //   phoneNumber={"535200006"}
+        //   setVerificationSuccess={onPhoneConfirmationSuccess}
+        //   callback={() => console.log("SMS")}
+        //   mode="UPDATE"
+        // />
+        <div>Display sms modal</div>
       )}
     </>
   );
