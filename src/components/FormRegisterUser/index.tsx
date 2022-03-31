@@ -9,7 +9,7 @@ import { CompositionSection } from "../Compositions";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import CardModal from "../CardModal";
-import { Error } from "../Inputs/style";
+// import { Error } from "../Inputs/style";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
@@ -26,6 +26,7 @@ import { ConfirmationResult, User } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { useMutation } from "react-query";
+import { FirebaseError } from "@firebase/util";
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -81,6 +82,7 @@ export default function FormRegisterUser() {
     useState<{ name: string; preferredLang: string }>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [apiError, setApiError] = useState("");
 
   const {
     handleSubmit,
@@ -91,6 +93,22 @@ export default function FormRegisterUser() {
   passwordInputRef.current = watch("registrationUserForm.password", "");
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
 
+  const parseError = (error: string) => {
+    if (error.includes("email-already-exists")) {
+      setApiError(t("others:userRegistration.errors.emailExists"));
+    } else if (
+      error.includes("phone-number-already-exists") ||
+      error.includes("account-exists")
+    ) {
+      setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
+    } else if (error.includes("too-many-requests")) {
+      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+    } else if (error.includes("invalid-verification")) {
+      setApiError(t("others:userRegistration.errors.invalidCode"));
+    } else {
+      setApiError("Oops something went wrong");
+    }
+  };
   const onSubmit: SubmitHandler<FormType> = async ({
     registrationUserForm,
   }) => {
@@ -116,8 +134,12 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+        setSubmitRequstState((state) => ({ ...state, error }));
+        parseError(error.message);
+      }
     } finally {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
     }
@@ -145,10 +167,16 @@ export default function FormRegisterUser() {
   const updateAccount = async () => {
     setPhoneConfirmation(null);
     if (getTokenForAPI && updateData) {
-      await AccountApi.updateAccount({
-        payload: updateData,
-        token: await getTokenForAPI(),
-      });
+      try {
+        await AccountApi.updateAccount({
+          payload: updateData,
+          token: await getTokenForAPI(),
+        });
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
+      }
     }
   };
   return (
@@ -159,23 +187,26 @@ export default function FormRegisterUser() {
         </CardModal>
       )}
       <CompositionSection padding={[35, 30, 8, 30]} zIndex={2}>
-        <StyledHeader>{t("registrationUserForm.header")}</StyledHeader>
-        <StyledSubheader>{t("registrationUserForm.subheader")}</StyledSubheader>
+        <StyledHeader>
+          {t("others:forms.userRegistration.userRegistration")}
+        </StyledHeader>
+        <StyledSubheader>
+          {t("others:forms.userRegistration.enterDetails")}
+        </StyledSubheader>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.nameLabel")}
+            {t("others:forms.generic.name")}
           </InputControlLabel>
           <FormTextInput
             name="registrationUserForm.name"
-            label={t("registrationUserForm.namePlaceholder")}
+            label={t("others:forms.generic.name")}
             rules={{
               required: true,
             }}
             error={errors?.registrationUserForm?.name}
-            errorMsg={t("registrationUserForm.errors.name")}
           />
           <InputControlLabel marginBottom={"14px"}>
-            {t("registrationUserForm.preferredLanguageLabel")}
+            {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <FormLanguageDropdown
             name="registrationUserForm.preferredLanguage"
@@ -183,22 +214,21 @@ export default function FormRegisterUser() {
               required: true,
             }}
             error={errors?.registrationUserForm?.preferredLanguage}
-            errorMsg={t("registrationUserForm.errors.preferredLanguage")}
           />
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]} zIndex={1}>
         <SectionContent>
           <InputControlLabel marginBottom={"14px"}>
-            {t("registrationUserForm.phoneLabel")}
+            {t("refugeeAddForm.phoneLabel")}
           </InputControlLabel>
           <FormPhoneInput
             prefixName="registrationUserForm.phonePrefix"
             numberName="registrationUserForm.phoneNumber"
-            phonePrefixLabel={t("registrationUserForm.phonePrefixPlaceholder")}
-            phoneLabel={t("registrationUserForm.phoneNumberPlaceholder")}
+            phonePrefixLabel={t("hostAdd.country")}
+            phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
             error={errors?.registrationUserForm?.phoneNumber}
-            errorMsg={t("registrationUserForm.errors.phoneNumber")}
+            errorMsg=""
             data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
           />
         </SectionContent>
@@ -218,11 +248,11 @@ export default function FormRegisterUser() {
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.emailLabel")}
+            {t("others:forms.generic.emailAddress")}
           </InputControlLabel>
           <FormTextInput
             name="registrationUserForm.email"
-            label={t("registrationUserForm.emailPlaceholder")}
+            label={t("others:forms.generic.email")}
             rules={{
               required: true,
               pattern: {
@@ -238,11 +268,11 @@ export default function FormRegisterUser() {
       <CompositionSection padding={[0, 30, 0, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.passwordLabel")}
+            {t("others:forms.generic.password")}
           </InputControlLabel>
           <FormTextInput
             name={"registrationUserForm.password"}
-            label={t("registrationUserForm.passwordLabel")}
+            label={t("others:forms.generic.password")}
             secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
@@ -250,14 +280,13 @@ export default function FormRegisterUser() {
               minLength: 8,
             }}
             error={errors?.registrationUserForm?.password}
-            errorMsg={t("registrationUserForm.errors.password")}
           />
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.passwordConfirmLabel")}
+            {t("others:forms.userRegistration.confirmPassword")}
           </InputControlLabel>
           <FormTextInput
             name={"registrationUserForm.passwordConfirm"}
-            label={t("registrationUserForm.passwordConfirmLabel")}
+            label={t("others:forms.userRegistration.confirmPassword")}
             secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
@@ -274,10 +303,10 @@ export default function FormRegisterUser() {
               required: false,
             }}
             name="registrationUserForm.showPassword"
-            label={` ${t("registrationUserForm.showPasswordLabel")}`}
+            label={` ${t("others:common.actions.showPassword")}`}
           />
           {(submitRequstState.error || mutation.error) && (
-            <StyledErrorMessage>Oops something went wrong!</StyledErrorMessage>
+            <StyledErrorMessage>{apiError}</StyledErrorMessage>
           )}
         </SectionContent>
       </CompositionSection>
@@ -287,14 +316,14 @@ export default function FormRegisterUser() {
             <InputControl styles={buttonStyles}>
               <ButtonCta
                 onPress={() => router.push(Routes.HOMEPAGE)}
-                anchor={t("registrationUserForm.backButtonLabel")}
+                anchor={t("others:common.buttons.back")}
                 style={buttonStyles.backButton}
               />
             </InputControl>
             <InputControl styles={buttonStyles}>
               <ButtonCta
                 onPress={handleSubmit(onSubmit)}
-                anchor={t("registrationUserForm.nextButtonLabel")}
+                anchor={t("others:common.buttons.next")}
                 style={buttonStyles.nextButton}
               />
             </InputControl>
