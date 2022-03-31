@@ -119,10 +119,6 @@ const Authorization: Authorization = {
   async initUpdatePhone(phoneNumber, recaptcha) {
     const provider = new PhoneAuthProvider(auth);
     return await provider.verifyPhoneNumber(phoneNumber, recaptcha);
-    // const phoneCredential = PhoneAuthProvider.credential(
-    //   verificationId,
-    //   verificationCode
-    // );
   },
   async updatePhone(phoneCredential) {
     const user = getAuth().currentUser;

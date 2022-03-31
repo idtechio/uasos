@@ -13,7 +13,7 @@ import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
-import { ConfirmationResult } from "firebase/auth";
+import { ConfirmationResult, PhoneAuthProvider } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
@@ -33,6 +33,7 @@ interface Props {
   setVerificationSuccess: (success: boolean) => void;
   mode: "LOGIN" | "UPDATE" | "LINK";
   callback: () => void;
+  verificationId?: string;
 }
 export default function SmsVerificationModal({
   phoneNumber,
@@ -40,6 +41,7 @@ export default function SmsVerificationModal({
   setVerificationSuccess,
   mode,
   callback,
+  verificationId,
 }: Props) {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -78,20 +80,7 @@ export default function SmsVerificationModal({
     }
   };
 
-  const handleResendUpdate = async () => {
-    setResending(true);
-    try {
-      if (identity) {
-        const update = await Authorization.updatePhone(
-          phoneNumber,
-          Authorization.initCaptcha("recaptcha__container"),
-          "32313"
-        );
-      }
-    } catch (err) {
-      setApiError(t("others:common.sms.verificationFail"));
-    }
-  };
+  const handleResendUpdate = async () => {};
 
   const handleResend =
     mode === "LINK"
@@ -124,9 +113,17 @@ export default function SmsVerificationModal({
       }
     } else {
       try {
-        await confirmation.confirm(code);
-        setVerificationSuccess(true);
-        callback();
+        if (mode === "UPDATE" && verificationId) {
+          const phoneCredential = PhoneAuthProvider.credential(
+            verificationId,
+            code
+          );
+          await Authorization.updatePhone(phoneCredential);
+        } else {
+          await confirmation.confirm(code);
+          setVerificationSuccess(true);
+          callback();
+        }
       } catch {
         setApiError(t("others:common.sms.verificationFail"));
       }
