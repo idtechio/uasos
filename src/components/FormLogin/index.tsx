@@ -170,6 +170,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 display: "flex",
                 marginBottom: "30px",
                 alignSelf: "flex-end",
+                marginTop: 50,
               }}
               anchor={t("common:loginForm.logIn")}
               onPress={handleSubmit(onSubmit, () => {})}
