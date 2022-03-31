@@ -141,7 +141,6 @@ export default function FormAdGuest() {
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
       country: guest.country,
-      listing_country: guest.country,
     };
 
     if (guest.town) {
