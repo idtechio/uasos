@@ -30,7 +30,10 @@ export async function publishMessage(
       .topic(topicNameOrId)
       .publishMessage({ data });
 
-    console.log(`Message ${messageId} published.`);
+    console.log(
+      `Message ${messageId} published to ${topicNameOrId}: `,
+      message
+    );
     return { status: PublishStatus.OK };
   } catch (e) {
     return {
