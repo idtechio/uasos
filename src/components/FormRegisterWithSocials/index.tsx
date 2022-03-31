@@ -32,6 +32,22 @@ export default function FromRegisterWithSocials() {
     useState<boolean>(false);
   const [data, setData] = useState<{ name: string; prefferedLang: string }>();
   const [apiError, setApiError] = useState<string>("");
+  const parseError = (error: string) => {
+    if (error.includes("email-already-exists")) {
+      setApiError(t("others:userRegistration.errors.emailExists"));
+    } else if (
+      error.includes("phone-number-already-exists") ||
+      error.includes("account-exists")
+    ) {
+      setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
+    } else if (error.includes("too-many-requests")) {
+      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+    } else if (error.includes("invalid-verification")) {
+      setApiError(t("others:userRegistration.errors.invalidCode"));
+    } else {
+      setApiError(t("others:common.sms.verificationFail"));
+    }
+  };
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -66,10 +82,11 @@ export default function FromRegisterWithSocials() {
       );
     } catch (error: unknown) {
       if (error instanceof Error) {
-        setApiError(error?.message);
+        parseError(error?.message);
       }
     }
   };
+
   const updateAccount = async () => {
     if (getTokenForAPI && data) {
       await AccountApi.updateAccount({
