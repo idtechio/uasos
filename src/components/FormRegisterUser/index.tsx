@@ -198,6 +198,7 @@ export default function FormRegisterUser() {
           <FormTextInput
             name="registrationUserForm.name"
             label={t("others:forms.generic.name")}
+            styles={{ wrapper: { marginTop: 6, marginBottom: 10 } }}
             rules={{
               required: true,
             }}
@@ -220,15 +221,17 @@ export default function FormRegisterUser() {
           <InputControlLabel marginBottom={"14px"}>
             {t("refugeeAddForm.phoneLabel")}
           </InputControlLabel>
-          <FormPhoneInput
-            prefixName="registrationUserForm.phonePrefix"
-            numberName="registrationUserForm.phoneNumber"
-            phonePrefixLabel={t("hostAdd.country")}
-            phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
-            error={errors?.registrationUserForm?.phoneNumber}
-            errorMsg=""
-            data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
-          />
+          <div style={{ marginBottom: 10 }}>
+            <FormPhoneInput
+              prefixName="registrationUserForm.phonePrefix"
+              numberName="registrationUserForm.phoneNumber"
+              phonePrefixLabel={t("hostAdd.country")}
+              phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
+              error={errors?.registrationUserForm?.phoneNumber}
+              errorMsg=""
+              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+            />
+          </div>
         </SectionContent>
       </CompositionSection>
       {/*<CompositionSection padding={[0, 30, 0, 30]}>*/}
@@ -248,19 +251,21 @@ export default function FormRegisterUser() {
           <InputControlLabel marginBottom={"0"}>
             {t("others:forms.generic.emailAddress")}
           </InputControlLabel>
-          <FormTextInput
-            name="registrationUserForm.email"
-            label={t("others:forms.generic.email")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: t("validations.invalidEmail"),
-              },
-            }}
-            error={errors?.registrationUserForm?.email}
-            errorMsg={t("registrationUserForm.errors.email")}
-          />
+          <div style={{ marginTop: 6, marginBottom: 10 }}>
+            <FormTextInput
+              name="registrationUserForm.email"
+              label={t("others:forms.generic.email")}
+              rules={{
+                required: true,
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: t("validations.invalidEmail"),
+                },
+              }}
+              error={errors?.registrationUserForm?.email}
+              errorMsg={t("registrationUserForm.errors.email")}
+            />
+          </div>
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]}>
@@ -272,6 +277,7 @@ export default function FormRegisterUser() {
             name={"registrationUserForm.password"}
             label={t("others:forms.generic.password")}
             secureTextEntry={!isShowPasswordChecked}
+            styles={{ wrapper: { marginTop: 6, marginBottom: 10 } }}
             rules={{
               required: true,
               maxLength: 50,
@@ -283,6 +289,7 @@ export default function FormRegisterUser() {
             {t("others:forms.userRegistration.confirmPassword")}
           </InputControlLabel>
           <FormTextInput
+            styles={{ wrapper: { marginTop: 6, marginBottom: 10 } }}
             name={"registrationUserForm.passwordConfirm"}
             label={t("others:forms.userRegistration.confirmPassword")}
             secureTextEntry={!isShowPasswordChecked}
@@ -308,7 +315,7 @@ export default function FormRegisterUser() {
           )}
         </SectionContent>
       </CompositionSection>
-      <CompositionSection padding={[35, 30, 8, 30]}>
+      <CompositionSection padding={[35, 30, 24, 30]}>
         <SectionContent>
           <CompositionRow>
             <InputControl styles={buttonStyles}>
