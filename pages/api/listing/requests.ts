@@ -50,7 +50,8 @@ export interface RequestProps {
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string>;
-  match_status?: MatchStatus;
+  match_id?: string | null;
+  match_status?: MatchStatus | null;
   matchedOffer?: MatchedOfferProps;
 }
 
@@ -140,6 +141,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     is_with_elderly: g.is_with_elderly,
     is_ukrainian_nationality: g.is_ukrainian_nationality,
     duration_category: g.duration_category,
+    match_id: g.match_id,
     match_status: g.match_status,
     matchedOffer: g.match_id
       ? {
@@ -172,6 +174,7 @@ function getMockRequests(): RequestProps[] {
       duration_category: ["longer"],
       status: GuestHostStatus.MATCHED,
       match_status: MatchStatus.AWAITING_RESPONSE,
+      match_id: "eee4e25e-aae4-11ec-9a20-1726ed50bb17",
       matchedOffer: {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -196,6 +199,9 @@ function getMockRequests(): RequestProps[] {
       is_ukrainian_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       status: GuestHostStatus.ACCEPTED,
+      match_id: null,
+      match_status: null,
+      matchedOffer: undefined,
     },
     {
       id: "ccc4e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -213,6 +219,9 @@ function getMockRequests(): RequestProps[] {
       is_ukrainian_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       status: GuestHostStatus.BEING_PROCESS,
+      match_id: null,
+      match_status: null,
+      matchedOffer: undefined,
     },
   ];
 }
