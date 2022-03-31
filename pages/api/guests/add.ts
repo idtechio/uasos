@@ -27,7 +27,7 @@ export interface GuestProps {
 }
 
 interface GuestDBProps {
-  db_accounts_id: string;
+  fnc_accounts_id: string;
 }
 
 async function addGuest(
@@ -49,7 +49,7 @@ async function addGuest(
     const body = req.body;
     const guestData: GuestProps & GuestDBProps = {
       ...body,
-      db_accounts_id: account.db_accounts_id,
+      fnc_accounts_id: account.db_accounts_id,
     };
 
     const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
