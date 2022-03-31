@@ -40,6 +40,7 @@ export default function FromRegisterWithSocials() {
             ? identity?.displayName.split(" ")[0]
             : "",
         email: identity && identity.email ? identity?.email : "",
+        prefferedLanguage: "pl",
       },
     },
   });
@@ -169,9 +170,7 @@ export default function FromRegisterWithSocials() {
               prefixName="registerWithSocials.phonePrefix"
               numberName="registerWithSocials.phoneNumber"
               phonePrefixLabel={t("others:forms.generic.country")}
-              phoneLabel={t(
-                "common:registrationUserForm.phoneNumberPlaceholder"
-              )}
+              phoneLabel={t("_ _ _  _ _ _  _ _ _")}
               error={errors?.advancedHost?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
               data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
