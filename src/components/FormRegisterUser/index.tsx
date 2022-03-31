@@ -9,7 +9,7 @@ import { CompositionSection } from "../Compositions";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
 import CardModal from "../CardModal";
-import { Error } from "../Inputs/style";
+// import { Error } from "../Inputs/style";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
@@ -26,6 +26,7 @@ import { ConfirmationResult, User } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { useMutation } from "react-query";
+import { FirebaseError } from "@firebase/util";
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -133,9 +134,12 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
-    } catch (error: any) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-      parseError(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+        setSubmitRequstState((state) => ({ ...state, error }));
+        parseError(error.message);
+      }
     } finally {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
     }
@@ -168,8 +172,10 @@ export default function FormRegisterUser() {
           payload: updateData,
           token: await getTokenForAPI(),
         });
-      } catch (error: any) {
-        parseError(error.message);
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
       }
     }
   };

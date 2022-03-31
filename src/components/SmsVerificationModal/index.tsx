@@ -17,6 +17,7 @@ import { ConfirmationResult } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
+import { FirebaseError } from "@firebase/util";
 
 interface Props {
   phoneNumber: string;
@@ -49,8 +50,10 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch (error: any) {
-      parseError(error?.message);
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+      }
     }
   };
   const handleResendLink = async () => {
@@ -64,8 +67,10 @@ export default function SmsVerificationModal({
         );
         setResendConfirmation(confirm);
       }
-    } catch (error: any) {
-      parseError(error?.message);
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+      }
     }
   };
 
@@ -128,16 +133,20 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch (error: any) {
-        parseError(error?.message);
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
       }
     } else {
       try {
         await confirmation.confirm(code);
         setVerificationSuccess(true);
         callback();
-      } catch (error: any) {
-        parseError(error?.message);
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
       }
     }
   };

@@ -21,6 +21,7 @@ import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
+import { FirebaseError } from "@firebase/util";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -81,7 +82,7 @@ export default function FromRegisterWithSocials() {
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
     } catch (error: unknown) {
-      if (error instanceof Error) {
+      if (error instanceof Error || error instanceof FirebaseError) {
         parseError(error?.message);
       }
     }
