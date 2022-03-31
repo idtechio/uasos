@@ -3,7 +3,7 @@ import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import { AccountDBProps, getAccountFromDB } from "../account/get";
+import { AccountInfoDBProps, getAccountFromDB } from "../account/get";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -45,7 +45,7 @@ async function addHost(
       throw new Error("token is required");
     }
 
-    const account: false | AccountDBProps = await getAccountFromDB(
+    const account: false | AccountInfoDBProps = await getAccountFromDB(
       req.decodedToken.uid
     );
     if (!account) {
