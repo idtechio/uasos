@@ -156,7 +156,7 @@ export default function FromRegisterWithSocials() {
             prefixName="registerWithSocials.phonePrefix"
             numberName="registerWithSocials.phoneNumber"
             phonePrefixLabel={t("others:forms.generic.country")}
-            phoneLabel={t("hostAdd.phonePlaceholder")}
+            phoneLabel={t("common:registrationUserForm.phoneNumberPlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
             errorMsg={t("hostAdd.errors.phoneNumber")}
             data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
