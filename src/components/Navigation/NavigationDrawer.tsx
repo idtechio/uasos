@@ -5,7 +5,7 @@ import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
 import UserIcon from "../../style/svgs/user.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
 import { useContext } from "react";
@@ -18,7 +18,6 @@ interface Props {
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
   const { t } = useTranslation("common");
-  const { data: session } = useSession();
   const { identity } = useContext(AuthContext);
 
   const handleSignOut = () => {
@@ -42,7 +41,6 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
               title={"Dashboard"}
               Icon={UserIcon}
               onPress={() => {
-                console.log("ON PRESS");
                 router.push("/dashboard");
                 hideDrawer();
               }}

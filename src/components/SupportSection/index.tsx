@@ -53,7 +53,16 @@ export default function SupportSection({
         ),
       },
     ];
-  }, [t, offers, isOffersInError, isOffersLoading]);
+  }, [
+    t,
+    offers,
+    isOffersLoading,
+    isOffersInError,
+    requests,
+    isRequestsLoading,
+    isRequestsInError,
+    readonly,
+  ]);
 
   return <TabPanel items={items} initialSelectedIndex={0} />;
 }

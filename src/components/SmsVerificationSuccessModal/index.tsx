@@ -12,7 +12,7 @@ export default function SmsVerificationSuccessModal() {
   return (
     <CardModal closeable={false}>
       <Wrapper>
-        <Image src={SmsSent}></Image>
+        <Image src={SmsSent} alt=""></Image>
         <StyledHeader>
           {t("others:common.sms.verificationSuccess")}
         </StyledHeader>

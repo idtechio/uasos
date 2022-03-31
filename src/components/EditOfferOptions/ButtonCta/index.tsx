@@ -12,7 +12,6 @@ const ButtonCta = ({
   colorOpposite = false,
   onClick,
   variant = "contained",
-  color = "primary",
   disabled = false,
 }: ButtonProps & {
   disabled?: boolean;

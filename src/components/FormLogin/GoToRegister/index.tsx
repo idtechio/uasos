@@ -1,12 +1,11 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { StyleSheet } from "react-native";
-
 import { ButtonCta } from "../../Buttons";
 import { CompositionSection } from "../../Compositions";
 import FormContainer from "../FormContainer";
-
 import { StyledText, Wrapper } from "./styled";
+import { Routes } from "../../../consts/router";
 
 const GoToRegister = () => {
   const { t } = useTranslation();
@@ -15,7 +14,7 @@ const GoToRegister = () => {
       <CompositionSection padding={[5, 15, 30, 15]} backgroundColor="#fff">
         <FormContainer>
           <StyledText>{t("loginForm.doNotHaveAcc")}</StyledText>
-          <Link href={"/register"} passHref>
+          <Link href={Routes.REGISTER} passHref>
             <ButtonCta anchor={t("loginForm.register")} style={styles.button} />
           </Link>
         </FormContainer>

@@ -1,4 +1,4 @@
-import { useRef, useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { TouchableOpacity } from "react-native";
 import {
@@ -58,7 +58,7 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch (err: any) {
+    } catch {
       setApiError(t("others:common.sms.verificationFail"));
     }
   };
@@ -73,7 +73,7 @@ export default function SmsVerificationModal({
         );
         setResendConfirmation(confirm);
       }
-    } catch (err: any) {
+    } catch {
       setApiError(t("others:common.sms.verificationFail"));
     }
   };
@@ -109,9 +109,9 @@ export default function SmsVerificationModal({
   const formFields = useForm<FormType>();
   const {
     handleSubmit,
-    register,
+    // register,
     control,
-    formState: { errors },
+    // formState,
   } = formFields;
   const onSubmit = async (data: FormType) => {
     const code =
@@ -120,7 +120,7 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch (err: any) {
+      } catch {
         setApiError(t("others:common.sms.verificationFail"));
       }
     } else {
@@ -128,19 +128,19 @@ export default function SmsVerificationModal({
         await confirmation.confirm(code);
         setVerificationSuccess(true);
         callback();
-      } catch (err: any) {
+      } catch {
         setApiError(t("others:common.sms.verificationFail"));
       }
     }
   };
-  const onError = (error: any) => {
+  const onError = () => {
     setError("Must be a digit");
   };
   return (
     <CardModal closeable={false}>
       <div style={{ display: "none" }} id="recaptcha__container"></div>
       <Wrapper>
-        <Image src={SmsSent}></Image>
+        <Image src={SmsSent} alt=""></Image>
         <StyledHeader>{t("others:common.sms.verification")}</StyledHeader>
         <StyledText>
           {t("others:common.sms.sentInfo", { phoneNumber })}
@@ -153,13 +153,12 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
                   value={value}
-                  ref={ref1}
+                  // eslint-disable-next-line
+                  ref={ref1 as any}
                   keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
@@ -170,7 +169,7 @@ export default function SmsVerificationModal({
                     ) {
                       onChange(newValue);
                       if (newValue.nativeEvent.text) {
-                        ref2.current.focus();
+                        ref2.current?.focus();
                       }
                     }
                   }}
@@ -184,12 +183,11 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref2}
+                  // eslint-disable-next-line
+                  ref={ref2 as any}
                   keyboardType="numeric"
                   value={value}
                   onChange={(newValue) => {
@@ -201,7 +199,7 @@ export default function SmsVerificationModal({
                     ) {
                       onChange(newValue);
                       if (newValue.nativeEvent.text) {
-                        ref3.current.focus();
+                        ref3.current?.focus();
                       }
                     }
                   }}
@@ -215,13 +213,12 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
                   value={value}
-                  ref={ref3}
+                  // eslint-disable-next-line
+                  ref={ref3 as any}
                   keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
@@ -232,7 +229,7 @@ export default function SmsVerificationModal({
                     ) {
                       onChange(newValue);
                       if (newValue.nativeEvent.text) {
-                        ref4.current.focus();
+                        ref4.current?.focus();
                       }
                     }
                   }}
@@ -246,13 +243,12 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
                   value={value}
-                  ref={ref4}
+                  // eslint-disable-next-line
+                  ref={ref4 as any}
                   keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
@@ -263,7 +259,7 @@ export default function SmsVerificationModal({
                     ) {
                       onChange(newValue);
                       if (newValue.nativeEvent.text) {
-                        ref5.current.focus();
+                        ref5.current?.focus();
                       }
                     }
                   }}
@@ -277,13 +273,12 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
                   value={value}
-                  ref={ref5}
+                  // eslint-disable-next-line
+                  ref={ref5 as any}
                   keyboardType="numeric"
                   onChange={(newValue) => {
                     setError(null);
@@ -294,7 +289,7 @@ export default function SmsVerificationModal({
                     ) {
                       onChange(newValue);
                       if (newValue.nativeEvent.text) {
-                        ref6.current.focus();
+                        ref6.current?.focus();
                       }
                     }
                   }}
@@ -308,12 +303,11 @@ export default function SmsVerificationModal({
                 maxLength: 100,
                 pattern: /\d/,
               }}
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur: _, value } }) => (
                 <StyledInput
-                  // eslint-disable-next-line
-                  // @ts-ignore
                   borderColor={error ? "red" : ""}
-                  ref={ref6}
+                  // eslint-disable-next-line
+                  ref={ref6 as any}
                   value={value}
                   onChange={(newValue) => {
                     setError(null);

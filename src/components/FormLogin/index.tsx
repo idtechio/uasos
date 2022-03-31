@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -24,7 +23,6 @@ type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const { t } = useTranslation();
-  const { locale } = useRouter();
 
   const [passwordInput, setPasswordInput] = useState(false);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
@@ -88,18 +86,17 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       }
     }
   };
-  const onError = (error: any) => null;
 
-  const handlePassErrorMsg = (type: string): string => {
-    switch (type) {
-      case "minLength":
-        return t("validations.toShortPassword");
-      case "required":
-        return t("validations.invalidPassword");
-      default:
-        return t("validations.invalidPassword");
-    }
-  };
+  // const handlePassErrorMsg = (type: string): string => {
+  //   switch (type) {
+  //     case "minLength":
+  //       return t("validations.toShortPassword");
+  //     case "required":
+  //       return t("validations.invalidPassword");
+  //     default:
+  //       return t("validations.invalidPassword");
+  //   }
+  // };
 
   enum PROVIDERS {
     FACEBOOK = "facebook",
@@ -158,11 +155,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={`${handlePassErrorMsg(
-                    // eslint-disable-next-line
-                    // @ts-ignore
-                    errors?.login?.password?.type
-                  )}`}
+                  // errorMsg={`${handlePassErrorMsg(
+                  //   // eslint-disable-next-line
+                  //   // @ts-ignore
+                  //   errors?.login?.password?.type
+                  // )}`}
                 />
                 <LostPass />
               </>
@@ -179,7 +176,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                 alignSelf: "flex-end",
               }}
               anchor={t("common:loginForm.logIn")}
-              onPress={handleSubmit(onSubmit, onError)}
+              onPress={handleSubmit(onSubmit, () => {})}
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
           </FormProvider>
