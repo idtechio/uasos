@@ -25,7 +25,7 @@ import { FirebaseError } from "@firebase/util";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity, getTokenForAPI } = useContext(AuthContext);
+  const { identity } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -89,10 +89,9 @@ export default function FromRegisterWithSocials() {
   };
 
   const updateAccount = async () => {
-    if (getTokenForAPI && data) {
+    if (data) {
       await AccountApi.updateAccount({
         payload: data,
-        token: await getTokenForAPI(),
       });
     }
   };

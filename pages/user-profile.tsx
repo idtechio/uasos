@@ -10,7 +10,7 @@ import Redirect from "../src/components/Redirect";
 import { AuthContext } from "./_app";
 
 export default function UserProfile() {
-  const { identity, loaded, account, getTokenForAPI } = useContext(AuthContext);
+  const { identity, loaded, account } = useContext(AuthContext);
 
   if (!loaded) {
     // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
@@ -19,7 +19,7 @@ export default function UserProfile() {
     );
   }
 
-  if (!account || !identity || !getTokenForAPI) {
+  if (!identity && loaded) {
     return <Redirect path="/signin"></Redirect>;
   }
 
@@ -27,11 +27,7 @@ export default function UserProfile() {
     <CompositionAppBody>
       <PageContentWrapper>
         <AppBack to={"/dashboard"} />
-        <EditUserProfileForm
-          account={account}
-          identity={identity}
-          getTokenKey={getTokenForAPI}
-        />
+        <EditUserProfileForm account={account} identity={identity} />
       </PageContentWrapper>
     </CompositionAppBody>
   );

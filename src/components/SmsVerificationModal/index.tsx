@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { TextInput, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import {
   StyledText,
   Wrapper,
@@ -13,11 +14,20 @@ import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
-import { ConfirmationResult } from "firebase/auth";
+import { ConfirmationResult, PhoneAuthProvider } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
 import { FirebaseError } from "@firebase/util";
+
+type FormType = {
+  "1": string;
+  "2": string;
+  "3": string;
+  "4": string;
+  "5": string;
+  "6": string;
+};
 
 interface Props {
   phoneNumber: string;
@@ -25,6 +35,7 @@ interface Props {
   setVerificationSuccess: (success: boolean) => void;
   mode: "LOGIN" | "UPDATE" | "LINK";
   callback: () => void;
+  verificationId?: string;
 }
 export default function SmsVerificationModal({
   phoneNumber,
@@ -32,6 +43,7 @@ export default function SmsVerificationModal({
   setVerificationSuccess,
   mode,
   callback,
+  verificationId,
 }: Props) {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -99,34 +111,20 @@ export default function SmsVerificationModal({
       : mode === "LOGIN"
       ? handleResendLogin
       : handleResendUpdate;
-  const ref1 = useRef<TextInput>(null);
-  const ref2 = useRef<TextInput>(null);
-  const ref3 = useRef<TextInput>(null);
-  const ref4 = useRef<TextInput>(null);
-  const ref5 = useRef<TextInput>(null);
-  const ref6 = useRef<TextInput>(null);
-  const formFields = useForm<{
-    "1": string;
-    "2": string;
-    "3": string;
-    "4": string;
-    "5": string;
-    "6": string;
-  }>();
+  const ref1 = useRef<any>(null);
+  const ref2 = useRef<any>(null);
+  const ref3 = useRef<any>(null);
+  const ref4 = useRef<any>(null);
+  const ref5 = useRef<any>(null);
+  const ref6 = useRef<any>(null);
+  const formFields = useForm<FormType>();
   const {
     handleSubmit,
     // register,
     control,
     // formState,
   } = formFields;
-  const onSubmit = async (data: {
-    "1": string;
-    "2": string;
-    "3": string;
-    "4": string;
-    "5": string;
-    "6": string;
-  }) => {
+  const onSubmit = async (data: FormType) => {
     const code =
       data["1"] + data["2"] + data["3"] + data["4"] + data["5"] + data["6"];
     if (resending) {
@@ -140,9 +138,17 @@ export default function SmsVerificationModal({
       }
     } else {
       try {
-        await confirmation.confirm(code);
-        setVerificationSuccess(true);
-        callback();
+        if (mode === "UPDATE" && verificationId) {
+          const phoneCredential = PhoneAuthProvider.credential(
+            verificationId,
+            code
+          );
+          await Authorization.updatePhone(phoneCredential);
+        } else {
+          await confirmation.confirm(code);
+          setVerificationSuccess(true);
+          callback();
+        }
       } catch (error: unknown) {
         if (error instanceof Error || error instanceof FirebaseError) {
           parseError(error?.message);

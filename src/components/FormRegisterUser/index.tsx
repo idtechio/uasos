@@ -57,7 +57,7 @@ export default function FormRegisterUser() {
       ),
     { retry: 10, retryDelay: 1000 }
   );
-  const { identity, loaded } = useContext(AuthContext);
+  const { identity } = useContext(AuthContext);
   const { t } = useTranslation();
   const { getTokenForAPI } = useContext(AuthContext);
   const passwordInputRef = useRef<string | null>(null);
@@ -86,7 +86,7 @@ export default function FormRegisterUser() {
 
   const {
     handleSubmit,
-    formState: { errors, isValid, isSubmitted },
+    formState: { errors },
     watch,
   } = form;
 
@@ -117,7 +117,6 @@ export default function FormRegisterUser() {
       email,
       phonePrefix,
       phoneNumber,
-      smsNotification,
       password,
       preferredLanguage,
     } = registrationUserForm;
@@ -170,7 +169,6 @@ export default function FormRegisterUser() {
       try {
         await AccountApi.updateAccount({
           payload: updateData,
-          token: await getTokenForAPI(),
         });
       } catch (error: unknown) {
         if (error instanceof Error || error instanceof FirebaseError) {
