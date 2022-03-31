@@ -19,8 +19,8 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import PreferredLanguageInput from "./Inputs/PreferredLanguageInput";
 import { AccountApi } from "../../client-api/account";
+import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -40,7 +40,6 @@ export default function FromRegisterWithSocials() {
             ? identity?.displayName.split(" ")[0]
             : "",
         email: identity && identity.email ? identity?.email : "",
-        language: "Poland",
       },
     },
   });
@@ -130,12 +129,24 @@ export default function FromRegisterWithSocials() {
           <InputControlLabel>
             {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
-          <PreferredLanguageInput></PreferredLanguageInput>
+          <FormLanguageDropdown
+            name="registerWithSocials.prefferedLanguage"
+            rules={{
+              required: true,
+            }}
+            error={errors?.registrationUserForm?.preferredLanguage}
+            errorMsg={t("registrationUserForm.errors.preferredLanguage")}
+          />
+          {/* <PreferredLanguageInput></PreferredLanguageInput> */}
+
           <InputControlLabel>
             {t("others:forms.generic.email")}
           </InputControlLabel>
           <FormTextInput
-            styles={{ wrapper: { height: "auto", marginBottom: "15px" } }}
+            zIndex={-1}
+            styles={{
+              wrapper: { height: "auto", marginBottom: "15px", zIndex: -1 },
+            }}
             name="registerWithSocials.email"
             label={t("others:forms.generic.email")}
             rules={{
@@ -149,18 +160,23 @@ export default function FromRegisterWithSocials() {
             errorMsg={t("hostAdd.errors.email")}
             readonly={true}
           />
-          <InputControlLabel>
-            {t("others:forms.generic.phoneNumber")}
-          </InputControlLabel>
-          <FormPhoneInput
-            prefixName="registerWithSocials.phonePrefix"
-            numberName="registerWithSocials.phoneNumber"
-            phonePrefixLabel={t("others:forms.generic.country")}
-            phoneLabel={t("common:registrationUserForm.phoneNumberPlaceholder")}
-            error={errors?.advancedHost?.phoneNumber}
-            errorMsg={t("hostAdd.errors.phoneNumber")}
-            data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
-          />
+
+          <CompositionSection padding={[0, 0, 0, 0]} zIndex={-1}>
+            <InputControlLabel>
+              {t("others:forms.generic.phoneNumber")}
+            </InputControlLabel>
+            <FormPhoneInput
+              prefixName="registerWithSocials.phonePrefix"
+              numberName="registerWithSocials.phoneNumber"
+              phonePrefixLabel={t("others:forms.generic.country")}
+              phoneLabel={t(
+                "common:registrationUserForm.phoneNumberPlaceholder"
+              )}
+              error={errors?.advancedHost?.phoneNumber}
+              errorMsg={t("hostAdd.errors.phoneNumber")}
+              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+            />
+          </CompositionSection>
           <FormFooter>
             <ButtonCta
               onPress={() => Authorization.logOut()}
