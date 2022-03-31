@@ -18,6 +18,7 @@ import {
   createUserWithEmailAndPassword,
   linkWithPhoneNumber,
   getAuth,
+  PhoneAuthCredential,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -68,7 +69,7 @@ interface Authorization {
   updatePhone: (
     phoneNumber: string,
     recapcha: RecaptchaVerifier,
-    verificationCode: string
+    phoneCredential: PhoneAuthCredential
   ) => Promise<void>;
   createUser: (email: string, password: string) => Promise<void>;
   linkWithPhone: (
@@ -115,16 +116,16 @@ const Authorization: Authorization = {
   async sendVerificationEmail(user) {
     await sendEmailVerification(user);
   },
-  async updatePhone(phoneNumber, recaptcha, verificationCode) {
+  async updatePhone(phoneNumber, recaptcha, phoneCredential) {
     const provider = new PhoneAuthProvider(auth);
     const verificationId = await provider.verifyPhoneNumber(
       phoneNumber,
       recaptcha
     );
-    const phoneCredential = PhoneAuthProvider.credential(
-      verificationId,
-      verificationCode
-    );
+    // const phoneCredential = PhoneAuthProvider.credential(
+    //   verificationId,
+    //   verificationCode
+    // );
     const user = getAuth().currentUser;
 
     if (!user) {
