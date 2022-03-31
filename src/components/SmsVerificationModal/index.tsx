@@ -73,7 +73,6 @@ export default function SmsVerificationModal({
     return null;
   };
   const parseError = (error: string) => {
-    console.log(error);
     if (error.includes("email-already-exists")) {
       setApiError(t("others:userRegistration.errors.emailExists"));
     } else if (

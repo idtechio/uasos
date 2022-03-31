@@ -81,6 +81,7 @@ export default function FormRegisterUser() {
     useState<{ name: string; preferredLang: string }>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+  const [apiError, setApiError] = useState("");
 
   const {
     handleSubmit,
@@ -91,6 +92,22 @@ export default function FormRegisterUser() {
   passwordInputRef.current = watch("registrationUserForm.password", "");
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
 
+  const parseError = (error: string) => {
+    if (error.includes("email-already-exists")) {
+      setApiError(t("others:userRegistration.errors.emailExists"));
+    } else if (
+      error.includes("phone-number-already-exists") ||
+      error.includes("account-exists")
+    ) {
+      setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
+    } else if (error.includes("too-many-requests")) {
+      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+    } else if (error.includes("invalid-verification")) {
+      setApiError(t("others:userRegistration.errors.invalidCode"));
+    } else {
+      setApiError("Oops something went wrong");
+    }
+  };
   const onSubmit: SubmitHandler<FormType> = async ({
     registrationUserForm,
   }) => {
@@ -116,8 +133,9 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
-    } catch (error) {
+    } catch (error: any) {
       setSubmitRequstState((state) => ({ ...state, error }));
+      parseError(error.message);
     } finally {
       setSubmitRequstState((state) => ({ ...state, loading: false }));
     }
@@ -145,10 +163,14 @@ export default function FormRegisterUser() {
   const updateAccount = async () => {
     setPhoneConfirmation(null);
     if (getTokenForAPI && updateData) {
-      await AccountApi.updateAccount({
-        payload: updateData,
-        token: await getTokenForAPI(),
-      });
+      try {
+        await AccountApi.updateAccount({
+          payload: updateData,
+          token: await getTokenForAPI(),
+        });
+      } catch (error: any) {
+        parseError(error.message);
+      }
     }
   };
   return (
@@ -278,7 +300,7 @@ export default function FormRegisterUser() {
             label={` ${t("others:common.actions.showPassword")}`}
           />
           {(submitRequstState.error || mutation.error) && (
-            <StyledErrorMessage>Oops something went wrong!</StyledErrorMessage>
+            <StyledErrorMessage>{apiError}</StyledErrorMessage>
           )}
         </SectionContent>
       </CompositionSection>
