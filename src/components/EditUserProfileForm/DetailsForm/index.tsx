@@ -1,4 +1,5 @@
 import { User } from "firebase/auth";
+import { useTranslation } from "next-i18next";
 import React, { useCallback } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import styled from "styled-components/native";
@@ -59,6 +60,7 @@ export default function UserDetailsForm({
   identity?: User | null;
   onSuccess(): void;
 }) {
+  const { t } = useTranslation("others");
   const { mutate, isLoading } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
@@ -90,20 +92,20 @@ export default function UserDetailsForm({
   return (
     <FormProvider {...form}>
       <ContentContainer>
-        <ScreenHeader>User profile edit</ScreenHeader>
-        <FormHeader>Enter your details</FormHeader>
+        <ScreenHeader>{t("forms.userProfile.header")}</ScreenHeader>
+        <FormHeader>{t("forms.userRegistration.enterDetails")}</FormHeader>
         <Inputs />
 
         <FormFooter>
           <ButtonCta
             color="primary"
             variant="outlined"
-            anchor="Cancel"
+            anchor={t("common.buttons.cancel")}
             disabled={isLoading}
           />
           <ButtonCta
             disabled={isLoading}
-            anchor="Update"
+            anchor={t("common.buttons.update")}
             onPress={handleSubmit(onSubmit)}
           />
         </FormFooter>

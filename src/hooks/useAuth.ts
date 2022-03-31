@@ -31,9 +31,12 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
-      const token = user && (await getIdToken(user, false));
+      const account = await AccountApi.getAccount()
+        .then((res) => res)
+        .catch(() => null);
+
       setIdentity(user);
-      setAccount(token ? await AccountApi.getAccount() : null);
+      setAccount(account);
       setLoaded(true);
     });
   }, []);

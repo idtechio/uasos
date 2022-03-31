@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import styled, { css } from "styled-components/native";
@@ -22,6 +23,7 @@ const wrapperStyle = css`
 
 export default function SmsNotificationInput() {
   const { control } = useFormContext<EditProfileForm>();
+  const { t } = useTranslation("others");
   return (
     <Wrapper>
       <Controller
@@ -31,7 +33,7 @@ export default function SmsNotificationInput() {
           <CheckboxField
             value={value || false}
             onChange={onChange}
-            text="I want to get notified via SMS about potential match offers "
+            text={t("forms.userRegistration.agreeOnSmsCommunication")}
             wrapperStyle={wrapperStyle}
             textStyle={textStyle}
           />
