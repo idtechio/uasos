@@ -13,7 +13,6 @@ export default function EditUserProfileForm({
   account: getAccountDTO | null;
   identity?: User | null;
 }) {
-  const { t } = useTranslation();
   const [detailsUpdated, setDetailsUpdated] = useState(false);
   const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
     null
@@ -26,6 +25,7 @@ export default function EditUserProfileForm({
 
   const checkIfPhoneIsVerified = async () => {
     const user = getAuth().currentUser;
+    console.log({ user });
 
     if (user?.phoneNumber) {
       const captcha = await Authorization.initCaptcha("recaptcha__container1");
@@ -48,7 +48,6 @@ export default function EditUserProfileForm({
   }, [detailsUpdated]);
   return (
     <>
-      <p>{t("hostAdd.country")}</p>
       <UserDetailsForm
         account={account}
         identity={identity}

@@ -39,17 +39,19 @@ const getPhonePrefix = (phone: string) =>
 const getFormDefaultValues = (
   account: getAccountDTO | null,
   identity: User | null | undefined
-) => ({
-  email: identity?.email || undefined,
-  phone: identity?.phoneNumber
-    ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
-    : undefined,
-  name: account?.name || undefined,
-  preferredLanguage: account?.prefferedLang || undefined,
-  phonePrefix: identity?.phoneNumber
-    ? getPhonePrefix(identity.phoneNumber)
-    : undefined,
-});
+) => {
+  return {
+    email: identity?.email || undefined,
+    phone: identity?.phoneNumber
+      ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
+      : undefined,
+    name: account?.name || undefined,
+    preferredLanguage: account?.prefferedLang || undefined,
+    phonePrefix: identity?.phoneNumber
+      ? getPhonePrefix(identity.phoneNumber)
+      : undefined,
+  };
+};
 
 export default function UserDetailsForm({
   account,
@@ -76,16 +78,17 @@ export default function UserDetailsForm({
         prefferedLang: data.preferredLanguage,
       };
 
-      onSuccess();
-
-      // mutate(
-      //   { payload },
-      //   {
-      //     onError: () => {
-      //       // Set error message
-      //     },
-      //   }
-      // );
+      mutate(
+        { payload },
+        {
+          onError: () => {
+            // Set error message
+          },
+          onSuccess: () => {
+            onSuccess();
+          },
+        }
+      );
     },
     [mutate, onSuccess]
   );

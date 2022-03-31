@@ -1,27 +1,10 @@
 import { useMemo, VFC } from "react";
 import { useTranslation } from "react-i18next";
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
 import { Dropdown } from "../../Dropdown";
 import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 import InputControl from "../InputControl";
+import { ErrorMessage, LabelContainer, LabelText } from "./style";
 import { CountryDropdownItemType, CountrySelectProps } from "./types";
-
-const Error = styled.Text`
-  color: ${({ theme }: { theme: Theme }) => theme.colors.error};
-  margin-bottom: 10px;
-`;
-
-const LabelContainer = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-`;
-
-const LabelText = styled.Text`
-  margin-left: 8px;
-`;
 
 const useCountriesList = (data?: CountryDropdownItemType[]) => {
   const { t } = useTranslation();
@@ -104,7 +87,7 @@ const CountrySelect: VFC<CountrySelectProps> = (props) => {
         label={label}
         multiselect={multiSelect}
       />
-      {error && <Error>{errorMsg}</Error>}
+      {error && <ErrorMessage>{errorMsg}</ErrorMessage>}
     </InputControl>
   );
 };
