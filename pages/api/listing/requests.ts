@@ -142,36 +142,40 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     return [];
   }
 
-  return guestsList.map((g) => ({
-    id: g.guest_id,
-    name: g.guest_name,
-    status: g.guest_status,
-    city: g.city,
-    country: g.country,
-    phone_num: g.phone_num,
-    email: g.email,
-    beds: g.beds,
-    acceptable_shelter_types: g.acceptable_shelter_types,
-    group_relation: g.group_relation,
-    is_pregnant: g.is_pregnant,
-    is_with_disability: g.is_with_disability,
-    is_with_animal: g.is_with_animal,
-    is_with_elderly: g.is_with_elderly,
-    is_ukrainian_nationality: g.is_ukrainian_nationality,
-    duration_category: g.duration_category,
-    match_id: g.match_id,
-    match_status: g.match_status,
-    matchedOffer: g.match_id
-      ? {
-          id: g.host_id,
-          name: g.host_name,
-          city: g.host_city,
-          country: g.host_country,
-          phone_num: g.host_phone_num,
-          email: g.host_email,
-        }
-      : undefined,
-  }));
+  return guestsList.map(
+    (g) =>
+      ({
+        id: g.guest_id,
+        name: g.guest_name,
+        status: g.guest_status,
+        city: g.city,
+        country: g.country,
+        phone_num: g.phone_num,
+        email: g.email,
+        beds: g.beds,
+        acceptable_shelter_types: g.acceptable_shelter_types,
+        group_relation: g.group_relation,
+        is_pregnant: g.is_pregnant,
+        is_with_disability: g.is_with_disability,
+        is_with_animal: g.is_with_animal,
+        is_with_elderly: g.is_with_elderly,
+        is_ukrainian_nationality: g.is_ukrainian_nationality,
+        duration_category: g.duration_category,
+        match_id: g.match_id,
+        match_status: g.match_status,
+        matchedOffer: g.match_id
+          ? {
+              id: g.host_id,
+              name: g.host_name,
+              city: g.host_city,
+              country: g.host_country,
+              phone_num: g.host_phone_num,
+              email: g.host_email,
+            }
+          : undefined,
+        // TODO: fix ts error
+      } as any)
+  );
 }
 
 function getMockRequests(): RequestProps[] {
@@ -196,6 +200,7 @@ function getMockRequests(): RequestProps[] {
       match_status: MatchStatus.AWAITING_RESPONSE,
       match_id: "eee4e25e-aae4-11ec-9a20-1726ed50bb17",
       matchedOffer: {
+        listing_country: "Poland",
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         name: "Jan Kowalski",
         city: "Warszawa",
