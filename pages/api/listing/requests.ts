@@ -33,7 +33,7 @@ export interface MatchedOfferProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
+
   shelter_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -44,6 +44,8 @@ export interface MatchedOfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
+
+  status: GuestHostStatus;
 }
 
 export interface RequestProps {
@@ -53,7 +55,7 @@ export interface RequestProps {
   country: string;
   phone_num: string;
   email: string;
-  city?: string;
+  city: string;
   acceptable_shelter_types: Array<string>;
   beds: number;
   group_relation: Array<string>;
@@ -98,10 +100,21 @@ type GuestListItem = RequestProps & {
   match_id?: string;
   host_id: string;
   host_name: string;
+  host_status: GuestHostStatus;
   host_city: string;
   host_country: string;
   host_phone_num: string;
   host_email: string;
+  host_shelter_type: Array<string>;
+  host_beds: number;
+  host_acceptable_group_relations: Array<string>;
+  host_ok_for_pregnant: Boolean;
+  host_ok_for_disabilities: Boolean;
+  host_ok_for_animals: Boolean;
+  host_ok_for_elderly: Boolean;
+  host_ok_for_any_nationality: Boolean;
+  host_duration_category: Array<string>;
+  host_transport_included: Boolean;
 };
 
 async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
@@ -133,7 +146,18 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       host_city,
       host_country,
       host_phone_num,
-      host_email
+      host_email,
+      host_status,
+      host_shelter_type,
+      host_beds,
+      host_acceptable_group_relations,
+      host_ok_for_pregnant,
+      host_ok_for_disabilities,
+      host_ok_for_animals,
+      host_ok_for_elderly,
+      host_ok_for_any_nationality,
+      host_duration_category,
+      host_transport_included
     FROM requests WHERE account_uid = $1`,
     [uid]
   );
@@ -169,6 +193,18 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           country: g.host_country,
           phone_num: g.host_phone_num,
           email: g.host_email,
+
+          shelter_type: g.host_shelter_type,
+          beds: g.host_beds,
+          acceptable_group_relations: g.host_acceptable_group_relations,
+          ok_for_pregnant: g.host_ok_for_pregnant,
+          ok_for_disabilities: g.host_ok_for_disabilities,
+          ok_for_animals: g.host_ok_for_animals,
+          ok_for_elderly: g.host_ok_for_elderly,
+          ok_for_any_nationality: g.host_ok_for_any_nationality,
+          duration_category: g.host_duration_category,
+          transport_included: g.host_transport_included,
+          status: g.host_status,
         }
       : undefined,
   }));
@@ -212,6 +248,7 @@ function getMockRequests(): RequestProps[] {
         ok_for_any_nationality: Boolean.TRUE,
         duration_category: ["month"],
         transport_included: Boolean.TRUE,
+        status: GuestHostStatus.ACCEPTED,
       },
     },
     {

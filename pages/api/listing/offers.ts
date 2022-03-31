@@ -44,7 +44,7 @@ export interface MatchedRequestProps {
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string>;
 
-  status: MatchStatus;
+  status: GuestHostStatus;
 }
 
 export interface OfferProps {
@@ -100,10 +100,20 @@ type HostListitem = OfferProps & {
   match_id?: string;
   guest_id: string;
   guest_name: string;
+  guest_status: GuestHostStatus;
   guest_city: string;
   guest_country: string;
   guest_phone_num: string;
   guest_email: string;
+  guest_acceptable_shelter_types: Array<string>;
+  guest_beds: number;
+  guest_group_relation: Array<string>;
+  guest_is_pregnant: Boolean;
+  guest_is_with_disability: Boolean;
+  guest_is_with_animal: Boolean;
+  guest_is_with_elderly: Boolean;
+  guest_is_ukrainian_nationality: Boolean;
+  guest_duration_category: Array<string>;
 };
 
 async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
@@ -136,7 +146,17 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       guest_city,
       guest_country,
       guest_phone_num,
-      guest_email
+      guest_email,
+      guest_status,
+      guest_acceptable_shelter_types,
+      guest_beds,
+      guest_group_relation,
+      guest_is_pregnant,
+      guest_is_with_disability,
+      guest_is_with_animal,
+      guest_is_with_elderly,
+      guest_is_ukrainian_nationality,
+      guest_duration_category
     FROM offers WHERE account_uid = $1`,
     [uid]
   );
@@ -173,16 +193,17 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
           country: h.guest_country,
           phone_num: h.guest_phone_num,
           email: h.guest_email,
-          acceptable_shelter_types: [],
-          beds: 0,
-          group_relation: [],
-          is_pregnant: Boolean.TRUE,
-          is_with_disability: Boolean.TRUE,
-          is_with_animal: Boolean.TRUE,
-          is_with_elderly: Boolean.TRUE,
-          is_ukrainian_nationality: Boolean.TRUE,
-          duration_category: [],
-          status: MatchStatus.ACCEPTED,
+
+          acceptable_shelter_types: h.guest_acceptable_shelter_types,
+          beds: h.guest_beds,
+          group_relation: h.guest_group_relation,
+          is_pregnant: h.guest_is_pregnant,
+          is_with_disability: h.guest_is_with_disability,
+          is_with_animal: h.guest_is_with_animal,
+          is_with_elderly: h.guest_is_with_elderly,
+          is_ukrainian_nationality: h.guest_is_ukrainian_nationality,
+          duration_category: h.guest_duration_category,
+          status: h.guest_status,
         }
       : undefined,
   }));
@@ -226,7 +247,7 @@ function getMockOffers(): OfferProps[] {
         is_with_elderly: Boolean.TRUE,
         is_ukrainian_nationality: Boolean.TRUE,
         duration_category: ["longer"],
-        status: MatchStatus.ACCEPTED,
+        status: GuestHostStatus.ACCEPTED,
       },
     },
     {
