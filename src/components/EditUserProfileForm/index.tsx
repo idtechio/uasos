@@ -1,6 +1,6 @@
 import { ConfirmationResult, getAuth, User } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { getAccountDTO } from "../../client-api/account";
+import { AccountApi, getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import UserDetailsForm from "./DetailsForm";
@@ -17,6 +17,7 @@ export default function EditUserProfileForm({
     null
   );
   const [verificationId, setVerificationId] = useState<string | null>(null);
+  const [newPhoneNumber, setNewPhoneNumber] = useState<string | null>(null);
 
   const onPhoneConfirmationSuccess = () => {
     return null;
@@ -24,8 +25,11 @@ export default function EditUserProfileForm({
 
   const checkIfPhoneIsVerified = async () => {
     const user = getAuth().currentUser;
+    const account = await AccountApi.getAccount();
 
-    if (user?.phoneNumber) {
+    const isNewPhoneNumber = user?.phoneNumber && !account?.confirmedPhone;
+    if (isNewPhoneNumber) {
+      setNewPhoneNumber(user.phoneNumber);
       const captcha = await Authorization.initCaptcha("recaptcha__container1");
       setVerificationId(
         await Authorization.initUpdatePhone(user.phoneNumber, captcha)
@@ -44,6 +48,10 @@ export default function EditUserProfileForm({
       checkIfPhoneIsVerified();
     }
   }, [detailsUpdated]);
+
+  const shouldOpenSmsVerification =
+    detailsUpdated && confirmation && verificationId && newPhoneNumber;
+
   return (
     <>
       <UserDetailsForm
@@ -51,11 +59,11 @@ export default function EditUserProfileForm({
         identity={identity}
         onSuccess={() => setDetailsUpdated(true)}
       />
-      {detailsUpdated && confirmation && verificationId && (
+      {shouldOpenSmsVerification && (
         <SmsVerificationModal
           confirmation={confirmation}
           verificationId={verificationId}
-          phoneNumber={"535200006"}
+          phoneNumber={newPhoneNumber}
           setVerificationSuccess={onPhoneConfirmationSuccess}
           callback={() => null}
           mode="UPDATE"
