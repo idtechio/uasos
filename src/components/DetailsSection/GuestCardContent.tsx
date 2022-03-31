@@ -1,20 +1,19 @@
 import React from "react";
-import DataField from "./DataField";
-import { TouchableOpacity } from "react-native";
-import ArrowIcon from "../../style/svgs/chevron-down.svg";
-import { Header, Title, FlexWrapper } from "./style";
-import GuestAdditionalInfo from "./GuestAdditionalInfo";
-import AddressIcon from "../../style/svgs/marker.svg";
-import GuestsIcon from "../../style/svgs/users.svg";
-import DurationIcon from "../../style/svgs/calendar.svg";
-import AtIcon from "../../style/svgs/at.svg";
-import PhoneIcon from "../../style/svgs/phone2.svg";
 import { useTranslation } from "react-i18next";
+import { TouchableOpacity } from "react-native";
 import { RequestProps } from "../../../pages/api/listing/requests";
-import { MatchedRequestProps } from "../../../pages/api/listing/offers";
+import AtIcon from "../../style/svgs/at.svg";
+import DurationIcon from "../../style/svgs/calendar.svg";
+import ArrowIcon from "../../style/svgs/chevron-down.svg";
+import AddressIcon from "../../style/svgs/marker.svg";
+import PhoneIcon from "../../style/svgs/phone2.svg";
+import GuestsIcon from "../../style/svgs/users.svg";
+import DataField from "./DataField";
+import GuestAdditionalInfo from "./GuestAdditionalInfo";
+import { FlexWrapper, Header, Title } from "./style";
 
 interface GuestCardContentProps {
-  request: RequestProps | MatchedRequestProps | null;
+  request: RequestProps | null;
   showContact?: boolean;
 }
 

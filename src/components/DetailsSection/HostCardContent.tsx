@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { TouchableOpacity } from "react-native";
 import { OfferProps } from "../../../pages/api/listing/offers";
-import { MatchedOfferProps } from "../../../pages/api/listing/requests";
 import AtIcon from "../../style/svgs/at.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
 import ArrowIcon from "../../style/svgs/chevron-down.svg";
@@ -16,7 +15,7 @@ import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
 
 interface HostCardContentProps {
-  offer: OfferProps | MatchedOfferProps | null;
+  offer: OfferProps | null;
   showContact?: boolean;
 }
 

@@ -11,6 +11,7 @@ export type DetailsSectionProps = {
   data?: OfferProps | RequestProps | null;
 };
 
+// TODO: fix as RequestProps | OfferProps typing
 export default function DetailsSection({
   containerStyle,
   isOffer,
@@ -21,24 +22,24 @@ export default function DetailsSection({
       {data ? (
         <DetailsCard type={isOffer ? "host" : "guest"}>
           {isOffer ? (
-            <HostCardContent offer={data} />
+            <HostCardContent offer={data as OfferProps} />
           ) : (
-            <GuestCardContent request={data} />
+            <GuestCardContent request={data as RequestProps} />
           )}
         </DetailsCard>
       ) : null}
-      {data?.matchedRequest ? (
+      {(data as RequestProps)?.matchedOffer ? (
         <DetailsCard>
           <GuestCardContent
-            request={data?.matchedRequest}
-            showContact={data.match_status === "accepted"}
+            request={data as RequestProps}
+            showContact={(data as RequestProps).match_status === "accepted"}
           />
         </DetailsCard>
-      ) : data?.matchedOffer ? (
+      ) : (data as OfferProps)?.matchedRequest ? (
         <DetailsCard>
           <HostCardContent
-            offer={data?.matchedOffer}
-            showContact={data.match_status === "accepted"}
+            offer={data as OfferProps}
+            showContact={(data as OfferProps).match_status === "accepted"}
           />
         </DetailsCard>
       ) : null}
