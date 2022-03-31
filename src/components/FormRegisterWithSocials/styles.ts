@@ -6,7 +6,7 @@ export const FormFooter = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
   margin-bottom: 50px;
 `;
 export const ErrorText = styled.Text`

@@ -155,11 +155,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  // errorMsg={`${handlePassErrorMsg(
-                  //   // eslint-disable-next-line
-                  //   // @ts-ignore
-                  //   errors?.login?.password?.type
-                  // )}`}
+                  errorMsg={t("common:registrationUserForm.errors.password")}
                 />
                 <LostPass />
               </>
