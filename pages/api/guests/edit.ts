@@ -9,8 +9,6 @@ enum Boolean {
   TRUE = "TRUE",
 }
 export interface GuestProps {
-  id?: string;
-  uid?: string;
   name: string;
   country?: string;
   phone_num: string;
@@ -39,9 +37,9 @@ async function editGuest(
     // TODO check permission to edit guests with db_guests_id=body.id for user req.decodedToken.uid
 
     const body = JSON.parse(req.body);
-    const guestData: GuestProps = {
+    const guestData: GuestProps & { db_guests_id: string } = {
       ...body,
-      uid: req.decodedToken.uid,
+      db_guests_id: body.id,
     };
     const topicNameOrId = process.env.TOPIC_GUEST_UPDATE;
     const pubResult = await publishMessage(topicNameOrId, guestData);

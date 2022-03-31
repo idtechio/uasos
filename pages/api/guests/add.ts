@@ -9,8 +9,6 @@ enum Boolean {
   TRUE = "TRUE",
 }
 export interface GuestProps {
-  id?: string;
-  uid?: string;
   name: string;
   country?: string;
   phone_num: string;
@@ -36,10 +34,13 @@ async function addGuest(
       throw new Error("token is required");
     }
 
+    // TODO read account_id from db
+    const account = { id: "---" };
+
     const body = JSON.parse(req.body);
-    const guestData: GuestProps = {
+    const guestData: GuestProps & { db_accounts_id: string } = {
       ...body,
-      uid: req.decodedToken.uid,
+      db_accounts_id: account.id,
     };
     const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, guestData);

@@ -3,22 +3,22 @@ import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
+import Account from "../../guest";
 
 enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
 export interface HostProps {
-  id?: string;
-  uid?: string;
   country: string;
   phone_num: string;
   email: string;
+  closest_city: string;
   city: string;
-  // zipcode?: string;
-  // street?: string;
-  // building_no?: string;
-  // appartment_no?: string;
+  zipcode: string;
+  street: string;
+  building_no: string;
+  appartment_no: string;
   shelter_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -29,6 +29,7 @@ export interface HostProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
+  can_be_verified: Boolean;
 }
 
 async function editHost(
@@ -43,9 +44,9 @@ async function editHost(
     // TODO check permission to edit hosts with db_hosts_id=body.id for user req.decodedToken.uid
 
     const body = JSON.parse(req.body);
-    const hostData: HostProps = {
+    const hostData: HostProps & { db_hosts_id: string } = {
       ...body,
-      uid: req.decodedToken.uid,
+      db_hosts_id: body.id,
     };
     const topicNameOrId = process.env.TOPIC_HOST_UPDATE;
     const pubResult = await publishMessage(topicNameOrId, hostData);

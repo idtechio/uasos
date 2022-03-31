@@ -9,16 +9,15 @@ enum Boolean {
   TRUE = "TRUE",
 }
 export interface HostProps {
-  id?: string;
-  uid?: string;
   country: string;
   phone_num: string;
   email: string;
+  closest_city: string;
   city: string;
-  // zipcode?: string;
-  // street?: string;
-  // building_no?: string;
-  // appartment_no?: string;
+  zipcode: string;
+  street: string;
+  building_no: string;
+  appartment_no: string;
   shelter_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -40,10 +39,13 @@ async function addHost(
       throw new Error("token is required");
     }
 
+    // TODO read account_id from db
+    const account = { id: "---" };
+
     const body = JSON.parse(req.body);
-    const hostData: HostProps = {
+    const hostData: HostProps & { db_accounts_id: string } = {
       ...body,
-      uid: req.decodedToken.uid,
+      db_accounts_id: account.id,
     };
     const topicNameOrId = process.env.TOPIC_HOST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, hostData);
