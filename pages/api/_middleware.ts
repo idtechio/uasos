@@ -10,6 +10,7 @@ export async function middleware(req: NextRequest) {
   if (process.env.ENV_NAME === "test") {
     res.headers.set("Access-Control-Allow-Credentials", "true");
     res.headers.set("Access-Control-Allow-Origin", "*");
+    res.headers.set("Access-Control-Allow-Headers", "*");
     res.headers.set(
       "Access-Control-Allow-Methods",
       "GET,OPTIONS,PATCH,DELETE,POST,PUT"
@@ -21,6 +22,7 @@ export async function middleware(req: NextRequest) {
         headers: {
           "Access-Control-Allow-Credentials": "true",
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "*",
           "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
         },
       });
