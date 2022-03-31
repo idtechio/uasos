@@ -28,7 +28,7 @@
   "whatSosUaDoesSection": {
     "title": "What does SOS-UA do?",
     "bulletPoints": {
-      "0": "Volunteers and institutions describe accomodation offered (type, maximum capacity, length of stay)",
+      "0": "Volunteers and institutions describe accommodation offered (type, maximum capacity, length of stay)",
       "1": "People looking for a shelter define their needs and minimum requirements (e.g. group size, location)",
       "2": "UA-SOS automatically connects those in need of shelter with the best-suited accommodation offered by hosts"
     },

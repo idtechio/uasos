@@ -14,7 +14,7 @@
   },
   "likeToHelp": {
     "title": "Chcete pomoci?",
-    "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete bezplatně nabídnout obětem války na Ukrajině. Naše aplikace automaticky přiřadí nabídku registrovaným osobám hledajícím pomoc na základě poskytnutých informací",
+    "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete <b>bezplatně </b>nabídnout obětem války na Ukrajině. Naše aplikace automaticky přiřadí nabídku registrovaným osobám hledajícím pomoc na základě poskytnutých informací",
     "cta": "Nabídněte ubytování"
   },
   "weMatched": {
@@ -32,7 +32,7 @@
       "1": "Lidé, kteří hledají ubytování, definují svoje potřeby a minimální požadavky (např. velikost skupiny, lokalita)",
       "2": "UA-SOS automaticky spojuje ty, kteří hledají přistřeší s nejvhodnějším nabízením ubytováním"
     },
-    "algorithmExplanation": "",
+    "algorithmExplanation": "Algoritmus optimalizuje shody tak, aby co nejvíce lidí v nouzi našlo ubytování.",
     "rolldown": "Více",
     "rollup": "Méně",
     "description": "Portál spojuje osoby v nouzi s institucemi a lidmi, kteří nabízejí svoji pomoc",

@@ -9,6 +9,23 @@ enum Boolean {
   TRUE = "TRUE",
 }
 
+enum GuestHostStatus {
+  ACCEPTED = "accepted", // default status after creation
+  REJECTED = "rejected", // for future moderation purpose
+  BEING_PROCESS = "being_processed", // during matching process
+  MATCHED = "matched", // matched with guest/hosts and awaiting for response
+  MATCH_ACCEPTED = "match_accepted", // match accepted by host and guest
+  DEFAULT = "default",
+}
+
+enum MatchStatus {
+  ACCEPTED = "accepted", // match accepted by guest and by host
+  REJECTED = "rejected", // match rejected by guest or by host
+  TIMEOUT = "timeout", // timeout during awaiting for guest and host response
+  AWAITING_RESPONSE = "awaiting_response", // match awaiting for guest and host response
+  DEFAULT = "default",
+}
+
 export interface MatchedRequestProps {
   id: string;
   country: string;
@@ -30,6 +47,7 @@ export interface MatchedRequestProps {
 
 export interface OfferProps {
   id: string;
+  status: GuestHostStatus;
   country: string;
   phone_num: string;
   email: string;
@@ -44,8 +62,8 @@ export interface OfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
-  status: string;
-  match_status?: string;
+  match_id?: string | null;
+  match_status?: MatchStatus | null;
   matchedRequest?: MatchedRequestProps;
 }
 
@@ -76,8 +94,7 @@ async function getOffers(
 
 type HostListitem = OfferProps & {
   host_id: string;
-  host_status: string;
-  match_status: string;
+  host_status: GuestHostStatus;
   match_id?: string;
   guest_id: string;
   guest_city: string;
@@ -89,27 +106,33 @@ type HostListitem = OfferProps & {
 async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
   const hostsList: false | HostListitem[] = await select(
     `SELECT
-      h.db_hosts_id as host_id,
-      h.city, h.country,
-      h.phone_num, h.email,
-      h.shelter_type, h.beds,
-      h.acceptable_group_relations,
-      h.ok_for_pregnant, h.ok_for_disabilities, h.ok_for_animals,
-      h.ok_for_elderly, h.ok_for_any_nationality,
-      h.duration_category, null as transport_included, -- h.transport_included,
-      h.fnc_status as host_status,
-      m.db_matches_id as match_id,
-      m.fnc_status as match_status,
-      g.db_guests_id as guest_id,
-      g.city as guest_city,
-      g.country as guest_country,
-      g.phone_num as guest_phone_num,
-      g.email as guest_email
-    FROM hosts h
-    JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id
-    LEFT JOIN matches m ON m.fnc_hosts_id = h.db_hosts_id
-    LEFT JOIN guests g ON g.db_guests_id = m.fnc_guests_id
-    WHERE a.uid = $1`,
+      host_id,
+      host_status,
+
+      city,
+      country,
+      phone_num,
+      email,
+      shelter_type,
+      beds,
+      acceptable_group_relations,
+      ok_for_pregnant,
+      ok_for_disabilities,
+      ok_for_animals,
+      ok_for_elderly,
+      ok_for_any_nationality,
+      duration_category,
+      transport_included,
+      
+      match_id,
+      match_status,
+
+      guest_id,
+      guest_city,
+      guest_country,
+      guest_phone_num,
+      guest_email
+    FROM offers WHERE account_uid = $1`,
     [uid]
   );
 
@@ -119,6 +142,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
 
   return hostsList.map((h) => ({
     id: h.host_id,
+    status: h.host_status,
     city: h.city,
     country: h.country,
     phone_num: h.phone_num,
@@ -133,8 +157,8 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: h.duration_category,
     transport_included: h.transport_included,
-    status: h.host_status,
     match_status: h.match_status,
+    match_id: h.match_id,
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
@@ -165,8 +189,9 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
-      status: "",
-      match_status: "",
+      status: GuestHostStatus.MATCH_ACCEPTED,
+      match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
+      match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
@@ -201,7 +226,10 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
-      status: "",
+      status: GuestHostStatus.ACCEPTED,
+      match_id: null,
+      match_status: null,
+      matchedRequest: undefined,
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -224,7 +252,10 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       transport_included: Boolean.FALSE,
-      status: "",
+      status: GuestHostStatus.BEING_PROCESS,
+      match_id: null,
+      match_status: null,
+      matchedRequest: undefined,
     },
   ];
 }

@@ -1,28 +1,28 @@
 {
-  "showMorePartners": "Az összes partner megtekintése",
+  "supportingPartners": "A kezdeményezést támogató partnerek",
   "ngoPartners": "Nem kormányzati szervezetek (NGO-k)",
   "projectInitiators": "Projekt kezdeményezők",
   "partners": "Partnerek",
-  "supportingPartners": "A kezdeményezést támogató partnerek",
+  "showMorePartners": "Az összes partner megtekintése",
   "projectIntention": {
+    "title": "Segítünk menedéket találni az ukrajnai háború áldozatainak",
     "description_part1": "Segítünk a menekülteknek automatikusan",
-    "description_part2": "szállást találni a segíteni akaró embereken és intézményeken keresztül.",
     "freeOfCharge": "ingyenes",
+    "description_part2": "szállást találni a segíteni akaró embereken és intézményeken keresztül.",
     "lookingForHelp": "Szállást keresek",
-    "shareHelp": "Segíteni szeretnék",
-    "title": "Segítünk menedéket találni az ukrajnai háború áldozatainak"
+    "shareHelp": "Segíteni szeretnék"
   },
   "likeToHelp": {
-    "cta": "Szállás felajánlása",
+    "title": "Szeretnél segíteni?",
     "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak.\n  \n \n\n  \n \n\n  Alkalmazásunk automatikusan párosítja a szállást a segítséget kereső, regisztrált személyekkel a megadott információk alapján",
-    "title": "Szeretnél segíteni?"
+    "cta": "Szállás felajánlása"
   },
   "weMatched": {
     "title": "Már ennyi sikeres párosítást hajtottunk végre...",
     "cards": {
-      "currentOffers": "Jelenleg elérhető ajánlatok",
       "helpedPeople": "segítséget keresők",
-      "lookingForHelp": "továbbra is segítséget keres"
+      "lookingForHelp": "továbbra is segítséget keres",
+      "currentOffers": "Jelenleg elérhető ajánlatok"
     }
   },
   "whatSosUaDoesSection": {
@@ -33,35 +33,35 @@
       "2": "Az UA-SOS automatikusan összekapcsolja a szállást keresőket a házigazdák által kínált legmegfelelőbb opcióval"
     },
     "algorithmExplanation": "Az algoritmus optimalizálja a párosításokat, hogy minél több rászoruló találjon szállást",
-    "description": "A portál összeköti a segítségre szorulókat a támogató intézményekkel és önkéntes segítőkkel",
-    "howItWorks": "Hogyan működik?",
     "rolldown": "Mutass többet",
-    "rollup": "Kevesebb"
+    "rollup": "Kevesebb",
+    "description": "A portál összeköti a segítségre szorulókat a támogató intézményekkel és önkéntes segítőkkel",
+    "howItWorks": "Hogyan működik?"
   },
   "instructions": {
     "0": {
-      "text": "A felhasználó szállás felajánlásán vagy keresésén keresztül regisztrál a portálra",
-      "title": "Regisztráció"
+      "title": "Regisztráció",
+      "text": "A felhasználó szállás felajánlásán vagy keresésén keresztül regisztrál a portálra"
     },
     "1": {
-      "text": "A felhasználó kitölt egy űrlapot a felkínált vagy keresett szállásról.",
-      "title": "Űrlap kitöltése"
+      "title": "Űrlap kitöltése",
+      "text": "A felhasználó kitölt egy űrlapot a felkínált vagy keresett szállásról."
     },
     "2": {
-      "text": "Az algoritmus átnézi a kínált szállások és szálláskeresők adatbázisát, és a kapott információk alapján kiválasztja a legmegfelelőbbet",
-      "title": "Automatikus párosítás"
+      "title": "Automatikus párosítás",
+      "text": "Az algoritmus átnézi a kínált szállások és szálláskeresők adatbázisát, és a kapott információk alapján kiválasztja a legmegfelelőbbet"
     },
     "3": {
-      "text": "A párosításról a felhasználók e-mailben kapnak értesítést. Csatlakozott felhasználók számára további leírás elérhető az alkalmazásban.",
-      "title": "Információ a felhasználónak elküldve"
+      "title": "Információ a felhasználónak elküldve",
+      "text": "A párosításról a felhasználók e-mailben kapnak értesítést. Csatlakozott felhasználók számára további leírás elérhető az alkalmazásban."
     },
     "4": {
-      "text": "A kapcsolat létrejötte után lehetőség van egymással e-mailben vagy telefonon felvenni a kapcsolatot a részletek megbeszélése érdekében",
-      "title": "A felhasználók kapcsolatba lépnek egymással"
+      "title": "A felhasználók kapcsolatba lépnek egymással",
+      "text": "A kapcsolat létrejötte után lehetőség van egymással e-mailben vagy telefonon felvenni a kapcsolatot a részletek megbeszélése érdekében"
     },
     "5": {
-      "text": "Az utolsó lépés az ajánlat megerősítése vagy elutasítása az alkalmazásban. Ha az ajánlatot elutasítják, az visszakerül a poolba",
-      "title": "Az ajánlat megerősítése vagy elutasítása"
+      "title": "Az ajánlat megerősítése vagy elutasítása",
+      "text": "Az utolsó lépés az ajánlat megerősítése vagy elutasítása az alkalmazásban. Ha az ajánlatot elutasítják, az visszakerül a poolba"
     }
   },
   "howDoesItWork": {

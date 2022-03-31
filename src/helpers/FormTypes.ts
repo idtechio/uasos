@@ -110,6 +110,11 @@ export type FormType = {
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;
+    zipCode: string;
+    city: string;
+    street: string;
+    buildingNumber: string;
+    apartmentNumber: string;
   };
   advancedRefugee: {
     town: string;
