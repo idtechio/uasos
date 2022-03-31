@@ -1,56 +1,14 @@
 import { useMemo, VFC } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropdown } from "../../Dropdown";
-import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 import InputControl from "../InputControl";
-import { ErrorMessage, LabelContainer, LabelText } from "./style";
+import { getDefaultCountryList } from "./defaultLists";
+import { ErrorMessage } from "./style";
 import { CountryDropdownItemType, CountrySelectProps } from "./types";
 
 const useCountriesList = (data?: CountryDropdownItemType[]) => {
   const { t } = useTranslation();
-
-  const result = useMemo(
-    () =>
-      data || [
-        {
-          label: (
-            <LabelContainer>
-              <LanguageFlags locale="pl" />
-              <LabelText>{t("hostAdd.countries.poland")}</LabelText>
-            </LabelContainer>
-          ),
-          value: "poland",
-        },
-        {
-          label: (
-            <LabelContainer>
-              <LanguageFlags locale="hu" />
-              <LabelText>{t("hostAdd.countries.hungary")}</LabelText>
-            </LabelContainer>
-          ),
-          value: "hungary",
-        },
-        {
-          label: (
-            <LabelContainer>
-              <LanguageFlags locale="cs" />
-              <LabelText>{t("hostAdd.countries.czechia")}</LabelText>
-            </LabelContainer>
-          ),
-          value: "czechia",
-        },
-        {
-          label: (
-            <LabelContainer>
-              <LanguageFlags locale="sk" />
-              <LabelText>{t("hostAdd.countries.slovakia")}</LabelText>
-            </LabelContainer>
-          ),
-          value: "slovakia",
-        },
-      ],
-    [t, data]
-  );
+  const result = useMemo(() => data || getDefaultCountryList(t), [t, data]);
 
   return result;
 };

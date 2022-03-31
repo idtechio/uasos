@@ -19,7 +19,7 @@
       "termsOfService": "Terms of Service"
     },
     "words": {
-      "idWithData": "Id: {{id}}",
+      "idWithData": "ID: {{id}}",
       "renew": "Renew",
       "additionalInformation": "Additional information",
       "congratulations": "Congratulations",
@@ -48,7 +48,9 @@
       "verification": "Email verification"
     },
     "nationalities": {
-      "ukrainians": "Ukrainians"
+      "ukrainians": "Ukrainians",
+      "ukrainian": "Ukrainian",
+      "nonUkrainian": "Non-Ukrainian"
     }
   },
   "forms": {
@@ -71,7 +73,7 @@
       "confirmPassword": "Confirm password",
       "agreeOnSmsCommunication": "I want to get notified via SMS about potential match offers ",
       "language": "Language",
-      "proposeCreateAccount": "If you don't have an account you can create one. ",
+      "proposeCreateAccount": "If you don't have an account, you can create one.",
       "newPassword": "New password",
       "userRegistration": "User registration",
       "preferredLanguage": "Preferred language of communication ",
@@ -135,7 +137,7 @@
       "country": "Country",
       "email": "Email",
       "emailAddress": "E-mail address",
-      "closestLargeCity": "Closest large city"
+      "closestLargeCity": "The closest large city"
     },
     "createRefuge": {
       "shelter": {
@@ -156,8 +158,8 @@
     },
     "resetPassword": {
       "setNewPassword": "Set new password",
-      "header": "Provide new password for your accout",
-      "emailSent": "Password reset email sent - check your mailbox",
+      "header": "Provide new password for your account",
+      "emailSent": "Password reset email sent — check your mailbox",
       "success": "Your password has been successfully changed",
       "detail": "If you do not remember your password, enter your email address. We will send you a link to the password reset form."
     },
@@ -220,7 +222,14 @@
     "popup": {
       "description": "Notify us of any problems \u2028using the form below",
       "problemReported": "The problem has been reported",
-      "thanksForLettingKnow": "Thank you for letting us know about this situation.  "
+      "thanksForLettingKnow": "Thank you for letting us know about this situation.",
+      "reasons": {
+        "guestNotNeedHelp": "My guest doesn't require accommodation anymore",
+        "hostCantHelp": "My host can't provide accommodation anymore",
+        "rejectedAfterContact": "I/other party rejected offer after first contact",
+        "noResponseAfterContact": "No contact despite several attempts",
+        "notShowUp": "Host/guest didn't show up to agreed place"
+      }
     }
   },
   "deleteOffer": {
@@ -243,5 +252,14 @@
     "soFar": "So far...",
     "appDescription": "We help refugees find automatically <b>free</b> accommodation in <b>Poland, Czechia, Hungary and Slovakia,</b> offered by people and institutions willing to help.",
     "comingSoon": "Coming soon: transport, job search and medical advice functionalities"
+  },
+  "userRegistration": {
+    "errors": {
+      "emailExist": "User with this account already exist",
+      "phoneExist": "This phone number is already linked to another account",
+      "tooManyRequest": "To many phone verification requests",
+      "invalidCode": "Invalid Code",
+      "phoneLinkingFailed": "Error occurred while linking phone number to your account, log in and try again"
+    }
   }
 }

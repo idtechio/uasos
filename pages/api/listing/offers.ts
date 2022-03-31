@@ -51,7 +51,8 @@ export interface OfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
-  match_status?: MatchStatus;
+  match_id?: string | null;
+  match_status?: MatchStatus | null;
   matchedRequest?: MatchedRequestProps;
 }
 
@@ -144,6 +145,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     duration_category: h.duration_category,
     transport_included: h.transport_included,
     match_status: h.match_status,
+    match_id: h.match_id,
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
@@ -175,6 +177,7 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
       status: GuestHostStatus.MATCH_ACCEPTED,
+      match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -201,6 +204,9 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
+      match_id: null,
+      match_status: null,
+      matchedRequest: undefined,
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
@@ -224,6 +230,9 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["2_3_weeks"],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.BEING_PROCESS,
+      match_id: null,
+      match_status: null,
+      matchedRequest: undefined,
     },
   ];
 }

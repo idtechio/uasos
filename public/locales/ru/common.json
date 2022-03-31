@@ -11,7 +11,6 @@
     "numberOfGuests": "Количество гостей",
     "timePeriod": "Срок пребывания",
     "withKids": "Я с ребёнком/детьми",
-    "name": "Имя",
     "email": "Электронная почта",
     "phone": "Номер телефона",
     "town": "Город",
@@ -96,7 +95,6 @@
       "label": "Какие жилищные условия вы можете предоставить?",
       "options": {
         "flat": "У меня свободная квартира",
-        "room": "У меня свободная комната",
         "mattress": "У меня дополнительный матрас",
         "other": "Другие"
       }
@@ -146,14 +144,10 @@
       "slovakia": "Словакия"
     },
     "nameLabel": "Имя (введите только имя)",
-    "namePlaceholder": "имя",
-    "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
     "phoneLabel": "Номер телефона",
     "phonePlaceholder": "xxx-xxx-xxx",
-    "phonePrefixPlaceholder": "Страна",
     "cityLabel": "город",
-    "cityTooltipText": "Выберите ближайший крупный город если вашего города нет в списке",
     "cityPlaceholder": "город",
     "type": "тип размещения",
     "hostType": "Тип хозяина жилья",
@@ -166,18 +160,17 @@
       "host_type_friends_group": "Группа друзей/знакомых"
     },
     "guestCount": "Сколько человек вы можете принять?",
-    "accommodationTime": "Как долго вы можете принимать гостей-беженцев (недели)?",
-    "accomodationPhoto": "",
-    "accomodationPhotoLabel": "",
-    "accomodationPhotoReset": "",
+    "accomodationPhoto": "Добавить фото жилья",
+    "accomodationPhotoLabel": "Добавить фото",
+    "accomodationPhotoReset": "Удалить",
     "accommodationTimeLabel": {
-      "less_than_week": "",
-      "week": "",
-      "two_weeks": "",
-      "month": "",
-      "longer": ""
+      "less_than_week": "Менее недели",
+      "week": "Неделя",
+      "two_weeks": "2 недели",
+      "month": "Месяц",
+      "longer": "Длиннее"
     },
-    "volunteerVisitAcceptance": "",
+    "volunteerVisitAcceptance": "Я согласен на проверку места (волонтерский визит)",
     "nationality": "Какое гражданство беженца вы можете принять?",
     "ukraine": "Украина",
     "additionalInformationHeader": "Дополнительная информация",
@@ -185,7 +178,6 @@
     "childBedCount": "Количество спальных мест для детей",
     "city": "город",
     "fullBedCount": "Количество полноценных спальных мест",
-    "groupsTypes": "Какие типы групп вы примете?",
     "pregnantReady": "Приму женщину на позднем сроке беременности (свыше 6 месяцев)",
     "dissabilityReady": "Я приму человека с инвалидностью",
     "elderReady": "Я приму пожилого человека / пожилых людей",
@@ -193,25 +185,22 @@
     "basicInfoHeader": "Предоставьте информацию о жилье, которое вы предлагаете",
     "refugeInfoHeader": "Предоставьте информацию о своем жилье",
     "addButton": "Отправить/Добавить",
-    "addButtomErrorMessage": "",
+    "addButtomErrorMessage": "Пожалуйста, заполните необходимые поля",
     "errors": {
       "name": "Подайте своё имя",
       "email": "Подайте правильный адрес электронной почты",
       "phoneNumber": "Подайте свой номер телефона",
-      "country": "",
-      "town": "",
+      "country": "Требуется страна",
+      "town": "Требуется город",
       "type": "Укажите тип размещения",
       "hostType": "Укажите тип хозяина жилья",
-      "guestCount": "",
       "accommodationTime": "Укажите максимальную длительность пребывания гостя-беженца",
-      "nationality": "",
-      "groupsTypes": "",
       "nationalityError": "Требуется указать гражданство беженцев, которых вы готовы принять"
     },
     "prolongationReady": "Предлагаю возможность продления пребывания (за отдельную плату)",
     "transportReady": "Я предлагаю возможность транспорта"
   },
-  "logout": "Выйти",
+  "logout": "Выйти из системы",
   "back": "Вернуться",
   "backToHomePage": "Вернуться к главной странице",
   "shareLocation": "Зарегистрироваться",
@@ -222,13 +211,15 @@
   "privacyPolicy": "Политика конфиденциальности",
   "termsOfService": "правила пользования",
   "patrons": "Меценаты",
+  "faq": "Часто задаваемые вопросы",
+  "yourSafety": "Ваша безопасность",
   "rodo": "GDPR",
   "thankfulnessModal": {
     "thankYou": "Спасибо!",
     "thanksForYourDecision": "",
     "applicationSent": "Ваша просьба отправлена. Несколько раз в день мы проверяем нашу базу данных, чтобы вам найти подходящий выбор.",
     "informWhenAccomodationFound": "Как только мы найдём для вас место проживания, мы вам сообщим по электронной почте.",
-    "backToMainPage": ""
+    "backToMainPage": "Вернуться на главную страницу"
   },
   "thankfulnessHostModal": {
     "thankYou": "Спасибо!",
@@ -255,9 +246,7 @@
       "location": "Подайте предпочтительный город"
     },
     "labels": {
-      "name": "Имя",
       "email": "Электронная почта",
-      "phoneNumber": "Номер телефона",
       "refugeesCount": "Для скольких человек вы ищете убежище?",
       "refugee": "Беженец {{number}}",
       "refugeeDetails": "Предоставьте дополнительную информацию, чтобы выбрать лучшее место для вас:",
@@ -277,7 +266,6 @@
     "addButtomErrorMessage": "Пожалуйста, заполните необходимые поля",
     "pregnantReady": "я / со мной женщина в позднем сроке беременности (более 6 месяцев)",
     "dissabilityReady": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями",
-    "animalReady": "Я с животным",
     "elderReady": "Я или со мной пожилой человек",
     "ageLabel": "возраст",
     "genderLabel": "Пол",
@@ -286,24 +274,19 @@
     "fullBedCountLabel": "Количество полноценных спальных мест",
     "childBedCountLabel": "Количество спальных мест для детей",
     "placeOfRefuge": "В какой локализацие вы ищете убежище?",
-    "countryOfRefugeLabel": "В какой стране вы ищете убежище?",
     "countryOfRefugePlaceholder": "Выберите страну",
     "cityOfRefugeLabel": "Выберите город:",
     "overnightDurationLabel": "На какой срок пребывания вы ищете жилье?",
     "cityOfRefugePlaceholder": "Выберите район",
     "nameLabel": "Имя (введите только имя)",
-    "namePlaceholder": "имя",
     "emailLabel": "Электронная почта",
     "emailPlaceholder": "Электронная почта",
     "phoneLabel": "Номер телефона",
     "phonePlaceholder": "xxx-xxx-xxx",
-    "phonePrefixPlaceholder": "Страна",
-    "cityLabel": "Выберите город, в котором или вблизи которого вы ищете помощь.",
     "cityPlaceholder": "город",
     "groupRelations": "Какие у вас отношения между членами группы?",
     "selectPlaceholder": "Выберите из списка",
     "accommodationType": "Какие жилищные условия вы ищете?",
-    "countryOfGroup": "Какая страна происхождения группы?",
     "countryOfGroupUA": "Украина",
     "countryOfGroupOthers": "другая",
     "accompanyingPerson": "Сопровождающий",
@@ -321,7 +304,7 @@
       "accommodationType": "Выберите тип размещения",
       "countryOfGroup": "Пожалуйста, выберите национальность"
     },
-    "refugeInfoHeader": ""
+    "refugeInfoHeader": "Предоставить информацию о вашем жилье"
   },
   "accomodationPhoto": "Добавьте фото предлагаемого приюта",
   "accomodationPhotoReset": "удалить",
@@ -338,36 +321,9 @@
     "doNotHaveAcc": "Создать аккаунт если у вас его нет",
     "register": "Зарегистрироваться"
   },
-  "gdpr": "",
+  "gdpr": "GDPR",
   "ogMeta": {
     "title": "We help war refugees from Ukraine find shelter",
     "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-  },
-  "registrationUserForm": {
-    "header": "Регистрация пользователя",
-    "subheader": "Введите свои данные",
-    "nameLabel": "Имя",
-    "namePlaceholder": "Имя",
-    "preferredLanguageLabel": "Предпочтительный язык общения",
-    "preferredLanguagePlaceholder": "Язык",
-    "phoneLabel": "Номер телефона",
-    "phonePrefixPlaceholder": "Страна",
-    "phoneNumberPlaceholder": "_ _ _  _ _ _  _ _ _",
-    "smsNotificationLabel": "Я хочу получать SMS-уведомления о потенциальных предложениях",
-    "emailLabel": "Адрес электронной почты",
-    "emailPlaceholder": "Электронная почта",
-    "passwordLabel": "Пароль",
-    "passwordConfirmLabel": "Подтвердите пароль",
-    "passwordConfirmPlaceholder": "Подтвердите пароль",
-    "showPasswordLabel": "Показать пароль",
-    "backButtonLabel": "Назад",
-    "nextButtonLabel": "Далее",
-    "errors": {
-      "name": "Укажите ваше имя",
-      "phoneNumber": "Укажите свой номер телефона",
-      "email": "Пожалуйста, введите действительный адрес электронной почты",
-      "password": "Введите правильный пароль",
-      "passwordConfirm": "Пароли не совпадают"
-    }
   }
 }

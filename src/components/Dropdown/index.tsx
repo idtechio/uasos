@@ -83,12 +83,12 @@ export function Dropdown<T>({
     };
 
     if (containerRef.current && Platform.OS === "web" && showOptions) {
-      document.body.addEventListener("click", handleClickOutside);
+      document.body.addEventListener("click", handleClickOutside, true);
     }
 
     return () => {
       if (Platform.OS === "web") {
-        document.body.removeEventListener("click", handleClickOutside);
+        document.body.removeEventListener("click", handleClickOutside, true);
       }
     };
   }, [showOptions]);

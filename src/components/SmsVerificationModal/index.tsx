@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { TouchableOpacity } from "react-native";
@@ -17,6 +18,7 @@ import { ConfirmationResult, PhoneAuthProvider } from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
+import { FirebaseError } from "@firebase/util";
 
 type FormType = {
   "1": string;
@@ -60,8 +62,10 @@ export default function SmsVerificationModal({
         Authorization.initCaptcha("recaptcha__container")
       );
       setResendConfirmation(confirm);
-    } catch {
-      setApiError(t("others:common.sms.verificationFail"));
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+      }
     }
   };
   const handleResendLink = async () => {
@@ -75,13 +79,32 @@ export default function SmsVerificationModal({
         );
         setResendConfirmation(confirm);
       }
-    } catch {
-      setApiError(t("others:common.sms.verificationFail"));
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        parseError(error?.message);
+      }
     }
   };
 
-  const handleResendUpdate = async () => {};
-
+  const handleResendUpdate = () => {
+    return null;
+  };
+  const parseError = (error: string) => {
+    if (error.includes("email-already-exists")) {
+      setApiError(t("others:userRegistration.errors.emailExists"));
+    } else if (
+      error.includes("phone-number-already-exists") ||
+      error.includes("account-exists")
+    ) {
+      setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
+    } else if (error.includes("too-many-requests")) {
+      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+    } else if (error.includes("invalid-verification")) {
+      setApiError(t("others:userRegistration.errors.invalidCode"));
+    } else {
+      setApiError(t("others:common.sms.verificationFail"));
+    }
+  };
   const handleResend =
     mode === "LINK"
       ? handleResendLink
@@ -108,8 +131,10 @@ export default function SmsVerificationModal({
       try {
         await resendConfirmation?.confirm(code);
         setVerificationSuccess(true);
-      } catch {
-        setApiError(t("others:common.sms.verificationFail"));
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
       }
     } else {
       try {
@@ -124,8 +149,10 @@ export default function SmsVerificationModal({
           setVerificationSuccess(true);
           callback();
         }
-      } catch {
-        setApiError(t("others:common.sms.verificationFail"));
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          parseError(error?.message);
+        }
       }
     }
   };

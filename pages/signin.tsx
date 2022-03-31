@@ -17,6 +17,8 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import { useContext } from "react";
 import { AuthContext } from "./_app";
 import Redirect from "../src/components/Redirect";
+import CardModal from "../src/components/CardModal";
+import { ActivityIndicator } from "react-native";
 type Providers = Record<
   LiteralUnion<BuiltInProviderType, string>,
   ClientSafeProvider
@@ -28,18 +30,24 @@ export type SignInProps = {
 };
 
 const SignIn = ({ providers, csrfToken }: SignInProps) => {
-  const { identity } = useContext(AuthContext);
+  const { identity, loaded } = useContext(AuthContext);
   return (
     <CompositionAppBody>
       <AppBack to={Routes.HOMEPAGE} />
-      {identity ? (
-        identity?.phoneNumber ? (
-          <Redirect path="/dashboard"></Redirect>
+      {loaded ? (
+        identity ? (
+          identity?.phoneNumber ? (
+            <Redirect path="/dashboard"></Redirect>
+          ) : (
+            <FormRegisterWithSocials></FormRegisterWithSocials>
+          )
         ) : (
-          <FormRegisterWithSocials></FormRegisterWithSocials>
+          <LoginForm providers={providers} csrfToken={csrfToken} />
         )
       ) : (
-        <LoginForm providers={providers} csrfToken={csrfToken} />
+        <CardModal closeable={false}>
+          <ActivityIndicator size="large" />
+        </CardModal>
       )}
     </CompositionAppBody>
   );

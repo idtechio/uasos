@@ -41,7 +41,6 @@ export const FooterLink = styledWeb.a<{ active?: boolean; theme: Theme }>`
         margin-right: 15px;
         margin-left: 15px;
         font-size: 16px;
-        white-space: nowrap;
       `,
     })}
 `;

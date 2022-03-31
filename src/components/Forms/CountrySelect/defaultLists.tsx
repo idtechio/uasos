@@ -1,13 +1,8 @@
-import { useMemo, VFC } from "react";
-import { useTranslation } from "react-i18next";
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
-import { Dropdown } from "../../Dropdown";
+import { TFunction } from "next-i18next";
 import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
-import InputControl from "../InputControl";
-import { CountryDropdownItemType, CountrySelectProps } from "./types";
+import { LabelContainer, LabelText } from "./style";
 
-export const LanguageList = [
+export const getDefaultCountryList = (t: TFunction) => [
   {
     label: (
       <LabelContainer>

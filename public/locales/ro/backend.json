@@ -1,0 +1,13 @@
+{
+  "messaging": {
+    "sms": {
+      "offeringNotification": "",
+      "sealedNotification": "Am găsit un contact. Acceptați/respingeți pe uasos.org sau e-mail."
+    }
+  },
+  "sendgrid": {
+    "HostGetsMatch": "",
+    "GuestGetsMatch": "",
+    "GUESTANDHOSTMATCHCONFIRM": ""
+  }
+}

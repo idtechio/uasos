@@ -1,5 +1,4 @@
 import { ConfirmationResult, getAuth, User } from "firebase/auth";
-import { useTranslation } from "next-i18next";
 import React, { useEffect, useState } from "react";
 import { getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
@@ -19,13 +18,12 @@ export default function EditUserProfileForm({
   );
   const [verificationId, setVerificationId] = useState<string | null>(null);
 
-  const onPhoneConfirmationSuccess = (success: boolean) => {
-    console.log({ success });
+  const onPhoneConfirmationSuccess = () => {
+    return null;
   };
 
   const checkIfPhoneIsVerified = async () => {
     const user = getAuth().currentUser;
-    console.log({ user });
 
     if (user?.phoneNumber) {
       const captcha = await Authorization.initCaptcha("recaptcha__container1");
@@ -59,7 +57,7 @@ export default function EditUserProfileForm({
           verificationId={verificationId}
           phoneNumber={"535200006"}
           setVerificationSuccess={onPhoneConfirmationSuccess}
-          callback={() => console.log("SMS")}
+          callback={() => null}
           mode="UPDATE"
         />
       )}

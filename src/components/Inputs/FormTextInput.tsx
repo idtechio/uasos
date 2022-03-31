@@ -16,6 +16,7 @@ type Props = {
   secureTextEntry?: boolean;
   readonly?: boolean;
   styles?: InputStylesProps;
+  zIndex?: number;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormTextInput = ({
@@ -29,6 +30,7 @@ const FormTextInput = ({
   secureTextEntry,
   readonly,
   styles,
+  zIndex,
 }: Props) => {
   const { control } = useFormContext();
   return (
@@ -36,7 +38,7 @@ const FormTextInput = ({
       control={control}
       rules={rules}
       render={({ field: { onChange, onBlur, value } }) => (
-        <InputControl>
+        <InputControl zIndex={zIndex}>
           <Input
             placeholder={label}
             onChange={onChange}
