@@ -120,7 +120,10 @@ export default function HostCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("duration")}
-            value={offer?.duration_category
+            value={(typeof offer.duration_category === "string"
+              ? offer.duration_category.split(",")
+              : offer.duration_category
+            )
               .map((el: string) => t2(`staticValues.timePeriod.${el}`))
               .join(", ")}
           />

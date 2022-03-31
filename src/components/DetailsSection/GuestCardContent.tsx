@@ -89,7 +89,10 @@ export default function GuestCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("duration")}
-            value={request?.duration_category
+            value={(typeof request.duration_category === "string"
+              ? request.duration_category.split(",")
+              : request.duration_category
+            )
               .map((el: string) => t2(`staticValues.timePeriod.${el}`))
               .join(", ")}
           />
@@ -121,7 +124,10 @@ export default function GuestCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("groupType")}
-            value={request?.group_relation
+            value={(typeof request.group_relation === "string"
+              ? request.group_relation.split(",")
+              : request.group_relation
+            )
               .map((el: string) => t2(`staticValues.groupRelations.${el}`))
               .join(", ")}
           />
