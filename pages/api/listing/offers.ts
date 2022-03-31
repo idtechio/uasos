@@ -146,7 +146,8 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     (h) =>
       ({
         id: h.host_id,
-        name: h.host.name,
+        // TODO: pick host name?
+        name: "",
         status: h.host_status,
         city: h.city,
         country: h.country,
@@ -188,6 +189,7 @@ function getMockOffers(): OfferProps[] {
       email: "host1@example.com",
       shelter_type: ["room"],
       beds: 1,
+      name: "Name",
       acceptable_group_relations: ["single_woman", "family_with_children"],
       ok_for_pregnant: Boolean.TRUE,
       ok_for_disabilities: Boolean.TRUE,
@@ -200,6 +202,7 @@ function getMockOffers(): OfferProps[] {
       match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
+        listing_country: "Poland",
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         name: "Karina",
         city: "Warszawa",

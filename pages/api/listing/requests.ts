@@ -93,9 +93,11 @@ async function getRequests(
 
 type GuestListItem = RequestProps & {
   guest_id: string;
+  guest_name: string;
   guest_status: GuestHostStatus;
   match_id?: string;
   host_id: string;
+  host_name: string;
   host_city: string;
   host_country: string;
   host_phone_num: string;
@@ -107,6 +109,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     `SELECT
       guest_id,
       guest_status,
+      guest_name,
 
       city,
       country,
@@ -126,6 +129,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       match_status,
 
       host_id,
+      host_name,
       host_city,
       host_country,
       host_phone_num,
@@ -140,6 +144,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
 
   return guestsList.map((g) => ({
     id: g.guest_id,
+    name: g.guest_name,
     status: g.guest_status,
     city: g.city,
     country: g.country,
@@ -159,6 +164,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     matchedOffer: g.match_id
       ? {
           id: g.host_id,
+          name: g.host_name,
           city: g.host_city,
           country: g.host_country,
           phone_num: g.host_phone_num,
@@ -172,6 +178,7 @@ function getMockRequests(): RequestProps[] {
   return [
     {
       id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Zenon Nowak",
       city: "Warszawa",
       country: "poland",
       phone_num: "+48999888777",
@@ -190,6 +197,7 @@ function getMockRequests(): RequestProps[] {
       match_id: "eee4e25e-aae4-11ec-9a20-1726ed50bb17",
       matchedOffer: {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
+        name: "Jan Kowalski",
         city: "Warszawa",
         country: "poland",
         phone_num: "+48111222333",
@@ -208,6 +216,7 @@ function getMockRequests(): RequestProps[] {
     },
     {
       id: "bbb4e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Zenon Nowak",
       city: "",
       country: "poland",
       phone_num: "+48888777666",
@@ -228,6 +237,7 @@ function getMockRequests(): RequestProps[] {
     },
     {
       id: "ccc4e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Zenon Nowak",
       city: "Debrecen",
       country: "hungary",
       phone_num: "+36777666555",

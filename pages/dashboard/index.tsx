@@ -12,17 +12,16 @@ import {
 } from "../../src/components/SupportSection/mapper";
 import Tags from "../../src/components/Tags";
 import VerifySection from "../../src/components/VerifySection/VerifySection";
-import { AuthContext } from "../_app";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
+import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 const fakeTags = ["Shelter"];
 
-export default function Dashboard() {
-  const { identity, account, loaded } = useContext(AuthContext);
-
+function DashboardContent() {
+  const { account, loaded } = useContext(AuthContext);
   const {
     data: offersDTO,
     isError: isOffersInError,
@@ -34,8 +33,6 @@ export default function Dashboard() {
     isError: isRequestsInError,
     isLoading: isRequestsLoading,
   } = useRequestsList();
-
-  if (!identity && loaded) return <Redirect path="/signin" />;
 
   const offers = offersDTO ? toOffers(offersDTO) : undefined;
   const requests = requestsDTO ? toRequests(requestsDTO) : undefined;
@@ -73,6 +70,18 @@ export default function Dashboard() {
       </PageContentWrapper>
     </CompositionAppBody>
   );
+}
+
+export default function Dashboard() {
+  const { identity, loaded } = useContext(AuthContext);
+
+  if (!loaded) {
+    return <div>Loading</div>;
+  }
+
+  if (!identity && loaded) return <Redirect path="/signin" />;
+
+  return <DashboardContent />;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({

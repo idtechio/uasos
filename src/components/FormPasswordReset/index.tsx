@@ -76,6 +76,7 @@ const FormPasswordReset = () => {
               }}
               error={errors?.resetPassword?.password}
               errorMsg={"Password must be at leat 8 characters long"}
+              styles={{ wrapper: { marginBottom: 12 } }}
             />
             <FormTextInput
               name={"resetPassword.passwordRepeat"}
@@ -96,7 +97,7 @@ const FormPasswordReset = () => {
           <ButtonContainer>
             <ButtonCta
               onPress={handleSubmit(onSubmit, onError)}
-              anchor={"Set new password"}
+              anchor={t("others:forms.resetPassword.setNewPassword")}
               style={styles.verifyButton}
             />
           </ButtonContainer>

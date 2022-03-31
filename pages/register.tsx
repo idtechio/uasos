@@ -6,6 +6,7 @@ import Redirect from "../src/components/Redirect";
 import { AuthContext } from "./_app";
 import { Routes } from "../src/consts/router";
 import FormRegisterUser from "../src/components/FormRegisterUser";
+import PageContentWrapper from "../src/components/PageContentWrapper";
 
 export default function Account() {
   const { identity, account, loaded } = useContext(AuthContext);
@@ -17,7 +18,9 @@ export default function Account() {
   } else {
     return (
       <CompositionAppBody>
-        <FormRegisterUser />
+        <PageContentWrapper>
+          <FormRegisterUser />
+        </PageContentWrapper>
       </CompositionAppBody>
     );
   }
