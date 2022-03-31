@@ -24,7 +24,6 @@ export const AccountApi: AccountApi = {
       {
         method: "POST",
         headers: {
-          mode: "no-cors",
           "content-type": "application/json",
           Authorization: `Bearer ${token}`,
         },
