@@ -159,23 +159,26 @@ export default function FormRegisterUser() {
         </CardModal>
       )}
       <CompositionSection padding={[35, 30, 8, 30]} zIndex={2}>
-        <StyledHeader>{t("registrationUserForm.header")}</StyledHeader>
-        <StyledSubheader>{t("registrationUserForm.subheader")}</StyledSubheader>
+        <StyledHeader>
+          {t("others:forms.userRegistration.userRegistration")}
+        </StyledHeader>
+        <StyledSubheader>
+          {t("others:forms.userRegistration.enterDetails")}
+        </StyledSubheader>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.nameLabel")}
+            {t("others:forms.generic.name")}
           </InputControlLabel>
           <FormTextInput
             name="registrationUserForm.name"
-            label={t("registrationUserForm.namePlaceholder")}
+            label={t("others:forms.generic.name")}
             rules={{
               required: true,
             }}
             error={errors?.registrationUserForm?.name}
-            errorMsg={t("registrationUserForm.errors.name")}
           />
           <InputControlLabel marginBottom={"14px"}>
-            {t("registrationUserForm.preferredLanguageLabel")}
+            {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <FormLanguageDropdown
             name="registrationUserForm.preferredLanguage"
@@ -183,22 +186,21 @@ export default function FormRegisterUser() {
               required: true,
             }}
             error={errors?.registrationUserForm?.preferredLanguage}
-            errorMsg={t("registrationUserForm.errors.preferredLanguage")}
           />
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]} zIndex={1}>
         <SectionContent>
           <InputControlLabel marginBottom={"14px"}>
-            {t("registrationUserForm.phoneLabel")}
+            {t("refugeeAddForm.phoneLabel")}
           </InputControlLabel>
           <FormPhoneInput
             prefixName="registrationUserForm.phonePrefix"
             numberName="registrationUserForm.phoneNumber"
-            phonePrefixLabel={t("registrationUserForm.phonePrefixPlaceholder")}
-            phoneLabel={t("registrationUserForm.phoneNumberPlaceholder")}
+            phonePrefixLabel={t("hostAdd.country")}
+            phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
             error={errors?.registrationUserForm?.phoneNumber}
-            errorMsg={t("registrationUserForm.errors.phoneNumber")}
+            errorMsg=""
             data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
           />
         </SectionContent>
@@ -218,11 +220,11 @@ export default function FormRegisterUser() {
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.emailLabel")}
+            {t("others:forms.generic.emailAddress")}
           </InputControlLabel>
           <FormTextInput
             name="registrationUserForm.email"
-            label={t("registrationUserForm.emailPlaceholder")}
+            label={t("others:forms.generic.email")}
             rules={{
               required: true,
               pattern: {
@@ -238,11 +240,11 @@ export default function FormRegisterUser() {
       <CompositionSection padding={[0, 30, 0, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.passwordLabel")}
+            {t("others:forms.generic.password")}
           </InputControlLabel>
           <FormTextInput
             name={"registrationUserForm.password"}
-            label={t("registrationUserForm.passwordLabel")}
+            label={t("others:forms.generic.password")}
             secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
@@ -250,14 +252,13 @@ export default function FormRegisterUser() {
               minLength: 8,
             }}
             error={errors?.registrationUserForm?.password}
-            errorMsg={t("registrationUserForm.errors.password")}
           />
           <InputControlLabel marginBottom={"0"}>
-            {t("registrationUserForm.passwordConfirmLabel")}
+            {t("others:forms.userRegistration.confirmPassword")}
           </InputControlLabel>
           <FormTextInput
             name={"registrationUserForm.passwordConfirm"}
-            label={t("registrationUserForm.passwordConfirmLabel")}
+            label={t("others:forms.userRegistration.confirmPassword")}
             secureTextEntry={!isShowPasswordChecked}
             rules={{
               required: true,
@@ -274,7 +275,7 @@ export default function FormRegisterUser() {
               required: false,
             }}
             name="registrationUserForm.showPassword"
-            label={` ${t("registrationUserForm.showPasswordLabel")}`}
+            label={` ${t("others:common.actions.showPassword")}`}
           />
           {(submitRequstState.error || mutation.error) && (
             <StyledErrorMessage>Oops something went wrong!</StyledErrorMessage>
@@ -287,14 +288,14 @@ export default function FormRegisterUser() {
             <InputControl styles={buttonStyles}>
               <ButtonCta
                 onPress={() => router.push(Routes.HOMEPAGE)}
-                anchor={t("registrationUserForm.backButtonLabel")}
+                anchor={t("others:common.buttons.back")}
                 style={buttonStyles.backButton}
               />
             </InputControl>
             <InputControl styles={buttonStyles}>
               <ButtonCta
                 onPress={handleSubmit(onSubmit)}
-                anchor={t("registrationUserForm.nextButtonLabel")}
+                anchor={t("others:common.buttons.next")}
                 style={buttonStyles.nextButton}
               />
             </InputControl>
