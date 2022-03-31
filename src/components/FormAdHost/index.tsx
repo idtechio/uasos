@@ -367,7 +367,7 @@ export default function FormAdHost() {
 
           <View>
             <InputControlLabel>
-              {t("hostAdd.accommodationTime")}
+              {t("refugeeAddForm.overnightDurationLabel")}
             </InputControlLabel>
             <FormRadioGroup
               name={t("advancedHost.accommodationTime")}
@@ -408,7 +408,9 @@ export default function FormAdHost() {
               zIndex: 1,
             }}
           >
-            <InputControlLabel>{t("hostAdd.groupsTypes")}</InputControlLabel>
+            <InputControlLabel>
+              {t("others:forms.createShelter.groupsHostAccepts")}
+            </InputControlLabel>
             <FormDropdown<string>
               multiSelect
               zIndex={11}
