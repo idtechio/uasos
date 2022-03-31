@@ -3,7 +3,7 @@ import { GetNumberList } from "../../pages/api/listing/numbers";
 export const getNumberList = async () => {
   try {
     const res = await fetch(
-      process.env.NEXT_PUBLIC_DOMAIN + "/api/listing/numbers",
+      process.env.NEXT_PUBLIC_DOMAIN + "api/listing/numbers",
       {
         method: "GET",
       }

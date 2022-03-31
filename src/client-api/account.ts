@@ -20,7 +20,7 @@ export const AccountApi: AccountApi = {
   getAccount: async function () {
     const token = await getFirebaseToken();
     const res = await fetch(
-      process.env.NEXT_PUBLIC_DOMAIN + `/api/account/get`,
+      process.env.NEXT_PUBLIC_DOMAIN + `api/account/get`,
       {
         method: "POST",
         headers: {
@@ -34,7 +34,7 @@ export const AccountApi: AccountApi = {
   updateAccount: async function ({ payload }) {
     const token = await getFirebaseToken();
     const res = await fetch(
-      process.env.NEXT_PUBLIC_DOMAIN + "/api/account/update",
+      process.env.NEXT_PUBLIC_DOMAIN + "api/account/update",
       {
         method: "POST",
         headers: {
