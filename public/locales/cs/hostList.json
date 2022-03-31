@@ -1,13 +1,13 @@
 {
-    "placeFor": "Místo pro",
-    "people": "Osob",
-    "maximum": "Max.",
-    "twoWeeks": "Dva týdny",
-    "month": "Měsíc",
-    "longerThanMonth": "Déle než měsíc",
-    "food": "Strava",
-    "petsWelcome": "Domácí mazlíčci vítáni",
-    "disabledReady": "Osoba s postížením",
-    "locationOwner": "Vlastník objektu",
-    "use": "Použít"
+  "placeFor": "Místo pro",
+  "people": "Osob",
+  "maximum": "Max.",
+  "twoWeeks": "Dva týdny",
+  "month": "Měsíc",
+  "longerThanMonth": "Déle než měsíc",
+  "food": "Strava",
+  "petsWelcome": "Domácí mazlíčci vítáni",
+  "disabledReady": "Osoba s postížením",
+  "locationOwner": "Vlastník objektu",
+  "use": "Použít"
 }

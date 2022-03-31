@@ -4,11 +4,8 @@ import { InputProps } from "./types";
 
 export const InputWraper = styled.View`
   width: 100%;
-  height: 62px;
   display: flex;
   justify-content: flex-end;
-  /* margin-top: 16px; */
-  margin-bottom: 10px;
 `;
 
 export const InputRow = styled.View`
@@ -20,8 +17,8 @@ type LabelProps = Pick<InputProps, "labelsBackgroundColor" | "error"> & {
   theme: Theme;
 };
 export const Label = styled.Text<LabelProps>`
-  margin-bottom: -10px;
-  margin-left: 15px;
+  top: -10px;
+  left: 15px;
   background-color: ${(props) =>
     props.labelsBackgroundColor ? `${props.labelsBackgroundColor}` : `#fff`};
   width: fit-content;
@@ -30,10 +27,12 @@ export const Label = styled.Text<LabelProps>`
   z-index: 2;
   color: ${(props) =>
     props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.5)`};
+  position: absolute;
 `;
 
 type TextInputProps = InputProps & { theme: Theme };
 export const TextInput = styled.TextInput<TextInputProps>`
+  position: relative;
   border: ${({ theme, error }) =>
     `${theme.forms.borderWidth} solid ${
       error ? theme.colors.error : "rgba(28, 27, 37, 0.3)"
