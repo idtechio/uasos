@@ -22,20 +22,25 @@ export async function publishMessage(
       throw new Error("Topic name must be defined");
     }
 
-    const data = Buffer.from(
-      typeof message === "object" ? JSON.stringify(message) : message
-    );
+    const messageContent =
+      typeof message === "object" ? JSON.stringify(message) : message;
+    const data = Buffer.from(messageContent);
 
     const messageId = await pubSubClient
       .topic(topicNameOrId)
       .publishMessage({ data });
 
     console.log(
-      `Message ${messageId} published to ${topicNameOrId}: `,
-      message
+      `PUBSUB Message ${messageId} published to ${topicNameOrId}: `,
+      messageContent
     );
     return { status: PublishStatus.OK };
   } catch (e) {
+    console.log(
+      `PUBSUB Error while publishing to ${topicNameOrId}: `,
+      typeof message === "object" ? JSON.stringify(message) : message
+    );
+
     return {
       status: PublishStatus.ERROR,
       error:
