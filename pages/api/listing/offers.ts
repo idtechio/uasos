@@ -28,6 +28,7 @@ enum MatchStatus {
 
 export interface MatchedRequestProps {
   id: string;
+  name: string;
   country: string;
   phone_num: string;
   email: string;
@@ -36,6 +37,7 @@ export interface MatchedRequestProps {
 
 export interface OfferProps {
   id: string;
+  name: string;
   status: GuestHostStatus;
   country: string;
   phone_num: string;
@@ -81,9 +83,11 @@ async function getOffers(
 
 type HostListitem = OfferProps & {
   host_id: string;
+  host_name: string;
   host_status: GuestHostStatus;
   match_id?: string;
   guest_id: string;
+  guest_name: string;
   guest_city: string;
   guest_country: string;
   guest_phone_num: string;
@@ -95,6 +99,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     `SELECT
       host_id,
       host_status,
+      host_name,
 
       city,
       country,
@@ -115,6 +120,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       match_status,
 
       guest_id,
+      guest_name,
       guest_city,
       guest_country,
       guest_phone_num,
@@ -129,6 +135,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
 
   return hostsList.map((h) => ({
     id: h.host_id,
+    name: h.host_name,
     status: h.host_status,
     city: h.city,
     country: h.country,
@@ -149,6 +156,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
+          name: h.guest_name,
           city: h.guest_city,
           country: h.guest_country,
           phone_num: h.guest_phone_num,
@@ -162,6 +170,7 @@ function getMockOffers(): OfferProps[] {
   return [
     {
       id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Jan Kowalski",
       city: "Warszawa",
       country: "poland",
       phone_num: "+48111222333",
@@ -181,6 +190,7 @@ function getMockOffers(): OfferProps[] {
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
+        name: "Zenon Nowak",
         city: "Warszawa",
         country: "poland",
         phone_num: "+48999888777",
@@ -189,6 +199,7 @@ function getMockOffers(): OfferProps[] {
     },
     {
       id: "2224e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Jan Kowalski",
       city: "Wrocław",
       country: "poland",
       phone_num: "+48222333444",
@@ -210,6 +221,7 @@ function getMockOffers(): OfferProps[] {
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Jan Kowalski",
       city: "Budapest",
       country: "hungary",
       phone_num: "+36333444555",
