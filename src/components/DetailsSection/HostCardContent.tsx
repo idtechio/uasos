@@ -18,6 +18,8 @@ interface HostCardContentProps {
 
 export default function HostCardContent({ offer }: HostCardContentProps) {
   const { t } = useTranslation("offer-details");
+  const { t: t2 } = useTranslation("common");
+
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
   const additionalInfo = {
@@ -55,7 +57,7 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
           />
         )}
         {offer?.status &&
-          offer?.status === "acceptedByboth" &&
+          offer?.status === "match_accepted" &&
           offer?.email && (
             <DataField
               isBlue={true}
@@ -68,7 +70,7 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
           )}
 
         {offer?.status &&
-          offer?.status === "acceptedByboth" &&
+          offer?.status === "match_accepted" &&
           offer?.phone_num && (
             <DataField
               isBlue={true}
@@ -97,7 +99,7 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
             iconHeight={15}
             label={t("accomType")}
             value={offer?.shelter_type
-              .map((el: string) => t(`${el}`))
+              .map((el: string) => t2(`staticValues.accommodationTypes.${el}`))
               .join(", ")}
           />
         )}
@@ -115,9 +117,9 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
             Icon={DurationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("durationHost")}
+            label={t("duration")}
             value={offer?.duration_category
-              .map((el: string) => t(`${el}`))
+              .map((el: string) => t2(`staticValues.timePeriod.${el}`))
               .join(", ")}
           />
         )}

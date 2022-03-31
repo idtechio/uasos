@@ -5,7 +5,7 @@ type DataFieldProps = {
   iconWidth?: number;
   iconHeight?: number;
   label: string;
-  value?: string;
+  value?: string | number;
   isBlue?: boolean;
 };
 

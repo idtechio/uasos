@@ -18,7 +18,7 @@ import { useRequestsList } from "../../src/queries/useRequestsList";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
-const fakeTags = ["Sheller"];
+const fakeTags = ["Shelter"];
 
 export default function Dashboard() {
   const { identity, account, loaded } = useContext(AuthContext);

@@ -47,7 +47,6 @@ export interface OfferProps {
   status: string;
   match_status?: string;
   matchedRequest?: MatchedRequestProps;
-  status?: string;
 }
 
 async function getOffers(
@@ -64,8 +63,10 @@ async function getOffers(
   let offers: OfferProps[];
 
   if (req.decodedToken?.uid) {
+    console.log("from db");
     offers = await getOffersFromDB(req.decodedToken.uid);
   } else {
+    console.log("mock");
     offers = getMockOffers();
   }
 

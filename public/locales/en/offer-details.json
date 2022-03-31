@@ -32,7 +32,6 @@
   "hostAddress": "Address:",
   "accomType": "Accommodation type:",
   "maxPeople": "Maximum number of persons:",
-  "durationHost": "Duration of stay",
 
   "thankYou": "Thank you",
   "confirmFeedback": " Thank you very much for confirming the proposal received. As soon as we receive both confirmations, we will let you know.",
@@ -43,5 +42,8 @@
   "reject": "Reject",
   "confirm": "Confirm",
 
-  "back": "Back"
+  "back": "Back",
+
+  "confirm_match_error": "An error occured and your match could not be confirmed. Try again later.",
+  "reject_match_error": "An error occured and your match could not be rejected. Try again later."
 }

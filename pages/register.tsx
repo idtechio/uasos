@@ -3,8 +3,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useContext } from "react";
 import { CompositionAppBody } from "../src/components/Compositions";
 import Redirect from "../src/components/Redirect";
-import { completeTranslation } from "../src/helpers/completeTranslation";
-import { withSession } from "../src/helpers/withSession";
 import { AuthContext } from "./_app";
 import { Routes } from "../src/consts/router";
 import FormRegisterUser from "../src/components/FormRegisterUser";
@@ -25,11 +23,8 @@ export default function Account() {
   }
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }) =>
-    completeTranslation({
-      props: {
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});

@@ -136,7 +136,12 @@ const Requests = ({
           />
 
           {!readonly && (
-            <DetailsLink href={`${Routes.OFFER_DETAILS}/${r.id}`} />
+            <DetailsLink
+              href={{
+                pathname: Routes.DETAILS,
+                query: { id: r.id, type: "request" },
+              }}
+            />
           )}
         </SupportCard>
       ))}

@@ -16,7 +16,8 @@ interface GuestCardContentProps {
 }
 
 export default function GuestCardContent({ request }: GuestCardContentProps) {
-  const { t } = useTranslation(["offer-details", "common"]);
+  const { t: t2 } = useTranslation("common");
+  const { t } = useTranslation("offer-details");
 
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
@@ -57,7 +58,7 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
         )}
 
         {request?.status &&
-          request.status === "acceptedByboth" &&
+          request.status === "match_accepted" &&
           request?.email && (
             <DataField
               isBlue={true}
@@ -70,7 +71,7 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
           )}
 
         {request?.status &&
-          request.status === "acceptedByboth" &&
+          request.status === "match_accepted" &&
           request?.phone_num && (
             <DataField
               isBlue={true}
@@ -89,7 +90,7 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
             iconHeight={15}
             label={t("duration")}
             value={request?.duration_category
-              .map((el: string) => t(`${el}`))
+              .map((el: string) => t2(`staticValues.timePeriod.${el}`))
               .join(", ")}
           />
         )}
@@ -100,7 +101,7 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
             iconWidth={15}
             iconHeight={15}
             label={t("address")}
-            value={t(`${request?.city}`)}
+            value={request?.city}
           />
         )}
 
@@ -121,7 +122,7 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
             iconHeight={15}
             label={t("groupType")}
             value={request?.group_relation
-              .map((el: string) => t(`${el}`))
+              .map((el: string) => t2(`staticValues.groupRelations.${el}`))
               .join(", ")}
           />
         )}

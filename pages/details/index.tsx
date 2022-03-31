@@ -14,15 +14,11 @@ import PageContentWrapper from "../../src/components/PageContentWrapper";
 import { AuthContext } from "../_app";
 import Redirect from "../../src/components/Redirect";
 import { GetServerSideProps } from "next";
-import { completeTranslation } from "../../src/helpers/completeTranslation";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { withSession } from "../../src/helpers/withSession";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
 import { OfferProps } from "../api/listing/offers";
 import { RequestProps } from "../api/listing/requests";
-
-const isMatch = true;
 
 const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
 
@@ -45,36 +41,52 @@ const BackText = styled.Text`
 `;
 
 export default function OfferDetails() {
+  const { identity, loaded } = useContext(AuthContext);
+  const router = useRouter();
+  const { id, type } = router.query;
+  const { t } = useTranslation("offer-details");
   const [dataToShow, setDataToShow] = React.useState<
     OfferProps | RequestProps | null
   >(null);
   const [isOffer, setIsOffer] = React.useState<boolean>(false);
+  const {
+    data: offersData,
+    isError: isOffersError,
+    isLoading: isOffersLoading,
+  } = useOffersList();
 
-  const { t } = useTranslation("offer-details");
-  const { identity, loaded } = useContext(AuthContext);
-  const router = useRouter();
-  // const { id } = router.query;
-  const id = "1114e25e-aae4-11ec-9a20-1726ed50bb17";
-  const { data: offers } = useOffersList();
-  const { data: requests } = useRequestsList();
+  const {
+    data: requestsData,
+    isError: isRequestsError,
+    isLoading: isRequestsLoading,
+  } = useRequestsList();
 
-  console.log({ offers });
-  console.log({ requests });
+  const offers = offersData ? offersData.offers : undefined;
+  const requests = requestsData ? requestsData.requests : undefined;
 
   React.useEffect(() => {
-    const data = offers?.offers.filter((el) => el.id === id)[0];
-    if (data) {
-      setDataToShow(data);
-      setIsOffer(true);
+    if (offers && offers.length && !dataToShow) {
+      const data = offers.filter((el) => el.id === id)[0];
+      if (data) {
+        setDataToShow(data);
+        setIsOffer(true);
+      }
     }
   }, [offers]);
 
   React.useEffect(() => {
-    const data = requests?.requests.filter((el) => el.id === id)[0];
-    if (data) {
-      setDataToShow(data);
+    if (requests && requests.length && !dataToShow) {
+      const data = requests.filter((el) => el.id === id)[0];
+      if (data) {
+        setDataToShow(data);
+      }
     }
   }, [requests]);
+
+  if (!identity && loaded) return <Redirect path="/signin" />;
+
+  console.log({ offers });
+  console.log({ requests });
 
   if (loaded) {
     if (identity) {
@@ -90,7 +102,7 @@ export default function OfferDetails() {
                 <ArrowLeftIcon />
                 <BackText>{t("back")}</BackText>
               </BackWrapper>
-              {isMatch ? (
+              {dataToShow?.match._id ? (
                 <WarningSection containerStyle={topMarginStyle} />
               ) : null}
               <DetailsSection
@@ -98,7 +110,12 @@ export default function OfferDetails() {
                 data={dataToShow}
                 containerStyle={bottomMarginStyle}
               />
-              {isMatch ? <DetailsDecisionButtons /> : null}
+              {dataToShow?.match_id ? (
+                <DetailsDecisionButtons
+                  matchId={dataToShow.match_id}
+                  typeOfUser={type === "offer" ? "host" : "guest"}
+                />
+              ) : null}
             </>
           </PageContentWrapper>
         </CompositionAppBody>
@@ -114,11 +131,8 @@ export default function OfferDetails() {
   }
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }) =>
-    completeTranslation({
-      props: {
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});
