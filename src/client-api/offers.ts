@@ -8,7 +8,7 @@ export type GetOffersListDTO = {
 export const getOffersList = async () => {
   const token = await getFirebaseToken();
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN}api/listing/offers`,
+    `${process.env.NEXT_PUBLIC_DOMAIN}/api/listing/offers`,
     {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },

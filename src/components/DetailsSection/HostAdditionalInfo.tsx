@@ -5,10 +5,22 @@ import DataField from "./DataField";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import TransportIcon from "../../style/svgs/truck.svg";
+import ElderIcon from "../../style/svgs/elder.svg";
+import PregnantIcon from "../../style/svgs/pregnant.svg";
+import DiversityIcon from "../../style/svgs/earth.svg";
 import { useTranslation } from "react-i18next";
+import { Boolean } from "../../../pages/api/listing/requests";
 
+export type InfoType = {
+  animals?: Boolean;
+  disability?: Boolean;
+  transport?: Boolean;
+  pregnancy?: Boolean;
+  elderly?: Boolean;
+  diversity?: Boolean;
+};
 interface HostAdditionalInfoProps {
-  info: { animals: boolean; disability: boolean; transport: boolean };
+  info: InfoType;
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {
   borderTopWidth: 3,
@@ -46,6 +58,33 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             iconWidth={12}
             iconHeight={13}
             label={t("disabilityAccepted")}
+          />
+        )}
+
+        {info.pregnancy && (
+          <DataField
+            Icon={PregnantIcon}
+            iconWidth={12}
+            iconHeight={13}
+            label={t("pregnancyAccepted")}
+          />
+        )}
+
+        {info.elderly && (
+          <DataField
+            Icon={ElderIcon}
+            iconWidth={12}
+            iconHeight={13}
+            label={t("elderlyAccepted")}
+          />
+        )}
+
+        {info.diversity && (
+          <DataField
+            Icon={DiversityIcon}
+            iconWidth={12}
+            iconHeight={13}
+            label={t("diversityAccepted")}
           />
         )}
       </ItemsRow>
