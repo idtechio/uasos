@@ -15,21 +15,18 @@ export interface ModalProps {
   close: () => void;
   showSuccess: boolean;
   showError: boolean;
-  isLoading: boolean;
 }
 
 export default function ModalOnConfirm({
   close,
   showSuccess,
   showError,
-  isLoading,
 }: ModalProps) {
   const { t } = useTranslation("offer-details");
   const router = useRouter();
   return (
     <FormWrapper>
-      <CloseButton onPress={close} />
-      {isLoading ? "Loading..." : null}
+      {!showSuccess && <CloseButton onPress={close} />}
       {showError ? (
         <FormDescription>{t("confirm_match_error")}</FormDescription>
       ) : null}

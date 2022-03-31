@@ -28,6 +28,7 @@ enum MatchStatus {
 
 export interface MatchedOfferProps {
   id: string;
+  name: string;
   country: string;
   phone_num: string;
   email: string;
@@ -47,6 +48,7 @@ export interface MatchedOfferProps {
 
 export interface RequestProps {
   id: string;
+  name: string;
   status: GuestHostStatus;
   country: string;
   phone_num: string;

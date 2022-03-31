@@ -9,14 +9,21 @@ import AddressIcon from "../../style/svgs/marker.svg";
 import AccommodationIcon from "../../style/svgs/home.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
+import AtIcon from "../../style/svgs/at.svg";
+import PhoneIcon from "../../style/svgs/phone2.svg";
 import { useTranslation } from "react-i18next";
 import { MatchedOfferProps } from "../../../pages/api/listing/requests";
 import { OfferProps } from "../../../pages/api/listing/offers";
+
 interface HostCardContentProps {
   offer: OfferProps | MatchedOfferProps | null;
+  showContact?: boolean;
 }
 
-export default function HostCardContent({ offer }: HostCardContentProps) {
+export default function HostCardContent({
+  offer,
+  showContact,
+}: HostCardContentProps) {
   const { t } = useTranslation("offer-details");
   const { t: t2 } = useTranslation("common");
 
@@ -28,9 +35,9 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
     disability: offer?.ok_for_disabilities,
     elderly: offer?.ok_for_elderly,
     diversity: offer?.ok_for_any_nationality,
-    pregnancy: offer?.ok_for_pregnancy,
+    pregnancy: offer?.ok_for_pregnant,
   };
-  console.log({ offer });
+
   return (
     <>
       <Header>
@@ -56,31 +63,27 @@ export default function HostCardContent({ offer }: HostCardContentProps) {
             value={offer?.name}
           />
         )}
-        {offer?.status &&
-          offer?.status === "match_accepted" &&
-          offer?.email && (
-            <DataField
-              isBlue={true}
-              Icon={DurationIcon}
-              iconWidth={15}
-              iconHeight={15}
-              label={t("emailAddress")}
-              value={offer?.email}
-            />
-          )}
+        {showContact && offer?.email && (
+          <DataField
+            isBlue={true}
+            Icon={AtIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("emailAddress")}
+            value={offer?.email}
+          />
+        )}
 
-        {offer?.status &&
-          offer?.status === "match_accepted" &&
-          offer?.phone_num && (
-            <DataField
-              isBlue={true}
-              Icon={DurationIcon}
-              iconWidth={15}
-              iconHeight={15}
-              label={t("phoneNumber")}
-              value={offer?.phone_num}
-            />
-          )}
+        {showContact && offer?.phone_num && (
+          <DataField
+            isBlue={true}
+            Icon={PhoneIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("phoneNumber")}
+            value={offer?.phone_num}
+          />
+        )}
 
         {offer?.city && (
           <DataField

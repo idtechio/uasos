@@ -32,7 +32,10 @@
       "week": "One week",
       "twoWeeks": "2 weeks",
       "month": "One month",
-      "longer": "Longer than a month"
+      "longer": "Longer than a month",
+      "less_than_1_week": "Less than a week",
+      "two_weeks": "2 weeks",
+      "2_3_weeks": "2 to 3 weeks"
     },
     "groupRelations": {
       "single_man": "Single Man",

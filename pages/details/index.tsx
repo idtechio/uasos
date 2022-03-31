@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleProp, Text, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
@@ -19,6 +19,8 @@ import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
 import { OfferProps } from "../api/listing/offers";
 import { RequestProps } from "../api/listing/requests";
+import { LoadingCards } from "../../src/components/SupportSection/LoadingCards";
+import { Error } from "../../src/components/Inputs/style";
 
 const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
 
@@ -40,15 +42,15 @@ const BackText = styled.Text`
   text-align: left;
 `;
 
-export default function OfferDetails() {
+export default function Details() {
   const { identity, loaded } = useContext(AuthContext);
+
   const router = useRouter();
   const { id, type } = router.query;
   const { t } = useTranslation("offer-details");
   const [dataToShow, setDataToShow] = React.useState<
     OfferProps | RequestProps | null
   >(null);
-  const [isOffer, setIsOffer] = React.useState<boolean>(false);
   const {
     data: offersData,
     isError: isOffersError,
@@ -69,7 +71,6 @@ export default function OfferDetails() {
       const data = offers.filter((el) => el.id === id)[0];
       if (data) {
         setDataToShow(data);
-        setIsOffer(true);
       }
     }
   }, [offers]);
@@ -83,40 +84,47 @@ export default function OfferDetails() {
     }
   }, [requests]);
 
-  if (!identity && loaded) return <Redirect path="/signin" />;
-
-  console.log({ offers });
-  console.log({ requests });
-
   if (loaded) {
     if (identity) {
       return (
         <CompositionAppBody>
           <PageContentWrapper>
-            <>
-              <BackWrapper
-                onPress={() => {
-                  router.push("/dashboard");
-                }}
-              >
-                <ArrowLeftIcon />
-                <BackText>{t("back")}</BackText>
-              </BackWrapper>
-              {dataToShow?.match._id ? (
-                <WarningSection containerStyle={topMarginStyle} />
-              ) : null}
-              <DetailsSection
-                isOffer={isOffer}
-                data={dataToShow}
-                containerStyle={bottomMarginStyle}
-              />
-              {dataToShow?.match_id ? (
-                <DetailsDecisionButtons
-                  matchId={dataToShow.match_id}
-                  typeOfUser={type === "offer" ? "host" : "guest"}
-                />
-              ) : null}
-            </>
+            {isOffersLoading || isRequestsLoading ? (
+              /* // TODO: current spinner is from components/SupportSection/LoadingCards, nice to add a custom one for this view */
+              <LoadingCards count={3} showImage={true} />
+            ) : (
+              <>
+                <BackWrapper
+                  onPress={() => {
+                    router.push("/dashboard");
+                  }}
+                >
+                  <ArrowLeftIcon />
+                  <BackText>{t("back")}</BackText>
+                </BackWrapper>
+
+                {isOffersError || isRequestsError ? (
+                  <Error>{t("could_not_load_details")}</Error>
+                ) : (
+                  <>
+                    {dataToShow?.match_id ? (
+                      <WarningSection containerStyle={topMarginStyle} />
+                    ) : null}
+                    <DetailsSection
+                      isOffer={type === "offer"}
+                      data={dataToShow}
+                      containerStyle={bottomMarginStyle}
+                    />
+                    {dataToShow?.status === "matched" ? (
+                      <DetailsDecisionButtons
+                        matchId={dataToShow?.match_id}
+                        typeOfUser={type === "offer" ? "host" : "guest"}
+                      />
+                    ) : null}
+                  </>
+                )}
+              </>
+            )}
           </PageContentWrapper>
         </CompositionAppBody>
       );
@@ -124,9 +132,13 @@ export default function OfferDetails() {
       return <Redirect path="/signin"></Redirect>;
     }
   } else {
-    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
     return (
-      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
+      <CompositionAppBody>
+        <PageContentWrapper>
+          {/* // TODO: current spinner is from components/SupportSection/LoadingCards, nice to add a custom one for this view */}
+          <LoadingCards count={3} showImage={true} />
+        </PageContentWrapper>
+      </CompositionAppBody>
     );
   }
 }

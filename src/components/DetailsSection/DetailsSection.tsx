@@ -29,11 +29,17 @@ export default function DetailsSection({
       ) : null}
       {data?.matchedRequest ? (
         <DetailsCard>
-          <GuestCardContent request={data?.matchedRequest} />
+          <GuestCardContent
+            request={data?.matchedRequest}
+            showContact={data.match_status === "accepted"}
+          />
         </DetailsCard>
       ) : data?.matchedOffer ? (
         <DetailsCard>
-          <HostCardContent offer={data?.matchedOffer} />
+          <HostCardContent
+            offer={data?.matchedOffer}
+            showContact={data.match_status === "accepted"}
+          />
         </DetailsCard>
       ) : null}
     </View>

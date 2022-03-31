@@ -28,6 +28,7 @@ enum MatchStatus {
 
 export interface MatchedRequestProps {
   id: string;
+  name: string;
   country: string;
   phone_num: string;
   email: string;
@@ -47,6 +48,7 @@ export interface MatchedRequestProps {
 
 export interface OfferProps {
   id: string;
+  name: string;
   status: GuestHostStatus;
   country: string;
   phone_num: string;
@@ -142,6 +144,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
 
   return hostsList.map((h) => ({
     id: h.host_id,
+    name: h.host.name,
     status: h.host_status,
     city: h.city,
     country: h.country,
@@ -194,6 +197,7 @@ function getMockOffers(): OfferProps[] {
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
+        name: "Karina",
         city: "Warszawa",
         country: "poland",
         phone_num: "+48999888777",
@@ -212,6 +216,7 @@ function getMockOffers(): OfferProps[] {
     },
     {
       id: "2224e25e-aae4-11ec-9a20-1726ed50bb17",
+      name: "Alina",
       city: "Wrocław",
       country: "poland",
       phone_num: "+48222333444",

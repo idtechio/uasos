@@ -2,13 +2,14 @@ import React, { useCallback, useState } from "react";
 import ButtonCta from "../EditOfferOptions/ButtonCta";
 import CardModal from "../CardModal";
 import { CardModalStyle } from "../EditOfferOptions/EditOfferButton/style";
-import { FormFooter } from "../EditOfferOptions/style";
+import { FormDescription, FormFooter } from "../EditOfferOptions/style";
 import ModalOnConfirm from "./ModalOnConfirm";
 import ModalOnReject from "./ModalOnReject";
 import { useTranslation } from "react-i18next";
 
 interface DetailsDecisionButtonsProps {
   typeOfUser: string;
+  matchId: string | null | undefined;
 }
 
 export default function DetailsDecisionButtons({
@@ -34,7 +35,7 @@ export default function DetailsDecisionButtons({
     setIsLoading(true);
     if (typeOfUser === "host") {
       const res = await fetch(
-        `/api/hosts/matchesconfirm/${matchId}?accepted=1`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/hosts/matchesconfirm/${matchId}?accepted=1`,
         { method: "GET" }
       );
       if (res) {
@@ -47,7 +48,7 @@ export default function DetailsDecisionButtons({
       }
     } else {
       const res = await fetch(
-        `/api/guests/matchesconfirm/${matchId}?accepted=1`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/guests/matchesconfirm/${matchId}?accepted=1`,
         { method: "GET" }
       );
       if (res) {
@@ -66,7 +67,7 @@ export default function DetailsDecisionButtons({
     setIsLoading(true);
     if (typeOfUser === "host") {
       const res = await fetch(
-        `/api/hosts/matchesconfirm/${matchId}?accepted=0`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/hosts/matchesconfirm/${matchId}?accepted=0`,
         { method: "GET" }
       );
       if (res) {
@@ -79,7 +80,7 @@ export default function DetailsDecisionButtons({
       }
     } else {
       const res = await fetch(
-        `/api/guests/matchesconfirm/${matchId}?accepted=0`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/guests/matchesconfirm/${matchId}?accepted=0`,
         { method: "GET" }
       );
       if (res) {
@@ -98,24 +99,32 @@ export default function DetailsDecisionButtons({
       case "accept":
         return (
           <CardModal closeable={false} cardStyle={CardModalStyle}>
-            <ModalOnConfirm
-              close={closeModal}
-              isLoading={isLoading}
-              showSuccess={showSuccess}
-              showError={showError}
-            />
+            {isLoading ? (
+              // TODO: nice spinner
+              <FormDescription>Loading...</FormDescription>
+            ) : (
+              <ModalOnConfirm
+                close={closeModal}
+                showSuccess={showSuccess}
+                showError={showError}
+              />
+            )}
           </CardModal>
         );
 
       case "reject":
         return (
           <CardModal closeable={false} cardStyle={CardModalStyle}>
-            <ModalOnReject
-              close={closeModal}
-              isLoading={isLoading}
-              showSuccess={showSuccess}
-              showError={showError}
-            />
+            {isLoading ? (
+              // TODO: nice spinner
+              <FormDescription>Loading...</FormDescription>
+            ) : (
+              <ModalOnReject
+                close={closeModal}
+                showSuccess={showSuccess}
+                showError={showError}
+              />
+            )}
           </CardModal>
         );
 
@@ -123,7 +132,7 @@ export default function DetailsDecisionButtons({
       default:
         return null;
     }
-  }, [modalOpened, closeModal]);
+  }, [modalOpened, closeModal, isLoading, showSuccess, showError]);
 
   return (
     <FormFooter style={{ marginBottom: 60 }}>

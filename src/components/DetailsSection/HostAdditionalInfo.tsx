@@ -12,12 +12,12 @@ import { useTranslation } from "react-i18next";
 
 interface HostAdditionalInfoProps {
   info: {
-    animals: boolean;
-    disability: boolean;
-    transport: boolean;
-    pregnancy: boolean;
-    elderly: boolean;
-    diversity: boolean;
+    animals: Boolean | undefined;
+    disability: Boolean | undefined;
+    transport: Boolean | undefined;
+    pregnancy: Boolean | undefined;
+    elderly: Boolean | undefined;
+    diversity: Boolean | undefined;
   };
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {

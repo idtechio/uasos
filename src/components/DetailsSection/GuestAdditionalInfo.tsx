@@ -6,11 +6,11 @@ import { useTranslation } from "react-i18next";
 
 interface GuestAdditionalInfoProps {
   info: {
-    disability: boolean;
-    pregnancy: boolean;
-    diversity: boolean;
-    animals: boolean;
-    elderly: boolean;
+    disability: Boolean | undefined;
+    pregnancy: Boolean | undefined;
+    diversity: Boolean | undefined;
+    animals: Boolean | undefined;
+    elderly: Boolean | undefined;
   };
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {

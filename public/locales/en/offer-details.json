@@ -45,5 +45,7 @@
   "back": "Back",
 
   "confirm_match_error": "An error occured and your match could not be confirmed. Try again later.",
-  "reject_match_error": "An error occured and your match could not be rejected. Try again later."
+  "reject_match_error": "An error occured and your match could not be rejected. Try again later.",
+
+  "could_not_load_details": "An error occured during loading the details. Please go back to dashboard and try again."
 }

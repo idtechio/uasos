@@ -7,15 +7,21 @@ import GuestAdditionalInfo from "./GuestAdditionalInfo";
 import AddressIcon from "../../style/svgs/marker.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
+import AtIcon from "../../style/svgs/at.svg";
+import PhoneIcon from "../../style/svgs/phone2.svg";
 import { useTranslation } from "react-i18next";
 import { RequestProps } from "../../../pages/api/listing/requests";
 import { MatchedRequestProps } from "../../../pages/api/listing/offers";
 
 interface GuestCardContentProps {
   request: RequestProps | MatchedRequestProps | null;
+  showContact?: boolean;
 }
 
-export default function GuestCardContent({ request }: GuestCardContentProps) {
+export default function GuestCardContent({
+  request,
+  showContact,
+}: GuestCardContentProps) {
   const { t: t2 } = useTranslation("common");
   const { t } = useTranslation("offer-details");
 
@@ -30,7 +36,6 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
     animals: request?.is_with_animal,
   };
 
-  console.log({ request });
   return (
     <>
       <Header>
@@ -57,31 +62,27 @@ export default function GuestCardContent({ request }: GuestCardContentProps) {
           />
         )}
 
-        {request?.status &&
-          request.status === "match_accepted" &&
-          request?.email && (
-            <DataField
-              isBlue={true}
-              Icon={DurationIcon}
-              iconWidth={15}
-              iconHeight={15}
-              label={t("emailAddress")}
-              value={request?.email}
-            />
-          )}
+        {showContact && request?.email && (
+          <DataField
+            isBlue={true}
+            Icon={AtIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("emailAddress")}
+            value={request?.email}
+          />
+        )}
 
-        {request?.status &&
-          request.status === "match_accepted" &&
-          request?.phone_num && (
-            <DataField
-              isBlue={true}
-              Icon={DurationIcon}
-              iconWidth={15}
-              iconHeight={15}
-              label={t("phoneNumber")}
-              value={request?.phone_num}
-            />
-          )}
+        {showContact && request?.phone_num && (
+          <DataField
+            isBlue={true}
+            Icon={PhoneIcon}
+            iconWidth={15}
+            iconHeight={15}
+            label={t("phoneNumber")}
+            value={request?.phone_num}
+          />
+        )}
 
         {request?.duration_category && (
           <DataField
