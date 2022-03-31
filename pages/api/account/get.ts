@@ -26,7 +26,8 @@ enum PhoneStatus {
   SUSPENDED = "suspended", // for future moderation purpose
   DEFAULT = "default", // not verified
 }
-interface AccountDBProps {
+export interface AccountDBProps {
+  db_accounts_id: string;
   uid: string;
   name: string;
   email: string;
@@ -73,9 +74,12 @@ async function getAccount(
   }
 }
 
-async function getAccountFromDB(uid: string): Promise<false | AccountDBProps> {
+export async function getAccountFromDB(
+  uid: string
+): Promise<false | AccountDBProps> {
   const dbAccount: false | AccountDBProps[] = await select(
     `SELECT
+      db_accounts_id,
       uid,
       name,
       email,

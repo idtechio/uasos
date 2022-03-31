@@ -1,15 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { select } from "../../../lib/db";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import Account from "../../guest";
 
 enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
 export interface HostProps {
+  id?: string;
   country: string;
   phone_num: string;
   email: string;
@@ -32,6 +33,10 @@ export interface HostProps {
   can_be_verified: Boolean;
 }
 
+interface HostDBProps {
+  db_hosts_id: string;
+}
+
 async function editHost(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
@@ -41,13 +46,19 @@ async function editHost(
       throw new Error("token is required");
     }
 
-    // TODO check permission to edit hosts with db_hosts_id=body.id for user req.decodedToken.uid
-
     const body = JSON.parse(req.body);
-    const hostData: HostProps & { db_hosts_id: string } = {
+
+    const host = await getHostFromDB(body.id, req.decodedToken.uid);
+    if (!host) {
+      throw new Error("Host's offer does not exist");
+    }
+
+    const hostData: HostProps & HostDBProps = {
       ...body,
-      db_hosts_id: body.id,
+      db_hosts_id: host.db_hosts_id,
     };
+    delete hostData.id;
+
     const topicNameOrId = process.env.TOPIC_HOST_UPDATE;
     const pubResult = await publishMessage(topicNameOrId, hostData);
 
@@ -56,11 +67,32 @@ async function editHost(
       .json(pubResult);
     res.end();
   } catch (e) {
-    res
-      .status(400)
-      .json({ ok: "not ok", error: e instanceof Error ? e.message : "" });
+    res.status(400).json({
+      ok: "not ok",
+      error: e instanceof Error ? e.message : "",
+    });
     res.end();
   }
+}
+
+async function getHostFromDB(
+  hostId: string,
+  uid: string
+): Promise<false | HostDBProps> {
+  const dbHost: false | HostDBProps[] = await select(
+    `SELECT
+      h.db_hosts_id
+    FROM hosts h
+    JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id AND a.uid = $2
+    WHERE h.db_hosts_id = $1`,
+    [hostId, uid]
+  );
+
+  if (!dbHost) {
+    return false;
+  }
+
+  return dbHost[0];
 }
 
 export default withApiAuth(editHost);

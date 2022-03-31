@@ -3,6 +3,7 @@ import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
+import { AccountDBProps, getAccountFromDB } from "../account/get";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -25,6 +26,10 @@ export interface GuestProps {
   duration_category: Array<string>;
 }
 
+interface GuestDBProps {
+  db_accounts_id: string;
+}
+
 async function addGuest(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
@@ -34,13 +39,17 @@ async function addGuest(
       throw new Error("token is required");
     }
 
-    // TODO read account_id from db
-    const account = { id: "---" };
+    const account: false | AccountDBProps = await getAccountFromDB(
+      req.decodedToken.uid
+    );
+    if (!account) {
+      throw new Error("user account does not exist");
+    }
 
     const body = JSON.parse(req.body);
-    const guestData: GuestProps & { db_accounts_id: string } = {
+    const guestData: GuestProps & GuestDBProps = {
       ...body,
-      db_accounts_id: account.id,
+      db_accounts_id: account.db_accounts_id,
     };
     const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, guestData);

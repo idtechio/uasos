@@ -150,6 +150,13 @@ export default function FormAdHost() {
           nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
         duration_category: [accommodationTime],
         transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
+        // TODO set data for new props:
+        closest_city: "",
+        zipcode: "",
+        street: "",
+        building_no: "",
+        appartment_no: "",
+        can_be_verified: Boolean.FALSE,
       });
 
       setSubmitRequstState((state) => ({ ...state, succeeded: true }));
