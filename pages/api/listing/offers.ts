@@ -57,13 +57,13 @@ export interface OfferProps {
   city: string;
   shelter_type: Array<string>;
   beds: number;
-  acceptable_group_relations: Array<string>;
+  acceptable_group_relations: Array<string> | string;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: Array<string>;
+  duration_category: Array<string> | string;
   transport_included: Boolean;
   match_id?: string | null;
   match_status?: MatchStatus | null;
@@ -105,15 +105,15 @@ type HostListitem = OfferProps & {
   guest_country: string;
   guest_phone_num: string;
   guest_email: string;
-  guest_acceptable_shelter_types: Array<string>;
+  guest_acceptable_shelter_types: string;
   guest_beds: number;
-  guest_group_relation: Array<string>;
+  guest_group_relation: string;
   guest_is_pregnant: Boolean;
   guest_is_with_disability: Boolean;
   guest_is_with_animal: Boolean;
   guest_is_with_elderly: Boolean;
   guest_is_ukrainian_nationality: Boolean;
-  guest_duration_category: Array<string>;
+  guest_duration_category: string;
 };
 
 async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
@@ -175,13 +175,19 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     email: h.email,
     shelter_type: h.shelter_type,
     beds: h.beds,
-    acceptable_group_relations: h.acceptable_group_relations,
+    acceptable_group_relations:
+      typeof h.acceptable_group_relations === "string"
+        ? h.acceptable_group_relations.split(",")
+        : h.acceptable_group_relations,
     ok_for_pregnant: h.ok_for_pregnant,
     ok_for_disabilities: h.ok_for_disabilities,
     ok_for_animals: h.ok_for_animals,
     ok_for_elderly: h.ok_for_elderly,
     ok_for_any_nationality: h.ok_for_any_nationality,
-    duration_category: h.duration_category,
+    duration_category:
+      typeof h.duration_category === "string"
+        ? h.duration_category.split(",")
+        : h.duration_category,
     transport_included: h.transport_included,
     match_status: h.match_status,
     match_id: h.match_id,
@@ -194,15 +200,15 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
           phone_num: h.guest_phone_num,
           email: h.guest_email,
 
-          acceptable_shelter_types: h.guest_acceptable_shelter_types,
+          acceptable_shelter_types: h.guest_acceptable_shelter_types.split(","),
           beds: h.guest_beds,
-          group_relation: h.guest_group_relation,
+          group_relation: h.guest_group_relation.split(","),
           is_pregnant: h.guest_is_pregnant,
           is_with_disability: h.guest_is_with_disability,
           is_with_animal: h.guest_is_with_animal,
           is_with_elderly: h.guest_is_with_elderly,
           is_ukrainian_nationality: h.guest_is_ukrainian_nationality,
-          duration_category: h.guest_duration_category,
+          duration_category: h.guest_duration_category.split(","),
           status: h.guest_status,
         }
       : undefined,

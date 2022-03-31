@@ -56,15 +56,15 @@ export interface RequestProps {
   phone_num: string;
   email: string;
   city: string;
-  acceptable_shelter_types: Array<string>;
+  acceptable_shelter_types: Array<string> | string;
   beds: number;
-  group_relation: Array<string>;
+  group_relation: Array<string> | string;
   is_pregnant: Boolean;
   is_with_disability: Boolean;
   is_with_animal: Boolean;
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
-  duration_category: Array<string>;
+  duration_category: Array<string> | string;
   match_id?: string | null;
   match_status?: MatchStatus | null;
   matchedOffer?: MatchedOfferProps;
@@ -105,15 +105,15 @@ type GuestListItem = RequestProps & {
   host_country: string;
   host_phone_num: string;
   host_email: string;
-  host_shelter_type: Array<string>;
+  host_shelter_type: string;
   host_beds: number;
-  host_acceptable_group_relations: Array<string>;
+  host_acceptable_group_relations: string;
   host_ok_for_pregnant: Boolean;
   host_ok_for_disabilities: Boolean;
   host_ok_for_animals: Boolean;
   host_ok_for_elderly: Boolean;
   host_ok_for_any_nationality: Boolean;
-  host_duration_category: Array<string>;
+  host_duration_category: string;
   host_transport_included: Boolean;
 };
 
@@ -175,14 +175,23 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     phone_num: g.phone_num,
     email: g.email,
     beds: g.beds,
-    acceptable_shelter_types: g.acceptable_shelter_types,
-    group_relation: g.group_relation,
+    acceptable_shelter_types:
+      typeof g.acceptable_shelter_types === "string"
+        ? g.acceptable_shelter_types.split(",")
+        : g.acceptable_shelter_types,
+    group_relation:
+      typeof g.group_relation === "string"
+        ? g.group_relation.split(",")
+        : g.group_relation,
     is_pregnant: g.is_pregnant,
     is_with_disability: g.is_with_disability,
     is_with_animal: g.is_with_animal,
     is_with_elderly: g.is_with_elderly,
     is_ukrainian_nationality: g.is_ukrainian_nationality,
-    duration_category: g.duration_category,
+    duration_category:
+      typeof g.duration_category === "string"
+        ? g.duration_category.split(",")
+        : g.duration_category,
     match_id: g.match_id,
     match_status: g.match_status,
     matchedOffer: g.match_id
@@ -194,15 +203,16 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           phone_num: g.host_phone_num,
           email: g.host_email,
 
-          shelter_type: g.host_shelter_type,
+          shelter_type: g.host_shelter_type.split(","),
           beds: g.host_beds,
-          acceptable_group_relations: g.host_acceptable_group_relations,
+          acceptable_group_relations:
+            g.host_acceptable_group_relations.split(","),
           ok_for_pregnant: g.host_ok_for_pregnant,
           ok_for_disabilities: g.host_ok_for_disabilities,
           ok_for_animals: g.host_ok_for_animals,
           ok_for_elderly: g.host_ok_for_elderly,
           ok_for_any_nationality: g.host_ok_for_any_nationality,
-          duration_category: g.host_duration_category,
+          duration_category: g.host_duration_category.split(","),
           transport_included: g.host_transport_included,
           status: g.host_status,
         }

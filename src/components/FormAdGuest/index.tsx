@@ -121,7 +121,7 @@ export default function FormAdGuest({
     const guest = data.advancedRefugee;
 
     let apiObject: GuestProps = {
-      name: guest.name,
+      // name: guest.name,
       phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,

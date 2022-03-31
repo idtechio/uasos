@@ -10,7 +10,6 @@ enum Boolean {
   TRUE = "TRUE",
 }
 export interface GuestProps {
-  name: string;
   country?: string;
   phone_num: string;
   email: string;
