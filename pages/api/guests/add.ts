@@ -46,11 +46,12 @@ async function addGuest(
       throw new Error("user account does not exist");
     }
 
-    const body = JSON.parse(req.body);
+    const body = req.body;
     const guestData: GuestProps & GuestDBProps = {
       ...body,
       db_accounts_id: account.db_accounts_id,
     };
+
     const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, guestData);
 

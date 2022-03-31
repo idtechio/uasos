@@ -1,4 +1,5 @@
 import { RequestProps } from "../../pages/api/listing/requests";
+import { getFirebaseToken } from "../helpers/getFirebaseToken";
 
 export type GetRequestsListDTO = {
   ok: "ok";
@@ -6,9 +7,13 @@ export type GetRequestsListDTO = {
 };
 
 export const getRequestsList = async () => {
+  const token = await getFirebaseToken();
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DOMAIN}/api/listing/requests`,
-    { method: "GET" }
+    {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    }
   );
 
   if (res.status != 200) {
