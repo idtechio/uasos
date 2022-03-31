@@ -3,14 +3,15 @@ import { Subtitle, Info, FlexWrapper, ItemsColumn } from "./style";
 import { Bullet, ListItem } from "../WarningSection/style";
 import { StyleProp, ViewStyle } from "react-native";
 import { useTranslation } from "react-i18next";
+import { Boolean } from "../../../pages/api/listing/requests";
 
 interface GuestAdditionalInfoProps {
   info: {
-    disability: Boolean | undefined;
-    pregnancy: Boolean | undefined;
-    diversity: Boolean | undefined;
-    animals: Boolean | undefined;
-    elderly: Boolean | undefined;
+    disability?: Boolean;
+    pregnancy?: Boolean;
+    diversity?: Boolean;
+    animals?: Boolean;
+    elderly?: Boolean;
   };
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {

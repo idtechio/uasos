@@ -1,19 +1,19 @@
 import React from "react";
-import DataField from "./DataField";
-import { Header, Title, FlexWrapper } from "./style";
-import { TouchableOpacity } from "react-native";
-import ArrowIcon from "../../style/svgs/chevron-down.svg";
-import HostAdditionalInfo from "./HostAdditionalInfo";
-import HostIcon from "../../style/svgs/user-check.svg";
-import AddressIcon from "../../style/svgs/marker.svg";
-import AccommodationIcon from "../../style/svgs/home.svg";
-import GuestsIcon from "../../style/svgs/users.svg";
-import DurationIcon from "../../style/svgs/calendar.svg";
-import AtIcon from "../../style/svgs/at.svg";
-import PhoneIcon from "../../style/svgs/phone2.svg";
 import { useTranslation } from "react-i18next";
-import { MatchedOfferProps } from "../../../pages/api/listing/requests";
+import { TouchableOpacity } from "react-native";
 import { OfferProps } from "../../../pages/api/listing/offers";
+import { MatchedOfferProps } from "../../../pages/api/listing/requests";
+import AtIcon from "../../style/svgs/at.svg";
+import DurationIcon from "../../style/svgs/calendar.svg";
+import ArrowIcon from "../../style/svgs/chevron-down.svg";
+import AccommodationIcon from "../../style/svgs/home.svg";
+import AddressIcon from "../../style/svgs/marker.svg";
+import PhoneIcon from "../../style/svgs/phone2.svg";
+import HostIcon from "../../style/svgs/user-check.svg";
+import GuestsIcon from "../../style/svgs/users.svg";
+import DataField from "./DataField";
+import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
+import { FlexWrapper, Header, Title } from "./style";
 
 interface HostCardContentProps {
   offer: OfferProps | MatchedOfferProps | null;
@@ -29,7 +29,7 @@ export default function HostCardContent({
 
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
-  const additionalInfo = {
+  const additionalInfo: InfoType = {
     animals: offer?.ok_for_animals,
     transport: offer?.transport_included,
     disability: offer?.ok_for_disabilities,

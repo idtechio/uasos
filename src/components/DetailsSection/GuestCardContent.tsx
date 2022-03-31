@@ -29,7 +29,7 @@ export default function GuestCardContent({
     React.useState<boolean>(false);
 
   const additionalInfo = {
-    diversity: !request?.is_ukrainian_nationality,
+    diversity: request?.is_ukrainian_nationality,
     pregnancy: request?.is_pregnant,
     disability: request?.is_with_disability,
     elderly: request?.is_with_elderly,

@@ -272,33 +272,6 @@ function getMockOffers(): OfferProps[] {
       match_status: null,
       matchedRequest: undefined,
     },
-    {
-      id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
-      name: "Jan Kowalski",
-      city: "Budapest",
-      country: "hungary",
-      phone_num: "+36333444555",
-      email: "host1@example.com",
-      shelter_type: ["flat"],
-      beds: 4,
-      acceptable_group_relations: [
-        "single_woman",
-        "family_with_children",
-        "unrelated_group",
-        "mother_with_children",
-      ],
-      ok_for_pregnant: Boolean.TRUE,
-      ok_for_disabilities: Boolean.FALSE,
-      ok_for_animals: Boolean.FALSE,
-      ok_for_elderly: Boolean.TRUE,
-      ok_for_any_nationality: Boolean.TRUE,
-      duration_category: ["2_3_weeks"],
-      transport_included: Boolean.FALSE,
-      status: GuestHostStatus.BEING_PROCESS,
-      match_id: null,
-      match_status: null,
-      matchedRequest: undefined,
-    },
   ];
 }
 
