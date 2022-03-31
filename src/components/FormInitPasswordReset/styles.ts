@@ -5,6 +5,7 @@ export const ButtonContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
+  margin-top: 50px;
 `;
 export const StyledHeader = styled.Text`
   font-weight: bold;
@@ -12,14 +13,20 @@ export const StyledHeader = styled.Text`
   line-height: 24px;
   display: flex;
   letter-spacing: 0.5px;
+  color: #003566;
 `;
 export const StyledText = styled.Text`
   font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
   display: flex;
+  margin: 10px 0px 50px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
   letter-spacing: 0.5px;
-  margin: 35px 0;
+
+  color: #003566;
 `;
 export const ModalContainer = styled.View`
   justify-content: center;
