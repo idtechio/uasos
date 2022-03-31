@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export async function middleware(_req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
 
   // eslint-disable-next-line no-console
