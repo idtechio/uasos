@@ -3,7 +3,7 @@ import DataField from "./DataField";
 import { Header, Title, FlexWrapper } from "./style";
 import { TouchableOpacity } from "react-native";
 import ArrowIcon from "../../style/svgs/chevron-down.svg";
-import HostAdditionalInfo from "./HostAdditionalInfo";
+import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
 import HostIcon from "../../style/svgs/user-check.svg";
 import AddressIcon from "../../style/svgs/marker.svg";
 import AccommodationIcon from "../../style/svgs/home.svg";
@@ -29,7 +29,7 @@ export default function HostCardContent({
 
   const [showAdditionalInfo, setShowAdditionalInfo] =
     React.useState<boolean>(false);
-  const additionalInfo = {
+  const additionalInfo: InfoType = {
     animals: offer?.ok_for_animals,
     transport: offer?.transport_included,
     disability: offer?.ok_for_disabilities,

@@ -142,36 +142,40 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     return [];
   }
 
-  return hostsList.map((h) => ({
-    id: h.host_id,
-    name: h.host.name,
-    status: h.host_status,
-    city: h.city,
-    country: h.country,
-    phone_num: h.phone_num,
-    email: h.email,
-    shelter_type: h.shelter_type,
-    beds: h.beds,
-    acceptable_group_relations: h.acceptable_group_relations,
-    ok_for_pregnant: h.ok_for_pregnant,
-    ok_for_disabilities: h.ok_for_disabilities,
-    ok_for_animals: h.ok_for_animals,
-    ok_for_elderly: h.ok_for_elderly,
-    ok_for_any_nationality: h.ok_for_any_nationality,
-    duration_category: h.duration_category,
-    transport_included: h.transport_included,
-    match_status: h.match_status,
-    match_id: h.match_id,
-    matchedRequest: h.match_id
-      ? {
-          id: h.guest_id,
-          city: h.guest_city,
-          country: h.guest_country,
-          phone_num: h.guest_phone_num,
-          email: h.guest_email,
-        }
-      : undefined,
-  }));
+  return hostsList.map(
+    (h) =>
+      ({
+        id: h.host_id,
+        name: h.host.name,
+        status: h.host_status,
+        city: h.city,
+        country: h.country,
+        phone_num: h.phone_num,
+        email: h.email,
+        shelter_type: h.shelter_type,
+        beds: h.beds,
+        acceptable_group_relations: h.acceptable_group_relations,
+        ok_for_pregnant: h.ok_for_pregnant,
+        ok_for_disabilities: h.ok_for_disabilities,
+        ok_for_animals: h.ok_for_animals,
+        ok_for_elderly: h.ok_for_elderly,
+        ok_for_any_nationality: h.ok_for_any_nationality,
+        duration_category: h.duration_category,
+        transport_included: h.transport_included,
+        match_status: h.match_status,
+        match_id: h.match_id,
+        matchedRequest: h.match_id
+          ? {
+              id: h.guest_id,
+              city: h.guest_city,
+              country: h.guest_country,
+              phone_num: h.guest_phone_num,
+              email: h.guest_email,
+            }
+          : undefined,
+        // TODO: FIX TS error
+      } as any)
+  );
 }
 
 function getMockOffers(): OfferProps[] {
@@ -232,32 +236,6 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
-      match_id: null,
-      match_status: null,
-      matchedRequest: undefined,
-    },
-    {
-      id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
-      city: "Budapest",
-      country: "hungary",
-      phone_num: "+36333444555",
-      email: "host1@example.com",
-      shelter_type: ["flat"],
-      beds: 4,
-      acceptable_group_relations: [
-        "single_woman",
-        "family_with_children",
-        "unrelated_group",
-        "mother_with_children",
-      ],
-      ok_for_pregnant: Boolean.TRUE,
-      ok_for_disabilities: Boolean.FALSE,
-      ok_for_animals: Boolean.FALSE,
-      ok_for_elderly: Boolean.TRUE,
-      ok_for_any_nationality: Boolean.TRUE,
-      duration_category: ["2_3_weeks"],
-      transport_included: Boolean.FALSE,
-      status: GuestHostStatus.BEING_PROCESS,
       match_id: null,
       match_status: null,
       matchedRequest: undefined,

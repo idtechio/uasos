@@ -9,16 +9,18 @@ import ElderIcon from "../../style/svgs/elder.svg";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
 import DiversityIcon from "../../style/svgs/earth.svg";
 import { useTranslation } from "react-i18next";
+import { Boolean } from "../../../pages/api/listing/requests";
 
+export type InfoType = {
+  animals?: Boolean;
+  disability?: Boolean;
+  transport?: Boolean;
+  pregnancy?: Boolean;
+  elderly?: Boolean;
+  diversity?: Boolean;
+};
 interface HostAdditionalInfoProps {
-  info: {
-    animals: Boolean | undefined;
-    disability: Boolean | undefined;
-    transport: Boolean | undefined;
-    pregnancy: Boolean | undefined;
-    elderly: Boolean | undefined;
-    diversity: Boolean | undefined;
-  };
+  info: InfoType;
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {
   borderTopWidth: 3,

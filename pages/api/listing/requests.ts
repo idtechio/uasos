@@ -4,7 +4,7 @@ import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
-enum Boolean {
+export enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
