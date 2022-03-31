@@ -1,14 +1,13 @@
 {
-  "placeFor": "",
-  "people": "",
-  "maximum": "",
-  "oneWeek": "",
-  "twoWeeks": "",
-  "month": "",
-  "longerThanMonth": "",
-  "food": "",
-  "petsWelcome": "",
-  "disabledReady": "",
-  "locationOwner": "",
-  "use": ""
+    "placeFor": "Place pour",
+    "people": "personnes",
+    "maximum": "max.",
+    "twoWeeks": "Deux semaines",
+    "month": "Un mois",
+    "longerThanMonth": "Plus d'un mois",
+    "food": "Nourriture",
+    "petsWelcome": "Animaux domestiques acceptés",
+    "disabledReady": "Aménagements pour les personnes à mobilité réduite",
+    "locationOwner": "Héberger",
+    "use": "Utiliser"
 }

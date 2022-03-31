@@ -1,0 +1,13 @@
+{
+    "messaging": {
+        "sms": {
+            "offeringNotification": "Našli jsme vám kontakt. Přijmout\/odmítnout na uasos.org nebo na vašem.",
+            "sealedNotification": "Máme pro vás kontakt! Zkontrolujte svůj email a potvrďte."
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-6b4658ec7d894ee792e1a936e700a91f",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-5e9fdd4e26494c1e982cc3beeca10ea7"
+    }
+}
