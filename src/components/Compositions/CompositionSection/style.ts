@@ -22,7 +22,7 @@ export const SectionHeader = styled.Text<SectionProps & { theme: Theme }>`
   color: ${({ theme }) => theme.colors.headings};
   font-size: 17px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 50px;
   ${({ theme }) =>
     theme.getBreakPoint({
       lg: css`

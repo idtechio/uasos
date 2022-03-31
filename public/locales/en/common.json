@@ -2,8 +2,8 @@
   "test": "Test message EN",
   "navigationDrawer": {
     "profile": "User profile",
-    "placesList": "Your list of accomodations",
-    "logIn": "LogIn",
+    "placesList": "Your list of accommodations",
+    "logIn": "Login",
     "logout": "Log out"
   },
   "labels": {
@@ -100,7 +100,7 @@
       }
     },
     "floor": {
-      "label": "On which floor is the accomodation located?",
+      "label": "On which floor is the accommodation located?",
       "hint": "* Seniors may have difficulty accessing the high floor"
     },
     "submit": "Register your offer"
@@ -178,7 +178,7 @@
     "childBedCount": "Number of sleeping places for children",
     "city": "city",
     "fullBedCount": "Number of full-size sleeping places",
-    "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months",
+    "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months)",
     "dissabilityReady": "I will accept a person with a disability",
     "elderReady": "I will accept elderly person",
     "animalReady": "I will accept a person with a pet",
@@ -229,8 +229,8 @@
       "animals": "I am accompanied by a pet",
       "toddler": "Child under 2 years",
       "oldPerson": "I am or I am accompanied by an elderly person",
-      "disability": "I am or I am accompanied by a person with disability",
-      "pregnant": "I am or I am accompanied by a person in advanced pregnancy (over 6 months)"
+      "disability": "I am, or I am accompanied by a person with disability",
+      "pregnant": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)"
     },
     "refugeesCountOptions": {
       "alone": "I am alone",
@@ -262,7 +262,7 @@
     "basicInfoHeader": "Provide basic information about yourself and the people you travel with",
     "addButton": "Send the application",
     "addButtomErrorMessage": "Please fill in the required fields",
-    "pregnantReady": "I am or I am accompanied by a person in advanced pregnancy (over 6 months)",
+    "pregnantReady": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)",
     "dissabilityReady": "I am accompanied by a person with disability",
     "elderReady": "I am accompanied by an elderly person",
     "ageLabel": "Age",
@@ -277,7 +277,7 @@
     "overnightDurationLabel": "For what period are you looking for accommodation?",
     "cityOfRefugePlaceholder": "Choose an area",
     "nameLabel": "Name (enter only first name)",
-    "emailLabel": "Provode your e-mail address:",
+    "emailLabel": "Provide your e-mail address:",
     "emailPlaceholder": "e-mail",
     "phoneLabel": "Phone number",
     "phonePlaceholder": "xxx-xxx-xxx",
@@ -315,7 +315,7 @@
     "or": "or",
     "lostPass": "Lost Password?",
     "click": "click",
-    "logIn": "LogIn",
+    "logIn": "Login",
     "doNotHaveAcc": "Do you want to have access ?",
     "register": "Register"
   },
@@ -323,32 +323,5 @@
   "ogMeta": {
     "title": "We help war refugees from Ukraine find shelter",
     "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-  },
-  "registrationUserForm": {
-    "header": "User registration",
-    "subheader": "Enter your details",
-    "nameLabel": "Name",
-    "namePlaceholder": "Name",
-    "preferredLanguageLabel": "Preferred language of communication",
-    "preferredLanguagePlaceholder": "Language",
-    "phoneLabel": "Phone number",
-    "phonePrefixPlaceholder": "Country",
-    "phoneNumberPlaceholder": "_ _ _  _ _ _  _ _ _",
-    "smsNotificationLabel": "I want to get notified via SMS about potential match offers",
-    "emailLabel": "E-mail address",
-    "emailPlaceholder": "Email",
-    "passwordLabel": "Password",
-    "passwordConfirmLabel": "Confirm password",
-    "passwordConfirmPlaceholder": "Confirm password",
-    "showPasswordLabel": "Show password",
-    "backButtonLabel": "Back",
-    "nextButtonLabel": "Next",
-    "errors": {
-      "name": "Provide your name",
-      "phoneNumber": "Provide your phone number",
-      "email": "Please enter a valid e-mail",
-      "password": "Please enter a valid password",
-      "passwordConfirm": "Passwords are different"
-    }
   }
 }

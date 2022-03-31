@@ -8,7 +8,6 @@ export const InputWraper = styled.View<InputControlProps>`
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 26px;
   z-index: ${({ zIndex }) => zIndex || "0"};
 `;
 

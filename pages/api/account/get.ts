@@ -80,8 +80,8 @@ async function getAccountFromDB(uid: string): Promise<false | AccountDBProps> {
       name,
       email,
       phone_num,
-      fnc_msisdn_status,
-      fnc_email_status,
+      phone_status,
+      email_status,
       preferred_lang
     FROM accounts_info
     WHERE uid = $1`,

@@ -14,7 +14,7 @@
   },
   "likeToHelp": {
     "title": "Chcete pomôcť?",
-    "details": "Zaregistrujte akýkoľvek typ ubytovania, ktorý môžete bezplatne ponúknuť obetiam vojny na Ukrajine. Naša aplikácia automaticky priradí registrovaným osobám hľadajúcim pomoc na základe poskytnutých informácií",
+    "details": "Zaregistrujte akýkoľvek typ ubytovania, ktorý môžete <b>bezplatne</b> ponúknuť obetiam vojny na Ukrajine. Naša aplikácia automaticky priradí registrovaným osobám hľadajúcim pomoc na základe poskytnutých informácií",
     "cta": "Ponúknite ubytovanie"
   },
   "weMatched": {

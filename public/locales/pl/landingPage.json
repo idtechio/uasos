@@ -18,10 +18,10 @@
     "cta": "Zgłoś lokal"
   },
   "weMatched": {
-    "title": "Dotychczas...",
+    "title": "Udało nam się dopasować już...",
     "cards": {
-      "helpedPeople": "wspierani uchodźcy",
-      "lookingForHelp": "uchodźcy wciąż szukający pomocy",
+      "helpedPeople": "potrzebujących osób",
+      "lookingForHelp": "nadal poszukuje wsparcia",
       "currentOffers": "aktualnie dostępnych ofert"
     }
   },
