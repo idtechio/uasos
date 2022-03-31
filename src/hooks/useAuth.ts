@@ -66,11 +66,11 @@ interface Authorization {
     password: string
   ) => Promise<void>;
   sendVerificationEmail: (user: User) => Promise<void>;
-  updatePhone: (
+  updatePhone: (phoneCredential: PhoneAuthCredential) => Promise<void>;
+  initUpdatePhone: (
     phoneNumber: string,
-    recapcha: RecaptchaVerifier,
-    phoneCredential: PhoneAuthCredential
-  ) => Promise<void>;
+    recaptcha: RecaptchaVerifier
+  ) => Promise<string>;
   createUser: (email: string, password: string) => Promise<void>;
   linkWithPhone: (
     user: User,
@@ -116,16 +116,15 @@ const Authorization: Authorization = {
   async sendVerificationEmail(user) {
     await sendEmailVerification(user);
   },
-  async updatePhone(phoneNumber, recaptcha, phoneCredential) {
+  async initUpdatePhone(phoneNumber, recaptcha) {
     const provider = new PhoneAuthProvider(auth);
-    const verificationId = await provider.verifyPhoneNumber(
-      phoneNumber,
-      recaptcha
-    );
+    return await provider.verifyPhoneNumber(phoneNumber, recaptcha);
     // const phoneCredential = PhoneAuthProvider.credential(
     //   verificationId,
     //   verificationCode
     // );
+  },
+  async updatePhone(phoneCredential) {
     const user = getAuth().currentUser;
 
     if (!user) {
