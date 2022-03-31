@@ -1,60 +1,68 @@
 import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
 import TabPanel from "../TabPanel";
-import { AccommodationTime } from "../../helpers/FormTypes";
 import LookingForSupport from "./LookingForSupport";
 import ProvidingSupport from "./ProvidingSupport";
-import { Offer } from "./types";
+import { Offer, Request } from "./types";
 
-const fakeOffers: Offer[] = [
-  {
-    id: "o1",
-    imageUrl:
-      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg",
-    beds: 3,
-    city: "Warsaw",
-    duration: AccommodationTime.TWO_WEEKS,
-    name: "housing",
-    state: "BEING_CONFIRMED",
-  },
-  {
-    id: "o2",
-    imageUrl:
-      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg",
-    beds: 2,
-    city: "Gdańsk",
-    duration: AccommodationTime.LONGER,
-    name: "housing",
-    state: "CONFIRMED",
-  },
-  {
-    id: "o3",
-    imageUrl:
-      "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg",
-    beds: 2,
-    city: "Gdańsk",
-    duration: AccommodationTime.LONGER,
-    name: "Housing 3",
-    state: "INACTIVE",
-  },
-];
+type SupportSectionProps = {
+  offers?: Offer[];
+  isOffersLoading: boolean;
+  isOffersInError: boolean;
+  requests?: Request[];
+  isRequestsLoading: boolean;
+  isRequestsInError: boolean;
+  readonly: boolean;
+};
 
-export default function SupportSection() {
+export default function SupportSection({
+  offers,
+  isOffersLoading,
+  isOffersInError,
+  requests,
+  isRequestsLoading,
+  isRequestsInError,
+  readonly,
+}: SupportSectionProps) {
   const { t } = useTranslation("desktop");
+
   const items = useMemo(() => {
     return [
       {
         key: "1",
         title: t("providingSupport"),
-        content: <ProvidingSupport offers={fakeOffers} />,
+        content: (
+          <ProvidingSupport
+            offers={offers}
+            isError={isOffersInError}
+            isLoading={isOffersLoading}
+            readonly={readonly}
+          />
+        ),
       },
       {
         key: "2",
         title: t("lookingForSupport"),
-        content: <LookingForSupport requests={fakeOffers} />,
+        content: (
+          <LookingForSupport
+            requests={requests}
+            isError={isRequestsInError}
+            isLoading={isRequestsLoading}
+            readonly={readonly}
+          />
+        ),
       },
     ];
-  }, [t]);
+  }, [
+    t,
+    offers,
+    isOffersLoading,
+    isOffersInError,
+    requests,
+    isRequestsLoading,
+    isRequestsInError,
+    readonly,
+  ]);
 
   return <TabPanel items={items} initialSelectedIndex={0} />;
 }

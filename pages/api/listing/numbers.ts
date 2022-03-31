@@ -14,7 +14,7 @@ export type GetNumberList = {
 
 async function getNumbers(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const numbers: false | any[] = await select(
+    const numbers: false | NumbersProps[] = await select(
       `SELECT
         coalesce(m_beds, 0) AS matched_beds,
         coalesce(h_beds, 0) AS available_beds,
@@ -30,7 +30,10 @@ async function getNumbers(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ ok: "ok", numbers: numbers[0] } as GetNumberList);
     res.end();
   } catch (error) {
-    res.status(400).json({ ok: "not ok" });
+    res.status(400).json({
+      ok: "not ok",
+      error: error instanceof Error ? error.message : "",
+    });
     res.end();
   }
 }

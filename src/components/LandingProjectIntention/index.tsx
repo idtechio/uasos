@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
@@ -108,7 +107,6 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
 
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
-  const { data: session } = useSession();
   const router = useRouter();
   const { identity } = useContext(AuthContext);
 

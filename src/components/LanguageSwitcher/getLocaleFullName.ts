@@ -3,8 +3,8 @@ const LocaleNames: { [key: string]: string } = {
   ua: "Yкраїнська",
   ru: "Pусский",
   hu: "Magyar",
-  sk: "Slovenský",
-  cs: "Český",
+  sk: "Slovenčina",
+  cs: "Čeština",
   en: "English",
 };
 

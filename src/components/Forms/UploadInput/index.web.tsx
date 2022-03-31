@@ -23,7 +23,8 @@ const UploadButton = styled.TouchableOpacity`
   height: 100px;
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
   margin-top: 5px;
-  margin-horizontal: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 `;
 
 const ButtonLabelText = styled.Text`
@@ -72,6 +73,7 @@ const UploadInput = ({
 
     return () => {
       if (inputRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         inputRef.current.removeEventListener("change", handleChange);
       }
     };

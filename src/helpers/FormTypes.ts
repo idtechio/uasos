@@ -154,6 +154,17 @@ export type FormType = {
     password: string;
     passwordRepeat: string;
   };
+  registrationUserForm: {
+    name: string;
+    preferredLanguage: string;
+    phonePrefix: string;
+    phoneNumber: string;
+    smsNotification: boolean;
+    email: string;
+    password: string;
+    passwordConfirm: string;
+    showPassword: boolean;
+  };
 };
 
 type PathsToStringProps<T> = T extends

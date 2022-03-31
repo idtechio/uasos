@@ -31,6 +31,7 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
+      console.log(user);
       setIdentity(user);
       setAccount(
         user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
@@ -96,7 +97,9 @@ const Authorization: Authorization = {
       containerId,
       {
         size: "invisible",
+        // eslint-disable-next-line no-console
         callback: () => console.log("success"),
+        // eslint-disable-next-line no-console
         "expired-callback": () => console.log("failier"),
       },
       auth

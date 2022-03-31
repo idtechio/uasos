@@ -13,6 +13,7 @@ export default function UserProfile() {
   const { identity, loaded, account, getTokenForAPI } = useContext(AuthContext);
 
   if (!loaded) {
+    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
     return (
       <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
     );

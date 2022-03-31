@@ -26,7 +26,6 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
-// import FormCheckbox from "../Inputs/FormCheckbox";
 
 // const MAX_PHOTOS_COUNT = 3;
 

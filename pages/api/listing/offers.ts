@@ -1,12 +1,29 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { select } from "../../../lib/db";
-import {
-  /* withApiAuth, */ ApiAuthTokenDetails,
+import withApiAuth, {
+  ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
 enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
+}
+
+enum GuestHostStatus {
+  ACCEPTED = "accepted", // default status after creation
+  REJECTED = "rejected", // for future moderation purpose
+  BEING_PROCESS = "being_processed", // during matching process
+  MATCHED = "matched", // matched with guest/hosts and awaiting for response
+  MATCH_ACCEPTED = "match_accepted", // match accepted by host and guest
+  DEFAULT = "default",
+}
+
+enum MatchStatus {
+  ACCEPTED = "accepted", // match accepted by guest and by host
+  REJECTED = "rejected", // match rejected by guest or by host
+  TIMEOUT = "timeout", // timeout during awaiting for guest and host response
+  AWAITING_RESPONSE = "awaiting_response", // match awaiting for guest and host response
+  DEFAULT = "default",
 }
 
 export interface MatchedRequestProps {
@@ -15,16 +32,15 @@ export interface MatchedRequestProps {
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
 }
 
 export interface OfferProps {
   id: string;
+  status: GuestHostStatus;
   country: string;
   phone_num: string;
   email: string;
   city: string;
-  listing_country: string;
   shelter_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -35,8 +51,7 @@ export interface OfferProps {
   ok_for_any_nationality: Boolean;
   duration_category: Array<string>;
   transport_included: Boolean;
-  status: string;
-  match_status?: string;
+  match_status?: MatchStatus;
   matchedRequest?: MatchedRequestProps;
 }
 
@@ -63,31 +78,47 @@ async function getOffers(
   res.end();
 }
 
+type HostListitem = OfferProps & {
+  host_id: string;
+  host_status: GuestHostStatus;
+  match_id?: string;
+  guest_id: string;
+  guest_city: string;
+  guest_country: string;
+  guest_phone_num: string;
+  guest_email: string;
+};
+
 async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
-  const hostsList: false | any[] = await select(
+  const hostsList: false | HostListitem[] = await select(
     `SELECT
-      h.db_hosts_id as host_id,
-      h.city, h.country, h.listing_country,
-      h.phone_num, h.email,
-      h.shelter_type, h.beds,
-      h.acceptable_group_relations,
-      h.ok_for_pregnant, h.ok_for_disabilities, h.ok_for_animals,
-      h.ok_for_elderly, h.ok_for_any_nationality,
-      h.duration_category, h.transport_included,
-      h.fnc_status as host_status,
-      m.db_matches_id as match_id,
-      m.fnc_status as match_status,
-      g.db_guests_id as guest_id,
-      g.city as guest_city,
-      g.country as guest_country,
-      g.listing_country as guest_listing_country,
-      g.phone_num as guest_phone_num,
-      g.email as guest_email
-    FROM hosts h
-    JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id
-    LEFT JOIN matches m ON m.fnc_hosts_id = h.db_hosts_id
-    LEFT JOIN guests g ON g.db_guests_id = m.fnc_guests_id
-    WHERE a.uid = $1`,
+      host_id,
+      host_status,
+
+      city,
+      country,
+      phone_num,
+      email,
+      shelter_type,
+      beds,
+      acceptable_group_relations,
+      ok_for_pregnant,
+      ok_for_disabilities,
+      ok_for_animals,
+      ok_for_elderly,
+      ok_for_any_nationality,
+      duration_category,
+      transport_included,
+      
+      match_id,
+      match_status,
+
+      guest_id,
+      guest_city,
+      guest_country,
+      guest_phone_num,
+      guest_email
+    FROM offers WHERE account_uid = $1`,
     [uid]
   );
 
@@ -97,9 +128,9 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
 
   return hostsList.map((h) => ({
     id: h.host_id,
+    status: h.host_status,
     city: h.city,
     country: h.country,
-    listing_country: h.listing_country,
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: h.shelter_type,
@@ -112,14 +143,12 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: h.duration_category,
     transport_included: h.transport_included,
-    status: h.host_status,
     match_status: h.match_status,
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
           city: h.guest_city,
           country: h.guest_country,
-          listing_country: h.guest_listing_country,
           phone_num: h.guest_phone_num,
           email: h.guest_email,
         }
@@ -133,7 +162,6 @@ function getMockOffers(): OfferProps[] {
       id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Warszawa",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
@@ -146,13 +174,12 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
-      status: "",
-      match_status: "",
+      status: GuestHostStatus.MATCH_ACCEPTED,
+      match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
         id: "aaa4e25e-aae4-11ec-9a20-1726ed50bb17",
         city: "Warszawa",
         country: "poland",
-        listing_country: "poland",
         phone_num: "+48999888777",
         email: "guest3@example.com",
       },
@@ -161,7 +188,6 @@ function getMockOffers(): OfferProps[] {
       id: "2224e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Wrocław",
       country: "poland",
-      listing_country: "poland",
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
@@ -174,13 +200,12 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
-      status: "",
+      status: GuestHostStatus.ACCEPTED,
     },
     {
       id: "3334e25e-aae4-11ec-9a20-1726ed50bb17",
       city: "Budapest",
       country: "hungary",
-      listing_country: "hungary",
       phone_num: "+36333444555",
       email: "host1@example.com",
       shelter_type: ["flat"],
@@ -198,11 +223,10 @@ function getMockOffers(): OfferProps[] {
       ok_for_any_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       transport_included: Boolean.FALSE,
-      status: "",
+      status: GuestHostStatus.BEING_PROCESS,
     },
   ];
 }
 
-// TODO turn on auth
-// export default withApiAuth(getOffers);
-export default getOffers;
+// TODO set auth as required
+export default withApiAuth(getOffers, true);

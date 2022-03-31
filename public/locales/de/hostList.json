@@ -2,13 +2,12 @@
   "placeFor": "Platz für",
   "people": "Personen",
   "maximum": "max.",
-  "oneWeek": "Eine Woche",
   "twoWeeks": "Zwei Wochen",
   "month": "Ein Monat",
-  "longerThanMonth": "Mehr als ein Monat",
-  "food": "Essen",
+  "longerThanMonth": "Länger als ein Monat",
+  "food": "Verpflegung",
   "petsWelcome": "Haustiere willkommen",
-  "disabledReady": "Personen mit körperlichen Einschränkungen können untergebracht werden",
+  "disabledReady": "Personen mit körperlichen Einschränkungen",
   "locationOwner": "Gastgeber",
   "use": "Benutze"
 }

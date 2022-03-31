@@ -26,12 +26,12 @@ export const Label = styled.Text`
   padding: 10px 0px;
 `;
 
-type CardAddProps = { label: string; onPress: () => void };
+type CardAddProps = { label: string; onPress: () => void; readonly?: boolean };
 
-export default function CardAdd({ label, onPress }: CardAddProps) {
+export default function CardAdd({ label, onPress, readonly }: CardAddProps) {
   return (
     <CardAddWrapper>
-      <Button onPress={onPress}>
+      <Button onPress={onPress} disabled={readonly}>
         <PlusCircleIcon />
         <Label>{label}</Label>
       </Button>

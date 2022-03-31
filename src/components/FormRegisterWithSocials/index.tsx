@@ -7,7 +7,7 @@ import FormContainer from "../FormLogin/FormContainer";
 import FormTextInput from "../Inputs/FormTextInput";
 import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
+import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
@@ -46,7 +46,7 @@ export default function FromRegisterWithSocials() {
   });
   const { handleSubmit } = form;
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: Pick<FormType, "registerWithSocials">) => {
     setData({
       name: e.registerWithSocials.name,
       prefferedLang: e.registerWithSocials.prefferedLanguage,
@@ -64,8 +64,10 @@ export default function FromRegisterWithSocials() {
       setPhoneNumber(
         e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber
       );
-    } catch (error: any) {
-      setApiError(error?.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setApiError(error?.message);
+      }
     }
   };
   const updateAccount = async () => {
@@ -77,36 +79,48 @@ export default function FromRegisterWithSocials() {
     }
   };
 
-  const onError = (e: any) => {
-    console.log(e);
-  };
-
   const {
-    formState: { errors, isValid, isSubmitted },
+    formState: { errors },
   } = form;
 
   const provider = identity?.providerData
     .map((provider) => provider.providerId)
     .includes("google.com")
     ? "google"
-    : "facebook";
+    : identity?.providerData
+        .map((provider) => provider.providerId)
+        .includes("facebook.com")
+    ? "facebook"
+    : "";
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
       <div style={{ display: "none" }} id="captcha__container"></div>
       <FormContainer>
-        <FormHeader>{"Fill in the missing data"}</FormHeader>
-        <ButtonSM
-          id={provider}
-          onPress={() => null}
-          anchor={`${t("loginForm.logInWith")} with ${provider}`}
-        />
+        <FormHeader>
+          {t("others:forms.userRegistration.userRegistration")}
+        </FormHeader>
+        {provider === "facebook" || provider === "google" ? (
+          <ButtonSM
+            id={provider}
+            onPress={() => null}
+            anchor={
+              provider === "facebook"
+                ? t("others:forms.login.signInFacebook")
+                : t("others:forms.login.signInGoogle")
+            }
+          />
+        ) : (
+          <></>
+        )}
         <Spacer />
         <FormProvider {...form}>
-          <InputControlLabel marginBottom="10px">{"Name"}</InputControlLabel>
+          <InputControlLabel marginBottom="10px">
+            {t("others:forms.generic.name")}
+          </InputControlLabel>
           <FormTextInput
             name="registerWithSocials.name"
-            label={t("hostAdd.namePlaceholder")}
+            label={t("others:forms.generic.name")}
             rules={{
               required: true,
             }}
@@ -114,14 +128,16 @@ export default function FromRegisterWithSocials() {
             errorMsg={t("hostAdd.errors.name")}
           />
           <InputControlLabel>
-            {"Preffered language of communication"}
+            {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <PreferredLanguageInput></PreferredLanguageInput>
-          <InputControlLabel>{t("hostAdd.emailLabel")}</InputControlLabel>
+          <InputControlLabel>
+            {t("others:forms.generic.email")}
+          </InputControlLabel>
           <FormTextInput
             styles={{ wrapper: { height: "auto", marginBottom: "15px" } }}
             name="registerWithSocials.email"
-            label={t("hostAdd.emailPlaceholder")}
+            label={t("others:forms.generic.email")}
             rules={{
               required: true,
               pattern: {
@@ -133,11 +149,13 @@ export default function FromRegisterWithSocials() {
             errorMsg={t("hostAdd.errors.email")}
             readonly={true}
           />
-          <InputControlLabel>{t("hostAdd.phoneLabel")}</InputControlLabel>
+          <InputControlLabel>
+            {t("others:forms.generic.phoneNumber")}
+          </InputControlLabel>
           <FormPhoneInput
             prefixName="registerWithSocials.phonePrefix"
             numberName="registerWithSocials.phoneNumber"
-            phonePrefixLabel={t("hostAdd.phonePrefixPlaceholder")}
+            phonePrefixLabel={t("others:forms.generic.country")}
             phoneLabel={t("hostAdd.phonePlaceholder")}
             error={errors?.advancedHost?.phoneNumber}
             errorMsg={t("hostAdd.errors.phoneNumber")}
@@ -146,12 +164,12 @@ export default function FromRegisterWithSocials() {
           <FormFooter>
             <ButtonCta
               onPress={() => Authorization.logOut()}
-              anchor={"Back"}
+              anchor={t("others:common.buttons.back")}
               style={styles.backButton}
             />
             <ButtonCta
-              onPress={handleSubmit(onSubmit, onError)}
-              anchor={"Verify"}
+              onPress={handleSubmit(onSubmit, () => {})}
+              anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}
             />
           </FormFooter>

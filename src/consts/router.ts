@@ -4,4 +4,5 @@ export enum Routes {
   HOST = "/host",
   GUEST = "/guest",
   OFFER_DETAILS = "/offer-details",
+  REGISTER = "/register",
 }

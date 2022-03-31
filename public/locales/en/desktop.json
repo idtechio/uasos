@@ -22,5 +22,9 @@
   "matched": "We found a match",
   "beingConfirmed": "Being confirmed",
   "confirmed": "Confirmed",
-  "details": "Details"
+  "details": "Details",
+  "could_not_fetch_offers_list": "Couln't fetch offers list, try again later.",
+  "could_not_fetch_requests_list": "Couln't fetch request list, try again later.",
+  "submission": "Submission",
+  "accomodationSearch": "Accomodation search"
 }
