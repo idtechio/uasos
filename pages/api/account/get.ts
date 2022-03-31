@@ -26,7 +26,7 @@ enum PhoneStatus {
   SUSPENDED = "suspended", // for future moderation purpose
   DEFAULT = "default", // not verified
 }
-export interface AccountDBProps {
+export interface AccountInfoDBProps {
   db_accounts_id: string;
   uid: string;
   name: string;
@@ -46,7 +46,7 @@ async function getAccount(
       throw new Error("token is required");
     }
 
-    const dbAccount: false | AccountDBProps = await getAccountFromDB(
+    const dbAccount: false | AccountInfoDBProps = await getAccountFromDB(
       req.decodedToken.uid
     );
 
@@ -76,8 +76,8 @@ async function getAccount(
 
 export async function getAccountFromDB(
   uid: string
-): Promise<false | AccountDBProps> {
-  const dbAccount: false | AccountDBProps[] = await select(
+): Promise<false | AccountInfoDBProps> {
+  const dbAccount: false | AccountInfoDBProps[] = await select(
     `SELECT
       db_accounts_id,
       uid,
