@@ -35,7 +35,7 @@ export default function DetailsDecisionButtons({
     setIsLoading(true);
     if (typeOfUser === "host") {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/api/hosts/matchesconfirm/${matchId}?accepted=1`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}api/hosts/matchesconfirm/${matchId}?accepted=1`,
         { method: "GET" }
       );
       if (res) {
@@ -48,7 +48,7 @@ export default function DetailsDecisionButtons({
       }
     } else {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/api/guests/matchesconfirm/${matchId}?accepted=1`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}api/guests/matchesconfirm/${matchId}?accepted=1`,
         { method: "GET" }
       );
       if (res) {
@@ -67,7 +67,7 @@ export default function DetailsDecisionButtons({
     setIsLoading(true);
     if (typeOfUser === "host") {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/api/hosts/matchesconfirm/${matchId}?accepted=0`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}api/hosts/matchesconfirm/${matchId}?accepted=0`,
         { method: "GET" }
       );
       if (res) {
@@ -80,7 +80,7 @@ export default function DetailsDecisionButtons({
       }
     } else {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}/api/guests/matchesconfirm/${matchId}?accepted=0`,
+        `${process.env.NEXT_PUBLIC_DOMAIN}api/guests/matchesconfirm/${matchId}?accepted=0`,
         { method: "GET" }
       );
       if (res) {

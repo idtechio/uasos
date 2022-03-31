@@ -3,7 +3,7 @@ import { getFirebaseToken } from "./getFirebaseToken";
 
 export default async function addHostToApi(host: HostProps) {
   const token = await getFirebaseToken();
-  return fetch(process.env.NEXT_PUBLIC_DOMAIN + "/api/hosts/add", {
+  return fetch(process.env.NEXT_PUBLIC_DOMAIN + "api/hosts/add", {
     method: "post",
     body: JSON.stringify(host),
     headers: {
