@@ -134,12 +134,11 @@ export default function FormAdHost() {
     setSubmitRequstState((state) => ({ ...state, loading: true }));
     try {
       await addHostToApi({
-        name: name,
+        // name: name,
         country: country,
         phone_num: `${phonePrefix}${phoneNumber}`,
         email: email,
         city: town,
-        listing_country: country,
         shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
@@ -151,6 +150,13 @@ export default function FormAdHost() {
           nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
         duration_category: [accommodationTime],
         transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
+        // TODO set data for new props:
+        closest_city: "",
+        zipcode: "",
+        street: "",
+        building_no: "",
+        appartment_no: "",
+        can_be_verified: Boolean.FALSE,
       });
 
       setSubmitRequstState((state) => ({ ...state, succeeded: true }));

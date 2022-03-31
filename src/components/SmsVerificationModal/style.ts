@@ -19,7 +19,9 @@ export const InputWrapper = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `;
-export const StyledInput = styled.TextInput<{ borderColor?: string }>`
+
+type StyledInputProps = { borderColor: string };
+export const StyledInput = styled.TextInput<StyledInputProps>`
   width: 35;
   height: 50;
   border: 1px solid lightgrey;

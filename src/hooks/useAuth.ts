@@ -17,6 +17,8 @@ import {
   PhoneAuthProvider,
   createUserWithEmailAndPassword,
   linkWithPhoneNumber,
+  getAuth,
+  PhoneAuthCredential,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -31,11 +33,12 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
-      console.log(user);
+      const account = await AccountApi.getAccount()
+        .then((res) => res)
+        .catch(() => null);
+
       setIdentity(user);
-      setAccount(
-        user ? await AccountApi.getAccount(await getIdToken(user, true)) : null
-      );
+      setAccount(account);
       setLoaded(true);
     });
   }, []);
@@ -63,12 +66,11 @@ interface Authorization {
     password: string
   ) => Promise<void>;
   sendVerificationEmail: (user: User) => Promise<void>;
-  updatePhone: (
-    user: User,
+  updatePhone: (phoneCredential: PhoneAuthCredential) => Promise<void>;
+  initUpdatePhone: (
     phoneNumber: string,
-    recapcha: RecaptchaVerifier,
-    verificationCode: string
-  ) => Promise<void>;
+    recaptcha: RecaptchaVerifier
+  ) => Promise<string>;
   createUser: (email: string, password: string) => Promise<void>;
   linkWithPhone: (
     user: User,
@@ -114,16 +116,16 @@ const Authorization: Authorization = {
   async sendVerificationEmail(user) {
     await sendEmailVerification(user);
   },
-  async updatePhone(user, phoneNumber, recaptcha, verificationCode) {
+  async initUpdatePhone(phoneNumber, recaptcha) {
     const provider = new PhoneAuthProvider(auth);
-    const verificationId = await provider.verifyPhoneNumber(
-      phoneNumber,
-      recaptcha
-    );
-    const phoneCredential = PhoneAuthProvider.credential(
-      verificationId,
-      verificationCode
-    );
+    return await provider.verifyPhoneNumber(phoneNumber, recaptcha);
+  },
+  async updatePhone(phoneCredential) {
+    const user = getAuth().currentUser;
+
+    if (!user) {
+      throw new Error("No user");
+    }
     await updatePhoneNumber(user, phoneCredential);
   },
   async createUser(email, password) {

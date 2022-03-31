@@ -4,6 +4,7 @@ import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { FormKey } from "../../helpers/FormTypes";
 import { useTranslation } from "react-i18next";
 import FormDropdown from "./FormDropdown";
+import { LanguageFlags } from "../LanguageSwitcher/LanguageFlags";
 
 type Props = {
   name: FormKey;
@@ -31,10 +32,48 @@ const FormTextInput: VFC<Props> = (props) => {
   const { t } = useTranslation();
 
   const countryDropdownList = [
-    { label: t("hostAdd.countries.poland"), value: "poland" },
-    { label: t("hostAdd.countries.hungary"), value: "hungary" },
-    { label: t("hostAdd.countries.czechia"), value: "czechia" },
-    { label: t("hostAdd.countries.slovakia"), value: "slovakia" },
+    {
+      label: (
+        <div>
+          <LanguageFlags locale="pl" />
+          <span style={{ marginLeft: 5 }}>{t("hostAdd.countries.poland")}</span>
+        </div>
+      ),
+      value: "poland",
+    },
+    {
+      label: (
+        <div>
+          <LanguageFlags locale="hu" />
+          <span style={{ marginLeft: 5 }}>
+            {t("hostAdd.countries.hungary")}
+          </span>
+        </div>
+      ),
+      value: "hungary",
+    },
+    {
+      label: (
+        <div>
+          <LanguageFlags locale="cs" />
+          <span style={{ marginLeft: 5 }}>
+            {t("hostAdd.countries.czechia")}
+          </span>
+        </div>
+      ),
+      value: "czechia",
+    },
+    {
+      label: (
+        <div>
+          <LanguageFlags locale="sk" />
+          <span style={{ marginLeft: 5 }}>
+            {t("hostAdd.countries.slovakia")}
+          </span>
+        </div>
+      ),
+      value: "slovakia",
+    },
   ];
 
   const { control } = useFormContext();

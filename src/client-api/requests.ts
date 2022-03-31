@@ -6,7 +6,10 @@ export type GetRequestsListDTO = {
 };
 
 export const getRequestsList = async () => {
-  const res = await fetch("/api/listing/requests", { method: "GET" });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_DOMAIN}api/listing/requests`,
+    { method: "GET" }
+  );
 
   if (res.status != 200) {
     throw new Error("Couln't fetch requests list, try again later.");

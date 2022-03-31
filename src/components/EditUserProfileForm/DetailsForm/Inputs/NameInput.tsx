@@ -1,6 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import { Input } from "../../Forms";
+import { Input } from "../../../Forms";
 import { EditProfileForm } from "../types";
 import { InputWrapper } from "./style";
 

@@ -6,8 +6,10 @@ import withApiAuth, {
 } from "../../../src/helpers/withAPIAuth";
 import { getUser } from "../../../lib/firebase-admin-app";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
+import { AccountInfoDBProps, getAccountFromDB } from "./get";
 
 interface AccountDBProps {
+  db_accounts_id?: string;
   uid: string;
   name: string;
   email: string;
@@ -31,6 +33,10 @@ async function updateAccount(
       throw new Error("there is no user");
     }
 
+    const account: false | AccountInfoDBProps = await getAccountFromDB(
+      req.decodedToken.uid
+    );
+
     let body;
     try {
       body = JSON.parse(req.body);
@@ -42,13 +48,20 @@ async function updateAccount(
       uid: user.uid,
       name: body?.name || user.displayName,
       email: body?.email || user.email,
-      phone_num: body?.phoneNumber || user.phoneNumber,
+      phone_num: body?.phone || user.phoneNumber,
       preferred_lang: body?.prefferedLang,
       fnc_email_status: user.emailVerified ? "065" : "055",
       fnc_msisdn_status: user.phoneNumber ? "065" : "055",
     };
 
-    const topicNameOrId = process.env.TOPIC_ACCOUNT;
+    let topicNameOrId: string | undefined;
+    if (account) {
+      accountData.db_accounts_id = account.db_accounts_id;
+      topicNameOrId = process.env.TOPIC_ACCOUNT_UPDATE;
+    } else {
+      topicNameOrId = process.env.TOPIC_ACCOUNT_INSERT;
+    }
+
     const pubResult = await publishMessage(topicNameOrId, accountData);
     res
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)

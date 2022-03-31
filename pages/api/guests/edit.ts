@@ -1,15 +1,16 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { select } from "../../../lib/db";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import { AccountInfoDBProps, getAccountFromDB } from "../account/get";
 
 enum Boolean {
   FALSE = "FALSE",
   TRUE = "TRUE",
 }
 export interface GuestProps {
+  id?: string;
   name: string;
   country?: string;
   phone_num: string;
@@ -27,10 +28,10 @@ export interface GuestProps {
 }
 
 interface GuestDBProps {
-  db_accounts_id: string;
+  db_guests_id: string;
 }
 
-async function addGuest(
+async function editGuest(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
@@ -39,19 +40,20 @@ async function addGuest(
       throw new Error("token is required");
     }
 
-    const account: false | AccountInfoDBProps = await getAccountFromDB(
-      req.decodedToken.uid
-    );
-    if (!account) {
-      throw new Error("user account does not exist");
+    const body = JSON.parse(req.body);
+
+    const guest = await getGuestFromDB(body.id, req.decodedToken.uid);
+    if (!guest) {
+      throw new Error("Guest's request does not exist");
     }
 
-    const body = JSON.parse(req.body);
     const guestData: GuestProps & GuestDBProps = {
       ...body,
-      db_accounts_id: account.db_accounts_id,
+      db_guests_id: guest.db_guests_id,
     };
-    const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
+    delete guestData.id;
+
+    const topicNameOrId = process.env.TOPIC_GUEST_UPDATE;
     const pubResult = await publishMessage(topicNameOrId, guestData);
 
     res
@@ -66,4 +68,24 @@ async function addGuest(
   }
 }
 
-export default withApiAuth(addGuest);
+async function getGuestFromDB(
+  guestId: string,
+  uid: string
+): Promise<false | GuestDBProps> {
+  const dbHost: false | GuestDBProps[] = await select(
+    `SELECT
+      g.db_guests_id
+    FROM guests g
+    JOIN accounts a ON a.db_accounts_id = g.fnc_accounts_id AND a.uid = $2
+    WHERE g.db_guests_id = $1`,
+    [guestId, uid]
+  );
+
+  if (!dbHost) {
+    return false;
+  }
+
+  return dbHost[0];
+}
+
+export default withApiAuth(editGuest);

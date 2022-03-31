@@ -1,3 +1,5 @@
+import { getFirebaseToken } from "../helpers/getFirebaseToken";
+
 export interface getAccountDTO {
   uid: string;
   name: string;
@@ -11,31 +13,37 @@ export interface updateAccountReqDTO {
   prefferedLang: string;
 }
 interface AccountApi {
-  getAccount: (token: string) => Promise<getAccountDTO>;
-  updateAccount: (options: {
-    payload: object;
-    token: string;
-  }) => Promise<unknown>;
+  getAccount: () => Promise<getAccountDTO>;
+  updateAccount: (options: { payload: object }) => Promise<any>;
 }
 export const AccountApi: AccountApi = {
-  getAccount: async function (token) {
-    const res = await fetch(`/api/account/get`, {
-      method: "post",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  getAccount: async function () {
+    const token = await getFirebaseToken();
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_DOMAIN + `api/account/get`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     return (await res.json()).account;
   },
-  updateAccount: async function ({ token, payload }) {
-    const res = await fetch("/api/account/update", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+  updateAccount: async function ({ payload }) {
+    const token = await getFirebaseToken();
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_DOMAIN + "api/account/update",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
+    );
 
     return await res.json();
   },

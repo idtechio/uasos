@@ -1,110 +1,76 @@
-import { User } from "firebase/auth";
-import React, { useCallback } from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import styled from "styled-components/native";
-import { getAccountDTO } from "../../client-api/account";
-import { useEditAccount } from "../../queries/useAccount";
-import ButtonCta from "../EditOfferOptions/ButtonCta";
-import Inputs from "./Inputs";
-import { ContentContainer, FormHeader, ScreenHeader } from "./style";
-import { EditProfileForm } from "./types";
-
-const FormFooter = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 119px;
-`;
-
-const getPhoneNumberWithoutPrefix = (phone: string) =>
-  phone
-    .split("")
-    .reverse()
-    .join("")
-    .substring(0, 9)
-    .split("")
-    .reverse()
-    .join("");
-
-const getPhonePrefix = (phone: string) =>
-  phone
-    .split("")
-    .reverse()
-    .filter((_, index) => index >= 9)
-    .reverse()
-    .join("");
-
-const getFormDefaultValues = (account: getAccountDTO, identity: User) => ({
-  email: identity.email || "",
-  phone: identity.phoneNumber
-    ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
-    : undefined,
-  name: account.name,
-  preferredLanguage: account.prefferedLang,
-  phonePrefix: identity.phoneNumber
-    ? getPhonePrefix(identity.phoneNumber)
-    : undefined,
-});
+import { ConfirmationResult, getAuth, User } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { AccountApi, getAccountDTO } from "../../client-api/account";
+import { Authorization } from "../../hooks/useAuth";
+import SmsVerificationModal from "../SmsVerificationModal";
+import UserDetailsForm from "./DetailsForm";
 
 export default function EditUserProfileForm({
   account,
   identity,
-  getTokenKey,
 }: {
-  account: getAccountDTO;
-  identity: User;
-  getTokenKey: () => Promise<string>;
+  account: getAccountDTO | null;
+  identity?: User | null;
 }) {
-  const { mutate, isLoading } = useEditAccount();
-  const form = useForm<EditProfileForm>({
-    defaultValues: getFormDefaultValues(account, identity),
-  });
-  const { handleSubmit } = form;
-
-  const onSubmit = useCallback(
-    async (data: EditProfileForm) => {
-      const payload = {
-        name: data.name,
-        email: data.email,
-        phone: `${data.phonePrefix}${data.phone}`,
-        prefferedLang: data.preferredLanguage,
-      };
-
-      const token = await getTokenKey();
-      mutate(
-        { token, payload },
-        {
-          onError: () => {
-            // Set error message
-          },
-        }
-      );
-    },
-    [getTokenKey, mutate]
+  const [detailsUpdated, setDetailsUpdated] = useState(false);
+  const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
+    null
   );
+  const [verificationId, setVerificationId] = useState<string | null>(null);
+  const [newPhoneNumber, setNewPhoneNumber] = useState<string | null>(null);
+
+  const onPhoneConfirmationSuccess = () => {
+    return null;
+  };
+
+  const checkIfPhoneIsVerified = async () => {
+    const user = getAuth().currentUser;
+    const account = await AccountApi.getAccount();
+
+    const isNewPhoneNumber = user?.phoneNumber && !account?.confirmedPhone;
+    if (isNewPhoneNumber) {
+      setNewPhoneNumber(user.phoneNumber);
+      const captcha = await Authorization.initCaptcha("recaptcha__container1");
+      setVerificationId(
+        await Authorization.initUpdatePhone(user.phoneNumber, captcha)
+      );
+
+      const confirm = await Authorization.signInWithPhone(
+        user.phoneNumber,
+        Authorization.initCaptcha("recaptcha__container2")
+      );
+      setConfirmation(confirm);
+    }
+  };
+
+  useEffect(() => {
+    if (detailsUpdated) {
+      checkIfPhoneIsVerified();
+    }
+  }, [detailsUpdated]);
+
+  const shouldOpenSmsVerification =
+    detailsUpdated && confirmation && verificationId && newPhoneNumber;
 
   return (
-    <FormProvider {...form}>
-      <ContentContainer>
-        <ScreenHeader>User profile edit</ScreenHeader>
-        <FormHeader>Enter your details</FormHeader>
-        <Inputs />
-
-        <FormFooter>
-          <ButtonCta
-            color="primary"
-            variant="outlined"
-            anchor="Cancel"
-            disabled={isLoading}
-          />
-          <ButtonCta
-            disabled={isLoading}
-            anchor="Update"
-            onPress={handleSubmit(onSubmit)}
-          />
-        </FormFooter>
-      </ContentContainer>
-    </FormProvider>
+    <>
+      <UserDetailsForm
+        account={account}
+        identity={identity}
+        onSuccess={() => setDetailsUpdated(true)}
+      />
+      {shouldOpenSmsVerification && (
+        <SmsVerificationModal
+          confirmation={confirmation}
+          verificationId={verificationId}
+          phoneNumber={newPhoneNumber}
+          setVerificationSuccess={onPhoneConfirmationSuccess}
+          callback={() => null}
+          mode="UPDATE"
+        />
+      )}
+      <div id={"recaptcha__container1"} />
+      <div id={"recaptcha__container2"} />
+    </>
   );
 }
