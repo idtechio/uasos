@@ -10,7 +10,7 @@ import {
   toOffers,
   toRequests,
 } from "../../src/components/SupportSection/mapper";
-import Tags from "../../src/components/Tags";
+// import Tags from "../../src/components/Tags";
 import VerifySection from "../../src/components/VerifySection/VerifySection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
@@ -18,7 +18,7 @@ import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
-const fakeTags = ["Shelter"];
+// const fakeTags = ["Shelter"];
 
 function DashboardContent() {
   const { account, loaded } = useContext(AuthContext);
@@ -52,9 +52,9 @@ function DashboardContent() {
             needPhone={needPhoneVerification}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
           />
-          {loaded && (
+          {/* {loaded && (
             <Tags tags={fakeTags} containerStyle={[bottomMarginStyle]} />
-          )}
+          )} */}
           <SupportSection
             readonly={readonly}
             offers={offers}
