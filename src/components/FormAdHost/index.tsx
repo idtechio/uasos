@@ -27,16 +27,6 @@ import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
 
-// const MAX_PHOTOS_COUNT = 3;
-
-// const PreviewsWrapper = styled.View`
-//   margin-top: 10px;
-//   flex-direction: row;
-//   align-items: center;
-//   z-index: 10;
-//   margin-bottom: 26px;
-// `;
-
 export const SectionContent = styled.View`
   display: flex;
   gap: 30px 0px;
@@ -45,11 +35,6 @@ export const SectionContent = styled.View`
   margin-right: auto;
   margin-left: auto;
 `;
-
-// const TooltipIcon = styled.View`
-//   background: "black";
-//   color: "white";
-// `;
 
 enum Boolean {
   FALSE = "FALSE",
@@ -462,7 +447,11 @@ export default function FormAdHost() {
           />
           {isSubmitted && !isValid ? (
             <View style={styles.errorWrapper}>
-              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+              {(submitRequstState.error as Error)?.message ? (
+                <Error>{(submitRequstState.error as Error)?.message}</Error>
+              ) : (
+                <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+              )}
             </View>
           ) : null}
         </InputControl>

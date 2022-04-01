@@ -14,6 +14,6 @@ export default async function addHostToApi(host: HostProps) {
     if (res.status === 200) {
       return true;
     }
-    return false;
+    throw new Error("Couldn't add host to api");
   });
 }
