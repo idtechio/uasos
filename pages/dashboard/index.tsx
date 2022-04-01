@@ -10,7 +10,7 @@ import {
   toOffers,
   toRequests,
 } from "../../src/components/SupportSection/mapper";
-import Tags from "../../src/components/Tags";
+// import Tags from "../../src/components/Tags";
 import VerifySection from "../../src/components/VerifySection/VerifySection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
