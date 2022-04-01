@@ -8,6 +8,7 @@ export const FormFooter = styled.View`
   width: 100%;
   z-index: -2;
   margin-bottom: 50px;
+  margin-top: 50px;
 `;
 export const ErrorText = styled.Text`
   font-size: 16px;

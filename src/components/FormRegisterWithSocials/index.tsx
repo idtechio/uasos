@@ -143,6 +143,7 @@ export default function FromRegisterWithSocials() {
             }}
             error={errors?.registerWithSocials?.name}
             errorMsg={t("hostAdd.errors.name")}
+            styles={{ wrapper: { marginBottom: 12 } }}
           />
           <InputControlLabel>
             {t("others:forms.userRegistration.preferredLanguage")}
@@ -157,13 +158,13 @@ export default function FromRegisterWithSocials() {
           />
           {/* <PreferredLanguageInput></PreferredLanguageInput> */}
 
-          <InputControlLabel>
+          <InputControlLabel style={{ marginTop: 12 }}>
             {t("others:forms.generic.email")}
           </InputControlLabel>
           <FormTextInput
             zIndex={-1}
             styles={{
-              wrapper: { height: "auto", marginBottom: "15px", zIndex: -1 },
+              wrapper: { height: "auto", marginBottom: "12px", zIndex: -1 },
             }}
             name="registerWithSocials.email"
             label={t("others:forms.generic.email")}
