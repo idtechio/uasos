@@ -63,10 +63,13 @@ const Content = ({
   if (isLoading || requests === undefined) {
     return <LoadingCards count={3} showImage={false} />;
   }
-  if (requests.length === 0) {
-    return <NoOffer readonly={readonly} />;
-  }
-  return <Requests requests={requests} readonly={readonly} />;
+
+  return (
+    <>
+      <Requests requests={requests} readonly={readonly} />
+      <NoOffer readonly={readonly} />
+    </>
+  );
 };
 
 const NoOffer = ({ readonly }: { readonly: boolean }) => {

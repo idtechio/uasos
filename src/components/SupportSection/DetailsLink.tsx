@@ -39,7 +39,7 @@ const ArrowIconWrapper = styled.View`
   align-items: center;
   margin-left: 16px;
 `;
-const SectionDetails = styled.Pressable`
+const SectionDetails = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
