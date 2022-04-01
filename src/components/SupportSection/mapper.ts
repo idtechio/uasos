@@ -29,6 +29,7 @@ const toOffer = (o: OfferProps) => ({
   duration: toAccomodationTime(o.duration_category),
   name: toName(o), //TODO: check if name is shelter_type
   state: toMatchOfferState(o), //TODO: check match state algo
+  matchedRequest: o.matchedRequest,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
   const matchStatus = o.match_status;
@@ -56,10 +57,12 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
   city: r.city ?? "N/A",
   duration: toAccomodationTime(r.duration_category),
   state: toMatchRequestState(r),
+  matchedOffer: r.matchedOffer,
 });
 
 const toName: (_: OfferProps) => string = (o) =>
   o.shelter_type.length === 0 ? "N/A" : o.shelter_type.join(", ");
+
 const toAccomodationTime: (duration_category: string[]) => AccommodationTime = (
   duration_category
 ) => {

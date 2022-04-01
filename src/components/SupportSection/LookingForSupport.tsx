@@ -19,6 +19,7 @@ import StatusBadge from "../StatusBadge";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
 import { LoadingCards } from "./LoadingCards";
 import styled from "styled-components/native";
+import { MetchedInfo } from "./MetchedInfo";
 
 type RequestProps = {
   requests?: Request[];
@@ -106,7 +107,7 @@ const Requests = ({
   readonly: boolean;
 }) => {
   const { t } = useTranslation("desktop");
-
+  console.log({ requests });
   return (
     <>
       {requests.map((r) => (
@@ -129,11 +130,20 @@ const Requests = ({
           >
             <StatusBadge state={r.state} />
           </div>
-          <AnnouncementHighlights
-            beds={r.beds}
-            city={r.city}
-            duration={r.duration}
-          />
+
+          {r.matchedOffer ? (
+            <MetchedInfo
+              name={r.matchedOffer.name}
+              email={r.matchedOffer.email}
+              phone_num={r.matchedOffer.phone_num}
+            />
+          ) : (
+            <AnnouncementHighlights
+              beds={r.beds}
+              city={r.city}
+              duration={r.duration}
+            />
+          )}
 
           {!readonly && (
             <DetailsLink href={`${Routes.OFFER_DETAILS}/${r.id}`} />
