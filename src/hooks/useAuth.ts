@@ -19,6 +19,8 @@ import {
   linkWithPhoneNumber,
   getAuth,
   PhoneAuthCredential,
+  getRedirectResult,
+  UserCredential,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -52,8 +54,8 @@ const useAuth = () => {
 
 interface Authorization {
   logOut: () => Promise<void>;
-  signInWithGoogle: () => Promise<void>;
-  signInWithFacebook: () => Promise<void>;
+  signInWithGoogle: () => Promise<UserCredential | null>;
+  signInWithFacebook: () => Promise<UserCredential | null>;
   signInWithPhone: (
     phoneNumber: string,
     recaptcha: RecaptchaVerifier
@@ -83,10 +85,14 @@ const Authorization: Authorization = {
     await signOut(auth);
   },
   async signInWithGoogle() {
-    signInWithRedirect(auth, new GoogleAuthProvider());
+    await signInWithRedirect(auth, new GoogleAuthProvider());
+    const res = await getRedirectResult(auth);
+    return res;
   },
   async signInWithFacebook() {
     signInWithRedirect(auth, new FacebookAuthProvider());
+    const res = await getRedirectResult(auth);
+    return res;
   },
   async signInWithPhone(phoneNumber, recaptcha) {
     return await signInWithPhoneNumber(auth, phoneNumber, recaptcha);
