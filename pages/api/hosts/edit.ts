@@ -20,8 +20,8 @@ const trueOrFalse = match("TRUE").or(match("FALSE"));
 const HostPropsType = object({
   id: string,
   country: string,
-  phone_num: string,
-  email: string,
+  "phone_num?": string,
+  "email?": string,
   closest_city: string,
   city: string,
   zipcode: string,

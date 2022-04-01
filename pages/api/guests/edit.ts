@@ -19,10 +19,9 @@ const trueOrFalse = match("TRUE").or(match("FALSE"));
 
 const GuestPropsType = object({
   id: string,
-  name: string,
   "country?": string,
-  phone_num: string,
-  email: string,
+  "phone_num?": string,
+  "email?": string,
   "city?": string,
   acceptable_shelter_types: arrayOf(string),
   beds: number,
