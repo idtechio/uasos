@@ -21,6 +21,7 @@ import {
   PhoneAuthCredential,
   getRedirectResult,
   UserCredential,
+  applyActionCode,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -79,6 +80,7 @@ interface Authorization {
     phoneNumber: string,
     recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
+  applyCode: (code: string) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -139,6 +141,9 @@ const Authorization: Authorization = {
   },
   async linkWithPhone(user, phoneNumber, recaptcha) {
     return await linkWithPhoneNumber(user, phoneNumber, recaptcha);
+  },
+  async applyCode(code) {
+    await applyActionCode(auth, code);
   },
 };
 
