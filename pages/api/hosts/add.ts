@@ -1,36 +1,46 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import {
+  object,
+  string,
+  number,
+  arrayOf,
+  match,
+  Infer,
+  coerceTo,
+  ContentedError,
+} from "@gucciogucci/contented";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 import { AccountInfoDBProps, getAccountFromDB } from "../account/get";
 
-enum Boolean {
-  FALSE = "FALSE",
-  TRUE = "TRUE",
-}
-export interface HostProps {
-  country: string;
-  phone_num: string;
-  email: string;
-  closest_city: string;
-  city: string;
-  zipcode: string;
-  street: string;
-  building_no: string;
-  appartment_no: string;
-  shelter_type: Array<string>;
-  beds: number;
-  acceptable_group_relations: Array<string>;
-  ok_for_pregnant: Boolean;
-  ok_for_disabilities: Boolean;
-  ok_for_animals: Boolean;
-  ok_for_elderly: Boolean;
-  ok_for_any_nationality: Boolean;
-  duration_category: Array<string>;
-  transport_included: Boolean;
-  can_be_verified: Boolean;
-}
+const trueOrFalse = match("TRUE").or(match("FALSE"));
+
+const HostPropsType = object({
+  country: string,
+  "phone_num?": string,
+  "email?": string,
+  closest_city: string,
+  city: string,
+  zipcode: string,
+  street: string,
+  building_no: string,
+  appartment_no: string,
+  shelter_type: arrayOf(string),
+  beds: number,
+  acceptable_group_relations: arrayOf(string),
+  ok_for_pregnant: trueOrFalse,
+  ok_for_disabilities: trueOrFalse,
+  ok_for_animals: trueOrFalse,
+  ok_for_elderly: trueOrFalse,
+  ok_for_any_nationality: trueOrFalse,
+  duration_category: arrayOf(string),
+  transport_included: trueOrFalse,
+  can_be_verified: trueOrFalse,
+});
+
+export type HostProps = Infer<typeof HostPropsType>;
 
 interface HostDBProps {
   fnc_accounts_id: string;
@@ -52,7 +62,13 @@ async function addHost(
       throw new Error("user account does not exist");
     }
 
-    const body = req.body;
+    const body = coerceTo(HostPropsType, req.body);
+    if (body instanceof ContentedError) {
+      res.status(400).json({ ok: "not ok", error: body });
+      res.end();
+      return;
+    }
+
     const hostData: HostProps & HostDBProps = {
       ...body,
       fnc_accounts_id: account.db_accounts_id,

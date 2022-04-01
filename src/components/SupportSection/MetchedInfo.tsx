@@ -22,22 +22,37 @@ export const MetchedInfo = ({
         <IconWrapper>
           <UsersIcon />
         </IconWrapper>
-        <Label>{t("others:forms.generic.guest")}:</Label>
-        <Label>{name}</Label>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: t("others:forms.generic.guest", { name }),
+          }}
+        />
       </Info>
       <Info>
         <IconWrapper>
           <EmailIcon />
         </IconWrapper>
-        <Label>{t("others:forms.generic.emailAddressWithData")}:</Label>
-        <Label>{email}</Label>
+
+        <p
+          dangerouslySetInnerHTML={{
+            __html: t("others:forms.generic.emailAddressWithData", {
+              mail: email,
+            }),
+          }}
+        />
       </Info>
       <Info>
         <IconWrapper>
           <PhoneIcon />
         </IconWrapper>
-        <Label>{t("others:forms.generic.phoneNumberWithData")}:</Label>
-        <Label>{phone_num}</Label>
+
+        <p
+          dangerouslySetInnerHTML={{
+            __html: t("others:forms.generic.phoneNumberWithData", {
+              number: phone_num,
+            }),
+          }}
+        />
       </Info>
     </SectionInfo>
   );

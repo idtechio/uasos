@@ -1,31 +1,40 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import {
+  object,
+  string,
+  number,
+  arrayOf,
+  match,
+  Infer,
+  coerceTo,
+  ContentedError,
+} from "@gucciogucci/contented";
 import { select } from "../../../lib/db";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
-enum Boolean {
-  FALSE = "FALSE",
-  TRUE = "TRUE",
-}
-export interface GuestProps {
-  id?: string;
-  name: string;
-  country?: string;
-  phone_num: string;
-  email: string;
-  city?: string;
-  acceptable_shelter_types: Array<string>;
-  beds: number;
-  group_relation: Array<string>;
-  is_pregnant: Boolean;
-  is_with_disability: Boolean;
-  is_with_animal: Boolean;
-  is_with_elderly: Boolean;
-  is_ukrainian_nationality: Boolean;
-  duration_category: Array<string>;
-}
+const trueOrFalse = match("TRUE").or(match("FALSE"));
+
+const GuestPropsType = object({
+  id: string,
+  "country?": string,
+  "phone_num?": string,
+  "email?": string,
+  "city?": string,
+  acceptable_shelter_types: arrayOf(string),
+  beds: number,
+  group_relation: arrayOf(string),
+  is_pregnant: trueOrFalse,
+  is_with_disability: trueOrFalse,
+  is_with_animal: trueOrFalse,
+  is_with_elderly: trueOrFalse,
+  is_ukrainian_nationality: trueOrFalse,
+  duration_category: arrayOf(string),
+});
+
+export type GuestProps = Infer<typeof GuestPropsType>;
 
 interface GuestDBProps {
   db_guests_id: string;
@@ -40,7 +49,12 @@ async function editGuest(
       throw new Error("token is required");
     }
 
-    const body = req.body;
+    const body = coerceTo(GuestPropsType, req.body);
+    if (body instanceof ContentedError) {
+      res.status(400).json({ ok: "not ok", error: body });
+      res.end();
+      return;
+    }
 
     const guest = await getGuestFromDB(body.id, req.decodedToken.uid);
     if (!guest) {
@@ -51,10 +65,10 @@ async function editGuest(
       ...body,
       db_guests_id: guest.db_guests_id,
     };
-    delete guestData.id;
+    const { id: _, ...guestDataWithoutId } = guestData;
 
     const topicNameOrId = process.env.TOPIC_GUEST_UPDATE;
-    const pubResult = await publishMessage(topicNameOrId, guestData);
+    const pubResult = await publishMessage(topicNameOrId, guestDataWithoutId);
 
     res
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)

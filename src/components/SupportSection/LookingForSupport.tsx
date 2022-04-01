@@ -107,7 +107,7 @@ const Requests = ({
   readonly: boolean;
 }) => {
   const { t } = useTranslation("desktop");
-  console.log({ requests });
+
   return (
     <>
       {requests.map((r) => (

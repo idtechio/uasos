@@ -55,7 +55,7 @@ export interface OfferProps {
   phone_num: string;
   email: string;
   city: string;
-  shelter_type: Array<string>;
+  shelter_type: Array<string> | string;
   beds: number;
   acceptable_group_relations: Array<string> | string;
   ok_for_pregnant: Boolean;
@@ -173,21 +173,15 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     country: h.country,
     phone_num: h.phone_num,
     email: h.email,
-    shelter_type: h.shelter_type,
+    shelter_type: ungroupString(h.shelter_type),
     beds: h.beds,
-    acceptable_group_relations:
-      typeof h.acceptable_group_relations === "string"
-        ? h.acceptable_group_relations.split(",")
-        : h.acceptable_group_relations,
+    acceptable_group_relations: ungroupString(h.acceptable_group_relations),
     ok_for_pregnant: h.ok_for_pregnant,
     ok_for_disabilities: h.ok_for_disabilities,
     ok_for_animals: h.ok_for_animals,
     ok_for_elderly: h.ok_for_elderly,
     ok_for_any_nationality: h.ok_for_any_nationality,
-    duration_category:
-      typeof h.duration_category === "string"
-        ? h.duration_category.split(",")
-        : h.duration_category,
+    duration_category: ungroupString(h.duration_category),
     transport_included: h.transport_included,
     match_status: h.match_status,
     match_id: h.match_id,
@@ -200,15 +194,17 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
           phone_num: h.guest_phone_num,
           email: h.guest_email,
 
-          acceptable_shelter_types: h.guest_acceptable_shelter_types.split(","),
+          acceptable_shelter_types: ungroupString(
+            h.guest_acceptable_shelter_types
+          ),
           beds: h.guest_beds,
-          group_relation: h.guest_group_relation.split(","),
+          group_relation: ungroupString(h.guest_group_relation),
           is_pregnant: h.guest_is_pregnant,
           is_with_disability: h.guest_is_with_disability,
           is_with_animal: h.guest_is_with_animal,
           is_with_elderly: h.guest_is_with_elderly,
           is_ukrainian_nationality: h.guest_is_ukrainian_nationality,
-          duration_category: h.guest_duration_category.split(","),
+          duration_category: ungroupString(h.guest_duration_category),
           status: h.guest_status,
         }
       : undefined,
@@ -279,6 +275,17 @@ function getMockOffers(): OfferProps[] {
       matchedRequest: undefined,
     },
   ];
+}
+
+function ungroupString(str: string[] | string): Array<string> {
+  if (typeof str !== "string") {
+    return str;
+  }
+
+  if (str[0] === "{" && str[str.length - 1] === "}") {
+    str = str.substring(1, str.length - 1);
+  }
+  return str.split(",");
 }
 
 // TODO set auth as required
