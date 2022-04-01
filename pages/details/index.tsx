@@ -42,9 +42,7 @@ const BackText = styled.Text`
   text-align: left;
 `;
 
-export default function Details() {
-  const { identity, loaded } = useContext(AuthContext);
-
+function DetailsContent() {
   const router = useRouter();
   const { id, type } = router.query;
   const { t } = useTranslation("offer-details");
@@ -84,63 +82,67 @@ export default function Details() {
     }
   }, [requests]);
 
-  if (loaded) {
-    if (identity) {
-      return (
-        <CompositionAppBody>
-          <PageContentWrapper>
-            {isOffersLoading || isRequestsLoading ? (
-              /* // TODO: current spinner is from components/SupportSection/LoadingCards, nice to add a custom one for this view */
-              <LoadingCards count={3} showImage={true} />
+  return (
+    <CompositionAppBody>
+      <PageContentWrapper>
+        {isOffersLoading || isRequestsLoading ? (
+          <LoadingCards count={1} showImage={true} />
+        ) : (
+          <>
+            <BackWrapper
+              onPress={() => {
+                router.push("/dashboard");
+              }}
+            >
+              <ArrowLeftIcon />
+              <BackText>{t("back")}</BackText>
+            </BackWrapper>
+
+            {isOffersError || isRequestsError ? (
+              <Error>{t("could_not_load_details")}</Error>
             ) : (
               <>
-                <BackWrapper
-                  onPress={() => {
-                    router.push("/dashboard");
-                  }}
-                >
-                  <ArrowLeftIcon />
-                  <BackText>{t("back")}</BackText>
-                </BackWrapper>
-
-                {isOffersError || isRequestsError ? (
-                  <Error>{t("could_not_load_details")}</Error>
-                ) : (
-                  <>
-                    {dataToShow?.match_id ? (
-                      <WarningSection containerStyle={topMarginStyle} />
-                    ) : null}
-                    <DetailsSection
-                      isOffer={type === "offer"}
-                      data={dataToShow}
-                      containerStyle={bottomMarginStyle}
-                    />
-                    {dataToShow?.status === "matched" ? (
-                      <DetailsDecisionButtons
-                        matchId={dataToShow?.match_id}
-                        typeOfUser={type === "offer" ? "host" : "guest"}
-                      />
-                    ) : null}
-                  </>
-                )}
+                {dataToShow?.match_id ? (
+                  <WarningSection containerStyle={topMarginStyle} />
+                ) : null}
+                <DetailsSection
+                  isOffer={type === "offer"}
+                  data={dataToShow}
+                  containerStyle={bottomMarginStyle}
+                />
+                {dataToShow?.status === "matched" ? (
+                  <DetailsDecisionButtons
+                    matchId={dataToShow?.match_id}
+                    typeOfUser={type === "offer" ? "host" : "guest"}
+                  />
+                ) : null}
               </>
             )}
-          </PageContentWrapper>
-        </CompositionAppBody>
-      );
-    } else {
-      return <Redirect path="/signin"></Redirect>;
-    }
-  } else {
+          </>
+        )}
+      </PageContentWrapper>
+    </CompositionAppBody>
+  );
+}
+
+export default function Details() {
+  const { identity, loaded } = useContext(AuthContext);
+
+  if (!loaded) {
     return (
       <CompositionAppBody>
         <PageContentWrapper>
-          {/* // TODO: current spinner is from components/SupportSection/LoadingCards, nice to add a custom one for this view */}
-          <LoadingCards count={3} showImage={true} />
+          <LoadingCards count={1} showImage={false} />
         </PageContentWrapper>
       </CompositionAppBody>
     );
   }
+
+  if (loaded && !identity) {
+    return <Redirect path="/signin"></Redirect>;
+  }
+
+  return <DetailsContent />;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
