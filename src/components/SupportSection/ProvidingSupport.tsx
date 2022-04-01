@@ -67,10 +67,13 @@ const Content = ({
   if (isLoading || offers === undefined) {
     return <LoadingCards count={3} showImage={true} />;
   }
-  if (offers.length === 0) {
-    return <NoOffer readonly={readonly} />;
-  }
-  return <Offers offers={offers} readonly={readonly} />;
+
+  return (
+    <>
+      <Offers offers={offers} readonly={readonly} />
+      <NoOffer readonly={readonly} />
+    </>
+  );
 };
 
 const NoOffer = ({ readonly }: { readonly: boolean }) => {
