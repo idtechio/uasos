@@ -1597,6 +1597,11 @@
     protobufjs "^6.10.0"
     yargs "^16.2.0"
 
+"@gucciogucci/contented@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@gucciogucci/contented/-/contented-2.0.2.tgz#29b9af2fdf23c4919e711627b242fd3066ecdc61"
+  integrity sha512-yDYnuJANcN7tYozkmrFR7sNIWOL8RGIvzB1ZZ97tzsJGxcqG0CuadDd6H4RFHIlzecWcGtnaa+nmpAWAjuGD5w==
+
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.2.1.tgz"
