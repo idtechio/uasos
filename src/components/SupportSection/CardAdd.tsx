@@ -12,6 +12,7 @@ const CardAddWrapper = styled(Card)`
   box-sizing: border-box;
   border-radius: 8px;
   padding: 40px 0px;
+  margin-top: 14px;
 `;
 
 const Button = styled.Pressable`
