@@ -24,12 +24,12 @@ const ReportBodyPropsType = object({
 
 type ReportBodyProps = Infer<typeof ReportBodyPropsType>;
 
-interface ListingApiRequest extends NextApiRequest {
+interface ReportApiRequest extends NextApiRequest {
   body: ReportBodyProps;
 }
 
 async function listingReport(
-  req: ListingApiRequest & ApiAuthTokenDetails,
+  req: ReportApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
