@@ -263,7 +263,6 @@ export default function FormRegisterUser() {
                 },
               }}
               error={errors?.registrationUserForm?.email}
-              errorMsg={t("registrationUserForm.errors.email")}
             />
           </div>
         </SectionContent>
@@ -300,7 +299,9 @@ export default function FormRegisterUser() {
               validate: (value) => value === passwordInputRef.current,
             }}
             error={errors?.registrationUserForm?.passwordConfirm}
-            errorMsg={t("registrationUserForm.errors.passwordConfirm")}
+            errorMsg={t(
+              "others:forms.userRegistration.validations.passwordMismatch"
+            )}
           />
           <FormCheckbox
             isCentered={false}
