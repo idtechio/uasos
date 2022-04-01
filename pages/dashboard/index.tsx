@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
@@ -15,13 +15,18 @@ import VerifySection from "../../src/components/VerifySection/VerifySection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
 import { AuthContext } from "../_app";
+import EmailVerificationModal from "../../src/components/EmailVerificationModal";
+import { Authorization } from "../../src/hooks/useAuth";
+import { useRouter } from "next/router";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 // const fakeTags = ["Shelter"];
 
 function DashboardContent() {
-  const { account, loaded } = useContext(AuthContext);
+  const { account, loaded, identity } = useContext(AuthContext);
+  const router = useRouter();
+  const [emailModalVisible, setEmailModalVisible] = useState(false);
   const {
     data: offersDTO,
     isError: isOffersInError,
@@ -33,6 +38,17 @@ function DashboardContent() {
     isError: isRequestsInError,
     isLoading: isRequestsLoading,
   } = useRequestsList();
+
+  const showEmailVerificationModal = async () => {
+    if (identity) {
+      if (identity.email) {
+        await Authorization.sendVerificationEmail(identity);
+        setEmailModalVisible(true);
+      } else {
+        router.push("user-profile");
+      }
+    }
+  };
 
   const offers = offersDTO ? toOffers(offersDTO) : undefined;
   const requests = requestsDTO ? toRequests(requestsDTO) : undefined;
@@ -48,6 +64,7 @@ function DashboardContent() {
       <PageContentWrapper outerStyles={{ paddingHorizontal: 16 }}>
         <>
           <VerifySection
+            emailOnPress={showEmailVerificationModal}
             needEmail={needEmailVerification}
             needPhone={needPhoneVerification}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
@@ -67,6 +84,11 @@ function DashboardContent() {
             isRequestsLoading={!loaded || isRequestsLoading}
           />
         </>
+        {emailModalVisible ? (
+          <EmailVerificationModal onClose={() => setEmailModalVisible(false)} />
+        ) : (
+          <></>
+        )}
       </PageContentWrapper>
     </CompositionAppBody>
   );
