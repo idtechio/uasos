@@ -1,10 +1,9 @@
+import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/router";
-import { useContext, useEffect, useRef } from "react";
-import { AuthContext } from "../../../pages/_app";
+import { useEffect, useRef } from "react";
 import { Authorization } from "../../hooks/useAuth";
 
 export default function EmailVerificationSubmit() {
-  const { identity } = useContext(AuthContext);
   const oobCodeRef = useRef<null | string>(null);
   const router = useRouter();
 
@@ -12,11 +11,18 @@ export default function EmailVerificationSubmit() {
     const queryParams = new URLSearchParams(window.location.search);
     oobCodeRef.current = queryParams.get("oobCode");
     (async function verifyEmail() {
-      if (identity && oobCodeRef && oobCodeRef?.current) {
-        await Authorization.applyCode(oobCodeRef?.current);
-        router.push("/dashboard");
+      if (oobCodeRef && oobCodeRef?.current) {
+        try {
+          await Authorization.applyCode(oobCodeRef?.current);
+          router.push("/dashboard");
+        } catch (error) {
+          if (error instanceof FirebaseError) {
+            console.log(error?.message);
+          }
+          router.push("/dashboard");
+        }
       }
     })();
-  }, []);
+  }, [oobCodeRef]);
   return <></>;
 }
