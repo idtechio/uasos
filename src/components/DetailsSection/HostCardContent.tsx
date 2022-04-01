@@ -100,7 +100,10 @@ export default function HostCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("accomType")}
-            value={offer?.shelter_type
+            value={(typeof offer.shelter_type === "string"
+              ? offer.shelter_type.split(",")
+              : offer.shelter_type
+            )
               .map((el: string) => t2(`staticValues.accommodationTypes.${el}`))
               .join(", ")}
           />

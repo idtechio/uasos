@@ -175,23 +175,14 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     phone_num: g.phone_num,
     email: g.email,
     beds: g.beds,
-    acceptable_shelter_types:
-      typeof g.acceptable_shelter_types === "string"
-        ? g.acceptable_shelter_types.split(",")
-        : g.acceptable_shelter_types,
-    group_relation:
-      typeof g.group_relation === "string"
-        ? g.group_relation.split(",")
-        : g.group_relation,
+    acceptable_shelter_types: ungroupString(g.acceptable_shelter_types),
+    group_relation: ungroupString(g.group_relation),
     is_pregnant: g.is_pregnant,
     is_with_disability: g.is_with_disability,
     is_with_animal: g.is_with_animal,
     is_with_elderly: g.is_with_elderly,
     is_ukrainian_nationality: g.is_ukrainian_nationality,
-    duration_category:
-      typeof g.duration_category === "string"
-        ? g.duration_category.split(",")
-        : g.duration_category,
+    duration_category: ungroupString(g.duration_category),
     match_id: g.match_id,
     match_status: g.match_status,
     matchedOffer: g.match_id
@@ -203,16 +194,17 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           phone_num: g.host_phone_num,
           email: g.host_email,
 
-          shelter_type: g.host_shelter_type.split(","),
+          shelter_type: ungroupString(g.host_shelter_type),
           beds: g.host_beds,
-          acceptable_group_relations:
-            g.host_acceptable_group_relations.split(","),
+          acceptable_group_relations: ungroupString(
+            g.host_acceptable_group_relations
+          ),
           ok_for_pregnant: g.host_ok_for_pregnant,
           ok_for_disabilities: g.host_ok_for_disabilities,
           ok_for_animals: g.host_ok_for_animals,
           ok_for_elderly: g.host_ok_for_elderly,
           ok_for_any_nationality: g.host_ok_for_any_nationality,
-          duration_category: g.host_duration_category.split(","),
+          duration_category: ungroupString(g.host_duration_category),
           transport_included: g.host_transport_included,
           status: g.host_status,
         }
@@ -304,6 +296,17 @@ function getMockRequests(): RequestProps[] {
       matchedOffer: undefined,
     },
   ];
+}
+
+function ungroupString(str: string[] | string): Array<string> {
+  if (typeof str !== "string") {
+    return str;
+  }
+
+  if (str[0] === "{" && str[str.length - 1] === "}") {
+    str = str.substring(1, str.length - 1);
+  }
+  return str.split(",");
 }
 
 // TODO set auth as required
