@@ -1,14 +1,14 @@
 {
-  "location": "Lokalizacja",
-  "numberOfGuests": "Liczba gości",
-  "timeframe": "Długosć pobytu",
-  "twoWeeks": "Dwa tygodnie",
-  "month": "Jeden miesiąc",
-  "longerThanMonth": "Dłużej niż miesiąc",
-  "food": "Żywność",
-  "disabledPerson": "Osoby z niepełnosprawnością",
-  "kidsBelow2yo": "Jestem z dzieckiem",
-  "animalsWelcome": "Zwierzęta mile widziane",
-  "yes": "tak",
-  "no": "nie"
+    "location": "Lokalizacja",
+    "numberOfGuests": "Liczba gości",
+    "timeframe": "Długosć pobytu",
+    "twoWeeks": "Dwa tygodnie",
+    "month": "Jeden miesiąc",
+    "longerThanMonth": "Dłużej niż miesiąc",
+    "food": "Żywność",
+    "disabledPerson": "Osoby z niepełnosprawnością",
+    "kidsBelow2yo": "Jestem z dzieckiem",
+    "animalsWelcome": "Zwierzęta mile widziane",
+    "yes": "tak",
+    "no": "nie"
 }

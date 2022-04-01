@@ -1,11 +1,11 @@
 {
-  "arrival": "Дата прибытия",
-  "persons": "Количество гостей",
-  "locationPreference": "Предпочтительная локализация",
-  "anyLocation": "Любая локализация",
-  "travelingWithAnimal": "С нами домашнее животное",
-  "travelingWithOlderPerson": "со мной пожилой человек / я сам пожилой человек",
-  "travelingWithDisabledPerson": "со мной человек с ограниченными возможностями / я сам человек с ограниченными возможностями",
-  "travelingWithToddler": "С нами ребёнок",
-  "inviteGuest": "Пригласить гостя"
+    "arrival": "Дата прибытия",
+    "persons": "Количество гостей",
+    "locationPreference": "Предпочтительная локализация",
+    "anyLocation": "Любая локализация",
+    "travelingWithAnimal": "С нами домашнее животное",
+    "travelingWithOlderPerson": "со мной пожилой человек \/ я сам пожилой человек",
+    "travelingWithDisabledPerson": "со мной человек с ограниченными возможностями \/ я сам человек с ограниченными возможностями",
+    "travelingWithToddler": "С нами ребёнок",
+    "inviteGuest": "Пригласить гостя"
 }

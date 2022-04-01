@@ -1,13 +1,13 @@
 {
-  "messaging": {
-    "sms": {
-      "offeringNotification": "",
-      "sealedNotification": ""
+    "messaging": {
+        "sms": {
+            "offeringNotification": "",
+            "sealedNotification": ""
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "",
+        "GuestGetsMatch": "",
+        "GUESTANDHOSTMATCHCONFIRM": ""
     }
-  },
-  "sendgrid": {
-    "HostGetsMatch": "",
-    "GuestGetsMatch": "",
-    "GUESTANDHOSTMATCHCONFIRM": ""
-  }
 }
