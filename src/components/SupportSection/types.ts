@@ -7,6 +7,15 @@ export type MatchState =
   | "BEING_CONFIRMED"
   | "CONFIRMED";
 
+interface CommonMatched {
+  id: string;
+  name: string;
+  country: string;
+  phone_num: string;
+  email: string;
+  city: string;
+}
+
 export type Offer = {
   id: string;
   name: string;
@@ -15,6 +24,7 @@ export type Offer = {
   beds: number;
   duration: AccommodationTime;
   state: MatchState;
+  matchedRequest?: CommonMatched;
 };
 
 export type Request = {
@@ -23,4 +33,5 @@ export type Request = {
   beds: number;
   duration: AccommodationTime;
   state: MatchState;
+  matchedOffer?: CommonMatched;
 };

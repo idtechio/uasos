@@ -18,6 +18,13 @@ export const Title = styled.Text`
   line-height: 33px;
 `;
 
+export const Placeholder = styled.View`
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  background: #ececec;
+`;
+
 export const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
