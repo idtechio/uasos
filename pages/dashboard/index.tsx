@@ -18,7 +18,7 @@ import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
-const fakeTags = ["Shelter"];
+// const fakeTags = ["Shelter"];
 
 function DashboardContent() {
   const { account, loaded } = useContext(AuthContext);

@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import CardModal from "../../CardModal";
 import DeleteOfferForm from "../DeleteOffer";
@@ -16,13 +17,40 @@ import {
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
+const buttons = [
+  {
+    icon: <ClockIcon />,
+    type: "renew",
+    label: "others:common.words.renew",
+  },
+  {
+    icon: <EditIcon />,
+    type: "edit",
+    label: "others:desktop.contextMenu.edit",
+  },
+  {
+    icon: <AlertIcon />,
+    type: "report",
+    hide: true,
+    label: "others:desktop.contextMenu.reportProblem",
+  },
+  {
+    icon: <BinIcon />,
+    type: "delete",
+    hide: true,
+    label: "hostAdd.accomodationPhotoReset",
+  },
+];
+
+type ModalTypes = "delete" | "report" | "renew" | null;
+
 export default function EditOfferButton() {
   const containerRef = useRef<View | null>(null);
 
+  const { t } = useTranslation();
+
   const [popoverOpened, setPopoverOpened] = useState(false);
-  const [modalOpened, setModalOpened] = useState<
-    "delete" | "report" | "renew" | null
-  >(null);
+  const [modalOpened, setModalOpened] = useState<ModalTypes>(null);
 
   const onTriggerPress = useCallback(
     () => setPopoverOpened((currentValue) => !currentValue),
@@ -31,69 +59,57 @@ export default function EditOfferButton() {
 
   const closeModal = useCallback(() => setModalOpened(null), []);
 
+  const triggerModal = (modalType: ModalTypes) => () =>
+    setModalOpened(modalType);
+
   const Modal = useCallback(() => {
+    let modalComponent = null;
+
     switch (modalOpened) {
       case "delete":
-        return (
-          <CardModal closeable={false} cardStyle={CardModalStyle}>
-            <DeleteOfferForm close={closeModal} />
-          </CardModal>
-        );
+        modalComponent = <DeleteOfferForm close={closeModal} />;
+        break;
 
       case "renew":
-        return (
-          <CardModal closeable={false} cardStyle={CardModalStyle}>
-            <RenewOffer close={closeModal} />
-          </CardModal>
-        );
+        modalComponent = <RenewOffer close={closeModal} />;
+        break;
 
       case "report":
-        return (
-          <CardModal closeable={false} cardStyle={CardModalStyle}>
-            <ReportOffer close={closeModal} />
-          </CardModal>
-        );
+        modalComponent = <ReportOffer close={closeModal} />;
+        break;
 
-      case null:
       default:
-        return null;
+        modalComponent = null;
     }
+
+    return (
+      modalComponent && (
+        <CardModal closeable={false} cardStyle={CardModalStyle}>
+          {modalComponent}
+        </CardModal>
+      )
+    );
   }, [modalOpened, closeModal]);
 
   const PopoverOptions = useCallback(
     () => (
       <Options>
-        <ListButton
-          icon={<ClockIcon />}
-          onPress={() => setModalOpened("renew")}
-          withBottomBorder
-        >
-          Renew
-        </ListButton>
-        <ListButton
-          icon={<EditIcon />}
-          onPress={() => {
-            /*console.log("Edit")*/
-          }}
-          withBottomBorder
-        >
-          Edit
-        </ListButton>
-        <ListButton
-          textColor="secondary"
-          icon={<AlertIcon />}
-          onPress={() => setModalOpened("report")}
-          withBottomBorder
-        >
-          Report a problem
-        </ListButton>
-        <ListButton
-          textColor="secondary"
-          icon={<BinIcon />}
-          onPress={() => setModalOpened("delete")}
-        >
-          Delete
-        </ListButton>
+        {buttons.map((button, i, array) => {
+          if (button.hide) {
+            return <></>;
+          }
+
+          return (
+            <ListButton
+              key={button.type}
+              icon={button.icon}
+              withBottomBorder={i !== array.length - 1}
+              onPress={triggerModal(button.type as ModalTypes)}
+            >
+              {t(button.label)}
+            </ListButton>
+          );
+        })}
       </Options>
     ),
     []

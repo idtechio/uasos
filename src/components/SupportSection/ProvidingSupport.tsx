@@ -11,9 +11,9 @@ import DetailsLink from "./DetailsLink";
 import {
   HeaderWrapper,
   IdContainer,
-  ImageWrapper,
   MoreButtonWrapper,
   OfferTitle,
+  Placeholder,
   SupportCard,
   SupportWrapper,
   TextWrapper,
@@ -22,6 +22,7 @@ import {
 import { Offer } from "./types";
 import "react-loading-skeleton/dist/skeleton.css";
 import { LoadingCards } from "./LoadingCards";
+import { MetchedInfo } from "./MetchedInfo";
 
 type ProvidingSupportProps = {
   offers?: Offer[];
@@ -105,9 +106,11 @@ const Offers = ({
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              {!readonly && <EditOfferButton />}
+              <EditOfferButton />
             </MoreButtonWrapper>
 
+            <Placeholder />
+            {/* 
             <ImageWrapper>
               <img
                 src={o.imageUrl}
@@ -116,7 +119,7 @@ const Offers = ({
                 height={80}
                 style={{ borderRadius: 4 }}
               />
-            </ImageWrapper>
+            </ImageWrapper> */}
             <TextWrapper>
               <IdContainer>Id: {o.id}</IdContainer>
               <OfferTitle>
@@ -134,12 +137,19 @@ const Offers = ({
             </TextWrapper>
           </HeaderWrapper>
 
-          <AnnouncementHighlights
-            beds={o.beds}
-            city={o.city}
-            duration={o.duration}
-          />
-
+          {o.matchedRequest ? (
+            <MetchedInfo
+              name={o.matchedRequest.name}
+              email={o.matchedRequest.email}
+              phone_num={o.matchedRequest.phone_num}
+            />
+          ) : (
+            <AnnouncementHighlights
+              beds={o.beds}
+              city={o.city}
+              duration={o.duration}
+            />
+          )}
           {!readonly && (
             <DetailsLink
               href={{
