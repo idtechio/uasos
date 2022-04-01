@@ -38,3 +38,5 @@ sa_key.json
 # ide
 .vscode
 .idea
+
+tsconfig.tsbuildinfo
