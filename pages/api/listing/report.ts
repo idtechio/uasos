@@ -45,13 +45,12 @@ async function listingReport(
       return;
     }
 
-    const body = coerceTo(ReportBodyPropsType, req.body);
-    if (body instanceof ContentedError) {
-      res.status(400).json({ message: body });
+    const reportData = coerceTo(ReportBodyPropsType, req.body);
+
+    if (reportData instanceof ContentedError) {
+      res.status(400).json({ message: reportData });
       return;
     }
-
-    const reportData: ReportBodyProps = { ...body };
 
     try {
       const topicNameOrId = process.env.TOPIC_REPORT;
