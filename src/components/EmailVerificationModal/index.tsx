@@ -7,24 +7,23 @@ import SmsSent from "../../../public/assets/PasswordReset.png";
 import { TouchableOpacity } from "react-native";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
+import { useTranslation } from "next-i18next";
 
 interface Props {
   onClose: () => void;
 }
 export default function EmailVerificationModal({ onClose }: Props) {
   const { identity } = useContext(AuthContext);
+  const { t } = useTranslation();
   return (
     <CardModal closeable={false}>
       <Wrapper>
         <Image src={SmsSent} alt=""></Image>
-        <StyledHeader>SMS verification successfully completed</StyledHeader>
-        <StyledText>
-          we have sent a verification code to your email address. Click link to
-          verify it
-        </StyledText>
+        <StyledHeader>{t("others:common.email.verification")}</StyledHeader>
+        <StyledText>{t("others:common.email.sentInfo")}</StyledText>
         <ButtonCta
           onPress={() => onClose()}
-          anchor={"Continue"}
+          anchor={t("others:common.buttons.close")}
           style={{ width: "100px", marginTop: "30px" }}
         />
         <TouchableOpacity>
@@ -35,7 +34,7 @@ export default function EmailVerificationModal({ onClose }: Props) {
               }
             }}
           >
-            Re-send code
+            {t("others:common.links.re-sendCode")}
           </StyledText>
         </TouchableOpacity>
       </Wrapper>
