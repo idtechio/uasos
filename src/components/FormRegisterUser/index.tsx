@@ -274,7 +274,7 @@ export default function FormRegisterUser() {
           </InputControlLabel>
           <FormTextInput
             name={"registrationUserForm.password"}
-            label={t("others:forms.generic.password")}
+            label={t("others:forms.userRegistration.password")}
             secureTextEntry={!isShowPasswordChecked}
             styles={{ wrapper: { marginTop: 6, marginBottom: 10 } }}
             rules={{
