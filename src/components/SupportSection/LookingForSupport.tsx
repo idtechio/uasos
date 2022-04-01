@@ -77,7 +77,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
       label={t("addRequest")}
       readonly={readonly}
       onPress={() => {
-        if (!readonly) router.push(Routes.HOST);
+        if (!readonly) router.push(Routes.GUEST);
       }}
     />
   );

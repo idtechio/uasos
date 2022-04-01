@@ -52,9 +52,9 @@ function DashboardContent() {
             needPhone={needPhoneVerification}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
           />
-          {loaded && (
+          {/* {loaded && (
             <Tags tags={fakeTags} containerStyle={[bottomMarginStyle]} />
-          )}
+          )} */}
           <SupportSection
             readonly={readonly}
             offers={offers}
