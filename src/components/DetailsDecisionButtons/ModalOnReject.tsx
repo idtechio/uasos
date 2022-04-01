@@ -10,29 +10,43 @@ import {
   FormHeader,
   FormWrapper,
 } from "../EditOfferOptions/style";
+import { ModalProps } from "./ModalOnConfirm";
 
-export default function ModalOnReject({ close }: { close(): void }) {
+export default function ModalOnReject({
+  close,
+  showSuccess,
+  showError,
+}: ModalProps) {
   const { t } = useTranslation("offer-details");
   const router = useRouter();
   return (
     <FormWrapper>
-      <CloseButton onPress={close} />
-      <HomeIllustration />
-      <FormHeader style={{ marginTop: 17 }}> {t("thankYou")}</FormHeader>
-      <FormDescription style={{ marginTop: 19, maxWidth: "40ch" }}>
-        {t("longThanks")}
-      </FormDescription>
-      <FormDescription style={{ maxWidth: "30ch" }}>
-        {t("rejectFeedback")}
-      </FormDescription>
-      <FormFooter style={{ marginTop: 60, justifyContent: "center" }}>
-        <ButtonCta
-          anchor={t("backToProfile")}
-          onPress={() => {
-            router.push("/dashboard");
-          }}
-        />
-      </FormFooter>
+      {!showSuccess && <CloseButton onPress={close} />}
+      {showError ? (
+        <FormDescription>{t("reject_match_error")}</FormDescription>
+      ) : null}
+      {showSuccess ? (
+        <>
+          <HomeIllustration />
+          <FormHeader style={{ marginTop: 17 }}> {t("thankYou")}</FormHeader>
+          <FormDescription style={{ marginTop: 19, maxWidth: "40ch" }}>
+            {t("longThanks")}
+          </FormDescription>
+          <FormDescription style={{ maxWidth: "30ch" }}>
+            {t("rejectFeedback")}
+          </FormDescription>
+        </>
+      ) : null}
+      {showSuccess || showError ? (
+        <FormFooter style={{ marginTop: 60, justifyContent: "center" }}>
+          <ButtonCta
+            anchor={t("backToProfile")}
+            onPress={() => {
+              router.push("/dashboard");
+            }}
+          />
+        </FormFooter>
+      ) : null}
     </FormWrapper>
   );
 }

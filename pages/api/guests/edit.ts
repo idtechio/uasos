@@ -40,7 +40,7 @@ async function editGuest(
       throw new Error("token is required");
     }
 
-    const body = JSON.parse(req.body);
+    const body = req.body;
 
     const guest = await getGuestFromDB(body.id, req.decodedToken.uid);
     if (!guest) {

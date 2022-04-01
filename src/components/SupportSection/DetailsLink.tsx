@@ -5,7 +5,11 @@ import styled from "styled-components/native";
 import ArrowIcon from "../../../src/style/svgs/arrow.svg";
 import { Theme } from "../../style/theme.config";
 
-export default function DetailsLink({ href }: { href: string }) {
+export default function DetailsLink({
+  href,
+}: {
+  href: string | { pathname: string; query: { id: string; type: string } };
+}) {
   const { t } = useTranslation("details");
   return (
     <LinkWrapper>

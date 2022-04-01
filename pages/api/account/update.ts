@@ -37,12 +37,7 @@ async function updateAccount(
       req.decodedToken.uid
     );
 
-    let body;
-    try {
-      body = JSON.parse(req.body);
-    } catch (e) {
-      body = {};
-    }
+    const body = req.body;
 
     const accountData: AccountDBProps = {
       uid: user.uid,

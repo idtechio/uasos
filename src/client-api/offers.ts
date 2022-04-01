@@ -1,5 +1,6 @@
 import { OfferProps } from "../../pages/api/listing/offers";
 import { getFirebaseToken } from "../helpers/getFirebaseToken";
+
 export type GetOffersListDTO = {
   ok: "ok";
   offers: OfferProps[];

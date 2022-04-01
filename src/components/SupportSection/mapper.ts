@@ -61,13 +61,19 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
 });
 
 const toName: (_: OfferProps) => string = (o) =>
-  o.shelter_type.length === 0 ? "N/A" : o.shelter_type.join(", ");
-
-const toAccomodationTime: (duration_category: string[]) => AccommodationTime = (
-  duration_category
-) => {
+  o.shelter_type.length === 0
+    ? "N/A"
+    : typeof o.shelter_type === "string"
+    ? o.shelter_type
+    : o.shelter_type.join(", ");
+const toAccomodationTime: (
+  duration_category: string[] | string
+) => AccommodationTime = (duration_category) => {
   return (
-    duration_category
+    (typeof duration_category === "string"
+      ? duration_category.split(",")
+      : duration_category
+    )
       .map((c) => {
         switch (c) {
           case "less_than_week":

@@ -33,7 +33,7 @@ export interface HostProps {
 }
 
 interface HostDBProps {
-  db_accounts_id: string;
+  fnc_accounts_id: string;
 }
 
 async function addHost(
@@ -52,11 +52,12 @@ async function addHost(
       throw new Error("user account does not exist");
     }
 
-    const body = JSON.parse(req.body);
+    const body = req.body;
     const hostData: HostProps & HostDBProps = {
       ...body,
-      db_accounts_id: account.db_accounts_id,
+      fnc_accounts_id: account.db_accounts_id,
     };
+
     const topicNameOrId = process.env.TOPIC_HOST_INSERT;
     const pubResult = await publishMessage(topicNameOrId, hostData);
 

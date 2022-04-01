@@ -6,8 +6,6 @@ import AppBack from "../../src/components/AppBack";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdHost from "../../src/components/FormAdHost";
 import Redirect from "../../src/components/Redirect";
-import { completeTranslation } from "../../src/helpers/completeTranslation";
-import { withSession } from "../../src/helpers/withSession";
 import { AuthContext } from "../_app";
 
 export default function Account() {
@@ -32,11 +30,8 @@ export default function Account() {
   }
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }) =>
-    completeTranslation({
-      props: {
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});

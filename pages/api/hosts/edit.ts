@@ -46,7 +46,7 @@ async function editHost(
       throw new Error("token is required");
     }
 
-    const body = JSON.parse(req.body);
+    const body = req.body;
 
     const host = await getHostFromDB(body.id, req.decodedToken.uid);
     if (!host) {

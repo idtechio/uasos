@@ -3,9 +3,16 @@ import { Subtitle, Info, FlexWrapper, ItemsColumn } from "./style";
 import { Bullet, ListItem } from "../WarningSection/style";
 import { StyleProp, ViewStyle } from "react-native";
 import { useTranslation } from "react-i18next";
+import { Boolean } from "../../../pages/api/listing/requests";
 
 interface GuestAdditionalInfoProps {
-  info: { disability: boolean; pregnancy: boolean; diversity: boolean };
+  info: {
+    disability?: Boolean;
+    pregnancy?: Boolean;
+    diversity?: Boolean;
+    animals?: Boolean;
+    elderly?: Boolean;
+  };
 }
 export const borderTopStyle: StyleProp<ViewStyle> = {
   borderTopWidth: 3,
@@ -39,6 +46,20 @@ export default function GuestAdditionalInfo({
           <ListItem>
             <Bullet />
             <Info>{t("diversityPresent")}</Info>
+          </ListItem>
+        )}
+
+        {info.animals && (
+          <ListItem>
+            <Bullet />
+            <Info>{t("animalsPresent")}</Info>
+          </ListItem>
+        )}
+
+        {info.elderly && (
+          <ListItem>
+            <Bullet />
+            <Info>{t("elderPresent")}</Info>
           </ListItem>
         )}
       </ItemsColumn>

@@ -42,6 +42,7 @@ export const Value = styled.Text`
   font-weight: 700;
   font-size: 16px;
   line-height: 18.75px;
+  flex: 0;
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
 `;
 
