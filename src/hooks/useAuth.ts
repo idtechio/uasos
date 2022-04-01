@@ -22,6 +22,7 @@ import {
   getRedirectResult,
   UserCredential,
   applyActionCode,
+  updateEmail,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
@@ -84,6 +85,7 @@ interface Authorization {
     recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
   applyCode: (code: string) => Promise<void>;
+  updateMail: (email: string) => Promise<void>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -147,6 +149,13 @@ const Authorization: Authorization = {
   },
   async applyCode(code) {
     await applyActionCode(auth, code);
+  },
+  async updateMail(email) {
+    const user = getAuth().currentUser;
+    if (!user) {
+      throw new Error("No user");
+    }
+    await updateEmail(user, email);
   },
 };
 
