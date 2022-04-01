@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 import EmailIcon from "../../../src/style/svgs/matched_email.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
 import PhoneIcon from "../../../src/style/svgs/matched_phone.svg";
-import { Label } from "./style";
 
 export const MetchedInfo = ({
   name,
