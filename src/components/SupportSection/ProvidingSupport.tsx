@@ -103,7 +103,7 @@ const Offers = ({
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              {!readonly && <EditOfferButton />}
+              <EditOfferButton />
             </MoreButtonWrapper>
 
             <Placeholder />

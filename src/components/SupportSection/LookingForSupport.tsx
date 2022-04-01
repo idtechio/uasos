@@ -114,7 +114,7 @@ const Requests = ({
         <SupportCard key={r.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              {!readonly && <EditOfferButton />}
+              <EditOfferButton />
             </MoreButtonWrapper>
             <RequestTextWrapper>
               <RequestFirstLine>{t("submission")}</RequestFirstLine>
