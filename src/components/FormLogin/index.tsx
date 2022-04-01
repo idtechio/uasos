@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 
@@ -14,11 +14,12 @@ import GoToRegister from "./GoToRegister";
 import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
 import { Authorization } from "../../hooks/useAuth";
-import { ConfirmationResult } from "firebase/auth";
+import { ConfirmationResult, getRedirectResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { ErrorText } from "../FormRegisterWithSocials/styles";
-
+import { auth } from "../../../lib/firebase-app";
+import CardModal from "../CardModal";
 type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
@@ -31,6 +32,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
   const [error, setError] = useState<string>("");
+  const [providerLoginError, setProviderLoginError] = useState<boolean>(false);
 
   const formFields = useForm<FormType>();
 
@@ -97,7 +99,15 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   //       return t("validations.invalidPassword");
   //   }
   // };
-
+  useEffect(() => {
+    (async function checkIfLoginSucced() {
+      try {
+        await getRedirectResult(auth);
+      } catch (error) {
+        setProviderLoginError(true);
+      }
+    })();
+  }, []);
   enum PROVIDERS {
     FACEBOOK = "facebook",
     GOOGLE = "google",
@@ -105,10 +115,14 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const handleSignIn = async (providerId: string) => {
     switch (providerId) {
       case PROVIDERS.FACEBOOK:
-        await Authorization.signInWithFacebook();
+        {
+          await Authorization.signInWithFacebook();
+        }
         break;
       case PROVIDERS.GOOGLE:
-        await Authorization.signInWithGoogle();
+        {
+          await Authorization.signInWithGoogle();
+        }
         break;
     }
   };
@@ -191,6 +205,18 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
           {error ? <ErrorText>{error}</ErrorText> : <></>}
+          {providerLoginError ? (
+            <CardModal
+              closeable
+              onModalClose={() => setProviderLoginError(false)}
+            >
+              <ErrorText>
+                {t("others:forms.userRegistration.errors.duplicatedMail")}
+              </ErrorText>
+            </CardModal>
+          ) : (
+            <></>
+          )}
         </FormContainer>
       </CompositionSection>
       <GoToRegister />
