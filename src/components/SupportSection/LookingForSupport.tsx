@@ -74,7 +74,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
   const router = useRouter();
   return (
     <CardAdd
-      label={t("addRequest")}
+      label={t("addSubmission")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);
