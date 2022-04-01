@@ -41,7 +41,7 @@ function DashboardContent() {
 
   const showEmailVerificationModal = async () => {
     if (identity) {
-      if (identity.email) {
+      if (identity?.email) {
         await Authorization.sendVerificationEmail(identity);
         setEmailModalVisible(true);
       } else {
