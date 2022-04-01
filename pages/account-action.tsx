@@ -6,6 +6,7 @@ import {
   CompositionAppBody,
   CompositionContainer,
 } from "../src/components/Compositions";
+import EmailVerificationSubmit from "../src/components/EmailVerificationSubmit";
 import FormResetPassword from "../src/components/FormPasswordReset";
 import { Routes } from "../src/consts/router";
 
@@ -20,6 +21,11 @@ export default function App() {
       <CompositionContainer>
         <AppBack to={Routes.SIGN_IN} />
         {modeRef.current === "resetPassword" ? <FormResetPassword /> : <></>}
+        {modeRef.current === "verifyEmail" ? (
+          <EmailVerificationSubmit />
+        ) : (
+          <></>
+        )}
       </CompositionContainer>
     </CompositionAppBody>
   );
