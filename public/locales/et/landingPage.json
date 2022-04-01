@@ -70,14 +70,14 @@
       "0": "",
       "1": "",
       "2": "",
-      "3": "",
+      "3": "Võtke ühendust peremehega / külalisega",
       "4": ""
     }
   },
   "hero": {
-    "description": "",
-    "lookingForHelp": "",
+    "description": "Me aitame pagulastel automaatselt leida majutust, mida pakuvad abivalmis inimesed ja asutused.",
+    "lookingForHelp": "Ma otsin varjupaika",
     "shareHelp": "",
-    "title": "Ayudamos a encontrar refugio a las víctimas de la guerra en Ucrania"
+    "title": ""
   }
 }

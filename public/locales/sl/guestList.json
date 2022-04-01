@@ -2,10 +2,10 @@
   "arrival": "",
   "persons": "",
   "locationPreference": "",
-  "anyLocation": "",
   "travelingWithAnimal": "",
-  "travelingWithOlderPerson": "",
-  "travelingWithDisabledPerson": "",
   "travelingWithToddler": "",
-  "inviteGuest": ""
+  "inviteGuest": "",
+  "anyLocation": "",
+  "travelingWithOlderPerson": "",
+  "travelingWithDisabledPerson": ""
 }

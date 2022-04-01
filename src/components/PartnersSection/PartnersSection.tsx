@@ -6,6 +6,7 @@ import { Theme } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 import { PartnerCard } from "../PartnerCard";
 import SectionTitle from "../SectionTitle";
+import { Routes } from "../../consts/router";
 
 type StyledSectionProps = { bgColor?: string; theme: Theme };
 const StyledSection = styled.View<StyledSectionProps>`
@@ -88,7 +89,7 @@ export function PartnersSection() {
   const router = useRouter();
 
   const onCTAPress = () => {
-    router.push("/partners");
+    router.push(Routes.PARTNERS);
   };
 
   return (

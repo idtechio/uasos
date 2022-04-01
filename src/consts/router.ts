@@ -5,4 +5,7 @@ export enum Routes {
   GUEST = "/guest",
   DETAILS = "/details",
   REGISTER = "/register",
+  REGULATIONS = "/regulations",
+  PRIVACY_POLICY = "/privacy-policy",
+  PARTNERS = "/partners",
 }

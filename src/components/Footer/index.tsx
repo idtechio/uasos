@@ -9,10 +9,12 @@ import {
 } from "./Footer.styled";
 import SosuaLogoWhite from "../../../src/style/svgs/sosua_logo_white.svg";
 import { useRouter } from "next/router";
+import { Routes } from "../../consts/router";
 
 const Footer = () => {
   const { t } = useTranslation();
   const router = useRouter();
+  const { PRIVACY_POLICY, REGULATIONS, PARTNERS } = Routes;
 
   return (
     <FooterWrapper>
@@ -21,14 +23,18 @@ const Footer = () => {
       </FooterHeaderWrapper>
       <HorizontalLine />
       <FooterContentWrapper>
-        <Link href="/regulamin.pdf" passHref locale={false}>
-          <FooterLink>{t("termsOfService")}</FooterLink>
+        <Link href={REGULATIONS} passHref>
+          <FooterLink active={router.pathname === REGULATIONS}>
+            {t("termsOfService")}
+          </FooterLink>
         </Link>
-        <Link href="/polityka-prywatnosci.pdf" passHref locale={false}>
-          <FooterLink>{t("privacyPolicy")}</FooterLink>
+        <Link href={PRIVACY_POLICY} passHref>
+          <FooterLink active={router.pathname === PRIVACY_POLICY}>
+            {t("privacyPolicy")}
+          </FooterLink>
         </Link>
-        <Link href="/partners" passHref>
-          <FooterLink active={router.pathname === "/partners"}>
+        <Link href={PARTNERS} passHref>
+          <FooterLink active={router.pathname === PARTNERS}>
             {t("patrons")}
           </FooterLink>
         </Link>

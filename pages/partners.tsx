@@ -1,4 +1,3 @@
-import { Pressable } from "react-native";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
@@ -9,8 +8,8 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import { NGO, INITIATORS, PARTNERS } from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
-import { useRouter } from "next/router";
 import { Theme } from "../src/style/theme.config";
+import GoBack from "../src/components/GoBack";
 
 const PartnersContainer = styled.View`
   width: 100%;
@@ -45,45 +44,13 @@ const StyledPartnerCard = styled(PartnerCard)`
   aspect-ratio: 1.625;
 `;
 
-const GoBackIcon = styled.Image`
-  width: 8px;
-  height: 14px;
-  margin-right: 20px;
-`;
-
-const Text = styled.Text`
-  font-weight: 700;
-  font-size: 13px;
-  color: #003566;
-`;
-
-const BackContainer = styled.View`
-  display: flex;
-  flex-direction: row;
-`;
-
-const BackToMainPage = () => {
-  const router = useRouter();
-  const { t } = useTranslation();
-
-  return (
-    <Pressable onPress={() => router.push("/")}>
-      <BackContainer>
-        {/* @ts-expect-error TODO: fix prop type */}
-        <GoBackIcon source="/goBack.svg" />
-        <Text>{t("back")}</Text>
-      </BackContainer>
-    </Pressable>
-  );
-};
-
 const PartnersPage = () => {
   const { t } = useTranslation("landingPage");
 
   return (
     <CompositionAppBody>
       <Section>
-        <BackToMainPage />
+        <GoBack />
       </Section>
 
       <Section>
