@@ -242,7 +242,7 @@ export default function FormAdGuest({
         <SectionContent>
           <View style={{ zIndex: 14 }}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.countryOfRefugeLabel")}
+              {t("others:forms.createRefuge.shelter.whatIsTargetCountry")}
             </InputCotrolLabel>
             <FormCountryDropdown
               zIndex={14}
@@ -257,7 +257,7 @@ export default function FormAdGuest({
           </View>
           <View style={{ zIndex: 13, marginTop: 10 }}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.cityLabel")}
+              {t("others:forms.createRefuge.shelter.targetCityAndSurroundings")}
               <View style={styles.tooltipText}>
                 <Tooltip>
                   <Text style={{ zIndex: 99 }}>
@@ -268,13 +268,13 @@ export default function FormAdGuest({
             </InputCotrolLabel>
             <Buttons style={{ justifyContent: "space-between" }}>
               <ChoiceButton
-                text={t("refugeeAddForm.anyCity")}
+                text={t("others:forms.createRefuge:shelter.anyCity")}
                 isSmall
                 onPress={() => setLocation(Location.Any)}
                 isSelected={location === Location.Any}
               />
               <ChoiceButton
-                text={t("refugeeAddForm.specificCity")}
+                text={t("others:forms.match.specificCity")}
                 isSmall
                 onPress={() => setLocation(Location.Preffered)}
                 isSelected={location === Location.Preffered}
