@@ -106,7 +106,7 @@ const Offers = ({
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              <EditOfferButton />
+              <EditOfferButton targetID={o.id} targetType="hosts" />
             </MoreButtonWrapper>
 
             <Placeholder />

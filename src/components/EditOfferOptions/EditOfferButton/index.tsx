@@ -44,7 +44,13 @@ const buttons = [
 
 type ModalTypes = "delete" | "report" | "renew" | null;
 
-export default function EditOfferButton() {
+export default function EditOfferButton({
+  targetID,
+  targetType,
+}: {
+  targetID: string;
+  targetType: "hosts" | "guests";
+}) {
   const containerRef = useRef<View | null>(null);
 
   const { t } = useTranslation();
@@ -67,7 +73,13 @@ export default function EditOfferButton() {
 
     switch (modalOpened) {
       case "delete":
-        modalComponent = <DeleteOfferForm close={closeModal} />;
+        modalComponent = (
+          <DeleteOfferForm
+            close={closeModal}
+            targetID={targetID}
+            targetType={targetType}
+          />
+        );
         break;
 
       case "renew":
@@ -89,7 +101,7 @@ export default function EditOfferButton() {
         </CardModal>
       )
     );
-  }, [modalOpened, closeModal]);
+  }, [modalOpened, closeModal, targetID, targetType]);
 
   const PopoverOptions = useCallback(
     () => (
@@ -112,7 +124,7 @@ export default function EditOfferButton() {
         })}
       </Options>
     ),
-    []
+    [t]
   );
 
   useWebHandleClickOutside(containerRef, popoverOpened, () =>
