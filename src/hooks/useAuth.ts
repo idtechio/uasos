@@ -39,9 +39,9 @@ const useAuth = () => {
       const account = await AccountApi.getAccount()
         .then((res) => res)
         .catch(() => null);
-      if (user) {
-        await AccountApi.updateAccount({ payload: {} });
-      }
+      // if (user) {
+      //   await AccountApi.updateAccount({ payload: {} });
+      // }
 
       setIdentity(user);
       setAccount(account);
