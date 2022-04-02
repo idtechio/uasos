@@ -18,10 +18,10 @@
         "cta": "Einen Schutzraum vorschlagen"
     },
     "weMatched": {
-        "title": "Wir waren bereits in der Lage, die...",
+        "title": "Bis jetzt...",
         "cards": {
-            "helpedPeople": "Bedürftige",
-            "lookingForHelp": "immer noch auf der Suche nach Hilfe",
+            "helpedPeople": "unterstützte Flüchtlinge",
+            "lookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
             "currentOffers": "aktuell verfügbare Angebote"
         }
     },

@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
-        "refugesSupported": "unterstützte Flüchtlinge",
-        "soFar": "Bis jetzt...",
         "appDescription": "Wir helfen Flüchtlingen, automatisch eine <b>kostenlose<\/b> Unterkunft in <b>Polen, Tschechien, Ungarn und der Slowakei<\/b> zu finden <b>,<\/b> die von hilfsbereiten Menschen und Einrichtungen angeboten wird.",
         "comingSoon": "Demnächst: Funktionen für Verkehr, Stellensuche und medizinische Beratung"
     },

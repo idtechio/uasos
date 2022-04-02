@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "réfugiés qui cherchent toujours de l'aide",
-        "refugesSupported": "réfugiés soutenus",
-        "soFar": "Jusqu'à présent...",
         "appDescription": "Nous aidons les réfugiés à trouver un logement <b>gratuit<\/b> chez des personnes et institutions qui souhaitent aider en <b>Pologne, République Tchèque, Hongrie et Slovaquie<\/b> à travers une plateforme automatique.",
         "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux."
     },

@@ -198,7 +198,8 @@
             "nationalityError": "Státní příslušnost je vyžadovaný údaj"
         },
         "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
-        "transportReady": "Možnost dopravy"
+        "transportReady": "Možnost dopravy",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Odhlásit se",
     "back": "Zpět",

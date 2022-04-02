@@ -18,10 +18,10 @@
         "cta": "Szállás felajánlása"
     },
     "weMatched": {
-        "title": "Már ennyi sikeres párosítást hajtottunk végre...",
+        "title": "Eddig...",
         "cards": {
-            "helpedPeople": "segítséget keresők",
-            "lookingForHelp": "továbbra is segítséget keres",
+            "helpedPeople": "támogatott menekültek",
+            "lookingForHelp": "a menekültek még mindig segítséget keresnek",
             "currentOffers": "Jelenleg elérhető ajánlatok"
         }
     },

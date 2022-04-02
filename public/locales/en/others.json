@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "refugees still looking for help",
-        "refugesSupported": "refugees supported",
-        "soFar": "So far...",
         "appDescription": "We help refugees find automatically <b>free<\/b> accommodation in <b>Poland, Czechia, Hungary and Slovakia,<\/b> offered by people and institutions willing to help.",
         "comingSoon": "Coming soon: transport, job search and medical advice functionalities"
     },
