@@ -303,7 +303,8 @@
             "accommodationType": "Vyberte typ ubytovania",
             "countryOfGroup": "Vyberte národnosť"
         },
-        "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní"
+        "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní",
+        "countryOfGroup": "Z akej krajiny skupina pochádza?"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

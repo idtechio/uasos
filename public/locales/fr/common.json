@@ -303,7 +303,8 @@
             "accommodationType": "Sélectionnez le type de logement",
             "countryOfGroup": "Veuillez sélectionner la nationalité"
         },
-        "refugeInfoHeader": "Informations supplémentaires sur le logement proposé"
+        "refugeInfoHeader": "Informations supplémentaires sur le logement proposé",
+        "countryOfGroup": ""
     },
     "accomodationPhoto": "Ajouter une photo du logement proposé",
     "accomodationPhotoReset": "Supprimer",

@@ -303,7 +303,8 @@
             "accommodationType": "Selectați tipul de cazare",
             "countryOfGroup": "Vă rugăm selectați naționalitatea"
         },
-        "refugeInfoHeader": "Adăugați informații cu privire la cazare"
+        "refugeInfoHeader": "Adăugați informații cu privire la cazare",
+        "countryOfGroup": "Care este țara de origine a grupului?"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",
