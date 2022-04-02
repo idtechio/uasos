@@ -24,6 +24,8 @@ const ReportBodyPropsType = object({
 
 type ReportBodyProps = Infer<typeof ReportBodyPropsType>;
 
+type ReportDataType = { uid: string } & ReportBodyProps;
+
 interface ReportApiRequest extends NextApiRequest {
   body: ReportBodyProps;
 }
@@ -45,12 +47,14 @@ async function listingReport(
       return;
     }
 
-    const reportData = coerceTo(ReportBodyPropsType, req.body);
+    const body = coerceTo(ReportBodyPropsType, req.body);
 
-    if (reportData instanceof ContentedError) {
-      res.status(400).json({ message: reportData });
+    if (body instanceof ContentedError) {
+      res.status(400).json({ message: body });
       return;
     }
+
+    const reportData: ReportDataType = { uid: user.uid, ...body };
 
     try {
       const topicNameOrId = process.env.TOPIC_REPORT;
