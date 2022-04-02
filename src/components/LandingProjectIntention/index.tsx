@@ -108,7 +108,10 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
   const router = useRouter();
-  const { identity } = useContext(AuthContext);
+  const { identity, account } = useContext(AuthContext);
+
+  const isAccountVerified =
+    identity && account?.confirmedEmail && account?.confirmedPhone;
 
   return (
     <Container>
@@ -126,7 +129,7 @@ const LandingProjectIntention = () => {
           </SubTitleWrapper>
 
           <ButtonContainer>
-            {identity ? (
+            {isAccountVerified ? (
               <>
                 <Link href="/guest">
                   <a>
