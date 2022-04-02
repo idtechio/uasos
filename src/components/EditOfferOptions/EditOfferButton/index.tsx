@@ -21,6 +21,7 @@ const buttons = [
   {
     icon: <ClockIcon />,
     type: "renew",
+    hide: true,
     label: "others:common.words.renew",
   },
   {
@@ -37,7 +38,6 @@ const buttons = [
   {
     icon: <BinIcon />,
     type: "delete",
-    hide: true,
     label: "hostAdd.accomodationPhotoReset",
   },
 ];
