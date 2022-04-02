@@ -314,7 +314,7 @@ export default function FormAdGuest({
       <CompositionSection
         zIndex={2}
         padding={[35, 30, 8, 30]}
-        header={t("refugeeAddForm.additionalInformationHeader")}
+        header={t("others:forms.createRefuge:shelter.groupDetails")}
       >
         <SectionContent>
           <View style={{}}>
