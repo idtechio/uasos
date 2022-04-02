@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "uprchlíků stále hledá pomoc",
-        "refugesSupported": "podpořených uprchlíků",
-        "soFar": "Zatím...",
         "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Hungarech<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
         "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství"
     },

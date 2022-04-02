@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "utečencov stále hľadá pomoc",
-        "refugesSupported": "podporených utečencov",
-        "soFar": "Doteraz...",
         "appDescription": "Pomáhame utečencom automaticky nájsť <b>neplatené<\/b> ubytovanie v <b>Poľsku, Česku, Maďarsku a na Slovensku<\/b>, ktoré ponúkajú inštitúcie a ľudia ochotní pomôcť.",
         "comingSoon": "Čoskoro: funkcie pre dopravu, hľadanie práce a zdravotnícku asistenciu."
     },

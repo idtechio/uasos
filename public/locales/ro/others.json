@@ -49,8 +49,8 @@
         },
         "nationalities": {
             "ukrainians": "Ucrainenii",
-            "ukrainian": "",
-            "nonUkrainian": ""
+            "ukrainian": "Ucrainean",
+            "nonUkrainian": "Non-Ucrainean"
         }
     },
     "forms": {
@@ -81,9 +81,9 @@
             "validations": {
                 "passwordMismatch": "Parolele sunt diferite"
             },
-            "password": "",
+            "password": "Parola (min. 8 caractere)",
             "errors": {
-                "duplicatedMail": ""
+                "duplicatedMail": "Adresa de e-mail folosită pentru logare este deja folosită în sistemul nostru. Vă rugăm să încercați să vă logați din nou printr-o metodă de conectare diferită."
             }
         },
         "match": {
@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "refugiații încă mai caută ajutor",
-        "refugesSupported": "refugiați sprijiniți",
-        "soFar": "Până acum...",
         "appDescription": "Îi ajutăm pe refugiați să găsească automat cazare <b>gratuită<\/b> în <b>Polonia, Cehia, Ungaria și Slovacia,<\/b> oferită de persoane și instituții dispuse să ajute.",
         "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală"
     },

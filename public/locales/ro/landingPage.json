@@ -18,10 +18,10 @@
         "cta": "Propuneți o cazare"
     },
     "weMatched": {
-        "title": "Am găsit deja o potrivire",
+        "title": "Până acum...",
         "cards": {
-            "helpedPeople": "persoane care caută ajutor",
-            "lookingForHelp": "Ajutor",
+            "helpedPeople": "refugiați sprijiniți",
+            "lookingForHelp": "refugiații încă mai caută ajutor",
             "currentOffers": "Oferte disponibile momentan"
         }
     },

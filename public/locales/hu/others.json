@@ -251,9 +251,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "a menekültek még mindig segítséget keresnek",
-        "refugesSupported": "támogatott menekültek",
-        "soFar": "Eddig...",
         "appDescription": "Segítünk a menekülteknek automatikusan <b>ingyenes<\/b> szállást találni <b>Lengyelországban, Csehországban, Hunniában és Szlovákiában,<\/b> amelyet segítőkész emberek és intézmények kínálnak.",
         "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadási funkciók"
     },

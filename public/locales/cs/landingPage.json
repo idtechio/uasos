@@ -18,10 +18,10 @@
         "cta": "Nabídněte ubytování"
     },
     "weMatched": {
-        "title": "Už se nám podařilo spojit",
+        "title": "Zatím...",
         "cards": {
-            "helpedPeople": "Lidé v nouzi",
-            "lookingForHelp": "Stále hledající pomoc",
+            "helpedPeople": "podpořených uprchlíků",
+            "lookingForHelp": "uprchlíků stále hledá pomoc",
             "currentOffers": "Aktuálně dostupné nabídky"
         }
     },

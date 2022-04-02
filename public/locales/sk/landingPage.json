@@ -18,10 +18,10 @@
         "cta": "Ponúknite ubytovanie"
     },
     "weMatched": {
-        "title": "Už sa nám podarilo spojiť...",
+        "title": "Doteraz...",
         "cards": {
-            "helpedPeople": "ľudia v núdzi",
-            "lookingForHelp": "stále hľadá pomoc",
+            "helpedPeople": "podporených utečencov",
+            "lookingForHelp": "utečencov stále hľadá pomoc",
             "currentOffers": "Aktuálne dostupné ponuky"
         }
     },
