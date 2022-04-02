@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { StyleProp, ViewStyle } from "react-native";
+import { Pressable, StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
 import { hexToRGB } from "../../helpers/misc";
 import { Theme } from "../../style/theme.config";
@@ -39,7 +38,7 @@ type ToastProps = {
   color: string;
   icon?: React.ReactElement;
   label: string;
-  cta?: { label: string; href: string };
+  cta?: { label: string; onPress: () => void };
   contaierStyle?: StyleProp<ViewStyle>;
 };
 
@@ -57,9 +56,9 @@ const Toast = ({
         <Label color={color}>{label}</Label>
       </TextAndIconWrapper>
       {cta ? (
-        <Link href={cta.href} passHref>
+        <Pressable onPress={cta.onPress}>
           <LinkText>{cta.label}</LinkText>
-        </Link>
+        </Pressable>
       ) : (
         <></>
       )}
