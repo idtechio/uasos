@@ -9,6 +9,7 @@ import ButtonCta from "../../EditOfferOptions/ButtonCta";
 import Inputs from "./Inputs";
 import { ContentContainer, FormHeader, ScreenHeader } from "./style";
 import { EditProfileForm } from "./types";
+import { Authorization } from "../../../hooks/useAuth";
 
 const FormFooter = styled.View`
   display: flex;
@@ -77,7 +78,7 @@ export default function UserDetailsForm({
         phone: `${data.phonePrefix}${data.phone}`,
         prefferedLang: data.preferredLanguage,
       };
-
+      await Authorization.updateMail(payload.email);
       mutate(
         { payload },
         {

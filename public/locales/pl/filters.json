@@ -1,7 +1,7 @@
 {
     "location": "Lokalizacja",
     "numberOfGuests": "Liczba gości",
-    "timeframe": "Długosć pobytu",
+    "timeframe": "Długość pobytu",
     "twoWeeks": "Dwa tygodnie",
     "month": "Jeden miesiąc",
     "longerThanMonth": "Dłużej niż miesiąc",
@@ -9,6 +9,6 @@
     "disabledPerson": "Osoby z niepełnosprawnością",
     "kidsBelow2yo": "Jestem z dzieckiem",
     "animalsWelcome": "Zwierzęta mile widziane",
-    "yes": "tak",
-    "no": "nie"
+    "yes": "Tak",
+    "no": "Nie"
 }

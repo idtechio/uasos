@@ -18,6 +18,8 @@ import { AuthContext } from "../_app";
 import EmailVerificationModal from "../../src/components/EmailVerificationModal";
 import { Authorization } from "../../src/hooks/useAuth";
 import { useRouter } from "next/router";
+import ConfirmRejectModal from "../../src/components/ConfirmRejectModal";
+import { MODAL_STATUS } from "../../src/components/ConfirmRejectModal/constants";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
@@ -41,7 +43,7 @@ function DashboardContent() {
 
   const showEmailVerificationModal = async () => {
     if (identity) {
-      if (identity.email) {
+      if (identity?.email) {
         await Authorization.sendVerificationEmail(identity);
         setEmailModalVisible(true);
       } else {
@@ -83,6 +85,8 @@ function DashboardContent() {
             }
             isRequestsLoading={!loaded || isRequestsLoading}
           />
+          <ConfirmRejectModal status={MODAL_STATUS.ACCEPT} />
+          <ConfirmRejectModal status={MODAL_STATUS.REJECT} />
         </>
         {emailModalVisible ? (
           <EmailVerificationModal onClose={() => setEmailModalVisible(false)} />

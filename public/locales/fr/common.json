@@ -198,7 +198,8 @@
             "nationalityError": "La nationalité du réfugié est requise"
         },
         "prolongationReady": "Possibilité de prolonger le séjour (payant)",
-        "transportReady": "Possibilité de transport"
+        "transportReady": "Possibilité de transport",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Se déconnecter",
     "back": "Précédent",
