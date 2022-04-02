@@ -45,9 +45,9 @@ export const ThankfulnessModal = ({
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href={Routes.HOMEPAGE}>
+          <Link href={Routes.HOMEPAGE} passHref>
             <a>
-              <ButtonCta anchor={t("backToHomePage")} />
+              <ButtonCta pressable={false} anchor={t("backToHomePage")} />
             </a>
           </Link>
         </ThankfulnessModalButtonCtaWrapper>
