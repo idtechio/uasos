@@ -42,7 +42,7 @@ async function deleteHost(
 
     const topicNameOrId = process.env.TOPIC_HOST_DELETE;
     const pubResult = await publishMessage(topicNameOrId, {
-      id: host.db_hosts_id,
+      db_hosts_id: host.db_hosts_id,
     });
 
     res

@@ -42,7 +42,7 @@ async function deleteGuest(
 
     const topicNameOrId = process.env.TOPIC_GUEST_DELETE;
     const pubResult = await publishMessage(topicNameOrId, {
-      id: guest.db_guests_id,
+      db_guests_id: guest.db_guests_id,
     });
 
     res
