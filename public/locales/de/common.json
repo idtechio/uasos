@@ -198,7 +198,8 @@
             "nationalityError": "Die Staatsangehörigkeit eines Flüchtlings ist erforderlich"
         },
         "prolongationReady": "Möglichkeit der Verlängerung des Aufenthalts (gegen Gebühr)",
-        "transportReady": "Möglichkeit des Transports"
+        "transportReady": "Möglichkeit des Transports",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Abmelden",
     "back": "",
