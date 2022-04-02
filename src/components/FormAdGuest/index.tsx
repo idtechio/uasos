@@ -1,30 +1,30 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import styled from "styled-components/native";
+import type { GuestProps } from "../../../pages/api/guests/add";
 import { FormType } from "../../helpers/FormTypes";
+import { useAddGuestToApi } from "../../queries/useRequestsList";
+import AnimalsIcon from "../../style/svgs/animals.svg";
+import DisabilityIcon from "../../style/svgs/disability.svg";
+import ElderIcon from "../../style/svgs/elder.svg";
+import PregnantIcon from "../../style/svgs/pregnant.svg";
 import { ButtonCta } from "../Buttons";
-import FormDropdown from "../Inputs/FormDropdown";
+import CardModal from "../CardModal";
+import { CompositionSection } from "../Compositions";
+import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import { Buttons } from "../Forms/RadioButtons/style";
+import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
 import FormCountryDropdown from "../Inputs/FormCountryDropdown";
-import { CompositionSection } from "../Compositions";
-import { Tooltip } from "../Tooltip";
-import { InputControl, InputCotrolLabel, ChoiceButton } from "../Forms";
+import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
-import AnimalsIcon from "../../style/svgs/animals.svg";
-import ElderIcon from "../../style/svgs/elder.svg";
-import DisabilityIcon from "../../style/svgs/disability.svg";
-import PregnantIcon from "../../style/svgs/pregnant.svg";
-import addGuestToApi from "../../helpers/addGuestToApi";
-import CardModal from "../CardModal";
-import { ThankfulnessModal } from "../ThankfulnessModal";
-import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
-import styled from "styled-components/native";
-import { Buttons } from "../Forms/RadioButtons/style";
+import { ThankfulnessModal } from "../ThankfulnessModal";
+import { Tooltip } from "../Tooltip";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -72,6 +72,7 @@ export default function FormAdGuest({
       },
     },
   });
+  const { mutate } = useAddGuestToApi();
 
   const [location, setLocation] = useState<Location>(Location.Any);
   const [submitRequstState, setSubmitRequstState] =
@@ -154,14 +155,17 @@ export default function FormAdGuest({
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    try {
-      await addGuestToApi(apiObject);
-      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-    } finally {
-      setSubmitRequstState((state) => ({ ...state, loading: false }));
-    }
+    mutate(apiObject, {
+      onSuccess: () => {
+        setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+      },
+      onError: (error) => {
+        setSubmitRequstState((state) => ({ ...state, error }));
+      },
+      onSettled: () => {
+        setSubmitRequstState((state) => ({ ...state, loading: false }));
+      },
+    });
   };
 
   const onError = (_error: unknown) => {
@@ -242,7 +246,7 @@ export default function FormAdGuest({
         <SectionContent>
           <View style={{ zIndex: 14 }}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.countryOfRefugeLabel")}
+              {t("others:forms.createRefuge.shelter.whatIsTargetCountry")}
             </InputCotrolLabel>
             <FormCountryDropdown
               zIndex={14}
@@ -257,7 +261,7 @@ export default function FormAdGuest({
           </View>
           <View style={{ zIndex: 13, marginTop: 10 }}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.cityLabel")}
+              {t("others:forms.createRefuge.shelter.targetCityAndSurroundings")}
               <View style={styles.tooltipText}>
                 <Tooltip>
                   <Text style={{ zIndex: 99 }}>
@@ -268,13 +272,13 @@ export default function FormAdGuest({
             </InputCotrolLabel>
             <Buttons style={{ justifyContent: "space-between" }}>
               <ChoiceButton
-                text={t("refugeeAddForm.anyCity")}
+                text={t("others:forms.createRefuge:shelter.anyCity")}
                 isSmall
                 onPress={() => setLocation(Location.Any)}
                 isSelected={location === Location.Any}
               />
               <ChoiceButton
-                text={t("refugeeAddForm.specificCity")}
+                text={t("others:forms.match.specificCity")}
                 isSmall
                 onPress={() => setLocation(Location.Preffered)}
                 isSelected={location === Location.Preffered}
@@ -314,7 +318,7 @@ export default function FormAdGuest({
       <CompositionSection
         zIndex={2}
         padding={[35, 30, 8, 30]}
-        header={t("refugeeAddForm.additionalInformationHeader")}
+        header={t("others:forms.createRefuge:shelter.groupDetails")}
       >
         <SectionContent>
           <View style={{}}>

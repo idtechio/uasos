@@ -20,12 +20,12 @@ import {
   additionalHostsFeats,
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
-import addHostToApi from "../../helpers/addHostToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
+import { useAddHostToApi } from "../../queries/useOffersList";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -56,6 +56,7 @@ const submitRequestDefualtState = {
 export default function FormAdHost() {
   const { t } = useTranslation();
   const { name: sessionName, email: sessionEmail } = useSessionUserData();
+  const { mutate } = useAddHostToApi();
 
   const form = useForm<FormType>({
     defaultValues: {
@@ -112,44 +113,54 @@ export default function FormAdHost() {
       phonePrefix,
       phoneNumber,
       pregnantReady,
-      town,
+      city,
       transportReady: transportReady,
+      zipCode,
+      street,
+      buildingNumber,
+      apartmentNumber,
+      closestLargeCity,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
-    try {
-      await addHostToApi({
-        // name: name,
-        country: country,
-        phone_num: `${phonePrefix}${phoneNumber}`,
-        email: email,
-        city: town,
-        shelter_type: [accommodationType],
-        acceptable_group_relations: groupsTypes,
-        beds: guestCount,
-        ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_any_nationality:
-          nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
-        duration_category: [accommodationTime],
-        transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
-        // TODO set data for new props:
-        closest_city: "",
-        zipcode: "",
-        street: "",
-        building_no: "",
-        appartment_no: "",
-        can_be_verified: Boolean.FALSE,
-      });
 
-      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-    } finally {
-      setSubmitRequstState((state) => ({ ...state, loading: false }));
-    }
+    const payload = {
+      // name: name,
+      country: country,
+      phone_num: `${phonePrefix}${phoneNumber}`,
+      email: email,
+      city: city,
+      shelter_type: [accommodationType],
+      acceptable_group_relations: groupsTypes,
+      beds: guestCount,
+      ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_any_nationality:
+        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+      duration_category: [accommodationTime],
+      transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
+      // TODO set data for new props:
+      closest_city: closestLargeCity,
+      zipcode: zipCode,
+      street: street,
+      building_no: buildingNumber,
+      appartment_no: apartmentNumber,
+      can_be_verified: Boolean.FALSE,
+    };
+
+    mutate(payload, {
+      onSuccess: () => {
+        setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+      },
+      onError: (error) => {
+        setSubmitRequstState((state) => ({ ...state, error }));
+      },
+      onSettled: () => {
+        setSubmitRequstState((state) => ({ ...state, loading: false }));
+      },
+    });
   };
 
   const OVERNIGHT_DURATION_TYPES = [
@@ -220,12 +231,12 @@ export default function FormAdHost() {
             <FormCityDropdown
               zIndex={13}
               country={watchCountry}
-              name="advancedHost.town"
+              name="advancedHost.closestLargeCity"
               placeholder={t("refugeeAddForm.cityPlaceholder")}
               rules={{
                 required: true,
               }}
-              error={errors?.advancedHost?.town}
+              error={errors?.advancedHost?.closestLargeCity}
               errorMsg={t("validations.requiredTown")}
             />
           </View>
@@ -415,7 +426,7 @@ export default function FormAdHost() {
                 required: true,
               }}
               error={errors?.advancedHost?.groupsTypes}
-              errorMsg={t("hostAdd.errors.groupsTypes")}
+              errorMsg={t("refugeeAddForm.errors.groupRelations")}
             />
           </View>
 
@@ -445,15 +456,17 @@ export default function FormAdHost() {
             anchor={t("refugeeAddForm.addButton")}
             style={styles.addButton}
           />
-          {isSubmitted && !isValid ? (
+          {isSubmitted && !isValid && (
             <View style={styles.errorWrapper}>
-              {(submitRequstState.error as Error)?.message ? (
-                <Error>{(submitRequstState.error as Error)?.message}</Error>
-              ) : (
-                <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
-              )}
+              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
             </View>
-          ) : null}
+          )}
+
+          {isSubmitted && (submitRequstState.error as Error)?.message && (
+            <View style={styles.errorWrapper}>
+              <Error>{(submitRequstState.error as Error).message}</Error>
+            </View>
+          )}
         </InputControl>
       </CompositionSection>
     </FormProvider>
