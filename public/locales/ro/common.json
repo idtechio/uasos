@@ -198,7 +198,8 @@
             "nationalityError": "Vă rugăm selectați naționalitatea"
         },
         "prolongationReady": "Posibilitate de prelungire a șederii (contra unei sume de bani)",
-        "transportReady": "Posibilitate de transport"
+        "transportReady": "Posibilitate de transport",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Deconectați-vă",
     "back": "Empty",
