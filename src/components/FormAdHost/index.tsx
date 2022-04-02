@@ -420,7 +420,7 @@ export default function FormAdHost() {
                 required: true,
               }}
               error={errors?.advancedHost?.groupsTypes}
-              errorMsg={t("hostAdd.errors.groupsTypes")}
+              errorMsg={t("refugeeAddForm.errors.groupRelations")}
             />
           </View>
 
