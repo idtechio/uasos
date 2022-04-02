@@ -112,8 +112,13 @@ export default function FormAdHost() {
       phonePrefix,
       phoneNumber,
       pregnantReady,
-      town,
+      city,
       transportReady: transportReady,
+      zipCode,
+      street,
+      buildingNumber,
+      apartmentNumber,
+      closestLargeCity,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
@@ -123,7 +128,7 @@ export default function FormAdHost() {
         country: country,
         phone_num: `${phonePrefix}${phoneNumber}`,
         email: email,
-        city: town,
+        city: city,
         shelter_type: [accommodationType],
         acceptable_group_relations: groupsTypes,
         beds: guestCount,
@@ -136,11 +141,11 @@ export default function FormAdHost() {
         duration_category: [accommodationTime],
         transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
         // TODO set data for new props:
-        closest_city: "",
-        zipcode: "",
-        street: "",
-        building_no: "",
-        appartment_no: "",
+        closest_city: closestLargeCity,
+        zipcode: zipCode,
+        street: street,
+        building_no: buildingNumber,
+        appartment_no: apartmentNumber,
         can_be_verified: Boolean.FALSE,
       });
 
@@ -220,12 +225,12 @@ export default function FormAdHost() {
             <FormCityDropdown
               zIndex={13}
               country={watchCountry}
-              name="advancedHost.town"
+              name="advancedHost.closestLargeCity"
               placeholder={t("refugeeAddForm.cityPlaceholder")}
               rules={{
                 required: true,
               }}
-              error={errors?.advancedHost?.town}
+              error={errors?.advancedHost?.closestLargeCity}
               errorMsg={t("validations.requiredTown")}
             />
           </View>
@@ -445,15 +450,17 @@ export default function FormAdHost() {
             anchor={t("refugeeAddForm.addButton")}
             style={styles.addButton}
           />
-          {isSubmitted && !isValid ? (
+          {isSubmitted && !isValid && (
             <View style={styles.errorWrapper}>
-              {(submitRequstState.error as Error)?.message ? (
-                <Error>{(submitRequstState.error as Error)?.message}</Error>
-              ) : (
-                <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
-              )}
+              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
             </View>
-          ) : null}
+          )}
+
+          {isSubmitted && (submitRequstState.error as Error)?.message && (
+            <View style={styles.errorWrapper}>
+              <Error>{(submitRequstState.error as Error).message}</Error>
+            </View>
+          )}
         </InputControl>
       </CompositionSection>
     </FormProvider>

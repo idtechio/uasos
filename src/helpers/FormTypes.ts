@@ -93,7 +93,6 @@ export type FormType = {
     email: string;
     phonePrefix: string;
     phoneNumber: string;
-    town: string;
     country: string;
     accommodationType: string;
     guestCount: number;
@@ -112,6 +111,7 @@ export type FormType = {
     elderReady: string;
     zipCode: string;
     city: string;
+    closestLargeCity: string;
     street: string;
     buildingNumber: string;
     apartmentNumber: string;
