@@ -20,12 +20,12 @@ import {
   additionalHostsFeats,
   GROUP_RELATIONS,
 } from "./FormAddHost.data";
-import addHostToApi from "../../helpers/addHostToApi";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
+import { useAddHostToApi } from "../../queries/useOffersList";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -56,6 +56,7 @@ const submitRequestDefualtState = {
 export default function FormAdHost() {
   const { t } = useTranslation();
   const { name: sessionName, email: sessionEmail } = useSessionUserData();
+  const { mutate } = useAddHostToApi();
 
   const form = useForm<FormType>({
     defaultValues: {
@@ -122,39 +123,44 @@ export default function FormAdHost() {
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
-    try {
-      await addHostToApi({
-        // name: name,
-        country: country,
-        phone_num: `${phonePrefix}${phoneNumber}`,
-        email: email,
-        city: city,
-        shelter_type: [accommodationType],
-        acceptable_group_relations: groupsTypes,
-        beds: guestCount,
-        ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
-        ok_for_any_nationality:
-          nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
-        duration_category: [accommodationTime],
-        transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
-        // TODO set data for new props:
-        closest_city: closestLargeCity,
-        zipcode: zipCode,
-        street: street,
-        building_no: buildingNumber,
-        appartment_no: apartmentNumber,
-        can_be_verified: Boolean.FALSE,
-      });
 
-      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-    } finally {
-      setSubmitRequstState((state) => ({ ...state, loading: false }));
-    }
+    const payload = {
+      // name: name,
+      country: country,
+      phone_num: `${phonePrefix}${phoneNumber}`,
+      email: email,
+      city: city,
+      shelter_type: [accommodationType],
+      acceptable_group_relations: groupsTypes,
+      beds: guestCount,
+      ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_disabilities: disabilityReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
+      ok_for_any_nationality:
+        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+      duration_category: [accommodationTime],
+      transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
+      // TODO set data for new props:
+      closest_city: closestLargeCity,
+      zipcode: zipCode,
+      street: street,
+      building_no: buildingNumber,
+      appartment_no: apartmentNumber,
+      can_be_verified: Boolean.FALSE,
+    };
+
+    mutate(payload, {
+      onSuccess: () => {
+        setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+      },
+      onError: (error) => {
+        setSubmitRequstState((state) => ({ ...state, error }));
+      },
+      onSettled: () => {
+        setSubmitRequstState((state) => ({ ...state, loading: false }));
+      },
+    });
   };
 
   const OVERNIGHT_DURATION_TYPES = [

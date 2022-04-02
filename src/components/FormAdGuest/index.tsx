@@ -1,30 +1,30 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import styled from "styled-components/native";
+import type { GuestProps } from "../../../pages/api/guests/add";
 import { FormType } from "../../helpers/FormTypes";
+import { useAddGuestToApi } from "../../queries/useRequestsList";
+import AnimalsIcon from "../../style/svgs/animals.svg";
+import DisabilityIcon from "../../style/svgs/disability.svg";
+import ElderIcon from "../../style/svgs/elder.svg";
+import PregnantIcon from "../../style/svgs/pregnant.svg";
 import { ButtonCta } from "../Buttons";
-import FormDropdown from "../Inputs/FormDropdown";
+import CardModal from "../CardModal";
+import { CompositionSection } from "../Compositions";
+import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import { Buttons } from "../Forms/RadioButtons/style";
+import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
 import FormCountryDropdown from "../Inputs/FormCountryDropdown";
-import { CompositionSection } from "../Compositions";
-import { Tooltip } from "../Tooltip";
-import { InputControl, InputCotrolLabel, ChoiceButton } from "../Forms";
+import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
-import AnimalsIcon from "../../style/svgs/animals.svg";
-import ElderIcon from "../../style/svgs/elder.svg";
-import DisabilityIcon from "../../style/svgs/disability.svg";
-import PregnantIcon from "../../style/svgs/pregnant.svg";
-import addGuestToApi from "../../helpers/addGuestToApi";
-import CardModal from "../CardModal";
-import { ThankfulnessModal } from "../ThankfulnessModal";
-import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
-import styled from "styled-components/native";
-import { Buttons } from "../Forms/RadioButtons/style";
+import { ThankfulnessModal } from "../ThankfulnessModal";
+import { Tooltip } from "../Tooltip";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -72,6 +72,7 @@ export default function FormAdGuest({
       },
     },
   });
+  const { mutate } = useAddGuestToApi();
 
   const [location, setLocation] = useState<Location>(Location.Any);
   const [submitRequstState, setSubmitRequstState] =
@@ -154,14 +155,17 @@ export default function FormAdGuest({
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    try {
-      await addGuestToApi(apiObject);
-      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-    } finally {
-      setSubmitRequstState((state) => ({ ...state, loading: false }));
-    }
+    mutate(apiObject, {
+      onSuccess: () => {
+        setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+      },
+      onError: (error) => {
+        setSubmitRequstState((state) => ({ ...state, error }));
+      },
+      onSettled: () => {
+        setSubmitRequstState((state) => ({ ...state, loading: false }));
+      },
+    });
   };
 
   const onError = (_error: unknown) => {

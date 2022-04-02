@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { getOffersList } from "../client-api/offers";
-import addGuestToApi from "../helpers/addGuestToApi";
 import addHostToApi from "../helpers/addHostToApi";
 import { QueryKeys } from "./queryKeys";
 
@@ -12,21 +11,8 @@ export const useAddHostToApi = () => {
 
   return useMutation(addHostToApi, {
     onSuccess: () => {
-      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST], {
-        exact: false,
-      });
-    },
-  });
-};
-
-export const useAddGuestToApi = () => {
-  const queryClient = useQueryClient();
-
-  return useMutation(addGuestToApi, {
-    onSuccess: () => {
-      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST], {
-        exact: false,
-      });
+      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
+      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
     },
   });
 };
