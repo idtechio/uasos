@@ -303,7 +303,8 @@
             "accommodationType": "Выберите тип размещения",
             "countryOfGroup": "Пожалуйста, выберите национальность"
         },
-        "refugeInfoHeader": "Предоставить информацию о вашем жилье"
+        "refugeInfoHeader": "Предоставить информацию о вашем жилье",
+        "countryOfGroup": "Какова страна происхождения группы?"
     },
     "accomodationPhoto": "Добавьте фото предлагаемого приюта",
     "accomodationPhotoReset": "удалить",

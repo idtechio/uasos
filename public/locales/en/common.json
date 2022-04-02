@@ -303,7 +303,8 @@
             "accommodationType": "Select the type of accommodation",
             "countryOfGroup": "Please select nationality"
         },
-        "refugeInfoHeader": "Provide information about your accommodation"
+        "refugeInfoHeader": "Provide information about your accommodation",
+        "countryOfGroup": "What is the group's origin country?"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",

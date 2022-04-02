@@ -303,7 +303,8 @@
             "accommodationType": "Виберіть тип проживання",
             "countryOfGroup": "Будь ласка, виберіть національність"
         },
-        "refugeInfoHeader": "Надайте інформацію про своє житло"
+        "refugeInfoHeader": "Надайте інформацію про своє житло",
+        "countryOfGroup": ""
     },
     "accomodationPhoto": "Додайте фотографію пропонованого притулку",
     "accomodationPhotoReset": "видаляти",

@@ -303,7 +303,8 @@
             "accommodationType": "Válassza ki a szállás típusát",
             "countryOfGroup": "Kérjük, válassza ki az állampolgárságát"
         },
-        "refugeInfoHeader": "Adjon tájékoztatást a szállásáról"
+        "refugeInfoHeader": "Adjon tájékoztatást a szállásáról",
+        "countryOfGroup": "Melyik a csoport származási országa?"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",

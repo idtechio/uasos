@@ -303,7 +303,8 @@
             "accommodationType": "Wybierz typ noclegu",
             "countryOfGroup": "Wybierz narodowość"
         },
-        "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu"
+        "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu",
+        "countryOfGroup": "Z jakiego kraju pochodzi grupa?"
     },
     "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoReset": "Usuń",
