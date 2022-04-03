@@ -8,6 +8,7 @@ import ArrowIcon from "../../style/svgs/chevron-down.svg";
 import AddressIcon from "../../style/svgs/marker.svg";
 import PhoneIcon from "../../style/svgs/phone2.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
+import { toAccomodationTime } from "../SupportSection/mapper";
 import DataField from "./DataField";
 import GuestAdditionalInfo from "./GuestAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
@@ -89,7 +90,9 @@ export default function GuestCardContent({
             iconHeight={15}
             label={t("others:forms.match.durationWithData", {
               number: t(
-                `common:hostAdd.accommodationTimeLabel.${request.duration_category}`
+                `common:hostAdd.accommodationTimeLabel.${toAccomodationTime(
+                  request.duration_category
+                )}`
               ),
               unit: "",
             })}

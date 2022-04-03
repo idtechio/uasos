@@ -10,6 +10,7 @@ import AddressIcon from "../../style/svgs/marker.svg";
 import PhoneIcon from "../../style/svgs/phone2.svg";
 import HostIcon from "../../style/svgs/user-check.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
+import { toAccomodationTime } from "../SupportSection/mapper";
 import DataField from "./DataField";
 import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
@@ -121,12 +122,11 @@ export default function HostCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("others:forms.match.durationWithData", {
-              number: (typeof offer.duration_category === "string"
-                ? offer.duration_category.split(",")
-                : offer.duration_category
-              )
-                .map((el: string) => t(`staticValues.timePeriod.${el}`))
-                .join(", "),
+              number: t(
+                `common:hostAdd.accommodationTimeLabel.${toAccomodationTime(
+                  offer.duration_category
+                )}`
+              ),
               unit: "",
             })}
           />
