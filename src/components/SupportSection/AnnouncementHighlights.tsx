@@ -14,7 +14,7 @@ export const AnnouncementHighlights = ({
   beds: number;
   duration: string;
 }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation("others");
 
   return (
     <SectionInfo>
@@ -22,22 +22,21 @@ export const AnnouncementHighlights = ({
         <IconWrapper>
           <MarkerIcon />
         </IconWrapper>
-        <Label>{t("city")}:</Label>
-        <Label>{city}</Label>
+        <Label>{t("forms.generic.cityWithData", { city })}</Label>
       </Info>
       <Info>
         <IconWrapper>
           <UsersIcon />
         </IconWrapper>
-        <Label>{t("numberOfPeople")}:</Label>
-        <Label>{beds}</Label>
+        <Label>{t("desktop.host.numberOfPeople", { maxAmount: beds })}</Label>
       </Info>
       <Info>
         <IconWrapper>
           <ClockIcon />
         </IconWrapper>
-        <Label>{t("duration")}:</Label>
-        <Label>{t(duration)}</Label>
+        <Label>
+          {t("desktop.refuge.duration", { number: duration, unit: "" })}
+        </Label>
       </Info>
     </SectionInfo>
   );
