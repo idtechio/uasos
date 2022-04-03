@@ -48,10 +48,10 @@ export default function ConfirmRejectModal({
 
       localStorage.setItem(
         `${ALREADY_SHOWN}${status}`,
-        prepareToStorage(result)
+        prepareToStorage(alreadyShowedIds, result)
       );
 
-      result.length ? setModalOpen(true) : setModalOpen(false);
+      setModalOpen(!!result.length);
     };
 
     checkIsMatches();

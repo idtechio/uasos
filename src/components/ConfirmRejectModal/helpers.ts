@@ -13,15 +13,16 @@ export const filterByStatus = (status: Status, arrayToFilter: ResultItem[]) => {
   );
 };
 
-export const prepareToStorage = (result: ResultItem[]) => {
-  let alreadyShown = {};
-
+export const prepareToStorage = (
+  alreadyShowed: AlreadyShowed,
+  result: ResultItem[]
+) => {
   result.forEach((item) => {
-    alreadyShown = {
-      ...alreadyShown,
+    alreadyShowed = {
+      ...alreadyShowed,
       [item.id]: true,
     };
   });
 
-  return JSON.stringify(alreadyShown);
+  return JSON.stringify(alreadyShowed);
 };
