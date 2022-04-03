@@ -1,15 +1,9 @@
 import { StyleProp, View, ViewStyle } from "react-native";
 import { useTranslation } from "next-i18next";
-import {
-  WarningWrapper,
-  HeaderText,
-  ListedText,
-  TextWrapper,
-  ListWrapper,
-  ListItem,
-  Bullet,
-} from "./style";
+import { WarningWrapper, HeaderText, TextWrapper } from "./style";
 import WarningIcon from "../../style/svgs/warningTriangle.svg";
+import styled from "styled-components";
+import { sanitize } from "../../helpers/sanitize";
 
 const ICON_DIM = 24;
 
@@ -17,8 +11,23 @@ export type WarningSectionProps = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 
+const Test = styled.div`
+  b {
+  }
+  ul {
+    padding: 0 0 0 18px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 10px;
+    }
+  }
+`;
+
 const WarningSection = ({ containerStyle }: WarningSectionProps) => {
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation("others");
   return (
     <WarningWrapper style={containerStyle}>
       <View>
@@ -26,19 +35,14 @@ const WarningSection = ({ containerStyle }: WarningSectionProps) => {
       </View>
       <TextWrapper>
         <View>
-          <HeaderText>{t("warningHeader")}</HeaderText>
-          <HeaderText>{t("justInCase")}</HeaderText>
+          <HeaderText>
+            <Test
+              dangerouslySetInnerHTML={{
+                __html: sanitize(t("forms.match.usersWarning")),
+              }}
+            />
+          </HeaderText>
         </View>
-        <ListWrapper>
-          <ListItem>
-            <Bullet />
-            <ListedText>{t("verifyIdentity")}</ListedText>
-          </ListItem>
-          <ListItem>
-            <Bullet />
-            <ListedText>{t("verifyGroup")}</ListedText>
-          </ListItem>
-        </ListWrapper>
       </TextWrapper>
     </WarningWrapper>
   );

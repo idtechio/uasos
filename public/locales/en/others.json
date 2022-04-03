@@ -94,7 +94,7 @@
             "confirmed": "Your guest\/host has just confirmed an offer. Contact him\/her to arrange the details. ",
             "accommodationTypeWithData": "Accommodation type: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Additional information on accommodation",
-            "usersWarning": "<b>For safety purposes, keep your relatives informed about who you are sheltering. Just in case: \n<\/b>verify the identity of the person you are sheltering,\nmake sure the group composition matches the original description ",
+            "usersWarning": "<b>For safety purposes, keep your relatives informed about who you are sheltering. Just in case: \n<\/b>\n<ul>\n<li>verify the identity of the person you are sheltering,<\/li>\n<li>make sure the group composition matches the original description<\/li>\n<\/ul>",
             "individual": "Individual",
             "host": {
                 "formSent": "Form sent",
@@ -115,11 +115,16 @@
             "groupInformation": {
                 "pregnancy": "The group includes a person with an advanced pregnancy (over 6 months)",
                 "disability": "There is a person with a disability in the group",
-                "multicultural": "The group includes people from different nationalities"
+                "multicultural": "The group includes people from different nationalities",
+                "animals": "The group is accompanied by a pet",
+                "elders": "There is an elderly person in the group"
             },
             "submited": "Form submitted",
             "facilityInformation": {
-                "disability": "Facilities for people with disabilities"
+                "disability": "Facilities for people with disabilities",
+                "pregnancy": "Facilities for pregnant woman",
+                "eldery": "Facilities for elderly persons",
+                "diversity": "All nationalities welcome"
             },
             "password": "Password",
             "selectFromList": "Select from the list",
@@ -199,7 +204,8 @@
                 "haveMatch": "We found a match",
                 "lookingForMatch": "Looking for a match",
                 "awaitingHostApproval": "Awaiting host approval",
-                "confirmed": "Confirmed"
+                "confirmed": "Confirmed",
+                "rejected": "Rejected"
             }
         },
         "refuge": {

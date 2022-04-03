@@ -18,6 +18,15 @@ enum GuestHostStatus {
   DEFAULT = "default",
 }
 
+enum GuestHostType {
+  INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
+  LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
+  FOUND_A_MATCH = "found_a_match", // matched with guest/hosts and awaiting for response
+  BEING_CONFIRMED = "being_confirmed", // matched confirmed by one side (host or guest)
+  CONFIRMED = "confirmed", // match confirmed by two sides (host and guest)
+  REJECTED = "rejected", // match rejected by one side
+}
+
 enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
@@ -64,6 +73,7 @@ export interface OfferProps {
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
   duration_category: Array<string> | string;
+  type: GuestHostType;
   transport_included: Boolean;
   match_id?: string | null;
   match_status?: MatchStatus | null;
@@ -138,6 +148,8 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       duration_category,
       transport_included,
       
+      type,
+
       match_id,
       match_status,
 
@@ -183,8 +195,9 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: ungroupString(h.duration_category),
     transport_included: h.transport_included,
-    match_status: h.match_status,
+    type: h.type,
     match_id: h.match_id,
+    match_status: h.match_status,
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
@@ -231,6 +244,7 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
       status: GuestHostStatus.MATCH_ACCEPTED,
+      type: GuestHostType.BEING_CONFIRMED,
       match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
@@ -270,6 +284,7 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
+      type: GuestHostType.LOOKING_FOR_MATCH,
       match_id: null,
       match_status: null,
       matchedRequest: undefined,

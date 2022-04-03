@@ -94,7 +94,7 @@
             "confirmed": "Ihr Gast\/Gastgeber hat soeben ein Angebot bestätigt. Setzen Sie sich mit ihm\/ihr in Verbindung, um die Einzelheiten zu besprechen. ",
             "accommodationTypeWithData": "Unterkunftsart: <b>{{Typ}}<\/b>",
             "additionalInfoOnAccommodation": "Zusätzliche Informationen zur Unterkunft",
-            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\nÜberprüfen Sie die Identität der Person, die Sie beherbergen,\nVergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt. ",
+            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\n<ul>\n<li>Überprüfen Sie die Identität der Person, die Sie beherbergen,<\/li>\n<li>Vergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt.<\/li>\n<\/ul>",
             "individual": "Einzelne",
             "host": {
                 "formSent": "Formular gesendet",
@@ -115,11 +115,16 @@
             "groupInformation": {
                 "pregnancy": "Die Gruppe umfasst eine Person mit einer fortgeschrittenen Schwangerschaft (über 6 Monate)",
                 "disability": "In der Gruppe gibt es eine Person mit einer Behinderung",
-                "multicultural": "Die Gruppe umfasst Menschen verschiedener Nationalitäten"
+                "multicultural": "Die Gruppe umfasst Menschen verschiedener Nationalitäten",
+                "animals": "Die Gruppe wird von einem Haustier begleitet",
+                "elders": "Es gibt eine ältere Person in der Gruppe"
             },
             "submited": "Eingereichtes Formular",
             "facilityInformation": {
-                "disability": "Einrichtungen für Menschen mit Behinderungen"
+                "disability": "Einrichtungen für Menschen mit Behinderungen",
+                "pregnancy": "Einrichtungen für schwangere Frauen",
+                "eldery": "Einrichtungen für ältere Menschen",
+                "diversity": "Alle Nationalitäten willkommen"
             },
             "password": "Passwort",
             "selectFromList": "Wählen Sie aus der Liste",
@@ -199,7 +204,8 @@
                 "haveMatch": "Wir haben eine Übereinstimmung gefunden",
                 "lookingForMatch": "Suche nach einer Übereinstimmung",
                 "awaitingHostApproval": "Genehmigung des Gastgebers steht noch aus",
-                "confirmed": "Bestätigen"
+                "confirmed": "Bestätigen",
+                "rejected": "Abgelehnt"
             }
         },
         "refuge": {

@@ -94,8 +94,11 @@ export default function FormRegisterUser() {
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
 
   const parseError = (error: string) => {
-    if (error.includes("email-already-exists")) {
-      setApiError(t("others:userRegistration.errors.emailExists"));
+    if (
+      error.includes("email-already-exists") ||
+      error.includes("email-already-in-use")
+    ) {
+      setApiError(t("others:userRegistration.errors.emailExist"));
     } else if (
       error.includes("phone-number-already-exists") ||
       error.includes("account-exists")

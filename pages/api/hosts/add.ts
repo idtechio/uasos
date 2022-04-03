@@ -19,6 +19,7 @@ const trueOrFalse = match("TRUE").or(match("FALSE"));
 
 const HostPropsType = object({
   country: string,
+  "name?": string,
   "phone_num?": string,
   "email?": string,
   closest_city: string,
@@ -72,6 +73,9 @@ async function addHost(
     const hostData: HostProps & HostDBProps = {
       ...body,
       fnc_accounts_id: account.db_accounts_id,
+      name: account.name,
+      email: account.email,
+      phone_num: account.phone_num,
     };
 
     const topicNameOrId = process.env.TOPIC_HOST_INSERT;

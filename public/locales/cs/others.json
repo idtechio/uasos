@@ -94,7 +94,7 @@
             "confirmed": "Váš host\/hostitel právě potvrdil nabídku. Kontaktujte ho\/ji a domluvte se na podrobnostech. ",
             "accommodationTypeWithData": "Typ ubytování: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Další informace o ubytování",
-            "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:<\/b>\nověřte si totožnost osoby, kterou ukrýváte,\nujistěte se, že složení skupiny odpovídá původnímu popisu ",
+            "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:<\/b>\n<ul>\n<li>ověřte si totožnost osoby, kterou ukrýváte,<\/li>\n<li>ujistěte se, že složení skupiny odpovídá původnímu popisu<\/li>\n<\/ul>",
             "individual": "Jednotlivec",
             "host": {
                 "formSent": "Formulář odeslaný",
@@ -115,11 +115,16 @@
             "groupInformation": {
                 "pregnancy": "Skupina zahrnuje osobu v pokročilém stádiu těhotenství (nad 6 měsíců).",
                 "disability": "Ve skupině je osoba se zdravotním postižením.",
-                "multicultural": "Ve skupině jsou lidé různých národností"
+                "multicultural": "Ve skupině jsou lidé různých národností",
+                "animals": "Skupinu doprovází domácí mazlíček",
+                "elders": "Ve skupině je starší osoba."
             },
             "submited": "Formulář odeslaný ",
             "facilityInformation": {
-                "disability": "Zařízení pro osoby se zdravotním postižením"
+                "disability": "Zařízení pro osoby se zdravotním postižením",
+                "pregnancy": "Zařízení pro těhotné ženy",
+                "eldery": "Zařízení pro seniory",
+                "diversity": "Všechny národnosti vítány"
             },
             "password": "Heslo",
             "selectFromList": "Vyberte ze seznamu",
@@ -199,7 +204,8 @@
                 "haveMatch": "Našli jsme shodu",
                 "lookingForMatch": "Hledá se shoda",
                 "awaitingHostApproval": "Čeká se na schválení hostitele",
-                "confirmed": "Potvrzeno"
+                "confirmed": "Potvrzeno",
+                "rejected": "Odmítnuto"
             }
         },
         "refuge": {
