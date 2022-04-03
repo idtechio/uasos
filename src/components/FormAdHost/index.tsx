@@ -55,7 +55,11 @@ const submitRequestDefualtState = {
 
 export default function FormAdHost() {
   const { t } = useTranslation();
-  const { mutate } = useAddHostToApi();
+  const {
+    mutate,
+    isLoading: isSubmitLoading,
+    isSuccess: isSubmitSuccess,
+  } = useAddHostToApi();
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
@@ -464,7 +468,7 @@ export default function FormAdHost() {
             anchor={t("refugeeAddForm.addButton")}
             style={styles.addButton}
           />
-          {isSubmitted && !isValid && (
+          {isSubmitted && !isValid && !isSubmitLoading && !isSubmitSuccess && (
             <View style={styles.errorWrapper}>
               <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
             </View>
