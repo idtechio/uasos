@@ -13,7 +13,16 @@ export type WarningSectionProps = {
 
 const Test = styled.div`
   b {
+  }
+  ul {
+    padding: 0 0 0 18px;
+    margin: 0;
     display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 10px;
+    }
   }
 `;
 

@@ -68,7 +68,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={PregnantIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("hostList:pregnancyAccepted")}
+            label={t("others:forms.generic.hostInformation.takesPregnancy")}
           />
         )}
 

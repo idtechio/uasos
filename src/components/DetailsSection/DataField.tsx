@@ -28,8 +28,8 @@ const Label = styled.div<LabelProps>`
 
 export default function DataField({
   Icon,
-  iconWidth,
-  iconHeight,
+  iconWidth = 15,
+  iconHeight = 15,
   label,
   isBlue = false,
 }: DataFieldProps) {
