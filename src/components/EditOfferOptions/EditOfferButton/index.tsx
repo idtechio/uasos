@@ -28,6 +28,7 @@ const buttons = [
     icon: <EditIcon />,
     type: "edit",
     label: "others:desktop.contextMenu.edit",
+    hide: true,
   },
   {
     icon: <AlertIcon />,

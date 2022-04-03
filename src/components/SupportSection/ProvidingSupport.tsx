@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
 import { Error } from "../Inputs/style";
@@ -8,6 +9,7 @@ import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
+import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
   IdContainer,
@@ -20,9 +22,6 @@ import {
   Title,
 } from "./style";
 import { Offer } from "./types";
-import "react-loading-skeleton/dist/skeleton.css";
-import { LoadingCards } from "./LoadingCards";
-import { MetchedInfo } from "./MetchedInfo";
 
 type ProvidingSupportProps = {
   offers?: Offer[];
@@ -37,7 +36,7 @@ export default function ProvidingSupport({
   isError,
   readonly,
 }: ProvidingSupportProps) {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation();
 
   if (!isLoading && (isError || !offers)) {
     return (
@@ -49,7 +48,7 @@ export default function ProvidingSupport({
 
   return (
     <SupportWrapper>
-      <Title>{t("overviewOfYourOffers")}</Title>
+      <Title>{t("others:desktop.yourOffers")}</Title>
       <Content isLoading={isLoading} offers={offers} readonly={readonly} />
     </SupportWrapper>
   );
@@ -82,7 +81,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
   const router = useRouter();
   return (
     <CardAdd
-      label={t("addOffer")}
+      label={t("others:common.actions.addOffer")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.HOST);
@@ -137,19 +136,19 @@ const Offers = ({
             </TextWrapper>
           </HeaderWrapper>
 
-          {o.matchedRequest ? (
+          {/* {o.matchedRequest ? (
             <MetchedInfo
               name={o.matchedRequest.name}
               email={o.matchedRequest.email}
               phone_num={o.matchedRequest.phone_num}
             />
-          ) : (
-            <AnnouncementHighlights
-              beds={o.beds}
-              city={o.city}
-              duration={o.duration}
-            />
-          )}
+          ) : ( */}
+          <AnnouncementHighlights
+            beds={o.beds}
+            city={o.city}
+            duration={o.duration}
+          />
+          {/* )} */}
           {!readonly && (
             <DetailsLink
               href={{

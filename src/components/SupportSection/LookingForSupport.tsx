@@ -1,25 +1,24 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
+import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { Error } from "../Inputs/style";
+import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
-import { Request } from "./types";
-import { Error } from "../Inputs/style";
+import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
+  Label,
   MoreButtonWrapper,
   SupportCard,
   SupportWrapper,
   TextWrapper,
   Title,
-  Label,
 } from "./style";
-import StatusBadge from "../StatusBadge";
-import EditOfferButton from "../EditOfferOptions/EditOfferButton";
-import { LoadingCards } from "./LoadingCards";
-import styled from "styled-components/native";
-import { MetchedInfo } from "./MetchedInfo";
+import { Request } from "./types";
 
 type RequestProps = {
   requests?: Request[];
@@ -45,7 +44,7 @@ export default function LookingForSupport({
 
   return (
     <SupportWrapper>
-      <Title>{t("overviewOfYourOffers")}</Title>
+      <Title>{t("others:desktop.yourOffers")}</Title>
       <Content isLoading={isLoading} requests={requests} readonly={readonly} />
     </SupportWrapper>
   );
@@ -78,7 +77,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
   const router = useRouter();
   return (
     <CardAdd
-      label={t("addSubmission")}
+      label={t("others:common.actions.addSubmission")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);
@@ -134,19 +133,19 @@ const Requests = ({
             <StatusBadge state={r.type} />
           </div>
 
-          {r.matchedOffer ? (
+          {/* {r.matchedOffer ? (
             <MetchedInfo
               name={r.matchedOffer.name}
               email={r.matchedOffer.email}
               phone_num={r.matchedOffer.phone_num}
             />
-          ) : (
-            <AnnouncementHighlights
-              beds={r.beds}
-              city={r.city}
-              duration={r.duration}
-            />
-          )}
+          ) : ( */}
+          <AnnouncementHighlights
+            beds={r.beds}
+            city={r.city}
+            duration={r.duration}
+          />
+          {/* )} */}
 
           {!readonly && (
             <DetailsLink
