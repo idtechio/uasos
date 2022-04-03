@@ -24,8 +24,7 @@ export default function GuestCardContent({
   const { t: t2 } = useTranslation("common");
   const { t } = useTranslation("offer-details");
 
-  const [showAdditionalInfo, setShowAdditionalInfo] =
-    React.useState<boolean>(false);
+  const [showAdditionalInfo, setShowAdditionalInfo] = React.useState(true);
 
   const additionalInfo = {
     diversity: request?.is_ukrainian_nationality,

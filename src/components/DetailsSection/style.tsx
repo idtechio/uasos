@@ -81,7 +81,7 @@ export const CardWrapper = styled.View`
 export const FlexWrapper = styled.View`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   padding: 20px 0;
 `;
 

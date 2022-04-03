@@ -26,8 +26,7 @@ export default function HostCardContent({
   const { t } = useTranslation("offer-details");
   const { t: t2 } = useTranslation("common");
 
-  const [showAdditionalInfo, setShowAdditionalInfo] =
-    React.useState<boolean>(false);
+  const [showAdditionalInfo, setShowAdditionalInfo] = React.useState(true);
   const additionalInfo: InfoType = {
     animals: offer?.ok_for_animals,
     transport: offer?.transport_included,
