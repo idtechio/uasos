@@ -116,7 +116,10 @@ const Requests = ({
         <SupportCard key={r.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              <EditOfferButton targetID={r.id} targetType="guests" />
+              {/* TODO: move this into EditOfferButton  */}
+              {r.type !== "confirmed" && (
+                <EditOfferButton targetID={r.id} targetType="guests" />
+              )}
             </MoreButtonWrapper>
             <RequestTextWrapper>
               <RequestFirstLine>{t("submission")}</RequestFirstLine>

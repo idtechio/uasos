@@ -105,7 +105,9 @@ const Offers = ({
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              <EditOfferButton targetID={o.id} targetType="hosts" />
+              {o.type !== "confirmed" && (
+                <EditOfferButton targetID={o.id} targetType="hosts" />
+              )}
             </MoreButtonWrapper>
 
             <Placeholder />
