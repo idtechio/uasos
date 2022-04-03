@@ -10,8 +10,7 @@ interface Props {
 }
 
 const AppBack = ({ to }: Props) => {
-  const { t } = useTranslation();
-
+  const { t } = useTranslation("others");
   return (
     <Wrapper>
       <Link href={to || Routes.HOMEPAGE} passHref>
@@ -23,7 +22,7 @@ const AppBack = ({ to }: Props) => {
               height: 24,
             }}
           />
-          <StyledText>{t("back")}</StyledText>
+          <StyledText>{t("common.buttons.back")}</StyledText>
         </LinkContent>
       </Link>
     </Wrapper>

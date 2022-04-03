@@ -1,28 +1,25 @@
+import { GetServerSideProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
+import styled from "styled-components/native";
+import AppBack from "../../src/components/AppBack";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
 import DetailsSection from "../../src/components/DetailsSection/DetailsSection";
-import WarningSection from "../../src/components/WarningSection/WarningSection";
-import ArrowLeftIcon from "../../src/style/svgs/chevron-left.svg";
-import { TouchableOpacity } from "react-native";
-import styled from "styled-components/native";
-import { Theme } from "../../src/style/theme.config";
+import { Error } from "../../src/components/Inputs/style";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
-import { AuthContext } from "../_app";
 import Redirect from "../../src/components/Redirect";
-import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { LoadingCards } from "../../src/components/SupportSection/LoadingCards";
+import WarningSection from "../../src/components/WarningSection/WarningSection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
+import { Theme } from "../../src/style/theme.config";
 import { OfferProps } from "../api/listing/offers";
 import { RequestProps } from "../api/listing/requests";
-import { LoadingCards } from "../../src/components/SupportSection/LoadingCards";
-import { Error } from "../../src/components/Inputs/style";
-
-const topMarginStyle: StyleProp<ViewStyle> = { marginTop: 15 };
+import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
 
@@ -89,22 +86,13 @@ function DetailsContent() {
           <LoadingCards count={1} showImage={true} />
         ) : (
           <>
-            <BackWrapper
-              onPress={() => {
-                router.push("/dashboard");
-              }}
-            >
-              <ArrowLeftIcon />
-              <BackText>{t("back")}</BackText>
-            </BackWrapper>
+            <AppBack to="/dashboard" />
 
             {isOffersError || isRequestsError ? (
               <Error>{t("could_not_load_details")}</Error>
             ) : (
               <>
-                {dataToShow?.match_id ? (
-                  <WarningSection containerStyle={topMarginStyle} />
-                ) : null}
+                {dataToShow?.match_id ? <WarningSection /> : null}
                 <DetailsSection
                   isOffer={type === "offer"}
                   data={dataToShow}

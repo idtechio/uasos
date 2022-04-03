@@ -17,17 +17,8 @@ export const TextWrapper = styled.View`
 `;
 
 export const HeaderText = styled.Text`
-  font-family: "Roboto";
-  font-weight: 700;
   font-size: 16px;
   line-height: 21px;
-`;
-
-export const ListWrapper = styled.View`
-  margin-top: 15px;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const ListItem = styled.View`
@@ -42,11 +33,4 @@ export const Bullet = styled.View`
   background-color: black;
   border-radius: 100%;
   margin-top: 8px;
-`;
-
-export const ListedText = styled.Text`
-  font-family: "Roboto";
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 400;
 `;
