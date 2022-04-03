@@ -43,5 +43,4 @@ export type Request = {
   duration: AccommodationTime;
   state: MatchState;
   matchedOffer?: CommonMatched;
-  closestCity?: string;
 };
