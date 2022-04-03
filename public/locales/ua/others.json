@@ -206,7 +206,7 @@
             "searchingAccommodation": "Пошук житла",
             "accommodationSearch": "Пошук житла",
             "submission": "Подання",
-            "duration": "Час: {{number}} {{unit}}"
+            "duration": "Час: {{value}}"
         },
         "providingSupport": "Надання підтримки",
         "yourSubmission": "Ваше подання",

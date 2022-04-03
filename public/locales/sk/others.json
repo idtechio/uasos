@@ -206,7 +206,7 @@
             "searchingAccommodation": "Vyhľadávanie ubytovania",
             "accommodationSearch": "Vyhľadávanie ubytovania",
             "submission": "Ponuka",
-            "duration": "Dĺžka pobytu: {{number}}{{unit}}"
+            "duration": "Dĺžka pobytu: {{value}}"
         },
         "providingSupport": "Poskytovanie podpory",
         "yourSubmission": "Vaša ponuka",

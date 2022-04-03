@@ -206,7 +206,7 @@
             "searchingAccommodation": "Recherche d'un logement",
             "accommodationSearch": "Recherche d'un logement",
             "submission": "Soumission",
-            "duration": "Durée : {{number}}{{unit}}"
+            "duration": "Durée: {{value}}"
         },
         "providingSupport": "Fournir de l'aide",
         "yourSubmission": "Votre soumission",

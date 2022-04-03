@@ -206,7 +206,7 @@
             "searchingAccommodation": "Szálláshely keresése",
             "accommodationSearch": "Szálláskeresés",
             "submission": "Beküldés",
-            "duration": "Időtartam: {{szám}} {{unit}}"
+            "duration": "Időtartam: {{value}}"
         },
         "providingSupport": "Támogatás nyújtása",
         "yourSubmission": "Az Ön beadványa",
