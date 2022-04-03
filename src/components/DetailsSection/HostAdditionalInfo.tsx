@@ -59,7 +59,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={DisabilityIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("hostList:disabledReady")}
+            label={t("others:forms.generic.facilityInformation.disability")}
           />
         )}
 
@@ -68,7 +68,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={PregnantIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("others:forms.generic.hostInformation.takesPregnancy")}
+            label={t("others:forms.generic.facilityInformation.pregnancy")}
           />
         )}
 
@@ -77,7 +77,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={ElderIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("elderlyAccepted")}
+            label={t("others:forms.generic.facilityInformation.eldery")}
           />
         )}
 
@@ -86,7 +86,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={DiversityIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("diversityAccepted")}
+            label={t("others:forms.generic.facilityInformation.diversity")}
           />
         )}
       </ItemsRow>
