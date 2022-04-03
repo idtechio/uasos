@@ -64,6 +64,11 @@ export interface OfferProps {
   phone_num: string;
   email: string;
   city: string;
+  closest_city: string;
+  zipcode: string;
+  street: string;
+  building_no: string;
+  appartment_no: string;
   shelter_type: Array<string> | string;
   beds: number;
   acceptable_group_relations: Array<string> | string;
@@ -133,8 +138,13 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       host_status,
       host_name,
 
-      city,
       country,
+      city,
+      closest_city,
+      zipcode,
+      street,
+      building_no,
+      appartment_no,
       phone_num,
       email,
       shelter_type,
@@ -183,6 +193,11 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     status: h.host_status,
     city: h.city,
     country: h.country,
+    closest_city: h.closest_city,
+    zipcode: h.zipcode,
+    street: h.street,
+    building_no: h.building_no,
+    appartment_no: h.appartment_no,
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: ungroupString(h.shelter_type),
@@ -231,6 +246,11 @@ function getMockOffers(): OfferProps[] {
       name: "Jan Kowalski",
       city: "Warszawa",
       country: "poland",
+      closest_city: "pruszków",
+      zipcode: "00-999",
+      street: "Sezamkowa",
+      building_no: "202",
+      appartment_no: "1",
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
@@ -271,6 +291,11 @@ function getMockOffers(): OfferProps[] {
       name: "Jan Kowalski",
       city: "Wrocław",
       country: "poland",
+      closest_city: "pruszków",
+      zipcode: "00-999",
+      street: "Sezamkowa",
+      building_no: "202",
+      appartment_no: "1",
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
