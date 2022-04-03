@@ -45,7 +45,7 @@ export default function LookingForSupport({
 
   return (
     <SupportWrapper>
-      <Title>{t("overviewOfYourOffers")}</Title>
+      <Title>{t("others:desktop.yourOffers")}</Title>
       <Content isLoading={isLoading} requests={requests} readonly={readonly} />
     </SupportWrapper>
   );
@@ -78,7 +78,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
   const router = useRouter();
   return (
     <CardAdd
-      label={t("addSubmission")}
+      label={t("others:common.actions.addSubmission")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);

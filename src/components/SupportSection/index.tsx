@@ -24,13 +24,13 @@ export default function SupportSection({
   isRequestsInError,
   readonly,
 }: SupportSectionProps) {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation();
 
   const items = useMemo(() => {
     return [
       {
         key: "1",
-        title: t("providingSupport"),
+        title: t("others:desktop.providingSupport"),
         content: (
           <ProvidingSupport
             offers={offers}
@@ -42,7 +42,7 @@ export default function SupportSection({
       },
       {
         key: "2",
-        title: t("lookingForSupport"),
+        title: t("others:desktop.lookingForSupport"),
         content: (
           <LookingForSupport
             requests={requests}
