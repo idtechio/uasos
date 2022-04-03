@@ -67,11 +67,11 @@
     "howDoesItWork": {
         "title": "Cum funcționează?",
         "points": {
-            "0": "Trimiteți un apartament sau o nevoie de cazare",
+            "0": "Trimiteți un apartament\nsau o nevoie de cazare",
             "1": "Completați\n  datele necesare",
             "2": "Așteptați pentru cea mai bună ofertă",
-            "3": "Contactați gazda \/ oaspetele",
-            "4": "Confirmați sau refuzați oferta"
+            "3": "Contactați\ngazda\/oaspetele",
+            "4": "Confirmați sau\nrefuzați oferta"
         }
     },
     "hero": {
