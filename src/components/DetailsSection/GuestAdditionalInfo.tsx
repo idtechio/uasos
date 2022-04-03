@@ -22,46 +22,50 @@ export const borderTopStyle: StyleProp<ViewStyle> = {
 export default function GuestAdditionalInfo({
   info,
 }: GuestAdditionalInfoProps) {
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation();
 
   return (
     <FlexWrapper style={borderTopStyle}>
-      <Subtitle>{t("groupExtraInfo")}</Subtitle>
+      <Subtitle>
+        {t("others:forms.generic.additionalGroupInformation")}
+      </Subtitle>
       <ItemsColumn>
-        {info.disability === "TRUE" && (
+        {
           <ListItem>
             <Bullet />
-            <Info>{t("disabilityPresent")}</Info>
+            <Info>{t("others:forms.generic.groupInformation.disability")}</Info>
           </ListItem>
-        )}
+        }
 
-        {info.pregnancy === "TRUE" && (
+        {
           <ListItem>
             <Bullet />
-            <Info>{t("pregnancyPresent")}</Info>
+            <Info>{t("others:forms.generic.groupInformation.pregnancy")}</Info>
           </ListItem>
-        )}
+        }
 
-        {info.diversity === "TRUE" && (
+        {
           <ListItem>
             <Bullet />
-            <Info>{t("diversityPresent")}</Info>
+            <Info>
+              {t("others:forms.generic.groupInformation.multicultural")}
+            </Info>
           </ListItem>
-        )}
+        }
 
-        {info.animals === "TRUE" && (
+        {
           <ListItem>
             <Bullet />
-            <Info>{t("animalsPresent")}</Info>
+            <Info>{t("others:forms.generic.groupInformation.animals")}</Info>
           </ListItem>
-        )}
+        }
 
-        {info.elderly === "TRUE" && (
+        {
           <ListItem>
             <Bullet />
-            <Info>{t("elderPresent")}</Info>
+            <Info>{t("others:forms.generic.groupInformation.elders")}</Info>
           </ListItem>
-        )}
+        }
       </ItemsColumn>
     </FlexWrapper>
   );

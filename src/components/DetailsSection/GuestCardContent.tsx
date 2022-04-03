@@ -91,6 +91,7 @@ export default function GuestCardContent({
               number: t(
                 `common:hostAdd.accommodationTimeLabel.${request.duration_category}`
               ),
+              unit: "",
             })}
           />
         )}
