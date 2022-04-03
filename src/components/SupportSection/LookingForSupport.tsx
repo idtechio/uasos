@@ -134,19 +134,19 @@ const Requests = ({
             <StatusBadge state={r.type} />
           </div>
 
-          {r.matchedOffer ? (
+          {/* {r.matchedOffer ? (
             <MetchedInfo
               name={r.matchedOffer.name}
               email={r.matchedOffer.email}
               phone_num={r.matchedOffer.phone_num}
             />
-          ) : (
-            <AnnouncementHighlights
-              beds={r.beds}
-              city={r.city}
-              duration={r.duration}
-            />
-          )}
+          ) : ( */}
+          <AnnouncementHighlights
+            beds={r.beds}
+            city={r.city}
+            duration={r.duration}
+          />
+          {/* )} */}
 
           {!readonly && (
             <DetailsLink

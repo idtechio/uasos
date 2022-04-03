@@ -137,19 +137,19 @@ const Offers = ({
             </TextWrapper>
           </HeaderWrapper>
 
-          {o.matchedRequest ? (
+          {/* {o.matchedRequest ? (
             <MetchedInfo
               name={o.matchedRequest.name}
               email={o.matchedRequest.email}
               phone_num={o.matchedRequest.phone_num}
             />
-          ) : (
-            <AnnouncementHighlights
-              beds={o.beds}
-              city={o.city}
-              duration={o.duration}
-            />
-          )}
+          ) : ( */}
+          <AnnouncementHighlights
+            beds={o.beds}
+            city={o.city}
+            duration={o.duration}
+          />
+          {/* )} */}
           {!readonly && (
             <DetailsLink
               href={{
