@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
 import { Error } from "../Inputs/style";
@@ -8,6 +9,7 @@ import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
+import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
   IdContainer,
@@ -20,9 +22,6 @@ import {
   Title,
 } from "./style";
 import { Offer } from "./types";
-import "react-loading-skeleton/dist/skeleton.css";
-import { LoadingCards } from "./LoadingCards";
-import { MetchedInfo } from "./MetchedInfo";
 
 type ProvidingSupportProps = {
   offers?: Offer[];

@@ -1,25 +1,24 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import styled from "styled-components/native";
 import { Routes } from "../../consts/router";
+import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { Error } from "../Inputs/style";
+import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
-import { Request } from "./types";
-import { Error } from "../Inputs/style";
+import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
+  Label,
   MoreButtonWrapper,
   SupportCard,
   SupportWrapper,
   TextWrapper,
   Title,
-  Label,
 } from "./style";
-import StatusBadge from "../StatusBadge";
-import EditOfferButton from "../EditOfferOptions/EditOfferButton";
-import { LoadingCards } from "./LoadingCards";
-import styled from "styled-components/native";
-import { MetchedInfo } from "./MetchedInfo";
+import { Request } from "./types";
 
 type RequestProps = {
   requests?: Request[];
