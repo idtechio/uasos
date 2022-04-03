@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Zobrazit heslo",
             "details": "Podrobnosti",
-            "addOffer": "Přidat nabídku"
+            "addOffer": "Přidat nabídku",
+            "addSubmission": "Žádost o podporu"
         },
         "email": {
             "sentInfo": "Na vaši e-mailovou adresu jsme zaslali ověřovací kód. Klikněte na odkaz pro ověření",

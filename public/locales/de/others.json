@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Passwort anzeigen",
             "details": "Einzelheiten",
-            "addOffer": "Angebot hinzufügen"
+            "addOffer": "Angebot hinzufügen",
+            "addSubmission": "Unterstützung anfordern"
         },
         "email": {
             "sentInfo": "wir haben einen Verifizierungscode an Ihre E-Mail-Adresse gesendet. Klicken Sie auf den Link, um ihn zu verifizieren",

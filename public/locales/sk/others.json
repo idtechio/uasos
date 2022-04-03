@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Zobraziť heslo",
             "details": "Podrobnosti",
-            "addOffer": "Pridať ponuku"
+            "addOffer": "Pridať ponuku",
+            "addSubmission": "Žiadosť o podporu"
         },
         "email": {
             "sentInfo": "na vašu e-mailovú adresu sme zaslali overovací kód. Kliknutím na odkaz ho overíte",

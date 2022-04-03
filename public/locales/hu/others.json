@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Jelszó megjelenítése",
             "details": "Részletek",
-            "addOffer": "Ajánlat hozzáadása"
+            "addOffer": "Ajánlat hozzáadása",
+            "addSubmission": "Támogatás kérése"
         },
         "email": {
             "sentInfo": "küldtünk egy ellenőrző kódot az e-mail címére. Kattintson a linkre az ellenőrzéshez",
@@ -198,7 +199,7 @@
         "offer": {
             "status": {
                 "accepted": "Elfogadva",
-                "beingConfirmed": "Megerősítve",
+                "beingConfirmed": "A megerősítés során",
                 "awaitingGuestApproval": "Vendég jóváhagyására várva",
                 "inactive": "Inaktív",
                 "haveMatch": "Találtunk egyezést",
