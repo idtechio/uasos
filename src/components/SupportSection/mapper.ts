@@ -62,6 +62,7 @@ const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
 };
 
 const toRequest: (r: RequestProps) => Request = (r) => ({
+  type: r.type,
   id: r.id,
   beds: r.beds,
   city: r.city ?? "N/A",
