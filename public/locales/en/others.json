@@ -121,7 +121,10 @@
             },
             "submited": "Form submitted",
             "facilityInformation": {
-                "disability": "Facilities for people with disabilities"
+                "disability": "Facilities for people with disabilities",
+                "pregnancy": "Facilities for pregnant woman",
+                "eldery": "Facilities for elderly persons",
+                "diversity": "All nationalities welcome"
             },
             "password": "Password",
             "selectFromList": "Select from the list",

@@ -121,7 +121,10 @@
             },
             "submited": "Formularz zgłoszony",
             "facilityInformation": {
-                "disability": "Udogodnienia dla osób niepełnosprawnych"
+                "disability": "Udogodnienia dla osób niepełnosprawnych",
+                "pregnancy": "Udogodnienia dla kobiet w ciąży",
+                "eldery": "Udogodnienia dla osób starszych",
+                "diversity": "Wszystkie narodowości mile widziane"
             },
             "password": "Hasło",
             "selectFromList": "Wybierz z listy",

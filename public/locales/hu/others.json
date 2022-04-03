@@ -121,7 +121,10 @@
             },
             "submited": "Beküldött űrlap",
             "facilityInformation": {
-                "disability": "Fogyatékkal élők számára kialakított létesítmények"
+                "disability": "Fogyatékkal élők számára kialakított létesítmények",
+                "pregnancy": "Terhes nők számára nyújtott szolgáltatások",
+                "eldery": "Idősek számára fenntartott létesítmények",
+                "diversity": "Minden nemzetiséget szívesen látunk"
             },
             "password": "Jelszó",
             "selectFromList": "Válasszon a listából",

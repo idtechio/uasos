@@ -121,7 +121,10 @@
             },
             "submited": "Eingereichtes Formular",
             "facilityInformation": {
-                "disability": "Einrichtungen für Menschen mit Behinderungen"
+                "disability": "Einrichtungen für Menschen mit Behinderungen",
+                "pregnancy": "Einrichtungen für schwangere Frauen",
+                "eldery": "Einrichtungen für ältere Menschen",
+                "diversity": "Alle Nationalitäten willkommen"
             },
             "password": "Passwort",
             "selectFromList": "Wählen Sie aus der Liste",
