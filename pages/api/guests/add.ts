@@ -19,6 +19,7 @@ const trueOrFalse = match("TRUE").or(match("FALSE"));
 
 const GuestPropsType = object({
   "country?": string,
+  "name?": string,
   "phone_num?": string,
   "email?": string,
   "city?": string,
@@ -65,6 +66,9 @@ async function addGuest(
     const guestData: GuestProps & GuestDBProps = {
       ...body,
       fnc_accounts_id: account.db_accounts_id,
+      name: account.name,
+      email: account.email,
+      phone_num: account.phone_num,
     };
 
     const topicNameOrId = process.env.TOPIC_GUEST_INSERT;
