@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Show password",
             "details": "Details",
-            "addOffer": "Add offer"
+            "addOffer": "Add offer",
+            "addSubmission": "Request support"
         },
         "email": {
             "sentInfo": "we have sent a verification code to your email address. Click link to verify it",

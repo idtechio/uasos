@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Pokaż hasło",
             "details": "Szczegóły",
-            "addOffer": "Dodaj ofertę"
+            "addOffer": "Dodaj ofertę",
+            "addSubmission": "Poproś o wsparcie"
         },
         "email": {
             "sentInfo": "Wysłaliśmy kod weryfikacyjny na Twój adres e-mail. Kliknij link, aby go zweryfikować",
@@ -198,7 +199,7 @@
         "offer": {
             "status": {
                 "accepted": "Zaakceptowano",
-                "beingConfirmed": "Potwierdzone",
+                "beingConfirmed": "W trakcie potwierdzania",
                 "awaitingGuestApproval": "Oczekiwanie na zatwierdzenie gościa",
                 "inactive": "Nieaktywne",
                 "haveMatch": "Znaleźliśmy dopasowanie",

@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Afișați parola",
             "details": "Detalii",
-            "addOffer": "Adăugați oferta"
+            "addOffer": "Adăugați oferta",
+            "addSubmission": ""
         },
         "email": {
             "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",

@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Afficher le mot de passe",
             "details": "Détails",
-            "addOffer": "Ajouter une offre de logement"
+            "addOffer": "Ajouter une offre de logement",
+            "addSubmission": ""
         },
         "email": {
             "sentInfo": "nous avons envoyé un code de vérification à votre adresse e-mail. Cliquez sur le lien pour le vérifier",
