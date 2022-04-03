@@ -123,7 +123,7 @@ export default function FormAdGuest({
 
     let apiObject: GuestProps = {
       // name: guest.name,
-      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
+      phone_num: `${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
