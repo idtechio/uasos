@@ -44,7 +44,7 @@ export default function LookingForSupport({
 
   return (
     <SupportWrapper>
-      <Title>{t("others:desktop.yourOffers")}</Title>
+      <Title>{t("others:desktop.yourSubmission")}</Title>
       <Content isLoading={isLoading} requests={requests} readonly={readonly} />
     </SupportWrapper>
   );
