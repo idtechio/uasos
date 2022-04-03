@@ -6,16 +6,16 @@ on:
 
 env:
   reg_project_id: "ukrn-hlpr"
-  deploy_project_id: "ukrn-hlpr-dev"
+  deploy_project_id: "ukrn-hlpr"
   image_name: "sosua"
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
   ga_id: "G-0000000000"
   firebase_api_key: ${{ secrets.DEV_FIREBASE_API_KEY }}
-  firebase_auth_domain: "ukrn-hlpr-dev.firebaseapp.com"
-  firebase_project_id: "ukrn-hlpr-dev"
-  firebase_storage_bucket: "ukrn-hlpr-dev.appspot.com"
-  firebase_messaging_sender_id: "727398461288"
-  firebase_app_id: "1:727398461288:web:af67d40f717ab97143b0dd"
+  firebase_auth_domain: "ukrn-hlpr.firebaseapp.com"
+  firebase_project_id: "ukrn-hlpr"
+  firebase_storage_bucket: "ukrn-hlpr.appspot.com"
+  firebase_messaging_sender_id: "55609607717"
+  firebase_app_id: "1:55609607717:web:2625f8aa395bb0d925e1cc"
   domain: "https://dev.uasos.org/"
 
 jobs:
