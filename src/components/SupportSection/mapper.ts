@@ -33,6 +33,7 @@ const toOffer = (o: OfferProps) => ({
   id: o.id,
   imageUrl:
     "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg", //TODO: need to be mapped
+  type: o.type,
   beds: o.beds,
   city: o.city,
   duration: toAccomodationTime(o.duration_category),
@@ -61,6 +62,7 @@ const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
 };
 
 const toRequest: (r: RequestProps) => Request = (r) => ({
+  type: r.type,
   id: r.id,
   beds: r.beds,
   city: r.city ?? "N/A",

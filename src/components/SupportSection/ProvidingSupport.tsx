@@ -132,7 +132,7 @@ const Offers = ({
                   marginTop: 14,
                 }}
               >
-                <StatusBadge state={o.state} />
+                <StatusBadge state={o.type} />
               </div>
             </TextWrapper>
           </HeaderWrapper>
