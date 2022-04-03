@@ -206,7 +206,7 @@
             "searchingAccommodation": "Poszukiwanie zakwaterowania",
             "accommodationSearch": "Wyszukiwanie noclegów",
             "submission": "Zgłoszenie",
-            "duration": "Okres: {{number}} {{unit}}"
+            "duration": "Okres: {{value}}"
         },
         "providingSupport": "Udzielane wsparcie",
         "yourSubmission": "Twoje zgłoszenia",

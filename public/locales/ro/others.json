@@ -206,7 +206,7 @@
             "searchingAccommodation": "Caut cazare",
             "accommodationSearch": "Căutare cazare",
             "submission": "Trimitere",
-            "duration": "Durata: {{număr}} {{unitate}}"
+            "duration": "Durata: {{value}}"
         },
         "providingSupport": "Oferă ajutor",
         "yourSubmission": "Forumular dvs.",

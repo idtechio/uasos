@@ -206,7 +206,7 @@
             "searchingAccommodation": "Поиск жилья",
             "accommodationSearch": "Поиск жилья",
             "submission": "Представление",
-            "duration": "Время: {{number}} {{unit}}"
+            "duration": "Время: {{value}}"
         },
         "providingSupport": "Оказание поддержки",
         "yourSubmission": "Ваше представление",

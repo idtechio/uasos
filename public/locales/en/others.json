@@ -206,7 +206,7 @@
             "searchingAccommodation": "Searching for accommodation",
             "accommodationSearch": "Accommodation search",
             "submission": "Submission",
-            "duration": "Duration: {{number}} {{unit}}"
+            "duration": "Duration: {{value}}"
         },
         "providingSupport": "Providing support",
         "yourSubmission": "Your submission",
