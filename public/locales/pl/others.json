@@ -94,7 +94,7 @@
             "confirmed": "Twój gość\/gospodarz właśnie potwierdził ofertę. Skontaktuj się z nim\/nią, aby ustalić szczegóły",
             "accommodationTypeWithData": "Typ zakwaterowania: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Dodatkowe informacje na temat zakwaterowania",
-            "usersWarning": "<b> Ze względów bezpieczeństwa informuj swoich bliskich o tym, komu udzielasz schronienia. W razie czego:\n <\/b> zweryfikować tożsamość osoby, której udzielasz schronienia,\n upewnij się, że skład grupy pasuje do oryginalnego opisu",
+            "usersWarning": "<b> Ze względów bezpieczeństwa informuj swoich bliskich o tym, komu udzielasz schronienia. W razie czego: <\/b>\n<ul>\n<li>zweryfikować tożsamość osoby, której udzielasz schronienia,<\/li>\n <li>upewnij się, że skład grupy pasuje do oryginalnego opisu<\/li>\n <\/ul>",
             "individual": "Osoba prywatna",
             "host": {
                 "formSent": "Formularz wysłany",
@@ -199,7 +199,8 @@
                 "haveMatch": "Znaleźliśmy dopasowanie",
                 "lookingForMatch": "Szukanie dopasowania",
                 "awaitingHostApproval": "Oczekiwanie na zatwierdzenie gospodarza",
-                "confirmed": "Potwierdzone"
+                "confirmed": "Potwierdzone",
+                "rejected": "Odrzucono"
             }
         },
         "refuge": {

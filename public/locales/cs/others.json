@@ -94,7 +94,7 @@
             "confirmed": "Váš host\/hostitel právě potvrdil nabídku. Kontaktujte ho\/ji a domluvte se na podrobnostech. ",
             "accommodationTypeWithData": "Typ ubytování: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Další informace o ubytování",
-            "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:<\/b>\nověřte si totožnost osoby, kterou ukrýváte,\nujistěte se, že složení skupiny odpovídá původnímu popisu ",
+            "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:<\/b>\n<ul>\n<li>ověřte si totožnost osoby, kterou ukrýváte,<\/li>\n<li>ujistěte se, že složení skupiny odpovídá původnímu popisu<\/li>\n<\/ul>",
             "individual": "Jednotlivec",
             "host": {
                 "formSent": "Formulář odeslaný",
@@ -199,7 +199,8 @@
                 "haveMatch": "Našli jsme shodu",
                 "lookingForMatch": "Hledá se shoda",
                 "awaitingHostApproval": "Čeká se na schválení hostitele",
-                "confirmed": "Potvrzeno"
+                "confirmed": "Potvrzeno",
+                "rejected": "Odmítnuto"
             }
         },
         "refuge": {

@@ -94,7 +94,7 @@
             "confirmed": "Ihr Gast\/Gastgeber hat soeben ein Angebot bestätigt. Setzen Sie sich mit ihm\/ihr in Verbindung, um die Einzelheiten zu besprechen. ",
             "accommodationTypeWithData": "Unterkunftsart: <b>{{Typ}}<\/b>",
             "additionalInfoOnAccommodation": "Zusätzliche Informationen zur Unterkunft",
-            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\nÜberprüfen Sie die Identität der Person, die Sie beherbergen,\nVergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt. ",
+            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\n<ul>\n<li>Überprüfen Sie die Identität der Person, die Sie beherbergen,<\/li>\n<li>Vergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt.<\/li>\n<\/ul>",
             "individual": "Einzelne",
             "host": {
                 "formSent": "Formular gesendet",
@@ -199,7 +199,8 @@
                 "haveMatch": "Wir haben eine Übereinstimmung gefunden",
                 "lookingForMatch": "Suche nach einer Übereinstimmung",
                 "awaitingHostApproval": "Genehmigung des Gastgebers steht noch aus",
-                "confirmed": "Bestätigen"
+                "confirmed": "Bestätigen",
+                "rejected": "Abgelehnt"
             }
         },
         "refuge": {
