@@ -3,8 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { StyleProp, TouchableOpacity, ViewStyle } from "react-native";
-import styled from "styled-components/native";
+import { StyleProp, ViewStyle } from "react-native";
 import AppBack from "../../src/components/AppBack";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import DetailsDecisionButtons from "../../src/components/DetailsDecisionButtons/DetailsDecisionButtons";
@@ -16,28 +15,11 @@ import { LoadingCards } from "../../src/components/SupportSection/LoadingCards";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
-import { Theme } from "../../src/style/theme.config";
 import { OfferProps } from "../api/listing/offers";
 import { RequestProps } from "../api/listing/requests";
 import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
-
-const BackWrapper = styled(TouchableOpacity)`
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  margin-top: 18px;
-`;
-
-const BackText = styled.Text`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16.41px;
-  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
-  text-align: left;
-`;
 
 function DetailsContent() {
   const router = useRouter();

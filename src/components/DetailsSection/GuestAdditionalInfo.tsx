@@ -30,42 +30,42 @@ export default function GuestAdditionalInfo({
         {t("others:forms.generic.additionalGroupInformation")}
       </Subtitle>
       <ItemsColumn>
-        {
+        {info.disability === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("others:forms.generic.groupInformation.disability")}</Info>
           </ListItem>
-        }
+        )}
 
-        {
+        {info.pregnancy === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("others:forms.generic.groupInformation.pregnancy")}</Info>
           </ListItem>
-        }
+        )}
 
-        {
+        {info.diversity === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>
               {t("others:forms.generic.groupInformation.multicultural")}
             </Info>
           </ListItem>
-        }
+        )}
 
-        {
+        {info.animals === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("others:forms.generic.groupInformation.animals")}</Info>
           </ListItem>
-        }
+        )}
 
-        {
+        {info.elderly === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("others:forms.generic.groupInformation.elders")}</Info>
           </ListItem>
-        }
+        )}
       </ItemsColumn>
     </FlexWrapper>
   );

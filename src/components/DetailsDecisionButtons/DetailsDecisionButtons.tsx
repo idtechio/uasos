@@ -135,7 +135,16 @@ export default function DetailsDecisionButtons({
   }, [modalOpened, closeModal, isLoading, showSuccess, showError]);
 
   return (
-    <FormFooter style={{ marginBottom: 60 }}>
+    <FormFooter
+      style={{
+        marginTop: 0,
+        marginBottom: 60,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <Modal />
       <ButtonCta
         variant="outlined"
