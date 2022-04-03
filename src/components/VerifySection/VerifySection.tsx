@@ -72,6 +72,7 @@ const VerifyPhoneToast = () => {
           confirmation={confirmation}
           setVerificationSuccess={() => {}}
           phoneNumber={identity.phoneNumber}
+          close={() => setModalOpened(false)}
         />
       )}
       <Toast

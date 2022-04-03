@@ -10,7 +10,7 @@ export const AnnouncementHighlights = ({
   beds,
   duration,
 }: {
-  city: string;
+  city?: string;
   beds: number;
   duration: string;
 }) => {

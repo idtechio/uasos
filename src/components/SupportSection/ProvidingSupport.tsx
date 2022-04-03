@@ -105,7 +105,9 @@ const Offers = ({
         <SupportCard key={o.id}>
           <HeaderWrapper>
             <MoreButtonWrapper>
-              <EditOfferButton targetID={o.id} targetType="hosts" />
+              {o.type !== "confirmed" && (
+                <EditOfferButton targetID={o.id} targetType="hosts" />
+              )}
             </MoreButtonWrapper>
 
             <Placeholder />
@@ -145,7 +147,7 @@ const Offers = ({
           ) : ( */}
           <AnnouncementHighlights
             beds={o.beds}
-            city={o.city}
+            city={o?.closestCity}
             duration={o.duration}
           />
           {/* )} */}

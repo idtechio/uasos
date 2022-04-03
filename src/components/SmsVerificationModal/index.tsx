@@ -19,6 +19,7 @@ import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
 import { FirebaseError } from "@firebase/util";
+import { CloseButton } from "../EditOfferOptions/style";
 
 type FormType = {
   "1": string;
@@ -36,6 +37,7 @@ interface Props {
   mode: "LOGIN" | "UPDATE" | "LINK";
   callback: () => void;
   verificationId?: string;
+  close?(): void;
 }
 export default function SmsVerificationModal({
   phoneNumber,
@@ -44,6 +46,7 @@ export default function SmsVerificationModal({
   mode,
   callback,
   verificationId,
+  close,
 }: Props) {
   const { t } = useTranslation();
   const { identity } = useContext(AuthContext);
@@ -163,6 +166,7 @@ export default function SmsVerificationModal({
     <CardModal closeable={false}>
       <div style={{ display: "none" }} id="recaptcha__container"></div>
       <Wrapper>
+        {close && <CloseButton onPress={close} />}
         <Image src={SmsSent} alt=""></Image>
         <StyledHeader>{t("others:common.sms.verification")}</StyledHeader>
         <StyledText>
