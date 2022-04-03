@@ -5,6 +5,15 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+enum GuestHostStatus {
+  ACCEPTED = "accepted", // default status after creation
+  REJECTED = "rejected", // for future moderation purpose
+  BEING_PROCESS = "being_processed", // during matching process
+  MATCHED = "matched", // matched with guest/hosts and awaiting for response
+  MATCH_ACCEPTED = "match_accepted", // match accepted by host and guest
+  DEFAULT = "default",
+}
+
 enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
@@ -32,21 +41,21 @@ const toOffer = (o: OfferProps) => ({
   matchedRequest: o.matchedRequest,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
-  const matchStatus = o.match_status;
+  const matchStatus = o.status;
   if (!matchStatus) {
     return "LOOKING_FOR_A_MATCH";
   }
   switch (matchStatus) {
-    case MatchStatus.ACCEPTED:
+    case GuestHostStatus.MATCH_ACCEPTED:
       return "CONFIRMED";
-    case MatchStatus.AWAITING_RESPONSE:
+    case GuestHostStatus.MATCHED:
       return "FOUND_MATCH";
-    case MatchStatus.DEFAULT:
+    case GuestHostStatus.DEFAULT:
       return "LOOKING_FOR_A_MATCH";
-    case MatchStatus.REJECTED:
-      return "INACTIVE";
-    case MatchStatus.TIMEOUT:
-      return "INACTIVE";
+    case GuestHostStatus.BEING_PROCESS:
+      return "BEING_CONFIRMED";
+    case GuestHostStatus.ACCEPTED:
+      return "LOOKING_FOR_A_MATCH";
   }
   return "LOOKING_FOR_A_MATCH";
 };
