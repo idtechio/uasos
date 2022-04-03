@@ -77,7 +77,7 @@ const toName: (_: OfferProps) => string = (o) =>
     : typeof o.shelter_type === "string"
     ? o.shelter_type
     : o.shelter_type.join(", ");
-const toAccomodationTime: (
+export const toAccomodationTime: (
   duration_category: string[] | string
 ) => AccommodationTime = (duration_category) => {
   return (
