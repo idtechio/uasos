@@ -10,12 +10,12 @@ export default function DetailsLink({
 }: {
   href: string | { pathname: string; query: { id: string; type: string } };
 }) {
-  const { t } = useTranslation("details");
+  const { t } = useTranslation("others");
   return (
     <LinkWrapper>
       <Link href={href} passHref>
         <SectionDetails>
-          <DetailsText>{t("details")}</DetailsText>
+          <DetailsText>{t("common.actions.details")}</DetailsText>
           <ArrowIconWrapper>
             <ArrowIcon />
           </ArrowIconWrapper>
