@@ -28,18 +28,20 @@ export const borderTopStyle: StyleProp<ViewStyle> = {
 };
 
 export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation();
 
   return (
     <FlexWrapper style={borderTopStyle}>
-      <Subtitle>{t("accommodationExtraInfo")}</Subtitle>
+      <Subtitle>
+        {t("others:forms.match.additionalInfoOnAccommodation")}
+      </Subtitle>
       <ItemsRow>
         {info.transport === "TRUE" && (
           <DataField
             Icon={TransportIcon}
             iconWidth={12}
             iconHeight={12}
-            label={t("transportOffered")}
+            label={t("others:forms.generic.hostInformation.offerTransport")}
           />
         )}
 
@@ -48,7 +50,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={AnimalsIcon}
             iconWidth={16}
             iconHeight={14}
-            label={t("petsAccepted")}
+            label={t("hostList:petsWelcome")}
           />
         )}
 
@@ -57,7 +59,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={DisabilityIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("disabilityAccepted")}
+            label={t("hostList:disabledReady")}
           />
         )}
 
@@ -66,7 +68,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
             Icon={PregnantIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("pregnancyAccepted")}
+            label={t("hostList:pregnancyAccepted")}
           />
         )}
 
