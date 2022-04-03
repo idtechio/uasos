@@ -142,31 +142,58 @@ export function HowDoesItWorkSection() {
     if (isDesktop) {
       return (
         <>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <PathItemDesktopContainer key={index} number={index}>
-              <PathItemDot>
-                <PathItemDotText>{index + 1}</PathItemDotText>
-              </PathItemDot>
-              <PathItemText>{t(`howDoesItWork.points.${index}`)}</PathItemText>
-            </PathItemDesktopContainer>
-          ))}
+          {Array.from({ length: 5 }).map((_, index) => {
+            // Shitty code, just changing order of items
+            let customIndex = index;
+            if (index === 3) {
+              customIndex = 4;
+            }
+
+            if (index === 4) {
+              customIndex = 3;
+            }
+
+            return (
+              <PathItemDesktopContainer key={index} number={index}>
+                <PathItemDot>
+                  <PathItemDotText>{index + 1}</PathItemDotText>
+                </PathItemDot>
+                <PathItemText>
+                  {t(`howDoesItWork.points.${customIndex}`)}
+                </PathItemText>
+              </PathItemDesktopContainer>
+            );
+          })}
         </>
       );
     }
 
     return (
       <>
-        {Array.from({ length: 5 }).map((_, index, arr) => (
-          <Fragment key={index}>
-            <PathItemMobileContainer>
-              <PathItemDot>
-                <Text>{index + 1}</Text>
-              </PathItemDot>
-              <PathItemText>{t(`howDoesItWork.points.${index}`)}</PathItemText>
-            </PathItemMobileContainer>
-            {index !== arr.length - 1 && <PathDotConnector />}
-          </Fragment>
-        ))}
+        {Array.from({ length: 5 }).map((_, index, arr) => {
+          let customIndex = index;
+          if (index === 3) {
+            customIndex = 4;
+          }
+
+          if (index === 4) {
+            customIndex = 3;
+          }
+
+          return (
+            <Fragment key={index}>
+              <PathItemMobileContainer>
+                <PathItemDot>
+                  <Text>{index + 1}</Text>
+                </PathItemDot>
+                <PathItemText>
+                  {t(`howDoesItWork.points.${customIndex}`)}
+                </PathItemText>
+              </PathItemMobileContainer>
+              {index !== arr.length - 1 && <PathDotConnector />}
+            </Fragment>
+          );
+        })}
       </>
     );
   }, [isDesktop, t]);

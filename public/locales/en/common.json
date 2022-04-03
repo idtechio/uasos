@@ -199,7 +199,7 @@
         },
         "prolongationReady": "Possibility of extending the stay (for a fee)",
         "transportReady": "Possibility of transport",
-        "hostAddressProcessingWarning": "Full address will not be shared with refugee - only your city"
+        "hostAddressProcessingWarning": "Full address will not be shared with refugee — only your city"
     },
     "logout": "Log out",
     "back": "Back",
