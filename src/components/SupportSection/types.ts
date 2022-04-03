@@ -32,6 +32,7 @@ export type Offer = {
   duration: AccommodationTime;
   state: MatchState;
   matchedRequest?: CommonMatched;
+  closestCity?: string;
 };
 
 export type Request = {
@@ -42,4 +43,5 @@ export type Request = {
   duration: AccommodationTime;
   state: MatchState;
   matchedOffer?: CommonMatched;
+  closestCity?: string;
 };
