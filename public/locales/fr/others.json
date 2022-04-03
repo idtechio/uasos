@@ -121,7 +121,10 @@
             },
             "submited": "Formulaire soumis",
             "facilityInformation": {
-                "disability": "Installations pour personnes handicapées"
+                "disability": "Installations pour personnes handicapées",
+                "pregnancy": "",
+                "eldery": "",
+                "diversity": ""
             },
             "password": "Mot de passe",
             "selectFromList": "Sélectionner dans la liste",

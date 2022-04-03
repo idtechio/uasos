@@ -121,7 +121,10 @@
             },
             "submited": "Formular trimis",
             "facilityInformation": {
-                "disability": "Facilități pentru persoanele cu handicap"
+                "disability": "Facilități pentru persoanele cu handicap",
+                "pregnancy": "",
+                "eldery": "",
+                "diversity": ""
             },
             "password": "Parola",
             "selectFromList": "Selectați din listă",

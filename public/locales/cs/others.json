@@ -121,7 +121,10 @@
             },
             "submited": "Formulář odeslaný ",
             "facilityInformation": {
-                "disability": "Zařízení pro osoby se zdravotním postižením"
+                "disability": "Zařízení pro osoby se zdravotním postižením",
+                "pregnancy": "Zařízení pro těhotné ženy",
+                "eldery": "Zařízení pro seniory",
+                "diversity": "Všechny národnosti vítány"
             },
             "password": "Heslo",
             "selectFromList": "Vyberte ze seznamu",
