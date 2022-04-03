@@ -94,7 +94,7 @@
             "confirmed": "Votre invité\/hôte vient de confirmer une offre. Contactez-le\/la pour régler les détails.",
             "accommodationTypeWithData": "Type d’hébergement: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Informations supplémentaires sur le logement",
-            "usersWarning": "<b>Pour des raisons de sécurité, informez vos proches des personnes que vous hébergez. Au cas où:\n <\/b>vérifier l'identité de la personne que vous hébergez,\n assurez-vous que la composition du groupe correspond à la description d'origine",
+            "usersWarning": "<b>Pour des raisons de sécurité, informez vos proches des personnes que vous hébergez. Au cas où: <\/b>\n<ul>\n<li>vérifier l'identité de la personne que vous hébergez,<\/li>\n<li> assurez-vous que la composition du groupe correspond à la description d'origine<\/li>\n<\/ul>",
             "individual": "Individu",
             "host": {
                 "formSent": "Formulaire envoyé",
@@ -199,7 +199,8 @@
                 "haveMatch": "Nous avons trouvé une correspondance",
                 "lookingForMatch": "Recherche d'une correspondance",
                 "awaitingHostApproval": "En attente de l'approbation de l'hôte",
-                "confirmed": "Confirmé"
+                "confirmed": "Confirmé",
+                "rejected": ""
             }
         },
         "refuge": {

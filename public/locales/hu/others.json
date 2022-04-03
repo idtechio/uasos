@@ -94,7 +94,7 @@
             "confirmed": "Az Ön vendége\/házigazdája most erősített meg egy ajánlatot. Vegye fel vele a kapcsolatot a részletek egyeztetése érdekében. ",
             "accommodationTypeWithData": "Szálláshely típusa: <b>{{típus}}<\/b>",
             "additionalInfoOnAccommodation": "További információk a szállásról",
-            "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:<\/b>\nEllenőrizze a menedéket nyújtó személy személyazonosságát,\ngyőződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak ",
+            "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:<\/b>\n<ul>\n<li>Ellenőrizze a menedéket nyújtó személy személyazonosságát,<\/li>\n<li>győződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak<\/li>\n<\/ul>",
             "individual": "Egyéni",
             "host": {
                 "formSent": "Elküldött űrlap",
@@ -199,7 +199,8 @@
                 "haveMatch": "Találtunk egyezést",
                 "lookingForMatch": "Párkeresés",
                 "awaitingHostApproval": "A fogadó jóváhagyására vár",
-                "confirmed": "Megerősítve"
+                "confirmed": "Megerősítve",
+                "rejected": "Visszautasított"
             }
         },
         "refuge": {
