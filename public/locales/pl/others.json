@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "W grupie znajduje się osoba z zaawansowaną ciążą (powyżej 6-go miesiąca)",
                 "disability": "W grupie znajduje się osoba niepełnosprawna",
-                "multicultural": "W skład grupy wchodzą osoby różnych narodowości"
+                "multicultural": "W skład grupy wchodzą osoby różnych narodowości",
+                "animals": "Grupie towarzyszy zwierzę domowe",
+                "elders": "W grupie znajduje się osoba starsza"
             },
             "submited": "Formularz zgłoszony",
             "facilityInformation": {

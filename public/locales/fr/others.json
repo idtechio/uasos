@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "Le groupe comprend une personne avec une grossesse avancée (plus de 6 mois)",
                 "disability": "Il y a une personne handicapée dans le groupe",
-                "multicultural": "Le groupe comprend des personnes de différentes nationalités"
+                "multicultural": "Le groupe comprend des personnes de différentes nationalités",
+                "animals": "Le groupe est accompagné d'un animal de compagnie",
+                "elders": "Il y a une personne âgée dans le groupe"
             },
             "submited": "Formulaire soumis",
             "facilityInformation": {

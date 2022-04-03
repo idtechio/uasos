@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "Grupul include o persoană cu o sarcină avansată (peste 6 luni).",
                 "disability": "În grup există o persoană cu dizabilități",
-                "multicultural": "Din grup fac parte persoane de diferite naționalități"
+                "multicultural": "Din grup fac parte persoane de diferite naționalități",
+                "animals": "Grupul este însoțit de un animal de companie",
+                "elders": "Există o persoană în vârstă în grup"
             },
             "submited": "Formular trimis",
             "facilityInformation": {

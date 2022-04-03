@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "Skupina zahrnuje osobu v pokročilém stádiu těhotenství (nad 6 měsíců).",
                 "disability": "Ve skupině je osoba se zdravotním postižením.",
-                "multicultural": "Ve skupině jsou lidé různých národností"
+                "multicultural": "Ve skupině jsou lidé různých národností",
+                "animals": "Skupinu doprovází domácí mazlíček",
+                "elders": "Ve skupině je starší osoba."
             },
             "submited": "Formulář odeslaný ",
             "facilityInformation": {

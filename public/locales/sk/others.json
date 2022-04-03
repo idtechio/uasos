@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "Do skupiny patrí osoba v pokročilom štádiu tehotenstva (nad 6 mesiacov)",
                 "disability": "V skupine je osoba so zdravotným postihnutím",
-                "multicultural": "Skupina zahŕňa ľudí viacerých národností"
+                "multicultural": "Skupina zahŕňa ľudí viacerých národností",
+                "animals": "Skupinu sprevádza domáce zviera",
+                "elders": "V skupine je staršia osoba"
             },
             "submited": "Formulár odoslaný",
             "facilityInformation": {
