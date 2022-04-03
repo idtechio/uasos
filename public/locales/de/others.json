@@ -35,7 +35,7 @@
         "sms": {
             "verification": "SMS-Überprüfung",
             "verificationSuccess": "SMS-Verifizierung erfolgreich abgeschlossen",
-            "sentInfo": "Geben Sie den Verifizierungscode ein, der an die Telefonnummer {{PhoneNumber}} gesendet wurde.",
+            "sentInfo": "Geben Sie den Verifizierungscode ein, der an die Telefonnummer {{phoneNumber}} gesendet wurde.",
             "verificationFail": "Huch! Etwas ist schief gelaufen, versuchen Sie es erneut oder generieren Sie einen neuen Code"
         },
         "actions": {
@@ -89,11 +89,11 @@
         },
         "match": {
             "guestProfile": "Gast-Profil",
-            "numberOfPeopleWithData": "Maximale Anzahl von Personen: <b>{{Anzahl}}<\/b>",
-            "durationWithData": "Dauer des Aufenthalts: <b>{{Anzahl}} {{Einheit}}<\/b>",
+            "numberOfPeopleWithData": "Maximale Anzahl von Personen: <b>{{number}}<\/b>",
+            "durationWithData": "Dauer des Aufenthalts: <b>{{number}} {{unit}}<\/b>",
             "specificCity": "Bestimmte Stadt",
             "confirmed": "Ihr Gast\/Gastgeber hat soeben ein Angebot bestätigt. Setzen Sie sich mit ihm\/ihr in Verbindung, um die Einzelheiten zu besprechen. ",
-            "accommodationTypeWithData": "Unterkunftsart: <b>{{Typ}}<\/b>",
+            "accommodationTypeWithData": "Unterkunftsart: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Zusätzliche Informationen zur Unterkunft",
             "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\n<ul>\n<li>Überprüfen Sie die Identität der Person, die Sie beherbergen,<\/li>\n<li>Vergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt.<\/li>\n<\/ul>",
             "individual": "Einzelne",
@@ -102,7 +102,7 @@
                 "formSentThanks": "Vielen Dank für Ihre Bereitschaft zu helfen. Ihre Immobilie wurde in die Liste aufgenommen. Wir werden unsere Datenbank mit Bedürftigen durchsuchen und Sie informieren, sobald wir die richtige Person gefunden haben.",
                 "received": "Vielen Dank für die Bestätigung des erhaltenen Vorschlags. Sobald wir beide Bestätigungen erhalten haben, werden wir Sie informieren."
             },
-            "searchAddress": "Adresse suchen: <b>{{Stadt}}<\/b>",
+            "searchAddress": "Adresse suchen: <b>{{city}}<\/b>",
             "rejected": "Ihr potenzieller Gast\/Gastgeber hat das Angebot abgelehnt. Ihr Angebot wird wieder in den Pool aufgenommen. Wir werden Sie über das nächste Angebot informieren, sobald wir es finden können.",
             "refuge": {
                 "rejection": "Vielen Dank, dass Sie Ihre Entscheidung bestätigt haben. Ihre Einreichung wird wieder in den Pool aufgenommen. Wir werden Sie über den nächsten Vorschlag informieren, sobald wir einen gefunden haben."
@@ -129,18 +129,18 @@
             },
             "password": "Passwort",
             "selectFromList": "Wählen Sie aus der Liste",
-            "cityWithData": "Stadt: {{Stadt}}",
-            "phoneNumberWithData": "Telefonnummer: <b>{{Nummer}}<\/b>",
-            "hostWithName": "Gastgeber: <b>{{Name}}<\/b>",
+            "cityWithData": "Stadt: {{city}}",
+            "phoneNumberWithData": "Telefonnummer: <b>{{number}}<\/b>",
+            "hostWithName": "Gastgeber: <b>{{name}}<\/b>",
             "addPhoto": "Foto hinzufügen",
             "emailAddressWithData": "E-Mail Adresse: <b>{{mail}}<\/b>",
             "zipCode": "Postleitzahl",
             "hostProfile": "Host-Profil",
-            "peopleInGroup": "Anzahl der Personen in der Gruppe: <b>{{Anzahl}}<\/b>",
-            "city": "Adresse: <b>{{Stadt}}<\/b>",
-            "groupType": "Gruppentyp: <b>{{Typ}}<\/b>",
+            "peopleInGroup": "Anzahl der Personen in der Gruppe: <b>{{number}}<\/b>",
+            "city": "Adresse: <b>{{city}}<\/b>",
+            "groupType": "Gruppentyp: <b>{{type}}<\/b>",
             "additionalGroupInformation": "Zusätzliche Informationen zur Gruppe",
-            "guest": "Gast: <b>{{Name}}<\/b>",
+            "guest": "Gast: <b>{{name}}<\/b>",
             "selectMultipleFromList": "Wählen Sie aus der Liste (Mehrfachauswahl)",
             "name": "Name",
             "phoneNumber": "Rufnummer",
