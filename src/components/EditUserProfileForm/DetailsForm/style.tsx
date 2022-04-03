@@ -33,3 +33,25 @@ export const FormHeader = styled.Text`
   margin-top: 32px;
   margin-bottom: 16px;
 `;
+
+export const ErrorText = styled.Text`
+  color: ${({ theme }) => (theme as Theme).colors.figmaPalette.alert};
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+
+  flex: 0 0 100%;
+  margin-bottom: 12px;
+`;
+
+export const SuccessMessage = styled.Text`
+  color: ${({ theme }) => (theme as Theme).colors.figmaPalette.positive};
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  flex: 0 0 100%;
+
+  margin-bottom: 12px;
+`;

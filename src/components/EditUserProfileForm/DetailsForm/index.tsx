@@ -7,9 +7,16 @@ import { getAccountDTO } from "../../../client-api/account";
 import { useEditAccount } from "../../../queries/useAccount";
 import ButtonCta from "../../EditOfferOptions/ButtonCta";
 import Inputs from "./Inputs";
-import { ContentContainer, FormHeader, ScreenHeader } from "./style";
+import {
+  ContentContainer,
+  ErrorText,
+  FormHeader,
+  ScreenHeader,
+  SuccessMessage,
+} from "./style";
 import { EditProfileForm } from "./types";
 import { Authorization } from "../../../hooks/useAuth";
+import { useRouter } from "next/router";
 
 const FormFooter = styled.View`
   display: flex;
@@ -64,7 +71,8 @@ export default function UserDetailsForm({
   onSuccess(): void;
 }) {
   const { t } = useTranslation("others");
-  const { mutate, isLoading } = useEditAccount();
+  const router = useRouter();
+  const { mutate, isLoading, isSuccess, isError, error } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
   });
@@ -101,12 +109,16 @@ export default function UserDetailsForm({
         <FormHeader>{t("forms.userRegistration.enterDetails")}</FormHeader>
         <Inputs />
 
-        <FormFooter>
+        <FormFooter style={{ flexWrap: "wrap" }}>
+          {isSuccess && <SuccessMessage>Success</SuccessMessage>}
+          {isError && <ErrorText>Error</ErrorText>}
+
           <ButtonCta
             color="primary"
             variant="outlined"
             anchor={t("common.buttons.cancel")}
             disabled={isLoading}
+            onPress={() => router.push("/dashboard")}
           />
           <ButtonCta
             disabled={isLoading}

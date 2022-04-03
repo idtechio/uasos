@@ -202,6 +202,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               setVerificationSuccess={setSmsVerificationSuccess}
               mode="LOGIN"
               callback={() => null}
+              close={() => setPhoneLoginConfirmation(null)}
             />
           ) : (
             <></>
