@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
@@ -25,6 +25,7 @@ import { ThankfulnessModal } from "../ThankfulnessModal";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import { useAddHostToApi } from "../../queries/useOffersList";
+import { AuthContext } from "../../../pages/_app";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -55,6 +56,7 @@ const submitRequestDefualtState = {
 export default function FormAdHost() {
   const { t } = useTranslation();
   const { mutate } = useAddHostToApi();
+  const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
     defaultValues: {
@@ -63,6 +65,7 @@ export default function FormAdHost() {
         country: "poland",
         volunteerVisitAcceptance: "true",
         groupsTypes: [],
+        phoneNumber: identity?.phoneNumber ?? "",
       },
     },
   });
@@ -119,6 +122,7 @@ export default function FormAdHost() {
 
     const payload = {
       country: country,
+      phone_num: identity?.phoneNumber ?? "",
       city: city,
       shelter_type: [accommodationType],
       acceptable_group_relations: groupsTypes,
@@ -139,7 +143,6 @@ export default function FormAdHost() {
       appartment_no: apartmentNumber,
       can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
-
     mutate(payload, {
       onSuccess: () => {
         setSubmitRequstState((state) => ({ ...state, succeeded: true }));

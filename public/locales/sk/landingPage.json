@@ -67,11 +67,11 @@
     "howDoesItWork": {
         "title": "Ako to funguje?",
         "points": {
-            "0": "Odošlite ponuku ubytovania alebo žiadosť o ubytovanie",
+            "0": "Odošlite ponuku ubytovania\nalebo žiadosť o ubytovanie",
             "1": "Vyplňte potrebné údaje",
             "2": "Počkajte na najlepšiu ponuku",
-            "3": "Kontaktujte hostiteľa \/ hosťa",
-            "4": "Potvrdiť alebo odmietnuť ponuku"
+            "3": "Kontaktujte\nhostiteľa\/hosťa",
+            "4": "Potvrdiť alebo\nodmietnuť ponuku"
         }
     },
     "hero": {

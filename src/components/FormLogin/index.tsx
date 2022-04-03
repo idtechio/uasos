@@ -67,7 +67,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           data.login.password
         );
       } catch (error) {
-        return null;
+        if (error instanceof Error) {
+          if (error.message.includes("wrong-password")) {
+            setError("Invalid Passowrd");
+          }
+        }
       }
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
@@ -170,7 +174,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={t("common:registrationUserForm.errors.password")}
                 />
                 <LostPass />
               </>
