@@ -345,6 +345,7 @@ export default function FormRegisterUser() {
               phoneNumber={phoneNumber}
               confirmation={phoneConfirmation}
               setVerificationSuccess={setSmsVerificationSuccess}
+              close={() => setPhoneConfirmation(null)}
             />
           ) : (
             <></>

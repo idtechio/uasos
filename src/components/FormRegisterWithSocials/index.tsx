@@ -214,6 +214,7 @@ export default function FromRegisterWithSocials() {
             phoneNumber={phoneNumber}
             confirmation={phoneLoginConfirmation}
             setVerificationSuccess={setSmsVerificationSuccess}
+            close={() => setPhoneLoginConfirmation(null)}
           />
         ) : (
           <></>
