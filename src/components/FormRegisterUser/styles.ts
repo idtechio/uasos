@@ -19,7 +19,7 @@ export const StyledSubheader = styled.Text`
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
 `;
 export const StyledErrorMessage = styled.Text`
-  color: "red";
+  color: red;
   font-size: 16;
   line-height: 24;
 `;
