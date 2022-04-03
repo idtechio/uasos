@@ -23,8 +23,7 @@ export default function HostCardContent({
   offer,
   showContact,
 }: HostCardContentProps) {
-  const { t } = useTranslation("offer-details");
-  const { t: t2 } = useTranslation("common");
+  const { t } = useTranslation();
 
   const [showAdditionalInfo, setShowAdditionalInfo] = React.useState(true);
   const additionalInfo: InfoType = {
@@ -39,7 +38,7 @@ export default function HostCardContent({
   return (
     <>
       <Header>
-        <Title>{t("hostProfile")}</Title>
+        <Title>{t("others:forms.generic.hostProfile")}</Title>
         {additionalInfo ? (
           <TouchableOpacity
             onPress={() => setShowAdditionalInfo(!showAdditionalInfo)}
@@ -57,7 +56,9 @@ export default function HostCardContent({
             Icon={HostIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("host") + offer?.name}
+            label={t("others:forms.generic.hostWithName", {
+              name: offer?.name,
+            })}
           />
         )}
         {showContact && offer?.email && (
@@ -85,7 +86,7 @@ export default function HostCardContent({
             Icon={AddressIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("hostAddress") + offer?.city}
+            label={t("others:forms.generic.city", { city: offer?.city })}
           />
         )}
 
@@ -94,17 +95,14 @@ export default function HostCardContent({
             Icon={AccommodationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={
-              t("accomType") +
-              (typeof offer.shelter_type === "string"
+            label={t("others:forms.match.accommodationTypeWithData", {
+              type: (typeof offer.shelter_type === "string"
                 ? offer.shelter_type.split(",")
                 : offer.shelter_type
               )
-                .map((el: string) =>
-                  t2(`staticValues.accommodationTypes.${el}`)
-                )
-                .join(", ")
-            }
+                .map((el: string) => t(`staticValues.accommodationTypes.${el}`))
+                .join(", "),
+            })}
           />
         )}
         {offer?.beds && (
@@ -112,7 +110,9 @@ export default function HostCardContent({
             Icon={GuestsIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("maxPeople") + offer?.beds}
+            label={t("others:forms.match.numberOfPeopleWithData", {
+              number: offer?.beds,
+            })}
           />
         )}
         {offer?.duration_category && offer?.duration_category.length && (
@@ -120,15 +120,15 @@ export default function HostCardContent({
             Icon={DurationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={
-              t("duration") +
-              (typeof offer.duration_category === "string"
+            label={t("others:forms.match.durationWithData", {
+              number: (typeof offer.duration_category === "string"
                 ? offer.duration_category.split(",")
                 : offer.duration_category
               )
-                .map((el: string) => t2(`staticValues.timePeriod.${el}`))
-                .join(", ")
-            }
+                .map((el: string) => t(`staticValues.timePeriod.${el}`))
+                .join(", "),
+              unit: "",
+            })}
           />
         )}
 
