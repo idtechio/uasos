@@ -34,7 +34,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
     <FlexWrapper style={borderTopStyle}>
       <Subtitle>{t("accommodationExtraInfo")}</Subtitle>
       <ItemsRow>
-        {info.transport && (
+        {info.transport === "TRUE" && (
           <DataField
             Icon={TransportIcon}
             iconWidth={12}
@@ -43,7 +43,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
           />
         )}
 
-        {info.animals && (
+        {info.animals === "TRUE" && (
           <DataField
             Icon={AnimalsIcon}
             iconWidth={16}
@@ -52,7 +52,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
           />
         )}
 
-        {info.disability && (
+        {info.disability === "TRUE" && (
           <DataField
             Icon={DisabilityIcon}
             iconWidth={12}
@@ -61,7 +61,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
           />
         )}
 
-        {info.pregnancy && (
+        {info.pregnancy === "TRUE" && (
           <DataField
             Icon={PregnantIcon}
             iconWidth={12}
@@ -70,7 +70,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
           />
         )}
 
-        {info.elderly && (
+        {info.elderly === "TRUE" && (
           <DataField
             Icon={ElderIcon}
             iconWidth={12}
@@ -79,7 +79,7 @@ export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
           />
         )}
 
-        {info.diversity && (
+        {info.diversity === "TRUE" && (
           <DataField
             Icon={DiversityIcon}
             iconWidth={12}

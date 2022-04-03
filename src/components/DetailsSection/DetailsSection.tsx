@@ -30,16 +30,16 @@ export default function DetailsSection({
       ) : null}
       {(data as RequestProps)?.matchedOffer ? (
         <DetailsCard>
-          <GuestCardContent
-            request={data as RequestProps}
-            showContact={(data as RequestProps).match_status === "accepted"}
+          <HostCardContent
+            offer={data as OfferProps}
+            showContact={(data as OfferProps).match_status === "accepted"}
           />
         </DetailsCard>
       ) : (data as OfferProps)?.matchedRequest ? (
         <DetailsCard>
-          <HostCardContent
-            offer={data as OfferProps}
-            showContact={(data as OfferProps).match_status === "accepted"}
+          <GuestCardContent
+            request={(data as OfferProps)?.matchedRequest as RequestProps}
+            showContact={(data as RequestProps).match_status === "accepted"}
           />
         </DetailsCard>
       ) : null}

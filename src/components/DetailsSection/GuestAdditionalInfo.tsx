@@ -28,35 +28,35 @@ export default function GuestAdditionalInfo({
     <FlexWrapper style={borderTopStyle}>
       <Subtitle>{t("groupExtraInfo")}</Subtitle>
       <ItemsColumn>
-        {info.disability && (
+        {info.disability === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("disabilityPresent")}</Info>
           </ListItem>
         )}
 
-        {info.pregnancy && (
+        {info.pregnancy === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("pregnancyPresent")}</Info>
           </ListItem>
         )}
 
-        {info.diversity && (
+        {info.diversity === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("diversityPresent")}</Info>
           </ListItem>
         )}
 
-        {info.animals && (
+        {info.animals === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("animalsPresent")}</Info>
           </ListItem>
         )}
 
-        {info.elderly && (
+        {info.elderly === "TRUE" && (
           <ListItem>
             <Bullet />
             <Info>{t("elderPresent")}</Info>

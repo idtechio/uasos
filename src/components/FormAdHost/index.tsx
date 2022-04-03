@@ -22,7 +22,6 @@ import {
 } from "./FormAddHost.data";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import { useSessionUserData } from "../../hooks/useSessionUserData";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import { useAddHostToApi } from "../../queries/useOffersList";
@@ -56,15 +55,12 @@ const submitRequestDefualtState = {
 
 export default function FormAdHost() {
   const { t } = useTranslation();
-  const { name: sessionName, email: sessionEmail } = useSessionUserData();
   const { mutate } = useAddHostToApi();
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
     defaultValues: {
       advancedHost: {
-        name: sessionName ? sessionName.split(" ")[0] : "",
-        email: sessionEmail,
         guestCount: 1,
         country: "poland",
         volunteerVisitAcceptance: "true",
@@ -111,10 +107,6 @@ export default function FormAdHost() {
       groupsTypes,
       guestCount,
       nationality,
-      name,
-      email,
-      phonePrefix,
-      phoneNumber,
       pregnantReady,
       city,
       transportReady: transportReady,
@@ -123,15 +115,14 @@ export default function FormAdHost() {
       buildingNumber,
       apartmentNumber,
       closestLargeCity,
+      volunteerVisitAcceptance,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
     const payload = {
-      // name: name,
       country: country,
       phone_num: identity?.phoneNumber ?? "",
-      email: email,
       city: city,
       shelter_type: [accommodationType],
       acceptable_group_relations: groupsTypes,
@@ -150,7 +141,7 @@ export default function FormAdHost() {
       street: street,
       building_no: buildingNumber,
       appartment_no: apartmentNumber,
-      can_be_verified: Boolean.FALSE,
+      can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
     mutate(payload, {
       onSuccess: () => {
@@ -252,6 +243,9 @@ export default function FormAdHost() {
                 name="advancedHost.zipCode"
                 label={t("others:forms.generic.zipCode")}
                 error={errors?.advancedHost?.zipCode}
+                rules={{
+                  required: true,
+                }}
               />
             </View>
             <View style={styles.inputWrapper}>
@@ -260,6 +254,9 @@ export default function FormAdHost() {
                 name="advancedHost.city"
                 label={t("refugeeAddForm.cityPlaceholder")}
                 error={errors?.advancedHost?.city}
+                rules={{
+                  required: true,
+                }}
               />
             </View>
           </View>
@@ -272,6 +269,9 @@ export default function FormAdHost() {
               name="advancedHost.street"
               label={t("others:forms.createShelter.street")}
               error={errors?.advancedHost?.street}
+              rules={{
+                required: true,
+              }}
             />
           </View>
 
@@ -284,6 +284,9 @@ export default function FormAdHost() {
                 name="advancedHost.buildingNumber"
                 label={t("others:forms.createShelter.buildingNo")}
                 error={errors?.advancedHost?.buildingNumber}
+                rules={{
+                  required: true,
+                }}
               />
             </View>
             <View style={styles.inputWrapper}>
@@ -294,6 +297,9 @@ export default function FormAdHost() {
                 name="advancedHost.apartmentNumber"
                 label={t("others:forms.createShelter.apartmentNo")}
                 error={errors?.advancedHost?.apartmentNumber}
+                rules={{
+                  required: true,
+                }}
               />
             </View>
           </View>
