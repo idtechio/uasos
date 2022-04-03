@@ -11,7 +11,7 @@ export default function StatusBadge({ state }: { state: MATCH_TYPE }) {
     MATCH_TYPE,
     { value: string; label: string; style: BadgeStyle }
   > = {
-    "being-confirmed": {
+    being_confirmed: {
       value: "x1",
       label: t("others:desktop.offer.status.beingConfirmed"),
       style: "pending",
@@ -21,7 +21,7 @@ export default function StatusBadge({ state }: { state: MATCH_TYPE }) {
       label: t("others:desktop.offer.status.confirmed"),
       style: "positive",
     },
-    "found-a-match": {
+    found_a_match: {
       value: "x3",
       label: t("others:desktop.offer.status.haveMatch"),
       style: "positive",
@@ -31,7 +31,7 @@ export default function StatusBadge({ state }: { state: MATCH_TYPE }) {
       label: t("others:ldesktop.offer.status.inactive"),
       style: "disabled",
     },
-    "looking-for-match": {
+    looking_for_match: {
       value: "x5",
       label: t("others:desktop.offer.status.lookingForMatch"),
       style: "pending",

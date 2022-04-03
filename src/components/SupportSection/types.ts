@@ -8,9 +8,9 @@ export type MatchState =
   | "CONFIRMED";
 export type MATCH_TYPE =
   | "inactive"
-  | "looking-for-match"
-  | "found-a-match"
-  | "being-confirmed"
+  | "looking_for_match"
+  | "found_a_match"
+  | "being_confirmed"
   | "confirmed"
   | "rejected";
 interface CommonMatched {
