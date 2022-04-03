@@ -115,7 +115,9 @@
             "groupInformation": {
                 "pregnancy": "A csoportba egy előrehaladott terhességű (6 hónapnál hosszabb) személy tartozik.",
                 "disability": "A csoportban van egy fogyatékossággal élő személy is",
-                "multicultural": "A csoportban különböző nemzetiségű emberek vannak"
+                "multicultural": "A csoportban különböző nemzetiségű emberek vannak",
+                "animals": "A csoportot egy háziállat kíséri",
+                "elders": "Van egy idős személy a csoportban"
             },
             "submited": "Beküldött űrlap",
             "facilityInformation": {
