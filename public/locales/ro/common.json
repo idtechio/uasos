@@ -247,7 +247,7 @@
         "labels": {
             "email": "E-mail",
             "refugeesCount": "Pentru câte persoane căutați cazare?",
-            "refugee": "Refugiați {{număr}}",
+            "refugee": "Refugiați {{number}}",
             "refugeeDetails": "Furnizați informații suplimentare pentru a permite cea mai bună potrivire pentru dvs.",
             "refugeesAnimal": "Rasă",
             "isGDPRAccepted": "Accept politica de confidențialitate",
