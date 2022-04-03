@@ -1,11 +1,13 @@
-import { DataWrapper, Label, Value } from "./style";
+import { sanitize } from "../../helpers/sanitize";
+import { DataWrapper } from "./style";
+import styled from "styled-components";
+import { Theme } from "../../style/theme.config";
 
 type DataFieldProps = {
   Icon?: React.ElementType;
   iconWidth?: number;
   iconHeight?: number;
   label: string;
-  value?: string | number;
   isBlue?: boolean;
 };
 
@@ -14,15 +16,22 @@ const blueStyle = {
   backgroundColor: "#E7F2FF",
 };
 
-const blueTextStyle = { color: "#0057B8" };
+type LabelProps = { isBlue: boolean; theme: Theme };
+
+const Label = styled.div<LabelProps>`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.75px;
+
+  color: ${({ theme, isBlue }) => (isBlue ? "#0057B8" : theme.colors.blue)};
+`;
 
 export default function DataField({
   Icon,
   iconWidth,
   iconHeight,
   label,
-  value,
-  isBlue,
+  isBlue = false,
 }: DataFieldProps) {
   return (
     <>
@@ -31,11 +40,13 @@ export default function DataField({
           <Icon
             width={iconWidth}
             height={iconHeight}
-            style={isBlue && { color: "#0057B8" }}
+            style={isBlue ? { color: "#0057B8" } : {}}
           />
         ) : null}
-        <Label style={isBlue && blueTextStyle}>{label}</Label>
-        {value && <Value style={isBlue && blueTextStyle}>{value}</Value>}
+        <Label
+          isBlue={isBlue}
+          dangerouslySetInnerHTML={{ __html: sanitize(label) }}
+        />
       </DataWrapper>
     </>
   );

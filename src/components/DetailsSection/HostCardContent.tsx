@@ -57,8 +57,7 @@ export default function HostCardContent({
             Icon={HostIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("host")}
-            value={offer?.name}
+            label={t("host") + offer?.name}
           />
         )}
         {showContact && offer?.email && (
@@ -67,8 +66,7 @@ export default function HostCardContent({
             Icon={AtIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("emailAddress")}
-            value={offer?.email}
+            label={t("emailAddress") + offer?.email}
           />
         )}
 
@@ -78,8 +76,7 @@ export default function HostCardContent({
             Icon={PhoneIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("phoneNumber")}
-            value={offer?.phone_num}
+            label={t("phoneNumber") + offer?.phone_num}
           />
         )}
 
@@ -88,8 +85,7 @@ export default function HostCardContent({
             Icon={AddressIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("hostAddress")}
-            value={offer?.city}
+            label={t("hostAddress") + offer?.city}
           />
         )}
 
@@ -98,13 +94,17 @@ export default function HostCardContent({
             Icon={AccommodationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("accomType")}
-            value={(typeof offer.shelter_type === "string"
-              ? offer.shelter_type.split(",")
-              : offer.shelter_type
-            )
-              .map((el: string) => t2(`staticValues.accommodationTypes.${el}`))
-              .join(", ")}
+            label={
+              t("accomType") +
+              (typeof offer.shelter_type === "string"
+                ? offer.shelter_type.split(",")
+                : offer.shelter_type
+              )
+                .map((el: string) =>
+                  t2(`staticValues.accommodationTypes.${el}`)
+                )
+                .join(", ")
+            }
           />
         )}
         {offer?.beds && (
@@ -112,8 +112,7 @@ export default function HostCardContent({
             Icon={GuestsIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("maxPeople")}
-            value={offer?.beds}
+            label={t("maxPeople") + offer?.beds}
           />
         )}
         {offer?.duration_category && offer?.duration_category.length && (
@@ -121,13 +120,15 @@ export default function HostCardContent({
             Icon={DurationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("duration")}
-            value={(typeof offer.duration_category === "string"
-              ? offer.duration_category.split(",")
-              : offer.duration_category
-            )
-              .map((el: string) => t2(`staticValues.timePeriod.${el}`))
-              .join(", ")}
+            label={
+              t("duration") +
+              (typeof offer.duration_category === "string"
+                ? offer.duration_category.split(",")
+                : offer.duration_category
+              )
+                .map((el: string) => t2(`staticValues.timePeriod.${el}`))
+                .join(", ")
+            }
           />
         )}
 

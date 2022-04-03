@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 import { Theme } from "../../style/theme.config";
-
 // ADDITIONAL INFO
 
 export const Subtitle = styled.Text`
@@ -29,13 +28,6 @@ export const DataWrapper = styled.View`
   border-radius: 5px;
   border: 1px solid
     ${({ theme }: { theme: Theme }) => theme.colors.borderLightGray};
-`;
-
-export const Label = styled.Text`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18.75px;
-  color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
 `;
 
 export const Value = styled.Text`
