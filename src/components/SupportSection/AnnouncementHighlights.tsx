@@ -35,7 +35,9 @@ export const AnnouncementHighlights = ({
           <ClockIcon />
         </IconWrapper>
         <Label>
-          {t("desktop.refuge.duration", { number: duration, unit: "" })}
+          {t("desktop.refuge.duration", {
+            value: t(`common:hostAdd.accommodationTimeLabel.${duration}`),
+          })}
         </Label>
       </Info>
     </SectionInfo>
