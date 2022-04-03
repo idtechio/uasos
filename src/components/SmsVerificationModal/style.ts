@@ -34,6 +34,7 @@ export const Wrapper = styled.View`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 export const ErrorText = styled(StyledText)`
   color: red;

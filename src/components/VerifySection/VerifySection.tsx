@@ -72,6 +72,7 @@ const VerifyPhoneToast = () => {
           confirmation={confirmation}
           setVerificationSuccess={() => {}}
           phoneNumber={identity.phoneNumber}
+          close={() => setModalOpened(false)}
         />
       )}
       <Toast
@@ -104,7 +105,7 @@ export default function VerifySection({
           contaierStyle={{ marginBottom: 10 }}
         />
       )}
-      {needPhone && <VerifyPhoneToast />}
+      {<VerifyPhoneToast />}
     </VerifySectionWrapper>
   );
 }
