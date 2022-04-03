@@ -29,7 +29,7 @@ export const toRequests: (xs: GetRequestsListDTO) => Request[] = (
   xs: GetRequestsListDTO
 ) => xs.requests.map(toRequest);
 
-const toOffer = (o: OfferProps) => ({
+const toOffer = (o: OfferProps): Offer => ({
   id: o.id,
   imageUrl:
     "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg", //TODO: need to be mapped
@@ -40,6 +40,7 @@ const toOffer = (o: OfferProps) => ({
   name: toName(o), //TODO: check if name is shelter_type
   state: toMatchOfferState(o), //TODO: check match state algo
   matchedRequest: o.matchedRequest,
+  closestCity: o.closest_city,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
   const matchStatus = o.status;

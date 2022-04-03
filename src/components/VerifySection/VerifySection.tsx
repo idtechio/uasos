@@ -105,7 +105,7 @@ export default function VerifySection({
           contaierStyle={{ marginBottom: 10 }}
         />
       )}
-      {<VerifyPhoneToast />}
+      {needPhone && <VerifyPhoneToast />}
     </VerifySectionWrapper>
   );
 }

@@ -147,7 +147,7 @@ const Offers = ({
           ) : ( */}
           <AnnouncementHighlights
             beds={o.beds}
-            city={o.city}
+            city={o?.closestCity}
             duration={o.duration}
           />
           {/* )} */}
