@@ -131,7 +131,7 @@ const Requests = ({
               marginBottom: 14,
             }}
           >
-            <StatusBadge state={r.state} />
+            <StatusBadge state={r.type} />
           </div>
 
           {r.matchedOffer ? (
