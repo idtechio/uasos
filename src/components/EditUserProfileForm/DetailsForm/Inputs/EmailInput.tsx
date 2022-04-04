@@ -17,7 +17,6 @@ export default function EmailInput() {
           <Input
             placeholder={t("labels.email")}
             styles={{ wrapper: { margin: 0, height: "auto" } }}
-            withoutLabel
             value={value}
             onChange={onChange}
           />

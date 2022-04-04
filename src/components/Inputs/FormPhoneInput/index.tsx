@@ -68,7 +68,6 @@ function FormPhoneInput({
         render={({ field: { onChange, onBlur, value } }) => (
           <InputControl styles={phoneInputControlStyles}>
             <Input
-              withoutLabel
               placeholder={phoneLabel}
               onChange={onChange}
               value={value}
