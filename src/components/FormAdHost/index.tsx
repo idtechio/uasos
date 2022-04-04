@@ -196,6 +196,7 @@ export default function FormAdHost() {
       <CompositionSection
         padding={[35, 30, 20, 30]}
         header={t("others:forms.createShelter.accommodationHeader")}
+        subHeader={t("hostAdd.hostAddressProcessingWarning")}
         zIndex={3}
       >
         <SectionContent>
