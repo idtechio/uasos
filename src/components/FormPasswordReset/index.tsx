@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
+import { InputCotrolLabel as InputControlLabel } from "../Forms";
 
 import FormContainer from "../FormLogin/FormContainer";
 import { FormProvider, useForm } from "react-hook-form";
@@ -17,6 +18,7 @@ import {
   styles,
   ModalContainer,
   StyledModalText,
+  VerticalDivider,
 } from "./styles";
 import CardModal from "../CardModal";
 import ModalPicture from "../../../public/assets/PasswordReset.png";
@@ -25,18 +27,29 @@ import { Routes } from "../../consts/router";
 
 const FormPasswordReset = () => {
   const { t } = useTranslation();
-  const [resetSuccess, setResetSucces] = useState<boolean>(false);
+  const [resetSuccess, setResetSuccess] = useState<boolean>(false);
   const router = useRouter();
   // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const formFields = useForm<FormType>();
   const firstInputRef = useRef<string | null>(null);
+  const oobCodeRef = useRef<null | string>(null);
+
   const {
     handleSubmit,
     formState: { errors },
     watch,
   } = formFields;
+
+  const ERROR_MESSAGES = {
+    LENGTH: "others:forms.userRegistration.validations.passwordLength",
+    REPEAT: "others:forms.userRegistration.validations.passwordMismatch",
+  };
+
+  const secondInputErrorType = errors?.resetPassword?.passwordRepeat?.type;
+
   firstInputRef.current = watch("resetPassword.password", "");
+
   const onSubmit = async (data: {
     resetPassword: { passwordRepeat: string };
   }) => {
@@ -46,18 +59,25 @@ const FormPasswordReset = () => {
           oobCodeRef.current,
           data.resetPassword.passwordRepeat
         );
-        setResetSucces(true);
+        setResetSuccess(true);
       } catch (e) {
         return null;
       }
     }
   };
-  const oobCodeRef = useRef<null | string>(null);
+
+  const onError = () => null;
+
+  const validatePasswordMismatch = (value: string) =>
+    value === firstInputRef.current;
+
+  const onPressHandler = () => router.push(Routes.SIGN_IN);
+
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     oobCodeRef.current = queryParams.get("oobCode");
   }, []);
-  const onError = () => null;
+
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -65,9 +85,12 @@ const FormPasswordReset = () => {
         <StyledText>{t("others:forms.resetPassword.header")}</StyledText>
         <FormContainer>
           <FormProvider {...formFields}>
+            <InputControlLabel marginBottom={"10"}>
+              {t("others:forms.userRegistration.newPassword")}
+            </InputControlLabel>
             <FormTextInput
               name={"resetPassword.password"}
-              label={t("others:forms.resetPassword.setNewPassword")}
+              label={t("others:forms.userRegistration.newPassword")}
               secureTextEntry
               rules={{
                 required: true,
@@ -75,9 +98,15 @@ const FormPasswordReset = () => {
                 minLength: 8,
               }}
               error={errors?.resetPassword?.password}
-              errorMsg={"Password must be at leat 8 characters long"}
-              styles={{ wrapper: { marginBottom: 12 } }}
+              errorMsg={t(ERROR_MESSAGES.LENGTH)}
+              styles={{ wrapper: { marginBottom: 10 } }}
             />
+            <VerticalDivider
+              height={errors?.resetPassword?.password ? "0px" : "26px"}
+            />
+            <InputControlLabel marginBottom={"10"}>
+              {t("others:forms.userRegistration.confirmPassword")}
+            </InputControlLabel>
             <FormTextInput
               name={"resetPassword.passwordRepeat"}
               label={t("others:forms.userRegistration.confirmPassword")}
@@ -86,12 +115,17 @@ const FormPasswordReset = () => {
                 required: true,
                 maxLength: 50,
                 minLength: 8,
-                validate: (value) => value === firstInputRef.current,
+                validate: validatePasswordMismatch,
               }}
               error={errors?.resetPassword?.passwordRepeat}
               errorMsg={t(
-                "others:common.forms.userRegistration.validations.passowordMismatch"
+                `${
+                  secondInputErrorType === "validate"
+                    ? ERROR_MESSAGES.REPEAT
+                    : ERROR_MESSAGES.LENGTH
+                }`
               )}
+              styles={{ wrapper: { marginBottom: 10 } }}
             />
           </FormProvider>
           <ButtonContainer>
@@ -110,7 +144,7 @@ const FormPasswordReset = () => {
                 {t("others:common.resetPassword.success")}
               </StyledModalText>
               <ButtonCta
-                onPress={() => router.push(Routes.SIGN_IN)}
+                onPress={onPressHandler}
                 anchor={"Continue"}
                 style={styles.confirmButton}
               />
