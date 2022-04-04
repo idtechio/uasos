@@ -49,8 +49,8 @@ async function updateAccount(
     if (account) {
       accountData.db_accounts_id = account.db_accounts_id;
       body?.name && (accountData.name = body.name);
-      body?.email && (accountData.email = body.email);
-      body?.phone && (accountData.phone_num = body.phone);
+      accountData.email = body?.email || user.email;
+      accountData.phone_num = body?.phone || user.phoneNumber;
       body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
 
       topicNameOrId = process.env.TOPIC_ACCOUNT_UPDATE;
