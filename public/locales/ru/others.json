@@ -164,7 +164,8 @@
             "login": "Войти",
             "signInFacebook": "Войти с помощью Facebook",
             "signInGoogle": "Войти в систему с помощью Google",
-            "emailOrPhoneDetail": "Электронная почта или номер телефона"
+            "emailOrPhoneDetail": "Электронная почта или номер телефона",
+            "invalidPassword": "Предоставлен неверный пароль"
         },
         "resetPassword": {
             "setNewPassword": "Установите новый пароль",

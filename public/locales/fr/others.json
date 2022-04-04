@@ -164,7 +164,8 @@
             "login": "Se connecter",
             "signInFacebook": "Se connecter avec Facebook",
             "signInGoogle": "Se connecter avec Google",
-            "emailOrPhoneDetail": "E-mail ou numéro de téléphone"
+            "emailOrPhoneDetail": "E-mail ou numéro de téléphone",
+            "invalidPassword": ""
         },
         "resetPassword": {
             "setNewPassword": "Définir un nouveau mot de passe",

@@ -164,7 +164,8 @@
             "login": "Přihlášení",
             "signInFacebook": "Přihlaste se pomocí služby Facebook",
             "signInGoogle": "Přihlášení pomocí služby Google",
-            "emailOrPhoneDetail": "Email nebo telefonní číslo"
+            "emailOrPhoneDetail": "Email nebo telefonní číslo",
+            "invalidPassword": "Zadáno neplatné heslo"
         },
         "resetPassword": {
             "setNewPassword": "Nastaviť nové heslo",
