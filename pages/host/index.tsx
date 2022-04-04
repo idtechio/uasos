@@ -15,7 +15,7 @@ export default function Account() {
     if (identity) {
       return (
         <CompositionAppBody>
-          <AppBack to="/" />
+          <AppBack to="/dashboard" />
           <FormAdHost />
         </CompositionAppBody>
       );
