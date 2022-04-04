@@ -68,7 +68,9 @@ export default function HostCardContent({
             Icon={AtIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("emailAddress") + offer?.email}
+            label={t("others:forms.generic.emailAddressWithData", {
+              mail: offer?.email,
+            })}
           />
         )}
 
@@ -78,7 +80,9 @@ export default function HostCardContent({
             Icon={PhoneIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("phoneNumber") + offer?.phone_num}
+            label={t("others:forms.generic.phoneNumberWithData", {
+              number: offer?.phone_num,
+            })}
           />
         )}
 
