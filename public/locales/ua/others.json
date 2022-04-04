@@ -164,7 +164,8 @@
             "login": "Увійти",
             "signInFacebook": "Увійдіть за допомогою Facebook",
             "signInGoogle": "Увійдіть за допомогою Google",
-            "emailOrPhoneDetail": "Електронна пошта або номер телефону"
+            "emailOrPhoneDetail": "Електронна пошта або номер телефону",
+            "invalidPassword": "Надано недійсний пароль"
         },
         "resetPassword": {
             "setNewPassword": "Встановити новий пароль",

@@ -164,7 +164,8 @@
             "login": "Autentificare",
             "signInFacebook": "Conectați-vă cu Facebook",
             "signInGoogle": "Conectați-vă cu Google",
-            "emailOrPhoneDetail": "E-mail sau număr de telefon"
+            "emailOrPhoneDetail": "E-mail sau număr de telefon",
+            "invalidPassword": "Parola furnizată nu este validă"
         },
         "resetPassword": {
             "setNewPassword": "Setați o nouă parolă",
