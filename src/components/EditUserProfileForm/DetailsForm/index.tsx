@@ -1,6 +1,6 @@
 import { User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import styled from "styled-components/native";
 import { getAccountDTO } from "../../../client-api/account";
@@ -17,7 +17,7 @@ import {
 import { EditProfileForm } from "./types";
 import { Authorization } from "../../../hooks/useAuth";
 import { useRouter } from "next/router";
-
+import { AuthContext } from "../../../../pages/_app";
 const FormFooter = styled.View`
   display: flex;
   flex-direction: row;
@@ -71,6 +71,7 @@ export default function UserDetailsForm({
   onSuccess(): void;
 }) {
   const { t } = useTranslation("others");
+  const { refetchAccount } = useContext(AuthContext);
   const router = useRouter();
   const { mutate, isLoading, isSuccess, isError, error } = useEditAccount();
   const form = useForm<EditProfileForm>({
@@ -93,7 +94,11 @@ export default function UserDetailsForm({
           onError: () => {
             // Set error message
           },
-          onSuccess: () => {
+          onSuccess: async () => {
+            if (refetchAccount) {
+              await refetchAccount();
+              router.push("/dashboard");
+            }
             onSuccess();
           },
         }

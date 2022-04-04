@@ -50,6 +50,15 @@ const useAuth = () => {
           .catch(() => null);
         setAccount(updatedAccount);
       }
+      if (user && !account) {
+        await AccountApi.updateAccount({
+          payload: {},
+        });
+        const updatedAccount = await AccountApi.getAccount()
+          .then((res) => res)
+          .catch(() => null);
+        setAccount(updatedAccount);
+      }
 
       setIdentity(user);
       setLoaded(true);
@@ -59,8 +68,12 @@ const useAuth = () => {
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
+  const refetchAccount = async () => {
+    const account = await AccountApi.getAccount();
+    setAccount(account);
+  };
 
-  return { identity, account, getTokenForAPI, loaded };
+  return { identity, account, getTokenForAPI, loaded, refetchAccount };
 };
 
 interface Authorization {
