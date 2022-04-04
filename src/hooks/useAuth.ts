@@ -40,12 +40,18 @@ const useAuth = () => {
       const account = await AccountApi.getAccount()
         .then((res) => res)
         .catch(() => null);
-      // if (user) {
-      //   await AccountApi.updateAccount({ payload: {} });
-      // }
+      setAccount(account);
+      if (user && user.emailVerified && !account?.confirmedEmail) {
+        await AccountApi.updateAccount({
+          payload: { perferredLang: account?.prefferedLang },
+        });
+        const updatedAccount = await AccountApi.getAccount()
+          .then((res) => res)
+          .catch(() => null);
+        setAccount(updatedAccount);
+      }
 
       setIdentity(user);
-      setAccount(account);
       setLoaded(true);
     });
   }, []);
