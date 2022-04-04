@@ -5,6 +5,15 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+export enum GuestHostType {
+  INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
+  LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
+  FOUND_A_MATCH = "found_a_match", // matched with guest/hosts and awaiting for response
+  BEING_CONFIRMED = "being_confirmed", // matched confirmed by one side (host or guest)
+  CONFIRMED = "confirmed", // match confirmed by two sides (host and guest)
+  REJECTED = "rejected", // match rejected by one side
+}
+
 enum GuestHostStatus {
   ACCEPTED = "accepted", // default status after creation
   REJECTED = "rejected", // for future moderation purpose

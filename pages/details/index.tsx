@@ -12,6 +12,7 @@ import { Error } from "../../src/components/Inputs/style";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
 import Redirect from "../../src/components/Redirect";
 import { LoadingCards } from "../../src/components/SupportSection/LoadingCards";
+import { GuestHostType } from "../../src/components/SupportSection/mapper";
 import WarningSection from "../../src/components/WarningSection/WarningSection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
@@ -80,7 +81,11 @@ function DetailsContent() {
                   data={dataToShow}
                   containerStyle={bottomMarginStyle}
                 />
-                {dataToShow?.status === "matched" ? (
+                {dataToShow?.type &&
+                [
+                  GuestHostType.FOUND_A_MATCH,
+                  GuestHostType.BEING_CONFIRMED,
+                ].includes(dataToShow.type) ? (
                   <DetailsDecisionButtons
                     matchId={dataToShow?.match_id}
                     typeOfUser={type === "offer" ? "host" : "guest"}
