@@ -80,7 +80,8 @@
             "preferredLanguage": "A kommunikáció preferált nyelve ",
             "fillMissingData": "Töltse ki a hiányzó adatokat",
             "validations": {
-                "passwordMismatch": "A jelszavak különbözőek"
+                "passwordMismatch": "A jelszavak különbözőek",
+                "passwordLength": "A jelszó hosszának legalább 8 karakteresnek kell lennie"
             },
             "password": "",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Telefon nem ellenőrzött",
-            "emailNotVerified": "E-mail nem ellenőrzött"
+            "emailNotVerified": "E-mail nem ellenőrzött",
+            "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt."
         },
         "housing": "Lakhatás"
     },
