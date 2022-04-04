@@ -73,7 +73,7 @@ function DashboardContent() {
             emailOnPress={showEmailVerificationModal}
             needEmail={needEmailVerification}
             needPhone={needPhoneVerification}
-            needAccount={needBackendAccountCreation}
+            needAccount={true}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
           />
           {/* {loaded && (

@@ -110,9 +110,7 @@ export default function VerifySection({
       {needAccount && (
         <Toast
           color={theme.colors.error}
-          label={
-            "Your account is being created,\n please refresh page in a moment"
-          }
+          label={t("others:desktop.checks.accountInCreation")}
           cta={{ onPress: () => null, label: "" }}
           icon={<ActivityIndicator />}
           contaierStyle={{ marginBottom: 10 }}
