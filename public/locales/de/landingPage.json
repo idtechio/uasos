@@ -18,10 +18,10 @@
         "cta": "Einen Schutzraum vorschlagen"
     },
     "weMatched": {
-        "title": "Wir waren bereits in der Lage, die...",
+        "title": "Bis jetzt...",
         "cards": {
-            "helpedPeople": "Bedürftige",
-            "lookingForHelp": "immer noch auf der Suche nach Hilfe",
+            "helpedPeople": "unterstützte Flüchtlinge",
+            "lookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
             "currentOffers": "aktuell verfügbare Angebote"
         }
     },
@@ -70,7 +70,7 @@
             "0": "Eine Wohnung melden\n oder Bedarf",
             "1": "Füllen Sie die\n  die erforderlichen Daten",
             "2": "Warten Sie\n auf das beste Angebot",
-            "3": "Kontakt mit dem Gastgeber\/Gast",
+            "3": "Kontakt mit\ndem Gastgeber\/Gast",
             "4": "Bestätigen oder\n Angebot ablehnen"
         }
     },

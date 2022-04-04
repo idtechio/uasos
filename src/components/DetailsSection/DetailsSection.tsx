@@ -19,6 +19,22 @@ export default function DetailsSection({
 }: DetailsSectionProps) {
   return (
     <View style={containerStyle}>
+      {(data as RequestProps)?.matchedOffer && (
+        <DetailsCard>
+          <HostCardContent
+            offer={data as OfferProps}
+            showContact={(data as OfferProps).match_status === "accepted"}
+          />
+        </DetailsCard>
+      )}
+      {(data as OfferProps)?.matchedRequest && (
+        <DetailsCard>
+          <GuestCardContent
+            request={(data as OfferProps)?.matchedRequest as RequestProps}
+            showContact={(data as RequestProps).match_status === "accepted"}
+          />
+        </DetailsCard>
+      )}
       {data ? (
         <DetailsCard type={isOffer ? "host" : "guest"}>
           {isOffer ? (
@@ -26,21 +42,6 @@ export default function DetailsSection({
           ) : (
             <GuestCardContent request={data as RequestProps} />
           )}
-        </DetailsCard>
-      ) : null}
-      {(data as RequestProps)?.matchedOffer ? (
-        <DetailsCard>
-          <GuestCardContent
-            request={data as RequestProps}
-            showContact={(data as RequestProps).match_status === "accepted"}
-          />
-        </DetailsCard>
-      ) : (data as OfferProps)?.matchedRequest ? (
-        <DetailsCard>
-          <HostCardContent
-            offer={data as OfferProps}
-            showContact={(data as OfferProps).match_status === "accepted"}
-          />
         </DetailsCard>
       ) : null}
     </View>

@@ -198,7 +198,8 @@
             "nationalityError": "Státní příslušnost je vyžadovaný údaj"
         },
         "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
-        "transportReady": "Možnost dopravy"
+        "transportReady": "Možnost dopravy",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Odhlásit se",
     "back": "Zpět",
@@ -302,7 +303,8 @@
             "accommodationType": "Vyberte typ ubytování",
             "countryOfGroup": "Vyberte národnost"
         },
-        "refugeInfoHeader": "Poskytnout informace o ubytování"
+        "refugeInfoHeader": "Poskytnout informace o ubytování",
+        "countryOfGroup": "Z jaké země skupina pochází?"
     },
     "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
     "accomodationPhotoReset": "Smazat",

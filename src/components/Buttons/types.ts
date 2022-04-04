@@ -13,4 +13,5 @@ export type ButtonProps = {
   onMouseEnter?: (event: NativeTouchEvent) => void;
   onClick?: (event: NativeTouchEvent) => void;
   href?: string;
+  pressable?: boolean;
 };

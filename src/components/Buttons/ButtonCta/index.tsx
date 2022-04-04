@@ -1,6 +1,7 @@
 import { Button, Text } from "./style";
 import type { ButtonProps } from "../types";
 import { useCallback } from "react";
+import { Pressable, View } from "react-native";
 
 const ButtonCta = ({
   style,
@@ -8,6 +9,7 @@ const ButtonCta = ({
   onPress,
   colorOpposite = false,
   onClick,
+  pressable = true,
 }: ButtonProps) => {
   const handlePress = useCallback(
     (event) => {
@@ -18,7 +20,12 @@ const ButtonCta = ({
   );
 
   return (
-    <Button style={style} onPress={handlePress} colorOpposite={colorOpposite}>
+    <Button
+      as={pressable ? Pressable : View}
+      style={style}
+      onPress={handlePress}
+      colorOpposite={colorOpposite}
+    >
       {typeof anchor === "string" ? (
         <Text colorOpposite={colorOpposite}>{anchor}</Text>
       ) : (

@@ -35,13 +35,14 @@
         "sms": {
             "verification": "SMS-Überprüfung",
             "verificationSuccess": "SMS-Verifizierung erfolgreich abgeschlossen",
-            "sentInfo": "Geben Sie den Verifizierungscode ein, der an die Telefonnummer {{PhoneNumber}} gesendet wurde.",
+            "sentInfo": "Geben Sie den Verifizierungscode ein, der an die Telefonnummer {{phoneNumber}} gesendet wurde.",
             "verificationFail": "Huch! Etwas ist schief gelaufen, versuchen Sie es erneut oder generieren Sie einen neuen Code"
         },
         "actions": {
             "showPassword": "Passwort anzeigen",
             "details": "Einzelheiten",
-            "addOffer": "Angebot hinzufügen"
+            "addOffer": "Angebot hinzufügen",
+            "addSubmission": "Unterstützung anfordern"
         },
         "email": {
             "sentInfo": "wir haben einen Verifizierungscode an Ihre E-Mail-Adresse gesendet. Klicken Sie auf den Link, um ihn zu verifizieren",
@@ -88,20 +89,20 @@
         },
         "match": {
             "guestProfile": "Gast-Profil",
-            "numberOfPeopleWithData": "Maximale Anzahl von Personen: <b>{{Anzahl}}<\/b>",
-            "durationWithData": "Dauer des Aufenthalts: <b>{{Anzahl}} {{Einheit}}<\/b>",
+            "numberOfPeopleWithData": "Maximale Anzahl von Personen: <b>{{number}}<\/b>",
+            "durationWithData": "Dauer des Aufenthalts: <b>{{number}} {{unit}}<\/b>",
             "specificCity": "Bestimmte Stadt",
             "confirmed": "Ihr Gast\/Gastgeber hat soeben ein Angebot bestätigt. Setzen Sie sich mit ihm\/ihr in Verbindung, um die Einzelheiten zu besprechen. ",
-            "accommodationTypeWithData": "Unterkunftsart: <b>{{Typ}}<\/b>",
+            "accommodationTypeWithData": "Unterkunftsart: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Zusätzliche Informationen zur Unterkunft",
-            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\nÜberprüfen Sie die Identität der Person, die Sie beherbergen,\nVergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt. ",
+            "usersWarning": "<b>Informieren Sie aus Sicherheitsgründen Ihre Angehörigen darüber, wen Sie beherbergen. Nur für den Fall der Fälle:<\/b>\n<ul>\n<li>Überprüfen Sie die Identität der Person, die Sie beherbergen,<\/li>\n<li>Vergewissern Sie sich, dass die Zusammensetzung der Gruppe mit der ursprünglichen Beschreibung übereinstimmt.<\/li>\n<\/ul>",
             "individual": "Einzelne",
             "host": {
                 "formSent": "Formular gesendet",
                 "formSentThanks": "Vielen Dank für Ihre Bereitschaft zu helfen. Ihre Immobilie wurde in die Liste aufgenommen. Wir werden unsere Datenbank mit Bedürftigen durchsuchen und Sie informieren, sobald wir die richtige Person gefunden haben.",
                 "received": "Vielen Dank für die Bestätigung des erhaltenen Vorschlags. Sobald wir beide Bestätigungen erhalten haben, werden wir Sie informieren."
             },
-            "searchAddress": "Adresse suchen: <b>{{Stadt}}<\/b>",
+            "searchAddress": "Adresse suchen: <b>{{city}}<\/b>",
             "rejected": "Ihr potenzieller Gast\/Gastgeber hat das Angebot abgelehnt. Ihr Angebot wird wieder in den Pool aufgenommen. Wir werden Sie über das nächste Angebot informieren, sobald wir es finden können.",
             "refuge": {
                 "rejection": "Vielen Dank, dass Sie Ihre Entscheidung bestätigt haben. Ihre Einreichung wird wieder in den Pool aufgenommen. Wir werden Sie über den nächsten Vorschlag informieren, sobald wir einen gefunden haben."
@@ -115,26 +116,31 @@
             "groupInformation": {
                 "pregnancy": "Die Gruppe umfasst eine Person mit einer fortgeschrittenen Schwangerschaft (über 6 Monate)",
                 "disability": "In der Gruppe gibt es eine Person mit einer Behinderung",
-                "multicultural": "Die Gruppe umfasst Menschen verschiedener Nationalitäten"
+                "multicultural": "Die Gruppe umfasst Menschen verschiedener Nationalitäten",
+                "animals": "Die Gruppe wird von einem Haustier begleitet",
+                "elders": "Es gibt eine ältere Person in der Gruppe"
             },
             "submited": "Eingereichtes Formular",
             "facilityInformation": {
-                "disability": "Einrichtungen für Menschen mit Behinderungen"
+                "disability": "Einrichtungen für Menschen mit Behinderungen",
+                "pregnancy": "Einrichtungen für schwangere Frauen",
+                "eldery": "Einrichtungen für ältere Menschen",
+                "diversity": "Alle Nationalitäten willkommen"
             },
             "password": "Passwort",
             "selectFromList": "Wählen Sie aus der Liste",
-            "cityWithData": "Stadt: {{Stadt}}",
-            "phoneNumberWithData": "Telefonnummer: <b>{{Nummer}}<\/b>",
-            "hostWithName": "Gastgeber: <b>{{Name}}<\/b>",
+            "cityWithData": "Stadt: {{city}}",
+            "phoneNumberWithData": "Telefonnummer: <b>{{number}}<\/b>",
+            "hostWithName": "Gastgeber: <b>{{name}}<\/b>",
             "addPhoto": "Foto hinzufügen",
             "emailAddressWithData": "E-Mail Adresse: <b>{{mail}}<\/b>",
             "zipCode": "Postleitzahl",
             "hostProfile": "Host-Profil",
-            "peopleInGroup": "Anzahl der Personen in der Gruppe: <b>{{Anzahl}}<\/b>",
-            "city": "Adresse: <b>{{Stadt}}<\/b>",
-            "groupType": "Gruppentyp: <b>{{Typ}}<\/b>",
+            "peopleInGroup": "Anzahl der Personen in der Gruppe: <b>{{number}}<\/b>",
+            "city": "Adresse: <b>{{city}}<\/b>",
+            "groupType": "Gruppentyp: <b>{{type}}<\/b>",
             "additionalGroupInformation": "Zusätzliche Informationen zur Gruppe",
-            "guest": "Gast: <b>{{Name}}<\/b>",
+            "guest": "Gast: <b>{{name}}<\/b>",
             "selectMultipleFromList": "Wählen Sie aus der Liste (Mehrfachauswahl)",
             "name": "Name",
             "phoneNumber": "Rufnummer",
@@ -158,7 +164,8 @@
             "login": "Einloggen",
             "signInFacebook": "Mit Facebook anmelden",
             "signInGoogle": "Mit Google anmelden",
-            "emailOrPhoneDetail": "E-Mail oder Telefonnummer"
+            "emailOrPhoneDetail": "E-Mail oder Telefonnummer",
+            "invalidPassword": "Ungültiges Passwort angegeben"
         },
         "resetPassword": {
             "setNewPassword": "Neues Passwort festlegen",
@@ -199,14 +206,15 @@
                 "haveMatch": "Wir haben eine Übereinstimmung gefunden",
                 "lookingForMatch": "Suche nach einer Übereinstimmung",
                 "awaitingHostApproval": "Genehmigung des Gastgebers steht noch aus",
-                "confirmed": "Bestätigen"
+                "confirmed": "Bestätigen",
+                "rejected": "Abgelehnt"
             }
         },
         "refuge": {
             "searchingAccommodation": "Suche nach einer Unterkunft",
             "accommodationSearch": "Unterkunftssuche",
             "submission": "Einreichung",
-            "duration": "Dauer: {{Anzahl}} {{Einheit}}"
+            "duration": "Dauer: {{value}}"
         },
         "providingSupport": "Unterstützung bieten",
         "yourSubmission": "Ihr Beitrag",
@@ -251,9 +259,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
-        "refugesSupported": "unterstützte Flüchtlinge",
-        "soFar": "Bis jetzt...",
         "appDescription": "Wir helfen Flüchtlingen, automatisch eine <b>kostenlose<\/b> Unterkunft in <b>Polen, Tschechien, Ungarn und der Slowakei<\/b> zu finden <b>,<\/b> die von hilfsbereiten Menschen und Einrichtungen angeboten wird.",
         "comingSoon": "Demnächst: Funktionen für Verkehr, Stellensuche und medizinische Beratung"
     },

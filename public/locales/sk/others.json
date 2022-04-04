@@ -41,7 +41,8 @@
         "actions": {
             "showPassword": "Zobraziť heslo",
             "details": "Podrobnosti",
-            "addOffer": "Pridať ponuku"
+            "addOffer": "Pridať ponuku",
+            "addSubmission": "Žiadosť o podporu"
         },
         "email": {
             "sentInfo": "na vašu e-mailovú adresu sme zaslali overovací kód. Kliknutím na odkaz ho overíte",
@@ -94,7 +95,7 @@
             "confirmed": "Váš hosť\/hostiteľ práve potvrdil ponuku. Kontaktujte ho\/ju a dohodnite si podrobnosti. ",
             "accommodationTypeWithData": "Typ ubytovania: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Ďalšie informácie o ubytovaní",
-            "usersWarning": "<b>Z bezpečnostných dôvodov informujte svojich príbuzných o tom, koho ubytovávate. Pre každý prípad:\n<\/b>overte si totožnosť osoby, ktorú ubytovávate,\nuistite sa, že zloženie skupiny zodpovedá pôvodnému popisu ",
+            "usersWarning": "<b>Z bezpečnostných dôvodov informujte svojich príbuzných o tom, koho ubytovávate. Pre každý prípad:<\/b>\n<ul>\n<li>overte si totožnosť osoby, ktorú ubytovávate,<\/li>\n<li>uistite sa, že zloženie skupiny zodpovedá pôvodnému popisu<\/li>\n<\/ul>",
             "individual": "Jednotlivec",
             "host": {
                 "formSent": "Formulár odoslaný",
@@ -115,11 +116,16 @@
             "groupInformation": {
                 "pregnancy": "Do skupiny patrí osoba v pokročilom štádiu tehotenstva (nad 6 mesiacov)",
                 "disability": "V skupine je osoba so zdravotným postihnutím",
-                "multicultural": "Skupina zahŕňa ľudí viacerých národností"
+                "multicultural": "Skupina zahŕňa ľudí viacerých národností",
+                "animals": "Skupinu sprevádza domáce zviera",
+                "elders": "V skupine je staršia osoba"
             },
             "submited": "Formulár odoslaný",
             "facilityInformation": {
-                "disability": "Zariadenia pre osoby so zdravotným postihnutím"
+                "disability": "Zariadenia pre osoby so zdravotným postihnutím",
+                "pregnancy": "Zariadenia pre tehotné ženy",
+                "eldery": "Zariadenia pre staršie osoby",
+                "diversity": "Všetky národnosti sú vítané"
             },
             "password": "Heslo",
             "selectFromList": "Vyberte zo zoznamu",
@@ -158,7 +164,8 @@
             "login": "Prihlásiť sa",
             "signInFacebook": "Prihláste sa pomocou služby Facebook",
             "signInGoogle": "Prihlásenie pomocou služby Google",
-            "emailOrPhoneDetail": "Email alebo telefónne číslo"
+            "emailOrPhoneDetail": "Email alebo telefónne číslo",
+            "invalidPassword": "Zadané neplatné heslo"
         },
         "resetPassword": {
             "setNewPassword": "Nastaviť nové heslo",
@@ -199,14 +206,15 @@
                 "haveMatch": "Našli sme zhodu",
                 "lookingForMatch": "Hľadá sa zhoda",
                 "awaitingHostApproval": "Čaká sa na potvrdenie od hostiteľa",
-                "confirmed": "Potvrdené"
+                "confirmed": "Potvrdené",
+                "rejected": "Odmietnuté"
             }
         },
         "refuge": {
             "searchingAccommodation": "Vyhľadávanie ubytovania",
             "accommodationSearch": "Vyhľadávanie ubytovania",
             "submission": "Ponuka",
-            "duration": "Dĺžka pobytu: {{number}}{{unit}}"
+            "duration": "Dĺžka pobytu: {{value}}"
         },
         "providingSupport": "Poskytovanie podpory",
         "yourSubmission": "Vaša ponuka",
@@ -251,9 +259,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "utečencov stále hľadá pomoc",
-        "refugesSupported": "podporených utečencov",
-        "soFar": "Doteraz...",
         "appDescription": "Pomáhame utečencom automaticky nájsť <b>neplatené<\/b> ubytovanie v <b>Poľsku, Česku, Maďarsku a na Slovensku<\/b>, ktoré ponúkajú inštitúcie a ľudia ochotní pomôcť.",
         "comingSoon": "Čoskoro: funkcie pre dopravu, hľadanie práce a zdravotnícku asistenciu."
     },

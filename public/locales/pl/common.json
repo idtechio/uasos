@@ -2,7 +2,7 @@
     "test": "testowa wiadomość PL",
     "navigationDrawer": {
         "profile": "Profil użytkownika",
-        "placesList": "Twoja lista mieszkań",
+        "placesList": "Twoja lista lokali",
         "logIn": "Zaloguj się",
         "logout": "Wyloguj"
     },
@@ -22,7 +22,7 @@
         "invalidPhoneNumber": "Podaj prawidłowy numer telefonu",
         "requiredTown": "Podaj miejscowość",
         "requiredTime": "Podaj na jak długo",
-        "requiredPeopleQuantity": "Podaj liczbę osób, które mozesz przyjąć",
+        "requiredPeopleQuantity": "Podaj liczbę osób, które możesz przyjąć",
         "requiredLivingConditions": "Podaj warunki lokalowe",
         "requiredFloor": "Podaj piętro"
     },
@@ -179,7 +179,7 @@
         "city": "Miasto",
         "fullBedCount": "Liczba pełnowymiarowych miejsc do spania",
         "pregnantReady": "Przyjmę osobę w zaawansowanej ciąży (powyżej 6 miesiąca",
-        "dissabilityReady": "Przyjmę osobę z niepełnosprawnością",
+        "dissabilityReady": "Przyjmę osoby z niepełnosprawnością",
         "elderReady": "Przyjmę osobę\/osoby starsze",
         "animalReady": "Przyjmę osobę ze zwierzakiem",
         "basicInfoHeader": "Podaj podstawowe informacje",
@@ -188,7 +188,7 @@
         "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
         "errors": {
             "name": "Podaj swoje imię",
-            "email": "Podaj poprawny email",
+            "email": "Podaj poprawny e-mail",
             "phoneNumber": "Podaj numer telefonu",
             "country": "Kraj jest wymagany",
             "town": "Miasto jest wymagane",
@@ -198,14 +198,15 @@
             "nationalityError": "Narodowość uchodźców jest wymagana"
         },
         "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
-        "transportReady": "Oferuję możliwość transportu"
+        "transportReady": "Oferuję możliwość transportu",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Wyloguj się",
     "back": "Wstecz",
     "backToHomePage": "Powrót do strony głównej",
-    "shareLocation": "Załóż konto w serwisie",
+    "shareLocation": "Załóż konto",
     "registerGuest": "Znajdź lokum",
-    "more": "więcej",
+    "more": "Więcej",
     "register1": "Zarejestruj się",
     "register2": "Rejestracja",
     "privacyPolicy": "Polityka prywatności",
@@ -215,7 +216,7 @@
     "thankfulnessModal": {
         "thankYou": "Dziękujemy!",
         "thanksForYourDecision": "Dziękujemy za poinformowanie nas o swojej decyzji",
-        "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę wolontariuszy, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
+        "applicationSent": "Twoja aplikacja została wysłana. Kilka razy dziennie przeszukujemy naszą bazę ogłoszeń, żeby znaleźć dla Ciebie jak najlepsze miejsce.",
         "informWhenAccomodationFound": "Gdy tylko znajdziemy dla Ciebie nocleg, poinformujemy Cię o tym za pomocą maila.",
         "backToMainPage": "Wróć do strony głównej"
     },
@@ -248,7 +249,7 @@
             "refugeesCount": "Dla ilu osób szukasz noclegu?",
             "refugee": "Uchodźca {{number}}",
             "refugeeDetails": "Podaj informacje dodatkowe, aby dobrać miejsce najlepsze dla Ciebie",
-            "refugeesAnimal": "Rasa (imię zwierzaka)",
+            "refugeesAnimal": "Rasa",
             "isGDPRAccepted": "Akceptuję politykę prywatności",
             "submitButton": "Skorzystaj z pomocy",
             "location": "Gdzie chciałbyś się zatrzymać?",
@@ -259,8 +260,8 @@
         }
     },
     "refugeeAddForm": {
-        "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach z którymi podróżujesz",
-        "addButton": "Wyślij aplikację",
+        "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach, z którymi podróżujesz",
+        "addButton": "Wyślij zgłoszenie",
         "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
         "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
         "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",
@@ -268,7 +269,7 @@
         "ageLabel": "Wiek",
         "genderLabel": "Płeć",
         "genderPlaceholder": "Podaj płeć",
-        "travelCompanions": "Informacje na temat osób z którymi się przemieszczasz",
+        "travelCompanions": "Informacje na temat osób, z którymi się przemieszczasz",
         "fullBedCountLabel": "Ile osób z Tobą podróżuje? (wliczając Ciebie)",
         "childBedCountLabel": "Liczba miejsc do spania dla dzieci",
         "placeOfRefuge": "Gdzie szukasz noclegu?",
@@ -282,7 +283,7 @@
         "phoneLabel": "Numer telefonu",
         "phonePlaceholder": "xxx-xxx-xxx",
         "cityPlaceholder": "Miasto",
-        "groupRelations": "Jaki jest poziom relacji między członkami grupy?",
+        "groupRelations": "Jaki jest typ relacji między członkami grupy?",
         "selectPlaceholder": "Wybierz z listy",
         "accommodationType": "Wybierz wszystkie interesujące Cię opcje noclegu (wybór wielu jest możliwy)",
         "countryOfGroupUA": "Ukraina",
@@ -291,7 +292,7 @@
         "errors": {
             "name": "Podaj swoje imię",
             "email": "Podaj poprawny e-mail",
-            "gender": "Uzupełnij płeć z którą się utożsamiasz",
+            "gender": "Uzupełnij płeć, z którą się utożsamiasz",
             "cityOfRefuge": "Wybierz miasto",
             "phoneNumber": "Podaj numer telefonu",
             "countryOfRefuge": "Wybierz kraj",
@@ -302,7 +303,8 @@
             "accommodationType": "Wybierz typ noclegu",
             "countryOfGroup": "Wybierz narodowość"
         },
-        "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu"
+        "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu",
+        "countryOfGroup": "Z jakiego kraju pochodzi grupa?"
     },
     "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoReset": "Usuń",
@@ -311,17 +313,17 @@
     "dropdownSearch": "Szukaj",
     "heroImageAlt": "Slava Ukraini!",
     "loginForm": {
-        "logInWith": "Zaloguj się za pomocą",
+        "logInWith": "Zaloguj się",
         "or": "lub",
         "lostPass": "nie pamiętasz hasła?",
         "click": "kliknij tutaj",
-        "logIn": "zaloguj się",
-        "doNotHaveAcc": "Jeśli nie posiadasz konta? Możesz założyć je tutaj",
-        "register": "zarejestruj się"
+        "logIn": "Zaloguj się",
+        "doNotHaveAcc": "Jeśli nie posiadasz konta, możesz założyć je tutaj",
+        "register": "Zarejestruj się"
     },
     "gdpr": "RODO",
     "ogMeta": {
         "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
-        "description": "Platforma UASOS.org we współpracy z wiodącymi organizacjami dobroczynnymi automatycznie i bezpłatniełączyuchodźców wojny w Ukrainie z osobami, które są w stanie udzielić im schronienia. Dołącz do pomagających lub zgłoś swoje potrzeby jużdziś!"
+        "description": "Platforma UASOS.org we współpracy z wiodącymi organizacjami dobroczynnymi automatycznie i bezpłatnie łączy uchodźców wojny w Ukrainie z osobami, które są w stanie udzielić im schronienia. Dołącz do pomagających lub zgłoś swoje potrzeby już dziś!"
     }
 }

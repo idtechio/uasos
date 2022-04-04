@@ -35,13 +35,14 @@
         "sms": {
             "verification": "SMS-ellenőrzés",
             "verificationSuccess": "Az SMS-ellenőrzés sikeresen befejeződött",
-            "sentInfo": "Írja be a {{telefonszám}} telefonszámra küldött ellenőrző kódot.",
+            "sentInfo": "Írja be a {{phoneNumber}} telefonszámra küldött ellenőrző kódot.",
             "verificationFail": "Hoppá! Valami rosszul sült el, próbálja meg újra vagy generáljon új kódot."
         },
         "actions": {
             "showPassword": "Jelszó megjelenítése",
             "details": "Részletek",
-            "addOffer": "Ajánlat hozzáadása"
+            "addOffer": "Ajánlat hozzáadása",
+            "addSubmission": "Támogatás kérése"
         },
         "email": {
             "sentInfo": "küldtünk egy ellenőrző kódot az e-mail címére. Kattintson a linkre az ellenőrzéshez",
@@ -88,20 +89,20 @@
         },
         "match": {
             "guestProfile": "Vendég profil",
-            "numberOfPeopleWithData": "Maximális létszám: <b>{{szám}}<\/b>",
-            "durationWithData": "A tartózkodás időtartama: <b>{{szám}} {{egység}}<\/b>",
+            "numberOfPeopleWithData": "Maximális létszám: <b>{{number}}<\/b>",
+            "durationWithData": "A tartózkodás időtartama: <b>{{number}} {{unit}}<\/b>",
             "specificCity": "Konkrét város",
             "confirmed": "Az Ön vendége\/házigazdája most erősített meg egy ajánlatot. Vegye fel vele a kapcsolatot a részletek egyeztetése érdekében. ",
-            "accommodationTypeWithData": "Szálláshely típusa: <b>{{típus}}<\/b>",
+            "accommodationTypeWithData": "Szálláshely típusa: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "További információk a szállásról",
-            "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:<\/b>\nEllenőrizze a menedéket nyújtó személy személyazonosságát,\ngyőződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak ",
+            "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:<\/b>\n<ul>\n<li>Ellenőrizze a menedéket nyújtó személy személyazonosságát,<\/li>\n<li>győződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak<\/li>\n<\/ul>",
             "individual": "Egyéni",
             "host": {
                 "formSent": "Elküldött űrlap",
                 "formSentThanks": "Köszönjük, hogy kifejezte segítőkészségét Az Ön ingatlana felkerült a listára. Át fogjuk keresni a rászorulók adatbázisát, és amint megtaláljuk a megfelelő személyt, értesítjük Önt.",
                 "received": "Köszönöm szépen a beérkezett javaslat megerősítését. Amint megkapjuk mindkét visszaigazolást, értesítjük Önt."
             },
-            "searchAddress": "Keresési cím: <b>{{város}}<\/b>",
+            "searchAddress": "Keresési cím: <b>{{city}}<\/b>",
             "rejected": "Az Ön potenciális vendége\/házigazdája elutasította az ajánlatot. A beadványa visszakerül a medencébe, amint megtaláljuk a következő ajánlatot, értesítjük.",
             "refuge": {
                 "rejection": "Köszönjük, hogy megerősítette döntését. Az Ön beadványa visszakerül a medencébe, amint találunk egyet, értesítjük a következő pályázatról."
@@ -115,26 +116,31 @@
             "groupInformation": {
                 "pregnancy": "A csoportba egy előrehaladott terhességű (6 hónapnál hosszabb) személy tartozik.",
                 "disability": "A csoportban van egy fogyatékossággal élő személy is",
-                "multicultural": "A csoportban különböző nemzetiségű emberek vannak"
+                "multicultural": "A csoportban különböző nemzetiségű emberek vannak",
+                "animals": "A csoportot egy háziállat kíséri",
+                "elders": "Van egy idős személy a csoportban"
             },
             "submited": "Beküldött űrlap",
             "facilityInformation": {
-                "disability": "Fogyatékkal élők számára kialakított létesítmények"
+                "disability": "Fogyatékkal élők számára kialakított létesítmények",
+                "pregnancy": "Terhes nők számára nyújtott szolgáltatások",
+                "eldery": "Idősek számára fenntartott létesítmények",
+                "diversity": "Minden nemzetiséget szívesen látunk"
             },
             "password": "Jelszó",
             "selectFromList": "Válasszon a listából",
-            "cityWithData": "Város: {{város}}",
-            "phoneNumberWithData": "Telefonszám: <b>{{szám}}<\/b>",
-            "hostWithName": "Házigazda: <b>{{név}}<\/b>",
+            "cityWithData": "Város: {{city}}",
+            "phoneNumberWithData": "Telefonszám: <b>{{number}}<\/b>",
+            "hostWithName": "Házigazda: <b>{{name}}<\/b>",
             "addPhoto": "Fénykép hozzáadása",
             "emailAddressWithData": "E-mail cím: <b>{{mail}}<\/b>",
             "zipCode": "Irányítószám",
             "hostProfile": "Gazdálkodó profil",
-            "peopleInGroup": "A csoport létszáma: <b>{{szám}}<\/b>",
-            "city": "Cím: <b>{{város}}<\/b>",
-            "groupType": "Csoport típusa: <b>{{típus}}<\/b>",
+            "peopleInGroup": "A csoport létszáma: <b>{{number}}<\/b>",
+            "city": "Cím: <b>{{city}}<\/b>",
+            "groupType": "Csoport típusa: <b>{{type}}<\/b>",
             "additionalGroupInformation": "További csoportinformációk",
-            "guest": "Vendég: <b>{{név}}<\/b>",
+            "guest": "Vendég: <b>{{name}}<\/b>",
             "selectMultipleFromList": "Válasszon a listából (feleletválasztós)",
             "name": "Név",
             "phoneNumber": "Telefonszám",
@@ -158,7 +164,8 @@
             "login": "Bejelentkezés",
             "signInFacebook": "Bejelentkezés Facebookkal",
             "signInGoogle": "Bejelentkezés a Google segítségével",
-            "emailOrPhoneDetail": "E-mail vagy telefonszám"
+            "emailOrPhoneDetail": "E-mail vagy telefonszám",
+            "invalidPassword": "Érvénytelen jelszó megadása"
         },
         "resetPassword": {
             "setNewPassword": "Új jelszó beállítása",
@@ -193,20 +200,21 @@
         "offer": {
             "status": {
                 "accepted": "Elfogadva",
-                "beingConfirmed": "Megerősítve",
+                "beingConfirmed": "A megerősítés során",
                 "awaitingGuestApproval": "Vendég jóváhagyására várva",
                 "inactive": "Inaktív",
                 "haveMatch": "Találtunk egyezést",
                 "lookingForMatch": "Párkeresés",
                 "awaitingHostApproval": "A fogadó jóváhagyására vár",
-                "confirmed": "Megerősítve"
+                "confirmed": "Megerősítve",
+                "rejected": "Visszautasított"
             }
         },
         "refuge": {
             "searchingAccommodation": "Szálláshely keresése",
             "accommodationSearch": "Szálláskeresés",
             "submission": "Beküldés",
-            "duration": "Időtartam: {{szám}} {{unit}}"
+            "duration": "Időtartam: {{value}}"
         },
         "providingSupport": "Támogatás nyújtása",
         "yourSubmission": "Az Ön beadványa",
@@ -251,9 +259,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "a menekültek még mindig segítséget keresnek",
-        "refugesSupported": "támogatott menekültek",
-        "soFar": "Eddig...",
         "appDescription": "Segítünk a menekülteknek automatikusan <b>ingyenes<\/b> szállást találni <b>Lengyelországban, Csehországban, Hunniában és Szlovákiában,<\/b> amelyet segítőkész emberek és intézmények kínálnak.",
         "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadási funkciók"
     },

@@ -25,7 +25,7 @@ import { FirebaseError } from "@firebase/util";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
-  const { identity } = useContext(AuthContext);
+  const { identity, account } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -49,13 +49,23 @@ export default function FromRegisterWithSocials() {
       setApiError(t("others:common.sms.verificationFail"));
     }
   };
+  const provider = identity?.providerData
+    .map((provider) => provider.providerId)
+    .includes("google.com")
+    ? "google"
+    : identity?.providerData
+        .map((provider) => provider.providerId)
+        .includes("facebook.com")
+    ? "facebook"
+    : "";
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
-        name:
-          identity && identity.displayName
+        name: provider
+          ? identity && identity.displayName
             ? identity?.displayName.split(" ")[0]
-            : "",
+            : ""
+          : account?.name,
         email: identity && identity.email ? identity?.email : "",
         prefferedLanguage: "pl",
       },
@@ -99,16 +109,6 @@ export default function FromRegisterWithSocials() {
   const {
     formState: { errors },
   } = form;
-
-  const provider = identity?.providerData
-    .map((provider) => provider.providerId)
-    .includes("google.com")
-    ? "google"
-    : identity?.providerData
-        .map((provider) => provider.providerId)
-        .includes("facebook.com")
-    ? "facebook"
-    : "";
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -214,6 +214,7 @@ export default function FromRegisterWithSocials() {
             phoneNumber={phoneNumber}
             confirmation={phoneLoginConfirmation}
             setVerificationSuccess={setSmsVerificationSuccess}
+            close={() => setPhoneLoginConfirmation(null)}
           />
         ) : (
           <></>

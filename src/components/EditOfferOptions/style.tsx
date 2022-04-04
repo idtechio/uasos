@@ -52,11 +52,8 @@ export const FormDescription = styled.Text`
 `;
 
 export const FormFooter = styled.View`
+  margin-top: 80px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 export const CloseButtonWrapper = styled.Pressable`
@@ -74,3 +71,11 @@ export const CloseButton = (
     <CrossIcon />
   </CloseButtonWrapper>
 );
+
+export const ButtonsBox = styled.View`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;

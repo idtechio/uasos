@@ -59,7 +59,7 @@
     },
     "accommodationOffer": {
         "canAccommodate": "Platz für <1>{{count}} Menschen<\/1>",
-        "duration": "max. <1> {{Zeit}} <\/1>",
+        "duration": "max. <1> {{time}} <\/1>",
         "acceptAnimals": "Haustiere akzeptiert",
         "disabledSupport": "Einrichtungen für Behinderte",
         "includesFood": "Lebensmittel",
@@ -72,11 +72,11 @@
         "chooseFromListMulti": "Wählen Sie aus der Liste (Sie können mehrere Optionen auswählen)"
     },
     "guestOffer": {
-        "arrivalToPoland": "Ankunftsdatum: {{Ankunft}}",
-        "peopleToAccommodate": "+ {{Zahl}} Menschen",
-        "preferredLocation": "bevorzugter Standort: <1>{{Ort}}<\/1>",
-        "withAnimals": "Ich werde von einem Haustier begleitet: <1> {{Tiere}} <\/1>",
-        "withKids": "Ich werde von einem Kind begleitet: <1>{{Alter}}<\/1>",
+        "arrivalToPoland": "Ankunftsdatum: {{arrival}}",
+        "peopleToAccommodate": "+ {{count}} Menschen",
+        "preferredLocation": "bevorzugter Standort: <1>{{location}}<\/1>",
+        "withAnimals": "Ich werde von einem Haustier begleitet: <1> {{animals}} <\/1>",
+        "withKids": "Ich werde von einem Kind begleitet: <1>{{age}}<\/1>",
         "withDisabled": "Ich werde von einer Person mit Behinderung begleitet",
         "withElder": "Ich werde von einer älteren Person begleitet",
         "invite": "Gastgeber"
@@ -198,7 +198,8 @@
             "nationalityError": "Die Staatsangehörigkeit eines Flüchtlings ist erforderlich"
         },
         "prolongationReady": "Möglichkeit der Verlängerung des Aufenthalts (gegen Gebühr)",
-        "transportReady": "Möglichkeit des Transports"
+        "transportReady": "Möglichkeit des Transports",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Abmelden",
     "back": "",
@@ -246,7 +247,7 @@
         "labels": {
             "email": "E-Mail",
             "refugeesCount": "Für wie viele Personen suchen Sie eine Unterkunft?",
-            "refugee": "Flüchtling {{Anzahl}}",
+            "refugee": "Flüchtling {{number}}",
             "refugeeDetails": "Geben Sie zusätzliche Informationen an, um die beste Lösung für Sie zu finden",
             "refugeesAnimal": "Rasse",
             "isGDPRAccepted": "Ich akzeptiere die Datenschutzbestimmungen",
@@ -302,7 +303,8 @@
             "accommodationType": "Wählen Sie die Art der Unterkunft",
             "countryOfGroup": "Bitte wählen Sie eine Nationalität"
         },
-        "refugeInfoHeader": "Informationen über Ihre Unterkunft bereitstellen"
+        "refugeInfoHeader": "Informationen über Ihre Unterkunft bereitstellen",
+        "countryOfGroup": "Welches ist das Herkunftsland der Gruppe?"
     },
     "accomodationPhoto": "Ein Foto der angebotenen Unterkunft hinzufügen",
     "accomodationPhotoReset": "Löschen",

@@ -66,6 +66,7 @@ export default function EditUserProfileForm({
           phoneNumber={newPhoneNumber}
           setVerificationSuccess={onPhoneConfirmationSuccess}
           callback={() => null}
+          close={() => setConfirmation(null)}
           mode="UPDATE"
         />
       )}

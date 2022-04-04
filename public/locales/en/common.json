@@ -198,7 +198,8 @@
             "nationalityError": "Refugee nationality is required"
         },
         "prolongationReady": "Possibility of extending the stay (for a fee)",
-        "transportReady": "Possibility of transport"
+        "transportReady": "Possibility of transport",
+        "hostAddressProcessingWarning": "Full address will not be shared with refugee — only your city"
     },
     "logout": "Log out",
     "back": "Back",
@@ -302,7 +303,8 @@
             "accommodationType": "Select the type of accommodation",
             "countryOfGroup": "Please select nationality"
         },
-        "refugeInfoHeader": "Provide information about your accommodation"
+        "refugeInfoHeader": "Provide information about your accommodation",
+        "countryOfGroup": "What is the group's origin country?"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",

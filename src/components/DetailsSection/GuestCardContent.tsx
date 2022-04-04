@@ -8,6 +8,7 @@ import ArrowIcon from "../../style/svgs/chevron-down.svg";
 import AddressIcon from "../../style/svgs/marker.svg";
 import PhoneIcon from "../../style/svgs/phone2.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
+import { toAccomodationTime } from "../SupportSection/mapper";
 import DataField from "./DataField";
 import GuestAdditionalInfo from "./GuestAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
@@ -21,11 +22,9 @@ export default function GuestCardContent({
   request,
   showContact,
 }: GuestCardContentProps) {
-  const { t: t2 } = useTranslation("common");
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation();
 
-  const [showAdditionalInfo, setShowAdditionalInfo] =
-    React.useState<boolean>(false);
+  const [showAdditionalInfo, setShowAdditionalInfo] = React.useState(true);
 
   const additionalInfo = {
     diversity: request?.is_ukrainian_nationality,
@@ -38,7 +37,7 @@ export default function GuestCardContent({
   return (
     <>
       <Header>
-        <Title>{t("guestProfile")}</Title>
+        <Title>{t("others:forms.match.guestProfile")}</Title>
         {additionalInfo ? (
           <TouchableOpacity
             onPress={() => setShowAdditionalInfo(!showAdditionalInfo)}
@@ -56,8 +55,7 @@ export default function GuestCardContent({
             Icon={GuestsIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("guest")}
-            value={request?.name}
+            label={t("others:forms.generic.guest", { name: request?.name })}
           />
         )}
 
@@ -67,8 +65,9 @@ export default function GuestCardContent({
             Icon={AtIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("emailAddress")}
-            value={request?.email}
+            label={t("others:forms.generic.emailAddressWithData", {
+              mail: request?.email,
+            })}
           />
         )}
 
@@ -78,8 +77,9 @@ export default function GuestCardContent({
             Icon={PhoneIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("phoneNumber")}
-            value={request?.phone_num}
+            label={t("others:forms.generic.phoneNumberWithData", {
+              number: request?.phone_num,
+            })}
           />
         )}
 
@@ -88,13 +88,14 @@ export default function GuestCardContent({
             Icon={DurationIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("duration")}
-            value={(typeof request.duration_category === "string"
-              ? request.duration_category.split(",")
-              : request.duration_category
-            )
-              .map((el: string) => t2(`staticValues.timePeriod.${el}`))
-              .join(", ")}
+            label={t("others:forms.match.durationWithData", {
+              number: t(
+                `common:hostAdd.accommodationTimeLabel.${toAccomodationTime(
+                  request.duration_category
+                )}`
+              ),
+              unit: "",
+            })}
           />
         )}
 
@@ -103,8 +104,9 @@ export default function GuestCardContent({
             Icon={AddressIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("address")}
-            value={request?.city}
+            label={t("others:forms.match.searchAddress", {
+              city: request?.city,
+            })}
           />
         )}
 
@@ -113,8 +115,9 @@ export default function GuestCardContent({
             Icon={GuestsIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("peopleNumber")}
-            value={request?.beds}
+            label={t("others:forms.generic.peopleInGroup", {
+              number: request?.beds,
+            })}
           />
         )}
 
@@ -123,13 +126,14 @@ export default function GuestCardContent({
             Icon={GuestsIcon}
             iconWidth={15}
             iconHeight={15}
-            label={t("groupType")}
-            value={(typeof request.group_relation === "string"
-              ? request.group_relation.split(",")
-              : request.group_relation
-            )
-              .map((el: string) => t2(`staticValues.groupRelations.${el}`))
-              .join(", ")}
+            label={t("others:forms.generic.groupType", {
+              type: (typeof request.group_relation === "string"
+                ? request.group_relation.split(",")
+                : request.group_relation
+              )
+                .map((el: string) => t(`staticValues.groupRelations.${el}`))
+                .join(", "),
+            })}
           />
         )}
       </FlexWrapper>

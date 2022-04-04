@@ -5,6 +5,15 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+enum GuestHostStatus {
+  ACCEPTED = "accepted", // default status after creation
+  REJECTED = "rejected", // for future moderation purpose
+  BEING_PROCESS = "being_processed", // during matching process
+  MATCHED = "matched", // matched with guest/hosts and awaiting for response
+  MATCH_ACCEPTED = "match_accepted", // match accepted by host and guest
+  DEFAULT = "default",
+}
+
 enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
@@ -20,38 +29,41 @@ export const toRequests: (xs: GetRequestsListDTO) => Request[] = (
   xs: GetRequestsListDTO
 ) => xs.requests.map(toRequest);
 
-const toOffer = (o: OfferProps) => ({
+const toOffer = (o: OfferProps): Offer => ({
   id: o.id,
   imageUrl:
     "https://images.contentstack.io/v3/assets/bltec2ed8e3c4b1e16d/bltfbcc7f32e0cd6ff5/617b2ba9b187491e7c56dfca/getting-started-on-airbnb-optimized.jpg", //TODO: need to be mapped
+  type: o.type,
   beds: o.beds,
   city: o.city,
   duration: toAccomodationTime(o.duration_category),
   name: toName(o), //TODO: check if name is shelter_type
   state: toMatchOfferState(o), //TODO: check match state algo
   matchedRequest: o.matchedRequest,
+  closestCity: o.closest_city,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
-  const matchStatus = o.match_status;
+  const matchStatus = o.status;
   if (!matchStatus) {
     return "LOOKING_FOR_A_MATCH";
   }
   switch (matchStatus) {
-    case MatchStatus.ACCEPTED:
+    case GuestHostStatus.MATCH_ACCEPTED:
       return "CONFIRMED";
-    case MatchStatus.AWAITING_RESPONSE:
+    case GuestHostStatus.MATCHED:
       return "FOUND_MATCH";
-    case MatchStatus.DEFAULT:
+    case GuestHostStatus.DEFAULT:
       return "LOOKING_FOR_A_MATCH";
-    case MatchStatus.REJECTED:
-      return "INACTIVE";
-    case MatchStatus.TIMEOUT:
-      return "INACTIVE";
+    case GuestHostStatus.BEING_PROCESS:
+      return "BEING_CONFIRMED";
+    case GuestHostStatus.ACCEPTED:
+      return "LOOKING_FOR_A_MATCH";
   }
   return "LOOKING_FOR_A_MATCH";
 };
 
 const toRequest: (r: RequestProps) => Request = (r) => ({
+  type: r.type,
   id: r.id,
   beds: r.beds,
   city: r.city ?? "N/A",
@@ -66,7 +78,7 @@ const toName: (_: OfferProps) => string = (o) =>
     : typeof o.shelter_type === "string"
     ? o.shelter_type
     : o.shelter_type.join(", ");
-const toAccomodationTime: (
+export const toAccomodationTime: (
   duration_category: string[] | string
 ) => AccommodationTime = (duration_category) => {
   return (

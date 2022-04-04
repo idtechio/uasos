@@ -198,7 +198,8 @@
             "nationalityError": "Menekült állampolgárságának megadása szükséges"
         },
         "prolongationReady": "Lehetőség a tartózkodás meghosszabbítására (térítés ellenében)",
-        "transportReady": "Szállítási lehetőség"
+        "transportReady": "Szállítási lehetőség",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Kijelentkezés",
     "back": "Vissza",
@@ -302,7 +303,8 @@
             "accommodationType": "Válassza ki a szállás típusát",
             "countryOfGroup": "Kérjük, válassza ki az állampolgárságát"
         },
-        "refugeInfoHeader": "Adjon tájékoztatást a szállásáról"
+        "refugeInfoHeader": "Adjon tájékoztatást a szállásáról",
+        "countryOfGroup": "Melyik a csoport származási országa?"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",

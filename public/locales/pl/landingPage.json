@@ -18,15 +18,15 @@
         "cta": "Zgłoś lokal"
     },
     "weMatched": {
-        "title": "Udało nam się dopasować już...",
+        "title": "Jak dotąd...",
         "cards": {
-            "helpedPeople": "potrzebujących osób",
-            "lookingForHelp": "nadal poszukuje wsparcia",
+            "helpedPeople": "wspartych uchodźców",
+            "lookingForHelp": "uchodźców wciąż szukających pomocy",
             "currentOffers": "aktualnie dostępnych ofert"
         }
     },
     "whatSosUaDoesSection": {
-        "title": "Co robi SOS-UA?",
+        "title": "Co robi UASOS?",
         "bulletPoints": {
             "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna liczba osób, długość pobytu)",
             "1": "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",

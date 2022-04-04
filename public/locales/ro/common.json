@@ -183,7 +183,7 @@
         "elderReady": "Accept persoane în vârstă",
         "animalReady": "Voi accepta o persoană cu un animal de companie",
         "basicInfoHeader": "Furnizați înformații de bază",
-        "refugeInfoHeader": "Empty",
+        "refugeInfoHeader": "Adăugați informații despre cazare.",
         "addButton": "Trimiteți",
         "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
         "errors": {
@@ -198,10 +198,11 @@
             "nationalityError": "Vă rugăm selectați naționalitatea"
         },
         "prolongationReady": "Posibilitate de prelungire a șederii (contra unei sume de bani)",
-        "transportReady": "Posibilitate de transport"
+        "transportReady": "Posibilitate de transport",
+        "hostAddressProcessingWarning": "Adresa completă nu va fi împărtășită cu refugiații - doar informații despre orașul dvs."
     },
     "logout": "Deconectați-vă",
-    "back": "Empty",
+    "back": "Înapoi",
     "backToHomePage": "Înapoi la pagina principală",
     "shareLocation": "Creați un cont",
     "registerGuest": "Găsește cazare",
@@ -214,7 +215,7 @@
     "rodo": "GDPR",
     "thankfulnessModal": {
         "thankYou": "Vă mulțumim!",
-        "thanksForYourDecision": "Câmp necompletat",
+        "thanksForYourDecision": "Vă mulțumim pentru că ne-ați informat de decizia dumneavoastră.",
         "applicationSent": "Cererea dumneavoastră a fost trimisă. Verificăm de mai multe ori pe zi baza noastră de date cu voluntari pentru a găsi cel mai bun loc pentru dvs.",
         "informWhenAccomodationFound": "De îndată ce vom găsi cazare pentru dumneavoastră, vă vom informa prin e-mail.",
         "backToMainPage": "Înapoi la pagina de pornire"
@@ -246,7 +247,7 @@
         "labels": {
             "email": "E-mail",
             "refugeesCount": "Pentru câte persoane căutați cazare?",
-            "refugee": "Refugiați {{număr}}",
+            "refugee": "Refugiați {{number}}",
             "refugeeDetails": "Furnizați informații suplimentare pentru a permite cea mai bună potrivire pentru dvs.",
             "refugeesAnimal": "Rasă",
             "isGDPRAccepted": "Accept politica de confidențialitate",
@@ -302,7 +303,8 @@
             "accommodationType": "Selectați tipul de cazare",
             "countryOfGroup": "Vă rugăm selectați naționalitatea"
         },
-        "refugeInfoHeader": "Adăugați informații cu privire la cazare"
+        "refugeInfoHeader": "Adăugați informații cu privire la cazare",
+        "countryOfGroup": "Care este țara de origine a grupului?"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",

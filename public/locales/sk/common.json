@@ -198,7 +198,8 @@
             "nationalityError": "Vyžaduje sa štátna príslušnosť"
         },
         "prolongationReady": "Možnosť predĺženia pobytu (za poplatok)",
-        "transportReady": "Možnosť dopravy"
+        "transportReady": "Možnosť dopravy",
+        "hostAddressProcessingWarning": ""
     },
     "logout": "Odhlásiť sa",
     "back": "Späť",
@@ -246,7 +247,7 @@
         "labels": {
             "email": "E-mailová adresa",
             "refugeesCount": "Pre koľko ľudí hľadáte ubytovanie?",
-            "refugee": "Utečenec {{číslo}}",
+            "refugee": "Utečenec {{number}}",
             "refugeeDetails": "Poskytnite ďalšie informácie, aby ste mohli nájsť najlepšiu zhodu",
             "refugeesAnimal": "Plemeno",
             "isGDPRAccepted": "Prijímam zásady ochrany osobných údajov",
@@ -302,7 +303,8 @@
             "accommodationType": "Vyberte typ ubytovania",
             "countryOfGroup": "Vyberte národnosť"
         },
-        "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní"
+        "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní",
+        "countryOfGroup": "Z akej krajiny skupina pochádza?"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

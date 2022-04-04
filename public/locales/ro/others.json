@@ -35,13 +35,14 @@
         "sms": {
             "verification": "Verificarea prin SMS",
             "verificationSuccess": "Verificarea SMS-ului a fost finalizată cu succes",
-            "sentInfo": "Introduceți codul de verificare trimis la numărul de telefon {{Numărul telefonului}}.",
+            "sentInfo": "Introduceți codul de verificare trimis la numărul de telefon {{phoneNumber}}.",
             "verificationFail": "Oops! Ceva nu a mers bine, încercați din nou sau generați un nou cod"
         },
         "actions": {
             "showPassword": "Afișați parola",
             "details": "Detalii",
-            "addOffer": "Adăugați oferta"
+            "addOffer": "Adăugați oferta",
+            "addSubmission": ""
         },
         "email": {
             "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",
@@ -49,8 +50,8 @@
         },
         "nationalities": {
             "ukrainians": "Ucrainenii",
-            "ukrainian": "",
-            "nonUkrainian": ""
+            "ukrainian": "Ucrainean",
+            "nonUkrainian": "Non-Ucrainean"
         }
     },
     "forms": {
@@ -81,20 +82,20 @@
             "validations": {
                 "passwordMismatch": "Parolele sunt diferite"
             },
-            "password": "",
+            "password": "Parola (min. 8 caractere)",
             "errors": {
-                "duplicatedMail": ""
+                "duplicatedMail": "Adresa de e-mail folosită pentru logare este deja folosită în sistemul nostru. Vă rugăm să încercați să vă logați din nou printr-o metodă de conectare diferită."
             }
         },
         "match": {
             "guestProfile": "Profilul oaspetelui",
-            "numberOfPeopleWithData": "Numărul maxim de persoane: <b>{{număr}}<\/b>",
-            "durationWithData": "Durata șederii: <b>{{număr}} {{unitate}}<\/b>",
+            "numberOfPeopleWithData": "Numărul maxim de persoane: <b>{{number}}<\/b>",
+            "durationWithData": "Durata șederii: <b>{{number}} {{unit}}<\/b>",
             "specificCity": "Oraș specific",
             "confirmed": "Oaspetele\/gazda dvs. tocmai a confirmat o ofertă. Luați legătura cu el\/ea pentru a aranja detaliile. ",
-            "accommodationTypeWithData": "Tipul de cazare: <b>{{tip}}<\/b>",
+            "accommodationTypeWithData": "Tipul de cazare: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Informații suplimentare despre cazare",
-            "usersWarning": "<b>Din motive de siguranță, țineți-vă rudele la curent cu persoanele pe care le adăpostiți. Pentru orice eventualitate:<\/b>\nverificați identitatea persoanei pe care o adăpostiți,\nasigurați-vă că componența grupului corespunde descrierii inițiale ",
+            "usersWarning": "<b>Din motive de siguranță, țineți-vă rudele la curent cu persoanele pe care le adăpostiți. Pentru orice eventualitate:<\/b>\n<ul>\n<li>verificați identitatea persoanei pe care o adăpostiți,<\/li>\n<li>asigurați-vă că componența grupului corespunde descrierii inițiale<\/li>\n<\/ul>",
             "individual": "Individual",
             "host": {
                 "formSent": "Formular trimis",
@@ -115,24 +116,29 @@
             "groupInformation": {
                 "pregnancy": "Grupul include o persoană cu o sarcină avansată (peste 6 luni).",
                 "disability": "În grup există o persoană cu dizabilități",
-                "multicultural": "Din grup fac parte persoane de diferite naționalități"
+                "multicultural": "Din grup fac parte persoane de diferite naționalități",
+                "animals": "Grupul este însoțit de un animal de companie",
+                "elders": "Există o persoană în vârstă în grup"
             },
             "submited": "Formular trimis",
             "facilityInformation": {
-                "disability": "Facilități pentru persoanele cu handicap"
+                "disability": "Facilități pentru persoanele cu handicap",
+                "pregnancy": "",
+                "eldery": "",
+                "diversity": ""
             },
             "password": "Parola",
             "selectFromList": "Selectați din listă",
             "cityWithData": "Oraș: {{city}}",
-            "phoneNumberWithData": "Număr de telefon: <b>{{număr}}<\/b>",
+            "phoneNumberWithData": "Număr de telefon: <b>{{number}}<\/b>",
             "hostWithName": "Gazdă",
             "addPhoto": "Adăugați o fotografie",
             "emailAddressWithData": "Adresa de e-mail: <b>{{mail}}<\/b>",
             "zipCode": "Cod poștal",
             "hostProfile": "Profilul gazdei",
-            "peopleInGroup": "Numărul de persoane din grup: <b>{{număr}}<\/b>",
+            "peopleInGroup": "Numărul de persoane din grup: <b>{{number}}<\/b>",
             "city": "Adresă: <b>{{city}}<\/b>",
-            "groupType": "Tipul de grup: <b>{{tip}}<\/b>",
+            "groupType": "Tipul de grup: <b>{{type}}<\/b>",
             "additionalGroupInformation": "Informații suplimentare despre grup",
             "guest": "Oaspete",
             "selectMultipleFromList": "Selectați din listă (alegere multiplă)",
@@ -158,7 +164,8 @@
             "login": "Autentificare",
             "signInFacebook": "Conectați-vă cu Facebook",
             "signInGoogle": "Conectați-vă cu Google",
-            "emailOrPhoneDetail": "E-mail sau număr de telefon"
+            "emailOrPhoneDetail": "E-mail sau număr de telefon",
+            "invalidPassword": "Parola furnizată nu este validă"
         },
         "resetPassword": {
             "setNewPassword": "Setați o nouă parolă",
@@ -199,14 +206,15 @@
                 "haveMatch": "Am găsit o potrivire",
                 "lookingForMatch": "Caut o potrivire",
                 "awaitingHostApproval": "În așteptarea aprobării gazdei",
-                "confirmed": "Confirmat"
+                "confirmed": "Confirmat",
+                "rejected": "Respins"
             }
         },
         "refuge": {
             "searchingAccommodation": "Caut cazare",
             "accommodationSearch": "Căutare cazare",
             "submission": "Trimitere",
-            "duration": "Durata: {{număr}} {{unitate}}"
+            "duration": "Durata: {{value}}"
         },
         "providingSupport": "Oferă ajutor",
         "yourSubmission": "Forumular dvs.",
@@ -251,9 +259,6 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "refugiații încă mai caută ajutor",
-        "refugesSupported": "refugiați sprijiniți",
-        "soFar": "Până acum...",
         "appDescription": "Îi ajutăm pe refugiați să găsească automat cazare <b>gratuită<\/b> în <b>Polonia, Cehia, Ungaria și Slovacia,<\/b> oferită de persoane și instituții dispuse să ajute.",
         "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală"
     },

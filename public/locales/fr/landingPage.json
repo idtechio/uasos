@@ -18,10 +18,10 @@
         "cta": "Proposer un abri"
     },
     "weMatched": {
-        "title": "Nous avons déjà pu établir une correspondance...",
+        "title": "Jusqu'à présent...",
         "cards": {
-            "helpedPeople": "les personnes dans le besoin",
-            "lookingForHelp": "toujours à la recherche d’aide",
+            "helpedPeople": "réfugiés soutenus",
+            "lookingForHelp": "réfugiés qui cherchent toujours de l'aide",
             "currentOffers": "offres actuellement disponibles"
         }
     },

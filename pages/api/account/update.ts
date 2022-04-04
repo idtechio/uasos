@@ -11,10 +11,10 @@ import { AccountInfoDBProps, getAccountFromDB } from "./get";
 interface AccountDBProps {
   db_accounts_id?: string;
   uid: string;
-  name: string;
-  email: string;
-  phone_num: string;
-  preferred_lang: string;
+  name?: string;
+  email?: string;
+  phone_num?: string;
+  preferred_lang?: string;
   fnc_email_status: string;
   fnc_msisdn_status: string;
 }
@@ -41,10 +41,6 @@ async function updateAccount(
 
     const accountData: AccountDBProps = {
       uid: user.uid,
-      name: body?.name || user.displayName,
-      email: body?.email || user.email,
-      phone_num: body?.phone || user.phoneNumber,
-      preferred_lang: body?.prefferedLang,
       fnc_email_status: user.emailVerified ? "065" : "055",
       fnc_msisdn_status: user.phoneNumber ? "065" : "055",
     };
@@ -52,8 +48,18 @@ async function updateAccount(
     let topicNameOrId: string | undefined;
     if (account) {
       accountData.db_accounts_id = account.db_accounts_id;
+      body?.name && (accountData.name = body.name);
+      body?.email && (accountData.email = body.email);
+      body?.phone && (accountData.phone_num = body.phone);
+      body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
+
       topicNameOrId = process.env.TOPIC_ACCOUNT_UPDATE;
     } else {
+      accountData.name = body?.name || user.displayName;
+      accountData.email = body?.email || user.email;
+      accountData.phone_num = body?.phone || user.phoneNumber;
+      accountData.preferred_lang = body?.prefferedLang;
+
       topicNameOrId = process.env.TOPIC_ACCOUNT_INSERT;
     }
 

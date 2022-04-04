@@ -18,6 +18,15 @@ enum GuestHostStatus {
   DEFAULT = "default",
 }
 
+enum GuestHostType {
+  INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
+  LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
+  FOUND_A_MATCH = "found_a_match", // matched with guest/hosts and awaiting for response
+  BEING_CONFIRMED = "being_confirmed", // matched confirmed by one side (host or guest)
+  CONFIRMED = "confirmed", // match confirmed by two sides (host and guest)
+  REJECTED = "rejected", // match rejected by one side
+}
+
 enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
@@ -55,6 +64,11 @@ export interface OfferProps {
   phone_num: string;
   email: string;
   city: string;
+  closest_city: string;
+  zipcode: string;
+  street: string;
+  building_no: string;
+  appartment_no: string;
   shelter_type: Array<string> | string;
   beds: number;
   acceptable_group_relations: Array<string> | string;
@@ -64,6 +78,7 @@ export interface OfferProps {
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
   duration_category: Array<string> | string;
+  type: GuestHostType;
   transport_included: Boolean;
   match_id?: string | null;
   match_status?: MatchStatus | null;
@@ -123,8 +138,13 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       host_status,
       host_name,
 
-      city,
       country,
+      city,
+      closest_city,
+      zipcode,
+      street,
+      building_no,
+      appartment_no,
       phone_num,
       email,
       shelter_type,
@@ -138,6 +158,8 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       duration_category,
       transport_included,
       
+      type,
+
       match_id,
       match_status,
 
@@ -171,6 +193,11 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     status: h.host_status,
     city: h.city,
     country: h.country,
+    closest_city: h.closest_city,
+    zipcode: h.zipcode,
+    street: h.street,
+    building_no: h.building_no,
+    appartment_no: h.appartment_no,
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: ungroupString(h.shelter_type),
@@ -183,8 +210,9 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: ungroupString(h.duration_category),
     transport_included: h.transport_included,
-    match_status: h.match_status,
+    type: h.type,
     match_id: h.match_id,
+    match_status: h.match_status,
     matchedRequest: h.match_id
       ? {
           id: h.guest_id,
@@ -218,6 +246,11 @@ function getMockOffers(): OfferProps[] {
       name: "Jan Kowalski",
       city: "Warszawa",
       country: "poland",
+      closest_city: "pruszków",
+      zipcode: "00-999",
+      street: "Sezamkowa",
+      building_no: "202",
+      appartment_no: "1",
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
@@ -231,6 +264,7 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["month"],
       transport_included: Boolean.TRUE,
       status: GuestHostStatus.MATCH_ACCEPTED,
+      type: GuestHostType.BEING_CONFIRMED,
       match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
       match_status: MatchStatus.ACCEPTED,
       matchedRequest: {
@@ -257,6 +291,11 @@ function getMockOffers(): OfferProps[] {
       name: "Jan Kowalski",
       city: "Wrocław",
       country: "poland",
+      closest_city: "pruszków",
+      zipcode: "00-999",
+      street: "Sezamkowa",
+      building_no: "202",
+      appartment_no: "1",
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
@@ -270,6 +309,7 @@ function getMockOffers(): OfferProps[] {
       duration_category: ["less_than_1_week"],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
+      type: GuestHostType.LOOKING_FOR_MATCH,
       match_id: null,
       match_status: null,
       matchedRequest: undefined,

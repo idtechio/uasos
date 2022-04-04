@@ -18,6 +18,15 @@ enum GuestHostStatus {
   DEFAULT = "default",
 }
 
+enum GuestHostType {
+  INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
+  LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
+  FOUND_A_MATCH = "found_a_match", // matched with guest/hosts and awaiting for response
+  BEING_CONFIRMED = "being_confirmed", // matched confirmed by one side (host or guest)
+  CONFIRMED = "confirmed", // match confirmed by two sides (host and guest)
+  REJECTED = "rejected", // match rejected by one side
+}
+
 enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
@@ -65,6 +74,7 @@ export interface RequestProps {
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string> | string;
+  type: GuestHostType;
   match_id?: string | null;
   match_status?: MatchStatus | null;
   matchedOffer?: MatchedOfferProps;
@@ -137,6 +147,8 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       is_with_animal,
       is_with_elderly,
       is_ukrainian_nationality,
+
+      type,
       
       match_id,
       match_status,
@@ -183,6 +195,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
     is_with_elderly: g.is_with_elderly,
     is_ukrainian_nationality: g.is_ukrainian_nationality,
     duration_category: ungroupString(g.duration_category),
+    type: g.type,
     match_id: g.match_id,
     match_status: g.match_status,
     matchedOffer: g.match_id
@@ -231,6 +244,7 @@ function getMockRequests(): RequestProps[] {
       is_ukrainian_nationality: Boolean.TRUE,
       duration_category: ["longer"],
       status: GuestHostStatus.MATCHED,
+      type: GuestHostType.BEING_CONFIRMED,
       match_status: MatchStatus.AWAITING_RESPONSE,
       match_id: "eee4e25e-aae4-11ec-9a20-1726ed50bb17",
       matchedOffer: {
@@ -270,6 +284,7 @@ function getMockRequests(): RequestProps[] {
       is_ukrainian_nationality: Boolean.FALSE,
       duration_category: ["less_than_1_week"],
       status: GuestHostStatus.ACCEPTED,
+      type: GuestHostType.LOOKING_FOR_MATCH,
       match_id: null,
       match_status: null,
       matchedOffer: undefined,
@@ -291,6 +306,7 @@ function getMockRequests(): RequestProps[] {
       is_ukrainian_nationality: Boolean.TRUE,
       duration_category: ["2_3_weeks"],
       status: GuestHostStatus.BEING_PROCESS,
+      type: GuestHostType.LOOKING_FOR_MATCH,
       match_id: null,
       match_status: null,
       matchedOffer: undefined,

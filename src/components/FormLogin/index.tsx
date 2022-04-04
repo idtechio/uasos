@@ -67,7 +67,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           data.login.password
         );
       } catch (error) {
-        return null;
+        if (error instanceof Error) {
+          if (error.message.includes("wrong-password")) {
+            setError(t("others:forms.login.invalidPassword"));
+          }
+        }
       }
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
@@ -170,7 +174,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={t("common:registrationUserForm.errors.password")}
                 />
                 <LostPass />
               </>
@@ -180,14 +183,13 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <ButtonCta
               style={{
                 width: "130px",
-                textTransform: "capitalize",
                 height: "43px",
                 display: "flex",
                 marginBottom: "30px",
                 alignSelf: "flex-end",
                 marginTop: 50,
               }}
-              anchor={t("common:loginForm.logIn")}
+              anchor={t("others:forms.login.login")}
               onPress={handleSubmit(onSubmit, () => {})}
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
@@ -199,6 +201,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               setVerificationSuccess={setSmsVerificationSuccess}
               mode="LOGIN"
               callback={() => null}
+              close={() => setPhoneLoginConfirmation(null)}
             />
           ) : (
             <></>

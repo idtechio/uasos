@@ -12,7 +12,6 @@ type Props = {
   error?: FieldError;
   errorMsg?: string;
   extra?: React.ReactNode;
-  labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
   readonly?: boolean;
   styles?: InputStylesProps;
@@ -26,7 +25,6 @@ const FormTextInput = ({
   rules,
   error,
   extra,
-  labelsBackgroundColor,
   secureTextEntry,
   readonly,
   styles,
@@ -47,7 +45,6 @@ const FormTextInput = ({
             error={error}
             extra={extra}
             secureTextEntry={secureTextEntry}
-            labelsBackgroundColor={labelsBackgroundColor}
             readonly={readonly}
             styles={styles}
           />

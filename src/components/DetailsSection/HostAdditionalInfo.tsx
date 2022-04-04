@@ -28,63 +28,65 @@ export const borderTopStyle: StyleProp<ViewStyle> = {
 };
 
 export default function HostAdditionalInfo({ info }: HostAdditionalInfoProps) {
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation();
 
   return (
     <FlexWrapper style={borderTopStyle}>
-      <Subtitle>{t("accommodationExtraInfo")}</Subtitle>
+      <Subtitle>
+        {t("others:forms.match.additionalInfoOnAccommodation")}
+      </Subtitle>
       <ItemsRow>
-        {info.transport && (
+        {info.transport === "TRUE" && (
           <DataField
             Icon={TransportIcon}
             iconWidth={12}
             iconHeight={12}
-            label={t("transportOffered")}
+            label={t("others:forms.generic.hostInformation.offerTransport")}
           />
         )}
 
-        {info.animals && (
+        {info.animals === "TRUE" && (
           <DataField
             Icon={AnimalsIcon}
             iconWidth={16}
             iconHeight={14}
-            label={t("petsAccepted")}
+            label={t("hostList:petsWelcome")}
           />
         )}
 
-        {info.disability && (
+        {info.disability === "TRUE" && (
           <DataField
             Icon={DisabilityIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("disabilityAccepted")}
+            label={t("others:forms.generic.facilityInformation.disability")}
           />
         )}
 
-        {info.pregnancy && (
+        {info.pregnancy === "TRUE" && (
           <DataField
             Icon={PregnantIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("pregnancyAccepted")}
+            label={t("others:forms.generic.facilityInformation.pregnancy")}
           />
         )}
 
-        {info.elderly && (
+        {info.elderly === "TRUE" && (
           <DataField
             Icon={ElderIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("elderlyAccepted")}
+            label={t("others:forms.generic.facilityInformation.eldery")}
           />
         )}
 
-        {info.diversity && (
+        {info.diversity === "TRUE" && (
           <DataField
             Icon={DiversityIcon}
             iconWidth={12}
             iconHeight={13}
-            label={t("diversityAccepted")}
+            label={t("others:forms.generic.facilityInformation.diversity")}
           />
         )}
       </ItemsRow>

@@ -19,7 +19,7 @@
             "termsOfService": "Warunki świadczenia usług"
         },
         "words": {
-            "idWithData": "Id: {{id}}",
+            "idWithData": "ID: {{id}}",
             "renew": "Odnów",
             "additionalInformation": "Informacje dodatkowe",
             "congratulations": "Gratulacje",
@@ -41,10 +41,11 @@
         "actions": {
             "showPassword": "Pokaż hasło",
             "details": "Szczegóły",
-            "addOffer": "Dodaj ofertę"
+            "addOffer": "Dodaj ofertę",
+            "addSubmission": "Poproś o wsparcie"
         },
         "email": {
-            "sentInfo": "wysłaliśmy kod weryfikacyjny na Twój adres e-mail. Kliknij link, aby go zweryfikować",
+            "sentInfo": "Wysłaliśmy kod weryfikacyjny na Twój adres e-mail. Kliknij link, aby go zweryfikować",
             "verification": "Weryfikacja adresu e-mail"
         },
         "nationalities": {
@@ -81,9 +82,9 @@
             "validations": {
                 "passwordMismatch": "Podane hasła są różne"
             },
-            "password": "",
+            "password": "Hasło (min. 8 znaków)",
             "errors": {
-                "duplicatedMail": ""
+                "duplicatedMail": "Adres e-mail powiązany z wybranym kontem dostawcy logowania jest już używany w naszym systemie. Prosimy spróbować zalogować się ponownie przy użyciu innej metody logowania."
             }
         },
         "match": {
@@ -94,8 +95,8 @@
             "confirmed": "Twój gość\/gospodarz właśnie potwierdził ofertę. Skontaktuj się z nim\/nią, aby ustalić szczegóły",
             "accommodationTypeWithData": "Typ zakwaterowania: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Dodatkowe informacje na temat zakwaterowania",
-            "usersWarning": "<b> Ze względów bezpieczeństwa informuj swoich bliskich o tym, komu udzielasz schronienia. W razie czego:\n <\/b> zweryfikować tożsamość osoby, której udzielasz schronienia,\n upewnij się, że skład grupy pasuje do oryginalnego opisu",
-            "individual": "Indywidualny",
+            "usersWarning": "<b> Ze względów bezpieczeństwa informuj swoich bliskich o tym, komu udzielasz schronienia. W razie czego: <\/b>\n<ul>\n<li>zweryfikować tożsamość osoby, której udzielasz schronienia,<\/li>\n <li>upewnij się, że skład grupy pasuje do oryginalnego opisu<\/li>\n <\/ul>",
+            "individual": "Osoba prywatna",
             "host": {
                 "formSent": "Formularz wysłany",
                 "formSentThanks": "Dziękujemy za wyrażenie chęci pomocy. Twoja nieruchomość została dodana do listy. Przeszukamy naszą bazę danych osób potrzebujących i gdy znajdziemy odpowiednią osobę, damy Ci znać.",
@@ -115,18 +116,23 @@
             "groupInformation": {
                 "pregnancy": "W grupie znajduje się osoba z zaawansowaną ciążą (powyżej 6-go miesiąca)",
                 "disability": "W grupie znajduje się osoba niepełnosprawna",
-                "multicultural": "W skład grupy wchodzą osoby różnych narodowości"
+                "multicultural": "W skład grupy wchodzą osoby różnych narodowości",
+                "animals": "Grupie towarzyszy zwierzę domowe",
+                "elders": "W grupie znajduje się osoba starsza"
             },
             "submited": "Formularz zgłoszony",
             "facilityInformation": {
-                "disability": "Udogodnienia dla osób niepełnosprawnych"
+                "disability": "Udogodnienia dla osób niepełnosprawnych",
+                "pregnancy": "Udogodnienia dla kobiet w ciąży",
+                "eldery": "Udogodnienia dla osób starszych",
+                "diversity": "Wszystkie narodowości mile widziane"
             },
             "password": "Hasło",
             "selectFromList": "Wybierz z listy",
             "cityWithData": "Miasto: {{city}}",
             "phoneNumberWithData": "Numer telefonu: <b> {{number}} <\/b>",
             "hostWithName": "Gospodarz: <b> {{name}} <\/b>",
-            "addPhoto": "Dodaj zdjęcie",
+            "addPhoto": "Dodaj \u2028zdjęcie",
             "emailAddressWithData": "Adres e-mail: <b>{{mail}}<\/b>",
             "zipCode": "Kod pocztowy",
             "hostProfile": "Profil gospodarza",
@@ -158,7 +164,8 @@
             "login": "Zaloguj się",
             "signInFacebook": "Zaloguj się przez Facebook",
             "signInGoogle": "Zaloguj się przez Google",
-            "emailOrPhoneDetail": "Adres e-mail lub numer telefonu"
+            "emailOrPhoneDetail": "Adres e-mail lub numer telefonu",
+            "invalidPassword": "Podano nieprawidłowe hasło"
         },
         "resetPassword": {
             "setNewPassword": "Ustaw nowe hasło",
@@ -185,7 +192,7 @@
     "desktop": {
         "lookingForSupport": "Szukam wsparcia",
         "filters": {
-            "shelter": "Zakwaterowanie"
+            "shelter": "Nocleg"
         },
         "host": {
             "numberOfPeople": "Liczba osób: Max {{maxAmount}}"
@@ -193,20 +200,21 @@
         "offer": {
             "status": {
                 "accepted": "Zaakceptowano",
-                "beingConfirmed": "Potwierdzone",
+                "beingConfirmed": "W trakcie potwierdzania",
                 "awaitingGuestApproval": "Oczekiwanie na zatwierdzenie gościa",
                 "inactive": "Nieaktywne",
                 "haveMatch": "Znaleźliśmy dopasowanie",
                 "lookingForMatch": "Szukanie dopasowania",
-                "awaitingHostApproval": "Oczekiwanie na zatwierdzenie przez gospodarza",
-                "confirmed": "Potwierdzone"
+                "awaitingHostApproval": "Oczekiwanie na zatwierdzenie gospodarza",
+                "confirmed": "Potwierdzone",
+                "rejected": "Odrzucono"
             }
         },
         "refuge": {
             "searchingAccommodation": "Poszukiwanie zakwaterowania",
             "accommodationSearch": "Wyszukiwanie noclegów",
             "submission": "Zgłoszenie",
-            "duration": "Okres: {{number}} {{unit}}"
+            "duration": "Okres: {{value}}"
         },
         "providingSupport": "Udzielane wsparcie",
         "yourSubmission": "Twoje zgłoszenia",
@@ -220,7 +228,7 @@
             "phoneNotVerified": "Telefon nie został zweryfikowany",
             "emailNotVerified": "E-mail nie został zweryfikowany"
         },
-        "housing": "Mieszkanie"
+        "housing": "Nocleg"
     },
     "reportProblem": {
         "popup": {
@@ -228,11 +236,11 @@
             "problemReported": "Problem został zgłoszony",
             "thanksForLettingKnow": "Dziękujemy za poinformowanie nas o zaistniałej sytuacji.",
             "reasons": {
-                "guestNotNeedHelp": "",
-                "hostCantHelp": "",
-                "rejectedAfterContact": "",
-                "noResponseAfterContact": "",
-                "notShowUp": ""
+                "guestNotNeedHelp": "Gość nie potrzebuje już noclegu",
+                "hostCantHelp": "Gospodarz nie może już zapewnić zakwaterowania",
+                "rejectedAfterContact": "Oferta odrzucona po pierwszym kontakcie przeze mnie\/drugą stronę",
+                "noResponseAfterContact": "Brak kontaktu mimo kilku prób",
+                "notShowUp": "Gospodarz\/gość nie pojawił się w umówionym miejscu"
             }
         }
     },
@@ -251,19 +259,16 @@
         }
     },
     "welcomePage": {
-        "refugesLookingForHelp": "uchodźcy wciąż szukający pomocy",
-        "refugesSupported": "wsparci uchodźcy",
-        "soFar": "Jak dotąd...",
         "appDescription": "Pomagamy uchodźcom znaleźć <b>bezpłatne<\/b> zakwaterowanie w <b>Polsce, Czechach, na Węgrzech i na Słowacji<\/b>, oferowane przez osoby i instytucje chętne do pomocy.",
         "comingSoon": "Wkrótce: funkcje związane z transportem, poszukiwaniem pracy i poradami medycznymi"
     },
     "userRegistration": {
         "errors": {
-            "emailExist": "",
-            "phoneExist": "",
-            "tooManyRequest": "",
-            "invalidCode": "",
-            "phoneLinkingFailed": ""
+            "emailExist": "Użytkownik z tym kontem już istnieje",
+            "phoneExist": "Ten numer telefonu jest już powiązany z innym kontem",
+            "tooManyRequest": "Zbyt wiele próśb o weryfikację",
+            "invalidCode": "Nieprawidłowy kod",
+            "phoneLinkingFailed": "Wystąpił błąd podczas łączenia numeru telefonu z kontem, zaloguj się i spróbuj ponownie"
         }
     }
 }

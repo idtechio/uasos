@@ -33,7 +33,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
-        defaultOptions: { queries: { staleTime: 2 * 60 * 1000, retry: false } },
+        defaultOptions: {
+          queries: {
+            staleTime: 2 * 60 * 1000,
+            retry: false,
+          },
+        },
       })
   );
 

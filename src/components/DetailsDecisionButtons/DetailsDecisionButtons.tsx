@@ -16,7 +16,7 @@ export default function DetailsDecisionButtons({
   matchId,
   typeOfUser,
 }: DetailsDecisionButtonsProps) {
-  const { t } = useTranslation("offer-details");
+  const { t } = useTranslation();
   const [modalOpened, setModalOpened] = useState<"accept" | "reject" | null>(
     null
   );
@@ -135,14 +135,26 @@ export default function DetailsDecisionButtons({
   }, [modalOpened, closeModal, isLoading, showSuccess, showError]);
 
   return (
-    <FormFooter style={{ marginBottom: 60 }}>
+    <FormFooter
+      style={{
+        marginTop: 0,
+        marginBottom: 60,
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <Modal />
       <ButtonCta
         variant="outlined"
-        anchor={t("reject")}
+        anchor={t("others:common.buttons.reject")}
         onPress={handleRejectMatch}
       />
-      <ButtonCta anchor={t("confirm")} onPress={handleConfirmMatch} />
+      <ButtonCta
+        anchor={t("others:common.buttons.confirm")}
+        onPress={handleConfirmMatch}
+      />
     </FormFooter>
   );
 }

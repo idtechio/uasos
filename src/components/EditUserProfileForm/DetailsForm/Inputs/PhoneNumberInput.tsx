@@ -52,7 +52,6 @@ export default function PhoneNumberInput() {
                 error={error}
                 // errorMsg={error?.message}
                 placeholder="xxx-xxx-xxx"
-                withoutLabel
               />
             )}
           />
