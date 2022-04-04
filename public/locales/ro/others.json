@@ -80,7 +80,8 @@
             "preferredLanguage": "Limba de comunicare preferată ",
             "fillMissingData": "Completați datele lipsă",
             "validations": {
-                "passwordMismatch": "Parolele sunt diferite"
+                "passwordMismatch": "Parolele sunt diferite",
+                "passwordLength": ""
             },
             "password": "Parola (min. 8 caractere)",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Număr de telefon neverificat",
-            "emailNotVerified": "Email neverificat"
+            "emailNotVerified": "Email neverificat",
+            "accountInCreation": ""
         },
         "housing": "Locuință"
     },

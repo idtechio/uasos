@@ -80,7 +80,8 @@
             "preferredLanguage": "Предпочитаемый язык общения ",
             "fillMissingData": "Заполните недостающие данные",
             "validations": {
-                "passwordMismatch": "Пароли разные"
+                "passwordMismatch": "Пароли разные",
+                "passwordLength": "Длина пароля должна быть не менее 8 символов"
             },
             "password": "",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Телефон не проверен",
-            "emailNotVerified": "Электронная почта не проверена"
+            "emailNotVerified": "Электронная почта не проверена",
+            "accountInCreation": "Ваша учетная запись создается, обновите страницу через несколько секунд."
         },
         "housing": "Жилье"
     },

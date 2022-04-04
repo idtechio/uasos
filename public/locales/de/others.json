@@ -80,7 +80,8 @@
             "preferredLanguage": "Bevorzugte Sprache der Kommunikation ",
             "fillMissingData": "Füllen Sie die fehlenden Daten aus",
             "validations": {
-                "passwordMismatch": "Passwörter sind unterschiedlich"
+                "passwordMismatch": "Passwörter sind unterschiedlich",
+                "passwordLength": ""
             },
             "password": "",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Telefon nicht verifiziert",
-            "emailNotVerified": "E-Mail nicht verifiziert"
+            "emailNotVerified": "E-Mail nicht verifiziert",
+            "accountInCreation": ""
         },
         "housing": "Gehäuse"
     },
