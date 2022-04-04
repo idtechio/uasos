@@ -13,23 +13,6 @@ export const InputRow = styled.View`
   align-items: center;
 `;
 
-type LabelProps = Pick<InputProps, "labelsBackgroundColor" | "error"> & {
-  theme: Theme;
-};
-export const Label = styled.Text<LabelProps>`
-  top: -10px;
-  left: 15px;
-  background-color: ${(props) =>
-    props.labelsBackgroundColor ? `${props.labelsBackgroundColor}` : `#fff`};
-  width: fit-content;
-  padding: 3px 5px;
-  line-height: 100%;
-  z-index: 2;
-  color: ${(props) =>
-    props.error ? props.theme.colors.error : `rgba(28, 27, 37, 0.5)`};
-  position: absolute;
-`;
-
 type TextInputProps = InputProps & { theme: Theme };
 export const TextInput = styled.TextInput<TextInputProps>`
   position: relative;
