@@ -9,7 +9,7 @@ ARG NEXT_PUBLIC_FIREBASE_APP_ID
 ARG NEXT_PUBLIC_DOMAIN
 WORKDIR /app
 COPY . .
-RUN npm install && npm run build
+RUN yarn && yarn build
 
 # Copy app and deps
 FROM node:12-alpine
@@ -23,7 +23,7 @@ ARG NEXT_PUBLIC_FIREBASE_APP_ID
 ARG NEXT_PUBLIC_DOMAIN
 WORKDIR /app
 COPY --from=build-env /app .
-RUN rm -rf node_modules && npm install --only=production
+RUN rm -rf node_modules && yarn --production
 
 # Run Next.js
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
