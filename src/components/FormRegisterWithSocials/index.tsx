@@ -82,7 +82,6 @@ export default function FromRegisterWithSocials() {
       let confirmation = null;
       if (identity) {
         confirmation = await Authorization.linkWithPhone(
-          identity,
           e.registerWithSocials.phonePrefix + e.registerWithSocials.phoneNumber,
           Authorization.initCaptcha("captcha__container")
         );
