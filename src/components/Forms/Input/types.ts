@@ -15,8 +15,6 @@ export type InputProps<T = string> = {
   error?: unknown;
   type?: string;
   extra?: ReactNode;
-  labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
-  withoutLabel?: boolean;
   styles?: InputStylesProps;
 };
