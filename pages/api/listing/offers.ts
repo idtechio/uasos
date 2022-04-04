@@ -3,6 +3,7 @@ import { select } from "../../../lib/db";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
+import { AccommodationTime } from "../../../src/helpers/FormTypes";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -71,13 +72,13 @@ export interface OfferProps {
   appartment_no: string;
   shelter_type: Array<string> | string;
   beds: number;
-  acceptable_group_relations: Array<string> | string;
+  acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: Array<string> | string;
+  duration_category: Array<string>;
   type: GuestHostType;
   transport_included: Boolean;
   match_id?: string | null;
@@ -208,7 +209,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_animals: h.ok_for_animals,
     ok_for_elderly: h.ok_for_elderly,
     ok_for_any_nationality: h.ok_for_any_nationality,
-    duration_category: ungroupString(h.duration_category),
+    duration_category: h.duration_category,
     transport_included: h.transport_included,
     type: h.type,
     match_id: h.match_id,
@@ -261,7 +262,7 @@ function getMockOffers(): OfferProps[] {
       ok_for_animals: Boolean.TRUE,
       ok_for_elderly: Boolean.TRUE,
       ok_for_any_nationality: Boolean.TRUE,
-      duration_category: ["month"],
+      duration_category: [AccommodationTime.MONTH],
       transport_included: Boolean.TRUE,
       status: GuestHostStatus.MATCH_ACCEPTED,
       type: GuestHostType.BEING_CONFIRMED,
@@ -306,7 +307,7 @@ function getMockOffers(): OfferProps[] {
       ok_for_animals: Boolean.FALSE,
       ok_for_elderly: Boolean.FALSE,
       ok_for_any_nationality: Boolean.FALSE,
-      duration_category: ["less_than_1_week"],
+      duration_category: [AccommodationTime.LESS_THAN_WEEK],
       transport_included: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
       type: GuestHostType.LOOKING_FOR_MATCH,
