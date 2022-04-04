@@ -97,7 +97,6 @@ export default function UserDetailsForm({
           onSuccess: async () => {
             if (refetchAccount) {
               await refetchAccount();
-              await refetchAccount();
               router.push("/dashboard");
             }
             onSuccess();

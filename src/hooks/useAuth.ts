@@ -50,6 +50,15 @@ const useAuth = () => {
           .catch(() => null);
         setAccount(updatedAccount);
       }
+      if (user && !account) {
+        await AccountApi.updateAccount({
+          payload: {},
+        });
+        const updatedAccount = await AccountApi.getAccount()
+          .then((res) => res)
+          .catch(() => null);
+        setAccount(updatedAccount);
+      }
 
       setIdentity(user);
       setLoaded(true);
