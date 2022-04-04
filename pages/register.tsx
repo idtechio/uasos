@@ -11,9 +11,7 @@ import PageContentWrapper from "../src/components/PageContentWrapper";
 export default function Account() {
   const { identity, account, loaded } = useContext(AuthContext);
 
-  if (identity && identity.phoneNumber && account?.prefferedLang && loaded) {
-    return <Redirect path={Routes.HOMEPAGE} />;
-  } else if (identity && !identity.phoneNumber) {
+  if (loaded && identity && account) {
     return <Redirect path={Routes.SIGN_IN} />;
   } else {
     return (
