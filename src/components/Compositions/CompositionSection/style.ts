@@ -18,9 +18,16 @@ export const PageSection = styled.View<SectionProps & { theme: Theme }>`
   flex-grow: ${(props) => props.flexGrow};
 `;
 
-export const HeaderWrapper = styled.View`
-  margin-bottom: 50px;
-`;
+interface HeaderWrapperProps {
+  useMargin: boolean;
+}
+
+export const HeaderWrapper = styled.View<HeaderWrapperProps>(
+  ({ useMargin }) =>
+    css`
+      margin-bottom: ${useMargin && "50px"};
+    `
+);
 
 export const SectionHeader = styled.Text<SectionProps & { theme: Theme }>(
   ({ theme }) => css`

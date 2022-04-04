@@ -26,8 +26,8 @@ const CompositionSection = ({
       zIndex={zIndex}
       flexGrow={flexGrow}
     >
-      <HeaderWrapper>
-        {header ? <SectionHeader>{header}</SectionHeader> : null}
+      <HeaderWrapper useMargin={Boolean(header || subHeader)}>
+        {header && <SectionHeader>{header}</SectionHeader>}
         {subHeader && <SectionSubHeader>{subHeader}</SectionSubHeader>}
       </HeaderWrapper>
 
