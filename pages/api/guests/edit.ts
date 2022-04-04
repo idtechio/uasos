@@ -14,6 +14,11 @@ import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
+import {
+  AccountInfoDBProps,
+  getAccountFromDB,
+  isAccountVerified,
+} from "../account/get";
 
 const trueOrFalse = match("TRUE").or(match("FALSE"));
 
@@ -47,6 +52,16 @@ async function editGuest(
   try {
     if (!req.decodedToken) {
       throw new Error("token is required");
+    }
+
+    const account: false | AccountInfoDBProps = await getAccountFromDB(
+      req.decodedToken.uid
+    );
+    if (!account) {
+      throw new Error("user account does not exist");
+    }
+    if (!isAccountVerified(account)) {
+      throw new Error("user email or phone is not verified");
     }
 
     const body = coerceTo(GuestPropsType, req.body);

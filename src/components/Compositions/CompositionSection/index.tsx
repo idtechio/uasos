@@ -1,5 +1,10 @@
 import type { SectionProps } from "./types";
-import { PageSection, SectionHeader } from "./style";
+import {
+  PageSection,
+  HeaderWrapper,
+  SectionHeader,
+  SectionSubHeader,
+} from "./style";
 
 const CompositionSection = ({
   children,
@@ -8,6 +13,7 @@ const CompositionSection = ({
   sectionId,
   padding,
   header,
+  subHeader,
   zIndex,
   flexGrow,
 }: SectionProps) => {
@@ -20,7 +26,11 @@ const CompositionSection = ({
       zIndex={zIndex}
       flexGrow={flexGrow}
     >
-      {header ? <SectionHeader>{header}</SectionHeader> : null}
+      <HeaderWrapper useMargin={Boolean(header || subHeader)}>
+        {header && <SectionHeader>{header}</SectionHeader>}
+        {subHeader && <SectionSubHeader>{subHeader}</SectionSubHeader>}
+      </HeaderWrapper>
+
       {children}
     </PageSection>
   );
