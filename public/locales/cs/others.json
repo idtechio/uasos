@@ -80,7 +80,8 @@
             "preferredLanguage": "Preferovaný jazyk komunikace ",
             "fillMissingData": "Doplňte chybějící údaje",
             "validations": {
-                "passwordMismatch": "Hesla jsou různá"
+                "passwordMismatch": "Hesla jsou různá",
+                "passwordLength": "Délka hesla musí být alespoň 8 znaků"
             },
             "password": "",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Telefon nebyl ověřen",
-            "emailNotVerified": "Email nebyl ověřen"
+            "emailNotVerified": "Email nebyl ověřen",
+            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku."
         },
         "housing": "Ubytování"
     },
