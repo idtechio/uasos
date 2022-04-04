@@ -1,6 +1,5 @@
 import { RequestProps } from "../../pages/api/listing/requests";
 import { getFirebaseToken } from "../helpers/getFirebaseToken";
-
 export type GetRequestsListDTO = {
   ok: "ok";
   requests: RequestProps[];

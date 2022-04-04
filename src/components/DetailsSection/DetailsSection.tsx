@@ -22,7 +22,7 @@ export default function DetailsSection({
       {(data as RequestProps)?.matchedOffer && (
         <DetailsCard>
           <HostCardContent
-            offer={data as OfferProps}
+            offer={(data as RequestProps)?.matchedOffer as OfferProps}
             showContact={(data as OfferProps).match_status === "accepted"}
           />
         </DetailsCard>
