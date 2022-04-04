@@ -69,7 +69,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       } catch (error) {
         if (error instanceof Error) {
           if (error.message.includes("wrong-password")) {
-            setError("Invalid Passowrd");
+            setError(t("others:forms.login.invalidPassword"));
           }
         }
       }
@@ -183,14 +183,13 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <ButtonCta
               style={{
                 width: "130px",
-                textTransform: "capitalize",
                 height: "43px",
                 display: "flex",
                 marginBottom: "30px",
                 alignSelf: "flex-end",
                 marginTop: 50,
               }}
-              anchor={t("common:loginForm.logIn")}
+              anchor={t("others:forms.login.login")}
               onPress={handleSubmit(onSubmit, () => {})}
             />
             <div id="captcha__container" style={{ display: "none" }}></div>
