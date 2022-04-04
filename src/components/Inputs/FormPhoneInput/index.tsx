@@ -15,7 +15,6 @@ type Props = {
   error?: FieldError;
   errorMsg: string;
   extra?: React.ReactNode;
-  labelsBackgroundColor?: string;
   secureTextEntry?: boolean;
   data: { label: JSX.Element; value: string }[];
 };
@@ -28,7 +27,6 @@ function FormPhoneInput({
   errorMsg,
   error,
   extra,
-  labelsBackgroundColor,
   secureTextEntry,
   data,
 }: Props) {
@@ -75,7 +73,6 @@ function FormPhoneInput({
               error={error}
               extra={extra}
               secureTextEntry={secureTextEntry}
-              labelsBackgroundColor={labelsBackgroundColor}
               styles={inputStyles}
             />
           </InputControl>
