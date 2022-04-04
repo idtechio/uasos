@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { FieldError } from "react-hook-form";
 
 export type CountrySelectProps = {
@@ -14,5 +13,5 @@ export type CountrySelectProps = {
 
 export type CountryDropdownItemType = {
   value: string;
-  label: string | ReactNode;
+  label: string | JSX.Element;
 };
