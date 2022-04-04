@@ -99,7 +99,6 @@ interface Authorization {
   ) => Promise<string>;
   createUser: (email: string, password: string) => Promise<void>;
   linkWithPhone: (
-    user: User,
     phoneNumber: string,
     recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
@@ -163,7 +162,11 @@ const Authorization: Authorization = {
   async createUser(email, password) {
     await createUserWithEmailAndPassword(auth, email, password);
   },
-  async linkWithPhone(user, phoneNumber, recaptcha) {
+  async linkWithPhone(phoneNumber, recaptcha) {
+    const user = getAuth().currentUser;
+    if (!user) {
+      throw new Error("No user");
+    }
     return await linkWithPhoneNumber(user, phoneNumber, recaptcha);
   },
   async applyCode(code) {
