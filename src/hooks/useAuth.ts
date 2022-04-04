@@ -59,8 +59,12 @@ const useAuth = () => {
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
+  const refetchAccount = async () => {
+    const account = await AccountApi.getAccount();
+    setAccount(account);
+  };
 
-  return { identity, account, getTokenForAPI, loaded };
+  return { identity, account, getTokenForAPI, loaded, refetchAccount };
 };
 
 interface Authorization {

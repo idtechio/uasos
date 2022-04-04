@@ -20,14 +20,22 @@ export const AuthContext = createContext<{
   identity: null | User | undefined;
   account: null | getAccountDTO;
   getTokenForAPI: null | (() => Promise<string>);
+  refetchAccount: null | (() => Promise<void>);
   loaded: boolean;
-}>({ identity: null, getTokenForAPI: null, account: null, loaded: false });
+}>({
+  identity: null,
+  getTokenForAPI: null,
+  account: null,
+  refetchAccount: null,
+  loaded: false,
+});
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
-  const { identity, account, getTokenForAPI, loaded } = useAuth();
+  const { identity, account, getTokenForAPI, loaded, refetchAccount } =
+    useAuth();
   const router = useRouter();
 
   const [queryClient] = useState(
@@ -81,7 +89,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
             <ThemeProviderWeb theme={theme}>
               <ThemeProviderNative theme={theme}>
                 <AuthContext.Provider
-                  value={{ identity, account, getTokenForAPI, loaded }}
+                  value={{
+                    identity,
+                    account,
+                    getTokenForAPI,
+                    loaded,
+                    refetchAccount,
+                  }}
                 >
                   <Component {...pageProps} />
                 </AuthContext.Provider>
