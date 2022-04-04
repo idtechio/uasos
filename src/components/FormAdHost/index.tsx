@@ -1,9 +1,14 @@
-import { useState, useMemo, useContext } from "react";
+import { useState, useMemo, useEffect, useContext } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
-import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
+import {
+  AccommodationType,
+  FormType,
+  HostType,
+  Nationality,
+} from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
@@ -24,12 +29,16 @@ import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
-import { useAddHostToApi } from "../../queries/useOffersList";
+import {
+  useAddHostToApi,
+  useUpdateHostToApi,
+} from "../../queries/useOffersList";
+import { OfferProps } from "../../../pages/api/listing/offers";
 import { AuthContext } from "../../../pages/_app";
 
 export const SectionContent = styled.View`
   display: flex;
-  gap: 30px 0px;
+  gap: 30px 0;
   max-width: 400px;
   width: 100%;
   margin-right: auto;
@@ -53,13 +62,18 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
-export default function FormAdHost() {
+type FormAdHostProps = {
+  data: OfferProps | null;
+};
+
+export default function FormAdHost({ data }: FormAdHostProps) {
   const { t } = useTranslation();
   const {
-    mutate,
+    mutate: mutateAdd,
     isLoading: isSubmitLoading,
     isSuccess: isSubmitSuccess,
   } = useAddHostToApi();
+  const { mutate: mutateUpdate } = useUpdateHostToApi();
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
@@ -73,6 +87,40 @@ export default function FormAdHost() {
       },
     },
   });
+
+  useEffect(() => {
+    if (form && data) {
+      form.reset({
+        advancedHost: {
+          country: data?.country ? data.country : "poland",
+          city: data?.city ? data.city : "",
+          closestLargeCity: data?.closest_city ? data.closest_city : "",
+          zipCode: data?.zipcode ? data.zipcode : "",
+          street: data?.street ? data.street : "",
+          buildingNumber: data?.building_no ? data.building_no : "",
+          apartmentNumber: data?.appartment_no ? data.appartment_no : "",
+          accommodationType: data?.shelter_type ? data.shelter_type[0] : "",
+          accommodationTime: data?.duration_category
+            ? data.duration_category[0]
+            : "",
+          guestCount: data?.beds ? data.beds : 1,
+          groupsTypes: data?.acceptable_group_relations
+            ? data.acceptable_group_relations
+            : [],
+          pregnantReady: data?.ok_for_pregnant === Boolean.TRUE,
+          disabilityReady: data?.ok_for_disabilities === Boolean.TRUE,
+          animalReady: data?.ok_for_animals === Boolean.TRUE,
+          elderReady: data?.ok_for_elderly === Boolean.TRUE,
+          nationality:
+            data?.ok_for_any_nationality === Boolean.TRUE
+              ? Nationality.ANY
+              : data?.ok_for_any_nationality === Boolean.FALSE
+              ? Nationality.UKRAINIAN
+              : "",
+        },
+      });
+    }
+  }, [data, form]);
 
   const [submitRequstState, setSubmitRequstState] =
     useState<SubmitRequestState>(submitRequestDefualtState);
@@ -125,6 +173,7 @@ export default function FormAdHost() {
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
     const payload = {
+      id: data?.id ? data.id : undefined,
       country: country,
       phone_num: identity?.phoneNumber ?? "",
       city: city,
@@ -147,6 +196,9 @@ export default function FormAdHost() {
       appartment_no: apartmentNumber,
       can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
+
+    const mutate = data?.id ? mutateUpdate : mutateAdd;
+
     mutate(payload, {
       onSuccess: () => {
         setSubmitRequstState((state) => ({ ...state, succeeded: true }));

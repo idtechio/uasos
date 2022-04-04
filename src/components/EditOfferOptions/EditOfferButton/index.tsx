@@ -14,6 +14,8 @@ import {
   Options,
   TriggerButton,
 } from "./style";
+import { Routes } from "../../../consts/router";
+import { useRouter } from "next/router";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
@@ -28,7 +30,6 @@ const buttons = [
     icon: <EditIcon />,
     type: "edit",
     label: "others:desktop.contextMenu.edit",
-    hide: true,
   },
   {
     icon: <AlertIcon />,
@@ -43,7 +44,7 @@ const buttons = [
   },
 ];
 
-type ModalTypes = "delete" | "report" | "renew" | null;
+type ModalTypes = "delete" | "report" | "renew" | "edit" | null;
 
 export default function EditOfferButton({
   targetID,
@@ -55,6 +56,7 @@ export default function EditOfferButton({
   const containerRef = useRef<View | null>(null);
 
   const { t } = useTranslation();
+  const router = useRouter();
 
   const [popoverOpened, setPopoverOpened] = useState(false);
   const [modalOpened, setModalOpened] = useState<ModalTypes>(null);
@@ -89,6 +91,11 @@ export default function EditOfferButton({
 
       case "report":
         modalComponent = <ReportOffer close={closeModal} />;
+        break;
+
+      case "edit":
+        modalComponent = null;
+        router.push(`${Routes.HOST}?id=${targetID}`);
         break;
 
       default:
