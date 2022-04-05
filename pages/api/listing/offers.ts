@@ -72,13 +72,13 @@ export interface OfferProps {
   appartment_no: string;
   shelter_type: Array<string> | string;
   beds: number;
-  acceptable_group_relations: Array<string>;
+  acceptable_group_relations: Array<string> | string;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: Array<string>;
+  duration_category: Array<string> | string;
   type: GuestHostType;
   transport_included: Boolean;
   match_id?: string | null;
@@ -209,7 +209,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_animals: h.ok_for_animals,
     ok_for_elderly: h.ok_for_elderly,
     ok_for_any_nationality: h.ok_for_any_nationality,
-    duration_category: h.duration_category,
+    duration_category: ungroupString(h.duration_category),
     transport_included: h.transport_included,
     type: h.type,
     match_id: h.match_id,
