@@ -10,6 +10,7 @@ const Input = ({
   secureTextEntry,
   styles,
   readonly,
+  keyboardType = "default",
 }: InputProps) => (
   <InputWraper style={styles?.wrapper}>
     <InputRow>
@@ -21,6 +22,7 @@ const Input = ({
         secureTextEntry={secureTextEntry}
         style={styles?.textInput}
         editable={!readonly}
+        keyboardType={keyboardType}
       />
 
       {extra && extra}

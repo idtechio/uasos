@@ -12,7 +12,6 @@ import DetailsLink from "./DetailsLink";
 import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
-  IdContainer,
   MoreButtonWrapper,
   OfferTitle,
   Placeholder,
@@ -122,7 +121,6 @@ const Offers = ({
               />
             </ImageWrapper> */}
             <TextWrapper>
-              <IdContainer>Id: {o.id}</IdContainer>
               <OfferTitle>
                 {t(`common:staticValues.accommodationTypes.${o.name}`)}
               </OfferTitle>

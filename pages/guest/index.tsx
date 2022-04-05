@@ -15,7 +15,7 @@ export default function Account() {
     if (identity) {
       return (
         <CompositionAppBody>
-          <AppBack to="/" />
+          <AppBack to="/dashboard" />
           <FormAdGuest
             name={identity.displayName}
             email={identity.email}

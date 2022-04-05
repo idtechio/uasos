@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ViewStyle } from "react-native";
+import { ViewStyle, KeyboardType } from "react-native";
 
 export type InputStylesProps = {
   wrapper?: ViewStyle;
@@ -17,4 +17,5 @@ export type InputProps<T = string> = {
   extra?: ReactNode;
   secureTextEntry?: boolean;
   styles?: InputStylesProps;
+  keyboardType?: KeyboardType;
 };

@@ -50,6 +50,15 @@ const useAuth = () => {
           .catch(() => null);
         setAccount(updatedAccount);
       }
+      if (user && !account) {
+        await AccountApi.updateAccount({
+          payload: {},
+        });
+        const updatedAccount = await AccountApi.getAccount()
+          .then((res) => res)
+          .catch(() => null);
+        setAccount(updatedAccount);
+      }
 
       setIdentity(user);
       setLoaded(true);
@@ -59,8 +68,12 @@ const useAuth = () => {
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }
+  const refetchAccount = async () => {
+    const account = await AccountApi.getAccount();
+    setAccount(account);
+  };
 
-  return { identity, account, getTokenForAPI, loaded };
+  return { identity, account, getTokenForAPI, loaded, refetchAccount };
 };
 
 interface Authorization {
@@ -86,7 +99,6 @@ interface Authorization {
   ) => Promise<string>;
   createUser: (email: string, password: string) => Promise<void>;
   linkWithPhone: (
-    user: User,
     phoneNumber: string,
     recaptcha: RecaptchaVerifier
   ) => Promise<ConfirmationResult>;
@@ -150,7 +162,11 @@ const Authorization: Authorization = {
   async createUser(email, password) {
     await createUserWithEmailAndPassword(auth, email, password);
   },
-  async linkWithPhone(user, phoneNumber, recaptcha) {
+  async linkWithPhone(phoneNumber, recaptcha) {
+    const user = getAuth().currentUser;
+    if (!user) {
+      throw new Error("No user");
+    }
     return await linkWithPhoneNumber(user, phoneNumber, recaptcha);
   },
   async applyCode(code) {

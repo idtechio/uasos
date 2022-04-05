@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
+
 export const ButtonContainer = styled.View`
   display: flex;
   flex-direction: row;
@@ -54,3 +55,8 @@ export const styles = StyleSheet.create({
   },
   confirmButton: {},
 });
+export const VerticalDivider = styled.View<{
+  height?: string;
+}>`
+  height: ${(props) => props.height};
+`;

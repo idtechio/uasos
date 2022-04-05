@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { TouchableOpacity } from "react-native";
+import { MatchedRequestProps } from "../../../pages/api/listing/offers";
 import { RequestProps } from "../../../pages/api/listing/requests";
 import AtIcon from "../../style/svgs/at.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
@@ -14,7 +15,7 @@ import GuestAdditionalInfo from "./GuestAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
 
 interface GuestCardContentProps {
-  request: RequestProps | null;
+  request: RequestProps | MatchedRequestProps | null;
   showContact?: boolean;
 }
 

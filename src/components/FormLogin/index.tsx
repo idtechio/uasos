@@ -43,6 +43,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   // eslint-disable-next-line
   const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   // eslint-disable-next-line
+  const PHONE_WITHOUT_PREFIX_REGEX = /^\d{10}$/;
+  // eslint-disable-next-line
   const PHONE_REGEX = /[+]([^\d]*\d){8}/;
   const EMAIL_OR_PHONE_REGEX =
     // eslint-disable-next-line
@@ -112,6 +114,21 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       }
     })();
   }, []);
+  const validateSheba = (str: string) => {
+    const isPhoneWithoutPrefixValid = PHONE_WITHOUT_PREFIX_REGEX.test(str);
+    const isPhoneOrEmail = EMAIL_OR_PHONE_REGEX.test(str);
+
+    if (!str) {
+      return "Your phone or email is required";
+    } else if (str.length >= 50) {
+      return "Your contact information should be lesss than 50 symbols";
+    } else if (isPhoneWithoutPrefixValid) {
+      return "+38";
+    } else if (!isPhoneOrEmail) {
+      return t("others:forms.login.emailOrPhoneDetails");
+    }
+  };
+
   enum PROVIDERS {
     FACEBOOK = "facebook",
     GOOGLE = "google",
@@ -155,12 +172,10 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               label={t("others:forms.login.emailOrPhone")}
               styles={{ wrapper: { marginBottom: 12 } }}
               rules={{
-                required: true,
-                maxLength: 50,
-                pattern: EMAIL_OR_PHONE_REGEX,
+                validate: validateSheba,
               }}
               error={errors?.login?.phoneOrEmail}
-              errorMsg={t("others:forms.login.emailOrPhoneDetails")}
+              errorMsg={errors?.login?.phoneOrEmail?.message}
             />
             {passwordInput ? (
               <>

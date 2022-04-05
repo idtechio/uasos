@@ -13,5 +13,5 @@ export type CountrySelectProps = {
 
 export type CountryDropdownItemType = {
   value: string;
-  label: string;
+  label: string | JSX.Element;
 };

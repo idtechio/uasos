@@ -99,4 +99,11 @@ export async function getAccountFromDB(
   return dbAccount[0];
 }
 
+export function isAccountVerified(account: AccountInfoDBProps): boolean {
+  return (
+    account.email_status === EmailStatus.ACCEPTED &&
+    account.phone_status === PhoneStatus.ACCEPTED
+  );
+}
+
 export default withApiAuth(getAccount);
