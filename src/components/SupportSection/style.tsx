@@ -49,14 +49,6 @@ export const TextWrapper = styled.View`
   padding-left: 12.7px;
 `;
 
-export const IdContainer = styled.Text`
-  letter-spacing: 0.5px;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-`;
-
 export const OfferTitle = styled.Text`
   font-family: "Roboto";
   font-style: normal;

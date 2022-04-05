@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import {
   HeaderWrapper,
-  IdContainer,
   ImageWrapper,
   OfferTitle,
   SupportCard,
@@ -38,9 +37,6 @@ const LoadingCard = ({ showImage }: { showImage?: boolean }) => {
           <></>
         )}
         <TextWrapper>
-          <IdContainer>
-            <Skeleton />
-          </IdContainer>
           <OfferTitle>
             <Skeleton />
           </OfferTitle>
