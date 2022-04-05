@@ -199,7 +199,7 @@
         },
         "prolongationReady": "Lehetőség a tartózkodás meghosszabbítására (térítés ellenében)",
         "transportReady": "Szállítási lehetőség",
-        "hostAddressProcessingWarning": ""
+        "hostAddressProcessingWarning": "A teljes címet nem osztjuk meg a menekültekkel - csak a várost."
     },
     "logout": "Kijelentkezés",
     "back": "Vissza",

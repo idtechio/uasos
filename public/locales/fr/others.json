@@ -230,7 +230,11 @@
             "emailNotVerified": "E-mail non vérifié",
             "accountInCreation": ""
         },
-        "housing": "Logement"
+        "housing": "Logement",
+        "confirmation": {
+            "header": "",
+            "content": ""
+        }
     },
     "reportProblem": {
         "popup": {

@@ -199,7 +199,7 @@
         },
         "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
         "transportReady": "Oferuję możliwość transportu",
-        "hostAddressProcessingWarning": ""
+        "hostAddressProcessingWarning": "Pełny adres nie będzie udostępniany uchodźcom - jedynie miasto."
     },
     "logout": "Wyloguj się",
     "back": "Wstecz",
