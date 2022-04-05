@@ -24,12 +24,12 @@ export const LandingMatchedSection = ({
           text={t("weMatched.cards.helpedPeople")}
         />
         <Tile
-          value={numberList.available_beds}
+          value={numberList.requested_beds}
           text={t("weMatched.cards.lookingForHelp")}
           spaced
         />
         <Tile
-          value={numberList.requested_beds}
+          value={numberList.available_beds}
           text={t("weMatched.cards.currentOffers")}
         />
       </MatchedCardsWrapper>
