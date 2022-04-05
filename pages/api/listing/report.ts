@@ -18,7 +18,6 @@ import { getHostFromDB } from "../hosts/edit";
 
 const ReportBodyPropsType = object({
   match_id: string,
-  offer_id: string,
   "host_id?": string,
   "guest_id?": string,
   report_type: string,
@@ -67,7 +66,7 @@ async function listingReport(
   }
 
   const reportData: ReportDataType = {
-    db_accounts_id: account.uid,
+    db_accounts_id: account.db_accounts_id,
     db_matches_id: body.match_id,
     report_type: body.report_type,
   };
