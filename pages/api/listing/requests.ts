@@ -42,6 +42,7 @@ export interface MatchedOfferProps {
   phone_num: string;
   email: string;
   city: string;
+  closest_city: string;
 
   shelter_type: Array<string>;
   beds: number;
@@ -112,6 +113,7 @@ type GuestListItem = RequestProps & {
   host_name: string;
   host_status: GuestHostStatus;
   host_city: string;
+  host_closest_city: string;
   host_country: string;
   host_phone_num: string;
   host_email: string;
@@ -156,6 +158,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       host_id,
       host_name,
       host_city,
+      host_closest_city,
       host_country,
       host_phone_num,
       host_email,
@@ -203,6 +206,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           id: g.host_id,
           name: g.host_name,
           city: g.host_city,
+          closest_city: g.host_closest_city,
           country: g.host_country,
           phone_num: g.host_phone_num,
           email: g.host_email,
@@ -251,6 +255,7 @@ function getMockRequests(): RequestProps[] {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         name: "Jan Kowalski",
         city: "Warszawa",
+        closest_city: "Warszawa",
         country: "poland",
         phone_num: "+48111222333",
         email: "host1@example.com",
