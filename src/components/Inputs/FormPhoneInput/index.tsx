@@ -74,6 +74,7 @@ function FormPhoneInput({
               extra={extra}
               secureTextEntry={secureTextEntry}
               styles={inputStyles}
+              keyboardType={"phone-pad"}
             />
           </InputControl>
         )}
