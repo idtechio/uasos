@@ -6,6 +6,7 @@ export interface getAccountDTO {
   prefferedLang?: string;
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
+  smsNotification: Boolean;
   verified?: Boolean;
 }
 export interface updateAccountReqDTO {
@@ -29,7 +30,8 @@ export const AccountApi: AccountApi = {
         },
       }
     );
-    return (await res.json()).account;
+    const account = (await res.json()).account;
+    return { ...{ smsNotification: false }, ...account };
   },
   updateAccount: async function ({ payload }) {
     const token = await getFirebaseToken();
