@@ -230,7 +230,11 @@
             "emailNotVerified": "Email neverificat",
             "accountInCreation": ""
         },
-        "housing": "Locuință"
+        "housing": "Locuință",
+        "confirmation": {
+            "header": "Vă mulțumim pentru decizia dumneavoastră",
+            "content": ""
+        }
     },
     "reportProblem": {
         "popup": {
