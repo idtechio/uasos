@@ -84,7 +84,7 @@ const PartnersPage = () => {
         </PartnersContainer>
       </Section>
 
-      {/* TODO: add translation to the title */}
+      {/* TODO: add translation to the title under the "partnersMedia" key */}
       <Section>
         <SectionTitle title={"Media partners"} />
         <PartnersContainer>
