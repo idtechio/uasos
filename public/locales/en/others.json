@@ -230,7 +230,11 @@
             "emailNotVerified": "Email not verified",
             "accountInCreation": "Your account is being created, refresh page after couple seconds."
         },
-        "housing": "Housing"
+        "housing": "Housing",
+        "confirmation": {
+            "header": "Thank you for your decision",
+            "content": "If you have accepted, wait for the other person's decision. Once the other side accepts, you will receive an email with contact information. <br \/> In case of cancellation, your application will be returned to the pool of active applications. We will inform you by email about the next offer."
+        }
     },
     "reportProblem": {
         "popup": {

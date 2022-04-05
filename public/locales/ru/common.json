@@ -199,7 +199,7 @@
         },
         "prolongationReady": "Предлагаю возможность продления пребывания (за отдельную плату)",
         "transportReady": "Я предлагаю возможность транспорта",
-        "hostAddressProcessingWarning": ""
+        "hostAddressProcessingWarning": "Полный адрес не будет передан беженцам - только ваш город"
     },
     "logout": "Выйти из системы",
     "back": "Вернуться",
