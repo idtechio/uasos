@@ -11,11 +11,11 @@ env:
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
   ga_id: "G-0000000000"
   firebase_api_key: ${{ secrets.TEST_FIREBASE_API_KEY }}
-  firebase_auth_domain: "ukrn-hlpr-dev.firebaseapp.com"
-  firebase_project_id: "ukrn-hlpr-dev"
-  firebase_storage_bucket: "ukrn-hlpr-dev.appspot.com"
-  firebase_messaging_sender_id: "727398461288"
-  firebase_app_id: "1:727398461288:web:af67d40f717ab97143b0dd"
+  firebase_auth_domain: "ukrn-hlpr-test.firebaseapp.com"
+  firebase_project_id: "ukrn-hlpr-test"
+  firebase_storage_bucket: "ukrn-hlpr-test.appspot.com"
+  firebase_messaging_sender_id: "1070051882301"
+  firebase_app_id: "1:1070051882301:web:e696fe0c5ee5f427390154"
   domain: "https://test.uasos.org/"
 
 jobs:
