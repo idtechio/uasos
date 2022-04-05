@@ -6,22 +6,22 @@
     "showMorePartners": "Zobrazit všechny partnery",
     "projectIntention": {
         "title": "Pomáháme najít ubytování obětem války na Ukrajině",
-        "description_part1": "Pomáháme uprchlíkům automaticky nalézt",
-        "freeOfCharge": "bezplatné",
-        "description_part2": "ubytování nabízené lidmi a institucemi ochotnými pomoci.",
+        "description_part1": "Pomáhame uprchlíkům nalézt pomoc automaticky",
+        "freeOfCharge": "Zadarmo",
+        "description_part2": "Ubytování nabízené lidmi a institucemi ochotnámi pomoci",
         "lookingForHelp": "Hledám ubytování",
         "shareHelp": "Nabízím pomoc"
     },
     "likeToHelp": {
         "title": "Chcete pomoci?",
-        "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete bezplatně nabídnout obětem války na Ukrajině. Naše aplikace automaticky přiřadí nabídku registrovaným osobám hledajícím pomoc na základě poskytnutých informací",
+        "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete <b>bezplatně <\/b>nabídnout obětem války na Ukrajině. Naše aplikace automaticky přiřadí nabídku registrovaným osobám hledajícím pomoc na základě poskytnutých informací",
         "cta": "Nabídněte ubytování"
     },
     "weMatched": {
-        "title": "Už se nám podařilo spojit",
+        "title": "Zatím...",
         "cards": {
-            "helpedPeople": "Lidé v nouzi",
-            "lookingForHelp": "Stále hledající pomoc",
+            "helpedPeople": "podpořených uprchlíků",
+            "lookingForHelp": "uprchlíků stále hledá pomoc",
             "currentOffers": "Aktuálně dostupné nabídky"
         }
     },
@@ -32,7 +32,7 @@
             "1": "Lidé, kteří hledají ubytování, definují svoje potřeby a minimální požadavky (např. velikost skupiny, lokalita)",
             "2": "UA-SOS automaticky spojuje ty, kteří hledají přistřeší s nejvhodnějším nabízením ubytováním"
         },
-        "algorithmExplanation": "Algoritmus optimalizuje shody, aby co nejvíce lidí v nouzi nalezlo ubytování",
+        "algorithmExplanation": "Algoritmus optimalizuje shody tak, aby co nejvíce lidí v nouzi našlo ubytování.",
         "rolldown": "Více",
         "rollup": "Méně",
         "description": "Portál spojuje osoby v nouzi s institucemi a lidmi, kteří nabízejí svoji pomoc",
@@ -67,11 +67,11 @@
     "howDoesItWork": {
         "title": "Jak to funguje?",
         "points": {
-            "0": "Založte nabídku ubytování nebo žádost o ubytování",
+            "0": "Odeslat nabídku ubytování \nnebo žádost o ubytování",
             "1": "Vyplňte potřebné údaje",
-            "2": "Počkejte na nejlepší nabídku",
-            "3": "Kontaktujte hostitele\/hosta",
-            "4": "Potvrďte nebo zamítněte nabídku"
+            "2": "Počkat na nejlepší nabídku",
+            "3": "Kontaktovat hostitele",
+            "4": "Potvrdit nebo \nzamítnout nabídku"
         }
     },
     "hero": {

@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
 import { Theme } from "../../style/theme.config";
+import { AuthContext } from "../../../pages/_app";
+import { useContext } from "react";
 
 const Container = styled.View`
   width: 100%;
@@ -106,8 +107,11 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
 
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
-  const { data: session } = useSession();
   const router = useRouter();
+  const { identity, account } = useContext(AuthContext);
+
+  const isAccountVerified =
+    identity && account?.confirmedEmail && account?.confirmedPhone;
 
   return (
     <Container>
@@ -125,7 +129,7 @@ const LandingProjectIntention = () => {
           </SubTitleWrapper>
 
           <ButtonContainer>
-            {session ? (
+            {isAccountVerified ? (
               <>
                 <Link href="/guest">
                   <a>

@@ -93,7 +93,6 @@ export type FormType = {
     email: string;
     phonePrefix: string;
     phoneNumber: string;
-    town: string;
     country: string;
     accommodationType: string;
     guestCount: number;
@@ -110,6 +109,12 @@ export type FormType = {
     hostType: HostType;
     volunteerVisitAcceptance: string;
     elderReady: string;
+    zipCode: string;
+    city: string;
+    closestLargeCity: string;
+    street: string;
+    buildingNumber: string;
+    apartmentNumber: string;
   };
   advancedRefugee: {
     town: string;
@@ -135,6 +140,30 @@ export type FormType = {
   login: {
     email: string;
     password: string;
+    phoneOrEmail: string;
+  };
+  registerWithSocials: {
+    email: string;
+    name: string;
+    language: string;
+    phonePrefix: string;
+    phoneNumber: string;
+    prefferedLanguage: string;
+  };
+  resetPassword: {
+    password: string;
+    passwordRepeat: string;
+  };
+  registrationUserForm: {
+    name: string;
+    preferredLanguage: string;
+    phonePrefix: string;
+    phoneNumber: string;
+    smsNotification: boolean;
+    email: string;
+    password: string;
+    passwordConfirm: string;
+    showPassword: boolean;
   };
 };
 

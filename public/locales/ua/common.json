@@ -1,346 +1,329 @@
 {
-  "test": "Повідомлення тест",
-  "navigationDrawer": {
-    "profile": "Профіль користувача",
-    "placesList": "Твій перелік квартир",
-    "logIn": "Увійти",
-    "logout": "Вийти"
-  },
-  "labels": {
-    "location": "Місцезнаходження",
-    "numberOfGuests": "Кількість гостей",
-    "timePeriod": "Термін перебування",
-    "withKids": "Я з дитиною",
-    "name": "Ім'я",
-    "email": "Eлектронна пошта",
-    "phone": "Номер телефону",
-    "town": "Місто",
-    "phoneNumber": ""
-  },
-  "validations": {
-    "requiredName": "Вкажіть ім'я",
-    "invalidEmail": "Вкажіть правильну адресу електронної пошти",
-    "invalidPhoneNumber": "Вкажіть правильний номер телефону",
-    "requiredTown": "Вкажіть місто",
-    "requiredTime": "Вкажіть термін перебування",
-    "requiredPeopleQuantity": "Вкажіть кількість осіб, яких ви можете прийняти",
-    "requiredLivingConditions": "Вкажіть умови проживання",
-    "requiredFloor": "Вкажіть поверх"
-  },
-  "staticValues": {
-    "timePeriod": {
-      "lessThanAWeek": "Менше тижня",
-      "week": "Один тиждень",
-      "twoWeeks": "Два тижні",
-      "month": "Місяць",
-      "longer": "Довше ніж місяць"
-    },
-    "groupRelations": {
-      "single_man": "Неодружений",
-      "single_woman": "Неодружена",
-      "spouses": "Подружжі",
-      "mother_with_children": "Мама з дітьми",
-      "family_with_children": "Сім'я з дітьми",
-      "unrelated_group": "Неспоріднена група"
-    },
-    "accommodationTypes": {
-      "bed": "Ліжко в загальній кімнаті",
-      "room": "Кімната в загальній квартирі/будинку",
-      "flat": "Квартира",
-      "house": "Дім",
-      "collective": "Колективна кімната (наприклад, шкільна кімната)",
-      "public_shared_space": ""
-    },
-    "boolean": {
-      "yes": "так",
-      "no": "ні"
-    },
-    "anyLocation": "Люба",
-    "withElevator": "Є ліфт"
-  },
-  "accommodationOffer": {
-    "canAccommodate": "Місце для <1>{{count}} осіб</1>",
-    "duration": "max. <1> {{time}} </1>",
-    "acceptAnimals": "Тварини дозволені",
-    "disabledSupport": "все облаштовано для осіб з обмеженими можливостями",
-    "includesFood": "Харчування",
-    "author": {
-      "owner": "Власник"
-    }
-  },
-  "forms": {
-    "chooseFromList": "вибрати зі списку",
-    "chooseFromListMulti": "Виберіть зі списку (ви можете вибрати кілька варіантів)"
-  },
-  "guestOffer": {
-    "arrivalToPoland": "Дата прибуття",
-    "peopleToAccommodate": "+ {{count}} осіб",
-    "preferredLocation": "Бажане місце: <1>{{location}}</1>",
-    "withAnimals": "з нами домашня тварина: <1>{{animals}}</1>",
-    "withKids": "з нами дитина: <1>{{age}}</1>",
-    "withDisabled": "з нами особа з обмеженими можливостями",
-    "withElder": "з нами особа похилого віку",
-    "invite": "Прийняти до себе"
-  },
-  "addAccommodation": {
-    "hostPreferences": {
-      "label": "Яких осіб ви можете прийняти:",
-      "acceptAnimals": "Тварини дозволені",
-      "disabledSupport": "Особа з обмеженими можливостями",
-      "kidsUnder2": "Дитина меньше 2 років",
-      "foodIncluded": "Харчування включено"
-    },
-    "peopleQuantity": "Скільки осіб ви можете в себе прийняти?",
-    "forHowLong": "Як довго?",
-    "livingConditions": {
-      "label": "Які умови проживання ви пропонуєте?",
-      "options": {
-        "flat": "В мене є вільна квартира",
-        "room": "В мене є вільна кімната",
-        "mattress": "Можу додати матрац",
-        "other": "Інші"
-      }
-    },
-    "floor": {
-      "label": "На якому поверсі будуть жити?",
-      "hint": "Для осіб похилого віку може бути проблемою проживання на верхніх поверхах"
-    },
-    "submit": "Підтвердити"
-  },
-  "flags": {
-    "cz": "Прапор Чехії",
-    "en": "Прапор Великобританії",
-    "es": "Прапор Іспанії",
-    "fr": "Прапор Франції",
-    "hu": "Прапор Угорщини",
-    "it": "Прапор Італії",
-    "pl": "Прапор Польщі",
-    "ro": "Прапор Румунії",
-    "sk": "Прапор Словаччини",
-    "ua": "Прапор України",
-    "de": "Прапор Німеччини",
-    "at": "Прапор Австрії",
-    "be": "Прапор Бельгії",
-    "bg": "Прапор Болгарії",
-    "hr": "Прапор Хорватії",
-    "cy": "Прапор Кіпру",
-    "dk": "Прапор Данії",
-    "ee": "Прапор Естонії",
-    "fi": "Прапор Фінляндії",
-    "lv": "Прапор Латвії",
-    "li": "Прапор Ліхтенштейну",
-    "lt": "Прапор Литви",
-    "mt": "Прапор Мальти",
-    "nl": "Прапор Нідерландів",
-    "ні": "Прапор Норвегії",
-    "pt": "Прапор Португалії",
-    "si": "Прапор Словенії",
-    "se": "Прапор Швеції"
-  },
-  "hostAdd": {
-    "country": "Країна",
-    "countries": {
-      "poland": "Польща",
-      "hungary": "Угорщина",
-      "czechia": "чешка",
-      "slovakia": "словаччина"
-    },
-    "nameLabel": "Ім'я (введіть лише ім'я)",
-    "namePlaceholder": "ім'я",
-    "emailLabel": "Електронна пошта",
-    "emailPlaceholder": "електронна пошта",
-    "phoneLabel": "Номер телефону",
-    "phonePlaceholder": "xxx-xxx-xxx",
-    "phonePrefixPlaceholder": "Країна",
-    "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
-    "cityTooltipText": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
-    "cityPlaceholder": "Місто",
-    "type": "Тип розміщення",
-    "hostType": "Тип власника житла",
-    "hostTypeLabel": {
-      "host_type_men": "Чоловiк",
-      "host_type_women": "Жiнка",
-      "host_type_couple": "Пара",
-      "host_type_family": "Родина",
-      "host_type_elder_people": "Люди похилого вiку",
-      "host_type_friends_group": "Група друзiв/знайомих"
-    },
-    "guestCount": "Скільки осіб ви можете в себе прийняти?",
-    "accommodationTime": "Як довго?",
-    "accomodationPhoto": "",
-    "accomodationPhotoLabel": "",
-    "accomodationPhotoReset": "",
-    "accommodationTimeLabel": {
-      "less_than_week": "",
-      "week": "",
-      "two_weeks": "",
-      "month": "",
-      "longer": ""
-    },
-    "volunteerVisitAcceptance": "",
-    "nationality": "Яке громадянство біженця ви можете прийняти?",
-    "ukraine": "Україна",
-    "additionalInformationHeader": "Додаткова інформація",
-    "any": "Будь-який",
-    "childBedCount": "Кількість спальних місць для дітей",
-    "city": "Місто",
-    "fullBedCount": "Кількість повнорозмірних спальних місць",
-    "groupsTypes": "Які типи груп ви візьмете?",
-    "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
-    "dissabilityReady": "Прийму людину з обмеженими можливостями",
-    "elderReady": "Прийму особу/особи похилого віку",
-    "animalReady": "Прийму людину з твариною",
-    "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
-    "refugeInfoHeader": "Надайте інформацію про своє житло",
-    "addButton": "Подати / Додати",
-    "addButtomErrorMessage": "",
-    "errors": {
-      "name": "Вкажіть своє ім'я",
-      "email": "Вкажіть правильну адресу електронної пошти",
-      "phoneNumber": "Вкажіть номер телефону",
-      "country": "",
-      "town": "",
-      "type": "Вкажiть тип розмiщення",
-      "hostType": "Вкажiть тип власника житла",
-      "guestCount": "",
-      "accommodationTime": "Вкажiть максимальну тривалість перебування гостя-бiженця",
-      "nationality": "",
-      "groupsTypes": "",
-      "nationalityError": "Потрібно вказати громадянство біженців, яких ви готові прийняти"
-    },
-    "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
-    "transportReady": "Пропоную можливість транспортування"
-  },
-  "logout": "Вийти",
-  "back": "Повернутись",
-  "backToHomePage": "Повернутися на головну сторінку",
-  "shareLocation": "Зареєструватися",
-  "registerGuest": "Знайти квартиру",
-  "more": "Більше",
-  "register1": "Зареєструватися",
-  "register2": "Реєстрація",
-  "privacyPolicy": "Політика конфіденційності",
-  "termsOfService": "Умови користування",
-  "patrons": "Меценати",
-  "rodo": "GDPR",
-  "thankfulnessModal": {
-    "thankYou": "Дякуємо!",
-    "thanksForYourDecision": "",
-    "applicationSent": "Ваше прохання відправлено. Кілька разів на день ми перевіряемо базу даних, щоб знайти для вас оптимальний варіант.",
-    "informWhenAccomodationFound": "Як тільки ми знайдемо для вас помешкання, ми повідомимо електронною поштою.",
-    "backToMainPage": ""
-  },
-  "thankfulnessHostModal": {
-    "thankYou": "Дякуємо!",
-    "applicationSent": "Ваша пропозиція відправлена. Ми шукаємо в нашій базі даних кілька разів на день, щоб якомога ефективніше знайти людей, які потребують того, що ви пропонуєте.",
-    "informWhenAccomodationFound": "Як тільки ми знайдемо для вас потенційного гостя, ми повідомимо вам електронною поштою."
-  },
-  "refugeeForm": {
-    "refugeeDetailsOptions": {
-      "animals": "я зі своєю домашньою твариною",
-      "toddler": "Дитина меньше 2 років",
-      "oldPerson": "я / зі мною особа похилого віку",
-      "disability": "я / зі мною особа з обмеженими можливостями",
-      "pregnant": "я / зі мною жінка на пізньому терміні вагітності (більше 6 місяців)"
-    },
-    "refugeesCountOptions": {
-      "alone": "Я один/одна",
-      "more": "Більше"
-    },
-    "errors": {
-      "name": "Вкажіть своє ім'я",
-      "email": "Вкажіть правильну адресу електронної пошти",
-      "phoneNumber": "Вкажіть правильний номер телефону",
-      "required": "Заповнити обов'язково",
-      "location": "Якому місту надаєте перевагу"
+    "test": "Повідомлення тест",
+    "navigationDrawer": {
+        "profile": "Профіль користувача",
+        "placesList": "Твій перелік квартир",
+        "logIn": "Увійти",
+        "logout": "Вийти"
     },
     "labels": {
-      "name": "Ім'я",
-      "email": "електронна пошта",
-      "phoneNumber": "Номер телефону",
-      "refugeesCount": "Для скількох осіб шукаете помешкання?",
-      "refugee": "Біженець",
-      "refugeeDetails": "Надай додаткову інформацію, щоб вибрати для вас краще місце:",
-      "refugeesAnimal": "Назва породи і ім'я",
-      "isGDPRAccepted": "Я приймаю політику конфіденційності",
-      "submitButton": "Попросити про допомогу",
-      "location": "В якому місці ви бажаете зупинитись?",
-      "anyLocation": "Будь яке місце",
-      "prefferedLocation": "Бажане місце",
-      "city": "Місто",
-      "addRefugee": "Додати особу"
-    }
-  },
-  "refugeeAddForm": {
-    "basicInfoHeader": "Надайте основну інформацію про себе та людей, з якими ви подорожуєте",
-    "addButton": "Послати заявку",
-    "addButtomErrorMessage": "",
-    "pregnantReady": "я / зі мною жінка на пізному терміні вагітності (більше 6 місяців)",
-    "dissabilityReady": "я / зі мною особа з обмеженими можливостями",
-    "animalReady": "я зі своєю домашньою твариною",
-    "elderReady": "Я чи є зі мною літня людина",
-    "ageLabel": "Вік",
-    "genderLabel": "Стать",
-    "genderPlaceholder": "Вкажіть свою стать",
-    "travelCompanions": "Інформація про людей, з якими ви подорожуєте",
-    "fullBedCountLabel": "Скільки людей їде з вами?",
-    "childBedCountLabel": "Кількість спальних місць для дітей",
-    "placeOfRefuge": "В якому місці ви бажаете зупинитись?",
-    "countryOfRefugeLabel": "В якій країні ви шукаєте притулку?",
-    "countryOfRefugePlaceholder": "вибрати країну",
-    "cityOfRefugeLabel": "Виберіть місто:",
-    "overnightDurationLabel": "На який термін перебування ви шукаєте житло?",
-    "cityOfRefugePlaceholder": "Виберіть область",
-    "nameLabel": "Ім'я (введіть лише ім'я)",
-    "namePlaceholder": "ім'я",
-    "emailLabel": "Електронна пошта",
-    "emailPlaceholder": "електронна пошта",
-    "phoneLabel": "Номер телефону",
-    "phonePlaceholder": "xxx-xxx-xxx",
-    "phonePrefixPlaceholder": "Країна",
-    "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви шукаєте допомогу.",
-    "cityPlaceholder": "Місто",
-    "groupRelations": "Яки в вас стосунки між учасниками групи?",
-    "selectPlaceholder": "вибрати зі списку",
-    "accommodationType": "Будь ласка, виберіть усі варіанти проживання, які бажаєте (можливі кілька варіантів)",
-    "countryOfGroup": "Яка країна походження групи?",
-    "countryOfGroupUA": "Україна",
-    "countryOfGroupOthers": "Інша",
-    "accompanyingPerson": "Супроводжуючий",
-    "errors": {
-      "name": "Вкажіть ім'я",
-      "email": "Вкажіть правильну адресу електронної пошти",
-      "gender": "Вкажіть вашу стать",
-      "cityOfRefuge": "Будь ласка, виберіть місто",
-      "phoneNumber": "Вкажіть номер телефону",
-      "countryOfRefuge": "вибрати країну",
-      "childBedCount": "Введіть кількість місць",
-      "fullBedCountsaas": "Введіть кількість місць",
-      "groupRelations": "Виберіть відносини",
-      "overnightDuration": "Вкажiть на який термін перебування ви шукаєте житло?",
-      "accommodationType": "Виберіть тип проживання",
-      "countryOfGroup": "Будь ласка, виберіть національність"
+        "location": "Місцезнаходження",
+        "numberOfGuests": "Кількість гостей",
+        "timePeriod": "Термін перебування",
+        "withKids": "Я з дитиною",
+        "email": "Eлектронна пошта",
+        "phone": "Номер телефону",
+        "town": "Місто",
+        "phoneNumber": "Телефон"
     },
-    "refugeInfoHeader": ""
-  },
-  "accomodationPhoto": "Додайте фотографію пропонованого притулку",
-  "accomodationPhotoReset": "видаляти",
-  "accomodationPhotoLabel": "подати",
-  "dropdownChoose": "Виберіть ...",
-  "dropdownSearch": "Пошук",
-  "heroImageAlt": "Слава України!",
-  "loginForm": {
-    "logInWith": "Увійти з допомогою",
-    "or": "або",
-    "lostPass": "Забули пароль?",
-    "click": "натисніть тут",
-    "logIn": "Увійти",
-    "doNotHaveAcc": "Створити аккаунт якщо немає",
-    "register": "Зареєструватися"
-  },
-  "gdpr": "",
-  "ogMeta": {
-    "title": "Ми допомагаємо знайти притулок жертвам війни в Україні",
-    "description": "Портал UASOS.org у співпраці з провідними благодійними організаціями автоматично та безкоштовно обмінює контактами біженців з України з людьми, які можуть дати житло.  Долучайтесь до тих, хто може поділитись житлом, або подайте заявку на прихисток прямо зараз"
-  }
+    "validations": {
+        "requiredName": "Вкажіть ім'я",
+        "invalidEmail": "Вкажіть правильну адресу електронної пошти",
+        "invalidPhoneNumber": "Вкажіть правильний номер телефону",
+        "requiredTown": "Вкажіть місто",
+        "requiredTime": "Вкажіть термін перебування",
+        "requiredPeopleQuantity": "Вкажіть кількість осіб, яких ви можете прийняти",
+        "requiredLivingConditions": "Вкажіть умови проживання",
+        "requiredFloor": "Вкажіть поверх"
+    },
+    "staticValues": {
+        "timePeriod": {
+            "lessThanAWeek": "Менше тижня",
+            "week": "Один тиждень",
+            "twoWeeks": "Два тижні",
+            "month": "Місяць",
+            "longer": "Довше ніж місяць"
+        },
+        "groupRelations": {
+            "single_man": "Неодружений",
+            "single_woman": "Неодружена",
+            "spouses": "Подружжі",
+            "mother_with_children": "Мама з дітьми",
+            "family_with_children": "Сім'я з дітьми",
+            "unrelated_group": "Неспоріднена група"
+        },
+        "accommodationTypes": {
+            "bed": "Ліжко в загальній кімнаті",
+            "room": "Кімната в загальній квартирі\/будинку",
+            "flat": "Квартира",
+            "house": "Дім",
+            "collective": "Колективна кімната (наприклад, шкільна кімната)",
+            "public_shared_space": "Колективна кімната (наприклад, шкільна кімната)"
+        },
+        "boolean": {
+            "yes": "так",
+            "no": "ні"
+        },
+        "anyLocation": "Люба",
+        "withElevator": "Є ліфт"
+    },
+    "accommodationOffer": {
+        "canAccommodate": "Місце для <1>{{count}} осіб<\/1>",
+        "duration": "max. <1> {{time}} <\/1>",
+        "acceptAnimals": "Тварини дозволені",
+        "disabledSupport": "все облаштовано для осіб з обмеженими можливостями",
+        "includesFood": "Харчування",
+        "author": {
+            "owner": "Власник"
+        }
+    },
+    "forms": {
+        "chooseFromList": "вибрати зі списку",
+        "chooseFromListMulti": "Виберіть зі списку (ви можете вибрати кілька варіантів)"
+    },
+    "guestOffer": {
+        "arrivalToPoland": "Дата прибуття",
+        "peopleToAccommodate": "+ {{count}} осіб",
+        "preferredLocation": "Бажане місце: <1>{{location}}<\/1>",
+        "withAnimals": "з нами домашня тварина: <1>{{animals}}<\/1>",
+        "withKids": "з нами дитина: <1>{{age}}<\/1>",
+        "withDisabled": "з нами особа з обмеженими можливостями",
+        "withElder": "з нами особа похилого віку",
+        "invite": "Прийняти до себе"
+    },
+    "addAccommodation": {
+        "hostPreferences": {
+            "label": "Яких осіб ви можете прийняти:",
+            "acceptAnimals": "Тварини дозволені",
+            "disabledSupport": "Особа з обмеженими можливостями",
+            "kidsUnder2": "Дитина меньше 2 років",
+            "foodIncluded": "Харчування включено"
+        },
+        "peopleQuantity": "Скільки осіб ви можете в себе прийняти?",
+        "forHowLong": "Як довго?",
+        "livingConditions": {
+            "label": "Які умови проживання ви пропонуєте?",
+            "options": {
+                "flat": "В мене є вільна квартира",
+                "mattress": "Можу додати матрац",
+                "other": "Інші"
+            }
+        },
+        "floor": {
+            "label": "На якому поверсі будуть жити?",
+            "hint": "Для осіб похилого віку може бути проблемою проживання на верхніх поверхах"
+        },
+        "submit": "Підтвердити"
+    },
+    "flags": {
+        "cz": "Прапор Чехії",
+        "en": "Прапор Великобританії",
+        "es": "Прапор Іспанії",
+        "fr": "Прапор Франції",
+        "hu": "Прапор Угорщини",
+        "it": "Прапор Італії",
+        "pl": "Прапор Польщі",
+        "ro": "Прапор Румунії",
+        "sk": "Прапор Словаччини",
+        "ua": "Прапор України",
+        "de": "Прапор Німеччини",
+        "at": "Прапор Австрії",
+        "be": "Прапор Бельгії",
+        "bg": "Прапор Болгарії",
+        "hr": "Прапор Хорватії",
+        "cy": "Прапор Кіпру",
+        "dk": "Прапор Данії",
+        "ee": "Прапор Естонії",
+        "fi": "Прапор Фінляндії",
+        "lv": "Прапор Латвії",
+        "li": "Прапор Ліхтенштейну",
+        "lt": "Прапор Литви",
+        "mt": "Прапор Мальти",
+        "nl": "Прапор Нідерландів",
+        "no": "Прапор Норвегії",
+        "pt": "Прапор Португалії",
+        "si": "Прапор Словенії",
+        "se": "Прапор Швеції"
+    },
+    "hostAdd": {
+        "country": "Країна",
+        "countries": {
+            "poland": "Польща",
+            "hungary": "Угорщина",
+            "czechia": "чешка",
+            "slovakia": "словаччина"
+        },
+        "nameLabel": "Ім'я (введіть лише ім'я)",
+        "emailPlaceholder": "електронна пошта",
+        "phoneLabel": "Номер телефону",
+        "phonePlaceholder": "xxx-xxx-xxx",
+        "cityLabel": "Будь ласка, виберіть місто, в якому або поблизу якого ви пропонуєте зупинитися.",
+        "cityPlaceholder": "Місто",
+        "type": "Тип розміщення",
+        "hostType": "Тип власника житла",
+        "hostTypeLabel": {
+            "host_type_men": "Чоловiк",
+            "host_type_women": "Жiнка",
+            "host_type_couple": "Пара",
+            "host_type_family": "Родина",
+            "host_type_elder_people": "Люди похилого вiку",
+            "host_type_friends_group": "Група друзiв\/знайомих"
+        },
+        "guestCount": "Скільки осіб ви можете в себе прийняти?",
+        "accomodationPhoto": "Додати фото житла",
+        "accomodationPhotoLabel": "Додати фото",
+        "accomodationPhotoReset": "Видалити",
+        "accommodationTimeLabel": {
+            "less_than_week": "Менше тижня",
+            "week": "тиждень",
+            "two_weeks": "2 тижні",
+            "month": "Місяць",
+            "longer": "Довше"
+        },
+        "volunteerVisitAcceptance": "Я згоден на перевірку місця (волонтерський візит)",
+        "nationality": "Яке громадянство біженця ви можете прийняти?",
+        "ukraine": "Україна",
+        "additionalInformationHeader": "Додаткова інформація",
+        "any": "Будь-який",
+        "childBedCount": "Кількість спальних місць для дітей",
+        "city": "Місто",
+        "fullBedCount": "Кількість повнорозмірних спальних місць",
+        "pregnantReady": "Прийму жінку в пізньому терміні вагітності (більше 6 місяців)",
+        "dissabilityReady": "Прийму людину з обмеженими можливостями",
+        "elderReady": "Прийму особу\/особи похилого віку",
+        "animalReady": "Прийму людину з твариною",
+        "basicInfoHeader": "Надайте інформацію про житло, яке ви пропонуєте",
+        "refugeInfoHeader": "Надайте інформацію про своє житло",
+        "addButton": "Подати \/ Додати",
+        "addButtomErrorMessage": "Будь ласка, заповніть необхідні поля",
+        "errors": {
+            "name": "Вкажіть своє ім'я",
+            "email": "Вкажіть правильну адресу електронної пошти",
+            "phoneNumber": "Вкажіть номер телефону",
+            "country": "Укажіть країну",
+            "town": "Місто потрібно",
+            "type": "Вкажiть тип розмiщення",
+            "hostType": "Вкажiть тип власника житла",
+            "accommodationTime": "Вкажiть максимальну тривалість перебування гостя-бiженця",
+            "nationalityError": "Потрібно вказати громадянство біженців, яких ви готові прийняти"
+        },
+        "prolongationReady": "Пропоную можливість продовження перебування (за окрему плату)",
+        "transportReady": "Пропоную можливість транспортування",
+        "hostAddressProcessingWarning": ""
+    },
+    "logout": "Вийти",
+    "back": "Повернутись",
+    "backToHomePage": "Повернутися на головну сторінку",
+    "shareLocation": "Зареєструватися",
+    "registerGuest": "Знайти квартиру",
+    "more": "Більше",
+    "register1": "Зареєструватися",
+    "register2": "Реєстрація",
+    "privacyPolicy": "Політика конфіденційності",
+    "termsOfService": "Умови користування",
+    "patrons": "Меценати",
+    "rodo": "GDPR",
+    "thankfulnessModal": {
+        "thankYou": "Дякуємо!",
+        "thanksForYourDecision": "Дякуємо, що повідомили про своє рішення",
+        "applicationSent": "Ваше прохання відправлено. Кілька разів на день ми перевіряемо базу даних, щоб знайти для вас оптимальний варіант.",
+        "informWhenAccomodationFound": "Як тільки ми знайдемо для вас помешкання, ми повідомимо електронною поштою.",
+        "backToMainPage": "Поверніться на домашню сторінку"
+    },
+    "thankfulnessHostModal": {
+        "thankYou": "Дякуємо!",
+        "applicationSent": "Ваша пропозиція відправлена. Ми шукаємо в нашій базі даних кілька разів на день, щоб якомога ефективніше знайти людей, які потребують того, що ви пропонуєте.",
+        "informWhenAccomodationFound": "Як тільки ми знайдемо для вас потенційного гостя, ми повідомимо вам електронною поштою."
+    },
+    "refugeeForm": {
+        "refugeeDetailsOptions": {
+            "animals": "я зі своєю домашньою твариною",
+            "toddler": "Дитина меньше 2 років",
+            "oldPerson": "я \/ зі мною особа похилого віку",
+            "disability": "я \/ зі мною особа з обмеженими можливостями",
+            "pregnant": "я \/ зі мною жінка на пізньому терміні вагітності (більше 6 місяців)"
+        },
+        "refugeesCountOptions": {
+            "alone": "Я один\/одна",
+            "more": "Більше"
+        },
+        "errors": {
+            "name": "Вкажіть своє ім'я",
+            "email": "Вкажіть правильну адресу електронної пошти",
+            "phoneNumber": "Вкажіть правильний номер телефону",
+            "required": "Заповнити обов'язково",
+            "location": "Якому місту надаєте перевагу"
+        },
+        "labels": {
+            "email": "електронна пошта",
+            "refugeesCount": "Для скількох осіб шукаете помешкання?",
+            "refugee": "Біженець",
+            "refugeeDetails": "Надай додаткову інформацію, щоб вибрати для вас краще місце:",
+            "refugeesAnimal": "Назва породи і ім'я",
+            "isGDPRAccepted": "Я приймаю політику конфіденційності",
+            "submitButton": "Попросити про допомогу",
+            "location": "В якому місці ви бажаете зупинитись?",
+            "anyLocation": "Будь яке місце",
+            "prefferedLocation": "Бажане місце",
+            "city": "Місто",
+            "addRefugee": "Додати особу"
+        }
+    },
+    "refugeeAddForm": {
+        "basicInfoHeader": "Надайте основну інформацію про себе та людей, з якими ви подорожуєте",
+        "addButton": "Послати заявку",
+        "addButtomErrorMessage": "Будь ласка, заповніть необхідні поля",
+        "pregnantReady": "я \/ зі мною жінка на пізному терміні вагітності (більше 6 місяців)",
+        "dissabilityReady": "я \/ зі мною особа з обмеженими можливостями",
+        "elderReady": "Я чи є зі мною літня людина",
+        "ageLabel": "Вік",
+        "genderLabel": "Стать",
+        "genderPlaceholder": "Вкажіть свою стать",
+        "travelCompanions": "Інформація про людей, з якими ви подорожуєте",
+        "fullBedCountLabel": "Скільки людей їде з вами?",
+        "childBedCountLabel": "Кількість спальних місць для дітей",
+        "placeOfRefuge": "В якому місці ви бажаете зупинитись?",
+        "countryOfRefugePlaceholder": "вибрати країну",
+        "cityOfRefugeLabel": "Виберіть місто:",
+        "overnightDurationLabel": "На який термін перебування ви шукаєте житло?",
+        "cityOfRefugePlaceholder": "Виберіть область",
+        "nameLabel": "Ім'я (введіть лише ім'я)",
+        "emailLabel": "Електронна пошта",
+        "emailPlaceholder": "електронна пошта",
+        "phoneLabel": "Номер телефону",
+        "phonePlaceholder": "xxx-xxx-xxx",
+        "cityPlaceholder": "Місто",
+        "groupRelations": "Яки в вас стосунки між учасниками групи?",
+        "selectPlaceholder": "вибрати зі списку",
+        "accommodationType": "Будь ласка, виберіть усі варіанти проживання, які бажаєте (можливі кілька варіантів)",
+        "countryOfGroupUA": "Україна",
+        "countryOfGroupOthers": "Інша",
+        "accompanyingPerson": "Супроводжуючий",
+        "errors": {
+            "name": "Вкажіть ім'я",
+            "email": "Вкажіть правильну адресу електронної пошти",
+            "gender": "Вкажіть вашу стать",
+            "cityOfRefuge": "Будь ласка, виберіть місто",
+            "phoneNumber": "Вкажіть номер телефону",
+            "countryOfRefuge": "вибрати країну",
+            "childBedCount": "Введіть кількість місць",
+            "fullBedCountsaas": "Введіть кількість місць",
+            "groupRelations": "Виберіть відносини",
+            "overnightDuration": "Вкажiть на який термін перебування ви шукаєте житло?",
+            "accommodationType": "Виберіть тип проживання",
+            "countryOfGroup": "Будь ласка, виберіть національність"
+        },
+        "refugeInfoHeader": "Надайте інформацію про своє житло",
+        "countryOfGroup": "Яка країна походження групи?"
+    },
+    "accomodationPhoto": "Додайте фотографію пропонованого притулку",
+    "accomodationPhotoReset": "видаляти",
+    "accomodationPhotoLabel": "подати",
+    "dropdownChoose": "Виберіть ...",
+    "dropdownSearch": "Пошук",
+    "heroImageAlt": "Слава України!",
+    "loginForm": {
+        "logInWith": "Увійти з допомогою",
+        "or": "або",
+        "lostPass": "Забули пароль?",
+        "click": "натисніть тут",
+        "logIn": "Увійти",
+        "doNotHaveAcc": "Створити аккаунт якщо немає",
+        "register": "Зареєструватися"
+    },
+    "gdpr": "GDPR",
+    "ogMeta": {
+        "title": "Ми допомагаємо знайти притулок жертвам війни в Україні",
+        "description": "Портал UASOS.org у співпраці з провідними благодійними організаціями автоматично та безкоштовно обмінює контактами біженців з України з людьми, які можуть дати житло.  Долучайтесь до тих, хто може поділитись житлом, або подайте заявку на прихисток прямо зараз"
+    }
 }

@@ -13,15 +13,15 @@
         "shareHelp": "Segíteni szeretnék"
     },
     "likeToHelp": {
-        "title": "Szeretene segíteni?",
+        "title": "Szeretnél segíteni?",
         "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak.\n  \n \n\n  \n \n\n  Alkalmazásunk automatikusan párosítja a szállást a segítséget kereső, regisztrált személyekkel a megadott információk alapján",
         "cta": "Szállás felajánlása"
     },
     "weMatched": {
-        "title": "Már ennyi sikeres párosítást hajtottunk végre...",
+        "title": "Eddig...",
         "cards": {
-            "helpedPeople": "segítséget keresők",
-            "lookingForHelp": "továbbra is segítséget keres",
+            "helpedPeople": "támogatott menekültek",
+            "lookingForHelp": "a menekültek még mindig segítséget keresnek",
             "currentOffers": "Jelenleg elérhető ajánlatok"
         }
     },
@@ -70,8 +70,8 @@
             "0": "Lakás vagy igény rögzítése",
             "1": "Töltse ki a szükséges adatokat",
             "2": "Várjon a legjobb ajánlatra",
-            "3": "Vegye fel a kapcsolatot a házigazdával\/vendéggel",
-            "4": "Ajánlat elfogadása\/elutasítása"
+            "3": "Vegye fel a kapcsolatot\na házigazdával\/vendéggel",
+            "4": "Ajánlat\nelfogadása\/elutasítása"
         }
     },
     "hero": {

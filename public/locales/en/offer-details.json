@@ -1,0 +1,51 @@
+{
+  "warningHeader": "For safety purposes, keep your relatives informed about who you are sheltering.",
+  "justInCase": "Just in case:",
+  "verifyIdentity": "verify the identity of the person you are sheltering,",
+  "verifyGroup": "make sure the group composition matches the original description",
+
+  "groupExtraInfo": "Additional group information",
+  "disabilityPresent": "There is a person with a disability in the group",
+  "pregnancyPresent": "The group includes a person with an advanced pregnancy (over 6 months)",
+  "diversityPresent": "The group includes people from different nationalities",
+  "animalsPresent": "The group is accompanied by a pet",
+  "elderPresent": "There is an elder in the group",
+
+  "accommodationExtraInfo": "Additional information on accommodation",
+  "transportOffered": "I offer transport",
+  "petsAccepted": "Pets accepted",
+  "disabilityAccepted": "Facilities for people with disabilities",
+  "elderlyAccepted": "Suitable for elders",
+  "diversityAccepted": "Different nationalities accepted",
+
+  "guestProfile": "Guest profile",
+  "guest": "Guest:",
+  "duration": "Duration of stay:",
+  "address": "Search address:",
+  "peopleNumber": "Number of people in the group:",
+  "groupType": "Group type:",
+  "emailAddress": "E-mail address",
+  "phoneNumber": "Phone number",
+
+  "hostProfile": "Host profile",
+  "host": "Host:",
+  "hostAddress": "Address:",
+  "accomType": "Accommodation type:",
+  "maxPeople": "Maximum number of persons:",
+
+  "thankYou": "Thank you",
+  "confirmFeedback": " Thank you very much for confirming the proposal received. As soon as we receive both confirmations, we will let you know.",
+  "backToProfile": "Back to profile",
+
+  "longThanks": "Thank you for confirming your decision.",
+  "rejectFeedback": "Your submission will go back into the pool, we will let you know about the next proposal as soon as we can find one.",
+  "reject": "Reject",
+  "confirm": "Confirm",
+
+  "back": "Back",
+
+  "confirm_match_error": "An error occured and your match could not be confirmed. Try again later.",
+  "reject_match_error": "An error occured and your match could not be rejected. Try again later.",
+
+  "could_not_load_details": "An error occured during loading the details. Please go back to dashboard and try again."
+}

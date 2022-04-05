@@ -14,21 +14,21 @@
     },
     "likeToHelp": {
         "title": "Would you like to help?",
-        "details": "Register any type of accomodation that you can offer free of charge to the victims of the war in Ukraine.\n\n\n\n\n  Our application will automatically match registered people looking for help based on information provided",
+        "details": "Register any type of accommodation that you can offer <b>free<\/b> of charge to the victims of the war in Ukraine.",
         "cta": "Propose a shelter"
     },
     "weMatched": {
-        "title": "We were already able to match...",
+        "title": "So far...",
         "cards": {
-            "helpedPeople": "people in need",
-            "lookingForHelp": "still looking for help",
+            "helpedPeople": "refugees supported",
+            "lookingForHelp": "refugees still looking for help",
             "currentOffers": "currently available offers"
         }
     },
     "whatSosUaDoesSection": {
         "title": "What does SOS-UA do?",
         "bulletPoints": {
-            "0": "Volunteers and institutions describe accomodation offered (type, maximum capacity, length of stay)",
+            "0": "Volunteers and institutions describe accommodation offered (type, maximum capacity, length of stay)",
             "1": "People looking for a shelter define their needs and minimum requirements (e.g. group size, location)",
             "2": "UA-SOS automatically connects those in need of shelter with the best-suited accommodation offered by hosts"
         },

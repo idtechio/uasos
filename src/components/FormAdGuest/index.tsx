@@ -1,37 +1,30 @@
 import { useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet, View, Text } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import styled from "styled-components/native";
+import type { GuestProps } from "../../../pages/api/guests/add";
 import { FormType } from "../../helpers/FormTypes";
+import { useAddGuestToApi } from "../../queries/useRequestsList";
+import AnimalsIcon from "../../style/svgs/animals.svg";
+import DisabilityIcon from "../../style/svgs/disability.svg";
+import ElderIcon from "../../style/svgs/elder.svg";
+import PregnantIcon from "../../style/svgs/pregnant.svg";
 import { ButtonCta } from "../Buttons";
-import FormDropdown from "../Inputs/FormDropdown";
+import CardModal from "../CardModal";
+import { CompositionSection } from "../Compositions";
+import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
+import { Buttons } from "../Forms/RadioButtons/style";
+import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
 import FormCountryDropdown from "../Inputs/FormCountryDropdown";
-import { CompositionSection } from "../Compositions";
-import { Tooltip } from "../Tooltip";
-import {
-  InputControl,
-  InputCotrolLabel,
-  ChoiceButton,
-  RadioButtons,
-} from "../Forms";
+import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import FormTextInput from "../Inputs/FormTextInput";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
-import AnimalsIcon from "../../style/svgs/animals.svg";
-import ElderIcon from "../../style/svgs/elder.svg";
-import DisabilityIcon from "../../style/svgs/disability.svg";
-import PregnantIcon from "../../style/svgs/pregnant.svg";
-import addGuestToApi from "../../helpers/addGuestToApi";
-import CardModal from "../CardModal";
-import { ThankfulnessModal } from "../ThankfulnessModal";
-import { useSessionUserData } from "../../hooks/useSessionUserData";
-import type { GuestProps } from "../../../pages/api/guests/add";
 import { Error } from "../Inputs/style";
-import FormPhoneInput from "../Inputs/FormPhoneInput/FormPhoneInput";
-import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList.data";
-import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
+import { ThankfulnessModal } from "../ThankfulnessModal";
+import { Tooltip } from "../Tooltip";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -54,15 +47,24 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
-export default function FormAdGuest() {
-  const { t } = useTranslation();
-  const { name: sessionName, email: sessionEmail } = useSessionUserData();
+type FormAdGuestProps = {
+  name: string | null;
+  email: string | null;
+  phoneNumber: string | null;
+};
 
+export default function FormAdGuest({
+  name,
+  email,
+  phoneNumber,
+}: FormAdGuestProps) {
+  const { t } = useTranslation();
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
-        name: sessionName ? sessionName.split(" ")[0] : "",
-        email: sessionEmail,
+        name: name ? name.split(" ")[0] : "",
+        email: email ?? "",
+        phoneNumber: phoneNumber ?? "",
         fullBedCount: 1,
         childBedCount: 0,
         age: 18,
@@ -70,6 +72,7 @@ export default function FormAdGuest() {
       },
     },
   });
+  const { mutate } = useAddGuestToApi();
 
   const [location, setLocation] = useState<Location>(Location.Any);
   const [submitRequstState, setSubmitRequstState] =
@@ -119,8 +122,8 @@ export default function FormAdGuest() {
     const guest = data.advancedRefugee;
 
     let apiObject: GuestProps = {
-      name: guest.name,
-      phone_num: `${guest.phonePrefix}${guest.phoneNumber}`,
+      // name: guest.name,
+      phone_num: `${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
       beds: guest.fullBedCount,
@@ -141,7 +144,6 @@ export default function FormAdGuest() {
         guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
       country: guest.country,
-      listing_country: guest.country,
     };
 
     if (guest.town) {
@@ -153,14 +155,17 @@ export default function FormAdGuest() {
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    try {
-      await addGuestToApi(apiObject);
-      setSubmitRequstState((state) => ({ ...state, succeeded: true }));
-    } catch (error) {
-      setSubmitRequstState((state) => ({ ...state, error }));
-    } finally {
-      setSubmitRequstState((state) => ({ ...state, loading: false }));
-    }
+    mutate(apiObject, {
+      onSuccess: () => {
+        setSubmitRequstState((state) => ({ ...state, succeeded: true }));
+      },
+      onError: (error) => {
+        setSubmitRequstState((state) => ({ ...state, error }));
+      },
+      onSettled: () => {
+        setSubmitRequstState((state) => ({ ...state, loading: false }));
+      },
+    });
   };
 
   const onError = (_error: unknown) => {
@@ -231,205 +236,162 @@ export default function FormAdGuest() {
           contentText={t("thankfulnessModal.informWhenAccomodationFound")}
         />
       )}
-      <CompositionSection
-        padding={[35, 30, 8, 30]}
-        zIndex={6}
-        header={t("refugeeAddForm.basicInfoHeader")}
-      >
-        <InputControl>
-          <InputCotrolLabel>{t("refugeeAddForm.nameLabel")}</InputCotrolLabel>
-          <FormTextInput
-            name="advancedRefugee.name"
-            label={t("refugeeAddForm.namePlaceholder")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedRefugee?.name}
-            errorMsg={t("refugeeAddForm.errors.name")}
-          />
 
-          <InputCotrolLabel>{t("refugeeAddForm.emailLabel")}</InputCotrolLabel>
-          <FormTextInput
-            name="advancedRefugee.email"
-            label={t("refugeeAddForm.emailPlaceholder")}
-            rules={{
-              required: true,
-              pattern: {
-                value: /\S+@\S+\.\S+/,
-                message: t("validations.invalidEmail"),
-              },
-            }}
-            error={errors?.advancedRefugee?.email}
-            errorMsg={t("refugeeAddForm.errors.email")}
-          />
-          <InputCotrolLabel>{t("refugeeAddForm.phoneLabel")}</InputCotrolLabel>
-          <FormPhoneInput
-            prefixName="advancedRefugee.phonePrefix"
-            numberName="advancedRefugee.phoneNumber"
-            phonePrefixLabel={t("refugeeAddForm.phonePrefixPlaceholder")}
-            phoneLabel={t("refugeeAddForm.phonePlaceholder")}
-            error={errors?.advancedRefugee?.phoneNumber}
-            errorMsg={t("refugeeAddForm.errors.phoneNumber")}
-            data={generatePhonePrefixDropdownList(addGuestPhonePrefixList)}
-          />
-        </InputControl>
-      </CompositionSection>
       <CompositionSection
         zIndex={5}
         padding={[35, 30, 8, 30]}
         header={t("refugeeAddForm.placeOfRefuge")}
         backgroundColor="#F5F4F4"
       >
-        <InputControl zIndex={14}>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.countryOfRefugePlaceholder")}
-          </InputCotrolLabel>
-          <FormCountryDropdown
-            zIndex={14}
-            placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
-            name="advancedRefugee.country"
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedRefugee?.country}
-            errorMsg={t("hostAdd.errors.country")}
-          />
-        </InputControl>
-        <InputControl zIndex={13}>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.countryOfRefugeLabel")}
-          </InputCotrolLabel>
-          <RadioButtons>
-            <ChoiceButton
-              text={t("refugeeForm.labels.anyLocation")}
-              isSmall
-              onPress={() => setLocation(Location.Any)}
-              isSelected={location === Location.Any}
-            />
-            <ChoiceButton
-              text={t("refugeeForm.labels.prefferedLocation")}
-              isSmall
-              onPress={() => setLocation(Location.Preffered)}
-              isSelected={location === Location.Preffered}
-            />
-          </RadioButtons>
-        </InputControl>
-
-        {location === Location.Preffered && (
-          <InputControl zIndex={13}>
+        <SectionContent>
+          <View style={{ zIndex: 14 }}>
             <InputCotrolLabel>
-              {t("refugeeAddForm.cityLabel")}
-              <View style={styles.tooltipText}>
-                <Tooltip>
-                  <Text>{t("hostAdd.cityTooltipText")}</Text>
-                </Tooltip>
-              </View>
+              {t("others:forms.createRefuge.shelter.whatIsTargetCountry")}
             </InputCotrolLabel>
-            <FormCityDropdown
-              country={watchCountry}
-              name="advancedRefugee.town"
-              placeholder={t("refugeeAddForm.cityPlaceholder")}
+            <FormCountryDropdown
+              zIndex={14}
+              placeholder={t("refugeeAddForm.countryOfRefugePlaceholder")}
+              name="advancedRefugee.country"
               rules={{
                 required: true,
               }}
-              error={errors?.advancedRefugee?.town}
-              errorMsg={t("validations.requiredTown")}
+              error={errors?.advancedRefugee?.country}
+              errorMsg={t("hostAdd.errors.country")}
             />
-          </InputControl>
-        )}
-        <InputControl>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.overnightDurationLabel")}
-          </InputCotrolLabel>
-          <FormRadioGroup
-            name="advancedRefugee.overnightDuration"
-            rules={{
-              required: true,
-            }}
-            data={OVERNIGHT_DURATION_TYPES}
-            error={errors?.advancedRefugee?.overnightDuration}
-            errorMsg={t("refugeeAddForm.errors.overnightDuration")}
-          />
-        </InputControl>
+          </View>
+          <View style={{ zIndex: 13, marginTop: 10 }}>
+            <InputCotrolLabel>
+              {t("others:forms.createRefuge.shelter.targetCityAndSurroundings")}
+              <View style={styles.tooltipText}>
+                <Tooltip>
+                  <Text style={{ zIndex: 99 }}>
+                    {t("refugeeAddForm.cityTooltipText")}
+                  </Text>
+                </Tooltip>
+              </View>
+            </InputCotrolLabel>
+            <Buttons style={{ justifyContent: "space-between" }}>
+              <ChoiceButton
+                text={t("others:forms.createRefuge:shelter.anyCity")}
+                isSmall
+                onPress={() => setLocation(Location.Any)}
+                isSelected={location === Location.Any}
+              />
+              <ChoiceButton
+                text={t("others:forms.match.specificCity")}
+                isSmall
+                onPress={() => setLocation(Location.Preffered)}
+                isSelected={location === Location.Preffered}
+              />
+            </Buttons>
+          </View>
+          {location === Location.Preffered && (
+            <View style={{ zIndex: 13 }}>
+              <FormCityDropdown
+                country={watchCountry}
+                name="advancedRefugee.town"
+                placeholder={t("refugeeAddForm.cityPlaceholder")}
+                rules={{
+                  required: true,
+                }}
+                error={errors?.advancedRefugee?.town}
+                errorMsg={t("validations.requiredTown")}
+              />
+            </View>
+          )}
+          <View style={{ zIndex: 12 }}>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.overnightDurationLabel")}
+            </InputCotrolLabel>
+            <FormRadioGroup
+              name="advancedRefugee.overnightDuration"
+              rules={{
+                required: true,
+              }}
+              data={OVERNIGHT_DURATION_TYPES}
+              error={errors?.advancedRefugee?.overnightDuration}
+              errorMsg={t("refugeeAddForm.errors.overnightDuration")}
+            />
+          </View>
+        </SectionContent>
       </CompositionSection>
       <CompositionSection
         zIndex={2}
         padding={[35, 30, 8, 30]}
-        header={t("hostAdd.additionalInformationHeader")}
+        header={t("others:forms.createRefuge:shelter.groupDetails")}
       >
-        <InputControl>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.fullBedCountLabel")}
-          </InputCotrolLabel>
-          <FormNumericInput
-            name="advancedRefugee.fullBedCount"
-            rules={{
-              required: true,
-            }}
-            min={1}
-            error={errors?.advancedRefugee?.fullBedCount}
-            errorMsg={t("refugeeAddForm.errors.fullBedCount")}
-          />
-        </InputControl>
-        <FormButtonsVertical
-          label={t("refugeeForm.labels.refugeeDetails")}
-          data={refugeeDetailsOptions}
-        />
-        <InputControl zIndex={11}>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.groupRelations")}
-          </InputCotrolLabel>
-          <FormDropdown
-            data={GROUP_RELATIONS}
-            name="advancedRefugee.groupRelations"
-            placeholder={t("refugeeAddForm.selectPlaceholder")}
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedRefugee?.groupRelations}
-            errorMsg={t("refugeeAddForm.errors.groupRelations")}
-          />
-        </InputControl>
-        <InputControl zIndex={10}>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.accommodationType")}
-          </InputCotrolLabel>
-          <FormDropdown<string>
-            data={ACCOMMODATION_TYPES}
-            name="advancedRefugee.accommodationType"
-            placeholder={t("refugeeAddForm.selectPlaceholder")}
-            multiSelect
-            rules={{
-              required: true,
-            }}
-            error={errors?.advancedRefugee?.accommodationType}
-            errorMsg={t("refugeeAddForm.errors.accommodationType")}
-          />
-        </InputControl>
+        <SectionContent>
+          <View style={{}}>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.fullBedCountLabel")}
+            </InputCotrolLabel>
+            <FormNumericInput
+              name="advancedRefugee.fullBedCount"
+              rules={{
+                required: true,
+              }}
+              min={1}
+              error={errors?.advancedRefugee?.fullBedCount}
+              errorMsg={t("refugeeAddForm.errors.fullBedCount")}
+            />
+          </View>
+          <FormButtonsVertical data={refugeeDetailsOptions} />
+          <View style={{ zIndex: 11 }}>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.groupRelations")}
+            </InputCotrolLabel>
+            <FormDropdown
+              data={GROUP_RELATIONS}
+              name="advancedRefugee.groupRelations"
+              placeholder={t("refugeeAddForm.selectPlaceholder")}
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedRefugee?.groupRelations}
+              errorMsg={t("refugeeAddForm.errors.groupRelations")}
+            />
+          </View>
+          <View style={{ zIndex: 10 }}>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.accommodationType")}
+            </InputCotrolLabel>
+            <FormDropdown<string>
+              data={ACCOMMODATION_TYPES}
+              name="advancedRefugee.accommodationType"
+              placeholder={t("refugeeAddForm.selectPlaceholder")}
+              multiSelect
+              rules={{
+                required: true,
+              }}
+              error={errors?.advancedRefugee?.accommodationType}
+              errorMsg={t("refugeeAddForm.errors.accommodationType")}
+            />
+          </View>
 
-        <InputControl>
-          <InputCotrolLabel>
-            {t("refugeeAddForm.countryOfGroup")}
-          </InputCotrolLabel>
-          <FormRadioGroup
-            name="advancedRefugee.nationality"
-            rules={{
-              required: true,
-            }}
-            data={[
-              {
-                label: t("refugeeAddForm.countryOfGroupUA"),
-                value: "ukraine",
-              },
-              {
-                label: t("refugeeAddForm.countryOfGroupOthers"),
-                value: "any",
-              },
-            ]}
-            error={errors?.advancedRefugee?.nationality}
-            errorMsg={t("refugeeAddForm.errors.countryOfGroup")}
-          />
-        </InputControl>
+          <View style={{}}>
+            <InputCotrolLabel>
+              {t("refugeeAddForm.countryOfGroup")}
+            </InputCotrolLabel>
+            <FormRadioGroup
+              name="advancedRefugee.nationality"
+              rules={{
+                required: true,
+              }}
+              data={[
+                {
+                  label: t("refugeeAddForm.countryOfGroupUA"),
+                  value: "ukraine",
+                },
+                {
+                  label: t("refugeeAddForm.countryOfGroupOthers"),
+                  value: "any",
+                },
+              ]}
+              error={errors?.advancedRefugee?.nationality}
+              errorMsg={t("refugeeAddForm.errors.countryOfGroup")}
+            />
+          </View>
+        </SectionContent>
       </CompositionSection>
       <CompositionSection
         zIndex={1}
@@ -457,3 +419,12 @@ const styles = StyleSheet.create({
   },
   tooltipText: { marginHorizontal: 10 },
 });
+
+export const SectionContent = styled.View`
+  display: flex;
+  gap: 30px 0px;
+  max-width: 400px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+`;

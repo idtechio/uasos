@@ -5,7 +5,12 @@ import Section from "../src/components/Section";
 import SectionTitle from "../src/components/SectionTitle";
 import { PartnerCard } from "../src/components/PartnerCard";
 import { CompositionAppBody } from "../src/components/Compositions";
-import { NGO, INITIATORS, PARTNERS } from "../src/consts/partners.json";
+import {
+  NGO,
+  INITIATORS,
+  MEDIA_PARTNERS,
+  PARTNERS,
+} from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { Theme } from "../src/style/theme.config";
@@ -14,7 +19,7 @@ import GoBack from "../src/components/GoBack";
 const PartnersContainer = styled.View`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   align-items: center;
   column-gap: 15px;
   row-gap: 10px;
@@ -24,6 +29,18 @@ const PartnersContainer = styled.View`
       lg: css`
         margin-top: 10px;
         grid-template-columns: repeat(8, minmax(0, 1fr));
+      `,
+      md: css`
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      `,
+      sm: css`
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      `,
+      tablet: css`
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      `,
+      mobile: css`
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       `,
     })}
 `;
@@ -58,6 +75,20 @@ const PartnersPage = () => {
         <SectionTitle title={t("projectInitiators")} />
         <PartnersContainer>
           {INITIATORS.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              source={partner.image}
+              alt={partner.alt}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
+
+      {/* TODO: add translation to the title */}
+      <Section>
+        <SectionTitle title={"Media partners"} />
+        <PartnersContainer>
+          {MEDIA_PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
               source={partner.image}

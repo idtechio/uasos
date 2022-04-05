@@ -18,15 +18,40 @@ export const PageSection = styled.View<SectionProps & { theme: Theme }>`
   flex-grow: ${(props) => props.flexGrow};
 `;
 
-export const SectionHeader = styled.Text<SectionProps & { theme: Theme }>`
-  color: ${({ theme }) => theme.colors.headings};
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  ${({ theme }) =>
-    theme.getBreakPoint({
+interface HeaderWrapperProps {
+  useMargin: boolean;
+}
+
+export const HeaderWrapper = styled.View<HeaderWrapperProps>(
+  ({ useMargin }) =>
+    css`
+      margin-bottom: ${useMargin && "50px"};
+    `
+);
+
+export const SectionHeader = styled.Text<SectionProps & { theme: Theme }>(
+  ({ theme }) => css`
+    color: ${theme.colors.headings};
+    font-size: 17px;
+    font-weight: 700;
+    ${theme.getBreakPoint({
       lg: css`
         text-align: center;
       `,
     })}
-`;
+  `
+);
+
+export const SectionSubHeader = styled.Text<SectionProps & { theme: Theme }>(
+  ({ theme }) => css`
+    color: ${theme.colors.headings};
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 500;
+    ${theme.getBreakPoint({
+      lg: css`
+        text-align: center;
+      `,
+    })}
+  `
+);

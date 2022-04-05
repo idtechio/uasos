@@ -1,15 +1,14 @@
 {
+    "location": "Lokalita",
     "numberOfGuests": "Počet hostů",
     "timeframe": "Délka pobytu",
-    "oneWeek": "Týden",
     "twoWeeks": "Dva týdny",
-    "month": "Měsíc",
+    "month": "Jeden měsíc",
     "longerThanMonth": "Déle než měsíc",
+    "food": "Jídlo",
     "disabledPerson": "Osoba s postižením",
-    "kidsBelow2yo": "Cestuji s dítětem do 2 let věku",
+    "kidsBelow2yo": "Dítě do 2 let věku",
+    "animalsWelcome": "Domácí mazlíčci vítáni",
     "yes": "Ano",
-    "no": "Ne",
-    "location": "",
-    "food": "",
-    "animalsWelcome": ""
+    "no": "Ne"
 }

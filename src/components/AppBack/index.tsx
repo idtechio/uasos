@@ -10,19 +10,19 @@ interface Props {
 }
 
 const AppBack = ({ to }: Props) => {
-  const { t } = useTranslation();
-
+  const { t } = useTranslation("others");
   return (
     <Wrapper>
       <Link href={to || Routes.HOMEPAGE} passHref>
         <LinkContent>
           <ChevronIcon
             style={{
-              height: 17,
               transform: "rotate(90deg) translateX(-1px)",
+              width: 24,
+              height: 24,
             }}
           />
-          <StyledText>{t("back")}</StyledText>
+          <StyledText>{t("common.buttons.back")}</StyledText>
         </LinkContent>
       </Link>
     </Wrapper>

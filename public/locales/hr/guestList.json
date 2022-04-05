@@ -1,11 +1,11 @@
 {
-    "arrival": "Dan dolaska",
-    "persons": "Broj gostiju",
-    "locationPreference": "Preferirana lokacija",
-    "travelingWithAnimal": "S nama je kućni ljubimac",
-    "travelingWithToddler": "S nama je dijete",
-    "inviteGuest": "Prihvati kod sebe",
-    "anyLocation": "",
-    "travelingWithOlderPerson": "",
-    "travelingWithDisabledPerson": ""
+  "arrival": "Dan dolaska",
+  "persons": "Broj gostiju",
+  "locationPreference": "Preferirana lokacija",
+  "travelingWithAnimal": "S nama je kućni ljubimac",
+  "travelingWithToddler": "S nama je dijete",
+  "inviteGuest": "Prihvati kod sebe",
+  "anyLocation": "",
+  "travelingWithOlderPerson": "",
+  "travelingWithDisabledPerson": ""
 }

@@ -2,13 +2,12 @@
     "placeFor": "Miejsce dla",
     "people": "osób",
     "maximum": "max.",
+    "twoWeeks": "Dwa tygodnie",
+    "month": "Miesiąc",
+    "longerThanMonth": "Więcej",
+    "food": "Wyżywienie",
     "petsWelcome": "zwierzęta mile widziane",
+    "disabledReady": "osoby z niepełnosprawnością",
     "locationOwner": "Gospodarz",
-    "use": "Skorzystaj",
-    "oneWeek": "",
-    "twoWeeks": "",
-    "month": "",
-    "longerThanMonth": "",
-    "food": "",
-    "disabledReady": ""
+    "use": "Skorzystaj"
 }

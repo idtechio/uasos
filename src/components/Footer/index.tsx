@@ -38,6 +38,12 @@ const Footer = () => {
             {t("patrons")}
           </FooterLink>
         </Link>
+        <Link href="/faq.pdf" passHref locale={false}>
+          <FooterLink>{t("faq")}</FooterLink>
+        </Link>
+        <Link href="/safety-tips.pdf" passHref locale={false}>
+          <FooterLink>{t("yourSafety")}</FooterLink>
+        </Link>
       </FooterContentWrapper>
     </FooterWrapper>
   );

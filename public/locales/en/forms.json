@@ -1,7 +1,5 @@
 {
     "name": "Name",
-    "eMail": "e-mail address",
-    "phone": "Phone number",
     "location": "Location",
     "preferences": "Specify your preferences on whom you can host",
     "animalsWelcome": "Pets accepted",
@@ -12,14 +10,12 @@
     "howLong": "For how long?",
     "flatType": "What housing conditions can you offer?",
     "freeFlat": "I have a free flat",
-    "singleRoom": "I have a free room",
     "additionalBed": "I have a free mattress",
     "other": "Other",
     "floor": "On which floor will they live?",
     "floorDisclaimer": "Elderly people may have difficulty accessing the high floor",
     "submitOffer": "Submit offer",
     "iAccept": "Accept",
-    "privacyPolicy": "Privacy Policy",
     "howManyTravelers": "For how many people are you looking for accommodation?",
     "iAmAlone": "I am alone",
     "more": "More",
@@ -33,6 +29,6 @@
     "pet": "Breed (name)",
     "travelingWithInfantBelow2yo": "Child under 2 years",
     "travelingWithOlderPerson": "I am or I am accompanied by an elder person",
-    "travelingWithDisabledPerson": "I am or I am accompanied by a person with disability",
+    "travelingWithDisabledPerson": "I am, or I am accompanied by a person with disability",
     "getHelp": "Get help"
 }

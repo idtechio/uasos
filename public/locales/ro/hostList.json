@@ -2,13 +2,12 @@
     "placeFor": "Loc pentru",
     "people": "persoane",
     "maximum": "max.",
-    "petsWelcome": "Accept animale de companie",
-    "locationOwner": "Gazdă",
-    "use": "Utilizați",
-    "oneWeek": "O săptămână",
     "twoWeeks": "Două săptămâni",
     "month": "O lună",
     "longerThanMonth": "Mai mult de o lună",
-    "food": "Masă",
-    "disabledReady": "Facilități pentru oaspeți cu dizabilități"
+    "food": "Mâncare",
+    "petsWelcome": "Acceptăm animale de companie",
+    "disabledReady": "Primesc perosane cu disabilități",
+    "locationOwner": "Gazdă",
+    "use": "Rezerv"
 }

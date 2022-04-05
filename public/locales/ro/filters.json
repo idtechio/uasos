@@ -1,15 +1,14 @@
 {
-    "numberOfGuests": "Număr de oaspeți",
+    "location": "Locație",
+    "numberOfGuests": "Număr persoane",
     "timeframe": "Durata șederii",
-    "oneWeek": "O săptămână",
     "twoWeeks": "Două săptămâni",
     "month": "O lună",
     "longerThanMonth": "Mai mult de o lună",
+    "food": "Mâncare",
     "disabledPerson": "Persoană cu dizabilități",
     "kidsBelow2yo": "Călătoresc cu un copil",
+    "animalsWelcome": "Acceptăm animale de companie",
     "yes": "Da",
-    "no": "Nu",
-    "location": "Locație",
-    "food": "Masă",
-    "animalsWelcome": "Accept animale de companie"
+    "no": "Nu"
 }

@@ -6,22 +6,22 @@
     "showMorePartners": "Zobraziť všetkých partnerov",
     "projectIntention": {
         "title": "Pomáhame nájsť ubytovanie pre obete vojny na Ukrajine",
-        "description_part1": "Pomáhame utečencom automaticky nájst ubytovanie",
+        "description_part1": "Pomáhame utečencom nájsť sa automaticky",
         "freeOfCharge": "zadarmo",
-        "description_part2": "ponúkané ľuďmi a inštitúciami ochotnými pomôcť.",
+        "description_part2": "Ubytovanie ponúkané ľuďmi a inštitúciami ochotnými pomôcť.",
         "lookingForHelp": "Hľadám ubytovanie",
         "shareHelp": "Ponúkam pomoc"
     },
     "likeToHelp": {
         "title": "Chcete pomôcť?",
-        "details": "Zaregistrujte akýkoľvek typ ubytovania, ktoré môžete bezplatne ponúknuť obetiam vojny na Ukrajine. Naša aplikácia automaticky priradí ponúknuté ubytovanie registrovaným osobám hľadajúcim pomoc na základe poskytnutých informácií",
+        "details": "Zaregistrujte akýkoľvek typ ubytovania, ktorý môžete <b>bezplatne<\/b> ponúknuť obetiam vojny na Ukrajine. Naša aplikácia automaticky priradí registrovaným osobám hľadajúcim pomoc na základe poskytnutých informácií",
         "cta": "Ponúknite ubytovanie"
     },
     "weMatched": {
-        "title": "Už sa nám podarilo spojiť...",
+        "title": "Doteraz...",
         "cards": {
-            "helpedPeople": "ľudia v núdzi",
-            "lookingForHelp": "stále hľadá pomoc",
+            "helpedPeople": "podporených utečencov",
+            "lookingForHelp": "utečencov stále hľadá pomoc",
             "currentOffers": "Aktuálne dostupné ponuky"
         }
     },
@@ -67,11 +67,11 @@
     "howDoesItWork": {
         "title": "Ako to funguje?",
         "points": {
-            "0": "Odošlite ponuku ubytovania\n alebo žiadosť o ubytovanie",
+            "0": "Odošlite ponuku ubytovania\nalebo žiadosť o ubytovanie",
             "1": "Vyplňte potrebné údaje",
             "2": "Počkajte na najlepšiu ponuku",
-            "3": "Kontaktujte hostiteľa \/ hosťa",
-            "4": "Potvrďte aleb\no odmietnite ponuku"
+            "3": "Kontaktujte\nhostiteľa\/hosťa",
+            "4": "Potvrdiť alebo\nodmietnuť ponuku"
         }
     },
     "hero": {

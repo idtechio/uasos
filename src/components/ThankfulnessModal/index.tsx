@@ -1,6 +1,9 @@
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import { StyleSheet, View } from "react-native";
-import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
+import { ButtonCta } from "../Buttons";
+import CardModal from "../CardModal";
 import {
   ThankfulnessHeader,
   ThankfulnessModalButtonCtaWrapper,
@@ -8,11 +11,7 @@ import {
   ThankfulnessModalTextWrapper,
   ThankfulnessText,
 } from "./style";
-import CardModal from "../CardModal";
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
 import { ThankfulnessModalProps } from "./types";
-import { Routes } from "../../consts/router";
 
 const ICON_BASE_WIDTH = 160;
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
@@ -45,9 +44,9 @@ export const ThankfulnessModal = ({
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href={Routes.HOMEPAGE}>
+          <Link href="/dashboard" passHref>
             <a>
-              <ButtonCta anchor={t("backToHomePage")} />
+              <ButtonCta pressable={false} anchor={t("backToHomePage")} />
             </a>
           </Link>
         </ThankfulnessModalButtonCtaWrapper>

@@ -2,8 +2,8 @@ import styled from "styled-components/native";
 import { Theme } from "../../../style/theme.config";
 
 export const LostPassWrapper = styled.View`
-  margin-top: -30px;
-  margin-bottom: 20px;
+  margin-top: 32px;
+  text-transform: capitalize;
 `;
 
 export const StyledText = styled.Text`

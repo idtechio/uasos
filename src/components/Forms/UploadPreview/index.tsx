@@ -18,7 +18,8 @@ const PreviewWrapper = styled.View`
   flex-direction: column;
   background: #fff;
   margin-top: 5px;
-  margin-horizontal: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 `;
 
 type Props = {
@@ -31,6 +32,7 @@ const UploadPreview = ({ preview, onDelete }: Props) => {
 
   return (
     <PreviewWrapper>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={preview} alt="" style={styles.image} />
       <TouchableOpacity onPress={onDelete}>
         <DeletePhotoText>{t("hostAdd.accomodationPhotoReset")}</DeletePhotoText>

@@ -1,0 +1,13 @@
+{
+    "messaging": {
+        "sms": {
+            "offeringNotification": "Nous avons un contact pour vous ! Vérifiez votre e-mail et confirmez.",
+            "sealedNotification": "Nous avons un contact pour vous ! Vérifiez votre e-mail et confirmez."
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "",
+        "GuestGetsMatch": "",
+        "GUESTANDHOSTMATCHCONFIRM": ""
+    }
+}
