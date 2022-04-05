@@ -80,7 +80,8 @@
             "preferredLanguage": "Preferred language of communication ",
             "fillMissingData": "Fill in the missing data",
             "validations": {
-                "passwordMismatch": "Passwords are different"
+                "passwordMismatch": "Passwords are different",
+                "passwordLength": "Password length must be at least 8 characters"
             },
             "password": "Password (min 8 chars)",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Phone not verified",
-            "emailNotVerified": "Email not verified"
+            "emailNotVerified": "Email not verified",
+            "accountInCreation": "Your account is being created, refresh page after couple seconds."
         },
         "housing": "Housing"
     },

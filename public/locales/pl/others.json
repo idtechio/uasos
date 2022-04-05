@@ -80,7 +80,8 @@
             "preferredLanguage": "Preferowany język komunikacji",
             "fillMissingData": "Uzupełnij brakujące dane",
             "validations": {
-                "passwordMismatch": "Podane hasła są różne"
+                "passwordMismatch": "Podane hasła są różne",
+                "passwordLength": "Długość hasła musi wynosić co najmniej 8 znaków"
             },
             "password": "Hasło (min. 8 znaków)",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Telefon nie został zweryfikowany",
-            "emailNotVerified": "E-mail nie został zweryfikowany"
+            "emailNotVerified": "E-mail nie został zweryfikowany",
+            "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach."
         },
         "housing": "Nocleg"
     },

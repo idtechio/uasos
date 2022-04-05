@@ -80,7 +80,8 @@
             "preferredLanguage": "Бажана мова спілкування",
             "fillMissingData": "Заповніть відсутні дані",
             "validations": {
-                "passwordMismatch": "Паролі різні"
+                "passwordMismatch": "Паролі різні",
+                "passwordLength": "Довжина пароля має бути не менше 8 символів"
             },
             "password": "",
             "errors": {
@@ -226,7 +227,8 @@
         },
         "checks": {
             "phoneNotVerified": "Телефон не перевірений",
-            "emailNotVerified": "Електронна адреса не підтверджена"
+            "emailNotVerified": "Електронна адреса не підтверджена",
+            "accountInCreation": "Ваш обліковий запис створюється, оновіть сторінку через пару секунд."
         },
         "housing": "Житло"
     },

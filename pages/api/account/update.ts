@@ -17,6 +17,7 @@ interface AccountDBProps {
   preferred_lang?: string;
   fnc_email_status: string;
   fnc_msisdn_status: string;
+  fnc_status?: string;
 }
 
 async function updateAccount(
@@ -49,8 +50,8 @@ async function updateAccount(
     if (account) {
       accountData.db_accounts_id = account.db_accounts_id;
       body?.name && (accountData.name = body.name);
-      body?.email && (accountData.email = body.email);
-      body?.phone && (accountData.phone_num = body.phone);
+      accountData.email = body?.email || user.email;
+      accountData.phone_num = body?.phone || user.phoneNumber;
       body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
 
       topicNameOrId = process.env.TOPIC_ACCOUNT_UPDATE;
@@ -59,6 +60,7 @@ async function updateAccount(
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
       accountData.preferred_lang = body?.prefferedLang;
+      accountData.fnc_status = "035";
 
       topicNameOrId = process.env.TOPIC_ACCOUNT_INSERT;
     }

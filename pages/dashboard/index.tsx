@@ -58,8 +58,12 @@ function DashboardContent() {
     account !== undefined && account !== null && !account.confirmedEmail;
   const needPhoneVerification: boolean =
     account !== undefined && account !== null && !account.confirmedPhone;
+  const needBackendAccountCreation = account ? false : true;
 
-  const readonly = needEmailVerification || needPhoneVerification;
+  const readonly =
+    needEmailVerification ||
+    needPhoneVerification ||
+    needBackendAccountCreation;
 
   return (
     <CompositionAppBody>
@@ -69,6 +73,7 @@ function DashboardContent() {
             emailOnPress={showEmailVerificationModal}
             needEmail={needEmailVerification}
             needPhone={needPhoneVerification}
+            needAccount={needBackendAccountCreation}
             containerStyle={[{ marginTop: 20 }, bottomMarginStyle]}
           />
           {/* {loaded && (

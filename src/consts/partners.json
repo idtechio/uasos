@@ -41,8 +41,16 @@
       "image": "/partners/kik-warszawa.png"
     },
     {
-      "alt": "techsoup",
-      "image": "/partners/techsoup.png"
+      "alt": "auschwitz pledge foundation",
+      "image": "/partners/auschwitz-pledge-foundation.png"
+    },
+    {
+      "alt": "fundacja ocaleie",
+      "image": "/partners/fundacja-ocalenie.png"
+    },
+    {
+      "alt": "refugees welcome polska",
+      "image": "/partners/refugees-welcome-polska.png"
     }
   ],
   "INITIATORS": [
@@ -57,10 +65,16 @@
     {
       "alt": "clevsoft",
       "image": "/partners/clevsoft-development.png"
+    }
+  ],
+  "MEDIA_PARTNERS": [
+    {
+      "alt": "radio zet",
+      "image": "/partners/radio-zet.png"
     },
     {
-      "alt": "auschwitz pledge foundation",
-      "image": "/partners/auschwitz-pledge-foundation.png"
+      "alt": "discovery",
+      "image": "/partners/discovery.png"
     }
   ],
   "PARTNERS": [
@@ -69,12 +83,12 @@
       "image": "/partners/bnp-paribas.png"
     },
     {
-      "alt": "credit agricole",
-      "image": "/partners/credit-agricole.png"
-    },
-    {
       "alt": "grupa luxmed",
       "image": "/partners/grupa-luxmed.png"
+    },
+    {
+      "alt": "credit agricole",
+      "image": "/partners/credit-agricole.png"
     },
     {
       "alt": "uniqa",
@@ -87,6 +101,18 @@
     {
       "alt": "shopee",
       "image": "/partners/shopee.png"
+    },
+    {
+      "alt": "związek miast polskich",
+      "image": "/partners/zwiazek-miast-polskich.png"
+    },
+    {
+      "alt": "unia metropolii polskich",
+      "image": "/partners/unia-metropolii-polskich.png"
+    },
+    {
+      "alt": "twilio",
+      "image": "/partners/twilio.png"
     },
     {
       "alt": "uber",
@@ -113,20 +139,8 @@
       "image": "/partners/orange.png"
     },
     {
-      "alt": "związek miast polskich",
-      "image": "/partners/zwiazek-miast-polskich.png"
-    },
-    {
-      "alt": "unia metropolii polskich",
-      "image": "/partners/unia-metropolii-polskich.png"
-    },
-    {
       "alt": "id tech",
       "image": "/partners/id-tech.png"
-    },
-    {
-      "alt": "bcg platinum",
-      "image": "/partners/bcg-platinum.png"
     },
     {
       "alt": "boldare",
@@ -141,16 +155,8 @@
       "image": "/partners/startup-development-house.png"
     },
     {
-      "alt": "twilio",
-      "image": "/partners/twilio.png"
-    },
-    {
       "alt": "ccc",
       "image": "/partners/ccc.png"
-    },
-    {
-      "alt": "inelo",
-      "image": "/partners/inelo.png"
     },
     {
       "alt": "inpost",
@@ -159,6 +165,10 @@
     {
       "alt": "le pont",
       "image": "/partners/le-pont.png"
+    },
+    {
+      "alt": "techsoup",
+      "image": "/partners/techsoup.png"
     },
     {
       "alt": "chmura krajowa",
@@ -181,8 +191,28 @@
       "image": "/partners/m.png"
     },
     {
+      "alt": "stxnext",
+      "image": "/partners/stxnext.png"
+    },
+    {
+      "alt": "bcg platinum",
+      "image": "/partners/bcg-platinum.png"
+    },
+    {
+      "alt": "lokalise",
+      "image": "/partners/lokalise.png"
+    },
+    {
+      "alt": "stowarziszenie mieszkanicznik",
+      "image": "/partners/stowarziszenie-mieszkanicznik.png"
+    },
+    {
       "alt": "blesu",
       "image": "/partners/blesu.png"
+    },
+    {
+      "alt": "group m",
+      "image": "/partners/group-m.png"
     }
   ]
 }

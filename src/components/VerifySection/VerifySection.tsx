@@ -1,7 +1,7 @@
 import { ConfirmationResult } from "firebase/auth";
 import { useTranslation } from "next-i18next";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle, ActivityIndicator } from "react-native";
 import styled, { useTheme } from "styled-components/native";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
@@ -16,6 +16,7 @@ const VerifySectionWrapper = styled.View``;
 export type Verifications = {
   needEmail: boolean;
   needPhone: boolean;
+  needAccount: boolean;
   containerStyle?: StyleProp<ViewStyle>;
   emailOnPress: () => void;
 };
@@ -89,6 +90,7 @@ const VerifyPhoneToast = () => {
 export default function VerifySection({
   needEmail,
   needPhone,
+  needAccount,
   containerStyle,
   emailOnPress,
 }: Verifications) {
@@ -102,6 +104,15 @@ export default function VerifySection({
           label={t("emailNotVerified")}
           cta={{ onPress: emailOnPress, label: t("verify") }}
           icon={<EmailIcon />}
+          contaierStyle={{ marginBottom: 10 }}
+        />
+      )}
+      {needAccount && (
+        <Toast
+          color={theme.colors.error}
+          label={t("others:desktop.checks.accountInCreation")}
+          cta={{ onPress: () => null, label: "" }}
+          icon={<ActivityIndicator />}
           contaierStyle={{ marginBottom: 10 }}
         />
       )}

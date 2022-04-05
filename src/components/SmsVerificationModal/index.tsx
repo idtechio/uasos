@@ -76,7 +76,6 @@ export default function SmsVerificationModal({
     try {
       if (identity) {
         const confirm = await Authorization.linkWithPhone(
-          identity,
           phoneNumber,
           Authorization.initCaptcha("recaptcha__container")
         );

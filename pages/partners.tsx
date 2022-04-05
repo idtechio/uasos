@@ -5,7 +5,12 @@ import Section from "../src/components/Section";
 import SectionTitle from "../src/components/SectionTitle";
 import { PartnerCard } from "../src/components/PartnerCard";
 import { CompositionAppBody } from "../src/components/Compositions";
-import { NGO, INITIATORS, PARTNERS } from "../src/consts/partners.json";
+import {
+  NGO,
+  INITIATORS,
+  MEDIA_PARTNERS,
+  PARTNERS,
+} from "../src/consts/partners.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { Theme } from "../src/style/theme.config";
@@ -70,6 +75,20 @@ const PartnersPage = () => {
         <SectionTitle title={t("projectInitiators")} />
         <PartnersContainer>
           {INITIATORS.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              source={partner.image}
+              alt={partner.alt}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
+
+      {/* TODO: add translation to the title */}
+      <Section>
+        <SectionTitle title={"Media partners"} />
+        <PartnersContainer>
+          {MEDIA_PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
               source={partner.image}

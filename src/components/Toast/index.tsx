@@ -18,6 +18,8 @@ const ToastWrapper = styled.View<{ color: string }>`
 const TextAndIconWrapper = styled.View`
   flex-direction: row;
   justify-content: start;
+  display: flex;
+  flex: 1;
 `;
 
 const Label = styled.Text<{ color: string }>`
