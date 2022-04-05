@@ -230,7 +230,11 @@
             "emailNotVerified": "E-Mail nicht verifiziert",
             "accountInCreation": ""
         },
-        "housing": "Gehäuse"
+        "housing": "Gehäuse",
+        "confirmation": {
+            "header": "Vielen Dank für Ihre Entscheidung",
+            "content": ""
+        }
     },
     "reportProblem": {
         "popup": {

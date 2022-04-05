@@ -230,7 +230,11 @@
             "emailNotVerified": "Email nebol overený",
             "accountInCreation": "Vaše konto sa vytvára, po niekoľkých sekundách obnovte stránku."
         },
-        "housing": "Ubytovanie"
+        "housing": "Ubytovanie",
+        "confirmation": {
+            "header": "Ďakujem za rozhodnutie",
+            "content": "Ak ste súhlasili, počkajte na rozhodnutie druhej osoby. Keď druhá strana súhlasí, dostanete e-mail s kontaktnými informáciami. <br \/> V prípade zrušenia bude vaša žiadosť vrátená do skupiny aktívnych žiadostí. O ďalšej ponuke vás budeme informovať e-mailom."
+        }
     },
     "reportProblem": {
         "popup": {
