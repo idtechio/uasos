@@ -21,6 +21,10 @@ import { RequestProps } from "../api/listing/requests";
 import { AuthContext } from "../_app";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 15 };
+const DETAIL_TYPE = {
+  offer: "offer",
+  request: "request",
+};
 
 function DetailsContent() {
   const router = useRouter();
@@ -75,9 +79,11 @@ function DetailsContent() {
               <Error>{t("could_not_load_details")}</Error>
             ) : (
               <>
-                {dataToShow?.match_id ? <WarningSection /> : null}
+                {dataToShow?.match_id && type === DETAIL_TYPE.offer ? (
+                  <WarningSection />
+                ) : null}
                 <DetailsSection
-                  isOffer={type === "offer"}
+                  isOffer={type === DETAIL_TYPE.offer}
                   data={dataToShow}
                   containerStyle={bottomMarginStyle}
                 />
@@ -88,7 +94,7 @@ function DetailsContent() {
                 ].includes(dataToShow.type) ? (
                   <DetailsDecisionButtons
                     matchId={dataToShow?.match_id}
-                    typeOfUser={type === "offer" ? "host" : "guest"}
+                    typeOfUser={type === DETAIL_TYPE.offer ? "host" : "guest"}
                   />
                 ) : null}
               </>
