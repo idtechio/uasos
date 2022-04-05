@@ -106,7 +106,7 @@ async function editHost(
   }
 }
 
-async function getHostFromDB(
+export async function getHostFromDB(
   hostId: string,
   uid: string
 ): Promise<false | HostDBProps> {
