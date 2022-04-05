@@ -51,6 +51,10 @@
     {
       "alt": "refugees welcome polska",
       "image": "/partners/refugees-welcome-polska.png"
+    },
+    {
+      "alt": "techsoup",
+      "image": "/partners/techsoup.png"
     }
   ],
   "INITIATORS": [
@@ -75,10 +79,6 @@
     {
       "alt": "discovery",
       "image": "/partners/discovery.png"
-    },
-    {
-      "alt": "agora sa",
-      "image": "/partners/agora-sa.png"
     }
   ],
   "PARTNERS": [
@@ -169,10 +169,6 @@
     {
       "alt": "le pont",
       "image": "/partners/le-pont.png"
-    },
-    {
-      "alt": "techsoup",
-      "image": "/partners/techsoup.png"
     },
     {
       "alt": "chmura krajowa",
