@@ -228,9 +228,14 @@
     "checks": {
       "phoneNotVerified": "Număr de telefon neverificat",
       "emailNotVerified": "Email neverificat",
-      "accountInCreation": ""
+      "accountInCreation": "",
+      "emailAlreadyInUse": ""
     },
-    "housing": "Locuință"
+    "housing": "Locuință",
+    "confirmation": {
+      "header": "Vă mulțumim pentru decizia dumneavoastră",
+      "content": ""
+    }
   },
   "reportProblem": {
     "popup": {

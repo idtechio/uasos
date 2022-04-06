@@ -228,9 +228,14 @@
     "checks": {
       "phoneNotVerified": "Telefon nem ellenőrzött",
       "emailNotVerified": "E-mail nem ellenőrzött",
-      "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt."
+      "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
+      "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel."
     },
-    "housing": "Lakhatás"
+    "housing": "Lakhatás",
+    "confirmation": {
+      "header": "Köszönjük a döntését",
+      "content": "Ha elfogadta, várja meg a másik személy döntését. Amint a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br /> Lemondás esetén az Ön jelentkezése visszakerül az aktív jelentkezések közé. A következő ajánlatról e-mailben értesítjük Önt."
+    }
   },
   "reportProblem": {
     "popup": {

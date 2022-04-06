@@ -199,7 +199,7 @@
     },
     "prolongationReady": "Možnosť predĺženia pobytu (za poplatok)",
     "transportReady": "Možnosť dopravy",
-    "hostAddressProcessingWarning": ""
+    "hostAddressProcessingWarning": "Úplná adresa nebude zdieľaná s utečencom - iba vaše mesto"
   },
   "logout": "Odhlásiť sa",
   "back": "Späť",
