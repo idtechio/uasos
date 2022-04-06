@@ -75,7 +75,7 @@ export interface RequestProps {
   is_ukrainian_nationality: Boolean;
   duration_category: Array<string> | string;
   type: GuestHostType;
-  match_id?: string | null;
+  match_id: string | null;
   match_status?: MatchStatus | null;
   matchedOffer?: MatchedOfferProps;
 }

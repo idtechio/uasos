@@ -80,7 +80,7 @@ export interface OfferProps {
   duration_category: Array<string> | string;
   type: GuestHostType;
   transport_included: Boolean;
-  match_id?: string | null;
+  match_id: string | null;
   match_status?: MatchStatus | null;
   matchedRequest?: MatchedRequestProps;
 }
@@ -112,7 +112,7 @@ type HostListitem = OfferProps & {
   host_id: string;
   host_name: string;
   host_status: GuestHostStatus;
-  match_id?: string;
+  match_id: string;
   guest_id: string;
   guest_name: string;
   guest_status: GuestHostStatus;
