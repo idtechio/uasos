@@ -30,8 +30,7 @@ export const AccountApi: AccountApi = {
         },
       }
     );
-    const account = (await res.json()).account;
-    return { ...{ smsNotification: false }, ...account };
+    return (await res.json()).account;
   },
   updateAccount: async function ({ payload }) {
     const token = await getFirebaseToken();
