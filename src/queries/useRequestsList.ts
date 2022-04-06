@@ -38,7 +38,7 @@ export const useAddGuestToApi = () => {
       };
 
       queryClient.setQueryData<GetRequestsListDTO | undefined>(
-        [QueryKeys.GET_OFFERS_LIST],
+        [QueryKeys.GET_REQUESTS_LIST],
         (data) => data && { ...data, offers: [...data.requests, newItem] }
       );
 
