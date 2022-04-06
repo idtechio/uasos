@@ -127,14 +127,11 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
       setSubmitRequstState((state) => ({ ...state, loading: false }));
-      console.log("start");
       const res = await mutation.mutateAsync({
         identity: identity as User,
         phonePrefix,
         phoneNumber,
       });
-      console.log("end");
-      console.log(res);
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);

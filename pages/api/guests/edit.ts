@@ -97,7 +97,7 @@ async function editGuest(
   }
 }
 
-async function getGuestFromDB(
+export async function getGuestFromDB(
   guestId: string,
   uid: string
 ): Promise<false | GuestDBProps> {

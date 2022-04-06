@@ -12,6 +12,8 @@ type Props = {
   numberName: FormKey;
   phoneLabel: string;
   phonePrefixLabel: string;
+  errorPrefix?: FieldError;
+  errorPrefixMsg?: string;
   error?: FieldError;
   errorMsg: string;
   extra?: React.ReactNode;
@@ -24,6 +26,8 @@ function FormPhoneInput({
   numberName,
   phoneLabel,
   phonePrefixLabel,
+  errorPrefixMsg,
+  errorPrefix,
   errorMsg,
   error,
   extra,
@@ -48,7 +52,7 @@ function FormPhoneInput({
               error={!!error}
               styles={dropdownStyles}
             />
-            {error && <Error>{errorMsg}</Error>}
+            {errorPrefix && errorPrefixMsg && <Error>{errorPrefixMsg}</Error>}
           </InputControl>
         )}
         name={prefixName}
@@ -76,6 +80,7 @@ function FormPhoneInput({
               styles={inputStyles}
               keyboardType={"phone-pad"}
             />
+            {error && <Error>{errorMsg}</Error>}
           </InputControl>
         )}
         name={numberName}
@@ -98,6 +103,7 @@ const phoneInputControlStyles = StyleSheet.create({
   wrapper: {
     maxWidth: "283px",
     width: `calc(100% - 107px - ${CompositionRowSpacing}px)`,
+    marginBottom: "12px",
   },
 });
 
@@ -105,12 +111,14 @@ const dropdownStyles = StyleSheet.create({
   select: {
     paddingTop: "14px",
     paddingBottom: "14px",
+    marginBottom: "12px",
   },
 });
 
 const inputStyles = StyleSheet.create({
   wrapper: {
     height: "54px",
+    marginBottom: "12px",
   },
   textInput: {
     paddingTop: "15px",
