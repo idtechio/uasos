@@ -71,6 +71,7 @@ export interface OfferProps {
   building_no: string;
   appartment_no: string;
   shelter_type: Array<string>;
+  host_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
@@ -149,6 +150,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       phone_num,
       email,
       shelter_type,
+      host_type,
       beds,
       acceptable_group_relations,
       ok_for_pregnant,
@@ -202,6 +204,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: ungroupString(h.shelter_type),
+    host_type: ungroupString(h.host_type),
     beds: h.beds,
     acceptable_group_relations: ungroupString(h.acceptable_group_relations),
     ok_for_pregnant: h.ok_for_pregnant,
@@ -255,6 +258,7 @@ function getMockOffers(): OfferProps[] {
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
+      host_type: ["host_type_women"],
       beds: 1,
       acceptable_group_relations: ["single_woman", "family_with_children"],
       ok_for_pregnant: Boolean.TRUE,
@@ -300,6 +304,7 @@ function getMockOffers(): OfferProps[] {
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
+      host_type: ["host_type_men"],
       beds: 3,
       acceptable_group_relations: ["single_man", "single_woman"],
       ok_for_pregnant: Boolean.FALSE,
