@@ -1,281 +1,281 @@
 {
-    "common": {
-        "buttons": {
-            "back": "Vissza",
-            "continue": "Folytatás",
-            "confirm": "Megerősítés",
-            "next": "Következő",
-            "backToDesktop": "Vissza a főoldalra",
-            "cancel": "Törölje",
-            "backToProfile": "Vissza a profilhoz",
-            "verify": "Ellenőrizze a  címet.",
-            "report": "Jelentés",
-            "update": "Frissítés",
-            "reject": "Visszautasítás",
-            "close": "Zárja be a"
-        },
-        "footer": {
-            "FAQ": "GYIK",
-            "termsOfService": "Szolgáltatási feltételek"
-        },
-        "words": {
-            "idWithData": "Id: {{id}}",
-            "renew": "Renew",
-            "additionalInformation": "További információk",
-            "congratulations": "Gratulálunk",
-            "thankYou": "Köszönöm.",
-            "or": "Vagy",
-            "badNews": "Rossz hírek"
-        },
-        "links": {
-            "re-sendCode": "Kód újraküldése",
-            "resetPassword": "Jelszó visszaállítása",
-            "resetPasswordLong": "Elfelejtette jelszavát? <b><u>Kattintson ide<\/u><\/b>"
-        },
-        "sms": {
-            "verification": "SMS-ellenőrzés",
-            "verificationSuccess": "Az SMS-ellenőrzés sikeresen befejeződött",
-            "sentInfo": "Írja be a {{phoneNumber}} telefonszámra küldött ellenőrző kódot.",
-            "verificationFail": "Hoppá! Valami rosszul sült el, próbálja meg újra vagy generáljon új kódot."
-        },
-        "actions": {
-            "showPassword": "Jelszó megjelenítése",
-            "details": "Részletek",
-            "addOffer": "Ajánlat hozzáadása",
-            "addSubmission": "Támogatás kérése"
-        },
-        "email": {
-            "sentInfo": "küldtünk egy ellenőrző kódot az e-mail címére. Kattintson a linkre az ellenőrzéshez",
-            "verification": "Email ellenőrzés"
-        },
-        "nationalities": {
-            "ukrainians": "Ukránok",
-            "ukrainian": "Ukrán",
-            "nonUkrainian": "Nem ukrán"
-        }
+  "common": {
+    "buttons": {
+      "back": "Vissza",
+      "continue": "Folytatás",
+      "confirm": "Megerősítés",
+      "next": "Következő",
+      "backToDesktop": "Vissza a főoldalra",
+      "cancel": "Törölje",
+      "backToProfile": "Vissza a profilhoz",
+      "verify": "Ellenőrizze a  címet.",
+      "report": "Jelentés",
+      "update": "Frissítés",
+      "reject": "Visszautasítás",
+      "close": "Zárja be a"
     },
-    "forms": {
-        "createShelter": {
-            "street": "Utca",
-            "agreeForShelterVerification": "Hozzájárulok, hogy a szállásomat ellenőrizzék (önkéntes látogatás) ",
-            "addPhotoHeader": "Adjon hozzá egy fényképet a kínált szállásról",
-            "buildingNo": "Épület száma",
-            "apartmentNo": "Lakásszám.",
-            "accommodationHeader": "Adjon tájékoztatást az Ön által kínált szállásról",
-            "groupsHostAccepts": "Milyen típusú csoportokat fogadnak el?",
-            "accommodationTypes": {
-                "house": "Ház"
-            },
-            "photosList": "Fotó a felajánlott menedékhelyről",
-            "acceptElderly": "Elfogadom az idős embereket"
-        },
-        "userRegistration": {
-            "enterDetails": "Adja meg adatait",
-            "confirmPassword": "Jelszó megerősítése",
-            "agreeOnSmsCommunication": "Szeretnék SMS-ben értesítést kapni a potenciális mérkőzésajánlatokról ",
-            "language": "Nyelv",
-            "proposeCreateAccount": "Ha még nincs fiókja, létrehozhat egyet. ",
-            "newPassword": "Új jelszó",
-            "userRegistration": "Felhasználói regisztráció",
-            "preferredLanguage": "A kommunikáció preferált nyelve ",
-            "fillMissingData": "Töltse ki a hiányzó adatokat",
-            "validations": {
-                "passwordMismatch": "A jelszavak különbözőek",
-                "passwordLength": "A jelszó hosszának legalább 8 karakteresnek kell lennie"
-            },
-            "password": "",
-            "errors": {
-                "duplicatedMail": ""
-            }
-        },
-        "match": {
-            "guestProfile": "Vendég profil",
-            "numberOfPeopleWithData": "Maximális létszám: <b>{{number}}<\/b>",
-            "durationWithData": "A tartózkodás időtartama: <b>{{number}} {{unit}}<\/b>",
-            "specificCity": "Konkrét város",
-            "confirmed": "Az Ön vendége\/házigazdája most erősített meg egy ajánlatot. Vegye fel vele a kapcsolatot a részletek egyeztetése érdekében. ",
-            "accommodationTypeWithData": "Szálláshely típusa: <b>{{type}}<\/b>",
-            "additionalInfoOnAccommodation": "További információk a szállásról",
-            "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:<\/b>\n<ul>\n<li>Ellenőrizze a menedéket nyújtó személy személyazonosságát,<\/li>\n<li>győződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak<\/li>\n<\/ul>",
-            "individual": "Egyéni",
-            "host": {
-                "formSent": "Elküldött űrlap",
-                "formSentThanks": "Köszönjük, hogy kifejezte segítőkészségét Az Ön ingatlana felkerült a listára. Át fogjuk keresni a rászorulók adatbázisát, és amint megtaláljuk a megfelelő személyt, értesítjük Önt.",
-                "received": "Köszönöm szépen a beérkezett javaslat megerősítését. Amint megkapjuk mindkét visszaigazolást, értesítjük Önt."
-            },
-            "searchAddress": "Keresési cím: <b>{{city}}<\/b>",
-            "rejected": "Az Ön potenciális vendége\/házigazdája elutasította az ajánlatot. A beadványa visszakerül a medencébe, amint megtaláljuk a következő ajánlatot, értesítjük.",
-            "refuge": {
-                "rejection": "Köszönjük, hogy megerősítette döntését. Az Ön beadványa visszakerül a medencébe, amint találunk egyet, értesítjük a következő pályázatról."
-            }
-        },
-        "generic": {
-            "hostInformation": {
-                "offerTransport": "Szállítást kínálok",
-                "takesPregnancy": "Elfogadom a terhesség előrehaladott állapotában lévő személyt (6 hónaposnál idősebb)."
-            },
-            "groupInformation": {
-                "pregnancy": "A csoportba egy előrehaladott terhességű (6 hónapnál hosszabb) személy tartozik.",
-                "disability": "A csoportban van egy fogyatékossággal élő személy is",
-                "multicultural": "A csoportban különböző nemzetiségű emberek vannak",
-                "animals": "A csoportot egy háziállat kíséri",
-                "elders": "Van egy idős személy a csoportban"
-            },
-            "submited": "Beküldött űrlap",
-            "facilityInformation": {
-                "disability": "Fogyatékkal élők számára kialakított létesítmények",
-                "pregnancy": "Terhes nők számára nyújtott szolgáltatások",
-                "eldery": "Idősek számára fenntartott létesítmények",
-                "diversity": "Minden nemzetiséget szívesen látunk"
-            },
-            "password": "Jelszó",
-            "selectFromList": "Válasszon a listából",
-            "cityWithData": "Város: {{city}}",
-            "phoneNumberWithData": "Telefonszám: <b>{{number}}<\/b>",
-            "hostWithName": "Házigazda: <b>{{name}}<\/b>",
-            "addPhoto": "Fénykép hozzáadása",
-            "emailAddressWithData": "E-mail cím: <b>{{mail}}<\/b>",
-            "zipCode": "Irányítószám",
-            "hostProfile": "Gazdálkodó profil",
-            "peopleInGroup": "A csoport létszáma: <b>{{number}}<\/b>",
-            "city": "Cím: <b>{{city}}<\/b>",
-            "groupType": "Csoport típusa: <b>{{type}}<\/b>",
-            "additionalGroupInformation": "További csoportinformációk",
-            "guest": "Vendég: <b>{{name}}<\/b>",
-            "selectMultipleFromList": "Válasszon a listából (feleletválasztós)",
-            "name": "Név",
-            "phoneNumber": "Telefonszám",
-            "country": "Ország",
-            "email": "E-mail",
-            "emailAddress": "E-mail cím",
-            "closestLargeCity": "Legközelebbi nagyváros"
-        },
-        "createRefuge": {
-            "shelter": {
-                "targetCityAndSurroundings": "Város és környéke",
-                "groupDetails": "Információk a veled együtt költöző személyekről",
-                "anyCity": "Bármelyik város",
-                "imWithPregnantOver6Months": "Én vagyok, vagy egy olyan személy kísér, aki <br \/> előrehaladott terhességben van (6 hónapnál hosszabb).",
-                "whatIsTargetCountry": "Melyik országban szeretnél maradni?",
-                "selectCountry": "Válasszon országot"
-            }
-        },
-        "login": {
-            "emailOrPhone": "Cím e-mail vagy telefonszám",
-            "login": "Bejelentkezés",
-            "signInFacebook": "Bejelentkezés Facebookkal",
-            "signInGoogle": "Bejelentkezés a Google segítségével",
-            "emailOrPhoneDetail": "E-mail vagy telefonszám",
-            "invalidPassword": "Érvénytelen jelszó megadása"
-        },
-        "resetPassword": {
-            "setNewPassword": "Új jelszó beállítása",
-            "header": "Adjon meg új jelszót a fiókjához",
-            "emailSent": "Jelszó-visszaállítási e-mail küldése - ellenőrizze a postafiókját",
-            "success": "A jelszava sikeresen megváltozott",
-            "detail": "Ha nem emlékszik a jelszavára, adja meg az e-mail címét. Küldeni fogunk egy linket a jelszó-visszaállítási űrlaphoz."
-        },
-        "edit": {
-            "editAccommodationHeader": "Szerkessze az Ön által kínált szállással kapcsolatos információkat"
-        },
-        "validations": {
-            "fill": {
-                "phoneNumber": "Töltse ki a telefonszámát"
-            }
-        },
-        "userProfile": {
-            "header": "Felhasználói profil szerkesztése"
-        },
-        "renew": {
-            "re-activateOffer": "Szeretné újra aktiválni a jelentkezést\/ajánlatot?"
-        }
+    "footer": {
+      "FAQ": "GYIK",
+      "termsOfService": "Szolgáltatási feltételek"
     },
-    "desktop": {
-        "lookingForSupport": "Támogatást keres",
-        "filters": {
-            "shelter": "Menedék"
-        },
-        "host": {
-            "numberOfPeople": "Emberek száma: Max {{maxAmount}}"
-        },
-        "offer": {
-            "status": {
-                "accepted": "Elfogadva",
-                "beingConfirmed": "A megerősítés során",
-                "awaitingGuestApproval": "Vendég jóváhagyására várva",
-                "inactive": "Inaktív",
-                "haveMatch": "Találtunk egyezést",
-                "lookingForMatch": "Párkeresés",
-                "awaitingHostApproval": "A fogadó jóváhagyására vár",
-                "confirmed": "Megerősítve",
-                "rejected": "Visszautasított"
-            }
-        },
-        "refuge": {
-            "searchingAccommodation": "Szálláshely keresése",
-            "accommodationSearch": "Szálláskeresés",
-            "submission": "Beküldés",
-            "duration": "Időtartam: {{value}}"
-        },
-        "providingSupport": "Támogatás nyújtása",
-        "yourSubmission": "Az Ön beadványa",
-        "yourOffers": "Az ajánlatok áttekintése",
-        "contextMenu": {
-            "reportProblem": "Probléma jelentése",
-            "renew": "Renew ",
-            "edit": "Szerkesztés"
-        },
-        "checks": {
-            "phoneNotVerified": "Telefon nem ellenőrzött",
-            "emailNotVerified": "E-mail nem ellenőrzött",
-            "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
-            "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel."
-        },
-        "housing": "Lakhatás",
-        "confirmation": {
-            "header": "Köszönjük a döntését",
-            "content": "Ha elfogadta, várja meg a másik személy döntését. Amint a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br \/> Lemondás esetén az Ön jelentkezése visszakerül az aktív jelentkezések közé. A következő ajánlatról e-mailben értesítjük Önt."
-        }
+    "words": {
+      "idWithData": "Id: {{id}}",
+      "renew": "Renew",
+      "additionalInformation": "További információk",
+      "congratulations": "Gratulálunk",
+      "thankYou": "Köszönöm.",
+      "or": "Vagy",
+      "badNews": "Rossz hírek"
     },
-    "reportProblem": {
-        "popup": {
-            "description": "Értesítsen minket bármilyen problémáról az alábbi űrlap segítségével",
-            "problemReported": "A problémát jelentették",
-            "thanksForLettingKnow": "Köszönjük, hogy tájékoztatott minket erről a helyzetről.  ",
-            "reasons": {
-                "guestNotNeedHelp": "",
-                "hostCantHelp": "",
-                "rejectedAfterContact": "",
-                "noResponseAfterContact": "",
-                "notShowUp": ""
-            }
-        }
+    "links": {
+      "re-sendCode": "Kód újraküldése",
+      "resetPassword": "Jelszó visszaállítása",
+      "resetPasswordLong": "Elfelejtette jelszavát? <b><u>Kattintson ide</u></b>"
     },
-    "deleteOffer": {
-        "popup": {
-            "areYouSure": "Biztos, hogy törölni szeretné a bejegyzést?",
-            "header": "Kérelem\/ajánlat törlése",
-            "confirmation": "Az Ön bejegyzését törölték"
-        }
+    "sms": {
+      "verification": "SMS-ellenőrzés",
+      "verificationSuccess": "Az SMS-ellenőrzés sikeresen befejeződött",
+      "sentInfo": "Írja be a {{phoneNumber}} telefonszámra küldött ellenőrző kódot.",
+      "verificationFail": "Hoppá! Valami rosszul sült el, próbálja meg újra vagy generáljon új kódot."
     },
-    "offer": {
-        "popup": {
-            "renew": {
-                "expiredMsg": "Az Ön jelentkezése \/ ajánlata\n <b>aktivitás hiányában lejárt<\/b>"
-            }
-        }
+    "actions": {
+      "showPassword": "Jelszó megjelenítése",
+      "details": "Részletek",
+      "addOffer": "Ajánlat hozzáadása",
+      "addSubmission": "Támogatás kérése"
     },
-    "welcomePage": {
-        "appDescription": "Segítünk a menekülteknek automatikusan <b>ingyenes<\/b> szállást találni <b>Lengyelországban, Csehországban, Hunniában és Szlovákiában,<\/b> amelyet segítőkész emberek és intézmények kínálnak.",
-        "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadási funkciók"
+    "email": {
+      "sentInfo": "küldtünk egy ellenőrző kódot az e-mail címére. Kattintson a linkre az ellenőrzéshez",
+      "verification": "Email ellenőrzés"
+    },
+    "nationalities": {
+      "ukrainians": "Ukránok",
+      "ukrainian": "Ukrán",
+      "nonUkrainian": "Nem ukrán"
+    }
+  },
+  "forms": {
+    "createShelter": {
+      "street": "Utca",
+      "agreeForShelterVerification": "Hozzájárulok, hogy a szállásomat ellenőrizzék (önkéntes látogatás) ",
+      "addPhotoHeader": "Adjon hozzá egy fényképet a kínált szállásról",
+      "buildingNo": "Épület száma",
+      "apartmentNo": "Lakásszám.",
+      "accommodationHeader": "Adjon tájékoztatást az Ön által kínált szállásról",
+      "groupsHostAccepts": "Milyen típusú csoportokat fogadnak el?",
+      "accommodationTypes": {
+        "house": "Ház"
+      },
+      "photosList": "Fotó a felajánlott menedékhelyről",
+      "acceptElderly": "Elfogadom az idős embereket"
     },
     "userRegistration": {
-        "errors": {
-            "emailExist": "",
-            "phoneExist": "",
-            "tooManyRequest": "",
-            "invalidCode": "",
-            "phoneLinkingFailed": ""
-        }
+      "enterDetails": "Adja meg adatait",
+      "confirmPassword": "Jelszó megerősítése",
+      "agreeOnSmsCommunication": "Szeretnék SMS-ben értesítést kapni a potenciális mérkőzésajánlatokról ",
+      "language": "Nyelv",
+      "proposeCreateAccount": "Ha még nincs fiókja, létrehozhat egyet. ",
+      "newPassword": "Új jelszó",
+      "userRegistration": "Felhasználói regisztráció",
+      "preferredLanguage": "A kommunikáció preferált nyelve ",
+      "fillMissingData": "Töltse ki a hiányzó adatokat",
+      "validations": {
+        "passwordMismatch": "A jelszavak különbözőek",
+        "passwordLength": "A jelszó hosszának legalább 8 karakteresnek kell lennie"
+      },
+      "password": "",
+      "errors": {
+        "duplicatedMail": ""
+      }
+    },
+    "match": {
+      "guestProfile": "Vendég profil",
+      "numberOfPeopleWithData": "Maximális létszám: <b>{{number}}</b>",
+      "durationWithData": "A tartózkodás időtartama: <b>{{number}} {{unit}}</b>",
+      "specificCity": "Konkrét város",
+      "confirmed": "Az Ön vendége/házigazdája most erősített meg egy ajánlatot. Vegye fel vele a kapcsolatot a részletek egyeztetése érdekében. ",
+      "accommodationTypeWithData": "Szálláshely típusa: <b>{{type}}</b>",
+      "additionalInfoOnAccommodation": "További információk a szállásról",
+      "usersWarning": "<b>Biztonsági okokból tájékoztassa a hozzátartozóit arról, hogy kiknek ad menedéket. Csak a biztonság kedvéért:</b>\n<ul>\n<li>Ellenőrizze a menedéket nyújtó személy személyazonosságát,</li>\n<li>győződjön meg arról, hogy a csoport összetétele megfelel az eredeti leírásnak</li>\n</ul>",
+      "individual": "Egyéni",
+      "host": {
+        "formSent": "Elküldött űrlap",
+        "formSentThanks": "Köszönjük, hogy kifejezte segítőkészségét Az Ön ingatlana felkerült a listára. Át fogjuk keresni a rászorulók adatbázisát, és amint megtaláljuk a megfelelő személyt, értesítjük Önt.",
+        "received": "Köszönöm szépen a beérkezett javaslat megerősítését. Amint megkapjuk mindkét visszaigazolást, értesítjük Önt."
+      },
+      "searchAddress": "Keresési cím: <b>{{city}}</b>",
+      "rejected": "Az Ön potenciális vendége/házigazdája elutasította az ajánlatot. A beadványa visszakerül a medencébe, amint megtaláljuk a következő ajánlatot, értesítjük.",
+      "refuge": {
+        "rejection": "Köszönjük, hogy megerősítette döntését. Az Ön beadványa visszakerül a medencébe, amint találunk egyet, értesítjük a következő pályázatról."
+      }
+    },
+    "generic": {
+      "hostInformation": {
+        "offerTransport": "Szállítást kínálok",
+        "takesPregnancy": "Elfogadom a terhesség előrehaladott állapotában lévő személyt (6 hónaposnál idősebb)."
+      },
+      "groupInformation": {
+        "pregnancy": "A csoportba egy előrehaladott terhességű (6 hónapnál hosszabb) személy tartozik.",
+        "disability": "A csoportban van egy fogyatékossággal élő személy is",
+        "multicultural": "A csoportban különböző nemzetiségű emberek vannak",
+        "animals": "A csoportot egy háziállat kíséri",
+        "elders": "Van egy idős személy a csoportban"
+      },
+      "submited": "Beküldött űrlap",
+      "facilityInformation": {
+        "disability": "Fogyatékkal élők számára kialakított létesítmények",
+        "pregnancy": "Terhes nők számára nyújtott szolgáltatások",
+        "eldery": "Idősek számára fenntartott létesítmények",
+        "diversity": "Minden nemzetiséget szívesen látunk"
+      },
+      "password": "Jelszó",
+      "selectFromList": "Válasszon a listából",
+      "cityWithData": "Város: {{city}}",
+      "phoneNumberWithData": "Telefonszám: <b>{{number}}</b>",
+      "hostWithName": "Házigazda: <b>{{name}}</b>",
+      "addPhoto": "Fénykép hozzáadása",
+      "emailAddressWithData": "E-mail cím: <b>{{mail}}</b>",
+      "zipCode": "Irányítószám",
+      "hostProfile": "Gazdálkodó profil",
+      "peopleInGroup": "A csoport létszáma: <b>{{number}}</b>",
+      "city": "Cím: <b>{{city}}</b>",
+      "groupType": "Csoport típusa: <b>{{type}}</b>",
+      "additionalGroupInformation": "További csoportinformációk",
+      "guest": "Vendég: <b>{{name}}</b>",
+      "selectMultipleFromList": "Válasszon a listából (feleletválasztós)",
+      "name": "Név",
+      "phoneNumber": "Telefonszám",
+      "country": "Ország",
+      "email": "E-mail",
+      "emailAddress": "E-mail cím",
+      "closestLargeCity": "Legközelebbi nagyváros"
+    },
+    "createRefuge": {
+      "shelter": {
+        "targetCityAndSurroundings": "Város és környéke",
+        "groupDetails": "Információk a veled együtt költöző személyekről",
+        "anyCity": "Bármelyik város",
+        "imWithPregnantOver6Months": "Én vagyok, vagy egy olyan személy kísér, aki <br /> előrehaladott terhességben van (6 hónapnál hosszabb).",
+        "whatIsTargetCountry": "Melyik országban szeretnél maradni?",
+        "selectCountry": "Válasszon országot"
+      }
+    },
+    "login": {
+      "emailOrPhone": "Cím e-mail vagy telefonszám",
+      "login": "Bejelentkezés",
+      "signInFacebook": "Bejelentkezés Facebookkal",
+      "signInGoogle": "Bejelentkezés a Google segítségével",
+      "emailOrPhoneDetail": "E-mail vagy telefonszám",
+      "invalidPassword": "Érvénytelen jelszó megadása"
+    },
+    "resetPassword": {
+      "setNewPassword": "Új jelszó beállítása",
+      "header": "Adjon meg új jelszót a fiókjához",
+      "emailSent": "Jelszó-visszaállítási e-mail küldése - ellenőrizze a postafiókját",
+      "success": "A jelszava sikeresen megváltozott",
+      "detail": "Ha nem emlékszik a jelszavára, adja meg az e-mail címét. Küldeni fogunk egy linket a jelszó-visszaállítási űrlaphoz."
+    },
+    "edit": {
+      "editAccommodationHeader": "Szerkessze az Ön által kínált szállással kapcsolatos információkat"
+    },
+    "validations": {
+      "fill": {
+        "phoneNumber": "Töltse ki a telefonszámát"
+      }
+    },
+    "userProfile": {
+      "header": "Felhasználói profil szerkesztése"
+    },
+    "renew": {
+      "re-activateOffer": "Szeretné újra aktiválni a jelentkezést/ajánlatot?"
     }
+  },
+  "desktop": {
+    "lookingForSupport": "Támogatást keres",
+    "filters": {
+      "shelter": "Menedék"
+    },
+    "host": {
+      "numberOfPeople": "Emberek száma: Max {{maxAmount}}"
+    },
+    "offer": {
+      "status": {
+        "accepted": "Elfogadva",
+        "beingConfirmed": "A megerősítés során",
+        "awaitingGuestApproval": "Vendég jóváhagyására várva",
+        "inactive": "Inaktív",
+        "haveMatch": "Találtunk egyezést",
+        "lookingForMatch": "Párkeresés",
+        "awaitingHostApproval": "A fogadó jóváhagyására vár",
+        "confirmed": "Megerősítve",
+        "rejected": "Visszautasított"
+      }
+    },
+    "refuge": {
+      "searchingAccommodation": "Szálláshely keresése",
+      "accommodationSearch": "Szálláskeresés",
+      "submission": "Beküldés",
+      "duration": "Időtartam: {{value}}"
+    },
+    "providingSupport": "Támogatás nyújtása",
+    "yourSubmission": "Az Ön beadványa",
+    "yourOffers": "Az ajánlatok áttekintése",
+    "contextMenu": {
+      "reportProblem": "Probléma jelentése",
+      "renew": "Renew ",
+      "edit": "Szerkesztés"
+    },
+    "checks": {
+      "phoneNotVerified": "Telefon nem ellenőrzött",
+      "emailNotVerified": "E-mail nem ellenőrzött",
+      "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
+      "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel."
+    },
+    "housing": "Lakhatás",
+    "confirmation": {
+      "header": "Köszönjük a döntését",
+      "content": "Ha elfogadta, várja meg a másik személy döntését. Amint a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br /> Lemondás esetén az Ön jelentkezése visszakerül az aktív jelentkezések közé. A következő ajánlatról e-mailben értesítjük Önt."
+    }
+  },
+  "reportProblem": {
+    "popup": {
+      "description": "Értesítsen minket bármilyen problémáról az alábbi űrlap segítségével",
+      "problemReported": "A problémát jelentették",
+      "thanksForLettingKnow": "Köszönjük, hogy tájékoztatott minket erről a helyzetről.  ",
+      "reasons": {
+        "guestNotNeedHelp": "",
+        "hostCantHelp": "",
+        "rejectedAfterContact": "",
+        "noResponseAfterContact": "",
+        "notShowUp": ""
+      }
+    }
+  },
+  "deleteOffer": {
+    "popup": {
+      "areYouSure": "Biztos, hogy törölni szeretné a bejegyzést?",
+      "header": "Kérelem/ajánlat törlése",
+      "confirmation": "Az Ön bejegyzését törölték"
+    }
+  },
+  "offer": {
+    "popup": {
+      "renew": {
+        "expiredMsg": "Az Ön jelentkezése / ajánlata\n <b>aktivitás hiányában lejárt</b>"
+      }
+    }
+  },
+  "welcomePage": {
+    "appDescription": "Segítünk a menekülteknek automatikusan <b>ingyenes</b> szállást találni <b>Lengyelországban, Csehországban, Hunniában és Szlovákiában,</b> amelyet segítőkész emberek és intézmények kínálnak.",
+    "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadási funkciók"
+  },
+  "userRegistration": {
+    "errors": {
+      "emailExist": "",
+      "phoneExist": "",
+      "tooManyRequest": "",
+      "invalidCode": "",
+      "phoneLinkingFailed": ""
+    }
+  }
 }

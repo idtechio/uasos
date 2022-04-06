@@ -88,13 +88,10 @@ const toName: (_: OfferProps) => string = (o) =>
     ? o.shelter_type
     : o.shelter_type.join(", ");
 export const toAccomodationTime: (
-  duration_category: string[] | string
+  duration_category: string[]
 ) => AccommodationTime = (duration_category) => {
   return (
-    (typeof duration_category === "string"
-      ? duration_category.split(",")
-      : duration_category
-    )
+    duration_category
       .map((c) => {
         switch (c) {
           case "less_than_week":

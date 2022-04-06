@@ -1,14 +1,14 @@
 {
-    "location": "Localisation",
-    "numberOfGuests": "Nombre d'invités",
-    "timeframe": "Durée du séjour",
-    "twoWeeks": "Deux semaines",
-    "month": "Un mois",
-    "longerThanMonth": "Plus d'un mois",
-    "food": "Nourriture",
-    "disabledPerson": "Personne handicapée",
-    "kidsBelow2yo": "Je suis avec un enfant",
-    "animalsWelcome": "Animaux domestiques acceptés",
-    "yes": "Oui",
-    "no": "Non"
+  "location": "Localisation",
+  "numberOfGuests": "Nombre d'invités",
+  "timeframe": "Durée du séjour",
+  "twoWeeks": "Deux semaines",
+  "month": "Un mois",
+  "longerThanMonth": "Plus d'un mois",
+  "food": "Nourriture",
+  "disabledPerson": "Personne handicapée",
+  "kidsBelow2yo": "Je suis avec un enfant",
+  "animalsWelcome": "Animaux domestiques acceptés",
+  "yes": "Oui",
+  "no": "Non"
 }

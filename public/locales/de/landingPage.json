@@ -1,84 +1,84 @@
 {
-    "supportingPartners": "Partner, die die Initiative unterstützen",
-    "ngoPartners": "Nicht-Regierungs-Organisationen (NGO's)",
-    "projectInitiators": "Projektinitiatoren",
-    "partners": "Partner",
-    "showMorePartners": "Alle Partner anzeigen",
-    "projectIntention": {
-        "title": "Wir helfen bei der Suche nach Unterkünften für die Opfer des Krieges in der Ukraine",
-        "description_part1": "Wir helfen Flüchtlingen bei der automatischen Suche",
-        "freeOfCharge": "kostenlos",
-        "description_part2": "Unterkünfte, die von hilfsbereiten Personen und Institutionen angeboten werden.",
-        "lookingForHelp": "Ich suche einen Unterschlupf",
-        "shareHelp": "Ich biete Hilfe an"
+  "supportingPartners": "Partner, die die Initiative unterstützen",
+  "ngoPartners": "Nicht-Regierungs-Organisationen (NGO's)",
+  "projectInitiators": "Projektinitiatoren",
+  "partners": "Partner",
+  "showMorePartners": "Alle Partner anzeigen",
+  "projectIntention": {
+    "title": "Wir helfen bei der Suche nach Unterkünften für die Opfer des Krieges in der Ukraine",
+    "description_part1": "Wir helfen Flüchtlingen bei der automatischen Suche",
+    "freeOfCharge": "kostenlos",
+    "description_part2": "Unterkünfte, die von hilfsbereiten Personen und Institutionen angeboten werden.",
+    "lookingForHelp": "Ich suche einen Unterschlupf",
+    "shareHelp": "Ich biete Hilfe an"
+  },
+  "likeToHelp": {
+    "title": "Würden Sie gerne helfen?",
+    "details": "Registrieren Sie jede Art von Unterkunft, die Sie den Opfern des Krieges in der Ukraine <b>kostenlos</b> anbieten können.",
+    "cta": "Einen Schutzraum vorschlagen"
+  },
+  "weMatched": {
+    "title": "Bis jetzt...",
+    "cards": {
+      "helpedPeople": "unterstützte Flüchtlinge",
+      "lookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
+      "currentOffers": "aktuell verfügbare Angebote"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "Was macht SOS-UA?",
+    "bulletPoints": {
+      "0": "Freiwillige und Einrichtungen beschreiben die angebotene Unterkunft (Art, maximale Kapazität, Dauer des Aufenthalts)",
+      "1": "Menschen, die eine Unterkunft suchen, definieren ihre Bedürfnisse und Mindestanforderungen (z. B. Gruppengröße, Standort)",
+      "2": "UA-SOS verbindet automatisch Schutzbedürftige mit den am besten geeigneten Unterkünften, die von Gastgebern angeboten werden"
     },
-    "likeToHelp": {
-        "title": "Würden Sie gerne helfen?",
-        "details": "Registrieren Sie jede Art von Unterkunft, die Sie den Opfern des Krieges in der Ukraine <b>kostenlos<\/b> anbieten können.",
-        "cta": "Einen Schutzraum vorschlagen"
+    "algorithmExplanation": "Der Algorithmus optimiert die Übereinstimmungen, so dass möglichst viele Bedürftige eine Unterkunft finden",
+    "rolldown": "Mehr sehen",
+    "rollup": "Weniger",
+    "description": "Das Portal verbindet Menschen in Not mit Institutionen und Menschen, die ihre Hilfe anbieten",
+    "howItWorks": "Wie funktioniert das?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Anmeldung",
+      "text": "Der Nutzer registriert sich auf dem Portal entweder als Anbieter von Unterkünften oder als Schutzbedürftiger"
     },
-    "weMatched": {
-        "title": "Bis jetzt...",
-        "cards": {
-            "helpedPeople": "unterstützte Flüchtlinge",
-            "lookingForHelp": "Flüchtlinge suchen weiter nach Hilfe",
-            "currentOffers": "aktuell verfügbare Angebote"
-        }
+    "1": {
+      "title": "Ausfüllen des Formulars",
+      "text": "Der Nutzer füllt ein Formular über die angebotene oder gesuchte Unterkunft aus."
     },
-    "whatSosUaDoesSection": {
-        "title": "Was macht SOS-UA?",
-        "bulletPoints": {
-            "0": "Freiwillige und Einrichtungen beschreiben die angebotene Unterkunft (Art, maximale Kapazität, Dauer des Aufenthalts)",
-            "1": "Menschen, die eine Unterkunft suchen, definieren ihre Bedürfnisse und Mindestanforderungen (z. B. Gruppengröße, Standort)",
-            "2": "UA-SOS verbindet automatisch Schutzbedürftige mit den am besten geeigneten Unterkünften, die von Gastgebern angeboten werden"
-        },
-        "algorithmExplanation": "Der Algorithmus optimiert die Übereinstimmungen, so dass möglichst viele Bedürftige eine Unterkunft finden",
-        "rolldown": "Mehr sehen",
-        "rollup": "Weniger",
-        "description": "Das Portal verbindet Menschen in Not mit Institutionen und Menschen, die ihre Hilfe anbieten",
-        "howItWorks": "Wie funktioniert das?"
+    "2": {
+      "title": "Automatischer Abgleich",
+      "text": "Der Algorithmus durchsucht die Datenbank mit Unterkunftsangeboten und bedürftigen Personen und wählt auf der Grundlage der bereitgestellten Informationen die beste Übereinstimmung aus"
     },
-    "instructions": {
-        "0": {
-            "title": "Anmeldung",
-            "text": "Der Nutzer registriert sich auf dem Portal entweder als Anbieter von Unterkünften oder als Schutzbedürftiger"
-        },
-        "1": {
-            "title": "Ausfüllen des Formulars",
-            "text": "Der Nutzer füllt ein Formular über die angebotene oder gesuchte Unterkunft aus."
-        },
-        "2": {
-            "title": "Automatischer Abgleich",
-            "text": "Der Algorithmus durchsucht die Datenbank mit Unterkunftsangeboten und bedürftigen Personen und wählt auf der Grundlage der bereitgestellten Informationen die beste Übereinstimmung aus"
-        },
-        "3": {
-            "title": "An den Nutzer gesendete Informationen",
-            "text": "Nach dem richtigen Treffer erhalten die Benutzer eine E-Mail. Eine zusätzliche Beschreibung der verbundenen Benutzer ist in der Anwendung verfügbar."
-        },
-        "4": {
-            "title": "Nutzer kontaktieren sich gegenseitig",
-            "text": "Nachdem die Verbindung hergestellt ist, kann man per E-Mail oder Telefon Kontakt miteinander aufnehmen, um die Einzelheiten zu besprechen"
-        },
-        "5": {
-            "title": "Bestätigung oder Ablehnung des Angebots",
-            "text": "Der letzte Schritt ist die Bestätigung oder Ablehnung des Angebots in der App. Wird das Angebot abgelehnt, wird es an den Pool zurückgegeben"
-        }
+    "3": {
+      "title": "An den Nutzer gesendete Informationen",
+      "text": "Nach dem richtigen Treffer erhalten die Benutzer eine E-Mail. Eine zusätzliche Beschreibung der verbundenen Benutzer ist in der Anwendung verfügbar."
     },
-    "howDoesItWork": {
-        "title": "Wie funktioniert das?",
-        "points": {
-            "0": "Eine Wohnung melden\n oder Bedarf",
-            "1": "Füllen Sie die\n  die erforderlichen Daten",
-            "2": "Warten Sie\n auf das beste Angebot",
-            "3": "Kontakt mit\ndem Gastgeber\/Gast",
-            "4": "Bestätigen oder\n Angebot ablehnen"
-        }
+    "4": {
+      "title": "Nutzer kontaktieren sich gegenseitig",
+      "text": "Nachdem die Verbindung hergestellt ist, kann man per E-Mail oder Telefon Kontakt miteinander aufnehmen, um die Einzelheiten zu besprechen"
     },
-    "hero": {
-        "description": "Wir helfen Flüchtlingen automatisch bei der Suche nach Unterkünften, die von hilfsbereiten Menschen und Einrichtungen angeboten werden.",
-        "lookingForHelp": "Ich suche eine Unterkunft",
-        "shareHelp": "Ich biete Hilfe an",
-        "title": "Wir helfen bei der Suche nach Unterkünften für die Opfer des Krieges in der Ukraine"
-    },
-    "partnersMedia": ""
+    "5": {
+      "title": "Bestätigung oder Ablehnung des Angebots",
+      "text": "Der letzte Schritt ist die Bestätigung oder Ablehnung des Angebots in der App. Wird das Angebot abgelehnt, wird es an den Pool zurückgegeben"
+    }
+  },
+  "howDoesItWork": {
+    "title": "Wie funktioniert das?",
+    "points": {
+      "0": "Eine Wohnung melden\n oder Bedarf",
+      "1": "Füllen Sie die\n  die erforderlichen Daten",
+      "2": "Warten Sie\n auf das beste Angebot",
+      "3": "Kontakt mit\ndem Gastgeber/Gast",
+      "4": "Bestätigen oder\n Angebot ablehnen"
+    }
+  },
+  "hero": {
+    "description": "Wir helfen Flüchtlingen automatisch bei der Suche nach Unterkünften, die von hilfsbereiten Menschen und Einrichtungen angeboten werden.",
+    "lookingForHelp": "Ich suche eine Unterkunft",
+    "shareHelp": "Ich biete Hilfe an",
+    "title": "Wir helfen bei der Suche nach Unterkünften für die Opfer des Krieges in der Ukraine"
+  },
+  "partnersMedia": ""
 }
