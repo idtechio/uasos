@@ -19,6 +19,7 @@ import {
   Title,
 } from "./style";
 import { Request } from "./types";
+import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
 
 type RequestProps = {
   requests?: Request[];
@@ -118,7 +119,10 @@ const Requests = ({
             <MoreButtonWrapper>
               {/* TODO: move this into EditOfferButton  */}
               {r.type !== "confirmed" && (
-                <EditOfferButton targetID={r.id} targetType="guests" />
+                <EditOfferButton
+                  targetID={r.id}
+                  targetType={TargetTypes.GUESTS}
+                />
               )}
             </MoreButtonWrapper>
             <RequestTextWrapper>

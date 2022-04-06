@@ -3,6 +3,7 @@ import { select } from "../../../lib/db";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
+import { AccommodationTime } from "../../../src/helpers/FormTypes";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -69,17 +70,19 @@ export interface OfferProps {
   street: string;
   building_no: string;
   appartment_no: string;
-  shelter_type: Array<string> | string;
+  shelter_type: Array<string>;
+  host_type: Array<string>;
   beds: number;
-  acceptable_group_relations: Array<string> | string;
+  acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: Array<string> | string;
+  duration_category: Array<string>;
   type: GuestHostType;
   transport_included: Boolean;
+  can_be_verified: Boolean;
   match_id?: string | null;
   match_status?: MatchStatus | null;
   matchedRequest?: MatchedRequestProps;
@@ -148,6 +151,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       phone_num,
       email,
       shelter_type,
+      host_type,
       beds,
       acceptable_group_relations,
       ok_for_pregnant,
@@ -157,6 +161,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       ok_for_any_nationality,
       duration_category,
       transport_included,
+      can_be_verified,
       
       type,
 
@@ -202,6 +207,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     phone_num: h.phone_num,
     email: h.email,
     shelter_type: ungroupString(h.shelter_type),
+    host_type: ungroupString(h.host_type),
     beds: h.beds,
     acceptable_group_relations: ungroupString(h.acceptable_group_relations),
     ok_for_pregnant: h.ok_for_pregnant,
@@ -211,6 +217,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     ok_for_any_nationality: h.ok_for_any_nationality,
     duration_category: ungroupString(h.duration_category),
     transport_included: h.transport_included,
+    can_be_verified: h.can_be_verified,
     type: h.type,
     match_id: h.match_id,
     match_status: h.match_status,
@@ -255,6 +262,7 @@ function getMockOffers(): OfferProps[] {
       phone_num: "+48111222333",
       email: "host1@example.com",
       shelter_type: ["room"],
+      host_type: ["host_type_women"],
       beds: 1,
       acceptable_group_relations: ["single_woman", "family_with_children"],
       ok_for_pregnant: Boolean.TRUE,
@@ -262,8 +270,9 @@ function getMockOffers(): OfferProps[] {
       ok_for_animals: Boolean.TRUE,
       ok_for_elderly: Boolean.TRUE,
       ok_for_any_nationality: Boolean.TRUE,
-      duration_category: ["month"],
+      duration_category: [AccommodationTime.MONTH],
       transport_included: Boolean.TRUE,
+      can_be_verified: Boolean.TRUE,
       status: GuestHostStatus.MATCH_ACCEPTED,
       type: GuestHostType.BEING_CONFIRMED,
       match_id: "eeee25e-aae4-11ec-9a20-1726ed50bb17",
@@ -300,6 +309,7 @@ function getMockOffers(): OfferProps[] {
       phone_num: "+48222333444",
       email: "host1@example.com",
       shelter_type: ["house"],
+      host_type: ["host_type_men"],
       beds: 3,
       acceptable_group_relations: ["single_man", "single_woman"],
       ok_for_pregnant: Boolean.FALSE,
@@ -307,8 +317,9 @@ function getMockOffers(): OfferProps[] {
       ok_for_animals: Boolean.FALSE,
       ok_for_elderly: Boolean.FALSE,
       ok_for_any_nationality: Boolean.FALSE,
-      duration_category: ["less_than_1_week"],
+      duration_category: [AccommodationTime.LESS_THAN_WEEK],
       transport_included: Boolean.FALSE,
+      can_be_verified: Boolean.FALSE,
       status: GuestHostStatus.ACCEPTED,
       type: GuestHostType.LOOKING_FOR_MATCH,
       match_id: null,

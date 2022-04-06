@@ -21,6 +21,7 @@ import {
   Title,
 } from "./style";
 import { Offer } from "./types";
+import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
 
 type ProvidingSupportProps = {
   offers?: Offer[];
@@ -105,7 +106,10 @@ const Offers = ({
           <HeaderWrapper>
             <MoreButtonWrapper>
               {o.type !== "confirmed" && (
-                <EditOfferButton targetID={o.id} targetType="hosts" />
+                <EditOfferButton
+                  targetID={o.id}
+                  targetType={TargetTypes.HOSTS}
+                />
               )}
             </MoreButtonWrapper>
 

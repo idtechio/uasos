@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, SetStateAction, useEffect } from "react";
 import { useCallback, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { View } from "react-native";
@@ -20,8 +20,20 @@ type Props = {
 };
 
 const FormButtonsVertical = ({ data, label }: Props) => {
-  const { control } = useFormContext();
+  const { control, getValues } = useFormContext();
   const [buttonsState, setButtonsState] = useState<string[]>([]);
+
+  useEffect(() => {
+    const initialState: SetStateAction<string[]> = [];
+
+    data.forEach((value: Data) => {
+      if (getValues(value.id)) {
+        initialState.push(value.id);
+      }
+    });
+
+    setButtonsState(initialState);
+  }, [data]);
 
   const onTilePress = useCallback(
     (id: string, onChange: (...event: unknown[]) => void) => {
