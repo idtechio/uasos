@@ -1,0 +1,84 @@
+{
+  "supportingPartners": "Partnerzy wspierający akcję",
+  "ngoPartners": "Organizacje pozarządowe (NGO)",
+  "projectInitiators": "Inicjatorzy projektu",
+  "partners": "Partnerzy",
+  "showMorePartners": "Zobacz wszystkich partnerów akcji",
+  "projectIntention": {
+    "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
+    "description_part1": "Pomagamy uchodźcom automatycznie znaleźć",
+    "freeOfCharge": "bezpłatne",
+    "description_part2": "miejsce noclegowe oferowane przez osoby i instytucje chcące nieść pomoc.",
+    "lookingForHelp": "Szukam schronienia",
+    "shareHelp": "Oferuję pomoc"
+  },
+  "likeToHelp": {
+    "title": "Chcesz pomóc?",
+    "details": "Zgłoś lokal, pokój lub miejsce, które możesz nieodpłatnie udostępnić ofiarom wojny w Ukrainie.",
+    "cta": "Zgłoś lokal"
+  },
+  "weMatched": {
+    "title": "Jak dotąd...",
+    "cards": {
+      "helpedPeople": "wspartych uchodźców",
+      "lookingForHelp": "uchodźców wciąż szukających pomocy",
+      "currentOffers": "aktualnie dostępnych ofert"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "Co robi UASOS?",
+    "bulletPoints": {
+      "0": "Wolontariusze i instytucje zgłaszają i opisują dostępne lokale (typ lokalu, maksymalna liczba osób, długość pobytu)",
+      "1": "Szukający schronienia określają swoje potrzeby i minimalne wymagania (np. wielkość grupy, miejsce zakwaterowania)",
+      "2": "UA-SOS automatycznie łączy potrzebujących schronienia z najlepiej dopasowanym lokum"
+    },
+    "algorithmExplanation": "Algorytm optymalizuje dopasowania tak, aby jak najwięcej potrzebujących znalazło schronienie.",
+    "rolldown": "Rozwiń",
+    "rollup": "Zwiń",
+    "description": "Portal łączy osoby potrzebujące wsparcia z osobami i instytucjami oferującymi pomoc.",
+    "howItWorks": "Jak to działa?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Rejestracja na portalu",
+      "text": "Użytkownik rejestruje się w portalu jako oferujący lokum albo potrzebujący schronienia."
+    },
+    "1": {
+      "title": "Wypełnienie formularza",
+      "text": "Użytkownik wypełnia formularz dotyczący oferowanego lokum lub poszukiwanego zakwaterowania."
+    },
+    "2": {
+      "title": "Automatyczne parowanie",
+      "text": "Algorytm przeszukuje bazę ogłoszeń oraz bazę potrzebujących i na podstawie dostarczonych informacji dobiera najlepsze połączenie."
+    },
+    "3": {
+      "title": "Informacja wysłana do użytkownika",
+      "text": "Po poprawnym dopasowaniu użytkownicy otrzymują wiadomość e-mail. W aplikacji widoczny jest dodatkowy opis połączonych użytkowników."
+    },
+    "4": {
+      "title": "Kontakt użytkowników",
+      "text": "Po połączeniu, możliwy jest kontakt mailowy lub telefoniczny użytkowników w celu omówienia szczegółów."
+    },
+    "5": {
+      "title": "Potwierdzenie lub odrzucenie oferty",
+      "text": "Ostatnim krokiem jest potwierdzenie lub odrzucenie oferty w aplikacji. Jeśli oferta zostanie odrzucona, ogłoszenia wracają do puli dostępnych ogłoszeń."
+    }
+  },
+  "howDoesItWork": {
+    "title": "Jak to działa?",
+    "points": {
+      "0": "Zgłoś mieszkanie\n lub potrzebę",
+      "1": "Uzupełnij\n niezbędne dane",
+      "2": "Poczekaj\n na najlepszą ofertę",
+      "3": "Skontaktuj się\n z gospodarzem/gościem",
+      "4": "Potwierdź lub\n odrzuć ofertę"
+    }
+  },
+  "hero": {
+    "description": "Pomagamy uchodźcom automatycznie znaleźć miejsce noclegowe oferowane przez osoby i instytucje chcące nieść pomoc.",
+    "lookingForHelp": "Szukam schronienia",
+    "shareHelp": "Oferuję pomoc",
+    "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie"
+  },
+  "partnersMedia": "Partnerzy medialni"
+}
