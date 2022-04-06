@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Furnizați informații de bază despre dumneavoastră și despre persoanele cu care călătoriți",
     "addButton": "Trimiteți cererea",
+    "confirmChangesButton": "Confirmați modificările",
     "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
     "pregnantReady": "Sunt sau sunt însoțită de o persoană în stare avansată de sarcină (peste 6 luni)",
     "dissabilityReady": "Sunt însoțit de o persoană cu handicap",

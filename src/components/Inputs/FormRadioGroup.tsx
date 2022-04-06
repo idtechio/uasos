@@ -27,7 +27,7 @@ const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
         data.filter((el) => el.value === getValues(name))[0]?.label
       );
     }
-  }, []);
+  }, [data, getValues, markedCheckbox, name]);
 
   const error = useMemo(() => {
     return name

@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Podaj podstawowe informacje o sobie i osobach, z którymi podróżujesz",
     "addButton": "Wyślij zgłoszenie",
+    "confirmChangesButton": "Potwierdź zmiany",
     "addButtomErrorMessage": "Proszę uzupełnić wymagane pola",
     "pregnantReady": "Jestem lub jest ze mną osoba w zaawansowanej ciąży (pow. 6 miesiąca)",
     "dissabilityReady": "Jestem lub jest ze mną osoba z niepełnosprawnością",

@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Poskytnite základné informácie o sebe a ľuďoch, s ktorými cestujete",
     "addButton": "Pošlite prihlášku",
+    "confirmChangesButton": "Potvrdiť zmeny",
     "addButtomErrorMessage": "Vyplňte prosím povinné polia",
     "pregnantReady": "Som alebo sprevádzam osobu v pokročilom štádiu tehotenstva (viac ako 6 mesiacov)",
     "dissabilityReady": "Prijmem osobu so zdravotným postihnutím",

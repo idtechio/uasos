@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Geben Sie grundlegende Informationen über sich selbst und die Personen, mit denen Sie reisen",
     "addButton": "Senden Sie die Bewerbung",
+    "confirmChangesButton": "Änderungen bestätigen",
     "addButtomErrorMessage": "Bitte füllen Sie die erforderlichen Felder aus",
     "pregnantReady": "Ich bin oder werde begleitet von einer Person in fortgeschrittener Schwangerschaft (über 6 Monate)",
     "dissabilityReady": "Ich werde von einer Person mit Behinderung begleitet",

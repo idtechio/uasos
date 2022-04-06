@@ -272,6 +272,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "",
     "addButton": "",
+    "confirmChangesButton": "",
     "addButtomErrorMessage": "",
     "pregnantReady": "",
     "dissabilityReady": "",

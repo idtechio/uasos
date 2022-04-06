@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Fournir des informations sur vous-même et les personnes avec qui vous voyagez.",
     "addButton": "Envoyer l'application",
+    "confirmChangesButton": "Confirmer les modifications",
     "addButtomErrorMessage": "Veuillez remplir les champs obligatoires",
     "pregnantReady": "Je suis ou je suis accompagnée d'une personne en état de grossesse avancée (plus de 6 mois)",
     "dissabilityReady": "Je suis accompagné(e) d'une personne âgée",

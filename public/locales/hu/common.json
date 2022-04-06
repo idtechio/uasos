@@ -262,6 +262,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "Adjon meg alapvető információkat magáról és azokról a személyekről, akikkel utazik",
     "addButton": "Jelentkezés elküldése",
+    "confirmChangesButton": "Módosítások megerősítése",
     "addButtomErrorMessage": "Kérjük, töltse ki a kötelező mezőket",
     "pregnantReady": "Én, vagy a velem érkező személy előrehaladott terhes (6 hónapon túl)",
     "dissabilityReady": "Fogyatékkal élő személlyel utazok",

@@ -103,6 +103,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
           accommodationTime: data?.duration_category
             ? data.duration_category[0]
             : "",
+          hostType: data?.host_type ? data?.host_type[0] : "",
           guestCount: data?.beds ? data.beds : 1,
           groupsTypes: data?.acceptable_group_relations
             ? data.acceptable_group_relations
@@ -149,6 +150,14 @@ export default function FormAdHost({ data }: FormAdHostProps) {
     [watchAccomodationTypeFieldValue]
   );
 
+  const getSubmitButtonTitle = useMemo(
+    () =>
+      data?.id
+        ? t("refugeeAddForm.confirmChangesButton")
+        : t("refugeeAddForm.addButton"),
+    [data]
+  );
+
   const onSubmit: SubmitHandler<FormType> = async ({ advancedHost }) => {
     const {
       accommodationTime,
@@ -169,6 +178,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       apartmentNumber,
       closestLargeCity,
       volunteerVisitAcceptance,
+      hostType,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
@@ -179,7 +189,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       phone_num: identity?.phoneNumber ?? "",
       city: city,
       shelter_type: [accommodationType],
-      host_type: [], // TODO add host type value
+      host_type: [hostType],
       acceptable_group_relations: groupsTypes,
       beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -190,7 +200,6 @@ export default function FormAdHost({ data }: FormAdHostProps) {
         nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [accommodationTime],
       transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
-      // TODO set data for new props:
       closest_city: closestLargeCity,
       zipcode: zipCode,
       street: street,
@@ -465,7 +474,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 required: true,
               }}
               data={[
-                { label: t("hostAdd.ukraine"), value: "ukraine" },
+                { label: t("hostAdd.ukraine"), value: "ukrainian" },
                 { label: t("hostAdd.any"), value: "any" },
               ]}
               errorMsg={t("hostAdd.errors.nationalityError")}
@@ -520,7 +529,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
         <InputControl>
           <ButtonCta
             onPress={handleSubmit(onSubmit)}
-            anchor={t("refugeeAddForm.addButton")}
+            anchor={getSubmitButtonTitle}
             style={styles.addButton}
           />
           {isSubmitted && !isValid && !isSubmitLoading && !isSubmitSuccess && (
