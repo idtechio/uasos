@@ -5,6 +5,11 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
+
 export enum GuestHostType {
   INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
   LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
@@ -14,7 +19,7 @@ export enum GuestHostType {
   REJECTED = "rejected", // match rejected by one side
 }
 
-enum GuestHostStatus {
+export enum GuestHostStatus {
   ACCEPTED = "accepted", // default status after creation
   REJECTED = "rejected", // for future moderation purpose
   BEING_PROCESS = "being_processed", // during matching process
@@ -50,6 +55,7 @@ const toOffer = (o: OfferProps): Offer => ({
   state: toMatchOfferState(o), //TODO: check match state algo
   matchedRequest: o.matchedRequest,
   closestCity: o.closest_city,
+  clientOnly: o.client_only,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
   const matchStatus = o.status;
@@ -79,6 +85,7 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
   duration: toAccomodationTime(r.duration_category),
   state: toMatchRequestState(r),
   matchedOffer: r.matchedOffer,
+  clientOnly: r.client_only,
 });
 
 const toName: (_: OfferProps) => string = (o) =>

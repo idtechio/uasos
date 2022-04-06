@@ -86,6 +86,7 @@ export interface OfferProps {
   match_id?: string | null;
   match_status?: MatchStatus | null;
   matchedRequest?: MatchedRequestProps;
+  client_only?: boolean;
 }
 
 async function getOffers(
