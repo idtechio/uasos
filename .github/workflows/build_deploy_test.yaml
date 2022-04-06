@@ -10,6 +10,7 @@ env:
   image_name: "sosua"
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
   ga_id: "G-0000000000"
+  fb_pixel_id: ""
   firebase_api_key: ${{ secrets.TEST_FIREBASE_API_KEY }}
   firebase_auth_domain: "ukrn-hlpr-test.firebaseapp.com"
   firebase_project_id: "ukrn-hlpr-test"
@@ -44,6 +45,7 @@ jobs:
           IMAGE_PROJECT_ID: eu.gcr.io/${{ env.reg_project_id }}/${{ env.image_name }}:${{ steps.vars.outputs.sha_short }}
           BUILD_ARGS: >
             --build-arg NEXT_PUBLIC_GA_ID=${{ env.ga_id }}
+            --build-arg NEXT_PUBLIC_FACEBOOK_PIXEL_ID=${{ env.fb_pixel_id }}
             --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=${{ env.firebase_api_key }}
             --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ env.firebase_auth_domain }}
             --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ env.firebase_project_id }}
