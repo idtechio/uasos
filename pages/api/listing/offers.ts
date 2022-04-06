@@ -180,7 +180,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
       guest_is_ukrainian_nationality,
       guest_duration_category
     FROM offers WHERE account_uid = $1
-    ORDER BY registered DESC`,
+    ORDER BY registered ASC`,
     [uid]
   );
 
