@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { createContext, useCallback, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import CardModal from "../../CardModal";
@@ -17,41 +17,49 @@ import {
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
-const buttons = [
-  {
-    icon: <ClockIcon />,
-    type: "renew",
-    hide: true,
-    label: "others:common.words.renew",
-  },
-  {
-    icon: <EditIcon />,
-    type: "edit",
-    label: "others:desktop.contextMenu.edit",
-    hide: true,
-  },
-  {
-    icon: <AlertIcon />,
-    type: "report",
-    hide: true,
-    label: "others:desktop.contextMenu.reportProblem",
-  },
-  {
-    icon: <BinIcon />,
-    type: "delete",
-    label: "hostAdd.accomodationPhotoReset",
-  },
-];
-
 type ModalTypes = "delete" | "report" | "renew" | null;
+
+export const EditOfferContext = createContext<{
+  targetID: string;
+  targetType: "hosts" | "guests";
+  matchID: string | null;
+}>({ targetType: "hosts", targetID: "", matchID: "" });
 
 export default function EditOfferButton({
   targetID,
   targetType,
+  matchID,
 }: {
   targetID: string;
   targetType: "hosts" | "guests";
+  matchID: string | null;
 }) {
+  const buttons = [
+    {
+      icon: <ClockIcon />,
+      type: "renew",
+      hide: true,
+      label: "others:common.words.renew",
+    },
+    {
+      icon: <EditIcon />,
+      type: "edit",
+      label: "others:desktop.contextMenu.edit",
+      hide: true,
+    },
+    {
+      icon: <AlertIcon />,
+      type: "report",
+      hide: !matchID,
+      label: "others:desktop.contextMenu.reportProblem",
+    },
+    {
+      icon: <BinIcon />,
+      type: "delete",
+      label: "hostAdd.accomodationPhotoReset",
+    },
+  ];
+
   const containerRef = useRef<View | null>(null);
 
   const { t } = useTranslation();
@@ -135,7 +143,9 @@ export default function EditOfferButton({
   return (
     <ButtonContainer ref={(ref) => (containerRef.current = ref)}>
       <TriggerButton onPress={onTriggerPress} />
-      <Modal />
+      <EditOfferContext.Provider value={{ targetType, targetID, matchID }}>
+        <Modal />
+      </EditOfferContext.Provider>
       {popoverOpened && <PopoverOptions />}
     </ButtonContainer>
   );

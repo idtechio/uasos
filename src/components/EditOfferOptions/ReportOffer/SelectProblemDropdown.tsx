@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
+import { useContext } from "react";
+import { EditOfferContext } from "../EditOfferButton/index";
+import React, { useCallback, useState } from "react";
 import { Dropdown } from "../../Dropdown";
 import { DropdownStyles, StyledLabel } from "./style";
 
@@ -6,29 +9,71 @@ const Label = ({ children }: { children: string }) => (
   <StyledLabel>{children}</StyledLabel>
 );
 
-const PROBLEM_TYPES = [
-  {
-    label: <Label>Problem 1</Label>,
-    value: "problem1",
-  },
-  { label: <Label>Problem 2</Label>, value: "problem2" },
-  {
-    label: <Label>Problem 3</Label>,
-    value: "problem3",
-  },
-  { label: <Label>Problem 4</Label>, value: "problem4" },
-];
+interface Props {
+  problemType: string | null;
+  onSelect(problem: string | null): void;
+}
+export default function SelectProblemDropdown({
+  problemType,
+  onSelect,
+}: Props) {
+  const { t } = useTranslation();
+  const { targetType } = useContext(EditOfferContext);
 
-export default function SelectProblemDropdown() {
-  const [value, setValue] = useState<string | null>(null);
+  const PROBLEM_TYPES = [
+    ...(targetType == "hosts"
+      ? [
+          {
+            label: (
+              <Label>
+                {t("others:reportProblem.popup.reasons.guestNotNeedHelp")}
+              </Label>
+            ),
+            value: "report_guest_inactive",
+          },
+        ]
+      : []),
+    ...(targetType == "guests"
+      ? [
+          {
+            label: (
+              <Label>
+                {t("others:reportProblem.popup.reasons.hostCantHelp")}
+              </Label>
+            ),
+            value: "report_host_inactive",
+          },
+        ]
+      : []),
+    {
+      label: (
+        <Label>
+          {t("others:reportProblem.popup.reasons.rejectedAfterContact")}
+        </Label>
+      ),
+      value: "report_first_contact",
+    },
+    {
+      label: (
+        <Label>
+          {t("others:reportProblem.popup.reasons.noResponseAfterContact")}
+        </Label>
+      ),
+      value: "report_no_contact",
+    },
+    {
+      label: <Label>{t("others:reportProblem.popup.reasons.notShowUp")}</Label>,
+      value: "report_no_show_up",
+    },
+  ];
 
   return (
     <Dropdown
       styles={DropdownStyles}
-      placeholder="Select from the list"
+      placeholder={t("others:forms.generic.selectFromList")}
       data={PROBLEM_TYPES}
-      selected={value}
-      itemPressFunction={setValue}
+      selected={problemType}
+      itemPressFunction={onSelect}
     />
   );
 }

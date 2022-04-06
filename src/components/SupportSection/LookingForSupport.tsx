@@ -118,7 +118,11 @@ const Requests = ({
             <MoreButtonWrapper>
               {/* TODO: move this into EditOfferButton  */}
               {r.type !== "confirmed" && (
-                <EditOfferButton targetID={r.id} targetType="guests" />
+                <EditOfferButton
+                  targetID={r.id}
+                  targetType="guests"
+                  matchID={r.matchId}
+                />
               )}
             </MoreButtonWrapper>
             <RequestTextWrapper>

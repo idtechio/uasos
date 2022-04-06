@@ -105,7 +105,11 @@ const Offers = ({
           <HeaderWrapper>
             <MoreButtonWrapper>
               {o.type !== "confirmed" && (
-                <EditOfferButton targetID={o.id} targetType="hosts" />
+                <EditOfferButton
+                  targetID={o.id}
+                  targetType="hosts"
+                  matchID={o.matchId}
+                />
               )}
             </MoreButtonWrapper>
 
