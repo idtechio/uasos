@@ -31,7 +31,7 @@ export default function Account() {
   }, [offers, id, offer]);
 
   if (loaded) {
-    if (!identity) {
+    if (identity) {
       return (
         <CompositionAppBody>
           <AppBack to="/dashboard" />

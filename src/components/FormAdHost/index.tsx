@@ -107,6 +107,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
           groupsTypes: data?.acceptable_group_relations
             ? data.acceptable_group_relations
             : [],
+          transportReady: data?.transport_included === Boolean.TRUE,
           pregnantReady: data?.ok_for_pregnant === Boolean.TRUE,
           disabilityReady: data?.ok_for_disabilities === Boolean.TRUE,
           animalReady: data?.ok_for_animals === Boolean.TRUE,
@@ -161,7 +162,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       nationality,
       pregnantReady,
       city,
-      transportReady: transportReady,
+      transportReady,
       zipCode,
       street,
       buildingNumber,

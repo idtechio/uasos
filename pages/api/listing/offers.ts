@@ -70,15 +70,15 @@ export interface OfferProps {
   street: string;
   building_no: string;
   appartment_no: string;
-  shelter_type: Array<string> | string;
+  shelter_type: Array<string>;
   beds: number;
-  acceptable_group_relations: Array<string> | string;
+  acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
   ok_for_disabilities: Boolean;
   ok_for_animals: Boolean;
   ok_for_elderly: Boolean;
   ok_for_any_nationality: Boolean;
-  duration_category: Array<string> | string;
+  duration_category: Array<string>;
   type: GuestHostType;
   transport_included: Boolean;
   match_id?: string | null;

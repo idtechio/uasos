@@ -102,10 +102,7 @@ export default function HostCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("others:forms.match.accommodationTypeWithData", {
-              type: (typeof offer.shelter_type === "string"
-                ? offer.shelter_type.split(",")
-                : offer.shelter_type
-              )
+              type: offer.shelter_type
                 .map((el: string) => t(`staticValues.accommodationTypes.${el}`))
                 .join(", "),
             })}

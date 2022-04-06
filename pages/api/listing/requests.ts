@@ -65,15 +65,15 @@ export interface RequestProps {
   phone_num: string;
   email: string;
   city: string;
-  acceptable_shelter_types: Array<string> | string;
+  acceptable_shelter_types: Array<string>;
   beds: number;
-  group_relation: Array<string> | string;
+  group_relation: Array<string>;
   is_pregnant: Boolean;
   is_with_disability: Boolean;
   is_with_animal: Boolean;
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
-  duration_category: Array<string> | string;
+  duration_category: Array<string>;
   type: GuestHostType;
   match_id?: string | null;
   match_status?: MatchStatus | null;
