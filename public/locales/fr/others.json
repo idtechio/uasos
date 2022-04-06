@@ -228,7 +228,8 @@
         "checks": {
             "phoneNotVerified": "Numéro de téléphone non-vérifié",
             "emailNotVerified": "E-mail non vérifié",
-            "accountInCreation": ""
+            "accountInCreation": "",
+            "emailAlreadyInUse": ""
         },
         "housing": "Logement",
         "confirmation": {

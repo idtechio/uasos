@@ -228,7 +228,8 @@
         "checks": {
             "phoneNotVerified": "Telefon nicht verifiziert",
             "emailNotVerified": "E-Mail nicht verifiziert",
-            "accountInCreation": ""
+            "accountInCreation": "",
+            "emailAlreadyInUse": ""
         },
         "housing": "Gehäuse",
         "confirmation": {

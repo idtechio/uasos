@@ -228,7 +228,8 @@
         "checks": {
             "phoneNotVerified": "Telefon nie został zweryfikowany",
             "emailNotVerified": "E-mail nie został zweryfikowany",
-            "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach."
+            "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach.",
+            "emailAlreadyInUse": "Adres e-mail powiązany z wybranym kontem dostawcy logowania jest już używany w naszym systemie. spróbuj zalogować się ponownie za pomocą innej metody logowania."
         },
         "housing": "Nocleg",
         "confirmation": {
