@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import { useContext } from "react";
 import { EditOfferContext } from "../EditOfferButton/index";
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Dropdown } from "../../Dropdown";
 import { DropdownStyles, StyledLabel } from "./style";
 
