@@ -170,7 +170,8 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       host_ok_for_any_nationality,
       host_duration_category,
       host_transport_included
-    FROM requests WHERE account_uid = $1`,
+    FROM requests WHERE account_uid = $1
+    ORDER BY registered DESC`,
     [uid]
   );
 
