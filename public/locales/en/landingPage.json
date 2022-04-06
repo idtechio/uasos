@@ -1,84 +1,84 @@
 {
-  "supportingPartners": "Partners supporting the initiative",
-  "ngoPartners": "Non-Governmental Organizations (NGO’s)",
-  "projectInitiators": "Project initiators",
-  "partners": "Partners",
-  "showMorePartners": "See all partners",
-  "projectIntention": {
-    "title": "We help to find shelter for the victims of the war in Ukraine",
-    "description_part1": "We help refugees find automatically",
-    "freeOfCharge": "free",
-    "description_part2": "accommodation offered by people and institutions willing to help.",
-    "lookingForHelp": "I'm looking for a shelter",
-    "shareHelp": "I offer help"
-  },
-  "likeToHelp": {
-    "title": "Would you like to help?",
-    "details": "Register any type of accommodation that you can offer <b>free</b> of charge to the victims of the war in Ukraine.",
-    "cta": "Propose a shelter"
-  },
-  "weMatched": {
-    "title": "So far...",
-    "cards": {
-      "helpedPeople": "refugees supported",
-      "lookingForHelp": "refugees still looking for help",
-      "currentOffers": "currently available offers"
-    }
-  },
-  "whatSosUaDoesSection": {
-    "title": "What does SOS-UA do?",
-    "bulletPoints": {
-      "0": "Volunteers and institutions describe accommodation offered (type, maximum capacity, length of stay)",
-      "1": "People looking for a shelter define their needs and minimum requirements (e.g. group size, location)",
-      "2": "UA-SOS automatically connects those in need of shelter with the best-suited accommodation offered by hosts"
+    "supportingPartners": "Partners supporting the initiative",
+    "ngoPartners": "Non-Governmental Organizations (NGO’s)",
+    "projectInitiators": "Project initiators",
+    "partners": "Partners",
+    "showMorePartners": "See all partners",
+    "projectIntention": {
+        "title": "We help to find shelter for the victims of the war in Ukraine",
+        "description_part1": "We help refugees find automatically",
+        "freeOfCharge": "free",
+        "description_part2": "accommodation offered by people and institutions willing to help.",
+        "lookingForHelp": "I'm looking for a shelter",
+        "shareHelp": "I offer help"
     },
-    "algorithmExplanation": "The algorithm optimizes matches, so that as many people in need find shelter",
-    "rolldown": "See more",
-    "rollup": "Less",
-    "description": "The portal connects people in need with institutions and people offering their help",
-    "howItWorks": "How does it work?"
-  },
-  "instructions": {
-    "0": {
-      "title": "Registration",
-      "text": "The user registers on the portal as either offering accommodation or needing shelter"
+    "likeToHelp": {
+        "title": "Would you like to help?",
+        "details": "Register any type of accommodation that you can offer free of charge to the victims of the war in Ukraine.",
+        "cta": "Propose a shelter"
     },
-    "1": {
-      "title": "Filling the form",
-      "text": "The user fills in a form on the offered accommodation or the accommodation sought."
+    "weMatched": {
+        "title": "So far...",
+        "cards": {
+            "helpedPeople": "refugees supported",
+            "lookingForHelp": "refugees still looking for help",
+            "currentOffers": "currently available offers"
+        }
     },
-    "2": {
-      "title": "Automatic matching",
-      "text": "The algorithm searches the database of offered accommodation and people in need and, based on the information provided, selects the best match"
+    "whatSosUaDoesSection": {
+        "title": "What does SOS-UA do?",
+        "bulletPoints": {
+            "0": "Volunteers and institutions describe accommodation offered (type, maximum capacity, length of stay)",
+            "1": "People looking for a shelter define their needs and minimum requirements (e.g. group size, location)",
+            "2": "UA-SOS automatically connects those in need of shelter with the best-suited accommodation offered by hosts"
+        },
+        "algorithmExplanation": "The algorithm optimizes matches, so that as many people in need find shelter",
+        "rolldown": "See more",
+        "rollup": "Less",
+        "description": "The portal connects people in need with institutions and people offering their help",
+        "howItWorks": "How does it work?"
     },
-    "3": {
-      "title": "Information sent to the user",
-      "text": "After the correct match, users receive an email. An additional description of connected users is available in the application."
+    "instructions": {
+        "0": {
+            "title": "Registration",
+            "text": "The user registers on the portal as either offering accommodation or needing shelter"
+        },
+        "1": {
+            "title": "Filling the form",
+            "text": "The user fills in a form on the offered accommodation or the accommodation sought."
+        },
+        "2": {
+            "title": "Automatic matching",
+            "text": "The algorithm searches the database of offered accommodation and people in need and, based on the information provided, selects the best match"
+        },
+        "3": {
+            "title": "Information sent to the user",
+            "text": "After the correct match, users receive an email. An additional description of connected users is available in the application."
+        },
+        "4": {
+            "title": "Users contact each other",
+            "text": "After the connection is made, it is possible to contact each other by e-mail or telephone in order to discuss the details"
+        },
+        "5": {
+            "title": "Confirmation or rejection of the offer",
+            "text": "The last step is to confirm or decline the offer in the app. If the offer is rejected, it is returned to the pool"
+        }
     },
-    "4": {
-      "title": "Users contact each other",
-      "text": "After the connection is made, it is possible to contact each other by e-mail or telephone in order to discuss the details"
+    "howDoesItWork": {
+        "title": "How does it work?",
+        "points": {
+            "0": "Submit an apartment\n or need",
+            "1": "Fill in\n  the necessary data",
+            "2": "Wait\n for the best offer",
+            "3": "Contact the host \/ guest",
+            "4": "Confirm or\n deny offer"
+        }
     },
-    "5": {
-      "title": "Confirmation or rejection of the offer",
-      "text": "The last step is to confirm or decline the offer in the app. If the offer is rejected, it is returned to the pool"
-    }
-  },
-  "howDoesItWork": {
-    "title": "How does it work?",
-    "points": {
-      "0": "Submit an apartment\n or need",
-      "1": "Fill in\n  the necessary data",
-      "2": "Wait\n for the best offer",
-      "3": "Contact the host / guest",
-      "4": "Confirm or\n deny offer"
-    }
-  },
-  "hero": {
-    "description": "We help refugees automatically find accommodation offered by people and institutions willing to help.",
-    "lookingForHelp": "I am looking for a shelter",
-    "shareHelp": "I offer help",
-    "title": "We help to find shelter for the victims of the war in Ukraine"
-  },
-  "partnersMedia": "Media partners"
+    "hero": {
+        "description": "We help refugees automatically find accommodation offered by people and institutions willing to help.",
+        "lookingForHelp": "I am looking for a shelter",
+        "shareHelp": "I offer help",
+        "title": "We help to find shelter for the victims of the war in Ukraine"
+    },
+    "partnersMedia": "Media partners"
 }
