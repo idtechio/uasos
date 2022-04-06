@@ -327,5 +327,6 @@
     "ogMeta": {
         "title": "Pomagamy znaleźć schronienie ofiarom wojny w Ukrainie",
         "description": "Platforma UASOS.org we współpracy z wiodącymi organizacjami dobroczynnymi automatycznie i bezpłatnie łączy uchodźców wojny w Ukrainie z osobami, które są w stanie udzielić im schronienia. Dołącz do pomagających lub zgłoś swoje potrzeby już dziś!"
-    }
+    },
+    "refugeeAddForm.confirmChangesButton": "Potwierdź zmiany"
 }

@@ -327,5 +327,6 @@
     "ogMeta": {
         "title": "Nous aidons les réfugiés de guerre d'Ukraine à trouver un abri",
         "description": "UASOS.org, en coopération avec les principales organisations caritatives, met automatiquement et gratuitement en contact les réfugiés d'Ukraine avec les personnes offrant un abri. Aidez-nous à offrir un soutien ou à demander un abri dès aujourd'hui !"
-    }
+    },
+    "refugeeAddForm.confirmChangesButton": ""
 }

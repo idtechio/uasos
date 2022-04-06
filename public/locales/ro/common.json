@@ -327,5 +327,6 @@
     "ogMeta": {
         "title": "Ajutăm refugiații din Ucraina să găsească adăpost",
         "description": "UASOS.org, în cooperare cu organizații caritabile de renume, pune în legătură, în mod automat și gratuit, refugiații din Ucraina cu persoanele care oferă adăpost. Ajutați-ne să oferim sprijin sau să solicită adăpost astăzi!"
-    }
+    },
+    "refugeeAddForm.confirmChangesButton": ""
 }
