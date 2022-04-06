@@ -2,9 +2,9 @@
     "name": "Név",
     "location": "Helyszín",
     "preferences": "Kérjük ossza meg, kinek tudna szállást biztosítani:",
-    "animalsWelcome": "Háziállatok elfogadva",
+    "animalsWelcome": "Háziállatokat fogad",
     "toddlerBelow2yo": "Kisgyermek (2 évesnél fiatalabb) fogadása",
-    "food": "Ellátás",
+    "food": "Élelmiszer biztosított",
     "disabledReady": "Fogyatékkal élő személy",
     "howManyPersons": "Hány embert tud elszállásolni?",
     "howLong": "Milyen hosszú időre?",
@@ -28,7 +28,7 @@
     "travelingWithPet": "Háziállattal utazok",
     "pet": "Fajta (név)",
     "travelingWithInfantBelow2yo": "Kisgyermekkel (2 évesnél fiatalabb) utazok",
-    "travelingWithOlderPerson": "Idős személy vagyok vagy kísérőm van.",
-    "travelingWithDisabledPerson": "Fogyatékossággal élő személy vagyok vagy kísérőm van",
+    "travelingWithOlderPerson": "Idős személy vagyok\/idős személlyel utazok",
+    "travelingWithDisabledPerson": "Fogyatékkal élő vagyok \/ fogyatékkal élővel utazok",
     "getHelp": "Segítségkérés"
 }

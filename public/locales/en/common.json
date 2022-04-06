@@ -195,7 +195,8 @@
             "type": "Accommodation type is required",
             "hostType": "Host type is required",
             "accommodationTime": "Duration of stay is required",
-            "nationalityError": "Refugee nationality is required"
+            "nationalityError": "Refugee nationality is required",
+            "groupsTypes": "Group type is required"
         },
         "prolongationReady": "Possibility of extending the stay (for a fee)",
         "transportReady": "Possibility of transport",
@@ -304,7 +305,8 @@
             "countryOfGroup": "Please select nationality"
         },
         "refugeInfoHeader": "Provide information about your accommodation",
-        "countryOfGroup": "What is the group's origin country?"
+        "countryOfGroup": "What is the group's origin country?",
+        "cityTooltip": "If you cannot find your city, choose the closest big city or town"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",

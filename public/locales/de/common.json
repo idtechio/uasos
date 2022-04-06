@@ -195,7 +195,8 @@
             "type": "Unterkunftsart ist erforderlich",
             "hostType": "Hosttyp ist erforderlich",
             "accommodationTime": "Dauer des Aufenthalts ist erforderlich",
-            "nationalityError": "Die Staatsangehörigkeit eines Flüchtlings ist erforderlich"
+            "nationalityError": "Die Staatsangehörigkeit eines Flüchtlings ist erforderlich",
+            "groupsTypes": ""
         },
         "prolongationReady": "Möglichkeit der Verlängerung des Aufenthalts (gegen Gebühr)",
         "transportReady": "Möglichkeit des Transports",
@@ -304,7 +305,8 @@
             "countryOfGroup": "Bitte wählen Sie eine Nationalität"
         },
         "refugeInfoHeader": "Informationen über Ihre Unterkunft bereitstellen",
-        "countryOfGroup": "Welches ist das Herkunftsland der Gruppe?"
+        "countryOfGroup": "Welches ist das Herkunftsland der Gruppe?",
+        "cityTooltip": ""
     },
     "accomodationPhoto": "Ein Foto der angebotenen Unterkunft hinzufügen",
     "accomodationPhotoReset": "Löschen",

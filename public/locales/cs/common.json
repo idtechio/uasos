@@ -140,7 +140,7 @@
         "countries": {
             "poland": "Polsko",
             "hungary": "Maďarština",
-            "czechia": "Čeština",
+            "czechia": "Česko",
             "slovakia": "Slovensko"
         },
         "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
@@ -195,7 +195,8 @@
             "type": "Typ ubytování je vyžadovaný údaj",
             "hostType": "Typ hostitele je vyžadovaný údaj",
             "accommodationTime": "Délka pobytu je vyžadováný údaj",
-            "nationalityError": "Státní příslušnost je vyžadovaný údaj"
+            "nationalityError": "Státní příslušnost je vyžadovaný údaj",
+            "groupsTypes": "Je vyžadován typ skupiny"
         },
         "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
         "transportReady": "Možnost dopravy",
@@ -304,7 +305,8 @@
             "countryOfGroup": "Vyberte národnost"
         },
         "refugeInfoHeader": "Poskytnout informace o ubytování",
-        "countryOfGroup": "Z jaké země skupina pochází?"
+        "countryOfGroup": "Z jaké země skupina pochází?",
+        "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město"
     },
     "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
     "accomodationPhotoReset": "Smazat",
