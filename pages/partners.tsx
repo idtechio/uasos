@@ -84,9 +84,8 @@ const PartnersPage = () => {
         </PartnersContainer>
       </Section>
 
-      {/* TODO: add translation to the title under the "partnersMedia" key */}
       <Section>
-        <SectionTitle title={"Media partners"} />
+        <SectionTitle title={t("partnersMedia")} />
         <PartnersContainer>
           {MEDIA_PARTNERS.map((partner, index) => (
             <StyledPartnerCard
