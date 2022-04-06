@@ -1,7 +1,6 @@
 import { useMemo, createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import Script from "next/script";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
 import { ThemeProvider as ThemeProviderNative } from "styled-components/native";
@@ -15,8 +14,9 @@ import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../lib/gtag";
-import Gtag from "./gtag";
+import { Gtag, GAtag } from "./gtag";
 import * as fbq from "../lib/fpixel";
+import FPixel from "./fpixel";
 
 export const AuthContext = createContext<{
   identity: null | User | undefined;
@@ -81,24 +81,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
     <>
-      {/* Global Site Code Pixel - Facebook Pixel */}
-      <Script
-        id="fb-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', ${fbq.FB_PIXEL_ID});
-          `,
-        }}
-      />
+      {fbq.FB_PIXEL_ID && <FPixel id={fbq.FB_PIXEL_ID} />}
+      {gtag.GOOGLE_TAG_ID && <Gtag id={gtag.GOOGLE_TAG_ID} />}
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps?.dehydratedState}>
           <GlobalStyles />
@@ -119,7 +103,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
               />
               <meta property="og:image:type" content="image/png" />
             </Head>
-            {gtag.GA_TRACKING_ID && <Gtag id={gtag.GA_TRACKING_ID} />}
+            {gtag.GA_TRACKING_ID && <GAtag id={gtag.GA_TRACKING_ID} />}
             <ThemeProviderWeb theme={theme}>
               <ThemeProviderNative theme={theme}>
                 <AuthContext.Provider
