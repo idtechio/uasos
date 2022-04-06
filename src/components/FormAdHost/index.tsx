@@ -155,7 +155,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       data?.id
         ? t("refugeeAddForm.confirmChangesButton")
         : t("refugeeAddForm.addButton"),
-    [data]
+    [t, data]
   );
 
   const onSubmit: SubmitHandler<FormType> = async ({ advancedHost }) => {

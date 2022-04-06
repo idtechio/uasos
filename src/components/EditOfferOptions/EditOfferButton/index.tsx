@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import CardModal from "../../CardModal";
@@ -16,42 +16,16 @@ import {
 } from "./style";
 import { Routes } from "../../../consts/router";
 import { useRouter } from "next/router";
+import { ModalTypes, TargetTypes } from "./types";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
-
-const buttons = [
-  {
-    icon: <ClockIcon />,
-    type: "renew",
-    hide: true,
-    label: "others:common.words.renew",
-  },
-  {
-    icon: <EditIcon />,
-    type: "edit",
-    label: "others:desktop.contextMenu.edit",
-  },
-  {
-    icon: <AlertIcon />,
-    type: "report",
-    hide: true,
-    label: "others:desktop.contextMenu.reportProblem",
-  },
-  {
-    icon: <BinIcon />,
-    type: "delete",
-    label: "hostAdd.accomodationPhotoReset",
-  },
-];
-
-type ModalTypes = "delete" | "report" | "renew" | "edit" | null;
 
 export default function EditOfferButton({
   targetID,
   targetType,
 }: {
   targetID: string;
-  targetType: "hosts" | "guests";
+  targetType: TargetTypes;
 }) {
   const containerRef = useRef<View | null>(null);
 
@@ -60,6 +34,44 @@ export default function EditOfferButton({
 
   const [popoverOpened, setPopoverOpened] = useState(false);
   const [modalOpened, setModalOpened] = useState<ModalTypes>(null);
+
+  const getButtonList = useMemo(
+    () => [
+      {
+        icon: <ClockIcon />,
+        type: "renew",
+        hide: true,
+        label: "others:common.words.renew",
+      },
+      {
+        icon: <EditIcon />,
+        type: "edit",
+        // TODO: will be removed later | SOSUA-177
+        hide: targetType === TargetTypes.GUESTS,
+        label: "others:desktop.contextMenu.edit",
+      },
+      {
+        icon: <AlertIcon />,
+        type: "report",
+        hide: true,
+        label: "others:desktop.contextMenu.reportProblem",
+      },
+      {
+        icon: <BinIcon />,
+        type: "delete",
+        label: "hostAdd.accomodationPhotoReset",
+      },
+    ],
+    [targetType]
+  );
+
+  const getEditButtonLink = useMemo(
+    () =>
+      `${
+        targetType === TargetTypes.HOSTS ? Routes.HOST : Routes.GUEST
+      }?id=${targetID}`,
+    [targetID, targetType]
+  );
 
   const onTriggerPress = useCallback(
     () => setPopoverOpened((currentValue) => !currentValue),
@@ -95,7 +107,7 @@ export default function EditOfferButton({
 
       case "edit":
         modalComponent = null;
-        router.push(`${Routes.HOST}?id=${targetID}`);
+        router.push(getEditButtonLink);
         break;
 
       default:
@@ -114,7 +126,7 @@ export default function EditOfferButton({
   const PopoverOptions = useCallback(
     () => (
       <Options>
-        {buttons.map((button, i, array) => {
+        {getButtonList.map((button, i, array) => {
           if (button.hide) {
             return <></>;
           }
