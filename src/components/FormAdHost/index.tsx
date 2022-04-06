@@ -179,6 +179,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       phone_num: identity?.phoneNumber ?? "",
       city: city,
       shelter_type: [accommodationType],
+      host_type: [], // TODO add host type value
       acceptable_group_relations: groupsTypes,
       beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
