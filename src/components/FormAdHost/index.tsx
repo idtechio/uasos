@@ -189,7 +189,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       phone_num: identity?.phoneNumber ?? "",
       city: city,
       shelter_type: [accommodationType],
-      host_type: [hostType],
+      host_type: shouldIncludeHostTypeField ? [hostType] : [],
       acceptable_group_relations: groupsTypes,
       beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -415,7 +415,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 data={(
                   Object.keys(HostType) as Array<keyof typeof HostType>
                 ).map((key: keyof typeof HostType) => ({
-                  value: key,
+                  value: HostType[key],
                   label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
                 }))}
                 name="advancedHost.hostType"
