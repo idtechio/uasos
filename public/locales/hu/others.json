@@ -228,7 +228,8 @@
         "checks": {
             "phoneNotVerified": "Telefon nem ellenőrzött",
             "emailNotVerified": "E-mail nem ellenőrzött",
-            "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt."
+            "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
+            "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel."
         },
         "housing": "Lakhatás",
         "confirmation": {

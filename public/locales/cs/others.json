@@ -228,7 +228,8 @@
         "checks": {
             "phoneNotVerified": "Telefon nebyl ověřen",
             "emailNotVerified": "Email nebyl ověřen",
-            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku."
+            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
+            "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem."
         },
         "housing": "Ubytování",
         "confirmation": {
