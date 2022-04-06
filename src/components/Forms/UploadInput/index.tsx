@@ -1,13 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Platform, StyleSheet } from "react-native";
+import { FieldError, useFormContext } from "react-hook-form";
+import { ActivityIndicator, Platform, Text } from "react-native";
 import styled from "styled-components/native";
 import UploadIcon from "../../../style/svgs/upload.svg";
+import UploadPreview from "../UploadPreview";
 
 type UploadInputProps = {
-  accept: string;
-  children: React.ReactNode;
-  onFileChange(file: File, dataUri: string | undefined): void;
-  disabled: boolean;
+  accept?: string;
+  name: string;
+  label?: string;
+  onFileChange(dataUris: Array<string>): void;
+  onBlur?: (e: unknown) => void;
+  disabled?: boolean;
+  error?: FieldError;
 };
 
 const UploadButton = styled.TouchableOpacity`
@@ -36,20 +41,39 @@ const ButtonLabelText = styled.Text`
   text-align: center;
 `;
 
+const List = styled.View`
+  display: flex;
+  flex-direction: row;
+  gap: 0px 15px;
+`;
+
 const UploadInput = ({
-  accept,
-  children,
+  accept = ".png, .jpg, .jpeg",
+  label,
   onFileChange,
   disabled,
+  name,
 }: UploadInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isLoading, toggleLoading] = useState(false);
+
+  const { watch, setValue } = useFormContext();
+
+  const uploadedPhotos: Array<string> = watch(name);
 
   const handleClick = useCallback(() => {
     if (!isLoading && inputRef.current) {
       inputRef.current.click();
     }
   }, [isLoading]);
+
+  const handleDelete = (key: string) => {
+    const filteredPhotos = uploadedPhotos.filter(
+      (uploadedPhoto) => uploadedPhoto !== key
+    );
+
+    setValue(name, filteredPhotos, { shouldValidate: true });
+  };
 
   useEffect(() => {
     const handleChange = (event: Event) => {
@@ -58,7 +82,7 @@ const UploadInput = ({
       toggleLoading(true);
 
       reader.onload = (ev) => {
-        onFileChange(file, ev.target?.result as string);
+        onFileChange([ev.target?.result as string, ...uploadedPhotos]);
         toggleLoading(false);
       };
       reader.onerror = () => toggleLoading(false);
@@ -77,7 +101,7 @@ const UploadInput = ({
         inputRef.current.removeEventListener("change", handleChange);
       }
     };
-  }, [onFileChange]);
+  }, [onFileChange, uploadedPhotos]);
 
   if (Platform.OS !== "web") {
     return null;
@@ -86,25 +110,25 @@ const UploadInput = ({
   return (
     <>
       <UploadButton disabled={disabled} onPress={handleClick}>
-        <UploadIcon style={styles.icon} />
+        <UploadIcon />
         <ButtonLabelText>
-          {isLoading ? <ActivityIndicator /> : children}
+          {isLoading ? <ActivityIndicator /> : <Text>{label}</Text>}
         </ButtonLabelText>
       </UploadButton>
-      <input type="file" accept={accept} ref={inputRef} style={styles.input} />
+      <input
+        type="file"
+        ref={inputRef}
+        accept={accept}
+        style={{ display: "none" }}
+      />
+
+      <List>
+        {uploadedPhotos.map((file: string) => (
+          <UploadPreview key={file} preview={file} onDelete={handleDelete} />
+        ))}
+      </List>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  icon: {
-    marginLeft: "4px",
-    width: "15px",
-    height: "15px",
-  },
-  input: {
-    display: "none",
-  },
-});
 
 export default UploadInput;

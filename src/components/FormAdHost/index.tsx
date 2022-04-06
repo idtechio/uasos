@@ -26,6 +26,7 @@ import { Error } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import { useAddHostToApi } from "../../queries/useOffersList";
 import { AuthContext } from "../../../pages/_app";
+import FormUpload from "../Inputs/FormUpload";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -70,6 +71,7 @@ export default function FormAdHost() {
         volunteerVisitAcceptance: "true",
         groupsTypes: [],
         phoneNumber: identity?.phoneNumber ?? "",
+        uploadedPhotos: [],
       },
     },
   });
@@ -366,6 +368,11 @@ export default function FormAdHost() {
               />
             </View>
           )}
+
+          <FormUpload
+            label={t("others:forms.generic.addPhoto")}
+            name="advancedHost.uploadedPhotos"
+          />
 
           <View>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
