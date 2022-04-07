@@ -19,17 +19,13 @@ const UploadButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 12px 20px;
   border: 1.5px #c8c8c8 dashed;
   border-radius: 10px;
   flex-direction: column;
   background: #fff;
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
 `;
 
 const ButtonLabelText = styled.Text`
@@ -109,23 +105,26 @@ const UploadInput = ({
 
   return (
     <>
-      <UploadButton disabled={disabled} onPress={handleClick}>
-        <UploadIcon />
-        <ButtonLabelText>
-          {isLoading ? <ActivityIndicator /> : <Text>{label}</Text>}
-        </ButtonLabelText>
-      </UploadButton>
-      <input
-        type="file"
-        ref={inputRef}
-        accept={accept}
-        style={{ display: "none" }}
-      />
-
       <List>
         {uploadedPhotos.map((file: string) => (
           <UploadPreview key={file} preview={file} onDelete={handleDelete} />
         ))}
+        {uploadedPhotos.length < 3 && (
+          <>
+            <UploadButton disabled={disabled} onPress={handleClick}>
+              <UploadIcon />
+              <ButtonLabelText>
+                {isLoading ? <ActivityIndicator /> : <Text>{label}</Text>}
+              </ButtonLabelText>
+            </UploadButton>
+            <input
+              type="file"
+              ref={inputRef}
+              accept={accept}
+              style={{ display: "none" }}
+            />
+          </>
+        )}
       </List>
     </>
   );
