@@ -1,332 +1,333 @@
 {
-    "test": "Tesztüzenet HU",
-    "navigationDrawer": {
-        "profile": "Felhasználói profil",
-        "placesList": "Szállások listája",
-        "logIn": "Bejelentkezés",
-        "logout": "Kijelentkezés"
+  "test": "Tesztüzenet HU",
+  "navigationDrawer": {
+    "profile": "Felhasználói profil",
+    "placesList": "Szállások listája",
+    "logIn": "Bejelentkezés",
+    "logout": "Kijelentkezés"
+  },
+  "labels": {
+    "location": "Előnyben részesített város",
+    "numberOfGuests": "Vendégek száma",
+    "timePeriod": "Tartózkodás hossza",
+    "withKids": "Gyermekkel utazok",
+    "email": "E-mail",
+    "phone": "Telefonszám",
+    "town": "Város/település",
+    "phoneNumber": "Telefonszám"
+  },
+  "validations": {
+    "requiredName": "Adja meg a nevét",
+    "invalidEmail": "Adjon meg egy érvényes e-mail címet",
+    "invalidPhoneNumber": "Adjon meg egy helyes telefonszámot",
+    "requiredTown": "Adja meg a várost/települést",
+    "requiredTime": "Adjon információt arról, hogy vendégei mennyi ideig maradhatnak",
+    "requiredPeopleQuantity": "Adja meg az elszállásolható személyek számát",
+    "requiredLivingConditions": "Adja meg a lakhatási feltételeket",
+    "requiredFloor": "Adja meg az emeletet"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "Kevesebb, mint egy hétig",
+      "week": "Egy hétig",
+      "twoWeeks": "Két hétig",
+      "month": "Egy hónapig",
+      "longer": "Egy hónapnál hosszabban"
+    },
+    "groupRelations": {
+      "single_man": "Egyedülálló",
+      "single_woman": "Egyedülálló",
+      "spouses": "Házaspár/Pár",
+      "mother_with_children": "Anya gyermekekkel",
+      "family_with_children": "Család gyermekekkel",
+      "unrelated_group": "Nem rokonokból álló csoport"
+    },
+    "accommodationTypes": {
+      "bed": "Ágy közös szobában",
+      "room": "Szoba közös használatú lakásban/házban",
+      "flat": "Lakás kizárólagos használatra",
+      "house": "Ház kizárólagos használatra",
+      "collective": "Közös helyiség (pl. tanterem)",
+      "public_shared_space": "Közös helyiség (pl. tanterem)"
+    },
+    "boolean": {
+      "yes": "igen",
+      "no": "nem"
+    },
+    "anyLocation": "Bármelyik",
+    "withElevator": "Liftes"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "Szállás <1>{{count}} fő</1> számára",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "Kisállat hozható",
+    "disabledSupport": "Lehetőségek fogyatékossággal élők számára",
+    "includesFood": "Élelmiszer",
+    "author": {
+      "owner": "Szállásadó"
+    }
+  },
+  "forms": {
+    "chooseFromList": "Válasszon a listából",
+    "chooseFromListMulti": "Válasszon a listából (több lehetőség közül választhat)"
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Érkezési idő: {{arrival}}",
+    "peopleToAccommodate": "#ERROR!",
+    "preferredLocation": "Előnyben részesített város: <1>{{location}}</1>",
+    "withAnimals": "Kisállattal utazok: <1> {{animals}} </1>",
+    "withKids": "Gyermekkel utazok: <1>{{age}}</1>",
+    "withDisabled": "Fogyatékkal élő személlyel utazok",
+    "withElder": "Idős személlyel utazok",
+    "invite": "Szállásadó"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Adja meg a vendégekkel kapcsolatos preferenciáit",
+      "acceptAnimals": "Kisállat hozható",
+      "disabledSupport": "Fogyatékosságal élők",
+      "kidsUnder2": "2 év alatti gyermekek",
+      "foodIncluded": "Étel biztosított"
+    },
+    "peopleQuantity": "Hány embert tud fogadni?",
+    "forHowLong": "Milyen időtartamra?",
+    "livingConditions": {
+      "label": "Milyen lakhatási feltételeket tud biztosítani?",
+      "options": {
+        "flat": "Szabad lakásom van",
+        "mattress": "Szabad ágyam van",
+        "other": "Egyéb"
+      }
+    },
+    "floor": {
+      "label": "Hanyadik emeleten található a szállás?",
+      "hint": "* Idősek számára a felső emelet nehezen megközelíthető lehet"
+    },
+    "submit": "Regisztrálja ajánlatát"
+  },
+  "flags": {
+    "cz": "Cseh zászló",
+    "en": "UK zászló",
+    "es": "Spanyol zászló",
+    "fr": "Francia zászló",
+    "hu": "Magyar zászló",
+    "it": "Olasz zászló",
+    "pl": "Lengyel zászló",
+    "ro": "Román zászló",
+    "sk": "Szlovák zászló",
+    "ua": "Ukrán zászló",
+    "de": "Német zászló",
+    "at": "Osztrák zászló",
+    "be": "Belga zászló",
+    "bg": "Bolgár zászló",
+    "hr": "Horvát zászló",
+    "cy": "Ciprus zászlaja",
+    "dk": "Dánia zászló",
+    "ee": "Észt zászló",
+    "fi": "Finn zászló",
+    "lv": "Lett zászló",
+    "li": "Liechtenstein zászlaja",
+    "lt": "Litván zászló",
+    "mt": "Málta zászlaja",
+    "nl": "Holland zászló",
+    "no": "Norvég zászló",
+    "pt": "Portugál zászló",
+    "si": "Szlovén zászló",
+    "se": "Svédország zászló"
+  },
+  "hostAdd": {
+    "country": "Ország",
+    "countries": {
+      "poland": "Lengyelország",
+      "hungary": "Magyarország",
+      "czechia": "Cseh",
+      "slovakia": "Szlovákia"
+    },
+    "nameLabel": "Keresztnév (csak a keresztnevet adja meg)",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Telefonszám (formátum +XX YYY YYY YYY)",
+    "phonePlaceholder": "Telefonszám (formátum +XX YYY YYY YYY)",
+    "cityLabel": "Válassza ki a felkínált szálláshoz legközelebbi várost.",
+    "cityPlaceholder": "Város",
+    "type": "Szállás típusa",
+    "hostType": "Fogadó típusa",
+    "hostTypeLabel": {
+      "host_type_men": "Férfi (egyedülálló)",
+      "host_type_women": "Nő (egyedülálló)",
+      "host_type_couple": "Pár",
+      "host_type_family": "Család gyermekekkel",
+      "host_type_elder_people": "Idős",
+      "host_type_friends_group": "Nem kapcsolódó"
+    },
+    "guestCount": "Hány személyt tud fogadni?",
+    "accomodationPhoto": "Képek hozzáadása a felajánlott szállásról",
+    "accomodationPhotoLabel": "Képek hozzáadása",
+    "accomodationPhotoReset": "Törlés",
+    "accommodationTimeLabel": {
+      "less_than_week": "Kevesebb, mint egy hétig",
+      "week": "Egy hétig",
+      "two_weeks": "Két hétig",
+      "month": "Egy hónapig",
+      "longer": "Egy hónapnál hosszabban"
+    },
+    "volunteerVisitAcceptance": "Hozzájárulok a tartózkodási hely ellenőrzéséhez (önkéntes látogatás)",
+    "nationality": "Milyen állampolgárságú menekülteket hajlandó elfogadni?",
+    "ukraine": "Ukrajna",
+    "additionalInformationHeader": "További információ",
+    "any": "Bármelyik",
+    "childBedCount": "Gyermekek számára elérhető alvóhelyek száma",
+    "city": "város",
+    "fullBedCount": "Felnőtt méretű alvóhelyek száma",
+    "pregnantReady": "Előrehaladott állapotban lévő (6 hónapon túli) várandós személyt fogadok",
+    "dissabilityReady": "Fogyatékkal élő személyt fogadok",
+    "elderReady": "Időseket fogadok",
+    "animalReady": "Háziállattal érkező személyt is fogadok",
+    "basicInfoHeader": "Adja meg az alapvető információkat",
+    "refugeInfoHeader": "Kérjük, adjon meg információt a szállásáról",
+    "addButton": "Beküldés/Hozzáadás",
+    "addButtomErrorMessage": "Kérjük töltse ki a kötelező mezőket",
+    "errors": {
+      "name": "Adja meg a nevét",
+      "email": "Adjon meg egy érvényes e-mail címet",
+      "phoneNumber": "Adja meg telefonszámát",
+      "country": "Az ország megadása kötelező",
+      "town": "Város megadása kötelező",
+      "type": "A szállás típusának megadása kötelező",
+      "hostType": "A szállás típusának megadása kötelező",
+      "accommodationTime": "A tartózkodás időtartamának megadása kötelező",
+      "nationalityError": "Menekült állampolgárságának megadása szükséges",
+      "groupsTypes": "A csoport típusa kötelező"
+    },
+    "prolongationReady": "Lehetőség a tartózkodás meghosszabbítására (térítés ellenében)",
+    "transportReady": "Szállítási lehetőség",
+    "hostAddressProcessingWarning": "A teljes címet nem osztjuk meg a menekültekkel - csak a várost."
+  },
+  "logout": "Kijelentkezés",
+  "back": "Vissza",
+  "backToHomePage": "Vissza a kezdőoldalra",
+  "shareLocation": "Felhasználói fiók létrehozása",
+  "registerGuest": "Keress szállást",
+  "more": "Mutass többet",
+  "register1": "Regisztráció",
+  "register2": "Regisztráció",
+  "privacyPolicy": "Adatvédelmi szabályzat",
+  "termsOfService": "Szabályok",
+  "faq": "",
+  "yourSafety": "",
+  "patrons": "Támogatók",
+  "rodo": "GDPR",
+  "thankfulnessModal": {
+    "thankYou": "Köszönjük!",
+    "thanksForYourDecision": "Köszönjük, hogy tájékoztatott minket döntéséről",
+    "applicationSent": "Jelentkezését rögzítettük. Naponta többször ellenőrizzük önkéntes adatbázisunkat, hogy megtaláljuk az Ön számára legmegfelelőbb helyet",
+    "informWhenAccomodationFound": "Amint találunk szállást, e-mailben értesítjük",
+    "backToMainPage": "Vissza a kezdőlapra"
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Köszönjük!",
+    "applicationSent": "Ajánlatát rögzítettük. Naponta többször ellenőrizzük adatbázisunkat, hogy megtaláljuk az Ön ajánlatához leginkább illő párosítást",
+    "informWhenAccomodationFound": "Amint találunk potenciális vendéget, e-mailben értesítjük."
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "Kisállattal utazok",
+      "toddler": "2 év alatti gyermek",
+      "oldPerson": "Idős személy vagyok/idős személlyel utazok",
+      "disability": "Fogyatékkal élő vagyok / fogyatékkal élővel utazok",
+      "pregnant": "Előrehaladott terhes (6 hónapon túl) vagyok/ előrehaladott terhes személlyel utazom"
+    },
+    "refugeesCountOptions": {
+      "alone": "Egyedül utazok",
+      "more": "Több"
+    },
+    "errors": {
+      "name": "Adja meg a nevét",
+      "email": "Adjon meg egy érvényes e-mail címet",
+      "phoneNumber": "Adjon meg egy helyes telefonszámot",
+      "required": "A mező kitöltése kötelező",
+      "location": "Adja meg a előnyben részesített várost/települést"
     },
     "labels": {
-        "location": "Előnyben részesített város",
-        "numberOfGuests": "Vendégek száma",
-        "timePeriod": "Tartózkodás hossza",
-        "withKids": "Gyermekkel utazok",
-        "email": "E-mail",
-        "phone": "Telefonszám",
-        "town": "Város\/település",
-        "phoneNumber": "Telefonszám"
+      "email": "E-mail",
+      "refugeesCount": "Hány fő számára keres szállást?",
+      "refugee": "Menekült {{number}}",
+      "refugeeDetails": "Adjon meg további információkat az Ön számára legmegfelelőbb párosításhoz",
+      "refugeesAnimal": "Fajta",
+      "isGDPRAccepted": "Elfogadom az adatvédelmi szabályzatot",
+      "submitButton": "Segítségkérés",
+      "location": "Hol szeretne megszállni?",
+      "anyLocation": "Bármelyik település",
+      "prefferedLocation": "Előnyben részesített város/település",
+      "city": "Város/település",
+      "addRefugee": "Személy hozzáadása"
+    }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Adjon meg alapvető információkat magáról és azokról a személyekről, akikkel utazik",
+    "addButton": "Jelentkezés elküldése",
+    "addButtomErrorMessage": "Kérjük, töltse ki a kötelező mezőket",
+    "pregnantReady": "Én, vagy a velem érkező személy előrehaladott terhes (6 hónapon túl)",
+    "dissabilityReady": "Fogyatékkal élő személlyel utazok",
+    "elderReady": "Idős személlyel utazok",
+    "ageLabel": "Kor",
+    "genderLabel": "Nem",
+    "genderPlaceholder": "Adja meg a nemét",
+    "travelCompanions": "Információ az útitársakról",
+    "fullBedCountLabel": "Hányan utaznak Önnel? (Önt is beleértve)",
+    "childBedCountLabel": "Gyermekágyak száma",
+    "placeOfRefuge": "Hol keres szállást?",
+    "countryOfRefugePlaceholder": "Válasszon országot",
+    "cityOfRefugeLabel": "Válasszon várost:",
+    "overnightDurationLabel": "Milyen időtartamra keresel szállást?",
+    "cityOfRefugePlaceholder": "Válasszon területet",
+    "nameLabel": "Név (csak a keresztnevet adja meg)",
+    "emailLabel": "Adja meg e-mail címét:",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Telefonszám (formátum +XX YYY YYY YYY)",
+    "phonePlaceholder": "Telefonszám (formátum +XX YYY YYY YYY)",
+    "cityPlaceholder": "Város",
+    "groupRelations": "Milyen típusú kapcsolat van a csoport tagjai között?",
+    "selectPlaceholder": "Válasszon a listából",
+    "accommodationType": "Milyen típusú szállást keres?",
+    "countryOfGroupUA": "Ukrajna",
+    "countryOfGroupOthers": "Egyéb",
+    "accompanyingPerson": "Kísérő személy",
+    "errors": {
+      "name": "Adja meg a nevét",
+      "email": "Adjon meg egy érvényes e-mail címet",
+      "gender": "Válassza ki a nemet, amellyel azonosul",
+      "cityOfRefuge": "Kérjük, válasszon várost/települést",
+      "phoneNumber": "Adja meg telefonszámát",
+      "countryOfRefuge": "Válasszon országot",
+      "childBedCount": "Adja meg a fekvőhelyek számát",
+      "fullBedCountsaas": "Adja meg a fekvőhelyek számát",
+      "groupRelations": "Válassz kapcsolatot",
+      "overnightDuration": "Válassza ki a tartózkodás időtartamát",
+      "accommodationType": "Válassza ki a szállás típusát",
+      "countryOfGroup": "Kérjük, válassza ki az állampolgárságát"
     },
-    "validations": {
-        "requiredName": "Adja meg a nevét",
-        "invalidEmail": "Adjon meg egy érvényes e-mail címet",
-        "invalidPhoneNumber": "Adjon meg egy helyes telefonszámot",
-        "requiredTown": "Adja meg a várost\/települést",
-        "requiredTime": "Adjon információt arról, hogy vendégei mennyi ideig maradhatnak",
-        "requiredPeopleQuantity": "Adja meg az elszállásolható személyek számát",
-        "requiredLivingConditions": "Adja meg a lakhatási feltételeket",
-        "requiredFloor": "Adja meg az emeletet"
-    },
-    "staticValues": {
-        "timePeriod": {
-            "lessThanAWeek": "Kevesebb, mint egy hétig",
-            "week": "Egy hétig",
-            "twoWeeks": "Két hétig",
-            "month": "Egy hónapig",
-            "longer": "Egy hónapnál hosszabban"
-        },
-        "groupRelations": {
-            "single_man": "Egyedülálló",
-            "single_woman": "Egyedülálló",
-            "spouses": "Házaspár\/Pár",
-            "mother_with_children": "Anya gyermekekkel",
-            "family_with_children": "Család gyermekekkel",
-            "unrelated_group": "Nem rokonokból álló csoport"
-        },
-        "accommodationTypes": {
-            "bed": "Ágy közös szobában",
-            "room": "Szoba közös használatú lakásban\/házban",
-            "flat": "Lakás kizárólagos használatra",
-            "house": "Ház kizárólagos használatra",
-            "collective": "Közös helyiség (pl. tanterem)",
-            "public_shared_space": "Közös helyiség (pl. tanterem)"
-        },
-        "boolean": {
-            "yes": "igen",
-            "no": "nem"
-        },
-        "anyLocation": "Bármelyik",
-        "withElevator": "Liftes"
-    },
-    "accommodationOffer": {
-        "canAccommodate": "Szállás <1>{{count}} fő<\/1> számára",
-        "duration": "max. <1> {{time}} <\/1>",
-        "acceptAnimals": "Kisállat hozható",
-        "disabledSupport": "Lehetőségek fogyatékossággal élők számára",
-        "includesFood": "Élelmiszer",
-        "author": {
-            "owner": "Szállásadó"
-        }
-    },
-    "forms": {
-        "chooseFromList": "Válasszon a listából",
-        "chooseFromListMulti": "Válasszon a listából (több lehetőség közül választhat)"
-    },
-    "guestOffer": {
-        "arrivalToPoland": "Érkezési idő: {{arrival}}",
-        "peopleToAccommodate": "#ERROR!",
-        "preferredLocation": "Előnyben részesített város: <1>{{location}}<\/1>",
-        "withAnimals": "Kisállattal utazok: <1> {{animals}} <\/1>",
-        "withKids": "Gyermekkel utazok: <1>{{age}}<\/1>",
-        "withDisabled": "Fogyatékkal élő személlyel utazok",
-        "withElder": "Idős személlyel utazok",
-        "invite": "Szállásadó"
-    },
-    "addAccommodation": {
-        "hostPreferences": {
-            "label": "Adja meg a vendégekkel kapcsolatos preferenciáit",
-            "acceptAnimals": "Kisállat hozható",
-            "disabledSupport": "Fogyatékosságal élők",
-            "kidsUnder2": "2 év alatti gyermekek",
-            "foodIncluded": "Étel biztosított"
-        },
-        "peopleQuantity": "Hány embert tud fogadni?",
-        "forHowLong": "Milyen időtartamra?",
-        "livingConditions": {
-            "label": "Milyen lakhatási feltételeket tud biztosítani?",
-            "options": {
-                "flat": "Szabad lakásom van",
-                "mattress": "Szabad ágyam van",
-                "other": "Egyéb"
-            }
-        },
-        "floor": {
-            "label": "Hanyadik emeleten található a szállás?",
-            "hint": "* Idősek számára a felső emelet nehezen megközelíthető lehet"
-        },
-        "submit": "Regisztrálja ajánlatát"
-    },
-    "flags": {
-        "cz": "Cseh zászló",
-        "en": "UK zászló",
-        "es": "Spanyol zászló",
-        "fr": "Francia zászló",
-        "hu": "Magyar zászló",
-        "it": "Olasz zászló",
-        "pl": "Lengyel zászló",
-        "ro": "Román zászló",
-        "sk": "Szlovák zászló",
-        "ua": "Ukrán zászló",
-        "de": "Német zászló",
-        "at": "Osztrák zászló",
-        "be": "Belga zászló",
-        "bg": "Bolgár zászló",
-        "hr": "Horvát zászló",
-        "cy": "Ciprus zászlaja",
-        "dk": "Dánia zászló",
-        "ee": "Észt zászló",
-        "fi": "Finn zászló",
-        "lv": "Lett zászló",
-        "li": "Liechtenstein zászlaja",
-        "lt": "Litván zászló",
-        "mt": "Málta zászlaja",
-        "nl": "Holland zászló",
-        "no": "Norvég zászló",
-        "pt": "Portugál zászló",
-        "si": "Szlovén zászló",
-        "se": "Svédország zászló"
-    },
-    "hostAdd": {
-        "country": "Ország",
-        "countries": {
-            "poland": "Lengyelország",
-            "hungary": "Magyarország",
-            "czechia": "Cseh",
-            "slovakia": "Szlovákia"
-        },
-        "nameLabel": "Keresztnév (csak a keresztnevet adja meg)",
-        "emailPlaceholder": "e-mail",
-        "phoneLabel": "Telefonszám (formátum +XX YYY YYY YYY)",
-        "phonePlaceholder": "Telefonszám (formátum +XX YYY YYY YYY)",
-        "cityLabel": "Válassza ki a felkínált szálláshoz legközelebbi várost.",
-        "cityPlaceholder": "Város",
-        "type": "Szállás típusa",
-        "hostType": "Fogadó típusa",
-        "hostTypeLabel": {
-            "host_type_men": "Férfi (egyedülálló)",
-            "host_type_women": "Nő (egyedülálló)",
-            "host_type_couple": "Pár",
-            "host_type_family": "Család gyermekekkel",
-            "host_type_elder_people": "Idős",
-            "host_type_friends_group": "Nem kapcsolódó"
-        },
-        "guestCount": "Hány személyt tud fogadni?",
-        "accomodationPhoto": "Képek hozzáadása a felajánlott szállásról",
-        "accomodationPhotoLabel": "Képek hozzáadása",
-        "accomodationPhotoReset": "Törlés",
-        "accommodationTimeLabel": {
-            "less_than_week": "Kevesebb, mint egy hétig",
-            "week": "Egy hétig",
-            "two_weeks": "Két hétig",
-            "month": "Egy hónapig",
-            "longer": "Egy hónapnál hosszabban"
-        },
-        "volunteerVisitAcceptance": "Hozzájárulok a tartózkodási hely ellenőrzéséhez (önkéntes látogatás)",
-        "nationality": "Milyen állampolgárságú menekülteket hajlandó elfogadni?",
-        "ukraine": "Ukrajna",
-        "additionalInformationHeader": "További információ",
-        "any": "Bármelyik",
-        "childBedCount": "Gyermekek számára elérhető alvóhelyek száma",
-        "city": "város",
-        "fullBedCount": "Felnőtt méretű alvóhelyek száma",
-        "pregnantReady": "Előrehaladott állapotban lévő (6 hónapon túli) várandós személyt fogadok",
-        "dissabilityReady": "Fogyatékkal élő személyt fogadok",
-        "elderReady": "Időseket fogadok",
-        "animalReady": "Háziállattal érkező személyt is fogadok",
-        "basicInfoHeader": "Adja meg az alapvető információkat",
-        "refugeInfoHeader": "Kérjük, adjon meg információt a szállásáról",
-        "addButton": "Beküldés\/Hozzáadás",
-        "addButtomErrorMessage": "Kérjük töltse ki a kötelező mezőket",
-        "errors": {
-            "name": "Adja meg a nevét",
-            "email": "Adjon meg egy érvényes e-mail címet",
-            "phoneNumber": "Adja meg telefonszámát",
-            "country": "Az ország megadása kötelező",
-            "town": "Város megadása kötelező",
-            "type": "A szállás típusának megadása kötelező",
-            "hostType": "A szállás típusának megadása kötelező",
-            "accommodationTime": "A tartózkodás időtartamának megadása kötelező",
-            "nationalityError": "Menekült állampolgárságának megadása szükséges",
-            "groupsTypes": "A csoport típusa kötelező"
-        },
-        "prolongationReady": "Lehetőség a tartózkodás meghosszabbítására (térítés ellenében)",
-        "transportReady": "Szállítási lehetőség",
-        "hostAddressProcessingWarning": "A teljes címet nem osztjuk meg a menekültekkel - csak a várost."
-    },
-    "logout": "Kijelentkezés",
-    "back": "Vissza",
-    "backToHomePage": "Vissza a kezdőoldalra",
-    "shareLocation": "Felhasználói fiók létrehozása",
-    "registerGuest": "Keress szállást",
-    "more": "Mutass többet",
-    "register1": "Regisztráció",
-    "register2": "Regisztráció",
-    "privacyPolicy": "Adatvédelmi szabályzat",
-    "termsOfService": "Szabályok",
-    "patrons": "Támogatók",
-    "rodo": "GDPR",
-    "thankfulnessModal": {
-        "thankYou": "Köszönjük!",
-        "thanksForYourDecision": "Köszönjük, hogy tájékoztatott minket döntéséről",
-        "applicationSent": "Jelentkezését rögzítettük. Naponta többször ellenőrizzük önkéntes adatbázisunkat, hogy megtaláljuk az Ön számára legmegfelelőbb helyet",
-        "informWhenAccomodationFound": "Amint találunk szállást, e-mailben értesítjük",
-        "backToMainPage": "Vissza a kezdőlapra"
-    },
-    "thankfulnessHostModal": {
-        "thankYou": "Köszönjük!",
-        "applicationSent": "Ajánlatát rögzítettük. Naponta többször ellenőrizzük adatbázisunkat, hogy megtaláljuk az Ön ajánlatához leginkább illő párosítást",
-        "informWhenAccomodationFound": "Amint találunk potenciális vendéget, e-mailben értesítjük."
-    },
-    "refugeeForm": {
-        "refugeeDetailsOptions": {
-            "animals": "Kisállattal utazok",
-            "toddler": "2 év alatti gyermek",
-            "oldPerson": "Idős személy vagyok\/idős személlyel utazok",
-            "disability": "Fogyatékkal élő vagyok \/ fogyatékkal élővel utazok",
-            "pregnant": "Előrehaladott terhes (6 hónapon túl) vagyok\/ előrehaladott terhes személlyel utazom"
-        },
-        "refugeesCountOptions": {
-            "alone": "Egyedül utazok",
-            "more": "Több"
-        },
-        "errors": {
-            "name": "Adja meg a nevét",
-            "email": "Adjon meg egy érvényes e-mail címet",
-            "phoneNumber": "Adjon meg egy helyes telefonszámot",
-            "required": "A mező kitöltése kötelező",
-            "location": "Adja meg a előnyben részesített várost\/települést"
-        },
-        "labels": {
-            "email": "E-mail",
-            "refugeesCount": "Hány fő számára keres szállást?",
-            "refugee": "Menekült {{number}}",
-            "refugeeDetails": "Adjon meg további információkat az Ön számára legmegfelelőbb párosításhoz",
-            "refugeesAnimal": "Fajta",
-            "isGDPRAccepted": "Elfogadom az adatvédelmi szabályzatot",
-            "submitButton": "Segítségkérés",
-            "location": "Hol szeretne megszállni?",
-            "anyLocation": "Bármelyik település",
-            "prefferedLocation": "Előnyben részesített város\/település",
-            "city": "Város\/település",
-            "addRefugee": "Személy hozzáadása"
-        }
-    },
-    "refugeeAddForm": {
-        "basicInfoHeader": "Adjon meg alapvető információkat magáról és azokról a személyekről, akikkel utazik",
-        "addButton": "Jelentkezés elküldése",
-        "addButtomErrorMessage": "Kérjük, töltse ki a kötelező mezőket",
-        "pregnantReady": "Én, vagy a velem érkező személy előrehaladott terhes (6 hónapon túl)",
-        "dissabilityReady": "Fogyatékkal élő személlyel utazok",
-        "elderReady": "Idős személlyel utazok",
-        "ageLabel": "Kor",
-        "genderLabel": "Nem",
-        "genderPlaceholder": "Adja meg a nemét",
-        "travelCompanions": "Információ az útitársakról",
-        "fullBedCountLabel": "Hányan utaznak Önnel? (Önt is beleértve)",
-        "childBedCountLabel": "Gyermekágyak száma",
-        "placeOfRefuge": "Hol keres szállást?",
-        "countryOfRefugePlaceholder": "Válasszon országot",
-        "cityOfRefugeLabel": "Válasszon várost:",
-        "overnightDurationLabel": "Milyen időtartamra keresel szállást?",
-        "cityOfRefugePlaceholder": "Válasszon területet",
-        "nameLabel": "Név (csak a keresztnevet adja meg)",
-        "emailLabel": "Adja meg e-mail címét:",
-        "emailPlaceholder": "e-mail",
-        "phoneLabel": "Telefonszám (formátum +XX YYY YYY YYY)",
-        "phonePlaceholder": "Telefonszám (formátum +XX YYY YYY YYY)",
-        "cityPlaceholder": "Város",
-        "groupRelations": "Milyen típusú kapcsolat van a csoport tagjai között?",
-        "selectPlaceholder": "Válasszon a listából",
-        "accommodationType": "Milyen típusú szállást keres?",
-        "countryOfGroupUA": "Ukrajna",
-        "countryOfGroupOthers": "Egyéb",
-        "accompanyingPerson": "Kísérő személy",
-        "errors": {
-            "name": "Adja meg a nevét",
-            "email": "Adjon meg egy érvényes e-mail címet",
-            "gender": "Válassza ki a nemet, amellyel azonosul",
-            "cityOfRefuge": "Kérjük, válasszon várost\/települést",
-            "phoneNumber": "Adja meg telefonszámát",
-            "countryOfRefuge": "Válasszon országot",
-            "childBedCount": "Adja meg a fekvőhelyek számát",
-            "fullBedCountsaas": "Adja meg a fekvőhelyek számát",
-            "groupRelations": "Válassz kapcsolatot",
-            "overnightDuration": "Válassza ki a tartózkodás időtartamát",
-            "accommodationType": "Válassza ki a szállás típusát",
-            "countryOfGroup": "Kérjük, válassza ki az állampolgárságát"
-        },
-        "refugeInfoHeader": "Adjon meg információt a szállásáról",
-        "countryOfGroup": "Melyik a csoport származási országa?",
-        "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost"
-    },
-    "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
-    "accomodationPhotoReset": "Törlés",
-    "accomodationPhotoLabel": "Beküldés",
-    "dropdownChoose": "Válasszon...",
-    "dropdownSearch": "Keress",
-    "heroImageAlt": "Slava Ukraini!",
-    "loginForm": {
-        "logInWith": "Bejelentkezés",
-        "or": "vagy",
-        "lostPass": "Elfelejtett jelszó?",
-        "click": "kattint",
-        "logIn": "Bejelentkezés",
-        "doNotHaveAcc": "Szeretne hozzáférést kapni?",
-        "register": "Regisztráció"
-    },
-    "gdpr": "GDPR",
-    "ogMeta": {
-        "title": "We help war refugees from Ukraine find shelter",
-        "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Változások megerősítése"
+    "refugeInfoHeader": "Adjon meg információt a szállásáról",
+    "countryOfGroup": "Melyik a csoport származási országa?",
+    "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost"
+  },
+  "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
+  "accomodationPhotoReset": "Törlés",
+  "accomodationPhotoLabel": "Beküldés",
+  "dropdownChoose": "Válasszon...",
+  "dropdownSearch": "Keress",
+  "heroImageAlt": "Slava Ukraini!",
+  "loginForm": {
+    "logInWith": "Bejelentkezés",
+    "or": "vagy",
+    "lostPass": "Elfelejtett jelszó?",
+    "click": "kattint",
+    "logIn": "Bejelentkezés",
+    "doNotHaveAcc": "Szeretne hozzáférést kapni?",
+    "register": "Regisztráció"
+  },
+  "gdpr": "GDPR",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

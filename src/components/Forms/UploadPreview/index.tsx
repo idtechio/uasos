@@ -1,53 +1,51 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
-
 import styled from "styled-components/native";
-import { useTranslation } from "react-i18next";
-import { Theme } from "../../../style/theme.config";
 
-const DeletePhotoText = styled.Text`
-  color: ${({ theme }: { theme: Theme }) => theme.colors.error};
-  margin-top: 5px;
-`;
+import CloseIcon from "../../../style/svgs/close.svg";
+
 const PreviewWrapper = styled.View`
+  position: relative;
+  width: 85px;
+  height: 85px;
+  background: #fff;
   align-items: center;
-  width: 100px;
-  max-height: 100px;
-  overflow: hidden;
-  border: 1.5px #c8c8c8 dashed;
   border-radius: 10px;
   flex-direction: column;
-  background: #fff;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+`;
+
+const IconWrapper = styled.TouchableOpacity`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #003566;
+  border-radius: 100%;
+  top: -10px;
+  right: -10px;
 `;
 
 type Props = {
   preview: string;
-  onDelete: () => void;
+  onDelete: (key: string) => void;
 };
 
 const UploadPreview = ({ preview, onDelete }: Props) => {
-  const { t } = useTranslation();
-
   return (
     <PreviewWrapper>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={preview} alt="" style={styles.image} />
-      <TouchableOpacity onPress={onDelete}>
-        <DeletePhotoText>{t("hostAdd.accomodationPhotoReset")}</DeletePhotoText>
-      </TouchableOpacity>
+      <img
+        alt=""
+        src={preview}
+        style={{
+          objectFit: "cover",
+          width: "100%",
+          height: "100%",
+          borderRadius: "10px",
+        }}
+      />
+      <IconWrapper onPress={() => onDelete(preview)}>
+        <CloseIcon />
+      </IconWrapper>
     </PreviewWrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  image: {
-    width: 100,
-    height: 80,
-    borderRadius: 8,
-    overflow: "hidden",
-  },
-});
 
 export default UploadPreview;

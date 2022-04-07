@@ -1,332 +1,333 @@
 {
-    "test": "Testovací zpráva CS",
-    "navigationDrawer": {
-        "profile": "Profil uživatele",
-        "placesList": "Váš seznam ubytování",
-        "logIn": "Přihlásit se",
-        "logout": "Odhlásit se"
+  "test": "Testovací zpráva CS",
+  "navigationDrawer": {
+    "profile": "Profil uživatele",
+    "placesList": "Váš seznam ubytování",
+    "logIn": "Přihlásit se",
+    "logout": "Odhlásit se"
+  },
+  "labels": {
+    "location": "Preferovaná lokalita",
+    "numberOfGuests": "Počet hostů",
+    "timePeriod": "Délka pobytu",
+    "withKids": "Cestuji s dítětem",
+    "email": "E-mailová adresa",
+    "phone": "Telefon",
+    "town": "Město",
+    "phoneNumber": "Telefonní číslo"
+  },
+  "validations": {
+    "requiredName": "Uveďte svoje jméno",
+    "invalidEmail": "Vyplňte platnou e-mailovou adresu",
+    "invalidPhoneNumber": "Vyplňte platné telefonní číslo",
+    "requiredTown": "Uveďte město",
+    "requiredTime": "Poskytněte informace o tom, jak dlouho u vás mohou vaši hosté zůstat",
+    "requiredPeopleQuantity": "Uveďte pořet lidí, které můžete přijmout",
+    "requiredLivingConditions": "Uveďte podmínky ubytování",
+    "requiredFloor": "Vyplňte poschodí"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "Méně než týden",
+      "week": "Týden",
+      "twoWeeks": "Dva týdny",
+      "month": "Měsíc",
+      "longer": "Déle než měsíc"
+    },
+    "groupRelations": {
+      "single_man": "Svobodný",
+      "single_woman": "Svobodná",
+      "spouses": "Manželé/Pár",
+      "mother_with_children": "Matka s dítětem/dětmi",
+      "family_with_children": "Rodina s dítětem/dětmi",
+      "unrelated_group": "Skupina známých"
+    },
+    "accommodationTypes": {
+      "bed": "Postel ve společném pokoji",
+      "room": "Pokoj v společném bytě/domě",
+      "flat": "Byt k výhradnímu použití",
+      "house": "Dům k výhradnímu použití",
+      "collective": "Společná místnost (např. místnost ve škole)",
+      "public_shared_space": "Společná místnost (např. místnost ve škole)"
+    },
+    "boolean": {
+      "yes": "Ano",
+      "no": "Ne"
+    },
+    "anyLocation": "Jakýkoliv",
+    "withElevator": "S výtahem"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "Místo pro <1>{{count}} osob</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "Domácí mazlíčci vítáni",
+    "disabledSupport": "Vhodné pro invalidy",
+    "includesFood": "Strava",
+    "author": {
+      "owner": "Majitel ubytování"
+    }
+  },
+  "forms": {
+    "chooseFromList": "Vybrat ze seznamu",
+    "chooseFromListMulti": "Vybrat ze seznamu (můžete vybrat více možností)"
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Datum příjezdu: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} osob",
+    "preferredLocation": "Preferovaná lokalita\" <1>{{location}}</1>",
+    "withAnimals": "Cestuji s domácím mazlíčkem: <1>{{animals}}</1>",
+    "withKids": "Cestuji s dítětem: <1>{{age}}</1>",
+    "withDisabled": "Cestuji s osobou se zdravotním postižením",
+    "withElder": "Cestuji s postarší osobou",
+    "invite": "Pozvat"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Zadejte svoje preference o tom, koho chcete přijmout",
+      "acceptAnimals": "Domácí mazlíčci vítáni",
+      "disabledSupport": "Lidé se zdravotním postižením",
+      "kidsUnder2": "Děti do 2 let věku",
+      "foodIncluded": "Strava zabezpečena"
+    },
+    "peopleQuantity": "Kolika lidem můžete poskytnout ubytování?",
+    "forHowLong": "Na jak dlouho?",
+    "livingConditions": {
+      "label": "Jaké ubytovací podmínky můžete nabídnout?",
+      "options": {
+        "flat": "Mám volný byt",
+        "mattress": "Mám volné lůžko",
+        "other": "Jiné"
+      }
+    },
+    "floor": {
+      "label": "Na kterém patře se nabízené ubytování nachází?",
+      "hint": "*Starší lidé mohou mít problém bydlet ve vyšších patrech"
+    },
+    "submit": "Zaregistrovat nabídku"
+  },
+  "flags": {
+    "cz": "Česká vlajka",
+    "en": "Vlajka Velké Británie",
+    "es": "Španělská vlajka",
+    "fr": "Francouzská vlajka",
+    "hu": "Maďarská vlajka",
+    "it": "Italská vlajka",
+    "pl": "Polská vlajka",
+    "ro": "Rumunská vlajka",
+    "sk": "Slovenská vlajka",
+    "ua": "Ukrajinská vlajka",
+    "de": "Německá vlajka",
+    "at": "Rakouská vlajka",
+    "be": "Belgická vlajka",
+    "bg": "Bulharská vlajka",
+    "hr": "Chorvatská vlajka",
+    "cy": "Kyperská vlajka",
+    "dk": "Dánská vlajka",
+    "ee": "Estonská vlajka",
+    "fi": "Finská vlajka",
+    "lv": "Lotyšská vlajka",
+    "li": "Lichtenštejnská vlajka",
+    "lt": "Litevská vlajka",
+    "mt": "Vlajka Malty",
+    "nl": "Nizozemská vlajka",
+    "no": "Norská vlajka",
+    "pt": "Vlajka Portugalska",
+    "si": "Slovinská vlajka",
+    "se": "Vlajka Švédska"
+  },
+  "hostAdd": {
+    "country": "Země",
+    "countries": {
+      "poland": "Polsko",
+      "hungary": "Maďarština",
+      "czechia": "Česko",
+      "slovakia": "Slovensko"
+    },
+    "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
+    "emailPlaceholder": "E-mailová adresa",
+    "phoneLabel": "Telefonní číslo (formát +XX YYY YYY YYY)",
+    "phonePlaceholder": "Telefonní číslo (formát +XX YYY YYY YYY)",
+    "cityLabel": "Vyberte město nejblíže k nabízenému ubytování",
+    "cityPlaceholder": "Město",
+    "type": "Typ ubytování",
+    "hostType": "Typ hostitele je vyžadovaný údaj",
+    "hostTypeLabel": {
+      "host_type_men": "Muž (svobodný)",
+      "host_type_women": "Žena (svobodná)",
+      "host_type_couple": "Pár",
+      "host_type_family": "Rodina s dítětem/dětmi",
+      "host_type_elder_people": "Postarší osoby",
+      "host_type_friends_group": "Skupina známých"
+    },
+    "guestCount": "Kolik osob jste ochotni ubytovat?",
+    "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
+    "accomodationPhotoLabel": "Přidat fotografie",
+    "accomodationPhotoReset": "Smazat",
+    "accommodationTimeLabel": {
+      "less_than_week": "Méně než týden",
+      "week": "Týden",
+      "two_weeks": "Dva týdny",
+      "month": "Měsíc",
+      "longer": "Déle než měsíc"
+    },
+    "volunteerVisitAcceptance": "Souhlasím s ověřením místo pobytu (návštěva dobrovolníka)",
+    "nationality": "Jaké občanství jste ochotni přijmout?",
+    "ukraine": "Ukrajina",
+    "additionalInformationHeader": "Dodatečné informace",
+    "any": "Jakékoliv",
+    "childBedCount": "Počet míst pro děti",
+    "city": "Město",
+    "fullBedCount": "Počet plnohodnotných míst na spaná",
+    "pregnantReady": "Přijmu osobu v pokročilém stádiu těhotenství (nad 6 měsíců)",
+    "dissabilityReady": "Přijmu osobu se zdravotním postížením",
+    "elderReady": "Přijmu postarší osobu",
+    "animalReady": "Přijmu osobu s domácím mazlíčkem",
+    "basicInfoHeader": "Přidat základní informace",
+    "refugeInfoHeader": "Poskytněte informace o ubytování",
+    "addButton": "Odeslat/Přidat",
+    "addButtomErrorMessage": "Vyplňte prosím všechna povinná pole",
+    "errors": {
+      "name": "Vyplňte svoje jméno",
+      "email": "Uveďte platnou emailovou adresu",
+      "phoneNumber": "Vyplňte svoje telefonní číslo",
+      "country": "Země je vyžadovaný údaj",
+      "town": "Město je požadovaný údaj",
+      "type": "Typ ubytování je vyžadovaný údaj",
+      "hostType": "Typ hostitele je vyžadovaný údaj",
+      "accommodationTime": "Délka pobytu je vyžadováný údaj",
+      "nationalityError": "Státní příslušnost je vyžadovaný údaj",
+      "groupsTypes": "Je vyžadován typ skupiny"
+    },
+    "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
+    "transportReady": "Možnost dopravy",
+    "hostAddressProcessingWarning": "Úplná adresa nebude sdílena s uprchlíkem - pouze vaše město."
+  },
+  "logout": "Odhlásit se",
+  "back": "Zpět",
+  "backToHomePage": "Zpět na hlavní stránku",
+  "shareLocation": "Vytvořit účet",
+  "registerGuest": "Najít ubytování",
+  "more": "Více",
+  "register1": "Registrovat se",
+  "register2": "Registace",
+  "privacyPolicy": "Zásady ochrany osobních údajů",
+  "termsOfService": "Pravidla použivání",
+  "faq": "",
+  "yourSafety": "",
+  "patrons": "Partneři",
+  "rodo": "Zásady ochrany osobních údajů",
+  "thankfulnessModal": {
+    "thankYou": "Děkujeme",
+    "thanksForYourDecision": "Děkujeme, že jste nás informovali o svém rozhodnutí",
+    "applicationSent": "Vaše žádost byla odeslána. Několikrát denně prohledáváme naši databázi, abychom pro vás našli to nejlepší ubytování",
+    "informWhenAccomodationFound": "Hned jak pro vás najdeme ubytování, budeme vás informovat pomocí e-mailu",
+    "backToMainPage": "Vrátit se na hlavní stránku"
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Děkujeme",
+    "applicationSent": "Vaše nabídka byla odeslána. Několikrát denně prohledáváme naši databázi, abychom nalezli co nejlepší shodu s vaši nabídkou",
+    "informWhenAccomodationFound": "Hned jak pro vás najdeme potenciálního hosta, budeme vás informovat pomocí e-mailu"
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "Cestuji s domácím mazlíčkem",
+      "toddler": "Dítě do 2 let věku",
+      "oldPerson": "Jsem nebo cestuji s postarší osobou",
+      "disability": "Jsem nebo cestuji s osobou se zdravotním postižením",
+      "pregnant": "Jsem nebo doprovázím osobu v pokročilém stádiu těhotenství (nad 6 měsíců)"
+    },
+    "refugeesCountOptions": {
+      "alone": "Jsem sám/sama",
+      "more": "Více"
+    },
+    "errors": {
+      "name": "Uveďte svoje jméno",
+      "email": "Vyplňte platnou e-mailovou adresu",
+      "phoneNumber": "Vyplňte platné telefonní číslo",
+      "required": "Toto pole je povinné",
+      "location": "Uveďte preferovanou lokalitu"
     },
     "labels": {
-        "location": "Preferovaná lokalita",
-        "numberOfGuests": "Počet hostů",
-        "timePeriod": "Délka pobytu",
-        "withKids": "Cestuji s dítětem",
-        "email": "E-mailová adresa",
-        "phone": "Telefon",
-        "town": "Město",
-        "phoneNumber": "Telefonní číslo"
+      "email": "E-mailová adresa",
+      "refugeesCount": "Pro kolik osob sháníte ubytování?",
+      "refugee": "Uprchlík {{number}}",
+      "refugeeDetails": "Poskytněte další informace, abychom pro vás mohli najít nejlepší shodu",
+      "refugeesAnimal": "Plemeno",
+      "isGDPRAccepted": "Přijímám zásady ochrany osobních údajů",
+      "submitButton": "Získat pomoc",
+      "location": "Kde byste chtěli bydlet?",
+      "anyLocation": "Jakákoliv lokalita",
+      "prefferedLocation": "Preferovaná lokalita",
+      "city": "Město",
+      "addRefugee": "Přidat osobu"
+    }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Poskytněte základní informace o sobě a o lidech, se kterými cestujete",
+    "addButton": "Odeslat přihlášku",
+    "addButtomErrorMessage": "Prosím vyplňte povinná pole",
+    "pregnantReady": "Jsem nebo doprovázím osobu v pokročilém stádiu těhotenství (nad 6 měsíců)",
+    "dissabilityReady": "Cestuji s osobou se zdravotním postižením",
+    "elderReady": "Cestuji s postarší osobou",
+    "ageLabel": "Věk",
+    "genderLabel": "Vyplňte pohlaví, se kterým se identifikujete",
+    "genderPlaceholder": "Uveďte svoje pohlaví",
+    "travelCompanions": "Informace o vaší skupině",
+    "fullBedCountLabel": "Kolik lidí (včetně vás) s vámi cestuje?",
+    "childBedCountLabel": "Zadejte počet lůžek",
+    "placeOfRefuge": "Kde hledáte ubytování?",
+    "countryOfRefugePlaceholder": "Vyverte zemi",
+    "cityOfRefugeLabel": "Vyberte město",
+    "overnightDurationLabel": "Na jaké období hledáte ubytování?",
+    "cityOfRefugePlaceholder": "Vyberte oblast",
+    "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
+    "emailLabel": "Uveďte svoji emailovou adresu:",
+    "emailPlaceholder": "E-mailová adresa",
+    "phoneLabel": "Telefonní číslo (formát +XX YYY YYY YYY)",
+    "phonePlaceholder": "Telefonní číslo (formát +XX YYY YYY YYY)",
+    "cityPlaceholder": "Město",
+    "groupRelations": "Jaký je vztah mezi členy skupiny?",
+    "selectPlaceholder": "Vyberte ze seznamu",
+    "accommodationType": "Vyberte ze seznamu",
+    "countryOfGroupUA": "Ukrajina",
+    "countryOfGroupOthers": "Jiné",
+    "accompanyingPerson": "Doprovázející osoba",
+    "errors": {
+      "name": "Uveďte svoje jméno",
+      "email": "Prosím zadejte platnou e-mailovou adresu",
+      "gender": "Vyplňte pohlaví, se kterým se identifikujete",
+      "cityOfRefuge": "Vyberte město",
+      "phoneNumber": "Uveďte svoje telefonní číslo",
+      "countryOfRefuge": "Vyberte zemi",
+      "childBedCount": "Zadejte počet lůžek",
+      "fullBedCountsaas": "Zadejte počet lůžek",
+      "groupRelations": "Vyberte vztah",
+      "overnightDuration": "Vyberte délku pobytu",
+      "accommodationType": "Vyberte typ ubytování",
+      "countryOfGroup": "Vyberte národnost"
     },
-    "validations": {
-        "requiredName": "Uveďte svoje jméno",
-        "invalidEmail": "Vyplňte platnou e-mailovou adresu",
-        "invalidPhoneNumber": "Vyplňte platné telefonní číslo",
-        "requiredTown": "Uveďte město",
-        "requiredTime": "Poskytněte informace o tom, jak dlouho u vás mohou vaši hosté zůstat",
-        "requiredPeopleQuantity": "Uveďte pořet lidí, které můžete přijmout",
-        "requiredLivingConditions": "Uveďte podmínky ubytování",
-        "requiredFloor": "Vyplňte poschodí"
-    },
-    "staticValues": {
-        "timePeriod": {
-            "lessThanAWeek": "Méně než týden",
-            "week": "Týden",
-            "twoWeeks": "Dva týdny",
-            "month": "Měsíc",
-            "longer": "Déle než měsíc"
-        },
-        "groupRelations": {
-            "single_man": "Svobodný",
-            "single_woman": "Svobodná",
-            "spouses": "Manželé\/Pár",
-            "mother_with_children": "Matka s dítětem\/dětmi",
-            "family_with_children": "Rodina s dítětem\/dětmi",
-            "unrelated_group": "Skupina známých"
-        },
-        "accommodationTypes": {
-            "bed": "Postel ve společném pokoji",
-            "room": "Pokoj v společném bytě\/domě",
-            "flat": "Byt k výhradnímu použití",
-            "house": "Dům k výhradnímu použití",
-            "collective": "Společná místnost (např. místnost ve škole)",
-            "public_shared_space": "Společná místnost (např. místnost ve škole)"
-        },
-        "boolean": {
-            "yes": "Ano",
-            "no": "Ne"
-        },
-        "anyLocation": "Jakýkoliv",
-        "withElevator": "S výtahem"
-    },
-    "accommodationOffer": {
-        "canAccommodate": "Místo pro <1>{{count}} osob<\/1>",
-        "duration": "max. <1> {{time}} <\/1>",
-        "acceptAnimals": "Domácí mazlíčci vítáni",
-        "disabledSupport": "Vhodné pro invalidy",
-        "includesFood": "Strava",
-        "author": {
-            "owner": "Majitel ubytování"
-        }
-    },
-    "forms": {
-        "chooseFromList": "Vybrat ze seznamu",
-        "chooseFromListMulti": "Vybrat ze seznamu (můžete vybrat více možností)"
-    },
-    "guestOffer": {
-        "arrivalToPoland": "Datum příjezdu: {{arrival}}",
-        "peopleToAccommodate": "+ {{count}} osob",
-        "preferredLocation": "Preferovaná lokalita\" <1>{{location}}<\/1>",
-        "withAnimals": "Cestuji s domácím mazlíčkem: <1>{{animals}}<\/1>",
-        "withKids": "Cestuji s dítětem: <1>{{age}}<\/1>",
-        "withDisabled": "Cestuji s osobou se zdravotním postižením",
-        "withElder": "Cestuji s postarší osobou",
-        "invite": "Pozvat"
-    },
-    "addAccommodation": {
-        "hostPreferences": {
-            "label": "Zadejte svoje preference o tom, koho chcete přijmout",
-            "acceptAnimals": "Domácí mazlíčci vítáni",
-            "disabledSupport": "Lidé se zdravotním postižením",
-            "kidsUnder2": "Děti do 2 let věku",
-            "foodIncluded": "Strava zabezpečena"
-        },
-        "peopleQuantity": "Kolika lidem můžete poskytnout ubytování?",
-        "forHowLong": "Na jak dlouho?",
-        "livingConditions": {
-            "label": "Jaké ubytovací podmínky můžete nabídnout?",
-            "options": {
-                "flat": "Mám volný byt",
-                "mattress": "Mám volné lůžko",
-                "other": "Jiné"
-            }
-        },
-        "floor": {
-            "label": "Na kterém patře se nabízené ubytování nachází?",
-            "hint": "*Starší lidé mohou mít problém bydlet ve vyšších patrech"
-        },
-        "submit": "Zaregistrovat nabídku"
-    },
-    "flags": {
-        "cz": "Česká vlajka",
-        "en": "Vlajka Velké Británie",
-        "es": "Španělská vlajka",
-        "fr": "Francouzská vlajka",
-        "hu": "Maďarská vlajka",
-        "it": "Italská vlajka",
-        "pl": "Polská vlajka",
-        "ro": "Rumunská vlajka",
-        "sk": "Slovenská vlajka",
-        "ua": "Ukrajinská vlajka",
-        "de": "Německá vlajka",
-        "at": "Rakouská vlajka",
-        "be": "Belgická vlajka",
-        "bg": "Bulharská vlajka",
-        "hr": "Chorvatská vlajka",
-        "cy": "Kyperská vlajka",
-        "dk": "Dánská vlajka",
-        "ee": "Estonská vlajka",
-        "fi": "Finská vlajka",
-        "lv": "Lotyšská vlajka",
-        "li": "Lichtenštejnská vlajka",
-        "lt": "Litevská vlajka",
-        "mt": "Vlajka Malty",
-        "nl": "Nizozemská vlajka",
-        "no": "Norská vlajka",
-        "pt": "Vlajka Portugalska",
-        "si": "Slovinská vlajka",
-        "se": "Vlajka Švédska"
-    },
-    "hostAdd": {
-        "country": "Země",
-        "countries": {
-            "poland": "Polsko",
-            "hungary": "Maďarština",
-            "czechia": "Česko",
-            "slovakia": "Slovensko"
-        },
-        "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
-        "emailPlaceholder": "E-mailová adresa",
-        "phoneLabel": "Telefonní číslo (formát +XX YYY YYY YYY)",
-        "phonePlaceholder": "Telefonní číslo (formát +XX YYY YYY YYY)",
-        "cityLabel": "Vyberte město nejblíže k nabízenému ubytování",
-        "cityPlaceholder": "Město",
-        "type": "Typ ubytování",
-        "hostType": "Typ hostitele je vyžadovaný údaj",
-        "hostTypeLabel": {
-            "host_type_men": "Muž (svobodný)",
-            "host_type_women": "Žena (svobodná)",
-            "host_type_couple": "Pár",
-            "host_type_family": "Rodina s dítětem\/dětmi",
-            "host_type_elder_people": "Postarší osoby",
-            "host_type_friends_group": "Skupina známých"
-        },
-        "guestCount": "Kolik osob jste ochotni ubytovat?",
-        "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
-        "accomodationPhotoLabel": "Přidat fotografie",
-        "accomodationPhotoReset": "Smazat",
-        "accommodationTimeLabel": {
-            "less_than_week": "Méně než týden",
-            "week": "Týden",
-            "two_weeks": "Dva týdny",
-            "month": "Měsíc",
-            "longer": "Déle než měsíc"
-        },
-        "volunteerVisitAcceptance": "Souhlasím s ověřením místo pobytu (návštěva dobrovolníka)",
-        "nationality": "Jaké občanství jste ochotni přijmout?",
-        "ukraine": "Ukrajina",
-        "additionalInformationHeader": "Dodatečné informace",
-        "any": "Jakékoliv",
-        "childBedCount": "Počet míst pro děti",
-        "city": "Město",
-        "fullBedCount": "Počet plnohodnotných míst na spaná",
-        "pregnantReady": "Přijmu osobu v pokročilém stádiu těhotenství (nad 6 měsíců)",
-        "dissabilityReady": "Přijmu osobu se zdravotním postížením",
-        "elderReady": "Přijmu postarší osobu",
-        "animalReady": "Přijmu osobu s domácím mazlíčkem",
-        "basicInfoHeader": "Přidat základní informace",
-        "refugeInfoHeader": "Poskytněte informace o ubytování",
-        "addButton": "Odeslat\/Přidat",
-        "addButtomErrorMessage": "Vyplňte prosím všechna povinná pole",
-        "errors": {
-            "name": "Vyplňte svoje jméno",
-            "email": "Uveďte platnou emailovou adresu",
-            "phoneNumber": "Vyplňte svoje telefonní číslo",
-            "country": "Země je vyžadovaný údaj",
-            "town": "Město je požadovaný údaj",
-            "type": "Typ ubytování je vyžadovaný údaj",
-            "hostType": "Typ hostitele je vyžadovaný údaj",
-            "accommodationTime": "Délka pobytu je vyžadováný údaj",
-            "nationalityError": "Státní příslušnost je vyžadovaný údaj",
-            "groupsTypes": "Je vyžadován typ skupiny"
-        },
-        "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
-        "transportReady": "Možnost dopravy",
-        "hostAddressProcessingWarning": "Úplná adresa nebude sdílena s uprchlíkem - pouze vaše město."
-    },
-    "logout": "Odhlásit se",
-    "back": "Zpět",
-    "backToHomePage": "Zpět na hlavní stránku",
-    "shareLocation": "Vytvořit účet",
-    "registerGuest": "Najít ubytování",
-    "more": "Více",
-    "register1": "Registrovat se",
-    "register2": "Registace",
-    "privacyPolicy": "Zásady ochrany osobních údajů",
-    "termsOfService": "Pravidla použivání",
-    "patrons": "Partneři",
-    "rodo": "Zásady ochrany osobních údajů",
-    "thankfulnessModal": {
-        "thankYou": "Děkujeme",
-        "thanksForYourDecision": "Děkujeme, že jste nás informovali o svém rozhodnutí",
-        "applicationSent": "Vaše žádost byla odeslána. Několikrát denně prohledáváme naši databázi, abychom pro vás našli to nejlepší ubytování",
-        "informWhenAccomodationFound": "Hned jak pro vás najdeme ubytování, budeme vás informovat pomocí e-mailu",
-        "backToMainPage": "Vrátit se na hlavní stránku"
-    },
-    "thankfulnessHostModal": {
-        "thankYou": "Děkujeme",
-        "applicationSent": "Vaše nabídka byla odeslána. Několikrát denně prohledáváme naši databázi, abychom nalezli co nejlepší shodu s vaši nabídkou",
-        "informWhenAccomodationFound": "Hned jak pro vás najdeme potenciálního hosta, budeme vás informovat pomocí e-mailu"
-    },
-    "refugeeForm": {
-        "refugeeDetailsOptions": {
-            "animals": "Cestuji s domácím mazlíčkem",
-            "toddler": "Dítě do 2 let věku",
-            "oldPerson": "Jsem nebo cestuji s postarší osobou",
-            "disability": "Jsem nebo cestuji s osobou se zdravotním postižením",
-            "pregnant": "Jsem nebo doprovázím osobu v pokročilém stádiu těhotenství (nad 6 měsíců)"
-        },
-        "refugeesCountOptions": {
-            "alone": "Jsem sám\/sama",
-            "more": "Více"
-        },
-        "errors": {
-            "name": "Uveďte svoje jméno",
-            "email": "Vyplňte platnou e-mailovou adresu",
-            "phoneNumber": "Vyplňte platné telefonní číslo",
-            "required": "Toto pole je povinné",
-            "location": "Uveďte preferovanou lokalitu"
-        },
-        "labels": {
-            "email": "E-mailová adresa",
-            "refugeesCount": "Pro kolik osob sháníte ubytování?",
-            "refugee": "Uprchlík {{number}}",
-            "refugeeDetails": "Poskytněte další informace, abychom pro vás mohli najít nejlepší shodu",
-            "refugeesAnimal": "Plemeno",
-            "isGDPRAccepted": "Přijímám zásady ochrany osobních údajů",
-            "submitButton": "Získat pomoc",
-            "location": "Kde byste chtěli bydlet?",
-            "anyLocation": "Jakákoliv lokalita",
-            "prefferedLocation": "Preferovaná lokalita",
-            "city": "Město",
-            "addRefugee": "Přidat osobu"
-        }
-    },
-    "refugeeAddForm": {
-        "basicInfoHeader": "Poskytněte základní informace o sobě a o lidech, se kterými cestujete",
-        "addButton": "Odeslat přihlášku",
-        "addButtomErrorMessage": "Prosím vyplňte povinná pole",
-        "pregnantReady": "Jsem nebo doprovázím osobu v pokročilém stádiu těhotenství (nad 6 měsíců)",
-        "dissabilityReady": "Cestuji s osobou se zdravotním postižením",
-        "elderReady": "Cestuji s postarší osobou",
-        "ageLabel": "Věk",
-        "genderLabel": "Vyplňte pohlaví, se kterým se identifikujete",
-        "genderPlaceholder": "Uveďte svoje pohlaví",
-        "travelCompanions": "Informace o vaší skupině",
-        "fullBedCountLabel": "Kolik lidí (včetně vás) s vámi cestuje?",
-        "childBedCountLabel": "Zadejte počet lůžek",
-        "placeOfRefuge": "Kde hledáte ubytování?",
-        "countryOfRefugePlaceholder": "Vyverte zemi",
-        "cityOfRefugeLabel": "Vyberte město",
-        "overnightDurationLabel": "Na jaké období hledáte ubytování?",
-        "cityOfRefugePlaceholder": "Vyberte oblast",
-        "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
-        "emailLabel": "Uveďte svoji emailovou adresu:",
-        "emailPlaceholder": "E-mailová adresa",
-        "phoneLabel": "Telefonní číslo (formát +XX YYY YYY YYY)",
-        "phonePlaceholder": "Telefonní číslo (formát +XX YYY YYY YYY)",
-        "cityPlaceholder": "Město",
-        "groupRelations": "Jaký je vztah mezi členy skupiny?",
-        "selectPlaceholder": "Vyberte ze seznamu",
-        "accommodationType": "Vyberte ze seznamu",
-        "countryOfGroupUA": "Ukrajina",
-        "countryOfGroupOthers": "Jiné",
-        "accompanyingPerson": "Doprovázející osoba",
-        "errors": {
-            "name": "Uveďte svoje jméno",
-            "email": "Prosím zadejte platnou e-mailovou adresu",
-            "gender": "Vyplňte pohlaví, se kterým se identifikujete",
-            "cityOfRefuge": "Vyberte město",
-            "phoneNumber": "Uveďte svoje telefonní číslo",
-            "countryOfRefuge": "Vyberte zemi",
-            "childBedCount": "Zadejte počet lůžek",
-            "fullBedCountsaas": "Zadejte počet lůžek",
-            "groupRelations": "Vyberte vztah",
-            "overnightDuration": "Vyberte délku pobytu",
-            "accommodationType": "Vyberte typ ubytování",
-            "countryOfGroup": "Vyberte národnost"
-        },
-        "refugeInfoHeader": "Poskytnout informace o ubytování",
-        "countryOfGroup": "Z jaké země skupina pochází?",
-        "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město"
-    },
-    "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
-    "accomodationPhotoReset": "Smazat",
-    "accomodationPhotoLabel": "Odeslat",
-    "dropdownChoose": "Vybrat",
-    "dropdownSearch": "Hledat",
-    "heroImageAlt": "Sláva Ukrajině!",
-    "loginForm": {
-        "logInWith": "Přihlásit se",
-        "or": "Nebo",
-        "lostPass": "Zapomenuté heslo",
-        "click": "Klikněte",
-        "logIn": "Přihlásit se",
-        "doNotHaveAcc": "Nemáte účet? Zde si ho můžete vytvořit",
-        "register": "Registrovat se"
-    },
-    "gdpr": "Ochrana osobních údajů",
-    "ogMeta": {
-        "title": "We help war refugees from Ukraine find shelter",
-        "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Potvrzení změn"
+    "refugeInfoHeader": "Poskytnout informace o ubytování",
+    "countryOfGroup": "Z jaké země skupina pochází?",
+    "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město"
+  },
+  "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
+  "accomodationPhotoReset": "Smazat",
+  "accomodationPhotoLabel": "Odeslat",
+  "dropdownChoose": "Vybrat",
+  "dropdownSearch": "Hledat",
+  "heroImageAlt": "Sláva Ukrajině!",
+  "loginForm": {
+    "logInWith": "Přihlásit se",
+    "or": "Nebo",
+    "lostPass": "Zapomenuté heslo",
+    "click": "Klikněte",
+    "logIn": "Přihlásit se",
+    "doNotHaveAcc": "Nemáte účet? Zde si ho můžete vytvořit",
+    "register": "Registrovat se"
+  },
+  "gdpr": "Ochrana osobních údajů",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }
