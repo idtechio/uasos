@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "Informations supplémentaires sur le logement proposé",
         "countryOfGroup": "",
-        "cityTooltip": "Si vous ne trouvez pas votre ville, choisissez la grande ville ou le village le plus proche."
+        "cityTooltip": "Si vous ne trouvez pas votre ville, choisissez la grande ville ou le village le plus proche.",
+        "confirmChangesButton": ""
     },
     "accomodationPhoto": "Ajouter une photo du logement proposé",
     "accomodationPhotoReset": "Supprimer",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "Nous aidons les réfugiés de guerre d'Ukraine à trouver un abri",
         "description": "UASOS.org, en coopération avec les principales organisations caritatives, met automatiquement et gratuitement en contact les réfugiés d'Ukraine avec les personnes offrant un abri. Aidez-nous à offrir un soutien ou à demander un abri dès aujourd'hui !"
-    },
-    "refugeeAddForm.confirmChangesButton": ""
+    }
 }
