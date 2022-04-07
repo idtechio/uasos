@@ -11,7 +11,7 @@ export default function NameInput() {
 
   return (
     <InputWrapper
-      label={t("labels.name")}
+      label={t("others:forms.generic.name")}
       styles={{ container: { marginTop: 0 } }}
     >
       <Controller
@@ -21,7 +21,7 @@ export default function NameInput() {
           <Input
             value={value || ""}
             onChange={onChange}
-            placeholder={t("labels.name")}
+            placeholder={t("others:forms.generic.name")}
             error={error}
             styles={{ wrapper: { margin: 0, height: 52 } }}
           />

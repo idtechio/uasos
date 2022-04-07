@@ -54,7 +54,7 @@ export default function PreferredLanguageInput() {
 
   return (
     <InputWrapper
-      label={t("labels.prefLanguage")}
+      label={t("others:forms.userRegistration.preferredLanguage")}
       styles={{ container: { zIndex: 9999 } }}
     >
       <Controller
@@ -65,7 +65,7 @@ export default function PreferredLanguageInput() {
             data={data}
             value={value || ""}
             onChange={onChange}
-            placeholder={t("labels.prefLanguage")}
+            placeholder={t("others:forms.userRegistration.preferredLanguage")}
             error={error}
             errorMsg={error?.message}
           />
