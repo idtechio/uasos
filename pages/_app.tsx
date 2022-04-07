@@ -14,7 +14,8 @@ import { User } from "firebase/auth";
 import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../lib/gtag";
-import { Gtag, GAtag } from "./gtag";
+import Gtag from "./gtag";
+import GAtag from "./gatag";
 import * as fbq from "../lib/fpixel";
 import FPixel from "./fpixel";
 
