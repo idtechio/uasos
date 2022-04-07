@@ -25,7 +25,9 @@
             "congratulations": "",
             "thankYou": "",
             "or": "",
-            "badNews": ""
+            "badNews": "",
+            "prefix": "",
+            "dashboard": ""
         },
         "links": {
             "re-sendCode": "",
@@ -229,13 +231,15 @@
             "phoneNotVerified": "",
             "emailNotVerified": "",
             "accountInCreation": "",
-            "emailAlreadyInUse": ""
+            "emailAlreadyInUse": "",
+            "idNotVerified": ""
         },
         "housing": "",
         "confirmation": {
             "header": "",
             "content": ""
-        }
+        },
+        "accommodationSearch": ""
     },
     "reportProblem": {
         "popup": {

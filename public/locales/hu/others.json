@@ -25,7 +25,9 @@
             "congratulations": "Gratulálunk",
             "thankYou": "Köszönjük.",
             "or": "Vagy",
-            "badNews": "Rossz hírek"
+            "badNews": "Rossz hírek",
+            "prefix": "Előtag",
+            "dashboard": "Műszerfal"
         },
         "links": {
             "re-sendCode": "Kód újraküldése",
@@ -229,13 +231,15 @@
             "phoneNotVerified": "Telefon nem ellenőrzött",
             "emailNotVerified": "E-mail cím nincs ellenőrizve",
             "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
-            "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel."
+            "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel.",
+            "idNotVerified": ""
         },
         "housing": "Lakhatás",
         "confirmation": {
             "header": "Köszönjük a döntését",
             "content": "Ha elfogadta, várja meg a másik személy döntését. Amint a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br \/> Lemondás esetén az Ön jelentkezése visszakerül az aktív jelentkezések közé. A következő ajánlatról e-mailben értesítjük Önt."
-        }
+        },
+        "accommodationSearch": "Szálláskeresés"
     },
     "reportProblem": {
         "popup": {
