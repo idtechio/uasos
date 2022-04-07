@@ -36,7 +36,7 @@ export default function PhoneNumberInput() {
                 onChange={onChange}
                 error={error}
                 errorMsg={error?.message}
-                placeholder={t("labels.prefix")}
+                placeholder={t("others:common.words.prefix")}
               />
             )}
           />

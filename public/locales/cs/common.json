@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "Poskytnout informace o ubytování",
         "countryOfGroup": "Z jaké země skupina pochází?",
-        "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město"
+        "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město",
+        "confirmChangesButton": "Potvrzení změn"
     },
     "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
     "accomodationPhotoReset": "Smazat",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "We help war refugees from Ukraine find shelter",
         "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Potvrzení změn"
+    }
 }

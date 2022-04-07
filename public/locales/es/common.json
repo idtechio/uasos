@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "",
         "countryOfGroup": "",
-        "cityTooltip": ""
+        "cityTooltip": "",
+        "confirmChangesButton": ""
     },
     "accomodationPhoto": "",
     "accomodationPhotoReset": "",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "",
         "description": ""
-    },
-    "refugeeAddForm.confirmChangesButton": ""
+    }
 }
