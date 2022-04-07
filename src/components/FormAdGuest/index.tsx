@@ -265,23 +265,27 @@ export default function FormAdGuest({
               <View style={styles.tooltipText}>
                 <Tooltip>
                   <Text style={{ zIndex: 99 }}>
-                    {t("refugeeAddForm.cityTooltipText")}
+                    {t("refugeeAddForm.cityTooltip")}
                   </Text>
                 </Tooltip>
               </View>
             </InputCotrolLabel>
-            <Buttons style={{ justifyContent: "space-between" }}>
+            <Buttons justifyContent={"space-between"}>
               <ChoiceButton
                 text={t("others:forms.createRefuge:shelter.anyCity")}
                 isSmall
                 onPress={() => setLocation(Location.Any)}
                 isSelected={location === Location.Any}
+                width={180}
+                noMarginRight
               />
               <ChoiceButton
                 text={t("others:forms.match.specificCity")}
                 isSmall
                 onPress={() => setLocation(Location.Preffered)}
                 isSelected={location === Location.Preffered}
+                width={180}
+                noMarginRight
               />
             </Buttons>
           </View>
@@ -417,7 +421,9 @@ const styles = StyleSheet.create({
   addButton: {
     marginBottom: 5,
   },
-  tooltipText: { marginHorizontal: 10 },
+  tooltipText: {
+    marginHorizontal: 10,
+  },
 });
 
 export const SectionContent = styled.View`

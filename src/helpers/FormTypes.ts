@@ -115,6 +115,7 @@ export type FormType = {
     street: string;
     buildingNumber: string;
     apartmentNumber: string;
+    uploadedPhotos: Array<string>;
   };
   advancedRefugee: {
     town: string;

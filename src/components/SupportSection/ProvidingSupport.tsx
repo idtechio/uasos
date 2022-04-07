@@ -2,8 +2,10 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ActivityIndicator } from "react-native";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
 import { Error } from "../Inputs/style";
 import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
@@ -21,7 +23,6 @@ import {
   Title,
 } from "./style";
 import { Offer } from "./types";
-import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
 
 type ProvidingSupportProps = {
   offers?: Offer[];
@@ -101,20 +102,26 @@ const Offers = ({
 
   return (
     <>
-      {offers.map((o) => (
-        <SupportCard key={o.id}>
-          <HeaderWrapper>
-            <MoreButtonWrapper>
-              {o.type !== "confirmed" && (
-                <EditOfferButton
-                  targetID={o.id}
-                  targetType={TargetTypes.HOSTS}
-                />
-              )}
-            </MoreButtonWrapper>
+      {offers.map((o) => {
+        const notYetReady = o.clientOnly;
 
-            <Placeholder />
-            {/* 
+        return (
+          <SupportCard key={o.id}>
+            <HeaderWrapper>
+              <MoreButtonWrapper>
+                {o.type !== "confirmed" &&
+                  (notYetReady ? (
+                    <ActivityIndicator />
+                  ) : (
+                    <EditOfferButton
+                      targetID={o.id}
+                      targetType={TargetTypes.HOSTS}
+                    />
+                  ))}
+              </MoreButtonWrapper>
+
+              <Placeholder />
+              {/* 
             <ImageWrapper>
               <img
                 src={o.imageUrl}
@@ -124,45 +131,46 @@ const Offers = ({
                 style={{ borderRadius: 4 }}
               />
             </ImageWrapper> */}
-            <TextWrapper>
-              <OfferTitle>
-                {t(`common:staticValues.accommodationTypes.${o.name}`)}
-              </OfferTitle>
-              <div
-                style={{
-                  alignSelf: "flex-start",
-                  justifySelf: "flex-end",
-                  marginTop: 14,
-                }}
-              >
-                <StatusBadge state={o.type} />
-              </div>
-            </TextWrapper>
-          </HeaderWrapper>
+              <TextWrapper>
+                <OfferTitle>
+                  {t(`common:staticValues.accommodationTypes.${o.name}`)}
+                </OfferTitle>
+                <div
+                  style={{
+                    alignSelf: "flex-start",
+                    justifySelf: "flex-end",
+                    marginTop: 14,
+                  }}
+                >
+                  <StatusBadge state={o.type} />
+                </div>
+              </TextWrapper>
+            </HeaderWrapper>
 
-          {/* {o.matchedRequest ? (
+            {/* {o.matchedRequest ? (
             <MetchedInfo
               name={o.matchedRequest.name}
               email={o.matchedRequest.email}
               phone_num={o.matchedRequest.phone_num}
             />
           ) : ( */}
-          <AnnouncementHighlights
-            beds={o.beds}
-            city={o?.closestCity}
-            duration={o.duration}
-          />
-          {/* )} */}
-          {!readonly && (
-            <DetailsLink
-              href={{
-                pathname: Routes.DETAILS,
-                query: { id: o.id, type: "offer" },
-              }}
+            <AnnouncementHighlights
+              beds={o.beds}
+              city={o?.closestCity}
+              duration={o.duration}
             />
-          )}
-        </SupportCard>
-      ))}
+            {/* )} */}
+            {!readonly && !notYetReady && (
+              <DetailsLink
+                href={{
+                  pathname: Routes.DETAILS,
+                  query: { id: o.id, type: "offer" },
+                }}
+              />
+            )}
+          </SupportCard>
+        );
+      })}
     </>
   );
 };

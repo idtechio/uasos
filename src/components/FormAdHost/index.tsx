@@ -35,6 +35,7 @@ import {
 } from "../../queries/useOffersList";
 import { OfferProps } from "../../../pages/api/listing/offers";
 import { AuthContext } from "../../../pages/_app";
+import FormUpload from "../Inputs/FormUpload";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -84,6 +85,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
         volunteerVisitAcceptance: "true",
         groupsTypes: [],
         phoneNumber: identity?.phoneNumber ?? "",
+        uploadedPhotos: [],
       },
     },
   });
@@ -429,6 +431,16 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
           )}
+
+          <View>
+            <InputControlLabel>
+              {t("others:forms.createShelter.addPhotoHeader")}
+            </InputControlLabel>
+            <FormUpload
+              label={t("others:forms.generic.addPhoto")}
+              name="advancedHost.uploadedPhotos"
+            />
+          </View>
 
           <View>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>

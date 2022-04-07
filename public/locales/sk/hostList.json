@@ -1,13 +1,13 @@
 {
-  "placeFor": "Miesto pre",
-  "people": "osoby",
-  "maximum": "Maximum",
-  "twoWeeks": "Dva týždne",
-  "month": "Jeden mesiac",
-  "longerThanMonth": "Viac než jeden mesiac",
-  "food": "Jedlo",
-  "petsWelcome": "Domáce zvieratá vítané",
-  "disabledReady": "Človek s postihnutím",
-  "locationOwner": "Majiteľ ubytovania",
-  "use": "Použiť"
+    "placeFor": "Miesto pre",
+    "people": "osoby",
+    "maximum": "Maximum",
+    "twoWeeks": "Dva týždne",
+    "month": "Jeden mesiac",
+    "longerThanMonth": "Viac než jeden mesiac",
+    "food": "Jedlo",
+    "petsWelcome": "Domáce zvieratá vítané",
+    "disabledReady": "Človek s postihnutím",
+    "locationOwner": "Majiteľ ubytovania",
+    "use": "Použiť"
 }

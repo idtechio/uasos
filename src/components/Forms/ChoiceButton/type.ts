@@ -8,4 +8,6 @@ export type ChoiceButtonProps = {
   onPress: () => void;
   isVertical?: boolean;
   error?: boolean;
+  width?: string | number;
+  noMarginRight?: boolean;
 };
