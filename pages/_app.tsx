@@ -68,10 +68,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   }, [router.events]);
 
   useEffect(() => {
-    fbq.pageview();
+    // fbq.pageview();
 
     const handleRouteChange = () => {
-      fbq.pageview();
+      // fbq.pageview();
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);
