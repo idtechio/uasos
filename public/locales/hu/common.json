@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "Adjon meg információt a szállásáról",
         "countryOfGroup": "Melyik a csoport származási országa?",
-        "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost"
+        "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost",
+        "confirmChangesButton": "Változások megerősítése"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "We help war refugees from Ukraine find shelter",
         "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Változások megerősítése"
+    }
 }

@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "Adăugați informații cu privire la cazare",
         "countryOfGroup": "Care este țara de origine a grupului?",
-        "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat"
+        "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
+        "confirmChangesButton": "Confirmați modificările"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "Ajutăm refugiații din Ucraina să găsească adăpost",
         "description": "UASOS.org, în cooperare cu organizații caritabile de renume, pune în legătură, în mod automat și gratuit, refugiații din Ucraina cu persoanele care oferă adăpost. Ajutați-ne să oferim sprijin sau să solicită adăpost astăzi!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Confirmați modificările"
+    }
 }

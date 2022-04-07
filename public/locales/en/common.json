@@ -306,7 +306,8 @@
         },
         "refugeInfoHeader": "Provide information about your accommodation",
         "countryOfGroup": "What is the group's origin country?",
-        "cityTooltip": "If you cannot find your city, choose the closest big city or town"
+        "cityTooltip": "If you cannot find your city, choose the closest big city or town",
+        "confirmChangesButton": "Confirm changes"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",
@@ -327,6 +328,5 @@
     "ogMeta": {
         "title": "We help war refugees from Ukraine find shelter",
         "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-    },
-    "refugeeAddForm.confirmChangesButton": "Confirm changes"
+    }
 }
