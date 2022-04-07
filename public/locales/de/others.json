@@ -25,7 +25,9 @@
             "congratulations": "Herzlichen Glückwunsch",
             "thankYou": "Dankeschön",
             "or": "Oder",
-            "badNews": "Schlechte Nachrichten"
+            "badNews": "Schlechte Nachrichten",
+            "prefix": "",
+            "dashboard": ""
         },
         "links": {
             "re-sendCode": "Code erneut senden",
@@ -229,13 +231,15 @@
             "phoneNotVerified": "Telefon nicht verifiziert",
             "emailNotVerified": "E-Mail nicht verifiziert",
             "accountInCreation": "",
-            "emailAlreadyInUse": ""
+            "emailAlreadyInUse": "",
+            "idNotVerified": ""
         },
         "housing": "Gehäuse",
         "confirmation": {
             "header": "Vielen Dank für Ihre Entscheidung",
             "content": ""
-        }
+        },
+        "accommodationSearch": ""
     },
     "reportProblem": {
         "popup": {

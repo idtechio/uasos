@@ -25,7 +25,9 @@
             "congratulations": "Felicitări",
             "thankYou": "Mulțumesc",
             "or": "Sau",
-            "badNews": "Ne pare rău"
+            "badNews": "Ne pare rău",
+            "prefix": "",
+            "dashboard": ""
         },
         "links": {
             "re-sendCode": "Retrimite codul",
@@ -42,7 +44,7 @@
             "showPassword": "Afișați parola",
             "details": "Detalii",
             "addOffer": "Adăugați oferta",
-            "addSubmission": ""
+            "addSubmission": "Solicitați asistență"
         },
         "email": {
             "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",
@@ -72,16 +74,16 @@
         "userRegistration": {
             "enterDetails": "Introduceți detaliile dvs.",
             "confirmPassword": "Confirmați parola",
-            "agreeOnSmsCommunication": "Doresc să fiu notificat prin SMS despre eventualele oferte de potrivire ",
+            "agreeOnSmsCommunication": "Doresc să fiu notificat prin SMS despre eventualele oferte de potrivire",
             "language": "Limba",
             "proposeCreateAccount": "Dacă nu aveți un cont, vă puteți crea unul.",
             "newPassword": "Parolă nouă",
             "userRegistration": "Înregistrarea utilizatorului",
-            "preferredLanguage": "Limba de comunicare preferată ",
+            "preferredLanguage": "Limba de comunicare preferată",
             "fillMissingData": "Completați datele lipsă",
             "validations": {
                 "passwordMismatch": "Parolele sunt diferite",
-                "passwordLength": ""
+                "passwordLength": "Parola trebuie să aibă cel puțin 8 caractere"
             },
             "password": "Parola (min. 8 caractere)",
             "errors": {
@@ -93,7 +95,7 @@
             "numberOfPeopleWithData": "Numărul maxim de persoane: <b>{{number}}<\/b>",
             "durationWithData": "Durata șederii: <b>{{number}} {{unit}}<\/b>",
             "specificCity": "Oraș specific",
-            "confirmed": "Oaspetele\/gazda dvs. tocmai a confirmat o ofertă. Luați legătura cu el\/ea pentru a aranja detaliile. ",
+            "confirmed": "Oaspetele\/gazda dvs. tocmai a confirmat o ofertă. Luați legătura cu el\/ea pentru a aranja detaliile.",
             "accommodationTypeWithData": "Tipul de cazare: <b>{{type}}<\/b>",
             "additionalInfoOnAccommodation": "Informații suplimentare despre cazare",
             "usersWarning": "<b>Din motive de siguranță, țineți-vă rudele la curent cu persoanele pe care le adăpostiți. Pentru orice eventualitate:<\/b>\n<ul>\n<li>verificați identitatea persoanei pe care o adăpostiți,<\/li>\n<li>asigurați-vă că componența grupului corespunde descrierii inițiale<\/li>\n<\/ul>",
@@ -124,9 +126,9 @@
             "submited": "Formular trimis",
             "facilityInformation": {
                 "disability": "Facilități pentru persoanele cu handicap",
-                "pregnancy": "",
-                "eldery": "",
-                "diversity": ""
+                "pregnancy": "Facilități pentru femeile însărcinate",
+                "eldery": "Facilități pentru persoanele vârstnice",
+                "diversity": "Toate naționalitățile sunt binevenite"
             },
             "password": "Parola",
             "selectFromList": "Selectați din listă",
@@ -218,7 +220,7 @@
             "duration": "Durata: {{value}}"
         },
         "providingSupport": "Oferă ajutor",
-        "yourSubmission": "Forumular dvs.",
+        "yourSubmission": "Formularul dumneavoastră",
         "yourOffers": "Prezentare generală a ofertelor dumneavoastră",
         "contextMenu": {
             "reportProblem": "Raportați o problemă",
@@ -228,14 +230,16 @@
         "checks": {
             "phoneNotVerified": "Număr de telefon neverificat",
             "emailNotVerified": "Email neverificat",
-            "accountInCreation": "",
-            "emailAlreadyInUse": ""
+            "accountInCreation": "Contul dumneavoastră este creat, reîmprospătați pagina după câteva secunde",
+            "emailAlreadyInUse": "Adresa de e-mail folosită este deja utilizată în sistemul nostru. Vă rugăm să încercați să încercați să vă conectați printr-o metodă diferită",
+            "idNotVerified": "ID-ul nu a fost verificat"
         },
         "housing": "Locuință",
         "confirmation": {
             "header": "Vă mulțumim pentru decizia dumneavoastră",
-            "content": ""
-        }
+            "content": "Dacă ați acceptat, așteptați pentru decizia celeilalte persoane. De îndată ce persoana respectivă acceptă, veți primi un email cu datele de contact. În caz de anulare, aplicația dumneavoastră se va întoarce în fondul de cereri active. Vă vom informa pe e-mail cu privire la următoarea ofertă"
+        },
+        "accommodationSearch": ""
     },
     "reportProblem": {
         "popup": {
