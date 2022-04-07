@@ -164,7 +164,9 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
   const getSubmitButtonTitle = useMemo(
     () =>
-      data?.id ? t("hostAdd.confirmChangesButton") : t("hostAdd.addButton"),
+      data?.id
+        ? t("refugeeAddForm.confirmChangesButton")
+        : t("hostAdd.addButton"),
     [t, data]
   );
 
