@@ -1,13 +1,13 @@
 {
-  "messaging": {
-    "sms": {
-      "offeringNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen Sie.",
-      "sealedNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen"
+    "messaging": {
+        "sms": {
+            "offeringNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen Sie.",
+            "sealedNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen"
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-84a76430736e472cb4cfa77c86fffa07",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-5e708c8583354be791b4b68231d9ed9c"
     }
-  },
-  "sendgrid": {
-    "HostGetsMatch": "d-84a76430736e472cb4cfa77c86fffa07",
-    "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
-    "GUESTANDHOSTMATCHCONFIRM": "d-5e708c8583354be791b4b68231d9ed9c"
-  }
 }
