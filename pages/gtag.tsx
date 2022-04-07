@@ -47,3 +47,5 @@ export const Gtag = ({ id }: GtagProps) => {
     />
   );
 };
+
+export default GAtag;
