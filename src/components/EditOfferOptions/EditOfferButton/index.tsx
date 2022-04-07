@@ -46,8 +46,6 @@ export default function EditOfferButton({
       {
         icon: <EditIcon />,
         type: "edit",
-        // TODO: will be removed later | SOSUA-177
-        hide: targetType === TargetTypes.GUESTS,
         label: "others:desktop.contextMenu.edit",
       },
       {

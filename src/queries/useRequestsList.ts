@@ -9,6 +9,7 @@ import {
 import addGuestToApi from "../helpers/addGuestToApi";
 import { API_REFRESH_LATENCY, uid } from "../helpers/misc";
 import { QueryKeys } from "./queryKeys";
+import updateGuestToApi from "../helpers/updateGuestToApi";
 
 export const useRequestsList = () =>
   useQuery([QueryKeys.GET_REQUESTS_LIST], getRequestsList);
@@ -46,6 +47,17 @@ export const useAddGuestToApi = () => {
         queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
         queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
       }, API_REFRESH_LATENCY);
+    },
+  });
+};
+
+export const useUpdateGuestToApi = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(updateGuestToApi, {
+    onSuccess: () => {
+      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
+      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
     },
   });
 };

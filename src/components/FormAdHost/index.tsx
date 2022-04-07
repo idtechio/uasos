@@ -24,10 +24,11 @@ import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
   GROUP_RELATIONS,
+  OVERNIGHT_DURATION_TYPES,
 } from "./FormAddHost.data";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import { Error } from "../Inputs/style";
+import { Error as InputError } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import {
   useAddHostToApi,
@@ -36,6 +37,8 @@ import {
 import { OfferProps } from "../../../pages/api/listing/offers";
 import { AuthContext } from "../../../pages/_app";
 import FormUpload from "../Inputs/FormUpload";
+import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
+import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -65,6 +68,12 @@ const submitRequestDefualtState = {
 
 type FormAdHostProps = {
   data: OfferProps | null;
+};
+
+type MutateCallbacks = {
+  onSuccess: () => void;
+  onError: (error: Error | unknown) => void;
+  onSettled: () => void;
 };
 
 export default function FormAdHost({ data }: FormAdHostProps) {
@@ -155,9 +164,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
   const getSubmitButtonTitle = useMemo(
     () =>
-      data?.id
-        ? t("refugeeAddForm.confirmChangesButton")
-        : t("refugeeAddForm.addButton"),
+      data?.id ? t("hostAdd.confirmChangesButton") : t("hostAdd.addButton"),
     [t, data]
   );
 
@@ -186,7 +193,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    const payload = {
+    const payload: AddHostProps | EditHostProps = {
       id: data?.id ? data.id : undefined,
       country: country,
       phone_num: identity?.phoneNumber ?? "",
@@ -200,7 +207,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_any_nationality:
-        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+        nationality === Nationality.ANY ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [accommodationTime],
       transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
       closest_city: closestLargeCity,
@@ -211,7 +218,19 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
 
-    const mutate = data?.id ? mutateUpdate : mutateAdd;
+    const mutate = (
+      payload: AddHostProps | EditHostProps,
+      callbacks: MutateCallbacks
+    ) => {
+      if (data?.id) {
+        mutateUpdate(payload as EditHostProps, callbacks);
+        return;
+      }
+
+      mutateAdd(payload as AddHostProps, callbacks);
+    };
+
+    setSubmitRequstState((state) => ({ ...state, loading: true }));
 
     mutate(payload, {
       onSuccess: () => {
@@ -225,20 +244,6 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       },
     });
   };
-
-  const OVERNIGHT_DURATION_TYPES = [
-    {
-      label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "less_than_week",
-    },
-    { label: t("staticValues.timePeriod.week"), value: "1_week" },
-    {
-      label: t("staticValues.timePeriod.twoWeeks"),
-      value: "2_3_weeks",
-    },
-    { label: t("staticValues.timePeriod.month"), value: "month" },
-    { label: t("staticValues.timePeriod.longer"), value: "longer" },
-  ];
 
   return (
     <FormProvider {...form}>
@@ -465,7 +470,10 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               rules={{
                 required: true,
               }}
-              data={OVERNIGHT_DURATION_TYPES}
+              data={OVERNIGHT_DURATION_TYPES.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               error={errors?.advancedHost?.accommodationTime}
               errorMsg={t("hostAdd.errors.accommodationTime")}
             />
@@ -487,8 +495,8 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 required: true,
               }}
               data={[
-                { label: t("hostAdd.ukraine"), value: "ukrainian" },
-                { label: t("hostAdd.any"), value: "any" },
+                { label: t("hostAdd.ukraine"), value: Nationality.UKRAINIAN },
+                { label: t("hostAdd.any"), value: Nationality.ANY },
               ]}
               errorMsg={t("hostAdd.errors.nationalityError")}
             />
@@ -547,13 +555,16 @@ export default function FormAdHost({ data }: FormAdHostProps) {
           />
           {isSubmitted && !isValid && !isSubmitLoading && !isSubmitSuccess && (
             <View style={styles.errorWrapper}>
-              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+              <InputError>
+                {t("refugeeAddForm.addButtomErrorMessage")}
+              </InputError>
             </View>
           )}
-
           {isSubmitted && (submitRequstState.error as Error)?.message && (
             <View style={styles.errorWrapper}>
-              <Error>{(submitRequstState.error as Error).message}</Error>
+              <InputError>
+                {(submitRequstState.error as Error).message}
+              </InputError>
             </View>
           )}
         </InputControl>
