@@ -1,30 +1,36 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import styled from "styled-components/native";
-import type { GuestProps } from "../../../pages/api/guests/add";
-import { FormType } from "../../helpers/FormTypes";
-import { useAddGuestToApi } from "../../queries/useRequestsList";
-import AnimalsIcon from "../../style/svgs/animals.svg";
-import DisabilityIcon from "../../style/svgs/disability.svg";
-import ElderIcon from "../../style/svgs/elder.svg";
-import PregnantIcon from "../../style/svgs/pregnant.svg";
+import type { GuestProps as AddGuestProps } from "../../../pages/api/guests/add";
+import type { GuestProps as EditGuestProps } from "../../../pages/api/guests/edit";
+import { FormType, Nationality } from "../../helpers/FormTypes";
+import {
+  useAddGuestToApi,
+  useUpdateGuestToApi,
+} from "../../queries/useRequestsList";
 import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
 import { CompositionSection } from "../Compositions";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
 import { Buttons } from "../Forms/RadioButtons/style";
-import FormButtonsVertical, { Data } from "../Inputs/FormButtonsVertcal";
+import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
 import FormCityDropdown from "../Inputs/FormCityDropdown";
 import FormCountryDropdown from "../Inputs/FormCountryDropdown";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
-import FormTextInput from "../Inputs/FormTextInput";
-import { Error } from "../Inputs/style";
+import { Error as InputError } from "../Inputs/style";
 import { ThankfulnessModal } from "../ThankfulnessModal";
 import { Tooltip } from "../Tooltip";
+import { RequestProps } from "../../../pages/api/listing/requests";
+import {
+  ACCOMMODATION_TYPES,
+  GROUP_RELATIONS,
+  OVERNIGHT_DURATION_TYPES,
+  refugeeDetailsOptions,
+} from "./FormAdGuest.data";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -33,7 +39,7 @@ enum Boolean {
 
 const enum Location {
   Any,
-  Preffered,
+  Preferred,
 }
 
 type SubmitRequestState = {
@@ -51,14 +57,28 @@ type FormAdGuestProps = {
   name: string | null;
   email: string | null;
   phoneNumber: string | null;
+  data: RequestProps | null;
+};
+
+type MutateCallbacks = {
+  onSuccess: () => void;
+  onError: (error: Error | unknown) => void;
+  onSettled: () => void;
 };
 
 export default function FormAdGuest({
   name,
   email,
   phoneNumber,
+  data,
 }: FormAdGuestProps) {
   const { t } = useTranslation();
+  const { mutate: mutateAdd } = useAddGuestToApi();
+  const { mutate: mutateUpdate } = useUpdateGuestToApi();
+  const [location, setLocation] = useState<Location>(Location.Any);
+  const [submitRequstState, setSubmitRequstState] =
+    useState<SubmitRequestState>(submitRequestDefualtState);
+
   const formFields = useForm<FormType>({
     defaultValues: {
       advancedRefugee: {
@@ -72,43 +92,47 @@ export default function FormAdGuest({
       },
     },
   });
-  const { mutate } = useAddGuestToApi();
 
-  const [location, setLocation] = useState<Location>(Location.Any);
-  const [submitRequstState, setSubmitRequstState] =
-    useState<SubmitRequestState>(submitRequestDefualtState);
+  useEffect(() => {
+    if (formFields && data) {
+      formFields.reset({
+        advancedRefugee: {
+          country: data?.country ? data.country : "",
+          town: data?.city ? data.city : "",
+          overnightDuration: data?.duration_category
+            ? data.duration_category[0]
+            : "",
+          fullBedCount: data?.beds ? data.beds : 1,
+          preferences: {
+            peopleDetails: {
+              pregnant: data?.is_pregnant === Boolean.TRUE,
+              disability: data?.is_with_disability === Boolean.TRUE,
+              animals: data?.is_with_animal === Boolean.TRUE,
+              oldPerson: data?.is_with_elderly === Boolean.TRUE,
+            },
+          },
+          groupRelations: data?.group_relation ? data.group_relation[0] : "",
+          accommodationType: data?.acceptable_shelter_types
+            ? data.acceptable_shelter_types
+            : [],
+          nationality:
+            data?.is_ukrainian_nationality === Boolean.TRUE
+              ? Nationality.UKRAINIAN
+              : data?.is_ukrainian_nationality === Boolean.FALSE
+              ? Nationality.ANY
+              : "",
+          phoneNumber: data?.phone_num ? data.phone_num : "",
+          email: data?.email ? data.email : "",
+        },
+      });
+    }
+  }, [data, formFields]);
 
-  const refugeeDetailsOptions: Data[] = useMemo(
-    () => [
-      {
-        id: "advancedRefugee.preferences.peopleDetails.animals",
-        label: t("refugeeForm.refugeeDetailsOptions.animals"),
-        icon: <AnimalsIcon width="30" height="25" />,
-        extra: (
-          <FormTextInput
-            name="advancedRefugee.preferences.animal"
-            label={t("refugeeForm.labels.refugeesAnimal")}
-          />
-        ),
-      },
-      {
-        id: "advancedRefugee.preferences.peopleDetails.pregnant",
-        label: t("refugeeForm.refugeeDetailsOptions.pregnant"),
-        icon: <PregnantIcon width="26" height="25" />,
-      },
-      {
-        id: "advancedRefugee.preferences.peopleDetails.oldPerson",
-        label: t("refugeeForm.refugeeDetailsOptions.oldPerson"),
-        icon: <ElderIcon width="26" height="25" />,
-      },
-      {
-        id: "advancedRefugee.preferences.peopleDetails.disability",
-        label: t("refugeeForm.refugeeDetailsOptions.disability"),
-        icon: <DisabilityIcon width="26" height="25" />,
-      },
-    ],
-    [t]
-  );
+  useEffect(() => {
+    if (data?.city && location === Location.Any) {
+      setLocation(Location.Preferred);
+    }
+  }, [data]);
 
   const {
     handleSubmit,
@@ -118,11 +142,20 @@ export default function FormAdGuest({
 
   const watchCountry = watch("advancedRefugee.country", "");
 
-  const onSubmit: SubmitHandler<FormType> = async (data) => {
-    const guest = data.advancedRefugee;
+  const getSubmitButtonTitle = useMemo(
+    () =>
+      data?.id
+        ? t("refugeeAddForm.confirmChangesButton")
+        : t("refugeeAddForm.addButton"),
+    [t, data]
+  );
 
-    let apiObject: GuestProps = {
+  const onSubmit: SubmitHandler<FormType> = async ({ advancedRefugee }) => {
+    const guest = advancedRefugee;
+
+    let apiObject: AddGuestProps | EditGuestProps = {
       // name: guest.name,
+      id: data?.id ? data.id : undefined,
       phone_num: `${guest.phoneNumber}`,
       email: guest.email,
       acceptable_shelter_types: guest.accommodationType,
@@ -141,7 +174,9 @@ export default function FormAdGuest({
         ? Boolean.TRUE
         : Boolean.FALSE,
       is_ukrainian_nationality:
-        guest.nationality === "ukraine" ? Boolean.TRUE : Boolean.FALSE,
+        guest.nationality === Nationality.UKRAINIAN
+          ? Boolean.TRUE
+          : Boolean.FALSE,
       duration_category: [guest.overnightDuration],
       country: guest.country,
     };
@@ -152,6 +187,18 @@ export default function FormAdGuest({
         city: guest.town,
       };
     }
+
+    const mutate = (
+      payload: AddGuestProps | EditGuestProps,
+      callbacks: MutateCallbacks
+    ) => {
+      if (data?.id) {
+        mutateUpdate(payload as EditGuestProps, callbacks);
+        return;
+      }
+
+      mutateAdd(payload as AddGuestProps, callbacks);
+    };
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
@@ -171,52 +218,6 @@ export default function FormAdGuest({
   const onError = (_error: unknown) => {
     // TODO: handle error case
   };
-
-  const GROUP_RELATIONS = [
-    { label: t("staticValues.groupRelations.single_man"), value: "single_man" },
-    {
-      label: t("staticValues.groupRelations.single_woman"),
-      value: "single_woman",
-    },
-    { label: t("staticValues.groupRelations.spouses"), value: "spouses" },
-    {
-      label: t("staticValues.groupRelations.mother_with_children"),
-      value: "mother_with_children",
-    },
-    {
-      label: t("staticValues.groupRelations.family_with_children"),
-      value: "family_with_children",
-    },
-    {
-      label: t("staticValues.groupRelations.unrelated_group"),
-      value: "unrelated_group",
-    },
-  ];
-
-  const ACCOMMODATION_TYPES = [
-    { label: t("staticValues.accommodationTypes.bed"), value: "bed" },
-    { label: t("staticValues.accommodationTypes.room"), value: "room" },
-    { label: t("staticValues.accommodationTypes.flat"), value: "flat" },
-    { label: t("staticValues.accommodationTypes.house"), value: "house" },
-    {
-      label: t("staticValues.accommodationTypes.collective"),
-      value: "collective",
-    },
-  ];
-
-  const OVERNIGHT_DURATION_TYPES = [
-    {
-      label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "less_than_1_week",
-    },
-    { label: t("staticValues.timePeriod.week"), value: "1_week" },
-    {
-      label: t("staticValues.timePeriod.twoWeeks"),
-      value: "2_3_weeks",
-    },
-    { label: t("staticValues.timePeriod.month"), value: "month" },
-    { label: t("staticValues.timePeriod.longer"), value: "longer" },
-  ];
 
   return (
     <FormProvider {...formFields}>
@@ -282,14 +283,14 @@ export default function FormAdGuest({
               <ChoiceButton
                 text={t("others:forms.match.specificCity")}
                 isSmall
-                onPress={() => setLocation(Location.Preffered)}
-                isSelected={location === Location.Preffered}
+                onPress={() => setLocation(Location.Preferred)}
+                isSelected={location === Location.Preferred}
                 width={180}
                 noMarginRight
               />
             </Buttons>
           </View>
-          {location === Location.Preffered && (
+          {location === Location.Preferred && (
             <View style={{ zIndex: 13 }}>
               <FormCityDropdown
                 country={watchCountry}
@@ -312,7 +313,10 @@ export default function FormAdGuest({
               rules={{
                 required: true,
               }}
-              data={OVERNIGHT_DURATION_TYPES}
+              data={OVERNIGHT_DURATION_TYPES.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               error={errors?.advancedRefugee?.overnightDuration}
               errorMsg={t("refugeeAddForm.errors.overnightDuration")}
             />
@@ -339,13 +343,21 @@ export default function FormAdGuest({
               errorMsg={t("refugeeAddForm.errors.fullBedCount")}
             />
           </View>
-          <FormButtonsVertical data={refugeeDetailsOptions} />
+          <FormButtonsVertical
+            data={refugeeDetailsOptions.map(({ label, ...rest }) => ({
+              label: t(label),
+              ...rest,
+            }))}
+          />
           <View style={{ zIndex: 11 }}>
             <InputCotrolLabel>
               {t("refugeeAddForm.groupRelations")}
             </InputCotrolLabel>
             <FormDropdown
-              data={GROUP_RELATIONS}
+              data={GROUP_RELATIONS.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               name="advancedRefugee.groupRelations"
               placeholder={t("refugeeAddForm.selectPlaceholder")}
               rules={{
@@ -360,7 +372,10 @@ export default function FormAdGuest({
               {t("refugeeAddForm.accommodationType")}
             </InputCotrolLabel>
             <FormDropdown<string>
-              data={ACCOMMODATION_TYPES}
+              data={ACCOMMODATION_TYPES.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               name="advancedRefugee.accommodationType"
               placeholder={t("refugeeAddForm.selectPlaceholder")}
               multiSelect
@@ -384,11 +399,11 @@ export default function FormAdGuest({
               data={[
                 {
                   label: t("refugeeAddForm.countryOfGroupUA"),
-                  value: "ukraine",
+                  value: Nationality.UKRAINIAN,
                 },
                 {
                   label: t("refugeeAddForm.countryOfGroupOthers"),
-                  value: "any",
+                  value: Nationality.ANY,
                 },
               ]}
               error={errors?.advancedRefugee?.nationality}
@@ -405,11 +420,11 @@ export default function FormAdGuest({
         <InputControl>
           <ButtonCta
             onPress={handleSubmit(onSubmit, onError)}
-            anchor={t("refugeeAddForm.addButton")}
+            anchor={getSubmitButtonTitle}
             style={styles.addButton}
           />
           {isSubmitted && !isValid ? (
-            <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+            <InputError>{t("refugeeAddForm.addButtomErrorMessage")}</InputError>
           ) : null}
         </InputControl>
       </CompositionSection>
@@ -428,7 +443,7 @@ const styles = StyleSheet.create({
 
 export const SectionContent = styled.View`
   display: flex;
-  gap: 30px 0px;
+  gap: 30px 0;
   max-width: 400px;
   width: 100%;
   margin-right: auto;

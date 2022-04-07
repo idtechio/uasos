@@ -101,11 +101,13 @@ export const toAccomodationTime: (
     duration_category
       .map((c) => {
         switch (c) {
-          case "less_than_week":
+          case "less_than_1_week":
             return AccommodationTime.LESS_THAN_WEEK;
+          case "1_week":
           case "week":
             return AccommodationTime.WEEK;
           case "two_weeks":
+          case "2_3_weeks":
             return AccommodationTime.TWO_WEEKS;
           case "month":
             return AccommodationTime.MONTH;

@@ -107,7 +107,7 @@ export type FormType = {
     prolongationReady: boolean;
     accommodationPhotos: [Blob];
     hostType: HostType | string;
-    volunteerVisitAcceptance: string;
+    volunteerVisitAcceptance: boolean;
     elderReady: boolean;
     zipCode: string;
     city: string;
