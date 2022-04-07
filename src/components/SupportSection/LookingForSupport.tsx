@@ -121,7 +121,6 @@ const Requests = ({
           <SupportCard key={r.id}>
             <HeaderWrapper>
               <MoreButtonWrapper>
-                {/* TODO: move this into EditOfferButton  */}
                 {r.type !== "confirmed" &&
                   (notYetReady ? (
                     <ActivityIndicator />

@@ -26,7 +26,7 @@ export const useAddGuestToApi = () => {
         email: variables.email ?? "",
         id: `not-yet-ready-${clientOnlyId}`,
         status: GuestHostStatus.DEFAULT,
-        type: GuestHostType.FOUND_A_MATCH,
+        type: GuestHostType.LOOKING_FOR_MATCH,
         country: variables.country ?? "",
         city: variables.city ?? "",
         is_pregnant: variables.is_pregnant as Boolean,
@@ -39,7 +39,7 @@ export const useAddGuestToApi = () => {
 
       queryClient.setQueryData<GetRequestsListDTO | undefined>(
         [QueryKeys.GET_REQUESTS_LIST],
-        (data) => data && { ...data, offers: [...data.requests, newItem] }
+        (data) => data && { ...data, requests: [...data.requests, newItem] }
       );
 
       setTimeout(() => {

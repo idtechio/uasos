@@ -27,7 +27,7 @@ export const useAddHostToApi = () => {
         email: variables.email ?? "",
         id: `not-yet-ready-${clientOnlyId}`,
         status: GuestHostStatus.DEFAULT,
-        type: GuestHostType.FOUND_A_MATCH,
+        type: GuestHostType.LOOKING_FOR_MATCH,
         can_be_verified: Boolean[variables.can_be_verified],
         transport_included: Boolean[variables.transport_included],
         ok_for_pregnant: Boolean[variables.ok_for_pregnant],
