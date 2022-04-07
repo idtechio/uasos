@@ -440,7 +440,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             </View>
           )}
 
-          <View>
+          {/* <View>
             <InputControlLabel>
               {t("others:forms.createShelter.addPhotoHeader")}
             </InputControlLabel>
@@ -448,7 +448,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               label={t("others:forms.generic.addPhoto")}
               name="advancedHost.uploadedPhotos"
             />
-          </View>
+          </View> */}
 
           <View>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
