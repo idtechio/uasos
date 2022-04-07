@@ -1,5 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
+import { useTranslation } from "next-i18next";
 import styled from "styled-components/native";
 import { Theme } from "../../../../style/theme.config";
 import Input from "../../../Forms/Input";
@@ -14,10 +15,11 @@ export const Error = styled.Text`
 
 export default function PhoneNumberInput() {
   const { control } = useFormContext<EditProfileForm>();
+  const { t } = useTranslation("common");
 
   return (
     <InputWrapper
-      label="Phone number"
+      label={t("labels.phone")}
       styles={{
         label: {},
         container: { zIndex: 999 },
@@ -34,7 +36,7 @@ export default function PhoneNumberInput() {
                 onChange={onChange}
                 error={error}
                 errorMsg={error?.message}
-                placeholder="Prefix"
+                placeholder={t("labels.prefix")}
               />
             )}
           />

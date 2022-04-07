@@ -16,6 +16,8 @@ const Footer = () => {
   const router = useRouter();
   const { PRIVACY_POLICY, REGULATIONS, PARTNERS } = Routes;
 
+  console.log(t("others:common.footer.FAQ"));
+
   return (
     <FooterWrapper>
       <FooterHeaderWrapper>
@@ -25,7 +27,7 @@ const Footer = () => {
       <FooterContentWrapper>
         <Link href={REGULATIONS} passHref>
           <FooterLink active={router.pathname === REGULATIONS}>
-            {t("termsOfService")}
+            {t("others:common.footer.termsOfService")}
           </FooterLink>
         </Link>
         <Link href={PRIVACY_POLICY} passHref>
@@ -39,7 +41,7 @@ const Footer = () => {
           </FooterLink>
         </Link>
         <Link href="/faq.pdf" passHref locale={false}>
-          <FooterLink>{t("faq")}</FooterLink>
+          <FooterLink>{t("others:common.footer.FAQ")}</FooterLink>
         </Link>
         <Link href="/safety-tips.pdf" passHref locale={false}>
           <FooterLink>{t("yourSafety")}</FooterLink>
