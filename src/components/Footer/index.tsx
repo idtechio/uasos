@@ -16,8 +16,6 @@ const Footer = () => {
   const router = useRouter();
   const { PRIVACY_POLICY, REGULATIONS, PARTNERS } = Routes;
 
-  console.log(t("others:common.footer.FAQ"));
-
   return (
     <FooterWrapper>
       <FooterHeaderWrapper>
