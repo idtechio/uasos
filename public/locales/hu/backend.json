@@ -2,7 +2,7 @@
     "messaging": {
         "sms": {
             "offeringNotification": "Van egy kapcsolatunk az Ön számára! Ellenőrizze az e-mailjét és erősítse meg.",
-            "sealedNotification": "Van egy kapcsolatunk az Ön számára! Ellenőrizze az e-mailjét és erősítse meg."
+            "sealedNotification": "Találtunk Önnek egy kontaktot. Elfogadás\/elutasítás az uasos.org-on."
         }
     },
     "sendgrid": {

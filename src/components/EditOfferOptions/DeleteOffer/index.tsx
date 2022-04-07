@@ -13,6 +13,7 @@ import {
   FormHeader,
   FormWrapper,
 } from "../style";
+import { TargetTypes } from "../EditOfferButton/types";
 
 export default function DeleteOfferForm({
   close,
@@ -21,7 +22,7 @@ export default function DeleteOfferForm({
 }: {
   close(): void;
   targetID: string;
-  targetType: "hosts" | "guests";
+  targetType: TargetTypes;
 }) {
   const { t } = useTranslation();
   const { mutate, isError, error, isSuccess, isLoading } = useDeleteItem();
@@ -30,11 +31,11 @@ export default function DeleteOfferForm({
   const handleDelete = () => mutate({ targetID, targetType });
 
   const closeAfterSuccess = useCallback(() => {
-    if (targetType === "guests") {
+    if (targetType === TargetTypes.GUESTS) {
       queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
     }
 
-    if (targetType === "hosts") {
+    if (targetType === TargetTypes.HOSTS) {
       queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
     }
 

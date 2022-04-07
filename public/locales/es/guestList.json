@@ -1,11 +1,11 @@
 {
-  "arrival": "",
-  "persons": "",
-  "locationPreference": "",
-  "travelingWithAnimal": "",
-  "travelingWithToddler": "",
-  "inviteGuest": "",
-  "anyLocation": "",
-  "travelingWithOlderPerson": "",
-  "travelingWithDisabledPerson": ""
+    "arrival": "",
+    "persons": "",
+    "locationPreference": "",
+    "anyLocation": "",
+    "travelingWithAnimal": "",
+    "travelingWithOlderPerson": "",
+    "travelingWithDisabledPerson": "",
+    "travelingWithToddler": "",
+    "inviteGuest": ""
 }

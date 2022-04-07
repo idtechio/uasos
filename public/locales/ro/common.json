@@ -195,7 +195,8 @@
             "type": "Tipe de cazare este un câmp obligatoriu",
             "hostType": "Tipul de gazdă este un câmp obligatoriu",
             "accommodationTime": "Durata șederii este obligatorie",
-            "nationalityError": "Vă rugăm selectați naționalitatea"
+            "nationalityError": "Vă rugăm selectați naționalitatea",
+            "groupsTypes": "Tipul grupului este un câmp obligatoriu"
         },
         "prolongationReady": "Posibilitate de prelungire a șederii (contra unei sume de bani)",
         "transportReady": "Posibilitate de transport",
@@ -304,7 +305,9 @@
             "countryOfGroup": "Vă rugăm selectați naționalitatea"
         },
         "refugeInfoHeader": "Adăugați informații cu privire la cazare",
-        "countryOfGroup": "Care este țara de origine a grupului?"
+        "countryOfGroup": "Care este țara de origine a grupului?",
+        "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
+        "confirmChangesButton": "Confirmați modificările"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",

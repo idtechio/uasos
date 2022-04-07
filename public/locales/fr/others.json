@@ -25,7 +25,9 @@
             "congratulations": "Félicitations",
             "thankYou": "Merci",
             "or": "Ou",
-            "badNews": "Mauvaise nouvelle"
+            "badNews": "Mauvaise nouvelle",
+            "prefix": "",
+            "dashboard": ""
         },
         "links": {
             "re-sendCode": "Renvoyer le code",
@@ -228,13 +230,16 @@
         "checks": {
             "phoneNotVerified": "Numéro de téléphone non-vérifié",
             "emailNotVerified": "E-mail non vérifié",
-            "accountInCreation": ""
+            "accountInCreation": "",
+            "emailAlreadyInUse": "",
+            "idNotVerified": ""
         },
         "housing": "Logement",
         "confirmation": {
             "header": "",
             "content": ""
-        }
+        },
+        "accommodationSearch": ""
     },
     "reportProblem": {
         "popup": {

@@ -25,7 +25,9 @@
             "congratulations": "Gratulacje",
             "thankYou": "Dziękujemy",
             "or": "Lub",
-            "badNews": "Złe wieści"
+            "badNews": "Złe wieści",
+            "prefix": "Prefiks",
+            "dashboard": "Tablica rozdzielcza"
         },
         "links": {
             "re-sendCode": "Ponowne wysłanie kodu",
@@ -228,13 +230,16 @@
         "checks": {
             "phoneNotVerified": "Telefon nie został zweryfikowany",
             "emailNotVerified": "E-mail nie został zweryfikowany",
-            "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach."
+            "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach.",
+            "emailAlreadyInUse": "Adres e-mail powiązany z wybranym kontem dostawcy logowania jest już używany w naszym systemie. spróbuj zalogować się ponownie za pomocą innej metody logowania.",
+            "idNotVerified": ""
         },
         "housing": "Nocleg",
         "confirmation": {
             "header": "Dziękujemy za Twoją decyzję",
             "content": "Jeśli wyraziłeś zgodę, poczekaj na decyzję drugiej osoby. Gdy druga strona zaakceptuje zgłoszenie, otrzymasz wiadomość e-mail z danymi kontaktowymi. <br \/> W przypadku rezygnacji Twoje zgłoszenie zostanie zwrócone do puli aktywnych zgłoszeń. O kolejnej ofercie poinformujemy Cię pocztą elektroniczną."
-        }
+        },
+        "accommodationSearch": "Wyszukiwanie noclegów"
     },
     "reportProblem": {
         "popup": {

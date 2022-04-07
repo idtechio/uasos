@@ -25,7 +25,9 @@
             "congratulations": "Gratulujeme",
             "thankYou": "Děkujeme",
             "or": "Nebo",
-            "badNews": "Špatné zprávy"
+            "badNews": "Špatné zprávy",
+            "prefix": "Předpona",
+            "dashboard": "Přístrojová deska"
         },
         "links": {
             "re-sendCode": "Opětovné zaslání kódu",
@@ -228,13 +230,16 @@
         "checks": {
             "phoneNotVerified": "Telefon nebyl ověřen",
             "emailNotVerified": "Email nebyl ověřen",
-            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku."
+            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
+            "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
+            "idNotVerified": ""
         },
         "housing": "Ubytování",
         "confirmation": {
             "header": "Děkujeme vám za vaše rozhodnutí",
             "content": "Pokud jste souhlasili, vyčkejte na rozhodnutí druhé osoby. Jakmile druhá strana souhlasí, obdržíte e-mail s kontaktními informacemi. <br \/> V případě zrušení bude vaše žádost vrácena do fondu aktivních žádostí. O další nabídce vás budeme informovat e-mailem."
-        }
+        },
+        "accommodationSearch": "Vyhledávání ubytování"
     },
     "reportProblem": {
         "popup": {

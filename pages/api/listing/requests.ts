@@ -42,6 +42,7 @@ export interface MatchedOfferProps {
   phone_num: string;
   email: string;
   city: string;
+  closest_city: string;
 
   shelter_type: Array<string>;
   beds: number;
@@ -65,19 +66,20 @@ export interface RequestProps {
   phone_num: string;
   email: string;
   city: string;
-  acceptable_shelter_types: Array<string> | string;
+  acceptable_shelter_types: Array<string>;
   beds: number;
-  group_relation: Array<string> | string;
+  group_relation: Array<string>;
   is_pregnant: Boolean;
   is_with_disability: Boolean;
   is_with_animal: Boolean;
   is_with_elderly: Boolean;
   is_ukrainian_nationality: Boolean;
-  duration_category: Array<string> | string;
+  duration_category: Array<string>;
   type: GuestHostType;
   match_id?: string | null;
   match_status?: MatchStatus | null;
   matchedOffer?: MatchedOfferProps;
+  client_only?: boolean;
 }
 
 async function getRequests(
@@ -112,6 +114,7 @@ type GuestListItem = RequestProps & {
   host_name: string;
   host_status: GuestHostStatus;
   host_city: string;
+  host_closest_city: string;
   host_country: string;
   host_phone_num: string;
   host_email: string;
@@ -156,6 +159,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       host_id,
       host_name,
       host_city,
+      host_closest_city,
       host_country,
       host_phone_num,
       host_email,
@@ -170,7 +174,8 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
       host_ok_for_any_nationality,
       host_duration_category,
       host_transport_included
-    FROM requests WHERE account_uid = $1`,
+    FROM requests WHERE account_uid = $1
+    ORDER BY registered ASC`,
     [uid]
   );
 
@@ -203,6 +208,7 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           id: g.host_id,
           name: g.host_name,
           city: g.host_city,
+          closest_city: g.host_closest_city,
           country: g.host_country,
           phone_num: g.host_phone_num,
           email: g.host_email,
@@ -251,6 +257,7 @@ function getMockRequests(): RequestProps[] {
         id: "1114e25e-aae4-11ec-9a20-1726ed50bb17",
         name: "Jan Kowalski",
         city: "Warszawa",
+        closest_city: "Warszawa",
         country: "poland",
         phone_num: "+48111222333",
         email: "host1@example.com",

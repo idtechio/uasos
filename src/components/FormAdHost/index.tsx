@@ -1,9 +1,14 @@
-import { useState, useMemo, useContext } from "react";
+import { useState, useMemo, useEffect, useContext } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
-import { AccommodationType, FormType, HostType } from "../../helpers/FormTypes";
+import {
+  AccommodationType,
+  FormType,
+  HostType,
+  Nationality,
+} from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 
 import { CompositionSection } from "../Compositions";
@@ -19,17 +24,25 @@ import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
   GROUP_RELATIONS,
+  OVERNIGHT_DURATION_TYPES,
 } from "./FormAddHost.data";
 import CardModal from "../CardModal";
 import { ThankfulnessModal } from "../ThankfulnessModal";
-import { Error } from "../Inputs/style";
+import { Error as InputError } from "../Inputs/style";
 import FormCheckbox from "../Inputs/FormCheckbox";
-import { useAddHostToApi } from "../../queries/useOffersList";
+import {
+  useAddHostToApi,
+  useUpdateHostToApi,
+} from "../../queries/useOffersList";
+import { OfferProps } from "../../../pages/api/listing/offers";
 import { AuthContext } from "../../../pages/_app";
+// import FormUpload from "../Inputs/FormUpload";
+import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
+import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
 
 export const SectionContent = styled.View`
   display: flex;
-  gap: 30px 0px;
+  gap: 30px 0;
   max-width: 400px;
   width: 100%;
   margin-right: auto;
@@ -53,13 +66,24 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
-export default function FormAdHost() {
+type FormAdHostProps = {
+  data: OfferProps | null;
+};
+
+type MutateCallbacks = {
+  onSuccess: () => void;
+  onError: (error: Error | unknown) => void;
+  onSettled: () => void;
+};
+
+export default function FormAdHost({ data }: FormAdHostProps) {
   const { t } = useTranslation();
   const {
-    mutate,
+    mutate: mutateAdd,
     isLoading: isSubmitLoading,
     isSuccess: isSubmitSuccess,
   } = useAddHostToApi();
+  const { mutate: mutateUpdate } = useUpdateHostToApi();
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
@@ -67,12 +91,50 @@ export default function FormAdHost() {
       advancedHost: {
         guestCount: 1,
         country: "poland",
-        volunteerVisitAcceptance: "true",
+        volunteerVisitAcceptance: true,
         groupsTypes: [],
         phoneNumber: identity?.phoneNumber ?? "",
+        uploadedPhotos: [],
       },
     },
   });
+
+  useEffect(() => {
+    if (form && data) {
+      form.reset({
+        advancedHost: {
+          country: data?.country ? data.country : "poland",
+          city: data?.city ? data.city : "",
+          closestLargeCity: data?.closest_city ? data.closest_city : "",
+          zipCode: data?.zipcode ? data.zipcode : "",
+          street: data?.street ? data.street : "",
+          buildingNumber: data?.building_no ? data.building_no : "",
+          apartmentNumber: data?.appartment_no ? data.appartment_no : "",
+          accommodationType: data?.shelter_type ? data.shelter_type[0] : "",
+          accommodationTime: data?.duration_category
+            ? data.duration_category[0]
+            : "",
+          hostType: data?.host_type ? data?.host_type[0] : "",
+          guestCount: data?.beds ? data.beds : 1,
+          groupsTypes: data?.acceptable_group_relations
+            ? data.acceptable_group_relations
+            : [],
+          transportReady: data?.transport_included === Boolean.TRUE,
+          pregnantReady: data?.ok_for_pregnant === Boolean.TRUE,
+          disabilityReady: data?.ok_for_disabilities === Boolean.TRUE,
+          animalReady: data?.ok_for_animals === Boolean.TRUE,
+          elderReady: data?.ok_for_elderly === Boolean.TRUE,
+          nationality:
+            data?.ok_for_any_nationality === Boolean.TRUE
+              ? Nationality.ANY
+              : data?.ok_for_any_nationality === Boolean.FALSE
+              ? Nationality.UKRAINIAN
+              : "",
+          volunteerVisitAcceptance: data?.can_be_verified === Boolean.TRUE,
+        },
+      });
+    }
+  }, [data, form]);
 
   const [submitRequstState, setSubmitRequstState] =
     useState<SubmitRequestState>(submitRequestDefualtState);
@@ -100,6 +162,14 @@ export default function FormAdHost() {
     [watchAccomodationTypeFieldValue]
   );
 
+  const getSubmitButtonTitle = useMemo(
+    () =>
+      data?.id
+        ? t("refugeeAddForm.confirmChangesButton")
+        : t("hostAdd.addButton"),
+    [t, data]
+  );
+
   const onSubmit: SubmitHandler<FormType> = async ({ advancedHost }) => {
     const {
       accommodationTime,
@@ -113,22 +183,25 @@ export default function FormAdHost() {
       nationality,
       pregnantReady,
       city,
-      transportReady: transportReady,
+      transportReady,
       zipCode,
       street,
       buildingNumber,
       apartmentNumber,
       closestLargeCity,
       volunteerVisitAcceptance,
+      hostType,
     } = advancedHost;
 
     setSubmitRequstState((state) => ({ ...state, loading: true }));
 
-    const payload = {
+    const payload: AddHostProps | EditHostProps = {
+      id: data?.id ? data.id : undefined,
       country: country,
       phone_num: identity?.phoneNumber ?? "",
       city: city,
       shelter_type: [accommodationType],
+      host_type: shouldIncludeHostTypeField ? [hostType] : [],
       acceptable_group_relations: groupsTypes,
       beds: guestCount,
       ok_for_pregnant: pregnantReady ? Boolean.TRUE : Boolean.FALSE,
@@ -136,10 +209,9 @@ export default function FormAdHost() {
       ok_for_animals: animalReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_elderly: elderReady ? Boolean.TRUE : Boolean.FALSE,
       ok_for_any_nationality:
-        nationality === "any" ? Boolean.TRUE : Boolean.FALSE,
+        nationality === Nationality.ANY ? Boolean.TRUE : Boolean.FALSE,
       duration_category: [accommodationTime],
       transport_included: transportReady ? Boolean.TRUE : Boolean.FALSE,
-      // TODO set data for new props:
       closest_city: closestLargeCity,
       zipcode: zipCode,
       street: street,
@@ -147,6 +219,21 @@ export default function FormAdHost() {
       appartment_no: apartmentNumber,
       can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
+
+    const mutate = (
+      payload: AddHostProps | EditHostProps,
+      callbacks: MutateCallbacks
+    ) => {
+      if (data?.id) {
+        mutateUpdate(payload as EditHostProps, callbacks);
+        return;
+      }
+
+      mutateAdd(payload as AddHostProps, callbacks);
+    };
+
+    setSubmitRequstState((state) => ({ ...state, loading: true }));
+
     mutate(payload, {
       onSuccess: () => {
         setSubmitRequstState((state) => ({ ...state, succeeded: true }));
@@ -159,20 +246,6 @@ export default function FormAdHost() {
       },
     });
   };
-
-  const OVERNIGHT_DURATION_TYPES = [
-    {
-      label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "less_than_1_week",
-    },
-    { label: t("staticValues.timePeriod.week"), value: "1_week" },
-    {
-      label: t("staticValues.timePeriod.twoWeeks"),
-      value: "2_3_weeks",
-    },
-    { label: t("staticValues.timePeriod.month"), value: "month" },
-    { label: t("staticValues.timePeriod.longer"), value: "longer" },
-  ];
 
   return (
     <FormProvider {...form}>
@@ -352,7 +425,7 @@ export default function FormAdHost() {
                 data={(
                   Object.keys(HostType) as Array<keyof typeof HostType>
                 ).map((key: keyof typeof HostType) => ({
-                  value: key,
+                  value: HostType[key],
                   label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
                 }))}
                 name="advancedHost.hostType"
@@ -366,6 +439,16 @@ export default function FormAdHost() {
               />
             </View>
           )}
+
+          {/* <View>
+            <InputControlLabel>
+              {t("others:forms.createShelter.addPhotoHeader")}
+            </InputControlLabel>
+            <FormUpload
+              label={t("others:forms.generic.addPhoto")}
+              name="advancedHost.uploadedPhotos"
+            />
+          </View> */}
 
           <View>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
@@ -389,7 +472,10 @@ export default function FormAdHost() {
               rules={{
                 required: true,
               }}
-              data={OVERNIGHT_DURATION_TYPES}
+              data={OVERNIGHT_DURATION_TYPES.map(({ label, ...rest }) => ({
+                label: t(label),
+                ...rest,
+              }))}
               error={errors?.advancedHost?.accommodationTime}
               errorMsg={t("hostAdd.errors.accommodationTime")}
             />
@@ -411,8 +497,8 @@ export default function FormAdHost() {
                 required: true,
               }}
               data={[
-                { label: t("hostAdd.ukraine"), value: "ukraine" },
-                { label: t("hostAdd.any"), value: "any" },
+                { label: t("hostAdd.ukraine"), value: Nationality.UKRAINIAN },
+                { label: t("hostAdd.any"), value: Nationality.ANY },
               ]}
               errorMsg={t("hostAdd.errors.nationalityError")}
             />
@@ -466,18 +552,21 @@ export default function FormAdHost() {
         <InputControl>
           <ButtonCta
             onPress={handleSubmit(onSubmit)}
-            anchor={t("refugeeAddForm.addButton")}
+            anchor={getSubmitButtonTitle}
             style={styles.addButton}
           />
           {isSubmitted && !isValid && !isSubmitLoading && !isSubmitSuccess && (
             <View style={styles.errorWrapper}>
-              <Error>{t("refugeeAddForm.addButtomErrorMessage")}</Error>
+              <InputError>
+                {t("refugeeAddForm.addButtomErrorMessage")}
+              </InputError>
             </View>
           )}
-
           {isSubmitted && (submitRequstState.error as Error)?.message && (
             <View style={styles.errorWrapper}>
-              <Error>{(submitRequstState.error as Error).message}</Error>
+              <InputError>
+                {(submitRequstState.error as Error).message}
+              </InputError>
             </View>
           )}
         </InputControl>

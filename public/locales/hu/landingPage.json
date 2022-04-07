@@ -14,7 +14,7 @@
     },
     "likeToHelp": {
         "title": "Szeretnél segíteni?",
-        "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak.\n  \n \n\n  \n \n\n  Alkalmazásunk automatikusan párosítja a szállást a segítséget kereső, regisztrált személyekkel a megadott információk alapján",
+        "details": "Regisztráljon bármilyen típusú szállást, amelyet <b>ingyenesen<\/b> ajánl fel az ukrajnai háború áldozatainak.",
         "cta": "Szállás felajánlása"
     },
     "weMatched": {

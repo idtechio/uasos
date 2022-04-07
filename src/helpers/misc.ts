@@ -9,3 +9,8 @@ export function hexToRGB(hex: string, alpha: number) {
     return "rgb(" + r + ", " + g + ", " + b + ")";
   }
 }
+
+export const uid = () =>
+  `${Date.now().toString(36)}-${(Math.random() * 1000).toFixed()}`;
+
+export const API_REFRESH_LATENCY = 7 * 1000;

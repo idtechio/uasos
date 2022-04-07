@@ -15,6 +15,9 @@ import { getAccountDTO } from "../src/client-api/account";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
 import * as gtag from "../lib/gtag";
 import Gtag from "./gtag";
+import GAtag from "./gatag";
+import * as fbq from "../lib/fpixel";
+import FPixel from "./fpixel";
 
 export const AuthContext = createContext<{
   identity: null | User | undefined;
@@ -63,8 +66,24 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    // fbq.pageview();
+
+    const handleRouteChange = () => {
+      // fbq.pageview();
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
+      {fbq.FB_PIXEL_ID && <FPixel id={fbq.FB_PIXEL_ID} />}
+      {gtag.GOOGLE_TAG_ID && <Gtag id={gtag.GOOGLE_TAG_ID} />}
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps?.dehydratedState}>
           <GlobalStyles />
@@ -85,7 +104,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
               />
               <meta property="og:image:type" content="image/png" />
             </Head>
-            {gtag.GA_TRACKING_ID && <Gtag id={gtag.GA_TRACKING_ID} />}
+            {gtag.GA_TRACKING_ID && <GAtag id={gtag.GA_TRACKING_ID} />}
             <ThemeProviderWeb theme={theme}>
               <ThemeProviderNative theme={theme}>
                 <AuthContext.Provider

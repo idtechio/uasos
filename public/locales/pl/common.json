@@ -195,7 +195,8 @@
             "type": "Typ noclegu jest wymagany",
             "hostType": "Typ gospodarza jest wymagany",
             "accommodationTime": "Okres trwania pobytu jest wymagany",
-            "nationalityError": "Narodowość uchodźców jest wymagana"
+            "nationalityError": "Narodowość uchodźców jest wymagana",
+            "groupsTypes": "Wymagany jest typ grupy"
         },
         "prolongationReady": "Oferuję możliwość przedłużenia pobytu (odpłatnie)",
         "transportReady": "Oferuję możliwość transportu",
@@ -304,7 +305,9 @@
             "countryOfGroup": "Wybierz narodowość"
         },
         "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu",
-        "countryOfGroup": "Z jakiego kraju pochodzi grupa?"
+        "countryOfGroup": "Z jakiego kraju pochodzi grupa?",
+        "cityTooltip": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
+        "confirmChangesButton": "Potwierdź zmiany"
     },
     "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoReset": "Usuń",

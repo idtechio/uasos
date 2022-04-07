@@ -140,7 +140,7 @@
         "countries": {
             "poland": "Poľsko",
             "hungary": "Maďarsko",
-            "czechia": "Čeština",
+            "czechia": "Česko",
             "slovakia": "Slovensko"
         },
         "nameLabel": "Krstné meno (zadajte iba krstné meno)",
@@ -174,7 +174,7 @@
         "nationality": "Aké národnosti ste ochotný prijať?",
         "ukraine": "Ukrajina",
         "additionalInformationHeader": "Dodatočné informácie",
-        "any": "Akýkoľvek",
+        "any": "Akékoľvek",
         "childBedCount": "Počet miest pre deti",
         "city": "Mesto",
         "fullBedCount": "Počet plnohodnotných miest na spanie ",
@@ -195,7 +195,8 @@
             "type": "Vyžaduje sa typ ubytovania",
             "hostType": "Vyžaduje sa typ hostiteľa",
             "accommodationTime": "Vyžaduje sa dĺžka pobytu",
-            "nationalityError": "Vyžaduje sa štátna príslušnosť"
+            "nationalityError": "Vyžaduje sa štátna príslušnosť",
+            "groupsTypes": "Vyžaduje sa typ skupiny"
         },
         "prolongationReady": "Možnosť predĺženia pobytu (za poplatok)",
         "transportReady": "Možnosť dopravy",
@@ -304,7 +305,9 @@
             "countryOfGroup": "Vyberte národnosť"
         },
         "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní",
-        "countryOfGroup": "Z akej krajiny skupina pochádza?"
+        "countryOfGroup": "Z akej krajiny skupina pochádza?",
+        "cityTooltip": "Ak nemôžete nájsť svoje mesto, vyberte najbližšie veľké mesto",
+        "confirmChangesButton": "Potvrdenie zmien"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

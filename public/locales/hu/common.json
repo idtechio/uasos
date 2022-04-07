@@ -100,7 +100,7 @@
             }
         },
         "floor": {
-            "label": "Melyik emeleten található a szállás?",
+            "label": "Hanyadik emeleten található a szállás?",
             "hint": "* Idősek számára a felső emelet nehezen megközelíthető lehet"
         },
         "submit": "Regisztrálja ajánlatát"
@@ -126,12 +126,12 @@
         "ee": "Észt zászló",
         "fi": "Finn zászló",
         "lv": "Lett zászló",
-        "li": "Liechtenstein zászló",
-        "lt": "Litvánia zászló",
-        "mt": "Málta zászló",
+        "li": "Liechtenstein zászlaja",
+        "lt": "Litván zászló",
+        "mt": "Málta zászlaja",
         "nl": "Holland zászló",
         "no": "Norvég zászló",
-        "pt": "Portugália zászló",
+        "pt": "Portugál zászló",
         "si": "Szlovén zászló",
         "se": "Svédország zászló"
     },
@@ -183,7 +183,7 @@
         "elderReady": "Időseket fogadok",
         "animalReady": "Háziállattal érkező személyt is fogadok",
         "basicInfoHeader": "Adja meg az alapvető információkat",
-        "refugeInfoHeader": "Kérjük, adjon információt a szállásáról",
+        "refugeInfoHeader": "Kérjük, adjon meg információt a szállásáról",
         "addButton": "Beküldés\/Hozzáadás",
         "addButtomErrorMessage": "Kérjük töltse ki a kötelező mezőket",
         "errors": {
@@ -195,7 +195,8 @@
             "type": "A szállás típusának megadása kötelező",
             "hostType": "A szállás típusának megadása kötelező",
             "accommodationTime": "A tartózkodás időtartamának megadása kötelező",
-            "nationalityError": "Menekült állampolgárságának megadása szükséges"
+            "nationalityError": "Menekült állampolgárságának megadása szükséges",
+            "groupsTypes": "A csoport típusa kötelező"
         },
         "prolongationReady": "Lehetőség a tartózkodás meghosszabbítására (térítés ellenében)",
         "transportReady": "Szállítási lehetőség",
@@ -303,8 +304,10 @@
             "accommodationType": "Válassza ki a szállás típusát",
             "countryOfGroup": "Kérjük, válassza ki az állampolgárságát"
         },
-        "refugeInfoHeader": "Adjon tájékoztatást a szállásáról",
-        "countryOfGroup": "Melyik a csoport származási országa?"
+        "refugeInfoHeader": "Adjon meg információt a szállásáról",
+        "countryOfGroup": "Melyik a csoport származási országa?",
+        "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost",
+        "confirmChangesButton": "Változások megerősítése"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",

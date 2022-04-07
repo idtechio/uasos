@@ -78,3 +78,17 @@ export const accomodationTypeDropdownFields = [
     value: AccommodationType.COLLECTIVE,
   },
 ];
+
+export const OVERNIGHT_DURATION_TYPES = [
+  {
+    label: "staticValues.timePeriod.lessThanAWeek",
+    value: "less_than_1_week",
+  },
+  { label: "staticValues.timePeriod.week", value: "1_week" },
+  {
+    label: "staticValues.timePeriod.twoWeeks",
+    value: "2_3_weeks",
+  },
+  { label: "staticValues.timePeriod.month", value: "month" },
+  { label: "staticValues.timePeriod.longer", value: "longer" },
+];
