@@ -82,7 +82,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       advancedHost: {
         guestCount: 1,
         country: "poland",
-        volunteerVisitAcceptance: "true",
+        volunteerVisitAcceptance: true,
         groupsTypes: [],
         phoneNumber: identity?.phoneNumber ?? "",
         uploadedPhotos: [],
@@ -121,6 +121,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               : data?.ok_for_any_nationality === Boolean.FALSE
               ? Nationality.UKRAINIAN
               : "",
+          volunteerVisitAcceptance: data?.can_be_verified === Boolean.TRUE,
         },
       });
     }
@@ -228,7 +229,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "less_than_1_week",
+      value: "less_than_week",
     },
     { label: t("staticValues.timePeriod.week"), value: "1_week" },
     {

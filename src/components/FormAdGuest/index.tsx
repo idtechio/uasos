@@ -207,7 +207,7 @@ export default function FormAdGuest({
   const OVERNIGHT_DURATION_TYPES = [
     {
       label: t("staticValues.timePeriod.lessThanAWeek"),
-      value: "less_than_1_week",
+      value: "less_than_week",
     },
     { label: t("staticValues.timePeriod.week"), value: "1_week" },
     {
