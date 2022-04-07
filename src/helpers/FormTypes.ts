@@ -35,7 +35,7 @@ export enum HostType {
 }
 
 export enum AccommodationTime {
-  LESS_THAN_WEEK = "less_than_1_week",
+  LESS_THAN_WEEK = "less_than_week",
   WEEK = "week",
   TWO_WEEKS = "two_weeks",
   MONTH = "month",
