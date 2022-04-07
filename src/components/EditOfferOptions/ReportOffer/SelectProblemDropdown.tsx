@@ -1,13 +1,16 @@
 import { useTranslation } from "next-i18next";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { EditOfferContext } from "../EditOfferButton/index";
 import React from "react";
 import { Dropdown } from "../../Dropdown";
 import { DropdownStyles, StyledLabel } from "./style";
+import { PROBLEM_TYPES } from "./constans";
 
 const Label = ({ children }: { children: string }) => (
   <StyledLabel>{children}</StyledLabel>
 );
+
+type DataItem = { label: JSX.Element; value: string };
 
 interface Props {
   problemType: string | null;
@@ -19,53 +22,17 @@ export default function SelectProblemDropdown({
 }: Props) {
   const { t } = useTranslation();
   const { targetType } = useContext(EditOfferContext);
+  const [data, setData] = useState<Array<DataItem>>([]);
 
-  const PROBLEM_TYPES = [
-    ...(targetType == "hosts"
-      ? [
-          {
-            label: (
-              <Label>
-                {t("others:reportProblem.popup.reasons.guestNotNeedHelp")}
-              </Label>
-            ),
-            value: "report_guest_inactive",
-          },
-        ]
-      : []),
-    ...(targetType == "guests"
-      ? [
-          {
-            label: (
-              <Label>
-                {t("others:reportProblem.popup.reasons.hostCantHelp")}
-              </Label>
-            ),
-            value: "report_host_inactive",
-          },
-        ]
-      : []),
-    {
-      label: (
-        <Label>
-          {t("others:reportProblem.popup.reasons.rejectedAfterContact")}
-        </Label>
-      ),
-      value: "report_first_contact",
-    },
-    {
-      label: (
-        <Label>
-          {t("others:reportProblem.popup.reasons.noResponseAfterContact")}
-        </Label>
-      ),
-      value: "report_no_contact",
-    },
-    {
-      label: <Label>{t("others:reportProblem.popup.reasons.notShowUp")}</Label>,
-      value: "report_no_show_up",
-    },
-  ];
+  useEffect(() => {
+    const dropDownData: DataItem[] = PROBLEM_TYPES.filter(
+      (item) => item.targetType === targetType || !item.targetType
+    ).map((item) => ({
+      label: <Label>{item.label}</Label>,
+      value: item.value,
+    }));
+    setData(dropDownData);
+  }, [problemType]);
 
   return (
     <Dropdown
