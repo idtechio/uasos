@@ -38,6 +38,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
         {identity ? (
           <>
             <NavigationMenuItem
+              // title={t("others:common.words.dashboard")}
               title={"Dashboard"}
               Icon={UserIcon}
               onPress={() => {

@@ -189,6 +189,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
+                  errorMsg={t("others:forms.login.invalidPassword")}
                 />
                 <LostPass />
               </>

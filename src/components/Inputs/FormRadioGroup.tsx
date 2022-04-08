@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
@@ -13,13 +13,21 @@ type Data = {
 type Props = {
   name: FormKey;
   data: Data[];
-  error?: FieldError;
+  error?: FieldError | FieldError[];
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
-  const { control, formState } = useFormContext();
+  const { control, formState, getValues } = useFormContext();
   const [markedCheckbox, setMarkedCheckbox] = useState<string>();
+
+  useEffect(() => {
+    if (data && getValues(name) && !markedCheckbox) {
+      setMarkedCheckbox(
+        data.filter((el) => el.value === getValues(name))[0]?.label
+      );
+    }
+  }, [data, getValues, markedCheckbox, name]);
 
   const error = useMemo(() => {
     return name

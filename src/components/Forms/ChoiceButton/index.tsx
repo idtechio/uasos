@@ -10,6 +10,7 @@ const ChoiceButton = ({
   onPress,
   isVertical = false,
   error,
+  ...props
 }: ChoiceButtonProps) => {
   return (
     <TouchableOpacity onPress={onPress}>
@@ -18,6 +19,7 @@ const ChoiceButton = ({
         isSelected={isSelected}
         isSmall={isSmall}
         isVertical={isVertical}
+        {...props}
       >
         {icon ? (
           <Icon isSelected={isSelected} isVertical={isVertical}>

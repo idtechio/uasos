@@ -4,8 +4,9 @@ import { Theme } from "../../../style/theme.config";
 
 type ButtonType = Pick<
   ChoiceButtonProps,
-  "error" | "isSelected" | "isSmall" | "isVertical"
+  "error" | "isSelected" | "isSmall" | "isVertical" | "width" | "noMarginRight"
 > & { isChoice?: boolean; theme: Theme };
+
 export const Button = styled.View<ButtonType>`
   border: ${(props) =>
     props.isChoice
@@ -23,10 +24,14 @@ export const Button = styled.View<ButtonType>`
   justify-content: ${(props) => (props.isVertical ? `flex-left` : `center`)};
   text-align: center;
   margin-right: ${(props) =>
-    props.isSmall ? (props.isVertical ? `0` : `10px`) : `0`};
+    props.isSmall
+      ? props.isVertical || props.noMarginRight
+        ? `0`
+        : `10px`
+      : `0`};
   margin-bottom: ${(props) => (props.isSmall ? `10px` : `0`)};
   height: ${(props) => (props.isSmall ? `unset` : `100%`)};
-  width: ${(props) => (props.isSmall ? `unset` : `100%`)};
+  width: ${(props) => props.width};
 `;
 
 type TextProps = {
@@ -36,6 +41,7 @@ type TextProps = {
   isChoice?: boolean;
   theme: Theme;
 };
+
 export const Text = styled.Text<TextProps>`
   text-align: ${(props) => (props.isSmall ? `left` : `center`)};
   color: ${(props) =>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
+import { useTranslation } from "next-i18next";
 import CountrySelect from "../../../Forms/CountrySelect";
 import { CountryDropdownItemType } from "../../../Forms/CountrySelect/types";
 import { EditProfileForm } from "../types";
@@ -49,10 +50,11 @@ const data: CountryDropdownItemType[] = [
 
 export default function PreferredLanguageInput() {
   const { control } = useFormContext<EditProfileForm>();
+  const { t } = useTranslation("common");
 
   return (
     <InputWrapper
-      label="Preferred language of communication"
+      label={t("others:forms.userRegistration.preferredLanguage")}
       styles={{ container: { zIndex: 9999 } }}
     >
       <Controller
@@ -63,7 +65,7 @@ export default function PreferredLanguageInput() {
             data={data}
             value={value || ""}
             onChange={onChange}
-            placeholder="Preferred language of communication"
+            placeholder={t("others:forms.userRegistration.preferredLanguage")}
             error={error}
             errorMsg={error?.message}
           />

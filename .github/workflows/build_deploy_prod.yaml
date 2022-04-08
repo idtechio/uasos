@@ -11,6 +11,7 @@ env:
   publisher_sa_key: ${{ secrets.DEPLOYER_SA_KEY }}
   ga_id: "G-J31BD9CXCV"
   fb_pixel_id: "488912726220166"
+  gtm_id: "GTM-575LPBQ"
   firebase_api_key: ${{ secrets.FIREBASE_API_KEY }}
   firebase_auth_domain: "ukrn-hlpr.firebaseapp.com"
   firebase_project_id: "ukrn-hlpr"
@@ -46,6 +47,7 @@ jobs:
           BUILD_ARGS: >
             --build-arg NEXT_PUBLIC_GA_ID=${{ env.ga_id }}
             --build-arg NEXT_PUBLIC_FACEBOOK_PIXEL_ID=${{ env.fb_pixel_id }}
+            --build-arg NEXT_PUBLIC_GTM_ID=${{ env.gtm_id }}
             --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=${{ env.firebase_api_key }}
             --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=${{ env.firebase_auth_domain }}
             --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=${{ env.firebase_project_id }}

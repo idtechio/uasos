@@ -34,6 +34,7 @@ const HostPropsType = object({
   building_no: string,
   appartment_no: string,
   shelter_type: arrayOf(string),
+  host_type: arrayOf(string),
   beds: number,
   acceptable_group_relations: arrayOf(string),
   ok_for_pregnant: trueOrFalse,

@@ -28,17 +28,17 @@ export default function SelectProblemDropdown({
     const dropDownData: DataItem[] = PROBLEM_TYPES.filter(
       (item) => item.targetType === targetType || !item.targetType
     ).map((item) => ({
-      label: <Label>{item.label}</Label>,
+      label: <Label>{t(item.label)}</Label>,
       value: item.value,
     }));
     setData(dropDownData);
-  }, [problemType]);
+  }, [targetType]);
 
   return (
     <Dropdown
       styles={DropdownStyles}
       placeholder={t("others:forms.generic.selectFromList")}
-      data={PROBLEM_TYPES}
+      data={data}
       selected={problemType}
       itemPressFunction={onSelect}
     />

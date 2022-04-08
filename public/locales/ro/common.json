@@ -1,329 +1,332 @@
 {
-    "test": "Mesaj de testare RO",
-    "navigationDrawer": {
-        "profile": "Profilul utilizatorului",
-        "placesList": "Lista ta de cazări",
-        "logIn": "Logare",
-        "logout": "Deconectați-vă"
+  "test": "Mesaj de testare RO",
+  "navigationDrawer": {
+    "profile": "Profilul utilizatorului",
+    "placesList": "Lista ta de cazări",
+    "logIn": "Logare",
+    "logout": "Deconectați-vă"
+  },
+  "labels": {
+    "location": "Locația preferată",
+    "numberOfGuests": "Număr persoane",
+    "timePeriod": "Durata șederii",
+    "withKids": "Călătoresc cu un copil",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "town": "Oraș/localitate",
+    "phoneNumber": "Telefon"
+  },
+  "validations": {
+    "requiredName": "Furnizați numele dvs.",
+    "invalidEmail": "Furnizați o adresă de e-mail validă",
+    "invalidPhoneNumber": "Furnizați un număr de telefon corect",
+    "requiredTown": "Vă rugăm selectați un oraș/localitate",
+    "requiredTime": "Durata pentru care puteți oferi cazare",
+    "requiredPeopleQuantity": "Numărul de persoane pe care le puteți găzdui",
+    "requiredLivingConditions": "Menționați condiții de cazare",
+    "requiredFloor": "Menționați etajul"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "mai puțin de o săptămână",
+      "week": "O săptămână",
+      "twoWeeks": "2 săptămâni",
+      "month": "O lună",
+      "longer": "Mai mult de o lună"
+    },
+    "groupRelations": {
+      "single_man": "Bărbat singur",
+      "single_woman": "Femeie singură",
+      "spouses": "Soți/cuplu",
+      "mother_with_children": "Mamă cu copii",
+      "family_with_children": "Familie cu copii",
+      "unrelated_group": "Grup neînrudit"
+    },
+    "accommodationTypes": {
+      "bed": "Pat într-o cameră comună",
+      "room": "Cameră într-un apartament / casă comună",
+      "flat": "Apartament pentru uz exclusiv",
+      "house": "Casă pentru uz exclusiv",
+      "collective": "Cameră comună (de exemplu sală de școală)",
+      "public_shared_space": "Cameră comună (de exemplu sală de școală)"
+    },
+    "boolean": {
+      "yes": "Da",
+      "no": "Nu"
+    },
+    "anyLocation": "Orice",
+    "withElevator": "cu lift"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "Loc pentru <1>1:count people</1>",
+    "duration": "max. < 1 > {{time}} < /1 >",
+    "acceptAnimals": "se acceptă animale de companie",
+    "disabledSupport": "Facilități pentru persoanele cu handicap",
+    "includesFood": "Mâncare",
+    "author": {
+      "owner": "Gazdă"
+    }
+  },
+  "forms": {
+    "chooseFromList": "Selectați din listă (alegere multiplă)",
+    "chooseFromListMulti": "Selectați din listă (puteți alege mai multe opțiuni)"
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Data sosirii: {{arrival}}",
+    "peopleToAccommodate": "+{{count}} persoane",
+    "preferredLocation": "Locația preferată{{location}}",
+    "withAnimals": "Sunt însoțit/ă de un animal de companie{{animals}}",
+    "withKids": "Călătoresc cu copii{{age}}",
+    "withDisabled": "Sunt însoțit de o persoană cu handicap",
+    "withElder": "Sunt însoțit de o persoană în vârstă",
+    "invite": "Gazda"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Specificați-vă preferințele cu privire la persoanele pe care le puteți găzdui",
+      "acceptAnimals": "se acceptă animale de companie",
+      "disabledSupport": "persoane cu dizabilități",
+      "kidsUnder2": "copii sub 2 ani",
+      "foodIncluded": "hrana asigurată"
+    },
+    "peopleQuantity": "Câte persoane puteți găzdui?",
+    "forHowLong": "Pentru cât timp?",
+    "livingConditions": {
+      "label": "Ce fel de cazare puteți pune la dispoziție?",
+      "options": {
+        "flat": "Am un apartament liber",
+        "mattress": "Am o saltea liberă",
+        "other": "altele"
+      }
+    },
+    "floor": {
+      "label": "La ce etaj este situată cazarea?",
+      "hint": "* Persoanele în vârstă ar putea avea dificultăți în accesarea etajului"
+    },
+    "submit": "Înregistrați oferta dvs."
+  },
+  "flags": {
+    "cz": "Steagul Cehiei",
+    "en": "Steagul Marii Britanii",
+    "es": "Steagul Spaniei",
+    "fr": "Steagul Franței",
+    "hu": "Steagul Ungariei",
+    "it": "Steagul Italiei",
+    "pl": "Steagul Poloniei",
+    "ro": "Steagul României",
+    "sk": "Steagul Slovaciei",
+    "ua": "Steagul Ucrainei",
+    "de": "Steagul Germaniei",
+    "at": "Steagul Austriei",
+    "be": "Steagul Belgiei",
+    "bg": "Steagul Bulgariei",
+    "hr": "Steagul Croatiei",
+    "cy": "Steaful Ciprului",
+    "dk": "Steagul Danemarcei",
+    "ee": "Steagul Estoniei",
+    "fi": "Steagul Finlandei",
+    "lv": "Steagul Letoniei",
+    "li": "Steagul Liechtensteinului",
+    "lt": "Steagul Lituaniei",
+    "mt": "Steagul Maltei",
+    "nl": "Steagul Olandei",
+    "no": "Steagul Norvegiei",
+    "pt": "steagul Portugaliei",
+    "si": "Steagul Sloveniei",
+    "se": "steagul Suediei"
+  },
+  "hostAdd": {
+    "country": "Țară",
+    "countries": {
+      "poland": "Polonia",
+      "hungary": "Ungaria",
+      "czechia": "Cehia",
+      "slovakia": "Slovacia"
+    },
+    "nameLabel": "Nume (introduceți doar prenumele)",
+    "emailPlaceholder": "E-mail",
+    "phoneLabel": "Număr de telefon",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "cityLabel": "Selectați orașul în care oferiți cazare sau cel mai apropiat de acesta.",
+    "cityPlaceholder": "Oraș",
+    "type": "Tipul de cazare",
+    "hostType": "Profilul gazdei",
+    "hostTypeLabel": {
+      "host_type_men": "Bărbat (singur)",
+      "host_type_women": "Femeie (singură)",
+      "host_type_couple": "Cuplu",
+      "host_type_family": "Familie cu copil/copii",
+      "host_type_elder_people": "Persoane în vârstă",
+      "host_type_friends_group": "Neînrudit"
+    },
+    "guestCount": "Câți oaspeți puteți găzdui?",
+    "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
+    "accomodationPhotoLabel": "Adăugați o fotografie",
+    "accomodationPhotoReset": "Eliminați",
+    "accommodationTimeLabel": {
+      "less_than_week": "Mai puțin de o săptămână",
+      "week": "Săptămână",
+      "two_weeks": "Două săptămâni",
+      "month": "Lună",
+      "longer": "Mai mult timp"
+    },
+    "volunteerVisitAcceptance": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar) ",
+    "nationality": "Ce naționalitate de refugiat sunteți dispus să acceptați?",
+    "ukraine": "Ucraina",
+    "additionalInformationHeader": "Informații suplimentare",
+    "any": "Orice",
+    "childBedCount": "Numărul de locuri de dormit pentru copii",
+    "city": "Oraș",
+    "fullBedCount": "Numar de locuri de dormit pentru adulți",
+    "pregnantReady": "Voi accepta o persoană într-o stare avansată de sarcină (peste 6 luni)",
+    "dissabilityReady": "Voi accepta o persoană cu handicap",
+    "elderReady": "Accept persoane în vârstă",
+    "animalReady": "Voi accepta o persoană cu un animal de companie",
+    "basicInfoHeader": "Furnizați înformații de bază",
+    "refugeInfoHeader": "Adăugați informații despre cazare.",
+    "addButton": "Trimiteți",
+    "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
+    "errors": {
+      "name": "Furnizați numele dvs.",
+      "email": "Furnizați o adresă de e-mail validă",
+      "phoneNumber": "Adăugați numărul de telefon",
+      "country": "Țara este un câmp obligatoriu",
+      "town": "Orașul este un câmp obligatoriu",
+      "type": "Tipe de cazare este un câmp obligatoriu",
+      "hostType": "Tipul de gazdă este un câmp obligatoriu",
+      "accommodationTime": "Durata șederii este obligatorie",
+      "nationalityError": "Vă rugăm selectați naționalitatea",
+      "groupsTypes": "Tipul grupului este un câmp obligatoriu"
+    },
+    "prolongationReady": "Posibilitate de prelungire a șederii (contra unei sume de bani)",
+    "transportReady": "Posibilitate de transport",
+    "hostAddressProcessingWarning": "Adresa completă nu va fi împărtășită cu refugiații - doar informații despre orașul dvs."
+  },
+  "logout": "Deconectați-vă",
+  "back": "Înapoi",
+  "backToHomePage": "Înapoi la pagina principală",
+  "shareLocation": "Creați un cont",
+  "registerGuest": "Găsește cazare",
+  "more": "Mai multe informații",
+  "register1": "Înregistrare",
+  "register2": "Înregistrarea",
+  "privacyPolicy": "Regulament de protecție a datelor",
+  "termsOfService": "Legislație",
+  "patrons": "Patroni",
+  "rodo": "GDPR",
+  "thankfulnessModal": {
+    "thankYou": "Vă mulțumim!",
+    "thanksForYourDecision": "Vă mulțumim pentru că ne-ați informat de decizia dumneavoastră.",
+    "applicationSent": "Cererea dumneavoastră a fost trimisă. Verificăm de mai multe ori pe zi baza noastră de date cu voluntari pentru a găsi cel mai bun loc pentru dvs.",
+    "informWhenAccomodationFound": "De îndată ce vom găsi cazare pentru dumneavoastră, vă vom informa prin e-mail.",
+    "backToMainPage": "Înapoi la pagina de pornire"
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Vă mulțumim!",
+    "applicationSent": "Oferta dvs. a fost trimisă. Căutăm în baza noastră de date de mai multe ori pe zi pentru a găsi cea mai bună potrivire cu oferta dumneavoastră. ",
+    "informWhenAccomodationFound": "De îndată ce găsim un potențial oaspete pentru dumneavoastră, vă vom informa prin e-mail."
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "Sunt însoțit/ă de un animal de companie",
+      "toddler": "Copil sub 2 ani",
+      "oldPerson": "Sunt sau sunt însoțit de o persoană în vârstă",
+      "disability": "Sunt sau sunt însoțit de o persoană cu handicap",
+      "pregnant": "Sunt sau sunt însoțită de o persoană în stare avansată de sarcină (peste 6 luni)"
+    },
+    "refugeesCountOptions": {
+      "alone": "Sunt singur/ă",
+      "more": "Mai mult"
+    },
+    "errors": {
+      "name": "Furnizați numele dvs.",
+      "email": "Furnizați o adresă de e-mail validă",
+      "phoneNumber": "Furnizați un număr de telefon corect",
+      "required": "Acest câmp este obligatoriu",
+      "location": "Furnizați o locație preferată"
     },
     "labels": {
-        "location": "Locația preferată",
-        "numberOfGuests": "Număr persoane",
-        "timePeriod": "Durata șederii",
-        "withKids": "Călătoresc cu un copil",
-        "email": "E-mail",
-        "phone": "Telefon",
-        "town": "Oraș\/localitate",
-        "phoneNumber": "Telefon"
-    },
-    "validations": {
-        "requiredName": "Furnizați numele dvs.",
-        "invalidEmail": "Furnizați o adresă de e-mail validă",
-        "invalidPhoneNumber": "Furnizați un număr de telefon corect",
-        "requiredTown": "Vă rugăm selectați un oraș\/localitate",
-        "requiredTime": "Durata pentru care puteți oferi cazare",
-        "requiredPeopleQuantity": "Numărul de persoane pe care le puteți găzdui",
-        "requiredLivingConditions": "Menționați condiții de cazare",
-        "requiredFloor": "Menționați etajul"
-    },
-    "staticValues": {
-        "timePeriod": {
-            "lessThanAWeek": "mai puțin de o săptămână",
-            "week": "O săptămână",
-            "twoWeeks": "2 săptămâni",
-            "month": "O lună",
-            "longer": "Mai mult de o lună"
-        },
-        "groupRelations": {
-            "single_man": "Bărbat singur",
-            "single_woman": "Femeie singură",
-            "spouses": "Soți\/cuplu",
-            "mother_with_children": "Mamă cu copii",
-            "family_with_children": "Familie cu copii",
-            "unrelated_group": "Grup neînrudit"
-        },
-        "accommodationTypes": {
-            "bed": "Pat într-o cameră comună",
-            "room": "Cameră într-un apartament \/ casă comună",
-            "flat": "Apartament pentru uz exclusiv",
-            "house": "Casă pentru uz exclusiv",
-            "collective": "Cameră comună (de exemplu sală de școală)",
-            "public_shared_space": "Cameră comună (de exemplu sală de școală)"
-        },
-        "boolean": {
-            "yes": "Da",
-            "no": "Nu"
-        },
-        "anyLocation": "Orice",
-        "withElevator": "cu lift"
-    },
-    "accommodationOffer": {
-        "canAccommodate": "Loc pentru <1>1:count people<\/1>",
-        "duration": "max. < 1 > {{time}} < \/1 >",
-        "acceptAnimals": "se acceptă animale de companie",
-        "disabledSupport": "Facilități pentru persoanele cu handicap",
-        "includesFood": "Mâncare",
-        "author": {
-            "owner": "Gazdă"
-        }
-    },
-    "forms": {
-        "chooseFromList": "Selectați din listă (alegere multiplă)",
-        "chooseFromListMulti": "Selectați din listă (puteți alege mai multe opțiuni)"
-    },
-    "guestOffer": {
-        "arrivalToPoland": "Data sosirii: {{arrival}}",
-        "peopleToAccommodate": "+{{count}} persoane",
-        "preferredLocation": "Locația preferată{{location}}",
-        "withAnimals": "Sunt însoțit\/ă de un animal de companie{{animals}}",
-        "withKids": "Călătoresc cu copii{{age}}",
-        "withDisabled": "Sunt însoțit de o persoană cu handicap",
-        "withElder": "Sunt însoțit de o persoană în vârstă",
-        "invite": "Gazda"
-    },
-    "addAccommodation": {
-        "hostPreferences": {
-            "label": "Specificați-vă preferințele cu privire la persoanele pe care le puteți găzdui",
-            "acceptAnimals": "se acceptă animale de companie",
-            "disabledSupport": "persoane cu dizabilități",
-            "kidsUnder2": "copii sub 2 ani",
-            "foodIncluded": "hrana asigurată"
-        },
-        "peopleQuantity": "Câte persoane puteți găzdui?",
-        "forHowLong": "Pentru cât timp?",
-        "livingConditions": {
-            "label": "Ce fel de cazare puteți pune la dispoziție?",
-            "options": {
-                "flat": "Am un apartament liber",
-                "mattress": "Am o saltea liberă",
-                "other": "altele"
-            }
-        },
-        "floor": {
-            "label": "La ce etaj este situată cazarea?",
-            "hint": "* Persoanele în vârstă ar putea avea dificultăți în accesarea etajului"
-        },
-        "submit": "Înregistrați oferta dvs."
-    },
-    "flags": {
-        "cz": "Steagul Cehiei",
-        "en": "Steagul Marii Britanii",
-        "es": "Steagul Spaniei",
-        "fr": "Steagul Franței",
-        "hu": "Steagul Ungariei",
-        "it": "Steagul Italiei",
-        "pl": "Steagul Poloniei",
-        "ro": "Steagul României",
-        "sk": "Steagul Slovaciei",
-        "ua": "Steagul Ucrainei",
-        "de": "Steagul Germaniei",
-        "at": "Steagul Austriei",
-        "be": "Steagul Belgiei",
-        "bg": "Steagul Bulgariei",
-        "hr": "Steagul Croatiei",
-        "cy": "Steaful Ciprului",
-        "dk": "Steagul Danemarcei",
-        "ee": "Steagul Estoniei",
-        "fi": "Steagul Finlandei",
-        "lv": "Steagul Letoniei",
-        "li": "Steagul Liechtensteinului",
-        "lt": "Steagul Lituaniei",
-        "mt": "Steagul Maltei",
-        "nl": "Steagul Olandei",
-        "no": "Steagul Norvegiei",
-        "pt": "steagul Portugaliei",
-        "si": "Steagul Sloveniei",
-        "se": "steagul Suediei"
-    },
-    "hostAdd": {
-        "country": "Țară",
-        "countries": {
-            "poland": "Polonia",
-            "hungary": "Ungaria",
-            "czechia": "Cehia",
-            "slovakia": "Slovacia"
-        },
-        "nameLabel": "Nume (introduceți doar prenumele)",
-        "emailPlaceholder": "E-mail",
-        "phoneLabel": "Număr de telefon",
-        "phonePlaceholder": "xxx-xxx-xxx",
-        "cityLabel": "Selectați orașul în care oferiți cazare sau cel mai apropiat de acesta.",
-        "cityPlaceholder": "Oraș",
-        "type": "Tipul de cazare",
-        "hostType": "Profilul gazdei",
-        "hostTypeLabel": {
-            "host_type_men": "Bărbat (singur)",
-            "host_type_women": "Femeie (singură)",
-            "host_type_couple": "Cuplu",
-            "host_type_family": "Familie cu copil\/copii",
-            "host_type_elder_people": "Persoane în vârstă",
-            "host_type_friends_group": "Neînrudit"
-        },
-        "guestCount": "Câți oaspeți puteți găzdui?",
-        "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
-        "accomodationPhotoLabel": "Adăugați o fotografie",
-        "accomodationPhotoReset": "Eliminați",
-        "accommodationTimeLabel": {
-            "less_than_week": "Mai puțin de o săptămână",
-            "week": "Săptămână",
-            "two_weeks": "Două săptămâni",
-            "month": "Lună",
-            "longer": "Mai mult timp"
-        },
-        "volunteerVisitAcceptance": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar) ",
-        "nationality": "Ce naționalitate de refugiat sunteți dispus să acceptați?",
-        "ukraine": "Ucraina",
-        "additionalInformationHeader": "Informații suplimentare",
-        "any": "Orice",
-        "childBedCount": "Numărul de locuri de dormit pentru copii",
-        "city": "Oraș",
-        "fullBedCount": "Numar de locuri de dormit pentru adulți",
-        "pregnantReady": "Voi accepta o persoană într-o stare avansată de sarcină (peste 6 luni)",
-        "dissabilityReady": "Voi accepta o persoană cu handicap",
-        "elderReady": "Accept persoane în vârstă",
-        "animalReady": "Voi accepta o persoană cu un animal de companie",
-        "basicInfoHeader": "Furnizați înformații de bază",
-        "refugeInfoHeader": "Adăugați informații despre cazare.",
-        "addButton": "Trimiteți",
-        "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
-        "errors": {
-            "name": "Furnizați numele dvs.",
-            "email": "Furnizați o adresă de e-mail validă",
-            "phoneNumber": "Adăugați numărul de telefon",
-            "country": "Țara este un câmp obligatoriu",
-            "town": "Orașul este un câmp obligatoriu",
-            "type": "Tipe de cazare este un câmp obligatoriu",
-            "hostType": "Tipul de gazdă este un câmp obligatoriu",
-            "accommodationTime": "Durata șederii este obligatorie",
-            "nationalityError": "Vă rugăm selectați naționalitatea"
-        },
-        "prolongationReady": "Posibilitate de prelungire a șederii (contra unei sume de bani)",
-        "transportReady": "Posibilitate de transport",
-        "hostAddressProcessingWarning": "Adresa completă nu va fi împărtășită cu refugiații - doar informații despre orașul dvs."
-    },
-    "logout": "Deconectați-vă",
-    "back": "Înapoi",
-    "backToHomePage": "Înapoi la pagina principală",
-    "shareLocation": "Creați un cont",
-    "registerGuest": "Găsește cazare",
-    "more": "Mai multe informații",
-    "register1": "Înregistrare",
-    "register2": "Înregistrarea",
-    "privacyPolicy": "Regulament de protecție a datelor",
-    "termsOfService": "Legislație",
-    "patrons": "Patroni",
-    "rodo": "GDPR",
-    "thankfulnessModal": {
-        "thankYou": "Vă mulțumim!",
-        "thanksForYourDecision": "Vă mulțumim pentru că ne-ați informat de decizia dumneavoastră.",
-        "applicationSent": "Cererea dumneavoastră a fost trimisă. Verificăm de mai multe ori pe zi baza noastră de date cu voluntari pentru a găsi cel mai bun loc pentru dvs.",
-        "informWhenAccomodationFound": "De îndată ce vom găsi cazare pentru dumneavoastră, vă vom informa prin e-mail.",
-        "backToMainPage": "Înapoi la pagina de pornire"
-    },
-    "thankfulnessHostModal": {
-        "thankYou": "Vă mulțumim!",
-        "applicationSent": "Oferta dvs. a fost trimisă. Căutăm în baza noastră de date de mai multe ori pe zi pentru a găsi cea mai bună potrivire cu oferta dumneavoastră. ",
-        "informWhenAccomodationFound": "De îndată ce găsim un potențial oaspete pentru dumneavoastră, vă vom informa prin e-mail."
-    },
-    "refugeeForm": {
-        "refugeeDetailsOptions": {
-            "animals": "Sunt însoțit\/ă de un animal de companie",
-            "toddler": "Copil sub 2 ani",
-            "oldPerson": "Sunt sau sunt însoțit de o persoană în vârstă",
-            "disability": "Sunt sau sunt însoțit de o persoană cu handicap",
-            "pregnant": "Sunt sau sunt însoțită de o persoană în stare avansată de sarcină (peste 6 luni)"
-        },
-        "refugeesCountOptions": {
-            "alone": "Sunt singur\/ă",
-            "more": "Mai mult"
-        },
-        "errors": {
-            "name": "Furnizați numele dvs.",
-            "email": "Furnizați o adresă de e-mail validă",
-            "phoneNumber": "Furnizați un număr de telefon corect",
-            "required": "Acest câmp este obligatoriu",
-            "location": "Furnizați o locație preferată"
-        },
-        "labels": {
-            "email": "E-mail",
-            "refugeesCount": "Pentru câte persoane căutați cazare?",
-            "refugee": "Refugiați {{number}}",
-            "refugeeDetails": "Furnizați informații suplimentare pentru a permite cea mai bună potrivire pentru dvs.",
-            "refugeesAnimal": "Rasă",
-            "isGDPRAccepted": "Accept politica de confidențialitate",
-            "submitButton": "Obțineți ajutor",
-            "location": "Unde ați dori să stați?",
-            "anyLocation": "Orice locație",
-            "prefferedLocation": "Locația preferată",
-            "city": "Oraș\/oraș",
-            "addRefugee": "Adăugați o persoană"
-        }
-    },
-    "refugeeAddForm": {
-        "basicInfoHeader": "Furnizați informații de bază despre dumneavoastră și despre persoanele cu care călătoriți",
-        "addButton": "Trimiteți cererea",
-        "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
-        "pregnantReady": "Sunt sau sunt însoțită de o persoană în stare avansată de sarcină (peste 6 luni)",
-        "dissabilityReady": "Sunt însoțit de o persoană cu handicap",
-        "elderReady": "Sunt însoțit de o persoană în vârstă",
-        "ageLabel": "Vârsta",
-        "genderLabel": "Gen",
-        "genderPlaceholder": "Furnizați sexul dvs.",
-        "travelCompanions": "Informații despre persoanele cu care vă aflați",
-        "fullBedCountLabel": "Câte persoane călătoresc cu dumneavoastră? (inclusiv dumneavoastră)",
-        "childBedCountLabel": "Numărul de paturi pentru copii",
-        "placeOfRefuge": "Unde căutați cazare?",
-        "countryOfRefugePlaceholder": "Alegeți o țară",
-        "cityOfRefugeLabel": "Alegeți orașul:",
-        "overnightDurationLabel": "Pentru ce perioadă căutați cazare?",
-        "cityOfRefugePlaceholder": "Alegeți o zonă",
-        "nameLabel": "Nume (introduceți doar prenumele)",
-        "emailLabel": "Adăugați o adresă de e-mail validă",
-        "emailPlaceholder": "E-mail",
-        "phoneLabel": "Număr de telefon",
-        "phonePlaceholder": "xxx-xxx-xxx",
-        "cityPlaceholder": "Oraș",
-        "groupRelations": "Care este tipul de relație dintre membrii grupului?",
-        "selectPlaceholder": "Selectați din listă",
-        "accommodationType": "Ce fel de cazare căutați?",
-        "countryOfGroupUA": "Ucraina",
-        "countryOfGroupOthers": "Altele",
-        "accompanyingPerson": "Informații despre persoana cu care călătoriți",
-        "errors": {
-            "name": "Adăugați numele dvs",
-            "email": "Vă rugăm adăugați o adresă de e-mail validă",
-            "gender": "Completați sexul cu care vă identificați",
-            "cityOfRefuge": "Vă rugăm selectați un oraș\/localitate",
-            "phoneNumber": "Adăugați numărul de telefon",
-            "countryOfRefuge": "Alegeți o țara",
-            "childBedCount": "Adăugați numărul de paturi",
-            "fullBedCountsaas": "Adăugați numărul de paturi",
-            "groupRelations": "Alegeți relația",
-            "overnightDuration": "Selectați durata șederii",
-            "accommodationType": "Selectați tipul de cazare",
-            "countryOfGroup": "Vă rugăm selectați naționalitatea"
-        },
-        "refugeInfoHeader": "Adăugați informații cu privire la cazare",
-        "countryOfGroup": "Care este țara de origine a grupului?"
-    },
-    "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
-    "accomodationPhotoReset": "Ștergeți",
-    "accomodationPhotoLabel": "Trimiteți",
-    "dropdownChoose": "Selectați...",
-    "dropdownSearch": "Căutare",
-    "heroImageAlt": "Slava Ukraini!",
-    "loginForm": {
-        "logInWith": "Autentificare",
-        "or": "sau",
-        "lostPass": "Ați uitat parola?",
-        "click": "click",
-        "logIn": "Logare",
-        "doNotHaveAcc": "Doriți să aveți acces?",
-        "register": "Înregistrare"
-    },
-    "gdpr": "GDPR",
-    "ogMeta": {
-        "title": "Ajutăm refugiații din Ucraina să găsească adăpost",
-        "description": "UASOS.org, în cooperare cu organizații caritabile de renume, pune în legătură, în mod automat și gratuit, refugiații din Ucraina cu persoanele care oferă adăpost. Ajutați-ne să oferim sprijin sau să solicită adăpost astăzi!"
+      "email": "E-mail",
+      "refugeesCount": "Pentru câte persoane căutați cazare?",
+      "refugee": "Refugiați {{number}}",
+      "refugeeDetails": "Furnizați informații suplimentare pentru a permite cea mai bună potrivire pentru dvs.",
+      "refugeesAnimal": "Rasă",
+      "isGDPRAccepted": "Accept politica de confidențialitate",
+      "submitButton": "Obțineți ajutor",
+      "location": "Unde ați dori să stați?",
+      "anyLocation": "Orice locație",
+      "prefferedLocation": "Locația preferată",
+      "city": "Oraș/oraș",
+      "addRefugee": "Adăugați o persoană"
     }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Furnizați informații de bază despre dumneavoastră și despre persoanele cu care călătoriți",
+    "addButton": "Trimiteți cererea",
+    "addButtomErrorMessage": "Vă rugăm să completați câmpurile obligatorii",
+    "pregnantReady": "Sunt sau sunt însoțită de o persoană în stare avansată de sarcină (peste 6 luni)",
+    "dissabilityReady": "Sunt însoțit de o persoană cu handicap",
+    "elderReady": "Sunt însoțit de o persoană în vârstă",
+    "ageLabel": "Vârsta",
+    "genderLabel": "Gen",
+    "genderPlaceholder": "Furnizați sexul dvs.",
+    "travelCompanions": "Informații despre persoanele cu care vă aflați",
+    "fullBedCountLabel": "Câte persoane călătoresc cu dumneavoastră? (inclusiv dumneavoastră)",
+    "childBedCountLabel": "Numărul de paturi pentru copii",
+    "placeOfRefuge": "Unde căutați cazare?",
+    "countryOfRefugePlaceholder": "Alegeți o țară",
+    "cityOfRefugeLabel": "Alegeți orașul:",
+    "overnightDurationLabel": "Pentru ce perioadă căutați cazare?",
+    "cityOfRefugePlaceholder": "Alegeți o zonă",
+    "nameLabel": "Nume (introduceți doar prenumele)",
+    "emailLabel": "Adăugați o adresă de e-mail validă",
+    "emailPlaceholder": "E-mail",
+    "phoneLabel": "Număr de telefon",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "cityPlaceholder": "Oraș",
+    "groupRelations": "Care este tipul de relație dintre membrii grupului?",
+    "selectPlaceholder": "Selectați din listă",
+    "accommodationType": "Ce fel de cazare căutați?",
+    "countryOfGroupUA": "Ucraina",
+    "countryOfGroupOthers": "Altele",
+    "accompanyingPerson": "Informații despre persoana cu care călătoriți",
+    "errors": {
+      "name": "Adăugați numele dvs",
+      "email": "Vă rugăm adăugați o adresă de e-mail validă",
+      "gender": "Completați sexul cu care vă identificați",
+      "cityOfRefuge": "Vă rugăm selectați un oraș/localitate",
+      "phoneNumber": "Adăugați numărul de telefon",
+      "countryOfRefuge": "Alegeți o țara",
+      "childBedCount": "Adăugați numărul de paturi",
+      "fullBedCountsaas": "Adăugați numărul de paturi",
+      "groupRelations": "Alegeți relația",
+      "overnightDuration": "Selectați durata șederii",
+      "accommodationType": "Selectați tipul de cazare",
+      "countryOfGroup": "Vă rugăm selectați naționalitatea"
+    },
+    "refugeInfoHeader": "Adăugați informații cu privire la cazare",
+    "countryOfGroup": "Care este țara de origine a grupului?",
+    "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
+    "confirmChangesButton": "Confirmați modificările"
+  },
+  "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
+  "accomodationPhotoReset": "Ștergeți",
+  "accomodationPhotoLabel": "Trimiteți",
+  "dropdownChoose": "Selectați...",
+  "dropdownSearch": "Căutare",
+  "heroImageAlt": "Slava Ukraini!",
+  "loginForm": {
+    "logInWith": "Autentificare",
+    "or": "sau",
+    "lostPass": "Ați uitat parola?",
+    "click": "click",
+    "logIn": "Logare",
+    "doNotHaveAcc": "Doriți să aveți acces?",
+    "register": "Înregistrare"
+  },
+  "gdpr": "GDPR",
+  "ogMeta": {
+    "title": "Ajutăm refugiații din Ucraina să găsească adăpost",
+    "description": "UASOS.org, în cooperare cu organizații caritabile de renume, pune în legătură, în mod automat și gratuit, refugiații din Ucraina cu persoanele care oferă adăpost. Ajutați-ne să oferim sprijin sau să solicită adăpost astăzi!"
+  }
 }

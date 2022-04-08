@@ -78,7 +78,7 @@ const VerifyPhoneToast = () => {
       )}
       <Toast
         color={theme.colors.error}
-        label={t("phoneNotVerified")}
+        label={t("others:desktop.checks.phoneNotVerified")}
         cta={{ onPress: openModal, label: t("verify") }}
         icon={<PhoneIcon />}
         contaierStyle={{ marginBottom: 0 }}
@@ -101,7 +101,7 @@ export default function VerifySection({
       {needEmail && (
         <Toast
           color={theme.colors.error}
-          label={t("emailNotVerified")}
+          label={t("others:desktop.checks.emailNotVerified")}
           cta={{ onPress: emailOnPress, label: t("verify") }}
           icon={<EmailIcon />}
           contaierStyle={{ marginBottom: 10 }}

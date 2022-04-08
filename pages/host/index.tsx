@@ -1,22 +1,41 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Text } from "react-native";
 import AppBack from "../../src/components/AppBack";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdHost from "../../src/components/FormAdHost";
 import Redirect from "../../src/components/Redirect";
 import { AuthContext } from "../_app";
+import { useRouter } from "next/router";
+import { useOffersList } from "../../src/queries/useOffersList";
+import { OfferProps } from "../api/listing/offers";
 
 export default function Account() {
   const { identity, loaded } = useContext(AuthContext);
+  const router = useRouter();
+  const { id } = router.query;
+  const [offer, setOffer] = React.useState<OfferProps | null>(null);
+  const { data: offersData } = useOffersList();
+
+  const offers = offersData ? offersData.offers : undefined;
+
+  React.useEffect(() => {
+    if (id && offers && offers.length && !offer) {
+      const matchedOffer = offers.filter((el) => el.id === id)[0];
+
+      if (matchedOffer) {
+        setOffer(matchedOffer);
+      }
+    }
+  }, [offers, id, offer]);
 
   if (loaded) {
     if (identity) {
       return (
         <CompositionAppBody>
           <AppBack to="/dashboard" />
-          <FormAdHost />
+          <FormAdHost data={offer} />
         </CompositionAppBody>
       );
     } else {

@@ -5,6 +5,11 @@ import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";
 import { MatchState, Offer, Request } from "./types";
 
+export enum Boolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
+
 export enum GuestHostType {
   INACTIVE = "inactive", // timeout, waiting to move to LOOKING_FOR_MATCH
   LOOKING_FOR_MATCH = "looking_for_match", // new | during matching process
@@ -14,7 +19,7 @@ export enum GuestHostType {
   REJECTED = "rejected", // match rejected by one side
 }
 
-enum GuestHostStatus {
+export enum GuestHostStatus {
   ACCEPTED = "accepted", // default status after creation
   REJECTED = "rejected", // for future moderation purpose
   BEING_PROCESS = "being_processed", // during matching process
@@ -51,6 +56,7 @@ const toOffer = (o: OfferProps): Offer => ({
   matchedRequest: o.matchedRequest,
   closestCity: o.closest_city,
   matchId: o.match_id,
+  clientOnly: o.client_only,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
   const matchStatus = o.status;
@@ -81,6 +87,7 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
   state: toMatchRequestState(r),
   matchedOffer: r.matchedOffer,
   matchId: r.match_id,
+  clientOnly: r.client_only,
 });
 
 const toName: (_: OfferProps) => string = (o) =>
@@ -90,20 +97,19 @@ const toName: (_: OfferProps) => string = (o) =>
     ? o.shelter_type
     : o.shelter_type.join(", ");
 export const toAccomodationTime: (
-  duration_category: string[] | string
+  duration_category: string[]
 ) => AccommodationTime = (duration_category) => {
   return (
-    (typeof duration_category === "string"
-      ? duration_category.split(",")
-      : duration_category
-    )
+    duration_category
       .map((c) => {
         switch (c) {
-          case "less_than_week":
+          case "less_than_1_week":
             return AccommodationTime.LESS_THAN_WEEK;
+          case "1_week":
           case "week":
             return AccommodationTime.WEEK;
           case "two_weeks":
+          case "2_3_weeks":
             return AccommodationTime.TWO_WEEKS;
           case "month":
             return AccommodationTime.MONTH;
