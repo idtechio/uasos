@@ -4,8 +4,6 @@ import { Error, Wrapper } from "./style";
 import { FormKey } from "../../helpers/FormTypes";
 import CheckboxField from "../Forms/CheckboxField";
 import InputControl from "../Forms/InputControl";
-import { InputControlStylesProps } from "../Forms/InputControl/types";
-import { FlattenSimpleInterpolation } from "styled-components";
 
 type Props = {
   name: FormKey;
@@ -14,9 +12,6 @@ type Props = {
   errorMsg?: string;
   value?: boolean;
   isCentered?: boolean;
-  styles?: InputControlStylesProps & {
-    checkboxFieldWrapper?: FlattenSimpleInterpolation;
-  };
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
 const FormCheckbox = ({
@@ -26,13 +21,12 @@ const FormCheckbox = ({
   rules,
   error,
   value,
-  styles,
   isCentered = true,
 }: Props) => {
   const { control } = useFormContext();
 
   return (
-    <InputControl styles={styles}>
+    <InputControl>
       <Wrapper isCentered={isCentered}>
         <Controller
           control={control}
@@ -43,7 +37,6 @@ const FormCheckbox = ({
               text={label}
               onChange={onChange}
               value={value}
-              wrapperStyle={styles?.checkboxFieldWrapper}
             />
           )}
           name={name}
