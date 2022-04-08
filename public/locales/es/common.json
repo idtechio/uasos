@@ -11,7 +11,6 @@
     "numberOfGuests": "",
     "timePeriod": "",
     "withKids": "",
-    "name": "",
     "email": "",
     "phone": "",
     "town": "",
@@ -96,7 +95,6 @@
       "label": "",
       "options": {
         "flat": "",
-        "room": "",
         "mattress": "",
         "other": ""
       }
@@ -140,17 +138,16 @@
   "hostAdd": {
     "country": "",
     "countries": {
-      "poland": ""
+      "poland": "",
+      "hungary": "",
+      "czechia": "",
+      "slovakia": ""
     },
     "nameLabel": "",
-    "namePlaceholder": "",
-    "emailLabel": "",
     "emailPlaceholder": "",
     "phoneLabel": "",
     "phonePlaceholder": "",
-    "phonePrefixPlaceholder": "",
     "cityLabel": "",
-    "cityTooltipText": "",
     "cityPlaceholder": "",
     "type": "",
     "hostType": "",
@@ -163,7 +160,6 @@
       "host_type_friends_group": ""
     },
     "guestCount": "",
-    "accommodationTime": "",
     "accomodationPhoto": "",
     "accomodationPhotoLabel": "",
     "accomodationPhotoReset": "",
@@ -182,7 +178,6 @@
     "childBedCount": "",
     "city": "",
     "fullBedCount": "",
-    "groupsTypes": "",
     "pregnantReady": "",
     "dissabilityReady": "",
     "elderReady": "",
@@ -199,14 +194,13 @@
       "town": "",
       "type": "",
       "hostType": "",
-      "guestCount": "",
       "accommodationTime": "",
-      "nationality": "",
-      "groupsTypes": "",
-      "nationalityError": ""
+      "nationalityError": "",
+      "groupsTypes": ""
     },
     "prolongationReady": "",
-    "transportReady": ""
+    "transportReady": "",
+    "hostAddressProcessingWarning": ""
   },
   "logout": "",
   "back": "",
@@ -219,8 +213,6 @@
   "privacyPolicy": "",
   "termsOfService": "",
   "patrons": "",
-  "faq": "",
-  "yourSafety": "",
   "rodo": "",
   "thankfulnessModal": {
     "thankYou": "",
@@ -254,9 +246,7 @@
       "location": ""
     },
     "labels": {
-      "name": "",
       "email": "",
-      "phoneNumber": "",
       "refugeesCount": "",
       "refugee": "",
       "refugeeDetails": "",
@@ -276,7 +266,6 @@
     "addButtomErrorMessage": "",
     "pregnantReady": "",
     "dissabilityReady": "",
-    "animalReady": "",
     "elderReady": "",
     "ageLabel": "",
     "genderLabel": "",
@@ -285,28 +274,19 @@
     "fullBedCountLabel": "",
     "childBedCountLabel": "",
     "placeOfRefuge": "",
-    "countryOfRefugeLabel": "",
     "countryOfRefugePlaceholder": "",
-    "cityLabel": "",
-    "anyCity": "",
-    "specificCity": "",
-    "cityTooltipText": "",
     "cityOfRefugeLabel": "",
     "overnightDurationLabel": "",
     "cityOfRefugePlaceholder": "",
-    "additionalInformationHeader": "",
     "nameLabel": "",
-    "namePlaceholder": "",
     "emailLabel": "",
     "emailPlaceholder": "",
     "phoneLabel": "",
     "phonePlaceholder": "",
-    "phonePrefixPlaceholder": "",
     "cityPlaceholder": "",
     "groupRelations": "",
     "selectPlaceholder": "",
     "accommodationType": "",
-    "countryOfGroup": "",
     "countryOfGroupUA": "",
     "countryOfGroupOthers": "",
     "accompanyingPerson": "",
@@ -324,7 +304,10 @@
       "accommodationType": "",
       "countryOfGroup": ""
     },
-    "refugeInfoHeader": ""
+    "refugeInfoHeader": "",
+    "countryOfGroup": "",
+    "cityTooltip": "",
+    "confirmChangesButton": ""
   },
   "accomodationPhoto": "",
   "accomodationPhotoReset": "",
@@ -343,34 +326,7 @@
   },
   "gdpr": "",
   "ogMeta": {
-    "title": "We help war refugees from Ukraine find shelter",
-    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
-  },
-  "registrationUserForm": {
-    "header": "",
-    "subheader": "",
-    "nameLabel": "",
-    "namePlaceholder": "",
-    "preferredLanguageLabel": "",
-    "preferredLanguagePlaceholder": "",
-    "phoneLabel": "",
-    "phonePrefixPlaceholder": "",
-    "phoneNumberPlaceholder": "",
-    "smsNotificationLabel": "",
-    "emailLabel": "",
-    "emailPlaceholder": "",
-    "passwordLabel": "",
-    "passwordConfirmLabel": "",
-    "passwordConfirmPlaceholder": "",
-    "showPasswordLabel": "",
-    "backButtonLabel": "",
-    "nextButtonLabel": "",
-    "errors": {
-      "name": "",
-      "phoneNumber": "",
-      "email": "",
-      "password": "",
-      "passwordConfirm": ""
-    }
+    "title": "",
+    "description": ""
   }
 }

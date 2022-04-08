@@ -188,7 +188,9 @@ export default function FromRegisterWithSocials() {
               numberName="registerWithSocials.phoneNumber"
               phonePrefixLabel={t("others:forms.generic.country")}
               phoneLabel={t("_ _ _  _ _ _  _ _ _")}
-              error={errors?.advancedHost?.phoneNumber}
+              errorPrefix={errors?.registerWithSocials?.phonePrefix}
+              errorPrefixMsg={t("hostAdd.errors.country")}
+              error={errors?.registerWithSocials?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
               data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
             />

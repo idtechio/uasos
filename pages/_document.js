@@ -5,6 +5,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import { AppRegistry } from "react-native";
 import config from "../app.json";
 import { FB_PIXEL_ID } from "../lib/fpixel";
+import { GOOGLE_TAG_ID } from "../lib/gtag";
 
 // Force Next-generated DOM elements to fill their parent's height
 const normalizeNextElements = `
@@ -79,6 +80,14 @@ export default class MyDocument extends Document {
               style={{ display: "none" }}
               src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
             />
+          </noscript>
+          <noscript>
+            <iframe
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_ID}`}
+            ></iframe>
           </noscript>
         </Head>
         <body style={{ height: "100%", overflow: "hidden" }}>

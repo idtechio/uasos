@@ -19,6 +19,8 @@ import {
   Title,
 } from "./style";
 import { Request } from "./types";
+import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
+import { ActivityIndicator } from "react-native";
 
 type RequestProps = {
   requests?: Request[];
@@ -112,54 +114,63 @@ const Requests = ({
 
   return (
     <>
-      {requests.map((r) => (
-        <SupportCard key={r.id}>
-          <HeaderWrapper>
-            <MoreButtonWrapper>
-              {/* TODO: move this into EditOfferButton  */}
-              {r.type !== "confirmed" && (
-                <EditOfferButton targetID={r.id} targetType="guests" />
-              )}
-            </MoreButtonWrapper>
-            <RequestTextWrapper>
-              <RequestFirstLine>{t("submission")}</RequestFirstLine>
-              <RequestSecondLine>{t("accomodationSearch")}</RequestSecondLine>
-            </RequestTextWrapper>
-          </HeaderWrapper>
-          <div
-            style={{
-              alignSelf: "flex-start",
-              justifySelf: "flex-end",
-              marginBottom: 14,
-            }}
-          >
-            <StatusBadge state={r.type} />
-          </div>
+      {requests.map((r) => {
+        const notYetReady = r.clientOnly;
 
-          {/* {r.matchedOffer ? (
+        return (
+          <SupportCard key={r.id}>
+            <HeaderWrapper>
+              <MoreButtonWrapper>
+                {r.type !== "confirmed" &&
+                  (notYetReady ? (
+                    <ActivityIndicator />
+                  ) : (
+                    <EditOfferButton
+                      targetID={r.id}
+                      targetType={TargetTypes.GUESTS}
+                    />
+                  ))}
+              </MoreButtonWrapper>
+              <RequestTextWrapper>
+                <RequestFirstLine>{t("submission")}</RequestFirstLine>
+                <RequestSecondLine>{t("accomodationSearch")}</RequestSecondLine>
+              </RequestTextWrapper>
+            </HeaderWrapper>
+            <div
+              style={{
+                alignSelf: "flex-start",
+                justifySelf: "flex-end",
+                marginBottom: 14,
+              }}
+            >
+              <StatusBadge state={r.type} />
+            </div>
+
+            {/* {r.matchedOffer ? (
             <MetchedInfo
               name={r.matchedOffer.name}
               email={r.matchedOffer.email}
               phone_num={r.matchedOffer.phone_num}
             />
           ) : ( */}
-          <AnnouncementHighlights
-            beds={r.beds}
-            city={r.city}
-            duration={r.duration}
-          />
-          {/* )} */}
-
-          {!readonly && (
-            <DetailsLink
-              href={{
-                pathname: Routes.DETAILS,
-                query: { id: r.id, type: "request" },
-              }}
+            <AnnouncementHighlights
+              beds={r.beds}
+              city={r.city}
+              duration={r.duration}
             />
-          )}
-        </SupportCard>
-      ))}
+            {/* )} */}
+
+            {!readonly && !notYetReady && (
+              <DetailsLink
+                href={{
+                  pathname: Routes.DETAILS,
+                  query: { id: r.id, type: "request" },
+                }}
+              />
+            )}
+          </SupportCard>
+        );
+      })}
     </>
   );
 };

@@ -128,10 +128,7 @@ export default function GuestCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("others:forms.generic.groupType", {
-              type: (typeof request.group_relation === "string"
-                ? request.group_relation.split(",")
-                : request.group_relation
-              )
+              type: request.group_relation
                 .map((el: string) => t(`staticValues.groupRelations.${el}`))
                 .join(", "),
             })}

@@ -219,6 +219,8 @@
   "register1": "",
   "register2": "",
   "termsOfService": "",
+  "faq": "",
+  "yourSafety": "",
   "patrons": "",
   "rodo": "",
   "thankfulnessModal": {
@@ -272,6 +274,7 @@
   "refugeeAddForm": {
     "basicInfoHeader": "",
     "addButton": "",
+    "confirmChangesButton": "",
     "addButtomErrorMessage": "",
     "pregnantReady": "",
     "dissabilityReady": "",

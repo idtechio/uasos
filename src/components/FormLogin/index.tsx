@@ -125,7 +125,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     } else if (isPhoneWithoutPrefixValid) {
       return "+38";
     } else if (!isPhoneOrEmail) {
-      return t("others:forms.login.emailOrPhoneDetails");
+      return t("others:forms.login.emailOrPhoneDetail");
     }
   };
 
@@ -189,6 +189,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
+                  errorMsg={t("others:forms.login.invalidPassword")}
                 />
                 <LostPass />
               </>

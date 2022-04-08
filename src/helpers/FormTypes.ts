@@ -97,8 +97,8 @@ export type FormType = {
     accommodationType: string;
     guestCount: number;
     childBedCount: number;
-    accommodationTime: AccommodationTime;
-    nationality: Nationality;
+    accommodationTime: AccommodationTime | string;
+    nationality: Nationality | string;
     groupsTypes: string[];
     transportReady: boolean;
     pregnantReady: boolean;
@@ -106,9 +106,9 @@ export type FormType = {
     animalReady: boolean;
     prolongationReady: boolean;
     accommodationPhotos: [Blob];
-    hostType: HostType;
-    volunteerVisitAcceptance: string;
-    elderReady: string;
+    hostType: HostType | string;
+    volunteerVisitAcceptance: boolean;
+    elderReady: boolean;
     zipCode: string;
     city: string;
     closestLargeCity: string;
