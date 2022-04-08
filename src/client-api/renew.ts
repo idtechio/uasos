@@ -14,7 +14,7 @@ export const renewListItem = async ({
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DOMAIN}api/${targetType}/renew`,
     {
-      method: "UPDATE",
+      method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
         "content-type": "application/json",
