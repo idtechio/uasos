@@ -6,7 +6,6 @@ export interface getAccountDTO {
   prefferedLang?: string;
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
-  smsNotification: Boolean;
   verified?: Boolean;
 }
 export interface updateAccountReqDTO {

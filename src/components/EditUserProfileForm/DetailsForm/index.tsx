@@ -44,10 +44,10 @@ const getPhonePrefix = (phone: string) =>
     .reverse()
     .join("");
 
-const getFormDefaultValues: (
+const getFormDefaultValues = (
   account: getAccountDTO | null,
   identity: User | null | undefined
-) => Partial<EditProfileForm> = (account, identity) => {
+) => {
   return {
     email: identity?.email || undefined,
     phone: identity?.phoneNumber
@@ -58,7 +58,6 @@ const getFormDefaultValues: (
     phonePrefix: identity?.phoneNumber
       ? getPhonePrefix(identity.phoneNumber)
       : undefined,
-    smsNotification: account?.smsNotification.valueOf(),
   };
 };
 
@@ -87,7 +86,6 @@ export default function UserDetailsForm({
         email: data.email,
         phone: `${data.phonePrefix}${data.phone}`,
         prefferedLang: data.preferredLanguage,
-        smsNotification: data.smsNotification ?? false,
       };
       await Authorization.updateMail(payload.email);
       mutate(

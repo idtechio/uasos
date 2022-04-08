@@ -3,7 +3,7 @@ import EmailInput from "./EmailInput";
 import NameInput from "./NameInput";
 import PhoneNumberInput from "./PhoneNumberInput";
 import PreferredLanguageInput from "./PreferredLanguageInput";
-import SmsNotificationInput from "./SmsNotificationInput";
+// import SmsNotificationInput from "./SmsNotificationInput";
 
 export default function Inputs() {
   return (
@@ -11,8 +11,8 @@ export default function Inputs() {
       <NameInput />
       <PreferredLanguageInput />
       <PhoneNumberInput />
+      {/* <SmsNotificationInput /> */}
       <EmailInput />
-      <SmsNotificationInput />
     </>
   );
 }

@@ -28,7 +28,7 @@ export default function SmsNotificationInput() {
     <Wrapper>
       <Controller
         control={control}
-        name="smsNotification"
+        name="smsNotifications"
         render={({ field: { value, onChange } }) => (
           <CheckboxField
             value={value || false}
