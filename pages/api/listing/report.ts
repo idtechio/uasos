@@ -4,23 +4,37 @@ import {
   coerceTo,
   ContentedError,
   Infer,
+  match,
   object,
   string,
 } from "@gucciogucci/contented";
+import { getMatchInfo } from "../../../lib/repository";
 
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 import { getAccountFromDB } from "../account/get";
-import { getGuestFromDB } from "../guests/edit";
-import { getHostFromDB } from "../hosts/edit";
+
+export enum ReportType {
+  REPORT_GUEST_INACTIVE = "report_guest_inactive", // My guest doesn't require accommodation anymore
+  REPORT_HOST_INACTIVE = "report_host_inactive", // My host can't provide accommodation anymore
+  REPORT_FIRST_CONTACT = "report_first_contact", // I/other party rejected offer after first contact
+  REPORT_NO_CONTACT = "report_no_contact", // No contact despite several attempts
+  REPORT_NO_SHOW_UP = "report_no_show_up", // Host/guest didn't show up to agreed place
+}
+
+const ReportTypeEnum = match(ReportType.REPORT_GUEST_INACTIVE)
+  .or(match(ReportType.REPORT_HOST_INACTIVE))
+  .or(match(ReportType.REPORT_FIRST_CONTACT))
+  .or(match(ReportType.REPORT_NO_CONTACT))
+  .or(match(ReportType.REPORT_NO_SHOW_UP));
 
 const ReportBodyPropsType = object({
   match_id: string,
-  "host_id?": string,
-  "guest_id?": string,
-  report_type: string,
+  host_id: string,
+  guest_id: string,
+  report_type: ReportTypeEnum,
 });
 
 type ReportBodyProps = Infer<typeof ReportBodyPropsType>;
@@ -30,7 +44,11 @@ type ReportDataType = {
   db_matches_id: string;
   db_hosts_id?: string;
   db_guests_id?: string;
-  report_type: string;
+  hosts_to_return?: string[];
+  hosts_to_disable?: string[];
+  guests_to_return?: string[];
+  guests_to_disable?: string[];
+  report_type: ReportType;
 };
 
 interface ReportApiRequest extends NextApiRequest {
@@ -58,6 +76,13 @@ async function listingReport(
     return;
   }
 
+  const matchInfo = await getMatchInfo(body.match_id, req.decodedToken.uid);
+
+  if (!matchInfo) {
+    res.status(400).json({ message: "Could not get 'matchInfo'" });
+    return;
+  }
+
   const account = await getAccountFromDB(req.decodedToken.uid);
 
   if (!account) {
@@ -68,34 +93,49 @@ async function listingReport(
   const reportData: ReportDataType = {
     db_accounts_id: account.db_accounts_id,
     db_matches_id: body.match_id,
+    db_hosts_id: matchInfo.isHost ? matchInfo.hostId : undefined,
+    db_guests_id: matchInfo.isGuest ? matchInfo.guestId : undefined,
     report_type: body.report_type,
   };
 
-  if (body.host_id && body.guest_id === undefined) {
-    const host = await getHostFromDB(body.host_id, account.uid);
-    if (host) {
-      reportData.db_hosts_id = host.db_hosts_id;
-    } else {
-      res
-        .status(400)
-        .json({ message: `Host not found by host_id: ${body.host_id}.` });
-      return;
+  // My guest doesn't require accommodation anymore
+  if (
+    matchInfo.isHost &&
+    body.report_type === ReportType.REPORT_GUEST_INACTIVE
+  ) {
+    reportData.guests_to_disable = [matchInfo.guestId];
+    reportData.hosts_to_return = [matchInfo.hostId];
+  }
+
+  // My host can't provide accommodation anymore
+  if (
+    matchInfo.isGuest &&
+    body.report_type === ReportType.REPORT_HOST_INACTIVE
+  ) {
+    reportData.hosts_to_disable = [matchInfo.hostId];
+    reportData.guests_to_return = [matchInfo.guestId];
+  }
+
+  // I/other party rejected offer after first contact
+  if (body.report_type === ReportType.REPORT_FIRST_CONTACT) {
+    reportData.hosts_to_return = [matchInfo.hostId];
+    reportData.guests_to_return = [matchInfo.guestId];
+  }
+
+  // No contact despite several attempts
+  // Host/guest didn't show up to agreed place
+  if (
+    body.report_type === ReportType.REPORT_NO_CONTACT ||
+    body.report_type === ReportType.REPORT_NO_SHOW_UP
+  ) {
+    if (matchInfo.isHost) {
+      reportData.hosts_to_return = [matchInfo.hostId];
+      reportData.guests_to_disable = [matchInfo.guestId];
     }
-  } else if (body.guest_id && body.host_id === undefined) {
-    const guest = await getGuestFromDB(body.guest_id, account.uid);
-    if (guest) {
-      reportData.db_guests_id = guest.db_guests_id;
-    } else {
-      res
-        .status(400)
-        .json({ message: `Guest not found by guest_id: ${body.guest_id}.` });
-      return;
+    if (matchInfo.isGuest) {
+      reportData.guests_to_return = [matchInfo.guestId];
+      reportData.hosts_to_disable = [matchInfo.hostId];
     }
-  } else {
-    res
-      .status(400)
-      .json({ message: "Must be either 'guest_id' or 'host_id'." });
-    return;
   }
 
   try {
