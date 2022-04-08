@@ -110,7 +110,7 @@ const Requests = ({
   requests: Request[];
   readonly: boolean;
 }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation("others", { keyPrefix: "desktop" });
 
   return (
     <>
@@ -132,8 +132,10 @@ const Requests = ({
                   ))}
               </MoreButtonWrapper>
               <RequestTextWrapper>
-                <RequestFirstLine>{t("submission")}</RequestFirstLine>
-                <RequestSecondLine>{t("accomodationSearch")}</RequestSecondLine>
+                <RequestFirstLine>{t("refuge.submission")}</RequestFirstLine>
+                <RequestSecondLine>
+                  {t("accommodationSearch")}
+                </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
             <div
