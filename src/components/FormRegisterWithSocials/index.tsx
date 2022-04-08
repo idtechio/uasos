@@ -22,6 +22,8 @@ import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { FirebaseError } from "@firebase/util";
+import FormCheckbox from "../Inputs/FormCheckbox";
+import { css } from "styled-components/native";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -31,7 +33,11 @@ export default function FromRegisterWithSocials() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
-  const [data, setData] = useState<{ name: string; prefferedLang: string }>();
+  const [data, setData] = useState<{
+    name: string;
+    prefferedLang: string;
+    smsNotification: boolean;
+  }>();
   const [apiError, setApiError] = useState<string>("");
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
@@ -67,6 +73,7 @@ export default function FromRegisterWithSocials() {
             : ""
           : account?.name,
         email: identity && identity.email ? identity?.email : "",
+        smsNotification: false,
         prefferedLanguage: "pl",
       },
     },
@@ -77,6 +84,7 @@ export default function FromRegisterWithSocials() {
     setData({
       name: e.registerWithSocials.name,
       prefferedLang: e.registerWithSocials.prefferedLanguage,
+      smsNotification: e.registerWithSocials.smsNotification,
     });
     try {
       let confirmation = null;
@@ -179,7 +187,7 @@ export default function FromRegisterWithSocials() {
             readonly={true}
           />
 
-          <CompositionSection padding={[0, 0, 0, 0]} zIndex={-1}>
+          <CompositionSection padding={[0, 0, 0, 0]} zIndex={1}>
             <InputControlLabel>
               {t("others:forms.generic.phoneNumber")}
             </InputControlLabel>
@@ -195,6 +203,26 @@ export default function FromRegisterWithSocials() {
               data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
             />
           </CompositionSection>
+          <CompositionSection padding={[20, 0, 0, 0]}>
+            <div>
+              <FormCheckbox
+                styles={{
+                  checkboxFieldWrapper: css`
+                    align-items: flex-start;
+                  `,
+                }}
+                isCentered={false}
+                rules={{
+                  required: false,
+                }}
+                name="registerWithSocials.smsNotification"
+                label={` ${t(
+                  "others:forms.userRegistration.agreeOnSmsCommunication"
+                )}`}
+              />
+            </div>
+          </CompositionSection>
+
           <FormFooter>
             <ButtonCta
               onPress={() => Authorization.logOut()}

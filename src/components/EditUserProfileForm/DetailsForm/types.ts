@@ -3,6 +3,6 @@ export interface EditProfileForm {
   preferredLanguage?: string;
   phone?: string;
   phonePrefix?: string;
-  smsNotifications?: boolean;
+  smsNotification?: boolean;
   email: string;
 }
