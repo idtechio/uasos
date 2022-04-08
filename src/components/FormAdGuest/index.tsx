@@ -392,6 +392,7 @@ export default function FormAdGuest({
               {t("refugeeAddForm.countryOfGroup")}
             </InputCotrolLabel>
             <FormRadioGroup
+              isRadio
               name="advancedRefugee.nationality"
               rules={{
                 required: true,
