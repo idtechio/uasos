@@ -52,6 +52,8 @@ export const FormDescription = styled.Text`
 `;
 
 export const FormFooter = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 80px;
   width: 100%;
 `;

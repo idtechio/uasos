@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import HomeIllustration from "../../../style/svgs/home_illustration.svg";
 import ButtonCta from "../ButtonCta";
 import {
@@ -10,20 +12,32 @@ import {
 } from "../style";
 
 export default function RenewOffer({ close }: { close(): void }) {
+  const { t } = useTranslation();
+
   return (
     <FormWrapper>
       <CloseButton onPress={close} />
       <HomeIllustration />
-      <FormHeader style={{ marginTop: 38 }}>Renew</FormHeader>
-      <FormDescription style={{ marginTop: 40, maxWidth: "26ch" }}>
-        Your application / offer <b>expired due to lack of activity</b>
-      </FormDescription>
-      <FormDescription style={{ marginTop: 22, maxWidth: "30ch" }}>
-        Do you want to re-activate the application/offer?
+      <FormHeader style={{ marginTop: 38 }}>
+        {t("others:common.words.renew")}
+      </FormHeader>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: t("others:offer.popup.renew.expiredMsg"),
+        }}
+        style={{ fontSize: 16, marginTop: 40 }}
+      />
+
+      <FormDescription style={{ marginTop: 22 }}>
+        {t("others:forms.renew.re-activateOffer")}
       </FormDescription>
       <FormFooter style={{ marginTop: 57 }}>
-        <ButtonCta anchor="Cancel" variant="outlined" onPress={close} />
-        <ButtonCta anchor="Renew" />
+        <ButtonCta
+          onPress={close}
+          variant="outlined"
+          anchor={t("others:common.buttons.cancel")}
+        />
+        <ButtonCta onPress={close} anchor={t("others:common.words.renew")} />
       </FormFooter>
     </FormWrapper>
   );
