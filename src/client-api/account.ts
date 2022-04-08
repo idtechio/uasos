@@ -19,17 +19,19 @@ interface AccountApi {
 export const AccountApi: AccountApi = {
   getAccount: async function () {
     const token = await getFirebaseToken();
-    const res = await fetch(
-      process.env.NEXT_PUBLIC_DOMAIN + `api/account/get`,
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return (await res.json()).account;
+    if (token) {
+      const res = await fetch(
+        process.env.NEXT_PUBLIC_DOMAIN + `api/account/get`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return (await res.json()).account;
+    }
   },
   updateAccount: async function ({ payload }) {
     const token = await getFirebaseToken();
