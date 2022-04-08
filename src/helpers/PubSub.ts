@@ -24,17 +24,12 @@ export async function publishMessage(
 
     const messageContent =
       typeof message === "object" ? JSON.stringify(message) : message;
-    const data = Buffer.from(messageContent);
 
-    const messageId = await pubSubClient
-      .topic(topicNameOrId)
-      .publishMessage({ data });
-
-    console.log(
-      `PUBSUB Message ${messageId} published to ${topicNameOrId}: `,
-      messageContent
-    );
-    return { status: PublishStatus.OK };
+    if (process.env.ENV_NAME === "local") {
+      return await publishLocal(topicNameOrId, messageContent);
+    } else {
+      return await publishCloud(topicNameOrId, messageContent);
+    }
   } catch (e) {
     console.log(
       `PUBSUB Error while publishing to ${topicNameOrId}: `,
@@ -48,4 +43,58 @@ export async function publishMessage(
         (e instanceof Error ? `: ${e.message}` : ""),
     };
   }
+}
+
+async function publishCloud(
+  topicNameOrId: string,
+  message: string
+): Promise<PublishMessageResult> {
+  const data = Buffer.from(message);
+
+  const messageId = await pubSubClient
+    .topic(topicNameOrId)
+    .publishMessage({ data });
+
+  console.log(
+    `PUBSUB Message ${messageId} published to ${topicNameOrId}: `,
+    message
+  );
+  return { status: PublishStatus.OK };
+}
+
+async function publishLocal(
+  topicNameOrId: string,
+  message: string
+): Promise<PublishMessageResult> {
+  const body = {
+    data: {
+      data: message,
+    },
+  };
+
+  type PortList = {
+    [key: string]: string;
+  };
+
+  const PORT: PortList = {
+    [process.env.TOPIC_HOST_INSERT + ""]: "8061",
+    [process.env.TOPIC_GUEST_INSERT + ""]: "8062",
+    [process.env.TOPIC_ACCOUNT_INSERT + ""]: "8063",
+    [process.env.TOPIC_ACCOUNT_UPDATE + ""]: "8064",
+  };
+
+  const res = await fetch("http://localhost:" + PORT[topicNameOrId], {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+
+  console.log(
+    `PUBSUB Message published to local ${topicNameOrId}: `,
+    message,
+    await res.text()
+  );
+  return { status: PublishStatus.OK };
 }
