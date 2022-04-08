@@ -60,7 +60,7 @@ export default function EditOfferButton({
         label: "hostAdd.accomodationPhotoReset",
       },
     ],
-    [targetType]
+    []
   );
 
   const getEditButtonLink = useMemo(
@@ -96,7 +96,13 @@ export default function EditOfferButton({
         break;
 
       case "renew":
-        modalComponent = <RenewOffer close={closeModal} />;
+        modalComponent = (
+          <RenewOffer
+            close={closeModal}
+            targetID={targetID}
+            targetType={targetType}
+          />
+        );
         break;
 
       case "report":
