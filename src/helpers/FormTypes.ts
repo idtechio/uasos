@@ -150,7 +150,6 @@ export type FormType = {
     phonePrefix: string;
     phoneNumber: string;
     prefferedLanguage: string;
-    smsNotification: boolean;
   };
   resetPassword: {
     password: string;
