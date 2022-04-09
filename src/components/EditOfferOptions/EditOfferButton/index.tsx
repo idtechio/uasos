@@ -40,7 +40,7 @@ export default function EditOfferButton({
       {
         icon: <ClockIcon />,
         type: "renew",
-        hide: false,
+        hide: true,
         label: "others:common.words.renew",
       },
       {
