@@ -84,26 +84,26 @@ async function listingReport(
 
   // My guest doesn't require accommodation anymore
   if (
-    matchInfo.isHost &&
+    matchInfo.is_host &&
     body.report_type === ReportType.REPORT_GUEST_INACTIVE
   ) {
-    reportData.guests_to_disable = [matchInfo.guestId];
-    reportData.hosts_to_return = [matchInfo.hostId];
+    reportData.guests_to_disable = [matchInfo.guest_id];
+    reportData.hosts_to_return = [matchInfo.host_id];
   }
 
   // My host can't provide accommodation anymore
   if (
-    matchInfo.isGuest &&
+    matchInfo.is_guest &&
     body.report_type === ReportType.REPORT_HOST_INACTIVE
   ) {
-    reportData.hosts_to_disable = [matchInfo.hostId];
-    reportData.guests_to_return = [matchInfo.guestId];
+    reportData.hosts_to_disable = [matchInfo.host_id];
+    reportData.guests_to_return = [matchInfo.guest_id];
   }
 
   // I/other party rejected offer after first contact
   if (body.report_type === ReportType.REPORT_FIRST_CONTACT) {
-    reportData.hosts_to_return = [matchInfo.hostId];
-    reportData.guests_to_return = [matchInfo.guestId];
+    reportData.hosts_to_return = [matchInfo.host_id];
+    reportData.guests_to_return = [matchInfo.guest_id];
   }
 
   // No contact despite several attempts
@@ -112,13 +112,13 @@ async function listingReport(
     body.report_type === ReportType.REPORT_NO_CONTACT ||
     body.report_type === ReportType.REPORT_NO_SHOW_UP
   ) {
-    if (matchInfo.isHost) {
-      reportData.hosts_to_return = [matchInfo.hostId];
-      reportData.guests_to_disable = [matchInfo.guestId];
+    if (matchInfo.is_host) {
+      reportData.hosts_to_return = [matchInfo.host_id];
+      reportData.guests_to_disable = [matchInfo.guest_id];
     }
-    if (matchInfo.isGuest) {
-      reportData.guests_to_return = [matchInfo.guestId];
-      reportData.hosts_to_disable = [matchInfo.hostId];
+    if (matchInfo.is_guest) {
+      reportData.guests_to_return = [matchInfo.guest_id];
+      reportData.hosts_to_disable = [matchInfo.host_id];
     }
   }
 
@@ -134,10 +134,10 @@ async function listingReport(
 }
 
 export interface MatchInfo {
-  isHost: boolean;
-  isGuest: boolean;
-  hostId: string;
-  guestId: string;
+  is_host: boolean;
+  is_guest: boolean;
+  host_id: string;
+  guest_id: string;
 }
 
 export async function getMatchInfo(
@@ -146,10 +146,10 @@ export async function getMatchInfo(
 ): Promise<false | MatchInfo> {
   const matchInfo: false | MatchInfo[] = await select(
     `SELECT
-      m.fnc_hosts_id AS hostId,
-      m.fnc_guests_id AS guestId,
-      ah.uid = $2 AS isHost,
-      ag.uid = $2 AS isGuest
+      m.fnc_hosts_id AS host_id,
+      m.fnc_guests_id AS guest_id,
+      ah.uid = $2 AS is_host,
+      ag.uid = $2 AS is_guest
     FROM matches m
     JOIN hosts h ON h.db_hosts_id = m.fnc_hosts_id
     JOIN guests g ON g.db_guests_id = m.fnc_guests_id
