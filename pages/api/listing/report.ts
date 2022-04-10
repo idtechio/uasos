@@ -8,13 +8,12 @@ import {
   object,
   string,
 } from "@gucciogucci/contented";
-import { getMatchInfo } from "../../../lib/repository";
 
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import { getAccountFromDB } from "../account/get";
+import { select } from "../../../lib/db";
 
 export enum ReportType {
   REPORT_GUEST_INACTIVE = "report_guest_inactive", // My guest doesn't require accommodation anymore
@@ -32,23 +31,19 @@ const ReportTypeEnum = match(ReportType.REPORT_GUEST_INACTIVE)
 
 const ReportBodyPropsType = object({
   match_id: string,
-  host_id: string,
-  guest_id: string,
+  "host_id?": string,
+  "guest_id?": string,
   report_type: ReportTypeEnum,
 });
 
 type ReportBodyProps = Infer<typeof ReportBodyPropsType>;
 
 type ReportDataType = {
-  db_accounts_id: string;
   db_matches_id: string;
-  db_hosts_id?: string;
-  db_guests_id?: string;
   hosts_to_return?: string[];
   hosts_to_disable?: string[];
   guests_to_return?: string[];
   guests_to_disable?: string[];
-  report_type: ReportType;
 };
 
 interface ReportApiRequest extends NextApiRequest {
@@ -79,23 +74,12 @@ async function listingReport(
   const matchInfo = await getMatchInfo(body.match_id, req.decodedToken.uid);
 
   if (!matchInfo) {
-    res.status(400).json({ message: "Could not get 'matchInfo'" });
-    return;
-  }
-
-  const account = await getAccountFromDB(req.decodedToken.uid);
-
-  if (!account) {
-    res.status(400).json({ message: "There is no account." });
+    res.status(400).json({ message: "Match does not exists" });
     return;
   }
 
   const reportData: ReportDataType = {
-    db_accounts_id: account.db_accounts_id,
     db_matches_id: body.match_id,
-    db_hosts_id: matchInfo.isHost ? matchInfo.hostId : undefined,
-    db_guests_id: matchInfo.isGuest ? matchInfo.guestId : undefined,
-    report_type: body.report_type,
   };
 
   // My guest doesn't require accommodation anymore
@@ -147,6 +131,39 @@ async function listingReport(
   } catch (e) {
     res.status(400).json({ ok: "not ok" });
   }
+}
+
+export interface MatchInfo {
+  isHost: boolean;
+  isGuest: boolean;
+  hostId: string;
+  guestId: string;
+}
+
+export async function getMatchInfo(
+  matchId: string,
+  uid: string
+): Promise<false | MatchInfo> {
+  const matchInfo: false | MatchInfo[] = await select(
+    `SELECT
+      m.fnc_hosts_id AS hostId,
+      m.fnc_guests_id AS guestId,
+      ah.uid = $2 AS isHost,
+      ag.uid = $2 AS isGuest
+    FROM matches m
+    JOIN hosts h ON h.db_hosts_id = m.fnc_hosts_id
+    JOIN guests g ON g.db_guests_id = m.fnc_guests_id
+    LEFT JOIN accounts ah ON ah.db_accounts_id = h.fnc_accounts_id
+    LEFT JOIN accounts ag ON ag.db_accounts_id = g.fnc_accounts_id
+    WHERE m.db_matches_id = $1 AND (ah.uid = $2 OR ag.uid = $2)`,
+    [matchId, uid]
+  );
+
+  if (!matchInfo) {
+    return false;
+  }
+
+  return matchInfo[0];
 }
 
 export default withApiAuth(listingReport);
