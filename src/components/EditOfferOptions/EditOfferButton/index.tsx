@@ -57,8 +57,7 @@ export default function EditOfferButton({
       {
         icon: <ClockIcon />,
         type: "renew",
-        hide: true,
-        // hide: targetStatusType !== GuestHostType.TIMEOUT, // waiting for backend changes
+        hide: targetStatusType !== GuestHostType.TIMEOUT,
         label: "others:common.words.renew",
       },
       {
@@ -77,7 +76,9 @@ export default function EditOfferButton({
         icon: <BinIcon />,
         type: "delete",
         hide: !!matchID,
-        // hide: targetStatusType !== GuestHostType.CONFIRMED, // waiting for backend changes
+        // hide:
+        //   targetStatusType !== GuestHostType.CONFIRMED &&
+        //   targetStatusType !== GuestHostType.TIMEOUT, // waiting for backend changes
         label: "hostAdd.accomodationPhotoReset",
       },
     ],

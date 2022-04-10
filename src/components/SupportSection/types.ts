@@ -12,7 +12,8 @@ export type MATCH_TYPE =
   | "found_a_match"
   | "being_confirmed"
   | "confirmed"
-  | "rejected";
+  | "rejected"
+  | "timeout";
 interface CommonMatched {
   id: string;
   name: string;
