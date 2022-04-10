@@ -58,7 +58,7 @@ async function updateAccount(
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
       body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
-      body?.smsNotification &&
+      body?.smsNotification !== undefined &&
         (accountData.sms_notification =
           body.smsNotification === true ||
           body.smsNotification === StringBoolean.TRUE
