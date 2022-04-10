@@ -109,15 +109,16 @@ const Offers = ({
           <SupportCard key={o.id}>
             <HeaderWrapper>
               <MoreButtonWrapper>
-                {o.type !== "confirmed" &&
-                  (notYetReady ? (
-                    <ActivityIndicator />
-                  ) : (
-                    <EditOfferButton
-                      targetID={o.id}
-                      targetType={TargetTypes.HOSTS}
-                    />
-                  ))}
+                {notYetReady ? (
+                  <ActivityIndicator />
+                ) : (
+                  <EditOfferButton
+                    targetID={o.id}
+                    targetType={TargetTypes.HOSTS}
+                    matchID={o.matchId}
+                    targetStatusType={o.type}
+                  />
+                )}
               </MoreButtonWrapper>
 
               <Placeholder />

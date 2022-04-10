@@ -121,15 +121,16 @@ const Requests = ({
           <SupportCard key={r.id}>
             <HeaderWrapper>
               <MoreButtonWrapper>
-                {r.type !== "confirmed" &&
-                  (notYetReady ? (
-                    <ActivityIndicator />
-                  ) : (
-                    <EditOfferButton
-                      targetID={r.id}
-                      targetType={TargetTypes.GUESTS}
-                    />
-                  ))}
+                {notYetReady ? (
+                  <ActivityIndicator />
+                ) : (
+                  <EditOfferButton
+                    targetID={r.id}
+                    targetType={TargetTypes.GUESTS}
+                    matchID={r.matchId}
+                    targetStatusType={r.type}
+                  />
+                )}
               </MoreButtonWrapper>
               <RequestTextWrapper>
                 <RequestFirstLine>{t("refuge.submission")}</RequestFirstLine>

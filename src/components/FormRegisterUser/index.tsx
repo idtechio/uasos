@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, StyleSheet } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -77,8 +77,11 @@ export default function FormRegisterUser() {
   const [phoneConfirmation, setPhoneConfirmation] =
     useState<null | ConfirmationResult>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [updateData, setUpdateData] =
-    useState<{ name: string; preferredLang: string }>();
+  const [updateData, setUpdateData] = useState<{
+    name: string;
+    preferredLang: string;
+    smsNotification: boolean;
+  }>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
   const [apiError, setApiError] = useState("");
@@ -119,10 +122,11 @@ export default function FormRegisterUser() {
       email,
       phonePrefix,
       phoneNumber,
+      smsNotification,
       password,
       preferredLanguage,
     } = registrationUserForm;
-    setUpdateData({ name, preferredLang: preferredLanguage });
+    setUpdateData({ name, preferredLang: preferredLanguage, smsNotification });
     try {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
@@ -236,18 +240,27 @@ export default function FormRegisterUser() {
           </div>
         </SectionContent>
       </CompositionSection>
-      {/*<CompositionSection padding={[0, 30, 0, 30]}>*/}
-      {/*  <SectionContent>*/}
-      {/*    <FormCheckbox*/}
-      {/*      isCentered={false}*/}
-      {/*      rules={{*/}
-      {/*        required: false,*/}
-      {/*      }}*/}
-      {/*      name="registrationUserForm.smsNotification"*/}
-      {/*      label={` ${t("registrationUserForm.smsNotificationLabel")}`}*/}
-      {/*    />*/}
-      {/*  </SectionContent>*/}
-      {/*</CompositionSection>*/}
+      <CompositionSection padding={[10, 30, 10, 26]}>
+        <SectionContent>
+          <div>
+            <FormCheckbox
+              styles={{
+                checkboxFieldWrapper: css`
+                  align-items: flex-start;
+                `,
+              }}
+              isCentered={false}
+              rules={{
+                required: false,
+              }}
+              name="registrationUserForm.smsNotification"
+              label={` ${t(
+                "others:forms.userRegistration.agreeOnSmsCommunication"
+              )}`}
+            />
+          </div>
+        </SectionContent>
+      </CompositionSection>
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>

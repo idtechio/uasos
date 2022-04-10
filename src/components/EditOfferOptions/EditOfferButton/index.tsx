@@ -1,4 +1,10 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, {
+  createContext,
+  useMemo,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import CardModal from "../../CardModal";
@@ -17,15 +23,26 @@ import {
 import { Routes } from "../../../consts/router";
 import { useRouter } from "next/router";
 import { ModalTypes, TargetTypes } from "./types";
+import { GuestHostType } from "../../SupportSection/mapper";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
+
+export const EditOfferContext = createContext<{
+  targetID: string;
+  targetType: "hosts" | "guests";
+  matchID?: string | null;
+}>({ targetType: "hosts", targetID: "", matchID: "" });
 
 export default function EditOfferButton({
   targetID,
   targetType,
+  matchID,
+  targetStatusType,
 }: {
   targetID: string;
+  matchID?: string | null;
   targetType: TargetTypes;
+  targetStatusType: string;
 }) {
   const containerRef = useRef<View | null>(null);
 
@@ -40,23 +57,27 @@ export default function EditOfferButton({
       {
         icon: <ClockIcon />,
         type: "renew",
-        hide: false,
+        hide: true,
+        // hide: targetStatusType !== GuestHostType.TIMEOUT, // waiting for backend changes
         label: "others:common.words.renew",
       },
       {
         icon: <EditIcon />,
         type: "edit",
+        hide: !!matchID,
         label: "others:desktop.contextMenu.edit",
       },
       {
         icon: <AlertIcon />,
         type: "report",
-        hide: true,
+        hide: targetStatusType !== GuestHostType.CONFIRMED,
         label: "others:desktop.contextMenu.reportProblem",
       },
       {
         icon: <BinIcon />,
         type: "delete",
+        hide: !!matchID,
+        // hide: targetStatusType !== GuestHostType.CONFIRMED, // waiting for backend changes
         label: "hostAdd.accomodationPhotoReset",
       },
     ],
@@ -155,10 +176,16 @@ export default function EditOfferButton({
     setPopoverOpened(false)
   );
 
+  if (!getButtonList.filter((b) => !b.hide).length) {
+    return null;
+  }
+
   return (
     <ButtonContainer ref={(ref) => (containerRef.current = ref)}>
       <TriggerButton onPress={onTriggerPress} />
-      <Modal />
+      <EditOfferContext.Provider value={{ targetType, targetID, matchID }}>
+        <Modal />
+      </EditOfferContext.Provider>
       {popoverOpened && <PopoverOptions />}
     </ButtonContainer>
   );
