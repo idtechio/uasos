@@ -1,34 +1,46 @@
-import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
+import { useContext, useEffect, useState } from "react";
+import { EditOfferContext } from "../EditOfferButton/index";
+import React from "react";
 import { Dropdown } from "../../Dropdown";
 import { DropdownStyles, StyledLabel } from "./style";
+import { PROBLEM_TYPES } from "./constans";
 
 const Label = ({ children }: { children: string }) => (
   <StyledLabel>{children}</StyledLabel>
 );
 
-const PROBLEM_TYPES = [
-  {
-    label: <Label>Problem 1</Label>,
-    value: "problem1",
-  },
-  { label: <Label>Problem 2</Label>, value: "problem2" },
-  {
-    label: <Label>Problem 3</Label>,
-    value: "problem3",
-  },
-  { label: <Label>Problem 4</Label>, value: "problem4" },
-];
+type DataItem = { label: JSX.Element; value: string };
 
-export default function SelectProblemDropdown() {
-  const [value, setValue] = useState<string | null>(null);
+interface Props {
+  problemType: string | null;
+  onSelect(problem: string | null): void;
+}
+export default function SelectProblemDropdown({
+  problemType,
+  onSelect,
+}: Props) {
+  const { t } = useTranslation();
+  const { targetType } = useContext(EditOfferContext);
+  const [data, setData] = useState<Array<DataItem>>([]);
+
+  useEffect(() => {
+    const dropDownData: DataItem[] = PROBLEM_TYPES.filter(
+      (item) => item.targetType === targetType || !item.targetType
+    ).map((item) => ({
+      label: <Label>{t(item.label)}</Label>,
+      value: item.value,
+    }));
+    setData(dropDownData);
+  }, [targetType]);
 
   return (
     <Dropdown
       styles={DropdownStyles}
-      placeholder="Select from the list"
-      data={PROBLEM_TYPES}
-      selected={value}
-      itemPressFunction={setValue}
+      placeholder={t("others:forms.generic.selectFromList")}
+      data={data}
+      selected={problemType}
+      itemPressFunction={onSelect}
     />
   );
 }

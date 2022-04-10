@@ -116,7 +116,7 @@ type HostListitem = OfferProps & {
   host_id: string;
   host_name: string;
   host_status: GuestHostStatus;
-  match_id?: string;
+  match_id: string;
   guest_id: string;
   guest_name: string;
   guest_status: GuestHostStatus;

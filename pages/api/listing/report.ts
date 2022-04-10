@@ -123,7 +123,7 @@ async function listingReport(
   }
 
   try {
-    const topicNameOrId = process.env.TOPIC_REPORT;
+    const topicNameOrId = process.env.TOPIC_MATCHES_SPLIT;
     const pubResult = await publishMessage(topicNameOrId, reportData);
     res
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)
