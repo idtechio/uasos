@@ -25,7 +25,6 @@ enum GuestHostType {
   BEING_CONFIRMED = "being_confirmed", // matched confirmed by one side (host or guest)
   CONFIRMED = "confirmed", // match confirmed by two sides (host and guest)
   REJECTED = "rejected", // match rejected by one side
-  TIMEOUT = "timeout", // timeout - no confirm/rejest on time
 }
 
 enum MatchStatus {

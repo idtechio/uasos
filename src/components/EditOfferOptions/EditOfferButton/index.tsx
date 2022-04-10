@@ -57,7 +57,7 @@ export default function EditOfferButton({
       {
         icon: <ClockIcon />,
         type: "renew",
-        hide: targetStatusType !== GuestHostType.TIMEOUT,
+        hide: targetStatusType !== GuestHostType.INACTIVE,
         label: "others:common.words.renew",
       },
       {

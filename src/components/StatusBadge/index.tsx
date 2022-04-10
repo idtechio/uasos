@@ -41,11 +41,6 @@ export default function StatusBadge({ state }: { state: MATCH_TYPE }) {
       label: t("others:desktop.offer.status.rejected"),
       style: "disabled",
     },
-    timeout: {
-      value: "x7",
-      label: t("others:desktop.offer.status.timeout"),
-      style: "disabled",
-    },
   };
   const { style, label } = BadgeContent[state] || {
     label: "",
