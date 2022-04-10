@@ -77,8 +77,7 @@ export default function EditOfferButton({
         type: "delete",
         hide: !!matchID,
         // hide:
-        //   targetStatusType !== GuestHostType.CONFIRMED &&
-        //   targetStatusType !== GuestHostType.TIMEOUT, // waiting for backend changes
+        //   targetStatusType === GuestHostType.CONFIRMED, // waiting for backend changes
         label: "hostAdd.accomodationPhotoReset",
       },
     ],
