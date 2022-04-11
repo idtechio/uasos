@@ -1,35 +1,33 @@
 import {
+  applyActionCode,
+  ConfirmationResult,
+  confirmPasswordReset,
+  createUserWithEmailAndPassword,
+  FacebookAuthProvider,
+  fetchSignInMethodsForEmail,
+  getAuth,
+  getIdToken,
+  getRedirectResult,
+  GoogleAuthProvider,
+  linkWithPhoneNumber,
   onAuthStateChanged,
-  User,
+  PhoneAuthCredential,
+  PhoneAuthProvider,
+  RecaptchaVerifier,
+  sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
   signInWithRedirect,
-  getIdToken,
   signOut,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  RecaptchaVerifier,
-  ConfirmationResult,
-  sendPasswordResetEmail,
-  confirmPasswordReset,
-  sendEmailVerification,
-  updatePhoneNumber,
-  PhoneAuthProvider,
-  createUserWithEmailAndPassword,
-  linkWithPhoneNumber,
-  getAuth,
-  PhoneAuthCredential,
-  getRedirectResult,
-  UserCredential,
-  applyActionCode,
   updateEmail,
-  fetchSignInMethodsForEmail,
-  SignInMethod,
+  updatePhoneNumber,
+  User,
+  UserCredential,
 } from "firebase/auth";
-import { AccountApi, getAccountDTO } from "../client-api/account";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../../lib/firebase-app";
-import { useQuery } from "react-query";
+import { AccountApi, getAccountDTO } from "../client-api/account";
 
 auth.useDeviceLanguage();
 
@@ -198,23 +196,5 @@ const Authorization: Authorization = {
   },
 };
 
-type Keys = "GOOGLE" | "FACEBOOK";
-type SignInValueTypes = typeof SignInMethod[Keys];
-
-const useCanEditEmail = () => {
-  const { data } = useQuery(
-    ["sign_in_methods"],
-    Authorization.getSignInMethods
-  );
-
-  const can = data?.some((value) =>
-    [SignInMethod.FACEBOOK, SignInMethod.GOOGLE].includes(
-      value as SignInValueTypes
-    )
-  );
-
-  return can;
-};
-
 export default useAuth;
-export { Authorization, useCanEditEmail };
+export { Authorization };
