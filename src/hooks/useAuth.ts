@@ -38,6 +38,7 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
+      console.log("CHANGED");
       const account = await AccountApi.getAccount()
         .then((res) => res)
         .catch(() => null);
@@ -182,9 +183,9 @@ const Authorization: Authorization = {
     await updateEmail(user, email);
   },
 
-  async getSignInMethods(user?: User | null) {
+  async getSignInMethods() {
     const auth = getAuth();
-    const targetUser = user ?? getAuth().currentUser;
+    const targetUser = getAuth().currentUser;
 
     if (!targetUser?.email || !auth) {
       return [];
