@@ -72,29 +72,19 @@ async function publishLocal(
     },
   };
 
-  type PortList = {
-    [key: string]: string;
-  };
-
-  const PORT: PortList = {
-    [process.env.TOPIC_HOST_INSERT + ""]: "8061",
-    [process.env.TOPIC_GUEST_INSERT + ""]: "8062",
-    [process.env.TOPIC_ACCOUNT_INSERT + ""]: "8063",
-    [process.env.TOPIC_ACCOUNT_UPDATE + ""]: "8064",
-  };
-
-  const res = await fetch("http://localhost:" + PORT[topicNameOrId], {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-
-  console.log(
-    `PUBSUB Message published to local ${topicNameOrId}: `,
-    message,
-    await res.text()
+  fetch(
+    `http://localhost${
+      process.env.LOCAL_PUBSUB_PORT ? ":" + process.env.LOCAL_PUBSUB_PORT : ""
+    }/${topicNameOrId}`,
+    {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "content-type": "application/json",
+      },
+    }
   );
+
+  console.log(`PUBSUB Message published to local ${topicNameOrId}: `, message);
   return { status: PublishStatus.OK };
 }
