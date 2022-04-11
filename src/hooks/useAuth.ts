@@ -1,32 +1,33 @@
 import {
+  applyActionCode,
+  ConfirmationResult,
+  confirmPasswordReset,
+  createUserWithEmailAndPassword,
+  FacebookAuthProvider,
+  fetchSignInMethodsForEmail,
+  getAuth,
+  getIdToken,
+  getRedirectResult,
+  GoogleAuthProvider,
+  linkWithPhoneNumber,
   onAuthStateChanged,
-  User,
+  PhoneAuthCredential,
+  PhoneAuthProvider,
+  RecaptchaVerifier,
+  sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
   signInWithRedirect,
-  getIdToken,
   signOut,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  RecaptchaVerifier,
-  ConfirmationResult,
-  sendPasswordResetEmail,
-  confirmPasswordReset,
-  sendEmailVerification,
-  updatePhoneNumber,
-  PhoneAuthProvider,
-  createUserWithEmailAndPassword,
-  linkWithPhoneNumber,
-  getAuth,
-  PhoneAuthCredential,
-  getRedirectResult,
-  UserCredential,
-  applyActionCode,
   updateEmail,
+  updatePhoneNumber,
+  User,
+  UserCredential,
 } from "firebase/auth";
-import { AccountApi, getAccountDTO } from "../client-api/account";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../../lib/firebase-app";
+import { AccountApi, getAccountDTO } from "../client-api/account";
 
 auth.useDeviceLanguage();
 
@@ -104,6 +105,7 @@ interface Authorization {
   ) => Promise<ConfirmationResult>;
   applyCode: (code: string) => Promise<void>;
   updateMail: (email: string) => Promise<void>;
+  getSignInMethods: () => Promise<string[]>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -178,6 +180,19 @@ const Authorization: Authorization = {
       throw new Error("No user");
     }
     await updateEmail(user, email);
+  },
+
+  async getSignInMethods(user?: User | null) {
+    const auth = getAuth();
+    const targetUser = user ?? getAuth().currentUser;
+
+    if (!targetUser?.email || !auth) {
+      return [];
+    }
+
+    const methods = await fetchSignInMethodsForEmail(auth, targetUser.email);
+
+    return methods;
   },
 };
 
