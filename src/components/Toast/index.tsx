@@ -2,6 +2,7 @@ import { Pressable, StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
 import { hexToRGB } from "../../helpers/misc";
 import { Theme } from "../../style/theme.config";
+import CrossIcon from "../../style/svgs/cross_green.svg";
 
 const ToastWrapper = styled.View<{ color: string }>`
   flex-direction: row;
@@ -36,11 +37,17 @@ const LinkText = styled.Text`
   text-decoration: underline;
 `;
 
+interface CTAInterface {
+  label?: string;
+  onPress?: () => void;
+  closable?: boolean;
+}
+
 type ToastProps = {
   color: string;
   icon?: React.ReactElement;
   label: string;
-  cta?: { label?: string; onPress?: () => void };
+  cta?: CTAInterface;
   contaierStyle?: StyleProp<ViewStyle>;
 };
 
@@ -59,11 +66,9 @@ const Toast = ({
       </TextAndIconWrapper>
       {cta ? (
         <Pressable onPress={cta.onPress}>
-          <LinkText>{cta.label}</LinkText>
+          {cta.closable ? <CrossIcon /> : <LinkText>{cta.label}</LinkText>}
         </Pressable>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </ToastWrapper>
   );
 };

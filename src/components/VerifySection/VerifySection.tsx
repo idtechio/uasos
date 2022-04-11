@@ -7,6 +7,7 @@ import EmailIcon from "../../style/svgs/email.svg";
 import PhoneIcon from "../../style/svgs/phone.svg";
 import { Theme } from "../../style/theme.config";
 import Toast from "../Toast";
+import IdVerificationToast from "../IdVerificationToast";
 
 const VerifySectionWrapper = styled.View``;
 
@@ -49,6 +50,7 @@ export default function VerifySection({
   const theme = useTheme() as Theme;
 
   const { t } = useTranslation("desktop");
+
   return (
     <VerifySectionWrapper style={containerStyle}>
       {needEmail && (
@@ -70,6 +72,7 @@ export default function VerifySection({
         />
       )}
       {needPhone && <VerifyPhoneToast />}
+      <IdVerificationToast />
     </VerifySectionWrapper>
   );
 }

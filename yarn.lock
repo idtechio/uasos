@@ -4816,6 +4816,11 @@ idb@3.0.2:
   resolved "https://registry.npmjs.org/idb/-/idb-3.0.2.tgz"
   integrity sha512-+FLa/0sTXqyux0o6C+i2lOR0VoS60LU/jzUo5xjfY6+7sEEgy4Gz1O7yFBXvjd7N0NyIGWIRg8DcQSLEG+VSPw==
 
+idcheckio-sdk@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/idcheckio-sdk/-/idcheckio-sdk-3.4.3.tgz#4c08ecdd2f3ed4edc6506c142755c48df03ac5b7"
+  integrity sha512-a+wmpMsi45oelPaJlSE9e93/Ommlo3qtUO1F2FfnHg0/zveCByr4z5gQBQ/cfzFsozSrTcFCqUgwfsN1/Img3w==
+
 ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.npmjs.org/ignore/-/ignore-4.0.6.tgz"
@@ -7008,6 +7013,13 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+qs@^6.10.3:
+  version "6.10.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.3.tgz#d6cde1b2ffca87b5aa57889816c5f81535e22e8e"
+  integrity sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==
+  dependencies:
+    side-channel "^1.0.4"
 
 queue-microtask@^1.2.2:
   version "1.2.3"

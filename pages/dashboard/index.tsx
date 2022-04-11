@@ -113,11 +113,13 @@ function DashboardContent() {
     account !== undefined && account !== null && !account.confirmedEmail;
   const needPhoneVerification: boolean =
     account !== undefined && account !== null && !account.confirmedPhone;
-  const needBackendAccountCreation = account ? false : true;
+  const needBackendAccountCreation = !account;
+  const needIdVerification = !account?.identityVerified;
 
   const readonly =
     needEmailVerification ||
     needPhoneVerification ||
+    needIdVerification ||
     needBackendAccountCreation;
 
   useEffect(() => {
@@ -151,6 +153,7 @@ function DashboardContent() {
           )}
           <SupportSection
             readonly={readonly}
+            identityVerified={needIdVerification}
             offers={offers}
             isOffersInError={loaded && !isOffersLoading && isOffersInError}
             isOffersLoading={!loaded || isOffersLoading}
