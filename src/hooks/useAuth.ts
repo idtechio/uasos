@@ -77,6 +77,7 @@ const useAuth = () => {
 };
 
 interface Authorization {
+  recaptcha: RecaptchaVerifier | null;
   logOut: () => Promise<void>;
   signInWithGoogle: () => Promise<UserCredential | null>;
   signInWithFacebook: () => Promise<UserCredential | null>;
@@ -106,6 +107,8 @@ interface Authorization {
   updateMail: (email: string) => Promise<void>;
 }
 const Authorization: Authorization = {
+  recaptcha: null,
+
   async logOut() {
     await signOut(auth);
   },
@@ -125,8 +128,9 @@ const Authorization: Authorization = {
   async signInWithEmail(email, password) {
     await signInWithEmailAndPassword(auth, email, password);
   },
+
   initCaptcha(containerId) {
-    return new RecaptchaVerifier(
+    this.recaptcha = new RecaptchaVerifier(
       containerId,
       {
         size: "invisible",
@@ -137,6 +141,8 @@ const Authorization: Authorization = {
       },
       auth
     );
+
+    return this.recaptcha;
   },
   async sendPasswordResetEmail(email) {
     await sendPasswordResetEmail(auth, email);

@@ -74,7 +74,7 @@ export default function UserDetailsForm({
   const { t } = useTranslation("others");
   const { refetchAccount } = useContext(AuthContext);
   const router = useRouter();
-  const { mutate, isLoading, isSuccess, isError, error } = useEditAccount();
+  const { mutate, isLoading, isSuccess, isError } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
   });
