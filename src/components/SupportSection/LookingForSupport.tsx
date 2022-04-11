@@ -27,6 +27,7 @@ type RequestProps = {
   isError: boolean;
   isLoading: boolean;
   readonly: boolean;
+  identityVerified: boolean;
 };
 
 export default function LookingForSupport({
@@ -34,6 +35,7 @@ export default function LookingForSupport({
   isError,
   isLoading,
   readonly,
+  identityVerified,
 }: RequestProps): JSX.Element {
   const { t } = useTranslation("desktop");
   if (!isLoading && (isError || !requests)) {
@@ -47,7 +49,12 @@ export default function LookingForSupport({
   return (
     <SupportWrapper>
       <Title>{t("others:desktop.yourSubmission")}</Title>
-      <Content isLoading={isLoading} requests={requests} readonly={readonly} />
+      <Content
+        isLoading={isLoading}
+        requests={requests}
+        readonly={readonly}
+        identityVerified={identityVerified}
+      />
     </SupportWrapper>
   );
 }
@@ -56,10 +63,12 @@ const Content = ({
   isLoading,
   readonly,
   requests,
+  identityVerified,
 }: {
   isLoading: boolean;
   readonly: boolean;
   requests?: Request[];
+  identityVerified: boolean;
 }) => {
   if (isLoading || requests === undefined) {
     return <LoadingCards count={3} showImage={false} />;
@@ -68,12 +77,18 @@ const Content = ({
   return (
     <>
       <Requests requests={requests} readonly={readonly} />
-      <NoOffer readonly={readonly} />
+      <NoOffer readonly={readonly} identityVerified={identityVerified} />
     </>
   );
 };
 
-const NoOffer = ({ readonly }: { readonly: boolean }) => {
+const NoOffer = ({
+  readonly,
+  identityVerified,
+}: {
+  readonly: boolean;
+  identityVerified: boolean;
+}) => {
   const { t } = useTranslation("desktop");
 
   const router = useRouter();
@@ -83,6 +98,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);
+        if (identityVerified) router.push(Routes.ID_CHECK);
       }}
     />
   );

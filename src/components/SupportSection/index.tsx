@@ -13,6 +13,7 @@ type SupportSectionProps = {
   isRequestsLoading: boolean;
   isRequestsInError: boolean;
   readonly: boolean;
+  identityVerified: boolean;
 };
 
 export default function SupportSection({
@@ -23,6 +24,7 @@ export default function SupportSection({
   isRequestsLoading,
   isRequestsInError,
   readonly,
+  identityVerified,
 }: SupportSectionProps) {
   const { t } = useTranslation();
 
@@ -37,6 +39,7 @@ export default function SupportSection({
             isError={isOffersInError}
             isLoading={isOffersLoading}
             readonly={readonly}
+            identityVerified={identityVerified}
           />
         ),
       },
@@ -49,6 +52,7 @@ export default function SupportSection({
             isError={isRequestsInError}
             isLoading={isRequestsLoading}
             readonly={readonly}
+            identityVerified={identityVerified}
           />
         ),
       },
@@ -62,6 +66,7 @@ export default function SupportSection({
     isRequestsLoading,
     isRequestsInError,
     readonly,
+    identityVerified,
   ]);
 
   return <TabPanel items={items} initialSelectedIndex={0} />;
