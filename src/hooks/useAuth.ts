@@ -23,10 +23,13 @@ import {
   UserCredential,
   applyActionCode,
   updateEmail,
+  fetchSignInMethodsForEmail,
+  SignInMethod,
 } from "firebase/auth";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 import { useState, useEffect } from "react";
 import { auth } from "../../lib/firebase-app";
+import { useQuery } from "react-query";
 
 auth.useDeviceLanguage();
 
@@ -104,6 +107,7 @@ interface Authorization {
   ) => Promise<ConfirmationResult>;
   applyCode: (code: string) => Promise<void>;
   updateMail: (email: string) => Promise<void>;
+  getSignInMethods: () => Promise<string[]>;
 }
 const Authorization: Authorization = {
   async logOut() {
@@ -179,7 +183,38 @@ const Authorization: Authorization = {
     }
     await updateEmail(user, email);
   },
+
+  async getSignInMethods(user?: User | null) {
+    const auth = getAuth();
+    const targetUser = user ?? getAuth().currentUser;
+
+    if (!targetUser?.email || !auth) {
+      return [];
+    }
+
+    const methods = await fetchSignInMethodsForEmail(auth, targetUser.email);
+
+    return methods;
+  },
+};
+
+type Keys = "GOOGLE" | "FACEBOOK";
+type SignInValueTypes = typeof SignInMethod[Keys];
+
+const useCanEditEmail = () => {
+  const { data } = useQuery(
+    ["sign_in_methods"],
+    Authorization.getSignInMethods
+  );
+
+  const can = data?.some((value) =>
+    [SignInMethod.FACEBOOK, SignInMethod.GOOGLE].includes(
+      value as SignInValueTypes
+    )
+  );
+
+  return can;
 };
 
 export default useAuth;
-export { Authorization };
+export { Authorization, useCanEditEmail };
