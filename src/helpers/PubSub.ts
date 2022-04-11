@@ -25,7 +25,7 @@ export async function publishMessage(
     const messageContent =
       typeof message === "object" ? JSON.stringify(message) : message;
 
-    if (process.env.ENV_NAME === "local") {
+    if (process.env.LOCAL_PUBSUB_ENABLED === "1") {
       return await publishLocal(topicNameOrId, messageContent);
     } else {
       return await publishCloud(topicNameOrId, messageContent);

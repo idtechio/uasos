@@ -1,8 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Intro
 
-## Getting Started
+UASOS project has four main parts:
 
-First, run the development server:
+1. frontend
+2. API
+3. backend
+4. database
+
+Frontend and API are located in this repo. Backend and database DDL in another one.
+
+You can develop frontend using API from ["test"](https://test.uasos.org/) server or setup backend and database in your local envinronment to run all parts localy.
+
+## 1. Frontend
+
+First, run the development server for frontend:
 
 ```bash
 npm run dev
@@ -12,56 +23,52 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 2. API from "test" server
 
-For dev purposes:
+You can use API from ["test"](https://test.uasos.org/) server changing
+`NEXT_PUBLIC_DOMAIN` to `https://test.uasos.org/`.
 
-To launch app without firebase add patch below:
+## 3-4. Local database and backend
 
-```ts
-------------------------------- lib/firebase.js -------------------------------
-index f90a8c4..2766c48 100644
-@@ -1,15 +1,4 @@
- import * as admin from "firebase-admin";
+You can clone and set up local database and backend functions from [idtechio/uasos-dev-infra](https://github.com/idtechio/uasos-dev-infra).
+How to do it? Read README file in that repository :)
 
--if (!admin.apps.length) {
--  admin.initializeApp({
--    credential: admin.credential.cert({
--      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
--      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
--      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
--    }),
--  });
--}
--
--const db = admin.firestore();
--
-+const db = {};
- export { db };
+Ensure that `.env` in this project contains:
 
-------------------------------- pages/index.tsx -------------------------------
-index 2254fc6..9a84a73 100644
-@@ -75,12 +75,9 @@ function Home(props) {
- }
+- `LOCAL_PUBSUB_ENABLED="1"` and `LOCAL_PUBSUB_PORT=8060` to send messages to local backend functions instead of Google PubSub Service like on production
+- `DB_HOST="127.0.0.1"` and `DB_PORT=5432` to connect to the local database
+- `LOCAL_PUBSUB_PORT` should have the same value as `ROUTE_FNC_PORT` in backend env, and `DB_PORT` should be equal too
 
- export async function getStaticProps() {
--  const res = await fetch("http://localhost:3000/api/accommodations");
--  const data = await res.json();
--
-   return {
-     props: {
--      data,
-+      data: [],
-     },
-   };
- }
-```
+## 5. Identity Platform
+
+We are using [Google Identity Platform] (https://cloud.google.com/identity-platform) for user authentication.
+
+You need to set up a few values in `.env` to use Identity Platform on local envinronment.
+
+For signing in/up you need:
+
+- `NEXT_PUBLIC_FIREBASE_API_KEY`
+- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+- `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+- `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+- `NEXT_PUBLIC_FIREBASE_APP_ID`
+
+To use API on localhost (for user token verification) you need:
+
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_CLIENT_EMAIL`
+- `FIREBASE_PRIVATE_KEY`
+
+Ask your team leader about it :)
+
+## Learn More about Next.js
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -69,9 +76,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
