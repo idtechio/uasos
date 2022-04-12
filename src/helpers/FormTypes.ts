@@ -114,7 +114,7 @@ export type FormType = {
     closestLargeCity: string;
     street: string;
     buildingNumber: string;
-    apartmentNumber: string;
+    apartmentNumber: string | undefined;
     uploadedPhotos: Array<string>;
   };
   advancedRefugee: {
