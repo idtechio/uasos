@@ -47,6 +47,12 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
+export type AccountUpdateData = {
+  name: string;
+  preferredLang: string;
+  smsNotification: boolean;
+};
+
 export default function FormRegisterUser() {
   const mutation = useMutation(
     (data: { identity: User; phonePrefix: string; phoneNumber: string }) =>
@@ -77,12 +83,7 @@ export default function FormRegisterUser() {
   const [phoneConfirmation, setPhoneConfirmation] =
     useState<null | ConfirmationResult>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [updateData, setUpdateData] = useState<{
-    name: string;
-    preferredLang: string;
-    smsNotification: boolean;
-  }>();
-
+  const [updateData, setUpdateData] = useState<AccountUpdateData>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
 
@@ -132,6 +133,13 @@ export default function FormRegisterUser() {
     try {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
+      await AccountApi.updateAccount({
+        payload: {
+          name,
+          preferredLang: preferredLanguage,
+          smsNotification,
+        },
+      });
       setSubmitRequstState((state) => ({ ...state, loading: false }));
 
       const res = await mutation.mutateAsync({
