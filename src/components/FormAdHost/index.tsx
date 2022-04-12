@@ -87,6 +87,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
+    mode: "onChange",
     defaultValues: {
       advancedHost: {
         guestCount: 1,

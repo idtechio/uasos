@@ -80,6 +80,7 @@ export default function FormAdGuest({
     useState<SubmitRequestState>(submitRequestDefualtState);
 
   const formFields = useForm<FormType>({
+    mode: "onChange",
     defaultValues: {
       advancedRefugee: {
         name: name ? name.split(" ")[0] : "",

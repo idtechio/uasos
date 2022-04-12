@@ -31,6 +31,7 @@ export default function FromRegisterWithSocials() {
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
   const [data, setData] = useState<{
@@ -48,7 +49,7 @@ export default function FromRegisterWithSocials() {
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -86,6 +87,7 @@ export default function FromRegisterWithSocials() {
       prefferedLang: e.registerWithSocials.prefferedLanguage,
       smsNotification: e.registerWithSocials.smsNotification,
     });
+    setIsLoading(true);
     try {
       let confirmation = null;
       if (identity) {
@@ -103,6 +105,7 @@ export default function FromRegisterWithSocials() {
         parseError(error?.message);
       }
     }
+    setIsLoading(false);
   };
 
   const updateAccount = async () => {
@@ -230,6 +233,7 @@ export default function FromRegisterWithSocials() {
               style={styles.backButton}
             />
             <ButtonCta
+              disabled={isLoading}
               onPress={handleSubmit(onSubmit, () => {})}
               anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}
