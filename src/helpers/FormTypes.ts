@@ -149,7 +149,7 @@ export type FormType = {
     language: string;
     phonePrefix: string;
     phoneNumber: string;
-    prefferedLanguage: string;
+    preferredLanguage: string;
     smsNotification: boolean;
   };
   resetPassword: {

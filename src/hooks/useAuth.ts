@@ -45,7 +45,7 @@ const useAuth = () => {
       setAccount(account);
       if (user && user.emailVerified && !account?.confirmedEmail) {
         await AccountApi.updateAccount({
-          payload: { preferredLang: account?.prefferedLang },
+          payload: { preferredLang: account?.preferredLang },
         });
         const updatedAccount = await AccountApi.getAccount()
           .then((res) => res)

@@ -36,7 +36,7 @@ export default function FromRegisterWithSocials() {
     useState<boolean>(false);
   const [data, setData] = useState<{
     name: string;
-    prefferedLang: string;
+    preferredLang: string;
     smsNotification: boolean;
   }>();
   const [apiError, setApiError] = useState<string>("");
@@ -75,7 +75,7 @@ export default function FromRegisterWithSocials() {
           : account?.name,
         email: identity && identity.email ? identity?.email : "",
         smsNotification: false,
-        prefferedLanguage: "pl",
+        preferredLanguage: "pl",
       },
     },
   });
@@ -84,7 +84,7 @@ export default function FromRegisterWithSocials() {
   const onSubmit = async (e: Pick<FormType, "registerWithSocials">) => {
     setData({
       name: e.registerWithSocials.name,
-      prefferedLang: e.registerWithSocials.prefferedLanguage,
+      preferredLang: e.registerWithSocials.preferredLanguage,
       smsNotification: e.registerWithSocials.smsNotification,
     });
     setIsLoading(true);
@@ -159,7 +159,7 @@ export default function FromRegisterWithSocials() {
             {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <FormLanguageDropdown
-            name="registerWithSocials.prefferedLanguage"
+            name="registerWithSocials.preferredLanguage"
             rules={{
               required: true,
             }}

@@ -57,7 +57,7 @@ async function updateAccount(
       body?.name && (accountData.name = body.name);
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
-      body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
+      body?.preferredLang && (accountData.preferred_lang = body.preferredLang);
       body?.smsNotification !== undefined &&
         (accountData.sms_notification =
           body.smsNotification === true ||
@@ -70,7 +70,7 @@ async function updateAccount(
       accountData.name = body?.name || user.displayName;
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
-      accountData.preferred_lang = body?.prefferedLang;
+      accountData.preferred_lang = body?.preferredLang;
       accountData.sms_notification =
         body.smsNotification === true ||
         body.smsNotification === StringBoolean.TRUE
