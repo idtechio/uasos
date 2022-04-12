@@ -23,7 +23,7 @@ import {
 import { Routes } from "../../../consts/router";
 import { useRouter } from "next/router";
 import { ModalTypes, TargetTypes } from "./types";
-import { GuestHostType } from "../../SupportSection/mapper";
+// import { GuestHostType } from "../../SupportSection/mapper";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
