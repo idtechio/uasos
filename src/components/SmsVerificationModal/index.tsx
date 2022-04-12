@@ -2,6 +2,7 @@
 import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
 import { TouchableOpacity } from "react-native";
+
 import {
   StyledText,
   Wrapper,
@@ -14,7 +15,11 @@ import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
-import { ConfirmationResult, PhoneAuthProvider } from "firebase/auth";
+import {
+  ConfirmationResult,
+  RecaptchaVerifier,
+  PhoneAuthProvider,
+} from "firebase/auth";
 import { Authorization } from "../../hooks/useAuth";
 import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
@@ -62,7 +67,7 @@ export default function SmsVerificationModal({
     try {
       const confirm = await Authorization.signInWithPhone(
         phoneNumber,
-        Authorization.initCaptcha("recaptcha__container")
+        Authorization.recaptcha as RecaptchaVerifier
       );
       setResendConfirmation(confirm);
     } catch (error: unknown) {
@@ -73,11 +78,12 @@ export default function SmsVerificationModal({
   };
   const handleResendLink = async () => {
     setResending(true);
+
     try {
       if (identity) {
         const confirm = await Authorization.linkWithPhone(
           phoneNumber,
-          Authorization.initCaptcha("recaptcha__container")
+          Authorization.recaptcha as RecaptchaVerifier
         );
         setResendConfirmation(confirm);
       }
@@ -91,6 +97,7 @@ export default function SmsVerificationModal({
   const handleResendUpdate = () => {
     return null;
   };
+
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
       setApiError(t("others:userRegistration.errors.emailExists"));
@@ -100,7 +107,7 @@ export default function SmsVerificationModal({
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -129,9 +136,11 @@ export default function SmsVerificationModal({
   const onSubmit = async (data: FormType) => {
     const code =
       data["1"] + data["2"] + data["3"] + data["4"] + data["5"] + data["6"];
+
     if (resending) {
       try {
         await resendConfirmation?.confirm(code);
+
         setVerificationSuccess(true);
       } catch (error: unknown) {
         if (error instanceof Error || error instanceof FirebaseError) {
@@ -158,9 +167,11 @@ export default function SmsVerificationModal({
       }
     }
   };
+
   const onError = () => {
     setError("Must be a digit");
   };
+
   return (
     <CardModal closeable={false}>
       <div style={{ display: "none" }} id="recaptcha__container"></div>
