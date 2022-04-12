@@ -20,7 +20,7 @@ const FormUpload = ({ name, errorMsg, rules, error, label }: Props) => {
     <Controller
       control={control}
       rules={rules}
-      render={({ field: { onChange, onBlur } }) => (
+      render={({ field: { onChange, onBlur, name } }) => (
         <View>
           <UploadInput
             name={name}

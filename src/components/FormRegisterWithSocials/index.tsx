@@ -22,6 +22,8 @@ import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { FirebaseError } from "@firebase/util";
+import FormCheckbox from "../Inputs/FormCheckbox";
+import { css } from "styled-components/native";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -29,9 +31,14 @@ export default function FromRegisterWithSocials() {
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
-  const [data, setData] = useState<{ name: string; prefferedLang: string }>();
+  const [data, setData] = useState<{
+    name: string;
+    preferredLang: string;
+    smsNotification: boolean;
+  }>();
   const [apiError, setApiError] = useState<string>("");
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
@@ -42,7 +49,7 @@ export default function FromRegisterWithSocials() {
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -67,7 +74,8 @@ export default function FromRegisterWithSocials() {
             : ""
           : account?.name,
         email: identity && identity.email ? identity?.email : "",
-        prefferedLanguage: "pl",
+        smsNotification: false,
+        preferredLanguage: "pl",
       },
     },
   });
@@ -76,8 +84,10 @@ export default function FromRegisterWithSocials() {
   const onSubmit = async (e: Pick<FormType, "registerWithSocials">) => {
     setData({
       name: e.registerWithSocials.name,
-      prefferedLang: e.registerWithSocials.prefferedLanguage,
+      preferredLang: e.registerWithSocials.preferredLanguage,
+      smsNotification: e.registerWithSocials.smsNotification,
     });
+    setIsLoading(true);
     try {
       let confirmation = null;
       if (identity) {
@@ -95,6 +105,7 @@ export default function FromRegisterWithSocials() {
         parseError(error?.message);
       }
     }
+    setIsLoading(false);
   };
 
   const updateAccount = async () => {
@@ -148,7 +159,7 @@ export default function FromRegisterWithSocials() {
             {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <FormLanguageDropdown
-            name="registerWithSocials.prefferedLanguage"
+            name="registerWithSocials.preferredLanguage"
             rules={{
               required: true,
             }}
@@ -179,7 +190,7 @@ export default function FromRegisterWithSocials() {
             readonly={true}
           />
 
-          <CompositionSection padding={[0, 0, 0, 0]} zIndex={-1}>
+          <CompositionSection padding={[0, 0, 0, 0]} zIndex={1}>
             <InputControlLabel>
               {t("others:forms.generic.phoneNumber")}
             </InputControlLabel>
@@ -195,6 +206,26 @@ export default function FromRegisterWithSocials() {
               data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
             />
           </CompositionSection>
+          <CompositionSection padding={[20, 0, 0, 0]}>
+            <div>
+              <FormCheckbox
+                styles={{
+                  checkboxFieldWrapper: css`
+                    align-items: flex-start;
+                  `,
+                }}
+                isCentered={false}
+                rules={{
+                  required: false,
+                }}
+                name="registerWithSocials.smsNotification"
+                label={` ${t(
+                  "others:forms.userRegistration.agreeOnSmsCommunication"
+                )}`}
+              />
+            </div>
+          </CompositionSection>
+
           <FormFooter>
             <ButtonCta
               onPress={() => Authorization.logOut()}
@@ -202,6 +233,7 @@ export default function FromRegisterWithSocials() {
               style={styles.backButton}
             />
             <ButtonCta
+              disabled={isLoading}
               onPress={handleSubmit(onSubmit, () => {})}
               anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}

@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, StyleSheet } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -47,6 +47,12 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
+export type AccountUpdateData = {
+  name: string;
+  preferredLang: string;
+  smsNotification: boolean;
+};
+
 export default function FormRegisterUser() {
   const mutation = useMutation(
     (data: { identity: User; phonePrefix: string; phoneNumber: string }) =>
@@ -77,10 +83,10 @@ export default function FormRegisterUser() {
   const [phoneConfirmation, setPhoneConfirmation] =
     useState<null | ConfirmationResult>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [updateData, setUpdateData] =
-    useState<{ name: string; preferredLang: string }>();
+  const [updateData, setUpdateData] = useState<AccountUpdateData>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+
   const [apiError, setApiError] = useState("");
 
   const {
@@ -104,7 +110,7 @@ export default function FormRegisterUser() {
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -119,19 +125,29 @@ export default function FormRegisterUser() {
       email,
       phonePrefix,
       phoneNumber,
+      smsNotification,
       password,
       preferredLanguage,
     } = registrationUserForm;
-    setUpdateData({ name, preferredLang: preferredLanguage });
+    setUpdateData({ name, preferredLang: preferredLanguage, smsNotification });
     try {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
+      await AccountApi.updateAccount({
+        payload: {
+          name,
+          preferredLang: preferredLanguage,
+          smsNotification,
+        },
+      });
       setSubmitRequstState((state) => ({ ...state, loading: false }));
+
       const res = await mutation.mutateAsync({
         identity: identity as User,
         phonePrefix,
         phoneNumber,
       });
+
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
@@ -236,18 +252,27 @@ export default function FormRegisterUser() {
           </div>
         </SectionContent>
       </CompositionSection>
-      {/*<CompositionSection padding={[0, 30, 0, 30]}>*/}
-      {/*  <SectionContent>*/}
-      {/*    <FormCheckbox*/}
-      {/*      isCentered={false}*/}
-      {/*      rules={{*/}
-      {/*        required: false,*/}
-      {/*      }}*/}
-      {/*      name="registrationUserForm.smsNotification"*/}
-      {/*      label={` ${t("registrationUserForm.smsNotificationLabel")}`}*/}
-      {/*    />*/}
-      {/*  </SectionContent>*/}
-      {/*</CompositionSection>*/}
+      <CompositionSection padding={[10, 30, 10, 26]}>
+        <SectionContent>
+          <div>
+            <FormCheckbox
+              styles={{
+                checkboxFieldWrapper: css`
+                  align-items: flex-start;
+                `,
+              }}
+              isCentered={false}
+              rules={{
+                required: false,
+              }}
+              name="registrationUserForm.smsNotification"
+              label={` ${t(
+                "others:forms.userRegistration.agreeOnSmsCommunication"
+              )}`}
+            />
+          </div>
+        </SectionContent>
+      </CompositionSection>
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
           <InputControlLabel marginBottom={"0"}>
@@ -323,9 +348,10 @@ export default function FormRegisterUser() {
           <CompositionRow>
             <InputControl styles={buttonStyles}>
               <ButtonCta
-                onPress={() => router.push(Routes.HOMEPAGE)}
-                anchor={t("others:common.buttons.back")}
                 style={buttonStyles.backButton}
+                disabled={submitRequstState.loading}
+                anchor={t("others:common.buttons.back")}
+                onPress={() => router.push(Routes.HOMEPAGE)}
               />
             </InputControl>
             <InputControl styles={buttonStyles}>
@@ -339,12 +365,12 @@ export default function FormRegisterUser() {
           <div style={{ display: "none" }} id="recaptcha__container"></div>
           {phoneConfirmation ? (
             <SmsVerificationModal
-              callback={updateAccount}
               mode="LINK"
+              callback={updateAccount}
               phoneNumber={phoneNumber}
               confirmation={phoneConfirmation}
-              setVerificationSuccess={setSmsVerificationSuccess}
               close={() => setPhoneConfirmation(null)}
+              setVerificationSuccess={setSmsVerificationSuccess}
             />
           ) : (
             <></>

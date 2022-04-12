@@ -237,7 +237,9 @@
         "housing": "Housing",
         "confirmation": {
             "header": "Thank you for your decision",
-            "content": "If you have accepted, wait for the other person's decision. Once the other side accepts, you will receive an email with contact information. <br \/> In case of cancellation, your application will be returned to the pool of active applications. We will inform you by email about the next offer."
+            "content": "If you have {{accepted}}, wait for the other person's decision. Once the other side accepts, you will receive an email with contact information. <br \/> In case of {{cancellation}}, your application will be returned to the pool of active applications. We will inform you by email about the next offer.",
+            "accepted": "accepted",
+            "cancellation": "cancellation"
         },
         "accommodationSearch": "Accommodation search"
     },

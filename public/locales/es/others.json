@@ -237,7 +237,9 @@
         "housing": "",
         "confirmation": {
             "header": "",
-            "content": ""
+            "content": "",
+            "accepted": "",
+            "cancellation": ""
         },
         "accommodationSearch": ""
     },

@@ -110,7 +110,7 @@ const Requests = ({
   requests: Request[];
   readonly: boolean;
 }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation("others", { keyPrefix: "desktop" });
 
   return (
     <>
@@ -121,19 +121,22 @@ const Requests = ({
           <SupportCard key={r.id}>
             <HeaderWrapper>
               <MoreButtonWrapper>
-                {r.type !== "confirmed" &&
-                  (notYetReady ? (
-                    <ActivityIndicator />
-                  ) : (
-                    <EditOfferButton
-                      targetID={r.id}
-                      targetType={TargetTypes.GUESTS}
-                    />
-                  ))}
+                {notYetReady ? (
+                  <ActivityIndicator />
+                ) : (
+                  <EditOfferButton
+                    targetID={r.id}
+                    targetType={TargetTypes.GUESTS}
+                    matchID={r.matchId}
+                    targetStatusType={r.type}
+                  />
+                )}
               </MoreButtonWrapper>
               <RequestTextWrapper>
-                <RequestFirstLine>{t("submission")}</RequestFirstLine>
-                <RequestSecondLine>{t("accomodationSearch")}</RequestSecondLine>
+                <RequestFirstLine>{t("refuge.submission")}</RequestFirstLine>
+                <RequestSecondLine>
+                  {t("accommodationSearch")}
+                </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
             <div

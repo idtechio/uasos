@@ -55,6 +55,7 @@ const toOffer = (o: OfferProps): Offer => ({
   state: toMatchOfferState(o), //TODO: check match state algo
   matchedRequest: o.matchedRequest,
   closestCity: o.closest_city,
+  matchId: o.match_id,
   clientOnly: o.client_only,
 });
 const toMatchOfferState: (o: OfferProps) => MatchState = (o) => {
@@ -85,6 +86,7 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
   duration: toAccomodationTime(r.duration_category),
   state: toMatchRequestState(r),
   matchedOffer: r.matchedOffer,
+  matchId: r.match_id,
   clientOnly: r.client_only,
 });
 

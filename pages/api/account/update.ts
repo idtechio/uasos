@@ -8,6 +8,10 @@ import { getUser } from "../../../lib/firebase-admin-app";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import { AccountInfoDBProps, getAccountFromDB } from "./get";
 
+enum StringBoolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 interface AccountDBProps {
   db_accounts_id?: string;
   uid: string;
@@ -15,6 +19,7 @@ interface AccountDBProps {
   email?: string;
   phone_num?: string;
   preferred_lang?: string;
+  sms_notification?: StringBoolean;
   fnc_email_status: string;
   fnc_msisdn_status: string;
   fnc_status?: string;
@@ -52,14 +57,25 @@ async function updateAccount(
       body?.name && (accountData.name = body.name);
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
-      body?.prefferedLang && (accountData.preferred_lang = body.prefferedLang);
+      body?.preferredLang && (accountData.preferred_lang = body.preferredLang);
+      body?.smsNotification !== undefined &&
+        (accountData.sms_notification =
+          body.smsNotification === true ||
+          body.smsNotification === StringBoolean.TRUE
+            ? StringBoolean.TRUE
+            : StringBoolean.FALSE);
 
       topicNameOrId = process.env.TOPIC_ACCOUNT_UPDATE;
     } else {
       accountData.name = body?.name || user.displayName;
       accountData.email = body?.email || user.email;
       accountData.phone_num = body?.phone || user.phoneNumber;
-      accountData.preferred_lang = body?.prefferedLang;
+      accountData.preferred_lang = body?.preferredLang;
+      accountData.sms_notification =
+        body.smsNotification === true ||
+        body.smsNotification === StringBoolean.TRUE
+          ? StringBoolean.TRUE
+          : StringBoolean.FALSE;
       accountData.fnc_status = "035";
 
       topicNameOrId = process.env.TOPIC_ACCOUNT_INSERT;

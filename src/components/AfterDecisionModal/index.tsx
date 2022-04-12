@@ -1,4 +1,5 @@
 import { StyleSheet, View } from "react-native";
+import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -14,6 +15,7 @@ import CardModal from "../CardModal";
 import Link from "next/link";
 import { AfterDecisionModalProps } from "./types";
 import { Routes } from "../../consts/router";
+import { parseAndSplitContent } from "./helpers";
 
 const ICON_BASE_WIDTH = 160;
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
@@ -21,6 +23,21 @@ const ICON_BASE_HEIGHT = 105;
 const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
 export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
+  const { t } = useTranslation("others");
+
+  const accepted = t("desktop.confirmation.accepted");
+  const cancellation = t("desktop.confirmation.cancellation");
+  const text = t("desktop.confirmation.content", { accepted, cancellation });
+
+  const {
+    acceptedBefore,
+    acceptedAfter,
+    cancellationBefore,
+    cancellationAfter,
+    acceptedSecondSentence,
+    cancellationSecondSentence,
+  } = parseAndSplitContent(text, { accepted, cancellation });
+
   return (
     <CardModal onModalClose={onClose} closeable={false} cardStyle={styles.card}>
       <DecisionModalContentWrapper>
@@ -33,58 +50,24 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
         </View>
 
         <DecisionModalTextWrapper>
-          <DecisionHeader>Dziękujemy za Twoją decyzję.</DecisionHeader>
+          <DecisionHeader>{t("desktop.confirmation.header")}</DecisionHeader>
           <DecisionText>
-            Jeśli <AcceptedText>zaakceptaowałeś</AcceptedText>, poczekaj na
-            decyzję drugiej strony. Po zaakceptowaniu przez drugą stronę,
-            otrzymasz e-mail z danymi kontatkowymi.
+            {acceptedBefore}
+            <AcceptedText>{accepted}</AcceptedText>
+            {`${acceptedAfter}.${acceptedSecondSentence}.`}
           </DecisionText>
 
           <DecisionText style={styles.textContainer}>
-            W przypadku <CancelledText>rezygnacji</CancelledText> Twoje
-            zgłoszenie wróci do puli aktywnych zgłoszeń. Poinformujemy Cię
-            mailowo o kolejnej propozycji.
-          </DecisionText>
-        </DecisionModalTextWrapper>
-
-        <View style={styles.divider} />
-
-        <DecisionModalTextWrapper>
-          <DecisionHeader>Дякую за ваше рішення.</DecisionHeader>
-          <DecisionText>
-            Якщо ви <AcceptedText>погодилися</AcceptedText>, дочекайтеся рішення
-            іншої сторони. Після погодження іншої сторони ви отримаєте
-            електронний лист з контактними даними.
-          </DecisionText>
-
-          <DecisionText style={styles.textContainer}>
-            Якщо ваш запит буде <CancelledText>скасований</CancelledText>, вiн
-            буде повернен до загального списку активних запитiв. Щойно ми
-            знайдемо запит, що відповідає Вашим критеріям - ми повідомимо Вам.
-          </DecisionText>
-        </DecisionModalTextWrapper>
-
-        <View style={styles.divider} />
-
-        <DecisionModalTextWrapper>
-          <DecisionHeader>Thank you for you decision</DecisionHeader>
-          <DecisionText>
-            If you have <AcceptedText>accepted</AcceptedText>, wait for the
-            other person{"'"}s decision. Once the other side accepts, you will
-            receive an email with contact information.
-          </DecisionText>
-
-          <DecisionText style={styles.textContainer}>
-            In case of <CancelledText>cancellation</CancelledText>, your
-            application will be returned to the pool of active applications. We
-            will inform you by email about the next offer.
+            {cancellationBefore}
+            <CancelledText>{cancellation}</CancelledText>
+            {`${cancellationAfter}.${cancellationSecondSentence}.`}
           </DecisionText>
         </DecisionModalTextWrapper>
 
         <DecisionModalButtonCtaWrapper>
           <Link href={Routes.HOMEPAGE}>
             <a>
-              <ButtonCta anchor="Strona główna / Home page" />
+              <ButtonCta anchor={t("common:backToHomePage")} />
             </a>
           </Link>
         </DecisionModalButtonCtaWrapper>

@@ -4,14 +4,19 @@ import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
 
+enum StringBoolean {
+  FALSE = "FALSE",
+  TRUE = "TRUE",
+}
 interface AccountProps {
   uid: string;
   name: string;
   email: string;
   phoneNumber: string;
-  prefferedLang: string;
+  preferredLang: string;
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
+  smsNotification: Boolean;
 }
 
 enum EmailStatus {
@@ -35,6 +40,7 @@ export interface AccountInfoDBProps {
   preferred_lang: string;
   email_status: EmailStatus;
   phone_status: PhoneStatus;
+  sms_notification: string;
 }
 
 async function getAccount(
@@ -59,9 +65,10 @@ async function getAccount(
       name: dbAccount.name,
       email: dbAccount.email,
       phoneNumber: dbAccount.phone_num,
-      prefferedLang: dbAccount.preferred_lang,
-      confirmedEmail: dbAccount.email_status === "accepted",
-      confirmedPhone: dbAccount.phone_status === "accepted",
+      preferredLang: dbAccount.preferred_lang,
+      smsNotification: dbAccount.sms_notification === StringBoolean.TRUE,
+      confirmedEmail: dbAccount.email_status === EmailStatus.ACCEPTED,
+      confirmedPhone: dbAccount.phone_status === PhoneStatus.ACCEPTED,
     };
 
     res.status(200).json({ ok: "ok", account });
@@ -86,7 +93,8 @@ export async function getAccountFromDB(
       phone_num,
       phone_status,
       email_status,
-      preferred_lang
+      preferred_lang,
+      sms_notification
     FROM accounts_info
     WHERE uid = $1`,
     [uid]
