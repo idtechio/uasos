@@ -15,11 +15,9 @@ You can develop frontend using API from ["test"](https://test.uasos.org/) server
 
 First, run the development server for frontend:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+`cp .env_example .env`
+
+`npm run dev` or `yarn dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
