@@ -70,7 +70,7 @@ export default function EditOfferButton({
       {
         icon: <AlertIcon />,
         type: "report",
-        hide: targetStatusType !== GuestHostType.CONFIRMED,
+        hide: true, // targetStatusType !== GuestHostType.CONFIRMED,
         label: "others:desktop.contextMenu.reportProblem",
       },
       {
