@@ -1,84 +1,84 @@
 {
-  "supportingPartners": "",
-  "ngoPartners": "",
-  "projectInitiators": "",
-  "partners": "",
-  "showMorePartners": "",
-  "projectIntention": {
-    "title": "",
-    "description_part1": "",
-    "freeOfCharge": "",
-    "description_part2": "",
-    "lookingForHelp": "",
-    "shareHelp": ""
-  },
-  "likeToHelp": {
-    "title": "",
-    "details": "",
-    "cta": ""
-  },
-  "weMatched": {
-    "title": "",
-    "cards": {
-      "helpedPeople": "",
-      "lookingForHelp": "",
-      "currentOffers": ""
-    }
-  },
-  "whatSosUaDoesSection": {
-    "title": "",
-    "bulletPoints": {
-      "0": "",
-      "1": "",
-      "2": ""
+    "supportingPartners": "",
+    "ngoPartners": "",
+    "projectInitiators": "",
+    "partners": "",
+    "showMorePartners": "",
+    "projectIntention": {
+        "title": "",
+        "description_part1": "",
+        "freeOfCharge": "",
+        "description_part2": "",
+        "lookingForHelp": "",
+        "shareHelp": ""
     },
-    "algorithmExplanation": "",
-    "rolldown": "",
-    "rollup": "",
-    "description": "",
-    "howItWorks": ""
-  },
-  "instructions": {
-    "0": {
-      "title": "",
-      "text": ""
+    "likeToHelp": {
+        "title": "",
+        "details": "",
+        "cta": ""
     },
-    "1": {
-      "title": "",
-      "text": ""
+    "weMatched": {
+        "title": "",
+        "cards": {
+            "helpedPeople": "",
+            "lookingForHelp": "",
+            "currentOffers": ""
+        }
     },
-    "2": {
-      "title": "",
-      "text": ""
+    "whatSosUaDoesSection": {
+        "title": "",
+        "bulletPoints": {
+            "0": "",
+            "1": "",
+            "2": ""
+        },
+        "algorithmExplanation": "",
+        "rolldown": "",
+        "rollup": "",
+        "description": "",
+        "howItWorks": ""
     },
-    "3": {
-      "title": "",
-      "text": ""
+    "instructions": {
+        "0": {
+            "title": "",
+            "text": ""
+        },
+        "1": {
+            "title": "",
+            "text": ""
+        },
+        "2": {
+            "title": "",
+            "text": ""
+        },
+        "3": {
+            "title": "",
+            "text": ""
+        },
+        "4": {
+            "title": "",
+            "text": ""
+        },
+        "5": {
+            "title": "",
+            "text": ""
+        }
     },
-    "4": {
-      "title": "",
-      "text": ""
+    "howDoesItWork": {
+        "title": "",
+        "points": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": ""
+        }
     },
-    "5": {
-      "title": "",
-      "text": ""
-    }
-  },
-  "howDoesItWork": {
-    "title": "",
-    "points": {
-      "0": "",
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": ""
-    }
-  },
-  "hero": {
-    "description": "",
-    "lookingForHelp": "",
-    "shareHelp": "",
-    "title": ""
-  },
-  "partnersMedia": ""
+    "hero": {
+        "description": "",
+        "lookingForHelp": "",
+        "shareHelp": "",
+        "title": ""
+    },
+    "partnersMedia": ""
 }

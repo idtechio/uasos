@@ -1,13 +1,13 @@
 {
-  "messaging": {
-    "sms": {
-      "offeringNotification": "Van egy kapcsolatunk az Ön számára! Ellenőrizze az e-mailjét és erősítse meg.",
-      "sealedNotification": "Találtunk Önnek egy kontaktot. Elfogadás/elutasítás az uasos.org-on."
+    "messaging": {
+        "sms": {
+            "offeringNotification": "Van egy kapcsolatunk az Ön számára! Ellenőrizze az e-mailjét és erősítse meg.",
+            "sealedNotification": "Találtunk Önnek egy kontaktot. Elfogadás\/elutasítás az uasos.org-on."
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-b5aa1cbf3f1b4fa5978daa33fc96dda6",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-129e6e1335af465da37939005b9eeb7b"
     }
-  },
-  "sendgrid": {
-    "HostGetsMatch": "d-b5aa1cbf3f1b4fa5978daa33fc96dda6",
-    "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
-    "GUESTANDHOSTMATCHCONFIRM": "d-129e6e1335af465da37939005b9eeb7b"
-  }
 }
