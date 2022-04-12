@@ -54,7 +54,7 @@ const getFormDefaultValues: (
       ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
       : undefined,
     name: account?.name || undefined,
-    preferredLanguage: account?.prefferedLang || undefined,
+    preferredLanguage: account?.preferredLang || undefined,
     phonePrefix: identity?.phoneNumber
       ? getPhonePrefix(identity.phoneNumber)
       : undefined,
@@ -74,7 +74,7 @@ export default function UserDetailsForm({
   const { t } = useTranslation("others");
   const { refetchAccount } = useContext(AuthContext);
   const router = useRouter();
-  const { mutate, isLoading, isSuccess, isError, error } = useEditAccount();
+  const { mutate, isLoading, isSuccess, isError } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
   });
@@ -86,7 +86,7 @@ export default function UserDetailsForm({
         name: data.name,
         email: data.email,
         phone: `${data.phonePrefix}${data.phone}`,
-        prefferedLang: data.preferredLanguage,
+        preferredLang: data.preferredLanguage,
         smsNotification: data.smsNotification ?? false,
       };
       await Authorization.updateMail(payload.email);

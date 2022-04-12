@@ -13,7 +13,7 @@ interface AccountProps {
   name: string;
   email: string;
   phoneNumber: string;
-  prefferedLang: string;
+  preferredLang: string;
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
   smsNotification: Boolean;
@@ -65,7 +65,7 @@ async function getAccount(
       name: dbAccount.name,
       email: dbAccount.email,
       phoneNumber: dbAccount.phone_num,
-      prefferedLang: dbAccount.preferred_lang,
+      preferredLang: dbAccount.preferred_lang,
       smsNotification: dbAccount.sms_notification === StringBoolean.TRUE,
       confirmedEmail: dbAccount.email_status === EmailStatus.ACCEPTED,
       confirmedPhone: dbAccount.phone_status === PhoneStatus.ACCEPTED,

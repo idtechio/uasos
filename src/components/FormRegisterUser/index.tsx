@@ -47,6 +47,12 @@ const submitRequestDefualtState = {
   succeeded: false,
 };
 
+export type AccountUpdateData = {
+  name: string;
+  preferredLang: string;
+  smsNotification: boolean;
+};
+
 export default function FormRegisterUser() {
   const mutation = useMutation(
     (data: { identity: User; phonePrefix: string; phoneNumber: string }) =>
@@ -77,13 +83,10 @@ export default function FormRegisterUser() {
   const [phoneConfirmation, setPhoneConfirmation] =
     useState<null | ConfirmationResult>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [updateData, setUpdateData] = useState<{
-    name: string;
-    preferredLang: string;
-    smsNotification: boolean;
-  }>();
+  const [updateData, setUpdateData] = useState<AccountUpdateData>();
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+
   const [apiError, setApiError] = useState("");
 
   const {
@@ -107,7 +110,7 @@ export default function FormRegisterUser() {
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -130,12 +133,21 @@ export default function FormRegisterUser() {
     try {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
+      await AccountApi.updateAccount({
+        payload: {
+          name,
+          preferredLang: preferredLanguage,
+          smsNotification,
+        },
+      });
       setSubmitRequstState((state) => ({ ...state, loading: false }));
+
       const res = await mutation.mutateAsync({
         identity: identity as User,
         phonePrefix,
         phoneNumber,
       });
+
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
@@ -336,9 +348,10 @@ export default function FormRegisterUser() {
           <CompositionRow>
             <InputControl styles={buttonStyles}>
               <ButtonCta
-                onPress={() => router.push(Routes.HOMEPAGE)}
-                anchor={t("others:common.buttons.back")}
                 style={buttonStyles.backButton}
+                disabled={submitRequstState.loading}
+                anchor={t("others:common.buttons.back")}
+                onPress={() => router.push(Routes.HOMEPAGE)}
               />
             </InputControl>
             <InputControl styles={buttonStyles}>
@@ -352,12 +365,12 @@ export default function FormRegisterUser() {
           <div style={{ display: "none" }} id="recaptcha__container"></div>
           {phoneConfirmation ? (
             <SmsVerificationModal
-              callback={updateAccount}
               mode="LINK"
+              callback={updateAccount}
               phoneNumber={phoneNumber}
               confirmation={phoneConfirmation}
-              setVerificationSuccess={setSmsVerificationSuccess}
               close={() => setPhoneConfirmation(null)}
+              setVerificationSuccess={setSmsVerificationSuccess}
             />
           ) : (
             <></>
