@@ -54,6 +54,7 @@ function DashboardContent() {
 
   const offers = offersDTO ? toOffers(offersDTO) : undefined;
   const requests = requestsDTO ? toRequests(requestsDTO) : undefined;
+
   const needEmailVerification: boolean =
     account !== undefined && account !== null && !account.confirmedEmail;
   const needPhoneVerification: boolean =

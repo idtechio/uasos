@@ -82,8 +82,10 @@ export default function FormRegisterUser() {
     preferredLang: string;
     smsNotification: boolean;
   }>();
+
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
     useState<boolean>(false);
+
   const [apiError, setApiError] = useState("");
 
   const {
@@ -107,7 +109,7 @@ export default function FormRegisterUser() {
     ) {
       setApiError(t("others:userRegistration.errors.phoneLinkingFailed"));
     } else if (error.includes("too-many-requests")) {
-      setApiError(t("others:userRegistration.errors.tooManyRequests"));
+      setApiError(t("others:userRegistration.errors.tooManyRequest"));
     } else if (error.includes("invalid-verification")) {
       setApiError(t("others:userRegistration.errors.invalidCode"));
     } else {
@@ -131,11 +133,13 @@ export default function FormRegisterUser() {
       setSubmitRequstState((state) => ({ ...state, loading: true }));
       await Authorization.createUser(email, password);
       setSubmitRequstState((state) => ({ ...state, loading: false }));
+
       const res = await mutation.mutateAsync({
         identity: identity as User,
         phonePrefix,
         phoneNumber,
       });
+
       setSubmitRequstState((state) => ({ ...state, loading: false }));
       setPhoneConfirmation(res);
       setPhoneNumber(phonePrefix + phoneNumber);
@@ -336,9 +340,10 @@ export default function FormRegisterUser() {
           <CompositionRow>
             <InputControl styles={buttonStyles}>
               <ButtonCta
-                onPress={() => router.push(Routes.HOMEPAGE)}
-                anchor={t("others:common.buttons.back")}
                 style={buttonStyles.backButton}
+                disabled={submitRequstState.loading}
+                anchor={t("others:common.buttons.back")}
+                onPress={() => router.push(Routes.HOMEPAGE)}
               />
             </InputControl>
             <InputControl styles={buttonStyles}>
@@ -352,12 +357,12 @@ export default function FormRegisterUser() {
           <div style={{ display: "none" }} id="recaptcha__container"></div>
           {phoneConfirmation ? (
             <SmsVerificationModal
-              callback={updateAccount}
               mode="LINK"
+              callback={updateAccount}
               phoneNumber={phoneNumber}
               confirmation={phoneConfirmation}
-              setVerificationSuccess={setSmsVerificationSuccess}
               close={() => setPhoneConfirmation(null)}
+              setVerificationSuccess={setSmsVerificationSuccess}
             />
           ) : (
             <></>
