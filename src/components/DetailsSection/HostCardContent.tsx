@@ -13,6 +13,7 @@ import HostIcon from "../../style/svgs/user-check.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
 import { toAccomodationTime } from "../SupportSection/mapper";
 import DataField from "./DataField";
+import PhotosField from "./PhotosField";
 import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";
 
@@ -135,8 +136,7 @@ export default function HostCardContent({
             })}
           />
         )}
-
-        {/* TODO: display attached photos */}
+        {offer && offer.photos && <PhotosField photos={offer.photos} />}
       </FlexWrapper>
       {showAdditionalInfo ? <HostAdditionalInfo info={additionalInfo} /> : null}
     </>

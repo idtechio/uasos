@@ -11,12 +11,12 @@ import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
 import DetailsLink from "./DetailsLink";
+import ImageThumbnail from "./ImageThumbnail";
 import { LoadingCards } from "./LoadingCards";
 import {
   HeaderWrapper,
   MoreButtonWrapper,
   OfferTitle,
-  Placeholder,
   SupportCard,
   SupportWrapper,
   TextWrapper,
@@ -120,18 +120,7 @@ const Offers = ({
                   />
                 )}
               </MoreButtonWrapper>
-
-              <Placeholder />
-              {/* 
-            <ImageWrapper>
-              <img
-                src={o.imageUrl}
-                alt="Announcement image"
-                width={80}
-                height={80}
-                style={{ borderRadius: 4 }}
-              />
-            </ImageWrapper> */}
+              <ImageThumbnail url={o.imageUrl} />
               <TextWrapper>
                 <OfferTitle>
                   {t(`common:staticValues.accommodationTypes.${o.name}`)}

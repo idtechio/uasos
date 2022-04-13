@@ -46,7 +46,7 @@ export const Header = styled.View`
   justify-content: space-between;
   align-items: center;
   padding-bottom: 21px;
-  border-bottom-width: 1px
+  border-bottom-width: 1px;
   border-bottom-color: ${({ theme }: { theme: Theme }) =>
     theme.colors.borderGray};
 `;
@@ -92,3 +92,10 @@ export const ItemsRow = styled.View`
   gap: 12px;
   flex-wrap: wrap;
 `;
+
+export const ImageContainer = styled.TouchableOpacity`
+  width: 100;
+  height: 100;
+`;
+
+export const PhotoWrapper = styled.ScrollView``;
