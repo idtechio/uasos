@@ -44,6 +44,18 @@ export const ImageWrapper = styled.View`
   flex: 0 0 80px;
 `;
 
+export const StyledImage = styled.Image`
+  position: absolute;
+  width: 80;
+  height: 80;
+  border-radius: 4;
+  z-index: 1;
+`;
+
+export const Spinner = styled.ActivityIndicator`
+  margin: auto;
+`;
+
 export const TextWrapper = styled.View`
   flex: 1 1 100%;
   padding-left: 12.7px;
