@@ -1,9 +1,12 @@
 import { User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import React, { useCallback, useContext } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import styled from "styled-components/native";
+import { AuthContext } from "../../../../pages/_app";
 import { getAccountDTO } from "../../../client-api/account";
+import { Authorization } from "../../../hooks/useAuth";
 import { useEditAccount } from "../../../queries/useAccount";
 import ButtonCta from "../../EditOfferOptions/ButtonCta";
 import Inputs from "./Inputs";
@@ -15,9 +18,6 @@ import {
   SuccessMessage,
 } from "./style";
 import { EditProfileForm } from "./types";
-import { Authorization } from "../../../hooks/useAuth";
-import { useRouter } from "next/router";
-import { AuthContext } from "../../../../pages/_app";
 const FormFooter = styled.View`
   display: flex;
   flex-direction: row;
@@ -54,7 +54,7 @@ const getFormDefaultValues: (
       ? getPhoneNumberWithoutPrefix(identity.phoneNumber)
       : undefined,
     name: account?.name || undefined,
-    preferredLanguage: account?.prefferedLang || undefined,
+    preferredLanguage: account?.preferredLang || undefined,
     phonePrefix: identity?.phoneNumber
       ? getPhonePrefix(identity.phoneNumber)
       : undefined,
@@ -74,7 +74,7 @@ export default function UserDetailsForm({
   const { t } = useTranslation("others");
   const { refetchAccount } = useContext(AuthContext);
   const router = useRouter();
-  const { mutate, isLoading, isSuccess, isError, error } = useEditAccount();
+  const { mutate, isLoading, isSuccess, isError } = useEditAccount();
   const form = useForm<EditProfileForm>({
     defaultValues: getFormDefaultValues(account, identity),
   });
@@ -86,7 +86,7 @@ export default function UserDetailsForm({
         name: data.name,
         email: data.email,
         phone: `${data.phonePrefix}${data.phone}`,
-        prefferedLang: data.preferredLanguage,
+        preferredLang: data.preferredLanguage,
         smsNotification: data.smsNotification ?? false,
       };
       await Authorization.updateMail(payload.email);

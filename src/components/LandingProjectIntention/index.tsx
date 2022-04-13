@@ -7,6 +7,7 @@ import { Routes } from "../../consts/router";
 import { Theme } from "../../style/theme.config";
 import { AuthContext } from "../../../pages/_app";
 import { useContext } from "react";
+import styledWeb from "styled-components";
 
 const Container = styled.View`
   width: 100%;
@@ -56,12 +57,16 @@ const SubTitleWrapper = styled.View`
     })}
 `;
 
-const SubTitle = styled.Text`
+const SubTitle = styledWeb.div` //TODO: react native doesn't support dangerouslySetInnerHTML attribute. When we create the mobile app extract this component and create a version working with both web and mobile
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
   margin-top: 30px;
+
+  b {
+    font-weight: 700;
+  }
 
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
@@ -71,10 +76,7 @@ const SubTitle = styled.Text`
         margin-top: 40px;
       `,
     })}
-`;
 
-const BoldSubTitle = styled(SubTitle)`
-  font-weight: 700;
 `;
 
 const ButtonContainer = styled.View`
@@ -107,12 +109,14 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
 
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
+  const { t: t_others } = useTranslation("others");
   const router = useRouter();
   const { identity, account } = useContext(AuthContext);
 
   const isAccountVerified =
     identity && account?.confirmedEmail && account?.confirmedPhone;
 
+  const welcomeAppDescription = t_others("welcomePage.appDescription");
   return (
     <Container>
       <ContentWrapper>
@@ -123,9 +127,9 @@ const LandingProjectIntention = () => {
           </Title>
 
           <SubTitleWrapper>
-            <SubTitle>{t("projectIntention.description_part1")}</SubTitle>
-            <BoldSubTitle> {t("projectIntention.freeOfCharge")} </BoldSubTitle>
-            <SubTitle>{t("projectIntention.description_part2")}</SubTitle>
+            <SubTitle
+              dangerouslySetInnerHTML={{ __html: welcomeAppDescription }}
+            />
           </SubTitleWrapper>
 
           <ButtonContainer>

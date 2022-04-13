@@ -27,7 +27,7 @@
       "or": "Vagy",
       "badNews": "Rossz hírek",
       "prefix": "Előtag",
-      "dashboard": "Műszerfal"
+      "dashboard": "Irányítópult"
     },
     "links": {
       "re-sendCode": "Kód újraküldése",
@@ -237,7 +237,9 @@
     "housing": "Lakhatás",
     "confirmation": {
       "header": "Köszönjük a döntését",
-      "content": "Ha elfogadta, várja meg a másik személy döntését. Amint a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br /> Lemondás esetén az Ön jelentkezése visszakerül az aktív jelentkezések közé. A következő ajánlatról e-mailben értesítjük Önt."
+      "content": "Ha {{accepted}} , várja meg a másik személy döntését. Miután a másik fél elfogadja, kap egy e-mailt az elérhetőségekkel. <br /> {{cancellation}} esetén az Ön alkalmazása visszakerül az aktív alkalmazások körébe. A következő ajánlatról e-mailben értesítünk.",
+      "accepted": "elfogadott",
+      "cancellation": "törlés"
     },
     "accommodationSearch": "Szálláskeresés"
   },
