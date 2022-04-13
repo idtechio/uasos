@@ -26,12 +26,15 @@ import { Theme } from "../../src/style/theme.config";
 
 import { useTheme } from "styled-components";
 import { useProgressToastContext } from "../../src/providers/ProgressToastProvider";
+import { useTranslation } from "react-i18next";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 // const fakeTags = ["Shelter"];
 
 function DashboardContent() {
+  const { t } = useTranslation();
+
   const { isProgressToastVisible, actions } = useProgressToastContext();
   const theme = useTheme() as Theme;
 
@@ -116,7 +119,7 @@ function DashboardContent() {
             <Toast
               icon={<PortraitIcon />}
               color={theme.colors.accent}
-              label="Change in progress..."
+              label={t("others:desktop.checks.changesInProgress")}
               contaierStyle={{ marginBottom: 10 }}
             />
           )}
