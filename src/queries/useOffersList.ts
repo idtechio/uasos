@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { HostProps } from "../../pages/api/hosts/edit";
-import offers, { OfferProps } from "../../pages/api/listing/offers";
+import { OfferProps } from "../../pages/api/listing/offers";
 import { getOffersList, GetOffersListDTO } from "../client-api/offers";
 import {
   GuestHostStatus,

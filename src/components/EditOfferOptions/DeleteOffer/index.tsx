@@ -1,7 +1,5 @@
 import { useTranslation } from "next-i18next";
-import React, { useCallback } from "react";
-import { useQueryClient } from "react-query";
-import { QueryKeys } from "../../../queries/queryKeys";
+import React from "react";
 import { useDeleteItem } from "../../../queries/useListing";
 import HomeIllustration from "../../../style/svgs/home_illustration.svg";
 import ButtonCta from "../ButtonCta";

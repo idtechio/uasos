@@ -39,7 +39,6 @@ import { AuthContext } from "../../../pages/_app";
 // import FormUpload from "../Inputs/FormUpload";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
-import { useQueryClient } from "react-query";
 
 export const SectionContent = styled.View`
   display: flex;
