@@ -1,5 +1,6 @@
 import { ConfirmationResult } from "firebase/auth";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { StyleProp, ViewStyle, ActivityIndicator } from "react-native";
 import styled, { useTheme } from "styled-components/native";
@@ -22,7 +23,9 @@ export type Verifications = {
 };
 
 const VerifyPhoneToast = () => {
+  const router = useRouter();
   const theme = useTheme() as Theme;
+
   const { t } = useTranslation("desktop");
   const [modalOpened, setModalOpened] = useState(false);
   const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
@@ -32,7 +35,11 @@ const VerifyPhoneToast = () => {
 
   const prepareModal = useCallback(
     async function () {
-      if (!identity?.phoneNumber) return null;
+      if (!identity?.phoneNumber) {
+        router.push("user-profile");
+
+        return null;
+      }
 
       const confirmation = await Authorization.signInWithPhone(
         identity?.phoneNumber,
@@ -95,6 +102,7 @@ export default function VerifySection({
   emailOnPress,
 }: Verifications) {
   const theme = useTheme() as Theme;
+
   const { t } = useTranslation("desktop");
   return (
     <VerifySectionWrapper style={containerStyle}>

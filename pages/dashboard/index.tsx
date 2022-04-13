@@ -1,11 +1,12 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
 import Redirect from "../../src/components/Redirect";
 import SupportSection from "../../src/components/SupportSection";
+import PortraitIcon from "../../src/style/svgs/portrait.svg";
 import {
   toOffers,
   toRequests,
@@ -20,12 +21,20 @@ import { Authorization } from "../../src/hooks/useAuth";
 import { useRouter } from "next/router";
 import ConfirmRejectModal from "../../src/components/ConfirmRejectModal";
 import { MODAL_STATUS } from "../../src/components/ConfirmRejectModal/constants";
+import Toast from "../../src/components/Toast";
+import { Theme } from "../../src/style/theme.config";
+
+import { useTheme } from "styled-components";
+import { useProgressToastContext } from "../../src/providers/ProgressToastProvider";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
 // const fakeTags = ["Shelter"];
 
 function DashboardContent() {
+  const { isProgressToastVisible, actions } = useProgressToastContext();
+  const theme = useTheme() as Theme;
+
   const { account, loaded, identity } = useContext(AuthContext);
   const router = useRouter();
   const [emailModalVisible, setEmailModalVisible] = useState(false);
@@ -52,8 +61,25 @@ function DashboardContent() {
     }
   };
 
-  const offers = offersDTO ? toOffers(offersDTO) : undefined;
-  const requests = requestsDTO ? toRequests(requestsDTO) : undefined;
+  const offers = useMemo(
+    () => (offersDTO ? toOffers(offersDTO) : undefined),
+    [offersDTO]
+  );
+  const requests = useMemo(
+    () => (requestsDTO ? toRequests(requestsDTO) : undefined),
+    [requestsDTO]
+  );
+
+  const isOffersChangeInProgress = useMemo(
+    () => offers?.some((offer) => offer.clientOnly),
+    [offers]
+  );
+
+  const isRequestChangeInProgress = useMemo(
+    () => requests?.some((request) => request.clientOnly),
+    [requests]
+  );
+
   const needEmailVerification: boolean =
     account !== undefined && account !== null && !account.confirmedEmail;
   const needPhoneVerification: boolean =
@@ -64,6 +90,12 @@ function DashboardContent() {
     needEmailVerification ||
     needPhoneVerification ||
     needBackendAccountCreation;
+
+  useEffect(() => {
+    if (!isOffersChangeInProgress && !isRequestChangeInProgress) {
+      actions.hideProgressToast();
+    }
+  }, [isOffersChangeInProgress, isRequestChangeInProgress, actions]);
 
   return (
     <CompositionAppBody>
@@ -79,6 +111,15 @@ function DashboardContent() {
           {/* {loaded && (
             <Tags tags={fakeTags} containerStyle={[bottomMarginStyle]} />
           )} */}
+
+          {isProgressToastVisible && (
+            <Toast
+              icon={<PortraitIcon />}
+              color={theme.colors.accent}
+              label="Change in progress..."
+              contaierStyle={{ marginBottom: 10 }}
+            />
+          )}
           <SupportSection
             readonly={readonly}
             offers={offers}

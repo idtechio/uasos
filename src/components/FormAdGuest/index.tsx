@@ -193,7 +193,7 @@ export default function FormAdGuest({
       callbacks: MutateCallbacks
     ) => {
       if (data?.id) {
-        mutateUpdate(payload as EditGuestProps, callbacks);
+        mutateUpdate({ ...data, ...payload } as EditGuestProps, callbacks);
         return;
       }
 
