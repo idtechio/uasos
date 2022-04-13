@@ -23,7 +23,7 @@ import {
 import { Routes } from "../../../consts/router";
 import { useRouter } from "next/router";
 import { ModalTypes, TargetTypes } from "./types";
-import { GuestHostType } from "../../SupportSection/mapper";
+// import { GuestHostType } from "../../SupportSection/mapper";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
@@ -70,7 +70,7 @@ export default function EditOfferButton({
       {
         icon: <AlertIcon />,
         type: "report",
-        hide: targetStatusType !== GuestHostType.CONFIRMED,
+        hide: true, // targetStatusType !== GuestHostType.CONFIRMED,
         label: "others:desktop.contextMenu.reportProblem",
       },
       {

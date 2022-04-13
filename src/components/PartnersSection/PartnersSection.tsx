@@ -36,7 +36,7 @@ const Container = styled.View`
 `;
 
 const PartnerCardWrapper = styled.View`
-  width: 100%;
+  width: 50%;
   padding: 8px;
 
   ${({ theme }: { theme: Theme }) =>
@@ -45,13 +45,13 @@ const PartnerCardWrapper = styled.View`
         width: 16.66%;
       `,
       md: css`
-        width: 33%;
+        width: 25%;
       `,
       sm: css`
-        width: 50%;
+        width: 33%;
       `,
       tablet: css`
-        width: 50%;
+        width: 33%;
       `,
     })}
 `;
