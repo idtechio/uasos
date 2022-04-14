@@ -230,7 +230,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               onModalClose={() => setProviderLoginError(false)}
             >
               <ErrorText>
-                {t("others:forms.userRegistration.errors.duplicatedMail")}
+                {t("others:desktop.checks.emailAlreadyInUse")}
               </ErrorText>
             </CardModal>
           ) : (
