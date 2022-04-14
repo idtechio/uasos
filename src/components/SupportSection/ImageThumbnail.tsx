@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
-import { ImageWrapper, StyledImage, Spinner } from "./style";
+import { ImageWrapper, StyledImage, Spinner, Placeholder } from "./style";
 
 interface ImageThumbnailInterface {
-  url: string;
+  url?: string;
+  size?: string | number;
+  margin?: string;
 }
 
-const ImageThumbnail = ({ url }: ImageThumbnailInterface) => {
+const ImageThumbnail = ({ url, size, margin }: ImageThumbnailInterface) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const onLoadHandler = () => {
@@ -14,13 +16,20 @@ const ImageThumbnail = ({ url }: ImageThumbnailInterface) => {
   };
 
   return (
-    <ImageWrapper>
-      <StyledImage
-        onLoadEnd={onLoadHandler}
-        accessibilityLabel="Announcement image"
-        source={{ uri: url }}
-      />
-      {!isLoaded && <Spinner size="large" />}
+    <ImageWrapper size={size} margin={margin}>
+      {url ? (
+        <>
+          {!isLoaded && <Spinner size="large" />}
+          <StyledImage
+            size={size}
+            onLoadEnd={onLoadHandler}
+            accessibilityLabel="Announcement image"
+            source={{ uri: url }}
+          />
+        </>
+      ) : (
+        <Placeholder />
+      )}
     </ImageWrapper>
   );
 };
