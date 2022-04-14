@@ -4,10 +4,5 @@
             "offeringNotification": "Am identificat un contact. Acceptați\/respingeți pe uasos.org sau e-mai",
             "sealedNotification": "Am găsit un contact. Acceptați\/respingeți pe uasos.org sau e-mail."
         }
-    },
-    "sendgrid": {
-        "HostGetsMatch": "",
-        "GuestGetsMatch": "",
-        "GUESTANDHOSTMATCHCONFIRM": ""
     }
 }

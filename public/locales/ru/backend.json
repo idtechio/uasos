@@ -4,10 +4,5 @@
             "offeringNotification": "",
             "sealedNotification": ""
         }
-    },
-    "sendgrid": {
-        "HostGetsMatch": "",
-        "GuestGetsMatch": "",
-        "GUESTANDHOSTMATCHCONFIRM": ""
     }
 }

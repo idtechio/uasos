@@ -4,10 +4,5 @@
             "offeringNotification": "We found you a contact. Accept\/reject on uasos.org or your email.",
             "sealedNotification": "We found you a contact. Accept\/reject on uasos.org or your email."
         }
-    },
-    "sendgrid": {
-        "HostGetsMatch": "d-3ca6f12b406b4858a6f6c1e6d2b134ee",
-        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
-        "GUESTANDHOSTMATCHCONFIRM": "d-4b189c34ff584451a1dc1f83421a7d21"
     }
 }

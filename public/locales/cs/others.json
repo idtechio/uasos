@@ -1,287 +1,289 @@
 {
-  "common": {
-    "buttons": {
-      "back": "Zpět",
-      "continue": "Pokračovat",
-      "confirm": "Potvrdit",
-      "next": "Další",
-      "backToDesktop": "Zpět na hlavní stránku",
-      "cancel": "Zrušit",
-      "backToProfile": "Zpět na profil",
-      "verify": "Ověřit",
-      "report": "Nahlásit",
-      "update": "Aktualizovat",
-      "reject": "Odmítnout",
-      "close": "Zavřít"
+    "common": {
+        "buttons": {
+            "back": "Zpět",
+            "continue": "Pokračovat",
+            "confirm": "Potvrdit",
+            "next": "Další",
+            "backToDesktop": "Zpět na hlavní stránku",
+            "cancel": "Zrušit",
+            "backToProfile": "Zpět na profil",
+            "verify": "Ověřit",
+            "report": "Nahlásit",
+            "update": "Aktualizovat",
+            "reject": "Odmítnout",
+            "close": "Zavřít"
+        },
+        "footer": {
+            "FAQ": "ČASTO KLADENÉ DOTAZY",
+            "termsOfService": "Pravidla použití",
+            "yourSafety": "Vaše bezpečnost"
+        },
+        "words": {
+            "idWithData": "ID: {{id}}",
+            "renew": "Obnovit",
+            "additionalInformation": "Další informace",
+            "congratulations": "Gratulujeme",
+            "thankYou": "Děkujeme",
+            "or": "Nebo",
+            "badNews": "Špatné zprávy",
+            "prefix": "Předpona",
+            "dashboard": "Přístrojová deska"
+        },
+        "links": {
+            "re-sendCode": "Opětovné zaslání kódu",
+            "resetPassword": "Nastavit nové heslo",
+            "resetPasswordLong": "Zapomněli jste heslo? <b><u>Klikněte zde<\/u><\/b>"
+        },
+        "sms": {
+            "verification": "Ověřování pomocí SMS",
+            "verificationSuccess": "Ověření SMS bylo úspěšně dokončeno",
+            "sentInfo": "Zadejte ověřovací kód zaslaný na telefonní číslo {{phoneNumber}}.",
+            "verificationFail": "Ups! Něco se pokazilo, zkuste to znovu nebo vygenerujte nový kód."
+        },
+        "actions": {
+            "showPassword": "Zobrazit heslo",
+            "details": "Podrobnosti",
+            "addOffer": "Přidat nabídku",
+            "addSubmission": "Žádost o podporu"
+        },
+        "email": {
+            "sentInfo": "Na vaši e-mailovou adresu jsme zaslali ověřovací kód. Klikněte na odkaz pro ověření",
+            "verification": "Ověření emailu"
+        },
+        "nationalities": {
+            "ukrainians": "Ukrajinci",
+            "ukrainian": "Ukrajinský",
+            "nonUkrainian": "Neukrajinské"
+        }
     },
-    "footer": {
-      "FAQ": "ČASTO KLADENÉ DOTAZY",
-      "termsOfService": "Pravidla použití"
+    "forms": {
+        "createShelter": {
+            "street": "Ulice",
+            "agreeForShelterVerification": "Souhlasím s ověřením mého ubytování (návštěva dobrovolníka) ",
+            "addPhotoHeader": "Přidejte fotografii nabízeného ubytování",
+            "buildingNo": "Budova č.",
+            "apartmentNo": "Apartmán č.",
+            "accommodationHeader": "Poskytněte informace o nabízeném ubytování",
+            "groupsHostAccepts": "Jaké typy skupin budete přijímat?",
+            "accommodationTypes": {
+                "house": "Dům"
+            },
+            "photosList": "Fotografie nabízeného ubytování",
+            "acceptElderly": "Přijmu seniori"
+        },
+        "userRegistration": {
+            "enterDetails": "Zadejte své údaje",
+            "confirmPassword": "Potvrďte heslo",
+            "agreeOnSmsCommunication": "Chci dostávat upozornění na potenciální nabídky prostřednictvím SMS. ",
+            "language": "Jazyk",
+            "proposeCreateAccount": "Pokud nemáte účet, můžete si ho vytvořit. ",
+            "newPassword": "Nové heslo",
+            "userRegistration": "Registrace uživatele",
+            "preferredLanguage": "Preferovaný jazyk komunikace ",
+            "fillMissingData": "Doplňte chybějící údaje",
+            "validations": {
+                "passwordMismatch": "Hesla jsou různá",
+                "passwordLength": "Délka hesla musí být alespoň 8 znaků"
+            },
+            "password": "",
+            "errors": {
+                "duplicatedMail": ""
+            }
+        },
+        "match": {
+            "guestProfile": "Profil hosta",
+            "numberOfPeopleWithData": "Maximální počet osob: <b>{{number}}<\/b>",
+            "durationWithData": "Délka pobytu: <b>{{number}}{{unit}}<\/b>",
+            "specificCity": "Konkrétní město",
+            "confirmed": "Váš host\/hostitel právě potvrdil nabídku. Kontaktujte ho\/ji a domluvte se na podrobnostech. ",
+            "accommodationTypeWithData": "Typ ubytování: <b>{{type}}<\/b>",
+            "additionalInfoOnAccommodation": "Další informace o ubytování",
+            "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:<\/b>\n<ul>\n<li>ověřte si totožnost osoby, kterou ukrýváte,<\/li>\n<li>ujistěte se, že složení skupiny odpovídá původnímu popisu<\/li>\n<\/ul>",
+            "individual": "Jednotlivec",
+            "host": {
+                "formSent": "Formulář odeslaný",
+                "formSentThanks": "Děkujeme za projevenou ochotu pomoci. Vaše nemovitost byla přidána na seznam. Budeme hledat v naší databázi lidí v nouzi, a jakmile najdeme vhodnou osobu, dáme vám vědět.",
+                "received": "Děkujeme za potvrzení obdrženého návrhu. Dáme vám vědět jakmile obdržíme obě potvrzení."
+            },
+            "searchAddress": "Adresa pro vyhledávání: <b>{{city}}<\/b>",
+            "rejected": "Váš potenciální host\/hostitel nabídku odmítl. Vaše nabídka se vrací zpět do fondu a my vám dáme vědět o další nabídce, jakmile ji najdeme.",
+            "refuge": {
+                "rejection": "Děkujeme za potvrzení vašeho rozhodnutí. Váš návrh se vrací zpět do fondu, o dalším návrhu vás budeme informovat, jakmile se nám podaří nějaký najít."
+            }
+        },
+        "generic": {
+            "hostInformation": {
+                "offerTransport": "Nabízím dopravu",
+                "takesPregnancy": "Přijmu osobu v pokročilém stádiu těhotenství (nad 6 měsíců)."
+            },
+            "groupInformation": {
+                "pregnancy": "Skupina zahrnuje osobu v pokročilém stádiu těhotenství (nad 6 měsíců).",
+                "disability": "Ve skupině je osoba se zdravotním postižením.",
+                "multicultural": "Ve skupině jsou lidé různých národností",
+                "animals": "Skupinu doprovází domácí mazlíček",
+                "elders": "Ve skupině je starší osoba."
+            },
+            "submited": "Formulář odeslaný ",
+            "facilityInformation": {
+                "disability": "Zařízení pro osoby se zdravotním postižením",
+                "pregnancy": "Zařízení pro těhotné ženy",
+                "eldery": "Zařízení pro seniory",
+                "diversity": "Všechny národnosti vítány"
+            },
+            "password": "Heslo",
+            "selectFromList": "Vyberte ze seznamu",
+            "cityWithData": "Město: {{city}}",
+            "phoneNumberWithData": "Telefonní číslo: <b>{{number}}<\/b>",
+            "hostWithName": "Hostitel: <b>{{name}}<\/b>",
+            "addPhoto": "Přidat fotografii",
+            "emailAddressWithData": "Emailová adresa: <b>{{mail}}<\/b>",
+            "zipCode": "Poštovní směrovací číslo",
+            "hostProfile": "Profil hostitele",
+            "peopleInGroup": "Počet osob ve skupině: <b>{{number}}<\/b>",
+            "city": "Adresa: <b>{{city}}<\/b>",
+            "groupType": "Typ skupiny: <b>{{type}}<\/b>",
+            "additionalGroupInformation": "Další informace o skupině",
+            "guest": "Host: <b>{{name}}<\/b>",
+            "selectMultipleFromList": "Vyberte ze seznamu (více možností)",
+            "name": "Jméno",
+            "phoneNumber": "Telefonní číslo",
+            "country": "Země",
+            "email": "Email",
+            "emailAddress": "Emailová adresa",
+            "closestLargeCity": "Nejbližší velké město"
+        },
+        "createRefuge": {
+            "shelter": {
+                "targetCityAndSurroundings": "Město a okolí",
+                "groupDetails": "Informace o osobách, se kterými se stěhujete",
+                "anyCity": "Jakékoli město",
+                "imWithPregnantOver6Months": "Jsem nebo mě doprovází osoba v pokročilém stádiu těhotenství (nad 6 měsíců) <br \/>.",
+                "whatIsTargetCountry": "V jaké zemi chcete zůstat?",
+                "selectCountry": "Zvolte zemi"
+            }
+        },
+        "login": {
+            "emailOrPhone": "Emailová adresa nebo telefonní číslo",
+            "login": "Přihlášení",
+            "signInFacebook": "Přihlaste se pomocí služby Facebook",
+            "signInGoogle": "Přihlášení pomocí služby Google",
+            "emailOrPhoneDetail": "Email nebo telefonní číslo",
+            "invalidPassword": "Zadáno neplatné heslo"
+        },
+        "resetPassword": {
+            "setNewPassword": "Nastaviť nové heslo",
+            "header": "Zadejte nové heslo pro svůj účet",
+            "emailSent": "E-mail s obnovením hesla byl odeslán - zkontrolujte si schránku",
+            "success": "Vaše heslo bylo úspěšně změněno",
+            "detail": "Pokud si nepamatujete své heslo, zadejte svou emailovou adresu. Pošleme vám odkaz na formulář pro obnovení hesla."
+        },
+        "edit": {
+            "editAccommodationHeader": "Upravte informace o nabízeném ubytování"
+        },
+        "validations": {
+            "fill": {
+                "phoneNumber": "Vyplňte své telefonní číslo"
+            }
+        },
+        "userProfile": {
+            "header": "Úprava profilu uživatele"
+        },
+        "renew": {
+            "re-activateOffer": "Chcete žádost\/nabídku znovu aktivovat?"
+        }
     },
-    "words": {
-      "idWithData": "ID: {{id}}",
-      "renew": "Obnovit",
-      "additionalInformation": "Další informace",
-      "congratulations": "Gratulujeme",
-      "thankYou": "Děkujeme",
-      "or": "Nebo",
-      "badNews": "Špatné zprávy",
-      "prefix": "Předpona",
-      "dashboard": "Přístrojová deska"
+    "desktop": {
+        "lookingForSupport": "Hledám pomoc",
+        "filters": {
+            "shelter": "Ubytování"
+        },
+        "host": {
+            "numberOfPeople": "Počet osob: Max {{maxAmount}}"
+        },
+        "offer": {
+            "status": {
+                "accepted": "Přijato",
+                "beingConfirmed": "Potvrzuje se",
+                "awaitingGuestApproval": "Čeká se na schválení hostem",
+                "inactive": "Neaktivní",
+                "haveMatch": "Našli jsme shodu",
+                "lookingForMatch": "Hledá se shoda",
+                "awaitingHostApproval": "Čeká se na schválení hostitele",
+                "confirmed": "Potvrzeno",
+                "rejected": "Odmítnuto"
+            }
+        },
+        "refuge": {
+            "searchingAccommodation": "Vyhledávání ubytování",
+            "accommodationSearch": "Vyhledávání ubytování",
+            "submission": "Nabídka",
+            "duration": "Doba pobytu: {{value}}"
+        },
+        "providingSupport": "Poskytování podpory",
+        "yourSubmission": "Vaše nabídka",
+        "yourOffers": "Přehled vašich nabídek",
+        "contextMenu": {
+            "reportProblem": "Nahlásit problém",
+            "renew": "Obnovit ",
+            "edit": "Upravit"
+        },
+        "checks": {
+            "phoneNotVerified": "Telefon nebyl ověřen",
+            "emailNotVerified": "Email nebyl ověřen",
+            "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
+            "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
+            "idNotVerified": "",
+            "changesInProgress": "Probíhající změny..."
+        },
+        "housing": "Ubytování",
+        "confirmation": {
+            "header": "Děkujeme vám za vaše rozhodnutí",
+            "content": "Pokud jste {{accepted}} , počkejte na rozhodnutí druhé osoby. Jakmile druhá strana přijme, obdržíte e-mail s kontaktními informacemi. <br \/> V případě {{cancellation}} bude vaše aplikace vrácena do fondu aktivních aplikací. O další nabídce Vás budeme informovat emailem.",
+            "accepted": "přijato",
+            "cancellation": "zrušení"
+        },
+        "accommodationSearch": "Vyhledávání ubytování"
     },
-    "links": {
-      "re-sendCode": "Opětovné zaslání kódu",
-      "resetPassword": "Nastavit nové heslo",
-      "resetPasswordLong": "Zapomněli jste heslo? <b><u>Klikněte zde</u></b>"
+    "reportProblem": {
+        "popup": {
+            "description": "O případných problémech nás informujte pomocí níže uvedeného formuláře.",
+            "problemReported": "Problém byl nahlášen",
+            "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali.  ",
+            "reasons": {
+                "guestNotNeedHelp": "",
+                "hostCantHelp": "",
+                "rejectedAfterContact": "",
+                "noResponseAfterContact": "",
+                "notShowUp": ""
+            }
+        }
     },
-    "sms": {
-      "verification": "Ověřování pomocí SMS",
-      "verificationSuccess": "Ověření SMS bylo úspěšně dokončeno",
-      "sentInfo": "Zadejte ověřovací kód zaslaný na telefonní číslo {{phoneNumber}}.",
-      "verificationFail": "Ups! Něco se pokazilo, zkuste to znovu nebo vygenerujte nový kód."
-    },
-    "actions": {
-      "showPassword": "Zobrazit heslo",
-      "details": "Podrobnosti",
-      "addOffer": "Přidat nabídku",
-      "addSubmission": "Žádost o podporu"
-    },
-    "email": {
-      "sentInfo": "Na vaši e-mailovou adresu jsme zaslali ověřovací kód. Klikněte na odkaz pro ověření",
-      "verification": "Ověření emailu"
-    },
-    "nationalities": {
-      "ukrainians": "Ukrajinci",
-      "ukrainian": "Ukrajinský",
-      "nonUkrainian": "Neukrajinské"
-    }
-  },
-  "forms": {
-    "createShelter": {
-      "street": "Ulice",
-      "agreeForShelterVerification": "Souhlasím s ověřením mého ubytování (návštěva dobrovolníka) ",
-      "addPhotoHeader": "Přidejte fotografii nabízeného ubytování",
-      "buildingNo": "Budova č.",
-      "apartmentNo": "Apartmán č.",
-      "accommodationHeader": "Poskytněte informace o nabízeném ubytování",
-      "groupsHostAccepts": "Jaké typy skupin budete přijímat?",
-      "accommodationTypes": {
-        "house": "Dům"
-      },
-      "photosList": "Fotografie nabízeného ubytování",
-      "acceptElderly": "Přijmu seniori"
-    },
-    "userRegistration": {
-      "enterDetails": "Zadejte své údaje",
-      "confirmPassword": "Potvrďte heslo",
-      "agreeOnSmsCommunication": "Chci dostávat upozornění na potenciální nabídky prostřednictvím SMS. ",
-      "language": "Jazyk",
-      "proposeCreateAccount": "Pokud nemáte účet, můžete si ho vytvořit. ",
-      "newPassword": "Nové heslo",
-      "userRegistration": "Registrace uživatele",
-      "preferredLanguage": "Preferovaný jazyk komunikace ",
-      "fillMissingData": "Doplňte chybějící údaje",
-      "validations": {
-        "passwordMismatch": "Hesla jsou různá",
-        "passwordLength": "Délka hesla musí být alespoň 8 znaků"
-      },
-      "password": "",
-      "errors": {
-        "duplicatedMail": ""
-      }
-    },
-    "match": {
-      "guestProfile": "Profil hosta",
-      "numberOfPeopleWithData": "Maximální počet osob: <b>{{number}}</b>",
-      "durationWithData": "Délka pobytu: <b>{{number}}{{unit}}</b>",
-      "specificCity": "Konkrétní město",
-      "confirmed": "Váš host/hostitel právě potvrdil nabídku. Kontaktujte ho/ji a domluvte se na podrobnostech. ",
-      "accommodationTypeWithData": "Typ ubytování: <b>{{type}}</b>",
-      "additionalInfoOnAccommodation": "Další informace o ubytování",
-      "usersWarning": "<b>Z bezpečnostních důvodů informujte své příbuzné o tom, koho ubytováváte. Pro všechny případy:</b>\n<ul>\n<li>ověřte si totožnost osoby, kterou ukrýváte,</li>\n<li>ujistěte se, že složení skupiny odpovídá původnímu popisu</li>\n</ul>",
-      "individual": "Jednotlivec",
-      "host": {
-        "formSent": "Formulář odeslaný",
-        "formSentThanks": "Děkujeme za projevenou ochotu pomoci. Vaše nemovitost byla přidána na seznam. Budeme hledat v naší databázi lidí v nouzi, a jakmile najdeme vhodnou osobu, dáme vám vědět.",
-        "received": "Děkujeme za potvrzení obdrženého návrhu. Dáme vám vědět jakmile obdržíme obě potvrzení."
-      },
-      "searchAddress": "Adresa pro vyhledávání: <b>{{city}}</b>",
-      "rejected": "Váš potenciální host/hostitel nabídku odmítl. Vaše nabídka se vrací zpět do fondu a my vám dáme vědět o další nabídce, jakmile ji najdeme.",
-      "refuge": {
-        "rejection": "Děkujeme za potvrzení vašeho rozhodnutí. Váš návrh se vrací zpět do fondu, o dalším návrhu vás budeme informovat, jakmile se nám podaří nějaký najít."
-      }
-    },
-    "generic": {
-      "hostInformation": {
-        "offerTransport": "Nabízím dopravu",
-        "takesPregnancy": "Přijmu osobu v pokročilém stádiu těhotenství (nad 6 měsíců)."
-      },
-      "groupInformation": {
-        "pregnancy": "Skupina zahrnuje osobu v pokročilém stádiu těhotenství (nad 6 měsíců).",
-        "disability": "Ve skupině je osoba se zdravotním postižením.",
-        "multicultural": "Ve skupině jsou lidé různých národností",
-        "animals": "Skupinu doprovází domácí mazlíček",
-        "elders": "Ve skupině je starší osoba."
-      },
-      "submited": "Formulář odeslaný ",
-      "facilityInformation": {
-        "disability": "Zařízení pro osoby se zdravotním postižením",
-        "pregnancy": "Zařízení pro těhotné ženy",
-        "eldery": "Zařízení pro seniory",
-        "diversity": "Všechny národnosti vítány"
-      },
-      "password": "Heslo",
-      "selectFromList": "Vyberte ze seznamu",
-      "cityWithData": "Město: {{city}}",
-      "phoneNumberWithData": "Telefonní číslo: <b>{{number}}</b>",
-      "hostWithName": "Hostitel: <b>{{name}}</b>",
-      "addPhoto": "Přidat fotografii",
-      "emailAddressWithData": "Emailová adresa: <b>{{mail}}</b>",
-      "zipCode": "Poštovní směrovací číslo",
-      "hostProfile": "Profil hostitele",
-      "peopleInGroup": "Počet osob ve skupině: <b>{{number}}</b>",
-      "city": "Adresa: <b>{{city}}</b>",
-      "groupType": "Typ skupiny: <b>{{type}}</b>",
-      "additionalGroupInformation": "Další informace o skupině",
-      "guest": "Host: <b>{{name}}</b>",
-      "selectMultipleFromList": "Vyberte ze seznamu (více možností)",
-      "name": "Jméno",
-      "phoneNumber": "Telefonní číslo",
-      "country": "Země",
-      "email": "Email",
-      "emailAddress": "Emailová adresa",
-      "closestLargeCity": "Nejbližší velké město"
-    },
-    "createRefuge": {
-      "shelter": {
-        "targetCityAndSurroundings": "Město a okolí",
-        "groupDetails": "Informace o osobách, se kterými se stěhujete",
-        "anyCity": "Jakékoli město",
-        "imWithPregnantOver6Months": "Jsem nebo mě doprovází osoba v pokročilém stádiu těhotenství (nad 6 měsíců) <br />.",
-        "whatIsTargetCountry": "V jaké zemi chcete zůstat?",
-        "selectCountry": "Zvolte zemi"
-      }
-    },
-    "login": {
-      "emailOrPhone": "Emailová adresa nebo telefonní číslo",
-      "login": "Přihlášení",
-      "signInFacebook": "Přihlaste se pomocí služby Facebook",
-      "signInGoogle": "Přihlášení pomocí služby Google",
-      "emailOrPhoneDetail": "Email nebo telefonní číslo",
-      "invalidPassword": "Zadáno neplatné heslo"
-    },
-    "resetPassword": {
-      "setNewPassword": "Nastaviť nové heslo",
-      "header": "Zadejte nové heslo pro svůj účet",
-      "emailSent": "E-mail s obnovením hesla byl odeslán - zkontrolujte si schránku",
-      "success": "Vaše heslo bylo úspěšně změněno",
-      "detail": "Pokud si nepamatujete své heslo, zadejte svou emailovou adresu. Pošleme vám odkaz na formulář pro obnovení hesla."
-    },
-    "edit": {
-      "editAccommodationHeader": "Upravte informace o nabízeném ubytování"
-    },
-    "validations": {
-      "fill": {
-        "phoneNumber": "Vyplňte své telefonní číslo"
-      }
-    },
-    "userProfile": {
-      "header": "Úprava profilu uživatele"
-    },
-    "renew": {
-      "re-activateOffer": "Chcete žádost/nabídku znovu aktivovat?"
-    }
-  },
-  "desktop": {
-    "lookingForSupport": "Hledám pomoc",
-    "filters": {
-      "shelter": "Ubytování"
-    },
-    "host": {
-      "numberOfPeople": "Počet osob: Max {{maxAmount}}"
+    "deleteOffer": {
+        "popup": {
+            "areYouSure": "Opravdu chcete svůj záznam odstranit?",
+            "header": "Odstranění požadavku\/nabídky",
+            "confirmation": "Váš záznam byl smazán"
+        }
     },
     "offer": {
-      "status": {
-        "accepted": "Přijato",
-        "beingConfirmed": "Potvrzuje se",
-        "awaitingGuestApproval": "Čeká se na schválení hostem",
-        "inactive": "Neaktivní",
-        "haveMatch": "Našli jsme shodu",
-        "lookingForMatch": "Hledá se shoda",
-        "awaitingHostApproval": "Čeká se na schválení hostitele",
-        "confirmed": "Potvrzeno",
-        "rejected": "Odmítnuto"
-      }
+        "popup": {
+            "renew": {
+                "expiredMsg": "Vaše žádost \/ nabídka\n <b>vypršela z důvodu nedostatečné aktivity<\/b>"
+            }
+        }
     },
-    "refuge": {
-      "searchingAccommodation": "Vyhledávání ubytování",
-      "accommodationSearch": "Vyhledávání ubytování",
-      "submission": "Nabídka",
-      "duration": "Doba pobytu: {{value}}"
+    "welcomePage": {
+        "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Hungarech<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
+        "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství"
     },
-    "providingSupport": "Poskytování podpory",
-    "yourSubmission": "Vaše nabídka",
-    "yourOffers": "Přehled vašich nabídek",
-    "contextMenu": {
-      "reportProblem": "Nahlásit problém",
-      "renew": "Obnovit ",
-      "edit": "Upravit"
-    },
-    "checks": {
-      "phoneNotVerified": "Telefon nebyl ověřen",
-      "emailNotVerified": "Email nebyl ověřen",
-      "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
-      "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
-      "idNotVerified": ""
-    },
-    "housing": "Ubytování",
-    "confirmation": {
-      "header": "Děkujeme vám za vaše rozhodnutí",
-      "content": "Pokud jste {{accepted}} , počkejte na rozhodnutí druhé osoby. Jakmile druhá strana přijme, obdržíte e-mail s kontaktními informacemi. <br /> V případě {{cancellation}} bude vaše aplikace vrácena do fondu aktivních aplikací. O další nabídce Vás budeme informovat emailem.",
-      "accepted": "přijato",
-      "cancellation": "zrušení"
-    },
-    "accommodationSearch": "Vyhledávání ubytování"
-  },
-  "reportProblem": {
-    "popup": {
-      "description": "O případných problémech nás informujte pomocí níže uvedeného formuláře.",
-      "problemReported": "Problém byl nahlášen",
-      "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali.  ",
-      "reasons": {
-        "guestNotNeedHelp": "",
-        "hostCantHelp": "",
-        "rejectedAfterContact": "",
-        "noResponseAfterContact": "",
-        "notShowUp": ""
-      }
+    "userRegistration": {
+        "errors": {
+            "emailExist": "",
+            "phoneExist": "",
+            "tooManyRequest": "",
+            "invalidCode": "",
+            "phoneLinkingFailed": ""
+        }
     }
-  },
-  "deleteOffer": {
-    "popup": {
-      "areYouSure": "Opravdu chcete svůj záznam odstranit?",
-      "header": "Odstranění požadavku/nabídky",
-      "confirmation": "Váš záznam byl smazán"
-    }
-  },
-  "offer": {
-    "popup": {
-      "renew": {
-        "expiredMsg": "Vaše žádost / nabídka\n <b>vypršela z důvodu nedostatečné aktivity</b>"
-      }
-    }
-  },
-  "welcomePage": {
-    "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné</b> ubytování v <b>Polsku, Česku, na Slovensku a v Hungarech</b>, které nabízejí lidé a instituce ochotné pomoci.",
-    "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství"
-  },
-  "userRegistration": {
-    "errors": {
-      "emailExist": "",
-      "phoneExist": "",
-      "tooManyRequest": "",
-      "invalidCode": "",
-      "phoneLinkingFailed": ""
-    }
-  }
 }
