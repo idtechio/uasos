@@ -9,6 +9,7 @@ import {
 import addHostToApi from "../helpers/addHostToApi";
 import { API_REFRESH_LATENCY, uid } from "../helpers/misc";
 import updateHostToApi from "../helpers/updateHostToApi";
+import { useProgressToastContext } from "../providers/ProgressToastProvider";
 import { QueryKeys } from "./queryKeys";
 
 export const useOffersList = () =>
@@ -16,6 +17,7 @@ export const useOffersList = () =>
 
 export const useAddHostToApi = () => {
   const queryClient = useQueryClient();
+  const { actions } = useProgressToastContext();
 
   return useMutation(addHostToApi, {
     onSuccess: (_, variables) => {
@@ -38,6 +40,8 @@ export const useAddHostToApi = () => {
         client_only: true,
       };
 
+      actions.showProgressToast();
+
       queryClient.setQueryData<GetOffersListDTO | undefined>(
         [QueryKeys.GET_OFFERS_LIST],
         (data) => data && { ...data, offers: [...data.offers, newItem] }
@@ -55,11 +59,34 @@ export const useAddHostToApi = () => {
 
 export const useUpdateHostToApi = () => {
   const queryClient = useQueryClient();
+  const { actions } = useProgressToastContext();
 
   return useMutation(updateHostToApi, {
-    onSuccess: () => {
-      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
-      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
+    onSuccess: (_, variables) => {
+      queryClient.setQueryData<GetOffersListDTO | undefined>(
+        [QueryKeys.GET_OFFERS_LIST],
+        (data) =>
+          data && {
+            ...data,
+            offers: data.offers.map((offer) => {
+              if (offer.id === variables.id) {
+                return {
+                  ...offer,
+                  ...(variables as OfferProps),
+                  client_only: true,
+                };
+              }
+              return offer;
+            }),
+          }
+      );
+
+      actions.showProgressToast();
+
+      setTimeout(() => {
+        queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
+        queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
+      }, API_REFRESH_LATENCY);
     },
   });
 };

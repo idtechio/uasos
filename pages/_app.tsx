@@ -1,12 +1,14 @@
 import { useMemo, createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
 import { ThemeProvider as ThemeProviderNative } from "styled-components/native";
 import { primary } from "../src/style/theme.config";
 import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
+import { ProgressToastProvider } from "../src/providers/ProgressToastProvider";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
 import { AppProps } from "next/app";
 import useAuth from "../src/hooks/useAuth";
@@ -116,7 +118,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
                     refetchAccount,
                   }}
                 >
-                  <Component {...pageProps} />
+                  <ProgressToastProvider>
+                    <Component {...pageProps} />
+                  </ProgressToastProvider>
                 </AuthContext.Provider>
               </ThemeProviderNative>
             </ThemeProviderWeb>

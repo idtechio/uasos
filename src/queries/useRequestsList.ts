@@ -10,12 +10,15 @@ import addGuestToApi from "../helpers/addGuestToApi";
 import { API_REFRESH_LATENCY, uid } from "../helpers/misc";
 import { QueryKeys } from "./queryKeys";
 import updateGuestToApi from "../helpers/updateGuestToApi";
+import { useProgressToastContext } from "../providers/ProgressToastProvider";
 
 export const useRequestsList = () =>
   useQuery([QueryKeys.GET_REQUESTS_LIST], getRequestsList);
 
 export const useAddGuestToApi = () => {
   const queryClient = useQueryClient();
+
+  const { actions } = useProgressToastContext();
 
   return useMutation(addGuestToApi, {
     onSuccess: (_, variables) => {
@@ -38,6 +41,8 @@ export const useAddGuestToApi = () => {
         client_only: true,
       };
 
+      actions.showProgressToast();
+
       queryClient.setQueryData<GetRequestsListDTO | undefined>(
         [QueryKeys.GET_REQUESTS_LIST],
         (data) => data && { ...data, requests: [...data.requests, newItem] }
@@ -54,10 +59,29 @@ export const useAddGuestToApi = () => {
 export const useUpdateGuestToApi = () => {
   const queryClient = useQueryClient();
 
+  const { actions } = useProgressToastContext();
+
   return useMutation(updateGuestToApi, {
-    onSuccess: () => {
-      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
-      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
+    onSuccess: (_, variables) => {
+      queryClient.setQueryData<GetRequestsListDTO | undefined>(
+        [QueryKeys.GET_REQUESTS_LIST],
+        (data) =>
+          data && {
+            ...data,
+            requests: data.requests.map((request) => {
+              if (request.id === variables.id) {
+                return {
+                  ...request,
+                  ...(variables as RequestProps),
+                  client_only: true,
+                };
+              }
+              return request;
+            }),
+          }
+      );
+
+      actions.showProgressToast();
     },
   });
 };

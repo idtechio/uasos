@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import { ActivityIndicator } from "react-native";
 import { useTranslation } from "react-i18next";
-import { useQueryClient } from "react-query";
-import { QueryKeys } from "../../../queries/queryKeys";
 import { useRenewItem } from "../../../queries/useListing";
 
 import HomeIllustration from "../../../style/svgs/home_illustration.svg";
@@ -27,28 +25,9 @@ export default function RenewOffer({
 }) {
   const { t } = useTranslation();
 
-  const { mutate, isLoading, isSuccess } = useRenewItem();
-  const queryClient = useQueryClient();
+  const { mutate, isLoading } = useRenewItem();
 
   const handleRenew = () => mutate({ targetID, targetType });
-
-  const closeAfterSuccess = useCallback(() => {
-    if (targetType === TargetTypes.GUESTS) {
-      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
-    }
-
-    if (targetType === TargetTypes.HOSTS) {
-      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
-    }
-
-    close();
-  }, [queryClient, targetType, close]);
-
-  useEffect(() => {
-    if (isSuccess) {
-      closeAfterSuccess();
-    }
-  }, [isSuccess, closeAfterSuccess]);
 
   return (
     <FormWrapper>
