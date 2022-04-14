@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Text } from "react-native";
 import AppBack from "../src/components/AppBack";
 import { CompositionAppBody } from "../src/components/Compositions";
@@ -10,7 +10,13 @@ import Redirect from "../src/components/Redirect";
 import { AuthContext } from "./_app";
 
 export default function UserProfile() {
-  const { identity, loaded, account } = useContext(AuthContext);
+  const { identity, loaded, account, refetchAccount } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (refetchAccount) {
+      refetchAccount().catch((err) => err);
+    }
+  }, []);
 
   if (!loaded) {
     // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
@@ -27,7 +33,11 @@ export default function UserProfile() {
     <CompositionAppBody>
       <PageContentWrapper>
         <AppBack to={"/dashboard"} />
-        <EditUserProfileForm account={account} identity={identity} />
+        <EditUserProfileForm
+          key={JSON.stringify(account)}
+          account={account}
+          identity={identity}
+        />
       </PageContentWrapper>
     </CompositionAppBody>
   );

@@ -40,7 +40,7 @@ type ToastProps = {
   color: string;
   icon?: React.ReactElement;
   label: string;
-  cta?: { label: string; onPress: () => void };
+  cta?: { label?: string; onPress?: () => void };
   contaierStyle?: StyleProp<ViewStyle>;
 };
 

@@ -13,7 +13,7 @@ export default function PreferredLanguageInput() {
     <InputWrapperRegister styles={{ container: { zIndex: 9999 } }}>
       <Controller
         control={control}
-        name="registerWithSocials.prefferedLanguage"
+        name="registerWithSocials.preferredLanguage"
         render={({ field: { value, onChange }, fieldState: { error } }) => (
           <CountrySelect
             value={value || ""}

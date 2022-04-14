@@ -3,6 +3,7 @@ import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { FormKey } from "../../helpers/FormTypes";
 import RadioButtons from "../Forms/RadioButtons";
 import ChoiceButton from "../Forms/ChoiceButton";
+import RadioButton from "../Forms/RadioButton";
 import { Error } from "./style";
 
 type Data = {
@@ -15,9 +16,10 @@ type Props = {
   data: Data[];
   error?: FieldError | FieldError[];
   errorMsg?: string;
+  isRadio?: boolean;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
+const FormRadioGroup = ({ name, rules, data, errorMsg, isRadio }: Props) => {
   const { control, formState, getValues } = useFormContext();
   const [markedCheckbox, setMarkedCheckbox] = useState<string>();
 
@@ -45,17 +47,31 @@ const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
       render={({ field: { onChange } }) => (
         <RadioButtons>
           {data.map(({ label, value }) => (
-            <ChoiceButton
-              key={label}
-              onPress={() => {
-                setMarkedCheckbox(label);
-                onChange(value);
-              }}
-              error={!!error}
-              text={label}
-              isSmall
-              isSelected={label === markedCheckbox}
-            />
+            <>
+              {isRadio ? (
+                <RadioButton
+                  key={label}
+                  labelText={label}
+                  isSelected={label === markedCheckbox}
+                  onPress={() => {
+                    setMarkedCheckbox(label);
+                    onChange(value);
+                  }}
+                />
+              ) : (
+                <ChoiceButton
+                  key={label}
+                  onPress={() => {
+                    setMarkedCheckbox(label);
+                    onChange(value);
+                  }}
+                  error={!!error}
+                  text={label}
+                  isSmall
+                  isSelected={label === markedCheckbox}
+                />
+              )}
+            </>
           ))}
           {error ? <Error>{errorMsg}</Error> : null}
         </RadioButtons>
@@ -64,4 +80,5 @@ const FormRadioGroup = ({ name, rules, data, errorMsg }: Props) => {
     />
   );
 };
+
 export default FormRadioGroup;

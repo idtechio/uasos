@@ -10,6 +10,7 @@ const ButtonCta = ({
   colorOpposite = false,
   onClick,
   pressable = true,
+  disabled,
 }: ButtonProps) => {
   const handlePress = useCallback(
     (event) => {
@@ -25,6 +26,7 @@ const ButtonCta = ({
       style={style}
       onPress={handlePress}
       colorOpposite={colorOpposite}
+      disabled={disabled}
     >
       {typeof anchor === "string" ? (
         <Text colorOpposite={colorOpposite}>{anchor}</Text>

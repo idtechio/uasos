@@ -237,7 +237,9 @@
     "housing": "Gehäuse",
     "confirmation": {
       "header": "Vielen Dank für Ihre Entscheidung",
-      "content": ""
+      "content": "",
+      "accepted": "",
+      "cancellation": ""
     },
     "accommodationSearch": ""
   },

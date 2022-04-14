@@ -60,7 +60,7 @@ type SubmitRequestState = {
   succeeded: boolean;
 };
 
-const submitRequestDefualtState = {
+const submitRequestDefaultState = {
   loading: false,
   error: null,
   succeeded: false,
@@ -87,6 +87,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
   const { identity } = useContext(AuthContext);
 
   const form = useForm<FormType>({
+    mode: "onChange",
     defaultValues: {
       advancedHost: {
         guestCount: 1,
@@ -137,7 +138,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
   }, [data, form]);
 
   const [submitRequstState, setSubmitRequstState] =
-    useState<SubmitRequestState>(submitRequestDefualtState);
+    useState<SubmitRequestState>(submitRequestDefaultState);
 
   const {
     handleSubmit,
@@ -216,7 +217,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       zipcode: zipCode,
       street: street,
       building_no: buildingNumber,
-      appartment_no: apartmentNumber,
+      appartment_no: apartmentNumber ?? "",
       can_be_verified: volunteerVisitAcceptance ? Boolean.TRUE : Boolean.FALSE,
     };
 
@@ -225,7 +226,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       callbacks: MutateCallbacks
     ) => {
       if (data?.id) {
-        mutateUpdate(payload as EditHostProps, callbacks);
+        mutateUpdate({ ...data, ...payload } as OfferProps, callbacks);
         return;
       }
 
@@ -259,7 +260,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
       {submitRequstState.succeeded && (
         <ThankfulnessModal
-          onClose={() => setSubmitRequstState(submitRequestDefualtState)}
+          onClose={() => setSubmitRequstState(submitRequestDefaultState)}
           headerText={t("thankfulnessHostModal.thankYou")}
           subHeaderText={t("thankfulnessHostModal.applicationSent")}
           contentText={t("thankfulnessHostModal.informWhenAccomodationFound")}
@@ -376,7 +377,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 label={t("others:forms.createShelter.apartmentNo")}
                 error={errors?.advancedHost?.apartmentNumber}
                 rules={{
-                  required: true,
+                  required: false,
                 }}
               />
             </View>

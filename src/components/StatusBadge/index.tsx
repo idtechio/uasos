@@ -28,7 +28,7 @@ export default function StatusBadge({ state }: { state: MATCH_TYPE }) {
     },
     inactive: {
       value: "x4",
-      label: t("others:ldesktop.offer.status.inactive"),
+      label: t("others:desktop.offer.status.inactive"),
       style: "disabled",
     },
     looking_for_match: {

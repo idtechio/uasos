@@ -63,7 +63,7 @@ export default function EditOfferButton({
       {
         icon: <EditIcon />,
         type: "edit",
-        hide: !!matchID,
+        hide: !!matchID || targetStatusType === GuestHostType.INACTIVE,
         label: "others:desktop.contextMenu.edit",
       },
       {
@@ -75,9 +75,7 @@ export default function EditOfferButton({
       {
         icon: <BinIcon />,
         type: "delete",
-        hide: !!matchID,
-        // hide:
-        //   targetStatusType === GuestHostType.CONFIRMED, // waiting for backend changes
+        hide: targetStatusType === GuestHostType.CONFIRMED,
         label: "hostAdd.accomodationPhotoReset",
       },
     ],

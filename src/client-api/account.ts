@@ -3,14 +3,15 @@ import { getFirebaseToken } from "../helpers/getFirebaseToken";
 export interface getAccountDTO {
   uid: string;
   name: string;
-  prefferedLang?: string;
+  preferredLang?: string;
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
+  smsNotification: Boolean;
   verified?: Boolean;
 }
 export interface updateAccountReqDTO {
   name: string;
-  prefferedLang: string;
+  preferredLang: string;
 }
 interface AccountApi {
   getAccount: () => Promise<getAccountDTO>;

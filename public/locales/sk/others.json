@@ -27,7 +27,7 @@
       "or": "Alebo",
       "badNews": "Zlé správy",
       "prefix": "Predpona",
-      "dashboard": "Prístrojová doska"
+      "dashboard": "Prehľad"
     },
     "links": {
       "re-sendCode": "Opätovné odoslanie kódu",
@@ -85,9 +85,9 @@
         "passwordMismatch": "Heslá sú rozdielne",
         "passwordLength": "Dĺžka hesla musí byť aspoň 8 znakov"
       },
-      "password": "",
+      "password": "Heslo (min 8 znakov)",
       "errors": {
-        "duplicatedMail": ""
+        "duplicatedMail": "E-mail spojený s vybraným účtom poskytovateľa prihlásenia je už v našom systéme použitý. Skúste sa prosím prihlásiť znova prostredníctvom iného spôsobu prihlásenia."
       }
     },
     "match": {
@@ -231,13 +231,15 @@
       "phoneNotVerified": "Neoverené telefónne číslo",
       "emailNotVerified": "Email nebol overený",
       "accountInCreation": "Vaše konto sa vytvára, po niekoľkých sekundách obnovte stránku.",
-      "emailAlreadyInUse": "E-mail spojený s vybraným účtom poskytovateľa prihlásenia je už v našom systéme použitý. skúste sa prosím prihlásiť znova prostredníctvom iného spôsobu prihlásenia.",
+      "emailAlreadyInUse": "E-mail spojený s vybraným účtom poskytovateľa prihlásenia je už v našom systéme použitý. Skúste sa prosím prihlásiť znova prostredníctvom iného spôsobu prihlásenia.",
       "idNotVerified": "ID neoverené"
     },
     "housing": "Ubytovanie",
     "confirmation": {
       "header": "Ďakujem za rozhodnutie",
-      "content": "Ak ste súhlasili, počkajte na rozhodnutie druhej osoby. Keď druhá strana súhlasí, dostanete e-mail s kontaktnými informáciami. <br /> V prípade zrušenia bude vaša žiadosť vrátená do skupiny aktívnych žiadostí. O ďalšej ponuke vás budeme informovať e-mailom."
+      "content": "Ak ste {{accepted}}, počkajte na rozhodnutie druhej osoby. Keď to druhá strana prijme, dostanete e-mail s kontaktnými informáciami. <br /> V prípade {{cancellation}} bude vaša aplikácia vrátená do skupiny aktívnych aplikácií. O ďalšej ponuke Vás budeme informovať emailom.",
+      "accepted": "prijaté",
+      "cancellation": "zrušenie"
     },
     "accommodationSearch": "Vyhľadávanie ubytovania"
   },
@@ -247,7 +249,7 @@
       "problemReported": "Problém bol nahlásený",
       "thanksForLettingKnow": "Ďakujeme, že ste nám dali vedieť o tejto situácii",
       "reasons": {
-        "guestNotNeedHelp": "",
+        "guestNotNeedHelp": "Môj hosť už nepotrebuje ubytovanie",
         "hostCantHelp": "Môj hostiteľ už nemôže poskytnúť ubytovanie",
         "rejectedAfterContact": "Ja/druhá strana sme odmietli ponuku po prvom kontakte",
         "noResponseAfterContact": "Žiaden kontakt napriek opakovaným pokusom",
@@ -275,10 +277,10 @@
   },
   "userRegistration": {
     "errors": {
-      "emailExist": "",
-      "phoneExist": "",
-      "tooManyRequest": "",
-      "invalidCode": "",
+      "emailExist": "Užívateľ s týmto účtom už existuje",
+      "phoneExist": "Toto telefónne číslo sa už používa s iným účtom",
+      "tooManyRequest": "Priveľa žiadostí o overenie telefónneho čísla",
+      "invalidCode": "Neplatný kód",
       "phoneLinkingFailed": ""
     }
   }

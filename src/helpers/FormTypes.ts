@@ -114,7 +114,7 @@ export type FormType = {
     closestLargeCity: string;
     street: string;
     buildingNumber: string;
-    apartmentNumber: string;
+    apartmentNumber: string | undefined;
     uploadedPhotos: Array<string>;
   };
   advancedRefugee: {
@@ -149,7 +149,8 @@ export type FormType = {
     language: string;
     phonePrefix: string;
     phoneNumber: string;
-    prefferedLanguage: string;
+    preferredLanguage: string;
+    smsNotification: boolean;
   };
   resetPassword: {
     password: string;

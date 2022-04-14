@@ -26,8 +26,8 @@
       "thankYou": "Mulțumesc",
       "or": "Sau",
       "badNews": "Ne pare rău",
-      "prefix": "",
-      "dashboard": ""
+      "prefix": "Prefix",
+      "dashboard": "Tabloul de bord"
     },
     "links": {
       "re-sendCode": "Retrimite codul",
@@ -59,7 +59,7 @@
   "forms": {
     "createShelter": {
       "street": "Strada",
-      "agreeForShelterVerification": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar) ",
+      "agreeForShelterVerification": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar)",
       "addPhotoHeader": "Adăugați o fotografie a cazării oferite",
       "buildingNo": "Clădirea nr.",
       "apartmentNo": "Apartament nr.",
@@ -102,7 +102,7 @@
       "individual": "Individual",
       "host": {
         "formSent": "Formular trimis",
-        "formSentThanks": "Vă mulțumim că v-ați exprimat dorința de a ajuta Proprietatea dumneavoastră a fost adăugată pe listă. Vom căuta în baza noastră de date cu persoanele aflate în nevoie și, odată ce vom găsi persoana potrivită, vă vom anunța.",
+        "formSentThanks": "Vă mulțumim că v-ați exprimat dorința de a ajuta. Proprietatea dumneavoastră a fost adăugată pe listă. Vom căuta în baza noastră de date cu persoanele aflate în nevoie și, odată ce vom găsi persoana potrivită, vă vom anunța.",
         "received": "Vă mulțumim foarte mult pentru confirmarea ofertei primite. De îndată ce vom primi ambele confirmări, vă vom anunța."
       },
       "searchAddress": "Adresa de căutare: <b>{{city}}</b>",
@@ -134,7 +134,7 @@
       "selectFromList": "Selectați din listă",
       "cityWithData": "Oraș: {{city}}",
       "phoneNumberWithData": "Număr de telefon: <b>{{number}}</b>",
-      "hostWithName": "Gazdă",
+      "hostWithName": "Gazdă<b>{{name}}</b>",
       "addPhoto": "Adăugați o fotografie",
       "emailAddressWithData": "Adresa de e-mail: <b>{{mail}}</b>",
       "zipCode": "Cod poștal",
@@ -237,9 +237,11 @@
     "housing": "Locuință",
     "confirmation": {
       "header": "Vă mulțumim pentru decizia dumneavoastră",
-      "content": "Dacă ați acceptat, așteptați pentru decizia celeilalte persoane. De îndată ce persoana respectivă acceptă, veți primi un email cu datele de contact. În caz de anulare, aplicația dumneavoastră se va întoarce în fondul de cereri active. Vă vom informa pe e-mail cu privire la următoarea ofertă"
+      "content": "Dacă aveți {{accepted}}, așteptați decizia celeilalte persoane. Odată ce cealaltă parte acceptă, veți primi un e-mail cu informații de contact. <br /> În cazul {{cancellation}} , aplicația dvs. va fi returnată în grupul de aplicații active. Vă vom informa prin e-mail despre următoarea ofertă.",
+      "accepted": "acceptat",
+      "cancellation": "anulare"
     },
-    "accommodationSearch": ""
+    "accommodationSearch": "Căutare cazare"
   },
   "reportProblem": {
     "popup": {

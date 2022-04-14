@@ -80,6 +80,7 @@ export default function FormAdGuest({
     useState<SubmitRequestState>(submitRequestDefualtState);
 
   const formFields = useForm<FormType>({
+    mode: "onChange",
     defaultValues: {
       advancedRefugee: {
         name: name ? name.split(" ")[0] : "",
@@ -193,7 +194,7 @@ export default function FormAdGuest({
       callbacks: MutateCallbacks
     ) => {
       if (data?.id) {
-        mutateUpdate(payload as EditGuestProps, callbacks);
+        mutateUpdate({ ...data, ...payload } as EditGuestProps, callbacks);
         return;
       }
 
@@ -392,6 +393,7 @@ export default function FormAdGuest({
               {t("refugeeAddForm.countryOfGroup")}
             </InputCotrolLabel>
             <FormRadioGroup
+              isRadio
               name="advancedRefugee.nationality"
               rules={{
                 required: true,
