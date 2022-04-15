@@ -4,5 +4,11 @@
             "offeringNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen Sie.",
             "sealedNotification": "Wir haben einen Kontakt für Sie! Prüfen Sie Ihre E-Mail und bestätigen"
         }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-84a76430736e472cb4cfa77c86fffa07",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-5e708c8583354be791b4b68231d9ed9c",
+        "MatchTimeout": "d-91d2f6af019646edb02128c86c111060"
     }
 }

@@ -4,5 +4,11 @@
             "offeringNotification": "",
             "sealedNotification": ""
         }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-3ca6f12b406b4858a6f6c1e6d2b134ee",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-4b189c34ff584451a1dc1f83421a7d21",
+        "MatchTimeout": ""
     }
 }
