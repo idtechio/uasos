@@ -8,6 +8,7 @@
     "sendgrid": {
         "HostGetsMatch": "d-ac09048dad354f179fcbc9f916388f99",
         "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
-        "GUESTANDHOSTMATCHCONFIRM": "d-06a55079412148e4b5d1c137bddc253a"
+        "GUESTANDHOSTMATCHCONFIRM": "d-06a55079412148e4b5d1c137bddc253a",
+        "MatchTimeout": "d-fd91a52b203f45bfbee31fdca04a880b"
     }
 }

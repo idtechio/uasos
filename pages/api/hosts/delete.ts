@@ -17,6 +17,7 @@ const HostPropsType = object({
 
 interface HostDBProps {
   db_hosts_id: string;
+  db_matches_id?: string;
 }
 
 async function deleteHost(
@@ -40,10 +41,15 @@ async function deleteHost(
       throw new Error("Host's offer does not exist");
     }
 
-    const topicNameOrId = process.env.TOPIC_HOST_DELETE;
-    const pubResult = await publishMessage(topicNameOrId, {
+    const message: HostDBProps = {
       db_hosts_id: host.db_hosts_id,
-    });
+    };
+    if (host.db_matches_id) {
+      message.db_matches_id = host.db_matches_id;
+    }
+
+    const topicNameOrId = process.env.TOPIC_HOST_DELETE;
+    const pubResult = await publishMessage(topicNameOrId, message);
 
     res
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)
@@ -63,9 +69,11 @@ async function getHostFromDB(
 ): Promise<false | HostDBProps> {
   const dbHost: false | HostDBProps[] = await select(
     `SELECT
-      h.db_hosts_id
+      h.db_hosts_id,
+      m.db_matches_id
     FROM hosts h
     JOIN accounts a ON a.db_accounts_id = h.fnc_accounts_id AND a.uid = $2
+    LEFT JOIN matches m ON m.fnc_hosts_id = h.db_hosts_id AND m.fnc_status NOT IN ('035', '045')
     WHERE h.db_hosts_id = $1`,
     [hostId, uid]
   );

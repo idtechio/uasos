@@ -4,6 +4,9 @@ import { ActivityIndicator, Platform, Text } from "react-native";
 import styled from "styled-components/native";
 import UploadIcon from "../../../style/svgs/upload.svg";
 import UploadPreview from "../UploadPreview";
+import Compressor from "compressorjs";
+import { MAX_HEIGHT, MAX_WIDTH, MIME_TYPE, QUALITY } from "./config";
+import { blobToBase64 } from "./utils";
 
 type UploadInputProps = {
   accept?: string;
@@ -44,7 +47,7 @@ const List = styled.View`
 `;
 
 const UploadInput = ({
-  accept = ".png, .jpg, .jpeg",
+  accept = ".jpeg",
   label,
   onFileChange,
   disabled,
@@ -74,17 +77,26 @@ const UploadInput = ({
   useEffect(() => {
     const handleChange = (event: Event) => {
       const file = (event.target as HTMLInputElement)?.files?.[0] as File;
-      const reader = new FileReader();
+      if (!file) {
+        return null;
+      }
       toggleLoading(true);
 
-      reader.onload = (ev) => {
-        onFileChange([ev.target?.result as string, ...uploadedPhotos]);
-        toggleLoading(false);
-      };
-      reader.onerror = () => toggleLoading(false);
-      reader.onabort = () => toggleLoading(false);
-
-      reader.readAsDataURL(file);
+      new Compressor(file, {
+        quality: QUALITY,
+        mimeType: MIME_TYPE,
+        maxHeight: MAX_HEIGHT,
+        maxWidth: MAX_WIDTH,
+        success(result) {
+          blobToBase64(result).then((result) => {
+            onFileChange([result as string, ...uploadedPhotos]);
+            toggleLoading(false);
+          });
+        },
+        error() {
+          toggleLoading(false);
+        },
+      });
     };
 
     if (inputRef.current) {

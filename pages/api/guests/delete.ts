@@ -17,6 +17,7 @@ const GuestPropsType = object({
 
 interface GuestDBProps {
   db_guests_id: string;
+  db_matches_id?: string;
 }
 
 async function deleteGuest(
@@ -40,10 +41,15 @@ async function deleteGuest(
       throw new Error("Guest's request does not exist");
     }
 
-    const topicNameOrId = process.env.TOPIC_GUEST_DELETE;
-    const pubResult = await publishMessage(topicNameOrId, {
+    const message: GuestDBProps = {
       db_guests_id: guest.db_guests_id,
-    });
+    };
+    if (guest.db_matches_id) {
+      message.db_matches_id = guest.db_matches_id;
+    }
+
+    const topicNameOrId = process.env.TOPIC_GUEST_DELETE;
+    const pubResult = await publishMessage(topicNameOrId, message);
 
     res
       .status(pubResult.status === PublishStatus.OK ? 200 : 400)
@@ -63,9 +69,11 @@ async function getGuestFromDB(
 ): Promise<false | GuestDBProps> {
   const dbGuest: false | GuestDBProps[] = await select(
     `SELECT
-      g.db_guests_id
+      g.db_guests_id,
+      m.db_matches_id
     FROM guests g
     JOIN accounts a ON a.db_accounts_id = g.fnc_accounts_id AND a.uid = $2
+    LEFT JOIN matches m ON m.fnc_guests_id = g.db_guests_id AND m.fnc_status NOT IN ('035', '045')
     WHERE g.db_guests_id = $1`,
     [guestId, uid]
   );
