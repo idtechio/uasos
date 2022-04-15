@@ -23,7 +23,7 @@ import {
 import { Routes } from "../../../consts/router";
 import { useRouter } from "next/router";
 import { ModalTypes, TargetTypes } from "./types";
-// import { GuestHostType } from "../../SupportSection/mapper";
+import { GuestHostType } from "../../SupportSection/mapper";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
@@ -57,27 +57,25 @@ export default function EditOfferButton({
       {
         icon: <ClockIcon />,
         type: "renew",
-        hide: true,
-        // hide: targetStatusType !== GuestHostType.TIMEOUT, // waiting for backend changes
+        hide: targetStatusType !== GuestHostType.INACTIVE,
         label: "others:common.words.renew",
       },
       {
         icon: <EditIcon />,
         type: "edit",
-        hide: !!matchID,
+        hide: !!matchID || targetStatusType === GuestHostType.INACTIVE,
         label: "others:desktop.contextMenu.edit",
       },
       {
         icon: <AlertIcon />,
         type: "report",
-        hide: true, // targetStatusType !== GuestHostType.CONFIRMED,
+        hide: targetStatusType !== GuestHostType.CONFIRMED,
         label: "others:desktop.contextMenu.reportProblem",
       },
       {
         icon: <BinIcon />,
         type: "delete",
-        hide: !!matchID,
-        // hide: targetStatusType !== GuestHostType.CONFIRMED, // waiting for backend changes
+        hide: targetStatusType === GuestHostType.CONFIRMED,
         label: "hostAdd.accomodationPhotoReset",
       },
     ],

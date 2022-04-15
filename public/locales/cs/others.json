@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "ČASTO KLADENÉ DOTAZY",
-            "termsOfService": "Pravidla použití"
+            "termsOfService": "Pravidla použití",
+            "yourSafety": "Vaše bezpečnost"
         },
         "words": {
             "idWithData": "ID: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "Email nebyl ověřen",
             "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
             "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
-            "idNotVerified": ""
+            "idNotVerified": "",
+            "changesInProgress": "Probíhající změny..."
         },
         "housing": "Ubytování",
         "confirmation": {

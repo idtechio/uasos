@@ -1,7 +1,5 @@
 import { useTranslation } from "next-i18next";
-import React, { useCallback } from "react";
-import { useQueryClient } from "react-query";
-import { QueryKeys } from "../../../queries/queryKeys";
+import React from "react";
 import { useDeleteItem } from "../../../queries/useListing";
 import HomeIllustration from "../../../style/svgs/home_illustration.svg";
 import ButtonCta from "../ButtonCta";
@@ -26,21 +24,8 @@ export default function DeleteOfferForm({
 }) {
   const { t } = useTranslation();
   const { mutate, isError, error, isSuccess, isLoading } = useDeleteItem();
-  const queryClient = useQueryClient();
 
   const handleDelete = () => mutate({ targetID, targetType });
-
-  const closeAfterSuccess = useCallback(() => {
-    if (targetType === TargetTypes.GUESTS) {
-      queryClient.invalidateQueries([QueryKeys.GET_REQUESTS_LIST]);
-    }
-
-    if (targetType === TargetTypes.HOSTS) {
-      queryClient.invalidateQueries([QueryKeys.GET_OFFERS_LIST]);
-    }
-
-    close();
-  }, [queryClient, targetType, close]);
 
   return (
     <FormWrapper>
@@ -59,7 +44,7 @@ export default function DeleteOfferForm({
 
           <ButtonCta
             style={{ marginTop: 88 }}
-            onPress={closeAfterSuccess}
+            onPress={close}
             anchor={t("others:common.buttons.close")}
           />
         </>

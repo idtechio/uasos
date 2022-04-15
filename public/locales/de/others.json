@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "FAQ",
-            "termsOfService": "Bedingungen der Dienstleistung"
+            "termsOfService": "Bedingungen der Dienstleistung",
+            "yourSafety": ""
         },
         "words": {
             "idWithData": "Id: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "E-Mail nicht verifiziert",
             "accountInCreation": "",
             "emailAlreadyInUse": "",
-            "idNotVerified": ""
+            "idNotVerified": "",
+            "changesInProgress": ""
         },
         "housing": "Gehäuse",
         "confirmation": {

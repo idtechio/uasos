@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "GYIK",
-            "termsOfService": "Szolgáltatási feltételek"
+            "termsOfService": "Szolgáltatási feltételek",
+            "yourSafety": "Az Ön biztonsága"
         },
         "words": {
             "idWithData": "Id: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "E-mail cím nincs ellenőrizve",
             "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
             "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel.",
-            "idNotVerified": ""
+            "idNotVerified": "",
+            "changesInProgress": "Folyamatban lévő változások..."
         },
         "housing": "Lakhatás",
         "confirmation": {

@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "FAQ",
-            "termsOfService": "Warunki świadczenia usług"
+            "termsOfService": "Warunki świadczenia usług",
+            "yourSafety": "Twoje bezpieczeństwo"
         },
         "words": {
             "idWithData": "ID: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "E-mail nie został zweryfikowany",
             "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach.",
             "emailAlreadyInUse": "Adres e-mail powiązany z wybranym kontem dostawcy logowania jest już używany w naszym systemie. spróbuj zalogować się ponownie za pomocą innej metody logowania.",
-            "idNotVerified": "Tożsamość niezweryfikowana"
+            "idNotVerified": "Tożsamość niezweryfikowana",
+            "changesInProgress": "Zmiany w toku..."
         },
         "housing": "Nocleg",
         "confirmation": {

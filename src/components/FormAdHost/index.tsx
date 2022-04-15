@@ -226,7 +226,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
       callbacks: MutateCallbacks
     ) => {
       if (data?.id) {
-        mutateUpdate(payload as EditHostProps, callbacks);
+        mutateUpdate({ ...data, ...payload } as OfferProps, callbacks);
         return;
       }
 
@@ -440,8 +440,8 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
           )}
-
-          {/* <View>
+          {/* 
+          <View>
             <InputControlLabel>
               {t("others:forms.createShelter.addPhotoHeader")}
             </InputControlLabel>

@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "ÎNTREBĂRI FRECVENTE",
-            "termsOfService": "Termeni și condiții de utilizare"
+            "termsOfService": "Termeni și condiții de utilizare",
+            "yourSafety": ""
         },
         "words": {
             "idWithData": "Id: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "Email neverificat",
             "accountInCreation": "Contul dumneavoastră este creat, reîmprospătați pagina după câteva secunde",
             "emailAlreadyInUse": "Adresa de e-mail folosită este deja utilizată în sistemul nostru. Vă rugăm să încercați să încercați să vă conectați printr-o metodă diferită",
-            "idNotVerified": "ID-ul nu a fost verificat"
+            "idNotVerified": "ID-ul nu a fost verificat",
+            "changesInProgress": ""
         },
         "housing": "Locuință",
         "confirmation": {

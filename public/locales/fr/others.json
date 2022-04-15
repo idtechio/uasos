@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "FAQ",
-            "termsOfService": "Conditions d'utilisation"
+            "termsOfService": "Conditions d'utilisation",
+            "yourSafety": ""
         },
         "words": {
             "idWithData": "Identifiant: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "E-mail non vérifié",
             "accountInCreation": "",
             "emailAlreadyInUse": "",
-            "idNotVerified": ""
+            "idNotVerified": "",
+            "changesInProgress": ""
         },
         "housing": "Logement",
         "confirmation": {

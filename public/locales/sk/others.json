@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "ČASTO KLADENÉ OTÁZKY",
-            "termsOfService": "Pravidla používania"
+            "termsOfService": "Pravidla používania",
+            "yourSafety": "Vaša bezpečnosť"
         },
         "words": {
             "idWithData": "ID: {{id}}",
@@ -232,7 +233,8 @@
             "emailNotVerified": "Email nebol overený",
             "accountInCreation": "Vaše konto sa vytvára, po niekoľkých sekundách obnovte stránku.",
             "emailAlreadyInUse": "E-mail spojený s vybraným účtom poskytovateľa prihlásenia je už v našom systéme použitý. Skúste sa prosím prihlásiť znova prostredníctvom iného spôsobu prihlásenia.",
-            "idNotVerified": "ID neoverené"
+            "idNotVerified": "ID neoverené",
+            "changesInProgress": "Prebiehajúce zmeny..."
         },
         "housing": "Ubytovanie",
         "confirmation": {

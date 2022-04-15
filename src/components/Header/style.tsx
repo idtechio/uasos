@@ -8,7 +8,7 @@ export const HeaderPage = styled.View`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  z-index: 3;
+  z-index: 10;
   height: 72px;
 `;
 
@@ -21,6 +21,7 @@ export const Container = styled.View`
   top: 0;
   z-index: 100;
   width: 100%;
+  z-index: 10;
 `;
 
 export const ServiceLogo = styled.View``;

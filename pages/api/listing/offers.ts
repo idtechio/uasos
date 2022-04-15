@@ -28,7 +28,7 @@ enum GuestHostType {
   REJECTED = "rejected", // match rejected by one side
 }
 
-enum MatchStatus {
+export enum MatchStatus {
   ACCEPTED = "accepted", // match accepted by guest and by host
   REJECTED = "rejected", // match rejected by guest or by host
   TIMEOUT = "timeout", // timeout during awaiting for guest and host response
@@ -116,7 +116,7 @@ type HostListitem = OfferProps & {
   host_id: string;
   host_name: string;
   host_status: GuestHostStatus;
-  match_id: string;
+  match_id?: string;
   guest_id: string;
   guest_name: string;
   guest_status: GuestHostStatus;

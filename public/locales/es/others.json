@@ -16,7 +16,8 @@
         },
         "footer": {
             "FAQ": "",
-            "termsOfService": ""
+            "termsOfService": "",
+            "yourSafety": ""
         },
         "words": {
             "idWithData": "",
@@ -232,7 +233,8 @@
             "emailNotVerified": "",
             "accountInCreation": "",
             "emailAlreadyInUse": "",
-            "idNotVerified": ""
+            "idNotVerified": "",
+            "changesInProgress": ""
         },
         "housing": "",
         "confirmation": {
