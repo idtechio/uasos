@@ -93,8 +93,7 @@ const UploadInput = ({
             toggleLoading(false);
           });
         },
-        error(err) {
-          console.log(err.message);
+        error() {
           toggleLoading(false);
         },
       });
