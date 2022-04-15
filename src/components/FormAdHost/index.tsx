@@ -36,7 +36,7 @@ import {
 } from "../../queries/useOffersList";
 import { OfferProps } from "../../../pages/api/listing/offers";
 import { AuthContext } from "../../../pages/_app";
-// import FormUpload from "../Inputs/FormUpload";
+import FormUpload from "../Inputs/FormUpload";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
 
@@ -441,7 +441,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             </View>
           )}
 
-          {/* <View>
+          <View>
             <InputControlLabel>
               {t("others:forms.createShelter.addPhotoHeader")}
             </InputControlLabel>
@@ -449,7 +449,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               label={t("others:forms.generic.addPhoto")}
               name="advancedHost.uploadedPhotos"
             />
-          </View> */}
+          </View>
 
           <View>
             <InputControlLabel>{t("hostAdd.guestCount")}</InputControlLabel>
