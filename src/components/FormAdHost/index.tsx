@@ -440,8 +440,8 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
           )}
-
-          {/* <View>
+          {/* 
+          <View>
             <InputControlLabel>
               {t("others:forms.createShelter.addPhotoHeader")}
             </InputControlLabel>
