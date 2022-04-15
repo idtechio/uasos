@@ -74,7 +74,7 @@ export default function FromRegisterWithSocials() {
             : ""
           : account?.name,
         email: identity && identity.email ? identity?.email : "",
-        smsNotification: false,
+        smsNotification: true,
         preferredLanguage: "pl",
       },
     },
@@ -118,7 +118,10 @@ export default function FromRegisterWithSocials() {
 
   const {
     formState: { errors },
+    watch,
   } = form;
+
+  const smsNotification = watch("registerWithSocials.smsNotification");
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -218,6 +221,7 @@ export default function FromRegisterWithSocials() {
                 rules={{
                   required: false,
                 }}
+                value={smsNotification}
                 name="registerWithSocials.smsNotification"
                 label={` ${t(
                   "others:forms.userRegistration.agreeOnSmsCommunication"

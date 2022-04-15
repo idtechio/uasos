@@ -71,7 +71,7 @@ export default function FormRegisterUser() {
   const form = useForm<FormType>({
     defaultValues: {
       registrationUserForm: {
-        smsNotification: false,
+        smsNotification: true,
         showPassword: false,
         preferredLanguage: "pl",
       },
@@ -97,6 +97,7 @@ export default function FormRegisterUser() {
 
   passwordInputRef.current = watch("registrationUserForm.password", "");
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
+  const smsNotification = watch("registrationUserForm.smsNotification");
 
   const parseError = (error: string) => {
     if (
@@ -195,6 +196,7 @@ export default function FormRegisterUser() {
       }
     }
   };
+
   return (
     <FormProvider {...form}>
       {submitRequstState.loading && (
@@ -265,6 +267,7 @@ export default function FormRegisterUser() {
               rules={{
                 required: false,
               }}
+              value={smsNotification}
               name="registrationUserForm.smsNotification"
               label={` ${t(
                 "others:forms.userRegistration.agreeOnSmsCommunication"
