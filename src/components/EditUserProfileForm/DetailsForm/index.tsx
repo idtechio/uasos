@@ -58,7 +58,7 @@ const getFormDefaultValues: (
     phonePrefix: identity?.phoneNumber
       ? getPhonePrefix(identity.phoneNumber)
       : undefined,
-    smsNotification: account?.smsNotification.valueOf(),
+    smsNotification: account?.smsNotification ?? true,
   };
 };
 
@@ -87,7 +87,7 @@ export default function UserDetailsForm({
         email: data.email,
         phone: `${data.phonePrefix}${data.phone}`,
         preferredLang: data.preferredLanguage,
-        smsNotification: data.smsNotification ?? false,
+        smsNotification: data.smsNotification,
       };
       await Authorization.updateMail(payload.email);
       mutate(
