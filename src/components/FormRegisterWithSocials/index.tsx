@@ -22,8 +22,8 @@ import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { FirebaseError } from "@firebase/util";
-import FormCheckbox from "../Inputs/FormCheckbox";
 import { css } from "styled-components/native";
+import SmsNotificationInput from "../EditUserProfileForm/DetailsForm/Inputs/SmsNotificationInput";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -210,24 +210,15 @@ export default function FromRegisterWithSocials() {
             />
           </CompositionSection>
           <CompositionSection padding={[20, 0, 0, 0]}>
-            <div>
-              <FormCheckbox
-                styles={{
-                  checkboxFieldWrapper: css`
-                    align-items: flex-start;
-                  `,
-                }}
-                isCentered={false}
-                rules={{
-                  required: false,
-                }}
-                value={smsNotification}
-                name="registerWithSocials.smsNotification"
-                label={` ${t(
-                  "others:forms.userRegistration.agreeOnSmsCommunication"
-                )}`}
-              />
-            </div>
+            <SmsNotificationInput
+              wrapperStyleProp={css`
+                align-items: flex-start;
+              `}
+              name="registerWithSocials.smsNotification"
+              rules={{
+                required: false,
+              }}
+            />
           </CompositionSection>
 
           <FormFooter>
