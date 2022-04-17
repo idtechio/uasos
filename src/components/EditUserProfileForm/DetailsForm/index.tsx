@@ -58,7 +58,7 @@ const getFormDefaultValues: (
     phonePrefix: identity?.phoneNumber
       ? getPhonePrefix(identity.phoneNumber)
       : undefined,
-    smsNotification: account?.smsNotification ?? true,
+    smsNotification: account?.smsNotification.valueOf() ?? true,
   };
 };
 
