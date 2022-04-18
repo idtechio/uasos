@@ -28,7 +28,10 @@
             "or": "Ou",
             "badNews": "Mauvaise nouvelle",
             "prefix": "",
-            "dashboard": ""
+            "dashboard": "",
+            "publicShelters": "",
+            "addMore": "",
+            "remember": ""
         },
         "links": {
             "re-sendCode": "Renvoyer le code",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "nous avons envoyé un code de vérification à votre adresse e-mail. Cliquez sur le lien pour le vérifier",
-            "verification": "Vérification de l'e-mail"
+            "verification": "Vérification de l'e-mail",
+            "errorTryAgainInSeconds": "",
+            "errorTryAgain": "",
+            "errorTooManyRequestsInSeconds": ""
         },
         "nationalities": {
             "ukrainians": "Ukrainiens",
@@ -70,7 +76,10 @@
                 "house": "Maison"
             },
             "photosList": "Photo du logement proposé",
-            "acceptElderly": "J'accepte les personnes âgées"
+            "acceptElderly": "J'accepte les personnes âgées",
+            "addPhotoHeaderWithLimit3": "",
+            "numberOfRooms": "",
+            "roomCapacity": ""
         },
         "userRegistration": {
             "enterDetails": "Entrez vos coordonnées",
@@ -151,7 +160,8 @@
             "country": "Pays",
             "email": "E-mail",
             "emailAddress": "Adresse E-mail",
-            "closestLargeCity": "La grande ville la plus proche"
+            "closestLargeCity": "La grande ville la plus proche",
+            "occupancy": ""
         },
         "createRefuge": {
             "shelter": {
@@ -234,7 +244,8 @@
             "accountInCreation": "",
             "emailAlreadyInUse": "",
             "idNotVerified": "",
-            "changesInProgress": ""
+            "changesInProgress": "",
+            "idVerified": ""
         },
         "housing": "Logement",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "",
             "cancellation": ""
         },
-        "accommodationSearch": ""
+        "accommodationSearch": "",
+        "exitToIDnow": ""
     },
     "reportProblem": {
         "popup": {
             "description": "Informez-nous de tout problème en utilisant le formulaire ci-dessous",
             "problemReported": "Le problème a été signalé",
-            "thanksForLettingKnow": "Merci de nous avoir informés de cette situation.",
+            "thanksForLettingKnow": "Merci de nous avoir informés de cette situation. Merci de nous avoir informés de cette situation. Nous allons chercher une autre correspondance pour vous.",
             "reasons": {
                 "guestNotNeedHelp": "Mon invité n'a plus besoin de logement",
                 "hostCantHelp": "Mon hôte ne peut plus fournir de logement",
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "Nous aidons les réfugiés à trouver un logement <b>gratuit<\/b> chez des personnes et institutions qui souhaitent aider en <b>Pologne, République Tchèque, Hongrie et Slovaquie<\/b> à travers une plateforme automatique.",
-        "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux."
+        "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux.",
+        "waysToStaySafe": ""
     },
     "userRegistration": {
         "errors": {
@@ -285,5 +298,20 @@
             "invalidCode": "Code non valide",
             "phoneLinkingFailed": "Une erreur s'est produite lors de l'association du numéro de téléphone à votre compte, connectez-vous à nouveau et réessayez."
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": ""
+        },
+        "addShelterMail": "",
+        "description": ""
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "",
+        "reviewedTips": "",
+        "getToKnowHost": "",
+        "exchangeFacebook": "",
+        "useTranslator": "",
+        "getToKnowGuest": ""
     }
 }
