@@ -8,20 +8,20 @@
         "title": "Segítünk menedéket találni az ukrajnai háború áldozatainak",
         "description_part1": "Segítünk a menekülteknek automatikusan",
         "freeOfCharge": "ingyenes",
-        "description_part2": "szállást találni a segíteni akaró embereken és intézményeken keresztül.",
+        "description_part2": "szállás, segíteni akaró magánszemélyek és intézmények felajánlásain keresztül.",
         "lookingForHelp": "Szállást keresek",
         "shareHelp": "Segíteni szeretnék"
     },
     "likeToHelp": {
-        "title": "Szeretene segíteni",
-        "details": "Regisztráljon bármilyen típusú szállást, amelyet <b>ingyenesen<\/b> ajánl fel az ukrajnai háború áldozatainak.",
+        "title": "Szeretene segíteni?",
+        "details": "Regisztráljon bármilyen típusú szállást, amelyet ingyenesen ajánl fel az ukrajnai háború áldozatainak",
         "cta": "Szállás felajánlása"
     },
     "weMatched": {
         "title": "Eddig...",
         "cards": {
-            "helpedPeople": "támogatott menekültek",
-            "lookingForHelp": "a menekültek még mindig segítséget keresnek",
+            "helpedPeople": "menekült talált szállást",
+            "lookingForHelp": "menekült vár még szállásra",
             "currentOffers": "Jelenleg elérhető ajánlatok"
         }
     },
@@ -75,7 +75,7 @@
         }
     },
     "hero": {
-        "description": "Menekülteknek segítünk automatikusan szállást találni az önkéntes felajánlásokat biztosító emberek és intézmények által.",
+        "description": "Segítünk a menekülteknek automatikusan ingyenes szállást találni magánszemélyek és intézmények  önkéntes felajánlásain keresztül.",
         "lookingForHelp": "Szállást keresek",
         "shareHelp": "Segíteni szeretnék",
         "title": "Segítünk szállást találni az ukrajnai háború áldozatainak"
