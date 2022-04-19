@@ -176,12 +176,14 @@ export const Description = styled.Text<CommonProp>(
 export const DropdownsWrapper = styled.View<CommonProp>(
   ({ theme }) => css`
     gap: 14px 0px;
+    margin-bottom: 24px;
 
     ${theme.getBreakPoint({
       md: css`
         flex-direction: row;
         gap: 0px 10px;
         justify-content: space-between;
+        margin-bottom: 31px;
       `,
     })};
   `
