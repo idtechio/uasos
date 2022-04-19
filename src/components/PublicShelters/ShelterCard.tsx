@@ -13,12 +13,16 @@ import { ButtonCta } from "../Buttons";
 
 export const ShelterCard = ({
   name,
-  email,
-  phone_num,
+  country,
+  city,
+  occupancy,
+  phoneNumber,
 }: {
   name: string;
-  email: string;
-  phone_num: string;
+  country: string;
+  city: string;
+  occupancy: string;
+  phoneNumber: string;
 }) => {
   const { t } = useTranslation();
 
@@ -28,29 +32,31 @@ export const ShelterCard = ({
 
   return (
     <Container>
-      <Header>
-        <Title>Warsaw - Torwar</Title>
-
-        <Button onPress={toogleMap}>
-          <ChevronDownIcon
-            style={{
-              transform: isMapVisible ? "rotate(180deg)" : "rotate(0)",
-            }}
-          />
-        </Button>
-      </Header>
-
-      {isMapVisible && <MapWrapper />}
-
       <FlexContainer>
-        <View>
+        <Column>
+          <Header>
+            <View>
+              <Country>{country}</Country>
+              <Title>{name}</Title>
+            </View>
+
+            <Button onPress={toogleMap}>
+              <ChevronDownIcon
+                style={{
+                  transform: isMapVisible ? "rotate(180deg)" : "rotate(0)",
+                }}
+              />
+            </Button>
+          </Header>
+
+          {isMapVisible && <MapWrapper />}
           <SectionInfo>
             <Info>
               <MarkerIcon width={15} height={15} />
               <p
                 dangerouslySetInnerHTML={{
-                  __html: t("others:forms.generic.emailAddressWithData", {
-                    mail: email,
+                  __html: t("others:forms.generic.city", {
+                    city,
                   }),
                 }}
               />
@@ -60,7 +66,9 @@ export const ShelterCard = ({
 
               <p
                 dangerouslySetInnerHTML={{
-                  __html: t("others:forms.generic.guest", { name }),
+                  __html: t("others:forms.generic.occupancy", {
+                    number: occupancy,
+                  }),
                 }}
               />
             </Info>
@@ -70,7 +78,7 @@ export const ShelterCard = ({
               <p
                 dangerouslySetInnerHTML={{
                   __html: t("others:forms.generic.phoneNumberWithData", {
-                    number: phone_num,
+                    number: phoneNumber,
                   }),
                 }}
               />
@@ -81,13 +89,15 @@ export const ShelterCard = ({
             <ButtonCta
               anchor={
                 <FlexTextIcon>
-                  <ButtonText>adsadsa</ButtonText>
+                  <ButtonText>
+                    {t("others:publicShelters.details.howToGetThere")}
+                  </ButtonText>
                   <PlaneIcon />
                 </FlexTextIcon>
               }
             />
           </Footer>
-        </View>
+        </Column>
 
         <DesktopMapWrapper />
       </FlexContainer>
@@ -109,6 +119,18 @@ const Container = styled.View`
   border-radius: 5px;
   height: fit-content;
 `;
+
+const Column = styled.View<CommonProp>(
+  ({ theme }) => css`
+    flex-grow: 1;
+
+    ${theme.getBreakPoint({
+      md: css`
+        flex-grow: 0;
+      `,
+    })};
+  `
+);
 
 const Header = styled.View`
   flex-direction: row;
@@ -139,10 +161,17 @@ const Button = styled.TouchableOpacity<CommonProp>(
     display: block;
 
     ${theme.getBreakPoint({
-      md: css`
+      lg: css`
         display: none;
       `,
     })};
+  `
+);
+
+const Country = styled.Text<CommonProp>(
+  ({ theme }) => css`
+    font-size: 16px;
+    color: ${theme.colors.headings};
   `
 );
 
@@ -156,6 +185,7 @@ const Title = styled.Text<CommonProp>(
 );
 
 const SectionInfo = styled.View`
+  flex-grow: 1;
   gap: 18px 0px;
   padding: 15px 0px;
   border-top-width: 2px;
@@ -165,6 +195,8 @@ const SectionInfo = styled.View`
 
 const FlexContainer = styled.View<CommonProp>(
   ({ theme }) => css`
+    flex-grow: 1;
+
     ${theme.getBreakPoint({
       md: css`
         flex-direction: row;

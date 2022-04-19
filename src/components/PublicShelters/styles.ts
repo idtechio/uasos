@@ -36,7 +36,7 @@ export const Content = styled.View<CommonProp>(
     width: 100%;
 
     ${theme.getBreakPoint({
-      md: css`
+      xl: css`
         width: 70%;
       `,
     })};
@@ -210,5 +210,12 @@ export const Label = styled.Text<CommonProp>(
         line-height: 28px;
       `,
     })};
+  `
+);
+
+export const SheltersContainer = styled.View<CommonProp>(
+  () => css`
+    gap: 50px 0px;
+    padding-bottom: 50px;
   `
 );
