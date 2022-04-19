@@ -38,12 +38,7 @@ export default function EmailVerificationModal({
             {t("others:common.links.re-sendCode")}
           </StyledTextButton>
         </TouchableOpacity>
-        <StyledText disabled={error || seconds !== 0}>
-          {/* {error
-            ? `Too many requests. Try again in ${seconds} seconds`
-            : seconds !== 0
-            ? `Mail hasn’t arrived? Try again in ${seconds} seconds`
-            : "Mail hasn’t arrived? Try again"} */}
+        <StyledText disabled={error || seconds !== 0} border={true}>
           {error
             ? t("others:common.email.errorTooManyRequestsInSeconds", {
                 number: seconds,

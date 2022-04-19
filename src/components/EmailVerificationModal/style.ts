@@ -4,6 +4,7 @@ import { Theme } from "../../style/theme.config";
 type Props = {
   disabled?: boolean;
   theme: Theme;
+  border?: boolean;
 };
 export const StyledText = styled.Text<Props>`
   font-size: 14px;
@@ -12,13 +13,22 @@ export const StyledText = styled.Text<Props>`
     disabled ? theme.colors.alert : theme.colors.text};
   margin: 20px 0;
   text-align: center;
+  ${({ border, theme }) =>
+    border &&
+    `
+    margin: 0;
+    paddingBottom: 2px;
+    borderBottomColor: ${theme.forms.border};
+    borderBottomWidth: 1px;
+    borderStyle: dashed;
+    `}
 `;
 export const StyledTextButton = styled.Text<Props>`
   font-size: 16px;
   font-weight: 700;
   color: ${({ disabled, theme }) =>
     disabled ? "#D9D9D9" : theme.colors.headings};
-  margin: 20px 0;
+  margin: 10px 0;
   text-align: center;
 `;
 export const StyledHeader = styled.Text`
