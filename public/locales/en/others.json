@@ -28,7 +28,10 @@
             "or": "Or",
             "badNews": "Bad news",
             "prefix": "Prefix",
-            "dashboard": "Dashboard"
+            "dashboard": "Dashboard",
+            "publicShelters": "Public shelters",
+            "addMore": "Add more",
+            "remember": "Remember:"
         },
         "links": {
             "re-sendCode": "Re-send code",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "we have sent a verification code to your email address. Click link to verify it",
-            "verification": "Email verification"
+            "verification": "Email verification",
+            "errorTryAgainInSeconds": "Mail hasn't arrived? Try again in {{number}} seconds",
+            "errorTryAgain": "Mail hasnt arrived? Try again.",
+            "errorTooManyRequestsInSeconds": "Too many requests. Try again in {{number}} seconds"
         },
         "nationalities": {
             "ukrainians": "Ukrainians",
@@ -70,7 +76,10 @@
                 "house": "House"
             },
             "photosList": "Photo of the shelter offered",
-            "acceptElderly": "I will accept elderly people"
+            "acceptElderly": "I will accept elderly people",
+            "addPhotoHeaderWithLimit3": "Add a photo of the offered accommodation (maximum 3)",
+            "numberOfRooms": "Number of rooms",
+            "roomCapacity": "Room capacity"
         },
         "userRegistration": {
             "enterDetails": "Enter your details",
@@ -151,7 +160,8 @@
             "country": "Country",
             "email": "Email",
             "emailAddress": "E-mail address",
-            "closestLargeCity": "The closest large city"
+            "closestLargeCity": "The closest large city",
+            "occupancy": "Occupancy: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -234,7 +244,8 @@
             "accountInCreation": "Your account is being created, refresh page after couple seconds.",
             "emailAlreadyInUse": "Email linked to selected login provider account is already used in our system. please try to log again via different login method.",
             "idNotVerified": "ID not verified",
-            "changesInProgress": "Changes in progress…"
+            "changesInProgress": "Changes in progress…",
+            "idVerified": "ID verification successful"
         },
         "housing": "Housing",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "accepted",
             "cancellation": "cancellation"
         },
-        "accommodationSearch": "Accommodation search"
+        "accommodationSearch": "Accommodation search",
+        "exitToIDnow": "Exit to IDnow"
     },
     "reportProblem": {
         "popup": {
             "description": "Notify us of any problems \u2028using the form below",
             "problemReported": "The problem has been reported",
-            "thanksForLettingKnow": "Thank you for letting us know about this situation.",
+            "thanksForLettingKnow": "Thank you for letting us know about this situation. Thank you for letting us know about this situation. We will look for another match for you.",
             "reasons": {
                 "guestNotNeedHelp": "My guest doesn't require accommodation anymore",
                 "hostCantHelp": "My host can't provide accommodation anymore",
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "We help refugees find automatically <b>free<\/b> accommodation in <b>Poland, Czechia, Hungary and Slovakia,<\/b> offered by people and institutions willing to help.",
-        "comingSoon": "Coming soon: transport, job search and medical advice functionalities"
+        "comingSoon": "Coming soon: transport, job search and medical advice functionalities",
+        "waysToStaySafe": "Learn about ways to stay safe"
     },
     "userRegistration": {
         "errors": {
@@ -285,5 +298,20 @@
             "invalidCode": "Invalid Code",
             "phoneLinkingFailed": "Error occurred while linking phone number to your account, log in and try again"
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": "How to get there"
+        },
+        "addShelterMail": "If you want to add your public shelter, please contact us at {{mail}}",
+        "description": "You can find here a list of publicly available shelters. Remember to call the place and confirm the availability before departing. \n"
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "<b>Remember to stay safe<\/b>\u2028Line 1 lorem ipsum\u2028Line 2 lorem ipsum",
+        "reviewedTips": "I have reviewed safety tips",
+        "getToKnowHost": "Get to know your host",
+        "exchangeFacebook": "Exchange your Facebook\/Instagram details, make a video call before live meeting.",
+        "useTranslator": "In case you don't speak the same language - connect via e-mail\/WhatsApp\/SMS and use e.g. Google Translate.",
+        "getToKnowGuest": "Get to know your guest"
     }
 }

@@ -5,6 +5,7 @@
         "city": "",
         "occupancy": "",
         "phoneNumber": "",
-        "howToGetThere": ""
+        "howToGetThere": "",
+        "country": ""
     }
 }
