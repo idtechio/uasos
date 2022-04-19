@@ -1,0 +1,11 @@
+{
+    "001": {
+        "name": "ÁLTALÁNOS INFORMÁCIÓK",
+        "content": {
+            "001": {
+                "question": "Mire szolgál a portál?",
+                "answer": "Az uaSOS.org platform összekapcsolja a szállást kereső menekülteket a szállást kínáló magánszemélyekkel, intézményekkel, civil szervezetekkel és cégekkel. Más, hasonló adatokat gyűjtő kezdeményezésekkel ellentétben az uaSOS.org platform automatikusan összekapcsolja a rászorulók bejelentéseit a segítségre vonatkozó ajánlatokkal, hogy a lehető legszélesebb körnek nyújthassa a lehető legjobb segítséget. A platformnak köszönhetően a rászorulóknak nem kell több száz elérhető segélyajánlatot böngészniük, hanem a legmegfelelőbb és legaktuálisabb, az igényeikre szabott ajánlatot kapják. A platformon való regisztráció nem anonim, ami mindkét fél számára biztonságot nyújt."
+            }
+        }
+    }
+}
