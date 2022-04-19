@@ -1,289 +1,317 @@
 {
-    "common": {
-        "buttons": {
-            "back": "Înapoi",
-            "continue": "Continuați",
-            "confirm": "Confirmați",
-            "next": "Următorul",
-            "backToDesktop": "Înapoi la pagina principală",
-            "cancel": "Anulează",
-            "backToProfile": "Înapoi la profil",
-            "verify": "Verifică",
-            "report": "Raport",
-            "update": "Actualizare",
-            "reject": "Respingeți",
-            "close": "Închideți"
-        },
-        "footer": {
-            "FAQ": "ÎNTREBĂRI FRECVENTE",
-            "termsOfService": "Termeni și condiții de utilizare",
-            "yourSafety": ""
-        },
-        "words": {
-            "idWithData": "Id: {{id}}",
-            "renew": "Reînnoiți",
-            "additionalInformation": "Informații suplimentare",
-            "congratulations": "Felicitări",
-            "thankYou": "Mulțumesc",
-            "or": "Sau",
-            "badNews": "Ne pare rău",
-            "prefix": "Prefix",
-            "dashboard": "Tabloul de bord"
-        },
-        "links": {
-            "re-sendCode": "Retrimite codul",
-            "resetPassword": "Resetare parolă",
-            "resetPasswordLong": "Ați uitat parola? <b><u>Click aici<\/u><\/b>"
-        },
-        "sms": {
-            "verification": "Verificarea prin SMS",
-            "verificationSuccess": "Verificarea SMS-ului a fost finalizată cu succes",
-            "sentInfo": "Introduceți codul de verificare trimis la numărul de telefon {{phoneNumber}}.",
-            "verificationFail": "Oops! Ceva nu a mers bine, încercați din nou sau generați un nou cod"
-        },
-        "actions": {
-            "showPassword": "Afișați parola",
-            "details": "Detalii",
-            "addOffer": "Adăugați oferta",
-            "addSubmission": "Solicitați asistență"
-        },
-        "email": {
-            "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",
-            "verification": "Verificare e-mail"
-        },
-        "nationalities": {
-            "ukrainians": "Ucrainenii",
-            "ukrainian": "Ucrainean",
-            "nonUkrainian": "Non-Ucrainean"
-        }
+  "common": {
+    "buttons": {
+      "back": "Înapoi",
+      "continue": "Continuați",
+      "confirm": "Confirmați",
+      "next": "Următorul",
+      "backToDesktop": "Înapoi la pagina principală",
+      "cancel": "Anulează",
+      "backToProfile": "Înapoi la profil",
+      "verify": "Verifică",
+      "report": "Raport",
+      "update": "Actualizare",
+      "reject": "Respingeți",
+      "close": "Închideți"
     },
-    "forms": {
-        "createShelter": {
-            "street": "Strada",
-            "agreeForShelterVerification": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar)",
-            "addPhotoHeader": "Adăugați o fotografie a cazării oferite",
-            "buildingNo": "Clădirea nr.",
-            "apartmentNo": "Apartament nr.",
-            "accommodationHeader": "Furnizați informații despre cazarea pe care o oferiți",
-            "groupsHostAccepts": "Ce tipuri de grupuri puteți accepta?",
-            "accommodationTypes": {
-                "house": "Casă"
-            },
-            "photosList": "Imagini cu locuința oferită",
-            "acceptElderly": "Accept persoane în vârstă"
-        },
-        "userRegistration": {
-            "enterDetails": "Introduceți detaliile dvs.",
-            "confirmPassword": "Confirmați parola",
-            "agreeOnSmsCommunication": "Doresc să fiu notificat prin SMS despre eventualele oferte de potrivire",
-            "language": "Limba",
-            "proposeCreateAccount": "Dacă nu aveți un cont, vă puteți crea unul.",
-            "newPassword": "Parolă nouă",
-            "userRegistration": "Înregistrarea utilizatorului",
-            "preferredLanguage": "Limba de comunicare preferată",
-            "fillMissingData": "Completați datele lipsă",
-            "validations": {
-                "passwordMismatch": "Parolele sunt diferite",
-                "passwordLength": "Parola trebuie să aibă cel puțin 8 caractere"
-            },
-            "password": "Parola (min. 8 caractere)",
-            "errors": {
-                "duplicatedMail": "Adresa de e-mail folosită pentru logare este deja folosită în sistemul nostru. Vă rugăm să încercați să vă logați din nou printr-o metodă de conectare diferită."
-            }
-        },
-        "match": {
-            "guestProfile": "Profilul oaspetelui",
-            "numberOfPeopleWithData": "Numărul maxim de persoane: <b>{{number}}<\/b>",
-            "durationWithData": "Durata șederii: <b>{{number}} {{unit}}<\/b>",
-            "specificCity": "Oraș specific",
-            "confirmed": "Oaspetele\/gazda dvs. tocmai a confirmat o ofertă. Luați legătura cu el\/ea pentru a aranja detaliile.",
-            "accommodationTypeWithData": "Tipul de cazare: <b>{{type}}<\/b>",
-            "additionalInfoOnAccommodation": "Informații suplimentare despre cazare",
-            "usersWarning": "<b>Din motive de siguranță, țineți-vă rudele la curent cu persoanele pe care le adăpostiți. Pentru orice eventualitate:<\/b>\n<ul>\n<li>verificați identitatea persoanei pe care o adăpostiți,<\/li>\n<li>asigurați-vă că componența grupului corespunde descrierii inițiale<\/li>\n<\/ul>",
-            "individual": "Individual",
-            "host": {
-                "formSent": "Formular trimis",
-                "formSentThanks": "Vă mulțumim că v-ați exprimat dorința de a ajuta. Proprietatea dumneavoastră a fost adăugată pe listă. Vom căuta în baza noastră de date cu persoanele aflate în nevoie și, odată ce vom găsi persoana potrivită, vă vom anunța.",
-                "received": "Vă mulțumim foarte mult pentru confirmarea ofertei primite. De îndată ce vom primi ambele confirmări, vă vom anunța."
-            },
-            "searchAddress": "Adresa de căutare: <b>{{city}}<\/b>",
-            "rejected": "Potențialul\/a dvs. oaspete\/gazdă a refuzat oferta. Propunerea dvs. va fi reintrodusă în baza de oferte.  Vă vom împărtăși următoarea ofertă imediat ce o vom găsi.",
-            "refuge": {
-                "rejection": "Vă mulțumim pentru confirmarea deciziei dumneavoastră. Propunerea dvs. va fi reintrodusă în fondul de selecție și vă vom anunța cu privire la următoarea propunere de îndată ce vom găsi una."
-            }
-        },
-        "generic": {
-            "hostInformation": {
-                "offerTransport": "Ofer transport",
-                "takesPregnancy": "Voi accepta o persoană într-o stare avansată de sarcină (peste 6 luni)"
-            },
-            "groupInformation": {
-                "pregnancy": "Grupul include o persoană cu o sarcină avansată (peste 6 luni).",
-                "disability": "În grup există o persoană cu dizabilități",
-                "multicultural": "Din grup fac parte persoane de diferite naționalități",
-                "animals": "Grupul este însoțit de un animal de companie",
-                "elders": "Există o persoană în vârstă în grup"
-            },
-            "submited": "Formular trimis",
-            "facilityInformation": {
-                "disability": "Facilități pentru persoanele cu handicap",
-                "pregnancy": "Facilități pentru femeile însărcinate",
-                "eldery": "Facilități pentru persoanele vârstnice",
-                "diversity": "Toate naționalitățile sunt binevenite"
-            },
-            "password": "Parola",
-            "selectFromList": "Selectați din listă",
-            "cityWithData": "Oraș: {{city}}",
-            "phoneNumberWithData": "Număr de telefon: <b>{{number}}<\/b>",
-            "hostWithName": "Gazdă<b>{{name}}<\/b>",
-            "addPhoto": "Adăugați o fotografie",
-            "emailAddressWithData": "Adresa de e-mail: <b>{{mail}}<\/b>",
-            "zipCode": "Cod poștal",
-            "hostProfile": "Profilul gazdei",
-            "peopleInGroup": "Numărul de persoane din grup: <b>{{number}}<\/b>",
-            "city": "Adresă: <b>{{city}}<\/b>",
-            "groupType": "Tipul de grup: <b>{{type}}<\/b>",
-            "additionalGroupInformation": "Informații suplimentare despre grup",
-            "guest": "Oaspete",
-            "selectMultipleFromList": "Selectați din listă (alegere multiplă)",
-            "name": "Nume",
-            "phoneNumber": "Număr de telefon",
-            "country": "Țară",
-            "email": "Email",
-            "emailAddress": "Adresă de e-mail",
-            "closestLargeCity": "Cel mai apropiat oraș mare"
-        },
-        "createRefuge": {
-            "shelter": {
-                "targetCityAndSurroundings": "Oraș și împrejurimi",
-                "groupDetails": "Informații despre persoanele cu care vă mutați",
-                "anyCity": "Orice oraș",
-                "imWithPregnantOver6Months": "Sunt, sau sunt însoțită de o persoană aflată în <br \/> sarcină avansată (peste 6 luni)",
-                "whatIsTargetCountry": "În ce țară doriți să stați?",
-                "selectCountry": "Selectați țara"
-            }
-        },
-        "login": {
-            "emailOrPhone": "Adresă e-mail sau număr de telefon",
-            "login": "Autentificare",
-            "signInFacebook": "Conectați-vă cu Facebook",
-            "signInGoogle": "Conectați-vă cu Google",
-            "emailOrPhoneDetail": "E-mail sau număr de telefon",
-            "invalidPassword": "Parola furnizată nu este validă"
-        },
-        "resetPassword": {
-            "setNewPassword": "Setați o nouă parolă",
-            "header": "Furnizați o nouă parolă pentru contul dvs.",
-            "emailSent": "E-mail de resetare a parolei trimis - verificați-vă căsuța poștală",
-            "success": "Parola dvs. a fost schimbată cu succes",
-            "detail": "Dacă nu vă amintiți parola, introduceți adresa dvs. de e-mail. Vă vom trimite un link către formularul de resetare a parolei."
-        },
-        "edit": {
-            "editAccommodationHeader": "Editați informații despre cazarea pe care o oferiți"
-        },
-        "validations": {
-            "fill": {
-                "phoneNumber": "Număr de telefon"
-            }
-        },
-        "userProfile": {
-            "header": "Editarea profilului de utilizatorului"
-        },
-        "renew": {
-            "re-activateOffer": "Doriți să reactivați aplicația\/oferta?"
-        }
+    "footer": {
+      "FAQ": "ÎNTREBĂRI FRECVENTE",
+      "termsOfService": "Termeni și condiții de utilizare",
+      "yourSafety": ""
     },
-    "desktop": {
-        "lookingForSupport": "Am nevoie de ajutor",
-        "filters": {
-            "shelter": "Adăpost"
-        },
-        "host": {
-            "numberOfPeople": "Număr de persoane: Max {{maxAmount}}"
-        },
-        "offer": {
-            "status": {
-                "accepted": "Acceptat",
-                "beingConfirmed": "În curs de confirmare",
-                "awaitingGuestApproval": "Se așteaptă aprobarea oaspeților",
-                "inactive": "Inactiv",
-                "haveMatch": "Am găsit o potrivire",
-                "lookingForMatch": "Caut o potrivire",
-                "awaitingHostApproval": "În așteptarea aprobării gazdei",
-                "confirmed": "Confirmat",
-                "rejected": "Respins"
-            }
-        },
-        "refuge": {
-            "searchingAccommodation": "Caut cazare",
-            "accommodationSearch": "Căutare cazare",
-            "submission": "Trimitere",
-            "duration": "Durata: {{value}}"
-        },
-        "providingSupport": "Oferă ajutor",
-        "yourSubmission": "Formularul dumneavoastră",
-        "yourOffers": "Prezentare generală a ofertelor dumneavoastră",
-        "contextMenu": {
-            "reportProblem": "Raportați o problemă",
-            "renew": "Reînnoiți",
-            "edit": "Editați"
-        },
-        "checks": {
-            "phoneNotVerified": "Număr de telefon neverificat",
-            "emailNotVerified": "Email neverificat",
-            "accountInCreation": "Contul dumneavoastră este creat, reîmprospătați pagina după câteva secunde",
-            "emailAlreadyInUse": "Adresa de e-mail folosită este deja utilizată în sistemul nostru. Vă rugăm să încercați să încercați să vă conectați printr-o metodă diferită",
-            "idNotVerified": "ID-ul nu a fost verificat",
-            "changesInProgress": ""
-        },
-        "housing": "Locuință",
-        "confirmation": {
-            "header": "Vă mulțumim pentru decizia dumneavoastră",
-            "content": "Dacă aveți {{accepted}}, așteptați decizia celeilalte persoane. Odată ce cealaltă parte acceptă, veți primi un e-mail cu informații de contact. <br \/> În cazul {{cancellation}} , aplicația dvs. va fi returnată în grupul de aplicații active. Vă vom informa prin e-mail despre următoarea ofertă.",
-            "accepted": "acceptat",
-            "cancellation": "anulare"
-        },
-        "accommodationSearch": "Căutare cazare"
+    "words": {
+      "idWithData": "Id: {{id}}",
+      "renew": "Reînnoiți",
+      "additionalInformation": "Informații suplimentare",
+      "congratulations": "Felicitări",
+      "thankYou": "Mulțumesc",
+      "or": "Sau",
+      "badNews": "Ne pare rău",
+      "prefix": "Prefix",
+      "dashboard": "Tabloul de bord",
+      "publicShelters": "",
+      "addMore": "",
+      "remember": ""
     },
-    "reportProblem": {
-        "popup": {
-            "description": "Anunțați-ne despre orice problemă folosind formularul de mai jos",
-            "problemReported": "Problema a fost raportată",
-            "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație.  ",
-            "reasons": {
-                "guestNotNeedHelp": "Oaspetele meu nu mai are nevoie de cazare",
-                "hostCantHelp": "Gazda mea nu mai poate oferi cazare",
-                "rejectedAfterContact": "Eu\/ cealaltă parte am respins oferta după primul contact",
-                "noResponseAfterContact": "Niciun contact în ciuda mai multor încercări",
-                "notShowUp": "Gazda\/oaspetele nu s-a prezentat la locul convenit"
-            }
-        }
+    "links": {
+      "re-sendCode": "Retrimite codul",
+      "resetPassword": "Resetare parolă",
+      "resetPasswordLong": "Ați uitat parola? <b><u>Click aici</u></b>"
     },
-    "deleteOffer": {
-        "popup": {
-            "areYouSure": "Sunteți sigur că doriți să vă ștergeți postarea?",
-            "header": "Ștergeți cererea\/oferta",
-            "confirmation": "Șterge oferta\/cererea"
-        }
+    "sms": {
+      "verification": "Verificarea prin SMS",
+      "verificationSuccess": "Verificarea SMS-ului a fost finalizată cu succes",
+      "sentInfo": "Introduceți codul de verificare trimis la numărul de telefon {{phoneNumber}}.",
+      "verificationFail": "Oops! Ceva nu a mers bine, încercați din nou sau generați un nou cod"
     },
-    "offer": {
-        "popup": {
-            "renew": {
-                "expiredMsg": "Cererea \/ oferta dumneavoastră\n <b>a expirat din cauza lipsei de activitate<\/b>"
-            }
-        }
+    "actions": {
+      "showPassword": "Afișați parola",
+      "details": "Detalii",
+      "addOffer": "Adăugați oferta",
+      "addSubmission": "Solicitați asistență"
     },
-    "welcomePage": {
-        "appDescription": "Îi ajutăm pe refugiați să găsească automat cazare <b>gratuită<\/b> în <b>Polonia, Cehia, Ungaria și Slovacia,<\/b> oferită de persoane și instituții dispuse să ajute.",
-        "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală"
+    "email": {
+      "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",
+      "verification": "Verificare e-mail",
+      "errorTryAgainInSeconds": "",
+      "errorTryAgain": "",
+      "errorTooManyRequestsInSeconds": ""
+    },
+    "nationalities": {
+      "ukrainians": "Ucrainenii",
+      "ukrainian": "Ucrainean",
+      "nonUkrainian": "Non-Ucrainean"
+    }
+  },
+  "forms": {
+    "createShelter": {
+      "street": "Strada",
+      "agreeForShelterVerification": "Sunt de acord să îmi fie verificată cazarea (vizită a unui voluntar)",
+      "addPhotoHeader": "Adăugați o fotografie a cazării oferite",
+      "buildingNo": "Clădirea nr.",
+      "apartmentNo": "Apartament nr.",
+      "accommodationHeader": "Furnizați informații despre cazarea pe care o oferiți",
+      "groupsHostAccepts": "Ce tipuri de grupuri puteți accepta?",
+      "accommodationTypes": {
+        "house": "Casă"
+      },
+      "photosList": "Imagini cu locuința oferită",
+      "acceptElderly": "Accept persoane în vârstă",
+      "addPhotoHeaderWithLimit3": "",
+      "numberOfRooms": "",
+      "roomCapacity": ""
     },
     "userRegistration": {
-        "errors": {
-            "emailExist": "Utilizatorul cu acest cont există deja",
-            "phoneExist": "Acest număr de telefon este deja conectat la alt cont",
-            "tooManyRequest": "Prea multe cereri de verificare telefonică",
-            "invalidCode": "Cod invalid",
-            "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs., conectați-vă și încercați din nou"
-        }
+      "enterDetails": "Introduceți detaliile dvs.",
+      "confirmPassword": "Confirmați parola",
+      "agreeOnSmsCommunication": "Doresc să fiu notificat prin SMS despre eventualele oferte de potrivire",
+      "language": "Limba",
+      "proposeCreateAccount": "Dacă nu aveți un cont, vă puteți crea unul.",
+      "newPassword": "Parolă nouă",
+      "userRegistration": "Înregistrarea utilizatorului",
+      "preferredLanguage": "Limba de comunicare preferată",
+      "fillMissingData": "Completați datele lipsă",
+      "validations": {
+        "passwordMismatch": "Parolele sunt diferite",
+        "passwordLength": "Parola trebuie să aibă cel puțin 8 caractere"
+      },
+      "password": "Parola (min. 8 caractere)",
+      "errors": {
+        "duplicatedMail": "Adresa de e-mail folosită pentru logare este deja folosită în sistemul nostru. Vă rugăm să încercați să vă logați din nou printr-o metodă de conectare diferită."
+      }
+    },
+    "match": {
+      "guestProfile": "Profilul oaspetelui",
+      "numberOfPeopleWithData": "Numărul maxim de persoane: <b>{{number}}</b>",
+      "durationWithData": "Durata șederii: <b>{{number}} {{unit}}</b>",
+      "specificCity": "Oraș specific",
+      "confirmed": "Oaspetele/gazda dvs. tocmai a confirmat o ofertă. Luați legătura cu el/ea pentru a aranja detaliile.",
+      "accommodationTypeWithData": "Tipul de cazare: <b>{{type}}</b>",
+      "additionalInfoOnAccommodation": "Informații suplimentare despre cazare",
+      "usersWarning": "<b>Din motive de siguranță, țineți-vă rudele la curent cu persoanele pe care le adăpostiți. Pentru orice eventualitate:</b>\n<ul>\n<li>verificați identitatea persoanei pe care o adăpostiți,</li>\n<li>asigurați-vă că componența grupului corespunde descrierii inițiale</li>\n</ul>",
+      "individual": "Individual",
+      "host": {
+        "formSent": "Formular trimis",
+        "formSentThanks": "Vă mulțumim că v-ați exprimat dorința de a ajuta. Proprietatea dumneavoastră a fost adăugată pe listă. Vom căuta în baza noastră de date cu persoanele aflate în nevoie și, odată ce vom găsi persoana potrivită, vă vom anunța.",
+        "received": "Vă mulțumim foarte mult pentru confirmarea ofertei primite. De îndată ce vom primi ambele confirmări, vă vom anunța."
+      },
+      "searchAddress": "Adresa de căutare: <b>{{city}}</b>",
+      "rejected": "Potențialul/a dvs. oaspete/gazdă a refuzat oferta. Propunerea dvs. va fi reintrodusă în baza de oferte.  Vă vom împărtăși următoarea ofertă imediat ce o vom găsi.",
+      "refuge": {
+        "rejection": "Vă mulțumim pentru confirmarea deciziei dumneavoastră. Propunerea dvs. va fi reintrodusă în fondul de selecție și vă vom anunța cu privire la următoarea propunere de îndată ce vom găsi una."
+      }
+    },
+    "generic": {
+      "hostInformation": {
+        "offerTransport": "Ofer transport",
+        "takesPregnancy": "Voi accepta o persoană într-o stare avansată de sarcină (peste 6 luni)"
+      },
+      "groupInformation": {
+        "pregnancy": "Grupul include o persoană cu o sarcină avansată (peste 6 luni).",
+        "disability": "În grup există o persoană cu dizabilități",
+        "multicultural": "Din grup fac parte persoane de diferite naționalități",
+        "animals": "Grupul este însoțit de un animal de companie",
+        "elders": "Există o persoană în vârstă în grup"
+      },
+      "submited": "Formular trimis",
+      "facilityInformation": {
+        "disability": "Facilități pentru persoanele cu handicap",
+        "pregnancy": "Facilități pentru femeile însărcinate",
+        "eldery": "Facilități pentru persoanele vârstnice",
+        "diversity": "Toate naționalitățile sunt binevenite"
+      },
+      "password": "Parola",
+      "selectFromList": "Selectați din listă",
+      "cityWithData": "Oraș: {{city}}",
+      "phoneNumberWithData": "Număr de telefon: <b>{{number}}</b>",
+      "hostWithName": "Gazdă<b>{{name}}</b>",
+      "addPhoto": "Adăugați o fotografie",
+      "emailAddressWithData": "Adresa de e-mail: <b>{{mail}}</b>",
+      "zipCode": "Cod poștal",
+      "hostProfile": "Profilul gazdei",
+      "peopleInGroup": "Numărul de persoane din grup: <b>{{number}}</b>",
+      "city": "Adresă: <b>{{city}}</b>",
+      "groupType": "Tipul de grup: <b>{{type}}</b>",
+      "additionalGroupInformation": "Informații suplimentare despre grup",
+      "guest": "Oaspete",
+      "selectMultipleFromList": "Selectați din listă (alegere multiplă)",
+      "name": "Nume",
+      "phoneNumber": "Număr de telefon",
+      "country": "Țară",
+      "email": "Email",
+      "emailAddress": "Adresă de e-mail",
+      "closestLargeCity": "Cel mai apropiat oraș mare",
+      "occupancy": ""
+    },
+    "createRefuge": {
+      "shelter": {
+        "targetCityAndSurroundings": "Oraș și împrejurimi",
+        "groupDetails": "Informații despre persoanele cu care vă mutați",
+        "anyCity": "Orice oraș",
+        "imWithPregnantOver6Months": "Sunt, sau sunt însoțită de o persoană aflată în <br /> sarcină avansată (peste 6 luni)",
+        "whatIsTargetCountry": "În ce țară doriți să stați?",
+        "selectCountry": "Selectați țara"
+      }
+    },
+    "login": {
+      "emailOrPhone": "Adresă e-mail sau număr de telefon",
+      "login": "Autentificare",
+      "signInFacebook": "Conectați-vă cu Facebook",
+      "signInGoogle": "Conectați-vă cu Google",
+      "emailOrPhoneDetail": "E-mail sau număr de telefon",
+      "invalidPassword": "Parola furnizată nu este validă"
+    },
+    "resetPassword": {
+      "setNewPassword": "Setați o nouă parolă",
+      "header": "Furnizați o nouă parolă pentru contul dvs.",
+      "emailSent": "E-mail de resetare a parolei trimis - verificați-vă căsuța poștală",
+      "success": "Parola dvs. a fost schimbată cu succes",
+      "detail": "Dacă nu vă amintiți parola, introduceți adresa dvs. de e-mail. Vă vom trimite un link către formularul de resetare a parolei."
+    },
+    "edit": {
+      "editAccommodationHeader": "Editați informații despre cazarea pe care o oferiți"
+    },
+    "validations": {
+      "fill": {
+        "phoneNumber": "Număr de telefon"
+      }
+    },
+    "userProfile": {
+      "header": "Editarea profilului de utilizatorului"
+    },
+    "renew": {
+      "re-activateOffer": "Doriți să reactivați aplicația/oferta?"
     }
+  },
+  "desktop": {
+    "lookingForSupport": "Am nevoie de ajutor",
+    "filters": {
+      "shelter": "Adăpost"
+    },
+    "host": {
+      "numberOfPeople": "Număr de persoane: Max {{maxAmount}}"
+    },
+    "offer": {
+      "status": {
+        "accepted": "Acceptat",
+        "beingConfirmed": "În curs de confirmare",
+        "awaitingGuestApproval": "Se așteaptă aprobarea oaspeților",
+        "inactive": "Inactiv",
+        "haveMatch": "Am găsit o potrivire",
+        "lookingForMatch": "Caut o potrivire",
+        "awaitingHostApproval": "În așteptarea aprobării gazdei",
+        "confirmed": "Confirmat",
+        "rejected": "Respins"
+      }
+    },
+    "refuge": {
+      "searchingAccommodation": "Caut cazare",
+      "accommodationSearch": "Căutare cazare",
+      "submission": "Trimitere",
+      "duration": "Durata: {{value}}"
+    },
+    "providingSupport": "Oferă ajutor",
+    "yourSubmission": "Formularul dumneavoastră",
+    "yourOffers": "Prezentare generală a ofertelor dumneavoastră",
+    "contextMenu": {
+      "reportProblem": "Raportați o problemă",
+      "renew": "Reînnoiți",
+      "edit": "Editați"
+    },
+    "checks": {
+      "phoneNotVerified": "Număr de telefon neverificat",
+      "emailNotVerified": "Email neverificat",
+      "accountInCreation": "Contul dumneavoastră este creat, reîmprospătați pagina după câteva secunde",
+      "emailAlreadyInUse": "Adresa de e-mail folosită este deja utilizată în sistemul nostru. Vă rugăm să încercați să încercați să vă conectați printr-o metodă diferită",
+      "idNotVerified": "ID-ul nu a fost verificat",
+      "changesInProgress": "",
+      "idVerified": ""
+    },
+    "housing": "Locuință",
+    "confirmation": {
+      "header": "Vă mulțumim pentru decizia dumneavoastră",
+      "content": "Dacă aveți {{accepted}}, așteptați decizia celeilalte persoane. Odată ce cealaltă parte acceptă, veți primi un e-mail cu informații de contact. <br /> În cazul {{cancellation}} , aplicația dvs. va fi returnată în grupul de aplicații active. Vă vom informa prin e-mail despre următoarea ofertă.",
+      "accepted": "acceptat",
+      "cancellation": "anulare"
+    },
+    "accommodationSearch": "Căutare cazare",
+    "exitToIDnow": ""
+  },
+  "reportProblem": {
+    "popup": {
+      "description": "Anunțați-ne despre orice problemă folosind formularul de mai jos",
+      "problemReported": "Problema a fost raportată",
+      "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație. Vă mulțumim că ne-ați informat despre această situație. Vom căuta o altă potrivire pentru dumneavoastră.",
+      "reasons": {
+        "guestNotNeedHelp": "Oaspetele meu nu mai are nevoie de cazare",
+        "hostCantHelp": "Gazda mea nu mai poate oferi cazare",
+        "rejectedAfterContact": "Eu/ cealaltă parte am respins oferta după primul contact",
+        "noResponseAfterContact": "Niciun contact în ciuda mai multor încercări",
+        "notShowUp": "Gazda/oaspetele nu s-a prezentat la locul convenit"
+      }
+    }
+  },
+  "deleteOffer": {
+    "popup": {
+      "areYouSure": "Sunteți sigur că doriți să vă ștergeți postarea?",
+      "header": "Ștergeți cererea/oferta",
+      "confirmation": "Șterge oferta/cererea"
+    }
+  },
+  "offer": {
+    "popup": {
+      "renew": {
+        "expiredMsg": "Cererea / oferta dumneavoastră\n <b>a expirat din cauza lipsei de activitate</b>"
+      }
+    }
+  },
+  "welcomePage": {
+    "appDescription": "Îi ajutăm pe refugiați să găsească automat cazare <b>gratuită</b> în <b>Polonia, Cehia, Ungaria și Slovacia,</b> oferită de persoane și instituții dispuse să ajute.",
+    "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală",
+    "waysToStaySafe": ""
+  },
+  "userRegistration": {
+    "errors": {
+      "emailExist": "Utilizatorul cu acest cont există deja",
+      "phoneExist": "Acest număr de telefon este deja conectat la alt cont",
+      "tooManyRequest": "Prea multe cereri de verificare telefonică",
+      "invalidCode": "Cod invalid",
+      "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs., conectați-vă și încercați din nou"
+    }
+  },
+  "publicShelters": {
+    "details": {
+      "howToGetThere": ""
+    },
+    "addShelterMail": "",
+    "description": ""
+  },
+  "popup:staySafe": {
+    "rememberToStaySafe": "",
+    "reviewedTips": "",
+    "getToKnowHost": "",
+    "exchangeFacebook": "",
+    "useTranslator": "",
+    "getToKnowGuest": ""
+  }
 }
