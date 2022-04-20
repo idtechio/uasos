@@ -1,7 +1,7 @@
 {
     "messaging": {
         "sms": {
-            "offeringNotification": "Znaleźliśmy Twój kontakt. Zaakceptuj\/odrzuć na uasos.org lub na mailu.",
+            "offeringNotification": "Znaleźliśmy dla Ciebie kontakt.Potwierdź\/odrzuć na uasos.org lub mailu",
             "sealedNotification": "Mamy dla Ciebie kontakt! Sprawdź swoją skrzynkę e-mail i potwierdź."
         }
     },
