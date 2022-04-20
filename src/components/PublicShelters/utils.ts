@@ -1,4 +1,4 @@
-interface ShelterInfo {
+export interface ShelterInfo {
   name: string;
   address: string;
   city: string;

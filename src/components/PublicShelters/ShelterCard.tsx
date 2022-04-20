@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { View } from "react-native";
 
 import { useTranslation } from "next-i18next";
@@ -10,6 +10,7 @@ import UsersIcon from "../../../src/style/svgs/users.svg";
 import PhoneIcon from "../../../src/style/svgs/matched_phone.svg";
 import { Theme } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
+import { MapComponent } from "./MapComponent";
 
 export const ShelterCard = ({
   name,
@@ -17,18 +18,35 @@ export const ShelterCard = ({
   city,
   occupancy,
   phoneNumber,
+  howToGetThere,
 }: {
   name: string;
   country: string;
   city: string;
   occupancy: string;
   phoneNumber: string;
+  howToGetThere: string;
 }) => {
   const { t } = useTranslation();
 
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   const toogleMap = () => setIsMapVisible((pIsMapVisible) => !pIsMapVisible);
+  let lat = undefined;
+  let lng = undefined;
+
+  if (howToGetThere) {
+    const [latitude, longitude] = howToGetThere.split("/@")[1].split(",");
+
+    lat = latitude;
+    lng = longitude;
+  }
+
+  const marker = { lat: Number(lat), lng: Number(lng) };
+
+  const handleOpenMapInNewTab = useCallback(() => {
+    window?.open(howToGetThere, "_blank");
+  }, [howToGetThere]);
 
   return (
     <Container>
@@ -49,7 +67,11 @@ export const ShelterCard = ({
             </Button>
           </Header>
 
-          {isMapVisible && <MapWrapper />}
+          {isMapVisible && (
+            <MapWrapper>
+              <MapComponent marker={marker} />
+            </MapWrapper>
+          )}
           <SectionInfo>
             <Info>
               <MarkerIcon width={15} height={15} />
@@ -87,6 +109,7 @@ export const ShelterCard = ({
 
           <Footer>
             <ButtonCta
+              onPress={handleOpenMapInNewTab}
               anchor={
                 <FlexTextIcon>
                   <ButtonText>
@@ -99,7 +122,9 @@ export const ShelterCard = ({
           </Footer>
         </Column>
 
-        <DesktopMapWrapper />
+        <DesktopMapWrapper>
+          <MapComponent marker={marker} />
+        </DesktopMapWrapper>
       </FlexContainer>
     </Container>
   );
@@ -146,11 +171,11 @@ const Footer = styled.View<CommonProp>(
   ({ theme }) => css`
     padding-top: 15px;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     ${theme.getBreakPoint({
       md: css`
-        justify-content: flex-end;
+        justify-content: flex-start;
       `,
     })};
   `
@@ -161,7 +186,7 @@ const Button = styled.TouchableOpacity<CommonProp>(
     display: block;
 
     ${theme.getBreakPoint({
-      lg: css`
+      md: css`
         display: none;
       `,
     })};
@@ -248,11 +273,18 @@ const FlexTextIcon = styled.View<CommonProp>(
 );
 
 export const MapWrapper = styled.View<CommonProp>(
-  () => css`
+  ({ theme }) => css`
     flex-grow: 1;
     height: 200px;
     background: #cecece;
     border-radius: 4px;
+    overflow: hidden;
+
+    ${theme.getBreakPoint({
+      md: css`
+        display: none;
+      `,
+    })};
   `
 );
 

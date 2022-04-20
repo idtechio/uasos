@@ -33,11 +33,15 @@ export const Layout = styled.View<CommonProp>(
 
 export const Content = styled.View<CommonProp>(
   ({ theme }) => css`
-    width: 100%;
-
     ${theme.getBreakPoint({
       xl: css`
         width: 70%;
+      `,
+      default: css`
+        width: 70%;
+      `,
+      mobile: css`
+        width: 100%;
       `,
     })};
   `
