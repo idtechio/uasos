@@ -98,6 +98,11 @@ const ButtonContainer = styled.View`
 const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
   margin-top: 17px;
   font-size: 16px;
+  display: flex;
+  padding: 0px 16px;
+  height: 48.5;
+  align-items: center;
+  justify-content: center;
 
   ${({ theme, first }) =>
     !first &&
@@ -110,8 +115,7 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
 
 const ButtonText = styled.Text`
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 14px;
   color: #003566;
 `;
 
@@ -165,28 +169,6 @@ const LandingProjectIntention = () => {
                     />
                   </a>
                 </Link>
-                <Link href="/public-shelters">
-                  <a>
-                    <ButtonStyle
-                      style={{
-                        flexDirection: "row",
-                        backgroundColor: "transparent",
-                        border: "1.5px solid rgb(0, 53, 102)",
-                        boxSizing: "border-box",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                      anchor={
-                        <FlexAnchor>
-                          <ButtonText>
-                            {t("others:common.words.publicShelters")}
-                          </ButtonText>
-                          <ChevronRight />
-                        </FlexAnchor>
-                      }
-                    />
-                  </a>
-                </Link>
               </>
             ) : (
               <>
@@ -201,6 +183,26 @@ const LandingProjectIntention = () => {
                 />
               </>
             )}
+            <Link href="/public-shelters">
+              <a>
+                <ButtonStyle
+                  style={{
+                    flexDirection: "row",
+                    backgroundColor: "transparent",
+                    border: "1.5px solid rgb(0, 53, 102)",
+                    boxSizing: "border-box",
+                  }}
+                  anchor={
+                    <FlexAnchor>
+                      <ButtonText>
+                        {t("others:common.words.publicShelters")}
+                      </ButtonText>
+                      <ChevronRight />
+                    </FlexAnchor>
+                  }
+                />
+              </a>
+            </Link>
           </ButtonContainer>
         </TextContainer>
       </ContentWrapper>

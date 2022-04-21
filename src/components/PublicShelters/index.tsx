@@ -159,7 +159,7 @@ export const PublicSheltersLayout = () => {
             {shelters.map((shelter) => (
               <ShelterCard
                 name={shelter.name}
-                city={shelter.city}
+                fullAddress={`${shelter.address}, ${shelter.city}`}
                 country={shelter.country}
                 key={shelter.howToGetThere}
                 occupancy={shelter.occupancy}

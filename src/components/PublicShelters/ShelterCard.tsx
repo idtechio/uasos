@@ -15,14 +15,14 @@ import { MapComponent } from "./MapComponent";
 export const ShelterCard = ({
   name,
   country,
-  city,
+  fullAddress,
   occupancy,
   phoneNumber,
   howToGetThere,
 }: {
   name: string;
   country: string;
-  city: string;
+  fullAddress: string;
   occupancy: string;
   phoneNumber: string;
   howToGetThere: string;
@@ -75,20 +75,20 @@ export const ShelterCard = ({
           <SectionInfo>
             <Info>
               <MarkerIcon width={15} height={15} />
-              <Text>
+              <RowText>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: t("others:forms.generic.city", {
-                      city,
+                      city: fullAddress,
                     }),
                   }}
                 />
-              </Text>
+              </RowText>
             </Info>
             <Info>
               <UsersIcon />
 
-              <Text>
+              <RowText>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: t("others:forms.generic.occupancy", {
@@ -96,11 +96,11 @@ export const ShelterCard = ({
                     }),
                   }}
                 />
-              </Text>
+              </RowText>
             </Info>
             <Info>
               <PhoneIcon />
-              <Text>
+              <RowText>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: t("others:forms.generic.phoneNumberWithData", {
@@ -108,7 +108,7 @@ export const ShelterCard = ({
                     }),
                   }}
                 />
-              </Text>
+              </RowText>
             </Info>
           </SectionInfo>
 
@@ -303,5 +303,11 @@ export const DesktopMapWrapper = styled(MapWrapper)<CommonProp>(
         display: block;
       `,
     })};
+  `
+);
+
+export const RowText = styled.Text<CommonProp>(
+  ({ theme }) => css`
+    color: ${theme.colors.headings};
   `
 );
