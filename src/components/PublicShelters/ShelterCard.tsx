@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
