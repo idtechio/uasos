@@ -196,11 +196,11 @@
             "hostType": "Le type d’hôte est requis",
             "accommodationTime": "La durée du séjour est requise",
             "nationalityError": "La nationalité du réfugié est requise",
-            "groupsTypes": ""
+            "groupsTypes": "Le type de groupe est requis"
         },
         "prolongationReady": "Possibilité de prolonger le séjour (payant)",
         "transportReady": "Possibilité de transport",
-        "hostAddressProcessingWarning": ""
+        "hostAddressProcessingWarning": "L'adresse complète ne sera pas partagée avec le réfugié - seulement votre ville."
     },
     "logout": "Se déconnecter",
     "back": "Précédent",
@@ -305,9 +305,9 @@
             "countryOfGroup": "Veuillez sélectionner la nationalité"
         },
         "refugeInfoHeader": "Informations supplémentaires sur le logement proposé",
-        "countryOfGroup": "",
+        "countryOfGroup": "Quel est le pays d'origine du groupe ?",
         "cityTooltip": "Si vous ne trouvez pas votre ville, choisissez la grande ville ou le village le plus proche.",
-        "confirmChangesButton": ""
+        "confirmChangesButton": "Confirmer les modifications"
     },
     "accomodationPhoto": "Ajouter une photo du logement proposé",
     "accomodationPhotoReset": "Supprimer",

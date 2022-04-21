@@ -28,8 +28,8 @@
             "or": "Nebo",
             "badNews": "Špatné zprávy",
             "prefix": "Předpona",
-            "dashboard": "Přístrojová deska",
-            "publicShelters": "Veřejné přístřešky",
+            "dashboard": "Přehled",
+            "publicShelters": "Veřejně dostupná přístřeší",
             "addMore": "Přidat další",
             "remember": "Nezapomeňte:"
         },
@@ -53,8 +53,8 @@
         "email": {
             "sentInfo": "Na vaši e-mailovou adresu jsme zaslali ověřovací kód. Klikněte na odkaz pro ověření",
             "verification": "Ověření emailu",
-            "errorTryAgainInSeconds": "Mail nedorazil? Zkuste to znovu za {{number}} sekund",
-            "errorTryAgain": "Pošta nedorazila? Zkuste to znovu.",
+            "errorTryAgainInSeconds": "E-mail nedorazil? Zkuste to znovu za {{number}} sekund",
+            "errorTryAgain": "E-mail nedorazil? Zkuste to znovu.",
             "errorTooManyRequestsInSeconds": "Příliš mnoho požadavků. Zkuste to znovu za {{číslo}} sekund."
         },
         "nationalities": {
@@ -161,7 +161,7 @@
             "email": "Email",
             "emailAddress": "Emailová adresa",
             "closestLargeCity": "Nejbližší velké město",
-            "occupancy": "Obsazenost: {{počet}}"
+            "occupancy": "Obsazenost: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -243,7 +243,7 @@
             "emailNotVerified": "Email nebyl ověřen",
             "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
             "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
-            "idNotVerified": "",
+            "idNotVerified": "Totožnost neověřena",
             "changesInProgress": "Probíhající změny...",
             "idVerified": "Úspěšné ověření totožnosti"
         },
@@ -255,7 +255,7 @@
             "cancellation": "zrušení"
         },
         "accommodationSearch": "Vyhledávání ubytování",
-        "exitToIDnow": "Výstup na IDnow"
+        "exitToIDnow": "Odejít do IDnow"
     },
     "reportProblem": {
         "popup": {
@@ -286,9 +286,9 @@
         }
     },
     "welcomePage": {
-        "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Hungarech<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
+        "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Maďarsku<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
         "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství",
-        "waysToStaySafe": "Zjistěte, jak zůstat v bezpečí"
+        "waysToStaySafe": "Poučte se, jak zůstat v bezpečí"
     },
     "userRegistration": {
         "errors": {
@@ -303,14 +303,14 @@
         "details": {
             "howToGetThere": "Jak se tam dostat"
         },
-        "addShelterMail": "Pokud chcete přidat svůj veřejný útulek, kontaktujte nás prosím na {{mail}}.",
-        "description": "Zde najdete seznam veřejně dostupných útulků. Před odjezdem nezapomeňte na místo zavolat a ověřit si dostupnost. \n"
+        "addShelterMail": "Pokud chcete přidat veřejně dostupné přístřeší, kontaktujte nás prosím na {{mail}}.",
+        "description": "Zde najdete seznam veřejně dostupných přístřeší. Před odjezdem nezapomeňte na místo zavolat a ověřit si dostupnost. \n"
     },
     "popup:staySafe": {
-        "rememberToStaySafe": "<b>Nezapomeňte zůstat v bezpečí<\/b>Řádek 1 lorem ipsum Řádek 2 lorem ipsum",
+        "rememberToStaySafe": "<b>Pamatujte na vlastní bezpečí<\/b>Řádek 1 lorem ipsum Řádek 2 lorem ipsum",
         "reviewedTips": "Zkontroloval jsem bezpečnostní tipy",
         "getToKnowHost": "Poznejte svého hostitele",
-        "exchangeFacebook": "Vyměňte si údaje na Facebooku\/Instagramu a před živým setkáním si zavolejte.",
+        "exchangeFacebook": "Vyměňte si údaje na Facebooku\/Instagramu a před osobním setkáním si zavolejte.",
         "useTranslator": "Pokud nemluvíte stejným jazykem, spojte se prostřednictvím e-mailu\/WhatsApp\/SMS a použijte například překladač Google.",
         "getToKnowGuest": "Poznejte svého hosta"
     }
