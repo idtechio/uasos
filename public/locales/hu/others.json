@@ -161,7 +161,7 @@
       "email": "E-mail",
       "emailAddress": "E-mail cím",
       "closestLargeCity": "Legközelebbi nagyváros",
-      "occupancy": "Foglalások száma: {{szám}}"
+      "occupancy": "Foglalások száma: {{number}}"
     },
     "createRefuge": {
       "shelter": {
