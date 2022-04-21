@@ -1,0 +1,14 @@
+{
+    "location": "Location",
+    "numberOfGuests": "Number of guests",
+    "timeframe": "Length of stay",
+    "twoWeeks": "Two weeks",
+    "month": "One month",
+    "longerThanMonth": "Longer than a month",
+    "food": "Food",
+    "disabledPerson": "Person with a disability",
+    "kidsBelow2yo": "I am with a child",
+    "animalsWelcome": "Pets accepted",
+    "yes": "Yes",
+    "no": "No"
+}
