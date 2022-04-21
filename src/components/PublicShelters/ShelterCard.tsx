@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
@@ -75,35 +75,40 @@ export const ShelterCard = ({
           <SectionInfo>
             <Info>
               <MarkerIcon width={15} height={15} />
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: t("others:forms.generic.city", {
-                    city,
-                  }),
-                }}
-              />
+              <Text>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.city", {
+                      city,
+                    }),
+                  }}
+                />
+              </Text>
             </Info>
             <Info>
               <UsersIcon />
 
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: t("others:forms.generic.occupancy", {
-                    number: occupancy,
-                  }),
-                }}
-              />
+              <Text>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.occupancy", {
+                      number: occupancy,
+                    }),
+                  }}
+                />
+              </Text>
             </Info>
             <Info>
               <PhoneIcon />
-
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: t("others:forms.generic.phoneNumberWithData", {
-                    number: phoneNumber,
-                  }),
-                }}
-              />
+              <Text>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.phoneNumberWithData", {
+                      number: phoneNumber,
+                    }),
+                  }}
+                />
+              </Text>
             </Info>
           </SectionInfo>
 

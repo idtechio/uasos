@@ -139,7 +139,7 @@ export const PublicSheltersLayout = () => {
                 itemPressFunction={handleChooseCountry}
               />
             </DropdownWrapper>
-            {selectedCountry && (
+            {selectedCountry ? (
               <DropdownWrapper>
                 <Label>{t("common:refugeeAddForm.cityOfRefugeLabel")}</Label>
                 <Dropdown
@@ -152,7 +152,7 @@ export const PublicSheltersLayout = () => {
                   placeholder={t("refugeeAddForm.cityPlaceholder")}
                 />
               </DropdownWrapper>
-            )}
+            ) : null}
           </DropdownsWrapper>
 
           <SheltersContainer>

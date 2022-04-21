@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import ChevronRight from "../../style/svgs/chevron-right.svg";
 import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
 import { Theme } from "../../style/theme.config";
@@ -107,6 +108,19 @@ const ButtonStyle = styled(ButtonCta)<{ first?: boolean; theme: Theme }>`
     })}
 `;
 
+const ButtonText = styled.Text`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #003566;
+`;
+
+const FlexAnchor = styled.View`
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 10px;
+`;
+
 const LandingProjectIntention = () => {
   const { t } = useTranslation("landingPage");
   const { t: t_others } = useTranslation("others");
@@ -151,17 +165,41 @@ const LandingProjectIntention = () => {
                     />
                   </a>
                 </Link>
+                <Link href="/public-shelters">
+                  <a>
+                    <ButtonStyle
+                      style={{
+                        flexDirection: "row",
+                        backgroundColor: "transparent",
+                        border: "1.5px solid rgb(0, 53, 102)",
+                        boxSizing: "border-box",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                      anchor={
+                        <FlexAnchor>
+                          <ButtonText>
+                            {t("others:common.words.publicShelters")}
+                          </ButtonText>
+                          <ChevronRight />
+                        </FlexAnchor>
+                      }
+                    />
+                  </a>
+                </Link>
               </>
             ) : (
-              <ButtonStyle
-                first
-                colorOpposite
-                anchor={t("common:shareLocation")}
-                onPress={(event) => {
-                  event?.preventDefault();
-                  router.push(`/${router?.locale}${Routes.SIGN_IN}`);
-                }}
-              />
+              <>
+                <ButtonStyle
+                  first
+                  colorOpposite
+                  anchor={t("common:shareLocation")}
+                  onPress={(event) => {
+                    event?.preventDefault();
+                    router.push(`/${router?.locale}${Routes.SIGN_IN}`);
+                  }}
+                />
+              </>
             )}
           </ButtonContainer>
         </TextContainer>

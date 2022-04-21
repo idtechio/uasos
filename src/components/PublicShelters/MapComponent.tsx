@@ -26,11 +26,21 @@ interface MapComponentProps {
   };
 }
 
+type Libraries = (
+  | "drawing"
+  | "geometry"
+  | "localContext"
+  | "places"
+  | "visualization"
+)[];
+
+const libraries: Libraries = ["places"];
+
 export const MapComponent = ({ marker }: MapComponentProps) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: API_KEY,
-    libraries: ["places"],
+    libraries,
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
