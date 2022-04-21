@@ -1,0 +1,11 @@
+{
+    "arrival": "Ankunft in Polen",
+    "persons": "Anzahl Gäste",
+    "locationPreference": "Bevorzugter Ort",
+    "anyLocation": "Egal - keine Präferenz",
+    "travelingWithAnimal": "Reisende mit Haustier",
+    "travelingWithOlderPerson": "Ich bin oder ich reise mit einer älteren Person",
+    "travelingWithDisabledPerson": "Ich bin oder reise mit einer Person mit einer körperlichen Einschränkung",
+    "travelingWithToddler": "Mit uns reist ein Kleinkind",
+    "inviteGuest": "Einladung abschicken"
+}
