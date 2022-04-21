@@ -161,7 +161,7 @@
             "email": "E-mail",
             "emailAddress": "Adres e-mail",
             "closestLargeCity": "Najbliższe duże miasto",
-            "occupancy": "Obłożenie: {{liczba}}"
+            "occupancy": "Obłożenie: {{number}}"
         },
         "createRefuge": {
             "shelter": {

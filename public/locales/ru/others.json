@@ -161,7 +161,7 @@
             "email": "Электронная почта",
             "emailAddress": "Электронная почта",
             "closestLargeCity": "Ближайший крупный город",
-            "occupancy": "Занятость: {{число}}"
+            "occupancy": "Занятость: {{number}}"
         },
         "createRefuge": {
             "shelter": {
