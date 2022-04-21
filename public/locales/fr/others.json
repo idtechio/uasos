@@ -17,7 +17,7 @@
         "footer": {
             "FAQ": "FAQ",
             "termsOfService": "Conditions d'utilisation",
-            "yourSafety": ""
+            "yourSafety": "Votre sécurité"
         },
         "words": {
             "idWithData": "Identifiant: {{id}}",
@@ -27,11 +27,11 @@
             "thankYou": "Merci",
             "or": "Ou",
             "badNews": "Mauvaise nouvelle",
-            "prefix": "",
-            "dashboard": "",
-            "publicShelters": "",
-            "addMore": "",
-            "remember": ""
+            "prefix": "Préfixe",
+            "dashboard": "Tableau de bord",
+            "publicShelters": "Logements publics",
+            "addMore": "Ajouter plus",
+            "remember": "Rappelez-vous :"
         },
         "links": {
             "re-sendCode": "Renvoyer le code",
@@ -48,14 +48,14 @@
             "showPassword": "Afficher le mot de passe",
             "details": "Détails",
             "addOffer": "Ajouter une offre de logement",
-            "addSubmission": ""
+            "addSubmission": "Demander du support"
         },
         "email": {
             "sentInfo": "nous avons envoyé un code de vérification à votre adresse e-mail. Cliquez sur le lien pour le vérifier",
             "verification": "Vérification de l'e-mail",
-            "errorTryAgainInSeconds": "",
-            "errorTryAgain": "",
-            "errorTooManyRequestsInSeconds": ""
+            "errorTryAgainInSeconds": "Le courrier n'est pas arrivé ? Essayez à nouveau dans {{nombre}} secondes",
+            "errorTryAgain": "Le courrier n'est pas arrivé ? Essayez à nouveau.",
+            "errorTooManyRequestsInSeconds": "Trop de demandes. Réessayez dans {{number}} secondes"
         },
         "nationalities": {
             "ukrainians": "Ukrainiens",
@@ -77,9 +77,9 @@
             },
             "photosList": "Photo du logement proposé",
             "acceptElderly": "J'accepte les personnes âgées",
-            "addPhotoHeaderWithLimit3": "",
-            "numberOfRooms": "",
-            "roomCapacity": ""
+            "addPhotoHeaderWithLimit3": "Ajouter une photo du logement proposé (maximum 3)",
+            "numberOfRooms": "Nombre de chambres",
+            "roomCapacity": "Capacité par chambre"
         },
         "userRegistration": {
             "enterDetails": "Entrez vos coordonnées",
@@ -93,11 +93,11 @@
             "fillMissingData": "Remplir les données manquantes",
             "validations": {
                 "passwordMismatch": "Mots de passe différents",
-                "passwordLength": ""
+                "passwordLength": "La mot de passe doit être d'au moins 8 caractères"
             },
-            "password": "",
+            "password": "Mot de passe (8 caractères minimum)",
             "errors": {
-                "duplicatedMail": ""
+                "duplicatedMail": "L'email lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau en utilisant une autre méthode de connexion."
             }
         },
         "match": {
@@ -136,9 +136,9 @@
             "submited": "Formulaire soumis",
             "facilityInformation": {
                 "disability": "Installations pour personnes handicapées",
-                "pregnancy": "",
-                "eldery": "",
-                "diversity": ""
+                "pregnancy": "Installations pour les femmes enceintes",
+                "eldery": "Installations pour les personnes âgées",
+                "diversity": "Toutes les nationalités sont les bienvenues"
             },
             "password": "Mot de passe",
             "selectFromList": "Sélectionner dans la liste",
@@ -161,7 +161,7 @@
             "email": "E-mail",
             "emailAddress": "Adresse E-mail",
             "closestLargeCity": "La grande ville la plus proche",
-            "occupancy": ""
+            "occupancy": "Occupation: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -179,7 +179,7 @@
             "signInFacebook": "Se connecter avec Facebook",
             "signInGoogle": "Se connecter avec Google",
             "emailOrPhoneDetail": "E-mail ou numéro de téléphone",
-            "invalidPassword": ""
+            "invalidPassword": "Mot de passe fourni non valide"
         },
         "resetPassword": {
             "setNewPassword": "Définir un nouveau mot de passe",
@@ -221,7 +221,7 @@
                 "lookingForMatch": "Recherche d'une correspondance",
                 "awaitingHostApproval": "En attente de l'approbation de l'hôte",
                 "confirmed": "Confirmé",
-                "rejected": ""
+                "rejected": "Rejeté"
             }
         },
         "refuge": {
@@ -241,21 +241,21 @@
         "checks": {
             "phoneNotVerified": "Numéro de téléphone non-vérifié",
             "emailNotVerified": "E-mail non vérifié",
-            "accountInCreation": "",
-            "emailAlreadyInUse": "",
-            "idNotVerified": "",
-            "changesInProgress": "",
-            "idVerified": ""
+            "accountInCreation": "Votre compte est en cours de création, actualisez la page après quelques secondes.",
+            "emailAlreadyInUse": "L'e-mail lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau via une autre méthode de connexion.",
+            "idNotVerified": "Identité non vérifiée",
+            "changesInProgress": "Changements en cours...",
+            "idVerified": "Vérification d'identité réussie"
         },
         "housing": "Logement",
         "confirmation": {
-            "header": "",
-            "content": "",
-            "accepted": "",
-            "cancellation": ""
+            "header": "Merci de votre décision",
+            "content": "Si vous avez {{accepted}}, attendez la décision de l'autre personne. Une fois que l'autre partie accepte, vous recevrez un e-mail avec les informations de contact. En cas de {{cancellation}}, votre candidature sera renvoyée dans le pool des candidatures actives. Nous vous informerons par e-mail de la prochaine offre.",
+            "accepted": "accepté",
+            "cancellation": "annulation"
         },
-        "accommodationSearch": "",
-        "exitToIDnow": ""
+        "accommodationSearch": "Recherche de logement",
+        "exitToIDnow": "Quitter vers IDnow"
     },
     "reportProblem": {
         "popup": {
@@ -288,7 +288,7 @@
     "welcomePage": {
         "appDescription": "Nous aidons les réfugiés à trouver un logement <b>gratuit<\/b> chez des personnes et institutions qui souhaitent aider en <b>Pologne, République Tchèque, Hongrie et Slovaquie<\/b> à travers une plateforme automatique.",
         "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux.",
-        "waysToStaySafe": ""
+        "waysToStaySafe": "Découvrez les moyens d'assurer votre sécurité"
     },
     "userRegistration": {
         "errors": {
@@ -301,17 +301,17 @@
     },
     "publicShelters": {
         "details": {
-            "howToGetThere": ""
+            "howToGetThere": "Comment s'y rendre"
         },
-        "addShelterMail": "",
-        "description": ""
+        "addShelterMail": "Si vous souhaitez ajouter un logement accessible au public, veuillez nous contacter à {{mail}}",
+        "description": "Vous trouverez ici une liste de logements accessibles au public. N'oubliez pas d'appeler le lieu et de confirmer la disponibilité avant de vous y rendre.\n"
     },
     "popup:staySafe": {
-        "rememberToStaySafe": "",
-        "reviewedTips": "",
-        "getToKnowHost": "",
-        "exchangeFacebook": "",
-        "useTranslator": "",
-        "getToKnowGuest": ""
+        "rememberToStaySafe": "<b>N’oubliez pas d'assurer votre sécurité<\/b> Ligne 1 lorem ipsum Ligne 2 lorem ipsum",
+        "reviewedTips": "J'ai passé en revue les conseils de sécurité",
+        "getToKnowHost": "Apprenez à connaître votre hôte",
+        "exchangeFacebook": "Échangez vos coordonnées Facebook\/Instagram, passez un appel vidéo avant la réunion en direct.",
+        "useTranslator": "Si vous ne parlez pas la même langue, connectez-vous par e-mail \/ WhatsApp \/ SMS et utilisez par exemple Google Translate.",
+        "getToKnowGuest": "Apprenez à connaître votre invité"
     }
 }
