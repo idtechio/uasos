@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import IdCheckClient from "../../../../lib/idCheck";
+import { idCheckClient } from "../../../../lib/idCheck";
 
 import withApiAuth, {
   ApiAuthTokenDetails,
@@ -15,20 +15,10 @@ interface SendLinkDataType {
 }
 
 const {
-  SDKWEB_URL: sdkWebUrl = "https://sdkweb-test.idcheck.io",
-  KEYCLOAK_URL: keycloakUrl = "https://api-test.ariadnext.com",
-  CIS_URL: cisUrl = "https://cis.vlan-341.demo.ariadnext.com:10443",
-  CIS_USERNAME: username = "uasos@ariadnext.com",
-  CIS_PASSWORD: password = "zUKo_mC_kj1I",
-  CIS_REALM: realm = "uasos",
   CONFCODE: confCode = "uasos_sdkweb_conf",
   NOTIFICATION_URL: notificationUrl = "test_notif",
-  ERROR_REDIRECT_URL: errorRedirectUrl = "https://localhost:3000/idcheck/error",
-  SUCCESS_REDIRECT_URL:
-    successRedirectUrl = "https://localhost:3000/idcheck/success",
+  NEXT_PUBLIC_DOMAIN: publicDomain = "http://localhost:3000/",
 } = { ...process.env };
-
-const client = new IdCheckClient(sdkWebUrl, keycloakUrl, cisUrl);
 
 async function index(
   req: NextApiRequest & ApiAuthTokenDetails,
@@ -44,38 +34,25 @@ async function index(
     return;
   }
 
-  const account: false | AccountInfoDBProps = await getAccountFromDB(
+  const account: AccountInfoDBProps | false = await getAccountFromDB(
     req.decodedToken.uid
   );
 
   if (!account) {
-    res.status(400).json({ message: "There is no account." });
-    return;
+    // res.status(400).json({ message: "There is no account." });
+    // return;
   }
 
-  const loginResponse = await client.login(username, password, realm);
-
-  if (loginResponse.status !== 200) {
-    const error = JSON.parse(await loginResponse.text());
-    console.error("Error:", error);
-    res.status(loginResponse.status).json({ error });
-    return;
-  }
-
-  client.accessToken = (await loginResponse.json()).access_token;
-
-  const sendLinkResponse = await client.sendLink({
-    realm,
+  const sendLinkResponse = await idCheckClient.sendLink({
     confCode,
     fileUid: `file-${new Date().getTime()}`,
-    language: account.preferred_lang,
-    // language: "EN",
+    // language: account.preferred_lang,
+    language: "EN",
     notificationUrl,
-    errorRedirectUrl,
-    successRedirectUrl,
+    publicDomain,
   });
 
-  if (sendLinkResponse.status !== 201) {
+  if (!sendLinkResponse.ok) {
     const error = JSON.parse(await sendLinkResponse.text());
     console.error("Error:", error);
     res.status(sendLinkResponse.status).json({ error });
