@@ -161,7 +161,7 @@
       "email": "Email",
       "emailAddress": "Emailová adresa",
       "closestLargeCity": "Najbližšie veľké mesto",
-      "occupancy": "Obsadenosť: {{počet}}"
+      "occupancy": "Obsadenosť: {{number}}"
     },
     "createRefuge": {
       "shelter": {
