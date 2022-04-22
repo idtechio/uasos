@@ -15,8 +15,8 @@ const CompositionAppBody = ({ children }: AppBodyProps) => {
         }}
       >
         <Content>{children}</Content>
-        <Footer />
       </StyledScrollView>
+      <Footer />
     </AppBodyWraper>
   );
 };

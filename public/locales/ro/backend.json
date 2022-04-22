@@ -1,14 +1,14 @@
 {
-    "messaging": {
-        "sms": {
-            "offeringNotification": "Am identificat un contact. Acceptați\/respingeți pe uasos.org sau e-mai",
-            "sealedNotification": "Am găsit un contact. Acceptați\/respingeți pe uasos.org sau e-mail."
-        }
-    },
-    "sendgrid": {
-        "HostGetsMatch": "",
-        "GuestGetsMatch": "",
-        "GUESTANDHOSTMATCHCONFIRM": "",
-        "MatchTimeout": ""
+  "messaging": {
+    "sms": {
+      "offeringNotification": "Am găsit un contact. Acceptați/respingeți pe uasos.org sau e-mai",
+      "sealedNotification": "Am găsit un contact. Acceptați/respingeți pe uasos.org sau e-mail."
     }
+  },
+  "sendgrid": {
+    "HostGetsMatch": "d-1820f9794dd441acae6f45fbc61f9d15",
+    "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+    "GUESTANDHOSTMATCHCONFIRM": "d-b9dcac0a9247451282f7e4a21d344905",
+    "MatchTimeout": "d-04b29313890a453a82dff7ba0d23620c"
+  }
 }

@@ -6,6 +6,7 @@ const LocaleNames: { [key: string]: string } = {
   sk: "Slovenčina",
   cs: "Čeština",
   en: "English",
+  ro: "Romanian",
 };
 
 export const getLocaleFullName = (locale?: string) =>

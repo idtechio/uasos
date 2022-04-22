@@ -1,11 +1,11 @@
 {
-    "001": {
-        "name": "",
-        "content": {
-            "001": {
-                "question": "",
-                "answer": ""
-            }
-        }
+  "001": {
+    "name": "INFORMAȚII GENERALE",
+    "content": {
+      "001": {
+        "question": "Pentru ce se folosește acest portal?",
+        "answer": "Platforma uaSOS.org pune în legătură refugiații în căutare de cazare cu persoanele private, instituțiile, ONG-urile și companiile care oferă cazare. Spre deosebire de alte inițiative care colectează informații similare, platforma uaSOS.org conectează automat anunțurile celor care caută cazare cu ofertele înregistrate pentru a oferi cea mai bună ofertă posibilă unui grup cât mai mare de persoane. Mulțumită platformei, personale în căutarea unei cazării nu vor fi nevoite să verifice sute de oferte disponibile, ci li se va propune cea mai bună și actualizată ofertă, conform nevoilor lor. Înregistrarea pe platformă nu e anonimă, ceea ce oferă siguranță tuturor celor implicați."
+      }
     }
+  }
 }

@@ -25,9 +25,9 @@ const ImageSplashBlue = styled.Image`
 `;
 
 interface Props {
-  color: keyof typeof SPLASH;
-  splashPosition: ViewStyle;
   style?: ViewStyle;
+  splashPosition: ViewStyle;
+  color: keyof typeof SPLASH;
 }
 
 export function Splash({ color, style, splashPosition }: Props) {

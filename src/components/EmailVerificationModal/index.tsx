@@ -1,19 +1,23 @@
-import { useContext } from "react";
-import { Wrapper, StyledHeader, StyledText } from "./style";
+import { Wrapper, StyledHeader, StyledText, StyledTextButton } from "./style";
 import { ButtonCta } from "../Buttons";
 import CardModal from "../CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/PasswordReset.png";
 import { TouchableOpacity } from "react-native";
-import { Authorization } from "../../hooks/useAuth";
-import { AuthContext } from "../../../pages/_app";
 import { useTranslation } from "next-i18next";
 
 interface Props {
+  restartTimer: () => void;
   onClose: () => void;
+  seconds: number;
+  error: boolean;
 }
-export default function EmailVerificationModal({ onClose }: Props) {
-  const { identity } = useContext(AuthContext);
+export default function EmailVerificationModal({
+  restartTimer,
+  onClose,
+  seconds,
+  error,
+}: Props) {
   const { t } = useTranslation();
   return (
     <CardModal closeable={false}>
@@ -26,17 +30,25 @@ export default function EmailVerificationModal({ onClose }: Props) {
           anchor={t("others:common.buttons.close")}
           style={{ width: "100px", marginTop: "30px" }}
         />
-        <TouchableOpacity>
-          <StyledText
-            onPress={() => {
-              if (identity) {
-                Authorization.sendVerificationEmail(identity);
-              }
-            }}
-          >
+        <TouchableOpacity
+          disabled={error || seconds !== 0}
+          onPress={restartTimer}
+        >
+          <StyledTextButton disabled={error || seconds !== 0}>
             {t("others:common.links.re-sendCode")}
-          </StyledText>
+          </StyledTextButton>
         </TouchableOpacity>
+        <StyledText disabled={error || seconds !== 0} border={true}>
+          {error
+            ? t("others:common.email.errorTooManyRequestsInSeconds", {
+                number: seconds,
+              })
+            : seconds !== 0
+            ? t("others:common.email.errorTryAgainInSeconds", {
+                number: seconds,
+              })
+            : t("others:common.email.errorTryAgain")}
+        </StyledText>
       </Wrapper>
     </CardModal>
   );
