@@ -2,11 +2,7 @@ import qs from "qs";
 import { GlobalRef } from "./globalRef";
 
 interface SendLinkProps {
-  confCode: string;
-  fileUid: string;
   language: string;
-  notificationUrl: string;
-  publicDomain: string;
 }
 
 interface TokensType {
@@ -21,10 +17,13 @@ const {
   CIS_PASSWORD: password = "zUKo_mC_kj1I",
   CIS_REALM: realm = "uasos",
   CLIENT_ID: clientId = "cis-api-client",
+  CONFCODE: confCode = "uasos_sdkweb_conf",
   KEYCLOAK_URL:
     keycloakUrl = "https://api-test.ariadnext.com/auth/realms/customer-identity/protocol/openid-connect/token",
   SDKWEB_URL:
     sdkWebUrl = "https://sdkweb-test.idcheck.io/rest/v1/idcheckio-sdk-web/onboarding/sendlink",
+  NOTIFICATION_URL: notificationUrl = "test_notif",
+  NEXT_PUBLIC_DOMAIN: publicDomain = "http://localhost:3000/",
 } = { ...process.env };
 
 class IdCheckClient {
@@ -85,7 +84,6 @@ class IdCheckClient {
   }
 
   private async login(): Promise<void> {
-    console.log("### login started");
     const loginResponse = await fetch(this.keycloakUrl, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -109,7 +107,6 @@ class IdCheckClient {
   }
 
   private async refresh(): Promise<void> {
-    console.log("### refresh started");
     const refreshResponse = await fetch(this.keycloakUrl, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -143,13 +140,7 @@ class IdCheckClient {
     this.updatedTokens = new Date();
   }
 
-  public async sendLink({
-    confCode,
-    fileUid,
-    language,
-    notificationUrl,
-    publicDomain,
-  }: SendLinkProps): Promise<Response> {
+  public async sendLink({ language }: SendLinkProps): Promise<Response> {
     if (!this.accessToken || this.getDiff() > this.refreshExpiresIn) {
       await this.login();
     }
@@ -183,7 +174,7 @@ class IdCheckClient {
         resultHandler: {
           cisConf: {
             realm,
-            fileUid,
+            fileUid: `file-${new Date().getTime()}`,
             fileLaunchCheck: true,
             fileCheckWait: true,
           },

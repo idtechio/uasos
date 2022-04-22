@@ -14,12 +14,6 @@ interface SendLinkDataType {
   expirationDate: string;
 }
 
-const {
-  CONFCODE: confCode = "uasos_sdkweb_conf",
-  NOTIFICATION_URL: notificationUrl = "test_notif",
-  NEXT_PUBLIC_DOMAIN: publicDomain = "http://localhost:3000/",
-} = { ...process.env };
-
 async function index(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
@@ -44,12 +38,8 @@ async function index(
   }
 
   const sendLinkResponse = await idCheckClient.sendLink({
-    confCode,
-    fileUid: `file-${new Date().getTime()}`,
     language: account.preferred_lang || "EN",
     // language: "EN",
-    notificationUrl,
-    publicDomain,
   });
 
   if (!sendLinkResponse.ok) {
