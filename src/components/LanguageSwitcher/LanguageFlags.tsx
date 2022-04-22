@@ -1,7 +1,6 @@
 import { useTranslation } from "next-i18next";
 import styled from "styled-components/native";
 import Image from "next/image";
-import type { TFunction } from "next-i18next";
 
 const FLAG_TYPE_EMOJI = "emoji";
 const FLAG_TYPE_SVG = "svg";
