@@ -303,7 +303,7 @@
         "details": {
             "howToGetThere": "Hogyan jutok el oda"
         },
-        "addShelterMail": "Ha hozzá szeretné adni nyilvános menedékhelyét, kérjük, lépjen kapcsolatba velünk a {{mail}}",
+        "addShelterMail": "Ha hozzá szeretné adni nyilvános menedékhelyét, kérjük, lépjen kapcsolatba velünk a publicshelters@uasos.org.",
         "description": "A nyilvánosan elérhető menedékhelyek listáját itt találja. Ne feledje indulás előtt felhívni a helyet, hogy a szabad helyek valóban rendelkezésre állnak-e! \n"
     },
     "popup:staySafe": {

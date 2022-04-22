@@ -303,7 +303,7 @@
         "details": {
             "howToGetThere": "Cum se ajunge acolo"
         },
-        "addShelterMail": "Dacă doriți să vă adăugați un centru de cazare, vă rugăm să ne contactați la {{mail}}",
+        "addShelterMail": "Dacă doriți să vă adăugați un centru de cazare, vă rugăm să ne contactați la publicshelters@uasos.org.",
         "description": "Puteți găsi aici o listă a adăposturilor disponibile publicului. Nu uitați să sunați la locul respectiv și să confirmați disponibilitatea înainte de a pleca. \n"
     },
     "popup:staySafe": {

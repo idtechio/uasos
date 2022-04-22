@@ -303,7 +303,7 @@
         "details": {
             "howToGetThere": "Ako sa tam dostať"
         },
-        "addShelterMail": "Ak chcete pridať svoj verejný útulok, kontaktujte nás na {{mail}}",
+        "addShelterMail": "Ak chcete pridať svoj verejný útulok, kontaktujte nás na publicshelters@uasos.org.",
         "description": "Tu nájdete zoznam verejne dostupných útulkov. Pred odchodom nezabudnite zavolať na miesto a overiť si dostupnosť. \n"
     },
     "popup:staySafe": {
