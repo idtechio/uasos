@@ -100,7 +100,8 @@ export default function EditUserProfileForm({ account, identity }: Props) {
 
   useEffect(() => {
     if (formPayload) {
-      !identity?.phoneNumber === !formPayload?.phone
+      (identity?.phoneNumber === null && formPayload?.phone === undefined) ||
+      identity?.phoneNumber === formPayload?.phone
         ? updateUserProfile()
         : verifyPhone();
     }
