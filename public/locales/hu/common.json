@@ -141,7 +141,8 @@
             "poland": "Lengyelország",
             "hungary": "Magyarország",
             "czechia": "Csehország",
-            "slovakia": "Szlovákia"
+            "slovakia": "Szlovákia",
+            "romania": "Románia"
         },
         "nameLabel": "Keresztnév (csak a keresztnevet adja meg)",
         "emailPlaceholder": "e-mail",

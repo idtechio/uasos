@@ -141,7 +141,8 @@
             "poland": "Polonia",
             "hungary": "Ungaria",
             "czechia": "Cehia",
-            "slovakia": "Slovacia"
+            "slovakia": "Slovacia",
+            "romania": ""
         },
         "nameLabel": "Nume (introduceți doar prenumele)",
         "emailPlaceholder": "E-mail",

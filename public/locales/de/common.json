@@ -141,7 +141,8 @@
             "poland": "Polen",
             "hungary": "Ungarn",
             "czechia": "Tschechisch",
-            "slovakia": "Slowakei"
+            "slovakia": "Slowakei",
+            "romania": ""
         },
         "nameLabel": "Vorname (nur den Vornamen eingeben)",
         "emailPlaceholder": "E-Mail",

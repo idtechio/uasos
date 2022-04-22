@@ -296,7 +296,7 @@
             "phoneExist": "Ten numer telefonu jest już powiązany z innym kontem",
             "tooManyRequest": "Zbyt wiele próśb o weryfikację",
             "invalidCode": "Nieprawidłowy kod",
-            "phoneLinkingFailed": "Wystąpił błąd podczas łączenia numeru telefonu z kontem, zaloguj się i spróbuj ponownie"
+            "phoneLinkingFailed": "Wystąpił błąd podczas łączenia numeru telefonu z kontem. Upewnij się, że Twój numer telefonu nie jest powiązany z innym kontem lub spróbuj ponownie, używając innego numeru."
         }
     },
     "publicShelters": {

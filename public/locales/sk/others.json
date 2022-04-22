@@ -296,7 +296,7 @@
             "phoneExist": "Toto telefónne číslo sa už používa s iným účtom",
             "tooManyRequest": "Priveľa žiadostí o overenie telefónneho čísla",
             "invalidCode": "Neplatný kód",
-            "phoneLinkingFailed": ""
+            "phoneLinkingFailed": "Pri prepájaní telefónneho čísla s vaším účtom došlo k chybe. Uistite sa, že vaše telefónne číslo nie je prepojené s iným účtom, alebo skúste znova použiť iné číslo."
         }
     },
     "publicShelters": {
