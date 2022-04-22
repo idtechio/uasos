@@ -12,6 +12,7 @@ import {
   DropDownListItemObjectSelected,
   DropDownWrapperMobileObject,
   ItemTextStyle,
+  Flex,
 } from "./style";
 import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
@@ -27,12 +28,14 @@ function LanguageSwitcher() {
         label: (
           <Link passHref href={asPath} locale={locale}>
             <a style={InnerLink}>
-              <LanguageFlags locale={locale} />
-              {isDesktop && (
-                <LanguageLabel>
-                  {locale ? getLocaleFullName(locale) : locale}
-                </LanguageLabel>
-              )}
+              <Flex>
+                <LanguageFlags locale={locale} />
+                {isDesktop && (
+                  <LanguageLabel>
+                    {locale ? getLocaleFullName(locale) : locale}
+                  </LanguageLabel>
+                )}
+              </Flex>
             </a>
           </Link>
         ),

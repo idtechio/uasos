@@ -1,84 +1,84 @@
 {
-    "supportingPartners": "Partneři podporující iniciativu",
-    "ngoPartners": "Nevládní organizace (NGO's)",
-    "projectInitiators": "Iniciátoři projektu",
-    "partners": "Partneři",
-    "showMorePartners": "Zobrazit všechny partnery",
-    "projectIntention": {
-        "title": "Pomáháme najít ubytování obětem války na Ukrajině",
-        "description_part1": "Pomáhame uprchlíkům nalézt pomoc automaticky",
-        "freeOfCharge": "Zadarmo",
-        "description_part2": "Ubytování nabízené lidmi a institucemi ochotnámi pomoci",
-        "lookingForHelp": "Hledám ubytování",
-        "shareHelp": "Nabízím pomoc"
+  "supportingPartners": "Partneři podporující iniciativu",
+  "ngoPartners": "Nevládní organizace (NGO's)",
+  "projectInitiators": "Iniciátoři projektu",
+  "partners": "Partneři",
+  "showMorePartners": "Zobrazit všechny partnery",
+  "projectIntention": {
+    "title": "Pomáháme najít ubytování obětem války na Ukrajině",
+    "description_part1": "Pomáhame uprchlíkům nalézt pomoc automaticky",
+    "freeOfCharge": "Zadarmo",
+    "description_part2": "Ubytování nabízené lidmi a institucemi ochotnámi pomoci",
+    "lookingForHelp": "Hledám ubytování",
+    "shareHelp": "Nabízím pomoc"
+  },
+  "likeToHelp": {
+    "title": "Chcete pomoci?",
+    "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete bezplatně nabídnout obětem války na Ukrajině. ",
+    "cta": "Nabídněte ubytování"
+  },
+  "weMatched": {
+    "title": "Zatím...",
+    "cards": {
+      "helpedPeople": "podpořených uprchlíků",
+      "lookingForHelp": "uprchlíků stále hledá pomoc",
+      "currentOffers": "Aktuálně dostupné nabídky"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "Co UA-SOS dělá?",
+    "bulletPoints": {
+      "0": "Dobrovolníci a instituce popíší nabízené ubytování (typ, maximální kapacita, délka pobytu)",
+      "1": "Lidé, kteří hledají ubytování, definují svoje potřeby a minimální požadavky (např. velikost skupiny, lokalita)",
+      "2": "UA-SOS automaticky spojuje ty, kteří hledají přistřeší s nejvhodnějším nabízením ubytováním"
     },
-    "likeToHelp": {
-        "title": "Chcete pomoci?",
-        "details": "Zaregistrujte jakýkoliv typ ubytování, který můžete bezplatně nabídnout obětem války na Ukrajině. ",
-        "cta": "Nabídněte ubytování"
+    "algorithmExplanation": "Algoritmus optimalizuje shody tak, aby co nejvíce lidí v nouzi našlo ubytování.",
+    "rolldown": "Více",
+    "rollup": "Méně",
+    "description": "Portál spojuje osoby v nouzi s institucemi a lidmi, kteří nabízejí svoji pomoc",
+    "howItWorks": "Jak to funguje?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Registrace",
+      "text": "Uživatel se na portálu zaregistruje jako poskytovatel ubytování, nebo žadatel o ubytování"
     },
-    "weMatched": {
-        "title": "Zatím...",
-        "cards": {
-            "helpedPeople": "podpořených uprchlíků",
-            "lookingForHelp": "uprchlíků stále hledá pomoc",
-            "currentOffers": "Aktuálně dostupné nabídky"
-        }
+    "1": {
+      "title": "Vyplnění formuláře",
+      "text": "Uživatel vyplní formulář o nabízeném, nebo hledaném ubytování"
     },
-    "whatSosUaDoesSection": {
-        "title": "Co UA-SOS dělá?",
-        "bulletPoints": {
-            "0": "Dobrovolníci a instituce popíší nabízené ubytování (typ, maximální kapacita, délka pobytu)",
-            "1": "Lidé, kteří hledají ubytování, definují svoje potřeby a minimální požadavky (např. velikost skupiny, lokalita)",
-            "2": "UA-SOS automaticky spojuje ty, kteří hledají přistřeší s nejvhodnějším nabízením ubytováním"
-        },
-        "algorithmExplanation": "Algoritmus optimalizuje shody tak, aby co nejvíce lidí v nouzi našlo ubytování.",
-        "rolldown": "Více",
-        "rollup": "Méně",
-        "description": "Portál spojuje osoby v nouzi s institucemi a lidmi, kteří nabízejí svoji pomoc",
-        "howItWorks": "Jak to funguje?"
+    "2": {
+      "title": "Automatické párování",
+      "text": "Algoritmus prohledá databáze nabízeného ubytování a osob v nouzi a na základě poskytnutých informací vybere tu nejlepší shodu"
     },
-    "instructions": {
-        "0": {
-            "title": "Registrace",
-            "text": "Uživatel se na portálu zaregistruje jako poskytovatel ubytování, nebo žadatel o ubytování"
-        },
-        "1": {
-            "title": "Vyplnění formuláře",
-            "text": "Uživatel vyplní formulář o nabízeném, nebo hledaném ubytování"
-        },
-        "2": {
-            "title": "Automatické párování",
-            "text": "Algoritmus prohledá databáze nabízeného ubytování a osob v nouzi a na základě poskytnutých informací vybere tu nejlepší shodu"
-        },
-        "3": {
-            "title": "Informace odeslané uživateli",
-            "text": "Po nalezení shody dostanou uživatelé e-mail. V aplikaci jsou poté k dispozici dodatečné informace o propojených uživatelích"
-        },
-        "4": {
-            "title": "Uživatelé se navzájem kontaktují",
-            "text": "Po navázání spojení je možné se navzájem kontaktovat e-mailem nebo telefonicky za účelem prodiskutování podrobností"
-        },
-        "5": {
-            "title": "Potvrzení nebo odmítnutí nabídky",
-            "text": "Posledním krokem je potvrzení nebo odmítnutí nabídky v aplikaci. Pakliže je nabídka zamítnuta, je vrácena mezi dostupné nabídky"
-        }
+    "3": {
+      "title": "Informace odeslané uživateli",
+      "text": "Po nalezení shody dostanou uživatelé e-mail. V aplikaci jsou poté k dispozici dodatečné informace o propojených uživatelích"
     },
-    "howDoesItWork": {
-        "title": "Jak to funguje?",
-        "points": {
-            "0": "Odeslat nabídku ubytování \nnebo žádost o ubytování",
-            "1": "Vyplňte potřebné údaje",
-            "2": "Počkat na nejlepší nabídku",
-            "3": "Kontaktovat hostitele",
-            "4": "Potvrdit nebo \nzamítnout nabídku"
-        }
+    "4": {
+      "title": "Uživatelé se navzájem kontaktují",
+      "text": "Po navázání spojení je možné se navzájem kontaktovat e-mailem nebo telefonicky za účelem prodiskutování podrobností"
     },
-    "hero": {
-        "description": "Pomáháme uprchlíkům automaticky najít ubytování, které nabízejí lidé a instituce ochotní pomoci",
-        "lookingForHelp": "Hledám ubytování",
-        "shareHelp": "Nabízím pomoc",
-        "title": "Pomáháme najít ubytování obětem války na Ukrajině"
-    },
-    "partnersMedia": "Mediální partneři"
+    "5": {
+      "title": "Potvrzení nebo odmítnutí nabídky",
+      "text": "Posledním krokem je potvrzení nebo odmítnutí nabídky v aplikaci. Pakliže je nabídka zamítnuta, je vrácena mezi dostupné nabídky"
+    }
+  },
+  "howDoesItWork": {
+    "title": "Jak to funguje?",
+    "points": {
+      "0": "Odeslat nabídku ubytování \nnebo žádost o ubytování",
+      "1": "Vyplňte potřebné údaje",
+      "2": "Počkat na nejlepší nabídku",
+      "3": "Kontaktovat hostitele",
+      "4": "Potvrdit nebo \nzamítnout nabídku"
+    }
+  },
+  "hero": {
+    "description": "Pomáháme uprchlíkům automaticky najít ubytování, které nabízejí lidé a instituce ochotní pomoci",
+    "lookingForHelp": "Hledám ubytování",
+    "shareHelp": "Nabízím pomoc",
+    "title": "Pomáháme najít ubytování obětem války na Ukrajině"
+  },
+  "partnersMedia": "Mediální partneři"
 }
