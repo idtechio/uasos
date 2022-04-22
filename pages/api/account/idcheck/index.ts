@@ -39,15 +39,15 @@ async function index(
   );
 
   if (!account) {
-    // res.status(400).json({ message: "There is no account." });
-    // return;
+    res.status(400).json({ message: "There is no account." });
+    return;
   }
 
   const sendLinkResponse = await idCheckClient.sendLink({
     confCode,
     fileUid: `file-${new Date().getTime()}`,
-    // language: account.preferred_lang,
-    language: "EN",
+    language: account.preferred_lang || "EN",
+    // language: "EN",
     notificationUrl,
     publicDomain,
   });
