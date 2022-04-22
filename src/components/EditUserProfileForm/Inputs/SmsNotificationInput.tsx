@@ -2,9 +2,9 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import styled, { css } from "styled-components/native";
-import CheckboxField from "../../../Forms/CheckboxField";
+import CheckboxField from "../../Forms/CheckboxField";
 import { FlattenSimpleInterpolation } from "styled-components";
-import { FormKey } from "../../../../helpers/FormTypes";
+import { FormKey } from "../../../helpers/FormTypes";
 
 const Wrapper = styled.View<{ wrapperStyleProp?: FlattenSimpleInterpolation }>`
   margin-top: ${(props) => (props.wrapperStyleProp ? "0" : "35px")};

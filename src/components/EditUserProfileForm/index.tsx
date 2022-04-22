@@ -1,77 +1,173 @@
-import { ConfirmationResult, getAuth, User } from "firebase/auth";
-import React, { useEffect, useState } from "react";
-import { AccountApi, getAccountDTO } from "../../client-api/account";
+import { FirebaseError } from "@firebase/util";
+import { ConfirmationResult, User } from "firebase/auth";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import React, { useCallback, useEffect, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
+import { useEditAccount } from "../../queries/useAccount";
+import ButtonCta from "../EditOfferOptions/ButtonCta";
+import { StyledErrorMessage } from "../FormRegisterUser/styles";
 import SmsVerificationModal from "../SmsVerificationModal";
-import UserDetailsForm from "./DetailsForm";
+import { getFormDefaultValues, parseError } from "./helpers";
+import Inputs from "./Inputs";
+import {
+  ContentContainer,
+  ErrorText,
+  FormHeader,
+  ScreenHeader,
+  SuccessMessage,
+  FormFooter,
+} from "./style";
 
-export default function EditUserProfileForm({
-  account,
-  identity,
-}: {
+import { EditProfileForm } from "./types";
+
+type Props = {
   account: getAccountDTO | null;
   identity?: User | null;
-}) {
-  const [detailsUpdated, setDetailsUpdated] = useState(false);
-  const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
-    null
+};
+
+export default function EditUserProfileForm({ account, identity }: Props) {
+  const router = useRouter();
+  const { t } = useTranslation("others");
+  const { mutate, isLoading, isSuccess, isError } = useEditAccount();
+
+  const form = useForm<EditProfileForm>({
+    defaultValues: getFormDefaultValues(account, identity),
+  });
+  const { handleSubmit } = form;
+  const [formPayload, setFormPayload] = useState<EditProfileForm | null>(null);
+
+  const [confirmation, setConfirmation] = useState<
+    ConfirmationResult | undefined
+  >(undefined);
+  const [verificationId, setVerificationId] = useState<string | undefined>(
+    undefined
   );
-  const [verificationId, setVerificationId] = useState<string | null>(null);
-  const [newPhoneNumber, setNewPhoneNumber] = useState<string | null>(null);
+  const [smsVerificationModalMode, setSmsVerificationModalMode] = useState<
+    "LINK" | "UPDATE"
+  >("LINK");
+  const [capchaInited, setCapchaInited] = useState<boolean>(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
-  const onPhoneConfirmationSuccess = () => {
-    return null;
-  };
-
-  const checkIfPhoneIsVerified = async () => {
-    const user = getAuth().currentUser;
-    const account = await AccountApi.getAccount();
-
-    const isNewPhoneNumber = user?.phoneNumber && !account?.confirmedPhone;
-    if (isNewPhoneNumber) {
-      setNewPhoneNumber(user.phoneNumber);
-      const captcha = await Authorization.initCaptcha("recaptcha__container1");
-      setVerificationId(
-        await Authorization.initUpdatePhone(user.phoneNumber, captcha)
-      );
-
-      const confirm = await Authorization.signInWithPhone(
-        user.phoneNumber,
-        Authorization.initCaptcha("recaptcha__container2")
-      );
-      setConfirmation(confirm);
+  const verifyPhone = async () => {
+    try {
+      const captcha = capchaInited
+        ? Authorization.recaptcha
+        : Authorization.initCaptcha("recaptcha__container");
+      setCapchaInited(true);
+      if (formPayload?.phone && captcha) {
+        if (!identity?.phoneNumber) {
+          setSmsVerificationModalMode("LINK");
+          const confirm = await Authorization.linkWithPhone(
+            formPayload?.phone,
+            captcha
+          );
+          setConfirmation(confirm);
+        } else if (identity?.phoneNumber !== formPayload?.phone) {
+          setSmsVerificationModalMode("UPDATE");
+          setVerificationId(
+            await Authorization.initUpdatePhone(formPayload?.phone, captcha)
+          );
+        }
+      }
+    } catch (error: unknown) {
+      if (error instanceof Error || error instanceof FirebaseError) {
+        setApiError(parseError(error.message));
+      }
+      closeSmsVerificationModal();
     }
   };
+
+  const onSubmit = useCallback(
+    async (data: EditProfileForm) => {
+      const payload = {
+        name: data.name,
+        email: data.email,
+        phone:
+          data.phonePrefix && data.phone
+            ? `${data.phonePrefix}${data.phone}`
+            : undefined,
+        preferredLang: data.preferredLanguage,
+        smsNotification: data.smsNotification,
+      };
+
+      setFormPayload(payload);
+    },
+    [formPayload]
+  );
 
   useEffect(() => {
-    if (detailsUpdated) {
-      checkIfPhoneIsVerified();
+    if (formPayload) {
+      (identity?.phoneNumber === null && formPayload?.phone === undefined) ||
+      identity?.phoneNumber === formPayload?.phone
+        ? updateUserProfile()
+        : verifyPhone();
     }
-  }, [detailsUpdated]);
+  }, [formPayload]);
 
-  const shouldOpenSmsVerification =
-    detailsUpdated && confirmation && verificationId && newPhoneNumber;
+  const updateUserProfile = useCallback(async () => {
+    if (formPayload) {
+      mutate(
+        { payload: formPayload },
+        {
+          onError: () => {
+            // Set error message
+          },
+          onSuccess: async () => {
+            router.push("/dashboard");
+          },
+        }
+      );
+      await Authorization.updateMail(formPayload.email);
+    }
+  }, [formPayload, mutate, router]);
+
+  const closeSmsVerificationModal = useCallback(() => {
+    confirmation ? setConfirmation(undefined) : setVerificationId(undefined);
+    setFormPayload(null);
+  }, [confirmation]);
 
   return (
     <>
-      <UserDetailsForm
-        account={account}
-        identity={identity}
-        onSuccess={() => setDetailsUpdated(true)}
-      />
-      {shouldOpenSmsVerification && (
+      <FormProvider {...form}>
+        <ContentContainer>
+          <ScreenHeader>{t("forms.userProfile.header")}</ScreenHeader>
+          <FormHeader>{t("forms.userRegistration.enterDetails")}</FormHeader>
+          <Inputs />
+          {apiError && <StyledErrorMessage>{t(apiError)}</StyledErrorMessage>}
+          <FormFooter style={{ flexWrap: "wrap" }}>
+            {isSuccess && <SuccessMessage>Success</SuccessMessage>}
+            {isError && <ErrorText>Error</ErrorText>}
+
+            <ButtonCta
+              color="primary"
+              variant="outlined"
+              anchor={t("common.buttons.cancel")}
+              disabled={isLoading}
+              onPress={() => router.push("/dashboard")}
+            />
+            <ButtonCta
+              disabled={isLoading}
+              anchor={t("common.buttons.update")}
+              onPress={handleSubmit(onSubmit)}
+            />
+          </FormFooter>
+        </ContentContainer>
+      </FormProvider>
+      {(confirmation || verificationId) && formPayload?.phone && (
         <SmsVerificationModal
           confirmation={confirmation}
           verificationId={verificationId}
-          phoneNumber={newPhoneNumber}
-          setVerificationSuccess={onPhoneConfirmationSuccess}
-          callback={() => null}
-          close={() => setConfirmation(null)}
-          mode="UPDATE"
+          phoneNumber={formPayload.phone}
+          setVerificationSuccess={() => console.log("success")}
+          callback={updateUserProfile}
+          close={closeSmsVerificationModal}
+          mode={smsVerificationModalMode}
         />
       )}
-      <div id={"recaptcha__container1"} />
-      <div id={"recaptcha__container2"} />
+      <div id={"recaptcha__container"} />
     </>
   );
 }

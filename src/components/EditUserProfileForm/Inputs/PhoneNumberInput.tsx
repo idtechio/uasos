@@ -2,9 +2,9 @@ import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components/native";
-import { Theme } from "../../../../style/theme.config";
-import Input from "../../../Forms/Input";
-import PhoneNumberPrefixSelect from "../../../Forms/PhoneNumberPrefixSelect";
+import { Theme } from "../../../style/theme.config";
+import Input from "../../Forms/Input";
+import PhoneNumberPrefixSelect from "../../Forms/PhoneNumberPrefixSelect";
 import { EditProfileForm } from "../types";
 import { InputWrapper } from "./style";
 
@@ -53,7 +53,7 @@ export default function PhoneNumberInput() {
                 onChange={onChange}
                 error={error}
                 // errorMsg={error?.message}
-                placeholder="xxx-xxx-xxx"
+                placeholder="_ _ _  _ _ _  _ _ _ "
               />
             )}
           />
