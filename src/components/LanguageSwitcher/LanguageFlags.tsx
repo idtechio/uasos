@@ -25,7 +25,7 @@ export const LanguageFlags = ({ locale }: Props) => {
       flag = "🇷🇺";
       break;
     case "en":
-      flag = "🇺🇸";
+      flag = "🇬🇧";
       break;
     case "hu":
       flag = "🇭🇺";
