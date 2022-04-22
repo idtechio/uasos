@@ -141,7 +141,8 @@
             "poland": "Польща",
             "hungary": "Угорщина",
             "czechia": "чешка",
-            "slovakia": "словаччина"
+            "slovakia": "словаччина",
+            "romania": "Румунія"
         },
         "nameLabel": "Ім'я (введіть лише ім'я)",
         "emailPlaceholder": "електронна пошта",

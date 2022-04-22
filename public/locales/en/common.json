@@ -141,7 +141,8 @@
             "poland": "Poland",
             "hungary": "Hungary",
             "czechia": "Czech",
-            "slovakia": "Slovakia"
+            "slovakia": "Slovakia",
+            "romania": "Romania"
         },
         "nameLabel": "First name (only enter first name)",
         "emailPlaceholder": "e-mail",

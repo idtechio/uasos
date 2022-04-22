@@ -296,7 +296,7 @@
             "phoneExist": "",
             "tooManyRequest": "",
             "invalidCode": "",
-            "phoneLinkingFailed": ""
+            "phoneLinkingFailed": "Při propojování telefonního čísla s vaším účtem došlo k chybě. Ujistěte se, že vaše telefonní číslo není propojeno s jiným účtem, nebo zkuste znovu použít jiné číslo"
         }
     },
     "publicShelters": {

@@ -296,7 +296,7 @@
             "phoneExist": "Ez a telefonszám már egy másik fiókhoz van kapcsolva",
             "tooManyRequest": "Túl sok telefonos ellenőrzési kérelem",
             "invalidCode": "Érvénytelen kód",
-            "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolásakor, jelentkezzen be, és próbálja újra"
+            "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolása közben. Győződjön meg róla, hogy a telefonszáma nincs összekapcsolva a másik fiókkal, vagy próbálja meg újra más számmal."
         }
     },
     "publicShelters": {

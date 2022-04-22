@@ -141,7 +141,8 @@
             "poland": "Polsko",
             "hungary": "Maďarština",
             "czechia": "Česko",
-            "slovakia": "Slovensko"
+            "slovakia": "Slovensko",
+            "romania": "Rumunsko"
         },
         "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
         "emailPlaceholder": "E-mailová adresa",
