@@ -1,11 +1,11 @@
 {
-  "001": {
-    "name": "",
-    "address": "",
-    "city": "",
-    "occupancy": "",
-    "phoneNumber": "",
-    "howToGetThere": "",
-    "country": ""
-  }
+    "001": {
+        "name": "",
+        "address": "",
+        "city": "",
+        "occupancy": "",
+        "phoneNumber": "",
+        "howToGetThere": "",
+        "country": ""
+    }
 }

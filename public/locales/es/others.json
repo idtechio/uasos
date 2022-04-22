@@ -1,317 +1,317 @@
 {
-  "common": {
-    "buttons": {
-      "back": "",
-      "continue": "",
-      "confirm": "",
-      "next": "",
-      "backToDesktop": "",
-      "cancel": "",
-      "backToProfile": "",
-      "verify": "",
-      "report": "",
-      "update": "",
-      "reject": "",
-      "close": ""
+    "common": {
+        "buttons": {
+            "back": "",
+            "continue": "",
+            "confirm": "",
+            "next": "",
+            "backToDesktop": "",
+            "cancel": "",
+            "backToProfile": "",
+            "verify": "",
+            "report": "",
+            "update": "",
+            "reject": "",
+            "close": ""
+        },
+        "footer": {
+            "FAQ": "",
+            "termsOfService": "",
+            "yourSafety": ""
+        },
+        "words": {
+            "idWithData": "",
+            "renew": "",
+            "additionalInformation": "",
+            "congratulations": "",
+            "thankYou": "",
+            "or": "",
+            "badNews": "",
+            "prefix": "",
+            "dashboard": "",
+            "publicShelters": "",
+            "addMore": "",
+            "remember": ""
+        },
+        "links": {
+            "re-sendCode": "",
+            "resetPassword": "",
+            "resetPasswordLong": ""
+        },
+        "sms": {
+            "verification": "",
+            "verificationSuccess": "",
+            "sentInfo": "",
+            "verificationFail": ""
+        },
+        "actions": {
+            "showPassword": "",
+            "details": "",
+            "addOffer": "",
+            "addSubmission": ""
+        },
+        "email": {
+            "sentInfo": "",
+            "verification": "",
+            "errorTryAgainInSeconds": "",
+            "errorTryAgain": "",
+            "errorTooManyRequestsInSeconds": ""
+        },
+        "nationalities": {
+            "ukrainians": "",
+            "ukrainian": "Ucraniano",
+            "nonUkrainian": "No ucraniano"
+        }
     },
-    "footer": {
-      "FAQ": "",
-      "termsOfService": "",
-      "yourSafety": ""
+    "forms": {
+        "createShelter": {
+            "street": "",
+            "agreeForShelterVerification": "",
+            "addPhotoHeader": "",
+            "buildingNo": "",
+            "apartmentNo": "",
+            "accommodationHeader": "",
+            "groupsHostAccepts": "",
+            "accommodationTypes": {
+                "house": ""
+            },
+            "photosList": "",
+            "acceptElderly": "",
+            "addPhotoHeaderWithLimit3": "",
+            "numberOfRooms": "",
+            "roomCapacity": ""
+        },
+        "userRegistration": {
+            "enterDetails": "",
+            "confirmPassword": "",
+            "agreeOnSmsCommunication": "",
+            "language": "",
+            "proposeCreateAccount": "",
+            "newPassword": "",
+            "userRegistration": "",
+            "preferredLanguage": "",
+            "fillMissingData": "",
+            "validations": {
+                "passwordMismatch": "",
+                "passwordLength": ""
+            },
+            "password": "",
+            "errors": {
+                "duplicatedMail": ""
+            }
+        },
+        "match": {
+            "guestProfile": "",
+            "numberOfPeopleWithData": "",
+            "durationWithData": "",
+            "specificCity": "",
+            "confirmed": "",
+            "accommodationTypeWithData": "",
+            "additionalInfoOnAccommodation": "",
+            "usersWarning": "",
+            "individual": "",
+            "host": {
+                "formSent": "",
+                "formSentThanks": "",
+                "received": ""
+            },
+            "searchAddress": "",
+            "rejected": "",
+            "refuge": {
+                "rejection": ""
+            }
+        },
+        "generic": {
+            "hostInformation": {
+                "offerTransport": "",
+                "takesPregnancy": ""
+            },
+            "groupInformation": {
+                "pregnancy": "",
+                "disability": "",
+                "multicultural": "",
+                "animals": "",
+                "elders": ""
+            },
+            "submited": "",
+            "facilityInformation": {
+                "disability": "",
+                "pregnancy": "",
+                "eldery": "",
+                "diversity": ""
+            },
+            "password": "",
+            "selectFromList": "",
+            "cityWithData": "",
+            "phoneNumberWithData": "",
+            "hostWithName": "",
+            "addPhoto": "",
+            "emailAddressWithData": "",
+            "zipCode": "",
+            "hostProfile": "",
+            "peopleInGroup": "",
+            "city": "",
+            "groupType": "",
+            "additionalGroupInformation": "",
+            "guest": "",
+            "selectMultipleFromList": "",
+            "name": "",
+            "phoneNumber": "",
+            "country": "",
+            "email": "",
+            "emailAddress": "",
+            "closestLargeCity": "",
+            "occupancy": ""
+        },
+        "createRefuge": {
+            "shelter": {
+                "targetCityAndSurroundings": "",
+                "groupDetails": "",
+                "anyCity": "",
+                "imWithPregnantOver6Months": "",
+                "whatIsTargetCountry": "",
+                "selectCountry": ""
+            }
+        },
+        "login": {
+            "emailOrPhone": "",
+            "login": "",
+            "signInFacebook": "",
+            "signInGoogle": "",
+            "emailOrPhoneDetail": "",
+            "invalidPassword": ""
+        },
+        "resetPassword": {
+            "setNewPassword": "",
+            "header": "",
+            "emailSent": "",
+            "success": "",
+            "detail": ""
+        },
+        "edit": {
+            "editAccommodationHeader": ""
+        },
+        "validations": {
+            "fill": {
+                "phoneNumber": ""
+            }
+        },
+        "userProfile": {
+            "header": ""
+        },
+        "renew": {
+            "re-activateOffer": ""
+        }
     },
-    "words": {
-      "idWithData": "",
-      "renew": "",
-      "additionalInformation": "",
-      "congratulations": "",
-      "thankYou": "",
-      "or": "",
-      "badNews": "",
-      "prefix": "",
-      "dashboard": "",
-      "publicShelters": "",
-      "addMore": "",
-      "remember": ""
+    "desktop": {
+        "lookingForSupport": "",
+        "filters": {
+            "shelter": ""
+        },
+        "host": {
+            "numberOfPeople": ""
+        },
+        "offer": {
+            "status": {
+                "accepted": "",
+                "beingConfirmed": "",
+                "awaitingGuestApproval": "",
+                "inactive": "",
+                "haveMatch": "",
+                "lookingForMatch": "",
+                "awaitingHostApproval": "",
+                "confirmed": "",
+                "rejected": ""
+            }
+        },
+        "refuge": {
+            "searchingAccommodation": "",
+            "accommodationSearch": "",
+            "submission": "",
+            "duration": ""
+        },
+        "providingSupport": "",
+        "yourSubmission": "",
+        "yourOffers": "",
+        "contextMenu": {
+            "reportProblem": "",
+            "renew": "",
+            "edit": ""
+        },
+        "checks": {
+            "phoneNotVerified": "",
+            "emailNotVerified": "",
+            "accountInCreation": "",
+            "emailAlreadyInUse": "",
+            "idNotVerified": "",
+            "changesInProgress": "",
+            "idVerified": ""
+        },
+        "housing": "",
+        "confirmation": {
+            "header": "",
+            "content": "",
+            "accepted": "",
+            "cancellation": ""
+        },
+        "accommodationSearch": "",
+        "exitToIDnow": ""
     },
-    "links": {
-      "re-sendCode": "",
-      "resetPassword": "",
-      "resetPasswordLong": ""
+    "reportProblem": {
+        "popup": {
+            "description": "",
+            "problemReported": "",
+            "thanksForLettingKnow": "",
+            "reasons": {
+                "guestNotNeedHelp": "",
+                "hostCantHelp": "",
+                "rejectedAfterContact": "",
+                "noResponseAfterContact": "",
+                "notShowUp": ""
+            }
+        }
     },
-    "sms": {
-      "verification": "",
-      "verificationSuccess": "",
-      "sentInfo": "",
-      "verificationFail": ""
-    },
-    "actions": {
-      "showPassword": "",
-      "details": "",
-      "addOffer": "",
-      "addSubmission": ""
-    },
-    "email": {
-      "sentInfo": "",
-      "verification": "",
-      "errorTryAgainInSeconds": "",
-      "errorTryAgain": "",
-      "errorTooManyRequestsInSeconds": ""
-    },
-    "nationalities": {
-      "ukrainians": "",
-      "ukrainian": "Ucraniano",
-      "nonUkrainian": "No ucraniano"
-    }
-  },
-  "forms": {
-    "createShelter": {
-      "street": "",
-      "agreeForShelterVerification": "",
-      "addPhotoHeader": "",
-      "buildingNo": "",
-      "apartmentNo": "",
-      "accommodationHeader": "",
-      "groupsHostAccepts": "",
-      "accommodationTypes": {
-        "house": ""
-      },
-      "photosList": "",
-      "acceptElderly": "",
-      "addPhotoHeaderWithLimit3": "",
-      "numberOfRooms": "",
-      "roomCapacity": ""
-    },
-    "userRegistration": {
-      "enterDetails": "",
-      "confirmPassword": "",
-      "agreeOnSmsCommunication": "",
-      "language": "",
-      "proposeCreateAccount": "",
-      "newPassword": "",
-      "userRegistration": "",
-      "preferredLanguage": "",
-      "fillMissingData": "",
-      "validations": {
-        "passwordMismatch": "",
-        "passwordLength": ""
-      },
-      "password": "",
-      "errors": {
-        "duplicatedMail": ""
-      }
-    },
-    "match": {
-      "guestProfile": "",
-      "numberOfPeopleWithData": "",
-      "durationWithData": "",
-      "specificCity": "",
-      "confirmed": "",
-      "accommodationTypeWithData": "",
-      "additionalInfoOnAccommodation": "",
-      "usersWarning": "",
-      "individual": "",
-      "host": {
-        "formSent": "",
-        "formSentThanks": "",
-        "received": ""
-      },
-      "searchAddress": "",
-      "rejected": "",
-      "refuge": {
-        "rejection": ""
-      }
-    },
-    "generic": {
-      "hostInformation": {
-        "offerTransport": "",
-        "takesPregnancy": ""
-      },
-      "groupInformation": {
-        "pregnancy": "",
-        "disability": "",
-        "multicultural": "",
-        "animals": "",
-        "elders": ""
-      },
-      "submited": "",
-      "facilityInformation": {
-        "disability": "",
-        "pregnancy": "",
-        "eldery": "",
-        "diversity": ""
-      },
-      "password": "",
-      "selectFromList": "",
-      "cityWithData": "",
-      "phoneNumberWithData": "",
-      "hostWithName": "",
-      "addPhoto": "",
-      "emailAddressWithData": "",
-      "zipCode": "",
-      "hostProfile": "",
-      "peopleInGroup": "",
-      "city": "",
-      "groupType": "",
-      "additionalGroupInformation": "",
-      "guest": "",
-      "selectMultipleFromList": "",
-      "name": "",
-      "phoneNumber": "",
-      "country": "",
-      "email": "",
-      "emailAddress": "",
-      "closestLargeCity": "",
-      "occupancy": ""
-    },
-    "createRefuge": {
-      "shelter": {
-        "targetCityAndSurroundings": "",
-        "groupDetails": "",
-        "anyCity": "",
-        "imWithPregnantOver6Months": "",
-        "whatIsTargetCountry": "",
-        "selectCountry": ""
-      }
-    },
-    "login": {
-      "emailOrPhone": "",
-      "login": "",
-      "signInFacebook": "",
-      "signInGoogle": "",
-      "emailOrPhoneDetail": "",
-      "invalidPassword": ""
-    },
-    "resetPassword": {
-      "setNewPassword": "",
-      "header": "",
-      "emailSent": "",
-      "success": "",
-      "detail": ""
-    },
-    "edit": {
-      "editAccommodationHeader": ""
-    },
-    "validations": {
-      "fill": {
-        "phoneNumber": ""
-      }
-    },
-    "userProfile": {
-      "header": ""
-    },
-    "renew": {
-      "re-activateOffer": ""
-    }
-  },
-  "desktop": {
-    "lookingForSupport": "",
-    "filters": {
-      "shelter": ""
-    },
-    "host": {
-      "numberOfPeople": ""
+    "deleteOffer": {
+        "popup": {
+            "areYouSure": "",
+            "header": "",
+            "confirmation": ""
+        }
     },
     "offer": {
-      "status": {
-        "accepted": "",
-        "beingConfirmed": "",
-        "awaitingGuestApproval": "",
-        "inactive": "",
-        "haveMatch": "",
-        "lookingForMatch": "",
-        "awaitingHostApproval": "",
-        "confirmed": "",
-        "rejected": ""
-      }
+        "popup": {
+            "renew": {
+                "expiredMsg": ""
+            }
+        }
     },
-    "refuge": {
-      "searchingAccommodation": "",
-      "accommodationSearch": "",
-      "submission": "",
-      "duration": ""
+    "welcomePage": {
+        "appDescription": "",
+        "comingSoon": "",
+        "waysToStaySafe": ""
     },
-    "providingSupport": "",
-    "yourSubmission": "",
-    "yourOffers": "",
-    "contextMenu": {
-      "reportProblem": "",
-      "renew": "",
-      "edit": ""
+    "userRegistration": {
+        "errors": {
+            "emailExist": "",
+            "phoneExist": "",
+            "tooManyRequest": "",
+            "invalidCode": "",
+            "phoneLinkingFailed": ""
+        }
     },
-    "checks": {
-      "phoneNotVerified": "",
-      "emailNotVerified": "",
-      "accountInCreation": "",
-      "emailAlreadyInUse": "",
-      "idNotVerified": "",
-      "changesInProgress": "",
-      "idVerified": ""
+    "publicShelters": {
+        "details": {
+            "howToGetThere": ""
+        },
+        "addShelterMail": "",
+        "description": ""
     },
-    "housing": "",
-    "confirmation": {
-      "header": "",
-      "content": "",
-      "accepted": "",
-      "cancellation": ""
-    },
-    "accommodationSearch": "",
-    "exitToIDnow": ""
-  },
-  "reportProblem": {
-    "popup": {
-      "description": "",
-      "problemReported": "",
-      "thanksForLettingKnow": "",
-      "reasons": {
-        "guestNotNeedHelp": "",
-        "hostCantHelp": "",
-        "rejectedAfterContact": "",
-        "noResponseAfterContact": "",
-        "notShowUp": ""
-      }
+    "popup:staySafe": {
+        "rememberToStaySafe": "",
+        "reviewedTips": "",
+        "getToKnowHost": "",
+        "exchangeFacebook": "",
+        "useTranslator": "",
+        "getToKnowGuest": ""
     }
-  },
-  "deleteOffer": {
-    "popup": {
-      "areYouSure": "",
-      "header": "",
-      "confirmation": ""
-    }
-  },
-  "offer": {
-    "popup": {
-      "renew": {
-        "expiredMsg": ""
-      }
-    }
-  },
-  "welcomePage": {
-    "appDescription": "",
-    "comingSoon": "",
-    "waysToStaySafe": ""
-  },
-  "userRegistration": {
-    "errors": {
-      "emailExist": "",
-      "phoneExist": "",
-      "tooManyRequest": "",
-      "invalidCode": "",
-      "phoneLinkingFailed": ""
-    }
-  },
-  "publicShelters": {
-    "details": {
-      "howToGetThere": ""
-    },
-    "addShelterMail": "",
-    "description": ""
-  },
-  "popup:staySafe": {
-    "rememberToStaySafe": "",
-    "reviewedTips": "",
-    "getToKnowHost": "",
-    "exchangeFacebook": "",
-    "useTranslator": "",
-    "getToKnowGuest": ""
-  }
 }
