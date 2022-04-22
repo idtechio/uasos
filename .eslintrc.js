@@ -8,7 +8,12 @@ module.exports = {
   ],
   plugins: ["prettier", "@typescript-eslint", "unused-imports"],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
     "no-console": "warn",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-var-requires": "off",

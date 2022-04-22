@@ -4,15 +4,17 @@ import Link from "next/link";
 import ChevronIcon from "../../style/svgs/chevron-down.svg";
 import { LinkContent, StyledText, Wrapper } from "./styled";
 import { Routes } from "../../consts/router";
+import { ViewStyle } from "react-native";
 
 interface Props {
   to: string;
+  style?: ViewStyle;
 }
 
-const AppBack = ({ to }: Props) => {
+const AppBack = ({ to, style }: Props) => {
   const { t } = useTranslation("others");
   return (
-    <Wrapper>
+    <Wrapper style={style}>
       <Link href={to || Routes.HOMEPAGE} passHref>
         <LinkContent>
           <ChevronIcon

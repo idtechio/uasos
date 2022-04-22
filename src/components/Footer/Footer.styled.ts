@@ -2,6 +2,9 @@ import styled from "styled-components/native";
 import styledWeb, { css } from "styled-components";
 import { Theme } from "../../style/theme.config";
 
+export const DESKTOP_FOOTER_HEIGHT = 70;
+export const MOBILE_FOOTER_HEIGHT = 210;
+
 export const FooterWrapper = styled.View`
   align-self: stretch;
   background-color: ${({ theme }: { theme: Theme }) => theme.colors.accent};

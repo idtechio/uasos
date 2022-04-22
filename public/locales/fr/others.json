@@ -1,317 +1,317 @@
 {
-    "common": {
-        "buttons": {
-            "back": "Précédent",
-            "continue": "Continuer",
-            "confirm": "Confirmer",
-            "next": "Suivant",
-            "backToDesktop": "Retour à la page d'accueil",
-            "cancel": "Annuler",
-            "backToProfile": "Retour au profil",
-            "verify": "Vérifier",
-            "report": "Signaler",
-            "update": "Mettre à jour",
-            "reject": "Rejeter",
-            "close": "Fermer"
-        },
-        "footer": {
-            "FAQ": "FAQ",
-            "termsOfService": "Conditions d'utilisation",
-            "yourSafety": "Votre sécurité"
-        },
-        "words": {
-            "idWithData": "Identifiant: {{id}}",
-            "renew": "Renouveler",
-            "additionalInformation": "Informations supplémentaires",
-            "congratulations": "Félicitations",
-            "thankYou": "Merci",
-            "or": "Ou",
-            "badNews": "Mauvaise nouvelle",
-            "prefix": "Préfixe",
-            "dashboard": "Tableau de bord",
-            "publicShelters": "Logements publics",
-            "addMore": "Ajouter plus",
-            "remember": "Rappelez-vous :"
-        },
-        "links": {
-            "re-sendCode": "Renvoyer le code",
-            "resetPassword": "Réinitialiser le mot de passe",
-            "resetPasswordLong": "Mot de passe oublié? <b><u>Cliquez ici<\/u><\/b>"
-        },
-        "sms": {
-            "verification": "Vérification par SMS",
-            "verificationSuccess": "Vérification par SMS terminée avec succès",
-            "sentInfo": "Entrez le code de vérification envoyé au numéro de téléphone {{phoneNumber}}.",
-            "verificationFail": "Oups ! Quelque chose s'est mal passé, essayez à nouveau ou générez un nouveau code."
-        },
-        "actions": {
-            "showPassword": "Afficher le mot de passe",
-            "details": "Détails",
-            "addOffer": "Ajouter une offre de logement",
-            "addSubmission": "Demander du support"
-        },
-        "email": {
-            "sentInfo": "nous avons envoyé un code de vérification à votre adresse e-mail. Cliquez sur le lien pour le vérifier",
-            "verification": "Vérification de l'e-mail",
-            "errorTryAgainInSeconds": "Le courrier n'est pas arrivé ? Essayez à nouveau dans {{nombre}} secondes",
-            "errorTryAgain": "Le courrier n'est pas arrivé ? Essayez à nouveau.",
-            "errorTooManyRequestsInSeconds": "Trop de demandes. Réessayez dans {{number}} secondes"
-        },
-        "nationalities": {
-            "ukrainians": "Ukrainiens",
-            "ukrainian": "Ukrainien",
-            "nonUkrainian": "Non-ukrainien"
-        }
+  "common": {
+    "buttons": {
+      "back": "Précédent",
+      "continue": "Continuer",
+      "confirm": "Confirmer",
+      "next": "Suivant",
+      "backToDesktop": "Retour à la page d'accueil",
+      "cancel": "Annuler",
+      "backToProfile": "Retour au profil",
+      "verify": "Vérifier",
+      "report": "Signaler",
+      "update": "Mettre à jour",
+      "reject": "Rejeter",
+      "close": "Fermer"
     },
-    "forms": {
-        "createShelter": {
-            "street": "Rue",
-            "agreeForShelterVerification": "J’accepte que l'on vérifie mon hébergement (visite de bénévoles)",
-            "addPhotoHeader": "Ajouter une photo du logement proposé",
-            "buildingNo": "Numéro d'immeuble",
-            "apartmentNo": "N° d’appartement",
-            "accommodationHeader": "Fournir des informations sur le logement que vous proposez",
-            "groupsHostAccepts": "Quels types de groupes accepteriez-vous ?",
-            "accommodationTypes": {
-                "house": "Maison"
-            },
-            "photosList": "Photo du logement proposé",
-            "acceptElderly": "J'accepte les personnes âgées",
-            "addPhotoHeaderWithLimit3": "Ajouter une photo du logement proposé (maximum 3)",
-            "numberOfRooms": "Nombre de chambres",
-            "roomCapacity": "Capacité par chambre"
-        },
-        "userRegistration": {
-            "enterDetails": "Entrez vos coordonnées",
-            "confirmPassword": "Confirmer le mot de passe",
-            "agreeOnSmsCommunication": "Je veux être informé par SMS de correspondances potentielles.",
-            "language": "Langue",
-            "proposeCreateAccount": "Si vous n'avez pas de compte, vous pouvez en créer un.",
-            "newPassword": "Nouveau mot de passe",
-            "userRegistration": "Enregistrement de l'utilisateur",
-            "preferredLanguage": "Langue de communication préférée",
-            "fillMissingData": "Remplir les données manquantes",
-            "validations": {
-                "passwordMismatch": "Mots de passe différents",
-                "passwordLength": "La mot de passe doit être d'au moins 8 caractères"
-            },
-            "password": "Mot de passe (8 caractères minimum)",
-            "errors": {
-                "duplicatedMail": "L'email lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau en utilisant une autre méthode de connexion."
-            }
-        },
-        "match": {
-            "guestProfile": "Profil invité",
-            "numberOfPeopleWithData": "Nombre maximum de personnes : <b>{{number}}<\/b>",
-            "durationWithData": "Durée du séjour : <b>{{number}}{{unit}}<\/b>",
-            "specificCity": "Ville spécifique",
-            "confirmed": "Votre invité\/hôte vient de confirmer une offre. Contactez-le\/la pour régler les détails.",
-            "accommodationTypeWithData": "Type d’hébergement: <b>{{type}}<\/b>",
-            "additionalInfoOnAccommodation": "Informations supplémentaires sur le logement",
-            "usersWarning": "<b>Pour des raisons de sécurité, informez vos proches des personnes que vous hébergez. Au cas où: <\/b>\n<ul>\n<li>vérifier l'identité de la personne que vous hébergez,<\/li>\n<li> assurez-vous que la composition du groupe correspond à la description d'origine<\/li>\n<\/ul>",
-            "individual": "Individu",
-            "host": {
-                "formSent": "Formulaire envoyé",
-                "formSentThanks": "Merci d'avoir exprimé votre volonté d'aider. Votre propriété a été ajoutée à la liste. Nous chercherons dans notre base de données de personnes dans le besoin et vous ferons savoir dès que nous trouvons la bonne personne.",
-                "received": "Merci beaucoup de confirmer la proposition reçue. Dès que nous aurons reçu les deux confirmations, nous vous le ferons savoir."
-            },
-            "searchAddress": "Chercher l'adresse : <b>{{city}}<\/b>",
-            "rejected": "Votre invité\/hôte potentiel a rejeté l'offre. Votre application retournera dans le pool, nous vous informerons de la prochaine offre que nous trouverons.",
-            "refuge": {
-                "rejection": "Merci d'avoir confirmé votre décision. Votre proposition sera remise dans le pool, nous vous informerons de la prochaine proposition dès que nous en aurons trouvé une."
-            }
-        },
-        "generic": {
-            "hostInformation": {
-                "offerTransport": "J'offre le transport",
-                "takesPregnancy": "J'accepte une personne en état de grossesse avancée (plus de 6 mois)."
-            },
-            "groupInformation": {
-                "pregnancy": "Le groupe comprend une personne avec une grossesse avancée (plus de 6 mois)",
-                "disability": "Il y a une personne handicapée dans le groupe",
-                "multicultural": "Le groupe comprend des personnes de différentes nationalités",
-                "animals": "Le groupe est accompagné d'un animal de compagnie",
-                "elders": "Il y a une personne âgée dans le groupe"
-            },
-            "submited": "Formulaire soumis",
-            "facilityInformation": {
-                "disability": "Installations pour personnes handicapées",
-                "pregnancy": "Installations pour les femmes enceintes",
-                "eldery": "Installations pour les personnes âgées",
-                "diversity": "Toutes les nationalités sont les bienvenues"
-            },
-            "password": "Mot de passe",
-            "selectFromList": "Sélectionner dans la liste",
-            "cityWithData": "Ville: {{city}}",
-            "phoneNumberWithData": "Numéro de téléphone : <b>{{number}}<\/b>",
-            "hostWithName": "Hôte : <b>{{name}}<\/b>",
-            "addPhoto": "Ajouter une photo",
-            "emailAddressWithData": "Adresse e-mail : <b>{{mail}}<\/b>",
-            "zipCode": "Code postal",
-            "hostProfile": "Profil de l'hôte",
-            "peopleInGroup": "Nombre de personnes dans le groupe : <b>{{number}}<\/b>",
-            "city": "Adresse : <b>{{city}}<\/b>",
-            "groupType": "Type de groupe : <b>{{type}}<\/b>",
-            "additionalGroupInformation": "Informations supplémentaires sur le groupe",
-            "guest": "Invité : <b>{{name}}<\/b>",
-            "selectMultipleFromList": "Sélectionnez dans la liste (choix multiple)",
-            "name": "Nom",
-            "phoneNumber": "Numéro de téléphone",
-            "country": "Pays",
-            "email": "E-mail",
-            "emailAddress": "Adresse E-mail",
-            "closestLargeCity": "La grande ville la plus proche",
-            "occupancy": "Occupation: {{number}}"
-        },
-        "createRefuge": {
-            "shelter": {
-                "targetCityAndSurroundings": "Ville et environs",
-                "groupDetails": "Informations sur les personnes avec qui vous emménagez",
-                "anyCity": "N’importe quelle ville",
-                "imWithPregnantOver6Months": "Je suis, ou je suis accompagné(e) d'une personne en <br \/> grossesse avancée (plus de 6 mois)",
-                "whatIsTargetCountry": "Dans quel pays souhaitez-vous loger ?",
-                "selectCountry": "Choisissez le pays"
-            }
-        },
-        "login": {
-            "emailOrPhone": "Adresse e-mail ou numéro de téléphone",
-            "login": "Se connecter",
-            "signInFacebook": "Se connecter avec Facebook",
-            "signInGoogle": "Se connecter avec Google",
-            "emailOrPhoneDetail": "E-mail ou numéro de téléphone",
-            "invalidPassword": "Mot de passe fourni non valide"
-        },
-        "resetPassword": {
-            "setNewPassword": "Définir un nouveau mot de passe",
-            "header": "Fournissez un nouveau mot de passe pour votre compte",
-            "emailSent": "E-mail de réinitialisation du mot de passe envoyé - vérifiez votre boîte électronique",
-            "success": "Votre mot de passe a été modifié avec succès",
-            "detail": "Si vous ne vous souvenez pas de votre mot de passe, saisissez votre adresse électronique. Nous vous enverrons un lien vers le formulaire de réinitialisation du mot de passe."
-        },
-        "edit": {
-            "editAccommodationHeader": "Modifier les informations sur le logement que vous proposez"
-        },
-        "validations": {
-            "fill": {
-                "phoneNumber": "Ajoutez votre numéro de téléphone"
-            }
-        },
-        "userProfile": {
-            "header": "Modification du profil utilisateur"
-        },
-        "renew": {
-            "re-activateOffer": "Voulez-vous réactiver la demande\/offre ?"
-        }
+    "footer": {
+      "FAQ": "FAQ",
+      "termsOfService": "Conditions d'utilisation",
+      "yourSafety": "Votre sécurité"
     },
-    "desktop": {
-        "lookingForSupport": "Recevoir de l'aide",
-        "filters": {
-            "shelter": "Abri"
-        },
-        "host": {
-            "numberOfPeople": "Nombre de personnes: maximum {{maxAmount}}"
-        },
-        "offer": {
-            "status": {
-                "accepted": "Accepté§",
-                "beingConfirmed": "En cours de confirmation",
-                "awaitingGuestApproval": "En attente de la confirmation de la personne hébergée",
-                "inactive": "Inactif",
-                "haveMatch": "Nous avons trouvé une correspondance",
-                "lookingForMatch": "Recherche d'une correspondance",
-                "awaitingHostApproval": "En attente de l'approbation de l'hôte",
-                "confirmed": "Confirmé",
-                "rejected": "Rejeté"
-            }
-        },
-        "refuge": {
-            "searchingAccommodation": "Recherche d'un logement",
-            "accommodationSearch": "Recherche d'un logement",
-            "submission": "Soumission",
-            "duration": "Durée: {{value}}"
-        },
-        "providingSupport": "Fournir de l'aide",
-        "yourSubmission": "Votre soumission",
-        "yourOffers": "Aperçu de vos offres",
-        "contextMenu": {
-            "reportProblem": "Signaler un problème",
-            "renew": "Renouveler",
-            "edit": "Modifier"
-        },
-        "checks": {
-            "phoneNotVerified": "Numéro de téléphone non-vérifié",
-            "emailNotVerified": "E-mail non vérifié",
-            "accountInCreation": "Votre compte est en cours de création, actualisez la page après quelques secondes.",
-            "emailAlreadyInUse": "L'e-mail lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau via une autre méthode de connexion.",
-            "idNotVerified": "Identité non vérifiée",
-            "changesInProgress": "Changements en cours...",
-            "idVerified": "Vérification d'identité réussie"
-        },
-        "housing": "Logement",
-        "confirmation": {
-            "header": "Merci de votre décision",
-            "content": "Si vous avez {{accepted}}, attendez la décision de l'autre personne. Une fois que l'autre partie accepte, vous recevrez un e-mail avec les informations de contact. En cas de {{cancellation}}, votre candidature sera renvoyée dans le pool des candidatures actives. Nous vous informerons par e-mail de la prochaine offre.",
-            "accepted": "accepté",
-            "cancellation": "annulation"
-        },
-        "accommodationSearch": "Recherche de logement",
-        "exitToIDnow": "Quitter vers IDnow"
+    "words": {
+      "idWithData": "Identifiant: {{id}}",
+      "renew": "Renouveler",
+      "additionalInformation": "Informations supplémentaires",
+      "congratulations": "Félicitations",
+      "thankYou": "Merci",
+      "or": "Ou",
+      "badNews": "Mauvaise nouvelle",
+      "prefix": "Préfixe",
+      "dashboard": "Tableau de bord",
+      "publicShelters": "Logements publics",
+      "addMore": "Ajouter plus",
+      "remember": "Rappelez-vous :"
     },
-    "reportProblem": {
-        "popup": {
-            "description": "Informez-nous de tout problème en utilisant le formulaire ci-dessous",
-            "problemReported": "Le problème a été signalé",
-            "thanksForLettingKnow": "Merci de nous avoir informés de cette situation. Merci de nous avoir informés de cette situation. Nous allons chercher une autre correspondance pour vous.",
-            "reasons": {
-                "guestNotNeedHelp": "Mon invité n'a plus besoin de logement",
-                "hostCantHelp": "Mon hôte ne peut plus fournir de logement",
-                "rejectedAfterContact": "J'ai \/ L'autre partie a rejeté l'offre après le premier contact",
-                "noResponseAfterContact": "Aucun retour malgré plusieurs tentatives",
-                "notShowUp": "L'hôte\/l'invité ne s'est pas présenté à l'endroit convenu."
-            }
-        }
+    "links": {
+      "re-sendCode": "Renvoyer le code",
+      "resetPassword": "Réinitialiser le mot de passe",
+      "resetPasswordLong": "Mot de passe oublié? <b><u>Cliquez ici</u></b>"
     },
-    "deleteOffer": {
-        "popup": {
-            "areYouSure": "Êtes-vous sûr de vouloir supprimer votre entrée ?",
-            "header": "Supprimer la demande\/offre",
-            "confirmation": "Votre entrée a été supprimée"
-        }
+    "sms": {
+      "verification": "Vérification par SMS",
+      "verificationSuccess": "Vérification par SMS terminée avec succès",
+      "sentInfo": "Entrez le code de vérification envoyé au numéro de téléphone {{phoneNumber}}.",
+      "verificationFail": "Oups ! Quelque chose s'est mal passé, essayez à nouveau ou générez un nouveau code."
     },
-    "offer": {
-        "popup": {
-            "renew": {
-                "expiredMsg": "Votre application \/ offre <b>a expiré en raison d'un manque d'activité<\/b>"
-            }
-        }
+    "actions": {
+      "showPassword": "Afficher le mot de passe",
+      "details": "Détails",
+      "addOffer": "Ajouter une offre de logement",
+      "addSubmission": "Demander du support"
     },
-    "welcomePage": {
-        "appDescription": "Nous aidons les réfugiés à trouver un logement <b>gratuit<\/b> chez des personnes et institutions qui souhaitent aider en <b>Pologne, République Tchèque, Hongrie et Slovaquie<\/b> à travers une plateforme automatique.",
-        "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux.",
-        "waysToStaySafe": "Découvrez les moyens d'assurer votre sécurité"
+    "email": {
+      "sentInfo": "nous avons envoyé un code de vérification à votre adresse e-mail. Cliquez sur le lien pour le vérifier",
+      "verification": "Vérification de l'e-mail",
+      "errorTryAgainInSeconds": "Le courrier n'est pas arrivé ? Essayez à nouveau dans {{nombre}} secondes",
+      "errorTryAgain": "Le courrier n'est pas arrivé ? Essayez à nouveau.",
+      "errorTooManyRequestsInSeconds": "Trop de demandes. Réessayez dans {{number}} secondes"
+    },
+    "nationalities": {
+      "ukrainians": "Ukrainiens",
+      "ukrainian": "Ukrainien",
+      "nonUkrainian": "Non-ukrainien"
+    }
+  },
+  "forms": {
+    "createShelter": {
+      "street": "Rue",
+      "agreeForShelterVerification": "J’accepte que l'on vérifie mon hébergement (visite de bénévoles)",
+      "addPhotoHeader": "Ajouter une photo du logement proposé",
+      "buildingNo": "Numéro d'immeuble",
+      "apartmentNo": "N° d’appartement",
+      "accommodationHeader": "Fournir des informations sur le logement que vous proposez",
+      "groupsHostAccepts": "Quels types de groupes accepteriez-vous ?",
+      "accommodationTypes": {
+        "house": "Maison"
+      },
+      "photosList": "Photo du logement proposé",
+      "acceptElderly": "J'accepte les personnes âgées",
+      "addPhotoHeaderWithLimit3": "Ajouter une photo du logement proposé (maximum 3)",
+      "numberOfRooms": "Nombre de chambres",
+      "roomCapacity": "Capacité par chambre"
     },
     "userRegistration": {
-        "errors": {
-            "emailExist": "Un utilisateur lié à ce compte existe déjà",
-            "phoneExist": "Ce numéro de téléphone est déjà lié à un autre compte",
-            "tooManyRequest": "Trop de demandes de vérification par téléphone",
-            "invalidCode": "Code non valide",
-            "phoneLinkingFailed": "Une erreur s'est produite lors de l'association du numéro de téléphone à votre compte, connectez-vous à nouveau et réessayez."
-        }
+      "enterDetails": "Entrez vos coordonnées",
+      "confirmPassword": "Confirmer le mot de passe",
+      "agreeOnSmsCommunication": "Je veux être informé par SMS de correspondances potentielles.",
+      "language": "Langue",
+      "proposeCreateAccount": "Si vous n'avez pas de compte, vous pouvez en créer un.",
+      "newPassword": "Nouveau mot de passe",
+      "userRegistration": "Enregistrement de l'utilisateur",
+      "preferredLanguage": "Langue de communication préférée",
+      "fillMissingData": "Remplir les données manquantes",
+      "validations": {
+        "passwordMismatch": "Mots de passe différents",
+        "passwordLength": "La mot de passe doit être d'au moins 8 caractères"
+      },
+      "password": "Mot de passe (8 caractères minimum)",
+      "errors": {
+        "duplicatedMail": "L'email lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau en utilisant une autre méthode de connexion."
+      }
     },
-    "publicShelters": {
-        "details": {
-            "howToGetThere": "Comment s'y rendre"
-        },
-        "addShelterMail": "Si vous souhaitez ajouter un logement accessible au public, veuillez nous contacter à {{mail}}",
-        "description": "Vous trouverez ici une liste de logements accessibles au public. N'oubliez pas d'appeler le lieu et de confirmer la disponibilité avant de vous y rendre.\n"
+    "match": {
+      "guestProfile": "Profil invité",
+      "numberOfPeopleWithData": "Nombre maximum de personnes : <b>{{number}}</b>",
+      "durationWithData": "Durée du séjour : <b>{{number}}{{unit}}</b>",
+      "specificCity": "Ville spécifique",
+      "confirmed": "Votre invité/hôte vient de confirmer une offre. Contactez-le/la pour régler les détails.",
+      "accommodationTypeWithData": "Type d’hébergement: <b>{{type}}</b>",
+      "additionalInfoOnAccommodation": "Informations supplémentaires sur le logement",
+      "usersWarning": "<b>Pour des raisons de sécurité, informez vos proches des personnes que vous hébergez. Au cas où: </b>\n<ul>\n<li>vérifier l'identité de la personne que vous hébergez,</li>\n<li> assurez-vous que la composition du groupe correspond à la description d'origine</li>\n</ul>",
+      "individual": "Individu",
+      "host": {
+        "formSent": "Formulaire envoyé",
+        "formSentThanks": "Merci d'avoir exprimé votre volonté d'aider. Votre propriété a été ajoutée à la liste. Nous chercherons dans notre base de données de personnes dans le besoin et vous ferons savoir dès que nous trouvons la bonne personne.",
+        "received": "Merci beaucoup de confirmer la proposition reçue. Dès que nous aurons reçu les deux confirmations, nous vous le ferons savoir."
+      },
+      "searchAddress": "Chercher l'adresse : <b>{{city}}</b>",
+      "rejected": "Votre invité/hôte potentiel a rejeté l'offre. Votre application retournera dans le pool, nous vous informerons de la prochaine offre que nous trouverons.",
+      "refuge": {
+        "rejection": "Merci d'avoir confirmé votre décision. Votre proposition sera remise dans le pool, nous vous informerons de la prochaine proposition dès que nous en aurons trouvé une."
+      }
     },
-    "popup:staySafe": {
-        "rememberToStaySafe": "<b>N’oubliez pas d'assurer votre sécurité<\/b> Ligne 1 lorem ipsum Ligne 2 lorem ipsum",
-        "reviewedTips": "J'ai passé en revue les conseils de sécurité",
-        "getToKnowHost": "Apprenez à connaître votre hôte",
-        "exchangeFacebook": "Échangez vos coordonnées Facebook\/Instagram, passez un appel vidéo avant la réunion en direct.",
-        "useTranslator": "Si vous ne parlez pas la même langue, connectez-vous par e-mail \/ WhatsApp \/ SMS et utilisez par exemple Google Translate.",
-        "getToKnowGuest": "Apprenez à connaître votre invité"
+    "generic": {
+      "hostInformation": {
+        "offerTransport": "J'offre le transport",
+        "takesPregnancy": "J'accepte une personne en état de grossesse avancée (plus de 6 mois)."
+      },
+      "groupInformation": {
+        "pregnancy": "Le groupe comprend une personne avec une grossesse avancée (plus de 6 mois)",
+        "disability": "Il y a une personne handicapée dans le groupe",
+        "multicultural": "Le groupe comprend des personnes de différentes nationalités",
+        "animals": "Le groupe est accompagné d'un animal de compagnie",
+        "elders": "Il y a une personne âgée dans le groupe"
+      },
+      "submited": "Formulaire soumis",
+      "facilityInformation": {
+        "disability": "Installations pour personnes handicapées",
+        "pregnancy": "Installations pour les femmes enceintes",
+        "eldery": "Installations pour les personnes âgées",
+        "diversity": "Toutes les nationalités sont les bienvenues"
+      },
+      "password": "Mot de passe",
+      "selectFromList": "Sélectionner dans la liste",
+      "cityWithData": "Ville: {{city}}",
+      "phoneNumberWithData": "Numéro de téléphone : <b>{{number}}</b>",
+      "hostWithName": "Hôte : <b>{{name}}</b>",
+      "addPhoto": "Ajouter une photo",
+      "emailAddressWithData": "Adresse e-mail : <b>{{mail}}</b>",
+      "zipCode": "Code postal",
+      "hostProfile": "Profil de l'hôte",
+      "peopleInGroup": "Nombre de personnes dans le groupe : <b>{{number}}</b>",
+      "city": "Adresse : <b>{{city}}</b>",
+      "groupType": "Type de groupe : <b>{{type}}</b>",
+      "additionalGroupInformation": "Informations supplémentaires sur le groupe",
+      "guest": "Invité : <b>{{name}}</b>",
+      "selectMultipleFromList": "Sélectionnez dans la liste (choix multiple)",
+      "name": "Nom",
+      "phoneNumber": "Numéro de téléphone",
+      "country": "Pays",
+      "email": "E-mail",
+      "emailAddress": "Adresse E-mail",
+      "closestLargeCity": "La grande ville la plus proche",
+      "occupancy": "Occupation: {{number}}"
+    },
+    "createRefuge": {
+      "shelter": {
+        "targetCityAndSurroundings": "Ville et environs",
+        "groupDetails": "Informations sur les personnes avec qui vous emménagez",
+        "anyCity": "N’importe quelle ville",
+        "imWithPregnantOver6Months": "Je suis, ou je suis accompagné(e) d'une personne en <br /> grossesse avancée (plus de 6 mois)",
+        "whatIsTargetCountry": "Dans quel pays souhaitez-vous loger ?",
+        "selectCountry": "Choisissez le pays"
+      }
+    },
+    "login": {
+      "emailOrPhone": "Adresse e-mail ou numéro de téléphone",
+      "login": "Se connecter",
+      "signInFacebook": "Se connecter avec Facebook",
+      "signInGoogle": "Se connecter avec Google",
+      "emailOrPhoneDetail": "E-mail ou numéro de téléphone",
+      "invalidPassword": "Mot de passe fourni non valide"
+    },
+    "resetPassword": {
+      "setNewPassword": "Définir un nouveau mot de passe",
+      "header": "Fournissez un nouveau mot de passe pour votre compte",
+      "emailSent": "E-mail de réinitialisation du mot de passe envoyé - vérifiez votre boîte électronique",
+      "success": "Votre mot de passe a été modifié avec succès",
+      "detail": "Si vous ne vous souvenez pas de votre mot de passe, saisissez votre adresse électronique. Nous vous enverrons un lien vers le formulaire de réinitialisation du mot de passe."
+    },
+    "edit": {
+      "editAccommodationHeader": "Modifier les informations sur le logement que vous proposez"
+    },
+    "validations": {
+      "fill": {
+        "phoneNumber": "Ajoutez votre numéro de téléphone"
+      }
+    },
+    "userProfile": {
+      "header": "Modification du profil utilisateur"
+    },
+    "renew": {
+      "re-activateOffer": "Voulez-vous réactiver la demande/offre ?"
     }
+  },
+  "desktop": {
+    "lookingForSupport": "Recevoir de l'aide",
+    "filters": {
+      "shelter": "Abri"
+    },
+    "host": {
+      "numberOfPeople": "Nombre de personnes: maximum {{maxAmount}}"
+    },
+    "offer": {
+      "status": {
+        "accepted": "Accepté§",
+        "beingConfirmed": "En cours de confirmation",
+        "awaitingGuestApproval": "En attente de la confirmation de la personne hébergée",
+        "inactive": "Inactif",
+        "haveMatch": "Nous avons trouvé une correspondance",
+        "lookingForMatch": "Recherche d'une correspondance",
+        "awaitingHostApproval": "En attente de l'approbation de l'hôte",
+        "confirmed": "Confirmé",
+        "rejected": "Rejeté"
+      }
+    },
+    "refuge": {
+      "searchingAccommodation": "Recherche d'un logement",
+      "accommodationSearch": "Recherche d'un logement",
+      "submission": "Soumission",
+      "duration": "Durée: {{value}}"
+    },
+    "providingSupport": "Fournir de l'aide",
+    "yourSubmission": "Votre soumission",
+    "yourOffers": "Aperçu de vos offres",
+    "contextMenu": {
+      "reportProblem": "Signaler un problème",
+      "renew": "Renouveler",
+      "edit": "Modifier"
+    },
+    "checks": {
+      "phoneNotVerified": "Numéro de téléphone non-vérifié",
+      "emailNotVerified": "E-mail non vérifié",
+      "accountInCreation": "Votre compte est en cours de création, actualisez la page après quelques secondes.",
+      "emailAlreadyInUse": "L'e-mail lié au compte de connexion sélectionné est déjà utilisé dans notre système. Veuillez essayer de vous connecter à nouveau via une autre méthode de connexion.",
+      "idNotVerified": "Identité non vérifiée",
+      "changesInProgress": "Changements en cours...",
+      "idVerified": "Vérification d'identité réussie"
+    },
+    "housing": "Logement",
+    "confirmation": {
+      "header": "Merci de votre décision",
+      "content": "Si vous avez {{accepted}}, attendez la décision de l'autre personne. Une fois que l'autre partie accepte, vous recevrez un e-mail avec les informations de contact. En cas de {{cancellation}}, votre candidature sera renvoyée dans le pool des candidatures actives. Nous vous informerons par e-mail de la prochaine offre.",
+      "accepted": "accepté",
+      "cancellation": "annulation"
+    },
+    "accommodationSearch": "Recherche de logement",
+    "exitToIDnow": "Quitter vers IDnow"
+  },
+  "reportProblem": {
+    "popup": {
+      "description": "Informez-nous de tout problème en utilisant le formulaire ci-dessous",
+      "problemReported": "Le problème a été signalé",
+      "thanksForLettingKnow": "Merci de nous avoir informés de cette situation. Merci de nous avoir informés de cette situation. Nous allons chercher une autre correspondance pour vous.",
+      "reasons": {
+        "guestNotNeedHelp": "Mon invité n'a plus besoin de logement",
+        "hostCantHelp": "Mon hôte ne peut plus fournir de logement",
+        "rejectedAfterContact": "J'ai / L'autre partie a rejeté l'offre après le premier contact",
+        "noResponseAfterContact": "Aucun retour malgré plusieurs tentatives",
+        "notShowUp": "L'hôte/l'invité ne s'est pas présenté à l'endroit convenu."
+      }
+    }
+  },
+  "deleteOffer": {
+    "popup": {
+      "areYouSure": "Êtes-vous sûr de vouloir supprimer votre entrée ?",
+      "header": "Supprimer la demande/offre",
+      "confirmation": "Votre entrée a été supprimée"
+    }
+  },
+  "offer": {
+    "popup": {
+      "renew": {
+        "expiredMsg": "Votre application / offre <b>a expiré en raison d'un manque d'activité</b>"
+      }
+    }
+  },
+  "welcomePage": {
+    "appDescription": "Nous aidons les réfugiés à trouver un logement <b>gratuit</b> chez des personnes et institutions qui souhaitent aider en <b>Pologne, République Tchèque, Hongrie et Slovaquie</b> à travers une plateforme automatique.",
+    "comingSoon": "Prochainement: fonctionnalités de transport, de recherche d'emploi et de conseils médicaux.",
+    "waysToStaySafe": "Découvrez les moyens d'assurer votre sécurité"
+  },
+  "userRegistration": {
+    "errors": {
+      "emailExist": "Un utilisateur lié à ce compte existe déjà",
+      "phoneExist": "Ce numéro de téléphone est déjà lié à un autre compte",
+      "tooManyRequest": "Trop de demandes de vérification par téléphone",
+      "invalidCode": "Code non valide",
+      "phoneLinkingFailed": "Une erreur s'est produite lors de la liaison du numéro de téléphone à votre compte. Assurez-vous que votre numéro de téléphone n'est pas lié à l'autre compte ou réessayez en utilisant un autre numéro."
+    }
+  },
+  "publicShelters": {
+    "details": {
+      "howToGetThere": "Comment s'y rendre"
+    },
+    "addShelterMail": "Si vous souhaitez ajouter un logement accessible au public, veuillez nous contacter à publicshelters@uasos.org.",
+    "description": "Vous trouverez ici une liste de logements accessibles au public. N'oubliez pas d'appeler le lieu et de confirmer la disponibilité avant de vous y rendre.\n"
+  },
+  "popup:staySafe": {
+    "rememberToStaySafe": "<b>N’oubliez pas d'assurer votre sécurité</b> Ligne 1 lorem ipsum Ligne 2 lorem ipsum",
+    "reviewedTips": "J'ai passé en revue les conseils de sécurité",
+    "getToKnowHost": "Apprenez à connaître votre hôte",
+    "exchangeFacebook": "Échangez vos coordonnées Facebook/Instagram, passez un appel vidéo avant la réunion en direct.",
+    "useTranslator": "Si vous ne parlez pas la même langue, connectez-vous par e-mail / WhatsApp / SMS et utilisez par exemple Google Translate.",
+    "getToKnowGuest": "Apprenez à connaître votre invité"
+  }
 }
