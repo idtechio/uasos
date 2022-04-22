@@ -1,333 +1,333 @@
 {
-    "test": "",
-    "navigationDrawer": {
-        "profile": "",
-        "placesList": "",
-        "logIn": "",
-        "logout": ""
+  "test": "",
+  "navigationDrawer": {
+    "profile": "",
+    "placesList": "",
+    "logIn": "",
+    "logout": ""
+  },
+  "labels": {
+    "location": "",
+    "numberOfGuests": "",
+    "timePeriod": "",
+    "withKids": "",
+    "email": "",
+    "phone": "",
+    "town": "",
+    "phoneNumber": ""
+  },
+  "validations": {
+    "requiredName": "",
+    "invalidEmail": "",
+    "invalidPhoneNumber": "",
+    "requiredTown": "",
+    "requiredTime": "",
+    "requiredPeopleQuantity": "",
+    "requiredLivingConditions": "",
+    "requiredFloor": ""
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "",
+      "week": "",
+      "twoWeeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "groupRelations": {
+      "single_man": "",
+      "single_woman": "",
+      "spouses": "",
+      "mother_with_children": "",
+      "family_with_children": "",
+      "unrelated_group": ""
+    },
+    "accommodationTypes": {
+      "bed": "",
+      "room": "",
+      "flat": "",
+      "house": "",
+      "collective": "",
+      "public_shared_space": ""
+    },
+    "boolean": {
+      "yes": "",
+      "no": ""
+    },
+    "anyLocation": "",
+    "withElevator": ""
+  },
+  "accommodationOffer": {
+    "canAccommodate": "",
+    "duration": "",
+    "acceptAnimals": "",
+    "disabledSupport": "",
+    "includesFood": "",
+    "author": {
+      "owner": ""
+    }
+  },
+  "forms": {
+    "chooseFromList": "",
+    "chooseFromListMulti": ""
+  },
+  "guestOffer": {
+    "arrivalToPoland": "",
+    "peopleToAccommodate": "",
+    "preferredLocation": "",
+    "withAnimals": "",
+    "withKids": "",
+    "withDisabled": "",
+    "withElder": "",
+    "invite": ""
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "",
+      "acceptAnimals": "",
+      "disabledSupport": "",
+      "kidsUnder2": "",
+      "foodIncluded": ""
+    },
+    "peopleQuantity": "",
+    "forHowLong": "",
+    "livingConditions": {
+      "label": "",
+      "options": {
+        "flat": "",
+        "mattress": "",
+        "other": ""
+      }
+    },
+    "floor": {
+      "label": "",
+      "hint": ""
+    },
+    "submit": ""
+  },
+  "flags": {
+    "cz": "",
+    "en": "",
+    "es": "",
+    "fr": "",
+    "hu": "",
+    "it": "",
+    "pl": "",
+    "ro": "",
+    "sk": "",
+    "ua": "",
+    "de": "",
+    "at": "",
+    "be": "",
+    "bg": "",
+    "hr": "",
+    "cy": "",
+    "dk": "",
+    "ee": "",
+    "fi": "",
+    "lv": "",
+    "li": "",
+    "lt": "",
+    "mt": "",
+    "nl": "",
+    "no": "",
+    "pt": "",
+    "si": "",
+    "se": ""
+  },
+  "hostAdd": {
+    "country": "",
+    "countries": {
+      "poland": "",
+      "hungary": "",
+      "czechia": "",
+      "slovakia": "",
+      "romania": ""
+    },
+    "nameLabel": "",
+    "emailPlaceholder": "",
+    "phoneLabel": "",
+    "phonePlaceholder": "",
+    "cityLabel": "",
+    "cityPlaceholder": "",
+    "type": "",
+    "hostType": "",
+    "hostTypeLabel": {
+      "host_type_men": "",
+      "host_type_women": "",
+      "host_type_couple": "",
+      "host_type_family": "",
+      "host_type_elder_people": "",
+      "host_type_friends_group": ""
+    },
+    "guestCount": "",
+    "accomodationPhoto": "",
+    "accomodationPhotoLabel": "",
+    "accomodationPhotoReset": "",
+    "accommodationTimeLabel": {
+      "less_than_week": "",
+      "week": "",
+      "two_weeks": "",
+      "month": "",
+      "longer": ""
+    },
+    "volunteerVisitAcceptance": "",
+    "nationality": "",
+    "ukraine": "",
+    "additionalInformationHeader": "",
+    "any": "",
+    "childBedCount": "",
+    "city": "",
+    "fullBedCount": "",
+    "pregnantReady": "",
+    "dissabilityReady": "",
+    "elderReady": "",
+    "animalReady": "",
+    "basicInfoHeader": "",
+    "refugeInfoHeader": "",
+    "addButton": "",
+    "addButtomErrorMessage": "",
+    "errors": {
+      "name": "",
+      "email": "",
+      "phoneNumber": "",
+      "country": "",
+      "town": "",
+      "type": "",
+      "hostType": "",
+      "accommodationTime": "",
+      "nationalityError": "",
+      "groupsTypes": ""
+    },
+    "prolongationReady": "",
+    "transportReady": "",
+    "hostAddressProcessingWarning": ""
+  },
+  "logout": "",
+  "back": "",
+  "backToHomePage": "",
+  "shareLocation": "",
+  "registerGuest": "",
+  "more": "",
+  "register1": "",
+  "register2": "",
+  "privacyPolicy": "",
+  "termsOfService": "",
+  "patrons": "",
+  "rodo": "",
+  "thankfulnessModal": {
+    "thankYou": "",
+    "thanksForYourDecision": "",
+    "applicationSent": "",
+    "informWhenAccomodationFound": "",
+    "backToMainPage": ""
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "",
+    "applicationSent": "",
+    "informWhenAccomodationFound": ""
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "",
+      "toddler": "",
+      "oldPerson": "",
+      "disability": "",
+      "pregnant": ""
+    },
+    "refugeesCountOptions": {
+      "alone": "",
+      "more": ""
+    },
+    "errors": {
+      "name": "",
+      "email": "",
+      "phoneNumber": "",
+      "required": "",
+      "location": ""
     },
     "labels": {
-        "location": "",
-        "numberOfGuests": "",
-        "timePeriod": "",
-        "withKids": "",
-        "email": "",
-        "phone": "",
-        "town": "",
-        "phoneNumber": ""
-    },
-    "validations": {
-        "requiredName": "",
-        "invalidEmail": "",
-        "invalidPhoneNumber": "",
-        "requiredTown": "",
-        "requiredTime": "",
-        "requiredPeopleQuantity": "",
-        "requiredLivingConditions": "",
-        "requiredFloor": ""
-    },
-    "staticValues": {
-        "timePeriod": {
-            "lessThanAWeek": "",
-            "week": "",
-            "twoWeeks": "",
-            "month": "",
-            "longer": ""
-        },
-        "groupRelations": {
-            "single_man": "",
-            "single_woman": "",
-            "spouses": "",
-            "mother_with_children": "",
-            "family_with_children": "",
-            "unrelated_group": ""
-        },
-        "accommodationTypes": {
-            "bed": "",
-            "room": "",
-            "flat": "",
-            "house": "",
-            "collective": "",
-            "public_shared_space": ""
-        },
-        "boolean": {
-            "yes": "",
-            "no": ""
-        },
-        "anyLocation": "",
-        "withElevator": ""
-    },
-    "accommodationOffer": {
-        "canAccommodate": "",
-        "duration": "",
-        "acceptAnimals": "",
-        "disabledSupport": "",
-        "includesFood": "",
-        "author": {
-            "owner": ""
-        }
-    },
-    "forms": {
-        "chooseFromList": "",
-        "chooseFromListMulti": ""
-    },
-    "guestOffer": {
-        "arrivalToPoland": "",
-        "peopleToAccommodate": "",
-        "preferredLocation": "",
-        "withAnimals": "",
-        "withKids": "",
-        "withDisabled": "",
-        "withElder": "",
-        "invite": ""
-    },
-    "addAccommodation": {
-        "hostPreferences": {
-            "label": "",
-            "acceptAnimals": "",
-            "disabledSupport": "",
-            "kidsUnder2": "",
-            "foodIncluded": ""
-        },
-        "peopleQuantity": "",
-        "forHowLong": "",
-        "livingConditions": {
-            "label": "",
-            "options": {
-                "flat": "",
-                "mattress": "",
-                "other": ""
-            }
-        },
-        "floor": {
-            "label": "",
-            "hint": ""
-        },
-        "submit": ""
-    },
-    "flags": {
-        "cz": "",
-        "en": "",
-        "es": "",
-        "fr": "",
-        "hu": "",
-        "it": "",
-        "pl": "",
-        "ro": "",
-        "sk": "",
-        "ua": "",
-        "de": "",
-        "at": "",
-        "be": "",
-        "bg": "",
-        "hr": "",
-        "cy": "",
-        "dk": "",
-        "ee": "",
-        "fi": "",
-        "lv": "",
-        "li": "",
-        "lt": "",
-        "mt": "",
-        "nl": "",
-        "no": "",
-        "pt": "",
-        "si": "",
-        "se": ""
-    },
-    "hostAdd": {
-        "country": "",
-        "countries": {
-            "poland": "",
-            "hungary": "",
-            "czechia": "",
-            "slovakia": "",
-            "romania": ""
-        },
-        "nameLabel": "",
-        "emailPlaceholder": "",
-        "phoneLabel": "",
-        "phonePlaceholder": "",
-        "cityLabel": "",
-        "cityPlaceholder": "",
-        "type": "",
-        "hostType": "",
-        "hostTypeLabel": {
-            "host_type_men": "",
-            "host_type_women": "",
-            "host_type_couple": "",
-            "host_type_family": "",
-            "host_type_elder_people": "",
-            "host_type_friends_group": ""
-        },
-        "guestCount": "",
-        "accomodationPhoto": "",
-        "accomodationPhotoLabel": "",
-        "accomodationPhotoReset": "",
-        "accommodationTimeLabel": {
-            "less_than_week": "",
-            "week": "",
-            "two_weeks": "",
-            "month": "",
-            "longer": ""
-        },
-        "volunteerVisitAcceptance": "",
-        "nationality": "",
-        "ukraine": "",
-        "additionalInformationHeader": "",
-        "any": "",
-        "childBedCount": "",
-        "city": "",
-        "fullBedCount": "",
-        "pregnantReady": "",
-        "dissabilityReady": "",
-        "elderReady": "",
-        "animalReady": "",
-        "basicInfoHeader": "",
-        "refugeInfoHeader": "",
-        "addButton": "",
-        "addButtomErrorMessage": "",
-        "errors": {
-            "name": "",
-            "email": "",
-            "phoneNumber": "",
-            "country": "",
-            "town": "",
-            "type": "",
-            "hostType": "",
-            "accommodationTime": "",
-            "nationalityError": "",
-            "groupsTypes": ""
-        },
-        "prolongationReady": "",
-        "transportReady": "",
-        "hostAddressProcessingWarning": ""
-    },
-    "logout": "",
-    "back": "",
-    "backToHomePage": "",
-    "shareLocation": "",
-    "registerGuest": "",
-    "more": "",
-    "register1": "",
-    "register2": "",
-    "privacyPolicy": "",
-    "termsOfService": "",
-    "patrons": "",
-    "rodo": "",
-    "thankfulnessModal": {
-        "thankYou": "",
-        "thanksForYourDecision": "",
-        "applicationSent": "",
-        "informWhenAccomodationFound": "",
-        "backToMainPage": ""
-    },
-    "thankfulnessHostModal": {
-        "thankYou": "",
-        "applicationSent": "",
-        "informWhenAccomodationFound": ""
-    },
-    "refugeeForm": {
-        "refugeeDetailsOptions": {
-            "animals": "",
-            "toddler": "",
-            "oldPerson": "",
-            "disability": "",
-            "pregnant": ""
-        },
-        "refugeesCountOptions": {
-            "alone": "",
-            "more": ""
-        },
-        "errors": {
-            "name": "",
-            "email": "",
-            "phoneNumber": "",
-            "required": "",
-            "location": ""
-        },
-        "labels": {
-            "email": "",
-            "refugeesCount": "",
-            "refugee": "",
-            "refugeeDetails": "",
-            "refugeesAnimal": "",
-            "isGDPRAccepted": "",
-            "submitButton": "",
-            "location": "",
-            "anyLocation": "",
-            "prefferedLocation": "",
-            "city": "",
-            "addRefugee": ""
-        }
-    },
-    "refugeeAddForm": {
-        "basicInfoHeader": "",
-        "addButton": "",
-        "addButtomErrorMessage": "",
-        "pregnantReady": "",
-        "dissabilityReady": "",
-        "elderReady": "",
-        "ageLabel": "",
-        "genderLabel": "",
-        "genderPlaceholder": "",
-        "travelCompanions": "",
-        "fullBedCountLabel": "",
-        "childBedCountLabel": "",
-        "placeOfRefuge": "",
-        "countryOfRefugePlaceholder": "",
-        "cityOfRefugeLabel": "",
-        "overnightDurationLabel": "",
-        "cityOfRefugePlaceholder": "",
-        "nameLabel": "",
-        "emailLabel": "",
-        "emailPlaceholder": "",
-        "phoneLabel": "",
-        "phonePlaceholder": "",
-        "cityPlaceholder": "",
-        "groupRelations": "",
-        "selectPlaceholder": "",
-        "accommodationType": "",
-        "countryOfGroupUA": "",
-        "countryOfGroupOthers": "",
-        "accompanyingPerson": "",
-        "errors": {
-            "name": "",
-            "email": "",
-            "gender": "",
-            "cityOfRefuge": "",
-            "phoneNumber": "",
-            "countryOfRefuge": "",
-            "childBedCount": "",
-            "fullBedCountsaas": "",
-            "groupRelations": "",
-            "overnightDuration": "",
-            "accommodationType": "",
-            "countryOfGroup": ""
-        },
-        "refugeInfoHeader": "",
-        "countryOfGroup": "",
-        "cityTooltip": "",
-        "confirmChangesButton": ""
-    },
-    "accomodationPhoto": "",
-    "accomodationPhotoReset": "",
-    "accomodationPhotoLabel": "",
-    "dropdownChoose": "",
-    "dropdownSearch": "",
-    "heroImageAlt": "",
-    "loginForm": {
-        "logInWith": "",
-        "or": "",
-        "lostPass": "",
-        "click": "",
-        "logIn": "",
-        "doNotHaveAcc": "",
-        "register": ""
-    },
-    "gdpr": "",
-    "ogMeta": {
-        "title": "",
-        "description": ""
+      "email": "",
+      "refugeesCount": "",
+      "refugee": "",
+      "refugeeDetails": "",
+      "refugeesAnimal": "",
+      "isGDPRAccepted": "",
+      "submitButton": "",
+      "location": "",
+      "anyLocation": "",
+      "prefferedLocation": "",
+      "city": "",
+      "addRefugee": ""
     }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "",
+    "addButton": "",
+    "addButtomErrorMessage": "",
+    "pregnantReady": "",
+    "dissabilityReady": "",
+    "elderReady": "",
+    "ageLabel": "",
+    "genderLabel": "",
+    "genderPlaceholder": "",
+    "travelCompanions": "",
+    "fullBedCountLabel": "",
+    "childBedCountLabel": "",
+    "placeOfRefuge": "",
+    "countryOfRefugePlaceholder": "",
+    "cityOfRefugeLabel": "",
+    "overnightDurationLabel": "",
+    "cityOfRefugePlaceholder": "",
+    "nameLabel": "",
+    "emailLabel": "",
+    "emailPlaceholder": "",
+    "phoneLabel": "",
+    "phonePlaceholder": "",
+    "cityPlaceholder": "",
+    "groupRelations": "",
+    "selectPlaceholder": "",
+    "accommodationType": "",
+    "countryOfGroupUA": "",
+    "countryOfGroupOthers": "",
+    "accompanyingPerson": "",
+    "errors": {
+      "name": "",
+      "email": "",
+      "gender": "",
+      "cityOfRefuge": "",
+      "phoneNumber": "",
+      "countryOfRefuge": "",
+      "childBedCount": "",
+      "fullBedCountsaas": "",
+      "groupRelations": "",
+      "overnightDuration": "",
+      "accommodationType": "",
+      "countryOfGroup": ""
+    },
+    "refugeInfoHeader": "",
+    "countryOfGroup": "",
+    "cityTooltip": "",
+    "confirmChangesButton": ""
+  },
+  "accomodationPhoto": "",
+  "accomodationPhotoReset": "",
+  "accomodationPhotoLabel": "",
+  "dropdownChoose": "",
+  "dropdownSearch": "",
+  "heroImageAlt": "",
+  "loginForm": {
+    "logInWith": "",
+    "or": "",
+    "lostPass": "",
+    "click": "",
+    "logIn": "",
+    "doNotHaveAcc": "",
+    "register": ""
+  },
+  "gdpr": "",
+  "ogMeta": {
+    "title": "",
+    "description": ""
+  }
 }
