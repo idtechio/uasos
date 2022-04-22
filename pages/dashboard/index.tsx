@@ -19,6 +19,7 @@ import { AuthContext } from "../_app";
 import EmailVerificationModal from "../../src/components/EmailVerificationModal";
 import { Authorization } from "../../src/hooks/useAuth";
 import { useRouter } from "next/router";
+import { useTimer } from "react-timer-hook";
 import ConfirmRejectModal from "../../src/components/ConfirmRejectModal";
 import { MODAL_STATUS } from "../../src/components/ConfirmRejectModal/constants";
 import Toast from "../../src/components/Toast";
@@ -40,7 +41,23 @@ function DashboardContent() {
 
   const { account, loaded, identity } = useContext(AuthContext);
   const router = useRouter();
+  const [sendVerificationEmailError, setSendVerificationEmailError] =
+    useState(false);
   const [emailModalVisible, setEmailModalVisible] = useState(false);
+
+  const { seconds, isRunning, restart } = useTimer({
+    expiryTimestamp: new Date(),
+    autoStart: false,
+    onExpire: () =>
+      sendVerificationEmailError ? setSendVerificationEmailError(false) : "",
+  });
+
+  const restartTimer = () => {
+    const time = new Date();
+    time.setSeconds(time.getSeconds() + 30);
+    restart(time);
+  };
+
   const {
     data: offersDTO,
     isError: isOffersInError,
@@ -56,12 +73,21 @@ function DashboardContent() {
   const showEmailVerificationModal = async () => {
     if (identity) {
       if (identity?.email) {
-        await Authorization.sendVerificationEmail(identity);
+        if (!isRunning) await sendVerificationEmail();
         setEmailModalVisible(true);
       } else {
         router.push("user-profile");
       }
     }
+  };
+
+  const sendVerificationEmail = async () => {
+    if (identity) {
+      await Authorization.sendVerificationEmail(identity!).catch(() =>
+        setSendVerificationEmailError(true)
+      );
+    }
+    restartTimer();
   };
 
   const offers = useMemo(
@@ -138,7 +164,12 @@ function DashboardContent() {
           <ConfirmRejectModal status={MODAL_STATUS.REJECT} />
         </>
         {emailModalVisible ? (
-          <EmailVerificationModal onClose={() => setEmailModalVisible(false)} />
+          <EmailVerificationModal
+            onClose={() => setEmailModalVisible(false)}
+            seconds={seconds}
+            restartTimer={sendVerificationEmail}
+            error={sendVerificationEmailError}
+          />
         ) : (
           <></>
         )}
