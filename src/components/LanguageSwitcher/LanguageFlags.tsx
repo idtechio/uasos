@@ -1,45 +1,67 @@
+import { useTranslation } from "next-i18next";
 import styled from "styled-components/native";
+import Image from "next/image";
+import type { TFunction } from "next-i18next";
+
+const FLAG_TYPE_EMOJI = "emoji";
+const FLAG_TYPE_SVG = "svg";
 
 interface Props {
   locale: string;
+  type?: string;
 }
+
+const SIZE = {
+  width: 26,
+  height: 17,
+};
 
 const Wrapper = styled.Text`
   font-size: 24px;
   line-height: 0px;
 `;
+interface LocaleMap {
+  [key: string]: string;
+}
+const emojis: LocaleMap = {
+  pl: "🇵🇱",
+  ua: "🇺🇦",
+  ro: "🇷🇴",
+  ru: "🇷🇺",
+  en: "🇬🇧",
+  hu: "🇭🇺",
+  sk: "🇸🇰",
+  cs: "🇨🇿",
+};
+const svgs: LocaleMap = {
+  CS: "CZ",
+};
 
-export const LanguageFlags = ({ locale }: Props) => {
-  let flag = "";
-  switch (locale.toLocaleLowerCase()) {
-    case "pl":
-      flag = "🇵🇱";
-      break;
-    case "ua":
-      flag = "🇺🇦";
-      break;
-    case "ro":
-      flag = "🇷🇴";
-      break;
-    case "ru":
-      flag = "🇷🇺";
-      break;
-    case "en":
-      flag = "🇬🇧";
-      break;
-    case "hu":
-      flag = "🇭🇺";
-      break;
-    case "sk":
-      flag = "🇸🇰";
-      break;
-    case "cs":
-      flag = "🇨🇿";
-      break;
+const EmojiFlag = ({ locale }: Props) => {
+  return <Wrapper>{emojis[locale.toLowerCase()] || ""}</Wrapper>;
+};
 
-    default:
-      flag = "";
-  }
+const SvgFlag = ({ locale }: Props) => {
+  const { t } = useTranslation();
+  return (
+    <Wrapper>
+      <Image
+        width={SIZE.width}
+        height={SIZE.height}
+        src={`/assets/${
+          svgs[locale.toUpperCase()] || locale.toUpperCase()
+        }_flag.svg`}
+        alt={t(`flags.${locale.toLowerCase()}`, locale.toUpperCase())}
+      />
+    </Wrapper>
+  );
+};
 
-  return <Wrapper>{flag}</Wrapper>;
+export const LanguageFlags = ({ locale, type }: Props) => {
+  return (
+    <>
+      {type === FLAG_TYPE_EMOJI && <EmojiFlag locale={locale} />}
+      {(!type || type === FLAG_TYPE_SVG) && <SvgFlag locale={locale} />}
+    </>
+  );
 };
