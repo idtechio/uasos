@@ -1,332 +1,333 @@
 {
-    "test": "Test message EN",
-    "navigationDrawer": {
-        "profile": "User profile",
-        "placesList": "Your list of accommodations",
-        "logIn": "Login",
-        "logout": "Log out"
+  "test": "Test message EN",
+  "navigationDrawer": {
+    "profile": "User profile",
+    "placesList": "Your list of accommodations",
+    "logIn": "Login",
+    "logout": "Log out"
+  },
+  "labels": {
+    "location": "Preferred location",
+    "numberOfGuests": "Number of guests",
+    "timePeriod": "Length of stay",
+    "withKids": "I am accompanied by a child",
+    "email": "E-mail",
+    "phone": "Phone",
+    "town": "City/Town",
+    "phoneNumber": "Phone"
+  },
+  "validations": {
+    "requiredName": "Provide your name",
+    "invalidEmail": "Provide a valid e-mail address",
+    "invalidPhoneNumber": "Provide correct phone number",
+    "requiredTown": "Provide city/town",
+    "requiredTime": "Provide information on how long your guests can stay",
+    "requiredPeopleQuantity": "Provide number of people you can host",
+    "requiredLivingConditions": "Provide housing conditions",
+    "requiredFloor": "Provide a floor"
+  },
+  "staticValues": {
+    "timePeriod": {
+      "lessThanAWeek": "less than a week",
+      "week": "One week",
+      "twoWeeks": "2 weeks",
+      "month": "One month",
+      "longer": "Longer than a month"
+    },
+    "groupRelations": {
+      "single_man": "Single Man",
+      "single_woman": "Single Woman",
+      "spouses": "Spouses/Couple",
+      "mother_with_children": "Mother with children",
+      "family_with_children": "Family with children",
+      "unrelated_group": "Unrelated group"
+    },
+    "accommodationTypes": {
+      "bed": "Bed in a shared room",
+      "room": "Room in a shared flat / house",
+      "flat": "Flat for exclusive use",
+      "house": "House for exclusive use",
+      "collective": "Collective room (e.g. school room)",
+      "public_shared_space": "Collective room (e.g. school room)"
+    },
+    "boolean": {
+      "yes": "yes",
+      "no": "no"
+    },
+    "anyLocation": "Any",
+    "withElevator": "with elevator"
+  },
+  "accommodationOffer": {
+    "canAccommodate": "Place for <1>{{count}} people</1>",
+    "duration": "max. <1> {{time}} </1>",
+    "acceptAnimals": "pets accepted",
+    "disabledSupport": "Facilities for disabled",
+    "includesFood": "Food",
+    "author": {
+      "owner": "Host"
+    }
+  },
+  "forms": {
+    "chooseFromList": "Select from list",
+    "chooseFromListMulti": "Select from the list (you can choose multiple options)"
+  },
+  "guestOffer": {
+    "arrivalToPoland": "Arrival date: {{arrival}}",
+    "peopleToAccommodate": "+ {{count}} people",
+    "preferredLocation": "preferred location: <1>{{location}}</1>",
+    "withAnimals": "I am accompanied by a pet: <1> {{animals}} </1>",
+    "withKids": "I am accompanied by a child: <1>{{age}}</1>",
+    "withDisabled": "I am accompanied by a person with disability",
+    "withElder": "I am accompanied by an elderly person",
+    "invite": "Host"
+  },
+  "addAccommodation": {
+    "hostPreferences": {
+      "label": "Specify your preferences on whom you can host",
+      "acceptAnimals": "pets accepted",
+      "disabledSupport": "people with disabilities",
+      "kidsUnder2": "children under 2 years",
+      "foodIncluded": "food provided"
+    },
+    "peopleQuantity": "How many people can you host?",
+    "forHowLong": "For how long?",
+    "livingConditions": {
+      "label": "Which living conditions can you propose?",
+      "options": {
+        "flat": "I have a free flat",
+        "mattress": "I have a free mattress",
+        "other": "other"
+      }
+    },
+    "floor": {
+      "label": "On which floor is the accommodation located?",
+      "hint": "* Seniors may have difficulty accessing the high floor"
+    },
+    "submit": "Register your offer"
+  },
+  "flags": {
+    "cz": "Czech flag",
+    "en": "UK flag",
+    "es": "Spanish flag",
+    "fr": "French flag",
+    "hu": "Hungarian flag",
+    "it": "Italian flag",
+    "pl": "Polish flag",
+    "ro": "Romanian flag",
+    "sk": "Slovakian flag",
+    "ua": "Ukrainian flag",
+    "de": "German flag",
+    "at": "Austrian flag",
+    "be": "Belgian flag",
+    "bg": "Bulgarian flag",
+    "hr": "Croatian flag",
+    "cy": "Cyprus flag",
+    "dk": "Denmark flag",
+    "ee": "Estonian flag",
+    "fi": "Finnish flag",
+    "lv": "Latvian flag",
+    "li": "Liechtenstein flag",
+    "lt": "Lithuanian flag",
+    "mt": "Malta flag",
+    "nl": "Dutch flag",
+    "no": "Norwegian flag",
+    "pt": "Portugal flag",
+    "si": "Slovenian flag",
+    "se": "Sweden flag"
+  },
+  "hostAdd": {
+    "country": "Country",
+    "countries": {
+      "poland": "Poland",
+      "hungary": "Hungary",
+      "czechia": "Czech",
+      "slovakia": "Slovakia",
+      "romania": "Romania"
+    },
+    "nameLabel": "First name (only enter first name)",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "cityLabel": "Select the city in which or in the closest vicinity you offer accommodation.",
+    "cityPlaceholder": "City",
+    "type": "Accommodation type",
+    "hostType": "Host type",
+    "hostTypeLabel": {
+      "host_type_men": "Male (single)",
+      "host_type_women": "Female (single)",
+      "host_type_couple": "Couple",
+      "host_type_family": "Family with child/children",
+      "host_type_elder_people": "Elderly",
+      "host_type_friends_group": "Non-related"
+    },
+    "guestCount": "How many guests are you able to host?",
+    "accomodationPhoto": "Add accommodation photo",
+    "accomodationPhotoLabel": "Add photo",
+    "accomodationPhotoReset": "Remove",
+    "accommodationTimeLabel": {
+      "less_than_week": "Less than a week",
+      "week": "Week",
+      "two_weeks": "2 weeks",
+      "month": "Month",
+      "longer": "Longer"
+    },
+    "volunteerVisitAcceptance": "I agree for the verification of the place (volunteer visit)",
+    "nationality": "What refugee nationality are you willing to accept?",
+    "ukraine": "Ukraine",
+    "additionalInformationHeader": "Additional Information",
+    "any": "Any",
+    "childBedCount": "Number of sleeping places for children",
+    "city": "city",
+    "fullBedCount": "Number of full-size sleeping places",
+    "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months)",
+    "dissabilityReady": "I will accept a person with a disability",
+    "elderReady": "I will accept elderly person",
+    "animalReady": "I will accept a person with a pet",
+    "basicInfoHeader": "Provide basic information",
+    "refugeInfoHeader": "Provide information on accommodation",
+    "addButton": "Submit / Add",
+    "addButtomErrorMessage": "Please fill in the required fields",
+    "errors": {
+      "name": "Provide your name",
+      "email": "Provide a valid e-mail",
+      "phoneNumber": "Provide your phone number",
+      "country": "Country is required",
+      "town": "City is required",
+      "type": "Accommodation type is required",
+      "hostType": "Host type is required",
+      "accommodationTime": "Duration of stay is required",
+      "nationalityError": "Refugee nationality is required",
+      "groupsTypes": "Group type is required"
+    },
+    "prolongationReady": "Possibility of extending the stay (for a fee)",
+    "transportReady": "Possibility of transport",
+    "hostAddressProcessingWarning": "Full address will not be shared with refugee — only your city"
+  },
+  "logout": "Log out",
+  "back": "Back",
+  "backToHomePage": "Back to home page",
+  "shareLocation": "Create an account",
+  "registerGuest": "Find a shelter",
+  "more": "See more",
+  "register1": "Register",
+  "register2": "Registration",
+  "privacyPolicy": "Privacy Policy",
+  "termsOfService": "Regulations",
+  "patrons": "Patrons",
+  "rodo": "GDPR",
+  "thankfulnessModal": {
+    "thankYou": "Thank you!",
+    "thanksForYourDecision": "Thank you for informing us of your decision",
+    "applicationSent": "Your application was sent. We are verifying several times a day our volunteer database in order to find the best place for you",
+    "informWhenAccomodationFound": "As soon as we find accommodation for you, we will inform you via e-mail",
+    "backToMainPage": "Go back to home page"
+  },
+  "thankfulnessHostModal": {
+    "thankYou": "Thank you!",
+    "applicationSent": "Your offer has been sent. We search our database several times a day to find the best match with to your offer. ",
+    "informWhenAccomodationFound": "As soon as we find a potential guest for you, we will inform you about it by e-mail."
+  },
+  "refugeeForm": {
+    "refugeeDetailsOptions": {
+      "animals": "I am accompanied by a pet",
+      "toddler": "Child under 2 years",
+      "oldPerson": "I am or I am accompanied by an elderly person",
+      "disability": "I am, or I am accompanied by a person with disability",
+      "pregnant": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)"
+    },
+    "refugeesCountOptions": {
+      "alone": "I am alone",
+      "more": "More"
+    },
+    "errors": {
+      "name": "Provide your name",
+      "email": "Provide a valid e-mail address",
+      "phoneNumber": "Provide a correct phone number",
+      "required": "This field is mandatory",
+      "location": "Provide a preferred location"
     },
     "labels": {
-        "location": "Preferred location",
-        "numberOfGuests": "Number of guests",
-        "timePeriod": "Length of stay",
-        "withKids": "I am accompanied by a child",
-        "email": "E-mail",
-        "phone": "Phone",
-        "town": "City\/Town",
-        "phoneNumber": "Phone"
-    },
-    "validations": {
-        "requiredName": "Provide your name",
-        "invalidEmail": "Provide a valid e-mail address",
-        "invalidPhoneNumber": "Provide correct phone number",
-        "requiredTown": "Provide city\/town",
-        "requiredTime": "Provide information on how long your guests can stay",
-        "requiredPeopleQuantity": "Provide number of people you can host",
-        "requiredLivingConditions": "Provide housing conditions",
-        "requiredFloor": "Provide a floor"
-    },
-    "staticValues": {
-        "timePeriod": {
-            "lessThanAWeek": "less than a week",
-            "week": "One week",
-            "twoWeeks": "2 weeks",
-            "month": "One month",
-            "longer": "Longer than a month"
-        },
-        "groupRelations": {
-            "single_man": "Single Man",
-            "single_woman": "Single Woman",
-            "spouses": "Spouses\/Couple",
-            "mother_with_children": "Mother with children",
-            "family_with_children": "Family with children",
-            "unrelated_group": "Unrelated group"
-        },
-        "accommodationTypes": {
-            "bed": "Bed in a shared room",
-            "room": "Room in a shared flat \/ house",
-            "flat": "Flat for exclusive use",
-            "house": "House for exclusive use",
-            "collective": "Collective room (e.g. school room)",
-            "public_shared_space": "Collective room (e.g. school room)"
-        },
-        "boolean": {
-            "yes": "yes",
-            "no": "no"
-        },
-        "anyLocation": "Any",
-        "withElevator": "with elevator"
-    },
-    "accommodationOffer": {
-        "canAccommodate": "Place for <1>{{count}} people<\/1>",
-        "duration": "max. <1> {{time}} <\/1>",
-        "acceptAnimals": "pets accepted",
-        "disabledSupport": "Facilities for disabled",
-        "includesFood": "Food",
-        "author": {
-            "owner": "Host"
-        }
-    },
-    "forms": {
-        "chooseFromList": "Select from list",
-        "chooseFromListMulti": "Select from the list (you can choose multiple options)"
-    },
-    "guestOffer": {
-        "arrivalToPoland": "Arrival date: {{arrival}}",
-        "peopleToAccommodate": "+ {{count}} people",
-        "preferredLocation": "preferred location: <1>{{location}}<\/1>",
-        "withAnimals": "I am accompanied by a pet: <1> {{animals}} <\/1>",
-        "withKids": "I am accompanied by a child: <1>{{age}}<\/1>",
-        "withDisabled": "I am accompanied by a person with disability",
-        "withElder": "I am accompanied by an elderly person",
-        "invite": "Host"
-    },
-    "addAccommodation": {
-        "hostPreferences": {
-            "label": "Specify your preferences on whom you can host",
-            "acceptAnimals": "pets accepted",
-            "disabledSupport": "people with disabilities",
-            "kidsUnder2": "children under 2 years",
-            "foodIncluded": "food provided"
-        },
-        "peopleQuantity": "How many people can you host?",
-        "forHowLong": "For how long?",
-        "livingConditions": {
-            "label": "Which living conditions can you propose?",
-            "options": {
-                "flat": "I have a free flat",
-                "mattress": "I have a free mattress",
-                "other": "other"
-            }
-        },
-        "floor": {
-            "label": "On which floor is the accommodation located?",
-            "hint": "* Seniors may have difficulty accessing the high floor"
-        },
-        "submit": "Register your offer"
-    },
-    "flags": {
-        "cz": "Czech flag",
-        "en": "UK flag",
-        "es": "Spanish flag",
-        "fr": "French flag",
-        "hu": "Hungarian flag",
-        "it": "Italian flag",
-        "pl": "Polish flag",
-        "ro": "Romanian flag",
-        "sk": "Slovakian flag",
-        "ua": "Ukrainian flag",
-        "de": "German flag",
-        "at": "Austrian flag",
-        "be": "Belgian flag",
-        "bg": "Bulgarian flag",
-        "hr": "Croatian flag",
-        "cy": "Cyprus flag",
-        "dk": "Denmark flag",
-        "ee": "Estonian flag",
-        "fi": "Finnish flag",
-        "lv": "Latvian flag",
-        "li": "Liechtenstein flag",
-        "lt": "Lithuanian flag",
-        "mt": "Malta flag",
-        "nl": "Dutch flag",
-        "no": "Norwegian flag",
-        "pt": "Portugal flag",
-        "si": "Slovenian flag",
-        "se": "Sweden flag"
-    },
-    "hostAdd": {
-        "country": "Country",
-        "countries": {
-            "poland": "Poland",
-            "hungary": "Hungary",
-            "czechia": "Czech",
-            "slovakia": "Slovakia"
-        },
-        "nameLabel": "First name (only enter first name)",
-        "emailPlaceholder": "e-mail",
-        "phoneLabel": "Phone number",
-        "phonePlaceholder": "xxx-xxx-xxx",
-        "cityLabel": "Select the city in which or in the closest vicinity you offer accommodation.",
-        "cityPlaceholder": "City",
-        "type": "Accommodation type",
-        "hostType": "Host type",
-        "hostTypeLabel": {
-            "host_type_men": "Male (single)",
-            "host_type_women": "Female (single)",
-            "host_type_couple": "Couple",
-            "host_type_family": "Family with child\/children",
-            "host_type_elder_people": "Elderly",
-            "host_type_friends_group": "Non-related"
-        },
-        "guestCount": "How many guests are you able to host?",
-        "accomodationPhoto": "Add accommodation photo",
-        "accomodationPhotoLabel": "Add photo",
-        "accomodationPhotoReset": "Remove",
-        "accommodationTimeLabel": {
-            "less_than_week": "Less than a week",
-            "week": "Week",
-            "two_weeks": "2 weeks",
-            "month": "Month",
-            "longer": "Longer"
-        },
-        "volunteerVisitAcceptance": "I agree for the verification of the place (volunteer visit)",
-        "nationality": "What refugee nationality are you willing to accept?",
-        "ukraine": "Ukraine",
-        "additionalInformationHeader": "Additional Information",
-        "any": "Any",
-        "childBedCount": "Number of sleeping places for children",
-        "city": "city",
-        "fullBedCount": "Number of full-size sleeping places",
-        "pregnantReady": "I will accept a person in an advanced state of pregnancy (over 6 months)",
-        "dissabilityReady": "I will accept a person with a disability",
-        "elderReady": "I will accept elderly person",
-        "animalReady": "I will accept a person with a pet",
-        "basicInfoHeader": "Provide basic information",
-        "refugeInfoHeader": "Provide information on accommodation",
-        "addButton": "Submit \/ Add",
-        "addButtomErrorMessage": "Please fill in the required fields",
-        "errors": {
-            "name": "Provide your name",
-            "email": "Provide a valid e-mail",
-            "phoneNumber": "Provide your phone number",
-            "country": "Country is required",
-            "town": "City is required",
-            "type": "Accommodation type is required",
-            "hostType": "Host type is required",
-            "accommodationTime": "Duration of stay is required",
-            "nationalityError": "Refugee nationality is required",
-            "groupsTypes": "Group type is required"
-        },
-        "prolongationReady": "Possibility of extending the stay (for a fee)",
-        "transportReady": "Possibility of transport",
-        "hostAddressProcessingWarning": "Full address will not be shared with refugee — only your city"
-    },
-    "logout": "Log out",
-    "back": "Back",
-    "backToHomePage": "Back to home page",
-    "shareLocation": "Create an account",
-    "registerGuest": "Find a shelter",
-    "more": "See more",
-    "register1": "Register",
-    "register2": "Registration",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Regulations",
-    "patrons": "Patrons",
-    "rodo": "GDPR",
-    "thankfulnessModal": {
-        "thankYou": "Thank you!",
-        "thanksForYourDecision": "Thank you for informing us of your decision",
-        "applicationSent": "Your application was sent. We are verifying several times a day our volunteer database in order to find the best place for you",
-        "informWhenAccomodationFound": "As soon as we find accommodation for you, we will inform you via e-mail",
-        "backToMainPage": "Go back to home page"
-    },
-    "thankfulnessHostModal": {
-        "thankYou": "Thank you!",
-        "applicationSent": "Your offer has been sent. We search our database several times a day to find the best match with to your offer. ",
-        "informWhenAccomodationFound": "As soon as we find a potential guest for you, we will inform you about it by e-mail."
-    },
-    "refugeeForm": {
-        "refugeeDetailsOptions": {
-            "animals": "I am accompanied by a pet",
-            "toddler": "Child under 2 years",
-            "oldPerson": "I am or I am accompanied by an elderly person",
-            "disability": "I am, or I am accompanied by a person with disability",
-            "pregnant": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)"
-        },
-        "refugeesCountOptions": {
-            "alone": "I am alone",
-            "more": "More"
-        },
-        "errors": {
-            "name": "Provide your name",
-            "email": "Provide a valid e-mail address",
-            "phoneNumber": "Provide a correct phone number",
-            "required": "This field is mandatory",
-            "location": "Provide a preferred location"
-        },
-        "labels": {
-            "email": "E-mail",
-            "refugeesCount": "For how many people are you looking for accommodation?",
-            "refugee": "Refugee {{number}}",
-            "refugeeDetails": "Provide additional information to enable the best match for you",
-            "refugeesAnimal": "Breed",
-            "isGDPRAccepted": "I accept the privacy policy",
-            "submitButton": "Get help",
-            "location": "Where would you like to stay?",
-            "anyLocation": "Any location",
-            "prefferedLocation": "Preferred location",
-            "city": "City\/Town",
-            "addRefugee": "Add a person"
-        }
-    },
-    "refugeeAddForm": {
-        "basicInfoHeader": "Provide basic information about yourself and the people you travel with",
-        "addButton": "Send the application",
-        "addButtomErrorMessage": "Please fill in the required fields",
-        "pregnantReady": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)",
-        "dissabilityReady": "I am accompanied by a person with disability",
-        "elderReady": "I am accompanied by an elderly person",
-        "ageLabel": "Age",
-        "genderLabel": "Gender",
-        "genderPlaceholder": "Provide your gender",
-        "travelCompanions": "Information on the people you are with",
-        "fullBedCountLabel": "How many people travel with you? (including you)",
-        "childBedCountLabel": "Number of beds for children",
-        "placeOfRefuge": "Where are you looking for accommodation?",
-        "countryOfRefugePlaceholder": "Choose a country",
-        "cityOfRefugeLabel": "Choose city:",
-        "overnightDurationLabel": "For what period are you looking for accommodation?",
-        "cityOfRefugePlaceholder": "Choose an area",
-        "nameLabel": "Name (enter only first name)",
-        "emailLabel": "Provide your e-mail address:",
-        "emailPlaceholder": "e-mail",
-        "phoneLabel": "Phone number",
-        "phonePlaceholder": "xxx-xxx-xxx",
-        "cityPlaceholder": "City",
-        "groupRelations": "What is the type of relationship between group members?",
-        "selectPlaceholder": "Select from list",
-        "accommodationType": "What type of accommodation are you looking for?",
-        "countryOfGroupUA": "Ukraine",
-        "countryOfGroupOthers": "Other",
-        "accompanyingPerson": "Accompanying person",
-        "errors": {
-            "name": "Provide your name",
-            "email": "Please enter a valid e-mail",
-            "gender": "Complete the gender you identify with",
-            "cityOfRefuge": "Please select a city\/town",
-            "phoneNumber": "Provide your phone number",
-            "countryOfRefuge": "Select a country",
-            "childBedCount": "Enter the number of beds",
-            "fullBedCountsaas": "Enter the number of beds",
-            "groupRelations": "Choose relationship",
-            "overnightDuration": "Select duration of stay",
-            "accommodationType": "Select the type of accommodation",
-            "countryOfGroup": "Please select nationality"
-        },
-        "refugeInfoHeader": "Provide information about your accommodation",
-        "countryOfGroup": "What is the group's origin country?",
-        "cityTooltip": "If you cannot find your city, choose the closest big city or town",
-        "confirmChangesButton": "Confirm changes"
-    },
-    "accomodationPhoto": "Add a photo of offered accommodation",
-    "accomodationPhotoReset": "Delete",
-    "accomodationPhotoLabel": "Submit",
-    "dropdownChoose": "Select...",
-    "dropdownSearch": "Search",
-    "heroImageAlt": "Slava Ukraini!",
-    "loginForm": {
-        "logInWith": "Log IN",
-        "or": "or",
-        "lostPass": "Lost Password?",
-        "click": "click",
-        "logIn": "Login",
-        "doNotHaveAcc": "Do you want to have access ?",
-        "register": "Register"
-    },
-    "gdpr": "GDPR",
-    "ogMeta": {
-        "title": "We help war refugees from Ukraine find shelter",
-        "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+      "email": "E-mail",
+      "refugeesCount": "For how many people are you looking for accommodation?",
+      "refugee": "Refugee {{number}}",
+      "refugeeDetails": "Provide additional information to enable the best match for you",
+      "refugeesAnimal": "Breed",
+      "isGDPRAccepted": "I accept the privacy policy",
+      "submitButton": "Get help",
+      "location": "Where would you like to stay?",
+      "anyLocation": "Any location",
+      "prefferedLocation": "Preferred location",
+      "city": "City/Town",
+      "addRefugee": "Add a person"
     }
+  },
+  "refugeeAddForm": {
+    "basicInfoHeader": "Provide basic information about yourself and the people you travel with",
+    "addButton": "Send the application",
+    "addButtomErrorMessage": "Please fill in the required fields",
+    "pregnantReady": "I am, or I am accompanied by a person in advanced pregnancy (over 6 months)",
+    "dissabilityReady": "I am accompanied by a person with disability",
+    "elderReady": "I am accompanied by an elderly person",
+    "ageLabel": "Age",
+    "genderLabel": "Gender",
+    "genderPlaceholder": "Provide your gender",
+    "travelCompanions": "Information on the people you are with",
+    "fullBedCountLabel": "How many people travel with you? (including you)",
+    "childBedCountLabel": "Number of beds for children",
+    "placeOfRefuge": "Where are you looking for accommodation?",
+    "countryOfRefugePlaceholder": "Choose a country",
+    "cityOfRefugeLabel": "Choose city:",
+    "overnightDurationLabel": "For what period are you looking for accommodation?",
+    "cityOfRefugePlaceholder": "Choose an area",
+    "nameLabel": "Name (enter only first name)",
+    "emailLabel": "Provide your e-mail address:",
+    "emailPlaceholder": "e-mail",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "xxx-xxx-xxx",
+    "cityPlaceholder": "City",
+    "groupRelations": "What is the type of relationship between group members?",
+    "selectPlaceholder": "Select from list",
+    "accommodationType": "What type of accommodation are you looking for?",
+    "countryOfGroupUA": "Ukraine",
+    "countryOfGroupOthers": "Other",
+    "accompanyingPerson": "Accompanying person",
+    "errors": {
+      "name": "Provide your name",
+      "email": "Please enter a valid e-mail",
+      "gender": "Complete the gender you identify with",
+      "cityOfRefuge": "Please select a city/town",
+      "phoneNumber": "Provide your phone number",
+      "countryOfRefuge": "Select a country",
+      "childBedCount": "Enter the number of beds",
+      "fullBedCountsaas": "Enter the number of beds",
+      "groupRelations": "Choose relationship",
+      "overnightDuration": "Select duration of stay",
+      "accommodationType": "Select the type of accommodation",
+      "countryOfGroup": "Please select nationality"
+    },
+    "refugeInfoHeader": "Provide information about your accommodation",
+    "countryOfGroup": "What is the group's origin country?",
+    "cityTooltip": "If you cannot find your city, choose the closest big city or town",
+    "confirmChangesButton": "Confirm changes"
+  },
+  "accomodationPhoto": "Add a photo of offered accommodation",
+  "accomodationPhotoReset": "Delete",
+  "accomodationPhotoLabel": "Submit",
+  "dropdownChoose": "Select...",
+  "dropdownSearch": "Search",
+  "heroImageAlt": "Slava Ukraini!",
+  "loginForm": {
+    "logInWith": "Log IN",
+    "or": "or",
+    "lostPass": "Lost Password?",
+    "click": "click",
+    "logIn": "Login",
+    "doNotHaveAcc": "Do you want to have access ?",
+    "register": "Register"
+  },
+  "gdpr": "GDPR",
+  "ogMeta": {
+    "title": "We help war refugees from Ukraine find shelter",
+    "description": "UASOS.org in cooperation with leading charity organizations automatically and for free connects refugees from Ukraine with people offering shelter. Help us offer support or request shelter today!"
+  }
 }

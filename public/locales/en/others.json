@@ -296,14 +296,14 @@
       "phoneExist": "This phone number is already linked to another account",
       "tooManyRequest": "Too many phone verification requests",
       "invalidCode": "Invalid Code",
-      "phoneLinkingFailed": "Error occurred while linking phone number to your account, log in and try again"
+      "phoneLinkingFailed": "Error occurred while linking phone number to your account. Make sure your phone number is not linked to the other account or try again using different number"
     }
   },
   "publicShelters": {
     "details": {
       "howToGetThere": "How to get there"
     },
-    "addShelterMail": "If you want to add your public shelter, please contact us at {{mail}}",
+    "addShelterMail": "If you want to add your public shelter, please contact us at publicshelters@uasos.org.",
     "description": "You can find here a list of publicly available shelters. Remember to call the place and confirm the availability before departing. \n"
   },
   "popup:staySafe": {

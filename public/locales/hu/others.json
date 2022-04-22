@@ -296,14 +296,14 @@
       "phoneExist": "Ez a telefonszám már egy másik fiókhoz van kapcsolva",
       "tooManyRequest": "Túl sok telefonos ellenőrzési kérelem",
       "invalidCode": "Érvénytelen kód",
-      "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolásakor, jelentkezzen be, és próbálja újra"
+      "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolása közben. Győződjön meg róla, hogy a telefonszáma nincs összekapcsolva a másik fiókkal, vagy próbálja meg újra más számmal."
     }
   },
   "publicShelters": {
     "details": {
       "howToGetThere": "Hogyan jutok el oda"
     },
-    "addShelterMail": "Ha hozzá szeretné adni nyilvános menedékhelyét, kérjük, lépjen kapcsolatba velünk a {{mail}}",
+    "addShelterMail": "Ha hozzá szeretné adni nyilvános menedékhelyét, kérjük, lépjen kapcsolatba velünk a publicshelters@uasos.org.",
     "description": "A nyilvánosan elérhető menedékhelyek listáját itt találja. Ne feledje indulás előtt felhívni a helyet, hogy a szabad helyek valóban rendelkezésre állnak-e! \n"
   },
   "popup:staySafe": {

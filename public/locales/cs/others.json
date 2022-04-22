@@ -296,14 +296,14 @@
       "phoneExist": "",
       "tooManyRequest": "",
       "invalidCode": "",
-      "phoneLinkingFailed": ""
+      "phoneLinkingFailed": "Při propojování telefonního čísla s vaším účtem došlo k chybě. Ujistěte se, že vaše telefonní číslo není propojeno s jiným účtem, nebo zkuste znovu použít jiné číslo"
     }
   },
   "publicShelters": {
     "details": {
       "howToGetThere": "Jak se tam dostat"
     },
-    "addShelterMail": "Pokud chcete přidat veřejně dostupné přístřeší, kontaktujte nás prosím na {{mail}}.",
+    "addShelterMail": "Pokud chcete přidat veřejně dostupné přístřeší, kontaktujte nás prosím na publicshelters@uasos.org.",
     "description": "Zde najdete seznam veřejně dostupných přístřeší. Před odjezdem nezapomeňte na místo zavolat a ověřit si dostupnost. \n"
   },
   "popup:staySafe": {

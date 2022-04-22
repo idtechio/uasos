@@ -296,14 +296,14 @@
       "phoneExist": "Acest număr de telefon este deja conectat la alt cont",
       "tooManyRequest": "Prea multe cereri de verificare telefonică",
       "invalidCode": "Cod invalid",
-      "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs., conectați-vă și încercați din nou"
+      "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs. Asigurați-vă că numărul dvs. de telefon nu este legat de celălalt cont sau încercați din nou folosind un alt număr."
     }
   },
   "publicShelters": {
     "details": {
       "howToGetThere": "Cum se ajunge acolo"
     },
-    "addShelterMail": "Dacă doriți să vă adăugați un centru de cazare, vă rugăm să ne contactați la {{mail}}",
+    "addShelterMail": "Dacă doriți să vă adăugați un centru de cazare, vă rugăm să ne contactați la publicshelters@uasos.org.",
     "description": "Puteți găsi aici o listă a adăposturilor disponibile publicului. Nu uitați să sunați la locul respectiv și să confirmați disponibilitatea înainte de a pleca. \n"
   },
   "popup:staySafe": {
