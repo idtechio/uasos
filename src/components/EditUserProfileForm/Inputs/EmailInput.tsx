@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
-import { useCanEditEmail } from "../../../../queries/useAccount";
-import { Input } from "../../../Forms";
+import { useCanEditEmail } from "../../../queries/useAccount";
+import { Input } from "../../Forms";
 import { EditProfileForm } from "../types";
 import { InputWrapper } from "./style";
 

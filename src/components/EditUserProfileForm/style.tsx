@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import { Theme } from "../../style/theme.config";
 
 export const ContentContainer = styled.View`
   background-color: white;
@@ -54,4 +54,12 @@ export const SuccessMessage = styled.Text`
   flex: 0 0 100%;
 
   margin-bottom: 12px;
+`;
+
+export const FormFooter = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 119px;
 `;

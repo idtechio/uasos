@@ -27,7 +27,7 @@ import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { useMutation } from "react-query";
 import { FirebaseError } from "@firebase/util";
-import SmsNotificationInput from "../EditUserProfileForm/DetailsForm/Inputs/SmsNotificationInput";
+import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export const SectionContent = styled.View`
   max-width: 400px;

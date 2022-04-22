@@ -1,8 +1,8 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { useTranslation } from "next-i18next";
-import CountrySelect from "../../../Forms/CountrySelect";
-import { CountryDropdownItemType } from "../../../Forms/CountrySelect/types";
+import CountrySelect from "../../Forms/CountrySelect";
+import { CountryDropdownItemType } from "../../Forms/CountrySelect/types";
 import { EditProfileForm } from "../types";
 import { InputWrapper } from "./style";
 
