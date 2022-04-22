@@ -303,7 +303,7 @@
         "details": {
             "howToGetThere": "Comment s'y rendre"
         },
-        "addShelterMail": "Si vous souhaitez ajouter un logement accessible au public, veuillez nous contacter à {{mail}}",
+        "addShelterMail": "Si vous souhaitez ajouter un logement accessible au public, veuillez nous contacter à publicshelters@uasos.org.",
         "description": "Vous trouverez ici une liste de logements accessibles au public. N'oubliez pas d'appeler le lieu et de confirmer la disponibilité avant de vous y rendre.\n"
     },
     "popup:staySafe": {

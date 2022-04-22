@@ -303,7 +303,7 @@
         "details": {
             "howToGetThere": "Jak dojechać"
         },
-        "addShelterMail": "Jeśli chcesz dodać swoje schronisko publiczne, skontaktuj się z nami pod adresem {{mail}}",
+        "addShelterMail": "Jeśli chcesz dodać swoje schronisko publiczne, skontaktuj się z nami pod adresem publicshelters@uasos.org.",
         "description": "Tutaj znajdziesz listę ogólnodostępnych schronisk. Pamiętaj, aby przed wyjazdem zadzwonić do danego miejsca i potwierdzić jego dostępność. \n"
     },
     "popup:staySafe": {
