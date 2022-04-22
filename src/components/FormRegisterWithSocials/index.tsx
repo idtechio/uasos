@@ -23,7 +23,7 @@ import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { FirebaseError } from "@firebase/util";
 import { css } from "styled-components/native";
-import SmsNotificationInput from "../EditUserProfileForm/DetailsForm/Inputs/SmsNotificationInput";
+import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();

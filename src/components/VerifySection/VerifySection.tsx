@@ -1,15 +1,11 @@
-import { ConfirmationResult } from "firebase/auth";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { StyleProp, ViewStyle, ActivityIndicator } from "react-native";
 import styled, { useTheme } from "styled-components/native";
-import { AuthContext } from "../../../pages/_app";
-import { Authorization } from "../../hooks/useAuth";
 import EmailIcon from "../../style/svgs/email.svg";
 import PhoneIcon from "../../style/svgs/phone.svg";
 import { Theme } from "../../style/theme.config";
-import SmsVerificationModal from "../SmsVerificationModal";
 import Toast from "../Toast";
 
 const VerifySectionWrapper = styled.View``;
@@ -27,66 +23,15 @@ const VerifyPhoneToast = () => {
   const theme = useTheme() as Theme;
 
   const { t } = useTranslation("desktop");
-  const [modalOpened, setModalOpened] = useState(false);
-  const [confirmation, setConfirmation] = useState<ConfirmationResult | null>(
-    null
-  );
-  const { identity } = useContext(AuthContext);
 
-  const prepareModal = useCallback(
-    async function () {
-      if (!identity?.phoneNumber) {
-        router.push("user-profile");
-
-        return null;
-      }
-
-      const confirmation = await Authorization.signInWithPhone(
-        identity?.phoneNumber,
-        Authorization.initCaptcha("verify_captcha_container")
-      );
-
-      setConfirmation(confirmation);
-    },
-
-    [identity?.phoneNumber]
-  );
-
-  function openModal() {
-    setModalOpened(true);
-  }
-
-  function onSuccessCallback() {
-    setModalOpened(false);
-  }
-
-  useEffect(() => {
-    if (modalOpened) {
-      prepareModal();
-    }
-
-    if (!modalOpened) {
-      setConfirmation(null);
-    }
-  }, [modalOpened, prepareModal]);
+  const goToProfile = useCallback(() => router.push("/user-profile"), []);
 
   return (
     <>
-      <div id="verify_captcha_container" />
-      {modalOpened && identity?.phoneNumber && confirmation && (
-        <SmsVerificationModal
-          mode="LINK"
-          callback={onSuccessCallback}
-          confirmation={confirmation}
-          setVerificationSuccess={() => {}}
-          phoneNumber={identity.phoneNumber}
-          close={() => setModalOpened(false)}
-        />
-      )}
       <Toast
         color={theme.colors.error}
         label={t("others:desktop.checks.phoneNotVerified")}
-        cta={{ onPress: openModal, label: t("verify") }}
+        cta={{ onPress: goToProfile, label: t("verify") }}
         icon={<PhoneIcon />}
         contaierStyle={{ marginBottom: 0 }}
       />

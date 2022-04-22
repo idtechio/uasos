@@ -37,7 +37,7 @@ type FormType = {
 
 interface Props {
   phoneNumber: string;
-  confirmation: ConfirmationResult;
+  confirmation?: ConfirmationResult;
   setVerificationSuccess: (success: boolean) => void;
   mode: "LOGIN" | "UPDATE" | "LINK";
   callback: () => void;
@@ -156,10 +156,10 @@ export default function SmsVerificationModal({
           );
           await Authorization.updatePhone(phoneCredential);
         } else {
-          await confirmation.confirm(code);
-          setVerificationSuccess(true);
-          callback();
+          await confirmation?.confirm(code);
         }
+        setVerificationSuccess(true);
+        callback();
       } catch (error: unknown) {
         if (error instanceof Error || error instanceof FirebaseError) {
           parseError(error?.message);
