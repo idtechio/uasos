@@ -17,7 +17,7 @@
         "footer": {
             "FAQ": "ÎNTREBĂRI FRECVENTE",
             "termsOfService": "Termeni și condiții de utilizare",
-            "yourSafety": ""
+            "yourSafety": "Siguranța ta"
         },
         "words": {
             "idWithData": "Id: {{id}}",
@@ -28,7 +28,10 @@
             "or": "Sau",
             "badNews": "Ne pare rău",
             "prefix": "Prefix",
-            "dashboard": "Tabloul de bord"
+            "dashboard": "Tabloul de bord",
+            "publicShelters": "Adăposturi publice",
+            "addMore": "Adăugați mai multe",
+            "remember": "Nu uitați:"
         },
         "links": {
             "re-sendCode": "Retrimite codul",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "am trimis un cod de verificare la adresa dvs. de e-mail. Faceți clic pe link pentru a-l verificare",
-            "verification": "Verificare e-mail"
+            "verification": "Verificare e-mail",
+            "errorTryAgainInSeconds": "Nu ați primit încă e-mail? Încercați în {{number}}secunde.",
+            "errorTryAgain": "Nu ați primit încă e-mail? Încercați din nou.",
+            "errorTooManyRequestsInSeconds": "Prea multe încercări. Reveniți în{{number}} secunde"
         },
         "nationalities": {
             "ukrainians": "Ucrainenii",
@@ -70,7 +76,10 @@
                 "house": "Casă"
             },
             "photosList": "Imagini cu locuința oferită",
-            "acceptElderly": "Accept persoane în vârstă"
+            "acceptElderly": "Accept persoane în vârstă",
+            "addPhotoHeaderWithLimit3": "Adaugă o fotografie a cazării oferite (maxim 3)",
+            "numberOfRooms": "Număr de camere",
+            "roomCapacity": "Capacitatea"
         },
         "userRegistration": {
             "enterDetails": "Introduceți detaliile dvs.",
@@ -151,7 +160,8 @@
             "country": "Țară",
             "email": "Email",
             "emailAddress": "Adresă de e-mail",
-            "closestLargeCity": "Cel mai apropiat oraș mare"
+            "closestLargeCity": "Cel mai apropiat oraș mare",
+            "occupancy": "Ocupanți: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -234,7 +244,8 @@
             "accountInCreation": "Contul dumneavoastră este creat, reîmprospătați pagina după câteva secunde",
             "emailAlreadyInUse": "Adresa de e-mail folosită este deja utilizată în sistemul nostru. Vă rugăm să încercați să încercați să vă conectați printr-o metodă diferită",
             "idNotVerified": "ID-ul nu a fost verificat",
-            "changesInProgress": ""
+            "changesInProgress": "Modificările sunt in curs de actualizare",
+            "idVerified": "ID verificat cu succes"
         },
         "housing": "Locuință",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "acceptat",
             "cancellation": "anulare"
         },
-        "accommodationSearch": "Căutare cazare"
+        "accommodationSearch": "Căutare cazare",
+        "exitToIDnow": "Ieșiți"
     },
     "reportProblem": {
         "popup": {
             "description": "Anunțați-ne despre orice problemă folosind formularul de mai jos",
             "problemReported": "Problema a fost raportată",
-            "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație.  ",
+            "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație. Vă mulțumim că ne-ați informat despre această situație. Vom căuta o altă potrivire pentru dumneavoastră.",
             "reasons": {
                 "guestNotNeedHelp": "Oaspetele meu nu mai are nevoie de cazare",
                 "hostCantHelp": "Gazda mea nu mai poate oferi cazare",
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "Îi ajutăm pe refugiați să găsească automat cazare <b>gratuită<\/b> în <b>Polonia, Cehia, Ungaria și Slovacia,<\/b> oferită de persoane și instituții dispuse să ajute.",
-        "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală"
+        "comingSoon": "În curând: funcționalități de transport, căutare de locuri de muncă și consiliere medicală",
+        "waysToStaySafe": "Aflați cum puteți rămâne în siguranță"
     },
     "userRegistration": {
         "errors": {
@@ -283,7 +296,22 @@
             "phoneExist": "Acest număr de telefon este deja conectat la alt cont",
             "tooManyRequest": "Prea multe cereri de verificare telefonică",
             "invalidCode": "Cod invalid",
-            "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs., conectați-vă și încercați din nou"
+            "phoneLinkingFailed": "A apărut o eroare la conectarea numărului de telefon la contul dvs. Asigurați-vă că numărul dvs. de telefon nu este legat de celălalt cont sau încercați din nou folosind un alt număr."
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": "Cum se ajunge acolo"
+        },
+        "addShelterMail": "Dacă doriți să vă adăugați un centru de cazare, vă rugăm să ne contactați la publicshelters@uasos.org.",
+        "description": "Puteți găsi aici o listă a adăposturilor disponibile publicului. Nu uitați să sunați la locul respectiv și să confirmați disponibilitatea înainte de a pleca. \n"
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "<b>Nu uitați să rămâneți în siguranță<\/b>",
+        "reviewedTips": "Am trecut în revistă sfaturile de siguranță",
+        "getToKnowHost": "Faceți cunoștință cu gazda dvs.",
+        "exchangeFacebook": "Faceți schimb de detalii pe Facebook\/Instagram, faceți un apel video înainte de întâlnirea live.",
+        "useTranslator": "În cazul în care nu vorbiți aceeași limbă - conectați-vă prin e-mail\/WhatsApp\/SMS și utilizați, de exemplu, Google Translate.",
+        "getToKnowGuest": "Faceți cunoștință cu oaspetele dvs."
     }
 }

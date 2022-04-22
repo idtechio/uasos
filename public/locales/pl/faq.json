@@ -1,0 +1,125 @@
+{
+    "001": {
+        "name": "INFORMACJE OGÓLNE",
+        "content": {
+            "001": {
+                "question": "Do czego służy ten portal?",
+                "answer": "Platforma uaSOS.org łączy uchodźców poszukujących noclegu z osobami prywatnymi, instytucjami, organizacjami pozarządowymi i firmami oferującymi zakwaterowanie. W przeciwieństwie do innych inicjatyw, które gromadzą podobne dane, platforma uaSOS.org automatycznie łączy ogłoszenia osób potrzebujących z ofertami pomocy, aby zapewnić jak najlepszą pomoc jak najszerszej grupie osób. Dzięki platformie osoby potrzebujące nie będą musiały przeglądać setek dostępnych ofert pomocy, ale otrzymają najbardziej odpowiednią i aktualną, dostosowaną do ich potrzeb. Rejestracja na platformie nie jest anonimowa, co zapewnia bezpieczeństwo obu stronom."
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            },
+            "004": {
+                "question": "",
+                "answer": ""
+            },
+            "005": {
+                "question": "",
+                "answer": ""
+            },
+            "006": {
+                "question": "",
+                "answer": ""
+            },
+            "007": {
+                "question": "",
+                "answer": ""
+            },
+            "008": {
+                "question": "",
+                "answer": ""
+            },
+            "009": {
+                "question": "",
+                "answer": ""
+            },
+            "010": {
+                "question": "",
+                "answer": ""
+            },
+            "011": {
+                "question": "",
+                "answer": ""
+            }
+        }
+    },
+    "002": {
+        "name": "",
+        "content": {
+            "001": {
+                "question": "",
+                "answer": ""
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            },
+            "004": {
+                "question": "",
+                "answer": ""
+            },
+            "005": {
+                "question": "",
+                "answer": ""
+            },
+            "006": {
+                "question": "",
+                "answer": ""
+            },
+            "007": {
+                "question": "",
+                "answer": ""
+            },
+            "008": {
+                "question": "",
+                "answer": ""
+            },
+            "009": {
+                "question": "",
+                "answer": ""
+            },
+            "010": {
+                "question": "",
+                "answer": ""
+            },
+            "011": {
+                "question": "",
+                "answer": ""
+            },
+            "012": {
+                "question": "",
+                "answer": ""
+            },
+            "013": {
+                "question": "",
+                "answer": ""
+            }
+        }
+    },
+    "003": {
+        "name": "",
+        "content": {
+            "001": {
+                "question": "",
+                "answer": ""
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            }
+        }
+    }
+}

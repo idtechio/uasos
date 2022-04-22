@@ -7,6 +7,7 @@ import CITY_LIST_CZ from "../../consts/cities/cz.json";
 import CITY_LIST_HU from "../../consts/cities/hu.json";
 import CITY_LIST_PL from "../../consts/cities/pl.json";
 import CITY_LIST_SK from "../../consts/cities/sk.json";
+import CITY_LIST_RO from "../../consts/cities/ro.json";
 
 type Props = {
   name: FormKey;
@@ -48,6 +49,9 @@ const FormTextInput: VFC<Props> = (props) => {
     case "slovakia":
       cityList = CITY_LIST_SK;
       break;
+    case "romania":
+      cityList = CITY_LIST_RO;
+      break;
   }
 
   return (
@@ -56,14 +60,14 @@ const FormTextInput: VFC<Props> = (props) => {
       rules={rules}
       render={() => (
         <FormDropdown
-          zIndex={zIndex}
-          data={cityList}
           name={name}
-          placeholder={placeholder}
           rules={rules}
           error={error}
           label={label}
+          zIndex={zIndex}
+          data={cityList}
           errorMsg={errorMsg}
+          placeholder={placeholder}
           multiSelect={multiSelect}
         />
       )}

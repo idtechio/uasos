@@ -24,17 +24,12 @@ export async function publishMessage(
 
     const messageContent =
       typeof message === "object" ? JSON.stringify(message) : message;
-    const data = Buffer.from(messageContent);
 
-    const messageId = await pubSubClient
-      .topic(topicNameOrId)
-      .publishMessage({ data });
-
-    console.log(
-      `PUBSUB Message ${messageId} published to ${topicNameOrId}: `,
-      messageContent
-    );
-    return { status: PublishStatus.OK };
+    if (process.env.LOCAL_PUBSUB_ENABLED === "1") {
+      return await publishLocal(topicNameOrId, messageContent);
+    } else {
+      return await publishCloud(topicNameOrId, messageContent);
+    }
   } catch (e) {
     console.log(
       `PUBSUB Error while publishing to ${topicNameOrId}: `,
@@ -48,4 +43,48 @@ export async function publishMessage(
         (e instanceof Error ? `: ${e.message}` : ""),
     };
   }
+}
+
+async function publishCloud(
+  topicNameOrId: string,
+  message: string
+): Promise<PublishMessageResult> {
+  const data = Buffer.from(message);
+
+  const messageId = await pubSubClient
+    .topic(topicNameOrId)
+    .publishMessage({ data });
+
+  console.log(
+    `PUBSUB Message ${messageId} published to ${topicNameOrId}: `,
+    message
+  );
+  return { status: PublishStatus.OK };
+}
+
+async function publishLocal(
+  topicNameOrId: string,
+  message: string
+): Promise<PublishMessageResult> {
+  const body = {
+    data: {
+      data: message,
+    },
+  };
+
+  fetch(
+    `http://localhost${
+      process.env.LOCAL_PUBSUB_PORT ? ":" + process.env.LOCAL_PUBSUB_PORT : ""
+    }/${topicNameOrId}`,
+    {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "content-type": "application/json",
+      },
+    }
+  );
+
+  console.log(`PUBSUB Message published to local ${topicNameOrId}: `, message);
+  return { status: PublishStatus.OK };
 }

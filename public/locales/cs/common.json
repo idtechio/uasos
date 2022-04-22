@@ -141,7 +141,8 @@
             "poland": "Polsko",
             "hungary": "Maďarština",
             "czechia": "Česko",
-            "slovakia": "Slovensko"
+            "slovakia": "Slovensko",
+            "romania": "Rumunsko"
         },
         "nameLabel": "Křestní jméno (zadejte pouze první jméno)",
         "emailPlaceholder": "E-mailová adresa",
@@ -307,7 +308,7 @@
         "refugeInfoHeader": "Poskytnout informace o ubytování",
         "countryOfGroup": "Z jaké země skupina pochází?",
         "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město",
-        "confirmChangesButton": "Potvrzení změn"
+        "confirmChangesButton": "Potvrdit změny"
     },
     "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
     "accomodationPhotoReset": "Smazat",

@@ -1,0 +1,125 @@
+{
+    "001": {
+        "name": "GENERAL INFORMATION",
+        "content": {
+            "001": {
+                "question": "What is the portal for?",
+                "answer": "The platform uaSOS.org connects refugees looking for accommodation with private individuals, institutions, NGOs and companies offering accommodation. Unlike other initiatives that collect similar data, the uaSOS.org platform automatically connects the announcements of those in need with offers of help in order to provide the best possible assistance to the widest possible group of people. Thanks to the platform, people in need will not have to browse hundreds of available offers of help, but will be presented with the most appropriate and up-to-date one, tailored to their needs. Registration on the platform is not anonymous, which provides security to both parties."
+            },
+            "002": {
+                "question": "Who created this portal?",
+                "answer": "The initiative is supported by Polish and Ukrainian NGOs, local governments and many companies, which not only provide the best technology, but also make it possible to reach hundreds of thousands of people on both sides of the border. The platform was created with the participation of dozens of volunteers and is based on an advanced engine, which in the future gives the possibility of developing the platform to serve other needs (e.g. transport)."
+            },
+            "003": {
+                "question": "Is it safe?",
+                "answer": "The platform has been fully secured from the legal side (including RODO issues) by experts cooperating with the ID Advisory law firm. It also has a number of technical safeguards, such as: personal data is processed in the Google cloud, the set of processed data is limited, and logging takes place via Facebook and Gmail, which ensures increased security.  \n\nAt the same time, we are not able to verify all persons who fill in the forms through the portal. So please contact your host\/hostess and clarify all the details before your stay. "
+            },
+            "004": {
+                "question": "How do I create an account? ",
+                "answer": "To create an account, you will need to fill in your email address and phone number to which a verification code will be sent. "
+            },
+            "005": {
+                "question": "Do I have to enter my personal details? ",
+                "answer": "To properly register, you need to provide your email address and phone number. We ask for your name to facilitate communication between the parties. "
+            },
+            "006": {
+                "question": "What is the privacy policy and GDPR? ",
+                "answer": "To read the privacy policy, go to the \"Privacy Policy\" tab. "
+            },
+            "007": {
+                "question": "Can I edit my ad? ",
+                "answer": "To edit your ad, after logging in click on the menu next to the ad (\"three dots\") and select the \"Edit\" function. "
+            },
+            "008": {
+                "question": "How do I delete my ad? ",
+                "answer": "You can delete your ad in two ways: \n\nafter logging in, click on the menu next to the notification (\"three dots\") and select the \"Delete\" function or \n\nin the email \"UA SOS - We have found a potential guest for you\" you have the option of choosing the option to delete listing. "
+            },
+            "009": {
+                "question": "Is there any charge for setting up an account? ",
+                "answer": "The portal is free, it's meant to help people fleeing the war in Ukraine. There is no fee charged at any stage of registration or use of our portal.  "
+            },
+            "010": {
+                "question": "How does the algorithm for pairing applications work?  ",
+                "answer": "The algorithm searches both databases to find as many potential connections as possible between hosts and potential guests based on their requirements. Every 15 minutes the algorithm is run to find connections for newly registered users, but also for people who have not yet found an offer-or have declined a previous offer. "
+            },
+            "011": {
+                "question": "Will I be informed about the status?  ",
+                "answer": "Yes, we will keep you updated on the status of your application by email - check your mailbox regularly. \n\nAdditionally, when we find a potential guest\/host for you we will notify you via SMS.  "
+            }
+        }
+    },
+    "002": {
+        "name": "FOR HELPERS\/HOSTS",
+        "content": {
+            "001": {
+                "question": "I want to help, how can I host? ",
+                "answer": "To make a place available, register on the portal, provide your e-mail address, phone number and activate your account. \n\nAs soon as we find a potential guest for you - we will inform you about it via e-mail and SMS. You will then be able to enter the portal, see the key information from the matching guest form and accept or decline the offer.   \n\nOnce both parties confirm the connection, you will exchange contact details - clarify the last details and confirm where you will meet. Remember that not everyone will speak Polish, so e-mail may sometimes be a more convenient option, as there are many translators available on the Internet that you can use to translate your correspondence. "
+            },
+            "002": {
+                "question": "I want to help refugees. Do only Ukrainians need help? ",
+                "answer": "When the war broke out there were people of different nationalities in Ukraine - for example, they were studying, on business trips, on contracts, etc. We help all people, regardless of their nationality, citizenship, political views, religion, sexual orientation or membership of an ethnic minority. "
+            },
+            "003": {
+                "question": "Can I indicate how many people I want to host and is a family with children preferred, for example? ",
+                "answer": "Of course. Everyone who decides to help people coming from Ukraine can declare how many people they want to help by taking them in. You can also indicate whether you are willing to accept, for example, a family with children, animals, etc. "
+            },
+            "004": {
+                "question": "Do I have to go to the border to receive a refugee? ",
+                "answer": "At the moment, the portal is primarily intended to help you find accommodation for refugees. If you are able to pick the person up from the border or from a particular place, it is welcome, but not required. You can submit such additional information in the form. Additional functionality will be added in the future to assist in finding transportation, jobs, etc. "
+            },
+            "005": {
+                "question": "I don't speak Ukrainian, how can I communicate? ",
+                "answer": "The preferred form of communication is via email. You don't need to know the Ukrainian language to communicate with a person speaking it. There are many translators available on the Internet which you can use to translate your correspondence. "
+            },
+            "006": {
+                "question": "Do I have to give my home address? ",
+                "answer": "You have to provide your home address to create an account on the portal. It will not be displayed to the guest – the guest will only see the city of accommodation. We suggest that host and guest meet in a public space. "
+            },
+            "007": {
+                "question": "For what minimum period of time can I host a person from Ukraine? ",
+                "answer": "The minimum time to host a person from Ukraine is one night. "
+            },
+            "008": {
+                "question": "Does the service verify the users of the portal? ",
+                "answer": "Users log in using their profile using e-mail, Facebook or Gmail, and their phone numbers are verified  "
+            },
+            "009": {
+                "question": "Can I resign from hosting a refugee? ",
+                "answer": "We are aware of the fact that life happens in various random situations, therefore you can resign from hosting refugees at any time. However, please remember that your offer to host people from Ukraine is important to them and they may not be able to find a new place to stay overnight. By volunteering you are deciding to help. "
+            },
+            "010": {
+                "question": "Do I have to help refugees financially? ",
+                "answer": "You do not have to provide any financial assistance to refugees. It is solely your goodwill. "
+            },
+            "011": {
+                "question": "Do I have to provide food for refugees? ",
+                "answer": "Given the refugees' situation, providing food, at least for the initial period of their stay, is welcome but remains voluntary. "
+            },
+            "012": {
+                "question": "I don't use the Internet, how can I host refugees from Ukraine? ",
+                "answer": "In order to help refugees from Ukraine through our portal, you need to register on it. However, if you do not use the Internet on a daily basis, you can ask people who do. "
+            },
+            "013": {
+                "question": "Can I charge refugees for utilities? ",
+                "answer": "People coming from Ukraine have fled the war. Try to support them during this difficult time. If you decide to help refugees, also consider that your utility bills may increase. "
+            }
+        }
+    },
+    "003": {
+        "name": "FOR REFUGEES \/ VISITORS ",
+        "content": {
+            "001": {
+                "question": "I am a refugee from Ukraine, how do I find accommodation? ",
+                "answer": "To find accommodation, register on the portal, provide your email address, phone number and activate your account and list your needs in the form. \n\nAs soon as we find a potential host for you, we will inform you via e-mail and SMS. You will then be able to go to the portal, view the host's profile and accept or decline their offer.   \n\nOnce both parties confirm the connection, you will exchange contact details - clarify the last details and confirm where you will meet. Remember that not everyone will speak Ukrainian - so email contact may sometimes be a more convenient option, as there are many translators available online that you can use to translate your conversation. "
+            },
+            "002": {
+                "question": "Can I count on transportation from the border to my final destination? ",
+                "answer": "Not everyone who offers accommodation to refugees is motorable or can offer transportation. The offer you receive may be marked \"with transportation\". Otherwise, you can ask your host for assistance in private correspondence. "
+            },
+            "003": {
+                "question": "Should I pay for room and board for the person who has taken me in? ",
+                "answer": "Helping refugees is selfless and free of charge. People who register on the portal and offer help do not expect anything in return. Remember, however, that the service is not responsible for the conditions under which you will be accepted. Make sure that you do not expect anything in return. "
+            }
+        }
+    }
+}

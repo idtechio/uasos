@@ -8,7 +8,7 @@
             "backToDesktop": "Vissza a főoldalra",
             "cancel": "Mégsem",
             "backToProfile": "Vissza a profilhoz",
-            "verify": "Ellenőrzés",
+            "verify": "Hitelesítés",
             "report": "Jelentés",
             "update": "Frissítés",
             "reject": "Visszautasítás",
@@ -16,11 +16,11 @@
         },
         "footer": {
             "FAQ": "GYIK",
-            "termsOfService": "Szolgáltatási feltételek",
+            "termsOfService": "Általános szerződési feltételek",
             "yourSafety": "Az Ön biztonsága"
         },
         "words": {
-            "idWithData": "Id: {{id}}",
+            "idWithData": "ID: {{id}}",
             "renew": "Megújítás",
             "additionalInformation": "További információ",
             "congratulations": "Gratulálunk",
@@ -28,7 +28,10 @@
             "or": "Vagy",
             "badNews": "Rossz hírek",
             "prefix": "Előtag",
-            "dashboard": "Irányítópult"
+            "dashboard": "Irányítópult",
+            "publicShelters": "Nyilvános menedékhelyek",
+            "addMore": "Több hozzáadása",
+            "remember": "Ne feledje:"
         },
         "links": {
             "re-sendCode": "Kód újraküldése",
@@ -48,8 +51,11 @@
             "addSubmission": "Támogatás kérése"
         },
         "email": {
-            "sentInfo": "Egy ellenőrző kódot küldtünk az e-mail címére. Kattintson a linkre az ellenőrzéshez",
-            "verification": "Email ellenőrzés"
+            "sentInfo": "Egy ellenőrző kódot küldtünk az e-mail címére. Kattintson a linkre az hitelesítéshez",
+            "verification": "Email ellenőrzés",
+            "errorTryAgainInSeconds": "Nem érkezett meg az e-mail? Próbálja újra {{number}} másodperc múlva!",
+            "errorTryAgain": "Nem érkezett meg az e-mail? Kérjük próbálja újra!",
+            "errorTooManyRequestsInSeconds": "Túl sok kérés érkezett be. Kérjük próbálja újra {{szám}} másodperc múlva!"
         },
         "nationalities": {
             "ukrainians": "Ukránok",
@@ -70,7 +76,10 @@
                 "house": "Ház"
             },
             "photosList": "Fotó a felajánlott szállásról",
-            "acceptElderly": "Fogadok idős embereket"
+            "acceptElderly": "Fogadok idős embereket",
+            "addPhotoHeaderWithLimit3": "Adjon hozzá egy fényképet a felajánlott szállásról (maximum 3-at)",
+            "numberOfRooms": "Szobák száma",
+            "roomCapacity": "Szobakapacitás"
         },
         "userRegistration": {
             "enterDetails": "Adja meg adatait",
@@ -109,7 +118,7 @@
             "searchAddress": "Keresési cím: <b>{{city}}<\/b>",
             "rejected": "Az Ön potenciális vendége\/házigazdája elutasította az ajánlatot. A beadványa visszakerül a hirdetések közé, amint megtaláljuk a következő ajánlatot, értesítjük.",
             "refuge": {
-                "rejection": "Köszönjük, hogy megerősítette döntését. Az Ön beadványa visszakerül a hirdetések közé, amint találunk egyet, értesítjük a következő pályázatról."
+                "rejection": "Köszönjük, hogy megerősítette döntését. Leadott kérése visszakerül a hirdetések közé; amint találunk egy következő lehetőséget, értesítjük."
             }
         },
         "generic": {
@@ -151,7 +160,8 @@
             "country": "Ország",
             "email": "E-mail",
             "emailAddress": "E-mail cím",
-            "closestLargeCity": "Legközelebbi nagyváros"
+            "closestLargeCity": "Legközelebbi nagyváros",
+            "occupancy": "Foglalások száma: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -159,7 +169,7 @@
                 "groupDetails": "Információk a veled együtt költöző személyekről",
                 "anyCity": "Bármelyik város",
                 "imWithPregnantOver6Months": "Én vagyok, vagy egy olyan személy kísér, akinek <br \/> terhessége előrehaladott (6 hónapon túl van).",
-                "whatIsTargetCountry": "Melyik országban szeretnél maradni?",
+                "whatIsTargetCountry": "Melyik országban szeretne maradni?",
                 "selectCountry": "Válasszon országot"
             }
         },
@@ -221,7 +231,7 @@
             "duration": "Időtartam: {{value}}"
         },
         "providingSupport": "Támogatás nyújtása",
-        "yourSubmission": "Az Ön beadványa",
+        "yourSubmission": "Leadott kérése",
         "yourOffers": "Az ajánlatok áttekintése",
         "contextMenu": {
             "reportProblem": "Probléma jelentése",
@@ -229,12 +239,13 @@
             "edit": "Szerkesztés"
         },
         "checks": {
-            "phoneNotVerified": "Telefon nem ellenőrzött",
-            "emailNotVerified": "E-mail cím nincs ellenőrizve",
+            "phoneNotVerified": "Telefon nincs hitelesítve",
+            "emailNotVerified": "E-mail cím nincs hitelesítve",
             "accountInCreation": "A fiók létrehozása folyamatban van, pár másodperc múlva frissítse az oldalt.",
             "emailAlreadyInUse": "A kiválasztott bejelentkezési szolgáltatói fiókhoz kapcsolódó e-mail már használatban van a rendszerünkben.Kérjük, próbáljon meg újra bejelentkezni egy másik bejelentkezési módszerrel.",
-            "idNotVerified": "",
-            "changesInProgress": "Folyamatban lévő változások..."
+            "idNotVerified": "ID nincs hitelesítve",
+            "changesInProgress": "Változtatások folyamatban...",
+            "idVerified": "Személyazonossági ellenőrzés sikeres"
         },
         "housing": "Lakhatás",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "elfogadott",
             "cancellation": "törlés"
         },
-        "accommodationSearch": "Szálláskeresés"
+        "accommodationSearch": "Szálláskeresés",
+        "exitToIDnow": "Kilépés az IDnow-hoz"
     },
     "reportProblem": {
         "popup": {
             "description": "Értesítsen minket bármilyen problémáról az alábbi űrlap segítségével",
             "problemReported": "A problémát jelentették",
-            "thanksForLettingKnow": "Köszönjük, hogy tájékoztatott minket erről a problémáról.",
+            "thanksForLettingKnow": "Köszönjük, hogy tájékoztatott minket erről. Megpróbálunk keresni Önnek egy megfelelő lehetőséget.",
             "reasons": {
                 "guestNotNeedHelp": "Vendégemnek már nincs szüksége szállásra",
                 "hostCantHelp": "A vendéglátóm már nem tud szállást biztosítani",
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "Segítünk a menekülteknek automatikusan <b>ingyenes<\/b> szállást találni <b>Lengyelországban, Csehországban, Magyarországon és Szlovákiában,<\/b> amelyet segítőkész emberek és intézmények kínálnak.",
-        "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadással kapcsolatos funkciók"
+        "comingSoon": "Hamarosan: közlekedési, álláskeresési és orvosi tanácsadással kapcsolatos funkciók",
+        "waysToStaySafe": "Ismerje meg a biztonság megőrzésének módjait"
     },
     "userRegistration": {
         "errors": {
@@ -283,7 +296,22 @@
             "phoneExist": "Ez a telefonszám már egy másik fiókhoz van kapcsolva",
             "tooManyRequest": "Túl sok telefonos ellenőrzési kérelem",
             "invalidCode": "Érvénytelen kód",
-            "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolásakor, jelentkezzen be, és próbálja újra"
+            "phoneLinkingFailed": "Hiba történt a telefonszám és a fiók összekapcsolása közben. Győződjön meg róla, hogy a telefonszáma nincs összekapcsolva a másik fiókkal, vagy próbálja meg újra más számmal."
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": "Hogyan jutok el oda"
+        },
+        "addShelterMail": "Ha hozzá szeretné adni nyilvános menedékhelyét, kérjük, lépjen kapcsolatba velünk a publicshelters@uasos.org.",
+        "description": "A nyilvánosan elérhető menedékhelyek listáját itt találja. Ne feledje indulás előtt felhívni a helyet, hogy a szabad helyek valóban rendelkezésre állnak-e! \n"
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "<b>Ne feledje, hogy maradjon biztonságban<\/b>",
+        "reviewedTips": "Átnéztem és megértettem a biztonsági tippeket",
+        "getToKnowHost": "Ismerje meg a házigazdát",
+        "exchangeFacebook": "Cseréljék ki Facebook\/ Instagram adataikat, és az élő találkozó előtt kezdeményezzenek videóhívást.",
+        "useTranslator": "Ha nem beszélik ugyanazt a nyelvet - lépjen kapcsolatba e-mailben\/ WhatsApp-on \/SMS-ben, és használja például a Google Translate-et.",
+        "getToKnowGuest": "Ismerje meg a vendégét"
     }
 }

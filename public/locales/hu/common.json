@@ -35,8 +35,8 @@
             "longer": "Egy hónapnál hosszabban"
         },
         "groupRelations": {
-            "single_man": "Egyedülálló",
-            "single_woman": "Egyedülálló",
+            "single_man": "Egyedülálló férfi",
+            "single_woman": "Egyedülálló nő",
             "spouses": "Házaspár\/Pár",
             "mother_with_children": "Anya gyermekekkel",
             "family_with_children": "Család gyermekekkel",
@@ -140,8 +140,9 @@
         "countries": {
             "poland": "Lengyelország",
             "hungary": "Magyarország",
-            "czechia": "Cseh",
-            "slovakia": "Szlovákia"
+            "czechia": "Csehország",
+            "slovakia": "Szlovákia",
+            "romania": "Románia"
         },
         "nameLabel": "Keresztnév (csak a keresztnevet adja meg)",
         "emailPlaceholder": "e-mail",
@@ -174,7 +175,7 @@
         "nationality": "Milyen állampolgárságú menekülteket hajlandó elfogadni?",
         "ukraine": "Ukrajna",
         "additionalInformationHeader": "További információ",
-        "any": "Bármelyik",
+        "any": "Bármilyen",
         "childBedCount": "Gyermekek számára elérhető alvóhelyek száma",
         "city": "város",
         "fullBedCount": "Felnőtt méretű alvóhelyek száma",

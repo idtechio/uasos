@@ -28,7 +28,10 @@
             "or": "Lub",
             "badNews": "Złe wieści",
             "prefix": "Prefiks",
-            "dashboard": "Panel użytkownika"
+            "dashboard": "Panel użytkownika",
+            "publicShelters": "Schroniska publiczne",
+            "addMore": "Dodaj więcej",
+            "remember": "Pamiętaj:"
         },
         "links": {
             "re-sendCode": "Ponowne wysłanie kodu",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "Wysłaliśmy kod weryfikacyjny na Twój adres e-mail. Kliknij link, aby go zweryfikować",
-            "verification": "Weryfikacja adresu e-mail"
+            "verification": "Weryfikacja adresu e-mail",
+            "errorTryAgainInSeconds": "E-mail nie dotarł? Spróbuj ponownie za {{number}} sekund",
+            "errorTryAgain": "Poczta nie dotarła? Spróbuj ponownie.",
+            "errorTooManyRequestsInSeconds": "Zbyt wiele żądań. Spróbuj ponownie za {{liczba}} sekund."
         },
         "nationalities": {
             "ukrainians": "Ukraińcy",
@@ -70,7 +76,10 @@
                 "house": "Dom"
             },
             "photosList": "Zdjęcie oferowanego miejsca noclegu",
-            "acceptElderly": "Przyjmę osoby starsze"
+            "acceptElderly": "Przyjmę osoby starsze",
+            "addPhotoHeaderWithLimit3": "Dodaj zdjęcie oferowanego zakwaterowania (maksymalnie 3)",
+            "numberOfRooms": "Liczba pokoi",
+            "roomCapacity": "Pojemność pomieszczenia"
         },
         "userRegistration": {
             "enterDetails": "Wpisz swoje dane",
@@ -151,7 +160,8 @@
             "country": "Kraj",
             "email": "E-mail",
             "emailAddress": "Adres e-mail",
-            "closestLargeCity": "Najbliższe duże miasto"
+            "closestLargeCity": "Najbliższe duże miasto",
+            "occupancy": "Obłożenie: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -234,7 +244,8 @@
             "accountInCreation": "Twoje konto jest w trakcie tworzenia, odśwież stronę po kilku sekundach.",
             "emailAlreadyInUse": "Adres e-mail powiązany z wybranym kontem dostawcy logowania jest już używany w naszym systemie. spróbuj zalogować się ponownie za pomocą innej metody logowania.",
             "idNotVerified": "Tożsamość niezweryfikowana",
-            "changesInProgress": "Zmiany w toku..."
+            "changesInProgress": "Zmiany w toku...",
+            "idVerified": "Weryfikacja tożsamości przebiegła pomyślnie"
         },
         "housing": "Nocleg",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "zaakceptowany",
             "cancellation": "anulowanie"
         },
-        "accommodationSearch": "Wyszukiwanie noclegów"
+        "accommodationSearch": "Wyszukiwanie noclegów",
+        "exitToIDnow": "Wyjście do IDnow"
     },
     "reportProblem": {
         "popup": {
             "description": "Powiadom nas o wszelkich problemach, korzystając z poniższego formularza",
             "problemReported": "Problem został zgłoszony",
-            "thanksForLettingKnow": "Dziękujemy za poinformowanie nas o zaistniałej sytuacji.",
+            "thanksForLettingKnow": "Dziękujemy za poinformowanie nas o tej sytuacji. Dziękujemy za poinformowanie nas o tej sytuacji. Poszukamy dla Ciebie innego odpowiednika.",
             "reasons": {
                 "guestNotNeedHelp": "Gość nie potrzebuje już noclegu",
                 "hostCantHelp": "Gospodarz nie może już zapewnić zakwaterowania",
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "Pomagamy uchodźcom znaleźć <b>bezpłatne<\/b> zakwaterowanie w <b>Polsce, Czechach, na Węgrzech i na Słowacji<\/b>, oferowane przez osoby i instytucje chętne do pomocy.",
-        "comingSoon": "Wkrótce: funkcje związane z transportem, poszukiwaniem pracy i poradami medycznymi"
+        "comingSoon": "Wkrótce: funkcje związane z transportem, poszukiwaniem pracy i poradami medycznymi",
+        "waysToStaySafe": "Dowiedz się, jak zachować bezpieczeństwo"
     },
     "userRegistration": {
         "errors": {
@@ -283,7 +296,22 @@
             "phoneExist": "Ten numer telefonu jest już powiązany z innym kontem",
             "tooManyRequest": "Zbyt wiele próśb o weryfikację",
             "invalidCode": "Nieprawidłowy kod",
-            "phoneLinkingFailed": "Wystąpił błąd podczas łączenia numeru telefonu z kontem, zaloguj się i spróbuj ponownie"
+            "phoneLinkingFailed": "Wystąpił błąd podczas łączenia numeru telefonu z kontem. Upewnij się, że Twój numer telefonu nie jest powiązany z innym kontem lub spróbuj ponownie, używając innego numeru."
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": "Jak dojechać"
+        },
+        "addShelterMail": "Jeśli chcesz dodać swoje schronisko publiczne, skontaktuj się z nami pod adresem publicshelters@uasos.org.",
+        "description": "Tutaj znajdziesz listę ogólnodostępnych schronisk. Pamiętaj, aby przed wyjazdem zadzwonić do danego miejsca i potwierdzić jego dostępność. \n"
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "<b>Pamiętaj o bezpieczeństwie<\/b>Linia 1 lorem ipsum Linia 2 lorem ipsum",
+        "reviewedTips": "Zapoznałem się z poradami dotyczącymi bezpieczeństwa",
+        "getToKnowHost": "Poznaj swojego gospodarza",
+        "exchangeFacebook": "Wymieńcie się danymi z Facebooka\/Instagrama, przed spotkaniem na żywo przeprowadźcie rozmowę wideo.",
+        "useTranslator": "Jeśli nie mówicie w tym samym języku - połączcie się przez e-mail\/WhatsApp\/SMS i skorzystajcie np. z Google Translate.",
+        "getToKnowGuest": "Poznaj swojego gościa"
     }
 }

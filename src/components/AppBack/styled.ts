@@ -29,4 +29,5 @@ export const Wrapper = styled.View`
   align-items: center;
   flex-direction: row;
   padding-left: 6px;
+  z-index: 10;
 `;

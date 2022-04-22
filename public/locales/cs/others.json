@@ -28,7 +28,10 @@
             "or": "Nebo",
             "badNews": "Špatné zprávy",
             "prefix": "Předpona",
-            "dashboard": "Přístrojová deska"
+            "dashboard": "Přehled",
+            "publicShelters": "Veřejně dostupná přístřeší",
+            "addMore": "Přidat další",
+            "remember": "Nezapomeňte:"
         },
         "links": {
             "re-sendCode": "Opětovné zaslání kódu",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "Na vaši e-mailovou adresu jsme zaslali ověřovací kód. Klikněte na odkaz pro ověření",
-            "verification": "Ověření emailu"
+            "verification": "Ověření emailu",
+            "errorTryAgainInSeconds": "E-mail nedorazil? Zkuste to znovu za {{number}} sekund",
+            "errorTryAgain": "E-mail nedorazil? Zkuste to znovu.",
+            "errorTooManyRequestsInSeconds": "Příliš mnoho požadavků. Zkuste to znovu za {{číslo}} sekund."
         },
         "nationalities": {
             "ukrainians": "Ukrajinci",
@@ -70,7 +76,10 @@
                 "house": "Dům"
             },
             "photosList": "Fotografie nabízeného ubytování",
-            "acceptElderly": "Přijmu seniori"
+            "acceptElderly": "Přijmu seniori",
+            "addPhotoHeaderWithLimit3": "Přidejte fotografii nabízeného ubytování (maximálně 3)",
+            "numberOfRooms": "Počet pokojů",
+            "roomCapacity": "Kapacita místnosti"
         },
         "userRegistration": {
             "enterDetails": "Zadejte své údaje",
@@ -151,7 +160,8 @@
             "country": "Země",
             "email": "Email",
             "emailAddress": "Emailová adresa",
-            "closestLargeCity": "Nejbližší velké město"
+            "closestLargeCity": "Nejbližší velké město",
+            "occupancy": "Obsazenost: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -233,8 +243,9 @@
             "emailNotVerified": "Email nebyl ověřen",
             "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
             "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
-            "idNotVerified": "",
-            "changesInProgress": "Probíhající změny..."
+            "idNotVerified": "Totožnost neověřena",
+            "changesInProgress": "Probíhající změny...",
+            "idVerified": "Úspěšné ověření totožnosti"
         },
         "housing": "Ubytování",
         "confirmation": {
@@ -243,13 +254,14 @@
             "accepted": "přijato",
             "cancellation": "zrušení"
         },
-        "accommodationSearch": "Vyhledávání ubytování"
+        "accommodationSearch": "Vyhledávání ubytování",
+        "exitToIDnow": "Odejít do IDnow"
     },
     "reportProblem": {
         "popup": {
             "description": "O případných problémech nás informujte pomocí níže uvedeného formuláře.",
             "problemReported": "Problém byl nahlášen",
-            "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali.  ",
+            "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali. Děkujeme, že jste nás o této situaci informovali. Budeme pro vás hledat jiný zápas.",
             "reasons": {
                 "guestNotNeedHelp": "",
                 "hostCantHelp": "",
@@ -274,8 +286,9 @@
         }
     },
     "welcomePage": {
-        "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Hungarech<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
-        "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství"
+        "appDescription": "Pomáháme uprchlíkům najít automaticky <b>bezplatné<\/b> ubytování v <b>Polsku, Česku, na Slovensku a v Maďarsku<\/b>, které nabízejí lidé a instituce ochotné pomoci.",
+        "comingSoon": "Již brzy: funkce pro dopravu, hledání práce a lékařské poradenství",
+        "waysToStaySafe": "Poučte se, jak zůstat v bezpečí"
     },
     "userRegistration": {
         "errors": {
@@ -283,7 +296,22 @@
             "phoneExist": "",
             "tooManyRequest": "",
             "invalidCode": "",
-            "phoneLinkingFailed": ""
+            "phoneLinkingFailed": "Při propojování telefonního čísla s vaším účtem došlo k chybě. Ujistěte se, že vaše telefonní číslo není propojeno s jiným účtem, nebo zkuste znovu použít jiné číslo"
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": "Jak se tam dostat"
+        },
+        "addShelterMail": "Pokud chcete přidat veřejně dostupné přístřeší, kontaktujte nás prosím na publicshelters@uasos.org.",
+        "description": "Zde najdete seznam veřejně dostupných přístřeší. Před odjezdem nezapomeňte na místo zavolat a ověřit si dostupnost. \n"
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "<b>Pamatujte na vlastní bezpečí<\/b>Řádek 1 lorem ipsum Řádek 2 lorem ipsum",
+        "reviewedTips": "Zkontroloval jsem bezpečnostní tipy",
+        "getToKnowHost": "Poznejte svého hostitele",
+        "exchangeFacebook": "Vyměňte si údaje na Facebooku\/Instagramu a před osobním setkáním si zavolejte.",
+        "useTranslator": "Pokud nemluvíte stejným jazykem, spojte se prostřednictvím e-mailu\/WhatsApp\/SMS a použijte například překladač Google.",
+        "getToKnowGuest": "Poznejte svého hosta"
     }
 }

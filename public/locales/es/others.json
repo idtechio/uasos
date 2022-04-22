@@ -28,7 +28,10 @@
             "or": "",
             "badNews": "",
             "prefix": "",
-            "dashboard": ""
+            "dashboard": "",
+            "publicShelters": "",
+            "addMore": "",
+            "remember": ""
         },
         "links": {
             "re-sendCode": "",
@@ -49,7 +52,10 @@
         },
         "email": {
             "sentInfo": "",
-            "verification": ""
+            "verification": "",
+            "errorTryAgainInSeconds": "",
+            "errorTryAgain": "",
+            "errorTooManyRequestsInSeconds": ""
         },
         "nationalities": {
             "ukrainians": "",
@@ -70,7 +76,10 @@
                 "house": ""
             },
             "photosList": "",
-            "acceptElderly": ""
+            "acceptElderly": "",
+            "addPhotoHeaderWithLimit3": "",
+            "numberOfRooms": "",
+            "roomCapacity": ""
         },
         "userRegistration": {
             "enterDetails": "",
@@ -151,7 +160,8 @@
             "country": "",
             "email": "",
             "emailAddress": "",
-            "closestLargeCity": ""
+            "closestLargeCity": "",
+            "occupancy": ""
         },
         "createRefuge": {
             "shelter": {
@@ -234,7 +244,8 @@
             "accountInCreation": "",
             "emailAlreadyInUse": "",
             "idNotVerified": "",
-            "changesInProgress": ""
+            "changesInProgress": "",
+            "idVerified": ""
         },
         "housing": "",
         "confirmation": {
@@ -243,7 +254,8 @@
             "accepted": "",
             "cancellation": ""
         },
-        "accommodationSearch": ""
+        "accommodationSearch": "",
+        "exitToIDnow": ""
     },
     "reportProblem": {
         "popup": {
@@ -275,7 +287,8 @@
     },
     "welcomePage": {
         "appDescription": "",
-        "comingSoon": ""
+        "comingSoon": "",
+        "waysToStaySafe": ""
     },
     "userRegistration": {
         "errors": {
@@ -285,5 +298,20 @@
             "invalidCode": "",
             "phoneLinkingFailed": ""
         }
+    },
+    "publicShelters": {
+        "details": {
+            "howToGetThere": ""
+        },
+        "addShelterMail": "",
+        "description": ""
+    },
+    "popup:staySafe": {
+        "rememberToStaySafe": "",
+        "reviewedTips": "",
+        "getToKnowHost": "",
+        "exchangeFacebook": "",
+        "useTranslator": "",
+        "getToKnowGuest": ""
     }
 }

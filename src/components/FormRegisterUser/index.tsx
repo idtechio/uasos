@@ -27,6 +27,7 @@ import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { useMutation } from "react-query";
 import { FirebaseError } from "@firebase/util";
+import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -254,26 +255,17 @@ export default function FormRegisterUser() {
           </div>
         </SectionContent>
       </CompositionSection>
-      <CompositionSection padding={[10, 30, 10, 26]}>
+      <CompositionSection padding={[0, 30, 10, 26]}>
         <SectionContent>
-          <div>
-            <FormCheckbox
-              styles={{
-                checkboxFieldWrapper: css`
-                  align-items: flex-start;
-                `,
-              }}
-              isCentered={false}
-              rules={{
-                required: false,
-              }}
-              value={smsNotification}
-              name="registrationUserForm.smsNotification"
-              label={` ${t(
-                "others:forms.userRegistration.agreeOnSmsCommunication"
-              )}`}
-            />
-          </div>
+          <SmsNotificationInput
+            wrapperStyleProp={css`
+              align-items: flex-start;
+            `}
+            name="registrationUserForm.smsNotification"
+            rules={{
+              required: false,
+            }}
+          />
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 8, 30]}>
