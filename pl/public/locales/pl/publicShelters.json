@@ -1,0 +1,11 @@
+{
+    "001": {
+        "name": "Warszawa - Torwar",
+        "address": "Łazienkowska 6A",
+        "city": "Warszawa",
+        "occupancy": "150",
+        "phoneNumber": "+48225298777",
+        "howToGetThere": "https:\/\/www.google.com\/maps\/place\/COS+Torwar\/@52.2224061,21.0422198,15z\/data=!4m2!3m1!1s0x0:0x120bb57e07d1fd45?sa=X&ved=2ahUKEwicl4e6q5j3AhWvtYsKHdZFA9MQ_BJ6BAhQEAU",
+        "country": "Polska"
+    }
+}

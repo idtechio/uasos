@@ -1,0 +1,14 @@
+{
+    "messaging": {
+        "sms": {
+            "offeringNotification": "Máme pre vás kontakt! Skontrolujte svoj e-mail a potvrďte.",
+            "sealedNotification": "Máme pre vás kontakt! Skontrolujte svoj email a potvrďte."
+        }
+    },
+    "sendgrid": {
+        "HostGetsMatch": "d-a14280582e91403aa8192be0bd66cffc",
+        "GuestGetsMatch": "d-fc675a4d49384ea297223df70dfbc872",
+        "GUESTANDHOSTMATCHCONFIRM": "d-a8d2d2c29b874208b98a298ebe96f805",
+        "MatchTimeout": "d-2474cd3c2b184cce8613f7e315f961fc"
+    }
+}
