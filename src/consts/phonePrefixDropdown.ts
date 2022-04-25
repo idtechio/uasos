@@ -1,4 +1,4 @@
-export const addHostPhonePrefixList = [
+export const phonePrefixDropdownList = [
   {
     locale: "ua",
     countryCode: "+380",
@@ -18,6 +18,10 @@ export const addHostPhonePrefixList = [
   {
     locale: "hu",
     countryCode: "+36",
+  },
+  {
+    locale: "ro",
+    countryCode: "+40",
   },
   {
     locale: "at",

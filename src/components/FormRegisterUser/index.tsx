@@ -13,7 +13,7 @@ import CardModal from "../CardModal";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
-import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
+import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { AccountApi } from "../../client-api/account";
 import { AuthContext } from "../../../pages/_app";
 import FormCheckbox from "../Inputs/FormCheckbox";
@@ -98,7 +98,6 @@ export default function FormRegisterUser() {
 
   passwordInputRef.current = watch("registrationUserForm.password", "");
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
-  const smsNotification = watch("registrationUserForm.smsNotification");
 
   const parseError = (error: string) => {
     if (
@@ -250,7 +249,7 @@ export default function FormRegisterUser() {
               phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
               error={errors?.registrationUserForm?.phoneNumber}
               errorMsg=""
-              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+              data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
           </div>
         </SectionContent>
