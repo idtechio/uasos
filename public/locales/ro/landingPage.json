@@ -5,7 +5,7 @@
     "partners": "Parteneri",
     "showMorePartners": "Vezi toți partenerii",
     "projectIntention": {
-        "title": "Ajutăm la găsirea unui adăpost pentru victimele războiului din Ucraina",
+        "title": "Ajutăm victimele războiului din Ucraina să își găsească un adăpost",
         "description_part1": "Ajutăm refugiații să găsească automat",
         "freeOfCharge": "gratuit",
         "description_part2": "Cazare oferită de persoanele și instituțiile care vor să ajute",
@@ -13,7 +13,7 @@
         "shareHelp": "Ofer ajutor"
     },
     "likeToHelp": {
-        "title": "Vreți să ajutați?",
+        "title": "Vrei să ajuți?",
         "details": "Înregistrați orice tip de cazare pe care o puteți oferi gratuit pentru victimele războiului din Ucraina.",
         "cta": "Propuneți o cazare"
     },
@@ -67,9 +67,9 @@
     "howDoesItWork": {
         "title": "Cum funcționează?",
         "points": {
-            "0": "Trimiteți un apartament\nsau o nevoie de cazare",
+            "0": "Postați o ofertă\nsau o nevoie de cazare",
             "1": "Completați\n  datele necesare",
-            "2": "Așteptați pentru cea mai bună ofertă",
+            "2": "Așteptați cea mai potrivită ofertă",
             "3": "Contactați\ngazda\/oaspetele",
             "4": "Confirmați sau\nrefuzați oferta"
         }
@@ -78,7 +78,7 @@
         "description": "Îi ajutăm pe refugiați să găsească în mod automat locuințe oferite de persoane și instituții dispuse să ajute.",
         "lookingForHelp": "Caut un adăpost",
         "shareHelp": "Ofer ajutor",
-        "title": "Ajutăm la găsirea unui adăpost pentru victimele războiului din Ucraina"
+        "title": "Ajutăm victimele războiului din Ucraina să își găsească un adăpost"
     },
     "partnersMedia": "Parteneri media"
 }
