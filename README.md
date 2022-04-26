@@ -28,7 +28,7 @@ You can use API from ["test"](https://test.uasos.org/) server changing
 
 ## 3-4. Local database and backend
 
-You can clone and set up local database and backend functions from [idtechio/uasos-dev-infra](https://github.com/idtechio/uasos-dev-infra).
+You can clone and set up local database and backend functions from [idtechio/uasos-dev-infra](https://github.com/idtechio/uasos-backend).
 How to do it? Read README file in that repository :)
 
 Ensure that `.env` in this project contains:

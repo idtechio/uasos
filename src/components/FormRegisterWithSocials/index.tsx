@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
-import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
+import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
 import { FormFooter, ErrorText } from "./styles";
 import { styles } from "./styles";
@@ -118,10 +118,7 @@ export default function FromRegisterWithSocials() {
 
   const {
     formState: { errors },
-    watch,
   } = form;
-
-  const smsNotification = watch("registerWithSocials.smsNotification");
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -206,7 +203,7 @@ export default function FromRegisterWithSocials() {
               errorPrefixMsg={t("hostAdd.errors.country")}
               error={errors?.registerWithSocials?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
-              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+              data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
           </CompositionSection>
           <CompositionSection padding={[20, 0, 0, 0]}>

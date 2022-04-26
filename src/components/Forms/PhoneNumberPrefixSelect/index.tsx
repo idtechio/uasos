@@ -4,7 +4,7 @@ import { Theme } from "../../../style/theme.config";
 import { Dropdown } from "../../Dropdown";
 import { generatePhonePrefixDropdownList } from "../../Inputs/FormPhoneInput/helpers";
 import InputControl from "../InputControl";
-import { addGuestPhonePrefixList } from "./AddGuestPhonePrefixList";
+import { phonePrefixDropdownList } from "../../../consts/phonePrefixDropdown";
 import { NumberPrefixItemType, NumberPrefixSelectProps } from "./types";
 
 export const Error = styled.Text`
@@ -17,7 +17,7 @@ const usePrefixList = (data?: NumberPrefixItemType[]) => {
     () =>
       data
         ? generatePhonePrefixDropdownList(data)
-        : generatePhonePrefixDropdownList(addGuestPhonePrefixList),
+        : generatePhonePrefixDropdownList(phonePrefixDropdownList),
     [data]
   );
 
