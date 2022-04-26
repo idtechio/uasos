@@ -2,7 +2,6 @@ import { Controller, FieldError, useFormContext } from "react-hook-form";
 import InputControl from "../Forms/InputControl";
 import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
-import { Dropdown } from "../Dropdown";
 import { Error } from "./style";
 import { PlacesAutocomplete } from "../PlacesAutocomplete";
 
@@ -14,7 +13,7 @@ type Props = {
   zIndex?: number;
 };
 
-function FormDropdown<T>({
+function FormGeoAutocomplete({
   name,
   errorMsg,
   rules,
@@ -46,4 +45,4 @@ function FormDropdown<T>({
   );
 }
 
-export default FormDropdown;
+export default FormGeoAutocomplete;

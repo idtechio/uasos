@@ -84,16 +84,18 @@ export const PlacesAutocomplete = ({ placeholder, onChange }: Props) => {
         <ArrowIcon />
       </IconWrapper>
 
-      <List>
-        {data.map((suggestion) => (
-          <Item
-            onPress={handlePress(suggestion.structured_formatting.main_text)}
-            key={suggestion.place_id}
-          >
-            <Text>{suggestion.structured_formatting.main_text}</Text>
-          </Item>
-        ))}
-      </List>
+      {data.length ? (
+        <List>
+          {data.map((suggestion) => (
+            <Item
+              onPress={handlePress(suggestion.structured_formatting.main_text)}
+              key={suggestion.place_id}
+            >
+              <Text>{suggestion.structured_formatting.main_text}</Text>
+            </Item>
+          ))}
+        </List>
+      ) : null}
     </Container>
   );
 };
