@@ -3,6 +3,7 @@ import { GlobalRef } from "./globalRef";
 
 interface SendLinkProps {
   language: string;
+  fileUid: string;
 }
 
 interface TokensType {
@@ -140,7 +141,7 @@ class IdCheckClient {
     this.updatedTokens = new Date();
   }
 
-  public async sendLink({ language }: SendLinkProps): Promise<Response> {
+  private async init() {
     if (!this.accessToken || this.getDiff() > this.refreshExpiresIn) {
       await this.login();
     }
@@ -148,6 +149,13 @@ class IdCheckClient {
     if (this.getDiff() > this.expiresIn) {
       await this.refresh();
     }
+  }
+
+  public async sendLink({
+    language,
+    fileUid,
+  }: SendLinkProps): Promise<Response> {
+    await this.init();
 
     return await fetch(this.sdkWebUrl, {
       method: "POST",
@@ -174,7 +182,7 @@ class IdCheckClient {
         resultHandler: {
           cisConf: {
             realm,
-            fileUid: `file-${new Date().getTime()}`,
+            fileUid,
             fileLaunchCheck: true,
             fileCheckWait: true,
           },
@@ -184,6 +192,18 @@ class IdCheckClient {
           successRedirectUrl: `${publicDomain}${language}/dashboard`,
         },
       }),
+    });
+  }
+
+  public async getStatus(url: string): Promise<Response> {
+    await this.init();
+
+    return await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.accessToken}`,
+      },
     });
   }
 }

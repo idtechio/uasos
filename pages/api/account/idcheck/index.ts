@@ -39,7 +39,7 @@ async function index(
 
   const sendLinkResponse = await idCheckClient.sendLink({
     language: account.preferred_lang || "EN",
-    // language: "EN",
+    fileUid: account.uid,
   });
 
   if (!sendLinkResponse.ok) {
