@@ -52,6 +52,11 @@ const useAuth = () => {
           .catch(() => null);
         setAccount(updatedAccount);
       }
+      if (user && user.phoneNumber && !account) {
+        await AccountApi.updateAccount({
+          payload: { phone: user?.phoneNumber },
+        });
+      }
       if (user && !account) {
         const updatedAccount = await AccountApi.getAccount()
           .then((res) => res)
