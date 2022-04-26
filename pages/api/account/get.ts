@@ -41,6 +41,7 @@ export interface AccountInfoDBProps {
   email_status: EmailStatus;
   phone_status: PhoneStatus;
   sms_notification: string;
+  identity_verified: string;
 }
 
 async function getAccount(
@@ -94,7 +95,8 @@ export async function getAccountFromDB(
       phone_status,
       email_status,
       preferred_lang,
-      sms_notification
+      sms_notification,
+      identity_verified
     FROM accounts_info
     WHERE uid = $1`,
     [uid]
