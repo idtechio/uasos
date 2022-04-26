@@ -36,6 +36,7 @@
     "react-native-web": "^0.17.6",
     "react-native-web-lottie": "^1.4.4",
     "react-query": "^3.34.19",
+    "react-simple-image-viewer": "^1.2.1",
     "react-slick": "^0.28.1",
     "react-timer-hook": "^3.0.5",
     "sanitize-html": "^2.7.0",
