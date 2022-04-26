@@ -1,11 +1,11 @@
 {
-  "001": {
-    "name": "Varşovia - Torwar",
-    "address": "Łazienkowska 6A",
-    "city": "Varşovia",
-    "occupancy": "150",
-    "phoneNumber": "+48225298777",
-    "howToGetThere": "https://www.google.com/maps/place/COS+Torwar/@52.2224061,21.0422198,15z/data=!4m2!3m1!1s0x0:0x120bb57e07d1fd45?sa=X&ved=2ahUKEwicl4e6q5j3AhWvtYsKHdZFA9MQ_BJ6BAhQEAU",
-    "country": "Polonia"
-  }
+    "001": {
+        "name": "Centrul de ajutor umanitar PTAK-Nadarzyn",
+        "address": "Aleja Katowicka 62 \/ Hala D",
+        "city": "Varşovia",
+        "occupancy": "20 000",
+        "phoneNumber": "+48572504645",
+        "howToGetThere": "https:\/\/www.google.com\/maps\/place\/Centrum+Pomocy+Humanitarnej+PTAK\/@52.111163,20.8283767,17z\/data=!3m1!4b1!4m5!3m4!1s0x4719378b7c802919:0x89fc67a8cbf0781!8m2!3d52.111163!4d20.8305654",
+        "country": "Polonia"
+    }
 }

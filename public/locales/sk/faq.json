@@ -1,11 +1,125 @@
 {
-  "001": {
-    "name": "VŠEOBECNÉ INFORMÁCIE",
-    "content": {
-      "001": {
-        "question": "Na čo slúži portál?",
-        "answer": "Platforma uaSOS.org spája utečencov hľadajúcich ubytovanie so súkromnými osobami, inštitúciami, mimovládnymi organizáciami a spoločnosťami, ktoré ponúkajú ubytovanie. Na rozdiel od iných iniciatív, ktoré zhromažďujú podobné údaje, platforma uaSOS.org automaticky spája oznámenia ľudí v núdzi s ponukami pomoci s cieľom poskytnúť čo najlepšiu pomoc čo najširšej skupine ľudí. Vďaka platforme nebudú musieť ľudia v núdzi prechádzať stovky dostupných ponúk pomoci, ale bude im predložená tá najvhodnejšia a najaktuálnejšia, prispôsobená ich potrebám. Registrácia na platforme nie je anonymná, čo poskytuje bezpečnosť obom stranám."
-      }
+    "001": {
+        "name": "VŠEOBECNÉ INFORMÁCIE",
+        "content": {
+            "001": {
+                "question": "Na čo slúži portál?",
+                "answer": "Platforma uaSOS.org spája utečencov hľadajúcich ubytovanie so súkromnými osobami, inštitúciami, mimovládnymi organizáciami a spoločnosťami, ktoré ponúkajú ubytovanie. Na rozdiel od iných iniciatív, ktoré zhromažďujú podobné údaje, platforma uaSOS.org automaticky spája oznámenia ľudí v núdzi s ponukami pomoci s cieľom poskytnúť čo najlepšiu pomoc čo najširšej skupine ľudí. Vďaka platforme nebudú musieť ľudia v núdzi prechádzať stovky dostupných ponúk pomoci, ale bude im predložená tá najvhodnejšia a najaktuálnejšia, prispôsobená ich potrebám. Registrácia na platforme nie je anonymná, čo poskytuje bezpečnosť obom stranám."
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            },
+            "004": {
+                "question": "",
+                "answer": ""
+            },
+            "005": {
+                "question": "",
+                "answer": ""
+            },
+            "006": {
+                "question": "",
+                "answer": ""
+            },
+            "007": {
+                "question": "",
+                "answer": ""
+            },
+            "008": {
+                "question": "",
+                "answer": ""
+            },
+            "009": {
+                "question": "",
+                "answer": ""
+            },
+            "010": {
+                "question": "",
+                "answer": ""
+            },
+            "011": {
+                "question": "",
+                "answer": ""
+            }
+        }
+    },
+    "002": {
+        "name": "",
+        "content": {
+            "001": {
+                "question": "",
+                "answer": ""
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            },
+            "004": {
+                "question": "",
+                "answer": ""
+            },
+            "005": {
+                "question": "",
+                "answer": ""
+            },
+            "006": {
+                "question": "",
+                "answer": ""
+            },
+            "007": {
+                "question": "",
+                "answer": ""
+            },
+            "008": {
+                "question": "",
+                "answer": ""
+            },
+            "009": {
+                "question": "",
+                "answer": ""
+            },
+            "010": {
+                "question": "",
+                "answer": ""
+            },
+            "011": {
+                "question": "",
+                "answer": ""
+            },
+            "012": {
+                "question": "",
+                "answer": ""
+            },
+            "013": {
+                "question": "",
+                "answer": ""
+            }
+        }
+    },
+    "003": {
+        "name": "",
+        "content": {
+            "001": {
+                "question": "",
+                "answer": ""
+            },
+            "002": {
+                "question": "",
+                "answer": ""
+            },
+            "003": {
+                "question": "",
+                "answer": ""
+            }
+        }
     }
-  }
 }
