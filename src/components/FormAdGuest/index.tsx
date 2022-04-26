@@ -284,7 +284,11 @@ export default function FormAdGuest({
               <ChoiceButton
                 text={t("others:forms.match.specificCity")}
                 isSmall
-                onPress={() => setLocation(Location.Preferred)}
+                onPress={async () => {
+                  (await formFields.trigger("advancedRefugee.country"))
+                    ? setLocation(Location.Preferred)
+                    : "";
+                }}
                 isSelected={location === Location.Preferred}
                 width={180}
                 noMarginRight
