@@ -3,6 +3,7 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
+
 import {
   AccommodationType,
   FormType,
@@ -39,6 +40,7 @@ import { AuthContext } from "../../../pages/_app";
 // import FormUpload from "../Inputs/FormUpload";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
+import { PlacesAutocomplete } from "../PlacesAutocomplete";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -329,6 +331,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             </View>
             <View style={styles.inputWrapper}>
               <InputControlLabel>{t("hostAdd.city")}</InputControlLabel>
+              <PlacesAutocomplete />
               <FormTextInput
                 name="advancedHost.city"
                 label={t("refugeeAddForm.cityPlaceholder")}
@@ -440,6 +443,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
           )}
+
           {/* 
           <View>
             <InputControlLabel>
