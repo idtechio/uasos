@@ -41,6 +41,7 @@ import { AuthContext } from "../../../pages/_app";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
 import FormGeoAutocomplete from "../Inputs/FormGeoAutocomplete";
+import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -278,7 +279,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
         <SectionContent>
           <View
             style={{
-              zIndex: 2,
+              zIndex: 5,
             }}
           >
             <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
@@ -296,7 +297,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
           <View
             style={{
-              zIndex: 2,
+              zIndex: 4,
             }}
           >
             <InputControlLabel>
@@ -315,7 +316,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             />
           </View>
 
-          <View style={[styles.flexInputs, { zIndex: 1 }]}>
+          <View style={[styles.flexInputs, { zIndex: 2 }]}>
             <View style={styles.inputWrapper}>
               <InputControlLabel>
                 {t("others:forms.generic.zipCode")}
@@ -329,8 +330,9 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 }}
               />
             </View>
-            <View style={styles.inputWrapper}>
+            <View style={[styles.inputWrapper, { zIndex: 6 }]}>
               <InputControlLabel>{t("hostAdd.city")}</InputControlLabel>
+
               <FormGeoAutocomplete
                 name="advancedHost.city"
                 placeholder={t("refugeeAddForm.cityPlaceholder")}

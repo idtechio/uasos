@@ -53,24 +53,15 @@ export const Input = styled.TextInput`
 export const List = styled.View(
   () => css`
     position: absolute;
-    bottom: -202px;
-    left: 0px;
-    right: 0px;
-    border: 1px solid rgba(28, 27, 37, 0.3);
     background-color: #fff;
     z-index: 1000;
+    border: 1px solid rgba(28, 27, 37, 0.3);
+    top: 48px;
+    width: 100%;
   `
 );
 
-export const Item = styled.Pressable(
-  () => css`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40px;
-    padding: 10px;
-    border-bottom-width: 1px;
-    border-color: rgba(28, 27, 37, 0.3);
-    background-color: #fff;
-  `
-);
+export const Separator = styled.View`
+  height: 1px 
+  background-color: rgba(28, 27, 37, 0.3)
+`;

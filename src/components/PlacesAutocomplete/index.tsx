@@ -2,29 +2,34 @@ import { useEffect, useRef, useState } from "react";
 
 import usePlacesAutocomplete from "use-places-autocomplete";
 import {
+  ActivityIndicator,
+  FlatList,
   NativeSyntheticEvent,
   Platform,
-  Text,
   TextInputChangeEventData,
 } from "react-native";
 
 import ArrowIcon from "../../style/svgs/arrow.svg";
 
-import { IconWrapper, Container, Input, List, Item } from "./styles";
+import { IconWrapper, Container, Input, List, Separator } from "./styles";
+import { FieldError } from "react-hook-form";
+import { Item } from "./Item";
 
 interface Props {
-  error: boolean;
+  error: FieldError | FieldError[];
   placeholder: string;
   onChange: (value: string) => void;
 }
 
 export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
   const containerRef = useRef<HTMLElement>();
+  const listRef = useRef<HTMLElement>();
+
   const [showOptions, setShowOptions] = useState(false);
 
   const {
     value,
-    suggestions: { data },
+    suggestions: { data, loading },
     setValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
@@ -41,16 +46,29 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
 
   const handleContainerPress = () => {
     setShowOptions(true);
+    setValue(value);
   };
 
   const toggleList = () => {
     setShowOptions((pShowOptions) => !pShowOptions);
   };
 
+  const handlePress = (cityName: string) => () => {
+    clearSuggestions();
+
+    setValue(cityName, false);
+    onChange(cityName);
+    setShowOptions(false);
+  };
+
   useEffect(() => {
     // @ts-expect-error TODO: fix event type
     const handleClickOutside = (ev) => {
-      if (containerRef.current && !containerRef.current?.contains(ev.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current?.contains(ev.target) &&
+        !listRef.current?.contains(ev.target)
+      ) {
         setShowOptions(false);
       }
     };
@@ -66,42 +84,52 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
     };
   }, [showOptions]);
 
-  const handlePress = (cityName: string) => () => {
-    clearSuggestions();
-
-    setValue(cityName, false);
-    onChange(cityName);
-  };
-
   return (
-    <Container
-      error={error}
-      // @ts-expect-error TODO: fix ref type
-      ref={containerRef}
-      onPress={handleContainerPress}
-    >
-      <Input placeholder={placeholder} value={value} onChange={handleChange} />
-      <IconWrapper onPress={toggleList} showOptions={showOptions}>
-        <ArrowIcon />
-      </IconWrapper>
+    <>
+      <Container
+        error={Boolean(error)}
+        // @ts-expect-error TODO: fix ref type
+        ref={containerRef}
+        onPress={handleContainerPress}
+      >
+        <Input
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+        />
+        {loading ? (
+          <ActivityIndicator
+            style={{
+              position: "absolute",
+              right: 15,
+            }}
+          />
+        ) : (
+          <IconWrapper onPress={toggleList} showOptions={showOptions}>
+            <ArrowIcon />
+          </IconWrapper>
+        )}
+      </Container>
 
-      {showOptions && data.length ? (
-        <List>
-          {data.map((suggestion) => (
-            <Item
-              onPress={handlePress(suggestion.structured_formatting.main_text)}
-              key={suggestion.place_id}
-            >
-              <Text
-                numberOfLines={1}
-                accessibilityLabel={suggestion.structured_formatting.main_text}
-              >
-                {suggestion.structured_formatting.main_text}
-              </Text>
-            </Item>
-          ))}
+      {!loading && value && showOptions ? (
+        <List ref={listRef}>
+          <FlatList
+            data={data}
+            ItemSeparatorComponent={Separator}
+            renderItem={({ item }) => (
+              <Item
+                label={item.structured_formatting.main_text}
+                sublabel={item.structured_formatting.secondary_text}
+                onPress={handlePress(item.structured_formatting.main_text)}
+              />
+            )}
+          />
+
+          {!loading && value && data.length === 0 && (
+            <Item disabled label="Location not found" />
+          )}
         </List>
       ) : null}
-    </Container>
+    </>
   );
 };
