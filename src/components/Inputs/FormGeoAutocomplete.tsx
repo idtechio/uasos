@@ -8,7 +8,7 @@ import { PlacesAutocomplete } from "../PlacesAutocomplete";
 type Props = {
   name: FormKey;
   placeholder: string;
-  error?: FieldError | FieldError[];
+  error?: FieldError | FieldError[] | undefined;
   errorMsg?: string;
   zIndex?: number;
 };

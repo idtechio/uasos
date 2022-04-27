@@ -16,7 +16,7 @@ import { FieldError } from "react-hook-form";
 import { Item } from "./Item";
 
 interface Props {
-  error: FieldError | FieldError[];
+  error?: FieldError | FieldError[] | undefined;
   placeholder: string;
   onChange: (value: string) => void;
 }
@@ -112,7 +112,10 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
       </Container>
 
       {!loading && value && showOptions ? (
-        <List ref={listRef}>
+        <List
+          // @ts-expect-error TODO: fix ref type
+          ref={listRef}
+        >
           <FlatList
             data={data}
             ItemSeparatorComponent={Separator}
