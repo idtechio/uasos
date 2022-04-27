@@ -30,23 +30,23 @@ export default function Account() {
     }
   }, [offers, id, offer]);
 
-  // if (loaded) {
-  //   if (identity) {
-  return (
-    <CompositionAppBody>
-      <AppBack to="/dashboard" />
-      <FormAdHost data={offer} />
-    </CompositionAppBody>
-  );
-  // } else {
-  //   // return <Redirect path="/signin"></Redirect>;
-  // }
-  // } else {
-  //   // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
-  //   return (
-  //     <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
-  //   );
-  // }
+  if (loaded) {
+    if (identity) {
+      return (
+        <CompositionAppBody>
+          <AppBack to="/dashboard" />
+          <FormAdHost data={offer} />
+        </CompositionAppBody>
+      );
+    } else {
+      return <Redirect path="/signin"></Redirect>;
+    }
+  } else {
+    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
+    return (
+      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
+    );
+  }
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
