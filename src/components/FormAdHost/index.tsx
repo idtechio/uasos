@@ -296,7 +296,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
           <View
             style={{
-              zIndex: 1,
+              zIndex: 2,
             }}
           >
             <InputControlLabel>
@@ -315,7 +315,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             />
           </View>
 
-          <View style={styles.flexInputs}>
+          <View style={[styles.flexInputs, { zIndex: 1 }]}>
             <View style={styles.inputWrapper}>
               <InputControlLabel>
                 {t("others:forms.generic.zipCode")}

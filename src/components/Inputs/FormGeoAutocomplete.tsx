@@ -30,8 +30,9 @@ function FormGeoAutocomplete({
       render={({ field: { onChange } }) => {
         return (
           <View style={{ zIndex }}>
-            <InputControl>
+            <InputControl zIndex={zIndex}>
               <PlacesAutocomplete
+                error={error}
                 onChange={onChange}
                 placeholder={placeholder}
               />

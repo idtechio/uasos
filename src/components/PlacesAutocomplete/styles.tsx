@@ -13,15 +13,22 @@ export const IconWrapper = styled.Pressable<IconWrapperProps>(
     `
 );
 
-export const Container = styled.Pressable`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  position: relative;
-  height: 48px;
-  border: 1px solid rgba(28, 27, 37, 0.3);
-  z-index: 1000;
-`;
+interface ContainerProps {
+  error: boolean;
+}
+
+export const Container = styled.Pressable<ContainerProps>(
+  ({ error }) => css`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    height: 48px;
+    border-radius: 4px;
+    border: ${error ? "rgb(216, 0, 12)" : "1px solid rgba(28, 27, 37, 0.3)"};
+    z-index: 1000;
+  `
+);
 
 export const Input = styled.TextInput`
   outline: 0px;
@@ -30,6 +37,7 @@ export const Input = styled.TextInput`
   width: 100%;
   flex: 1;
   padding: 0px 30px 0px 15px;
+  font-size: 16px;
 
   &:focus-visible {
     outline: 0px;
@@ -45,7 +53,7 @@ export const Input = styled.TextInput`
 export const List = styled.View(
   () => css`
     position: absolute;
-    bottom: -42px;
+    bottom: -202px;
     left: 0px;
     right: 0px;
     border: 1px solid rgba(28, 27, 37, 0.3);
@@ -61,5 +69,8 @@ export const Item = styled.Pressable(
     align-items: center;
     height: 40px;
     padding: 10px;
+    border-bottom-width: 1px;
+    border-color: rgba(28, 27, 37, 0.3);
+    background-color: #fff;
   `
 );

@@ -13,18 +13,18 @@ import ArrowIcon from "../../style/svgs/arrow.svg";
 import { IconWrapper, Container, Input, List, Item } from "./styles";
 
 interface Props {
+  error: boolean;
   placeholder: string;
   onChange: (value: string) => void;
 }
 
-export const PlacesAutocomplete = ({ placeholder, onChange }: Props) => {
+export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
   const containerRef = useRef<HTMLElement>();
   const [showOptions, setShowOptions] = useState(false);
 
   const {
-    ready,
     value,
-    suggestions: { status, data },
+    suggestions: { data },
     setValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
@@ -75,6 +75,7 @@ export const PlacesAutocomplete = ({ placeholder, onChange }: Props) => {
 
   return (
     <Container
+      error={error}
       // @ts-expect-error TODO: fix ref type
       ref={containerRef}
       onPress={handleContainerPress}
@@ -84,14 +85,19 @@ export const PlacesAutocomplete = ({ placeholder, onChange }: Props) => {
         <ArrowIcon />
       </IconWrapper>
 
-      {data.length ? (
+      {showOptions && data.length ? (
         <List>
           {data.map((suggestion) => (
             <Item
               onPress={handlePress(suggestion.structured_formatting.main_text)}
               key={suggestion.place_id}
             >
-              <Text>{suggestion.structured_formatting.main_text}</Text>
+              <Text
+                numberOfLines={1}
+                accessibilityLabel={suggestion.structured_formatting.main_text}
+              >
+                {suggestion.structured_formatting.main_text}
+              </Text>
             </Item>
           ))}
         </List>
