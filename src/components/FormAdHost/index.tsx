@@ -41,7 +41,6 @@ import { AuthContext } from "../../../pages/_app";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
 import FormGeoAutocomplete from "../Inputs/FormGeoAutocomplete";
-import FormAutocompleteInput from "../Inputs/FormAutocompleteInput";
 
 export const SectionContent = styled.View`
   display: flex;
