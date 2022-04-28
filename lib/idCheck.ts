@@ -14,17 +14,17 @@ interface TokensType {
 }
 
 const {
-  CIS_USERNAME: username = "uasos@ariadnext.com",
-  CIS_PASSWORD: password = "zUKo_mC_kj1I",
-  CIS_REALM: realm = "uasos",
-  CLIENT_ID: clientId = "cis-api-client",
-  CONFCODE: confCode = "uasos_sdkweb_conf",
+  CIS_USERNAME: username = "",
+  CIS_PASSWORD: password = "",
+  CIS_REALM: realm = "",
+  CLIENT_ID: clientId = "",
+  CONFCODE: confCode = "",
   KEYCLOAK_URL:
     keycloakUrl = "https://api-test.ariadnext.com/auth/realms/customer-identity/protocol/openid-connect/token",
   SDKWEB_URL:
     sdkWebUrl = "https://sdkweb-test.idcheck.io/rest/v1/idcheckio-sdk-web/onboarding/sendlink",
-  NOTIFICATION_URL: notificationUrl = "dev_notification",
-  NEXT_PUBLIC_DOMAIN: publicDomain = "http://localhost:3000/",
+  NOTIFICATION_URL: notificationUrl = "",
+  NEXT_PUBLIC_DOMAIN: publicDomain = "",
 } = { ...process.env };
 
 class IdCheckClient {

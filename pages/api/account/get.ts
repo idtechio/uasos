@@ -17,6 +17,7 @@ interface AccountProps {
   confirmedEmail: Boolean;
   confirmedPhone: Boolean;
   smsNotification: Boolean;
+  identityVerified: string;
 }
 
 enum EmailStatus {
@@ -70,6 +71,7 @@ async function getAccount(
       smsNotification: dbAccount.sms_notification === StringBoolean.TRUE,
       confirmedEmail: dbAccount.email_status === EmailStatus.ACCEPTED,
       confirmedPhone: dbAccount.phone_status === PhoneStatus.ACCEPTED,
+      identityVerified: dbAccount.identity_verified,
     };
 
     res.status(200).json({ ok: "ok", account });

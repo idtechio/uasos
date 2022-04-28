@@ -80,11 +80,12 @@ async function notification(req: NotificationApiRequest, res: NextApiResponse) {
     account &&
     (!account.identity_verified || account.identity_verified === "FALSE")
   ) {
-    account.identity_verified = result.lastReport.globalStatus;
-
     const topicName = process.env.TOPIC_ACCOUNT_UPDATE;
 
-    const pubResult = await publishMessage(topicName, account);
+    const pubResult = await publishMessage(topicName, {
+      db_accounts_id: account.db_accounts_id,
+      identity_verified: result.lastReport.globalStatus,
+    });
     if (pubResult.status !== PublishStatus.OK) {
       console.error("Could not update Identity Verification status!");
     }

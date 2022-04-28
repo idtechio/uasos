@@ -18,39 +18,46 @@ async function index(
   req: NextApiRequest & ApiAuthTokenDetails,
   res: NextApiResponse
 ) {
-  if (req.method !== "GET") {
-    res.status(404).json({ message: "Request HTTP Method Incorrect." });
-    return;
+  try {
+    if (req.method !== "GET") {
+      res.status(404).json({ message: "Request HTTP Method Incorrect." });
+      return;
+    }
+
+    if (!req.decodedToken) {
+      res.status(400).json({ message: "Token is required." });
+      return;
+    }
+
+    const account: AccountInfoDBProps | false = await getAccountFromDB(
+      req.decodedToken.uid
+    );
+
+    if (!account) {
+      res.status(400).json({ message: "There is no account." });
+      return;
+    }
+
+    const sendLinkResponse = await idCheckClient.sendLink({
+      language: account.preferred_lang || "EN",
+      fileUid: account.uid,
+    });
+
+    if (!sendLinkResponse.ok) {
+      const error = JSON.parse(await sendLinkResponse.text());
+      console.error("Error:", error);
+      res.status(sendLinkResponse.status).json({ error });
+      return;
+    }
+
+    const data: SendLinkDataType = await sendLinkResponse.json();
+    res.status(201).json(data);
+  } catch (e) {
+    res
+      .status(400)
+      .json({ ok: "not ok", error: e instanceof Error ? e.message : "" });
+    res.end();
   }
-
-  if (!req.decodedToken) {
-    res.status(400).json({ message: "Token is required." });
-    return;
-  }
-
-  const account: AccountInfoDBProps | false = await getAccountFromDB(
-    req.decodedToken.uid
-  );
-
-  if (!account) {
-    res.status(400).json({ message: "There is no account." });
-    return;
-  }
-
-  const sendLinkResponse = await idCheckClient.sendLink({
-    language: account.preferred_lang || "EN",
-    fileUid: account.uid,
-  });
-
-  if (!sendLinkResponse.ok) {
-    const error = JSON.parse(await sendLinkResponse.text());
-    console.error("Error:", error);
-    res.status(sendLinkResponse.status).json({ error });
-    return;
-  }
-
-  const data: SendLinkDataType = await sendLinkResponse.json();
-  res.status(201).json(data);
 }
 
 export default withApiAuth(index);
