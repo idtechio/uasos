@@ -4,7 +4,6 @@ import LoginForm from "../src/components/FormLogin";
 import FormRegisterWithSocials from "../src/components/FormRegisterWithSocials";
 import AppBack from "../src/components/AppBack";
 import { Routes } from "../src/consts/router";
-import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { CompositionAppBody } from "../src/components/Compositions";
 import { useContext } from "react";
@@ -38,14 +37,12 @@ const SignIn = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }) => {
-    return {
-      props: {
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    };
-  }
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(locale && (await serverSideTranslations(locale))),
+    },
+  };
+};
 
 export default SignIn;
