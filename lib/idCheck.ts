@@ -98,6 +98,16 @@ class IdCheckClient {
     });
 
     if (!loginResponse.ok) {
+      console.log(
+        "idcheck params",
+        qs.stringify({
+          grant_type: "password",
+          username,
+          password,
+          client_id: clientId,
+          broker: realm,
+        })
+      );
       const error = JSON.parse(await loginResponse.text());
       console.error("Error:", error);
       return;
