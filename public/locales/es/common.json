@@ -308,7 +308,8 @@
         "refugeInfoHeader": "",
         "countryOfGroup": "",
         "cityTooltip": "",
-        "confirmChangesButton": ""
+        "confirmChangesButton": "",
+        "cityPlaceholderWithBeds": ""
     },
     "accomodationPhoto": "",
     "accomodationPhotoReset": "",

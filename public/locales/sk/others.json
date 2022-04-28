@@ -170,7 +170,8 @@
                 "anyCity": "Akékoľvek mesto",
                 "imWithPregnantOver6Months": "Som v <br \/>pokročilom štádiu tehotenstva (viac než 6 mesiacov) alebo sprevádzam takúto osobu.",
                 "whatIsTargetCountry": "V ktorej krajine chcete zostať?",
-                "selectCountry": "Vyberte krajinu"
+                "selectCountry": "Vyberte krajinu",
+                "selectCountryWithBeds": "Vyberte krajinu ({{number}} lôžok)"
             }
         },
         "login": {
