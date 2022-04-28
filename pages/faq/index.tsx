@@ -58,7 +58,6 @@ const PrivacyPolicyPage = () => {
 
   useLayoutEffect(() => {
     function updateSize() {
-      console.log("window.innerWidth ", window.innerWidth);
       setIsDesktop(window.innerWidth > base.breakPoints.md);
     }
     window.addEventListener("resize", updateSize);
