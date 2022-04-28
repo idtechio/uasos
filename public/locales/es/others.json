@@ -170,7 +170,8 @@
                 "anyCity": "",
                 "imWithPregnantOver6Months": "",
                 "whatIsTargetCountry": "",
-                "selectCountry": ""
+                "selectCountry": "",
+                "selectCountryWithBeds": ""
             }
         },
         "login": {

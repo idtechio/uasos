@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Podaj informacje o swoim zakwaterowaniu",
         "countryOfGroup": "Z jakiego kraju pochodzi grupa?",
         "cityTooltip": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
-        "confirmChangesButton": "Potwierdź zmiany"
+        "confirmChangesButton": "Potwierdź zmiany",
+        "cityPlaceholderWithBeds": "Miasto ({{number}} łóżek)"
     },
     "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoReset": "Usuń",

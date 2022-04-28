@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Предоставить информацию о вашем жилье",
         "countryOfGroup": "Какова страна происхождения группы?",
         "cityTooltip": "Выберите ближайший крупный город если вашего города нет в списке",
-        "confirmChangesButton": "Подтвердить изменения"
+        "confirmChangesButton": "Подтвердить изменения",
+        "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)"
     },
     "accomodationPhoto": "Добавьте фото предлагаемого приюта",
     "accomodationPhotoReset": "удалить",

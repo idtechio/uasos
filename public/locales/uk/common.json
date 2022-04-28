@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Надайте інформацію про своє житло",
         "countryOfGroup": "Яка країна походження групи?",
         "cityTooltip": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
-        "confirmChangesButton": "Підтвердити зміни"
+        "confirmChangesButton": "Підтвердити зміни",
+        "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)"
     },
     "accomodationPhoto": "Додайте фотографію пропонованого притулку",
     "accomodationPhotoReset": "видаляти",
