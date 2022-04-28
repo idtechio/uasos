@@ -109,7 +109,7 @@ class IdCheckClient {
         })
       );
       const error = JSON.parse(await loginResponse.text());
-      console.error("Error:", error);
+      console.error("Error login:", error);
       return;
     }
 
@@ -138,7 +138,7 @@ class IdCheckClient {
         })
       );
       const error = JSON.parse(await refreshResponse.text());
-      console.error("Error:", error);
+      console.error("Error refresh:", error);
       return;
     }
 
@@ -174,6 +174,39 @@ class IdCheckClient {
     fileUid,
   }: SendLinkProps): Promise<Response> {
     await this.init();
+
+    console.log(
+      "sendLink",
+      JSON.stringify({
+        interfaceSettings: {
+          confCode,
+          language,
+        },
+        endpointsToNotify: [notificationUrl],
+        documentsToCapture: [
+          {
+            code: "ID_DOC",
+            docTypes: ["ID", "P"],
+          },
+          {
+            code: "SELFIE_DOC",
+            docTypes: ["SELFIE"],
+          },
+        ],
+        resultHandler: {
+          cisConf: {
+            realm,
+            fileUid,
+            fileLaunchCheck: true,
+            fileCheckWait: true,
+          },
+        },
+        redirectionData: {
+          errorRedirectUrl: `${publicDomain}error`,
+          successRedirectUrl: `${publicDomain}${language}/dashboard`,
+        },
+      })
+    );
 
     return await fetch(this.sdkWebUrl, {
       method: "POST",

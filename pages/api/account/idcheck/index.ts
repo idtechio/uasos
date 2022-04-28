@@ -45,7 +45,7 @@ async function index(
 
     if (!sendLinkResponse.ok) {
       const error = JSON.parse(await sendLinkResponse.text());
-      console.error("Error:", error);
+      console.error("Error sendLink:", error);
       res.status(sendLinkResponse.status).json({ error });
       return;
     }
