@@ -1,12 +1,6 @@
 name: Build and deploy test
 on:
   push:
-    branches:
-      - dev
-      - test
-      - "feat/**"
-      - "fix/**"
-      - "release/**"
     tags:
       - test
 
