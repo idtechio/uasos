@@ -170,7 +170,8 @@
                 "anyCity": "Orice oraș",
                 "imWithPregnantOver6Months": "Sunt, sau sunt însoțită de o persoană aflată în <br \/> sarcină avansată (peste 6 luni)",
                 "whatIsTargetCountry": "În ce țară doriți să stați?",
-                "selectCountry": "Selectați țara"
+                "selectCountry": "Selectați țara",
+                "selectCountryWithBeds": "Selectați țara ({{number}} de paturi)"
             }
         },
         "login": {

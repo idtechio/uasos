@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Poskytnite informácie o svojom ubytovaní",
         "countryOfGroup": "Z akej krajiny skupina pochádza?",
         "cityTooltip": "Ak nemôžete nájsť svoje mesto, vyberte najbližšie veľké mesto",
-        "confirmChangesButton": "Potvrdenie zmien"
+        "confirmChangesButton": "Potvrdenie zmien",
+        "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

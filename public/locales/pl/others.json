@@ -161,7 +161,7 @@
             "email": "E-mail",
             "emailAddress": "Adres e-mail",
             "closestLargeCity": "Najbliższe duże miasto",
-            "occupancy": "Obłożenie: {{number}}"
+            "occupancy": "Pojemność: {{number}}"
         },
         "createRefuge": {
             "shelter": {
@@ -170,7 +170,8 @@
                 "anyCity": "Dowolne miasto",
                 "imWithPregnantOver6Months": "Jestem lub jest ze mną osoba w <br \/> zaawansowanej ciąży (pow. 6 miesiąca)",
                 "whatIsTargetCountry": "W jakim kraju chcesz się zatrzymać?",
-                "selectCountry": "Wybierz kraj"
+                "selectCountry": "Wybierz kraj",
+                "selectCountryWithBeds": "Wybierz kraj ({{number}} łóżek)"
             }
         },
         "login": {
@@ -304,7 +305,7 @@
             "howToGetThere": "Jak dojechać"
         },
         "addShelterMail": "Jeśli chcesz dodać swoje schronisko publiczne, skontaktuj się z nami pod adresem publicshelters@uasos.org.",
-        "description": "Tutaj znajdziesz listę ogólnodostępnych schronisk. Pamiętaj, aby przed wyjazdem zadzwonić do danego miejsca i potwierdzić jego dostępność. \n"
+        "description": "Tutaj znajdziesz listę ogólnodostępnych schronisk. Pamiętaj, aby przed wyjazdem zadzwonić do danego miejsca i potwierdzić jego dostępność."
     },
     "popup:staySafe": {
         "rememberToStaySafe": "<b>Pamiętaj o bezpieczeństwie<\/b>Linia 1 lorem ipsum Linia 2 lorem ipsum",

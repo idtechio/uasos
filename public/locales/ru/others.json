@@ -170,7 +170,8 @@
                 "anyCity": "Любой город",
                 "imWithPregnantOver6Months": "Я нахожусь или меня сопровождает человек, находящийся на <br \/> поздних сроках беременности (более 6 месяцев)",
                 "whatIsTargetCountry": "В какой стране вы хотите остановиться?",
-                "selectCountry": "Выберите страну"
+                "selectCountry": "Выберите страну",
+                "selectCountryWithBeds": "Выберите страну ({{number}} койко-мест)"
             }
         },
         "login": {

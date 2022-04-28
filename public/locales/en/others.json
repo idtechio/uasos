@@ -170,7 +170,8 @@
                 "anyCity": "Any city",
                 "imWithPregnantOver6Months": "I am, or I am accompanied by a person in <br \/> advanced pregnancy (over 6 months)",
                 "whatIsTargetCountry": "What country are you looking to stay in?",
-                "selectCountry": "Select country"
+                "selectCountry": "Select country",
+                "selectCountryWithBeds": "Select country ({{number}} of beds)"
             }
         },
         "login": {

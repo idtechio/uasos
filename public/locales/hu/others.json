@@ -170,7 +170,8 @@
                 "anyCity": "Bármelyik város",
                 "imWithPregnantOver6Months": "Én vagyok, vagy egy olyan személy kísér, akinek <br \/> terhessége előrehaladott (6 hónapon túl van).",
                 "whatIsTargetCountry": "Melyik országban szeretne maradni?",
-                "selectCountry": "Válasszon országot"
+                "selectCountry": "Válasszon országot",
+                "selectCountryWithBeds": "Válasszon országot ({{number}} ágyak száma)"
             }
         },
         "login": {
