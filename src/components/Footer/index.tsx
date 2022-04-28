@@ -14,7 +14,7 @@ import { Routes } from "../../consts/router";
 const Footer = () => {
   const { t } = useTranslation();
   const router = useRouter();
-  const { PRIVACY_POLICY, REGULATIONS, PARTNERS } = Routes;
+  const { PRIVACY_POLICY, REGULATIONS, PARTNERS, FAQ } = Routes;
 
   return (
     <FooterWrapper>
@@ -38,9 +38,14 @@ const Footer = () => {
             {t("patrons")}
           </FooterLink>
         </Link>
-        <Link href="/faq.pdf" passHref locale={false}>
-          <FooterLink>{t("others:common.footer.FAQ")}</FooterLink>
+        <Link href={FAQ} passHref>
+          <FooterLink active={router.pathname === FAQ}>
+            {t("others:common.footer.FAQ")}
+          </FooterLink>
         </Link>
+        {/* <Link href="/faq.pdf" passHref locale={false}>
+          <FooterLink>{t("others:common.footer.FAQ")}</FooterLink>
+        </Link> */}
         <Link href="/safety-tips.pdf" passHref locale={false}>
           <FooterLink>{t("yourSafety")}</FooterLink>
         </Link>
