@@ -24,8 +24,9 @@ const {
   SDKWEB_URL:
     sdkWebUrl = "https://sdkweb-test.idcheck.io/rest/v1/idcheckio-sdk-web/onboarding/sendlink",
   NOTIFICATION_URL: notificationUrl = "",
-  NEXT_PUBLIC_DOMAIN: publicDomain = "",
 } = { ...process.env };
+
+const publicDomain = process.env.NEXT_PUBLIC_DOMAIN;
 
 class IdCheckClient {
   private readonly sdkWebUrl: string;
