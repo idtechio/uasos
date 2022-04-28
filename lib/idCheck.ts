@@ -129,6 +129,14 @@ class IdCheckClient {
     });
 
     if (!refreshResponse.ok) {
+      console.log(
+        "idcheck params",
+        qs.stringify({
+          grant_type: "refresh_token",
+          client_id: clientId,
+          refresh_token: this.refreshToken,
+        })
+      );
       const error = JSON.parse(await refreshResponse.text());
       console.error("Error:", error);
       return;
