@@ -13,6 +13,20 @@ interface TokensType {
   refresh_expires_in: number;
 }
 
+const acceptedLang = [
+  "EN",
+  "FR",
+  "IT",
+  "ES",
+  "DE",
+  "RO",
+  "CS",
+  "PL",
+  "PT",
+  "NL",
+  "AR",
+];
+
 const {
   CIS_USERNAME: username = "",
   CIS_PASSWORD: password = "",
@@ -26,6 +40,7 @@ const {
   NOTIFICATION_URL: notificationUrl = "",
 } = { ...process.env };
 
+// process.env.NEXT_PUBLIC_* are change into value during build process
 const publicDomain = process.env.NEXT_PUBLIC_DOMAIN;
 
 class IdCheckClient {
@@ -99,16 +114,6 @@ class IdCheckClient {
     });
 
     if (!loginResponse.ok) {
-      console.log(
-        "idcheck params",
-        qs.stringify({
-          grant_type: "password",
-          username,
-          password,
-          client_id: clientId,
-          broker: realm,
-        })
-      );
       const error = JSON.parse(await loginResponse.text());
       console.error("Error login:", error);
       return;
@@ -130,14 +135,6 @@ class IdCheckClient {
     });
 
     if (!refreshResponse.ok) {
-      console.log(
-        "idcheck params",
-        qs.stringify({
-          grant_type: "refresh_token",
-          client_id: clientId,
-          refresh_token: this.refreshToken,
-        })
-      );
       const error = JSON.parse(await refreshResponse.text());
       console.error("Error refresh:", error);
       return;
@@ -176,38 +173,10 @@ class IdCheckClient {
   }: SendLinkProps): Promise<Response> {
     await this.init();
 
-    console.log(
-      "sendLink",
-      JSON.stringify({
-        interfaceSettings: {
-          confCode,
-          language,
-        },
-        endpointsToNotify: [notificationUrl],
-        documentsToCapture: [
-          {
-            code: "ID_DOC",
-            docTypes: ["ID", "P"],
-          },
-          {
-            code: "SELFIE_DOC",
-            docTypes: ["SELFIE"],
-          },
-        ],
-        resultHandler: {
-          cisConf: {
-            realm,
-            fileUid,
-            fileLaunchCheck: true,
-            fileCheckWait: true,
-          },
-        },
-        redirectionData: {
-          errorRedirectUrl: `${publicDomain}error`,
-          successRedirectUrl: `${publicDomain}${language}/dashboard`,
-        },
-      })
-    );
+    language = language.toUpperCase();
+    if (!acceptedLang.includes(language)) {
+      language = "EN";
+    }
 
     return await fetch(this.sdkWebUrl, {
       method: "POST",
