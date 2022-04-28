@@ -5,6 +5,7 @@ import IconGoogle from "../../../style/svgs/iconGoogle.svg";
 import { Button, Text } from "./style";
 import Image from "next/image";
 import styled from "styled-components/native";
+import { PROVIDERS } from "../../FormLogin/constants";
 
 type Props = {
   id: string;
@@ -24,30 +25,28 @@ const GoogleButtonContainer = styled(Button)`
 `;
 
 const ButtonSM = ({ anchor, onPress, id }: Props) => {
-  if (id === "facebook") {
-    return (
-      <FacebookButtonContainer onPress={onPress}>
-        <div style={{ marginLeft: 5, marginRight: 0 }}>
-          <Image
-            src={FacebookLogo.src}
-            width={40}
-            height={40}
-            alt="login with facebook"
-          />
-        </div>
-        <Text>{anchor}</Text>
-      </FacebookButtonContainer>
-    );
-  }
-  if (id === "google") {
-    return (
-      <GoogleButtonContainer onPress={onPress}>
-        <IconGoogle />
-        <Text>{anchor}</Text>
-      </GoogleButtonContainer>
-    );
-  }
-  return <></>;
+  return (
+    <>
+      {id === PROVIDERS.FACEBOOK ? (
+        <FacebookButtonContainer onPress={onPress}>
+          <div style={{ marginLeft: 5, marginRight: 0 }}>
+            <Image
+              src={FacebookLogo.src}
+              width={40}
+              height={40}
+              alt="login with facebook"
+            />
+          </div>
+          <Text>{anchor}</Text>
+        </FacebookButtonContainer>
+      ) : (
+        <GoogleButtonContainer onPress={onPress}>
+          <IconGoogle />
+          <Text>{anchor}</Text>
+        </GoogleButtonContainer>
+      )}
+    </>
+  );
 };
 
 export default ButtonSM;
