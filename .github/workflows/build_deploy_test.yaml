@@ -2,7 +2,7 @@ name: Build and deploy test
 on:
   push:
     tags:
-      - test
+      - test-env
 
 env:
   reg_project_id: "ukrn-hlpr"
