@@ -61,6 +61,7 @@ export default function SmsVerificationModal({
 
   const [error, setError] = useState<string | null>(null);
   const [apiError, setApiError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleResendLogin = async () => {
     setResending(true);
@@ -136,7 +137,7 @@ export default function SmsVerificationModal({
   const onSubmit = async (data: FormType) => {
     const code =
       data["1"] + data["2"] + data["3"] + data["4"] + data["5"] + data["6"];
-
+    setIsLoading(true);
     if (resending) {
       try {
         await resendConfirmation?.confirm(code);
@@ -166,6 +167,7 @@ export default function SmsVerificationModal({
         }
       }
     }
+    setIsLoading(false);
   };
 
   const onError = () => {
@@ -368,6 +370,8 @@ export default function SmsVerificationModal({
           onPress={handleSubmit(onSubmit, onError)}
           anchor={t("others:common.buttons.verify")}
           style={{ width: "100px", marginTop: "30px" }}
+          isLoading={isLoading}
+          disabled={isLoading}
         />
         <TouchableOpacity onPress={handleResend}>
           <StyledText>{t("others:common.links.re-sendCode")}</StyledText>

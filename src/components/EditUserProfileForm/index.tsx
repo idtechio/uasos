@@ -50,8 +50,11 @@ export default function EditUserProfileForm({ account, identity }: Props) {
   >("LINK");
   const [capchaInited, setCapchaInited] = useState<boolean>(false);
   const [apiError, setApiError] = useState<string | null>(null);
+  const [isVerifyPhoneModalLoading, setIsVerifyPhoneModalLoading] =
+    useState<boolean>(false);
 
   const verifyPhone = async () => {
+    setIsVerifyPhoneModalLoading(true);
     try {
       const captcha = capchaInited
         ? Authorization.recaptcha
@@ -78,6 +81,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
       }
       closeSmsVerificationModal();
     }
+    setIsVerifyPhoneModalLoading(false);
   };
 
   const onSubmit = useCallback(
@@ -150,6 +154,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
             />
             <ButtonCta
               disabled={isLoading}
+              isLoading={isLoading || isVerifyPhoneModalLoading}
               anchor={t("common.buttons.update")}
               onPress={handleSubmit(onSubmit)}
             />
