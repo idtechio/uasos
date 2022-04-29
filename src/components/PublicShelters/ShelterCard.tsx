@@ -53,7 +53,7 @@ export const ShelterCard = ({
       <FlexContainer>
         <Column>
           <Header>
-            <View>
+            <View style={{ flex: 1 }}>
               <Country>{country}</Country>
               <Title>{name}</Title>
             </View>
