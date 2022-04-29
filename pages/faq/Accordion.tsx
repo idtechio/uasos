@@ -13,6 +13,7 @@ function Accordion({
 
   const Accordion = styled.View<{
     isOpenCategory?: boolean;
+    isMain?: boolean;
     onClick: (e: Event) => void;
   }>`
     display: ${(props) => (props.isOpenCategory ? "flex" : "none")};
@@ -23,13 +24,18 @@ function Accordion({
     width: 360px;
     margin: 15px;
     padding: 18px;
+    padding-left: ${(props) =>
+      props.isMain && props.isOpenCategory ? 0 : 18}px;
     font-size: 24px;
     text-align: left;
     background-color: #fff;
     border: none;
     border-radius: 16px;
     outline: none;
-    box-shadow: 0px 4px 24px rgba(34, 60, 80, 0.2);
+    box-shadow: ${(props) =>
+      props.isMain && props.isOpenCategory
+        ? "none"
+        : "0px 4px 24px rgba(34, 60, 80, 0.2)"};
     transition: 0.4s;
     cursor: pointer;
   `;
@@ -101,14 +107,19 @@ function Accordion({
       <Accordion
         key={nameCategory}
         isOpenCategory={isOpenCategory}
+        isMain={true}
         onClick={() => setIsOpenCategory(!isOpenCategory)}
       >
         <div>{nameCategory}</div>
-        <ArrowIconWrapper
-          style={isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null}
-        >
-          <ArrowIcon />
-        </ArrowIconWrapper>
+        {!isOpenCategory && (
+          <ArrowIconWrapper
+            style={
+              isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null
+            }
+          >
+            <ArrowIcon />
+          </ArrowIconWrapper>
+        )}
       </Accordion>
       {renderInnerAccordion()}
     </>
