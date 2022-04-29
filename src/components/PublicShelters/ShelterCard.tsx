@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import { View } from "react-native";
 
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
@@ -53,10 +52,10 @@ export const ShelterCard = ({
       <FlexContainer>
         <Column>
           <Header>
-            <View style={{ flex: 1 }}>
+            <HeaderContent>
               <Country>{country}</Country>
               <Title>{name}</Title>
-            </View>
+            </HeaderContent>
 
             <Button onPress={toogleMap}>
               <ChevronDownIcon
@@ -166,6 +165,10 @@ const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
+`;
+
+const HeaderContent = styled.View`
+  flex: 1;
 `;
 
 interface CommonProp {
