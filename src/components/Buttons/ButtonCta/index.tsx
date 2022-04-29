@@ -1,7 +1,7 @@
 import { Button, Text } from "./style";
 import type { ButtonProps } from "../types";
 import { useCallback } from "react";
-import { Pressable, View } from "react-native";
+import { ActivityIndicator, Pressable, View } from "react-native";
 
 const ButtonCta = ({
   style,
@@ -11,6 +11,7 @@ const ButtonCta = ({
   onClick,
   pressable = true,
   disabled,
+  isLoading,
 }: ButtonProps) => {
   const handlePress = useCallback(
     (event) => {
@@ -26,9 +27,11 @@ const ButtonCta = ({
       style={style}
       onPress={handlePress}
       colorOpposite={colorOpposite}
-      disabled={disabled}
+      disabled={disabled || isLoading}
     >
-      {typeof anchor === "string" ? (
+      {isLoading ? (
+        <ActivityIndicator size="small" />
+      ) : typeof anchor === "string" ? (
         <Text colorOpposite={colorOpposite}>{anchor}</Text>
       ) : (
         anchor
