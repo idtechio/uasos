@@ -2,6 +2,7 @@ import styled, { css } from "styled-components/native";
 import { Theme } from "../../style/theme.config";
 import { Splash } from "../../src/components/Slash";
 import { ButtonCta } from "../../src/components/Buttons";
+import { colors } from "../../src/style/landingPageStyle";
 
 export const TopLeftBlueSplash = styled(Splash)`
   ${({ theme }: { theme: Theme }) =>
@@ -46,7 +47,7 @@ export const TopRightYellowSplashPosition = css`
     })}
 `;
 
-export const Content = styled.View`
+export const Content = styled.View<{ isDesktop: boolean }>`
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
@@ -57,15 +58,19 @@ export const Content = styled.View`
   background-color: #fff;
 `;
 
-export const HeaderWrapper = styled.View`
-  margin-top: 350px;
+export const HeaderWrapper = styled.View<{ isDesktop: boolean }>`
+  margin-top: ${(props) => (props.isDesktop ? 350 : 35)}px;
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
 `;
 
-export const Title = styled.Text`
+export const Title = styled.Text<{ isDesktop: boolean }>`
+  position: relative;
+  display: flex;
+  align-self: ${(props) => (props.isDesktop ? "center" : "flex-start")};
+  margin-left: ${(props) => (props.isDesktop ? 0 : 110)}px;
   color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
   font-size: ${(props) => (props.isDesktop ? 96 : 24)}px;
   line-height: 30px;
@@ -79,6 +84,24 @@ export const Title = styled.Text`
         line-height: 52px;
         max-width: none;
         margin-top: 14px;
+      `,
+    })}
+`;
+
+export const YellowHighlight = styled.View`
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 15px;
+  width: 30px;
+  background-color: ${colors.yellow};
+  z-index: -1;
+
+  ${({ theme }: { theme: Theme }) =>
+    theme.getBreakPoint?.({
+      lg: css`
+        width: 220px;
+        top: 34px;
       `,
     })}
 `;
@@ -109,9 +132,9 @@ export const ButtonCtaWidthFixed = styled(ButtonCta)`
   margin-top: 60px;
 `;
 
-export const SubTitle = styled.View`
-  font-size: ${(props) => (props.isDesktop ? 28 : 16)}px;
-`;
+export const TitleWrapper = styled.View``;
+
+export const TitleName = styled.View``;
 
 export const TitleQuestion = styled.View`
   width: 100%;

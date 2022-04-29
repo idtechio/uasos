@@ -2,10 +2,20 @@ import { useState } from "react";
 import styled from "styled-components/native";
 import ArrowIcon from "../../src/style/svgs/arrow.svg";
 
-function Accordion({ title, content }: { title: string; content: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+function Accordion({
+  nameCategory,
+  content,
+}: {
+  nameCategory: string;
+  content: object;
+}) {
+  const [isOpenCategory, setIsOpenCategory] = useState(false);
 
-  const Accordion = styled.View`
+  const Accordion = styled.View<{
+    isOpenCategory?: boolean;
+    onClick: (e: Event) => void;
+  }>`
+    display: ${(props) => (props.isOpenCategory ? "flex" : "none")};
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,10 +33,10 @@ function Accordion({ title, content }: { title: string; content: string }) {
     transition: 0.4s;
     cursor: pointer;
   `;
-  const Panel = styled.View`
+  const Panel = styled.View<{ isOpenText: boolean }>`
     width: 360px;
     padding: 0 18px;
-    max-height: ${(props) => (props.isOpen ? "auto" : 0)};
+    max-height: ${(props) => (props.isOpenText ? "auto" : 0)};
     font-size: 12px;
     overflow: hidden;
     transition: max-height 2s ease-out;
@@ -50,21 +60,57 @@ function Accordion({ title, content }: { title: string; content: string }) {
     margin-bottom: 15px;
   `;
 
+  const renderAccordion = (question, answer) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    if (!isOpenCategory) {
+      return null;
+    }
+
+    return (
+      <>
+        <Accordion
+          // key={elContentValue}
+          isOpenCategory={true}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div>{question}</div>
+          <ArrowIconWrapper
+            style={isOpen ? { transform: [{ rotate: "180deg" }] } : null}
+          >
+            <ArrowIcon />
+          </ArrowIconWrapper>
+        </Accordion>
+        <Panel isOpenText={isOpen}>
+          <Hr />
+          <ContentWrapper>{answer}</ContentWrapper>
+          <Hr />
+        </Panel>
+      </>
+    );
+  };
+
+  const renderInnerAccordion = () => {
+    return Object.values(content).map((elContentValue, index) => {
+      return renderAccordion(elContentValue.question, elContentValue.answer);
+    });
+  };
+
   return (
     <>
-      <Accordion key={title} onClick={() => setIsOpen(!isOpen)}>
-        <div>{title}</div>
+      <Accordion
+        key={nameCategory}
+        isOpenCategory={isOpenCategory}
+        onClick={() => setIsOpenCategory(!isOpenCategory)}
+      >
+        <div>{nameCategory}</div>
         <ArrowIconWrapper
-          style={isOpen ? { transform: [{ rotate: "180deg" }] } : null}
+          style={isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null}
         >
           <ArrowIcon />
         </ArrowIconWrapper>
       </Accordion>
-      <Panel isOpen={isOpen}>
-        <Hr />
-        <ContentWrapper>{content}</ContentWrapper>
-        <Hr />
-      </Panel>
+      {renderInnerAccordion()}
     </>
   );
 }

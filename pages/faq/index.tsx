@@ -1,4 +1,4 @@
-import { useState, useMemo, useLayoutEffect } from "react";
+import { useState, useMemo, useLayoutEffect, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -10,7 +10,8 @@ import { withSession } from "../../src/helpers/withSession";
 import Accordion from "./Accordion";
 import { LanguageFlags } from "../../src/components/LanguageSwitcher/LanguageFlags";
 import { base } from "../../src/style/theme.config";
-import languagesList from "./languagesList";
+import { languagesList, languagesListNames } from "./languagesList";
+import faq from "../../public/locales/en/faq.json";
 import {
   TopLeftBlueSplash,
   TopLeftBlueSplashPosition,
@@ -21,35 +22,14 @@ import {
   ContentWrapper,
   LanguageFlagsWrapper,
   Title,
+  YellowHighlight,
   ButtonWrapper,
   ButtonCtaWidthFixed,
-  SubTitle,
+  TitleWrapper,
+  TitleName,
   TitleQuestion,
   TitleContent,
 } from "./styled";
-
-const faqQuestions = [
-  {
-    title: "Section 1",
-    content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente laborum cupiditate possimus labore, hic temporibus velit dicta earum suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-    voluptatem.`,
-  },
-  {
-    title: "Section 2",
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-    reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-    quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-    pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-    quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-    Repudiandae, mollitia id reprehenderit a ab odit!`,
-  },
-  {
-    title: "Section 3",
-    content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-    quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-    dolor ut sequi minus iste? Quas?`,
-  },
-];
 
 const PrivacyPolicyPage = () => {
   const { asPath, locale } = useRouter();
@@ -67,33 +47,50 @@ const PrivacyPolicyPage = () => {
 
   const faqQuestionsElements = () =>
     useMemo(() => {
-      if (isDesktop) {
-        return faqQuestions.map((el) => (
-          <div key={el.title}>
-            <TitleQuestion>{el.title}</TitleQuestion>
-            <TitleContent>{el.content}</TitleContent>
-          </div>
-        ));
-      } else {
-        return faqQuestions.map((el) => (
-          <Accordion title={el.title} content={el.content} />
-        ));
-      }
+      return Object.values(faq).map((el) => {
+        return Object.values(el).map((elContent) => {
+          if (typeof elContent === "object") {
+            if (!isDesktop) {
+              return <Accordion nameCategory={el.name} content={elContent} />;
+            }
+
+            return Object.values(elContent).map((elContentValue, index) => {
+              if (isDesktop) {
+                return (
+                  <TitleWrapper key={elContentValue.question}>
+                    {!index && <TitleName>{el.name}</TitleName>}
+                    <TitleQuestion>{elContentValue.question}</TitleQuestion>
+                    <TitleContent>{elContentValue.answer}</TitleContent>
+                  </TitleWrapper>
+                );
+              }
+            });
+          }
+        });
+      });
     }, [isDesktop]);
 
   const languagesListElements = () =>
     useMemo(
       () =>
         isDesktop
-          ? languagesList.map((el) => <RenderedButtonCtaLang lang={el} />)
+          ? languagesList.map((el, index) => (
+              <RenderedButtonCtaLang lang={el} index={index} />
+            ))
           : null,
       [isDesktop]
     );
 
-  const RenderedButtonCtaLang = ({ lang }: { lang: string }) => {
+  const RenderedButtonCtaLang = ({
+    lang,
+    index,
+  }: {
+    lang: string;
+    index: number;
+  }) => {
     return (
       <Link passHref href={asPath} locale={lang}>
-        <ButtonCtaWidthFixed anchor={t(`others:${lang}`)} />
+        <ButtonCtaWidthFixed anchor={languagesListNames[index]} />
       </Link>
     );
   };
@@ -115,7 +112,7 @@ const PrivacyPolicyPage = () => {
             />
           </>
         )}
-        <HeaderWrapper>
+        <HeaderWrapper isDesktop={isDesktop}>
           {isDesktop && <Logo />}
           <Title
             accessibilityRole="heading"
@@ -123,6 +120,7 @@ const PrivacyPolicyPage = () => {
             isDesktop={isDesktop}
           >
             {t("FAQ")}
+            {!isDesktop && <YellowHighlight />}
           </Title>
           <ButtonWrapper>{languagesListElements()}</ButtonWrapper>
           <ContentWrapper>
@@ -131,7 +129,6 @@ const PrivacyPolicyPage = () => {
                 <LanguageFlags locale={locale} width={53} height={34} />
               </LanguageFlagsWrapper>
             )}
-            <SubTitle isDesktop={isDesktop}>Title</SubTitle>
             {faqQuestionsElements()}
           </ContentWrapper>
         </HeaderWrapper>
