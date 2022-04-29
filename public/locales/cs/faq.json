@@ -20,7 +20,7 @@
             },
             "005": {
                 "question": "Musím zadávat své osobní údaje?",
-                "answer": "Pro správnou registraci je třeba uvést e-mailovou adresu a telefonní číslo. Vaše jméno požadujeme pro usnadnění komunikace mezi stranami.\n"
+                "answer": "Pro správnou registraci je třeba uvést e-mailovou adresu a telefonní číslo. Vaše jméno požadujeme pro usnadnění komunikace mezi stranami."
             },
             "006": {
                 "question": "Jaké jsou zásady ochrany osobních údajů a GDPR?",
@@ -43,82 +43,82 @@
                 "answer": "Algoritmus prohledává obě databáze, aby našel co nejvíce potenciálních spojení mezi hostiteli a potenciálními hosty na základě jejich požadavků. Každých 15 minut je algoritmus spuštěn, aby našel spojení pro nově registrované uživatele, ale také pro lidi, kteří ještě nenašli nabídku - nebo odmítli předchozí nabídku."
             },
             "011": {
-                "question": "",
-                "answer": ""
+                "question": "Budu informován o stavu?",
+                "answer": "Ano, o stavu vaší žádosti vás budeme informovat e-mailem - pravidelně kontrolujte svou e-mailovou schránku.\n\nJakmile pro vás najdeme potenciálního hosta\/hostitele, upozorníme vás na to prostřednictvím SMS."
             }
         }
     },
     "002": {
-        "name": "",
+        "name": "PRO POMOCNÍKY\/HOSPODÁŘE",
         "content": {
             "001": {
-                "question": "",
-                "answer": ""
+                "question": "Chci pomoci, jak se mohu stát hostitelem?",
+                "answer": "Chcete-li uvolnit místo, zaregistrujte se na portálu, uveďte svou e-mailovou adresu, telefonní číslo a aktivujte svůj účet. \n\nJakmile pro vás najdeme potenciálního hosta - budeme vás o tom informovat e-mailem a SMS zprávou. Poté budete moci vstoupit na portál, zobrazit si klíčové informace z formuláře pro hledání vhodného hosta a nabídku přijmout nebo odmítnout. \n\nJakmile obě strany potvrdí spojení, vyměníte si kontaktní údaje - upřesníte si poslední detaily a potvrdíte místo setkání. Nezapomeňte, že ne každý bude mluvit polsky, takže e-mail může být někdy vhodnější variantou, protože na internetu je k dispozici mnoho překladačů, které můžete využít k překladu korespondence."
             },
             "002": {
-                "question": "",
-                "answer": ""
+                "question": "Chci pomáhat uprchlíkům. Potřebují pomoc jen Ukrajinci?",
+                "answer": "V době vypuknutí války byli na Ukrajině lidé různých národností - například studující, na služebních cestách, na zakázkách apod. Pomáháme všem lidem bez ohledu na jejich národnost, občanství, politické názory, náboženství, sexuální orientaci nebo příslušnost k etnické menšině"
             },
             "003": {
-                "question": "",
-                "answer": ""
+                "question": "Mohu uvést, kolik osob chci hostit a zda je například preferována rodina s dětmi?",
+                "answer": "Samozřejmě. Každý, kdo se rozhodne pomoci lidem přicházejícím z Ukrajiny, může deklarovat, kolika lidem chce pomoci tím, že je přijme. Můžete také uvést, zda jste ochotni přijmout např. rodinu s dětmi, zvířata apod."
             },
             "004": {
-                "question": "",
-                "answer": ""
+                "question": "Musím jít na hranici, abych mohl přijmout uprchlíka?",
+                "answer": "V současné době je portál určen především k tomu, aby vám pomohl najít ubytování pro uprchlíky. Pokud jste schopni vyzvednout osobu na hranicích nebo na konkrétním místě, je to vítáno, ale není to nutné. Takové doplňující informace můžete zadat ve formuláři. V budoucnu budou přidány další funkce, které pomohou při hledání dopravy, zaměstnání atd."
             },
             "005": {
-                "question": "",
-                "answer": ""
+                "question": "Nemluvím ukrajinsky, jak se mohu domluvit?",
+                "answer": "Upřednostňovanou formou komunikace je e-mail. Ke komunikaci s osobou hovořící ukrajinským jazykem nepotřebujete\nznát ukrajinštinu. Na internetu je k dispozici mnoho překladačů, které můžete použít k překladu korespondence."
             },
             "006": {
-                "question": "",
-                "answer": ""
+                "question": "Musím uvést adresu svého bydliště?",
+                "answer": "Pro vytvoření účtu na portálu musíte uvést adresu svého bydliště. Ta se hostovi nezobrazí - host uvidí pouze město ubytování. Doporučujeme, aby se hostitel a host setkali na veřejném místě."
             },
             "007": {
-                "question": "",
-                "answer": ""
+                "question": "Na jakou minimální dobu mohu hostit osobu z Ukrajiny?",
+                "answer": "Minimální doba ubytování osoby z Ukrajiny je jedna noc."
             },
             "008": {
-                "question": "",
-                "answer": ""
+                "question": "Ověřuje služba uživatele portálu?",
+                "answer": "Uživatelé se přihlašují do svého profilu pomocí e-mailu, Facebook nebo Gmailu a jejich telefonní čísla jsou ověřena"
             },
             "009": {
-                "question": "",
-                "answer": ""
+                "question": "Mohu se vzdát hostování uprchlíka?",
+                "answer": "Jsme si vědomi toho, že v životě dochází k různým nahodilým situacím, a proto můžete z hostování uprchlíků kdykoli odstoupit. Nezapomeňte však, že vaše nabídka hostit lidi z Ukrajiny je pro ně důležitá a je možné, že nebudou moci najít nové místo, kde by mohli přenocovat. Dobrovolnictvím se rozhodnete pomoci."
             },
             "010": {
-                "question": "",
-                "answer": ""
+                "question": "Musím uprchlíkům finančně pomáhat?",
+                "answer": "Nemusíte uprchlíkům poskytovat žádnou finanční pomoc. Je to pouze vaše dobrá vůle."
             },
             "011": {
-                "question": "",
-                "answer": ""
+                "question": "Musím uprchlíkům zajistit jídlo?",
+                "answer": "Vzhledem k situaci uprchlíků je poskytování potravin, alespoň po počáteční dobu jejich pobytu, vítáno, ale zůstává dobrovolné."
             },
             "012": {
-                "question": "",
-                "answer": ""
+                "question": "Nepoužívám internet, jak mohu hostit uprchlíky z Ukrajiny?",
+                "answer": "Abyste mohli pomáhat uprchlíkům z Ukrajiny prostřednictvím našeho portálu, musíte se na něm zaregistrovat. Pokud však internet nepoužíváte denně, můžete požádat lidi, kteří jej používají."
             },
             "013": {
-                "question": "",
-                "answer": ""
+                "question": "Mohu účtovat uprchlíkům poplatky za služby?",
+                "answer": "Lidé přicházející z Ukrajiny utekli před válkou. Zkuste je v tomto těžkém období podpořit. Pokud se rozhodnete uprchlíkům pomoci, počítejte také s tím, že se vám mohou zvýšit účty za komunální služby."
             }
         }
     },
     "003": {
-        "name": "",
+        "name": "PRO UPRCHLÍKY \/ NÁVŠTĚVNÍKY",
         "content": {
             "001": {
-                "question": "",
-                "answer": ""
+                "question": "Jsem uprchlík z Ukrajiny, jak najdu ubytování?",
+                "answer": "Chcete-li si najít ubytování, zaregistrujte se na portálu, uveďte svou e-mailovou adresu, telefonní číslo, aktivujte svůj účet a ve formuláři uveďte své potřeby. \n\nJakmile pro vás najdeme potenciálního hostitele, budeme vás informovat e-mailem a SMS zprávou. Poté budete moci přejít na portál, prohlédnout si profil hostitele a přijmout nebo odmítnout jeho nabídku. \n\nJakmile obě strany potvrdí spojení, vyměníte si kontaktní údaje - upřesníte si poslední detaily a potvrdíte, kde se setkáte. Nezapomeňte, že ne každý bude mluvit ukrajinsky - proto může být někdy vhodnější e-mailový kontakt, protože na internetu je k dispozici mnoho překladatelů, které můžete využít k překladu konverzace."
             },
             "002": {
-                "question": "",
-                "answer": ""
+                "question": "Mohu počítat s dopravou od hranic do cílové destinace?",
+                "answer": "Ne každý, kdo nabízí ubytování pro uprchlíky, je motorizovaný nebo může nabídnout dopravu. Nabídka, kterou obdržíte, může být označena \"s dopravou\". V opačném případě můžete požádat hostitele o pomoc v soukromé korespondenci."
             },
             "003": {
-                "question": "",
-                "answer": ""
+                "question": "Mám platit za ubytování a stravu osobě, která mě přijala?",
+                "answer": "Pomoc uprchlíkům je nezištná a bezplatná. Lidé, kteří se na portálu zaregistrují a nabídnou pomoc, neočekávají nic na oplátku. Pamatujte však, že služba není zodpovědná za podmínky, za kterých budete přijati. Ujistěte se, že nic na oplátku neočekáváte."
             }
         }
     }
