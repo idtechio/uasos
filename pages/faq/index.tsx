@@ -1,4 +1,4 @@
-import { useState, useMemo, useLayoutEffect, useEffect } from "react";
+import { useState, useMemo, useLayoutEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -11,7 +11,6 @@ import Accordion from "./Accordion";
 import { LanguageFlags } from "../../src/components/LanguageSwitcher/LanguageFlags";
 import { base } from "../../src/style/theme.config";
 import { languagesList, languagesListNames } from "./languagesList";
-import faq from "../../public/locales/en/faq.json";
 import {
   TopLeftBlueSplash,
   TopLeftBlueSplashPosition,
@@ -47,6 +46,7 @@ const PrivacyPolicyPage = () => {
 
   const faqQuestionsElements = () =>
     useMemo(() => {
+      const faq = require(`../../public/locales/${locale}/faq.json`);
       return Object.values(faq).map((el) => {
         return Object.values(el).map((elContent) => {
           if (typeof elContent === "object") {
