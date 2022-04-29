@@ -76,10 +76,7 @@ async function notification(req: NotificationApiRequest, res: NextApiResponse) {
   }
 
   const account = await getAccountFromDB(uid);
-  if (
-    account &&
-    (!account.identity_verified || account.identity_verified === "FALSE")
-  ) {
+  if (account) {
     const topicName = process.env.TOPIC_ACCOUNT_UPDATE;
 
     const pubResult = await publishMessage(topicName, {
