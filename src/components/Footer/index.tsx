@@ -47,7 +47,7 @@ const Footer = () => {
           <FooterLink>{t("others:common.footer.FAQ")}</FooterLink>
         </Link> */}
         <Link href="/safety-tips.pdf" passHref locale={false}>
-          <FooterLink>{t("yourSafety")}</FooterLink>
+          <FooterLink>{t("others:common.footer.yourSafety")}</FooterLink>
         </Link>
       </FooterContentWrapper>
     </FooterWrapper>

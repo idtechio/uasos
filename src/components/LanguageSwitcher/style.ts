@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { TextStyle, ViewStyle } from "react-native";
+
 export const DropDownWrapperObject: ViewStyle = {
   borderWidth: 1,
   borderColor: "#dedede",
@@ -33,6 +34,11 @@ export const DropDownListItemObject: ViewStyle = {
   alignItems: "center",
   padding: 0,
 };
+
+export const Flex = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
 
 export const LanguageLabel = styled.Text`
   font-family: Roboto;

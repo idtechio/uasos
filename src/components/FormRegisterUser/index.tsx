@@ -13,7 +13,7 @@ import CardModal from "../CardModal";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
-import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
+import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { AccountApi } from "../../client-api/account";
 import { AuthContext } from "../../../pages/_app";
 import FormCheckbox from "../Inputs/FormCheckbox";
@@ -27,6 +27,7 @@ import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { useMutation } from "react-query";
 import { FirebaseError } from "@firebase/util";
+import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export const SectionContent = styled.View`
   max-width: 400px;
@@ -97,7 +98,6 @@ export default function FormRegisterUser() {
 
   passwordInputRef.current = watch("registrationUserForm.password", "");
   const isShowPasswordChecked = watch("registrationUserForm.showPassword");
-  const smsNotification = watch("registrationUserForm.smsNotification");
 
   const parseError = (error: string) => {
     if (
@@ -249,31 +249,22 @@ export default function FormRegisterUser() {
               phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
               error={errors?.registrationUserForm?.phoneNumber}
               errorMsg=""
-              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+              data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
           </div>
         </SectionContent>
       </CompositionSection>
-      <CompositionSection padding={[10, 30, 10, 26]}>
+      <CompositionSection padding={[0, 30, 10, 26]}>
         <SectionContent>
-          <div>
-            <FormCheckbox
-              styles={{
-                checkboxFieldWrapper: css`
-                  align-items: flex-start;
-                `,
-              }}
-              isCentered={false}
-              rules={{
-                required: false,
-              }}
-              value={smsNotification}
-              name="registrationUserForm.smsNotification"
-              label={` ${t(
-                "others:forms.userRegistration.agreeOnSmsCommunication"
-              )}`}
-            />
-          </div>
+          <SmsNotificationInput
+            wrapperStyleProp={css`
+              align-items: flex-start;
+            `}
+            name="registrationUserForm.smsNotification"
+            rules={{
+              required: false,
+            }}
+          />
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 8, 30]}>

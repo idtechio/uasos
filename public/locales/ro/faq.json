@@ -1,0 +1,125 @@
+{
+  "001": {
+    "name": "INFORMAȚII GENERALE",
+    "content": {
+      "001": {
+        "question": "Pentru ce se folosește acest portal?",
+        "answer": "Platforma uaSOS.org pune în legătură refugiații în căutare de cazare cu persoanele private, instituțiile, ONG-urile și companiile care oferă cazare. Spre deosebire de alte inițiative care colectează informații similare, platforma uaSOS.org conectează automat anunțurile celor care caută cazare cu ofertele înregistrate pentru a oferi cea mai bună ofertă posibilă unui grup cât mai mare de persoane. Mulțumită platformei, personale în căutarea unei cazării nu vor fi nevoite să verifice sute de oferte disponibile, ci li se va propune cea mai bună și actualizată ofertă, conform nevoilor lor. Înregistrarea pe platformă nu e anonimă, ceea ce oferă siguranță tuturor celor implicați."
+      },
+      "002": {
+        "question": "Cine a creat acest portal?",
+        "answer": "Inițiativa este susținută de ONG-uri poloneze și ucrainene, de administrații locale și de numeroase companii, care nu numai că oferă cea mai bună tehnologie, dar și fac posibilă atingerea a sute de mii de persoane de ambele părți ale frontierei. Platforma a fost creată cu participarea a zeci de voluntari și se bazează pe un algoritm avansat, care în viitor oferă posibilitatea de a dezvolta platforma pentru a servi și altor nevoi (de exemplu, transportul)."
+      },
+      "003": {
+        "question": "Este platforma sigură?",
+        "answer": "Platforma a fost complet securizată din punct de vedere juridic (inclusiv în ceea ce privește aspectele legate de RODO) de către experți care colaborează cu cabinetul de avocatură ID Advisory. De asemenea, platforma dispune de o serie de garanții tehnice, cum ar fi: datele cu caracter personal sunt prelucrate în cloud-ul Google, setul de date prelucrate este limitat, iar logarea are loc prin intermediul Facebook și Gmail, ceea ce asigură o securitate sporită. \n\nÎn același timp, nu putem verifica toate persoanele care completează formularele prin intermediul portalului, așa că vă rugăm să contactați gazda/gazda și să clarificați toate detaliile înainte de ședere."
+      },
+      "004": {
+        "question": "Cum îmi creez un cont?",
+        "answer": "Pentru a crea un cont, va trebui să completați adresa de e-mail și numărul de telefon, la care va fi trimis un cod de verificare."
+      },
+      "005": {
+        "question": "Trebuie să introduc datele mele personale?",
+        "answer": "Pentru a vă înregistra în mod corespunzător, trebuie să furnizați adresa de e-mail și numărul de telefon. Vă solicităm numele pentru a facilita comunicarea între părți."
+      },
+      "006": {
+        "question": "Ce este politica de confidențialitate și GDPR?",
+        "answer": "Pentru a citi politica de confidențialitate, accesați fila \"Politica de confidențialitate\"."
+      },
+      "007": {
+        "question": "Pot să îmi editez anunțul?",
+        "answer": "Pentru a vă edita anunțul, după ce vă autentificați, faceți clic pe meniul de lângă anunț (\"trei puncte\") și selectați funcția \"Editare\"."
+      },
+      "008": {
+        "question": "Cum îmi pot șterge anunțul?",
+        "answer": "Vă puteți șterge anunțul în două moduri: \n\ndupă conectare, faceți clic pe meniul de lângă notificare (\"trei puncte\") și selectați funcția \"Ștergere\" sau \n\nîn e-mailul \"UA SOS - Am găsit un potențial oaspete pentru dumneavoastră\" aveți posibilitatea de a alege opțiunea de a șterge listarea."
+      },
+      "009": {
+        "question": "Există vreo taxă pentru crearea unui cont?",
+        "answer": "Portalul este gratuit, este menit să ajute persoanele care fug de războiul din Ucraina. Nu se percepe nicio taxă în nicio etapă de înregistrare sau de utilizare a portalului nostru."
+      },
+      "010": {
+        "question": "Cum funcționează algoritmul de potrivire a aplicațiilor? ",
+        "answer": "Algoritmul caută în ambele baze de date pentru a găsi cât mai multe conexiuni potențiale între gazde și potențiali oaspeți, în funcție de cerințele acestora. La fiecare 15 minute, algoritmul este rulat pentru a găsi conexiuni pentru utilizatorii nou înregistrați, dar și pentru persoanele care nu au găsit încă o ofertă - sau care au refuzat o ofertă anterioară."
+      },
+      "011": {
+        "question": "Voi fi informat cu privire la statutul meu? ",
+        "answer": "Da, vă vom ține la curent cu situația cererii dumneavoastră prin e-mail - verificați-vă cutia poștală în mod regulat.\nÎn plus, atunci când găsim un potențial oaspete/gazdă pentru dumneavoastră, vă vom anunța prin SMS."
+      }
+    }
+  },
+  "002": {
+    "name": "PENTRU CEI CARE OFERĂ AJUTOR/GAZDE",
+    "content": {
+      "001": {
+        "question": "Vreau să ajut, cum pot fi gazdă?",
+        "answer": "Pentru a pune un loc la dispoziție, înregistrați-vă pe portal, furnizați adresa de e-mail, numărul de telefon și activați-vă contul.\n\nImediat ce găsim un potențial oaspete pentru dvs., vă vom informa prin e-mail și SMS, după care veți putea intra pe portal, veți putea vedea informațiile cheie din formularul de potrivire a oaspetelui și veți putea accepta sau refuza oferta. \n\nDupă ce ambele părți confirmă legătura, veți face schimb de date de contact - clarificați ultimele detalii și confirmați unde vă veți întâlni. Nu uitați că nu toată lumea va vorbi română, așa că e-mailul poate fi uneori o opțiune mai convenabilă, deoarece există multe opțiuni de traducere automată disponibile pe internet pe care îi puteți folosi pentru a vă traduce mesajele."
+      },
+      "002": {
+        "question": "Vreau să ajut refugiați. Doar ucrainenii au nevoie de ajutor?",
+        "answer": "Când a izbucnit războiul, în Ucraina se aflau persoane de diferite naționalități - de exemplu, erau la studii, în călătorii de afaceri, cu contracte etc. Noi ne dorim să ajutăm toți oamenii, indiferent de naționalitate, cetățenie, opinii politice, religie, orientare sexuală sau apartenență la o minoritate etnică."
+      },
+      "003": {
+        "question": "Pot indica câte persoane doresc să găzduiesc și dacă este preferabilă o familie cu copii, de exemplu?",
+        "answer": "Bineînțeles, toți cei care decid să ajute persoanele care vin din Ucraina pot declara câte persoane doresc să ajute prin găzduirea lor. De asemenea, puteți indica dacă sunteți dispus să acceptați, de exemplu, o familie cu copii, animale etc."
+      },
+      "004": {
+        "question": "Trebuie să mă duc la frontieră pentru a primi un refugiat?",
+        "answer": "În acest moment, portalul este destinat în primul rând să vă ajute să găsiți cazare pentru refugiați. Dacă aveți posibilitatea de a prelua persoana de la graniță sau dintr-un anumit loc, acest lucru este binevenit, dar nu este obligatoriu. Puteți trimite astfel de informații suplimentare în formular. În viitor, vor fi adăugate funcționalități suplimentare pentru a vă ajuta să găsiți mijloace de transport, locuri de muncă etc."
+      },
+      "005": {
+        "question": "Nu vorbesc ucraineană, cum pot să comunic?",
+        "answer": "Forma preferată de comunicare este prin e-mail. Nu este nevoie să cunoașteți limba ucraineană pentru a comunica cu o persoană care o vorbește. Există numeroase programe de traducere disponibile pe internet pe care le puteți folosi pentru a vă traduce corespondența."
+      },
+      "006": {
+        "question": "Trebuie să-mi dau adresa de domiciliu?",
+        "answer": "Pentru a vă crea un cont pe portal, trebuie să vă furnizați adresa de domiciliu. Aceasta nu va fi afișată oaspetelui - acesta va vedea doar orașul de cazare. Vă sugerăm ca gazda și oaspetele să se întâlnească într-un spațiu public."
+      },
+      "007": {
+        "question": "Pentru ce perioadă minimă de timp pot găzdui o persoană din Ucraina?",
+        "answer": "Timpul minim pentru a găzdui o persoană din Ucraina este de o noapte."
+      },
+      "008": {
+        "question": "Serviciul verifică utilizatorii portalului?",
+        "answer": "Utilizatorii se loghează folosind profilul lor prin e-mail, Facebook sau Gmail, iar numerele lor de telefon sunt verificate"
+      },
+      "009": {
+        "question": "Pot să renunț la găzduirea unui refugiat?",
+        "answer": "Suntem conștienți de faptul că viața se întâmplă în diverse situații aleatorii, prin urmare, puteți renunța la găzduirea refugiaților în orice moment. Cu toate acestea, vă rugăm să vă amintiți că oferta dvs. de a găzdui persoane din Ucraina este importantă pentru ei și este posibil ca aceștia să nu poată găsi un nou loc unde să rămână peste noapte. Prin voluntariat, decideți să ajutați."
+      },
+      "010": {
+        "question": "Trebuie să-i ajut financiar pe refugiați?",
+        "answer": "Nu trebuie să oferiți niciun fel de asistență financiară refugiaților, ci doar bunăvoința dumneavoastră."
+      },
+      "011": {
+        "question": "Trebuie să asigur hrană pentru refugiați?",
+        "answer": "Având în vedere situația refugiaților, furnizarea de alimente, cel puțin pentru perioada inițială a șederii lor, este binevenită, dar rămâne voluntară."
+      },
+      "012": {
+        "question": "Nu folosesc internetul, cum pot găzdui refugiați din Ucraina?",
+        "answer": "Pentru a ajuta refugiații din Ucraina prin intermediul portalului nostru, trebuie să vă înregistrați pe acesta. Cu toate acestea, dacă nu folosiți internetul zilnic, puteți solicita ajutorul unor persoane care îl folosesc."
+      },
+      "013": {
+        "question": "Pot să le cer refugiaților plata utilităților?",
+        "answer": "Oamenii care vin din Ucraina au fugit din calea războiului. Încercați să îi sprijiniți în această perioadă dificilă. Dacă decideți să ajutați refugiații, luați în considerare și faptul că facturile la utilități ar putea crește."
+      }
+    }
+  },
+  "003": {
+    "name": "PENTRU REFUGIAȚI / VIZITATORI",
+    "content": {
+      "001": {
+        "question": "Sunt un refugiat din Ucraina, cum pot găsi cazare?",
+        "answer": "Pentru a găsi cazare, înregistrați-vă pe portal, furnizați adresa de e-mail, numărul de telefon, activați-vă contul și enumerați-vă nevoile în formular.\n\nDe îndată ce găsim o gazdă potențială pentru dvs., vă vom informa prin e-mail și SMS. Veți putea apoi să accesați portalul, să vedeți profilul gazdei și să acceptați sau să refuzați oferta acesteia.\n\nDupă ce ambele părți confirmă conexiunea, veți face schimb de date de contact - clarificați ultimele detalii și confirmați unde vă veți întâlni. Nu uitați că nu toată lumea va vorbi ucraineană - astfel încât contactul prin e-mail poate fi uneori o opțiune mai convenabilă, deoarece există mulți traducători disponibili online pe care îi puteți folosi pentru a vă traduce conversația."
+      },
+      "002": {
+        "question": "Pot conta pe transport de la frontieră până la destinația finală?",
+        "answer": "Nu toți cei care oferă cazare pentru refugiați sunt motorizabili sau pot oferi transport. Este posibil ca oferta pe care o primiți să fie marcată cu mențiunea \"cu transport\". În caz contrar, puteți solicita asistență gazdei dumneavoastră prin corespondență privată."
+      },
+      "003": {
+        "question": "Ar trebui să plătesc cazarea și masa pentru persoana care m-a primit la ea?",
+        "answer": "Ajutarea refugiaților este dezinteresată și gratuită. Persoanele care se înregistrează pe portal și oferă ajutor nu se așteaptă la nimic în schimb. Amintiți-vă, totuși, că serviciul nu este responsabil pentru condițiile în care veți fi acceptat. Asigurați-vă că nu vă așteptați la nimic în schimb."
+      }
+    }
+  }
+}

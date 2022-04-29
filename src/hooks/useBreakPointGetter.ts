@@ -32,6 +32,7 @@ export function useBreakPointGetter() {
   const parsedWidth = _width ? width : undefined;
 
   /** This is a workaround for different class names on Server and Client */
+
   useIsomorphicEffect(() => {
     setWidth((current) => current ?? width);
   }, [width]);

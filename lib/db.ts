@@ -5,10 +5,11 @@ const DEBUG = false;
 const logger = console;
 
 const pool = new Pool({
-  host: process.env.DB_HOST,
+  host: process.env.DB_HOST || "127.0.0.1",
   user: process.env.DB_USER || "postgres",
   password: process.env.DB_PASSWORD || "postgres",
   database: process.env.DB_NAME || "postgres",
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : undefined,
 });
 
 const select = async function (text: string, params?: Array<unknown>) {

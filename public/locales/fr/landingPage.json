@@ -1,84 +1,84 @@
 {
-    "supportingPartners": "Partenaires soutenant l'initiative",
-    "ngoPartners": "Organisations non gouvernementales (ONG)",
-    "projectInitiators": "Initiateurs de projets",
-    "partners": "Partenaires",
-    "showMorePartners": "Voir tous les partenaires",
-    "projectIntention": {
-        "title": "Nous aidons à trouver un abri pour les victimes de la guerre en Ukraine",
-        "description_part1": "Nous aidons les réfugiés à trouver automatiquement",
-        "freeOfCharge": "gratuit",
-        "description_part2": "l'hébergement proposé par des personnes et des institutions qui veulent d'aider.",
-        "lookingForHelp": "Je cherche un abri",
-        "shareHelp": "Je propose mon aide"
+  "supportingPartners": "Partenaires soutenant l'initiative",
+  "ngoPartners": "Organisations non gouvernementales (ONG)",
+  "projectInitiators": "Initiateurs de projets",
+  "partners": "Partenaires",
+  "showMorePartners": "Voir tous les partenaires",
+  "projectIntention": {
+    "title": "Nous aidons à trouver un abri pour les victimes de la guerre en Ukraine",
+    "description_part1": "Nous aidons les réfugiés à trouver automatiquement",
+    "freeOfCharge": "gratuit",
+    "description_part2": "l'hébergement proposé par des personnes et des institutions qui veulent d'aider.",
+    "lookingForHelp": "Je cherche un abri",
+    "shareHelp": "Je propose mon aide"
+  },
+  "likeToHelp": {
+    "title": "Voulez-vous aider ?",
+    "details": "Enregistrez tout type de logement que vous pouvez offrir <b>gratuitement</b> aux victimes de la guerre en Ukraine.",
+    "cta": "Proposer un abri"
+  },
+  "weMatched": {
+    "title": "Jusqu'à présent...",
+    "cards": {
+      "helpedPeople": "réfugiés soutenus",
+      "lookingForHelp": "réfugiés qui cherchent toujours de l'aide",
+      "currentOffers": "offres actuellement disponibles"
+    }
+  },
+  "whatSosUaDoesSection": {
+    "title": "Que fait SOS-UA ?",
+    "bulletPoints": {
+      "0": "Les bénévoles et les institutions décrivent l’hébergement offert (type, capacité maximale, durée du séjour)",
+      "1": "Les personnes à la recherche d’un refuge définissent leurs besoins et leurs exigences minimales (p. ex. taille du groupe, emplacement)",
+      "2": "UA-SOS met automatiquement en relation les personnes ayant besoin d'un abri avec le logement le mieux adapté proposé par un hôte."
     },
-    "likeToHelp": {
-        "title": "Voulez-vous aider ?",
-        "details": "Enregistrez tout type de logement que vous pouvez offrir <b>gratuitement<\/b> aux victimes de la guerre en Ukraine.",
-        "cta": "Proposer un abri"
+    "algorithmExplanation": "L'algorithme optimise les correspondances afin que le plus de personnes dans le besoin trouvent un abri.",
+    "rolldown": "Voir plus",
+    "rollup": "Moins",
+    "description": "Le portail met en relation les personnes dans le besoin avec les institutions et les personnes offrant leur aide.",
+    "howItWorks": "Comment cela fonctionne ?"
+  },
+  "instructions": {
+    "0": {
+      "title": "Inscription",
+      "text": "L'utilisateur s'inscrit sur le portail en tant que personne proposant un logement ou ayant besoin d'un abri."
     },
-    "weMatched": {
-        "title": "Jusqu'à présent...",
-        "cards": {
-            "helpedPeople": "réfugiés soutenus",
-            "lookingForHelp": "réfugiés qui cherchent toujours de l'aide",
-            "currentOffers": "offres actuellement disponibles"
-        }
+    "1": {
+      "title": "Remplir le formulaire",
+      "text": "L’utilisateur remplit un formulaire sur le logement proposé ou recherché."
     },
-    "whatSosUaDoesSection": {
-        "title": "Que fait SOS-UA ?",
-        "bulletPoints": {
-            "0": "Les bénévoles et les institutions décrivent l’hébergement offert (type, capacité maximale, durée du séjour)",
-            "1": "Les personnes à la recherche d’un refuge définissent leurs besoins et leurs exigences minimales (p. ex. taille du groupe, emplacement)",
-            "2": "UA-SOS met automatiquement en relation les personnes ayant besoin d'un abri avec le logement le mieux adapté proposé par un hôte."
-        },
-        "algorithmExplanation": "L'algorithme optimise les correspondances afin que le plus de personnes dans le besoin trouvent un abri.",
-        "rolldown": "Voir plus",
-        "rollup": "Moins",
-        "description": "Le portail met en relation les personnes dans le besoin avec les institutions et les personnes offrant leur aide.",
-        "howItWorks": "Comment cela fonctionne ?"
+    "2": {
+      "title": "Correspondance automatique",
+      "text": "L'algorithme recherche dans la base de données de logements proposés et des personnes dans le besoin la meilleure correspondance sur la base des informations fournies"
     },
-    "instructions": {
-        "0": {
-            "title": "Inscription",
-            "text": "L'utilisateur s'inscrit sur le portail en tant que personne proposant un logement ou ayant besoin d'un abri."
-        },
-        "1": {
-            "title": "Remplir le formulaire",
-            "text": "L’utilisateur remplit un formulaire sur le logement proposé ou recherché."
-        },
-        "2": {
-            "title": "Correspondance automatique",
-            "text": "L'algorithme recherche dans la base de données de logements proposés et des personnes dans le besoin la meilleure correspondance sur la base des informations fournies"
-        },
-        "3": {
-            "title": "Informations envoyées à l'utilisateur",
-            "text": "A la suite d'une correspondance entre un invité et un hôte, les utilisateurs reçoivent un e-mail. Une description supplémentaire des utilisateurs connectés est disponible dans l’application."
-        },
-        "4": {
-            "title": "Les utilisateurs se contactent",
-            "text": "Une fois la connexion établie, il est possible de se contacter par e-mail ou par téléphone afin de discuter des détails"
-        },
-        "5": {
-            "title": "Confirmation ou rejet de l'offre",
-            "text": "La dernière étape consiste à confirmer ou à refuser l’offre dans l’application. Si l’offre est rejetée, elle est renvoyée dans le pool de demande"
-        }
+    "3": {
+      "title": "Informations envoyées à l'utilisateur",
+      "text": "A la suite d'une correspondance entre un invité et un hôte, les utilisateurs reçoivent un e-mail. Une description supplémentaire des utilisateurs connectés est disponible dans l’application."
     },
-    "howDoesItWork": {
-        "title": "Comment cela fonctionne ?",
-        "points": {
-            "0": "Soumettre une demande \n d'appartement ou d'aide",
-            "1": "Remplissez\n  les données nécessaires",
-            "2": "Attendre\n la meilleure offre",
-            "3": "Contacter l’hôte\/invité",
-            "4": "Confirmer ou \nrefuser l'offre"
-        }
+    "4": {
+      "title": "Les utilisateurs se contactent",
+      "text": "Une fois la connexion établie, il est possible de se contacter par e-mail ou par téléphone afin de discuter des détails"
     },
-    "hero": {
-        "description": "Nous aidons les réfugiés à trouver un logement gratuit chez des personnes et institutions qui souhaitent aider à travers une plateforme automatique.",
-        "lookingForHelp": "Je cherche un logement",
-        "shareHelp": "Je propose mon aide",
-        "title": "Nous aidons les victimes de la guerre en Ukraine à trouver un abri"
-    },
-    "partnersMedia": ""
+    "5": {
+      "title": "Confirmation ou rejet de l'offre",
+      "text": "La dernière étape consiste à confirmer ou à refuser l’offre dans l’application. Si l’offre est rejetée, elle est renvoyée dans le pool de demande"
+    }
+  },
+  "howDoesItWork": {
+    "title": "Comment cela fonctionne ?",
+    "points": {
+      "0": "Soumettre une demande \n d'appartement ou d'aide",
+      "1": "Remplissez\n  les données nécessaires",
+      "2": "Attendre\n la meilleure offre",
+      "3": "Contacter l’hôte/invité",
+      "4": "Confirmer ou \nrefuser l'offre"
+    }
+  },
+  "hero": {
+    "description": "Nous aidons les réfugiés à trouver un logement gratuit chez des personnes et institutions qui souhaitent aider à travers une plateforme automatique.",
+    "lookingForHelp": "Je cherche un logement",
+    "shareHelp": "Je propose mon aide",
+    "title": "Nous aidons les victimes de la guerre en Ukraine à trouver un abri"
+  },
+  "partnersMedia": "Partenaires médias"
 }

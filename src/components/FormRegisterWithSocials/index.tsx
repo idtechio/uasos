@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
-import { addHostPhonePrefixList } from "../FormAdHost/AddHostPhonePrefixList.data";
+import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
 import { FormFooter, ErrorText } from "./styles";
 import { styles } from "./styles";
@@ -22,8 +22,8 @@ import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
 import { FirebaseError } from "@firebase/util";
-import FormCheckbox from "../Inputs/FormCheckbox";
 import { css } from "styled-components/native";
+import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation();
@@ -118,10 +118,7 @@ export default function FromRegisterWithSocials() {
 
   const {
     formState: { errors },
-    watch,
   } = form;
-
-  const smsNotification = watch("registerWithSocials.smsNotification");
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
@@ -206,28 +203,19 @@ export default function FromRegisterWithSocials() {
               errorPrefixMsg={t("hostAdd.errors.country")}
               error={errors?.registerWithSocials?.phoneNumber}
               errorMsg={t("hostAdd.errors.phoneNumber")}
-              data={generatePhonePrefixDropdownList(addHostPhonePrefixList)}
+              data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
           </CompositionSection>
           <CompositionSection padding={[20, 0, 0, 0]}>
-            <div>
-              <FormCheckbox
-                styles={{
-                  checkboxFieldWrapper: css`
-                    align-items: flex-start;
-                  `,
-                }}
-                isCentered={false}
-                rules={{
-                  required: false,
-                }}
-                value={smsNotification}
-                name="registerWithSocials.smsNotification"
-                label={` ${t(
-                  "others:forms.userRegistration.agreeOnSmsCommunication"
-                )}`}
-              />
-            </div>
+            <SmsNotificationInput
+              wrapperStyleProp={css`
+                align-items: flex-start;
+              `}
+              name="registerWithSocials.smsNotification"
+              rules={{
+                required: false,
+              }}
+            />
           </CompositionSection>
 
           <FormFooter>
