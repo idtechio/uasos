@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
@@ -151,6 +151,18 @@ export default function FormAdGuest({
     [t, data]
   );
 
+  const onChooseLocation = useCallback(
+    (newLocation: Location) => async () => {
+      if (newLocation === Location.Preferred) {
+        const result = await formFields.trigger("advancedRefugee.country");
+        result ? setLocation(newLocation) : "";
+      } else {
+        setLocation(newLocation);
+      }
+    },
+    [location]
+  );
+
   const onSubmit: SubmitHandler<FormType> = async ({ advancedRefugee }) => {
     const guest = advancedRefugee;
 
@@ -276,7 +288,7 @@ export default function FormAdGuest({
               <ChoiceButton
                 text={t("others:forms.createRefuge:shelter.anyCity")}
                 isSmall
-                onPress={() => setLocation(Location.Any)}
+                onPress={onChooseLocation(Location.Any)}
                 isSelected={location === Location.Any}
                 width={180}
                 noMarginRight
@@ -284,7 +296,7 @@ export default function FormAdGuest({
               <ChoiceButton
                 text={t("others:forms.match.specificCity")}
                 isSmall
-                onPress={() => setLocation(Location.Preferred)}
+                onPress={onChooseLocation(Location.Preferred)}
                 isSelected={location === Location.Preferred}
                 width={180}
                 noMarginRight
