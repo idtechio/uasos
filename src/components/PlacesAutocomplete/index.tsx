@@ -9,9 +9,7 @@ import {
   TextInputChangeEventData,
 } from "react-native";
 
-import ArrowIcon from "../../style/svgs/arrow.svg";
-
-import { IconWrapper, Container, Input, List, Separator } from "./styles";
+import { Container, Input, List, Separator } from "./styles";
 import { FieldError } from "react-hook-form";
 import { Item } from "./Item";
 
@@ -34,7 +32,7 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
     clearSuggestions,
   } = usePlacesAutocomplete({
     requestOptions: {
-      /* Define search scope here */
+      types: ["(cities)"],
     },
     debounce: 300,
   });
@@ -49,10 +47,6 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
     setValue(value);
   };
 
-  const toggleList = () => {
-    setShowOptions((pShowOptions) => !pShowOptions);
-  };
-
   const handlePress = (cityName: string) => () => {
     clearSuggestions();
 
@@ -63,6 +57,7 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
 
   useEffect(() => {
     // @ts-expect-error TODO: fix event type
+
     const handleClickOutside = (ev) => {
       if (
         containerRef.current &&
@@ -84,6 +79,8 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
     };
   }, [showOptions]);
 
+  console.log({ data });
+
   return (
     <>
       <Container
@@ -104,11 +101,7 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
               right: 15,
             }}
           />
-        ) : (
-          <IconWrapper onPress={toggleList} showOptions={showOptions}>
-            <ArrowIcon />
-          </IconWrapper>
-        )}
+        ) : null}
       </Container>
 
       {!loading && value && showOptions ? (
@@ -117,7 +110,7 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
           ref={listRef}
         >
           <FlatList
-            data={data}
+            data={data.filter((item) => item.types.includes("geocode"))}
             ItemSeparatorComponent={Separator}
             renderItem={({ item }) => (
               <Item

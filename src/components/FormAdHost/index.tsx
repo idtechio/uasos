@@ -330,7 +330,9 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
             <View style={[styles.inputWrapper, { zIndex: 6 }]}>
-              <InputControlLabel>{t("hostAdd.city")}</InputControlLabel>
+              <InputControlLabel>
+                {t("refugeeAddForm.cityPlaceholder")}
+              </InputControlLabel>
 
               <FormGeoAutocomplete
                 name="advancedHost.city"

@@ -1,18 +1,5 @@
 import styled, { css } from "styled-components/native";
 
-interface IconWrapperProps {
-  showOptions: boolean;
-}
-
-export const IconWrapper = styled.Pressable<IconWrapperProps>(
-  ({ showOptions }) =>
-    css`
-      position: absolute;
-      right: 15;
-      transform: ${showOptions ? `rotate(180deg)` : ``};
-    `
-);
-
 interface ContainerProps {
   error: boolean;
 }
