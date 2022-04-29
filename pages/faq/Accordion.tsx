@@ -25,7 +25,7 @@ function Accordion({
     margin: 15px;
     padding: 18px;
     padding-left: ${(props) =>
-      props.isMain && props.isOpenCategory ? 0 : 18}px;
+      props.isMain ? 0 : 18}px; // props.isMain && props.isOpenCategory
     font-size: 24px;
     text-align: left;
     background-color: #fff;
@@ -33,11 +33,11 @@ function Accordion({
     border-radius: 16px;
     outline: none;
     box-shadow: ${(props) =>
-      props.isMain && props.isOpenCategory
+      props.isMain
         ? "none"
-        : "0px 4px 24px rgba(34, 60, 80, 0.2)"};
+        : "0px 4px 24px rgba(34, 60, 80, 0.2)"}; // props.isMain && props.isOpenCategory
     transition: 0.4s;
-    cursor: pointer;
+    cursor: ${(props) => (props.isMain ? "auto" : "pointer")};
   `;
   const Panel = styled.View<{ isOpenText: boolean }>`
     width: 360px;
@@ -69,9 +69,9 @@ function Accordion({
   const renderAccordion = (question, answer) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    if (!isOpenCategory) {
-      return null;
-    }
+    // if (!isOpenCategory) {
+    //   return null;
+    // }
 
     return (
       <>
@@ -111,15 +111,6 @@ function Accordion({
         onClick={() => setIsOpenCategory(!isOpenCategory)}
       >
         <div>{nameCategory}</div>
-        {!isOpenCategory && (
-          <ArrowIconWrapper
-            style={
-              isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null
-            }
-          >
-            <ArrowIcon />
-          </ArrowIconWrapper>
-        )}
       </Accordion>
       {renderInnerAccordion()}
     </>
@@ -127,3 +118,13 @@ function Accordion({
 }
 
 export default Accordion;
+
+// {!isOpenCategory && (
+//   <ArrowIconWrapper
+//     style={
+//       isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null
+//     }
+//   >
+//     <ArrowIcon />
+//   </ArrowIconWrapper>
+// )}
