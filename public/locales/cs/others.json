@@ -87,7 +87,7 @@
             "agreeOnSmsCommunication": "Chci dostávat upozornění na potenciální nabídky prostřednictvím SMS. ",
             "language": "Jazyk",
             "proposeCreateAccount": "Pokud nemáte účet, můžete si ho vytvořit. ",
-            "newPassword": "Nové heslo",
+            "newPassword": "Nové heslo (min. 8 znaků)",
             "userRegistration": "Registrace uživatele",
             "preferredLanguage": "Preferovaný jazyk komunikace ",
             "fillMissingData": "Doplňte chybějící údaje",
@@ -95,9 +95,9 @@
                 "passwordMismatch": "Hesla jsou různá",
                 "passwordLength": "Délka hesla musí být alespoň 8 znaků"
             },
-            "password": "",
+            "password": "Heslo (min. 8 znaků)",
             "errors": {
-                "duplicatedMail": ""
+                "duplicatedMail": "Email už v naší databázi existuje, prosím přihlašte se nebo využijte jinou metodu registrace."
             }
         },
         "match": {
@@ -116,9 +116,9 @@
                 "received": "Děkujeme za potvrzení obdrženého návrhu. Dáme vám vědět jakmile obdržíme obě potvrzení."
             },
             "searchAddress": "Adresa pro vyhledávání: <b>{{city}}<\/b>",
-            "rejected": "Váš potenciální host\/hostitel nabídku odmítl. Vaše nabídka se vrací zpět do fondu a my vám dáme vědět o další nabídce, jakmile ji najdeme.",
+            "rejected": "Váš potenciální host\/hostitel nabídku odmítl. Vaše nabídka se vrací zpět do seznamu a my vám dáme vědět o další nabídce, jakmile ji najdeme.",
             "refuge": {
-                "rejection": "Děkujeme za potvrzení vašeho rozhodnutí. Váš návrh se vrací zpět do fondu, o dalším návrhu vás budeme informovat, jakmile se nám podaří nějaký najít."
+                "rejection": "Děkujeme za potvrzení vašeho rozhodnutí. Vaše nabídka se nyní vrací zpět do seznamu. O další shodě Vás budeme informovat, jakmile se nám podaří nějakou najít."
             }
         },
         "generic": {
@@ -170,7 +170,8 @@
                 "anyCity": "Jakékoli město",
                 "imWithPregnantOver6Months": "Jsem nebo mě doprovází osoba v pokročilém stádiu těhotenství (nad 6 měsíců) <br \/>.",
                 "whatIsTargetCountry": "V jaké zemi chcete zůstat?",
-                "selectCountry": "Zvolte zemi"
+                "selectCountry": "Zvolte zemi",
+                "selectCountryWithBeds": "Vyberte zemi ({{number}} lůžek)"
             }
         },
         "login": {
@@ -242,10 +243,10 @@
             "phoneNotVerified": "Telefon nebyl ověřen",
             "emailNotVerified": "Email nebyl ověřen",
             "accountInCreation": "Váš účet se vytváří, po několika sekundách obnovte stránku.",
-            "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. zkuste se prosím znovu přihlásit jiným způsobem.",
+            "emailAlreadyInUse": "E-mail spojený s vybraným účtem poskytovatele přihlášení je v našem systému již použit. Zkuste se prosím znovu přihlásit jiným způsobem.",
             "idNotVerified": "Totožnost neověřena",
-            "changesInProgress": "Probíhající změny...",
-            "idVerified": "Úspěšné ověření totožnosti"
+            "changesInProgress": "Probíhají změny...",
+            "idVerified": "Totožnost byla úspěšně ověřena"
         },
         "housing": "Ubytování",
         "confirmation": {
@@ -261,13 +262,13 @@
         "popup": {
             "description": "O případných problémech nás informujte pomocí níže uvedeného formuláře.",
             "problemReported": "Problém byl nahlášen",
-            "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali. Děkujeme, že jste nás o této situaci informovali. Budeme pro vás hledat jiný zápas.",
+            "thanksForLettingKnow": "Děkujeme, že jste nás o této situaci informovali. Budeme pro vás hledat další shodu.",
             "reasons": {
-                "guestNotNeedHelp": "",
-                "hostCantHelp": "",
-                "rejectedAfterContact": "",
-                "noResponseAfterContact": "",
-                "notShowUp": ""
+                "guestNotNeedHelp": "Můj host již nepotřebuje ubytování",
+                "hostCantHelp": "Můj hostitel již nemůže zajistit ubytování",
+                "rejectedAfterContact": "Já nebo druhá strana po prvním kontaktu nabídku odmítla",
+                "noResponseAfterContact": "Přes několik pokusů se nepodařilo navázat kontakt",
+                "notShowUp": "Hostitel\/host se nedostavil na smluvené místo"
             }
         }
     },
@@ -292,11 +293,11 @@
     },
     "userRegistration": {
         "errors": {
-            "emailExist": "",
-            "phoneExist": "",
-            "tooManyRequest": "",
-            "invalidCode": "",
-            "phoneLinkingFailed": "Při propojování telefonního čísla s vaším účtem došlo k chybě. Ujistěte se, že vaše telefonní číslo není propojeno s jiným účtem, nebo zkuste znovu použít jiné číslo"
+            "emailExist": "Uživatel s tímto účtem již existuje",
+            "phoneExist": "Toto telefonní číslo je již spojeno s jiným účtem",
+            "tooManyRequest": "Příliš mnoho žádostí o ověření telefonu",
+            "invalidCode": "Neplatný kód",
+            "phoneLinkingFailed": "Při propojování telefonního čísla s vaším účtem došlo k chybě. Ujistěte se, že vaše telefonní číslo není propojeno s jiným účtem, nebo zkuste použít jiné číslo"
         }
     },
     "publicShelters": {
