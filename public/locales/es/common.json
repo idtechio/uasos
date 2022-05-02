@@ -309,7 +309,9 @@
         "countryOfGroup": "",
         "cityTooltip": "",
         "confirmChangesButton": "",
-        "cityPlaceholderWithBeds": ""
+        "cityPlaceholderWithBeds": "",
+        "bedsInfo": "",
+        "bedInfo": ""
     },
     "accomodationPhoto": "",
     "accomodationPhotoReset": "",
