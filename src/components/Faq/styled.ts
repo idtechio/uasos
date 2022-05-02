@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../src/style/theme.config";
-import { Splash } from "../../src/components/Slash";
-import { ButtonCta } from "../../src/components/Buttons";
-import { colors } from "../../src/style/landingPageStyle";
+import { Theme } from "../../style/theme.config";
+import { Splash } from "../Slash";
+import { ButtonCta } from "../Buttons";
+import { colors } from "../../style/landingPageStyle";
 
 export const TopLeftBlueSplash = styled(Splash)`
   ${({ theme }: { theme: Theme }) =>

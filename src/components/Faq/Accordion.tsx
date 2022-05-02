@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components/native";
-import ArrowIcon from "../../src/style/svgs/arrow.svg";
+import ArrowIcon from "../../style/svgs/arrow.svg";
 
 function Accordion({
   nameCategory,

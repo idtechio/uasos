@@ -1,16 +1,11 @@
 import { useState, useMemo, useLayoutEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { CompositionAppBody } from "../../src/components/Compositions";
-import Logo from "../../src/components/Header/image/Logo";
-import { GetServerSideProps } from "next";
-import { withSession } from "../../src/helpers/withSession";
+import Logo from "../Header/image/Logo";
 import Accordion from "./Accordion";
-import { LanguageFlags } from "../../src/components/LanguageSwitcher/LanguageFlags";
-import { base } from "../../src/style/theme.config";
-import { languagesList, languagesListNames } from "./languagesList";
+import { LanguageFlags } from "../LanguageSwitcher/LanguageFlags";
+import { base } from "../../style/theme.config";
 import {
   TopLeftBlueSplash,
   TopLeftBlueSplashPosition,
@@ -43,7 +38,20 @@ type Faq = {
   };
 };
 
-const FaqPage = () => {
+const languagesList = ["pl", "ua", "en", "ru", "cs", "sk", "hu", "ro"];
+
+const languagesListNames = [
+  "Polski",
+  "Yкраїнська",
+  "English",
+  "Pусский",
+  "Čeština",
+  "Slovenčina",
+  "Magyar",
+  "Română",
+];
+
+const FaqContent = () => {
   const { asPath, locale } = useRouter();
   const { t } = useTranslation("faq");
   const [isDesktop, setIsDesktop] = useState(false);
@@ -58,7 +66,7 @@ const FaqPage = () => {
   }, []);
 
   const faqQuestionsElements = useMemo(() => {
-    const faq: Faq = require(`../../public/locales/${locale}/faq.json`);
+    const faq: Faq = require(`../../../public/locales/${locale}/faq.json`);
     return Object.values(faq).map((el) => {
       return Object.values(el).map((elContent) => {
         if (typeof elContent === "object") {
@@ -93,57 +101,46 @@ const FaqPage = () => {
   );
 
   return (
-    <CompositionAppBody>
-      <Content isDesktop={isDesktop}>
+    <Content isDesktop={isDesktop}>
+      {isDesktop && (
+        <>
+          <TopLeftBlueSplash
+            color="blue"
+            // @ts-expect-error TODO: fix prop types
+            splashPosition={TopLeftBlueSplashPosition}
+          />
+          <TopRightYellowSplash
+            color="yellow"
+            // @ts-expect-error TODO: fix prop types
+            splashPosition={TopRightYellowSplashPosition}
+          />
+        </>
+      )}
+      <HeaderWrapper isDesktop={isDesktop}>
         {isDesktop && (
           <>
-            <TopLeftBlueSplash
-              color="blue"
-              // @ts-expect-error TODO: fix prop types
-              splashPosition={TopLeftBlueSplashPosition}
-            />
-            <TopRightYellowSplash
-              color="yellow"
-              // @ts-expect-error TODO: fix prop types
-              splashPosition={TopRightYellowSplashPosition}
-            />
+            <Logo />
+            <TitleDesktop accessibilityRole="header">{t("FAQ")}</TitleDesktop>
+            <ButtonWrapper>{languagesListElements}</ButtonWrapper>
           </>
         )}
-        <HeaderWrapper isDesktop={isDesktop}>
-          {isDesktop && (
-            <>
-              <Logo />
-              <TitleDesktop accessibilityRole="header">{t("FAQ")}</TitleDesktop>
-              <ButtonWrapper>{languagesListElements}</ButtonWrapper>
-            </>
+        {!isDesktop && (
+          <Title accessibilityRole="header">
+            {t("FAQ")}
+            <YellowHighlight />
+          </Title>
+        )}
+        <ContentWrapper isDesktop={isDesktop}>
+          {isDesktop && locale && (
+            <LanguageFlagsWrapper>
+              <LanguageFlags locale={locale} width={53} height={34} />
+            </LanguageFlagsWrapper>
           )}
-          {!isDesktop && (
-            <Title accessibilityRole="header">
-              {t("FAQ")}
-              <YellowHighlight />
-            </Title>
-          )}
-          <ContentWrapper isDesktop={isDesktop}>
-            {isDesktop && locale && (
-              <LanguageFlagsWrapper>
-                <LanguageFlags locale={locale} width={53} height={34} />
-              </LanguageFlagsWrapper>
-            )}
-            {faqQuestionsElements}
-          </ContentWrapper>
-        </HeaderWrapper>
-      </Content>
-    </CompositionAppBody>
+          {faqQuestionsElements}
+        </ContentWrapper>
+      </HeaderWrapper>
+    </Content>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => ({
-    props: {
-      session,
-      ...(locale && (await serverSideTranslations(locale))),
-    },
-  })
-);
-
-export default FaqPage;
+export default FaqContent;
