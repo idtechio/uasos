@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../src/style/theme.config";
 import { Splash } from "../../src/components/Slash";
 import { ButtonCta } from "../../src/components/Buttons";
 import { colors } from "../../src/style/landingPageStyle";
@@ -7,6 +7,9 @@ import { colors } from "../../src/style/landingPageStyle";
 export const TopLeftBlueSplash = styled(Splash)`
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
+      default: css`
+        max-width: 312px;
+      `,
       lg: css`
         max-width: 512px;
       `,
@@ -16,10 +19,13 @@ export const TopLeftBlueSplash = styled(Splash)`
 export const TopLeftBlueSplashPosition = css`
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
+      default: css`
+        left: -50%;
+      `,
       lg: css`
         width: 100%;
         top: 15%;
-        left: -70%;
+        left: -50%;
       `,
     })}
 `;
@@ -29,7 +35,7 @@ export const TopRightYellowSplash = styled(Splash)`
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       default: css`
-        max-width: 512px;
+        max-width: 312px;
       `,
       lg: css`
         max-width: 512px;
@@ -40,7 +46,12 @@ export const TopRightYellowSplash = styled(Splash)`
 export const TopRightYellowSplashPosition = css`
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
+      default: css`
+        right: -30%;
+        top: 40%;
+      `,
       lg: css`
+        right: -30%;
         width: 100%;
         top: 40%;
       `,
@@ -59,28 +70,48 @@ export const Content = styled.View<{ isDesktop: boolean }>`
 `;
 
 export const HeaderWrapper = styled.View<{ isDesktop: boolean }>`
-  margin-top: ${(props) => (props.isDesktop ? 350 : 35)}px;
+  margin-top: ${(props) => (props.isDesktop ? 150 : 35)}px;
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
 `;
 
-export const Title = styled.Text<{ isDesktop: boolean }>`
+export const Title = styled.Text`
   position: relative;
   display: flex;
-  align-self: ${(props) => (props.isDesktop ? "center" : "flex-start")};
-  margin-left: ${(props) => (props.isDesktop ? 0 : 110)}px;
-  color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
-  font-size: ${(props) => (props.isDesktop ? 96 : 24)}px;
+  align-self: flex-start;
+  margin-top: 0;
+  margin-left: 15px;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
+  font-size: 24px;
   line-height: 30px;
   font-weight: 700;
-  max-width: 300px;
 
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
-        font-size: 44px;
+        line-height: 52px;
+        max-width: none;
+        margin-top: 14px;
+      `,
+    })}
+`;
+
+export const TitleDesktop = styled.Text`
+  position: relative;
+  display: flex;
+  align-self: center;
+  margin-top: 40px;
+  margin-left: 0;
+  color: ${({ theme }: { theme: Theme }) => theme.colors.text};
+  font-size: 54px;
+  line-height: 30px;
+  font-weight: 700;
+
+  ${({ theme }: { theme: Theme }) =>
+    theme.getBreakPoint({
+      lg: css`
         line-height: 52px;
         max-width: none;
         margin-top: 14px;
@@ -106,18 +137,17 @@ export const YellowHighlight = styled.View`
     })}
 `;
 
-export const ContentWrapper = styled.View`
+export const ContentWrapper = styled.View<{ isDesktop: boolean }>`
   display: flex;
   align-self: flex-start;
   width: 100%;
-  padding: 0 95px;
+  padding: ${(props) => (props.isDesktop ? "0 95px" : "0")};
 `;
 
 export const LanguageFlagsWrapper = styled.View`
   width: 53px;
   height: 34px;
   margin-top: 145px;
-  margin-bottom: 20px;
 `;
 
 export const ButtonWrapper = styled.View`
@@ -132,20 +162,30 @@ export const ButtonCtaWidthFixed = styled(ButtonCta)`
   margin-top: 60px;
 `;
 
-export const TitleWrapper = styled.View``;
+export const TitleWrapper = styled.View`
+  margin-top: 35px;
+  margin-bottom: 15px;
+`;
 
-export const TitleName = styled.View``;
+export const TitleName = styled.View`
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+`;
 
 export const TitleQuestion = styled.View`
   width: 100%;
-  margin-top: 25px;
   margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
   word-wrap: break-word;
 `;
 
 export const TitleContent = styled.View`
   width: 100%;
-  font-size: 14px;
+  font-size: 20px;
+  line-height: 28px;
   word-wrap: break-word;
 `;

@@ -21,6 +21,7 @@ import {
   ContentWrapper,
   LanguageFlagsWrapper,
   Title,
+  TitleDesktop,
   YellowHighlight,
   ButtonWrapper,
   ButtonCtaWidthFixed,
@@ -30,7 +31,19 @@ import {
   TitleContent,
 } from "./styled";
 
-const PrivacyPolicyPage = () => {
+type Faq = {
+  [key: string]: {
+    name: string;
+    content: {
+      [key: string]: {
+        question: string;
+        answer: string;
+      };
+    };
+  };
+};
+
+const FaqPage = () => {
   const { asPath, locale } = useRouter();
   const { t } = useTranslation("faq");
   const [isDesktop, setIsDesktop] = useState(false);
@@ -44,56 +57,40 @@ const PrivacyPolicyPage = () => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  const faqQuestionsElements = () =>
-    useMemo(() => {
-      const faq = require(`../../public/locales/${locale}/faq.json`);
-      return Object.values(faq).map((el) => {
-        return Object.values(el).map((elContent) => {
-          if (typeof elContent === "object") {
-            if (!isDesktop) {
-              return <Accordion nameCategory={el.name} content={elContent} />;
-            }
-
-            return Object.values(elContent).map((elContentValue, index) => {
-              if (isDesktop) {
-                return (
-                  <TitleWrapper key={elContentValue.question}>
-                    {!index && <TitleName>{el.name}</TitleName>}
-                    <TitleQuestion>{elContentValue.question}</TitleQuestion>
-                    <TitleContent>{elContentValue.answer}</TitleContent>
-                  </TitleWrapper>
-                );
-              }
-            });
+  const faqQuestionsElements = useMemo(() => {
+    const faq: Faq = require(`../../public/locales/${locale}/faq.json`);
+    return Object.values(faq).map((el) => {
+      return Object.values(el).map((elContent) => {
+        if (typeof elContent === "object") {
+          if (!isDesktop) {
+            return <Accordion nameCategory={el.name} content={elContent} />;
           }
-        });
+
+          return Object.values(elContent).map((elContentValue, index) => {
+            return (
+              <TitleWrapper key={elContentValue.question}>
+                {!index && <TitleName>{el.name}</TitleName>}
+                <TitleQuestion>{elContentValue.question}</TitleQuestion>
+                <TitleContent>{elContentValue.answer}</TitleContent>
+              </TitleWrapper>
+            );
+          });
+        }
       });
-    }, [isDesktop]);
+    });
+  }, [isDesktop]);
 
-  const languagesListElements = () =>
-    useMemo(
-      () =>
-        isDesktop
-          ? languagesList.map((el, index) => (
-              <RenderedButtonCtaLang lang={el} index={index} />
-            ))
-          : null,
-      [isDesktop]
-    );
-
-  const RenderedButtonCtaLang = ({
-    lang,
-    index,
-  }: {
-    lang: string;
-    index: number;
-  }) => {
-    return (
-      <Link passHref href={asPath} locale={lang}>
-        <ButtonCtaWidthFixed anchor={languagesListNames[index]} />
-      </Link>
-    );
-  };
+  const languagesListElements = useMemo(
+    () =>
+      isDesktop
+        ? languagesList.map((el, index) => (
+            <Link passHref href={asPath} locale={el} key={index}>
+              <ButtonCtaWidthFixed anchor={languagesListNames[index]} />
+            </Link>
+          ))
+        : null,
+    [isDesktop]
+  );
 
   return (
     <CompositionAppBody>
@@ -113,23 +110,26 @@ const PrivacyPolicyPage = () => {
           </>
         )}
         <HeaderWrapper isDesktop={isDesktop}>
-          {isDesktop && <Logo />}
-          <Title
-            accessibilityRole="heading"
-            accessibilityLevel={1}
-            isDesktop={isDesktop}
-          >
-            {t("FAQ")}
-            {!isDesktop && <YellowHighlight />}
-          </Title>
-          <ButtonWrapper>{languagesListElements()}</ButtonWrapper>
-          <ContentWrapper>
-            {isDesktop && (
+          {isDesktop && (
+            <>
+              <Logo />
+              <TitleDesktop accessibilityRole="header">{t("FAQ")}</TitleDesktop>
+              <ButtonWrapper>{languagesListElements}</ButtonWrapper>
+            </>
+          )}
+          {!isDesktop && (
+            <Title accessibilityRole="header">
+              {t("FAQ")}
+              <YellowHighlight />
+            </Title>
+          )}
+          <ContentWrapper isDesktop={isDesktop}>
+            {isDesktop && locale && (
               <LanguageFlagsWrapper>
                 <LanguageFlags locale={locale} width={53} height={34} />
               </LanguageFlagsWrapper>
             )}
-            {faqQuestionsElements()}
+            {faqQuestionsElements}
           </ContentWrapper>
         </HeaderWrapper>
       </Content>
@@ -146,4 +146,4 @@ export const getServerSideProps: GetServerSideProps = withSession(
   })
 );
 
-export default PrivacyPolicyPage;
+export default FaqPage;

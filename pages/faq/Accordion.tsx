@@ -21,26 +21,23 @@ function Accordion({
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    width: 360px;
-    margin: 15px;
+    margin: ${(props) => (props.isMain ? "0 15px 0" : "15px")};
     padding: 18px;
-    padding-left: ${(props) =>
-      props.isMain ? 0 : 18}px; // props.isMain && props.isOpenCategory
-    font-size: 24px;
+    padding-left: ${(props) => (props.isMain ? 0 : 18)}px;
+    font-size: 14px;
+    font-weight: bold;
     text-align: left;
+    letter-spacing: ${(props) => (props.isMain ? "0.5px" : "normal")};
     background-color: #fff;
     border: none;
     border-radius: 16px;
     outline: none;
     box-shadow: ${(props) =>
-      props.isMain
-        ? "none"
-        : "0px 4px 24px rgba(34, 60, 80, 0.2)"}; // props.isMain && props.isOpenCategory
+      props.isMain ? "none" : "0px 4px 24px rgba(34, 60, 80, 0.2)"};
     transition: 0.4s;
     cursor: ${(props) => (props.isMain ? "auto" : "pointer")};
   `;
   const Panel = styled.View<{ isOpenText: boolean }>`
-    width: 360px;
     padding: 0 18px;
     max-height: ${(props) => (props.isOpenText ? "auto" : 0)};
     font-size: 12px;
@@ -62,24 +59,16 @@ function Accordion({
   `;
 
   const ContentWrapper = styled.View`
-    margin-top: 15px;
+    margin-top: 5px;
     margin-bottom: 15px;
   `;
 
-  const renderAccordion = (question, answer) => {
+  const QuestionAccordion = (question: string, answer: string) => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // if (!isOpenCategory) {
-    //   return null;
-    // }
 
     return (
       <>
-        <Accordion
-          // key={elContentValue}
-          isOpenCategory={true}
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <Accordion isOpenCategory={true} onClick={() => setIsOpen(!isOpen)}>
           <div>{question}</div>
           <ArrowIconWrapper
             style={isOpen ? { transform: [{ rotate: "180deg" }] } : null}
@@ -97,8 +86,8 @@ function Accordion({
   };
 
   const renderInnerAccordion = () => {
-    return Object.values(content).map((elContentValue, index) => {
-      return renderAccordion(elContentValue.question, elContentValue.answer);
+    return Object.values(content).map((elContentValue) => {
+      return QuestionAccordion(elContentValue.question, elContentValue.answer);
     });
   };
 
@@ -118,13 +107,3 @@ function Accordion({
 }
 
 export default Accordion;
-
-// {!isOpenCategory && (
-//   <ArrowIconWrapper
-//     style={
-//       isOpenCategory ? { transform: [{ rotate: "180deg" }] } : null
-//     }
-//   >
-//     <ArrowIcon />
-//   </ArrowIconWrapper>
-// )}

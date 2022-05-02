@@ -1,6 +1,6 @@
 export type LogoProps = {
-  width: JSX.IntrinsicElements["svg"]["width"];
-  height: JSX.IntrinsicElements["svg"]["height"];
+  width?: JSX.IntrinsicElements["svg"]["width"];
+  height?: JSX.IntrinsicElements["svg"]["height"];
 };
 
 function Logo({ width = 287, height = 87 }: LogoProps) {
