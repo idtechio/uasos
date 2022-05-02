@@ -142,7 +142,7 @@
       "hungary": "Ungarn",
       "czechia": "Tschechisch",
       "slovakia": "Slowakei",
-      "romania": ""
+      "romania": "Rumänien"
     },
     "nameLabel": "Vorname (nur den Vornamen eingeben)",
     "emailPlaceholder": "E-Mail",
@@ -184,7 +184,7 @@
     "elderReady": "Ich werde eine ältere Person akzeptieren",
     "animalReady": "Ich werde eine Person mit einem Haustier akzeptieren",
     "basicInfoHeader": "Grundlegende Informationen bereitstellen",
-    "refugeInfoHeader": "",
+    "refugeInfoHeader": "Bereitstellung von Informationen über Unterkünfte",
     "addButton": "Einreichen / Hinzufügen",
     "addButtomErrorMessage": "Bitte füllen Sie die erforderlichen Felder aus",
     "errors": {
@@ -197,14 +197,14 @@
       "hostType": "Hosttyp ist erforderlich",
       "accommodationTime": "Dauer des Aufenthalts ist erforderlich",
       "nationalityError": "Die Staatsangehörigkeit eines Flüchtlings ist erforderlich",
-      "groupsTypes": ""
+      "groupsTypes": "Gruppentyp ist erforderlich"
     },
     "prolongationReady": "Möglichkeit der Verlängerung des Aufenthalts (gegen Gebühr)",
     "transportReady": "Möglichkeit des Transports",
-    "hostAddressProcessingWarning": ""
+    "hostAddressProcessingWarning": "Die vollständige Adresse wird nicht an Flüchtlinge weitergegeben - nur Ihre Stadt"
   },
   "logout": "Abmelden",
-  "back": "",
+  "back": "Zurück",
   "backToHomePage": "Zurück zur Hauptseite",
   "shareLocation": "Ein Konto erstellen",
   "registerGuest": "Eine Unterkunft finden",
@@ -217,7 +217,7 @@
   "rodo": "GDPR",
   "thankfulnessModal": {
     "thankYou": "Ich danke Ihnen!",
-    "thanksForYourDecision": "",
+    "thanksForYourDecision": "Danke, dass Sie uns über Ihre Entscheidung informiert haben.",
     "applicationSent": "Ihre Bewerbung wurde abgeschickt. Wir überprüfen mehrmals täglich unsere Freiwilligendatenbank, um den besten Platz für Sie zu finden",
     "informWhenAccomodationFound": "Sobald wir eine Unterkunft für Sie gefunden haben, werden wir Sie per E-Mail informieren.",
     "backToMainPage": "Zurück zur Hauptseite"
@@ -307,9 +307,11 @@
     },
     "refugeInfoHeader": "Informationen über Ihre Unterkunft bereitstellen",
     "countryOfGroup": "Welches ist das Herkunftsland der Gruppe?",
-    "cityTooltip": "",
-    "confirmChangesButton": "",
-    "cityPlaceholderWithBeds": ""
+    "cityTooltip": "Wenn Sie Ihre Stadt nicht finden können, wählen Sie die nächstgelegene Großstadt oder Stadt",
+    "confirmChangesButton": "Bestätigen Sie Änderungen",
+    "cityPlaceholderWithBeds": "Stadt ({{Anzahl}} der Betten)",
+    "bedsCount": "",
+    "bedCount": ""
   },
   "accomodationPhoto": "Ein Foto der angebotenen Unterkunft hinzufügen",
   "accomodationPhotoReset": "Löschen",
