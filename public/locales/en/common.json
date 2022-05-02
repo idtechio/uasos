@@ -310,8 +310,8 @@
         "cityTooltip": "If you cannot find your city, choose the closest big city or town",
         "confirmChangesButton": "Confirm changes",
         "cityPlaceholderWithBeds": "City ({{number}} of beds)",
-        "bedsInfo": "({{number}} beds)",
-        "bedInfo": "(1 bed)"
+        "bedsCount": "({{number}} beds)",
+        "bedCount": "(1 bed)"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",

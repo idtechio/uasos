@@ -310,8 +310,8 @@
         "cityTooltip": "Si vous ne trouvez pas votre ville, choisissez la grande ville ou le village le plus proche.",
         "confirmChangesButton": "Confirmer les modifications",
         "cityPlaceholderWithBeds": "",
-        "bedsInfo": "",
-        "bedInfo": ""
+        "bedsCount": "",
+        "bedCount": ""
     },
     "accomodationPhoto": "Ajouter une photo du logement proposé",
     "accomodationPhotoReset": "Supprimer",
