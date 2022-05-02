@@ -309,7 +309,9 @@
         "countryOfGroup": "Melyik a csoport származási országa?",
         "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost",
         "confirmChangesButton": "Változások megerősítése",
-        "cityPlaceholderWithBeds": "Város ({{number}} ágyak száma)"
+        "cityPlaceholderWithBeds": "Város ({{number}} ágyak száma)",
+        "bedsInfo": "({{number}} ágyak)",
+        "bedInfo": "(1 ágy)"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",
