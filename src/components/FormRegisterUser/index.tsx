@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ActivityIndicator, StyleSheet } from "react-native";
+import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled, { css } from "styled-components/native";
 import { FormType } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
@@ -356,7 +356,7 @@ export default function FormRegisterUser() {
               />
             </InputControl>
           </CompositionRow>
-          <div style={{ display: "none" }} id="recaptcha__container"></div>
+          <View style={{ display: "none" }} nativeID="recaptcha__container" />
           {phoneConfirmation ? (
             <SmsVerificationModal
               mode="LINK"
