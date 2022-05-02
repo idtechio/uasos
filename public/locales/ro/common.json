@@ -309,7 +309,9 @@
         "countryOfGroup": "Care este țara de origine a grupului?",
         "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
         "confirmChangesButton": "Confirmați modificările",
-        "cityPlaceholderWithBeds": "Oraș ({{number}} de paturi)"
+        "cityPlaceholderWithBeds": "Oraș ({{number}} de paturi)",
+        "bedsCount": "",
+        "bedCount": ""
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",

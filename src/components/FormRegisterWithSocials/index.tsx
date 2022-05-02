@@ -223,9 +223,10 @@ export default function FromRegisterWithSocials() {
               onPress={() => Authorization.logOut()}
               anchor={t("others:common.buttons.back")}
               style={styles.backButton}
+              disabled={isLoading}
             />
             <ButtonCta
-              disabled={isLoading}
+              isLoading={isLoading}
               onPress={handleSubmit(onSubmit, () => {})}
               anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}

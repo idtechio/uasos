@@ -309,7 +309,9 @@
         "countryOfGroup": "Какова страна происхождения группы?",
         "cityTooltip": "Выберите ближайший крупный город если вашего города нет в списке",
         "confirmChangesButton": "Подтвердить изменения",
-        "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)"
+        "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)",
+        "bedsCount": "({{number}} коек)",
+        "bedCount": "(1 кровать)"
     },
     "accomodationPhoto": "Добавьте фото предлагаемого приюта",
     "accomodationPhotoReset": "удалить",
