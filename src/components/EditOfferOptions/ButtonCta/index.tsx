@@ -1,7 +1,7 @@
 import { Button, Text } from "./style";
 import type { ButtonProps } from "../../Buttons/types";
 import { useCallback } from "react";
-import { TextStyle } from "react-native";
+import { ActivityIndicator, TextStyle } from "react-native";
 import { ButtonColor, ButtonVariant } from "./types";
 
 // TODO: apply these changes in src/components/Buttons/ButtonCta
@@ -13,8 +13,10 @@ const ButtonCta = ({
   onClick,
   variant = "contained",
   disabled = false,
+  isLoading = false,
 }: ButtonProps & {
   disabled?: boolean;
+  isLoading?: boolean;
   textStyle?: TextStyle;
   variant?: ButtonVariant;
   color?: ButtonColor;
@@ -33,9 +35,11 @@ const ButtonCta = ({
       style={style}
       onPress={handlePress}
       colorOpposite={colorOpposite}
-      disabled={disabled}
+      disabled={disabled || isLoading}
     >
-      {typeof anchor === "string" ? (
+      {isLoading ? (
+        <ActivityIndicator size="small" />
+      ) : typeof anchor === "string" ? (
         <Text variant={variant} colorOpposite={colorOpposite}>
           {anchor}
         </Text>

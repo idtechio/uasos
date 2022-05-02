@@ -201,7 +201,7 @@
         },
         "prolongationReady": "Možnost prodloužení pobytu (za poplatek)",
         "transportReady": "Možnost dopravy",
-        "hostAddressProcessingWarning": "Úplná adresa nebude sdílena s uprchlíkem - pouze vaše město."
+        "hostAddressProcessingWarning": "Úplná adresa nebude sdílena s uprchlíkem - pouze vaše město"
     },
     "logout": "Odhlásit se",
     "back": "Zpět",
@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Poskytnout informace o ubytování",
         "countryOfGroup": "Z jaké země skupina pochází?",
         "cityTooltip": "Pokud nemůžete najít svou obec, vyberte nejbližší velké město",
-        "confirmChangesButton": "Potvrdit změny"
+        "confirmChangesButton": "Potvrdit změny",
+        "cityPlaceholderWithBeds": "Město ({{number}} lůžek)"
     },
     "accomodationPhoto": "Přidat fotografie nabízeného ubytování",
     "accomodationPhotoReset": "Smazat",

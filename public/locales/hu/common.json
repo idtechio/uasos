@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Adjon meg információt a szállásáról",
         "countryOfGroup": "Melyik a csoport származási országa?",
         "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost",
-        "confirmChangesButton": "Változások megerősítése"
+        "confirmChangesButton": "Változások megerősítése",
+        "cityPlaceholderWithBeds": "Város ({{number}} ágyak száma)"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",

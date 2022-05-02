@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Informationen über Ihre Unterkunft bereitstellen",
         "countryOfGroup": "Welches ist das Herkunftsland der Gruppe?",
         "cityTooltip": "",
-        "confirmChangesButton": ""
+        "confirmChangesButton": "",
+        "cityPlaceholderWithBeds": ""
     },
     "accomodationPhoto": "Ein Foto der angebotenen Unterkunft hinzufügen",
     "accomodationPhotoReset": "Löschen",

@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Provide information about your accommodation",
         "countryOfGroup": "What is the group's origin country?",
         "cityTooltip": "If you cannot find your city, choose the closest big city or town",
-        "confirmChangesButton": "Confirm changes"
+        "confirmChangesButton": "Confirm changes",
+        "cityPlaceholderWithBeds": "City ({{number}} of beds)"
     },
     "accomodationPhoto": "Add a photo of offered accommodation",
     "accomodationPhotoReset": "Delete",

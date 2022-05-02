@@ -170,7 +170,8 @@
                 "anyCity": "Будь-яке місто",
                 "imWithPregnantOver6Months": "Я \/ зі мною жінка на <br \/> пізньому терміні вагітності (більше ніж 6 місяців)",
                 "whatIsTargetCountry": "В якій країні ви хочете зупинитися?",
-                "selectCountry": "Виберіть країну"
+                "selectCountry": "Виберіть країну",
+                "selectCountryWithBeds": "Виберіть країну ( {{number}} ліжок)"
             }
         },
         "login": {

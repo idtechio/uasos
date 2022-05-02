@@ -170,7 +170,8 @@
                 "anyCity": "N’importe quelle ville",
                 "imWithPregnantOver6Months": "Je suis, ou je suis accompagné(e) d'une personne en <br \/> grossesse avancée (plus de 6 mois)",
                 "whatIsTargetCountry": "Dans quel pays souhaitez-vous loger ?",
-                "selectCountry": "Choisissez le pays"
+                "selectCountry": "Choisissez le pays",
+                "selectCountryWithBeds": ""
             }
         },
         "login": {

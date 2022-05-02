@@ -142,7 +142,7 @@
             "hungary": "Ungaria",
             "czechia": "Cehia",
             "slovakia": "Slovacia",
-            "romania": ""
+            "romania": "Română"
         },
         "nameLabel": "Nume (introduceți doar prenumele)",
         "emailPlaceholder": "E-mail",
@@ -308,7 +308,8 @@
         "refugeInfoHeader": "Adăugați informații cu privire la cazare",
         "countryOfGroup": "Care este țara de origine a grupului?",
         "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
-        "confirmChangesButton": "Confirmați modificările"
+        "confirmChangesButton": "Confirmați modificările",
+        "cityPlaceholderWithBeds": "Oraș ({{number}} de paturi)"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",
