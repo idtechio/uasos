@@ -105,7 +105,7 @@ export default function FormAdGuest({
 
   const buildDropDownCityData: BuildCityList = (t, country) => {
     const cities = defaultBuildCityList(t, country);
-    const beds = (countries ?? {})[country];
+    const beds = (countries ?? {})[country] || {};
     return cities.map((c) => ({
       ...c,
       ...{ label: beds[c.label] ? `${c.label} (${beds[c.label]})` : c.label },
@@ -506,13 +506,9 @@ const buildDropDownCountryData: (
       return p + beds;
     }, 0);
     const labelFunction: LabelFunction = (t) =>
-      `${t(c.label)} ${t(
-        "others:forms.createRefuge.shelter.selectCountryWithBeds",
-        {
-          number: numberOfBeds,
-        }
-      )}
-      `;
+      `${t(c.label)} ${t(`refugeeAddForm.bed${numberOfBeds > 1 && "s"}Count`, {
+        number: numberOfBeds,
+      })}`;
     return { ...c, ...{ label: labelFunction } };
   });
 };
