@@ -309,7 +309,9 @@
     "countryOfGroup": "What is the group's origin country?",
     "cityTooltip": "If you cannot find your city, choose the closest big city or town",
     "confirmChangesButton": "Confirm changes",
-    "cityPlaceholderWithBeds": "City ({{number}} of beds)"
+    "cityPlaceholderWithBeds": "City ({{number}} of beds)",
+    "bedsCount": "({{number}} beds)",
+    "bedCount": "(1 bed)"
   },
   "accomodationPhoto": "Add a photo of offered accommodation",
   "accomodationPhotoReset": "Delete",

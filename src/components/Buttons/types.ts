@@ -9,6 +9,7 @@ export type ButtonProps = {
   chevronUpsideDown?: boolean;
   colorOpposite?: boolean;
   disabled?: boolean;
+  isLoading?: boolean;
 
   // next-link params for routing
   onMouseEnter?: (event: NativeTouchEvent) => void;

@@ -309,7 +309,9 @@
     "countryOfGroup": "Z jakiego kraju pochodzi grupa?",
     "cityTooltip": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
     "confirmChangesButton": "Potwierdź zmiany",
-    "cityPlaceholderWithBeds": "Miasto ({{number}} łóżek)"
+    "cityPlaceholderWithBeds": "Miasto ({{number}} łóżek)",
+    "bedsCount": "({{number}} łóżek)",
+    "bedCount": "(1 łóżko)"
   },
   "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
   "accomodationPhotoReset": "Usuń",
