@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "",
-        "chooseFromListMulti": ""
+        "chooseFromListMulti": "",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "",
+                "bedCount": ""
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "",
@@ -309,9 +315,7 @@
         "countryOfGroup": "",
         "cityTooltip": "",
         "confirmChangesButton": "",
-        "cityPlaceholderWithBeds": "",
-        "bedsInfo": "",
-        "bedInfo": ""
+        "cityPlaceholderWithBeds": ""
     },
     "accomodationPhoto": "",
     "accomodationPhotoReset": "",

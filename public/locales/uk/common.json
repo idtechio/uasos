@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "вибрати зі списку",
-        "chooseFromListMulti": "Виберіть зі списку (ви можете вибрати кілька варіантів)"
+        "chooseFromListMulti": "Виберіть зі списку (ви можете вибрати кілька варіантів)",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "({{number}} ліжок)",
+                "bedCount": "(1 ліжко)"
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "Дата прибуття",
@@ -309,9 +315,7 @@
         "countryOfGroup": "Яка країна походження групи?",
         "cityTooltip": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
         "confirmChangesButton": "Підтвердити зміни",
-        "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)",
-        "bedsInfo": "({{number}} ліжок)",
-        "bedInfo": "(1 ліжко)"
+        "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)"
     },
     "accomodationPhoto": "Додайте фотографію пропонованого притулку",
     "accomodationPhotoReset": "видаляти",

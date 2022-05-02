@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "Wybierz z listy",
-        "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)"
+        "chooseFromListMulti": "Wybierz z listy (możesz wybrać kilka opcji)",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "({{number}} łóżek)",
+                "bedCount": "(1 łóżko)"
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "Przyjazd do Polski",
@@ -309,9 +315,7 @@
         "countryOfGroup": "Z jakiego kraju pochodzi grupa?",
         "cityTooltip": "Jeżeli nie znajdziesz swojej miejscowości, wybierz najbliższe duże miasto.",
         "confirmChangesButton": "Potwierdź zmiany",
-        "cityPlaceholderWithBeds": "Miasto ({{number}} łóżek)",
-        "bedsInfo": "({{number}} łóżek)",
-        "bedInfo": "(1 łóżko)"
+        "cityPlaceholderWithBeds": "Miasto ({{number}} łóżek)"
     },
     "accomodationPhoto": "Dodaj zdjęcie oferowanego noclegu",
     "accomodationPhotoReset": "Usuń",

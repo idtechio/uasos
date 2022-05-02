@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "Выберите из списка",
-        "chooseFromListMulti": "Выберите из списка (можно выбрать несколько вариантов)"
+        "chooseFromListMulti": "Выберите из списка (можно выбрать несколько вариантов)",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "({{number}} коек)",
+                "bedCount": "(1 кровать)"
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "Дата прибытия",
@@ -309,9 +315,7 @@
         "countryOfGroup": "Какова страна происхождения группы?",
         "cityTooltip": "Выберите ближайший крупный город если вашего города нет в списке",
         "confirmChangesButton": "Подтвердить изменения",
-        "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)",
-        "bedsInfo": "({{number}} коек)",
-        "bedInfo": "(1 кровать)"
+        "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)"
     },
     "accomodationPhoto": "Добавьте фото предлагаемого приюта",
     "accomodationPhotoReset": "удалить",

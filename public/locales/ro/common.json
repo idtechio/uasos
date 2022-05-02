@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "Selectați din listă (alegere multiplă)",
-        "chooseFromListMulti": "Selectați din listă (puteți alege mai multe opțiuni)"
+        "chooseFromListMulti": "Selectați din listă (puteți alege mai multe opțiuni)",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "",
+                "bedCount": ""
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "Data sosirii: {{arrival}}",
@@ -309,9 +315,7 @@
         "countryOfGroup": "Care este țara de origine a grupului?",
         "cityTooltip": "Dacă nu vă găsiți orașul, alegeți orașul cel mai apropiat",
         "confirmChangesButton": "Confirmați modificările",
-        "cityPlaceholderWithBeds": "Oraș ({{number}} de paturi)",
-        "bedsInfo": "",
-        "bedInfo": ""
+        "cityPlaceholderWithBeds": "Oraș ({{number}} de paturi)"
     },
     "accomodationPhoto": "Adăugați o fotografie a cazării oferite",
     "accomodationPhotoReset": "Ștergeți",

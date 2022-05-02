@@ -69,7 +69,13 @@
     },
     "forms": {
         "chooseFromList": "Vybrať zo zoznamu",
-        "chooseFromListMulti": "Vybrať zo zoznamu (výber viac možností povolený)"
+        "chooseFromListMulti": "Vybrať zo zoznamu (výber viac možností povolený)",
+        "createRefuge": {
+            "shelter": {
+                "bedsCount": "({{number}} lôžok)",
+                "bedCount": "(1 lôžko)"
+            }
+        }
     },
     "guestOffer": {
         "arrivalToPoland": "Dátum príjazdu: {{arrival}}",
@@ -309,9 +315,7 @@
         "countryOfGroup": "Z akej krajiny skupina pochádza?",
         "cityTooltip": "Ak nemôžete nájsť svoje mesto, vyberte najbližšie veľké mesto",
         "confirmChangesButton": "Potvrdenie zmien",
-        "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)",
-        "bedsInfo": "({{number}} lôžok)",
-        "bedInfo": "(1 lôžko)"
+        "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",
