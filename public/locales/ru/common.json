@@ -310,8 +310,8 @@
         "cityTooltip": "Выберите ближайший крупный город если вашего города нет в списке",
         "confirmChangesButton": "Подтвердить изменения",
         "cityPlaceholderWithBeds": "Город ({{number}} койко-мест)",
-        "bedsInfo": "({{number}} коек)",
-        "bedInfo": "(1 кровать)"
+        "bedsCount": "({{number}} коек)",
+        "bedCount": "(1 кровать)"
     },
     "accomodationPhoto": "Добавьте фото предлагаемого приюта",
     "accomodationPhotoReset": "удалить",

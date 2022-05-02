@@ -310,8 +310,8 @@
         "cityTooltip": "Ha nem találja a települést, válassza ki a legközelebbi várost",
         "confirmChangesButton": "Változások megerősítése",
         "cityPlaceholderWithBeds": "Város ({{number}} ágyak száma)",
-        "bedsInfo": "({{number}} ágyak)",
-        "bedInfo": "(1 ágy)"
+        "bedsCount": "({{number}} ágyak)",
+        "bedCount": "(1 ágy)"
     },
     "accomodationPhoto": "Fénykép hozzáadása a felajánlott szállásról",
     "accomodationPhotoReset": "Törlés",
