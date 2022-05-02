@@ -310,8 +310,8 @@
         "cityTooltip": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
         "confirmChangesButton": "Підтвердити зміни",
         "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)",
-        "bedsInfo": "({{number}} ліжок)",
-        "bedInfo": "(1 ліжко)"
+        "bedsCount": "({{number}} ліжок)",
+        "bedCount": "(1 ліжко)"
     },
     "accomodationPhoto": "Додайте фотографію пропонованого притулку",
     "accomodationPhotoReset": "видаляти",

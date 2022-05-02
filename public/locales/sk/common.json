@@ -310,8 +310,8 @@
         "cityTooltip": "Ak nemôžete nájsť svoje mesto, vyberte najbližšie veľké mesto",
         "confirmChangesButton": "Potvrdenie zmien",
         "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)",
-        "bedsInfo": "({{number}} lôžok)",
-        "bedInfo": "(1 lôžko)"
+        "bedsCount": "({{number}} lôžok)",
+        "bedCount": "(1 lôžko)"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

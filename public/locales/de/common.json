@@ -310,8 +310,8 @@
         "cityTooltip": "Wenn Sie Ihre Stadt nicht finden können, wählen Sie die nächstgelegene Großstadt oder Stadt",
         "confirmChangesButton": "Bestätigen Sie Änderungen",
         "cityPlaceholderWithBeds": "Stadt ({{Anzahl}} der Betten)",
-        "bedsInfo": "",
-        "bedInfo": ""
+        "bedsCount": "",
+        "bedCount": ""
     },
     "accomodationPhoto": "Ein Foto der angebotenen Unterkunft hinzufügen",
     "accomodationPhotoReset": "Löschen",
