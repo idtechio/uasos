@@ -30,7 +30,6 @@
     "react-loading-skeleton": "^3.0.3",
     "react-native": "^0.67.3",
     "react-native-web": "^0.17.6",
-    "react-native-web-lottie": "^1.4.4",
     "react-query": "^3.34.19",
     "react-slick": "^0.28.1",
     "react-timer-hook": "^3.0.5",

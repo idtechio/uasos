@@ -5672,11 +5672,6 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-web@^5.7.1:
-  version "5.9.1"
-  resolved "https://registry.npmjs.org/lottie-web/-/lottie-web-5.9.1.tgz"
-  integrity sha512-3uKtU6BhIK6ZRCE/QyiXq/KuRvPeEAz/VFwqd99jPbpgFY9gHLw2krqvcuCFGepeW94BipS/B3TqIfTc9pUeZg==
-
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz"
@@ -6994,13 +6989,6 @@ react-native-codegen@^0.0.8:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
-
-react-native-web-lottie@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.npmjs.org/react-native-web-lottie/-/react-native-web-lottie-1.4.4.tgz"
-  integrity sha512-W0jZiOf2u3Us6yASdpgAuL1+3Gw1EU/Wi5QAf6brzhXmJnq6/FMGCTf5zvSaX0yIurr9qcYB40DwAb4HwA6frg==
-  dependencies:
-    lottie-web "^5.7.1"
 
 react-native-web@^0.17.6:
   version "0.17.7"
