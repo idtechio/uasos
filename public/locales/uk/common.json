@@ -309,7 +309,9 @@
     "countryOfGroup": "Яка країна походження групи?",
     "cityTooltip": "Виберіть найближче велике місто якщо вашого міста немає у списку.",
     "confirmChangesButton": "Підтвердити зміни",
-    "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)"
+    "cityPlaceholderWithBeds": "Місто ({{number}} ліжок)",
+    "bedsCount": "({{number}} ліжок)",
+    "bedCount": "(1 ліжко)"
   },
   "accomodationPhoto": "Додайте фотографію пропонованого притулку",
   "accomodationPhotoReset": "видаляти",
