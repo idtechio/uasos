@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import IdCheckIo from "idcheckio-sdk";
+const IdCheckIo = require("idcheckio-sdk").default;
 import { useOnboarding } from "../../queries/useIdCheck";
 import { Configuration, ElementSelector } from "idcheckio-sdk/dist/schema";
 import { IdCheckIFrame } from "./style";
