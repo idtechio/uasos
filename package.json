@@ -18,7 +18,6 @@
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "lodash.debounce": "^4.0.8",
-    "lottie-react-native": "^5.0.1",
     "next": "latest",
     "next-i18next": "^10.5.0",
     "next-transpile-modules": "^9.0.0",
