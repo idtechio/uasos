@@ -10,4 +10,5 @@ export enum Routes {
   PARTNERS = "/partners",
   DASHBOARD = "/dashboard",
   ID_CHECK = "/id-check",
+  FAQ = "/faq",
 }
