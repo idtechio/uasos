@@ -1,15 +1,11 @@
 import { useMemo, useState } from "react";
-import useFetch from "react-fetch-hook";
 import { ActivityIndicator, FlatList } from "react-native";
 import debounce from "lodash.debounce";
 
 import type { InputProps } from "./types";
 import { InputRow, TextInput, Dropdown, Separator } from "./style";
 import Item from "./Item";
-
-type Response = {
-  predictions: { structured_formatting: { main_text: string } }[];
-};
+import { useAutocomplete } from "../../../queries/useAutocomplete";
 
 const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
   const [inputValue, setInputValue] = useState<string | undefined>(value);
@@ -17,9 +13,7 @@ const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
   const [text, setText] = useState<string | undefined>(value);
   const [isOpen, setIsOpen] = useState(false);
 
-  const { isLoading, data } = useFetch<Response>(
-    `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-  );
+  const { data, isLoading } = useAutocomplete(query);
 
   const debouncedFunction = debounce(setQuery, 1000);
 

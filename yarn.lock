@@ -6957,11 +6957,6 @@ react-dom@^17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
-react-fetch-hook@^1.8.5:
-  version "1.8.5"
-  resolved "https://registry.npmjs.org/react-fetch-hook/-/react-fetch-hook-1.8.5.tgz"
-  integrity sha512-HRkfFAGGS6u3xknFWvgNQBUBRkM0ZZnUlyv4yVy2e+ZijUDOPJ+CwgpZ5nvrNd6QVU8++KcV/9WSe3TyW/N/rA==
-
 react-hook-form@^7.27.1:
   version "7.27.1"
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.27.1.tgz"
