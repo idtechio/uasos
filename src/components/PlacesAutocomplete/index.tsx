@@ -12,14 +12,21 @@ import {
 import { Container, Input, List, Separator } from "./styles";
 import { FieldError } from "react-hook-form";
 import { Item } from "./Item";
+import { CountryCode, SelectedCountry } from "../Inputs/FormGeoAutocomplete";
 
 interface Props {
+  selectedCountry: SelectedCountry;
   error?: FieldError | FieldError[] | undefined;
   placeholder: string;
   onChange: (value: string) => void;
 }
 
-export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
+export const PlacesAutocomplete = ({
+  error,
+  onChange,
+  placeholder,
+  selectedCountry,
+}: Props) => {
   const containerRef = useRef<HTMLElement>();
   const listRef = useRef<HTMLElement>();
 
@@ -33,7 +40,11 @@ export const PlacesAutocomplete = ({ error, placeholder, onChange }: Props) => {
   } = usePlacesAutocomplete({
     requestOptions: {
       types: ["(cities)"],
+      componentRestrictions: {
+        country: CountryCode[selectedCountry],
+      },
     },
+    cache: false,
     debounce: 300,
   });
 

@@ -13,6 +13,16 @@ type Props = {
   zIndex?: number;
 };
 
+export enum CountryCode {
+  poland = "pl",
+  hungary = "hu",
+  czechia = "cz",
+  slovakia = "sk",
+  romania = "ro",
+}
+
+export type SelectedCountry = keyof typeof CountryCode;
+
 function FormGeoAutocomplete({
   name,
   errorMsg,
@@ -21,7 +31,9 @@ function FormGeoAutocomplete({
   placeholder,
   zIndex,
 }: Props & Pick<React.ComponentProps<typeof Controller>, "rules">) {
-  const { control } = useFormContext();
+  const { control, watch } = useFormContext();
+
+  const country = watch("advancedHost.country") as unknown as SelectedCountry;
 
   return (
     <Controller
@@ -34,6 +46,7 @@ function FormGeoAutocomplete({
               <PlacesAutocomplete
                 error={error}
                 onChange={onChange}
+                selectedCountry={country}
                 placeholder={placeholder}
               />
               {error && <Error>{errorMsg}</Error>}
