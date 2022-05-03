@@ -36,7 +36,6 @@
     "sanitize-html": "^2.7.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
-    "swr": "^1.2.2",
     "use-places-autocomplete": "^2.0.0"
   },
   "devDependencies": {
