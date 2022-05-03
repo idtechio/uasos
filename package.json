@@ -9,7 +9,6 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@artsy/detect-responsive-traits": "^0.1.0",
     "@google-cloud/pubsub": "^2.19.0",
     "@gucciogucci/contented": "^2.0.2",
     "@react-google-maps/api": "^2.8.1",
@@ -32,7 +31,6 @@
     "react-hook-form": "^7.27.1",
     "react-loading-skeleton": "^3.0.3",
     "react-native": "^0.67.3",
-    "react-native-modal": "^13.0.0",
     "react-native-web": "^0.17.6",
     "react-native-web-lottie": "^1.4.4",
     "react-query": "^3.34.19",
