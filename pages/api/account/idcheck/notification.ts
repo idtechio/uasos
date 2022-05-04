@@ -71,14 +71,6 @@ async function notification(req: NotificationApiRequest, res: NextApiResponse) {
   }
 
   const result: ResultResponseType = await response.json();
-
-  //-- TODO delete after testing
-  await fetch("https://webhook.site/53579bdc-d205-4a3c-b4ce-0d025f7c1f96", {
-    method: "POST",
-    body: JSON.stringify(result),
-  });
-  //--
-
   if (!result?.lastReport?.globalStatus) {
     return;
   }
