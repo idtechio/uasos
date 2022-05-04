@@ -484,15 +484,6 @@ export const SectionContent = styled.View`
   margin-left: auto;
 `;
 
-const bedsForCities: (
-  breakdown: CountryBedsBreakdownProps,
-  country: string
-) => { [city: string]: number } = (breakdown, country) => {
-  const citiesPerCountry = breakdown[country];
-  if (!citiesPerCountry) return {};
-  return citiesPerCountry.cities;
-};
-
 const buildDropDownCountryData: (
   breakdown: CountryBedsBreakdownProps
 ) => CountryData[] = (breakdown) => {
@@ -506,9 +497,7 @@ const buildDropDownCountryData: (
       return p + beds;
     }, 0);
     const labelFunction: LabelFunction = (t) =>
-      `${t(c.label)} ${t(`refugeeAddForm.bed${numberOfBeds > 1 && "s"}Count`, {
-        number: numberOfBeds,
-      })}`;
+      t(c.label) + (numberOfBeds > 0 ? ` (${numberOfBeds})` : "");
     return { ...c, ...{ label: labelFunction } };
   });
 };
