@@ -18,7 +18,7 @@ const Autocomplete = ({ label, onChange, value = "", error }: InputProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { isLoading, data } = useFetch<Response>(
-    `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=${process.env.GOOGLE_API_KEY}`
+    `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
   );
 
   const debouncedFunction = debounce(setQuery, 1000);
