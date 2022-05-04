@@ -1,0 +1,125 @@
+{
+    "001": {
+        "name": "INFORMACJE OGÓLNE",
+        "content": {
+            "001": {
+                "question": "Do czego służy ten portal?",
+                "answer": "Platforma uaSOS.org łączy uchodźców poszukujących noclegu z osobami prywatnymi, instytucjami, organizacjami pozarządowymi i firmami oferującymi zakwaterowanie. W przeciwieństwie do innych inicjatyw, które gromadzą podobne dane, platforma uaSOS.org automatycznie łączy ogłoszenia osób potrzebujących z ofertami pomocy, aby zapewnić jak najlepszą pomoc jak najszerszej grupie osób. Dzięki platformie osoby potrzebujące nie będą musiały przeglądać setek dostępnych ofert pomocy, ale otrzymają najbardziej odpowiednią i aktualną, dostosowaną do ich potrzeb. Rejestracja na platformie nie jest anonimowa, co zapewnia bezpieczeństwo obu stronom."
+            },
+            "002": {
+                "question": "Kto stworzył ten portal?",
+                "answer": "Inicjatywa jest wspierana przez polskie i ukraińskie organizacje pozarządowe, samorządy oraz wiele firm, które nie tylko zapewniają zastosowanie najlepszych technologii, ale także umożliwiają dotarcie do setek tysięcy ludzi po obu stronach granicy. Platforma powstała przy udziale kilkudziesięciu wolontariuszy i opiera się na zaawansowanym, silniku, który w przyszłości daje możliwość rozwoju platformy tak, aby obsługiwała też inne potrzeby (np. transport) ."
+            },
+            "003": {
+                "question": "Czy to bezpieczne?",
+                "answer": "Platforma została w pełni zabezpieczona od strony prawnej (m.in. kwestie RODO) przez ekspertów współpracujących z kancelarią ID Advisory. Posiada także szereg zabezpieczeń technicznych, m.in.: dane osób są procesowane w chmurze Google, zestaw przetwarzanych danych jest ograniczony, a logowanie odbywa się przez portale Facebook oraz Gmail co zapewnia zwiększenie bezpieczeństwa. Równocześnie, nie jesteśmy w stanie zweryfikować wszystkich osób, które wypełniają formularze poprzez portal.\n\nDlatego skontaktuj się z gospodarzem\/gościem i wyjaśnijcie wszystkie szczegóły przed rozpoczęciem pobytu."
+            },
+            "004": {
+                "question": "Jak założyć konto?",
+                "answer": "Aby założyć konto, należy wypełnić podać swój adres e-mail oraz numer telefonu, na który zostanie wysłany kod weryfikacyjny."
+            },
+            "005": {
+                "question": "Czy muszę podawać moje dane osobowe?",
+                "answer": "Aby poprawnie się zarejestrować, należy podać swój adres mailowy oraz numer telefonu. Wpisz swoje imię, by ułatwić komunikację między stronami."
+            },
+            "006": {
+                "question": "Gdzie znajdę szczegóły dotyczące polityki prywatności i RODO?",
+                "answer": "Aby zapoznać się z polityką prywatności, wejdź w zakładkę „Polityka prywatności”."
+            },
+            "007": {
+                "question": "Czy mogę edytować ogłoszenie?",
+                "answer": "Aby edytować zgłoszenie, po zalogowaniu należy kliknąć na menu przy zgłoszeniu („trzy kropki”) i zaznaczyć funkcję „Edytuj”."
+            },
+            "008": {
+                "question": "Jak mogę usunąć swoje ogłoszenie?",
+                "answer": "Usunięcie zgłoszenia może odbyć się na dwa sposoby:\n\npo zalogowaniu należy kliknąć na menu przy zgłoszeniu („trzy kropki”) i zaznaczyć opcję „Usuń” lub\n\nw mailu „UA SOS – Znaleźliśmy dla Ciebie potencjalnego gościa” istnieje możliwość wyboru opcji „Usuń zgłoszenie”. \n"
+            },
+            "009": {
+                "question": "Czy założenie konta wiąże się z jakimiś opłatami?",
+                "answer": "Portal jest darmowy, ma pomóc ludziom uciekającym przed wojną w Ukrainie. Na żadnym etapie rejestracji, ani korzystania z naszego portalu nie jest pobierana opłata"
+            },
+            "010": {
+                "question": "Jak działa algorytm łączący zgłoszenia w pary?",
+                "answer": "Algorytm przeszukuje obie bazy w celu znalezienia jak największej liczby potencjalnych połączeń pomiędzy gospodarzami i potencjalnymi gośćmi w oparciu o ich wymagania. Co 15 minut algorytm jest uruchamiany, żeby znaleźć połączenia dla nowo zarejestrowanych użytkowników, ale też osób, które jeszcze nie znalazły oferty- lub odrzuciły poprzednią ofertę."
+            },
+            "011": {
+                "question": "Czy będę informowany o statusie? ",
+                "answer": "Tak, będziemy Cię na bieżąco informować mailowo o zmianach statusu Twojego zgłoszenia - sprawdzaj regularnie swoją skrzynkę pocztową.\n\nDodatkowo w momencie znalezienia dla Ciebie potencjalnego gościa\/gospodarza poinformujemy Cię o tym SMS-em. "
+            }
+        }
+    },
+    "002": {
+        "name": "DLA POMAGAJĄCYCH \/ GOSPODARZY ",
+        "content": {
+            "001": {
+                "question": "Chcę pomóc, jak mogę udostępnić nocleg?",
+                "answer": "Aby udostępnić lokum, zarejestruj się w portalu, podaj adres mailowy, numer telefonu i aktywuj konto, a w formularzu opisz swoje lokum.\n\nTak szybko, jak tylko znajdziemy dla Ciebie potencjalnego gościa – poinformujemy Cię o tym mailowo i SMS-em. Będziesz mógł wtedy wejść na portal, zobaczyć kluczowej informacje z formularza dopasowanego gościa i zaakceptować lub odrzucić ofertę.\n\nW momencie kiedy obie strony potwierdzą połączenie, wymienimy między Wami szczegóły kontaktowe – wyjaśnijcie wtedy ostatnie detale i potwierdźcie, gdzie się spotkacie. Pamiętaj, że nie wszyscy będą mówić po polsku, dlatego kontakt mailowy może czasem być wygodniejszą opcją, gdyż w Internecie jest dostępnych wiele translatorów, których możecie użyć do przetłumaczenia korespondencji."
+            },
+            "002": {
+                "question": "Chcę pomóc uchodźcom. Czy pomocy potrzebują tylko Ukraińcy?",
+                "answer": "W chwili wybuchu wojny na terenie Ukrainy przebywali ludzie różnych narodowości – np. studiowali, byli w delegacjach, na kontraktach itp. Pomagamy wszystkim osobom, niezależnie od ich narodowości, obywatelstwa, poglądów politycznych, wyznania, orientacji seksualnej czy przynależności do mniejszości etnicznej."
+            },
+            "003": {
+                "question": "Czy mogę wskazać, ile osób chcę przyjąć i czy preferowana jest np. rodzina z dziećmi?",
+                "answer": "Oczywiście. Wszyscy, którzy zdecydują się pomóc osobom przyjeżdżającym z Ukrainy, mogą zadeklarować, ilu ludziom chcą udzielić pomocy, przyjmując ich pod swój dach. Możesz też wskazać, czy jesteś gotów przyjąć np. rodzinę z dziećmi, zwierzęta itp."
+            },
+            "004": {
+                "question": "Czy muszę pojechać na granicę, żeby odebrać uchodźcę?",
+                "answer": "Na tę chwilę portal ma pomóc przede wszystkim w znalezieniu lokum dla uchodźców. Jeśli możesz we własnym zakresie odebrać daną osobę z granicy lub z konkretnego miejsca, to jest to mile widziane, ale nie jest wymagane. Możesz taką dodatkową informację zgłosić w formularzu. W przyszłości dodawane będą dodatkowe funkcjonalności dotyczące pomocy w znalezieniu transportu, pracy itd.\n"
+            },
+            "005": {
+                "question": "Nie znam języka ukraińskiego, jak mogę się porozumieć?",
+                "answer": "Preferowaną formą komunikacji jest kontakt mailowy. Nie musisz znać języka ukraińskiego, aby porozumieć się z osobą mówiącą w tym języku. W Internecie dostępnych jest wiele translatorów, których możecie użyć do przetłumaczenia waszej korespondencji."
+            },
+            "006": {
+                "question": "Czy muszę podawać swój adres zamieszkania?",
+                "answer": "Aby założyć konto na portalu, musisz podać swój adres zamieszkania. Nie będzie on wyświetlany gościowi - zobaczy on tylko miasto, w którym oferujesz nocleg. Sugerujemy, aby gospodarz i gość spotkali się w miejscu publicznym."
+            },
+            "007": {
+                "question": "Na jaki minimalny okres mogę przyjąć osobę z Ukrainy?",
+                "answer": "Minimalny czas przyjęcia osoby z Ukrainy to jeden nocleg."
+            },
+            "008": {
+                "question": "Czy serwis weryfikuje użytkowników portalu?",
+                "answer": "Użytkownicy logują się wykorzystując swój profil na portalach Facebook lub Gmail, dodatkowo podawane są numery telefonów. Na tym etapie serwis nie weryfikuje w inny sposób osób rejestrujących się w portalu."
+            },
+            "009": {
+                "question": "Czy mogę zrezygnować z goszczenia uchodźców?",
+                "answer": "Zdajemy sobie sprawę z tego, że w życiu zdarzają się różne sytuacje losowe, dlatego w każdej chwili możesz zrezygnować z goszczenia uchodźców. Pamiętaj jednak, że Twoja propozycja ugoszczenia osób z Ukrainy jest dla nich ważna i mogą one nie być w stanie znaleźć z dnia na dzień nowego miejsca pobytu. Zgłaszając się decydujesz się na pomoc."
+            },
+            "010": {
+                "question": "Czy muszę pomagać uchodźcom finansowo?",
+                "answer": "Nie musisz udzielać uchodźcom żadnej pomocy finansowej. Jest to wyłącznie Twoja dobra wola."
+            },
+            "011": {
+                "question": "Czy muszę zapewnić uchodźcom wyżywienie?",
+                "answer": "Ze względu na sytuację uchodźców zapewnienie wyżywienia, chociażby przez początkowy okres ich pobytu jest mile widziane, ale pozostaje dobrowolne."
+            },
+            "012": {
+                "question": "Nie korzystam z Internetu, jak mogę przyjąć uchodźców z Ukrainy?",
+                "answer": "Aby udzielić pomocy uchodźcom z Ukrainy za pomocą naszego portalu, musisz się w nim zarejestrować. Jeśli jednak na co dzień nie korzystasz z Internetu, możesz poprosić o pomoc osoby, które z niego korzystają."
+            },
+            "013": {
+                "question": "Czy mogę pobrać od uchodźców opłatę za media?",
+                "answer": "Osoby przybywające z Ukrainy uciekły przed wojną. Staraj się je wspierać w tym trudnym czasie. Jeśli zdecydujesz się na pomoc uchodźcom, uwzględnij również to, że Twoje rachunki za media mogą wzrosnąć."
+            }
+        }
+    },
+    "003": {
+        "name": "DLA UCHODŹCÓW \/ GOŚCI",
+        "content": {
+            "001": {
+                "question": "Jestem uchodźcą z Ukrainy, jak mam znaleźć nocleg?",
+                "answer": "Aby znaleźć lokum, zarejestruj się w portalu, podaj adres mailowy, numer telefonu i aktywuj konto, a w  formularzu wylistuj swoje potrzeby.\n\nTak szybko, jak tylko znajdziemy dla Ciebie potencjalnego gospodarza – poinformujemy Cię o tym mailowo i SMS-em. Będziesz mógł wtedy wejść na portal, przejrzeć profil gospodarza i zaakceptować lub odrzucić jego ofertę.\n\nW momencie, kiedy obie strony potwierdzą połączenie, wymienimy między Wami szczegóły kontaktowe – wyjaśnijcie ostatnie detale i potwierdźcie, gdzie się spotkacie. Pamiętaj, że nie wszyscy będą mówić po ukraińsku – dlatego kontakt mailowy może czasem być wygodniejszą opcją, gdyż w internecie jest dostępnych wiele translatorów, których możecie użyć do przetłumaczenia Waszej korespondencji.\n"
+            },
+            "002": {
+                "question": "Czy mogę liczyć na transport z granicy do miejsca docelowego?",
+                "answer": "Nie wszyscy oferujący uchodźcom lokum są zmotoryzowani lub mogą zaoferować transport. Oferta, którą otrzymasz może być oznaczona jako „z transportem”. W przeciwnym wypadku możesz poprosić gospodarza o pomoc w prywatnej korespondencji."
+            },
+            "003": {
+                "question": "Czy mam zapłacić za nocleg i wyżywienie osobie, która mnie przyjęła pod swój dach?",
+                "answer": "Pomoc uchodźcom jest bezinteresowna i bezpłatna. Osoby, które rejestrują się w portalu i proponują pomoc, nie oczekują niczego w zamian. Pamiętaj jednak, że serwis nie ponosi odpowiedzialności za to na jakich warunkach zostaniesz przyjęty. Upewnij się czy ktoś nie będzie oczekiwał od Ciebie czegoś w zamian."
+            }
+        }
+    }
+}
