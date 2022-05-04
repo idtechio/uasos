@@ -262,7 +262,7 @@
         "popup": {
             "description": "Notify us of any problems \u2028using the form below",
             "problemReported": "The problem has been reported",
-            "thanksForLettingKnow": "Thank you for letting us know about this situation. Thank you for letting us know about this situation. We will look for another match for you.",
+            "thanksForLettingKnow": "Thank you for letting us know about this situation. We will look for another match for you.",
             "reasons": {
                 "guestNotNeedHelp": "My guest doesn't require accommodation anymore",
                 "hostCantHelp": "My host can't provide accommodation anymore",
