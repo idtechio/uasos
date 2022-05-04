@@ -3,7 +3,7 @@ import { NativeTouchEvent } from "react-native";
 
 export type ButtonProps = {
   style?: Record<string, unknown>;
-  anchor: React.ReactNode;
+  anchor?: React.ReactNode;
   onPress?: (e?: BaseSyntheticEvent) => void;
   chevronVisible?: boolean;
   chevronUpsideDown?: boolean;

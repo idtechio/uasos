@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Stripe = styled.View`
-  width: 25px
+  width: 24px
   border: 1px solid #003566;
   border-radius: 2px;
 `;

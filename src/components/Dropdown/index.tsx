@@ -18,16 +18,16 @@ import { DropdownProps } from "./types";
 
 export function Dropdown<T>({
   data,
-  direction = "to-bottom",
   label,
-  selected,
-  multiselect,
-  itemPressFunction,
-  placeholder,
   error,
   onBlur,
-  searchable = false,
   styles,
+  selected,
+  multiselect,
+  placeholder,
+  itemPressFunction,
+  searchable = false,
+  direction = "to-bottom",
   itemListAutoHeight = false,
   highlightSelectedItem = false,
 }: DropdownProps<T>) {
