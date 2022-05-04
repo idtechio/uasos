@@ -2,7 +2,7 @@ import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 
 import { FormKey } from "../../helpers/FormTypes";
-import { useTranslation } from "react-i18next";
+import { TFunction, useTranslation } from "react-i18next";
 import FormDropdown from "./FormDropdown";
 import { LanguageFlags } from "../LanguageSwitcher/LanguageFlags";
 import styled from "styled-components/native";
@@ -12,13 +12,23 @@ type Props = {
   label?: string;
   zIndex?: number;
   placeholder?: string;
+  countriesData?: CountryData[];
   error?: FieldError;
   multiSelect?: boolean;
   errorMsg?: string;
   onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const countriesData = [
+export type LabelFunction = (t: TFunction<"translation", undefined>) => string;
+export type CountryData = {
+  icon: string;
+  label: LabelFunction | string;
+  value: string;
+};
+
+export const DEFAULT_COUNTRIES_DATA: (Omit<CountryData, "label"> & {
+  label: string;
+})[] = [
   {
     icon: "pl",
     label: "hostAdd.countries.poland",
@@ -48,6 +58,7 @@ const FormTextInput: VFC<Props> = (props) => {
     label,
     errorMsg,
     rules,
+    countriesData,
     error,
     zIndex,
     placeholder,
@@ -55,16 +66,24 @@ const FormTextInput: VFC<Props> = (props) => {
   } = props;
 
   const { t } = useTranslation();
+  const translateLabel = (label: LabelFunction | string) => {
+    if (typeof label === "string") {
+      return t(label);
+    }
+    return label(t);
+  };
 
-  const countryDropdownList = countriesData.map((country) => ({
-    label: (
-      <FlexAlignCenter>
-        <LanguageFlags locale={country.icon} />
-        <span style={{ marginLeft: 5 }}>{t(country.label)}</span>
-      </FlexAlignCenter>
-    ),
-    value: country.value,
-  }));
+  const countryDropdownList = (countriesData ?? DEFAULT_COUNTRIES_DATA).map(
+    (country) => ({
+      label: (
+        <FlexAlignCenter>
+          <LanguageFlags locale={country.icon} />
+          <span style={{ marginLeft: 5 }}>{translateLabel(country.label)}</span>
+        </FlexAlignCenter>
+      ),
+      value: country.value,
+    })
+  );
 
   const { control } = useFormContext();
   return (

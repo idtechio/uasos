@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-
+import { TFunction, useTranslation } from "react-i18next";
 import { FormKey } from "../../helpers/FormTypes";
 import FormDropdown from "./FormDropdown";
 import CITY_LIST_CZ from "../../consts/cities/cz.json";
@@ -15,11 +15,34 @@ type Props = {
   label?: string;
   zIndex?: number;
   placeholder?: string;
+  buildCityList?: BuildCityList;
   error?: FieldError;
   multiSelect?: boolean;
   errorMsg?: string;
   onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
+
+export type BuildCityList = (
+  t: TFunction<"translation", undefined>,
+  country: string
+) => { label: string; value: unknown }[];
+
+export const defaultBuildCityList: BuildCityList = (_, country) => {
+  switch (country) {
+    case "czechia":
+      return CITY_LIST_CZ;
+    case "hungary":
+      return CITY_LIST_HU;
+    case "poland":
+      return CITY_LIST_PL;
+    case "slovakia":
+      return CITY_LIST_SK;
+    case "romania":
+      return CITY_LIST_RO;
+    default:
+      return [];
+  }
+};
 
 const FormTextInput: VFC<Props> = (props) => {
   const {
@@ -28,31 +51,16 @@ const FormTextInput: VFC<Props> = (props) => {
     country,
     errorMsg,
     rules,
+    buildCityList,
     error,
     zIndex,
     placeholder,
     multiSelect,
   } = props;
   const { control } = useFormContext();
-  let cityList: { label: string; value: unknown }[] = [];
+  const { t } = useTranslation();
 
-  switch (country) {
-    case "czechia":
-      cityList = CITY_LIST_CZ;
-      break;
-    case "hungary":
-      cityList = CITY_LIST_HU;
-      break;
-    case "poland":
-      cityList = CITY_LIST_PL;
-      break;
-    case "slovakia":
-      cityList = CITY_LIST_SK;
-      break;
-    case "romania":
-      cityList = CITY_LIST_RO;
-      break;
-  }
+  const cityList = (buildCityList ?? defaultBuildCityList)(t, country);
 
   return (
     <Controller

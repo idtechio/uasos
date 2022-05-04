@@ -16,8 +16,15 @@ import { CompositionSection } from "../Compositions";
 import { ChoiceButton, InputControl, InputCotrolLabel } from "../Forms";
 import { Buttons } from "../Forms/RadioButtons/style";
 import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
-import FormCityDropdown from "../Inputs/FormCityDropdown";
-import FormCountryDropdown from "../Inputs/FormCountryDropdown";
+import FormCityDropdown, {
+  BuildCityList,
+  defaultBuildCityList,
+} from "../Inputs/FormCityDropdown";
+import FormCountryDropdown, {
+  CountryData,
+  LabelFunction,
+  DEFAULT_COUNTRIES_DATA,
+} from "../Inputs/FormCountryDropdown";
 import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
@@ -31,6 +38,7 @@ import {
   OVERNIGHT_DURATION_TYPES,
   refugeeDetailsOptions,
 } from "./FormAdGuest.data";
+import { CountryBedsBreakdownProps } from "../../../pages/api/listing/countriesBedBreakdown";
 
 enum Boolean {
   FALSE = "FALSE",
@@ -58,6 +66,7 @@ type FormAdGuestProps = {
   email: string | null;
   phoneNumber: string | null;
   data: RequestProps | null;
+  countries: CountryBedsBreakdownProps | null;
 };
 
 type MutateCallbacks = {
@@ -71,6 +80,7 @@ export default function FormAdGuest({
   email,
   phoneNumber,
   data,
+  countries,
 }: FormAdGuestProps) {
   const { t } = useTranslation();
   const { mutate: mutateAdd } = useAddGuestToApi();
@@ -78,7 +88,6 @@ export default function FormAdGuest({
   const [location, setLocation] = useState<Location>(Location.Any);
   const [submitRequstState, setSubmitRequstState] =
     useState<SubmitRequestState>(submitRequestDefualtState);
-
   const formFields = useForm<FormType>({
     mode: "onChange",
     defaultValues: {
@@ -93,6 +102,15 @@ export default function FormAdGuest({
       },
     },
   });
+
+  const buildDropDownCityData: BuildCityList = (t, country) => {
+    const cities = defaultBuildCityList(t, country);
+    const beds = (countries ?? {})[country] || {};
+    return cities.map((c) => ({
+      ...c,
+      ...{ label: beds[c.label] ? `${c.label} (${beds[c.label]})` : c.label },
+    }));
+  };
 
   useEffect(() => {
     if (formFields && data) {
@@ -269,6 +287,7 @@ export default function FormAdGuest({
               rules={{
                 required: true,
               }}
+              countriesData={buildDropDownCountryData(countries ?? {})}
               error={errors?.advancedRefugee?.country}
               errorMsg={t("hostAdd.errors.country")}
             />
@@ -312,6 +331,7 @@ export default function FormAdGuest({
                 rules={{
                   required: true,
                 }}
+                buildCityList={buildDropDownCityData}
                 error={errors?.advancedRefugee?.town}
                 errorMsg={t("validations.requiredTown")}
               />
@@ -463,3 +483,21 @@ export const SectionContent = styled.View`
   margin-right: auto;
   margin-left: auto;
 `;
+
+const buildDropDownCountryData: (
+  breakdown: CountryBedsBreakdownProps
+) => CountryData[] = (breakdown) => {
+  return DEFAULT_COUNTRIES_DATA.map((c) => {
+    if (!breakdown[c.value]) {
+      return c;
+    }
+    const cities = breakdown[c.value];
+    const numberOfBeds = Object.keys(cities).reduce((p, c) => {
+      const beds = cities[c];
+      return p + beds;
+    }, 0);
+    const labelFunction: LabelFunction = (t) =>
+      t(c.label) + (numberOfBeds > 0 ? ` (${numberOfBeds})` : "");
+    return { ...c, ...{ label: labelFunction } };
+  });
+};

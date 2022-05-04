@@ -10,8 +10,15 @@ import { AuthContext } from "../_app";
 import { useRouter } from "next/router";
 import { RequestProps } from "../api/listing/requests";
 import { useRequestsList } from "../../src/queries/useRequestsList";
+import { getCountriesBedsBreakdown } from "../../src/client-api/countriesBedsBreakdown";
+import { withSession } from "../../src/helpers/withSession";
+import { CountryBedsBreakdownProps } from "../api/listing/countriesBedBreakdown";
 
-export default function Account() {
+export type AccountProps = {
+  countries: CountryBedsBreakdownProps;
+};
+
+export default function Account({ countries }: AccountProps) {
   const { identity, loaded } = useContext(AuthContext);
   const router = useRouter();
   const { id } = router.query;
@@ -40,6 +47,7 @@ export default function Account() {
             email={identity.email}
             phoneNumber={identity.phoneNumber}
             data={request}
+            countries={countries}
           />
         </CompositionAppBody>
       );
@@ -54,8 +62,15 @@ export default function Account() {
   }
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
-  props: {
-    ...(locale && (await serverSideTranslations(locale))),
-  },
-});
+export const getServerSideProps: GetServerSideProps = withSession(
+  async ({ locale }, session) => {
+    const response = await getCountriesBedsBreakdown();
+    return {
+      props: {
+        session,
+        countries: response.countries,
+        ...(locale && (await serverSideTranslations(locale))),
+      },
+    };
+  }
+);
