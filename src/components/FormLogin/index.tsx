@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { View } from "react-native";
 import { useTranslation } from "next-i18next";
 import styled from "styled-components";
 
@@ -208,7 +209,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               anchor={t("others:forms.login.login")}
               onPress={handleSubmit(onSubmit, () => {})}
             />
-            <div id="captcha__container" style={{ display: "none" }}></div>
+            <View nativeID="captcha__container" style={{ display: "none" }} />
           </FormProvider>
           {phoneLoginConfirmation ? (
             <SmsVerificationModal

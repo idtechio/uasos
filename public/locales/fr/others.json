@@ -262,7 +262,7 @@
         "popup": {
             "description": "Informez-nous de tout problème en utilisant le formulaire ci-dessous",
             "problemReported": "Le problème a été signalé",
-            "thanksForLettingKnow": "Merci de nous avoir informés de cette situation. Merci de nous avoir informés de cette situation. Nous allons chercher une autre correspondance pour vous.",
+            "thanksForLettingKnow": "Merci de nous avoir informés de cette situation. Nous allons chercher une autre correspondance pour vous.",
             "reasons": {
                 "guestNotNeedHelp": "Mon invité n'a plus besoin de logement",
                 "hostCantHelp": "Mon hôte ne peut plus fournir de logement",
