@@ -7,6 +7,8 @@ const FLAG_TYPE_SVG = "svg";
 
 interface Props {
   locale: string;
+  width?: number;
+  height?: number;
   type?: string;
 }
 
@@ -36,7 +38,7 @@ const svgs: LocaleMap = {
   CS: "CZ",
 };
 
-const EmojiFlag = ({ locale }: Props) => {
+const EmojiFlag = ({ locale, width = 26, height = 17 }: Props) => {
   return <Wrapper>{emojis[locale.toLowerCase()] || ""}</Wrapper>;
 };
 

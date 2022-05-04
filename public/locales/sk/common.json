@@ -309,7 +309,9 @@
         "countryOfGroup": "Z akej krajiny skupina pochádza?",
         "cityTooltip": "Ak nemôžete nájsť svoje mesto, vyberte najbližšie veľké mesto",
         "confirmChangesButton": "Potvrdenie zmien",
-        "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)"
+        "cityPlaceholderWithBeds": "Mesto ({{number}} lôžok)",
+        "bedsCount": "({{number}} lôžok)",
+        "bedCount": "(1 lôžko)"
     },
     "accomodationPhoto": "Pridať foto ponúkaného ubytovania",
     "accomodationPhotoReset": "Zmazať",

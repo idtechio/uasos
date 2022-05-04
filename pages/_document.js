@@ -6,6 +6,7 @@ import { AppRegistry } from "react-native";
 import config from "../app.json";
 import { FB_PIXEL_ID } from "../lib/fpixel";
 import { GOOGLE_TAG_ID } from "../lib/gtag";
+import { GOOGLE_MAPS_API_KEY } from "../lib/google-maps";
 
 // Force Next-generated DOM elements to fill their parent's height
 const normalizeNextElements = `
@@ -48,6 +49,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
             rel="stylesheet"
           />
+          <script
+            async
+            src={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`}
+          ></script>
           <link
             rel="apple-touch-icon"
             sizes="180x180"
