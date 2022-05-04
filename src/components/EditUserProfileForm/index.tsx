@@ -3,6 +3,7 @@ import { ConfirmationResult, User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
+import { View } from "react-native";
 import { FormProvider, useForm } from "react-hook-form";
 import { getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
@@ -172,7 +173,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
           mode={smsVerificationModalMode}
         />
       )}
-      <div id={"recaptcha__container"} />
+      <View nativeID="recaptcha__container" />
     </>
   );
 }
