@@ -3,6 +3,7 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
+
 import {
   AccommodationType,
   FormType,
@@ -39,6 +40,7 @@ import { AuthContext } from "../../../pages/_app";
 // import FormUpload from "../Inputs/FormUpload";
 import { HostProps as AddHostProps } from "../../../pages/api/hosts/add";
 import { HostProps as EditHostProps } from "../../../pages/api/hosts/edit";
+import FormGeoAutocomplete from "../Inputs/FormGeoAutocomplete";
 
 export const SectionContent = styled.View`
   display: flex;
@@ -276,7 +278,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
         <SectionContent>
           <View
             style={{
-              zIndex: 2,
+              zIndex: 5,
             }}
           >
             <InputControlLabel>{t("hostAdd.country")}</InputControlLabel>
@@ -294,7 +296,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
           <View
             style={{
-              zIndex: 1,
+              zIndex: 4,
             }}
           >
             <InputControlLabel>
@@ -313,7 +315,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             />
           </View>
 
-          <View style={styles.flexInputs}>
+          <View style={[styles.flexInputs, { zIndex: 2 }]}>
             <View style={styles.inputWrapper}>
               <InputControlLabel>
                 {t("others:forms.generic.zipCode")}
@@ -327,11 +329,14 @@ export default function FormAdHost({ data }: FormAdHostProps) {
                 }}
               />
             </View>
-            <View style={styles.inputWrapper}>
-              <InputControlLabel>{t("hostAdd.city")}</InputControlLabel>
-              <FormTextInput
+            <View style={[styles.inputWrapper, { zIndex: 6 }]}>
+              <InputControlLabel>
+                {t("refugeeAddForm.cityPlaceholder")}
+              </InputControlLabel>
+
+              <FormGeoAutocomplete
                 name="advancedHost.city"
-                label={t("refugeeAddForm.cityPlaceholder")}
+                placeholder={t("refugeeAddForm.cityPlaceholder")}
                 error={errors?.advancedHost?.city}
                 rules={{
                   required: true,
@@ -440,6 +445,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               />
             </View>
           )}
+
           {/* 
           <View>
             <InputControlLabel>
