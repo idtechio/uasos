@@ -94,7 +94,7 @@ function DetailsContent() {
                 ].includes(dataToShow.type) ? (
                   <DetailsDecisionButtons
                     matchId={dataToShow?.match_id}
-                    typeOfUser={type === DETAIL_TYPE.offer ? "host" : "guest"}
+                    listingId={dataToShow?.id}
                   />
                 ) : null}
               </>
