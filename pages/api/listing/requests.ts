@@ -35,6 +35,14 @@ enum MatchStatus {
   DEFAULT = "default",
 }
 
+export type ShelterType =
+  | "bed"
+  | "room"
+  | "flat"
+  | "house"
+  | "collective"
+  | "public_shared_space";
+
 export interface MatchedOfferProps {
   id: string;
   name: string;
@@ -44,7 +52,7 @@ export interface MatchedOfferProps {
   city: string;
   closest_city: string;
 
-  shelter_type: Array<string>;
+  shelter_type: Array<ShelterType>;
   beds: number;
   acceptable_group_relations: Array<string>;
   ok_for_pregnant: Boolean;
@@ -213,7 +221,9 @@ async function getRequestsFromDB(uid: string): Promise<RequestProps[]> {
           phone_num: g.host_phone_num,
           email: g.host_email,
 
-          shelter_type: ungroupString(g.host_shelter_type),
+          shelter_type: ungroupString(
+            g.host_shelter_type
+          ) as Array<ShelterType>,
           beds: g.host_beds,
           acceptable_group_relations: ungroupString(
             g.host_acceptable_group_relations

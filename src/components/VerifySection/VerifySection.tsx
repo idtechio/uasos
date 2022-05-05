@@ -22,7 +22,7 @@ const VerifyPhoneToast = () => {
   const router = useRouter();
   const theme = useTheme() as Theme;
 
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation(["desktop", "others"]);
 
   const goToProfile = useCallback(() => router.push("/user-profile"), []);
 
@@ -31,7 +31,7 @@ const VerifyPhoneToast = () => {
       <Toast
         color={theme.colors.error}
         label={t("others:desktop.checks.phoneNotVerified")}
-        cta={{ onPress: goToProfile, label: t("verify") }}
+        cta={{ onPress: goToProfile, label: t("desktop:verify") }}
         icon={<PhoneIcon />}
         contaierStyle={{ marginBottom: 0 }}
       />
@@ -48,14 +48,14 @@ export default function VerifySection({
 }: Verifications) {
   const theme = useTheme() as Theme;
 
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation(["desktop", "others"]);
   return (
     <VerifySectionWrapper style={containerStyle}>
       {needEmail && (
         <Toast
           color={theme.colors.error}
           label={t("others:desktop.checks.emailNotVerified")}
-          cta={{ onPress: emailOnPress, label: t("verify") }}
+          cta={{ onPress: emailOnPress, label: t("desktop:verify") }}
           icon={<EmailIcon />}
           contaierStyle={{ marginBottom: 10 }}
         />

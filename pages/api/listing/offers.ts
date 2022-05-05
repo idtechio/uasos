@@ -57,6 +57,14 @@ export interface MatchedRequestProps {
   status: GuestHostStatus;
 }
 
+export type ShelterType =
+  | "bed"
+  | "room"
+  | "flat"
+  | "house"
+  | "collective"
+  | "public_shared_space";
+
 export interface OfferProps {
   id: string;
   name: string;
@@ -70,7 +78,7 @@ export interface OfferProps {
   street: string;
   building_no: string;
   appartment_no: string;
-  shelter_type: Array<string>;
+  shelter_type: Array<ShelterType>;
   host_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -207,7 +215,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     appartment_no: h.appartment_no,
     phone_num: h.phone_num,
     email: h.email,
-    shelter_type: ungroupString(h.shelter_type),
+    shelter_type: ungroupString(h.shelter_type) as Array<ShelterType>,
     host_type: ungroupString(h.host_type),
     beds: h.beds,
     acceptable_group_relations: ungroupString(h.acceptable_group_relations),
