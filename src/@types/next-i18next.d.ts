@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
+
 import backend from "../../public/locales/en/backend.json";
 import common from "../../public/locales/en/common.json";
 import desktop from "../../public/locales/en/desktop.json";
@@ -14,6 +15,8 @@ import others from "../../public/locales/en/others.json";
 import privacyPolicy from "../../public/locales/en/privacyPolicy.json";
 import publicShelters from "../../public/locales/en/publicShelters.json";
 import regulations from "../../public/locales/en/regulations.json";
+
+// if new ns will be available, please add it to this object
 
 const dynamicResource = {
   backend,
