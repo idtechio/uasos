@@ -3,7 +3,7 @@ import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnancyIcon from "../../style/svgs/pregnancy.svg";
 import CarIcon from "../../style/svgs/car.svg";
 import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
-import { AccommodationTypeEnum } from "../../helpers/FormTypes";
+import { AccommodationTypeEnum, FormKey } from "../../helpers/FormTypes";
 import { ReactNode } from "react";
 
 type GroupRelationsLabelType =
