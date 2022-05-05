@@ -5,7 +5,7 @@ import Image from "next/image";
 const FLAG_TYPE_EMOJI = "emoji";
 const FLAG_TYPE_SVG = "svg";
 
-type Locale = "pl" | "ua" | "ro" | "ru" | "en" | "hu" | "sk" | "cs";
+type Locale = "pl" | "ua" | "ro" | "ru" | "en" | "hu" | "sk" | "cs" | string;
 interface Props {
   locale: Locale;
   width?: number;

@@ -53,7 +53,7 @@ const languagesListNames = [
 
 const FaqContent = () => {
   const { asPath, locale } = useRouter();
-  const { t } = useTranslation("faq");
+  const { t } = useTranslation("others");
   const [isDesktop, setIsDesktop] = useState(false);
 
   useLayoutEffect(() => {
@@ -120,13 +120,15 @@ const FaqContent = () => {
         {isDesktop && (
           <>
             <Logo />
-            <TitleDesktop accessibilityRole="header">{t("FAQ")}</TitleDesktop>
+            <TitleDesktop accessibilityRole="header">
+              {t("common.footer.FAQ")}
+            </TitleDesktop>
             <ButtonWrapper>{languagesListElements}</ButtonWrapper>
           </>
         )}
         {!isDesktop && (
           <Title accessibilityRole="header">
-            {t("FAQ")}
+            {t("common.footer.FAQ")}
             <YellowHighlight />
           </Title>
         )}
