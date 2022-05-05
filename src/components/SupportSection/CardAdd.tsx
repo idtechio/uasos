@@ -32,7 +32,7 @@ type CardAddProps = { label: string; onPress: () => void; readonly?: boolean };
 export default function CardAdd({ label, onPress, readonly }: CardAddProps) {
   return (
     <CardAddWrapper>
-      <Button onPress={onPress} disabled={readonly}>
+      <Button onPress={onPress}>
         <PlusCircleIcon />
         <Label>{label}</Label>
       </Button>

@@ -1,8 +1,8 @@
 name: Build and deploy test
 on:
   push:
-    branches:
-      - test
+    tags:
+      - "test-env/*"
 
 env:
   reg_project_id: "ukrn-hlpr"

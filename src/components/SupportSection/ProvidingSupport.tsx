@@ -29,6 +29,7 @@ type ProvidingSupportProps = {
   isError: boolean;
   isLoading: boolean;
   readonly: boolean;
+  identityVerified: boolean;
 };
 
 export default function ProvidingSupport({
@@ -36,6 +37,7 @@ export default function ProvidingSupport({
   isLoading,
   isError,
   readonly,
+  identityVerified,
 }: ProvidingSupportProps) {
   const { t } = useTranslation();
 
@@ -50,7 +52,12 @@ export default function ProvidingSupport({
   return (
     <SupportWrapper>
       <Title>{t("others:desktop.yourOffers")}</Title>
-      <Content isLoading={isLoading} offers={offers} readonly={readonly} />
+      <Content
+        isLoading={isLoading}
+        offers={offers}
+        readonly={readonly}
+        identityVerified={identityVerified}
+      />
     </SupportWrapper>
   );
 }
@@ -58,10 +65,12 @@ export default function ProvidingSupport({
 const Content = ({
   isLoading,
   readonly,
+  identityVerified,
   offers,
 }: {
   isLoading: boolean;
   readonly: boolean;
+  identityVerified: boolean;
   offers?: Offer[];
 }) => {
   if (isLoading || offers === undefined) {
@@ -71,12 +80,18 @@ const Content = ({
   return (
     <>
       <Offers offers={offers} readonly={readonly} />
-      <NoOffer readonly={readonly} />
+      <NoOffer readonly={readonly} identityVerified={identityVerified} />
     </>
   );
 };
 
-const NoOffer = ({ readonly }: { readonly: boolean }) => {
+const NoOffer = ({
+  readonly,
+  identityVerified,
+}: {
+  readonly: boolean;
+  identityVerified: boolean;
+}) => {
   const { t } = useTranslation("desktop");
 
   const router = useRouter();
@@ -86,6 +101,7 @@ const NoOffer = ({ readonly }: { readonly: boolean }) => {
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.HOST);
+        if (identityVerified) router.push(Routes.ID_CHECK);
       }}
     />
   );

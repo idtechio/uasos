@@ -8,6 +8,7 @@ export interface getAccountDTO {
   confirmedPhone: Boolean;
   smsNotification: Boolean;
   verified?: Boolean;
+  identityVerified?: string;
 }
 export interface updateAccountReqDTO {
   name: string;
