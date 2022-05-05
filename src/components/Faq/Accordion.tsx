@@ -28,15 +28,16 @@ function Accordion({
     font-weight: bold;
     text-align: left;
     letter-spacing: ${(props) => (props.isMain ? "0.5px" : "normal")};
-    background-color: #fff;
+    background-color: ${(props) => (props.isMain ? "none" : "#fff")};
     border: none;
     border-radius: 16px;
     outline: none;
     box-shadow: ${(props) =>
-      props.isMain ? "none" : "0px 4px 24px rgba(34, 60, 80, 0.2)"};
+      props.isMain ? "none" : "0px 4px 4px rgba(34, 60, 80, 0.2)"};
     transition: 0.4s;
     cursor: ${(props) => (props.isMain ? "auto" : "pointer")};
   `;
+
   const Panel = styled.View<{ isOpenText: boolean }>`
     padding: 0 18px;
     max-height: ${(props) => (props.isOpenText ? "auto" : 0)};
