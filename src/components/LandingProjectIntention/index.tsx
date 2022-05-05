@@ -126,22 +126,22 @@ const FlexAnchor = styled.View`
 `;
 
 const LandingProjectIntention = () => {
-  const { t } = useTranslation("landingPage");
-  const { t: t_others } = useTranslation("others");
+  const { t } = useTranslation(["landingPage", "others", "common"]);
+
   const router = useRouter();
   const { identity, account } = useContext(AuthContext);
 
   const isAccountVerified =
     identity && account?.confirmedEmail && account?.confirmedPhone;
 
-  const welcomeAppDescription = t_others("welcomePage.appDescription");
+  const welcomeAppDescription = t("others:welcomePage.appDescription");
   return (
     <Container>
       <ContentWrapper>
         <TextContainer>
           {/* @ts-expect-error TODO: fix prop types */}
           <Title accessibilityRole="heading" accessibilityLevel={1}>
-            {t("projectIntention.title")}
+            {t("landingPage:projectIntention.title")}
           </Title>
 
           <SubTitleWrapper>
@@ -157,7 +157,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOpposite
-                      anchor={t("projectIntention.lookingForHelp")}
+                      anchor={t("landingPage:projectIntention.lookingForHelp")}
                     />
                   </a>
                 </Link>
@@ -165,7 +165,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOpposite
-                      anchor={t("projectIntention.shareHelp")}
+                      anchor={t("landingPage:projectIntention.shareHelp")}
                     />
                   </a>
                 </Link>

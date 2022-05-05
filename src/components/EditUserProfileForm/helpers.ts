@@ -43,7 +43,7 @@ export const parseError = (error: string) => {
     error.includes("email-already-exists") ||
     error.includes("email-already-in-use")
   ) {
-    return "userRegistration.errors.emailExist";
+    return "userRegistration.errors.duplicatedMail";
   } else if (
     error.includes("phone-number-already-exists") ||
     error.includes("account-exists")

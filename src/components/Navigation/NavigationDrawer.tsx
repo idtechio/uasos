@@ -17,7 +17,7 @@ interface Props {
 
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "others"]);
   const { identity } = useContext(AuthContext);
 
   const handleSignOut = () => {
@@ -46,7 +46,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
               }}
             />
             <NavigationMenuItem
-              title={t("navigationDrawer.profile")}
+              title={t("common:navigationDrawer.profile")}
               Icon={UserIcon}
               onPress={() => {
                 router.push("/user-profile");
@@ -55,14 +55,14 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             />
 
             <NavigationMenuItem
-              title={t("navigationDrawer.logout")}
+              title={t("common:navigationDrawer.logout")}
               Icon={LogoutIcon}
               onPress={handleSignOut}
             />
           </>
         ) : (
           <NavigationMenuItem
-            title={t("navigationDrawer.logIn")}
+            title={t("common:navigationDrawer.logIn")}
             Icon={UserIcon}
             onPress={() => {
               router.push(`/${router?.locale}${Routes.SIGN_IN}`);

@@ -78,7 +78,7 @@ export interface OfferProps {
   street: string;
   building_no: string;
   appartment_no: string;
-  shelter_type: Array<ShelterType>;
+  shelter_type: Array<string>;
   host_type: Array<string>;
   beds: number;
   acceptable_group_relations: Array<string>;
@@ -215,7 +215,7 @@ async function getOffersFromDB(uid: string): Promise<OfferProps[]> {
     appartment_no: h.appartment_no,
     phone_num: h.phone_num,
     email: h.email,
-    shelter_type: ungroupString(h.shelter_type) as Array<ShelterType>,
+    shelter_type: ungroupString(h.shelter_type),
     host_type: ungroupString(h.host_type),
     beds: h.beds,
     acceptable_group_relations: ungroupString(h.acceptable_group_relations),

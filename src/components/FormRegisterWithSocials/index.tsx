@@ -26,7 +26,7 @@ import { css } from "styled-components/native";
 import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export default function FromRegisterWithSocials() {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["others", "common"]);
   const { identity, account } = useContext(AuthContext);
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
@@ -42,7 +42,7 @@ export default function FromRegisterWithSocials() {
   const [apiError, setApiError] = useState<string>("");
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
-      setApiError(t("others:userRegistration.errors.emailExists"));
+      setApiError(t("others:userRegistration.errors.emailExist"));
     } else if (
       error.includes("phone-number-already-exists") ||
       error.includes("account-exists")
@@ -152,7 +152,7 @@ export default function FromRegisterWithSocials() {
               required: true,
             }}
             error={errors?.registerWithSocials?.name}
-            errorMsg={t("hostAdd.errors.name")}
+            errorMsg={t("common:hostAdd.errors.name")}
             styles={{ wrapper: { marginBottom: 12 } }}
           />
           <InputControlLabel>
@@ -164,7 +164,6 @@ export default function FromRegisterWithSocials() {
               required: true,
             }}
             error={errors?.registrationUserForm?.preferredLanguage}
-            errorMsg={t("registrationUserForm.errors.preferredLanguage")}
           />
           {/* <PreferredLanguageInput></PreferredLanguageInput> */}
 
@@ -182,11 +181,11 @@ export default function FromRegisterWithSocials() {
               required: true,
               pattern: {
                 value: /\S+@\S+\.\S+/,
-                message: t("validations.invalidEmail"),
+                message: t("common:validations.invalidEmail"),
               },
             }}
             error={errors?.registerWithSocials?.email}
-            errorMsg={t("hostAdd.errors.email")}
+            errorMsg={t("common:hostAdd.errors.email")}
             readonly={true}
           />
 
@@ -198,11 +197,11 @@ export default function FromRegisterWithSocials() {
               prefixName="registerWithSocials.phonePrefix"
               numberName="registerWithSocials.phoneNumber"
               phonePrefixLabel={t("others:forms.generic.country")}
-              phoneLabel={t("_ _ _  _ _ _  _ _ _")}
+              phoneLabel="_ _ _  _ _ _  _ _ _"
               errorPrefix={errors?.registerWithSocials?.phonePrefix}
-              errorPrefixMsg={t("hostAdd.errors.country")}
+              errorPrefixMsg={t("common:hostAdd.errors.country")}
               error={errors?.registerWithSocials?.phoneNumber}
-              errorMsg={t("hostAdd.errors.phoneNumber")}
+              errorMsg={t("common:hostAdd.errors.phoneNumber")}
               data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
           </CompositionSection>

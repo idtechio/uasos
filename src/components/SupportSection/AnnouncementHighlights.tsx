@@ -5,6 +5,13 @@ import MarkerIcon from "../../../src/style/svgs/marker2.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
 import { Label } from "./style";
 
+export type Duration =
+  | "less_than_week"
+  | "week"
+  | "two_weeks"
+  | "month"
+  | "longer";
+
 export const AnnouncementHighlights = ({
   city,
   beds,
@@ -14,7 +21,7 @@ export const AnnouncementHighlights = ({
   beds: number;
   duration: string;
 }) => {
-  const { t } = useTranslation("others");
+  const { t } = useTranslation(["others", "common"]);
 
   return (
     <SectionInfo>
@@ -22,21 +29,25 @@ export const AnnouncementHighlights = ({
         <IconWrapper>
           <MarkerIcon />
         </IconWrapper>
-        <Label>{t("forms.generic.cityWithData", { city })}</Label>
+        <Label>{t("others:forms.generic.cityWithData", { city })}</Label>
       </Info>
       <Info>
         <IconWrapper>
           <UsersIcon />
         </IconWrapper>
-        <Label>{t("desktop.host.numberOfPeople", { maxAmount: beds })}</Label>
+        <Label>
+          {t("others:desktop.host.numberOfPeople", { maxAmount: beds })}
+        </Label>
       </Info>
       <Info>
         <IconWrapper>
           <ClockIcon />
         </IconWrapper>
         <Label>
-          {t("desktop.refuge.duration", {
-            value: t(`common:hostAdd.accommodationTimeLabel.${duration}`),
+          {t("others:desktop.refuge.duration", {
+            value: t(
+              `common:hostAdd.accommodationTimeLabel.${duration as Duration}`
+            ),
           })}
         </Label>
       </Info>

@@ -25,6 +25,13 @@ import ModalPicture from "../../../public/assets/PasswordReset.png";
 import Image from "next/image";
 import { Routes } from "../../consts/router";
 
+type LengthError = "others:forms.userRegistration.validations.passwordLength";
+type RepeatError = "others:forms.userRegistration.validations.passwordMismatch";
+interface ErrorMessages {
+  LENGTH: LengthError;
+  REPEAT: RepeatError;
+}
+
 const FormPasswordReset = () => {
   const { t } = useTranslation();
   const [resetSuccess, setResetSuccess] = useState<boolean>(false);
@@ -41,7 +48,7 @@ const FormPasswordReset = () => {
     watch,
   } = formFields;
 
-  const ERROR_MESSAGES = {
+  const ERROR_MESSAGES: ErrorMessages = {
     LENGTH: "others:forms.userRegistration.validations.passwordLength",
     REPEAT: "others:forms.userRegistration.validations.passwordMismatch",
   };
@@ -141,7 +148,7 @@ const FormPasswordReset = () => {
             <ModalContainer>
               <Image src={ModalPicture} alt="" />
               <StyledModalText>
-                {t("others:common.resetPassword.success")}
+                {t("others:forms.resetPassword.success")}
               </StyledModalText>
               <ButtonCta
                 onPress={onPressHandler}

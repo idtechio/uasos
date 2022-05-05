@@ -246,7 +246,7 @@ export default function FormRegisterUser() {
               prefixName="registrationUserForm.phonePrefix"
               numberName="registrationUserForm.phoneNumber"
               phonePrefixLabel={t("hostAdd.country")}
-              phoneLabel={t("_ _ _  _ _ _  _ _ _ ")}
+              phoneLabel={"_ _ _  _ _ _  _ _ _"}
               error={errors?.registrationUserForm?.phoneNumber}
               errorMsg=""
               data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}

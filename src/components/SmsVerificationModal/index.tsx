@@ -101,7 +101,7 @@ export default function SmsVerificationModal({
 
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
-      setApiError(t("others:userRegistration.errors.emailExists"));
+      setApiError(t("others:userRegistration.errors.emailExist"));
     } else if (
       error.includes("phone-number-already-exists") ||
       error.includes("account-exists")
