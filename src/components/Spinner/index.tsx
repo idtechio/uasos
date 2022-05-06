@@ -1,4 +1,4 @@
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator } from "react-native";
 
 export default function Spinner() {
   return (
