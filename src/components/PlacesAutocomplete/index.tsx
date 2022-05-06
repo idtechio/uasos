@@ -15,6 +15,7 @@ import { Item } from "./Item";
 import { CountryCode, SelectedCountry } from "../Inputs/FormGeoAutocomplete";
 
 interface Props {
+  value: string;
   selectedCountry: SelectedCountry;
   error?: FieldError | FieldError[] | undefined;
   placeholder: string;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 export const PlacesAutocomplete = ({
+  value,
   error,
   onChange,
   placeholder,
@@ -33,9 +35,9 @@ export const PlacesAutocomplete = ({
   const [showOptions, setShowOptions] = useState(false);
 
   const {
-    value,
+    value: localValue,
     suggestions: { data, loading },
-    setValue,
+    setValue: setLocalValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
     requestOptions: {
@@ -50,18 +52,18 @@ export const PlacesAutocomplete = ({
 
   const handleChange = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
     onChange("");
-    setValue(e.nativeEvent.text);
+    setLocalValue(e.nativeEvent.text);
   };
 
   const handleContainerPress = () => {
     setShowOptions(true);
-    setValue(value);
+    setLocalValue(localValue);
   };
 
   const handlePress = (cityName: string) => () => {
     clearSuggestions();
 
-    setValue(cityName, false);
+    setLocalValue(cityName, false);
     onChange(cityName);
     setShowOptions(false);
   };
@@ -90,8 +92,6 @@ export const PlacesAutocomplete = ({
     };
   }, [showOptions]);
 
-  console.log({ data });
-
   return (
     <>
       <Container
@@ -102,7 +102,7 @@ export const PlacesAutocomplete = ({
       >
         <Input
           placeholder={placeholder}
-          value={value}
+          value={localValue || value}
           onChange={handleChange}
         />
         {loading ? (
@@ -115,7 +115,7 @@ export const PlacesAutocomplete = ({
         ) : null}
       </Container>
 
-      {!loading && value && showOptions ? (
+      {!loading && localValue && showOptions ? (
         <List
           // @ts-expect-error TODO: fix ref type
           ref={listRef}
