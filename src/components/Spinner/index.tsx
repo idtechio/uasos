@@ -2,8 +2,12 @@ import { ActivityIndicator, View } from "react-native";
 
 export default function Spinner() {
   return (
-    <View style={{ margin: "auto" }}>
+    <SpinnerBase>
       <ActivityIndicator size="large" />
-    </View>
+    </SpinnerBase>
   );
 }
+
+const SpinnerBase = styled.View`
+  margin: auto;
+`;
