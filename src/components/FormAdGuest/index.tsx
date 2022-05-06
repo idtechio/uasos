@@ -133,7 +133,7 @@ export default function FormAdGuest({
     if (data?.city && location === Location.Any) {
       setLocation(Location.Preferred);
     }
-  }, [data]);
+  }, [data, location]);
 
   const {
     handleSubmit,
@@ -160,7 +160,7 @@ export default function FormAdGuest({
         setLocation(newLocation);
       }
     },
-    [location]
+    [formFields]
   );
 
   const onSubmit: SubmitHandler<FormType> = async ({ advancedRefugee }) => {

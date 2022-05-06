@@ -36,18 +36,20 @@ export default function ReportOffer({ close }: Props) {
   );
 
   const handleReport = () =>
-    mutate(
-      {
-        matchID: matchID!,
-        targetID,
-        targetType,
-        reportType: problem!,
-      },
-      {
-        onSuccess: () => setReportStatus(MODAL_STATUS.SUCCESS),
-        onError: () => setReportStatus(MODAL_STATUS.ERROR),
-      }
-    );
+    matchID && problem
+      ? mutate(
+          {
+            matchID: matchID,
+            targetID,
+            targetType,
+            reportType: problem,
+          },
+          {
+            onSuccess: () => setReportStatus(MODAL_STATUS.SUCCESS),
+            onError: () => setReportStatus(MODAL_STATUS.ERROR),
+          }
+        )
+      : "";
 
   const closeAfterSuccess = useCallback(() => {
     if (targetType === "guests") {

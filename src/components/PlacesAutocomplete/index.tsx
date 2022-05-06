@@ -90,8 +90,6 @@ export const PlacesAutocomplete = ({
     };
   }, [showOptions]);
 
-  console.log({ data });
-
   return (
     <>
       <Container

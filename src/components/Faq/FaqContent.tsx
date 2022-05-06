@@ -86,7 +86,7 @@ const FaqContent = () => {
         }
       });
     });
-  }, [isDesktop]);
+  }, [isDesktop, locale]);
 
   const languagesListElements = useMemo(
     () =>
@@ -97,7 +97,7 @@ const FaqContent = () => {
             </Link>
           ))
         : null,
-    [isDesktop]
+    [asPath, isDesktop]
   );
 
   return (

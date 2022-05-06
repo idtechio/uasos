@@ -2,8 +2,8 @@ import { FirebaseError } from "@firebase/util";
 import { ConfirmationResult, User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useState } from "react";
 import { View } from "react-native";
+import React, { useCallback, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
@@ -49,44 +49,67 @@ export default function EditUserProfileForm({ account, identity }: Props) {
   const [smsVerificationModalMode, setSmsVerificationModalMode] = useState<
     "LINK" | "UPDATE"
   >("LINK");
-  const [capchaInited, setCapchaInited] = useState<boolean>(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const [isVerifyPhoneModalLoading, setIsVerifyPhoneModalLoading] =
     useState<boolean>(false);
 
-  const verifyPhone = async () => {
-    setIsVerifyPhoneModalLoading(true);
-    try {
-      const captcha = capchaInited
-        ? Authorization.recaptcha
-        : Authorization.initCaptcha("recaptcha__container");
-      setCapchaInited(true);
-      if (formPayload?.phone && captcha) {
-        if (!identity?.phoneNumber) {
-          setSmsVerificationModalMode("LINK");
-          const confirm = await Authorization.linkWithPhone(
-            formPayload?.phone,
-            captcha
-          );
-          setConfirmation(confirm);
-        } else if (identity?.phoneNumber !== formPayload?.phone) {
-          setSmsVerificationModalMode("UPDATE");
-          setVerificationId(
-            await Authorization.initUpdatePhone(formPayload?.phone, captcha)
-          );
+  const closeSmsVerificationModal = useCallback(() => {
+    confirmation ? setConfirmation(undefined) : setVerificationId(undefined);
+    setFormPayload(null);
+  }, [confirmation]);
+
+  const verifyPhone = useCallback(
+    async (phone) => {
+      setIsVerifyPhoneModalLoading(true);
+
+      try {
+        const captcha = Authorization.recaptcha
+          ? Authorization.recaptcha
+          : Authorization.initCaptcha("recaptcha__container");
+        if (phone && captcha) {
+          if (!identity?.phoneNumber) {
+            setSmsVerificationModalMode("LINK");
+            const confirm = await Authorization.linkWithPhone(phone, captcha);
+            setConfirmation(confirm);
+          } else if (identity?.phoneNumber !== phone) {
+            setSmsVerificationModalMode("UPDATE");
+            setVerificationId(
+              await Authorization.initUpdatePhone(phone, captcha)
+            );
+          }
         }
+      } catch (error: unknown) {
+        if (error instanceof Error || error instanceof FirebaseError) {
+          setApiError(parseError(error.message));
+        }
+        closeSmsVerificationModal();
       }
-    } catch (error: unknown) {
-      if (error instanceof Error || error instanceof FirebaseError) {
-        setApiError(parseError(error.message));
-      }
-      closeSmsVerificationModal();
-    }
-    setIsVerifyPhoneModalLoading(false);
-  };
+      setIsVerifyPhoneModalLoading(false);
+    },
+    [closeSmsVerificationModal, identity?.phoneNumber]
+  );
+
+  const updateUserProfile = useCallback(
+    async (payload) => {
+      mutate(
+        { payload },
+        {
+          onError: () => {
+            // Set error message
+          },
+          onSuccess: async () => {
+            router.push("/dashboard");
+          },
+        }
+      );
+      await Authorization.updateMail(payload.email);
+    },
+    [mutate, router]
+  );
 
   const onSubmit = useCallback(
     async (data: EditProfileForm) => {
+      setApiError(null);
       const payload = {
         name: data.name,
         email: data.email,
@@ -97,42 +120,14 @@ export default function EditUserProfileForm({ account, identity }: Props) {
         preferredLang: data.preferredLanguage,
         smsNotification: data.smsNotification,
       };
-
       setFormPayload(payload);
+      (identity?.phoneNumber === null && payload?.phone === undefined) ||
+      identity?.phoneNumber === payload?.phone
+        ? updateUserProfile(payload)
+        : verifyPhone(payload?.phone);
     },
-    [formPayload]
+    [identity?.phoneNumber, updateUserProfile, verifyPhone]
   );
-
-  useEffect(() => {
-    if (formPayload) {
-      (identity?.phoneNumber === null && formPayload?.phone === undefined) ||
-      identity?.phoneNumber === formPayload?.phone
-        ? updateUserProfile()
-        : verifyPhone();
-    }
-  }, [formPayload]);
-
-  const updateUserProfile = useCallback(async () => {
-    if (formPayload) {
-      mutate(
-        { payload: formPayload },
-        {
-          onError: () => {
-            // Set error message
-          },
-          onSuccess: async () => {
-            router.push("/dashboard");
-          },
-        }
-      );
-      await Authorization.updateMail(formPayload.email);
-    }
-  }, [formPayload, mutate, router]);
-
-  const closeSmsVerificationModal = useCallback(() => {
-    confirmation ? setConfirmation(undefined) : setVerificationId(undefined);
-    setFormPayload(null);
-  }, [confirmation]);
 
   return (
     <>
@@ -167,8 +162,8 @@ export default function EditUserProfileForm({ account, identity }: Props) {
           confirmation={confirmation}
           verificationId={verificationId}
           phoneNumber={formPayload.phone}
-          setVerificationSuccess={() => console.log("success")}
-          callback={updateUserProfile}
+          setVerificationSuccess={() => null}
+          callback={() => updateUserProfile(formPayload)}
           close={closeSmsVerificationModal}
           mode={smsVerificationModalMode}
         />

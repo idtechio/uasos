@@ -32,7 +32,7 @@ export default function SelectProblemDropdown({
       value: item.value,
     }));
     setData(dropDownData);
-  }, [targetType]);
+  }, [t, targetType]);
 
   return (
     <Dropdown
