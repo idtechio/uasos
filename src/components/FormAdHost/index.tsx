@@ -102,8 +102,6 @@ export default function FormAdHost({ data }: FormAdHostProps) {
     },
   });
 
-  console.log(data);
-
   useEffect(() => {
     if (form && data) {
       form.reset({
