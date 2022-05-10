@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { View } from "react-native";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import { CompositionSection } from "../Compositions";
@@ -122,7 +123,7 @@ export default function FromRegisterWithSocials() {
 
   return (
     <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
-      <div style={{ display: "none" }} id="captcha__container"></div>
+      <View style={{ display: "none" }} nativeID="captcha__container" />
       <FormContainer>
         <FormHeader>
           {t("others:forms.userRegistration.userRegistration")}
@@ -223,9 +224,10 @@ export default function FromRegisterWithSocials() {
               onPress={() => Authorization.logOut()}
               anchor={t("others:common.buttons.back")}
               style={styles.backButton}
+              disabled={isLoading}
             />
             <ButtonCta
-              disabled={isLoading}
+              isLoading={isLoading}
               onPress={handleSubmit(onSubmit, () => {})}
               anchor={t("others:common.buttons.verify")}
               style={styles.verifyButton}

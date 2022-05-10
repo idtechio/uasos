@@ -3,6 +3,7 @@ import { ConfirmationResult, User } from "firebase/auth";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
+import { View } from "react-native";
 import { FormProvider, useForm } from "react-hook-form";
 import { getAccountDTO } from "../../client-api/account";
 import { Authorization } from "../../hooks/useAuth";
@@ -50,8 +51,11 @@ export default function EditUserProfileForm({ account, identity }: Props) {
   >("LINK");
   const [capchaInited, setCapchaInited] = useState<boolean>(false);
   const [apiError, setApiError] = useState<string | null>(null);
+  const [isVerifyPhoneModalLoading, setIsVerifyPhoneModalLoading] =
+    useState<boolean>(false);
 
   const verifyPhone = async () => {
+    setIsVerifyPhoneModalLoading(true);
     try {
       const captcha = capchaInited
         ? Authorization.recaptcha
@@ -78,6 +82,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
       }
       closeSmsVerificationModal();
     }
+    setIsVerifyPhoneModalLoading(false);
   };
 
   const onSubmit = useCallback(
@@ -150,6 +155,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
             />
             <ButtonCta
               disabled={isLoading}
+              isLoading={isLoading || isVerifyPhoneModalLoading}
               anchor={t("common.buttons.update")}
               onPress={handleSubmit(onSubmit)}
             />
@@ -167,7 +173,7 @@ export default function EditUserProfileForm({ account, identity }: Props) {
           mode={smsVerificationModalMode}
         />
       )}
-      <div id={"recaptcha__container"} />
+      <View nativeID="recaptcha__container" />
     </>
   );
 }
