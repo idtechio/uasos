@@ -65,7 +65,7 @@ const BadgeBase = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: fit-content;
 `;
 
 const BadgeText = styled.Text`
