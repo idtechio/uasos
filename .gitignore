@@ -40,3 +40,7 @@ sa_key.json
 .idea
 
 tsconfig.tsbuildinfo
+
+#cypress
+cypress/videos
+cypress/screenshots
