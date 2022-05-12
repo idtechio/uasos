@@ -34,6 +34,8 @@
     "react-loading-skeleton": "^3.0.3",
     "react-native": "^0.67.3",
     "react-native-modal": "^13.0.0",
+    "react-native-svg": "^12.3.0",
+    "react-native-svg-transformer": "^1.0.0",
     "react-native-web": "^0.17.6",
     "react-native-web-lottie": "^1.4.4",
     "react-query": "^3.34.19",
