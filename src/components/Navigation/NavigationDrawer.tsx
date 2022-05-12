@@ -4,6 +4,7 @@ import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
 import UserIcon from "../../style/svgs/user.svg";
+import ManageIcon from "../../style/svgs/manage.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -28,6 +29,11 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
     });
   };
 
+  const handleRedirect = (route: string) => () => {
+    router.push(route);
+    hideDrawer();
+  };
+
   if (!isOpen) {
     return null;
   }
@@ -40,20 +46,18 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             <NavigationMenuItem
               title={t("others:common.words.dashboard")}
               Icon={UserIcon}
-              onPress={() => {
-                router.push("/dashboard");
-                hideDrawer();
-              }}
+              onPress={handleRedirect(Routes.DASHBOARD)}
             />
             <NavigationMenuItem
               title={t("navigationDrawer.profile")}
               Icon={UserIcon}
-              onPress={() => {
-                router.push("/user-profile");
-                hideDrawer();
-              }}
+              onPress={handleRedirect(Routes.USER_PROFILE)}
             />
-
+            <NavigationMenuItem
+              title={t("navigationDrawer.manage")}
+              Icon={ManageIcon}
+              onPress={handleRedirect(Routes.MANAGE_DATA)}
+            />
             <NavigationMenuItem
               title={t("navigationDrawer.logout")}
               Icon={LogoutIcon}

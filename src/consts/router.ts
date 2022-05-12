@@ -1,6 +1,7 @@
 export enum Routes {
   HOMEPAGE = "/",
   SIGN_IN = "/signin",
+  DASHBOARD = "/dashboard",
   HOST = "/host",
   GUEST = "/guest",
   DETAILS = "/details",
@@ -9,4 +10,6 @@ export enum Routes {
   PRIVACY_POLICY = "/privacy-policy",
   PARTNERS = "/partners",
   FAQ = "/faq",
+  USER_PROFILE = "/user-profile",
+  MANAGE_DATA = "/manage-data",
 }
