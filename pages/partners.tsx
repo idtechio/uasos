@@ -11,6 +11,7 @@ import {
   MEDIA_PARTNERS,
   PARTNERS,
 } from "../src/consts/partners.json";
+import { uasosInMedia } from "../src/consts/in-media.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { Theme } from "../src/style/theme.config";
@@ -101,6 +102,19 @@ const PartnersPage = () => {
         <SectionTitle title={t("partners")} />
         <PartnersContainer>
           {PARTNERS.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              source={partner.image}
+              alt={partner.alt}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
+
+      <Section>
+        <SectionTitle title="uaSOS in media" />
+        <PartnersContainer>
+          {uasosInMedia.map((partner, index) => (
             <StyledPartnerCard
               key={index}
               source={partner.image}

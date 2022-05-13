@@ -1,0 +1,296 @@
+{
+  "uasosInMedia": [
+    {
+      "alt": "discovery",
+      "image": "/in-media/discovery.png"
+    },
+    {
+      "alt": "24jgora-pl",
+      "image": "/in-media/24jgora-pl.png"
+    },
+    {
+      "alt": "7skynews-pl",
+      "image": "/in-media/7skynews-pl.png"
+    },
+    {
+      "alt": "anty-radio",
+      "image": "/in-media/anty-radio.png"
+    },
+    {
+      "alt": "bogaty-region",
+      "image": "/in-media/bogaty-region.png"
+    },
+    {
+      "alt": "bomega",
+      "image": "/in-media/bomega.png"
+    },
+    {
+      "alt": "godziny-poznan",
+      "image": "/in-media/godziny-poznan.png"
+    },
+    {
+      "alt": "ca",
+      "image": "/in-media/ca.png"
+    },
+    {
+      "alt": "dzienik-internatow",
+      "image": "/in-media/dzienik-internatow.png"
+    },
+    {
+      "alt": "dzienna-pl",
+      "image": "/in-media/dzienna-pl.png"
+    },
+    {
+      "alt": "gazeta-prawna",
+      "image": "/in-media/gazeta-prawna.png"
+    },
+    {
+      "alt": "dziennik",
+      "image": "/in-media/dziennik.png"
+    },
+    {
+      "alt": "ekai",
+      "image": "/in-media/ekai.png"
+    },
+    {
+      "alt": "facebook",
+      "image": "/in-media/facebook.png"
+    },
+    {
+      "alt": "filary-business",
+      "image": "/in-media/filary-business.png"
+    },
+    {
+      "alt": "fintek",
+      "image": "/in-media/fintek.png"
+    },
+    {
+      "alt": "wyborza-pl",
+      "image": "/in-media/wyborza-pl.png"
+    },
+    {
+      "alt": "gazeta-pl",
+      "image": "/in-media/gazeta-pl.png"
+    },
+    {
+      "alt": "gazetafinansowa-info-pl",
+      "image": "/in-media/gazetafinansowa-info-pl.png"
+    },
+    {
+      "alt": "powiwiatova",
+      "image": "/in-media/powiwiatova.png"
+    },
+    {
+      "alt": "gizycko-pl",
+      "image": "/in-media/gizycko-pl.png"
+    },
+    {
+      "alt": "gosc-nedzielny",
+      "image": "/in-media/gosc-nedzielny.png"
+    },
+    {
+      "alt": "hitweb-eu",
+      "image": "/in-media/hitweb-eu.png"
+    },
+    {
+      "alt": "homo-digital",
+      "image": "/in-media/homo-digital.png"
+    },
+    {
+      "alt": "wiar-pl",
+      "image": "/in-media/wiar-pl.png"
+    },
+    {
+      "alt": "instagram",
+      "image": "/in-media/instagram.png"
+    },
+    {
+      "alt": "interia",
+      "image": "/in-media/interia.png"
+    },
+    {
+      "alt": "inwesctycie-pl",
+      "image": "/in-media/inwesctycie-pl.png"
+    },
+    {
+      "alt": "itblog24",
+      "image": "/in-media/itblog24.png"
+    },
+    {
+      "alt": "it-wiz",
+      "image": "/in-media/it-wiz.png"
+    },
+    {
+      "alt": "gosc-pl",
+      "image": "/in-media/gosc-pl.png"
+    },
+    {
+      "alt": "linkedin",
+      "image": "/in-media/linkedin.png"
+    },
+    {
+      "alt": "mainboard-pl",
+      "image": "/in-media/mainboard-pl.png"
+    },
+    {
+      "alt": "ms",
+      "image": "/in-media/ms.png"
+    },
+    {
+      "alt": "media-wirtualne",
+      "image": "/in-media/media-wirtualne.png"
+    },
+    {
+      "alt": "melo-radio",
+      "image": "/in-media/melo-radio.png"
+    },
+    {
+      "alt": "misyjne",
+      "image": "/in-media/misyjne.png"
+    },
+    {
+      "alt": "msn",
+      "image": "/in-media/msn.png"
+    },
+    {
+      "alt": "newseria",
+      "image": "/in-media/newseria.png"
+    },
+    {
+      "alt": "onet",
+      "image": "/in-media/onet.png"
+    },
+    {
+      "alt": "pap",
+      "image": "/in-media/pap.png"
+    },
+    {
+      "alt": "plotkie-biznesowe",
+      "image": "/in-media/plotkie-biznesowe.png"
+    },
+    {
+      "alt": "polskaprasa-pl",
+      "image": "/in-media/polskaprasa-pl.png"
+    },
+    {
+      "alt": "polske-radio",
+      "image": "/in-media/polske-radio.png"
+    },
+    {
+      "alt": "PR4",
+      "image": "/in-media/PR4.png"
+    },
+    {
+      "alt": "przewodnik-katolicki",
+      "image": "/in-media/przewodnik-katolicki.png"
+    },
+    {
+      "alt": "publiccrelations-pl",
+      "image": "/in-media/publiccrelations-pl.png"
+    },
+    {
+      "alt": "ngo-pl",
+      "image": "/in-media/ngo-pl.png"
+    },
+    {
+      "alt": "radio-fama",
+      "image": "/in-media/radio-fama.png"
+    },
+    {
+      "alt": "radio-wloclawek",
+      "image": "/in-media/radio-wloclawek.png"
+    },
+    {
+      "alt": "radio-rekord",
+      "image": "/in-media/radio-rekord.png"
+    },
+    {
+      "alt": "rmf-max",
+      "image": "/in-media/rmf-max.png"
+    },
+    {
+      "alt": "zet-radio",
+      "image": "/in-media/zet-radio.png"
+    },
+    {
+      "alt": "radio-katowice",
+      "image": "/in-media/radio-katowice.png"
+    },
+    {
+      "alt": "radio-em",
+      "image": "/in-media/radio-em.png"
+    },
+    {
+      "alt": "sadeszcanin",
+      "image": "/in-media/sadeszcanin.png"
+    },
+    {
+      "alt": "sieminowice-pl",
+      "image": "/in-media/sieminowice-pl.png"
+    },
+    {
+      "alt": "spotify",
+      "image": "/in-media/spotify.png"
+    },
+    {
+      "alt": "stooq",
+      "image": "/in-media/stooq.png"
+    },
+    {
+      "alt": "swiat&ludzie",
+      "image": "/in-media/swiat&ludzie.png"
+    },
+    {
+      "alt": "tarnowska-tv",
+      "image": "/in-media/tarnowska-tv.png"
+    },
+    {
+      "alt": "tech-hitweb-eu",
+      "image": "/in-media/tech-hitweb-eu.png"
+    },
+    {
+      "alt": "telko-in",
+      "image": "/in-media/telko-in.png"
+    },
+    {
+      "alt": "tomaszowski",
+      "image": "/in-media/tomaszowski.png"
+    },
+    {
+      "alt": "tok-fm",
+      "image": "/in-media/tok-fm.png"
+    },
+    {
+      "alt": "tvn",
+      "image": "/in-media/tvn.png"
+    },
+    {
+      "alt": "tvn24",
+      "image": "/in-media/tvn24.png"
+    },
+    {
+      "alt": "tvp3",
+      "image": "/in-media/tvp3.png"
+    },
+    {
+      "alt": "twitter",
+      "image": "/in-media/twitter.png"
+    },
+    {
+      "alt": "warsawnow-pl",
+      "image": "/in-media/warsawnow-pl.png"
+    },
+    {
+      "alt": "wirtualne-media",
+      "image": "/in-media/wirtualne-media.png"
+    },
+    {
+      "alt": "wprost",
+      "image": "/in-media/wprost.png"
+    },
+    {
+      "alt": "youtube",
+      "image": "/in-media/youtube.png"
+    }
+  ]
+}
