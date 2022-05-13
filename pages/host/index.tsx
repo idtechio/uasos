@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useContext } from "react";
-import { Text } from "react-native";
 import AppBack from "../../src/components/AppBack";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import FormAdHost from "../../src/components/FormAdHost";
@@ -10,6 +9,7 @@ import { AuthContext } from "../_app";
 import { useRouter } from "next/router";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { OfferProps } from "../api/listing/offers";
+import Spinner from "../../src/components/Spinner";
 
 export default function Account() {
   const { identity, loaded } = useContext(AuthContext);
@@ -42,10 +42,7 @@ export default function Account() {
       return <Redirect path="/signin"></Redirect>;
     }
   } else {
-    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
-    return (
-      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
-    );
+    return <Spinner />;
   }
 }
 
