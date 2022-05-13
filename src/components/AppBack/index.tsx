@@ -2,7 +2,7 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 import ChevronIcon from "../../style/svgs/chevron-down.svg";
-import { LinkContent, StyledText, Wrapper } from "./styled";
+import { LinkContent, StyledText, Wrapper, ChevronIconWrapper } from "./styled";
 import { Routes } from "../../consts/router";
 import { ViewStyle } from "react-native";
 
@@ -17,13 +17,14 @@ const AppBack = ({ to, style }: Props) => {
     <Wrapper style={style}>
       <Link href={to || Routes.HOMEPAGE} passHref>
         <LinkContent>
-          <ChevronIcon
-            style={{
-              transform: "rotate(90deg) translateX(-1px)",
-              width: 24,
-              height: 24,
-            }}
-          />
+          <ChevronIconWrapper>
+            <ChevronIcon
+              style={{
+                width: 24,
+                height: 24,
+              }}
+            />
+          </ChevronIconWrapper>
           <StyledText>{t("common.buttons.back")}</StyledText>
         </LinkContent>
       </Link>
