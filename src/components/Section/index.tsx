@@ -1,13 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { Theme } from "../../style/theme.config";
 
-const StyledSection = styled.section<{ bgColor?: string }>`
+const StyledSection = styled.View<{ bgColor?: string }>`
   background-color: ${(props) => props.bgColor};
   padding: 30px 0;
   z-index: 1;
 `;
 
-const Container = styled.div`
+const Container = styled.View`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -20,13 +21,12 @@ const Container = styled.div`
 type SectionProps = {
   bgColor?: string;
   children?: React.ReactNode;
-  style?: React.CSSProperties;
 };
 
-function Section({ bgColor, children, style }: SectionProps) {
+function Section({ bgColor, children }: SectionProps) {
   return (
     <StyledSection bgColor={bgColor}>
-      <Container style={style}>{children}</Container>
+      <Container>{children}</Container>
     </StyledSection>
   );
 }
