@@ -17,6 +17,7 @@ import {
   MoreButtonWrapper,
   OfferTitle,
   Placeholder,
+  SizedBox,
   SupportCard,
   SupportWrapper,
   TextWrapper,
@@ -136,15 +137,8 @@ const Offers = ({
                 <OfferTitle>
                   {t(`common:staticValues.accommodationTypes.${o.name}`)}
                 </OfferTitle>
-                <div
-                  style={{
-                    alignSelf: "flex-start",
-                    justifySelf: "flex-end",
-                    marginTop: 14,
-                  }}
-                >
-                  <StatusBadge state={o.type} />
-                </div>
+                <SizedBox />
+                <StatusBadge state={o.type} />
               </TextWrapper>
             </HeaderWrapper>
 

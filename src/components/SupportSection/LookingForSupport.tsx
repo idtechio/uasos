@@ -13,6 +13,7 @@ import {
   HeaderWrapper,
   Label,
   MoreButtonWrapper,
+  SizedBox,
   SupportCard,
   SupportWrapper,
   TextWrapper,
@@ -139,16 +140,8 @@ const Requests = ({
                 </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
-            <div
-              style={{
-                alignSelf: "flex-start",
-                justifySelf: "flex-end",
-                marginBottom: 14,
-              }}
-            >
-              <StatusBadge state={r.type} />
-            </div>
-
+            <StatusBadge state={r.type} />
+            <SizedBox />
             {/* {r.matchedOffer ? (
             <MetchedInfo
               name={r.matchedOffer.name}
