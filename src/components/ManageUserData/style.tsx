@@ -20,11 +20,11 @@ export const TextComponent = styled.Text<HeaderPropsInterface>`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-size: ${(props) => (props.small ? "16px" : "24px")};
+  font-size: ${({ small }) => (small ? "16px" : "24px")};
   line-height: 24px;
   letter-spacing: 0.5px;
   margin-top: ${({ marginTop }) => (marginTop ? "50px" : 0)};
   margin-bottom: ${({ marginBottom }) => (marginBottom ? "30px" : 0)};
-  text-align: ${(props) => (props.alignCenter ? "center" : "left")};
+  text-align: ${({ alignCenter }) => (alignCenter ? "center" : "left")};
   color: ${({ theme }) => (theme as Theme).colors.figmaPalette.fontMain};
 `;

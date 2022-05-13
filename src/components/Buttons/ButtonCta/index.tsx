@@ -6,12 +6,14 @@ import { ActivityIndicator, Pressable, View } from "react-native";
 const ButtonCta = ({
   style,
   anchor,
+  anchorColor,
   onPress,
   colorOpposite = false,
   onClick,
   pressable = true,
   disabled,
   isLoading,
+  margin,
 }: ButtonProps) => {
   const handlePress = useCallback(
     (event) => {
@@ -28,11 +30,14 @@ const ButtonCta = ({
       onPress={handlePress}
       colorOpposite={colorOpposite}
       disabled={disabled || isLoading}
+      margin={margin}
     >
       {isLoading ? (
         <ActivityIndicator size="small" />
       ) : typeof anchor === "string" ? (
-        <Text colorOpposite={colorOpposite}>{anchor}</Text>
+        <Text color={anchorColor} colorOpposite={colorOpposite}>
+          {anchor}
+        </Text>
       ) : (
         anchor
       )}
