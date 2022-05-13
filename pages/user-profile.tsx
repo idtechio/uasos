@@ -16,6 +16,7 @@ export default function UserProfile() {
     if (refetchAccount) {
       refetchAccount().catch((err) => err);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!identity && loaded) {

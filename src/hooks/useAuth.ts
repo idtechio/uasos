@@ -38,7 +38,6 @@ const useAuth = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
-      console.log("CHANGED");
       const account = await AccountApi.getAccount()
         .then((res) => res)
         .catch(() => null);

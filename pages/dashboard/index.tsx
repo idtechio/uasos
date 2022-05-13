@@ -84,7 +84,7 @@ function DashboardContent() {
 
   const sendVerificationEmail = async () => {
     if (identity) {
-      await Authorization.sendVerificationEmail(identity!).catch(() =>
+      await Authorization.sendVerificationEmail(identity).catch(() =>
         setSendVerificationEmailError(true)
       );
     }
