@@ -65,8 +65,9 @@ const PartnersPage = () => {
           {NGO.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -78,8 +79,9 @@ const PartnersPage = () => {
           {INITIATORS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -91,8 +93,9 @@ const PartnersPage = () => {
           {MEDIA_PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -104,8 +107,9 @@ const PartnersPage = () => {
           {PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
