@@ -1,5 +1,5 @@
 import { PhonePrefixListItem } from "./types";
-import { LabelContent } from "./style";
+import { LabelContent, PhonePrefix } from "./style";
 import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 
 export const generatePhonePrefixDropdownList = (list: PhonePrefixListItem[]) =>
@@ -8,7 +8,7 @@ export const generatePhonePrefixDropdownList = (list: PhonePrefixListItem[]) =>
       label: (
         <LabelContent>
           <LanguageFlags locale={locale} />
-          <span> {countryCode}</span>
+          <PhonePrefix> {countryCode}</PhonePrefix>
         </LabelContent>
       ),
       value: countryCode,
