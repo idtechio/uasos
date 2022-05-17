@@ -1,3 +1,5 @@
 export type AfterDecisionModalProps = {
-  onClose: () => void;
+  isAccepted: Boolean;
+  showError?: Boolean;
+  onClose?: () => void;
 };

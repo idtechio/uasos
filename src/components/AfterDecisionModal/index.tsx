@@ -22,8 +22,13 @@ const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
 const ICON_BASE_HEIGHT = 105;
 const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
-export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
+export const AfterDecisionModal = ({
+  isAccepted,
+  showError,
+  onClose,
+}: AfterDecisionModalProps) => {
   const { t } = useTranslation("others");
+  const { t: tod } = useTranslation("offer-details");
 
   const accepted = t("desktop.confirmation.accepted");
   const cancellation = t("desktop.confirmation.cancellation");
@@ -50,18 +55,33 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
         </View>
 
         <DecisionModalTextWrapper>
-          <DecisionHeader>{t("desktop.confirmation.header")}</DecisionHeader>
-          <DecisionText>
-            {acceptedBefore}
-            <AcceptedText>{accepted}</AcceptedText>
-            {`${acceptedAfter}.${acceptedSecondSentence}.`}
-          </DecisionText>
+          {showError && (
+            <DecisionText>{tod("confirm_match_error")}</DecisionText>
+          )}
 
-          <DecisionText style={styles.textContainer}>
-            {cancellationBefore}
-            <CancelledText>{cancellation}</CancelledText>
-            {`${cancellationAfter}.${cancellationSecondSentence}.`}
-          </DecisionText>
+          {!showError && (
+            <>
+              <DecisionHeader>
+                {t("desktop.confirmation.header")}
+              </DecisionHeader>
+
+              {isAccepted === true && (
+                <DecisionText>
+                  {acceptedBefore}
+                  <AcceptedText>{accepted}</AcceptedText>
+                  {`${acceptedAfter}.${acceptedSecondSentence}.`}
+                </DecisionText>
+              )}
+
+              {isAccepted === false && (
+                <DecisionText>
+                  {cancellationBefore}
+                  <CancelledText>{cancellation}</CancelledText>
+                  {`${cancellationAfter}.${cancellationSecondSentence}.`}
+                </DecisionText>
+              )}
+            </>
+          )}
         </DecisionModalTextWrapper>
 
         <DecisionModalButtonCtaWrapper>
@@ -77,9 +97,6 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
 };
 
 const styles = StyleSheet.create({
-  textContainer: {
-    marginTop: 12,
-  },
   card: {
     padding: 20,
   },

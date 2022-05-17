@@ -9,18 +9,21 @@ import { useTranslation } from "react-i18next";
 import Spinner from "../Spinner";
 
 interface DetailsDecisionButtonsProps {
-  typeOfUser: string;
+  listingId: string | null | undefined;
   matchId: string | null | undefined;
 }
 
 export default function DetailsDecisionButtons({
   matchId,
-  typeOfUser,
+  listingId,
 }: DetailsDecisionButtonsProps) {
+  enum MatchType {
+    ACCEPT = "accept",
+    REJECT = "reject",
+  }
+
   const { t } = useTranslation();
-  const [modalOpened, setModalOpened] = useState<"accept" | "reject" | null>(
-    null
-  );
+  const [modalOpened, setModalOpened] = useState<MatchType | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
   const [showError, setShowError] = useState<boolean>(false);
@@ -31,66 +34,31 @@ export default function DetailsDecisionButtons({
     setShowSuccess(false);
   }, []);
 
-  const handleConfirmMatch = async () => {
-    setModalOpened("accept");
+  const handleMatch = async (type: MatchType) => {
+    setModalOpened(type);
     setIsLoading(true);
-    if (typeOfUser === "host") {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}api/hosts/matchesconfirm/${matchId}?accepted=1`,
-        { method: "GET" }
-      );
-      if (res) {
-        setIsLoading(false);
-        if (res.status === 200) {
-          setShowSuccess(true);
-        } else {
-          setShowError(true);
-        }
-      }
-    } else {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}api/guests/matchesconfirm/${matchId}?accepted=1`,
-        { method: "GET" }
-      );
-      if (res) {
-        setIsLoading(false);
-        if (res.status === 200) {
-          setShowSuccess(true);
-        } else {
-          setShowError(true);
-        }
-      }
-    }
-  };
 
-  const handleRejectMatch = async () => {
-    setModalOpened("reject");
-    setIsLoading(true);
-    if (typeOfUser === "host") {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}api/hosts/matchesconfirm/${matchId}?accepted=0`,
-        { method: "GET" }
-      );
-      if (res) {
-        setIsLoading(false);
-        if (res.status === 200) {
-          setShowSuccess(true);
-        } else {
-          setShowError(true);
-        }
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_DOMAIN}api/matches/confirm`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          matches_id: matchId,
+          listing_id: listingId,
+          accepted: type === MatchType.ACCEPT ? "TRUE" : "FALSE",
+        }),
       }
-    } else {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_DOMAIN}api/guests/matchesconfirm/${matchId}?accepted=0`,
-        { method: "GET" }
-      );
-      if (res) {
-        setIsLoading(false);
-        if (res.status === 200) {
-          setShowSuccess(true);
-        } else {
-          setShowError(true);
-        }
+    );
+
+    if (res) {
+      setIsLoading(false);
+      if (res.status === 200) {
+        setShowSuccess(true);
+      } else {
+        setShowError(true);
       }
     }
   };
@@ -149,11 +117,11 @@ export default function DetailsDecisionButtons({
       <ButtonCta
         variant="outlined"
         anchor={t("others:common.buttons.reject")}
-        onPress={handleRejectMatch}
+        onPress={() => handleMatch(MatchType.REJECT)}
       />
       <ButtonCta
         anchor={t("others:common.buttons.confirm")}
-        onPress={handleConfirmMatch}
+        onPress={() => handleMatch(MatchType.ACCEPT)}
       />
     </FormFooter>
   );
