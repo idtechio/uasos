@@ -2,7 +2,7 @@ import { StyleProp, View, ViewStyle } from "react-native";
 import { useTranslation } from "next-i18next";
 import { WarningWrapper, HeaderText, TextWrapper } from "./style";
 import WarningIcon from "../../style/svgs/warningTriangle.svg";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { sanitize } from "../../helpers/sanitize";
 
 const ICON_DIM = 24;
@@ -11,7 +11,7 @@ export type WarningSectionProps = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 
-const Test = styled.div`
+const Test = styled.View`
   b {
   }
   ul {

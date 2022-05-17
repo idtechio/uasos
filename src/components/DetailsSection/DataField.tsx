@@ -1,6 +1,6 @@
 import { sanitize } from "../../helpers/sanitize";
 import { DataWrapper } from "./style";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { Theme } from "../../style/theme.config";
 
 type DataFieldProps = {
@@ -18,7 +18,7 @@ const blueStyle = {
 
 type LabelProps = { isBlue: boolean; theme: Theme };
 
-const Label = styled.div<LabelProps>`
+const Label = styled.View<LabelProps>`
   font-weight: 400;
   font-size: 16px;
   line-height: 18.75px;

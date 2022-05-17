@@ -7,8 +7,9 @@ const StyledSection = styled.View<{ bgColor?: string }>`
   z-index: 1;
 `;
 
+const StyledSectionContent = styled.Text``;
+
 const Container = styled.View`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -26,7 +27,10 @@ type SectionProps = {
 function Section({ bgColor, children }: SectionProps) {
   return (
     <StyledSection bgColor={bgColor}>
-      <Container>{children}</Container>
+      <StyledSectionContent>
+        {" "}
+        <Container>{children}</Container>
+      </StyledSectionContent>
     </StyledSection>
   );
 }

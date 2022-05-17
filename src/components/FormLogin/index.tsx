@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View } from "react-native";
 import { useTranslation } from "next-i18next";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -246,14 +246,19 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
 
 export default FormLogin;
 
-export const FormHeader = styled.h2`
+export const FormHeader = styled.View`
   color: ${({ theme }: { theme: Theme }) => theme.colors.textOnCta};
   font-weight: bold;
   font-size: 24px;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   line-height: 24px;
   letter-spacing: 0.5px;
 `;
 
-export const Spacer = styled.div`
+export const Spacer = styled.View`
   margin-bottom: 60px;
 `;
