@@ -26,6 +26,8 @@ const Test = styled.View`
   }
 `;
 
+const TestText = styled.Text``;
+
 const WarningSection = ({ containerStyle }: WarningSectionProps) => {
   const { t } = useTranslation("others");
   return (
@@ -36,11 +38,9 @@ const WarningSection = ({ containerStyle }: WarningSectionProps) => {
       <TextWrapper>
         <View>
           <HeaderText>
-            <Test
-              dangerouslySetInnerHTML={{
-                __html: sanitize(t("forms.match.usersWarning")),
-              }}
-            />
+            <Test>
+              <TestText>{sanitize(t("forms.match.usersWarning"))}</TestText>
+            </Test>
           </HeaderText>
         </View>
       </TextWrapper>
