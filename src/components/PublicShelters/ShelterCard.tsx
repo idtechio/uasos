@@ -75,38 +75,38 @@ export const ShelterCard = ({
             <Info>
               <MarkerIcon width={15} height={15} />
               <RowText>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: t("others:forms.generic.city", {
+                <InnerHTML>
+                  <InnerHTMLText>
+                    {t("others:forms.generic.city", {
                       city: fullAddress,
-                    }),
-                  }}
-                />
+                    })}
+                  </InnerHTMLText>
+                </InnerHTML>
               </RowText>
             </Info>
             <Info>
               <UsersIcon />
 
               <RowText>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: t("others:forms.generic.occupancy", {
+                <InnerHTML>
+                  <InnerHTMLText>
+                    {t("others:forms.generic.occupancy", {
                       number: occupancy,
-                    }),
-                  }}
-                />
+                    })}
+                  </InnerHTMLText>
+                </InnerHTML>
               </RowText>
             </Info>
             <Info>
               <PhoneIcon />
               <RowText>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: t("others:forms.generic.phoneNumberWithData", {
+                <InnerHTML>
+                  <InnerHTMLText>
+                    {t("others:forms.generic.phoneNumberWithData", {
                       number: phoneNumber,
-                    }),
-                  }}
-                />
+                    })}
+                  </InnerHTMLText>
+                </InnerHTML>
               </RowText>
             </Info>
           </SectionInfo>
@@ -314,3 +314,9 @@ export const RowText = styled.Text<CommonProp>(
     color: ${theme.colors.headings};
   `
 );
+
+export const InnerHTML = styled.View`
+  margin: 1em 0;
+`;
+
+export const InnerHTMLText = styled.Text``;

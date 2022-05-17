@@ -64,13 +64,17 @@ function Accordion({
     margin-bottom: 15px;
   `;
 
+  const QuestionWrapper = styled.View``;
+
+  const NameCategoryWrapper = styled.View``;
+
   const QuestionAccordion = (question: string, answer: string) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
       <>
         <Accordion isOpenCategory={true} onClick={() => setIsOpen(!isOpen)}>
-          <div>{question}</div>
+          <QuestionWrapper>{question}</QuestionWrapper>
           <ArrowIconWrapper
             style={isOpen ? { transform: [{ rotate: "180deg" }] } : null}
           >
@@ -100,7 +104,7 @@ function Accordion({
         isMain={true}
         onClick={() => setIsOpenCategory(!isOpenCategory)}
       >
-        <div>{nameCategory}</div>
+        <NameCategoryWrapper>{nameCategory}</NameCategoryWrapper>
       </Accordion>
       {renderInnerAccordion()}
     </>

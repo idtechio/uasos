@@ -77,3 +77,9 @@ export const Label = styled.Text`
   padding-right: 5px;
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
 `;
+
+export const StatusBadgeWrapper = styled.View`
+  align-left: flex-start;
+  justify-content: flex-end;
+  margin-top: 14;
+`;
