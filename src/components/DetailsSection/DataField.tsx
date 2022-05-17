@@ -26,6 +26,8 @@ const Label = styled.View<LabelProps>`
   color: ${({ theme, isBlue }) => (isBlue ? "#0057B8" : theme.colors.blue)};
 `;
 
+const LabelText = styled.Text``;
+
 export default function DataField({
   Icon,
   iconWidth = 15,
@@ -43,10 +45,9 @@ export default function DataField({
             style={isBlue ? { color: "#0057B8" } : {}}
           />
         ) : null}
-        <Label
-          isBlue={isBlue}
-          dangerouslySetInnerHTML={{ __html: sanitize(label) }}
-        />
+        <Label isBlue={isBlue}>
+          <LabelText>{sanitize(label)}</LabelText>
+        </Label>
       </DataWrapper>
     </>
   );
