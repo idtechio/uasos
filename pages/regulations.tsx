@@ -4,7 +4,6 @@ import {
 } from "../src/components/Compositions";
 import { useTranslation } from "next-i18next";
 import { GetServerSideProps } from "next";
-import { withSession } from "../src/helpers/withSession";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Routes } from "../src/consts/router";
 import AppBack from "../src/components/AppBack";
@@ -26,13 +25,10 @@ const RegulationsPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => ({
-    props: {
-      session,
-      ...(locale && (await serverSideTranslations(locale))),
-    },
-  })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});
 
 export default RegulationsPage;

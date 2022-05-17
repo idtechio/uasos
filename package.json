@@ -9,7 +9,6 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@artsy/detect-responsive-traits": "^0.1.0",
     "@google-cloud/pubsub": "^2.19.0",
     "@gucciogucci/contented": "^2.0.2",
     "@react-google-maps/api": "^2.8.1",
@@ -19,9 +18,7 @@
     "firebase": "^9.6.7",
     "firebase-admin": "^10.0.2",
     "lodash.debounce": "^4.0.8",
-    "lottie-react-native": "^5.0.1",
     "next": "latest",
-    "next-auth": "^4.2.1",
     "next-i18next": "^10.5.0",
     "next-transpile-modules": "^9.0.0",
     "pg": "^8.7.3",
@@ -29,20 +26,16 @@
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-fetch-hook": "^1.8.5",
     "react-hook-form": "^7.27.1",
     "react-loading-skeleton": "^3.0.3",
     "react-native": "^0.67.3",
-    "react-native-modal": "^13.0.0",
     "react-native-web": "^0.17.6",
-    "react-native-web-lottie": "^1.4.4",
     "react-query": "^3.34.19",
     "react-slick": "^0.28.1",
     "react-timer-hook": "^3.0.5",
     "sanitize-html": "^2.7.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
-    "swr": "^1.2.2",
     "use-places-autocomplete": "^2.0.0"
   },
   "devDependencies": {
