@@ -13,7 +13,6 @@ import {
   HeaderWrapper,
   Label,
   MoreButtonWrapper,
-  SizedBox,
   SupportCard,
   SupportWrapper,
   TextWrapper,

@@ -49,10 +49,6 @@ export const TextWrapper = styled.View`
   padding-left: 12.7px;
 `;
 
-export const SizedBox = styled.View`
-  height: 14;
-`;
-
 export const OfferTitle = styled.Text`
   font-family: "Roboto";
   font-style: normal;
