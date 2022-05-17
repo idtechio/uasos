@@ -17,11 +17,11 @@ import {
   MoreButtonWrapper,
   OfferTitle,
   Placeholder,
-  SizedBox,
   SupportCard,
   SupportWrapper,
   TextWrapper,
   Title,
+  StatusBadgeWrapper,
 } from "./style";
 import { Offer } from "./types";
 
@@ -137,8 +137,9 @@ const Offers = ({
                 <OfferTitle>
                   {t(`common:staticValues.accommodationTypes.${o.name}`)}
                 </OfferTitle>
-                <SizedBox />
-                <StatusBadge state={o.type} />
+                <StatusBadgeWrapper>
+                  <StatusBadge state={o.type} />
+                </StatusBadgeWrapper>
               </TextWrapper>
             </HeaderWrapper>
 

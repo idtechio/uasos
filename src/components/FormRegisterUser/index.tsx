@@ -12,7 +12,13 @@ import CardModal from "../CardModal";
 // import { Error } from "../Inputs/style";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
-import { StyledHeader, StyledSubheader, StyledErrorMessage } from "./styles";
+import {
+  StyledHeader,
+  StyledSubheader,
+  StyledErrorMessage,
+  FormPhoneInputWrapper,
+  FormTextInputWrapper,
+} from "./styles";
 import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { AccountApi } from "../../client-api/account";
 import { AuthContext } from "../../../pages/_app";
@@ -241,7 +247,7 @@ export default function FormRegisterUser() {
           <InputControlLabel marginBottom={"14px"}>
             {t("refugeeAddForm.phoneLabel")}
           </InputControlLabel>
-          <div style={{ marginBottom: 10 }}>
+          <FormPhoneInputWrapper>
             <FormPhoneInput
               prefixName="registrationUserForm.phonePrefix"
               numberName="registrationUserForm.phoneNumber"
@@ -251,7 +257,7 @@ export default function FormRegisterUser() {
               errorMsg=""
               data={generatePhonePrefixDropdownList(phonePrefixDropdownList)}
             />
-          </div>
+          </FormPhoneInputWrapper>
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 10, 26]}>
@@ -272,7 +278,7 @@ export default function FormRegisterUser() {
           <InputControlLabel marginBottom={"0"}>
             {t("others:forms.generic.emailAddress")}
           </InputControlLabel>
-          <div style={{ marginTop: 6, marginBottom: 10 }}>
+          <FormTextInputWrapper>
             <FormTextInput
               name="registrationUserForm.email"
               label={t("others:forms.generic.email")}
@@ -285,7 +291,7 @@ export default function FormRegisterUser() {
               }}
               error={errors?.registrationUserForm?.email}
             />
-          </div>
+          </FormTextInputWrapper>
         </SectionContent>
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]}>

@@ -23,3 +23,12 @@ export const StyledErrorMessage = styled.Text`
   font-size: 16;
   line-height: 24;
 `;
+
+export const FormPhoneInputWrapper = styled.View`
+  margin-bottom: 10px;
+`;
+
+export const FormTextInputWrapper = styled.View`
+  margin-top: 6px;
+  margin-bottom: 10px;
+`;

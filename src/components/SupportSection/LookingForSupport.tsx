@@ -13,11 +13,11 @@ import {
   HeaderWrapper,
   Label,
   MoreButtonWrapper,
-  SizedBox,
   SupportCard,
   SupportWrapper,
   TextWrapper,
   Title,
+  StatusBadgeWrapper,
 } from "./style";
 import { Request } from "./types";
 import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
@@ -140,8 +140,10 @@ const Requests = ({
                 </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
-            <StatusBadge state={r.type} />
-            <SizedBox />
+            <StatusBadgeWrapper>
+              <StatusBadge state={r.type} />
+            </StatusBadgeWrapper>
+
             {/* {r.matchedOffer ? (
             <MetchedInfo
               name={r.matchedOffer.name}

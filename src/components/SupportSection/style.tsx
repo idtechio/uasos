@@ -49,10 +49,6 @@ export const TextWrapper = styled.View`
   padding-left: 12.7px;
 `;
 
-export const SizedBox = styled.View`
-  height: 14;
-`;
-
 export const OfferTitle = styled.Text`
   font-family: "Roboto";
   font-style: normal;
@@ -76,4 +72,10 @@ export const Label = styled.Text`
   font-weight: 400;
   padding-right: 5px;
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
+`;
+
+export const StatusBadgeWrapper = styled.View`
+  align-left: flex-start;
+  justify-content: flex-end;
+  margin-top: 14;
 `;

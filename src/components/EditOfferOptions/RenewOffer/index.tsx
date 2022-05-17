@@ -12,6 +12,8 @@ import {
   FormFooter,
   FormHeader,
   FormWrapper,
+  InnerHTML,
+  InnerHTMLText,
 } from "../style";
 
 export default function RenewOffer({
@@ -36,12 +38,11 @@ export default function RenewOffer({
       <FormHeader style={{ marginTop: 38 }}>
         {t("others:common.words.renew")}
       </FormHeader>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: t("others:offer.popup.renew.expiredMsg"),
-        }}
-        style={{ fontSize: 16, marginTop: 40 }}
-      />
+      <InnerHTML>
+        <InnerHTMLText>
+          {t("others:offer.popup.renew.expiredMsg")}
+        </InnerHTMLText>
+      </InnerHTML>
 
       <FormDescription style={{ marginTop: 22 }}>
         {t("others:forms.renew.re-activateOffer")}
