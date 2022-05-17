@@ -21,15 +21,16 @@ const Container = styled.View`
 
 type SectionProps = {
   bgColor?: string;
+  style?: object;
   children?: React.ReactNode;
 };
 
-function Section({ bgColor, children }: SectionProps) {
+function Section({ bgColor, children, style }: SectionProps) {
   return (
     <StyledSection bgColor={bgColor}>
       <StyledSectionContent>
         {" "}
-        <Container>{children}</Container>
+        <Container style={style}>{children}</Container>
       </StyledSectionContent>
     </StyledSection>
   );
