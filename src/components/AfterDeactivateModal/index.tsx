@@ -1,4 +1,5 @@
 import { StyleSheet, View } from "react-native";
+import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -23,6 +24,7 @@ export const AfterDeactivateModal = ({
   onClose,
   isHost,
 }: AfterDeactivateModalProps) => {
+  const { t } = useTranslation("others");
   const router = useRouter();
 
   const goToHomePage = useCallback(
