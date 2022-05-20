@@ -12,10 +12,11 @@ import {
   DecisionText,
 } from "./style";
 import CardModal from "../CardModal";
-import Link from "next/link";
 import { AfterDecisionModalProps } from "./types";
 import { Routes } from "../../consts/router";
 import { parseAndSplitContent } from "./helpers";
+import { useCallback } from "react";
+import { useRouter } from "next/router";
 
 const ICON_BASE_WIDTH = 160;
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
@@ -27,7 +28,13 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
 
   const accepted = t("desktop.confirmation.accepted");
   const cancellation = t("desktop.confirmation.cancellation");
+  const router = useRouter();
   const text = t("desktop.confirmation.content", { accepted, cancellation });
+
+  const goToHomePage = useCallback(
+    () => router.push(Routes.HOMEPAGE),
+    [router]
+  );
 
   const {
     acceptedBefore,
@@ -65,11 +72,10 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
         </DecisionModalTextWrapper>
 
         <DecisionModalButtonCtaWrapper>
-          <Link href={Routes.HOMEPAGE}>
-            <a>
-              <ButtonCta anchor={t("common:backToHomePage")} />
-            </a>
-          </Link>
+          <ButtonCta
+            onPress={goToHomePage}
+            anchor={t("common:backToHomePage")}
+          />
         </DecisionModalButtonCtaWrapper>
       </DecisionModalContentWrapper>
     </CardModal>
