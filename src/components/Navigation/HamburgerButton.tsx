@@ -8,7 +8,7 @@ interface Props {
 
 const HamburgerButton = ({ isOpen, onPress }: Props) => {
   return (
-    <ButtonContainer onPress={onPress}>
+    <ButtonContainer onPress={onPress} data-cy="menuButton">
       {isOpen ? (
         <CrossIcon />
       ) : (

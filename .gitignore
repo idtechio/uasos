@@ -44,3 +44,6 @@ tsconfig.tsbuildinfo
 #cypress
 cypress/videos
 cypress/screenshots
+
+#firebase account key
+serviceAccount.json

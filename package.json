@@ -7,7 +7,9 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "typecheck": "tsc",
-    "cy": "cypress open"
+    "cy": "cypress open",
+    "e2e": "cypress run",
+    "e2e:headed": "cypress run --headed"
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
