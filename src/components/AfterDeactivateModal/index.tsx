@@ -73,7 +73,7 @@ export const AfterDeactivateModal = ({
         <DeactivateModalButtonCtaWrapper>
           <ButtonCta
             onPress={goToHomePage}
-            anchor="Strona główna / Home page"
+            anchor={t("common:backToHomePage")}
           />
         </DeactivateModalButtonCtaWrapper>
       </DeactivateModalContentWrapper>
