@@ -8,5 +8,6 @@ export enum Routes {
   REGULATIONS = "/regulations",
   PRIVACY_POLICY = "/privacy-policy",
   PARTNERS = "/partners",
+  PUBLIC_SHELTERS = "/public-shelters",
   FAQ = "/faq",
 }
