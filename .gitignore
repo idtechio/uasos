@@ -1,0 +1,117 @@
+
+# dependencies
+node_modules
+packages/*/node_modules
+apps/*/node_modules
+
+# git
+.git/config
+
+# next.js
+apps/*/.next
+packages/*/.next
+
+
+# misc
+.DS_Store
+
+
+# debug
+apps/*/yarn-debug.log
+apps/*/yarn-error.log
+packages/*/yarn-debug.log
+packages/*/yarn-error.log
+yarn-error.log
+
+# local env files
+apps/*/.env
+apps/*/.env.*
+packages/*/.env
+packages/*/.env.*
+
+!apps/*/.env.development
+!packages/*/.env.development
+
+# vercel
+packages/*/.vercel
+apps/*/.vercel
+
+sa_key.json
+
+# ide
+.vscode
+.idea
+
+tsconfig.tsbuildinfo
+
+
+# other 
+apps/*/jestcache
+apps/*/build
+packages/*/jestcache
+packages/*/build
+
+# Android/IntelliJ
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Expo
+.expo/*
+web-build/
+
+**/*/.expo
+
+**/*/.next
+
+**/*/ios
+**/*/android
+
+.turbo
+build/**
+
+
+# CocoaPods
+/ios/Pods/
+
+# Bundle artifacts
+*.jsbundle
+
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore

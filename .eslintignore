@@ -1,0 +1,12 @@
+.eslintrc.js
+**/node_modules/*
+**/out/*
+**/.next/*
+**/build/*
+**/storybook-static/*
+apps/**/*.config.js
+apps/**/svgTransform.js
+apps/**/setupTests.js
+apps/**/*.d.ts
+**/next-env.d.ts
+
