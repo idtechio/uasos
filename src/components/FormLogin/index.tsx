@@ -63,8 +63,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       setPasswordInput(false);
       delete data.login.password;
     }
-    /* eslint-disable-next-line */
     if (
+      /* eslint-disable-next-line */
       data.login.hasOwnProperty("password") &&
       data.login.password &&
       passwordInput
