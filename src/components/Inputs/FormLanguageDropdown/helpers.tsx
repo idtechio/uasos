@@ -1,4 +1,4 @@
-import { LabelContent } from "./style";
+import { LabelContent, LanguageName } from "./style";
 import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 import { getLocaleFullName } from "../../LanguageSwitcher/getLocaleFullName";
 
@@ -7,7 +7,7 @@ export const generateLanguageDropdownList = (list: string[]) =>
     label: (
       <LabelContent>
         <LanguageFlags locale={locale} />
-        <span> {getLocaleFullName(locale)}</span>
+        <LanguageName>{getLocaleFullName(locale)}</LanguageName>
       </LabelContent>
     ),
     value: locale,

@@ -1,6 +1,7 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { useTranslation } from "next-i18next";
+import styled from "styled-components/native";
 import CountrySelect from "../../Forms/CountrySelect";
 import { CountryDropdownItemType } from "../../Forms/CountrySelect/types";
 import { EditProfileForm } from "../types";
@@ -25,8 +26,16 @@ const ListOfLanguages: { [key: string]: string } = {
   UK: "Yкраїнська",
 };
 
+const LanguageWrapper = styled.View``;
+
+const LanguageText = styled.Text``;
+
 const LanguageLabel = ({ language }: { language: string }) => {
-  return <div>{ListOfLanguages[language] ?? language}</div>;
+  return (
+    <LanguageWrapper>
+      <LanguageText>{ListOfLanguages[language] ?? language}</LanguageText>
+    </LanguageWrapper>
+  );
 };
 
 const data: CountryDropdownItemType[] = [

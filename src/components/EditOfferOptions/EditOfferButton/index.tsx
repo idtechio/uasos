@@ -84,7 +84,7 @@ export default function EditOfferButton({
         label: "hostAdd.accomodationPhotoReset",
       },
     ],
-    []
+    [matchID, targetStatusType]
   );
 
   const getEditButtonLink = useMemo(
@@ -149,7 +149,14 @@ export default function EditOfferButton({
         </CardModal>
       )
     );
-  }, [modalOpened, closeModal, targetID, targetType]);
+  }, [
+    modalOpened,
+    closeModal,
+    targetID,
+    targetType,
+    router,
+    getEditButtonLink,
+  ]);
 
   const PopoverOptions = useCallback(
     () => (
@@ -172,7 +179,7 @@ export default function EditOfferButton({
         })}
       </Options>
     ),
-    [t]
+    [getButtonList, t]
   );
 
   useWebHandleClickOutside(containerRef, popoverOpened, () =>

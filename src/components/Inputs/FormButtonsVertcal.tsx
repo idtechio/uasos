@@ -33,7 +33,7 @@ const FormButtonsVertical = ({ data, label }: Props) => {
     });
 
     setButtonsState(initialState);
-  }, [data]);
+  }, [data, getValues]);
 
   const onTilePress = useCallback(
     (id: string, onChange: (...event: unknown[]) => void) => {

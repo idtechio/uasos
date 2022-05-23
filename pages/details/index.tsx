@@ -55,7 +55,7 @@ function DetailsContent() {
         setDataToShow(data);
       }
     }
-  }, [offers]);
+  }, [dataToShow, id, offers]);
 
   React.useEffect(() => {
     if (requests && requests.length && !dataToShow) {
@@ -64,7 +64,7 @@ function DetailsContent() {
         setDataToShow(data);
       }
     }
-  }, [requests]);
+  }, [dataToShow, id, requests]);
 
   return (
     <CompositionAppBody>

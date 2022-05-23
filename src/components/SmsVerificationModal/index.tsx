@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 
 import {
   StyledText,
@@ -176,7 +176,7 @@ export default function SmsVerificationModal({
 
   return (
     <CardModal closeable={false}>
-      <div style={{ display: "none" }} id="recaptcha__container"></div>
+      <View style={{ display: "none" }} nativeID="recaptcha__container" />
       <Wrapper>
         {close && <CloseButton onPress={close} />}
         <Image src={SmsSent} alt=""></Image>

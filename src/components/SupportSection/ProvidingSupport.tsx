@@ -22,6 +22,7 @@ import {
   SupportWrapper,
   TextWrapper,
   Title,
+  StatusBadgeWrapper,
 } from "./style";
 import { Offer } from "./types";
 
@@ -139,15 +140,9 @@ const Offers = ({
                     `staticValues.accommodationTypes.${o.name as ShelterType}`
                   )}
                 </OfferTitle>
-                <div
-                  style={{
-                    alignSelf: "flex-start",
-                    justifySelf: "flex-end",
-                    marginTop: 14,
-                  }}
-                >
+                <StatusBadgeWrapper>
                   <StatusBadge state={o.type} />
-                </div>
+                </StatusBadgeWrapper>
               </TextWrapper>
             </HeaderWrapper>
 

@@ -15,7 +15,7 @@ export interface updateAccountReqDTO {
 }
 interface AccountApi {
   getAccount: () => Promise<getAccountDTO>;
-  updateAccount: (options: { payload: object }) => Promise<any>;
+  updateAccount: (options: { payload: object }) => Promise<void>;
 }
 export const AccountApi: AccountApi = {
   getAccount: async function () {
@@ -36,18 +36,13 @@ export const AccountApi: AccountApi = {
   },
   updateAccount: async function ({ payload }) {
     const token = await getFirebaseToken();
-    const res = await fetch(
-      process.env.NEXT_PUBLIC_DOMAIN + "api/account/update",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      }
-    );
-
-    return await res.json();
+    await fetch(process.env.NEXT_PUBLIC_DOMAIN + "api/account/update", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
   },
 };

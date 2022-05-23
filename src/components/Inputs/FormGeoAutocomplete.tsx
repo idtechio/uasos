@@ -39,11 +39,12 @@ function FormGeoAutocomplete({
     <Controller
       control={control}
       rules={rules}
-      render={({ field: { onChange } }) => {
+      render={({ field: { onChange, value } }) => {
         return (
           <View style={{ zIndex }}>
             <InputControl zIndex={zIndex}>
               <PlacesAutocomplete
+                value={value}
                 error={error}
                 onChange={onChange}
                 selectedCountry={country}

@@ -2,7 +2,7 @@ import { StyleProp, View, ViewStyle } from "react-native";
 import { useTranslation } from "next-i18next";
 import { WarningWrapper, HeaderText, TextWrapper } from "./style";
 import WarningIcon from "../../style/svgs/warningTriangle.svg";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { sanitize } from "../../helpers/sanitize";
 
 const ICON_DIM = 24;
@@ -11,7 +11,7 @@ export type WarningSectionProps = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 
-const Test = styled.div`
+const Test = styled.View`
   b {
   }
   ul {
@@ -26,6 +26,8 @@ const Test = styled.div`
   }
 `;
 
+const TestText = styled.Text``;
+
 const WarningSection = ({ containerStyle }: WarningSectionProps) => {
   const { t } = useTranslation("others");
   return (
@@ -36,11 +38,9 @@ const WarningSection = ({ containerStyle }: WarningSectionProps) => {
       <TextWrapper>
         <View>
           <HeaderText>
-            <Test
-              dangerouslySetInnerHTML={{
-                __html: sanitize(t("forms.match.usersWarning")),
-              }}
-            />
+            <Test>
+              <TestText>{sanitize(t("forms.match.usersWarning"))}</TestText>
+            </Test>
           </HeaderText>
         </View>
       </TextWrapper>

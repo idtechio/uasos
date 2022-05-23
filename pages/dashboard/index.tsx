@@ -28,6 +28,7 @@ import { Theme } from "../../src/style/theme.config";
 import { useTheme } from "styled-components";
 import { useProgressToastContext } from "../../src/providers/ProgressToastProvider";
 import { useTranslation } from "react-i18next";
+import Spinner from "../../src/components/Spinner";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 
@@ -83,7 +84,7 @@ function DashboardContent() {
 
   const sendVerificationEmail = async () => {
     if (identity) {
-      await Authorization.sendVerificationEmail(identity!).catch(() =>
+      await Authorization.sendVerificationEmail(identity).catch(() =>
         setSendVerificationEmailError(true)
       );
     }
@@ -182,7 +183,7 @@ export default function Dashboard() {
   const { identity, loaded } = useContext(AuthContext);
 
   if (!loaded) {
-    return <div>Loading</div>;
+    return <Spinner />;
   }
 
   if (!identity && loaded) return <Redirect path="/signin" />;

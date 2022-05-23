@@ -1,4 +1,3 @@
-import { FirebaseError } from "firebase/app";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import { Authorization } from "../../hooks/useAuth";
@@ -16,13 +15,12 @@ export default function EmailVerificationSubmit() {
           await Authorization.applyCode(oobCodeRef?.current);
           router.push("/dashboard");
         } catch (error) {
-          if (error instanceof FirebaseError) {
-            console.log(error?.message);
-          }
+          // if (error instanceof FirebaseError) {
+          // }
           router.push("/dashboard");
         }
       }
     })();
-  }, [oobCodeRef]);
+  }, [oobCodeRef, router]);
   return <></>;
 }

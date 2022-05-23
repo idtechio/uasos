@@ -31,3 +31,9 @@ export const Wrapper = styled.View`
   padding-left: 6px;
   z-index: 10;
 `;
+
+export const ChevronIconWrapper = styled.View`
+  transform: rotate(90deg) translateX(-1px);
+  width: 24,
+  height: 24,
+`;

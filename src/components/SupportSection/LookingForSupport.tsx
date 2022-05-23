@@ -17,6 +17,7 @@ import {
   SupportWrapper,
   TextWrapper,
   Title,
+  StatusBadgeWrapper,
 } from "./style";
 import { Request } from "./types";
 import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
@@ -139,15 +140,9 @@ const Requests = ({
                 </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
-            <div
-              style={{
-                alignSelf: "flex-start",
-                justifySelf: "flex-end",
-                marginBottom: 14,
-              }}
-            >
+            <StatusBadgeWrapper>
               <StatusBadge state={r.type} />
-            </div>
+            </StatusBadgeWrapper>
 
             {/* {r.matchedOffer ? (
             <MetchedInfo

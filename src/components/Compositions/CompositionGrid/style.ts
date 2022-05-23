@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import { devices } from "../../../../project.config";
 
-export const Grid = styled.div<{
+export const Grid = styled.View<{
   spacing: [number, number];
   childrenCount: number;
   mobileReverse: boolean;

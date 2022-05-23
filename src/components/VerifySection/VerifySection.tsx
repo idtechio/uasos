@@ -24,7 +24,7 @@ const VerifyPhoneToast = () => {
 
   const { t } = useTranslation(["desktop", "others"]);
 
-  const goToProfile = useCallback(() => router.push("/user-profile"), []);
+  const goToProfile = useCallback(() => router.push("/user-profile"), [router]);
 
   return (
     <>

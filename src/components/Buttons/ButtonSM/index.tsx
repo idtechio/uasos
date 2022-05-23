@@ -23,18 +23,23 @@ const GoogleButtonContainer = styled(Button)`
   padding: 0;
 `;
 
+const ImageWrapper = styled.View`
+  margin-left: 5px;
+  margin-right: 0;
+`;
+
 const ButtonSM = ({ anchor, onPress, id }: Props) => {
   if (id === "facebook") {
     return (
       <FacebookButtonContainer onPress={onPress}>
-        <div style={{ marginLeft: 5, marginRight: 0 }}>
+        <ImageWrapper style={{ marginLeft: 5, marginRight: 0 }}>
           <Image
             src={FacebookLogo.src}
             width={40}
             height={40}
             alt="login with facebook"
           />
-        </div>
+        </ImageWrapper>
         <Text>{anchor}</Text>
       </FacebookButtonContainer>
     );

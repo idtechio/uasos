@@ -1,12 +1,12 @@
 import { HeaderPage, ActionBar, ServiceLogo, Container } from "./style";
 import Logo from "./image/Logo";
-import Link from "next/link";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
 import { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
 import { Routes } from "../../consts/router";
+import router from "next/router";
 
 const Header = () => {
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
@@ -14,15 +14,15 @@ const Header = () => {
   const toggleNavigationDrawer = () =>
     setNavigationDrawerOpen(!navigationDrawerOpen);
 
+  const onPressLogo = () => router.push(Routes.HOMEPAGE);
+
   return (
     <Container>
       <HeaderPage>
         <ServiceLogo>
-          <Link href={Routes.HOMEPAGE}>
-            <a>
-              <Logo width={129} height={40} />
-            </a>
-          </Link>
+          <Pressable onPress={onPressLogo}>
+            <Logo width={129} height={40} />
+          </Pressable>
         </ServiceLogo>
         <ActionBar>
           <View style={styles.flags}>
