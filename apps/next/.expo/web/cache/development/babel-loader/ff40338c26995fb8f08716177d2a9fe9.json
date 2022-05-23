@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from \"./PartnersSection\";","map":{"version":3,"sources":["/Users/stanislav.kovalov/Desktop/uasos/apps/next/src/components/PartnersSection/index.ts"],"names":[],"mappings":"AAAA","sourcesContent":["export * from \"./PartnersSection\";\n"]},"metadata":{},"sourceType":"module"}
