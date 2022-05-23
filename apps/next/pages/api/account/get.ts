@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { NextApiRequest, NextApiResponse } from "next";
 import { select } from "../../../lib/db";
 import withApiAuth, {

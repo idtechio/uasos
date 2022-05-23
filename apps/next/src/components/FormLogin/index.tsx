@@ -1,100 +1,101 @@
-import React, { useEffect, useState } from "react";
-import { View } from "react-native";
-import { useTranslation } from "next-i18next";
-import styled from "styled-components/native";
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { useEffect, useState } from 'react'
+import { View } from 'react-native'
+import { useTranslation } from 'next-i18next'
+import styled from 'styled-components/native'
 
-import { ButtonCta, ButtonSM } from "../Buttons";
-import { CompositionSection } from "../Compositions";
+import { ButtonCta, ButtonSM } from '../Buttons'
+import { CompositionSection } from '../Compositions'
 
-import FormContainer from "./FormContainer";
-import { SignInProps } from "../../../pages/signin";
-import { Theme } from "../../style/theme.config";
-import { FormProvider, useForm } from "react-hook-form";
-import { FormType } from "../../helpers/FormTypes";
-import GoToRegister from "./GoToRegister";
-import FormTextInput from "../Inputs/FormTextInput";
-import LostPass from "./LostPass";
-import { Authorization } from "../../hooks/useAuth";
-import { ConfirmationResult, getRedirectResult } from "firebase/auth";
-import SmsVerificationModal from "../SmsVerificationModal";
-import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import { ErrorText } from "../FormRegisterWithSocials/styles";
-import { auth } from "../../../lib/firebase-app";
-import CardModal from "../CardModal";
-type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
+import FormContainer from './FormContainer'
+import { SignInProps } from '../../../pages/signin'
+import { Theme } from '../../style/theme.config'
+import { FormProvider, useForm } from 'react-hook-form'
+import { FormType } from '../../helpers/FormTypes'
+import GoToRegister from './GoToRegister'
+import FormTextInput from '../Inputs/FormTextInput'
+import LostPass from './LostPass'
+import { Authorization } from '../../hooks/useAuth'
+import { ConfirmationResult, getRedirectResult } from 'firebase/auth'
+import SmsVerificationModal from '../SmsVerificationModal'
+import SmsVerificationSuccessModal from '../SmsVerificationSuccessModal'
+import { ErrorText } from '../FormRegisterWithSocials/styles'
+import { auth } from '../../../lib/firebase-app'
+import CardModal from '../CardModal'
+type FormLoginProps = Pick<SignInProps, 'providers' | 'csrfToken'>
 
 const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
-  const { t } = useTranslation();
-  const [mounted, setMounted] = useState(false);
-  const [passwordInput, setPasswordInput] = useState(false);
+  const { t } = useTranslation()
+  const [mounted, setMounted] = useState(false)
+  const [passwordInput, setPasswordInput] = useState(false)
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
-    useState<ConfirmationResult | null>(null);
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
+    useState<ConfirmationResult | null>(null)
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [smsVerificationSuccess, setSmsVerificationSuccess] =
-    useState<boolean>(false);
-  const [error, setError] = useState<string>("");
-  const [providerLoginError, setProviderLoginError] = useState<boolean>(false);
+    useState<boolean>(false)
+  const [error, setError] = useState<string>('')
+  const [providerLoginError, setProviderLoginError] = useState<boolean>(false)
 
-  const formFields = useForm<FormType>();
+  const formFields = useForm<FormType>()
 
   const {
     handleSubmit,
     formState: { errors },
-  } = formFields;
+  } = formFields
   // eslint-disable-next-line
-  const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
   // eslint-disable-next-line
-  const PHONE_WITHOUT_PREFIX_REGEX = /^\d{10}$/;
+  const PHONE_WITHOUT_PREFIX_REGEX = /^\d{10}$/
   // eslint-disable-next-line
-  const PHONE_REGEX = /[+]([^\d]*\d){8}/;
+  const PHONE_REGEX = /[+]([^\d]*\d){8}/
   const EMAIL_OR_PHONE_REGEX =
     // eslint-disable-next-line
-    /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|([+]([^\d]*\d){8})/;
+    /(^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)|([+]([^\d]*\d){8})/
   const onSubmit = async (data: {
-    login: { phoneOrEmail: string; password?: string };
+    login: { phoneOrEmail: string; password?: string }
   }) => {
     if (
       /* eslint-disable-next-line */
-      data.login.hasOwnProperty("password") &&
+      data.login.hasOwnProperty('password') &&
       data.login.password &&
       PHONE_REGEX.test(data.login.phoneOrEmail)
     ) {
-      setPasswordInput(false);
-      delete data.login.password;
+      setPasswordInput(false)
+      delete data.login.password
     }
     /* eslint-disable-next-line */
-    if (data.login.hasOwnProperty("password") && data.login.password) {
+    if (data.login.hasOwnProperty('password') && data.login.password) {
       try {
         await Authorization.signInWithEmail(
           data.login.phoneOrEmail,
           data.login.password
-        );
+        )
       } catch (error) {
         if (error instanceof Error) {
-          if (error.message.includes("wrong-password")) {
-            setError(t("others:forms.login.invalidPassword"));
+          if (error.message.includes('wrong-password')) {
+            setError(t('others:forms.login.invalidPassword'))
           }
         }
       }
     } else {
       if (EMAIL_REGEX.test(data.login.phoneOrEmail)) {
-        setPasswordInput(true);
+        setPasswordInput(true)
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
         try {
           const confirmation = await Authorization.signInWithPhone(
             data.login.phoneOrEmail,
-            Authorization.initCaptcha("captcha__container")
-          );
-          setPhoneLoginConfirmation(confirmation);
-          setPhoneNumber(data.login.phoneOrEmail);
+            Authorization.initCaptcha('captcha__container')
+          )
+          setPhoneLoginConfirmation(confirmation)
+          setPhoneNumber(data.login.phoneOrEmail)
         } catch (error) {
           // eslint-disable-next-line
           // @ts-ignore
-          setError(error.message);
+          setError(error.message)
         }
       }
     }
-  };
+  }
 
   // const handlePassErrorMsg = (type: string): string => {
   //   switch (type) {
@@ -107,70 +108,70 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   //   }
   // };
   useEffect(() => {
-    (async function checkIfLoginSucced() {
+    ;(async function checkIfLoginSucced() {
       try {
-        await getRedirectResult(auth);
+        await getRedirectResult(auth)
       } catch (error) {
-        setProviderLoginError(true);
+        setProviderLoginError(true)
       }
-    })();
-  }, []);
+    })()
+  }, [])
   const validateSheba = (str: string) => {
-    const isPhoneWithoutPrefixValid = PHONE_WITHOUT_PREFIX_REGEX.test(str);
-    const isPhoneOrEmail = EMAIL_OR_PHONE_REGEX.test(str);
+    const isPhoneWithoutPrefixValid = PHONE_WITHOUT_PREFIX_REGEX.test(str)
+    const isPhoneOrEmail = EMAIL_OR_PHONE_REGEX.test(str)
 
     if (!str) {
-      return "Your phone or email is required";
+      return 'Your phone or email is required'
     } else if (str.length >= 50) {
-      return "Your contact information should be lesss than 50 symbols";
+      return 'Your contact information should be lesss than 50 symbols'
     } else if (isPhoneWithoutPrefixValid) {
-      return "+38";
+      return '+38'
     } else if (!isPhoneOrEmail) {
-      return t("others:forms.login.emailOrPhoneDetail");
+      return t('others:forms.login.emailOrPhoneDetail')
     }
-  };
+  }
 
   enum PROVIDERS {
-    FACEBOOK = "facebook",
-    GOOGLE = "google",
+    FACEBOOK = 'facebook',
+    GOOGLE = 'google',
   }
   const handleSignIn = async (providerId: string) => {
     switch (providerId) {
       case PROVIDERS.FACEBOOK:
         {
-          await Authorization.signInWithFacebook();
+          await Authorization.signInWithFacebook()
         }
-        break;
+        break
       case PROVIDERS.GOOGLE:
         {
-          await Authorization.signInWithGoogle();
+          await Authorization.signInWithGoogle()
         }
-        break;
+        break
     }
-  };
+  }
 
   return (
     <>
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
-          <FormHeader>{t("others:forms.login.login")}</FormHeader>
+          <FormHeader>{t('others:forms.login.login')}</FormHeader>
           {Object.values(providers).map(({ id, name }) => (
             <ButtonSM
               key={name}
               id={id}
               onPress={() => handleSignIn(id)}
               anchor={
-                name === "Facebook"
-                  ? t("others:forms.login.signInFacebook")
-                  : t("others:forms.login.signInGoogle")
+                name === 'Facebook'
+                  ? t('others:forms.login.signInFacebook')
+                  : t('others:forms.login.signInGoogle')
               }
             />
           ))}
           <Spacer />
           <FormProvider {...formFields}>
             <FormTextInput
-              name={"login.phoneOrEmail"}
-              label={t("others:forms.login.emailOrPhone")}
+              name={'login.phoneOrEmail'}
+              label={t('others:forms.login.emailOrPhone')}
               styles={{ wrapper: { marginBottom: 12 } }}
               rules={{
                 validate: validateSheba,
@@ -181,8 +182,8 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             {passwordInput ? (
               <>
                 <FormTextInput
-                  name={"login.password"}
-                  label={t("others:forms.generic.password")}
+                  name={'login.password'}
+                  label={t('others:forms.generic.password')}
                   secureTextEntry
                   rules={{
                     required: true,
@@ -190,7 +191,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
                     minLength: 8,
                   }}
                   error={errors?.login?.password}
-                  errorMsg={t("others:forms.login.invalidPassword")}
+                  errorMsg={t('others:forms.login.invalidPassword')}
                 />
                 <LostPass />
               </>
@@ -199,17 +200,17 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             )}
             <ButtonCta
               style={{
-                width: "130px",
-                height: "43px",
-                display: "flex",
-                marginBottom: "30px",
-                alignSelf: "flex-end",
+                width: '130px',
+                height: '43px',
+                display: 'flex',
+                marginBottom: '30px',
+                alignSelf: 'flex-end',
                 marginTop: 50,
               }}
-              anchor={t("others:forms.login.login")}
+              anchor={t('others:forms.login.login')}
               onPress={handleSubmit(onSubmit, () => {})}
             />
-            <View nativeID="captcha__container" style={{ display: "none" }} />
+            <View nativeID="captcha__container" style={{ display: 'none' }} />
           </FormProvider>
           {phoneLoginConfirmation ? (
             <SmsVerificationModal
@@ -231,7 +232,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               onModalClose={() => setProviderLoginError(false)}
             >
               <ErrorText>
-                {t("others:desktop.checks.emailAlreadyInUse")}
+                {t('others:desktop.checks.emailAlreadyInUse')}
               </ErrorText>
             </CardModal>
           ) : (
@@ -241,10 +242,10 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       </CompositionSection>
       <GoToRegister />
     </>
-  );
-};
+  )
+}
 
-export default FormLogin;
+export default FormLogin
 
 export const FormHeader = styled.View`
   color: ${({ theme }: { theme: Theme }) => theme.colors.textOnCta};
@@ -257,8 +258,8 @@ export const FormHeader = styled.View`
   font-weight: bold;
   line-height: 24px;
   letter-spacing: 0.5px;
-`;
+`
 
 export const Spacer = styled.View`
   margin-bottom: 60px;
-`;
+`

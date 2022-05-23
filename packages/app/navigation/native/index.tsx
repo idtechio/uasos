@@ -1,10 +1,7 @@
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useAuthentication } from 'app/features/auth/AuthContext'
-import { LoginScreen } from 'app/features/auth/LoginScreen'
-import { TermsScreen } from 'app/features/auth/TermsScreen'
 
-import { HomeScreen } from '../../features/home/screen'
-import { UserDetailScreen } from '../../features/user/detail-screen'
 import { AuthNavigator } from './AuthNavigator'
 import { HomeNavigator } from './HomeNavigator'
 
@@ -14,7 +11,7 @@ const Stack = createNativeStackNavigator<{
 }>()
 
 export function NativeNavigation() {
-  const { user } = useAuthentication();
+  const { user } = useAuthentication()
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>

@@ -1,3 +1,4 @@
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { HomeScreen } from 'app/features/home/screen'
 import { UserDetailScreen } from 'app/features/user/detail-screen'

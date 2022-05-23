@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { NextApiRequest, NextApiResponse } from "next";
 import { UserRecord } from "firebase-admin/auth";
 

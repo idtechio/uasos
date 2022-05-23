@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import { Subtitle, FlexWrapper, ItemsRow } from "./style";
 import { StyleProp, ViewStyle } from "react-native";

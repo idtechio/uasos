@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { RequestProps } from "../../pages/api/listing/requests";
 import { getRequestsList, GetRequestsListDTO } from "../client-api/requests";

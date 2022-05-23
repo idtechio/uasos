@@ -1,3 +1,4 @@
+import React from "react";
 import ChevronIcon from "../../../style/svgs/chevron-down.svg";
 
 type Props = {

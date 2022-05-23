@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect } from "react";
+import { RefObject, useEffect } from "react";
 import { Platform, View } from "react-native";
 
 export const useWebHandleClickOutside = (

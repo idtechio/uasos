@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import { Subtitle, Info, FlexWrapper, ItemsColumn } from "./style";
 import { Bullet, ListItem } from "../WarningSection/style";

@@ -1,3 +1,4 @@
+import React from 'react'
 import { DripsyProvider, makeTheme } from 'dripsy'
 
 const theme = makeTheme({

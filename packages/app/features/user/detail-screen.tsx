@@ -1,3 +1,4 @@
+import React from 'react'
 import { View, Text } from 'dripsy'
 import { createParam } from 'solito'
 import { TextLink } from 'solito/link'

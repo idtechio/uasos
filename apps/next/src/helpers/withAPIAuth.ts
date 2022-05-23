@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { DecodedIdToken } from "firebase-admin/auth";
 

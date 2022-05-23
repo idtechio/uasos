@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { getFirebaseToken } from "../helpers/getFirebaseToken";
 
 export interface getAccountDTO {

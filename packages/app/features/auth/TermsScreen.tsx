@@ -1,7 +1,8 @@
-import React from "react";
-import { View, Text, Image, ScrollView } from "react-native";
-import { Appbar, Colors, Title } from "react-native-paper";
-import { useRouter } from "solito/router";
+/* eslint-disable react/no-unescaped-entities */
+import React from 'react'
+import { View, Text, Image, ScrollView } from 'react-native'
+import { Appbar, Colors, Title } from 'react-native-paper'
+import { useRouter } from 'solito/router'
 
 export function TermsScreen() {
   const { back } = useRouter()
@@ -98,12 +99,12 @@ export function TermsScreen() {
         <Image
           style={{ width: 250, height: 250, marginVertical: 32 }}
           source={{
-            uri: "https://media.giphy.com/media/krkrHAEodHgzP72rTI/giphy.gif",
+            uri: 'https://media.giphy.com/media/krkrHAEodHgzP72rTI/giphy.gif',
           }}
         />
 
         <Text style={{ marginBottom: 128 }}>May the force be with you</Text>
       </View>
     </ScrollView>
-  );
+  )
 }
