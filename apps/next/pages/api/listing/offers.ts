@@ -10,6 +10,14 @@ enum Boolean {
   TRUE = "TRUE",
 }
 
+export type ShelterType =
+  | "bed"
+  | "room"
+  | "flat"
+  | "house"
+  | "collective"
+  | "public_shared_space";
+
 enum GuestHostStatus {
   ACCEPTED = "accepted", // default status after creation
   REJECTED = "rejected", // for future moderation purpose
