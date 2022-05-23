@@ -21,8 +21,6 @@ import GAtag from "./gatag";
 import * as fbq from "../lib/fpixel";
 import FPixel from "./fpixel";
 
-console.log("work");
-
 export const AuthContext = createContext<{
   identity: null | User | undefined;
   account: null | getAccountDTO;
