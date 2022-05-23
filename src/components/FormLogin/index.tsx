@@ -89,9 +89,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         setPasswordInput(true);
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
         try {
+          const captcha = Authorization.recaptcha
+            ? Authorization.recaptcha
+            : Authorization.initCaptcha("captcha__container");
           const confirmation = await Authorization.signInWithPhone(
             data.login.phoneOrEmail,
-            Authorization.initCaptcha("captcha__container")
+            captcha
           );
           setPhoneLoginConfirmation(confirmation);
           setPhoneNumber(data.login.phoneOrEmail);
