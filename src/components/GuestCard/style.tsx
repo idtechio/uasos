@@ -64,6 +64,9 @@ export const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 10,
   },
+  textBold: {
+    fontWeight: "bold",
+  },
   place: {
     marginLeft: 12,
   },
