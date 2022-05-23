@@ -1,0 +1,1 @@
+{"ast":null,"code":"export { default } from \"@expo/next-adapter/document\";","map":{"version":3,"sources":["/Users/stanislav.kovalov/Desktop/uasos/apps/next/pages/_document.tsx"],"names":["default"],"mappings":"AAAA,SAASA,OAAT,QAAwB,6BAAxB","sourcesContent":["export { default } from \"@expo/next-adapter/document\"\n"]},"metadata":{},"sourceType":"module"}

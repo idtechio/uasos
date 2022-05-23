@@ -3,6 +3,10 @@
 UASOS project has four main parts:
 
 1. frontend
+
+- `expo`
+- `next`
+
 2. API
 3. backend
 4. database
@@ -25,7 +29,6 @@ First, run the development server for frontend:
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ![image](https://user-images.githubusercontent.com/102538002/169299195-c2498fb1-5ae2-43cd-bdf6-6838f5ed8bf9.png)
-
 
 ## 2. API from "dev" server
 
@@ -66,17 +69,73 @@ To use API on localhost (for user token verification) you need:
 
 Ask your team leader about it :)
 
-## Learn More about Next.js
+# React Native Next.js Monorepo
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+> Exploring universal apps (_native and web_) —[bootstrapped with solito](https://solito.dev/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+👾 [View the website](https://example.solito.dev)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Select the folder `apps/next` as the root of your Next.js app on the Vercel setup.
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Included packages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `solito` for cross-platform navigation ([Talk at Next.js Conf](https://www.youtube.com/watch?v=0lnbdRweJtA))
+- Expo SDK
+- Next.js
+- React Navigation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🗂 Folder layout
+
+- `apps` entry points for each app
+
+  - `expo`
+  - `next`
+
+- `packages` shared packages across apps
+  - `app` you'll be importing most files from `app/`
+    - `features` (don't use a `screens` folder. organize by feature.)
+    - `provider` (all the providers that wrap the app, and some no-ops for Web.)
+    - `navigation` Next.js has a `pages/` folder. React Native doesn't. This folder contains navigation-related code for RN. You may use it for any navigation code, such as custom links.
+
+You can add other folders inside of `packages/` if you know what you're doing and have a good reason to.
+
+## 🏁 Getting started
+
+```
+yarn
+yarn web
+yarn native
+```
+
+## 🆕 Add new dependencies
+
+<details>
+<summary>Pure JS dependencies</summary>
+
+If you're installing a JavaScript-only dependency that will be used across platforms, install it in `packages/app`:
+
+```sh
+cd packages/app
+yarn add date-fns
+cd ../..
+yarn
+```
+
+</details>
+
+<details>
+<summary>Native dependencies</summary>
+
+If you're installing a library with any native code, you must install it in `apps/expo`:
+
+```sh
+cd apps/expo
+yarn add react-native-reanimated
+
+cd ../..
+yarn
+```
+
+You can also install the native library inside of `packages/app` if you want to get autoimport for that package inside of the `app` folder. However, you need to be careful and install the _exact_ same version in both packages. If the versions mismatch at all, you'll potentially get terrible bugs. This is a classic monorepo issue.
+
+</details>

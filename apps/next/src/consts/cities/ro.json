@@ -1,0 +1,102 @@
+[
+  {
+    "label": "Bucharest",
+    "value": "683506",
+    "population": 1883425
+  },
+  {
+    "label": "Cluj-Napoca",
+    "value": "681290",
+    "population": 324576
+  },
+  {
+    "label": "Timişoara",
+    "value": "665087",
+    "population": 319279
+  },
+  {
+    "label": "Iaşi",
+    "value": "675810",
+    "population": 290422
+  },
+  {
+    "label": "Constanţa",
+    "value": "680963",
+    "population": 283872
+  },
+  {
+    "label": "Craiova",
+    "value": "680332",
+    "population": 269506
+  },
+  {
+    "label": "Braşov",
+    "value": "683844",
+    "population": 253200
+  },
+  {
+    "label": "Galaţi",
+    "value": "677697",
+    "population": 249432
+  },
+  {
+    "label": "Ploieşti",
+    "value": "670474",
+    "population": 209945
+  },
+  {
+    "label": "Oradea",
+    "value": "671768",
+    "population": 196367
+  },
+  {
+    "label": "Brăila",
+    "value": "683902",
+    "population": 180302
+  },
+  {
+    "label": "Arad",
+    "value": "686254",
+    "population": 159074
+  },
+  {
+    "label": "Piteşti",
+    "value": "670609",
+    "population": 155383
+  },
+  {
+    "label": "Sibiu",
+    "value": "667268",
+    "population": 147245
+  },
+  {
+    "label": "Bacău",
+    "value": "685948",
+    "population": 144307
+  },
+  {
+    "label": "Târgu-Mureş",
+    "value": "665004",
+    "population": 134290
+  },
+  {
+    "label": "Baia Mare",
+    "value": "685826",
+    "population": 123738
+  },
+  {
+    "label": "Buzău",
+    "value": "683123",
+    "population": 115494
+  },
+  {
+    "label": "Botoşani",
+    "value": "684039",
+    "population": 106847
+  },
+  {
+    "label": "Satu Mare",
+    "value": "667873",
+    "population": 102411
+  }
+]
