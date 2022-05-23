@@ -53,6 +53,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
   }) => {
+    setError("");
     if (
       /* eslint-disable-next-line */
       data.login.hasOwnProperty("password") &&
@@ -62,8 +63,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       setPasswordInput(false);
       delete data.login.password;
     }
-    /* eslint-disable-next-line */
-    if (data.login.hasOwnProperty("password") && data.login.password) {
+    if (
+      /* eslint-disable-next-line */
+      data.login.hasOwnProperty("password") &&
+      data.login.password &&
+      passwordInput
+    ) {
       try {
         await Authorization.signInWithEmail(
           data.login.phoneOrEmail,
@@ -73,6 +78,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         if (error instanceof Error) {
           if (error.message.includes("wrong-password")) {
             setError(t("others:forms.login.invalidPassword"));
+          }
+          if (error.message.includes("user-not-found")) {
+            setError("Invalid email");
           }
         }
       }
@@ -90,7 +98,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         } catch (error) {
           // eslint-disable-next-line
           // @ts-ignore
-          setError(error.message);
+          setError("Invalid phone number");
         }
       }
     }
@@ -118,6 +126,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const validateSheba = (str: string) => {
     const isPhoneWithoutPrefixValid = PHONE_WITHOUT_PREFIX_REGEX.test(str);
     const isPhoneOrEmail = EMAIL_OR_PHONE_REGEX.test(str);
+    if (PHONE_REGEX.test(str) && passwordInput) {
+      setPasswordInput(false);
+    }
 
     if (!str) {
       return "Your phone or email is required";
@@ -126,6 +137,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     } else if (isPhoneWithoutPrefixValid) {
       return "+38";
     } else if (!isPhoneOrEmail) {
+      setPasswordInput(false);
       return t("others:forms.login.emailOrPhoneDetail");
     }
   };
