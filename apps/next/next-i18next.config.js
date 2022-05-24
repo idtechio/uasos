@@ -1,5 +1,5 @@
 const path = require("path");
-console.log(path.toNamespacedPath());
+
 module.exports = {
   i18n: {
     // https://www.localeplanet.com/icu/iso639.html
