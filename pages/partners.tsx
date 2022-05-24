@@ -121,8 +121,9 @@ const PartnersPage = () => {
           {uasosInMedia.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
