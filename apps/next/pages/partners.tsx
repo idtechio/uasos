@@ -12,6 +12,7 @@ import {
   MEDIA_PARTNERS,
   PARTNERS,
 } from "../src/consts/partners.json";
+import { uasosInMedia } from "../src/consts/in-media.json";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { Theme } from "../src/style/theme.config";
@@ -65,8 +66,9 @@ const PartnersPage = () => {
           {NGO.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -78,8 +80,9 @@ const PartnersPage = () => {
           {INITIATORS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -91,8 +94,9 @@ const PartnersPage = () => {
           {MEDIA_PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>
@@ -104,8 +108,23 @@ const PartnersPage = () => {
           {PARTNERS.map((partner, index) => (
             <StyledPartnerCard
               key={index}
-              source={partner.image}
               alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
+            />
+          ))}
+        </PartnersContainer>
+      </Section>
+
+      <Section>
+        <SectionTitle title="uaSOS in media" />
+        <PartnersContainer>
+          {uasosInMedia.map((partner, index) => (
+            <StyledPartnerCard
+              key={index}
+              alt={partner.alt}
+              href={partner.href}
+              source={partner.image}
             />
           ))}
         </PartnersContainer>

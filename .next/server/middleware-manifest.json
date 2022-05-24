@@ -1,0 +1,26 @@
+{
+  "sortedMiddleware": [
+    "/api"
+  ],
+  "clientInfo": [
+    [
+      "/api",
+      false
+    ]
+  ],
+  "middleware": {
+    "/api": {
+      "env": [
+        "ENV_NAME"
+      ],
+      "files": [
+        "server/middleware-runtime.js",
+        "server/pages/api/_middleware.js"
+      ],
+      "name": "pages/api/_middleware",
+      "page": "/api",
+      "regexp": "^/api(?:(/.*)?)$"
+    }
+  },
+  "version": 1
+}

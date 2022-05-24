@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, ViewStyle } from "react-native";
+import Link from "next/link";
 import styled from "styled-components/native";
 import Card from "../Card";
 
@@ -11,13 +12,22 @@ interface Props {
   source: string;
   alt: string;
   style?: ViewStyle;
+  href: string;
 }
 
-export function PartnerCard({ source, alt, style }: Props) {
+export function PartnerCard({ source, href = "", alt, style }: Props) {
   return (
-    <Card style={style}>
-      {/* @ts-expect-error TODO: fix prop types */}
-      <StyledImage source={source} alt={alt} resizeMode="contain" />
-    </Card>
+    <Link href={href} passHref>
+      <a target="_blank">
+        <Card style={style}>
+          <StyledImage
+            alt={alt}
+            /* @ts-expect-error TODO: fix prop types */
+            source={source}
+            resizeMode="contain"
+          />
+        </Card>
+      </a>
+    </Link>
   );
 }
