@@ -9,22 +9,28 @@ UASOS project has four main parts:
 
 Frontend and API are located in this repo. Backend and database DDL in another one.
 
-You can develop frontend using API from ["test"](https://test.uasos.org/) server or setup backend and database in your local envinronment to run all parts localy.
+You can develop frontend using API from ["dev"](https://dev.uasos.org/) server or setup backend and database in your local envinronment to run all parts localy.
+
+For quick start ask your team leader about env file.
 
 ## 1. Frontend
 
 First, run the development server for frontend:
+`yarn install`
 
 `cp .env_example .env`
 
-`npm run dev` or `yarn dev`
+`yarn dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 2. API from "test" server
+![image](https://user-images.githubusercontent.com/102538002/169299195-c2498fb1-5ae2-43cd-bdf6-6838f5ed8bf9.png)
 
-You can use API from ["test"](https://test.uasos.org/) server changing
-`NEXT_PUBLIC_DOMAIN` to `https://test.uasos.org/`.
+
+## 2. API from "dev" server
+
+You can use API from ["dev"](https://dev.uasos.org/) server changing
+`NEXT_PUBLIC_DOMAIN` to `https://dev.uasos.org/`.
 
 ## 3-4. Local database and backend
 
