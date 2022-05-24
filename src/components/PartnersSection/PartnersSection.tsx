@@ -98,7 +98,11 @@ export function PartnersSection() {
       <Container>
         {NGO.slice(0, 6).map((item, index) => (
           <PartnerCardWrapper key={index}>
-            <StyledPartnerCard source={item.image} alt={item.alt} />
+            <StyledPartnerCard
+              alt={item.alt}
+              href={item.href}
+              source={item.image}
+            />
           </PartnerCardWrapper>
         ))}
       </Container>
