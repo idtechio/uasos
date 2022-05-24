@@ -90,12 +90,8 @@ const toRequest: (r: RequestProps) => Request = (r) => ({
   clientOnly: r.client_only,
 });
 
-const toName: (_: OfferProps) => string = (o) =>
-  o.shelter_type.length === 0
-    ? "N/A"
-    : typeof o.shelter_type === "string"
-    ? o.shelter_type
-    : o.shelter_type.join(", ");
+const toName: (_: OfferProps) => string = (o) => o.shelter_type[0];
+
 export const toAccomodationTime: (
   duration_category: string[]
 ) => AccommodationTime = (duration_category) => {

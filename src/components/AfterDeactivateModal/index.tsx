@@ -24,7 +24,7 @@ export const AfterDeactivateModal = ({
   onClose,
   isHost,
 }: AfterDeactivateModalProps) => {
-  const { t } = useTranslation("others");
+  const { t } = useTranslation(["others", "common"]);
   const router = useRouter();
 
   const goToHomePage = useCallback(

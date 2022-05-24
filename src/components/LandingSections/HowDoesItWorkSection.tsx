@@ -7,6 +7,8 @@ import { Fragment, useMemo } from "react";
 import Section from "../Section";
 import { Theme } from "../../style/theme.config";
 
+type CustomIndex = "0" | "1" | "2" | "3" | "4";
+
 const Image = styled.Image`
   flex: 1;
 `;
@@ -159,7 +161,9 @@ export function HowDoesItWorkSection() {
                   <PathItemDotText>{index + 1}</PathItemDotText>
                 </PathItemDot>
                 <PathItemText>
-                  {t(`howDoesItWork.points.${customIndex}`)}
+                  {t(
+                    `howDoesItWork.points.${String(customIndex) as CustomIndex}`
+                  )}
                 </PathItemText>
               </PathItemDesktopContainer>
             );
@@ -187,7 +191,9 @@ export function HowDoesItWorkSection() {
                   <Text>{index + 1}</Text>
                 </PathItemDot>
                 <PathItemText>
-                  {t(`howDoesItWork.points.${customIndex}`)}
+                  {t(
+                    `howDoesItWork.points.${String(customIndex) as CustomIndex}`
+                  )}
                 </PathItemText>
               </PathItemMobileContainer>
               {index !== arr.length - 1 && <PathDotConnector />}

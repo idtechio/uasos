@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
+
   const { identity, account, getTokenForAPI, loaded, refetchAccount } =
     useAuth();
   const router = useRouter();

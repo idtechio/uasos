@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ActivityIndicator } from "react-native";
+import { ShelterType } from "../../../pages/api/listing/offers";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../EditOfferOptions/EditOfferButton";
 import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
@@ -78,7 +79,7 @@ const Content = ({
 };
 
 const NoOffer = ({ readonly }: { readonly: boolean }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation(["desktop", "others"]);
 
   const router = useRouter();
   return (
@@ -135,7 +136,9 @@ const Offers = ({
             </ImageWrapper> */}
               <TextWrapper>
                 <OfferTitle>
-                  {t(`common:staticValues.accommodationTypes.${o.name}`)}
+                  {t(
+                    `staticValues.accommodationTypes.${o.name as ShelterType}`
+                  )}
                 </OfferTitle>
                 <StatusBadgeWrapper>
                   <StatusBadge state={o.type} />
