@@ -1,6 +1,21 @@
 import { ModalStatus } from "./types";
 
-export const CONFIRMATION_TEXT = {
+type TitleType = "congratulations" | "badNews";
+
+type Title = `common.words.${TitleType}`;
+
+type ContentType = "confirmed" | "rejected";
+
+type Content = `forms.match.${ContentType}`;
+
+interface ConfirmationText {
+  [key: string]: {
+    title: Title;
+    content: Content;
+  };
+}
+
+export const CONFIRMATION_TEXT: ConfirmationText = {
   CONFIRM: {
     title: "common.words.congratulations",
     content: "forms.match.confirmed",

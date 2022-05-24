@@ -1,12 +1,29 @@
 import React from "react";
-import { Data } from "../Inputs/FormButtonsVertcal";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import FormTextInput from "../Inputs/FormTextInput";
 import PregnantIcon from "../../style/svgs/pregnant.svg";
 import ElderIcon from "../../style/svgs/elder.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
+import { ReactNode } from "react";
+import { FormKey } from "../../helpers/FormTypes";
 
-export const refugeeDetailsOptions: Data[] = [
+type RefugeeDetailLabelType =
+  | "animals"
+  | "pregnant"
+  | "oldPerson"
+  | "disability";
+
+type RefugeeDetailLabel =
+  `refugeeForm.refugeeDetailsOptions.${RefugeeDetailLabelType}`;
+
+interface RefugeeDetailsOptions {
+  id: FormKey;
+  label: RefugeeDetailLabel;
+  icon?: ReactNode;
+  extra?: ReactNode;
+}
+
+export const refugeeDetailsOptions: Array<RefugeeDetailsOptions> = [
   {
     id: "advancedRefugee.preferences.peopleDetails.animals",
     label: "refugeeForm.refugeeDetailsOptions.animals",
@@ -35,7 +52,23 @@ export const refugeeDetailsOptions: Data[] = [
   },
 ];
 
-export const GROUP_RELATIONS = [
+type GroupRelationLabelType =
+  | "single_man"
+  | "single_woman"
+  | "spouses"
+  | "mother_with_children"
+  | "family_with_children"
+  | "unrelated_group";
+
+type GroupRelationLabel =
+  `staticValues.groupRelations.${GroupRelationLabelType}`;
+
+interface GroupRelations {
+  label: GroupRelationLabel;
+  value: string;
+}
+
+export const GROUP_RELATIONS: Array<GroupRelations> = [
   { label: "staticValues.groupRelations.single_man", value: "single_man" },
   {
     label: "staticValues.groupRelations.single_woman",
@@ -56,7 +89,17 @@ export const GROUP_RELATIONS = [
   },
 ];
 
-export const ACCOMMODATION_TYPES = [
+type AccommodationLabelType = "bed" | "room" | "flat" | "house" | "collective";
+
+type AccommodationLabel =
+  `staticValues.accommodationTypes.${AccommodationLabelType}`;
+
+interface AccommodationTypes {
+  label: AccommodationLabel;
+  value: string;
+}
+
+export const ACCOMMODATION_TYPES: Array<AccommodationTypes> = [
   { label: "staticValues.accommodationTypes.bed", value: "bed" },
   { label: "staticValues.accommodationTypes.room", value: "room" },
   { label: "staticValues.accommodationTypes.flat", value: "flat" },
@@ -67,7 +110,22 @@ export const ACCOMMODATION_TYPES = [
   },
 ];
 
-export const OVERNIGHT_DURATION_TYPES = [
+type OverNightDurationLabelType =
+  | "lessThanAWeek"
+  | "week"
+  | "twoWeeks"
+  | "month"
+  | "longer";
+
+type OverNightDurationLabel =
+  `staticValues.timePeriod.${OverNightDurationLabelType}`;
+
+interface OverNightDurationTypes {
+  label: OverNightDurationLabel;
+  value: string;
+}
+
+export const OVERNIGHT_DURATION_TYPES: Array<OverNightDurationTypes> = [
   {
     label: "staticValues.timePeriod.lessThanAWeek",
     value: "less_than_1_week",

@@ -10,14 +10,6 @@ export enum Boolean {
   TRUE = "TRUE",
 }
 
-export type ShelterType =
-  | "bed"
-  | "room"
-  | "flat"
-  | "house"
-  | "collective"
-  | "public_shared_space";
-
 enum GuestHostStatus {
   ACCEPTED = "accepted", // default status after creation
   REJECTED = "rejected", // for future moderation purpose
@@ -43,6 +35,14 @@ enum MatchStatus {
   AWAITING_RESPONSE = "awaiting_response", // match awaiting for guest and host response
   DEFAULT = "default",
 }
+
+export type ShelterType =
+  | "bed"
+  | "room"
+  | "flat"
+  | "house"
+  | "collective"
+  | "public_shared_space";
 
 export interface MatchedOfferProps {
   id: string;

@@ -1,3 +1,5 @@
+const path = require("path");
+console.log(path.toNamespacedPath());
 module.exports = {
   i18n: {
     // https://www.localeplanet.com/icu/iso639.html
@@ -7,4 +9,5 @@ module.exports = {
     fallbackLng: ["en", "pl"], // will fallback to english and then to polish if there's no english translation
     returnEmptyString: false, // allow an empty value to count as invalid (by default is true)
   },
+  localePath: path.resolve("../../packages/app/common-i18n/locales"),
 };

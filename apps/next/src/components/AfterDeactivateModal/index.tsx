@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
@@ -13,7 +14,7 @@ import CardModal from "../CardModal";
 import { AfterDeactivateModalProps } from "./types";
 import { Routes } from "../../consts/router";
 import { useRouter } from "next/router";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 
 const ICON_BASE_WIDTH = 160;
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
@@ -24,7 +25,7 @@ export const AfterDeactivateModal = ({
   onClose,
   isHost,
 }: AfterDeactivateModalProps) => {
-  const { t } = useTranslation("others");
+  const { t } = useTranslation(["others", "common"]);
   const router = useRouter();
 
   const goToHomePage = useCallback(

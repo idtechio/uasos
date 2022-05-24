@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import React, { useState, useMemo, useLayoutEffect } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
-import Logo from '../Header/image/Logo'
-import Accordion from './Accordion'
-import { LanguageFlags } from '../LanguageSwitcher/LanguageFlags'
-import { base } from '../../style/theme.config'
+import React from "react";
+import { useState, useMemo, useLayoutEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import Logo from "../Header/image/Logo";
+import Accordion from "./Accordion";
+import { LanguageFlags } from "../LanguageSwitcher/LanguageFlags";
+import { base } from "../../style/theme.config";
 import {
   TopLeftBlueSplash,
   TopLeftBlueSplashPosition,
@@ -25,54 +26,54 @@ import {
   TitleName,
   TitleQuestion,
   TitleContent,
-} from './styled'
+} from "./styled";
 
 type Faq = {
   [key: string]: {
-    name: string
+    name: string;
     content: {
       [key: string]: {
-        question: string
-        answer: string
-      }
-    }
-  }
-}
+        question: string;
+        answer: string;
+      };
+    };
+  };
+};
 
-const languagesList = ['pl', 'ua', 'en', 'ru', 'cs', 'sk', 'hu', 'ro']
+const languagesList = ["pl", "ua", "en", "ru", "cs", "sk", "hu", "ro"];
 
 const languagesListNames = [
-  'Polski',
-  'Yкраїнська',
-  'English',
-  'Pусский',
-  'Čeština',
-  'Slovenčina',
-  'Magyar',
-  'Română',
-]
+  "Polski",
+  "Yкраїнська",
+  "English",
+  "Pусский",
+  "Čeština",
+  "Slovenčina",
+  "Magyar",
+  "Română",
+];
 
 const FaqContent = () => {
-  const { asPath, locale } = useRouter()
-  const { t } = useTranslation('faq')
-  const [isDesktop, setIsDesktop] = useState(false)
+  const { asPath, locale } = useRouter();
+  const { t } = useTranslation("others");
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useLayoutEffect(() => {
     function updateSize() {
-      setIsDesktop(window.innerWidth > base.breakPoints.md)
+      setIsDesktop(window.innerWidth > base.breakPoints.md);
     }
-    window.addEventListener('resize', updateSize)
-    updateSize()
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   const faqQuestionsElements = useMemo(() => {
-    const faq: Faq = require(`../../../public/locales/${locale}/faq.json`)
+    const faq: Faq = require(`../../../public/locales/${locale}/faq.json`);
     return Object.values(faq).map((el) => {
       return Object.values(el).map((elContent) => {
-        if (typeof elContent === 'object') {
+        if (typeof elContent === "object") {
           if (!isDesktop) {
-            return <Accordion nameCategory={el.name} content={elContent} />
+            return <Accordion nameCategory={el.name} content={elContent} />;
           }
 
           return Object.values(elContent).map((elContentValue, index) => {
@@ -82,12 +83,12 @@ const FaqContent = () => {
                 <TitleQuestion>{elContentValue.question}</TitleQuestion>
                 <TitleContent>{elContentValue.answer}</TitleContent>
               </TitleWrapper>
-            )
-          })
+            );
+          });
         }
-      })
-    })
-  }, [isDesktop, locale])
+      });
+    });
+  }, [isDesktop, locale]);
 
   const languagesListElements = useMemo(
     () =>
@@ -99,7 +100,7 @@ const FaqContent = () => {
           ))
         : null,
     [asPath, isDesktop]
-  )
+  );
 
   return (
     <Content isDesktop={isDesktop}>
@@ -121,13 +122,15 @@ const FaqContent = () => {
         {isDesktop && (
           <>
             <Logo />
-            <TitleDesktop accessibilityRole="header">{t('FAQ')}</TitleDesktop>
+            <TitleDesktop accessibilityRole="header">
+              {t("common.footer.FAQ")}
+            </TitleDesktop>
             <ButtonWrapper>{languagesListElements}</ButtonWrapper>
           </>
         )}
         {!isDesktop && (
           <Title accessibilityRole="header">
-            {t('FAQ')}
+            {t("common.footer.FAQ")}
             <YellowHighlight />
           </Title>
         )}
@@ -141,7 +144,7 @@ const FaqContent = () => {
         </ContentWrapper>
       </HeaderWrapper>
     </Content>
-  )
-}
+  );
+};
 
-export default FaqContent
+export default FaqContent;

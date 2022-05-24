@@ -1,6 +1,17 @@
+/* eslint-disable @typescript-eslint/ban-types */
 const BASE_PATH = "/instructions";
 
-export const DATA = [
+type Number = "0" | "1" | "2" | "3" | "4" | "5";
+
+type Title = `instructions.${Number}.title`;
+type Text = `instructions.${Number}.text`;
+interface DataObject {
+  title: Title;
+  text: Text;
+  image: string;
+}
+
+export const DATA: Array<DataObject> = [
   {
     title: "instructions.0.title",
     text: "instructions.0.text",

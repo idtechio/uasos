@@ -59,7 +59,7 @@ const data: CountryDropdownItemType[] = [
 
 export default function PreferredLanguageInput() {
   const { control } = useFormContext<EditProfileForm>();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "others"]);
 
   return (
     <InputWrapper

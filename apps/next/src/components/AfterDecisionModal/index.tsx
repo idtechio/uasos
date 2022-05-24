@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
@@ -15,7 +16,7 @@ import CardModal from "../CardModal";
 import { AfterDecisionModalProps } from "./types";
 import { Routes } from "../../consts/router";
 import { parseAndSplitContent } from "./helpers";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 import { useRouter } from "next/router";
 
 const ICON_BASE_WIDTH = 160;
@@ -24,12 +25,16 @@ const ICON_BASE_HEIGHT = 105;
 const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
 export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
-  const { t } = useTranslation("others");
+  const { t } = useTranslation(["others", "common"]);
 
-  const accepted = t("desktop.confirmation.accepted");
-  const cancellation = t("desktop.confirmation.cancellation");
   const router = useRouter();
-  const text = t("desktop.confirmation.content", { accepted, cancellation });
+
+  const accepted = t("others:desktop.confirmation.accepted");
+  const cancellation = t("others:desktop.confirmation.cancellation");
+  const text = t("others:desktop.confirmation.content", {
+    accepted,
+    cancellation,
+  });
 
   const goToHomePage = useCallback(
     () => router.push(Routes.HOMEPAGE),
@@ -57,7 +62,9 @@ export const AfterDecisionModal = ({ onClose }: AfterDecisionModalProps) => {
         </View>
 
         <DecisionModalTextWrapper>
-          <DecisionHeader>{t("desktop.confirmation.header")}</DecisionHeader>
+          <DecisionHeader>
+            {t("others:desktop.confirmation.header")}
+          </DecisionHeader>
           <DecisionText>
             {acceptedBefore}
             <AcceptedText>{accepted}</AcceptedText>

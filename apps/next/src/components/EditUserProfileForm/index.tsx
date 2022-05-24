@@ -29,6 +29,21 @@ type Props = {
   identity?: User | null;
 };
 
+type ErrorType =
+  | "emailExist"
+  | "phoneLinkingFailed"
+  | "tooManyRequest"
+  | "invalidCode";
+
+type ApiError = `userRegistration.errors.${ErrorType}`;
+
+const apiErrors = [
+  "emailExist",
+  "phoneLinkingFailed",
+  "tooManyRequest",
+  "invalidCode",
+];
+
 export default function EditUserProfileForm({ account, identity }: Props) {
   const router = useRouter();
   const { t } = useTranslation("others");
@@ -136,7 +151,13 @@ export default function EditUserProfileForm({ account, identity }: Props) {
           <ScreenHeader>{t("forms.userProfile.header")}</ScreenHeader>
           <FormHeader>{t("forms.userRegistration.enterDetails")}</FormHeader>
           <Inputs />
-          {apiError && <StyledErrorMessage>{t(apiError)}</StyledErrorMessage>}
+          {apiError && (
+            <StyledErrorMessage>
+              {apiErrors.includes(apiError)
+                ? t(apiError as ApiError)
+                : apiError}
+            </StyledErrorMessage>
+          )}
           <FormFooter style={{ flexWrap: "wrap" }}>
             {isSuccess && <SuccessMessage>Success</SuccessMessage>}
             {isError && <ErrorText>Error</ErrorText>}

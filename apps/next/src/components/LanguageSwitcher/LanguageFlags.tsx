@@ -6,8 +6,9 @@ import Image from "next/image";
 const FLAG_TYPE_EMOJI = "emoji";
 const FLAG_TYPE_SVG = "svg";
 
+type Locale = "pl" | "ua" | "ro" | "ru" | "en" | "hu" | "sk" | "cs" | string;
 interface Props {
-  locale: string;
+  locale: Locale;
   width?: number;
   height?: number;
   type?: string;
@@ -39,7 +40,7 @@ const svgs: LocaleMap = {
   CS: "CZ",
 };
 
-const EmojiFlag = ({ locale, width = 26, height = 17 }: Props) => {
+const EmojiFlag = ({ locale }: Props) => {
   return <Wrapper>{emojis[locale.toLowerCase()] || ""}</Wrapper>;
 };
 
@@ -53,7 +54,7 @@ const SvgFlag = ({ locale }: Props) => {
         src={`/assets/${
           svgs[locale.toUpperCase()] || locale.toUpperCase()
         }_flag.svg`}
-        alt={t(`flags.${locale.toLowerCase()}`, locale.toUpperCase())}
+        alt="flag"
       />
     </Wrapper>
   );

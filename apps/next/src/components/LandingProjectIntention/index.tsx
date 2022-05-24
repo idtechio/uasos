@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
 import { Theme } from "../../style/theme.config";
 import { AuthContext } from "../../../pages/_app";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styledWeb from "styled-components";
 
 const Container = styled.View`
@@ -126,22 +127,22 @@ const FlexAnchor = styled.View`
 `;
 
 const LandingProjectIntention = () => {
-  const { t } = useTranslation("landingPage");
-  const { t: t_others } = useTranslation("others");
+  const { t } = useTranslation(["landingPage", "others", "common"]);
+
   const router = useRouter();
   const { identity, account } = useContext(AuthContext);
 
   const isAccountVerified =
     identity && account?.confirmedEmail && account?.confirmedPhone;
 
-  const welcomeAppDescription = t_others("welcomePage.appDescription");
+  const welcomeAppDescription = t("others:welcomePage.appDescription");
   return (
     <Container>
       <ContentWrapper>
         <TextContainer>
           {/* @ts-expect-error TODO: fix prop types */}
           <Title accessibilityRole="heading" accessibilityLevel={1}>
-            {t("projectIntention.title")}
+            {t("landingPage:projectIntention.title")}
           </Title>
 
           <SubTitleWrapper>
@@ -157,7 +158,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOpposite
-                      anchor={t("projectIntention.lookingForHelp")}
+                      anchor={t("landingPage:projectIntention.lookingForHelp")}
                     />
                   </a>
                 </Link>
@@ -165,7 +166,7 @@ const LandingProjectIntention = () => {
                   <a>
                     <ButtonStyle
                       colorOpposite
-                      anchor={t("projectIntention.shareHelp")}
+                      anchor={t("landingPage:projectIntention.shareHelp")}
                     />
                   </a>
                 </Link>

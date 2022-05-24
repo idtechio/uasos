@@ -15,11 +15,11 @@ export const Error = styled.Text`
 
 export default function PhoneNumberInput() {
   const { control } = useFormContext<EditProfileForm>();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["others", "common"]);
 
   return (
     <InputWrapper
-      label={t("labels.phone")}
+      label={t("common:labels.phone")}
       styles={{
         label: {},
         container: { zIndex: 999 },

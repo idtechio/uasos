@@ -42,7 +42,7 @@ export enum AccommodationTime {
   LONGER = "longer",
 }
 
-export enum AccommodationType {
+export enum AccommodationTypeEnum {
   ROOM = "room",
   BED = "bed",
   FLAT = "flat",

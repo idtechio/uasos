@@ -7,7 +7,7 @@ import { InputWrapper } from "./style";
 
 export default function NameInput() {
   const { control } = useFormContext<EditProfileForm>();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "others"]);
 
   return (
     <InputWrapper

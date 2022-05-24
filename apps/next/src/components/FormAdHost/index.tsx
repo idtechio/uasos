@@ -5,9 +5,8 @@ import { ActivityIndicator, View, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 
 import {
-  AccommodationType,
+  AccommodationTypeEnum,
   FormType,
-  HostType,
   Nationality,
 } from "../../helpers/FormTypes";
 import { ButtonCta } from "../Buttons";
@@ -24,7 +23,9 @@ import FormButtonsVertical from "../Inputs/FormButtonsVertcal";
 import {
   accomodationTypeDropdownFields,
   additionalHostsFeats,
+  AdditionalHostsFeatsLabel,
   GROUP_RELATIONS,
+  hostType,
   OVERNIGHT_DURATION_TYPES,
 } from "./FormAddHost.data";
 import CardModal from "../CardModal";
@@ -160,8 +161,8 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
   const shouldIncludeHostTypeField = useMemo(
     () =>
-      watchAccomodationTypeFieldValue === AccommodationType.BED ||
-      watchAccomodationTypeFieldValue === AccommodationType.ROOM,
+      watchAccomodationTypeFieldValue === AccommodationTypeEnum.BED ||
+      watchAccomodationTypeFieldValue === AccommodationTypeEnum.ROOM,
     [watchAccomodationTypeFieldValue]
   );
 
@@ -428,11 +429,9 @@ export default function FormAdHost({ data }: FormAdHostProps) {
             >
               <InputControlLabel>{t("hostAdd.hostType")}</InputControlLabel>
               <FormDropdown
-                data={(
-                  Object.keys(HostType) as Array<keyof typeof HostType>
-                ).map((key: keyof typeof HostType) => ({
-                  value: HostType[key],
-                  label: t(`hostAdd.hostTypeLabel.${String(HostType[key])}`),
+                data={hostType.map((item) => ({
+                  value: item.value,
+                  label: t(item.label),
                 }))}
                 name="advancedHost.hostType"
                 placeholder={t("forms.chooseFromList")}
@@ -466,7 +465,6 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               }}
               min={1}
               error={errors?.advancedHost?.guestCount}
-              errorMsg={t("hostAdd.errors.guestCount")}
             />{" "}
           </View>
 
@@ -475,7 +473,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
               {t("refugeeAddForm.overnightDurationLabel")}
             </InputControlLabel>
             <FormRadioGroup
-              name={t("advancedHost.accommodationTime")}
+              name="advancedHost.accommodationTime"
               rules={{
                 required: true,
               }}
@@ -538,7 +536,7 @@ export default function FormAdHost({ data }: FormAdHostProps) {
 
           <FormButtonsVertical
             data={additionalHostsFeats.map(({ label, ...rest }) => ({
-              label: t(label),
+              label: t(label as AdditionalHostsFeatsLabel),
               ...rest,
             }))}
           />

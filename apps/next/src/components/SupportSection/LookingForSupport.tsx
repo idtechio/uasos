@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import styled from "styled-components/native";
@@ -38,11 +37,11 @@ export default function LookingForSupport({
   isLoading,
   readonly,
 }: RequestProps): JSX.Element {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation(["desktop", "others"]);
   if (!isLoading && (isError || !requests)) {
     return (
       <SupportWrapper>
-        <Error>{t("could_not_fetch_requests_list")}</Error>
+        <Error>{t("desktop:could_not_fetch_requests_list")}</Error>
       </SupportWrapper>
     );
   }
@@ -77,12 +76,12 @@ const Content = ({
 };
 
 const NoOffer = ({ readonly }: { readonly: boolean }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation("others");
 
   const router = useRouter();
   return (
     <CardAdd
-      label={t("others:common.actions.addSubmission")}
+      label={t("common.actions.addSubmission")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);

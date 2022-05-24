@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { TouchableOpacity } from "react-native";
-import { OfferProps } from "../../../pages/api/listing/offers";
+import { OfferProps, ShelterType } from "../../../pages/api/listing/offers";
 import { MatchedOfferProps } from "../../../pages/api/listing/requests";
 import AtIcon from "../../style/svgs/at.svg";
 import DurationIcon from "../../style/svgs/calendar.svg";
@@ -25,7 +25,7 @@ export default function HostCardContent({
   offer,
   showContact,
 }: HostCardContentProps) {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["others", "common"]);
 
   const [showAdditionalInfo, setShowAdditionalInfo] = React.useState(true);
   const additionalInfo: InfoType = {
@@ -104,8 +104,14 @@ export default function HostCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("others:forms.match.accommodationTypeWithData", {
-              type: offer.shelter_type
-                .map((el: string) => t(`staticValues.accommodationTypes.${el}`))
+              type: (offer.shelter_type as Array<ShelterType>)
+                .map((el: ShelterType) =>
+                  t(
+                    `common:staticValues.accommodationTypes.${
+                      el as ShelterType
+                    }`
+                  )
+                )
                 .join(", "),
             })}
           />
