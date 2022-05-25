@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useContext } from "react";
+import loadNamespaces from "next-translate/loadNamespaces";
 import { CompositionAppBody } from "../src/components/Compositions";
 import Redirect from "../src/components/Redirect";
 import { AuthContext } from "./_app";
@@ -26,6 +26,6 @@ export default function Account() {
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(locale && (await serverSideTranslations(locale))),
+    ...(locale && (await loadNamespaces(locale))),
   },
 });

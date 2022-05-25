@@ -1,10 +1,13 @@
 {
   "name": "uasos-monorepo",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "nohoist": []
+  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.0.2",
     "@types/react": "^17.0.39",
@@ -28,6 +31,7 @@
   "scripts": {
     "native": "cd apps/expo && expo start",
     "web": "cd apps/next && yarn next",
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
     "precommit:lint": "eslint --ext ts --ext tsx",
     "precommit:format": "prettier --write"
   },
@@ -41,5 +45,9 @@
       "yarn precommit:lint",
       "yarn precommit:format"
     ]
+  },
+  "dependencies": {
+    "react-native-safe-area-context": "^4.2.5",
+    "react-native-screens": "^3.13.1"
   }
 }

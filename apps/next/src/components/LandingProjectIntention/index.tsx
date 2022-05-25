@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import useTranslation from "next-translate/useTranslation";
 import ChevronRight from "../../style/svgs/chevron-right.svg";
 import { ButtonCta } from "../Buttons";
 import { Routes } from "../../consts/router";
@@ -127,7 +127,7 @@ const FlexAnchor = styled.View`
 `;
 
 const LandingProjectIntention = () => {
-  const { t } = useTranslation(["landingPage", "others", "common"]);
+  const { t } = useTranslation("common");
 
   const router = useRouter();
   const { identity, account } = useContext(AuthContext);

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components/native";
 import { NGO } from "../../consts/partners.json";

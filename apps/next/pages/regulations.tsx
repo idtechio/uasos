@@ -3,11 +3,11 @@ import {
   CompositionAppBody,
   CompositionSection,
 } from "../src/components/Compositions";
-import { useTranslation } from "next-i18next";
+import useTranslation from "next-translate/useTranslation";
 import { GetServerSideProps } from "next";
 import styled from "styled-components/native";
 import { withSession } from "../src/helpers/withSession";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import loadNamespaces from "next-translate/loadNamespaces";
 import { Routes } from "../src/consts/router";
 import AppBack from "../src/components/AppBack";
 
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
   async ({ locale }, session) => ({
     props: {
       session,
-      ...(locale && (await serverSideTranslations(locale))),
+      ...(locale && (await loadNamespaces(locale))),
     },
   })
 );

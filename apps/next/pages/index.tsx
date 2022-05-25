@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components/native";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CompositionAppBody } from "../src/components/Compositions";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
@@ -177,14 +176,13 @@ function Landing({ numberList }: LandingProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => {
+  async (_, session) => {
     const numberList = await getNumberList();
 
     return {
       props: {
         session,
         numberList: numberList.numbers,
-        ...(locale && (await serverSideTranslations(locale))),
       },
     };
   }

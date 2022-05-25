@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import React, { Children } from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { AppRegistry } from "react-native";

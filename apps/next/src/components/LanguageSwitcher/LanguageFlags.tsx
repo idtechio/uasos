@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
+import useTranlsation from "next-translate/useTranslation";
 import styled from "styled-components/native";
 import Image from "next/image";
 
@@ -45,7 +45,7 @@ const EmojiFlag = ({ locale }: Props) => {
 };
 
 const SvgFlag = ({ locale }: Props) => {
-  const { t } = useTranslation();
+  const { t } = useTranlsation();
   return (
     <Wrapper>
       <Image

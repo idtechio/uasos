@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search } from "./style";
 import { TextInput } from "react-native";
-import { useTranslation } from "next-i18next";
+import useTranslation from "next-translate/useTranslation";
 
 type Props<T> = {
   searchable: boolean;

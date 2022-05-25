@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import loadNamespaces from "next-translate/loadNamespaces";
 import React, { useEffect, useRef } from "react";
 import AppBack from "../src/components/AppBack";
 import {
@@ -32,6 +32,6 @@ export default function App() {
 }
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(locale && (await serverSideTranslations(locale))),
+    ...(locale && (await loadNamespaces(locale))),
   },
 });
