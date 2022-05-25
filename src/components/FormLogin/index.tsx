@@ -217,6 +217,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               <></>
             )}
             <ButtonCta
+              testID="login-button"
               style={{
                 width: "130px",
                 height: "43px",
