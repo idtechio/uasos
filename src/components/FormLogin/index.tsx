@@ -82,6 +82,9 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           if (error.message.includes("user-not-found")) {
             setError("Invalid email");
           }
+          if (error.message.includes("too-many-requests")) {
+            setError("Too many requests");
+          }
         }
       }
     } else {
@@ -134,6 +137,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     }
 
     if (!str) {
+      setPasswordInput(false);
       return "Your phone or email is required";
     } else if (str.length >= 50) {
       return "Your contact information should be lesss than 50 symbols";
