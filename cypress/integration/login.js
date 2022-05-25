@@ -48,7 +48,7 @@ describe("The login page", () => {
   });
 
   it("when password input is visible lost password text and button must be visible", () => {
-    cy.get("input").type("antontestuasos@gmail.com");
+    cy.get("input").type(email);
     cy.get("[data-testid=login-button]").click();
     cy.contains("Lost Password?");
     cy.contains("a", "click")
@@ -57,7 +57,7 @@ describe("The login page", () => {
   });
 
   it("click to lost password button redirects to the forget password page", () => {
-    cy.get("input").type("antontestuasos@gmail.com");
+    cy.get("input").type(email);
     cy.get("[data-testid=login-button]").click();
     cy.contains("a", "click").click();
     cy.url().should("contain", "/password-reset-init");
@@ -97,7 +97,7 @@ describe("The login page", () => {
     cy.contains("Invalid phone number");
   });
 
-  it("register button send you to register form", () => {
+  it("register button redirectst  to register form", () => {
     cy.contains("Register").click();
     cy.url().should("include", "/register");
   });

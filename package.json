@@ -70,6 +70,7 @@
     "babel-plugin-react-native-web": "^0.17.7",
     "babel-plugin-styled-components": "^2.0.6",
     "cypress": "^9.6.1",
+    "cypress-firebase": "^2.2.1",
     "eslint": "^8.10.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.4.0",

@@ -35,4 +35,8 @@ describe("The home page when user is not signed in", () => {
     cy.contains("Propose a shelter").click();
     cy.url().should("include", "/signin");
   });
+
+  // it("login", () => {
+  // cy.login();
+  // });
 });
