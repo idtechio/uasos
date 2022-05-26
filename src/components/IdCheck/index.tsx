@@ -2,11 +2,14 @@ import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 const IdCheckIo = require("idcheckio-sdk").default;
 import { useOnboarding } from "../../queries/useIdCheck";
-import { Configuration, ElementSelector } from "idcheckio-sdk/dist/schema";
+import { ElementSelector } from "idcheckio-sdk/dist/schema";
 import { IdCheckIFrame } from "./style";
 import { setIsWaitingVerification } from "../IdVerificationToast/helpers";
+import { wordings } from "./wordings";
 
-const idcheck = new IdCheckIo({} as Configuration);
+const idcheck = new IdCheckIo({
+  wordings,
+});
 
 const IdCheck = () => {
   const router = useRouter();
