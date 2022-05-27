@@ -4,19 +4,12 @@ const nextConfig = {
   webpack5: true,
 };
 
+const { i18n } = require("./next-i18next.config");
+
 const { withExpo } = require("@expo/next-adapter");
 const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")([
-  "solito",
-  "dripsy",
-  "@dripsy/core",
-  "moti",
-  "@motify/core",
-  "@motify/components",
-  "app",
-]);
+const withTM = require("next-transpile-modules")(["solito", "app"]);
 const withFonts = require("next-fonts");
-const nextTranslate = require("next-translate");
 
 module.exports = withPlugins(
   [
@@ -53,9 +46,9 @@ module.exports = withPlugins(
           },
         };
       },
+      i18n,
     }),
     withFonts,
-    nextTranslate,
     [withExpo, { projectRoot: __dirname }],
   ],
   nextConfig

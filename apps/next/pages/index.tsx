@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components/native";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { CompositionAppBody } from "../src/components/Compositions";
 import LandingProjectIntention from "../src/components/LandingProjectIntention";
 import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesItWorkSection";
@@ -12,6 +13,7 @@ import { GetServerSideProps } from "next";
 import { NumbersProps } from "./api/listing/numbers";
 import { Theme } from "../src/style/theme.config";
 import { getNumberList } from "../src/client-api/numbers";
+import { HomeScreen } from "app/features/home/screen";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -164,8 +166,10 @@ function Landing({ numberList }: LandingProps) {
         splashPosition={BottomLeftBlueSplashPosition}
       />
       <LandingProjectIntentionWrapper>
+        <HomeScreen />
         <LandingProjectIntention />
       </LandingProjectIntentionWrapper>
+
       <PartnersSection />
       <HowDoesItWorkSection />
       <LikeToHelpSection>
@@ -176,13 +180,14 @@ function Landing({ numberList }: LandingProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = withSession(
-  async (_, session) => {
+  async ({ locale }, session) => {
     const numberList = await getNumberList();
 
     return {
       props: {
         session,
         numberList: numberList.numbers,
+        ...(locale && (await serverSideTranslations(locale))),
       },
     };
   }

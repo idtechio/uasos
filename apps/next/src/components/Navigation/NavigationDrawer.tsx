@@ -1,5 +1,5 @@
 import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-i18next";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
@@ -17,7 +17,7 @@ interface Props {
 
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["common", "others"]);
   const { identity } = useContext(AuthContext);
 
   const handleSignOut = () => {

@@ -1,18 +1,28 @@
 import React from "react";
+import { useFonts } from "expo-font";
 import "./src/i18n";
 
-import { HelloWorld } from "app/home-screen";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "react-native";
-const Stack = createNativeStackNavigator();
+import { NativeNavigation } from "app/navigation/native";
+import { Provider } from "app/provider";
 
 export default function App() {
+  const [loaded] = useFonts({
+    RobotoBlack: require("./assets/fonts/Roboto-Black.ttf"),
+    RobotoBold: require("./assets/fonts/Roboto-Bold.ttf"),
+    RobotoItalic: require("./assets/fonts/Roboto-Italic.ttf"),
+    RobotoLight: require("./assets/fonts/Roboto-Light.ttf"),
+    RobotoMedium: require("./assets/fonts/Roboto-Medium.ttf"),
+    RobotoRegular: require("./assets/fonts/Roboto-Regular.ttf"),
+    RobotoThin: require("./assets/fonts/Roboto-Thin.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HelloWorld} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider>
+      <NativeNavigation />
+    </Provider>
   );
 }

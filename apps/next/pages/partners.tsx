@@ -1,6 +1,6 @@
 import React from "react";
-import loadNamespaces from "next-translate/loadNamespaces";
-import useTranslation from "next-translate/useTranslation";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
 import Section from "../src/components/Section";
 import SectionTitle from "../src/components/SectionTitle";
@@ -137,7 +137,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
   async ({ locale }, session) => ({
     props: {
       session,
-      ...(locale && (await loadNamespaces(locale))),
+      ...(locale && (await serverSideTranslations(locale))),
     },
   })
 );

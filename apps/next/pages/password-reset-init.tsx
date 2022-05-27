@@ -1,5 +1,5 @@
 import React from "react";
-import loadNamespaces from "next-translate/loadNamespaces";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import AppBack from "../src/components/AppBack";
 import {
   CompositionAppBody,
@@ -20,6 +20,6 @@ export default function App() {
 }
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
   props: {
-    ...(locale && (await loadNamespaces(locale))),
+    ...(locale && (await serverSideTranslations(locale))),
   },
 });

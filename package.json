@@ -1,13 +1,10 @@
 {
   "name": "uasos-monorepo",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "apps/*",
-      "packages/*"
-    ],
-    "nohoist": []
-  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.0.2",
     "@types/react": "^17.0.39",
@@ -45,9 +42,5 @@
       "yarn precommit:lint",
       "yarn precommit:format"
     ]
-  },
-  "dependencies": {
-    "react-native-safe-area-context": "^4.2.5",
-    "react-native-screens": "^3.13.1"
   }
 }

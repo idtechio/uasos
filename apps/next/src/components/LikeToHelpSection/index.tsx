@@ -1,4 +1,4 @@
-import useTranslation from "next-translate/useTranslation";
+import { Trans, useTranslation } from "next-i18next";
 import React from "react";
 import styled, { css } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
@@ -66,9 +66,17 @@ export function LikeToHelpSection({ children }: LikeToHelpSectionProps) {
         <ContentWrapper>
           <SectionTitle title={t("likeToHelp.title")} />
           <DetailsText>
-            Zgłoś lokal, pokój lub miejsce, które możesz{" "}
-            <strong>nieodpłatnie</strong> udostępnić{" "}
-            <strong>ofiarom wojny w Ukrainie</strong>
+            <Trans
+              t={t}
+              i18nKey="likeToHelp.details"
+              components={{
+                bold: <strong />,
+              }}
+            >
+              Zgłoś lokal, pokój lub miejsce, które możesz{" "}
+              <strong>nieodpłatnie</strong> udostępnić{" "}
+              <strong>ofiarom wojny w Ukrainie</strong>
+            </Trans>
           </DetailsText>
           <StyledButton
             onPress={onCTAPress}

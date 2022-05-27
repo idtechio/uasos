@@ -4,7 +4,7 @@ import { AfterDecisionModal } from "../../../src/components/AfterDecisionModal";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { withSession } from "../../../src/helpers/withSession";
-import loadNamespaces from "next-translate/loadNamespaces";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //TODO: DRY pages/guest/matchesconfirm/[matchesId].js
 const Matchesconfirm = () => {
@@ -31,7 +31,7 @@ const Matchesconfirm = () => {
 export const getServerSideProps = withSession(async ({ locale }, session) => ({
   props: {
     session,
-    ...(await loadNamespaces(locale)),
+    ...(await serverSideTranslations(locale)),
   },
 }));
 

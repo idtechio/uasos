@@ -14,7 +14,7 @@ import type privacyPolicy from "./locales/en/privacyPolicy.json";
 import type publicShelters from "./locales/en/publicShelters.json";
 import type regulations from "./locales/en/regulations.json";
 
-// if new ns will be available, please add it to this object
+// if new ns will be available, please add it to this interface
 export interface LocalesTypes {
   backend: typeof backend;
   common: typeof common;
@@ -32,37 +32,3 @@ export interface LocalesTypes {
   publicShelters: typeof publicShelters;
   regulations: typeof regulations;
 }
-
-// if new supported ns will be available, please add it to this object
-export const supportedNs = [
-  "backend",
-  "common",
-  "desktop",
-  "faq",
-  "filters",
-  "forms",
-  "forms",
-  "guestList",
-  "homepage",
-  "hostList",
-  "landingPage",
-  "offer-details",
-  "others",
-  "privacyPolicy",
-  "publicShelters",
-  "regulations",
-];
-
-// if new supported locale will be available, please add it to this object
-export const supportedLocales = [
-  "ua",
-  "pl",
-  "ru",
-  "cs",
-  "en",
-  "hu",
-  "ro",
-  "sk",
-];
-
-export const defaultLocale = "pl";

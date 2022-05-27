@@ -4,7 +4,7 @@ import { AfterDeactivateModal } from "../../../src/components/AfterDeactivateMod
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { withSession } from "../../../src/helpers/withSession";
-import loadNamespaces from "next-translate/loadNamespaces";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //TODO: DRY pages/guest/deactivate/[hash].js
 const Deactivateconfirm = () => {
@@ -33,7 +33,7 @@ const Deactivateconfirm = () => {
 export const getServerSideProps = withSession(async ({ locale }, session) => ({
   props: {
     session,
-    ...(await loadNamespaces(locale)),
+    ...(await serverSideTranslations(locale)),
   },
 }));
 

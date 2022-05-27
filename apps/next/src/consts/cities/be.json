@@ -1,0 +1,8667 @@
+[
+  {
+    "label": "Brussels",
+    "value": "2800866",
+    "population": 1019022
+  },
+  {
+    "label": "Antwerpen",
+    "value": "2803138",
+    "population": 459805
+  },
+  {
+    "label": "Gent",
+    "value": "2797656",
+    "population": 231493
+  },
+  {
+    "label": "Charleroi",
+    "value": "2800481",
+    "population": 200132
+  },
+  {
+    "label": "Liège",
+    "value": "2792413",
+    "population": 182597
+  },
+  {
+    "label": "Anderlecht",
+    "value": "2803201",
+    "population": 160553
+  },
+  {
+    "label": "Schaerbeek",
+    "value": "2787149",
+    "population": 132761
+  },
+  {
+    "label": "Brugge",
+    "value": "2800931",
+    "population": 116709
+  },
+  {
+    "label": "Namur",
+    "value": "2790471",
+    "population": 106284
+  },
+  {
+    "label": "Molenbeek-Saint-Jean",
+    "value": "2791018",
+    "population": 97037
+  },
+  {
+    "label": "Leuven",
+    "value": "2792482",
+    "population": 92892
+  },
+  {
+    "label": "Mons",
+    "value": "2790869",
+    "population": 91277
+  },
+  {
+    "label": "Ixelles",
+    "value": "2795011",
+    "population": 86671
+  },
+  {
+    "label": "Uccle",
+    "value": "2785123",
+    "population": 82929
+  },
+  {
+    "label": "Deurne",
+    "value": "2799478",
+    "population": 78747
+  },
+  {
+    "label": "Aalst",
+    "value": "2803448",
+    "population": 77534
+  },
+  {
+    "label": "Mechelen",
+    "value": "2791537",
+    "population": 77530
+  },
+  {
+    "label": "La Louvière",
+    "value": "2793508",
+    "population": 76668
+  },
+  {
+    "label": "Kortrijk",
+    "value": "2794055",
+    "population": 73879
+  },
+  {
+    "label": "Hasselt",
+    "value": "2796491",
+    "population": 69222
+  },
+  {
+    "label": "Ostend",
+    "value": "2789786",
+    "population": 69011
+  },
+  {
+    "label": "Sint-Niklaas",
+    "value": "2786578",
+    "population": 69010
+  },
+  {
+    "label": "Tournai",
+    "value": "2785341",
+    "population": 67721
+  },
+  {
+    "label": "Genk",
+    "value": "2797670",
+    "population": 63666
+  },
+  {
+    "label": "Seraing",
+    "value": "2786824",
+    "population": 60737
+  },
+  {
+    "label": "Woluwe-Saint-Lambert",
+    "value": "2783476",
+    "population": 56584
+  },
+  {
+    "label": "Forest",
+    "value": "2798139",
+    "population": 56254
+  },
+  {
+    "label": "Roeselare",
+    "value": "2787889",
+    "population": 56016
+  },
+  {
+    "label": "Verviers",
+    "value": "2784821",
+    "population": 52824
+  },
+  {
+    "label": "Jette",
+    "value": "2794914",
+    "population": 52490
+  },
+  {
+    "label": "Mouscron",
+    "value": "2790595",
+    "population": 52069
+  },
+  {
+    "label": "Saint-Gilles",
+    "value": "2787413",
+    "population": 50221
+  },
+  {
+    "label": "Etterbeek",
+    "value": "2798578",
+    "population": 48344
+  },
+  {
+    "label": "Borgerhout",
+    "value": "2801471",
+    "population": 46087
+  },
+  {
+    "label": "Beveren",
+    "value": "2802031",
+    "population": 45179
+  },
+  {
+    "label": "Merksem",
+    "value": "2791301",
+    "population": 44435
+  },
+  {
+    "label": "Turnhout",
+    "value": "2785141",
+    "population": 44000
+  },
+  {
+    "label": "Berchem",
+    "value": "2802249",
+    "population": 43511
+  },
+  {
+    "label": "Dendermonde",
+    "value": "2799645",
+    "population": 43055
+  },
+  {
+    "label": "Evere",
+    "value": "2798554",
+    "population": 41667
+  },
+  {
+    "label": "Lokeren",
+    "value": "2792196",
+    "population": 41438
+  },
+  {
+    "label": "Wilrijk",
+    "value": "2783615",
+    "population": 41403
+  },
+  {
+    "label": "Beringen",
+    "value": "2802170",
+    "population": 40930
+  },
+  {
+    "label": "Dilbeek",
+    "value": "2799365",
+    "population": 39482
+  },
+  {
+    "label": "Heist-op-den-Berg",
+    "value": "2796153",
+    "population": 37873
+  },
+  {
+    "label": "Sint-Truiden",
+    "value": "2786545",
+    "population": 37859
+  },
+  {
+    "label": "Braine-l'Alleud",
+    "value": "2801154",
+    "population": 37512
+  },
+  {
+    "label": "Brasschaat",
+    "value": "2801117",
+    "population": 37040
+  },
+  {
+    "label": "Grimbergen",
+    "value": "2797114",
+    "population": 37000
+  },
+  {
+    "label": "Vilvoorde",
+    "value": "2784604",
+    "population": 36955
+  },
+  {
+    "label": "Herstal",
+    "value": "2795930",
+    "population": 36503
+  },
+  {
+    "label": "Maasmechelen",
+    "value": "2791961",
+    "population": 36251
+  },
+  {
+    "label": "Waregem",
+    "value": "2784068",
+    "population": 35896
+  },
+  {
+    "label": "Châtelet",
+    "value": "2800448",
+    "population": 35238
+  },
+  {
+    "label": "Ieper",
+    "value": "2795100",
+    "population": 35089
+  },
+  {
+    "label": "Ninove",
+    "value": "2790114",
+    "population": 34795
+  },
+  {
+    "label": "Geel",
+    "value": "2797779",
+    "population": 34697
+  },
+  {
+    "label": "Halle",
+    "value": "2796696",
+    "population": 34479
+  },
+  {
+    "label": "Hoboken",
+    "value": "2795730",
+    "population": 34443
+  },
+  {
+    "label": "Auderghem",
+    "value": "2802960",
+    "population": 33984
+  },
+  {
+    "label": "Knokke-Heist",
+    "value": "2794210",
+    "population": 33781
+  },
+  {
+    "label": "Schoten",
+    "value": "2786963",
+    "population": 33622
+  },
+  {
+    "label": "Lier",
+    "value": "2792397",
+    "population": 33272
+  },
+  {
+    "label": "Mol",
+    "value": "2791067",
+    "population": 32659
+  },
+  {
+    "label": "Sint-Amandsberg",
+    "value": "2786743",
+    "population": 32115
+  },
+  {
+    "label": "Wavre",
+    "value": "2783941",
+    "population": 32112
+  },
+  {
+    "label": "Binche",
+    "value": "2801922",
+    "population": 32030
+  },
+  {
+    "label": "Lommel",
+    "value": "2792179",
+    "population": 31993
+  },
+  {
+    "label": "Menen",
+    "value": "2791343",
+    "population": 31916
+  },
+  {
+    "label": "Tienen",
+    "value": "2785470",
+    "population": 31743
+  },
+  {
+    "label": "Evergem",
+    "value": "2798551",
+    "population": 31615
+  },
+  {
+    "label": "Heusden",
+    "value": "2795800",
+    "population": 31017
+  },
+  {
+    "label": "Wevelgem",
+    "value": "2783759",
+    "population": 30954
+  },
+  {
+    "label": "Geraardsbergen",
+    "value": "2797638",
+    "population": 30807
+  },
+  {
+    "label": "Sint-Pieters-Leeuw",
+    "value": "2786559",
+    "population": 30446
+  },
+  {
+    "label": "Kessel-Lo",
+    "value": "2794507",
+    "population": 30215
+  },
+  {
+    "label": "Blauwput",
+    "value": "2801824",
+    "population": 30215
+  },
+  {
+    "label": "Helchteren",
+    "value": "2796132",
+    "population": 30050
+  },
+  {
+    "label": "Houthalen",
+    "value": "2795261",
+    "population": 30050
+  },
+  {
+    "label": "Tongeren",
+    "value": "2785389",
+    "population": 29816
+  },
+  {
+    "label": "Deinze",
+    "value": "2799746",
+    "population": 29815
+  },
+  {
+    "label": "Waterloo",
+    "value": "2783985",
+    "population": 29778
+  },
+  {
+    "label": "Bilzen",
+    "value": "2801924",
+    "population": 29622
+  },
+  {
+    "label": "Louvain-la-Neuve",
+    "value": "2792073",
+    "population": 29521
+  },
+  {
+    "label": "Courcelles",
+    "value": "2800063",
+    "population": 29473
+  },
+  {
+    "label": "Asse",
+    "value": "2803033",
+    "population": 28985
+  },
+  {
+    "label": "Zaventem",
+    "value": "2783310",
+    "population": 28188
+  },
+  {
+    "label": "Oudenaarde",
+    "value": "2789529",
+    "population": 27935
+  },
+  {
+    "label": "Aarschot",
+    "value": "2803429",
+    "population": 27656
+  },
+  {
+    "label": "Saint-Josse-ten-Noode",
+    "value": "2787387",
+    "population": 27366
+  },
+  {
+    "label": "Ans",
+    "value": "2803160",
+    "population": 27297
+  },
+  {
+    "label": "Ath",
+    "value": "2803010",
+    "population": 26681
+  },
+  {
+    "label": "Kapellen",
+    "value": "2794730",
+    "population": 26410
+  },
+  {
+    "label": "Izegem",
+    "value": "2795009",
+    "population": 26382
+  },
+  {
+    "label": "Arlon",
+    "value": "2803073",
+    "population": 26179
+  },
+  {
+    "label": "Temse",
+    "value": "2785778",
+    "population": 26054
+  },
+  {
+    "label": "Harelbeke",
+    "value": "2796542",
+    "population": 25978
+  },
+  {
+    "label": "Herentals",
+    "value": "2796009",
+    "population": 25912
+  },
+  {
+    "label": "Maaseik",
+    "value": "2791964",
+    "population": 25201
+  },
+  {
+    "label": "Berchem-Sainte-Agathe",
+    "value": "2802247",
+    "population": 25162
+  },
+  {
+    "label": "Watermael-Boitsfort",
+    "value": "2783979",
+    "population": 25157
+  },
+  {
+    "label": "Flémalle-Haute",
+    "value": "2798307",
+    "population": 25144
+  },
+  {
+    "label": "Soignies",
+    "value": "2786420",
+    "population": 24869
+  },
+  {
+    "label": "Ganshoren",
+    "value": "2797844",
+    "population": 24859
+  },
+  {
+    "label": "Lanaken",
+    "value": "2793446",
+    "population": 24771
+  },
+  {
+    "label": "Mortsel",
+    "value": "2790676",
+    "population": 24525
+  },
+  {
+    "label": "Jumet",
+    "value": "2794860",
+    "population": 24510
+  },
+  {
+    "label": "Zottegem",
+    "value": "2783175",
+    "population": 24434
+  },
+  {
+    "label": "Ronse",
+    "value": "2787769",
+    "population": 24204
+  },
+  {
+    "label": "Nivelles",
+    "value": "2790101",
+    "population": 24149
+  },
+  {
+    "label": "Andenne",
+    "value": "2803204",
+    "population": 24055
+  },
+  {
+    "label": "Marcinelle",
+    "value": "2791726",
+    "population": 23696
+  },
+  {
+    "label": "Oupeye",
+    "value": "2789471",
+    "population": 23594
+  },
+  {
+    "label": "Wondelgem",
+    "value": "2783456",
+    "population": 23546
+  },
+  {
+    "label": "Overijse",
+    "value": "2789413",
+    "population": 23486
+  },
+  {
+    "label": "Zwevegem",
+    "value": "2783089",
+    "population": 23358
+  },
+  {
+    "label": "Ekeren",
+    "value": "2798873",
+    "population": 23300
+  },
+  {
+    "label": "Heverlee",
+    "value": "2795783",
+    "population": 23278
+  },
+  {
+    "label": "Beersel",
+    "value": "2802433",
+    "population": 23228
+  },
+  {
+    "label": "Wetteren",
+    "value": "2783763",
+    "population": 22930
+  },
+  {
+    "label": "Hamme",
+    "value": "2796637",
+    "population": 22891
+  },
+  {
+    "label": "Willebroek",
+    "value": "2783632",
+    "population": 22808
+  },
+  {
+    "label": "Saint-Nicolas",
+    "value": "2787356",
+    "population": 22586
+  },
+  {
+    "label": "Westerlo",
+    "value": "2783801",
+    "population": 22579
+  },
+  {
+    "label": "Diest",
+    "value": "2799397",
+    "population": 22516
+  },
+  {
+    "label": "Saint-Ghislain",
+    "value": "2787416",
+    "population": 22500
+  },
+  {
+    "label": "Manage",
+    "value": "2791814",
+    "population": 22196
+  },
+  {
+    "label": "Maldegem",
+    "value": "2791857",
+    "population": 22092
+  },
+  {
+    "label": "Fleurus",
+    "value": "2798297",
+    "population": 22080
+  },
+  {
+    "label": "Koekelberg",
+    "value": "2794190",
+    "population": 21984
+  },
+  {
+    "label": "Zedelgem",
+    "value": "2783308",
+    "population": 21968
+  },
+  {
+    "label": "Koksijde",
+    "value": "2794166",
+    "population": 21957
+  },
+  {
+    "label": "Edegem",
+    "value": "2799007",
+    "population": 21839
+  },
+  {
+    "label": "Gembloux",
+    "value": "2797713",
+    "population": 21676
+  },
+  {
+    "label": "Rixensart",
+    "value": "2787989",
+    "population": 21616
+  },
+  {
+    "label": "Oostkamp",
+    "value": "2789751",
+    "population": 21489
+  },
+  {
+    "label": "Zemst",
+    "value": "2783274",
+    "population": 21096
+  },
+  {
+    "label": "Grivegnée",
+    "value": "2797096",
+    "population": 21057
+  },
+  {
+    "label": "Chaudfontaine",
+    "value": "2800438",
+    "population": 20960
+  },
+  {
+    "label": "Nijlen",
+    "value": "2790135",
+    "population": 20792
+  },
+  {
+    "label": "Tervuren",
+    "value": "2785622",
+    "population": 20623
+  },
+  {
+    "label": "Frameries",
+    "value": "2798023",
+    "population": 20598
+  },
+  {
+    "label": "Schilde",
+    "value": "2787048",
+    "population": 20373
+  },
+  {
+    "label": "Kontich",
+    "value": "2794117",
+    "population": 20290
+  },
+  {
+    "label": "Zele",
+    "value": "2783293",
+    "population": 20236
+  },
+  {
+    "label": "Braine-le-Comte",
+    "value": "2801150",
+    "population": 20133
+  },
+  {
+    "label": "Boussu",
+    "value": "2801226",
+    "population": 20058
+  },
+  {
+    "label": "Gilly",
+    "value": "2797532",
+    "population": 20043
+  },
+  {
+    "label": "Bornem",
+    "value": "2801447",
+    "population": 19997
+  },
+  {
+    "label": "Balen",
+    "value": "2802743",
+    "population": 19978
+  },
+  {
+    "label": "Huy",
+    "value": "2795113",
+    "population": 19973
+  },
+  {
+    "label": "Colfontaine",
+    "value": "2800220",
+    "population": 19964
+  },
+  {
+    "label": "Zonhoven",
+    "value": "2783188",
+    "population": 19922
+  },
+  {
+    "label": "Assebroek",
+    "value": "2803030",
+    "population": 19772
+  },
+  {
+    "label": "Lochristi",
+    "value": "2792235",
+    "population": 19696
+  },
+  {
+    "label": "Jambes",
+    "value": "2794981",
+    "population": 19658
+  },
+  {
+    "label": "Poperinge",
+    "value": "2788726",
+    "population": 19537
+  },
+  {
+    "label": "Sint-Katelijne-Waver",
+    "value": "2786641",
+    "population": 19487
+  },
+  {
+    "label": "Sint-Andries",
+    "value": "2786739",
+    "population": 19336
+  },
+  {
+    "label": "Tielt",
+    "value": "2785476",
+    "population": 19299
+  },
+  {
+    "label": "Herent",
+    "value": "2796012",
+    "population": 19218
+  },
+  {
+    "label": "Eeklo",
+    "value": "2798987",
+    "population": 19116
+  },
+  {
+    "label": "Torhout",
+    "value": "2785364",
+    "population": 18933
+  },
+  {
+    "label": "Aalter",
+    "value": "2803443",
+    "population": 18802
+  },
+  {
+    "label": "Montignies-sur-Sambre",
+    "value": "2790796",
+    "population": 18765
+  },
+  {
+    "label": "Hoogstraten",
+    "value": "2795398",
+    "population": 18524
+  },
+  {
+    "label": "Meise",
+    "value": "2791424",
+    "population": 18497
+  },
+  {
+    "label": "Quaregnon",
+    "value": "2788499",
+    "population": 18491
+  },
+  {
+    "label": "Zwijndrecht",
+    "value": "2783081",
+    "population": 18249
+  },
+  {
+    "label": "Morlanwelz-Mariemont",
+    "value": "2790697",
+    "population": 18233
+  },
+  {
+    "label": "Koersel",
+    "value": "2794179",
+    "population": 18076
+  },
+  {
+    "label": "Eupen",
+    "value": "2798573",
+    "population": 18029
+  },
+  {
+    "label": "Tubize",
+    "value": "2785169",
+    "population": 18000
+  },
+  {
+    "label": "Blankenberge",
+    "value": "2801858",
+    "population": 18000
+  },
+  {
+    "label": "Sint-Genesius-Rode",
+    "value": "2786700",
+    "population": 17990
+  },
+  {
+    "label": "Middelkerke",
+    "value": "2791194",
+    "population": 17789
+  },
+  {
+    "label": "Kortenberg",
+    "value": "2794070",
+    "population": 17774
+  },
+  {
+    "label": "Kasterlee",
+    "value": "2794663",
+    "population": 17765
+  },
+  {
+    "label": "Diepenbeek",
+    "value": "2799412",
+    "population": 17699
+  },
+  {
+    "label": "Lessines",
+    "value": "2792567",
+    "population": 17687
+  },
+  {
+    "label": "Sint-Gillis-Waas",
+    "value": "2786694",
+    "population": 17658
+  },
+  {
+    "label": "Walcourt",
+    "value": "2784189",
+    "population": 17501
+  },
+  {
+    "label": "Kalmthout",
+    "value": "2794788",
+    "population": 17485
+  },
+  {
+    "label": "Ranst",
+    "value": "2788348",
+    "population": 17405
+  },
+  {
+    "label": "Lebbeke",
+    "value": "2793144",
+    "population": 17372
+  },
+  {
+    "label": "Wervik",
+    "value": "2783820",
+    "population": 17340
+  },
+  {
+    "label": "Stabroek",
+    "value": "2786229",
+    "population": 17294
+  },
+  {
+    "label": "Zolder",
+    "value": "2783197",
+    "population": 17289
+  },
+  {
+    "label": "Châtelineau",
+    "value": "2800445",
+    "population": 17166
+  },
+  {
+    "label": "Haaltert",
+    "value": "2796833",
+    "population": 17129
+  },
+  {
+    "label": "Mariakerke",
+    "value": "2791700",
+    "population": 17062
+  },
+  {
+    "label": "Visé",
+    "value": "2784548",
+    "population": 17054
+  },
+  {
+    "label": "Stekene",
+    "value": "2786087",
+    "population": 16989
+  },
+  {
+    "label": "Denderleeuw",
+    "value": "2799647",
+    "population": 16969
+  },
+  {
+    "label": "Dour",
+    "value": "2799226",
+    "population": 16861
+  },
+  {
+    "label": "Marche-en-Famenne",
+    "value": "2791744",
+    "population": 16856
+  },
+  {
+    "label": "Destelbergen",
+    "value": "2799496",
+    "population": 16853
+  },
+  {
+    "label": "Lede",
+    "value": "2793077",
+    "population": 16813
+  },
+  {
+    "label": "Merelbeke",
+    "value": "2791315",
+    "population": 16684
+  },
+  {
+    "label": "Péruwelz",
+    "value": "2789162",
+    "population": 16647
+  },
+  {
+    "label": "Tessenderlo",
+    "value": "2785612",
+    "population": 16574
+  },
+  {
+    "label": "Herve",
+    "value": "2795912",
+    "population": 16544
+  },
+  {
+    "label": "Herzele",
+    "value": "2795908",
+    "population": 16523
+  },
+  {
+    "label": "Beerse",
+    "value": "2802435",
+    "population": 16208
+  },
+  {
+    "label": "Neerpelt",
+    "value": "2790357",
+    "population": 16122
+  },
+  {
+    "label": "Duffel",
+    "value": "2799090",
+    "population": 16011
+  },
+  {
+    "label": "Sint-Kruis",
+    "value": "2786634",
+    "population": 16000
+  },
+  {
+    "label": "Fléron",
+    "value": "2798301",
+    "population": 15994
+  },
+  {
+    "label": "Puurs",
+    "value": "2788506",
+    "population": 15944
+  },
+  {
+    "label": "Pont-à-Celles",
+    "value": "2788765",
+    "population": 15909
+  },
+  {
+    "label": "Gentbrugge",
+    "value": "2797652",
+    "population": 15885
+  },
+  {
+    "label": "Boom",
+    "value": "2801494",
+    "population": 15810
+  },
+  {
+    "label": "Riemst",
+    "value": "2788088",
+    "population": 15809
+  },
+  {
+    "label": "Peer",
+    "value": "2789232",
+    "population": 15551
+  },
+  {
+    "label": "Diksmuide",
+    "value": "2799369",
+    "population": 15515
+  },
+  {
+    "label": "Lille",
+    "value": "2792360",
+    "population": 15466
+  },
+  {
+    "label": "Heusy",
+    "value": "2795795",
+    "population": 15420
+  },
+  {
+    "label": "Mechelen-aan-de-Maas",
+    "value": "2791534",
+    "population": 15374
+  },
+  {
+    "label": "Bevere",
+    "value": "2802039",
+    "population": 15311
+  },
+  {
+    "label": "Putte",
+    "value": "2788521",
+    "population": 15276
+  },
+  {
+    "label": "Soumagne",
+    "value": "2786344",
+    "population": 15237
+  },
+  {
+    "label": "Marchienne-au-Pont",
+    "value": "2791735",
+    "population": 15154
+  },
+  {
+    "label": "Rotselaar",
+    "value": "2787662",
+    "population": 15007
+  },
+  {
+    "label": "Wuustwezel",
+    "value": "2783416",
+    "population": 15000
+  },
+  {
+    "label": "Hollogne-aux-Pierres",
+    "value": "2795516",
+    "population": 14944
+  },
+  {
+    "label": "Aubange",
+    "value": "2802990",
+    "population": 14932
+  },
+  {
+    "label": "Bredene",
+    "value": "2801103",
+    "population": 14862
+  },
+  {
+    "label": "Ciney",
+    "value": "2800298",
+    "population": 14830
+  },
+  {
+    "label": "Kruibeke",
+    "value": "2793940",
+    "population": 14815
+  },
+  {
+    "label": "Thuin",
+    "value": "2785517",
+    "population": 14682
+  },
+  {
+    "label": "Zulte",
+    "value": "2783151",
+    "population": 14670
+  },
+  {
+    "label": "Merchtem",
+    "value": "2791323",
+    "population": 14660
+  },
+  {
+    "label": "Ternat",
+    "value": "2785654",
+    "population": 14569
+  },
+  {
+    "label": "Rumst",
+    "value": "2787521",
+    "population": 14521
+  },
+  {
+    "label": "Beernem",
+    "value": "2802437",
+    "population": 14512
+  },
+  {
+    "label": "Landen",
+    "value": "2793429",
+    "population": 14458
+  },
+  {
+    "label": "Knokke",
+    "value": "2794212",
+    "population": 14449
+  },
+  {
+    "label": "Wemmel",
+    "value": "2783856",
+    "population": 14406
+  },
+  {
+    "label": "Bastogne",
+    "value": "2802583",
+    "population": 14395
+  },
+  {
+    "label": "Bree",
+    "value": "2801093",
+    "population": 14363
+  },
+  {
+    "label": "Chapelle-lez-Herlaimont",
+    "value": "2800500",
+    "population": 14353
+  },
+  {
+    "label": "Éghezée",
+    "value": "2798949",
+    "population": 14352
+  },
+  {
+    "label": "Houdeng-Goegnies",
+    "value": "2795329",
+    "population": 14312
+  },
+  {
+    "label": "Genappe",
+    "value": "2797694",
+    "population": 14266
+  },
+  {
+    "label": "Rumbeke",
+    "value": "2787532",
+    "population": 14265
+  },
+  {
+    "label": "Aartselaar",
+    "value": "2803420",
+    "population": 14193
+  },
+  {
+    "label": "Leopoldsburg",
+    "value": "2792856",
+    "population": 14149
+  },
+  {
+    "label": "Hannut",
+    "value": "2796583",
+    "population": 14129
+  },
+  {
+    "label": "Brecht",
+    "value": "2801106",
+    "population": 14007
+  },
+  {
+    "label": "Anzegem",
+    "value": "2803130",
+    "population": 13920
+  },
+  {
+    "label": "Basse Lasne",
+    "value": "2802610",
+    "population": 13861
+  },
+  {
+    "label": "Berlare",
+    "value": "2802154",
+    "population": 13853
+  },
+  {
+    "label": "Flémalle-Grande",
+    "value": "2798309",
+    "population": 13738
+  },
+  {
+    "label": "Waremme",
+    "value": "2784066",
+    "population": 13737
+  },
+  {
+    "label": "Strombeek-Bever",
+    "value": "2785949",
+    "population": 13727
+  },
+  {
+    "label": "Tremelo",
+    "value": "2785293",
+    "population": 13721
+  },
+  {
+    "label": "Lummen",
+    "value": "2792007",
+    "population": 13689
+  },
+  {
+    "label": "Dison",
+    "value": "2799347",
+    "population": 13642
+  },
+  {
+    "label": "Ichtegem",
+    "value": "2795106",
+    "population": 13582
+  },
+  {
+    "label": "Lubbeek",
+    "value": "2792034",
+    "population": 13574
+  },
+  {
+    "label": "Ravels",
+    "value": "2788312",
+    "population": 13560
+  },
+  {
+    "label": "Couvin",
+    "value": "2800025",
+    "population": 13518
+  },
+  {
+    "label": "Buggenhout",
+    "value": "2800816",
+    "population": 13510
+  },
+  {
+    "label": "Esneux",
+    "value": "2798636",
+    "population": 13497
+  },
+  {
+    "label": "Assenede",
+    "value": "2803026",
+    "population": 13495
+  },
+  {
+    "label": "Herselt",
+    "value": "2795933",
+    "population": 13493
+  },
+  {
+    "label": "Jabbeke",
+    "value": "2794999",
+    "population": 13488
+  },
+  {
+    "label": "Beloeil",
+    "value": "2802292",
+    "population": 13405
+  },
+  {
+    "label": "Overpelt",
+    "value": "2789403",
+    "population": 13344
+  },
+  {
+    "label": "Amay",
+    "value": "2803246",
+    "population": 13307
+  },
+  {
+    "label": "Wezembeek-Oppem",
+    "value": "2783737",
+    "population": 13245
+  },
+  {
+    "label": "Oosterzele",
+    "value": "2789771",
+    "population": 13151
+  },
+  {
+    "label": "Drongen",
+    "value": "2799108",
+    "population": 13016
+  },
+  {
+    "label": "Sint-Gillis-bij-Dendermonde",
+    "value": "2786697",
+    "population": 12953
+  },
+  {
+    "label": "Heist",
+    "value": "2796157",
+    "population": 12951
+  },
+  {
+    "label": "Sprimont",
+    "value": "2786242",
+    "population": 12945
+  },
+  {
+    "label": "Wanze",
+    "value": "2784092",
+    "population": 12918
+  },
+  {
+    "label": "Wingene",
+    "value": "2783586",
+    "population": 12887
+  },
+  {
+    "label": "Dinant",
+    "value": "2799357",
+    "population": 12875
+  },
+  {
+    "label": "Kraainem",
+    "value": "2794016",
+    "population": 12815
+  },
+  {
+    "label": "Mont-sur-Marchienne",
+    "value": "2790749",
+    "population": 12761
+  },
+  {
+    "label": "Blégny",
+    "value": "2801820",
+    "population": 12745
+  },
+  {
+    "label": "Malmédy",
+    "value": "2791834",
+    "population": 12654
+  },
+  {
+    "label": "Kuurne",
+    "value": "2793857",
+    "population": 12638
+  },
+  {
+    "label": "Bressoux",
+    "value": "2801060",
+    "population": 12588
+  },
+  {
+    "label": "Grez-Doiceau",
+    "value": "2797128",
+    "population": 12367
+  },
+  {
+    "label": "Oud-Turnhout",
+    "value": "2789483",
+    "population": 12354
+  },
+  {
+    "label": "Bocholt",
+    "value": "2801754",
+    "population": 12346
+  },
+  {
+    "label": "Zandhoven",
+    "value": "2783347",
+    "population": 12306
+  },
+  {
+    "label": "Sint-Michiels",
+    "value": "2786581",
+    "population": 12297
+  },
+  {
+    "label": "Machelen",
+    "value": "2791951",
+    "population": 12252
+  },
+  {
+    "label": "Arendonk",
+    "value": "2803083",
+    "population": 12247
+  },
+  {
+    "label": "Erembodegem",
+    "value": "2798700",
+    "population": 12152
+  },
+  {
+    "label": "Boechout",
+    "value": "2801743",
+    "population": 12145
+  },
+  {
+    "label": "Opwijk",
+    "value": "2789654",
+    "population": 12045
+  },
+  {
+    "label": "Mettet",
+    "value": "2791261",
+    "population": 12014
+  },
+  {
+    "label": "Veurne",
+    "value": "2784804",
+    "population": 11983
+  },
+  {
+    "label": "Liedekerke",
+    "value": "2792423",
+    "population": 11980
+  },
+  {
+    "label": "Rochefort",
+    "value": "2787948",
+    "population": 11978
+  },
+  {
+    "label": "Ougrée",
+    "value": "2789475",
+    "population": 11975
+  },
+  {
+    "label": "Kinrooi",
+    "value": "2794445",
+    "population": 11946
+  },
+  {
+    "label": "Kortemark",
+    "value": "2794074",
+    "population": 11937
+  },
+  {
+    "label": "Paal",
+    "value": "2789388",
+    "population": 11935
+  },
+  {
+    "label": "Jodoigne",
+    "value": "2794895",
+    "population": 11930
+  },
+  {
+    "label": "Wommelgem",
+    "value": "2783462",
+    "population": 11917
+  },
+  {
+    "label": "Zelzate",
+    "value": "2783278",
+    "population": 11901
+  },
+  {
+    "label": "Gavere",
+    "value": "2797798",
+    "population": 11888
+  },
+  {
+    "label": "Heule",
+    "value": "2795823",
+    "population": 11873
+  },
+  {
+    "label": "De Haan",
+    "value": "2799779",
+    "population": 11766
+  },
+  {
+    "label": "Wasmes",
+    "value": "2784019",
+    "population": 11731
+  },
+  {
+    "label": "Beyne-Heusay",
+    "value": "2802015",
+    "population": 11608
+  },
+  {
+    "label": "Laarne",
+    "value": "2793797",
+    "population": 11600
+  },
+  {
+    "label": "Anderlues",
+    "value": "2803199",
+    "population": 11597
+  },
+  {
+    "label": "Bernissart",
+    "value": "2802135",
+    "population": 11588
+  },
+  {
+    "label": "Theux",
+    "value": "2785593",
+    "population": 11587
+  },
+  {
+    "label": "Zonnebeke",
+    "value": "2783184",
+    "population": 11581
+  },
+  {
+    "label": "Boortmeerbeek",
+    "value": "2801483",
+    "population": 11570
+  },
+  {
+    "label": "Herk-de-Stad",
+    "value": "2795985",
+    "population": 11566
+  },
+  {
+    "label": "Farciennes",
+    "value": "2798470",
+    "population": 11488
+  },
+  {
+    "label": "Montegnée",
+    "value": "2790824",
+    "population": 11417
+  },
+  {
+    "label": "Kuringen",
+    "value": "2793863",
+    "population": 11409
+  },
+  {
+    "label": "Profondeville",
+    "value": "2788577",
+    "population": 11401
+  },
+  {
+    "label": "Enghien",
+    "value": "2798747",
+    "population": 11367
+  },
+  {
+    "label": "Couillet",
+    "value": "2800073",
+    "population": 11365
+  },
+  {
+    "label": "Jemeppe-sur-Meuse",
+    "value": "2794929",
+    "population": 11312
+  },
+  {
+    "label": "Deerlijk",
+    "value": "2799797",
+    "population": 11292
+  },
+  {
+    "label": "Virton",
+    "value": "2784555",
+    "population": 11259
+  },
+  {
+    "label": "Nevele",
+    "value": "2790235",
+    "population": 11153
+  },
+  {
+    "label": "Gistel",
+    "value": "2797517",
+    "population": 11084
+  },
+  {
+    "label": "Seneffe",
+    "value": "2786852",
+    "population": 11025
+  },
+  {
+    "label": "Gosselies",
+    "value": "2797376",
+    "population": 11017
+  },
+  {
+    "label": "Wichelen",
+    "value": "2783728",
+    "population": 11014
+  },
+  {
+    "label": "Meulebeke",
+    "value": "2791255",
+    "population": 10948
+  },
+  {
+    "label": "Chaumont-Gistoux",
+    "value": "2800430",
+    "population": 10943
+  },
+  {
+    "label": "Melsele",
+    "value": "2791366",
+    "population": 10941
+  },
+  {
+    "label": "Frasnes-lez-Buissenal",
+    "value": "2797979",
+    "population": 10936
+  },
+  {
+    "label": "Alken",
+    "value": "2803285",
+    "population": 10933
+  },
+  {
+    "label": "Damme",
+    "value": "2799885",
+    "population": 10924
+  },
+  {
+    "label": "Aiseau",
+    "value": "2803323",
+    "population": 10906
+  },
+  {
+    "label": "Nazareth",
+    "value": "2790433",
+    "population": 10890
+  },
+  {
+    "label": "Zellik",
+    "value": "2783284",
+    "population": 10874
+  },
+  {
+    "label": "Nieuwpoort",
+    "value": "2790150",
+    "population": 10845
+  },
+  {
+    "label": "Jemappes",
+    "value": "2794936",
+    "population": 10809
+  },
+  {
+    "label": "Staden",
+    "value": "2786226",
+    "population": 10786
+  },
+  {
+    "label": "Grâce-Berleur",
+    "value": "2797336",
+    "population": 10758
+  },
+  {
+    "label": "Spa",
+    "value": "2786318",
+    "population": 10756
+  },
+  {
+    "label": "Ertvelde",
+    "value": "2798652",
+    "population": 10730
+  },
+  {
+    "label": "Grobbendonk",
+    "value": "2797094",
+    "population": 10724
+  },
+  {
+    "label": "Florennes",
+    "value": "2798276",
+    "population": 10723
+  },
+  {
+    "label": "Moorslede",
+    "value": "2790729",
+    "population": 10720
+  },
+  {
+    "label": "Melle",
+    "value": "2791385",
+    "population": 10687
+  },
+  {
+    "label": "Angleur",
+    "value": "2803183",
+    "population": 10647
+  },
+  {
+    "label": "Aywaille",
+    "value": "2802837",
+    "population": 10636
+  },
+  {
+    "label": "Rijkevorsel",
+    "value": "2788051",
+    "population": 10606
+  },
+  {
+    "label": "Jupille-sur-Meuse",
+    "value": "2794856",
+    "population": 10604
+  },
+  {
+    "label": "Ingelmunster",
+    "value": "2795056",
+    "population": 10603
+  },
+  {
+    "label": "Steenokkerzeel",
+    "value": "2786124",
+    "population": 10566
+  },
+  {
+    "label": "Oud-Heverlee",
+    "value": "2789492",
+    "population": 10533
+  },
+  {
+    "label": "Belsele",
+    "value": "2802289",
+    "population": 10489
+  },
+  {
+    "label": "Waasmunster",
+    "value": "2784231",
+    "population": 10460
+  },
+  {
+    "label": "Berlaar",
+    "value": "2802156",
+    "population": 10370
+  },
+  {
+    "label": "Borsbeek",
+    "value": "2801438",
+    "population": 10334
+  },
+  {
+    "label": "Petegem-aan-de-Leie",
+    "value": "2789145",
+    "population": 10332
+  },
+  {
+    "label": "Vosselaar",
+    "value": "2784349",
+    "population": 10317
+  },
+  {
+    "label": "Hoeilaart",
+    "value": "2795699",
+    "population": 10272
+  },
+  {
+    "label": "Durbuy",
+    "value": "2799047",
+    "population": 10251
+  },
+  {
+    "label": "La Calamine",
+    "value": "2793722",
+    "population": 10232
+  },
+  {
+    "label": "Eisden",
+    "value": "2798887",
+    "population": 10152
+  },
+  {
+    "label": "Rebecq-Rognon",
+    "value": "2788299",
+    "population": 10049
+  },
+  {
+    "label": "De Pinte",
+    "value": "2799570",
+    "population": 10020
+  },
+  {
+    "label": "Essen",
+    "value": "2798615",
+    "population": 10000
+  },
+  {
+    "label": "Zoersel",
+    "value": "2783204",
+    "population": 10000
+  },
+  {
+    "label": "Cuesmes",
+    "value": "2799947",
+    "population": 9992
+  },
+  {
+    "label": "Borgloon",
+    "value": "2801467",
+    "population": 9955
+  },
+  {
+    "label": "Raeren",
+    "value": "2788410",
+    "population": 9925
+  },
+  {
+    "label": "Hooglede",
+    "value": "2795423",
+    "population": 9900
+  },
+  {
+    "label": "Wilsele",
+    "value": "2783612",
+    "population": 9845
+  },
+  {
+    "label": "Monceau-sur-Sambre",
+    "value": "2790891",
+    "population": 9812
+  },
+  {
+    "label": "Écaussinnes-d'Enghien",
+    "value": "2799024",
+    "population": 9802
+  },
+  {
+    "label": "De Panne",
+    "value": "2799577",
+    "population": 9799
+  },
+  {
+    "label": "Alleur",
+    "value": "2803278",
+    "population": 9768
+  },
+  {
+    "label": "Neeroeteren",
+    "value": "2790361",
+    "population": 9759
+  },
+  {
+    "label": "Chimay",
+    "value": "2800325",
+    "population": 9720
+  },
+  {
+    "label": "Braine-le-Château",
+    "value": "2801152",
+    "population": 9627
+  },
+  {
+    "label": "Plombières",
+    "value": "2788849",
+    "population": 9596
+  },
+  {
+    "label": "Villers-la-Ville",
+    "value": "2784641",
+    "population": 9592
+  },
+  {
+    "label": "Ottignies",
+    "value": "2789570",
+    "population": 9557
+  },
+  {
+    "label": "Pepinster",
+    "value": "2789190",
+    "population": 9530
+  },
+  {
+    "label": "Saint-Servais",
+    "value": "2787327",
+    "population": 9516
+  },
+  {
+    "label": "Hemiksem",
+    "value": "2796085",
+    "population": 9504
+  },
+  {
+    "label": "Jurbise",
+    "value": "2794852",
+    "population": 9483
+  },
+  {
+    "label": "Opglabbeek",
+    "value": "2789714",
+    "population": 9452
+  },
+  {
+    "label": "Limal",
+    "value": "2792352",
+    "population": 9443
+  },
+  {
+    "label": "Erquelinnes",
+    "value": "2798666",
+    "population": 9396
+  },
+  {
+    "label": "Court-Saint-Étienne",
+    "value": "2800042",
+    "population": 9353
+  },
+  {
+    "label": "Meerhout",
+    "value": "2791494",
+    "population": 9346
+  },
+  {
+    "label": "Estaimpuis",
+    "value": "2798604",
+    "population": 9340
+  },
+  {
+    "label": "Lovendegem",
+    "value": "2792057",
+    "population": 9272
+  },
+  {
+    "label": "Hoeselt",
+    "value": "2795648",
+    "population": 9265
+  },
+  {
+    "label": "Pamel",
+    "value": "2789346",
+    "population": 9241
+  },
+  {
+    "label": "Bertem",
+    "value": "2802123",
+    "population": 9215
+  },
+  {
+    "label": "Begijnendijk",
+    "value": "2802405",
+    "population": 9178
+  },
+  {
+    "label": "Chênée",
+    "value": "2800395",
+    "population": 9163
+  },
+  {
+    "label": "Ardooie",
+    "value": "2803091",
+    "population": 9161
+  },
+  {
+    "label": "Sint-Lievens-Houtem",
+    "value": "2786616",
+    "population": 9146
+  },
+  {
+    "label": "Huldenberg",
+    "value": "2795184",
+    "population": 9137
+  },
+  {
+    "label": "Saint-Vith",
+    "value": "2787315",
+    "population": 9135
+  },
+  {
+    "label": "Avelgem",
+    "value": "2802871",
+    "population": 9106
+  },
+  {
+    "label": "Holsbeek",
+    "value": "2795511",
+    "population": 9094
+  },
+  {
+    "label": "Fosses-la-Ville",
+    "value": "2798099",
+    "population": 9062
+  },
+  {
+    "label": "Herseaux",
+    "value": "2795936",
+    "population": 9048
+  },
+  {
+    "label": "Sint-Stevens-Woluwe",
+    "value": "2786548",
+    "population": 9038
+  },
+  {
+    "label": "Welkenraedt",
+    "value": "2783870",
+    "population": 9006
+  },
+  {
+    "label": "Hamont",
+    "value": "2796625",
+    "population": 9001
+  },
+  {
+    "label": "Bierbeek",
+    "value": "2801998",
+    "population": 8994
+  },
+  {
+    "label": "Roux",
+    "value": "2787616",
+    "population": 8983
+  },
+  {
+    "label": "Gooik",
+    "value": "2797417",
+    "population": 8957
+  },
+  {
+    "label": "Houthulst",
+    "value": "2795255",
+    "population": 8951
+  },
+  {
+    "label": "Montigny-le-Tilleul",
+    "value": "2790804",
+    "population": 8938
+  },
+  {
+    "label": "Wijnegem",
+    "value": "2783684",
+    "population": 8932
+  },
+  {
+    "label": "Gullegem",
+    "value": "2796854",
+    "population": 8888
+  },
+  {
+    "label": "Strépy-Bracquegnies",
+    "value": "2785962",
+    "population": 8880
+  },
+  {
+    "label": "Bracquegnies",
+    "value": "2801161",
+    "population": 8880
+  },
+  {
+    "label": "Kapelle-op-den-Bos",
+    "value": "2794724",
+    "population": 8859
+  },
+  {
+    "label": "Wielsbeke",
+    "value": "2783717",
+    "population": 8828
+  },
+  {
+    "label": "Sint-Martens-Lennik",
+    "value": "2786587",
+    "population": 8818
+  },
+  {
+    "label": "Ransart",
+    "value": "2788353",
+    "population": 8813
+  },
+  {
+    "label": "Hornu",
+    "value": "2795361",
+    "population": 8793
+  },
+  {
+    "label": "Oudenburg",
+    "value": "2789519",
+    "population": 8752
+  },
+  {
+    "label": "Fontaine-l'Évêque",
+    "value": "2798184",
+    "population": 8730
+  },
+  {
+    "label": "Stembert",
+    "value": "2786080",
+    "population": 8696
+  },
+  {
+    "label": "Beverlo",
+    "value": "2802025",
+    "population": 8681
+  },
+  {
+    "label": "Niel",
+    "value": "2790225",
+    "population": 8656
+  },
+  {
+    "label": "Awans",
+    "value": "2802849",
+    "population": 8612
+  },
+  {
+    "label": "Heusden",
+    "value": "2795801",
+    "population": 8606
+  },
+  {
+    "label": "Halen",
+    "value": "2796715",
+    "population": 8548
+  },
+  {
+    "label": "Oostduinkerke",
+    "value": "2789794",
+    "population": 8534
+  },
+  {
+    "label": "Sint-Job-in-'t-Goor",
+    "value": "2786659",
+    "population": 8515
+  },
+  {
+    "label": "Lodelinsart",
+    "value": "2792226",
+    "population": 8489
+  },
+  {
+    "label": "Ghlin",
+    "value": "2797563",
+    "population": 8485
+  },
+  {
+    "label": "Hoevenen",
+    "value": "2795634",
+    "population": 8473
+  },
+  {
+    "label": "Auvelais",
+    "value": "2802902",
+    "population": 8456
+  },
+  {
+    "label": "Ledeberg",
+    "value": "2793070",
+    "population": 8454
+  },
+  {
+    "label": "Lauwe",
+    "value": "2793202",
+    "population": 8392
+  },
+  {
+    "label": "Sterrebeek",
+    "value": "2786055",
+    "population": 8357
+  },
+  {
+    "label": "Juprelle",
+    "value": "2794854",
+    "population": 8354
+  },
+  {
+    "label": "Koekelare",
+    "value": "2794194",
+    "population": 8317
+  },
+  {
+    "label": "Sint-Martens-Latem",
+    "value": "2786591",
+    "population": 8303
+  },
+  {
+    "label": "Dottignies",
+    "value": "2799230",
+    "population": 8299
+  },
+  {
+    "label": "Genval",
+    "value": "2797641",
+    "population": 8253
+  },
+  {
+    "label": "Beauraing",
+    "value": "2802501",
+    "population": 8242
+  },
+  {
+    "label": "La Bruyère",
+    "value": "2793733",
+    "population": 8194
+  },
+  {
+    "label": "Kruishoutem",
+    "value": "2793907",
+    "population": 8179
+  },
+  {
+    "label": "Westmalle",
+    "value": "2783786",
+    "population": 8173
+  },
+  {
+    "label": "Yvoir",
+    "value": "2783385",
+    "population": 8169
+  },
+  {
+    "label": "Lichtervelde",
+    "value": "2792428",
+    "population": 8169
+  },
+  {
+    "label": "Zomergem",
+    "value": "2783195",
+    "population": 8158
+  },
+  {
+    "label": "Bassenge",
+    "value": "2802606",
+    "population": 8151
+  },
+  {
+    "label": "Groot-Bijgaarden",
+    "value": "2797051",
+    "population": 8145
+  },
+  {
+    "label": "Pâturages",
+    "value": "2789254",
+    "population": 8106
+  },
+  {
+    "label": "Carnières",
+    "value": "2800637",
+    "population": 8087
+  },
+  {
+    "label": "Bertrix",
+    "value": "2802106",
+    "population": 8063
+  },
+  {
+    "label": "Philippeville",
+    "value": "2789016",
+    "population": 8051
+  },
+  {
+    "label": "Wolvertem",
+    "value": "2783464",
+    "population": 8045
+  },
+  {
+    "label": "Kortessem",
+    "value": "2794063",
+    "population": 8042
+  },
+  {
+    "label": "Athus",
+    "value": "2803005",
+    "population": 8028
+  },
+  {
+    "label": "Retie",
+    "value": "2788138",
+    "population": 8000
+  },
+  {
+    "label": "Le Roeulx",
+    "value": "2787878",
+    "population": 7968
+  },
+  {
+    "label": "Hove",
+    "value": "2795232",
+    "population": 7968
+  },
+  {
+    "label": "Merksplas",
+    "value": "2791297",
+    "population": 7963
+  },
+  {
+    "label": "Galmaarden",
+    "value": "2797851",
+    "population": 7939
+  },
+  {
+    "label": "Gingelom",
+    "value": "2797523",
+    "population": 7930
+  },
+  {
+    "label": "Comines",
+    "value": "2800195",
+    "population": 7899
+  },
+  {
+    "label": "Zoutleeuw",
+    "value": "2783170",
+    "population": 7897
+  },
+  {
+    "label": "Knesselare",
+    "value": "2794223",
+    "population": 7889
+  },
+  {
+    "label": "Silly",
+    "value": "2786769",
+    "population": 7887
+  },
+  {
+    "label": "Oostakker",
+    "value": "2789800",
+    "population": 7885
+  },
+  {
+    "label": "Uitkerke",
+    "value": "2785103",
+    "population": 7863
+  },
+  {
+    "label": "Waarschoot",
+    "value": "2784237",
+    "population": 7762
+  },
+  {
+    "label": "Habay-la-Vieille",
+    "value": "2796807",
+    "population": 7704
+  },
+  {
+    "label": "Boutersem",
+    "value": "2801215",
+    "population": 7702
+  },
+  {
+    "label": "Lissewege",
+    "value": "2792266",
+    "population": 7699
+  },
+  {
+    "label": "Lembeek",
+    "value": "2792898",
+    "population": 7689
+  },
+  {
+    "label": "Quévy-le-Petit",
+    "value": "2788446",
+    "population": 7689
+  },
+  {
+    "label": "Jalhay",
+    "value": "2794989",
+    "population": 7688
+  },
+  {
+    "label": "Schelle",
+    "value": "2787080",
+    "population": 7675
+  },
+  {
+    "label": "Haine-Saint-Pierre",
+    "value": "2796735",
+    "population": 7662
+  },
+  {
+    "label": "Sint-Amands",
+    "value": "2786746",
+    "population": 7653
+  },
+  {
+    "label": "Sleidinge",
+    "value": "2786516",
+    "population": 7640
+  },
+  {
+    "label": "Brunehault",
+    "value": "2800883",
+    "population": 7592
+  },
+  {
+    "label": "Kessel",
+    "value": "2794510",
+    "population": 7591
+  },
+  {
+    "label": "Marke",
+    "value": "2791673",
+    "population": 7575
+  },
+  {
+    "label": "Estinnes-au-Val",
+    "value": "2798597",
+    "population": 7573
+  },
+  {
+    "label": "Trooz",
+    "value": "2785208",
+    "population": 7559
+  },
+  {
+    "label": "Houdeng-Aimeries",
+    "value": "2795331",
+    "population": 7534
+  },
+  {
+    "label": "Tamines",
+    "value": "2785839",
+    "population": 7526
+  },
+  {
+    "label": "Antoing",
+    "value": "2803144",
+    "population": 7507
+  },
+  {
+    "label": "Burcht",
+    "value": "2800765",
+    "population": 7494
+  },
+  {
+    "label": "Langdorp",
+    "value": "2793406",
+    "population": 7492
+  },
+  {
+    "label": "Oostrozebeke",
+    "value": "2789737",
+    "population": 7489
+  },
+  {
+    "label": "Floreffe",
+    "value": "2798279",
+    "population": 7480
+  },
+  {
+    "label": "Vottem",
+    "value": "2784333",
+    "population": 7478
+  },
+  {
+    "label": "Sombreffe",
+    "value": "2786390",
+    "population": 7452
+  },
+  {
+    "label": "La Hulpe",
+    "value": "2793548",
+    "population": 7415
+  },
+  {
+    "label": "Kain",
+    "value": "2794818",
+    "population": 7412
+  },
+  {
+    "label": "Tongerlo",
+    "value": "2785385",
+    "population": 7404
+  },
+  {
+    "label": "Zwijnaarde",
+    "value": "2783084",
+    "population": 7379
+  },
+  {
+    "label": "Kortenaken",
+    "value": "2794072",
+    "population": 7374
+  },
+  {
+    "label": "Vedrin",
+    "value": "2784986",
+    "population": 7308
+  },
+  {
+    "label": "Vielsalm",
+    "value": "2784775",
+    "population": 7291
+  },
+  {
+    "label": "Haine-Saint-Paul",
+    "value": "2796737",
+    "population": 7268
+  },
+  {
+    "label": "As",
+    "value": "2803053",
+    "population": 7250
+  },
+  {
+    "label": "Wanfercée-Baulet",
+    "value": "2784111",
+    "population": 7246
+  },
+  {
+    "label": "Halle",
+    "value": "2796695",
+    "population": 7200
+  },
+  {
+    "label": "La Bouverie",
+    "value": "2793747",
+    "population": 7169
+  },
+  {
+    "label": "Scherpenheuvel",
+    "value": "2787060",
+    "population": 7162
+  },
+  {
+    "label": "Messancy",
+    "value": "2791272",
+    "population": 7144
+  },
+  {
+    "label": "Anhée",
+    "value": "2803174",
+    "population": 7125
+  },
+  {
+    "label": "Leuze",
+    "value": "2792474",
+    "population": 7095
+  },
+  {
+    "label": "Grembergen",
+    "value": "2797138",
+    "population": 7080
+  },
+  {
+    "label": "Andrimont",
+    "value": "2803187",
+    "population": 7064
+  },
+  {
+    "label": "Ruisbroek",
+    "value": "2787552",
+    "population": 7041
+  },
+  {
+    "label": "Eernegem",
+    "value": "2798973",
+    "population": 7040
+  },
+  {
+    "label": "Oostmalle",
+    "value": "2789745",
+    "population": 7034
+  },
+  {
+    "label": "Rocourt",
+    "value": "2787937",
+    "population": 7010
+  },
+  {
+    "label": "Booischot",
+    "value": "2801500",
+    "population": 6973
+  },
+  {
+    "label": "Zutendaal",
+    "value": "2783143",
+    "population": 6962
+  },
+  {
+    "label": "Wachtebeke",
+    "value": "2784227",
+    "population": 6911
+  },
+  {
+    "label": "Reet",
+    "value": "2788273",
+    "population": 6865
+  },
+  {
+    "label": "Vorst",
+    "value": "2784364",
+    "population": 6824
+  },
+  {
+    "label": "Wellen",
+    "value": "2783864",
+    "population": 6804
+  },
+  {
+    "label": "Saint-Georges-sur-Meuse",
+    "value": "2787425",
+    "population": 6803
+  },
+  {
+    "label": "Trazegnies",
+    "value": "2785305",
+    "population": 6798
+  },
+  {
+    "label": "Geluwe",
+    "value": "2797719",
+    "population": 6757
+  },
+  {
+    "label": "Lemberge",
+    "value": "2792891",
+    "population": 6726
+  },
+  {
+    "label": "Dampremy",
+    "value": "2799880",
+    "population": 6716
+  },
+  {
+    "label": "Heers",
+    "value": "2796297",
+    "population": 6689
+  },
+  {
+    "label": "Sint-Lenaarts",
+    "value": "2786622",
+    "population": 6685
+  },
+  {
+    "label": "Hamois",
+    "value": "2796627",
+    "population": 6662
+  },
+  {
+    "label": "Waimes",
+    "value": "2784199",
+    "population": 6661
+  },
+  {
+    "label": "Sint-Laureins",
+    "value": "2786626",
+    "population": 6657
+  },
+  {
+    "label": "Stavelot",
+    "value": "2786185",
+    "population": 6646
+  },
+  {
+    "label": "Beaumont",
+    "value": "2802510",
+    "population": 6645
+  },
+  {
+    "label": "Lettelingen",
+    "value": "2789096",
+    "population": 6611
+  },
+  {
+    "label": "Sint-Katherina-Lombeek",
+    "value": "2786638",
+    "population": 6607
+  },
+  {
+    "label": "Hechtel",
+    "value": "2796319",
+    "population": 6605
+  },
+  {
+    "label": "Pittem",
+    "value": "2788925",
+    "population": 6589
+  },
+  {
+    "label": "Zingem",
+    "value": "2783215",
+    "population": 6588
+  },
+  {
+    "label": "Wépion",
+    "value": "2783850",
+    "population": 6586
+  },
+  {
+    "label": "Quiévrain",
+    "value": "2788444",
+    "population": 6560
+  },
+  {
+    "label": "Mont-Saint-Guibert",
+    "value": "2790756",
+    "population": 6557
+  },
+  {
+    "label": "Brakel",
+    "value": "2790421",
+    "population": 6513
+  },
+  {
+    "label": "Vaux-sous-Chèvremont",
+    "value": "2784996",
+    "population": 6503
+  },
+  {
+    "label": "Zichem",
+    "value": "2783232",
+    "population": 6497
+  },
+  {
+    "label": "Leval-Trahegnies",
+    "value": "2792466",
+    "population": 6473
+  },
+  {
+    "label": "Adegem",
+    "value": "2803347",
+    "population": 6473
+  },
+  {
+    "label": "Nieuwerkerken",
+    "value": "2790179",
+    "population": 6466
+  },
+  {
+    "label": "Herne",
+    "value": "2795956",
+    "population": 6459
+  },
+  {
+    "label": "Sint-Maria-Lierde",
+    "value": "2786603",
+    "population": 6449
+  },
+  {
+    "label": "Klemskerke",
+    "value": "2794277",
+    "population": 6447
+  },
+  {
+    "label": "Hever",
+    "value": "2795785",
+    "population": 6426
+  },
+  {
+    "label": "Sint-Denijs-Westrem",
+    "value": "2786713",
+    "population": 6419
+  },
+  {
+    "label": "Neufchâteau",
+    "value": "2790286",
+    "population": 6416
+  },
+  {
+    "label": "Dalhem",
+    "value": "2799897",
+    "population": 6391
+  },
+  {
+    "label": "Hensies",
+    "value": "2796056",
+    "population": 6390
+  },
+  {
+    "label": "'s-Gravenwezel",
+    "value": "2786792",
+    "population": 6379
+  },
+  {
+    "label": "Buizingen",
+    "value": "2800790",
+    "population": 6369
+  },
+  {
+    "label": "Oedelem",
+    "value": "2789948",
+    "population": 6360
+  },
+  {
+    "label": "Baasrode",
+    "value": "2802812",
+    "population": 6352
+  },
+  {
+    "label": "Saint-Vaast",
+    "value": "2787319",
+    "population": 6351
+  },
+  {
+    "label": "Beauvechain",
+    "value": "2802483",
+    "population": 6334
+  },
+  {
+    "label": "Sinaai",
+    "value": "2786762",
+    "population": 6319
+  },
+  {
+    "label": "Stene",
+    "value": "2786077",
+    "population": 6310
+  },
+  {
+    "label": "Assesse",
+    "value": "2803018",
+    "population": 6279
+  },
+  {
+    "label": "Chastre-Villeroux-Blanmont",
+    "value": "2800457",
+    "population": 6243
+  },
+  {
+    "label": "Havré",
+    "value": "2796353",
+    "population": 6219
+  },
+  {
+    "label": "Erps-Kwerps",
+    "value": "2798668",
+    "population": 6213
+  },
+  {
+    "label": "Lichtaart",
+    "value": "2792435",
+    "population": 6212
+  },
+  {
+    "label": "Nieuwerkerken",
+    "value": "2790178",
+    "population": 6174
+  },
+  {
+    "label": "Gesves",
+    "value": "2797581",
+    "population": 6150
+  },
+  {
+    "label": "Baudour",
+    "value": "2802557",
+    "population": 6137
+  },
+  {
+    "label": "Jemeppe-sur-Sambre",
+    "value": "2794930",
+    "population": 6127
+  },
+  {
+    "label": "Embourg",
+    "value": "2798784",
+    "population": 6124
+  },
+  {
+    "label": "Kaprijke",
+    "value": "2794707",
+    "population": 6114
+  },
+  {
+    "label": "Moorsele",
+    "value": "2790733",
+    "population": 6102
+  },
+  {
+    "label": "Dilsen",
+    "value": "2799362",
+    "population": 6099
+  },
+  {
+    "label": "Nieuwkerken-Waas",
+    "value": "2790163",
+    "population": 6082
+  },
+  {
+    "label": "Beerzel",
+    "value": "2802422",
+    "population": 6077
+  },
+  {
+    "label": "Wandre",
+    "value": "2784114",
+    "population": 6076
+  },
+  {
+    "label": "Villers-le-Bouillet",
+    "value": "2784639",
+    "population": 6059
+  },
+  {
+    "label": "Chièvres",
+    "value": "2800328",
+    "population": 6045
+  },
+  {
+    "label": "Fayt-lez-Manage",
+    "value": "2798400",
+    "population": 6040
+  },
+  {
+    "label": "Ittre",
+    "value": "2795017",
+    "population": 6014
+  },
+  {
+    "label": "Eksaarde",
+    "value": "2798868",
+    "population": 6005
+  },
+  {
+    "label": "Schepdaal",
+    "value": "2787071",
+    "population": 6004
+  },
+  {
+    "label": "Denderhoutem",
+    "value": "2799649",
+    "population": 6000
+  },
+  {
+    "label": "Walhain-Saint-Paul",
+    "value": "2784168",
+    "population": 5992
+  },
+  {
+    "label": "Ohain",
+    "value": "2789911",
+    "population": 5977
+  },
+  {
+    "label": "Alsemberg",
+    "value": "2803266",
+    "population": 5943
+  },
+  {
+    "label": "Baal",
+    "value": "2802828",
+    "population": 5931
+  },
+  {
+    "label": "Hofstade",
+    "value": "2795618",
+    "population": 5927
+  },
+  {
+    "label": "Itegem",
+    "value": "2795024",
+    "population": 5911
+  },
+  {
+    "label": "Zwevezele",
+    "value": "2783087",
+    "population": 5873
+  },
+  {
+    "label": "Meerbeke",
+    "value": "2791507",
+    "population": 5866
+  },
+  {
+    "label": "Sint-Kwintens-Lennik",
+    "value": "2786630",
+    "population": 5856
+  },
+  {
+    "label": "Moerbeke",
+    "value": "2791120",
+    "population": 5855
+  },
+  {
+    "label": "Ruddervoorde",
+    "value": "2787572",
+    "population": 5832
+  },
+  {
+    "label": "Seilles",
+    "value": "2786873",
+    "population": 5826
+  },
+  {
+    "label": "Geetbets",
+    "value": "2797761",
+    "population": 5813
+  },
+  {
+    "label": "Eksel",
+    "value": "2798866",
+    "population": 5804
+  },
+  {
+    "label": "Nalinnes",
+    "value": "2790479",
+    "population": 5785
+  },
+  {
+    "label": "Kalken",
+    "value": "2794802",
+    "population": 5782
+  },
+  {
+    "label": "Rijmenam",
+    "value": "2788046",
+    "population": 5755
+  },
+  {
+    "label": "Ramillies",
+    "value": "2788381",
+    "population": 5749
+  },
+  {
+    "label": "Veerle",
+    "value": "2784980",
+    "population": 5748
+  },
+  {
+    "label": "Engis",
+    "value": "2798743",
+    "population": 5737
+  },
+  {
+    "label": "Bekkevoort",
+    "value": "2802374",
+    "population": 5714
+  },
+  {
+    "label": "Flénu",
+    "value": "2798305",
+    "population": 5704
+  },
+  {
+    "label": "Battice",
+    "value": "2802570",
+    "population": 5691
+  },
+  {
+    "label": "Bazel",
+    "value": "2802529",
+    "population": 5687
+  },
+  {
+    "label": "Braives",
+    "value": "2801147",
+    "population": 5672
+  },
+  {
+    "label": "Ivoz-Ramet",
+    "value": "2795013",
+    "population": 5672
+  },
+  {
+    "label": "Meeuwen",
+    "value": "2791460",
+    "population": 5668
+  },
+  {
+    "label": "Forchies-la-Marche",
+    "value": "2798145",
+    "population": 5649
+  },
+  {
+    "label": "Onze-Lieve-Vrouw-Waver",
+    "value": "2789821",
+    "population": 5621
+  },
+  {
+    "label": "Limbourg",
+    "value": "2792348",
+    "population": 5612
+  },
+  {
+    "label": "Boncelles",
+    "value": "2801550",
+    "population": 5578
+  },
+  {
+    "label": "Kwaadmechelen",
+    "value": "2793853",
+    "population": 5574
+  },
+  {
+    "label": "Ellezelles",
+    "value": "2798836",
+    "population": 5566
+  },
+  {
+    "label": "Saint-Hubert",
+    "value": "2787407",
+    "population": 5538
+  },
+  {
+    "label": "Westende",
+    "value": "2783805",
+    "population": 5522
+  },
+  {
+    "label": "Rillaar",
+    "value": "2788028",
+    "population": 5518
+  },
+  {
+    "label": "Butgenbach",
+    "value": "2800711",
+    "population": 5516
+  },
+  {
+    "label": "Beaufays",
+    "value": "2802518",
+    "population": 5489
+  },
+  {
+    "label": "Beverst",
+    "value": "2802021",
+    "population": 5483
+  },
+  {
+    "label": "Dworp",
+    "value": "2799034",
+    "population": 5470
+  },
+  {
+    "label": "Heinsch",
+    "value": "2796174",
+    "population": 5470
+  },
+  {
+    "label": "Malonne",
+    "value": "2791831",
+    "population": 5467
+  },
+  {
+    "label": "Lobbes",
+    "value": "2792245",
+    "population": 5467
+  },
+  {
+    "label": "Florenville",
+    "value": "2798272",
+    "population": 5464
+  },
+  {
+    "label": "Tilff",
+    "value": "2785449",
+    "population": 5455
+  },
+  {
+    "label": "Limelette",
+    "value": "2792345",
+    "population": 5416
+  },
+  {
+    "label": "Céroux-Mousty",
+    "value": "2800584",
+    "population": 5397
+  },
+  {
+    "label": "Lendelede",
+    "value": "2792879",
+    "population": 5393
+  },
+  {
+    "label": "Muizen",
+    "value": "2790558",
+    "population": 5386
+  },
+  {
+    "label": "Achel",
+    "value": "2803391",
+    "population": 5365
+  },
+  {
+    "label": "Sijsele",
+    "value": "2786777",
+    "population": 5348
+  },
+  {
+    "label": "Bouillon",
+    "value": "2801283",
+    "population": 5347
+  },
+  {
+    "label": "Bullange",
+    "value": "2800782",
+    "population": 5340
+  },
+  {
+    "label": "Mere",
+    "value": "2791317",
+    "population": 5335
+  },
+  {
+    "label": "Beveren-Leie",
+    "value": "2802034",
+    "population": 5331
+  },
+  {
+    "label": "Oostham",
+    "value": "2789769",
+    "population": 5320
+  },
+  {
+    "label": "Bissegem",
+    "value": "2801891",
+    "population": 5310
+  },
+  {
+    "label": "Comblain-au-Pont",
+    "value": "2800204",
+    "population": 5308
+  },
+  {
+    "label": "Hekelgem",
+    "value": "2796144",
+    "population": 5258
+  },
+  {
+    "label": "Forêt",
+    "value": "2798134",
+    "population": 5240
+  },
+  {
+    "label": "Prayon",
+    "value": "2788650",
+    "population": 5240
+  },
+  {
+    "label": "Desselgem",
+    "value": "2799509",
+    "population": 5234
+  },
+  {
+    "label": "Étalle",
+    "value": "2798593",
+    "population": 5228
+  },
+  {
+    "label": "Amblève",
+    "value": "2803242",
+    "population": 5221
+  },
+  {
+    "label": "Veldegem",
+    "value": "2784957",
+    "population": 5189
+  },
+  {
+    "label": "Momignies",
+    "value": "2790906",
+    "population": 5183
+  },
+  {
+    "label": "Elewijt",
+    "value": "2798847",
+    "population": 5172
+  },
+  {
+    "label": "Eke",
+    "value": "2798882",
+    "population": 5168
+  },
+  {
+    "label": "Noorderwijk",
+    "value": "2790043",
+    "population": 5166
+  },
+  {
+    "label": "Hastière-Lavaux",
+    "value": "2796482",
+    "population": 5147
+  },
+  {
+    "label": "Ruiselede",
+    "value": "2787547",
+    "population": 5129
+  },
+  {
+    "label": "Moorsel",
+    "value": "2790736",
+    "population": 5103
+  },
+  {
+    "label": "Maurage",
+    "value": "2791566",
+    "population": 5098
+  },
+  {
+    "label": "Nassogne",
+    "value": "2790451",
+    "population": 5081
+  },
+  {
+    "label": "Varsenare",
+    "value": "2785021",
+    "population": 5081
+  },
+  {
+    "label": "Langemark",
+    "value": "2793392",
+    "population": 5079
+  },
+  {
+    "label": "Glabbeek",
+    "value": "2797500",
+    "population": 5070
+  },
+  {
+    "label": "Marchin",
+    "value": "2791733",
+    "population": 5063
+  },
+  {
+    "label": "Schriek",
+    "value": "2786938",
+    "population": 5062
+  },
+  {
+    "label": "Erpe",
+    "value": "2798678",
+    "population": 5056
+  },
+  {
+    "label": "Tielt",
+    "value": "2785477",
+    "population": 5053
+  },
+  {
+    "label": "Remicourt",
+    "value": "2788211",
+    "population": 5050
+  },
+  {
+    "label": "Hingene",
+    "value": "2795740",
+    "population": 5047
+  },
+  {
+    "label": "Linden",
+    "value": "2792313",
+    "population": 5042
+  },
+  {
+    "label": "Paliseul",
+    "value": "2789354",
+    "population": 5037
+  },
+  {
+    "label": "Champion",
+    "value": "2800541",
+    "population": 5031
+  },
+  {
+    "label": "Sauvenière",
+    "value": "2787176",
+    "population": 5029
+  },
+  {
+    "label": "Diegem",
+    "value": "2799416",
+    "population": 5001
+  },
+  {
+    "label": "Sint-Antonius",
+    "value": "2786728",
+    "population": 5000
+  },
+  {
+    "label": "Hotton",
+    "value": "2795337",
+    "population": 4969
+  },
+  {
+    "label": "Schaffen",
+    "value": "2787147",
+    "population": 4948
+  },
+  {
+    "label": "Bierges",
+    "value": "2801992",
+    "population": 4941
+  },
+  {
+    "label": "Rekkem",
+    "value": "2788227",
+    "population": 4938
+  },
+  {
+    "label": "Mons-lez-Liège",
+    "value": "2790868",
+    "population": 4936
+  },
+  {
+    "label": "Bouffioulx",
+    "value": "2801292",
+    "population": 4935
+  },
+  {
+    "label": "Astene",
+    "value": "2803014",
+    "population": 4935
+  },
+  {
+    "label": "Waha",
+    "value": "2784211",
+    "population": 4923
+  },
+  {
+    "label": "Rumes",
+    "value": "2787530",
+    "population": 4918
+  },
+  {
+    "label": "Loppem",
+    "value": "2792108",
+    "population": 4913
+  },
+  {
+    "label": "Alveringem",
+    "value": "2803252",
+    "population": 4910
+  },
+  {
+    "label": "Oelegem",
+    "value": "2789943",
+    "population": 4906
+  },
+  {
+    "label": "Chiny",
+    "value": "2800320",
+    "population": 4897
+  },
+  {
+    "label": "La Hestre",
+    "value": "2793558",
+    "population": 4890
+  },
+  {
+    "label": "Westkapelle",
+    "value": "2783791",
+    "population": 4883
+  },
+  {
+    "label": "Betekom",
+    "value": "2802087",
+    "population": 4873
+  },
+  {
+    "label": "Hofstade",
+    "value": "2795617",
+    "population": 4868
+  },
+  {
+    "label": "Lontzen",
+    "value": "2792119",
+    "population": 4862
+  },
+  {
+    "label": "Ruisbroek",
+    "value": "2787550",
+    "population": 4860
+  },
+  {
+    "label": "Péronnes",
+    "value": "2789172",
+    "population": 4855
+  },
+  {
+    "label": "Weelde",
+    "value": "2783915",
+    "population": 4854
+  },
+  {
+    "label": "Drogenbos",
+    "value": "2799114",
+    "population": 4843
+  },
+  {
+    "label": "Ham-sur-Heure",
+    "value": "2796616",
+    "population": 4842
+  },
+  {
+    "label": "Heppen",
+    "value": "2796052",
+    "population": 4838
+  },
+  {
+    "label": "Aartrijke",
+    "value": "8521705",
+    "population": 4837
+  },
+  {
+    "label": "Linkebeek",
+    "value": "2792301",
+    "population": 4823
+  },
+  {
+    "label": "Itterbeek",
+    "value": "2795021",
+    "population": 4808
+  },
+  {
+    "label": "Tertre",
+    "value": "2785631",
+    "population": 4792
+  },
+  {
+    "label": "Havelange",
+    "value": "2796369",
+    "population": 4790
+  },
+  {
+    "label": "Clabecq",
+    "value": "2800286",
+    "population": 4782
+  },
+  {
+    "label": "Saive",
+    "value": "2787307",
+    "population": 4771
+  },
+  {
+    "label": "Luingne",
+    "value": "2792023",
+    "population": 4757
+  },
+  {
+    "label": "Belgrade",
+    "value": "2802359",
+    "population": 4756
+  },
+  {
+    "label": "Bonnert",
+    "value": "2801525",
+    "population": 4747
+  },
+  {
+    "label": "Nimy",
+    "value": "2790120",
+    "population": 4726
+  },
+  {
+    "label": "Welle",
+    "value": "2783868",
+    "population": 4722
+  },
+  {
+    "label": "Vichte",
+    "value": "2784786",
+    "population": 4721
+  },
+  {
+    "label": "Winksele",
+    "value": "2783575",
+    "population": 4710
+  },
+  {
+    "label": "Gouvy",
+    "value": "2797346",
+    "population": 4706
+  },
+  {
+    "label": "Veltem-Beisem",
+    "value": "2784907",
+    "population": 4698
+  },
+  {
+    "label": "Lot",
+    "value": "2792093",
+    "population": 4698
+  },
+  {
+    "label": "Ensival",
+    "value": "2798730",
+    "population": 4690
+  },
+  {
+    "label": "Cheratte",
+    "value": "2800363",
+    "population": 4689
+  },
+  {
+    "label": "Sint-Lambrechts-Herk",
+    "value": "2786628",
+    "population": 4676
+  },
+  {
+    "label": "Moerzeke",
+    "value": "2791090",
+    "population": 4657
+  },
+  {
+    "label": "Overmere",
+    "value": "2789409",
+    "population": 4626
+  },
+  {
+    "label": "Houffalize",
+    "value": "2795322",
+    "population": 4614
+  },
+  {
+    "label": "Libin",
+    "value": "2792442",
+    "population": 4609
+  },
+  {
+    "label": "Sint-Pauwels",
+    "value": "2786570",
+    "population": 4608
+  },
+  {
+    "label": "Eppegem",
+    "value": "2798714",
+    "population": 4597
+  },
+  {
+    "label": "Vaux-sur-Sûre",
+    "value": "2784994",
+    "population": 4581
+  },
+  {
+    "label": "Kaulille",
+    "value": "2794632",
+    "population": 4570
+  },
+  {
+    "label": "Retinne",
+    "value": "2788135",
+    "population": 4554
+  },
+  {
+    "label": "Bévercé",
+    "value": "2802042",
+    "population": 4550
+  },
+  {
+    "label": "Kermt",
+    "value": "2794525",
+    "population": 4543
+  },
+  {
+    "label": "Flawinne",
+    "value": "2798313",
+    "population": 4541
+  },
+  {
+    "label": "Somme-Leuze",
+    "value": "2786387",
+    "population": 4532
+  },
+  {
+    "label": "Teralfene",
+    "value": "2785736",
+    "population": 4525
+  },
+  {
+    "label": "Asper",
+    "value": "2803040",
+    "population": 4523
+  },
+  {
+    "label": "Houyet",
+    "value": "2795238",
+    "population": 4505
+  },
+  {
+    "label": "Cerfontaine",
+    "value": "2800591",
+    "population": 4500
+  },
+  {
+    "label": "Zeebrugge",
+    "value": "2783307",
+    "population": 4500
+  },
+  {
+    "label": "Rekem",
+    "value": "2788231",
+    "population": 4493
+  },
+  {
+    "label": "Munsterbilzen",
+    "value": "2790532",
+    "population": 4493
+  },
+  {
+    "label": "Attert",
+    "value": "2802996",
+    "population": 4491
+  },
+  {
+    "label": "Gierle",
+    "value": "2797552",
+    "population": 4488
+  },
+  {
+    "label": "Bouge",
+    "value": "2801290",
+    "population": 4486
+  },
+  {
+    "label": "Bois-d'Haine",
+    "value": "2801636",
+    "population": 4467
+  },
+  {
+    "label": "Humbeek",
+    "value": "2795148",
+    "population": 4464
+  },
+  {
+    "label": "Leefdaal",
+    "value": "2793054",
+    "population": 4457
+  },
+  {
+    "label": "Lanklaar",
+    "value": "2793346",
+    "population": 4453
+  },
+  {
+    "label": "Antheit",
+    "value": "2803150",
+    "population": 4447
+  },
+  {
+    "label": "Sougné-Remouchamps",
+    "value": "2786349",
+    "population": 4437
+  },
+  {
+    "label": "Wezemaal",
+    "value": "2783739",
+    "population": 4436
+  },
+  {
+    "label": "Ferrières",
+    "value": "2798365",
+    "population": 4434
+  },
+  {
+    "label": "Obourg",
+    "value": "2789972",
+    "population": 4429
+  },
+  {
+    "label": "Ramsel",
+    "value": "2788368",
+    "population": 4428
+  },
+  {
+    "label": "Gedinne",
+    "value": "2797781",
+    "population": 4416
+  },
+  {
+    "label": "Incourt",
+    "value": "2795063",
+    "population": 4395
+  },
+  {
+    "label": "Vivegnis",
+    "value": "2784529",
+    "population": 4369
+  },
+  {
+    "label": "Blaasveld",
+    "value": "2801880",
+    "population": 4367
+  },
+  {
+    "label": "Ploegsteert",
+    "value": "2788854",
+    "population": 4352
+  },
+  {
+    "label": "Lillois-Witterzée",
+    "value": "2792356",
+    "population": 4350
+  },
+  {
+    "label": "Strijpen",
+    "value": "2785957",
+    "population": 4346
+  },
+  {
+    "label": "Haasdonk",
+    "value": "2796820",
+    "population": 4333
+  },
+  {
+    "label": "Opoeteren",
+    "value": "2789684",
+    "population": 4331
+  },
+  {
+    "label": "Ohey",
+    "value": "2789908",
+    "population": 4324
+  },
+  {
+    "label": "Héron",
+    "value": "2795949",
+    "population": 4305
+  },
+  {
+    "label": "Loenhout",
+    "value": "2792219",
+    "population": 4302
+  },
+  {
+    "label": "Lasne-Chapelle-Saint-Lambert",
+    "value": "2800497",
+    "population": 4289
+  },
+  {
+    "label": "Koningshooikt",
+    "value": "2794127",
+    "population": 4280
+  },
+  {
+    "label": "Neuville-en-Condroz",
+    "value": "2790240",
+    "population": 4275
+  },
+  {
+    "label": "Romsée",
+    "value": "2787805",
+    "population": 4270
+  },
+  {
+    "label": "Louveigné",
+    "value": "2792071",
+    "population": 4267
+  },
+  {
+    "label": "Minderhout",
+    "value": "2791154",
+    "population": 4264
+  },
+  {
+    "label": "Blaton",
+    "value": "2801849",
+    "population": 4258
+  },
+  {
+    "label": "Ophain-Bois-Seigneur-Isaac",
+    "value": "2789708",
+    "population": 4255
+  },
+  {
+    "label": "Spy",
+    "value": "2786236",
+    "population": 4236
+  },
+  {
+    "label": "Sint-Pieters-Voeren",
+    "value": "2798056",
+    "population": 4235
+  },
+  {
+    "label": "Musson",
+    "value": "2790515",
+    "population": 4225
+  },
+  {
+    "label": "La Roche-en-Ardenne",
+    "value": "2793279",
+    "population": 4200
+  },
+  {
+    "label": "Tilleur",
+    "value": "2785436",
+    "population": 4189
+  },
+  {
+    "label": "Hombeek",
+    "value": "2795502",
+    "population": 4182
+  },
+  {
+    "label": "Souvret",
+    "value": "2786330",
+    "population": 4158
+  },
+  {
+    "label": "Machelen-aan-de-Leie",
+    "value": "2791950",
+    "population": 4153
+  },
+  {
+    "label": "Overboelare",
+    "value": "2789439",
+    "population": 4140
+  },
+  {
+    "label": "Gits",
+    "value": "2797513",
+    "population": 4127
+  },
+  {
+    "label": "Aubel",
+    "value": "2802985",
+    "population": 4119
+  },
+  {
+    "label": "Kettenis",
+    "value": "2794488",
+    "population": 4116
+  },
+  {
+    "label": "Anthisnes",
+    "value": "2803148",
+    "population": 4116
+  },
+  {
+    "label": "Gozée",
+    "value": "2797341",
+    "population": 4107
+  },
+  {
+    "label": "Vrasene",
+    "value": "2784328",
+    "population": 4097
+  },
+  {
+    "label": "Clavier",
+    "value": "2800269",
+    "population": 4092
+  },
+  {
+    "label": "Broechem",
+    "value": "2801013",
+    "population": 4090
+  },
+  {
+    "label": "Ressaix",
+    "value": "2788151",
+    "population": 4079
+  },
+  {
+    "label": "Hyon",
+    "value": "2795108",
+    "population": 4071
+  },
+  {
+    "label": "Everberg",
+    "value": "2798556",
+    "population": 4064
+  },
+  {
+    "label": "Oudegem",
+    "value": "2789551",
+    "population": 4061
+  },
+  {
+    "label": "Sint-Eloois-Winkel",
+    "value": "2786705",
+    "population": 4057
+  },
+  {
+    "label": "Poppel",
+    "value": "2788724",
+    "population": 4024
+  },
+  {
+    "label": "Wenduine",
+    "value": "2783854",
+    "population": 4003
+  },
+  {
+    "label": "Merbes-le-Château",
+    "value": "2791329",
+    "population": 3999
+  },
+  {
+    "label": "Maisières",
+    "value": "2791901",
+    "population": 3985
+  },
+  {
+    "label": "Kieldrecht",
+    "value": "2794466",
+    "population": 3981
+  },
+  {
+    "label": "Tildonk",
+    "value": "2785451",
+    "population": 3973
+  },
+  {
+    "label": "Trivières",
+    "value": "2785232",
+    "population": 3960
+  },
+  {
+    "label": "Sint-Eloois-Vijve",
+    "value": "2786707",
+    "population": 3953
+  },
+  {
+    "label": "Zaffelare",
+    "value": "2783380",
+    "population": 3949
+  },
+  {
+    "label": "Herenthout",
+    "value": "2796005",
+    "population": 3942
+  },
+  {
+    "label": "Tielen",
+    "value": "2785482",
+    "population": 3939
+  },
+  {
+    "label": "Olsene",
+    "value": "2789867",
+    "population": 3936
+  },
+  {
+    "label": "Hermée",
+    "value": "2795963",
+    "population": 3930
+  },
+  {
+    "label": "Baelen",
+    "value": "2802787",
+    "population": 3928
+  },
+  {
+    "label": "Libramont",
+    "value": "2792437",
+    "population": 3926
+  },
+  {
+    "label": "Lens",
+    "value": "2792871",
+    "population": 3902
+  },
+  {
+    "label": "Wechelderzande",
+    "value": "2783924",
+    "population": 3897
+  },
+  {
+    "label": "Deux-Acren",
+    "value": "2792692",
+    "population": 3896
+  },
+  {
+    "label": "Halanzy",
+    "value": "2796722",
+    "population": 3890
+  },
+  {
+    "label": "Malderen",
+    "value": "2791854",
+    "population": 3878
+  },
+  {
+    "label": "Léglise",
+    "value": "2792985",
+    "population": 3865
+  },
+  {
+    "label": "Denderwindeke",
+    "value": "2799642",
+    "population": 3861
+  },
+  {
+    "label": "Veldwezelt",
+    "value": "2784924",
+    "population": 3859
+  },
+  {
+    "label": "Haccourt",
+    "value": "2796798",
+    "population": 3847
+  },
+  {
+    "label": "Olne",
+    "value": "2789869",
+    "population": 3836
+  },
+  {
+    "label": "Modave",
+    "value": "2791132",
+    "population": 3825
+  },
+  {
+    "label": "Eynatten",
+    "value": "2798539",
+    "population": 3817
+  },
+  {
+    "label": "Tielrode",
+    "value": "2785480",
+    "population": 3804
+  },
+  {
+    "label": "Bellegem",
+    "value": "2802334",
+    "population": 3798
+  },
+  {
+    "label": "De Klinge",
+    "value": "2799728",
+    "population": 3796
+  },
+  {
+    "label": "Emblem",
+    "value": "2798787",
+    "population": 3796
+  },
+  {
+    "label": "Dadizele",
+    "value": "2799908",
+    "population": 3794
+  },
+  {
+    "label": "Vossem",
+    "value": "2784345",
+    "population": 3782
+  },
+  {
+    "label": "Schellebelle",
+    "value": "2787077",
+    "population": 3782
+  },
+  {
+    "label": "Olmen",
+    "value": "2789873",
+    "population": 3778
+  },
+  {
+    "label": "Sirault",
+    "value": "2786537",
+    "population": 3747
+  },
+  {
+    "label": "Bavikhove",
+    "value": "2802532",
+    "population": 3742
+  },
+  {
+    "label": "Stokkem",
+    "value": "2786015",
+    "population": 3722
+  },
+  {
+    "label": "Stevoort",
+    "value": "2786046",
+    "population": 3713
+  },
+  {
+    "label": "Rotem",
+    "value": "2787666",
+    "population": 3710
+  },
+  {
+    "label": "Élouges",
+    "value": "2798826",
+    "population": 3704
+  },
+  {
+    "label": "Gruitrode",
+    "value": "2796886",
+    "population": 3694
+  },
+  {
+    "label": "Scheldewindeke",
+    "value": "2787084",
+    "population": 3685
+  },
+  {
+    "label": "Ben-Ahin",
+    "value": "2802273",
+    "population": 3680
+  },
+  {
+    "label": "Lembeke",
+    "value": "2792893",
+    "population": 3679
+  },
+  {
+    "label": "Bousval",
+    "value": "2801218",
+    "population": 3661
+  },
+  {
+    "label": "Wauthier-Braine",
+    "value": "2783946",
+    "population": 3651
+  },
+  {
+    "label": "Falisolle",
+    "value": "2798501",
+    "population": 3642
+  },
+  {
+    "label": "Templeuve",
+    "value": "2785784",
+    "population": 3627
+  },
+  {
+    "label": "Meerle",
+    "value": "2791486",
+    "population": 3627
+  },
+  {
+    "label": "Vorselaar",
+    "value": "2784370",
+    "population": 3622
+  },
+  {
+    "label": "Balegem",
+    "value": "2802746",
+    "population": 3622
+  },
+  {
+    "label": "Kemzeke",
+    "value": "2794567",
+    "population": 3621
+  },
+  {
+    "label": "Vlamertinge",
+    "value": "2784504",
+    "population": 3619
+  },
+  {
+    "label": "Wespelaar",
+    "value": "2783817",
+    "population": 3612
+  },
+  {
+    "label": "Walsbets",
+    "value": "2784141",
+    "population": 3609
+  },
+  {
+    "label": "Korbeek-Lo",
+    "value": "2794092",
+    "population": 3606
+  },
+  {
+    "label": "Gaurain-Ramecroix",
+    "value": "2797805",
+    "population": 3603
+  },
+  {
+    "label": "Verlaine",
+    "value": "2784856",
+    "population": 3600
+  },
+  {
+    "label": "Oevel",
+    "value": "2789929",
+    "population": 3595
+  },
+  {
+    "label": "Wiekevorst",
+    "value": "2783721",
+    "population": 3589
+  },
+  {
+    "label": "Froidchapelle",
+    "value": "2797937",
+    "population": 3579
+  },
+  {
+    "label": "Zepperen",
+    "value": "2783271",
+    "population": 3577
+  },
+  {
+    "label": "Moerkerke",
+    "value": "2791098",
+    "population": 3576
+  },
+  {
+    "label": "Ampsin",
+    "value": "2803217",
+    "population": 3576
+  },
+  {
+    "label": "Oostnieuwkerke",
+    "value": "2789741",
+    "population": 3572
+  },
+  {
+    "label": "Werchter",
+    "value": "2783844",
+    "population": 3572
+  },
+  {
+    "label": "Opgrimbie",
+    "value": "2789712",
+    "population": 3560
+  },
+  {
+    "label": "Molenbeersel",
+    "value": "2791013",
+    "population": 3551
+  },
+  {
+    "label": "Basècles",
+    "value": "2802639",
+    "population": 3548
+  },
+  {
+    "label": "Tintigny",
+    "value": "2785422",
+    "population": 3538
+  },
+  {
+    "label": "Petit-Rechain",
+    "value": "2789053",
+    "population": 3522
+  },
+  {
+    "label": "Serskamp",
+    "value": "2786810",
+    "population": 3519
+  },
+  {
+    "label": "Neufvilles",
+    "value": "2790272",
+    "population": 3514
+  },
+  {
+    "label": "Meer",
+    "value": "2791515",
+    "population": 3512
+  },
+  {
+    "label": "Velaine",
+    "value": "2784971",
+    "population": 3510
+  },
+  {
+    "label": "Hallaar",
+    "value": "2796700",
+    "population": 3506
+  },
+  {
+    "label": "Hamoir",
+    "value": "2796629",
+    "population": 3500
+  },
+  {
+    "label": "Steendorp",
+    "value": "2786154",
+    "population": 3492
+  },
+  {
+    "label": "Montzen",
+    "value": "2790744",
+    "population": 3492
+  },
+  {
+    "label": "Luttre",
+    "value": "2791994",
+    "population": 3489
+  },
+  {
+    "label": "Zandvoorde",
+    "value": "2783333",
+    "population": 3484
+  },
+  {
+    "label": "Duisburg",
+    "value": "2799078",
+    "population": 3471
+  },
+  {
+    "label": "Trembleur",
+    "value": "2785296",
+    "population": 3465
+  },
+  {
+    "label": "Berg",
+    "value": "2802225",
+    "population": 3462
+  },
+  {
+    "label": "Opdorp",
+    "value": "2789716",
+    "population": 3459
+  },
+  {
+    "label": "Hulshout",
+    "value": "2795170",
+    "population": 3447
+  },
+  {
+    "label": "Essene",
+    "value": "2798611",
+    "population": 3445
+  },
+  {
+    "label": "Ham-sur-Sambre",
+    "value": "2796614",
+    "population": 3444
+  },
+  {
+    "label": "Ooigem",
+    "value": "2789817",
+    "population": 3429
+  },
+  {
+    "label": "Tisselt",
+    "value": "2785418",
+    "population": 3428
+  },
+  {
+    "label": "Landegem",
+    "value": "2793434",
+    "population": 3422
+  },
+  {
+    "label": "Leernes",
+    "value": "2793031",
+    "population": 3414
+  },
+  {
+    "label": "Vucht",
+    "value": "2784280",
+    "population": 3410
+  },
+  {
+    "label": "Saint-Symphorien",
+    "value": "2787322",
+    "population": 3402
+  },
+  {
+    "label": "Averbode",
+    "value": "2802865",
+    "population": 3396
+  },
+  {
+    "label": "Wegnez",
+    "value": "2783901",
+    "population": 3393
+  },
+  {
+    "label": "Gijzegem",
+    "value": "2797542",
+    "population": 3383
+  },
+  {
+    "label": "Hennuyères",
+    "value": "2796066",
+    "population": 3379
+  },
+  {
+    "label": "Gouy-lez-Piéton",
+    "value": "2797344",
+    "population": 3378
+  },
+  {
+    "label": "Vlezenbeek",
+    "value": "2784487",
+    "population": 3377
+  },
+  {
+    "label": "Molenstede",
+    "value": "2790953",
+    "population": 3374
+  },
+  {
+    "label": "Oreye",
+    "value": "2789635",
+    "population": 3373
+  },
+  {
+    "label": "Velzeke-Ruddershove",
+    "value": "2784903",
+    "population": 3359
+  },
+  {
+    "label": "Brugelette",
+    "value": "2800936",
+    "population": 3358
+  },
+  {
+    "label": "Frasnes-lez-Gosselies",
+    "value": "2797977",
+    "population": 3356
+  },
+  {
+    "label": "Sint-Huibrechts-Lille",
+    "value": "2786685",
+    "population": 3354
+  },
+  {
+    "label": "Faimes",
+    "value": "2798512",
+    "population": 3349
+  },
+  {
+    "label": "Habay-la-Neuve",
+    "value": "2796809",
+    "population": 3344
+  },
+  {
+    "label": "Hulste",
+    "value": "2795157",
+    "population": 3338
+  },
+  {
+    "label": "Lierneux",
+    "value": "2792400",
+    "population": 3332
+  },
+  {
+    "label": "Quevaucamps",
+    "value": "2788450",
+    "population": 3330
+  },
+  {
+    "label": "Mark",
+    "value": "2791719",
+    "population": 3327
+  },
+  {
+    "label": "Bois-de-Villers",
+    "value": "2801640",
+    "population": 3325
+  },
+  {
+    "label": "Eindhout",
+    "value": "2798897",
+    "population": 3311
+  },
+  {
+    "label": "Bassevelde",
+    "value": "2802596",
+    "population": 3282
+  },
+  {
+    "label": "Dion-le-Mont",
+    "value": "2799351",
+    "population": 3277
+  },
+  {
+    "label": "Kachtem",
+    "value": "2794823",
+    "population": 3276
+  },
+  {
+    "label": "Wasmuel",
+    "value": "2784014",
+    "population": 3262
+  },
+  {
+    "label": "Thimister",
+    "value": "2785562",
+    "population": 3261
+  },
+  {
+    "label": "Hillegem",
+    "value": "2795752",
+    "population": 3258
+  },
+  {
+    "label": "Zichen-Zussen-Bolder",
+    "value": "2783229",
+    "population": 3250
+  },
+  {
+    "label": "Koolkerke",
+    "value": "2794107",
+    "population": 3236
+  },
+  {
+    "label": "Hoegaarden",
+    "value": "2795703",
+    "population": 3226
+  },
+  {
+    "label": "Quenast",
+    "value": "2788471",
+    "population": 3226
+  },
+  {
+    "label": "Outer",
+    "value": "2789459",
+    "population": 3221
+  },
+  {
+    "label": "Olen",
+    "value": "2789886",
+    "population": 3209
+  },
+  {
+    "label": "Bièvre",
+    "value": "2801949",
+    "population": 3207
+  },
+  {
+    "label": "Lambermont",
+    "value": "2793482",
+    "population": 3206
+  },
+  {
+    "label": "Baisy-Thy",
+    "value": "2802759",
+    "population": 3185
+  },
+  {
+    "label": "Melen",
+    "value": "2791400",
+    "population": 3174
+  },
+  {
+    "label": "Huizingen",
+    "value": "2795189",
+    "population": 3172
+  },
+  {
+    "label": "Nossegem",
+    "value": "2790022",
+    "population": 3165
+  },
+  {
+    "label": "Wakken",
+    "value": "2784195",
+    "population": 3165
+  },
+  {
+    "label": "Eugies",
+    "value": "2798575",
+    "population": 3160
+  },
+  {
+    "label": "Esen",
+    "value": "2798638",
+    "population": 3152
+  },
+  {
+    "label": "Tollembeek",
+    "value": "2785401",
+    "population": 3152
+  },
+  {
+    "label": "Rupelmonde",
+    "value": "2787512",
+    "population": 3151
+  },
+  {
+    "label": "Handzame",
+    "value": "2796603",
+    "population": 3150
+  },
+  {
+    "label": "Adinkerke",
+    "value": "2803343",
+    "population": 3142
+  },
+  {
+    "label": "Flobecq",
+    "value": "2798290",
+    "population": 3142
+  },
+  {
+    "label": "Tihange",
+    "value": "2785456",
+    "population": 3140
+  },
+  {
+    "label": "Testelt",
+    "value": "2785610",
+    "population": 3131
+  },
+  {
+    "label": "Arquennes",
+    "value": "2803061",
+    "population": 3130
+  },
+  {
+    "label": "Marbais",
+    "value": "2791757",
+    "population": 3130
+  },
+  {
+    "label": "Manhay",
+    "value": "2791790",
+    "population": 3128
+  },
+  {
+    "label": "Loncin",
+    "value": "2792167",
+    "population": 3118
+  },
+  {
+    "label": "Onkerzele",
+    "value": "2789832",
+    "population": 3108
+  },
+  {
+    "label": "Ophoven",
+    "value": "2789696",
+    "population": 3104
+  },
+  {
+    "label": "Erwetegem",
+    "value": "2798649",
+    "population": 3102
+  },
+  {
+    "label": "Passendale",
+    "value": "2789270",
+    "population": 3095
+  },
+  {
+    "label": "Saint-Léger",
+    "value": "2787378",
+    "population": 3092
+  },
+  {
+    "label": "Goeferdinge",
+    "value": "2797455",
+    "population": 3088
+  },
+  {
+    "label": "Fexhe-le-Haut-Clocher",
+    "value": "2798357",
+    "population": 3082
+  },
+  {
+    "label": "Vlimmeren",
+    "value": "2784465",
+    "population": 3066
+  },
+  {
+    "label": "Gemmenich",
+    "value": "2797696",
+    "population": 3064
+  },
+  {
+    "label": "Lambusart",
+    "value": "2793478",
+    "population": 3060
+  },
+  {
+    "label": "Bouwel",
+    "value": "2801199",
+    "population": 3047
+  },
+  {
+    "label": "Wijchmaal",
+    "value": "2783696",
+    "population": 3042
+  },
+  {
+    "label": "Warneton",
+    "value": "2784033",
+    "population": 3039
+  },
+  {
+    "label": "Bray",
+    "value": "2801108",
+    "population": 3015
+  },
+  {
+    "label": "Sart-Dames-Avelines",
+    "value": "2787235",
+    "population": 3015
+  },
+  {
+    "label": "Onhaye",
+    "value": "2789834",
+    "population": 3014
+  },
+  {
+    "label": "Perre",
+    "value": "2789167",
+    "population": 3000
+  },
+  {
+    "label": "Oordegem",
+    "value": "2789807",
+    "population": 2990
+  },
+  {
+    "label": "Casteau",
+    "value": "2800629",
+    "population": 2989
+  },
+  {
+    "label": "Burst",
+    "value": "2800732",
+    "population": 2987
+  },
+  {
+    "label": "Appelterre-Eichem",
+    "value": "2803119",
+    "population": 2981
+  },
+  {
+    "label": "Meldert",
+    "value": "2791403",
+    "population": 2972
+  },
+  {
+    "label": "Stoumont",
+    "value": "2785989",
+    "population": 2970
+  },
+  {
+    "label": "Haasrode",
+    "value": "2796816",
+    "population": 2970
+  },
+  {
+    "label": "Aarsele",
+    "value": "2803427",
+    "population": 2959
+  },
+  {
+    "label": "Hautrage",
+    "value": "2796391",
+    "population": 2951
+  },
+  {
+    "label": "Goutroux",
+    "value": "2797349",
+    "population": 2947
+  },
+  {
+    "label": "Wellin",
+    "value": "2783862",
+    "population": 2937
+  },
+  {
+    "label": "Schulen",
+    "value": "2786913",
+    "population": 2930
+  },
+  {
+    "label": "Barvaux",
+    "value": "2802653",
+    "population": 2930
+  },
+  {
+    "label": "Érezée",
+    "value": "2798698",
+    "population": 2930
+  },
+  {
+    "label": "Aalbeke",
+    "value": "2803454",
+    "population": 2922
+  },
+  {
+    "label": "Steenhuffel",
+    "value": "2786140",
+    "population": 2919
+  },
+  {
+    "label": "Zelem",
+    "value": "2783290",
+    "population": 2917
+  },
+  {
+    "label": "Breendonk",
+    "value": "2801083",
+    "population": 2912
+  },
+  {
+    "label": "Sint-Joris-Winge",
+    "value": "2786649",
+    "population": 2908
+  },
+  {
+    "label": "Glain",
+    "value": "2797496",
+    "population": 2905
+  },
+  {
+    "label": "Rotheux-Rimière",
+    "value": "2787664",
+    "population": 2900
+  },
+  {
+    "label": "Pont-de-Loup",
+    "value": "2788752",
+    "population": 2896
+  },
+  {
+    "label": "Saint-Mard",
+    "value": "2787370",
+    "population": 2888
+  },
+  {
+    "label": "Wiers",
+    "value": "2783710",
+    "population": 2886
+  },
+  {
+    "label": "Lincent",
+    "value": "2792332",
+    "population": 2884
+  },
+  {
+    "label": "La Reid",
+    "value": "2793293",
+    "population": 2874
+  },
+  {
+    "label": "Heestert",
+    "value": "2796288",
+    "population": 2864
+  },
+  {
+    "label": "Appels",
+    "value": "2803122",
+    "population": 2862
+  },
+  {
+    "label": "Weerde",
+    "value": "2783913",
+    "population": 2857
+  },
+  {
+    "label": "Beveren",
+    "value": "2802032",
+    "population": 2853
+  },
+  {
+    "label": "Bertogne",
+    "value": "2802113",
+    "population": 2852
+  },
+  {
+    "label": "Poederlee",
+    "value": "2788837",
+    "population": 2845
+  },
+  {
+    "label": "Moerbeke",
+    "value": "2791121",
+    "population": 2840
+  },
+  {
+    "label": "Naast",
+    "value": "2790504",
+    "population": 2832
+  },
+  {
+    "label": "Couthuin",
+    "value": "2800036",
+    "population": 2826
+  },
+  {
+    "label": "Pulderbos",
+    "value": "2788539",
+    "population": 2819
+  },
+  {
+    "label": "Rumillies",
+    "value": "2787527",
+    "population": 2818
+  },
+  {
+    "label": "Grote-Brogel",
+    "value": "2796966",
+    "population": 2816
+  },
+  {
+    "label": "Kumtich",
+    "value": "2793867",
+    "population": 2814
+  },
+  {
+    "label": "Aye",
+    "value": "2802842",
+    "population": 2811
+  },
+  {
+    "label": "Pulle",
+    "value": "2788534",
+    "population": 2810
+  },
+  {
+    "label": "Saintes",
+    "value": "2787432",
+    "population": 2807
+  },
+  {
+    "label": "Neu-Moresnet",
+    "value": "2790267",
+    "population": 2807
+  },
+  {
+    "label": "Lotenhulle",
+    "value": "2792090",
+    "population": 2801
+  },
+  {
+    "label": "Perk",
+    "value": "2789178",
+    "population": 2800
+  },
+  {
+    "label": "Burdinne",
+    "value": "2800761",
+    "population": 2799
+  },
+  {
+    "label": "Nieuwrode",
+    "value": "2790144",
+    "population": 2796
+  },
+  {
+    "label": "Ruien",
+    "value": "2787559",
+    "population": 2795
+  },
+  {
+    "label": "Iddergem",
+    "value": "2795104",
+    "population": 2792
+  },
+  {
+    "label": "Ursel",
+    "value": "2785094",
+    "population": 2790
+  },
+  {
+    "label": "Beervelde",
+    "value": "2802424",
+    "population": 2772
+  },
+  {
+    "label": "Rollegem",
+    "value": "2787837",
+    "population": 2770
+  },
+  {
+    "label": "Berloz",
+    "value": "2802143",
+    "population": 2770
+  },
+  {
+    "label": "Virginal-Samme",
+    "value": "2784558",
+    "population": 2763
+  },
+  {
+    "label": "Leest",
+    "value": "2793023",
+    "population": 2758
+  },
+  {
+    "label": "Erpent",
+    "value": "2798674",
+    "population": 2758
+  },
+  {
+    "label": "Waudrez",
+    "value": "2783952",
+    "population": 2750
+  },
+  {
+    "label": "Kerksken",
+    "value": "2794537",
+    "population": 2740
+  },
+  {
+    "label": "Hergenrath",
+    "value": "2796001",
+    "population": 2740
+  },
+  {
+    "label": "Doische",
+    "value": "2799328",
+    "population": 2739
+  },
+  {
+    "label": "Zuienkerke",
+    "value": "2783153",
+    "population": 2736
+  },
+  {
+    "label": "Terhagen",
+    "value": "2785705",
+    "population": 2736
+  },
+  {
+    "label": "Moen",
+    "value": "2791126",
+    "population": 2729
+  },
+  {
+    "label": "Massemen",
+    "value": "2791608",
+    "population": 2723
+  },
+  {
+    "label": "Moustier-sur-Sambre",
+    "value": "2790591",
+    "population": 2721
+  },
+  {
+    "label": "Oosteeklo",
+    "value": "2789792",
+    "population": 2720
+  },
+  {
+    "label": "Sint-Martens-Bodegem",
+    "value": "2786595",
+    "population": 2715
+  },
+  {
+    "label": "Donceel",
+    "value": "2799317",
+    "population": 2712
+  },
+  {
+    "label": "Brustem",
+    "value": "2800875",
+    "population": 2693
+  },
+  {
+    "label": "Brussegem",
+    "value": "2800880",
+    "population": 2685
+  },
+  {
+    "label": "Geer",
+    "value": "2797770",
+    "population": 2682
+  },
+  {
+    "label": "Peutie",
+    "value": "2789020",
+    "population": 2667
+  },
+  {
+    "label": "Wambeek",
+    "value": "2784130",
+    "population": 2664
+  },
+  {
+    "label": "Masnuy-Saint-Jean",
+    "value": "2791616",
+    "population": 2663
+  },
+  {
+    "label": "Wieze",
+    "value": "2783704",
+    "population": 2660
+  },
+  {
+    "label": "Saint-Gérard",
+    "value": "2787423",
+    "population": 2659
+  },
+  {
+    "label": "Hamme-Mille",
+    "value": "2796632",
+    "population": 2652
+  },
+  {
+    "label": "Solre-sur-Sambre",
+    "value": "2786399",
+    "population": 2650
+  },
+  {
+    "label": "Vlijtingen",
+    "value": "2784467",
+    "population": 2650
+  },
+  {
+    "label": "Ligny",
+    "value": "2792369",
+    "population": 2640
+  },
+  {
+    "label": "Henri-Chapelle",
+    "value": "2796063",
+    "population": 2640
+  },
+  {
+    "label": "Meix-devant-Virton",
+    "value": "2791419",
+    "population": 2637
+  },
+  {
+    "label": "Glons",
+    "value": "2797485",
+    "population": 2637
+  },
+  {
+    "label": "Melsbroek",
+    "value": "2791368",
+    "population": 2637
+  },
+  {
+    "label": "Gellik",
+    "value": "2797727",
+    "population": 2636
+  },
+  {
+    "label": "Taintignies",
+    "value": "2785845",
+    "population": 2635
+  },
+  {
+    "label": "Robertville",
+    "value": "2787962",
+    "population": 2633
+  },
+  {
+    "label": "Perwez",
+    "value": "2789156",
+    "population": 2632
+  },
+  {
+    "label": "Mellet",
+    "value": "2791376",
+    "population": 2631
+  },
+  {
+    "label": "Beselare",
+    "value": "2802098",
+    "population": 2606
+  },
+  {
+    "label": "Elen",
+    "value": "2798852",
+    "population": 2604
+  },
+  {
+    "label": "Hermalle-sous-Argenteau",
+    "value": "2795970",
+    "population": 2603
+  },
+  {
+    "label": "Dentergem",
+    "value": "2799586",
+    "population": 2600
+  },
+  {
+    "label": "Vremde",
+    "value": "2784317",
+    "population": 2592
+  },
+  {
+    "label": "Crisnée",
+    "value": "2799997",
+    "population": 2587
+  },
+  {
+    "label": "Velm",
+    "value": "2784914",
+    "population": 2580
+  },
+  {
+    "label": "Thulin",
+    "value": "2785514",
+    "population": 2578
+  },
+  {
+    "label": "Budingen",
+    "value": "2800821",
+    "population": 2569
+  },
+  {
+    "label": "Otegem",
+    "value": "2789588",
+    "population": 2565
+  },
+  {
+    "label": "Biesme",
+    "value": "2801970",
+    "population": 2561
+  },
+  {
+    "label": "Meldert",
+    "value": "2791402",
+    "population": 2557
+  },
+  {
+    "label": "Dessel",
+    "value": "2799511",
+    "population": 2553
+  },
+  {
+    "label": "Hévillers",
+    "value": "2795780",
+    "population": 2547
+  },
+  {
+    "label": "Herdersem",
+    "value": "2796020",
+    "population": 2546
+  },
+  {
+    "label": "Landenne",
+    "value": "2793427",
+    "population": 2543
+  },
+  {
+    "label": "Opitter",
+    "value": "2789692",
+    "population": 2543
+  },
+  {
+    "label": "Wardin",
+    "value": "2784072",
+    "population": 2539
+  },
+  {
+    "label": "Niel-bij-As",
+    "value": "2790221",
+    "population": 2538
+  },
+  {
+    "label": "Polleur",
+    "value": "2788790",
+    "population": 2538
+  },
+  {
+    "label": "Feluy",
+    "value": "2798385",
+    "population": 2536
+  },
+  {
+    "label": "Trois-Ponts",
+    "value": "2785223",
+    "population": 2533
+  },
+  {
+    "label": "Autelbas",
+    "value": "2802914",
+    "population": 2530
+  },
+  {
+    "label": "Pommeroeul",
+    "value": "2788784",
+    "population": 2526
+  },
+  {
+    "label": "Sint-Maria-Oudenhove",
+    "value": "2786601",
+    "population": 2517
+  },
+  {
+    "label": "Lens-sur-Geer",
+    "value": "2792864",
+    "population": 2516
+  },
+  {
+    "label": "Tenneville",
+    "value": "2785745",
+    "population": 2510
+  },
+  {
+    "label": "Plainevaux",
+    "value": "2788908",
+    "population": 2508
+  },
+  {
+    "label": "Milmort",
+    "value": "2791159",
+    "population": 2507
+  },
+  {
+    "label": "Stambruges",
+    "value": "2786207",
+    "population": 2506
+  },
+  {
+    "label": "Blanden",
+    "value": "2801863",
+    "population": 2500
+  },
+  {
+    "label": "Orp-le-Grand",
+    "value": "2789621",
+    "population": 2496
+  },
+  {
+    "label": "Sint-Denijs",
+    "value": "2786717",
+    "population": 2489
+  },
+  {
+    "label": "Webbekom",
+    "value": "2783926",
+    "population": 2482
+  },
+  {
+    "label": "Crombach",
+    "value": "2799963",
+    "population": 2480
+  },
+  {
+    "label": "Herchies",
+    "value": "2796024",
+    "population": 2480
+  },
+  {
+    "label": "Ouffet",
+    "value": "2789479",
+    "population": 2477
+  },
+  {
+    "label": "Wasseiges",
+    "value": "2784010",
+    "population": 2471
+  },
+  {
+    "label": "Marche-lez-Écaussinnes",
+    "value": "2791739",
+    "population": 2470
+  },
+  {
+    "label": "Leffinge",
+    "value": "2793002",
+    "population": 2464
+  },
+  {
+    "label": "Meerbeek",
+    "value": "2791513",
+    "population": 2463
+  },
+  {
+    "label": "Queue-du-Bois",
+    "value": "2788453",
+    "population": 2461
+  },
+  {
+    "label": "Deurle",
+    "value": "2799482",
+    "population": 2454
+  },
+  {
+    "label": "Leuze",
+    "value": "2792475",
+    "population": 2454
+  },
+  {
+    "label": "Keerbergen",
+    "value": "2794619",
+    "population": 2440
+  },
+  {
+    "label": "Clermont",
+    "value": "2800254",
+    "population": 2439
+  },
+  {
+    "label": "Dudzele",
+    "value": "2799092",
+    "population": 2433
+  },
+  {
+    "label": "Roselies",
+    "value": "2787711",
+    "population": 2424
+  },
+  {
+    "label": "Schoonaarde",
+    "value": "2787008",
+    "population": 2423
+  },
+  {
+    "label": "Berchem",
+    "value": "2802251",
+    "population": 2423
+  },
+  {
+    "label": "Westmeerbeek",
+    "value": "2783784",
+    "population": 2422
+  },
+  {
+    "label": "Ayeneux",
+    "value": "2802839",
+    "population": 2419
+  },
+  {
+    "label": "Thy-le-Château",
+    "value": "2785500",
+    "population": 2417
+  },
+  {
+    "label": "Horrues",
+    "value": "2795356",
+    "population": 2416
+  },
+  {
+    "label": "Bossut-Gottechain",
+    "value": "2801344",
+    "population": 2407
+  },
+  {
+    "label": "Piéton",
+    "value": "2788981",
+    "population": 2404
+  },
+  {
+    "label": "Sint-Joris",
+    "value": "11398281",
+    "population": 2400
+  },
+  {
+    "label": "Lesve",
+    "value": "2792534",
+    "population": 2399
+  },
+  {
+    "label": "Kallo",
+    "value": "2794792",
+    "population": 2395
+  },
+  {
+    "label": "Godarville",
+    "value": "2797473",
+    "population": 2392
+  },
+  {
+    "label": "Borchtlombeek",
+    "value": "2801478",
+    "population": 2380
+  },
+  {
+    "label": "Ingooigem",
+    "value": "2795054",
+    "population": 2367
+  },
+  {
+    "label": "Orcq",
+    "value": "2789643",
+    "population": 2365
+  },
+  {
+    "label": "Borsbeke",
+    "value": "2801436",
+    "population": 2363
+  },
+  {
+    "label": "Elversele",
+    "value": "2798796",
+    "population": 2360
+  },
+  {
+    "label": "Sint-Baafs-Vijve",
+    "value": "2786724",
+    "population": 2356
+  },
+  {
+    "label": "Fexhe-Slins",
+    "value": "2798355",
+    "population": 2354
+  },
+  {
+    "label": "Tellin",
+    "value": "2785793",
+    "population": 2353
+  },
+  {
+    "label": "Terkoest",
+    "value": "11398283",
+    "population": 2350
+  },
+  {
+    "label": "Godinne",
+    "value": "2797470",
+    "population": 2350
+  },
+  {
+    "label": "Arsimont",
+    "value": "2803059",
+    "population": 2343
+  },
+  {
+    "label": "Thommen",
+    "value": "2785536",
+    "population": 2342
+  },
+  {
+    "label": "Vezin",
+    "value": "2784795",
+    "population": 2342
+  },
+  {
+    "label": "Kaggevinne",
+    "value": "2794820",
+    "population": 2338
+  },
+  {
+    "label": "Rendeux",
+    "value": "2788186",
+    "population": 2320
+  },
+  {
+    "label": "Oplinter",
+    "value": "2789688",
+    "population": 2317
+  },
+  {
+    "label": "Ottenburg",
+    "value": "2789580",
+    "population": 2314
+  },
+  {
+    "label": "Sainte-Ode",
+    "value": "2787435",
+    "population": 2310
+  },
+  {
+    "label": "Grand-Leez",
+    "value": "2797237",
+    "population": 2308
+  },
+  {
+    "label": "Viesville",
+    "value": "2784742",
+    "population": 2307
+  },
+  {
+    "label": "Baarle-Hertog",
+    "value": "2802816",
+    "population": 2305
+  },
+  {
+    "label": "Dikkelvenne",
+    "value": "2799372",
+    "population": 2302
+  },
+  {
+    "label": "Nil-Saint-Vincent-Saint-Martin",
+    "value": "2790124",
+    "population": 2300
+  },
+  {
+    "label": "Zoerle-Parwijs",
+    "value": "2783206",
+    "population": 2292
+  },
+  {
+    "label": "Beek",
+    "value": "2802468",
+    "population": 2285
+  },
+  {
+    "label": "Pellenberg",
+    "value": "2789207",
+    "population": 2283
+  },
+  {
+    "label": "Zeveneken",
+    "value": "2783249",
+    "population": 2281
+  },
+  {
+    "label": "Bellecourt",
+    "value": "2802345",
+    "population": 2278
+  },
+  {
+    "label": "Bellem",
+    "value": "2802327",
+    "population": 2274
+  },
+  {
+    "label": "Lint",
+    "value": "2792292",
+    "population": 2268
+  },
+  {
+    "label": "Bioul",
+    "value": "2801907",
+    "population": 2266
+  },
+  {
+    "label": "Westrozebeke",
+    "value": "2783773",
+    "population": 2264
+  },
+  {
+    "label": "Hoepertingen",
+    "value": "2795650",
+    "population": 2264
+  },
+  {
+    "label": "Eigenbilzen",
+    "value": "2798934",
+    "population": 2261
+  },
+  {
+    "label": "Boorsem",
+    "value": "2801485",
+    "population": 2260
+  },
+  {
+    "label": "Anseremme",
+    "value": "2803157",
+    "population": 2257
+  },
+  {
+    "label": "Koolskamp",
+    "value": "2794105",
+    "population": 2246
+  },
+  {
+    "label": "Tinlot",
+    "value": "2785427",
+    "population": 2236
+  },
+  {
+    "label": "Merkem",
+    "value": "2791304",
+    "population": 2236
+  },
+  {
+    "label": "Mollem",
+    "value": "2790922",
+    "population": 2236
+  },
+  {
+    "label": "Néchin",
+    "value": "2790427",
+    "population": 2235
+  },
+  {
+    "label": "Tarcienne",
+    "value": "2785822",
+    "population": 2229
+  },
+  {
+    "label": "Bevel",
+    "value": "2802054",
+    "population": 2221
+  },
+  {
+    "label": "Meux",
+    "value": "2791228",
+    "population": 2217
+  },
+  {
+    "label": "Leignon",
+    "value": "2792944",
+    "population": 2206
+  },
+  {
+    "label": "Presles",
+    "value": "2788614",
+    "population": 2206
+  },
+  {
+    "label": "Bassilly",
+    "value": "2802589",
+    "population": 2204
+  },
+  {
+    "label": "Mariekerke",
+    "value": "2791689",
+    "population": 2199
+  },
+  {
+    "label": "Rosières",
+    "value": "2787704",
+    "population": 2184
+  },
+  {
+    "label": "Poelkapelle",
+    "value": "2788822",
+    "population": 2184
+  },
+  {
+    "label": "Deurne",
+    "value": "2799479",
+    "population": 2182
+  },
+  {
+    "label": "Rummen",
+    "value": "2787525",
+    "population": 2177
+  },
+  {
+    "label": "Mater",
+    "value": "2791591",
+    "population": 2176
+  },
+  {
+    "label": "Neerheylissem",
+    "value": "2790380",
+    "population": 2175
+  },
+  {
+    "label": "Oetingen",
+    "value": "2789933",
+    "population": 2172
+  },
+  {
+    "label": "Heffen",
+    "value": "2796282",
+    "population": 2172
+  },
+  {
+    "label": "Bever",
+    "value": "2802052",
+    "population": 2159
+  },
+  {
+    "label": "Meerdonk",
+    "value": "2791501",
+    "population": 2159
+  },
+  {
+    "label": "Gottignies",
+    "value": "2797365",
+    "population": 2159
+  },
+  {
+    "label": "Vlierzele",
+    "value": "2784474",
+    "population": 2159
+  },
+  {
+    "label": "Lovenjoel",
+    "value": "2792054",
+    "population": 2157
+  },
+  {
+    "label": "Zarren",
+    "value": "2783324",
+    "population": 2150
+  },
+  {
+    "label": "Vreren",
+    "value": "2784313",
+    "population": 2143
+  },
+  {
+    "label": "Thiméon",
+    "value": "2785565",
+    "population": 2143
+  },
+  {
+    "label": "Denderbelle",
+    "value": "2799652",
+    "population": 2142
+  },
+  {
+    "label": "Wihéries",
+    "value": "2783700",
+    "population": 2142
+  },
+  {
+    "label": "Boekhoute",
+    "value": "2801729",
+    "population": 2129
+  },
+  {
+    "label": "Rulles",
+    "value": "2787536",
+    "population": 2129
+  },
+  {
+    "label": "Spalbeek",
+    "value": "2786310",
+    "population": 2127
+  },
+  {
+    "label": "Heure-le-Romain",
+    "value": "2795808",
+    "population": 2124
+  },
+  {
+    "label": "Everbeek",
+    "value": "2798558",
+    "population": 2124
+  },
+  {
+    "label": "Okegem",
+    "value": "2789893",
+    "population": 2119
+  },
+  {
+    "label": "Tourinnes-Saint-Lambert",
+    "value": "2785344",
+    "population": 2117
+  },
+  {
+    "label": "Hansbeke",
+    "value": "2796575",
+    "population": 2112
+  },
+  {
+    "label": "Vlissegem",
+    "value": "2784463",
+    "population": 2112
+  },
+  {
+    "label": "Waardamme",
+    "value": "2784246",
+    "population": 2103
+  },
+  {
+    "label": "Houtvenne",
+    "value": "2795250",
+    "population": 2100
+  },
+  {
+    "label": "Noville",
+    "value": "2790002",
+    "population": 2099
+  },
+  {
+    "label": "Aaigem",
+    "value": "2803456",
+    "population": 2098
+  },
+  {
+    "label": "Morkhoven",
+    "value": "2790699",
+    "population": 2092
+  },
+  {
+    "label": "Munkzwalm",
+    "value": "2790539",
+    "population": 2092
+  },
+  {
+    "label": "Lustin",
+    "value": "2792003",
+    "population": 2087
+  },
+  {
+    "label": "Temploux",
+    "value": "2785780",
+    "population": 2080
+  },
+  {
+    "label": "Froyennes",
+    "value": "2797903",
+    "population": 2075
+  },
+  {
+    "label": "Wortegem",
+    "value": "2783449",
+    "population": 2070
+  },
+  {
+    "label": "Acoz",
+    "value": "2803352",
+    "population": 2069
+  },
+  {
+    "label": "Boezinge",
+    "value": "2801694",
+    "population": 2061
+  },
+  {
+    "label": "Petegem-aan-de-Schelde",
+    "value": "8629581",
+    "population": 2060
+  },
+  {
+    "label": "Petegem",
+    "value": "2789146",
+    "population": 2060
+  },
+  {
+    "label": "Vertrijk",
+    "value": "2784823",
+    "population": 2059
+  },
+  {
+    "label": "Zillebeke",
+    "value": "2783222",
+    "population": 2058
+  },
+  {
+    "label": "Merendree",
+    "value": "2791309",
+    "population": 2057
+  },
+  {
+    "label": "Oppuurs",
+    "value": "2789668",
+    "population": 2052
+  },
+  {
+    "label": "Jemelle",
+    "value": "2794934",
+    "population": 2050
+  },
+  {
+    "label": "Vieux-Genappe",
+    "value": "2784737",
+    "population": 2048
+  },
+  {
+    "label": "Stokrooie",
+    "value": "2786011",
+    "population": 2047
+  },
+  {
+    "label": "Fraipont",
+    "value": "2798034",
+    "population": 2046
+  },
+  {
+    "label": "Estinnes-au-Mont",
+    "value": "2798599",
+    "population": 2042
+  },
+  {
+    "label": "Sint-Lievens-Esse",
+    "value": "2786618",
+    "population": 2040
+  },
+  {
+    "label": "Harzé",
+    "value": "2796508",
+    "population": 2030
+  },
+  {
+    "label": "Thieu",
+    "value": "2785572",
+    "population": 2024
+  },
+  {
+    "label": "Francorchamps",
+    "value": "2798003",
+    "population": 2023
+  },
+  {
+    "label": "Beigem",
+    "value": "2802391",
+    "population": 2019
+  },
+  {
+    "label": "Linkhout",
+    "value": "2792298",
+    "population": 2019
+  },
+  {
+    "label": "Uitbergen",
+    "value": "2785106",
+    "population": 2018
+  },
+  {
+    "label": "Mariembourg",
+    "value": "2791684",
+    "population": 2017
+  },
+  {
+    "label": "Verrebroek",
+    "value": "2784839",
+    "population": 2013
+  },
+  {
+    "label": "Bachte-Maria-Leerne",
+    "value": "2802798",
+    "population": 2006
+  },
+  {
+    "label": "Erbisoeul",
+    "value": "2798706",
+    "population": 2004
+  },
+  {
+    "label": "Maria Aalter",
+    "value": "2791703",
+    "population": 2000
+  },
+  {
+    "label": "Pironchamps",
+    "value": "2788938",
+    "population": 2000
+  },
+  {
+    "label": "Laneffe",
+    "value": "2793416",
+    "population": 1999
+  },
+  {
+    "label": "Thuillies",
+    "value": "2785519",
+    "population": 1996
+  },
+  {
+    "label": "Walem",
+    "value": "2784180",
+    "population": 1988
+  },
+  {
+    "label": "Nethen",
+    "value": "2790297",
+    "population": 1987
+  },
+  {
+    "label": "Halle-Booienhoven",
+    "value": "2796691",
+    "population": 1978
+  },
+  {
+    "label": "Wijtschate",
+    "value": "2783669",
+    "population": 1978
+  },
+  {
+    "label": "Westkerke",
+    "value": "2783789",
+    "population": 1975
+  },
+  {
+    "label": "Hertsberge",
+    "value": "2795916",
+    "population": 1970
+  },
+  {
+    "label": "Houtain-Saint-Siméon",
+    "value": "2795279",
+    "population": 1969
+  },
+  {
+    "label": "Rhisnes",
+    "value": "2788111",
+    "population": 1967
+  },
+  {
+    "label": "Elsenborn",
+    "value": "2798817",
+    "population": 1965
+  },
+  {
+    "label": "Tilly",
+    "value": "2785432",
+    "population": 1965
+  },
+  {
+    "label": "Hauset",
+    "value": "2796465",
+    "population": 1962
+  },
+  {
+    "label": "Klerken",
+    "value": "2794271",
+    "population": 1962
+  },
+  {
+    "label": "Vliermaal",
+    "value": "2784478",
+    "population": 1961
+  },
+  {
+    "label": "Vollezele",
+    "value": "2784420",
+    "population": 1961
+  },
+  {
+    "label": "Buvrinnes",
+    "value": "2800701",
+    "population": 1955
+  },
+  {
+    "label": "Gelrode",
+    "value": "2797723",
+    "population": 1954
+  },
+  {
+    "label": "Fauvillers",
+    "value": "2798438",
+    "population": 1952
+  },
+  {
+    "label": "Bierghes",
+    "value": "2801989",
+    "population": 1947
+  },
+  {
+    "label": "Rouvroy",
+    "value": "2787622",
+    "population": 1946
+  },
+  {
+    "label": "Messelbroek",
+    "value": "2791269",
+    "population": 1945
+  },
+  {
+    "label": "Moresnet",
+    "value": "2790713",
+    "population": 1943
+  },
+  {
+    "label": "Evrehailles",
+    "value": "2798542",
+    "population": 1940
+  },
+  {
+    "label": "Moignelée",
+    "value": "2791076",
+    "population": 1940
+  },
+  {
+    "label": "Bever",
+    "value": "2802051",
+    "population": 1932
+  },
+  {
+    "label": "Oeselgem",
+    "value": "2789936",
+    "population": 1927
+  },
+  {
+    "label": "Horion-Hozémont",
+    "value": "2795369",
+    "population": 1925
+  },
+  {
+    "label": "Baardegem",
+    "value": "2802820",
+    "population": 1924
+  },
+  {
+    "label": "Waanrode",
+    "value": "2784256",
+    "population": 1919
+  },
+  {
+    "label": "Harchies",
+    "value": "2796553",
+    "population": 1918
+  },
+  {
+    "label": "Kessenich",
+    "value": "2794504",
+    "population": 1917
+  },
+  {
+    "label": "Nukerke",
+    "value": "2789990",
+    "population": 1916
+  },
+  {
+    "label": "Corroy-le-Grand",
+    "value": "2800100",
+    "population": 1908
+  },
+  {
+    "label": "Roosbeek",
+    "value": "2787735",
+    "population": 1908
+  },
+  {
+    "label": "Sint-Joris-Weert",
+    "value": "2786651",
+    "population": 1907
+  },
+  {
+    "label": "Nederokkerzeel",
+    "value": "2790409",
+    "population": 1906
+  },
+  {
+    "label": "Franière",
+    "value": "2797996",
+    "population": 1900
+  },
+  {
+    "label": "Sint-Joris",
+    "value": "2786655",
+    "population": 1896
+  },
+  {
+    "label": "Oisquercq",
+    "value": "2789899",
+    "population": 1894
+  },
+  {
+    "label": "Cortil-Noirmont",
+    "value": "2800093",
+    "population": 1893
+  },
+  {
+    "label": "Sint-Martens-Lierde",
+    "value": "2786585",
+    "population": 1892
+  },
+  {
+    "label": "Viane",
+    "value": "2784790",
+    "population": 1892
+  },
+  {
+    "label": "Ville-sur-Haine",
+    "value": "2784608",
+    "population": 1888
+  },
+  {
+    "label": "Ophasselt",
+    "value": "2789705",
+    "population": 1882
+  },
+  {
+    "label": "Loverval",
+    "value": "2792048",
+    "population": 1881
+  },
+  {
+    "label": "Heldergem",
+    "value": "2796128",
+    "population": 1878
+  },
+  {
+    "label": "Schendelbeke",
+    "value": "2787073",
+    "population": 1870
+  },
+  {
+    "label": "Sint-Ulriks-Kapelle",
+    "value": "2786543",
+    "population": 1868
+  },
+  {
+    "label": "Etikhove",
+    "value": "2798587",
+    "population": 1867
+  },
+  {
+    "label": "Bottelare",
+    "value": "2801308",
+    "population": 1866
+  },
+  {
+    "label": "Villers-l'Évêque",
+    "value": "2784631",
+    "population": 1861
+  },
+  {
+    "label": "Éthe",
+    "value": "2798589",
+    "population": 1857
+  },
+  {
+    "label": "Limerlé",
+    "value": "2792343",
+    "population": 1855
+  },
+  {
+    "label": "Bellevaux-Ligneuville",
+    "value": "2802312",
+    "population": 1853
+  },
+  {
+    "label": "Steenhuize-Wijnhuize",
+    "value": "2786137",
+    "population": 1850
+  },
+  {
+    "label": "Saint-Sauveur",
+    "value": "2787329",
+    "population": 1843
+  },
+  {
+    "label": "Londerzeel",
+    "value": "2792165",
+    "population": 1842
+  },
+  {
+    "label": "Bonheiden",
+    "value": "2801539",
+    "population": 1840
+  },
+  {
+    "label": "Liers",
+    "value": "2792395",
+    "population": 1840
+  },
+  {
+    "label": "Elene",
+    "value": "2798850",
+    "population": 1838
+  },
+  {
+    "label": "Wortel",
+    "value": "2783447",
+    "population": 1832
+  },
+  {
+    "label": "Hoeleden",
+    "value": "2795656",
+    "population": 1831
+  },
+  {
+    "label": "Poulseur",
+    "value": "2788666",
+    "population": 1827
+  },
+  {
+    "label": "Jauche",
+    "value": "2794960",
+    "population": 1826
+  },
+  {
+    "label": "Izel",
+    "value": "2795007",
+    "population": 1818
+  },
+  {
+    "label": "Kleine-Brogel",
+    "value": "2794393",
+    "population": 1812
+  },
+  {
+    "label": "Nieuwenrode",
+    "value": "2790183",
+    "population": 1810
+  },
+  {
+    "label": "Recogne",
+    "value": "2788285",
+    "population": 1810
+  },
+  {
+    "label": "Waarloos",
+    "value": "2784242",
+    "population": 1808
+  },
+  {
+    "label": "Nismes",
+    "value": "2790111",
+    "population": 1807
+  },
+  {
+    "label": "Kester",
+    "value": "2794502",
+    "population": 1800
+  },
+  {
+    "label": "Liezele",
+    "value": "2792384",
+    "population": 1798
+  },
+  {
+    "label": "Bambrugge",
+    "value": "2802731",
+    "population": 1797
+  },
+  {
+    "label": "Tongrinne",
+    "value": "2785377",
+    "population": 1795
+  },
+  {
+    "label": "Donk",
+    "value": "2799310",
+    "population": 1793
+  },
+  {
+    "label": "Wommersom",
+    "value": "2783460",
+    "population": 1791
+  },
+  {
+    "label": "Zerkegem",
+    "value": "2783269",
+    "population": 1791
+  },
+  {
+    "label": "Wierde",
+    "value": "2783712",
+    "population": 1790
+  },
+  {
+    "label": "Neerijse",
+    "value": "2790370",
+    "population": 1789
+  },
+  {
+    "label": "Natoye",
+    "value": "2790447",
+    "population": 1786
+  },
+  {
+    "label": "Attenhoven",
+    "value": "2803001",
+    "population": 1784
+  },
+  {
+    "label": "Faulx-Les Tombes",
+    "value": "2798445",
+    "population": 1779
+  },
+  {
+    "label": "Idegem",
+    "value": "2795102",
+    "population": 1779
+  },
+  {
+    "label": "Rouvreux",
+    "value": "2787623",
+    "population": 1777
+  },
+  {
+    "label": "Val-Meer",
+    "value": "2785052",
+    "population": 1776
+  },
+  {
+    "label": "Deftinge",
+    "value": "2799792",
+    "population": 1775
+  },
+  {
+    "label": "Saint-Pierre",
+    "value": "2787352",
+    "population": 1773
+  },
+  {
+    "label": "Grotenberge",
+    "value": "2796922",
+    "population": 1773
+  },
+  {
+    "label": "Huise",
+    "value": "2795199",
+    "population": 1772
+  },
+  {
+    "label": "Leeuwergem",
+    "value": "2793018",
+    "population": 1769
+  },
+  {
+    "label": "On",
+    "value": "2789854",
+    "population": 1767
+  },
+  {
+    "label": "Zevergem",
+    "value": "2783237",
+    "population": 1766
+  },
+  {
+    "label": "Bunsbeek",
+    "value": "2800769",
+    "population": 1763
+  },
+  {
+    "label": "Walhorn",
+    "value": "2784165",
+    "population": 1763
+  },
+  {
+    "label": "Haacht",
+    "value": "2796844",
+    "population": 1763
+  },
+  {
+    "label": "Hérinnes",
+    "value": "2795992",
+    "population": 1759
+  },
+  {
+    "label": "Warsage",
+    "value": "2784024",
+    "population": 1755
+  },
+  {
+    "label": "Elverdinge",
+    "value": "2798798",
+    "population": 1751
+  },
+  {
+    "label": "Zandbergen",
+    "value": "2783357",
+    "population": 1750
+  },
+  {
+    "label": "Erondegem",
+    "value": "2798680",
+    "population": 1742
+  },
+  {
+    "label": "Comblain-Fairon",
+    "value": "2800202",
+    "population": 1738
+  },
+  {
+    "label": "Rèves",
+    "value": "2788121",
+    "population": 1734
+  },
+  {
+    "label": "Maffle",
+    "value": "2791935",
+    "population": 1733
+  },
+  {
+    "label": "Buzet",
+    "value": "2800695",
+    "population": 1729
+  },
+  {
+    "label": "Xhendelesse",
+    "value": "2783410",
+    "population": 1729
+  },
+  {
+    "label": "Michelbeke",
+    "value": "2791214",
+    "population": 1728
+  },
+  {
+    "label": "Thorembais-Saint-Trond",
+    "value": "2785525",
+    "population": 1725
+  },
+  {
+    "label": "Kortrijk-Dutsel",
+    "value": "2794052",
+    "population": 1722
+  },
+  {
+    "label": "Neerharen",
+    "value": "2790385",
+    "population": 1720
+  },
+  {
+    "label": "Watou",
+    "value": "2783961",
+    "population": 1713
+  },
+  {
+    "label": "Watervliet",
+    "value": "2783966",
+    "population": 1710
+  },
+  {
+    "label": "Hombourg",
+    "value": "2795499",
+    "population": 1707
+  },
+  {
+    "label": "Rance",
+    "value": "2788361",
+    "population": 1706
+  },
+  {
+    "label": "Épinois",
+    "value": "2798720",
+    "population": 1704
+  },
+  {
+    "label": "Loupoigne",
+    "value": "2792076",
+    "population": 1703
+  },
+  {
+    "label": "Mussy-la-Ville",
+    "value": "2790512",
+    "population": 1694
+  },
+  {
+    "label": "Oekene",
+    "value": "2789946",
+    "population": 1689
+  },
+  {
+    "label": "Yves-Gomezée",
+    "value": "2783387",
+    "population": 1680
+  },
+  {
+    "label": "Bas-Oha",
+    "value": "2802633",
+    "population": 1672
+  },
+  {
+    "label": "Barry",
+    "value": "2802661",
+    "population": 1670
+  },
+  {
+    "label": "Bellaire",
+    "value": "2802352",
+    "population": 1668
+  },
+  {
+    "label": "Sclayn",
+    "value": "2786898",
+    "population": 1668
+  },
+  {
+    "label": "Willemeau",
+    "value": "2783624",
+    "population": 1667
+  },
+  {
+    "label": "Obaix",
+    "value": "2789984",
+    "population": 1666
+  },
+  {
+    "label": "Xhendremael",
+    "value": "2783408",
+    "population": 1663
+  },
+  {
+    "label": "Snellegem",
+    "value": "2786446",
+    "population": 1661
+  },
+  {
+    "label": "Moha",
+    "value": "2791085",
+    "population": 1659
+  },
+  {
+    "label": "Eben-Emael",
+    "value": "2799030",
+    "population": 1657
+  },
+  {
+    "label": "Somzée",
+    "value": "2786375",
+    "population": 1657
+  },
+  {
+    "label": "Wijshagen",
+    "value": "2783671",
+    "population": 1655
+  },
+  {
+    "label": "Opbrakel",
+    "value": "2789723",
+    "population": 1653
+  },
+  {
+    "label": "Geluveld",
+    "value": "2797721",
+    "population": 1652
+  },
+  {
+    "label": "Émines",
+    "value": "2798776",
+    "population": 1650
+  },
+  {
+    "label": "Grand-Hallet",
+    "value": "2797252",
+    "population": 1650
+  },
+  {
+    "label": "Sint-Agatha-Rode",
+    "value": "2786750",
+    "population": 1647
+  },
+  {
+    "label": "Berbroek",
+    "value": "2802254",
+    "population": 1646
+  },
+  {
+    "label": "Xhoris",
+    "value": "2783401",
+    "population": 1645
+  },
+  {
+    "label": "Bois-de-Lessines",
+    "value": "2801655",
+    "population": 1645
+  },
+  {
+    "label": "Naninne",
+    "value": "2790464",
+    "population": 1634
+  },
+  {
+    "label": "Impe",
+    "value": "2795067",
+    "population": 1634
+  },
+  {
+    "label": "Kozen",
+    "value": "2794031",
+    "population": 1633
+  },
+  {
+    "label": "Othée",
+    "value": "2789584",
+    "population": 1630
+  },
+  {
+    "label": "Lixhe",
+    "value": "2792255",
+    "population": 1626
+  },
+  {
+    "label": "Vitrival",
+    "value": "2784534",
+    "population": 1624
+  },
+  {
+    "label": "Aspelare",
+    "value": "2803042",
+    "population": 1622
+  },
+  {
+    "label": "Dolembreux",
+    "value": "2799325",
+    "population": 1621
+  },
+  {
+    "label": "Herderen",
+    "value": "2796022",
+    "population": 1620
+  },
+  {
+    "label": "Piétrain",
+    "value": "2788978",
+    "population": 1619
+  },
+  {
+    "label": "Herbeumont",
+    "value": "2796037",
+    "population": 1612
+  },
+  {
+    "label": "Ouwegem",
+    "value": "2789446",
+    "population": 1608
+  },
+  {
+    "label": "Sivry",
+    "value": "2786529",
+    "population": 1606
+  },
+  {
+    "label": "Plancenoit",
+    "value": "2788904",
+    "population": 1603
+  },
+  {
+    "label": "Millen",
+    "value": "2791162",
+    "population": 1603
+  },
+  {
+    "label": "Schorisse",
+    "value": "2786968",
+    "population": 1602
+  },
+  {
+    "label": "Saint-Denis",
+    "value": "2787466",
+    "population": 1601
+  },
+  {
+    "label": "Charneux",
+    "value": "2800469",
+    "population": 1600
+  },
+  {
+    "label": "Leut",
+    "value": "2792485",
+    "population": 1599
+  },
+  {
+    "label": "Houwaart",
+    "value": "2795245",
+    "population": 1599
+  },
+  {
+    "label": "Bon-Secours",
+    "value": "2801517",
+    "population": 1599
+  },
+  {
+    "label": "Opprebais",
+    "value": "2789671",
+    "population": 1596
+  },
+  {
+    "label": "Roksem",
+    "value": "2787843",
+    "population": 1594
+  },
+  {
+    "label": "Morialmé",
+    "value": "2790706",
+    "population": 1594
+  },
+  {
+    "label": "Grandhan",
+    "value": "2797247",
+    "population": 1593
+  },
+  {
+    "label": "Reuland",
+    "value": "7732012",
+    "population": 1592
+  },
+  {
+    "label": "Meslin-l'Évêque",
+    "value": "2791282",
+    "population": 1586
+  },
+  {
+    "label": "Vroenhoven",
+    "value": "2784294",
+    "population": 1584
+  },
+  {
+    "label": "Sainte-Marie-sur-Semois",
+    "value": "2787441",
+    "population": 1584
+  },
+  {
+    "label": "Ledegem",
+    "value": "2793067",
+    "population": 1582
+  },
+  {
+    "label": "Pipaix",
+    "value": "2788948",
+    "population": 1582
+  },
+  {
+    "label": "Bost",
+    "value": "2801342",
+    "population": 1578
+  },
+  {
+    "label": "Egem",
+    "value": "2798959",
+    "population": 1577
+  },
+  {
+    "label": "Neerlinter",
+    "value": "2790363",
+    "population": 1574
+  },
+  {
+    "label": "Archennes",
+    "value": "2803098",
+    "population": 1571
+  },
+  {
+    "label": "Serinchamps",
+    "value": "2786817",
+    "population": 1566
+  },
+  {
+    "label": "Relegem",
+    "value": "2788224",
+    "population": 1566
+  },
+  {
+    "label": "Longlier",
+    "value": "2792145",
+    "population": 1564
+  },
+  {
+    "label": "Semmerzake",
+    "value": "2786857",
+    "population": 1562
+  },
+  {
+    "label": "Bihain",
+    "value": "2801942",
+    "population": 1562
+  },
+  {
+    "label": "Drieslinter",
+    "value": "2799133",
+    "population": 1559
+  },
+  {
+    "label": "Tiegem",
+    "value": "2785484",
+    "population": 1556
+  },
+  {
+    "label": "Richelle",
+    "value": "2788101",
+    "population": 1551
+  },
+  {
+    "label": "Strée",
+    "value": "2785968",
+    "population": 1548
+  },
+  {
+    "label": "Binkom",
+    "value": "2801916",
+    "population": 1546
+  },
+  {
+    "label": "Geest-Gérompont-Petit-Rosière",
+    "value": "2797764",
+    "population": 1545
+  },
+  {
+    "label": "Jeuk",
+    "value": "2794911",
+    "population": 1543
+  },
+  {
+    "label": "Beez",
+    "value": "2802419",
+    "population": 1541
+  },
+  {
+    "label": "Ollignies",
+    "value": "2789878",
+    "population": 1539
+  },
+  {
+    "label": "Kampenhout",
+    "value": "2794763",
+    "population": 1538
+  },
+  {
+    "label": "Mechelen-Bovelingen",
+    "value": "2791532",
+    "population": 1537
+  },
+  {
+    "label": "Hoves",
+    "value": "2795227",
+    "population": 1534
+  },
+  {
+    "label": "Schelderode",
+    "value": "2787087",
+    "population": 1530
+  },
+  {
+    "label": "Haillot",
+    "value": "2796744",
+    "population": 1524
+  },
+  {
+    "label": "Jamioulx",
+    "value": "2794974",
+    "population": 1522
+  },
+  {
+    "label": "Leers-Nord",
+    "value": "2793025",
+    "population": 1514
+  },
+  {
+    "label": "Noville",
+    "value": "2790001",
+    "population": 1513
+  },
+  {
+    "label": "Le Roux",
+    "value": "2792795",
+    "population": 1510
+  },
+  {
+    "label": "Estaimbourg",
+    "value": "2798606",
+    "population": 1508
+  },
+  {
+    "label": "Mont-Sainte-Aldegonde",
+    "value": "2790760",
+    "population": 1507
+  },
+  {
+    "label": "Assent",
+    "value": "2803020",
+    "population": 1504
+  },
+  {
+    "label": "Dave",
+    "value": "2799855",
+    "population": 1503
+  },
+  {
+    "label": "Micheroux",
+    "value": "2791212",
+    "population": 1501
+  },
+  {
+    "label": "Ledeberg",
+    "value": "2793072",
+    "population": 1500
+  },
+  {
+    "label": "Ramsdonk",
+    "value": "2788370",
+    "population": 1500
+  },
+  {
+    "label": "Pecq",
+    "value": "2789236",
+    "population": 1498
+  },
+  {
+    "label": "Courrière",
+    "value": "2800056",
+    "population": 1496
+  },
+  {
+    "label": "Givry",
+    "value": "2797506",
+    "population": 1496
+  },
+  {
+    "label": "Hermalle-sous-Huy",
+    "value": "2795968",
+    "population": 1494
+  },
+  {
+    "label": "Sint-Maria-Horebeke",
+    "value": "2786607",
+    "population": 1493
+  },
+  {
+    "label": "Fraire",
+    "value": "2798031",
+    "population": 1492
+  },
+  {
+    "label": "Dikkebus",
+    "value": "2799379",
+    "population": 1489
+  },
+  {
+    "label": "Gelinden",
+    "value": "2797731",
+    "population": 1484
+  },
+  {
+    "label": "Jamoigne",
+    "value": "2794970",
+    "population": 1481
+  },
+  {
+    "label": "Grand-Reng",
+    "value": "2797205",
+    "population": 1479
+  },
+  {
+    "label": "Beerst",
+    "value": "2802430",
+    "population": 1477
+  },
+  {
+    "label": "Nieuwkerke",
+    "value": "2790165",
+    "population": 1474
+  },
+  {
+    "label": "Montenaken",
+    "value": "2790822",
+    "population": 1472
+  },
+  {
+    "label": "Assenois",
+    "value": "2803024",
+    "population": 1471
+  },
+  {
+    "label": "Suarlée",
+    "value": "2785919",
+    "population": 1469
+  },
+  {
+    "label": "Wonck",
+    "value": "2783458",
+    "population": 1468
+  },
+  {
+    "label": "Eine",
+    "value": "2798891",
+    "population": 1466
+  },
+  {
+    "label": "Goetsenhoven",
+    "value": "2797447",
+    "population": 1465
+  },
+  {
+    "label": "Bierset",
+    "value": "2801983",
+    "population": 1465
+  },
+  {
+    "label": "Chaineux",
+    "value": "2800575",
+    "population": 1465
+  },
+  {
+    "label": "Bas-Warneton",
+    "value": "2802579",
+    "population": 1461
+  },
+  {
+    "label": "Thisnes",
+    "value": "2785544",
+    "population": 1461
+  },
+  {
+    "label": "Tohogne",
+    "value": "2785406",
+    "population": 1460
+  },
+  {
+    "label": "Warchin",
+    "value": "2784077",
+    "population": 1458
+  },
+  {
+    "label": "Bilstain",
+    "value": "2801926",
+    "population": 1457
+  },
+  {
+    "label": "'s-Gravenvoeren",
+    "value": "2798058",
+    "population": 1455
+  },
+  {
+    "label": "Reningelst",
+    "value": "2788176",
+    "population": 1453
+  },
+  {
+    "label": "Sibret",
+    "value": "2786782",
+    "population": 1443
+  },
+  {
+    "label": "Martelange",
+    "value": "2791642",
+    "population": 1440
+  },
+  {
+    "label": "Mignault",
+    "value": "2791178",
+    "population": 1439
+  },
+  {
+    "label": "Momalle",
+    "value": "2790911",
+    "population": 1437
+  },
+  {
+    "label": "Bomal",
+    "value": "2801576",
+    "population": 1436
+  },
+  {
+    "label": "Vinkt",
+    "value": "2784588",
+    "population": 1434
+  },
+  {
+    "label": "Vierset-Barse",
+    "value": "2784756",
+    "population": 1434
+  },
+  {
+    "label": "Grand-Rechain",
+    "value": "2797209",
+    "population": 1433
+  },
+  {
+    "label": "Longvilly",
+    "value": "2792121",
+    "population": 1432
+  },
+  {
+    "label": "Villers-le-Temple",
+    "value": "2784633",
+    "population": 1431
+  },
+  {
+    "label": "Housse",
+    "value": "2795294",
+    "population": 1429
+  },
+  {
+    "label": "Vosselare",
+    "value": "2784347",
+    "population": 1426
+  },
+  {
+    "label": "Noville-les-Bois",
+    "value": "2789999",
+    "population": 1426
+  },
+  {
+    "label": "Saint-Marc",
+    "value": "2787373",
+    "population": 1422
+  },
+  {
+    "label": "Sint-Pieters-Kapelle",
+    "value": "2786563",
+    "population": 1421
+  },
+  {
+    "label": "Strée-lez-Huy",
+    "value": "2785967",
+    "population": 1421
+  },
+  {
+    "label": "Melsen",
+    "value": "2791360",
+    "population": 1416
+  },
+  {
+    "label": "Vinalmont",
+    "value": "2784602",
+    "population": 1416
+  },
+  {
+    "label": "Vissenaken",
+    "value": "2784544",
+    "population": 1414
+  },
+  {
+    "label": "Wilderen",
+    "value": "2783647",
+    "population": 1414
+  },
+  {
+    "label": "Sint-Martens",
+    "value": "2786599",
+    "population": 1414
+  },
+  {
+    "label": "Soy",
+    "value": "2786324",
+    "population": 1411
+  },
+  {
+    "label": "Houtain-l'Évêque",
+    "value": "2784137",
+    "population": 1409
+  },
+  {
+    "label": "Jehay",
+    "value": "2794941",
+    "population": 1404
+  },
+  {
+    "label": "Magnée",
+    "value": "2791925",
+    "population": 1402
+  },
+  {
+    "label": "Oleye",
+    "value": "2789883",
+    "population": 1401
+  },
+  {
+    "label": "Blaugies",
+    "value": "2801846",
+    "population": 1401
+  },
+  {
+    "label": "Grote-Spouwen",
+    "value": "2796903",
+    "population": 1400
+  },
+  {
+    "label": "Tourinnes-la-Grosse",
+    "value": "2785346",
+    "population": 1400
+  },
+  {
+    "label": "Longchamps",
+    "value": "2792156",
+    "population": 1398
+  },
+  {
+    "label": "Mainvault",
+    "value": "2791906",
+    "population": 1397
+  },
+  {
+    "label": "Couture-Saint-Germain",
+    "value": "2800030",
+    "population": 1396
+  },
+  {
+    "label": "Laplaigne",
+    "value": "2793319",
+    "population": 1391
+  },
+  {
+    "label": "Mazenzele",
+    "value": "2791550",
+    "population": 1386
+  },
+  {
+    "label": "Dhuy",
+    "value": "2799422",
+    "population": 1383
+  },
+  {
+    "label": "Hakendover",
+    "value": "2796727",
+    "population": 1377
+  },
+  {
+    "label": "Wodecq",
+    "value": "2783504",
+    "population": 1376
+  },
+  {
+    "label": "Bavegem",
+    "value": "2802537",
+    "population": 1375
+  },
+  {
+    "label": "Forville",
+    "value": "2798106",
+    "population": 1374
+  },
+  {
+    "label": "Corbais",
+    "value": "2800150",
+    "population": 1373
+  },
+  {
+    "label": "Loyers",
+    "value": "2792044",
+    "population": 1373
+  },
+  {
+    "label": "Neuville",
+    "value": "2790252",
+    "population": 1370
+  },
+  {
+    "label": "Ronquières",
+    "value": "2787774",
+    "population": 1369
+  },
+  {
+    "label": "Pollare",
+    "value": "2788792",
+    "population": 1362
+  },
+  {
+    "label": "Mélin",
+    "value": "2791395",
+    "population": 1360
+  },
+  {
+    "label": "Vezon",
+    "value": "2784793",
+    "population": 1360
+  },
+  {
+    "label": "Beclers",
+    "value": "2802473",
+    "population": 1355
+  },
+  {
+    "label": "Fosse",
+    "value": "2798100",
+    "population": 1354
+  },
+  {
+    "label": "Saint-Denis",
+    "value": "2787465",
+    "population": 1354
+  },
+  {
+    "label": "Rijkhoven",
+    "value": "2788049",
+    "population": 1349
+  },
+  {
+    "label": "Lombardsijde",
+    "value": "2792187",
+    "population": 1348
+  },
+  {
+    "label": "Villers-Perwin",
+    "value": "2784625",
+    "population": 1347
+  },
+  {
+    "label": "Forrières",
+    "value": "2798117",
+    "population": 1345
+  },
+  {
+    "label": "Mourcourt",
+    "value": "2790597",
+    "population": 1345
+  },
+  {
+    "label": "Vaulx-lez-Tournai",
+    "value": "2785012",
+    "population": 1343
+  },
+  {
+    "label": "Voorde",
+    "value": "2784408",
+    "population": 1342
+  },
+  {
+    "label": "Bonneville",
+    "value": "2801520",
+    "population": 1341
+  },
+  {
+    "label": "Rocherath",
+    "value": "2787944",
+    "population": 1340
+  },
+  {
+    "label": "Beuzet",
+    "value": "2802057",
+    "population": 1340
+  },
+  {
+    "label": "Koninksem",
+    "value": "2794120",
+    "population": 1336
+  },
+  {
+    "label": "Rollegem-Kapelle",
+    "value": "2787835",
+    "population": 1335
+  },
+  {
+    "label": "Mortier",
+    "value": "2790683",
+    "population": 1330
+  },
+  {
+    "label": "Grand-Halleux",
+    "value": "2797250",
+    "population": 1329
+  },
+  {
+    "label": "Vliermaalroot",
+    "value": "2784476",
+    "population": 1321
+  },
+  {
+    "label": "Keiem",
+    "value": "2794605",
+    "population": 1318
+  },
+  {
+    "label": "Péronnes",
+    "value": "2789171",
+    "population": 1318
+  },
+  {
+    "label": "Corroy-le-Château",
+    "value": "2800102",
+    "population": 1315
+  },
+  {
+    "label": "Snaaskerke",
+    "value": "2786452",
+    "population": 1311
+  },
+  {
+    "label": "Nederhasselt",
+    "value": "2790415",
+    "population": 1310
+  },
+  {
+    "label": "Awirs",
+    "value": "2802845",
+    "population": 1308
+  },
+  {
+    "label": "Sart-Bernard",
+    "value": "2787242",
+    "population": 1305
+  },
+  {
+    "label": "Recht",
+    "value": "2788293",
+    "population": 1305
+  },
+  {
+    "label": "Woesten",
+    "value": "2783500",
+    "population": 1303
+  },
+  {
+    "label": "Slins",
+    "value": "2786499",
+    "population": 1301
+  },
+  {
+    "label": "Daverdisse",
+    "value": "2799851",
+    "population": 1299
+  },
+  {
+    "label": "Hognoul",
+    "value": "2795568",
+    "population": 1298
+  },
+  {
+    "label": "Kersbeek-Miskom",
+    "value": "2794516",
+    "population": 1298
+  },
+  {
+    "label": "Pottes",
+    "value": "2788677",
+    "population": 1297
+  },
+  {
+    "label": "Orgeo",
+    "value": "2789633",
+    "population": 1297
+  },
+  {
+    "label": "Papignies",
+    "value": "2789311",
+    "population": 1297
+  },
+  {
+    "label": "Huissignies",
+    "value": "2795194",
+    "population": 1290
+  },
+  {
+    "label": "Viersel",
+    "value": "2784760",
+    "population": 1289
+  },
+  {
+    "label": "Woumen",
+    "value": "2783442",
+    "population": 1284
+  },
+  {
+    "label": "Villers-Poterie",
+    "value": "2784623",
+    "population": 1283
+  },
+  {
+    "label": "Hamipré",
+    "value": "2796642",
+    "population": 1281
+  },
+  {
+    "label": "Ressegem",
+    "value": "2788148",
+    "population": 1280
+  },
+  {
+    "label": "Hollain",
+    "value": "2795551",
+    "population": 1276
+  },
+  {
+    "label": "Maubray",
+    "value": "2791577",
+    "population": 1272
+  },
+  {
+    "label": "Namêche",
+    "value": "2790476",
+    "population": 1267
+  },
+  {
+    "label": "Westouter",
+    "value": "2783781",
+    "population": 1266
+  },
+  {
+    "label": "Haulchin",
+    "value": "2796469",
+    "population": 1264
+  },
+  {
+    "label": "Welden",
+    "value": "2783873",
+    "population": 1262
+  },
+  {
+    "label": "Houthem",
+    "value": "2795258",
+    "population": 1256
+  },
+  {
+    "label": "Wijer",
+    "value": "2783694",
+    "population": 1252
+  },
+  {
+    "label": "Roisin",
+    "value": "2787850",
+    "population": 1251
+  },
+  {
+    "label": "Havinnes",
+    "value": "2796357",
+    "population": 1250
+  },
+  {
+    "label": "Baileux",
+    "value": "2802780",
+    "population": 1249
+  },
+  {
+    "label": "Argenteau",
+    "value": "2803079",
+    "population": 1249
+  },
+  {
+    "label": "Tongerlo",
+    "value": "2785384",
+    "population": 1249
+  },
+  {
+    "label": "Celles",
+    "value": "2800606",
+    "population": 1245
+  },
+  {
+    "label": "Frasnes",
+    "value": "2797983",
+    "population": 1244
+  },
+  {
+    "label": "Waltwilder",
+    "value": "2784135",
+    "population": 1244
+  },
+  {
+    "label": "Mopertingen",
+    "value": "2790721",
+    "population": 1243
+  },
+  {
+    "label": "Winenne",
+    "value": "2783589",
+    "population": 1242
+  },
+  {
+    "label": "Bléharies",
+    "value": "2801818",
+    "population": 1241
+  },
+  {
+    "label": "Rongy",
+    "value": "2787779",
+    "population": 1240
+  },
+  {
+    "label": "Oostvleteren",
+    "value": "2789731",
+    "population": 1237
+  },
+  {
+    "label": "Floriffoux",
+    "value": "2798268",
+    "population": 1236
+  },
+  {
+    "label": "Marquain",
+    "value": "2791653",
+    "population": 1233
+  },
+  {
+    "label": "Smetlede",
+    "value": "2786469",
+    "population": 1232
+  },
+  {
+    "label": "Kerkom",
+    "value": "2794540",
+    "population": 1230
+  },
+  {
+    "label": "Ellignies-Sainte-Anne",
+    "value": "2798832",
+    "population": 1220
+  },
+  {
+    "label": "Moere",
+    "value": "2791111",
+    "population": 1220
+  },
+  {
+    "label": "Lommersweiler",
+    "value": "2792176",
+    "population": 1215
+  },
+  {
+    "label": "Leerbeek",
+    "value": "2793033",
+    "population": 1214
+  },
+  {
+    "label": "Proven",
+    "value": "2788559",
+    "population": 1212
+  },
+  {
+    "label": "La Gleize",
+    "value": "2793600",
+    "population": 1212
+  },
+  {
+    "label": "Heppignies",
+    "value": "2796047",
+    "population": 1210
+  },
+  {
+    "label": "Bovigny",
+    "value": "2801174",
+    "population": 1210
+  },
+  {
+    "label": "Piétrebais",
+    "value": "2788975",
+    "population": 1209
+  },
+  {
+    "label": "Wihogne",
+    "value": "2783698",
+    "population": 1209
+  },
+  {
+    "label": "Godveerdegem",
+    "value": "2797462",
+    "population": 1207
+  },
+  {
+    "label": "Letterhoutem",
+    "value": "2792499",
+    "population": 1206
+  },
+  {
+    "label": "Bellefontaine",
+    "value": "2802340",
+    "population": 1206
+  },
+  {
+    "label": "Isières",
+    "value": "2795033",
+    "population": 1205
+  },
+  {
+    "label": "Vladslo",
+    "value": "2784508",
+    "population": 1205
+  },
+  {
+    "label": "Lens-Saint-Remy",
+    "value": "2792868",
+    "population": 1204
+  },
+  {
+    "label": "Roclenge-sur-Geer",
+    "value": "2787939",
+    "population": 1203
+  },
+  {
+    "label": "Flamierge",
+    "value": "2798321",
+    "population": 1202
+  },
+  {
+    "label": "Bras",
+    "value": "2801124",
+    "population": 1202
+  },
+  {
+    "label": "Ways",
+    "value": "2783928",
+    "population": 1200
+  },
+  {
+    "label": "Latour",
+    "value": "2793223",
+    "population": 1199
+  },
+  {
+    "label": "Noiseux",
+    "value": "2790064",
+    "population": 1197
+  },
+  {
+    "label": "Uikhoven",
+    "value": "2785118",
+    "population": 1197
+  },
+  {
+    "label": "Waret-la-Chaussée",
+    "value": "2784061",
+    "population": 1190
+  },
+  {
+    "label": "Heppenbach",
+    "value": "2796050",
+    "population": 1189
+  },
+  {
+    "label": "Aische-en-Refail",
+    "value": "2803325",
+    "population": 1189
+  },
+  {
+    "label": "Cerexhe-Heuseux",
+    "value": "2800593",
+    "population": 1189
+  },
+  {
+    "label": "Ernage",
+    "value": "2798687",
+    "population": 1188
+  },
+  {
+    "label": "Jandrain-Jandrenouille",
+    "value": "2794968",
+    "population": 1188
+  },
+  {
+    "label": "Jandrain",
+    "value": "7647767",
+    "population": 1188
+  },
+  {
+    "label": "Anvaing",
+    "value": "2803133",
+    "population": 1187
+  },
+  {
+    "label": "Kanne",
+    "value": "2794752",
+    "population": 1186
+  },
+  {
+    "label": "Meensel-Kiezegem",
+    "value": "2791521",
+    "population": 1186
+  },
+  {
+    "label": "Ochamps",
+    "value": "2789964",
+    "population": 1184
+  },
+  {
+    "label": "Ellikom",
+    "value": "2798830",
+    "population": 1183
+  },
+  {
+    "label": "Vinderhoute",
+    "value": "2784597",
+    "population": 1182
+  },
+  {
+    "label": "Ettelgem",
+    "value": "2798581",
+    "population": 1181
+  },
+  {
+    "label": "Nobressart",
+    "value": "2790089",
+    "population": 1180
+  },
+  {
+    "label": "Lo",
+    "value": "2792250",
+    "population": 1179
+  },
+  {
+    "label": "Kanegem",
+    "value": "2794757",
+    "population": 1179
+  },
+  {
+    "label": "Barchon",
+    "value": "2802680",
+    "population": 1177
+  },
+  {
+    "label": "Vance",
+    "value": "2785047",
+    "population": 1177
+  },
+  {
+    "label": "Landelies",
+    "value": "2793431",
+    "population": 1174
+  },
+  {
+    "label": "Leke",
+    "value": "2792924",
+    "population": 1173
+  },
+  {
+    "label": "Tavier",
+    "value": "2785811",
+    "population": 1173
+  },
+  {
+    "label": "Massenhoven",
+    "value": "2791606",
+    "population": 1172
+  },
+  {
+    "label": "Wangenies",
+    "value": "2784107",
+    "population": 1169
+  },
+  {
+    "label": "Orbais",
+    "value": "2789650",
+    "population": 1166
+  },
+  {
+    "label": "Outrijve",
+    "value": "2789448",
+    "population": 1165
+  },
+  {
+    "label": "Neerwinden",
+    "value": "2790341",
+    "population": 1165
+  },
+  {
+    "label": "Meyerode",
+    "value": "2791223",
+    "population": 1164
+  },
+  {
+    "label": "Autre-Église",
+    "value": "2802910",
+    "population": 1164
+  },
+  {
+    "label": "Moortsele",
+    "value": "2790723",
+    "population": 1162
+  },
+  {
+    "label": "Molenbeek-Wersbeek",
+    "value": "2791016",
+    "population": 1162
+  },
+  {
+    "label": "Oorbeek",
+    "value": "2789809",
+    "population": 1158
+  },
+  {
+    "label": "Elst",
+    "value": "2798805",
+    "population": 1157
+  },
+  {
+    "label": "Kemmel",
+    "value": "2794579",
+    "population": 1157
+  },
+  {
+    "label": "Mal",
+    "value": "2791875",
+    "population": 1154
+  },
+  {
+    "label": "Racour",
+    "value": "2788415",
+    "population": 1153
+  },
+  {
+    "label": "Manderfeld",
+    "value": "2791804",
+    "population": 1150
+  },
+  {
+    "label": "Westvleteren",
+    "value": "2783768",
+    "population": 1150
+  },
+  {
+    "label": "Soye",
+    "value": "2786322",
+    "population": 1150
+  },
+  {
+    "label": "Biez",
+    "value": "2801947",
+    "population": 1150
+  },
+  {
+    "label": "Champlon",
+    "value": "2800537",
+    "population": 1148
+  },
+  {
+    "label": "Velaines",
+    "value": "2784967",
+    "population": 1147
+  },
+  {
+    "label": "Elsegem",
+    "value": "2798820",
+    "population": 1147
+  },
+  {
+    "label": "Mazy",
+    "value": "2791544",
+    "population": 1146
+  },
+  {
+    "label": "Ciplet",
+    "value": "2800292",
+    "population": 1142
+  },
+  {
+    "label": "Forges",
+    "value": "2798124",
+    "population": 1141
+  },
+  {
+    "label": "Boussoit",
+    "value": "2801228",
+    "population": 1141
+  },
+  {
+    "label": "Labuissière",
+    "value": "2793725",
+    "population": 1140
+  },
+  {
+    "label": "Escanaffles",
+    "value": "2798642",
+    "population": 1138
+  },
+  {
+    "label": "Irchonwelz",
+    "value": "2795040",
+    "population": 1137
+  },
+  {
+    "label": "Lippelo",
+    "value": "2792282",
+    "population": 1136
+  },
+  {
+    "label": "Sint-Pieters-Rode",
+    "value": "2786556",
+    "population": 1135
+  },
+  {
+    "label": "Amougies",
+    "value": "2803220",
+    "population": 1132
+  },
+  {
+    "label": "Liberchies",
+    "value": "2792447",
+    "population": 1131
+  },
+  {
+    "label": "Schaltin",
+    "value": "2787126",
+    "population": 1130
+  },
+  {
+    "label": "Mornimont",
+    "value": "2790691",
+    "population": 1130
+  },
+  {
+    "label": "Membach",
+    "value": "2791356",
+    "population": 1129
+  },
+  {
+    "label": "Schuiferskapelle",
+    "value": "2786921",
+    "population": 1129
+  },
+  {
+    "label": "Warcoing",
+    "value": "2784074",
+    "population": 1124
+  },
+  {
+    "label": "Evregnies",
+    "value": "2798544",
+    "population": 1123
+  },
+  {
+    "label": "Biercée",
+    "value": "2801995",
+    "population": 1122
+  },
+  {
+    "label": "Herfelingen",
+    "value": "2796003",
+    "population": 1121
+  },
+  {
+    "label": "Opvelp",
+    "value": "2789656",
+    "population": 1121
+  },
+  {
+    "label": "Wanzele",
+    "value": "2784090",
+    "population": 1120
+  },
+  {
+    "label": "Écaussinnes-Lalaing",
+    "value": "2799022",
+    "population": 1119
+  },
+  {
+    "label": "Ormeignies",
+    "value": "2789626",
+    "population": 1119
+  },
+  {
+    "label": "Zétrud-Lumay",
+    "value": "2783264",
+    "population": 1119
+  },
+  {
+    "label": "Saint-Remy",
+    "value": "2787338",
+    "population": 1118
+  },
+  {
+    "label": "Sint-Jan-in-Eremo",
+    "value": "2786675",
+    "population": 1117
+  },
+  {
+    "label": "Loonbeek",
+    "value": "2792111",
+    "population": 1116
+  },
+  {
+    "label": "Meldert",
+    "value": "2791404",
+    "population": 1113
+  },
+  {
+    "label": "Achêne",
+    "value": "2803388",
+    "population": 1110
+  },
+  {
+    "label": "Spiere",
+    "value": "2786281",
+    "population": 1107
+  },
+  {
+    "label": "Durnal",
+    "value": "2799040",
+    "population": 1102
+  },
+  {
+    "label": "Bonlez",
+    "value": "2801533",
+    "population": 1102
+  },
+  {
+    "label": "Cul-des-Sarts",
+    "value": "2799942",
+    "population": 1100
+  },
+  {
+    "label": "Huppaye",
+    "value": "2795131",
+    "population": 1097
+  },
+  {
+    "label": "Haltinne",
+    "value": "2796671",
+    "population": 1095
+  },
+  {
+    "label": "Thiaumont",
+    "value": "2785590",
+    "population": 1093
+  },
+  {
+    "label": "Reppel",
+    "value": "2788157",
+    "population": 1091
+  },
+  {
+    "label": "Anseroeul",
+    "value": "2803155",
+    "population": 1090
+  },
+  {
+    "label": "Vellereille-les-Brayeux",
+    "value": "2784919",
+    "population": 1090
+  },
+  {
+    "label": "Sint-Martens-Leerne",
+    "value": "2786589",
+    "population": 1089
+  },
+  {
+    "label": "Corswarem",
+    "value": "2800097",
+    "population": 1088
+  },
+  {
+    "label": "Marenne",
+    "value": "2791709",
+    "population": 1088
+  },
+  {
+    "label": "Buissonville",
+    "value": "2800798",
+    "population": 1086
+  },
+  {
+    "label": "Voroux-lez-Liers",
+    "value": "2784373",
+    "population": 1084
+  },
+  {
+    "label": "Attenrode",
+    "value": "2802998",
+    "population": 1077
+  },
+  {
+    "label": "Clermont-sous-Huy",
+    "value": "2800255",
+    "population": 1075
+  },
+  {
+    "label": "Maillen",
+    "value": "2791911",
+    "population": 1072
+  },
+  {
+    "label": "Fontaine-Valmont",
+    "value": "2798179",
+    "population": 1071
+  },
+  {
+    "label": "Seloignes",
+    "value": "2786867",
+    "population": 1070
+  },
+  {
+    "label": "Reninge",
+    "value": "2788178",
+    "population": 1064
+  },
+  {
+    "label": "Hodeige",
+    "value": "2795717",
+    "population": 1063
+  },
+  {
+    "label": "Han-sur-Lesse",
+    "value": "2796569",
+    "population": 1061
+  },
+  {
+    "label": "Bekegem",
+    "value": "2802380",
+    "population": 1060
+  },
+  {
+    "label": "Wolkrange",
+    "value": "2783481",
+    "population": 1060
+  },
+  {
+    "label": "Aulnois",
+    "value": "2802931",
+    "population": 1059
+  },
+  {
+    "label": "Ghoy",
+    "value": "2797559",
+    "population": 1057
+  },
+  {
+    "label": "Saint-Amand",
+    "value": "2787478",
+    "population": 1056
+  },
+  {
+    "label": "Pondrôme",
+    "value": "2788771",
+    "population": 1055
+  },
+  {
+    "label": "Waret-l'Évêque",
+    "value": "2784059",
+    "population": 1055
+  },
+  {
+    "label": "Hanret",
+    "value": "2796578",
+    "population": 1054
+  },
+  {
+    "label": "Hellebecq",
+    "value": "2796121",
+    "population": 1053
+  },
+  {
+    "label": "Kapellen",
+    "value": "2794731",
+    "population": 1051
+  },
+  {
+    "label": "Hanzinelle",
+    "value": "2796563",
+    "population": 1049
+  },
+  {
+    "label": "Guigoven",
+    "value": "2796862",
+    "population": 1048
+  },
+  {
+    "label": "Mielen-boven-Aalst",
+    "value": "2791185",
+    "population": 1047
+  },
+  {
+    "label": "Desteldonk",
+    "value": "2799494",
+    "population": 1046
+  },
+  {
+    "label": "Sart-Saint-Laurent",
+    "value": "2787208",
+    "population": 1042
+  },
+  {
+    "label": "Genly",
+    "value": "2797667",
+    "population": 1040
+  },
+  {
+    "label": "Odeur",
+    "value": "2789953",
+    "population": 1039
+  },
+  {
+    "label": "Agimont",
+    "value": "2803334",
+    "population": 1039
+  },
+  {
+    "label": "Haneffe",
+    "value": "2796599",
+    "population": 1036
+  },
+  {
+    "label": "Kleine-Spouwen",
+    "value": "2794349",
+    "population": 1034
+  },
+  {
+    "label": "Petigny",
+    "value": "2789137",
+    "population": 1033
+  },
+  {
+    "label": "Gelbressée",
+    "value": "2797743",
+    "population": 1031
+  },
+  {
+    "label": "Lauw",
+    "value": "2793204",
+    "population": 1031
+  },
+  {
+    "label": "Vurste",
+    "value": "2784269",
+    "population": 1031
+  },
+  {
+    "label": "Dergneau",
+    "value": "2799547",
+    "population": 1031
+  },
+  {
+    "label": "Noduwez",
+    "value": "2790084",
+    "population": 1030
+  },
+  {
+    "label": "Bossière",
+    "value": "2801363",
+    "population": 1030
+  },
+  {
+    "label": "Vaux-et-Borset",
+    "value": "2785001",
+    "population": 1028
+  },
+  {
+    "label": "Wavreille",
+    "value": "2783937",
+    "population": 1026
+  },
+  {
+    "label": "Gougnies",
+    "value": "2797357",
+    "population": 1025
+  },
+  {
+    "label": "Thieusies",
+    "value": "2785567",
+    "population": 1025
+  },
+  {
+    "label": "Gleixhe",
+    "value": "2797490",
+    "population": 1021
+  },
+  {
+    "label": "Bovekerke",
+    "value": "2801193",
+    "population": 1021
+  },
+  {
+    "label": "Arville",
+    "value": "2803055",
+    "population": 1019
+  },
+  {
+    "label": "Nederboelare",
+    "value": "2790423",
+    "population": 1018
+  },
+  {
+    "label": "Sint-Jan",
+    "value": "2786679",
+    "population": 1016
+  },
+  {
+    "label": "Cambron-Saint-Vincent",
+    "value": "2800662",
+    "population": 1010
+  },
+  {
+    "label": "Zarlardinge",
+    "value": "2783326",
+    "population": 1008
+  },
+  {
+    "label": "Kerkhove",
+    "value": "2794543",
+    "population": 1004
+  },
+  {
+    "label": "Toernich",
+    "value": "2785408",
+    "population": 1004
+  },
+  {
+    "label": "Marche-les-Dames",
+    "value": "2791741",
+    "population": 1004
+  },
+  {
+    "label": "Grammene",
+    "value": "2797327",
+    "population": 1002
+  },
+  {
+    "label": "Roesbrugge-Haringe",
+    "value": "2787892",
+    "population": 1001
+  },
+  {
+    "label": "Chasse Royale",
+    "value": "2800461",
+    "population": 0
+  },
+  {
+    "label": "Saint-Yvon",
+    "value": "2787313",
+    "population": 0
+  }
+]

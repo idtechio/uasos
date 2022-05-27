@@ -6,7 +6,7 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import AppBack from "../src/components/AppBack";
 import { Theme } from "../src/style/theme.config";
 import { Routes } from "../src/consts/router";
-import loadNamespaces from "next-translate/loadNamespaces";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps } from "next";
 import { withSession } from "../src/helpers/withSession";
 
@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
   async ({ locale }, session) => ({
     props: {
       session,
-      ...(locale && (await loadNamespaces(locale))),
+      ...(locale && (await serverSideTranslations(locale))),
     },
   })
 );

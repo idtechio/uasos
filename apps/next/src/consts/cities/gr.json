@@ -1,0 +1,5392 @@
+[
+  {
+    "label": "Athens",
+    "value": "264371",
+    "population": 664046
+  },
+  {
+    "label": "Thessaloníki",
+    "value": "734077",
+    "population": 354290
+  },
+  {
+    "label": "Pátra",
+    "value": "255683",
+    "population": 168034
+  },
+  {
+    "label": "Piraeus",
+    "value": "255274",
+    "population": 163688
+  },
+  {
+    "label": "Lárisa",
+    "value": "258576",
+    "population": 144651
+  },
+  {
+    "label": "Peristéri",
+    "value": "255524",
+    "population": 139981
+  },
+  {
+    "label": "Irákleion",
+    "value": "261745",
+    "population": 137154
+  },
+  {
+    "label": "Kallithéa",
+    "value": "261414",
+    "population": 100641
+  },
+  {
+    "label": "Acharnés",
+    "value": "265488",
+    "population": 99346
+  },
+  {
+    "label": "Kalamariá",
+    "value": "736083",
+    "population": 91617
+  },
+  {
+    "label": "Níkaia",
+    "value": "256429",
+    "population": 89380
+  },
+  {
+    "label": "Glyfáda",
+    "value": "262036",
+    "population": 87305
+  },
+  {
+    "label": "Volos",
+    "value": "251833",
+    "population": 86048
+  },
+  {
+    "label": "Ílion",
+    "value": "256601",
+    "population": 84793
+  },
+  {
+    "label": "Ilioúpoli",
+    "value": "8310138",
+    "population": 78153
+  },
+  {
+    "label": "Keratsíni",
+    "value": "260204",
+    "population": 77077
+  },
+  {
+    "label": "Khalándrion",
+    "value": "260172",
+    "population": 74192
+  },
+  {
+    "label": "Néa Smýrni",
+    "value": "256575",
+    "population": 73076
+  },
+  {
+    "label": "Maroúsi",
+    "value": "265243",
+    "population": 72333
+  },
+  {
+    "label": "Agios Dimitrios",
+    "value": "263986",
+    "population": 71294
+  },
+  {
+    "label": "Zográfos",
+    "value": "8358544",
+    "population": 71026
+  },
+  {
+    "label": "Aigáleo",
+    "value": "265533",
+    "population": 69946
+  },
+  {
+    "label": "Néa Ionía",
+    "value": "256614",
+    "population": 67134
+  },
+  {
+    "label": "Ioánnina",
+    "value": "261779",
+    "population": 65574
+  },
+  {
+    "label": "Palaió Fáliro",
+    "value": "256075",
+    "population": 64021
+  },
+  {
+    "label": "Korydallós",
+    "value": "8310183",
+    "population": 63445
+  },
+  {
+    "label": "Tríkala",
+    "value": "252664",
+    "population": 61653
+  },
+  {
+    "label": "Výronas",
+    "value": "251948",
+    "population": 61308
+  },
+  {
+    "label": "Agía Paraskeví",
+    "value": "264194",
+    "population": 59704
+  },
+  {
+    "label": "Galátsi",
+    "value": "262135",
+    "population": 59345
+  },
+  {
+    "label": "Chalkída",
+    "value": "260133",
+    "population": 59125
+  },
+  {
+    "label": "Petroúpolis",
+    "value": "255377",
+    "population": 58979
+  },
+  {
+    "label": "Sérres",
+    "value": "734330",
+    "population": 58287
+  },
+  {
+    "label": "Ródos",
+    "value": "400666",
+    "population": 56128
+  },
+  {
+    "label": "Kalamata",
+    "value": "261604",
+    "population": 54100
+  },
+  {
+    "label": "Kavála",
+    "value": "735861",
+    "population": 54027
+  },
+  {
+    "label": "Chaniá",
+    "value": "260114",
+    "population": 53910
+  },
+  {
+    "label": "Kateríni",
+    "value": "735914",
+    "population": 53293
+  },
+  {
+    "label": "Alexandroupoli",
+    "value": "736928",
+    "population": 52979
+  },
+  {
+    "label": "Lamía",
+    "value": "258620",
+    "population": 52006
+  },
+  {
+    "label": "Irákleio",
+    "value": "261743",
+    "population": 49642
+  },
+  {
+    "label": "Xánthi",
+    "value": "733840",
+    "population": 48221
+  },
+  {
+    "label": "Kifisiá",
+    "value": "259824",
+    "population": 47332
+  },
+  {
+    "label": "Agrínio",
+    "value": "265560",
+    "population": 46899
+  },
+  {
+    "label": "Chaïdári",
+    "value": "260183",
+    "population": 45642
+  },
+  {
+    "label": "Komotiní",
+    "value": "735640",
+    "population": 45631
+  },
+  {
+    "label": "Sykiés",
+    "value": "734301",
+    "population": 44955
+  },
+  {
+    "label": "Dráma",
+    "value": "736364",
+    "population": 44823
+  },
+  {
+    "label": "Véroia",
+    "value": "733905",
+    "population": 44464
+  },
+  {
+    "label": "Álimos",
+    "value": "261614",
+    "population": 41720
+  },
+  {
+    "label": "Políchni",
+    "value": "734538",
+    "population": 39765
+  },
+  {
+    "label": "Kozáni",
+    "value": "735563",
+    "population": 36481
+  },
+  {
+    "label": "Thívai",
+    "value": "252910",
+    "population": 36477
+  },
+  {
+    "label": "Ágioi Anárgyroi",
+    "value": "8358563",
+    "population": 34168
+  },
+  {
+    "label": "Argyroúpoli",
+    "value": "264516",
+    "population": 34097
+  },
+  {
+    "label": "Áno Liósia",
+    "value": "264888",
+    "population": 33565
+  },
+  {
+    "label": "Kardítsa",
+    "value": "260989",
+    "population": 32789
+  },
+  {
+    "label": "Néa Ionía",
+    "value": "9034728",
+    "population": 32661
+  },
+  {
+    "label": "Rethymno",
+    "value": "254352",
+    "population": 32468
+  },
+  {
+    "label": "Cholargós",
+    "value": "259949",
+    "population": 30840
+  },
+  {
+    "label": "Vrilissia",
+    "value": "6324534",
+    "population": 30741
+  },
+  {
+    "label": "Asprópyrgos",
+    "value": "264445",
+    "population": 30251
+  },
+  {
+    "label": "Kórinthos",
+    "value": "259289",
+    "population": 30176
+  },
+  {
+    "label": "Ptolemaḯda",
+    "value": "734426",
+    "population": 30045
+  },
+  {
+    "label": "Gérakas",
+    "value": "8201845",
+    "population": 29939
+  },
+  {
+    "label": "Metamórfosi",
+    "value": "259128",
+    "population": 29891
+  },
+  {
+    "label": "Voúla",
+    "value": "251780",
+    "population": 28364
+  },
+  {
+    "label": "Kamaterón",
+    "value": "261249",
+    "population": 28361
+  },
+  {
+    "label": "Mytilene",
+    "value": "256866",
+    "population": 28322
+  },
+  {
+    "label": "Giannitsá",
+    "value": "733776",
+    "population": 27817
+  },
+  {
+    "label": "Neapoli",
+    "value": "11747175",
+    "population": 27084
+  },
+  {
+    "label": "Corfu",
+    "value": "2463679",
+    "population": 27003
+  },
+  {
+    "label": "Trípoli",
+    "value": "252601",
+    "population": 26561
+  },
+  {
+    "label": "Agía Varvára",
+    "value": "264111",
+    "population": 26550
+  },
+  {
+    "label": "Kaisarianí",
+    "value": "261678",
+    "population": 26370
+  },
+  {
+    "label": "Néa Filadélfeia",
+    "value": "256621",
+    "population": 25734
+  },
+  {
+    "label": "Moskháton",
+    "value": "256750",
+    "population": 25441
+  },
+  {
+    "label": "Pérama",
+    "value": "255588",
+    "population": 25389
+  },
+  {
+    "label": "Salamína",
+    "value": "254144",
+    "population": 25370
+  },
+  {
+    "label": "Elefsína",
+    "value": "262752",
+    "population": 24910
+  },
+  {
+    "label": "Chios",
+    "value": "259973",
+    "population": 23953
+  },
+  {
+    "label": "Pylaía",
+    "value": "734643",
+    "population": 23494
+  },
+  {
+    "label": "Mégara",
+    "value": "257365",
+    "population": 23456
+  },
+  {
+    "label": "Kilkís",
+    "value": "735736",
+    "population": 22914
+  },
+  {
+    "label": "Dhafní",
+    "value": "263312",
+    "population": 22913
+  },
+  {
+    "label": "Melíssia",
+    "value": "257302",
+    "population": 22741
+  },
+  {
+    "label": "Pýrgos",
+    "value": "255229",
+    "population": 22399
+  },
+  {
+    "label": "Árgos",
+    "value": "264670",
+    "population": 22209
+  },
+  {
+    "label": "Árta",
+    "value": "264559",
+    "population": 21895
+  },
+  {
+    "label": "Livadeiá",
+    "value": "258463",
+    "population": 21492
+  },
+  {
+    "label": "Artémida",
+    "value": "258038",
+    "population": 21488
+  },
+  {
+    "label": "Péfki",
+    "value": "8358562",
+    "population": 21352
+  },
+  {
+    "label": "Aígio",
+    "value": "265500",
+    "population": 20422
+  },
+  {
+    "label": "Náousa",
+    "value": "735030",
+    "population": 19887
+  },
+  {
+    "label": "Kos",
+    "value": "259245",
+    "population": 19244
+  },
+  {
+    "label": "Koropí",
+    "value": "259251",
+    "population": 19164
+  },
+  {
+    "label": "Édessa",
+    "value": "736357",
+    "population": 18669
+  },
+  {
+    "label": "Flórina",
+    "value": "736229",
+    "population": 17686
+  },
+  {
+    "label": "Néa Erythraía",
+    "value": "256622",
+    "population": 17379
+  },
+  {
+    "label": "Préveza",
+    "value": "254698",
+    "population": 17283
+  },
+  {
+    "label": "Ellinikó",
+    "value": "262719",
+    "population": 17259
+  },
+  {
+    "label": "Amaliáda",
+    "value": "265252",
+    "population": 16763
+  },
+  {
+    "label": "Panórama",
+    "value": "734771",
+    "population": 16551
+  },
+  {
+    "label": "Sparta",
+    "value": "253394",
+    "population": 16239
+  },
+  {
+    "label": "Orestiáda",
+    "value": "734880",
+    "population": 16221
+  },
+  {
+    "label": "Peraía",
+    "value": "734712",
+    "population": 16067
+  },
+  {
+    "label": "Agios Ioannis Rentis",
+    "value": "8478257",
+    "population": 16050
+  },
+  {
+    "label": "Vári",
+    "value": "252270",
+    "population": 15855
+  },
+  {
+    "label": "Meneméni",
+    "value": "735215",
+    "population": 15706
+  },
+  {
+    "label": "Néa Mákri",
+    "value": "256598",
+    "population": 15554
+  },
+  {
+    "label": "Oraiókastro",
+    "value": "734883",
+    "population": 15006
+  },
+  {
+    "label": "Távros",
+    "value": "253025",
+    "population": 14972
+  },
+  {
+    "label": "Pallíni",
+    "value": "255971",
+    "population": 14808
+  },
+  {
+    "label": "Paianía",
+    "value": "256197",
+    "population": 14595
+  },
+  {
+    "label": "Náfplio",
+    "value": "256637",
+    "population": 14582
+  },
+  {
+    "label": "Kalývia Thorikoú",
+    "value": "261445",
+    "population": 14424
+  },
+  {
+    "label": "Thérmi",
+    "value": "734080",
+    "population": 14373
+  },
+  {
+    "label": "Drapetsóna",
+    "value": "8644195",
+    "population": 13968
+  },
+  {
+    "label": "Papágou",
+    "value": "256342",
+    "population": 13699
+  },
+  {
+    "label": "Alexándreia",
+    "value": "736929",
+    "population": 13665
+  },
+  {
+    "label": "Náfpaktos",
+    "value": "256639",
+    "population": 13415
+  },
+  {
+    "label": "Kastoria",
+    "value": "735927",
+    "population": 13387
+  },
+  {
+    "label": "Néa Alikarnassós",
+    "value": "256629",
+    "population": 12925
+  },
+  {
+    "label": "Mesolóngi",
+    "value": "257186",
+    "population": 12785
+  },
+  {
+    "label": "Gázi",
+    "value": "262067",
+    "population": 12606
+  },
+  {
+    "label": "Ierápetra",
+    "value": "261814",
+    "population": 12355
+  },
+  {
+    "label": "Kálymnos",
+    "value": "261507",
+    "population": 12324
+  },
+  {
+    "label": "Rafína",
+    "value": "254425",
+    "population": 12168
+  },
+  {
+    "label": "Loutráki",
+    "value": "258066",
+    "population": 11564
+  },
+  {
+    "label": "Zakynthos",
+    "value": "251280",
+    "population": 11541
+  },
+  {
+    "label": "Ágios Nikólaos",
+    "value": "263824",
+    "population": 11421
+  },
+  {
+    "label": "Ermoúpolis",
+    "value": "262603",
+    "population": 11351
+  },
+  {
+    "label": "Ialysós",
+    "value": "252685",
+    "population": 11331
+  },
+  {
+    "label": "Mándra",
+    "value": "257811",
+    "population": 11327
+  },
+  {
+    "label": "Triandría",
+    "value": "865291",
+    "population": 11082
+  },
+  {
+    "label": "Ymittos",
+    "value": "7667930",
+    "population": 11000
+  },
+  {
+    "label": "Týrnavos",
+    "value": "252848",
+    "population": 10796
+  },
+  {
+    "label": "Grevená",
+    "value": "736151",
+    "population": 10563
+  },
+  {
+    "label": "Fársala",
+    "value": "262462",
+    "population": 10380
+  },
+  {
+    "label": "Diavatá",
+    "value": "736450",
+    "population": 10216
+  },
+  {
+    "label": "Néo Psychikó",
+    "value": "8657513",
+    "population": 10137
+  },
+  {
+    "label": "Polýgyros",
+    "value": "734517",
+    "population": 10000
+  },
+  {
+    "label": "Ágios Stéfanos",
+    "value": "263725",
+    "population": 9892
+  },
+  {
+    "label": "Néa Chalkidóna",
+    "value": "9035867",
+    "population": 9822
+  },
+  {
+    "label": "Argostólion",
+    "value": "264668",
+    "population": 9820
+  },
+  {
+    "label": "Kiáto",
+    "value": "259830",
+    "population": 9812
+  },
+  {
+    "label": "Anatolí",
+    "value": "265107",
+    "population": 9798
+  },
+  {
+    "label": "Limín Mesoyaías",
+    "value": "258314",
+    "population": 9686
+  },
+  {
+    "label": "Lykóvrysi",
+    "value": "258332",
+    "population": 9650
+  },
+  {
+    "label": "Psychikó",
+    "value": "254505",
+    "population": 9529
+  },
+  {
+    "label": "Markópoulo",
+    "value": "257671",
+    "population": 9513
+  },
+  {
+    "label": "Igoumenítsa",
+    "value": "261807",
+    "population": 9496
+  },
+  {
+    "label": "Néa Artáki",
+    "value": "256626",
+    "population": 9489
+  },
+  {
+    "label": "Zefyri",
+    "value": "9035858",
+    "population": 9454
+  },
+  {
+    "label": "Néa Moudhaniá",
+    "value": "734999",
+    "population": 9342
+  },
+  {
+    "label": "Spáta",
+    "value": "253376",
+    "population": 9198
+  },
+  {
+    "label": "Chrysoúpolis",
+    "value": "735747",
+    "population": 8885
+  },
+  {
+    "label": "Sitia",
+    "value": "253759",
+    "population": 8707
+  },
+  {
+    "label": "Lefkáda",
+    "value": "258438",
+    "population": 8673
+  },
+  {
+    "label": "Didymóteicho",
+    "value": "736447",
+    "population": 8336
+  },
+  {
+    "label": "Néa Péramos",
+    "value": "256592",
+    "population": 8333
+  },
+  {
+    "label": "Koufália",
+    "value": "735588",
+    "population": 8305
+  },
+  {
+    "label": "Síndos",
+    "value": "734284",
+    "population": 8228
+  },
+  {
+    "label": "Kalampáka",
+    "value": "261601",
+    "population": 8138
+  },
+  {
+    "label": "Epanomí",
+    "value": "736319",
+    "population": 8121
+  },
+  {
+    "label": "Gastoúni",
+    "value": "262098",
+    "population": 8114
+  },
+  {
+    "label": "Almyrós",
+    "value": "265292",
+    "population": 7955
+  },
+  {
+    "label": "Néa Michanióna",
+    "value": "735001",
+    "population": 7908
+  },
+  {
+    "label": "Giánnouli",
+    "value": "251332",
+    "population": 7885
+  },
+  {
+    "label": "Keratéa",
+    "value": "260210",
+    "population": 7493
+  },
+  {
+    "label": "Argos Orestiko",
+    "value": "736754",
+    "population": 7473
+  },
+  {
+    "label": "Chalástra",
+    "value": "734622",
+    "population": 7360
+  },
+  {
+    "label": "Filothéi",
+    "value": "262398",
+    "population": 7302
+  },
+  {
+    "label": "Néa Kallikráteia",
+    "value": "735016",
+    "population": 7238
+  },
+  {
+    "label": "Trílofos",
+    "value": "734014",
+    "population": 7227
+  },
+  {
+    "label": "Ágios Pávlos",
+    "value": "865290",
+    "population": 7221
+  },
+  {
+    "label": "Lagkadás",
+    "value": "735481",
+    "population": 7215
+  },
+  {
+    "label": "Néa Pentéli",
+    "value": "9035866",
+    "population": 7198
+  },
+  {
+    "label": "Drosiá",
+    "value": "262871",
+    "population": 7186
+  },
+  {
+    "label": "Marathónas",
+    "value": "257717",
+    "population": 7170
+  },
+  {
+    "label": "Lávrio",
+    "value": "258543",
+    "population": 7078
+  },
+  {
+    "label": "Náxos",
+    "value": "256632",
+    "population": 7070
+  },
+  {
+    "label": "Polýkastro",
+    "value": "734540",
+    "population": 7064
+  },
+  {
+    "label": "Elassóna",
+    "value": "262784",
+    "population": 7060
+  },
+  {
+    "label": "Filiatrá",
+    "value": "262418",
+    "population": 6970
+  },
+  {
+    "label": "Karpenísi",
+    "value": "260891",
+    "population": 6888
+  },
+  {
+    "label": "Aegina",
+    "value": "265502",
+    "population": 6867
+  },
+  {
+    "label": "Ámfissa",
+    "value": "265187",
+    "population": 6854
+  },
+  {
+    "label": "Krýa Vrýsi",
+    "value": "735546",
+    "population": 6839
+  },
+  {
+    "label": "Messíni",
+    "value": "257152",
+    "population": 6773
+  },
+  {
+    "label": "Soúda",
+    "value": "253456",
+    "population": 6729
+  },
+  {
+    "label": "Litóchoro",
+    "value": "735399",
+    "population": 6709
+  },
+  {
+    "label": "Néon Karlovásion",
+    "value": "256492",
+    "population": 6708
+  },
+  {
+    "label": "Vasilikón",
+    "value": "252190",
+    "population": 6571
+  },
+  {
+    "label": "Aridaía",
+    "value": "736753",
+    "population": 6561
+  },
+  {
+    "label": "Áyios Konstandínos",
+    "value": "263854",
+    "population": 6534
+  },
+  {
+    "label": "Anoixi",
+    "value": "264929",
+    "population": 6510
+  },
+  {
+    "label": "Asvestochóri",
+    "value": "736687",
+    "population": 6404
+  },
+  {
+    "label": "Moíres",
+    "value": "256842",
+    "population": 6379
+  },
+  {
+    "label": "Paralía",
+    "value": "255777",
+    "population": 6336
+  },
+  {
+    "label": "Gargaliánoi",
+    "value": "262104",
+    "population": 6282
+  },
+  {
+    "label": "Anávyssos",
+    "value": "265100",
+    "population": 6202
+  },
+  {
+    "label": "Thrakomakedónes",
+    "value": "9035859",
+    "population": 6200
+  },
+  {
+    "label": "Faliraki",
+    "value": "6354951",
+    "population": 6000
+  },
+  {
+    "label": "Ampelóna",
+    "value": "265206",
+    "population": 5961
+  },
+  {
+    "label": "Leondárion",
+    "value": "258508",
+    "population": 5929
+  },
+  {
+    "label": "Orchomenós",
+    "value": "256268",
+    "population": 5919
+  },
+  {
+    "label": "Néa Anchiálos",
+    "value": "256627",
+    "population": 5908
+  },
+  {
+    "label": "Zacháro",
+    "value": "251283",
+    "population": 5894
+  },
+  {
+    "label": "Ekáli",
+    "value": "262833",
+    "population": 5889
+  },
+  {
+    "label": "Ovriá",
+    "value": "256223",
+    "population": 5838
+  },
+  {
+    "label": "Psachná",
+    "value": "254546",
+    "population": 5828
+  },
+  {
+    "label": "Káto Achaḯa",
+    "value": "260644",
+    "population": 5752
+  },
+  {
+    "label": "Avlónas",
+    "value": "264310",
+    "population": 5744
+  },
+  {
+    "label": "Palamás",
+    "value": "256047",
+    "population": 5719
+  },
+  {
+    "label": "Diónysos",
+    "value": "263064",
+    "population": 5651
+  },
+  {
+    "label": "Siátista",
+    "value": "734315",
+    "population": 5612
+  },
+  {
+    "label": "Afántou",
+    "value": "408685",
+    "population": 5562
+  },
+  {
+    "label": "Agriá",
+    "value": "265601",
+    "population": 5519
+  },
+  {
+    "label": "Xylókastro",
+    "value": "251525",
+    "population": 5500
+  },
+  {
+    "label": "Mýrina",
+    "value": "256930",
+    "population": 5406
+  },
+  {
+    "label": "Féres",
+    "value": "736261",
+    "population": 5403
+  },
+  {
+    "label": "Archángelos",
+    "value": "408686",
+    "population": 5398
+  },
+  {
+    "label": "Plagiári",
+    "value": "734564",
+    "population": 5392
+  },
+  {
+    "label": "Vrontádos",
+    "value": "251606",
+    "population": 5323
+  },
+  {
+    "label": "Mourniés",
+    "value": "256696",
+    "population": 5318
+  },
+  {
+    "label": "Páros",
+    "value": "255721",
+    "population": 5289
+  },
+  {
+    "label": "Tympáki",
+    "value": "252862",
+    "population": 5285
+  },
+  {
+    "label": "Megalópoli",
+    "value": "257395",
+    "population": 5283
+  },
+  {
+    "label": "Skiáthos",
+    "value": "253643",
+    "population": 5187
+  },
+  {
+    "label": "Alivéri",
+    "value": "265309",
+    "population": 5184
+  },
+  {
+    "label": "Sidirókastro",
+    "value": "734310",
+    "population": 5177
+  },
+  {
+    "label": "Kárystos",
+    "value": "260935",
+    "population": 5091
+  },
+  {
+    "label": "Néoi Epivátes",
+    "value": "734973",
+    "population": 5077
+  },
+  {
+    "label": "Kryonéri",
+    "value": "258793",
+    "population": 5040
+  },
+  {
+    "label": "Kyparissía",
+    "value": "259782",
+    "population": 5033
+  },
+  {
+    "label": "Dhrosiá",
+    "value": "262869",
+    "population": 5020
+  },
+  {
+    "label": "Atalánti",
+    "value": "264390",
+    "population": 4978
+  },
+  {
+    "label": "Makrochóri",
+    "value": "735347",
+    "population": 4965
+  },
+  {
+    "label": "Agios Georgis",
+    "value": "6692641",
+    "population": 4958
+  },
+  {
+    "label": "Nigríta",
+    "value": "734924",
+    "population": 4947
+  },
+  {
+    "label": "Stylída",
+    "value": "253170",
+    "population": 4892
+  },
+  {
+    "label": "Aiánteio",
+    "value": "265546",
+    "population": 4860
+  },
+  {
+    "label": "Pentéli",
+    "value": "255610",
+    "population": 4851
+  },
+  {
+    "label": "Kítsi",
+    "value": "9036675",
+    "population": 4788
+  },
+  {
+    "label": "Itéa",
+    "value": "261715",
+    "population": 4782
+  },
+  {
+    "label": "Magoúla",
+    "value": "258007",
+    "population": 4735
+  },
+  {
+    "label": "Darátsos",
+    "value": "263257",
+    "population": 4732
+  },
+  {
+    "label": "Ampelákia",
+    "value": "265240",
+    "population": 4710
+  },
+  {
+    "label": "Vónitsa",
+    "value": "251823",
+    "population": 4703
+  },
+  {
+    "label": "Kremastí",
+    "value": "408684",
+    "population": 4700
+  },
+  {
+    "label": "Río",
+    "value": "254315",
+    "population": 4664
+  },
+  {
+    "label": "Ágios Athanásios",
+    "value": "736621",
+    "population": 4648
+  },
+  {
+    "label": "Ágioi Theódoroi",
+    "value": "264068",
+    "population": 4643
+  },
+  {
+    "label": "Filippiáda",
+    "value": "262411",
+    "population": 4619
+  },
+  {
+    "label": "Tínos",
+    "value": "252854",
+    "population": 4573
+  },
+  {
+    "label": "Skýdra",
+    "value": "734235",
+    "population": 4562
+  },
+  {
+    "label": "Vágia",
+    "value": "252101",
+    "population": 4535
+  },
+  {
+    "label": "Vasiliká",
+    "value": "733941",
+    "population": 4519
+  },
+  {
+    "label": "Sápes",
+    "value": "734355",
+    "population": 4506
+  },
+  {
+    "label": "Nerokoúros",
+    "value": "256449",
+    "population": 4388
+  },
+  {
+    "label": "Zevgolateió",
+    "value": "251220",
+    "population": 4363
+  },
+  {
+    "label": "Fíliro",
+    "value": "736245",
+    "population": 4362
+  },
+  {
+    "label": "Eleftheroúpolis",
+    "value": "736330",
+    "population": 4360
+  },
+  {
+    "label": "Mália",
+    "value": "257859",
+    "population": 4343
+  },
+  {
+    "label": "Istiaía",
+    "value": "261720",
+    "population": 4339
+  },
+  {
+    "label": "Aitolikó",
+    "value": "265507",
+    "population": 4323
+  },
+  {
+    "label": "Gýtheio",
+    "value": "251297",
+    "population": 4279
+  },
+  {
+    "label": "Aigínio",
+    "value": "736964",
+    "population": 4275
+  },
+  {
+    "label": "Alíartos",
+    "value": "265342",
+    "population": 4275
+  },
+  {
+    "label": "Kíssamos",
+    "value": "259718",
+    "population": 4236
+  },
+  {
+    "label": "Korinós",
+    "value": "735615",
+    "population": 4191
+  },
+  {
+    "label": "Vouliagméni",
+    "value": "251773",
+    "population": 4180
+  },
+  {
+    "label": "Erétria",
+    "value": "262628",
+    "population": 4166
+  },
+  {
+    "label": "Kalochóri",
+    "value": "736029",
+    "population": 4162
+  },
+  {
+    "label": "Souflí",
+    "value": "734187",
+    "population": 4149
+  },
+  {
+    "label": "Néa Magnisía",
+    "value": "735004",
+    "population": 4144
+  },
+  {
+    "label": "Kanáli",
+    "value": "2463705",
+    "population": 4086
+  },
+  {
+    "label": "Schimatári",
+    "value": "253673",
+    "population": 4035
+  },
+  {
+    "label": "Amfilochía",
+    "value": "265189",
+    "population": 4022
+  },
+  {
+    "label": "Prosotsáni",
+    "value": "734447",
+    "population": 4021
+  },
+  {
+    "label": "Kranídi",
+    "value": "258873",
+    "population": 4006
+  },
+  {
+    "label": "Spétses",
+    "value": "253356",
+    "population": 4001
+  },
+  {
+    "label": "Fálanna",
+    "value": "262525",
+    "population": 3987
+  },
+  {
+    "label": "Ano Arhanes",
+    "value": "262683",
+    "population": 3913
+  },
+  {
+    "label": "Katsikás",
+    "value": "260420",
+    "population": 3885
+  },
+  {
+    "label": "Deskáti",
+    "value": "263166",
+    "population": 3856
+  },
+  {
+    "label": "Neméa",
+    "value": "256558",
+    "population": 3853
+  },
+  {
+    "label": "Potamós",
+    "value": "2463594",
+    "population": 3840
+  },
+  {
+    "label": "Malesína",
+    "value": "257868",
+    "population": 3833
+  },
+  {
+    "label": "Irákleia",
+    "value": "736108",
+    "population": 3786
+  },
+  {
+    "label": "Mykonos",
+    "value": "257056",
+    "population": 3783
+  },
+  {
+    "label": "Kýmina",
+    "value": "735732",
+    "population": 3775
+  },
+  {
+    "label": "Agía Marína",
+    "value": "9036676",
+    "population": 3765
+  },
+  {
+    "label": "Lixoúri",
+    "value": "258175",
+    "population": 3752
+  },
+  {
+    "label": "Lechainá",
+    "value": "258522",
+    "population": 3714
+  },
+  {
+    "label": "Amýntaio",
+    "value": "736882",
+    "population": 3671
+  },
+  {
+    "label": "Póros",
+    "value": "254865",
+    "population": 3651
+  },
+  {
+    "label": "Amárynthos",
+    "value": "265245",
+    "population": 3647
+  },
+  {
+    "label": "Andravída",
+    "value": "265056",
+    "population": 3626
+  },
+  {
+    "label": "Gouménissa",
+    "value": "736166",
+    "population": 3609
+  },
+  {
+    "label": "Kolindrós",
+    "value": "735654",
+    "population": 3590
+  },
+  {
+    "label": "Agía Triáda",
+    "value": "736638",
+    "population": 3580
+  },
+  {
+    "label": "Arkalochóri",
+    "value": "264642",
+    "population": 3537
+  },
+  {
+    "label": "Néa Péramos",
+    "value": "734994",
+    "population": 3514
+  },
+  {
+    "label": "Kalampáki",
+    "value": "736082",
+    "population": 3514
+  },
+  {
+    "label": "Rodhítsa",
+    "value": "254258",
+    "population": 3509
+  },
+  {
+    "label": "Eleoúsa",
+    "value": "262757",
+    "population": 3484
+  },
+  {
+    "label": "Efkarpía",
+    "value": "736296",
+    "population": 3480
+  },
+  {
+    "label": "Chortiátis",
+    "value": "735764",
+    "population": 3466
+  },
+  {
+    "label": "Chóra",
+    "value": "259919",
+    "population": 3454
+  },
+  {
+    "label": "Géfyra",
+    "value": "733802",
+    "population": 3451
+  },
+  {
+    "label": "Áyios Nikólaos",
+    "value": "263805",
+    "population": 3426
+  },
+  {
+    "label": "Kimméria",
+    "value": "735731",
+    "population": 3424
+  },
+  {
+    "label": "Ágios Athanásios",
+    "value": "736618",
+    "population": 3419
+  },
+  {
+    "label": "Kardía",
+    "value": "735975",
+    "population": 3394
+  },
+  {
+    "label": "Sérvia",
+    "value": "734328",
+    "population": 3390
+  },
+  {
+    "label": "Velventós",
+    "value": "733911",
+    "population": 3378
+  },
+  {
+    "label": "Oía",
+    "value": "256344",
+    "population": 3376
+  },
+  {
+    "label": "Leptokaryá",
+    "value": "734256",
+    "population": 3366
+  },
+  {
+    "label": "Krinídes",
+    "value": "735540",
+    "population": 3365
+  },
+  {
+    "label": "Kapandríti",
+    "value": "261133",
+    "population": 3359
+  },
+  {
+    "label": "Vrakháti",
+    "value": "251685",
+    "population": 3338
+  },
+  {
+    "label": "Perivólia",
+    "value": "255507",
+    "population": 3320
+  },
+  {
+    "label": "Várda",
+    "value": "252291",
+    "population": 3307
+  },
+  {
+    "label": "Níkaia",
+    "value": "256428",
+    "population": 3274
+  },
+  {
+    "label": "Oichalía",
+    "value": "256504",
+    "population": 3271
+  },
+  {
+    "label": "Ierissós",
+    "value": "736130",
+    "population": 3266
+  },
+  {
+    "label": "Thásos",
+    "value": "734094",
+    "population": 3234
+  },
+  {
+    "label": "Lití",
+    "value": "735400",
+    "population": 3226
+  },
+  {
+    "label": "Kardamítsia",
+    "value": "10175086",
+    "population": 3172
+  },
+  {
+    "label": "Galatás",
+    "value": "262144",
+    "population": 3166
+  },
+  {
+    "label": "Néos Marmarás",
+    "value": "734939",
+    "population": 3158
+  },
+  {
+    "label": "Alepoú",
+    "value": "2463800",
+    "population": 3149
+  },
+  {
+    "label": "Chalkidóna",
+    "value": "735803",
+    "population": 3144
+  },
+  {
+    "label": "Paralía Avlídhos",
+    "value": "255773",
+    "population": 3115
+  },
+  {
+    "label": "Kallithéa",
+    "value": "736039",
+    "population": 3100
+  },
+  {
+    "label": "Vélo",
+    "value": "252062",
+    "population": 3096
+  },
+  {
+    "label": "Chlói",
+    "value": "8718077",
+    "population": 3079
+  },
+  {
+    "label": "Néa Tríglia",
+    "value": "734979",
+    "population": 3071
+  },
+  {
+    "label": "Vartholomió",
+    "value": "252239",
+    "population": 3068
+  },
+  {
+    "label": "Maniákoi",
+    "value": "735327",
+    "population": 3055
+  },
+  {
+    "label": "Dhráfi",
+    "value": "262969",
+    "population": 3055
+  },
+  {
+    "label": "Velestíno",
+    "value": "252074",
+    "population": 3044
+  },
+  {
+    "label": "Melíki",
+    "value": "735235",
+    "population": 3033
+  },
+  {
+    "label": "Galaxídhion",
+    "value": "262133",
+    "population": 3030
+  },
+  {
+    "label": "Leonídio",
+    "value": "258500",
+    "population": 3020
+  },
+  {
+    "label": "Moláoi",
+    "value": "256833",
+    "population": 3018
+  },
+  {
+    "label": "Néo Rýsi",
+    "value": "734946",
+    "population": 3012
+  },
+  {
+    "label": "Amfíkleia",
+    "value": "265191",
+    "population": 3012
+  },
+  {
+    "label": "Krókos",
+    "value": "735521",
+    "population": 3004
+  },
+  {
+    "label": "Plomári",
+    "value": "254949",
+    "population": 2996
+  },
+  {
+    "label": "Kými",
+    "value": "259806",
+    "population": 2979
+  },
+  {
+    "label": "Ormýlia",
+    "value": "734868",
+    "population": 2979
+  },
+  {
+    "label": "Eksochí",
+    "value": "10175092",
+    "population": 2975
+  },
+  {
+    "label": "Limín Khersonísou",
+    "value": "258315",
+    "population": 2968
+  },
+  {
+    "label": "Kónitsa",
+    "value": "735636",
+    "population": 2942
+  },
+  {
+    "label": "Fylí",
+    "value": "262426",
+    "population": 2937
+  },
+  {
+    "label": "Kraniá Elassónas",
+    "value": "258882",
+    "population": 2936
+  },
+  {
+    "label": "Lefkímmi",
+    "value": "258427",
+    "population": 2935
+  },
+  {
+    "label": "Panaitólion",
+    "value": "255945",
+    "population": 2935
+  },
+  {
+    "label": "Saronída",
+    "value": "7324476",
+    "population": 2932
+  },
+  {
+    "label": "Oinófyta",
+    "value": "256339",
+    "population": 2927
+  },
+  {
+    "label": "Stamáta",
+    "value": "253302",
+    "population": 2906
+  },
+  {
+    "label": "Axioúpoli",
+    "value": "736661",
+    "population": 2897
+  },
+  {
+    "label": "Skópelos",
+    "value": "253581",
+    "population": 2886
+  },
+  {
+    "label": "Pediní",
+    "value": "255646",
+    "population": 2871
+  },
+  {
+    "label": "Erythrés",
+    "value": "262609",
+    "population": 2862
+  },
+  {
+    "label": "Asproválta",
+    "value": "736694",
+    "population": 2838
+  },
+  {
+    "label": "Néos Mylótopos",
+    "value": "734938",
+    "population": 2835
+  },
+  {
+    "label": "Katochí",
+    "value": "260572",
+    "population": 2829
+  },
+  {
+    "label": "Neochórion",
+    "value": "256520",
+    "population": 2827
+  },
+  {
+    "label": "Agiá",
+    "value": "264283",
+    "population": 2827
+  },
+  {
+    "label": "Skála",
+    "value": "253739",
+    "population": 2817
+  },
+  {
+    "label": "Krousón",
+    "value": "258744",
+    "population": 2811
+  },
+  {
+    "label": "Kainoúryion",
+    "value": "261681",
+    "population": 2790
+  },
+  {
+    "label": "Violí Charáki",
+    "value": "8527512",
+    "population": 2785
+  },
+  {
+    "label": "Néa Kíos",
+    "value": "256606",
+    "population": 2778
+  },
+  {
+    "label": "Kassándreia",
+    "value": "735948",
+    "population": 2775
+  },
+  {
+    "label": "Kaména Voúrla",
+    "value": "261211",
+    "population": 2761
+  },
+  {
+    "label": "Káto Tithoréa",
+    "value": "260473",
+    "population": 2753
+  },
+  {
+    "label": "Sochós",
+    "value": "734198",
+    "population": 2748
+  },
+  {
+    "label": "Agía Marína",
+    "value": "264221",
+    "population": 2743
+  },
+  {
+    "label": "Amygdaleónas",
+    "value": "736886",
+    "population": 2724
+  },
+  {
+    "label": "Néa Palátia",
+    "value": "256593",
+    "population": 2723
+  },
+  {
+    "label": "Choristí",
+    "value": "735769",
+    "population": 2719
+  },
+  {
+    "label": "Palaiá Fókaia",
+    "value": "256173",
+    "population": 2713
+  },
+  {
+    "label": "Níkiti",
+    "value": "734916",
+    "population": 2711
+  },
+  {
+    "label": "Zipári",
+    "value": "444350",
+    "population": 2706
+  },
+  {
+    "label": "Pláka Dílesi",
+    "value": "10235571",
+    "population": 2696
+  },
+  {
+    "label": "Spercheiáda",
+    "value": "253360",
+    "population": 2691
+  },
+  {
+    "label": "Neápoli",
+    "value": "256589",
+    "population": 2683
+  },
+  {
+    "label": "Néa Výssa",
+    "value": "734978",
+    "population": 2673
+  },
+  {
+    "label": "Xiropótamos",
+    "value": "733818",
+    "population": 2670
+  },
+  {
+    "label": "Polichnítos",
+    "value": "254917",
+    "population": 2667
+  },
+  {
+    "label": "Aráchova",
+    "value": "264714",
+    "population": 2657
+  },
+  {
+    "label": "Livádi",
+    "value": "735390",
+    "population": 2655
+  },
+  {
+    "label": "Lagyná",
+    "value": "735472",
+    "population": 2649
+  },
+  {
+    "label": "Lékhaio",
+    "value": "258521",
+    "population": 2643
+  },
+  {
+    "label": "Eirinoúpoli",
+    "value": "865238",
+    "population": 2635
+  },
+  {
+    "label": "Náousa",
+    "value": "256653",
+    "population": 2596
+  },
+  {
+    "label": "Megáli Panagía",
+    "value": "735264",
+    "population": 2592
+  },
+  {
+    "label": "Pálairos",
+    "value": "256054",
+    "population": 2589
+  },
+  {
+    "label": "Íasmos",
+    "value": "736137",
+    "population": 2586
+  },
+  {
+    "label": "Anatolikó",
+    "value": "736859",
+    "population": 2583
+  },
+  {
+    "label": "Vrachnaíika",
+    "value": "251681",
+    "population": 2571
+  },
+  {
+    "label": "Astakós",
+    "value": "264416",
+    "population": 2569
+  },
+  {
+    "label": "Paramythiá",
+    "value": "255760",
+    "population": 2568
+  },
+  {
+    "label": "Rododáfni",
+    "value": "254257",
+    "population": 2564
+  },
+  {
+    "label": "Loutrá Aidhipsoú",
+    "value": "258075",
+    "population": 2560
+  },
+  {
+    "label": "Livanátes",
+    "value": "258182",
+    "population": 2559
+  },
+  {
+    "label": "Néa Vrasná",
+    "value": "8989471",
+    "population": 2556
+  },
+  {
+    "label": "Markópoulo Oropoú",
+    "value": "257669",
+    "population": 2549
+  },
+  {
+    "label": "Anógeia",
+    "value": "264806",
+    "population": 2545
+  },
+  {
+    "label": "Galátista",
+    "value": "736207",
+    "population": 2537
+  },
+  {
+    "label": "Néa Zíchni",
+    "value": "734977",
+    "population": 2530
+  },
+  {
+    "label": "Kéfalos",
+    "value": "260308",
+    "population": 2528
+  },
+  {
+    "label": "Tsarítsani",
+    "value": "252523",
+    "population": 2514
+  },
+  {
+    "label": "Selínia",
+    "value": "254030",
+    "population": 2509
+  },
+  {
+    "label": "Ermióni",
+    "value": "262607",
+    "population": 2505
+  },
+  {
+    "label": "Metsovo",
+    "value": "257083",
+    "population": 2503
+  },
+  {
+    "label": "Stavrós",
+    "value": "253242",
+    "population": 2489
+  },
+  {
+    "label": "Georgioupolis",
+    "value": "6692697",
+    "population": 2483
+  },
+  {
+    "label": "Ligourión",
+    "value": "258377",
+    "population": 2482
+  },
+  {
+    "label": "Pélla",
+    "value": "734726",
+    "population": 2476
+  },
+  {
+    "label": "Néa Málgara",
+    "value": "735003",
+    "population": 2476
+  },
+  {
+    "label": "Áyios Konstandínos",
+    "value": "263853",
+    "population": 2471
+  },
+  {
+    "label": "Limenária",
+    "value": "735418",
+    "population": 2471
+  },
+  {
+    "label": "Galatádes",
+    "value": "736210",
+    "population": 2459
+  },
+  {
+    "label": "Perístasi",
+    "value": "734698",
+    "population": 2454
+  },
+  {
+    "label": "Kanaláki",
+    "value": "261167",
+    "population": 2446
+  },
+  {
+    "label": "Pylí",
+    "value": "255301",
+    "population": 2430
+  },
+  {
+    "label": "Símantra",
+    "value": "735959",
+    "population": 2421
+  },
+  {
+    "label": "Traganón",
+    "value": "252747",
+    "population": 2414
+  },
+  {
+    "label": "Ássiros",
+    "value": "736692",
+    "population": 2409
+  },
+  {
+    "label": "Vlachiótis",
+    "value": "251896",
+    "population": 2404
+  },
+  {
+    "label": "Néo Soúli",
+    "value": "734943",
+    "population": 2399
+  },
+  {
+    "label": "Lefkónas",
+    "value": "735444",
+    "population": 2388
+  },
+  {
+    "label": "Zagorá",
+    "value": "251292",
+    "population": 2385
+  },
+  {
+    "label": "Vathí",
+    "value": "252164",
+    "population": 2385
+  },
+  {
+    "label": "Párga",
+    "value": "255736",
+    "population": 2379
+  },
+  {
+    "label": "Firá",
+    "value": "252920",
+    "population": 2376
+  },
+  {
+    "label": "Delphi",
+    "value": "263219",
+    "population": 2373
+  },
+  {
+    "label": "Palaióchora",
+    "value": "256131",
+    "population": 2372
+  },
+  {
+    "label": "Eláteia",
+    "value": "262776",
+    "population": 2372
+  },
+  {
+    "label": "Sými",
+    "value": "253858",
+    "population": 2354
+  },
+  {
+    "label": "Néa Mesimvría",
+    "value": "735002",
+    "population": 2349
+  },
+  {
+    "label": "Pýlos",
+    "value": "255293",
+    "population": 2345
+  },
+  {
+    "label": "Agiásos",
+    "value": "264146",
+    "population": 2320
+  },
+  {
+    "label": "Sykoúrio",
+    "value": "253871",
+    "population": 2318
+  },
+  {
+    "label": "Ádendro",
+    "value": "737002",
+    "population": 2312
+  },
+  {
+    "label": "Arnaía",
+    "value": "736733",
+    "population": 2300
+  },
+  {
+    "label": "Péfka",
+    "value": "734405",
+    "population": 2288
+  },
+  {
+    "label": "Evxinoúpolis",
+    "value": "262563",
+    "population": 2281
+  },
+  {
+    "label": "Antimácheia",
+    "value": "265078",
+    "population": 2251
+  },
+  {
+    "label": "Makrakómi",
+    "value": "257975",
+    "population": 2245
+  },
+  {
+    "label": "Karpathos",
+    "value": "260895",
+    "population": 2243
+  },
+  {
+    "label": "Nikísiani",
+    "value": "734919",
+    "population": 2236
+  },
+  {
+    "label": "Katoúna",
+    "value": "260468",
+    "population": 2234
+  },
+  {
+    "label": "Platý",
+    "value": "734575",
+    "population": 2228
+  },
+  {
+    "label": "Kyriáki",
+    "value": "259730",
+    "population": 2227
+  },
+  {
+    "label": "Karítsa",
+    "value": "735960",
+    "population": 2225
+  },
+  {
+    "label": "Ástros",
+    "value": "264396",
+    "population": 2222
+  },
+  {
+    "label": "Néa Manoláda",
+    "value": "256596",
+    "population": 2219
+  },
+  {
+    "label": "Vathýlakkos",
+    "value": "733933",
+    "population": 2218
+  },
+  {
+    "label": "Zarós",
+    "value": "251250",
+    "population": 2205
+  },
+  {
+    "label": "Kopanós",
+    "value": "735630",
+    "population": 2202
+  },
+  {
+    "label": "Karditsomagoúla",
+    "value": "260987",
+    "population": 2200
+  },
+  {
+    "label": "Vrontoú",
+    "value": "733842",
+    "population": 2196
+  },
+  {
+    "label": "Néa Lámpsakos",
+    "value": "256603",
+    "population": 2196
+  },
+  {
+    "label": "Palaió Tsiflíki",
+    "value": "734791",
+    "population": 2195
+  },
+  {
+    "label": "Galatás",
+    "value": "262143",
+    "population": 2195
+  },
+  {
+    "label": "Agía Paraskeví",
+    "value": "264181",
+    "population": 2195
+  },
+  {
+    "label": "Eloúnda",
+    "value": "262701",
+    "population": 2193
+  },
+  {
+    "label": "Terpní",
+    "value": "734102",
+    "population": 2169
+  },
+  {
+    "label": "Agía Varvára",
+    "value": "264114",
+    "population": 2167
+  },
+  {
+    "label": "Echínos",
+    "value": "736354",
+    "population": 2162
+  },
+  {
+    "label": "Néa Karváli",
+    "value": "735014",
+    "population": 2160
+  },
+  {
+    "label": "Skoútari",
+    "value": "734213",
+    "population": 2154
+  },
+  {
+    "label": "Káto Goúves",
+    "value": "7303252",
+    "population": 2153
+  },
+  {
+    "label": "Kompóti",
+    "value": "259452",
+    "population": 2150
+  },
+  {
+    "label": "Káto Soúlion",
+    "value": "260478",
+    "population": 2142
+  },
+  {
+    "label": "Anthoúsa",
+    "value": "8740260",
+    "population": 2132
+  },
+  {
+    "label": "Filiátes",
+    "value": "262420",
+    "population": 2129
+  },
+  {
+    "label": "Mouzáki",
+    "value": "256662",
+    "population": 2127
+  },
+  {
+    "label": "Alistráti",
+    "value": "736921",
+    "population": 2127
+  },
+  {
+    "label": "Kypséli",
+    "value": "259750",
+    "population": 2124
+  },
+  {
+    "label": "Mindilóglion",
+    "value": "256944",
+    "population": 2120
+  },
+  {
+    "label": "Aianí",
+    "value": "736971",
+    "population": 2119
+  },
+  {
+    "label": "Gónnoi",
+    "value": "261996",
+    "population": 2113
+  },
+  {
+    "label": "Dióni",
+    "value": "9036774",
+    "population": 2111
+  },
+  {
+    "label": "Pentálofos",
+    "value": "734722",
+    "population": 2107
+  },
+  {
+    "label": "Neochóri",
+    "value": "256509",
+    "population": 2102
+  },
+  {
+    "label": "Mesopotamía",
+    "value": "735178",
+    "population": 2099
+  },
+  {
+    "label": "Kipséli",
+    "value": "259745",
+    "population": 2096
+  },
+  {
+    "label": "Khalkoútsion",
+    "value": "260128",
+    "population": 2094
+  },
+  {
+    "label": "Lepenoú",
+    "value": "258497",
+    "population": 2090
+  },
+  {
+    "label": "Kontariótissa",
+    "value": "735638",
+    "population": 2088
+  },
+  {
+    "label": "Galatiní",
+    "value": "736208",
+    "population": 2085
+  },
+  {
+    "label": "Aria",
+    "value": "264662",
+    "population": 2080
+  },
+  {
+    "label": "Kostakioí",
+    "value": "259229",
+    "population": 2078
+  },
+  {
+    "label": "Rodópoli",
+    "value": "263535",
+    "population": 2078
+  },
+  {
+    "label": "Rodolívos",
+    "value": "734377",
+    "population": 2072
+  },
+  {
+    "label": "Límni",
+    "value": "258306",
+    "population": 2072
+  },
+  {
+    "label": "Pánormos",
+    "value": "6951006",
+    "population": 2069
+  },
+  {
+    "label": "Svorónos",
+    "value": "734120",
+    "population": 2066
+  },
+  {
+    "label": "Drymós",
+    "value": "736386",
+    "population": 2060
+  },
+  {
+    "label": "Sélero",
+    "value": "734336",
+    "population": 2059
+  },
+  {
+    "label": "Ágios Geórgios",
+    "value": "263646",
+    "population": 2045
+  },
+  {
+    "label": "Loúros",
+    "value": "258091",
+    "population": 2033
+  },
+  {
+    "label": "Tycheró",
+    "value": "734061",
+    "population": 2029
+  },
+  {
+    "label": "Kavallári",
+    "value": "735856",
+    "population": 2025
+  },
+  {
+    "label": "Íos",
+    "value": "261772",
+    "population": 2024
+  },
+  {
+    "label": "Kolchikón",
+    "value": "735651",
+    "population": 2010
+  },
+  {
+    "label": "Makrýgialos",
+    "value": "735348",
+    "population": 2009
+  },
+  {
+    "label": "Pikérmi",
+    "value": "255319",
+    "population": 2009
+  },
+  {
+    "label": "Yimnón",
+    "value": "251317",
+    "population": 2008
+  },
+  {
+    "label": "Néa Éfesos",
+    "value": "735023",
+    "population": 2006
+  },
+  {
+    "label": "Agía Marína",
+    "value": "264223",
+    "population": 2005
+  },
+  {
+    "label": "Melissochóri",
+    "value": "735231",
+    "population": 2002
+  },
+  {
+    "label": "Terpsithéa",
+    "value": "252989",
+    "population": 1992
+  },
+  {
+    "label": "Episkopí",
+    "value": "736316",
+    "population": 1990
+  },
+  {
+    "label": "Petroússa",
+    "value": "734664",
+    "population": 1985
+  },
+  {
+    "label": "Mytilinioí",
+    "value": "256865",
+    "population": 1982
+  },
+  {
+    "label": "Dílesi",
+    "value": "263098",
+    "population": 1976
+  },
+  {
+    "label": "Mólos",
+    "value": "256824",
+    "population": 1974
+  },
+  {
+    "label": "Stefanovíkeio",
+    "value": "253218",
+    "population": 1970
+  },
+  {
+    "label": "Paralía Vérgas",
+    "value": "9960216",
+    "population": 1966
+  },
+  {
+    "label": "Karyótissa",
+    "value": "735961",
+    "population": 1965
+  },
+  {
+    "label": "Thérmo",
+    "value": "252946",
+    "population": 1957
+  },
+  {
+    "label": "Lakkí",
+    "value": "258672",
+    "population": 1956
+  },
+  {
+    "label": "Káto Scholári",
+    "value": "735872",
+    "population": 1954
+  },
+  {
+    "label": "Epitálio",
+    "value": "262636",
+    "population": 1953
+  },
+  {
+    "label": "Néa Apollonía",
+    "value": "735025",
+    "population": 1953
+  },
+  {
+    "label": "Péta",
+    "value": "255458",
+    "population": 1952
+  },
+  {
+    "label": "Emporeío",
+    "value": "262696",
+    "population": 1946
+  },
+  {
+    "label": "Néa Fókaia",
+    "value": "735021",
+    "population": 1944
+  },
+  {
+    "label": "Arkhaía Kórinthos",
+    "value": "264638",
+    "population": 1939
+  },
+  {
+    "label": "Genisséa",
+    "value": "733798",
+    "population": 1935
+  },
+  {
+    "label": "Néos Skopós",
+    "value": "734935",
+    "population": 1934
+  },
+  {
+    "label": "Néo Petrítsi",
+    "value": "734947",
+    "population": 1932
+  },
+  {
+    "label": "Pefkochóri",
+    "value": "261080",
+    "population": 1931
+  },
+  {
+    "label": "Kardámaina",
+    "value": "261003",
+    "population": 1926
+  },
+  {
+    "label": "Martínon",
+    "value": "257621",
+    "population": 1916
+  },
+  {
+    "label": "Ássos",
+    "value": "264421",
+    "population": 1916
+  },
+  {
+    "label": "Afidnés",
+    "value": "265658",
+    "population": 1908
+  },
+  {
+    "label": "Agios Kirykos",
+    "value": "263870",
+    "population": 1908
+  },
+  {
+    "label": "Áyioi Apóstoloi",
+    "value": "264094",
+    "population": 1904
+  },
+  {
+    "label": "Sykiá",
+    "value": "734299",
+    "population": 1903
+  },
+  {
+    "label": "Makrísia",
+    "value": "257923",
+    "population": 1902
+  },
+  {
+    "label": "Ýdra",
+    "value": "261822",
+    "population": 1900
+  },
+  {
+    "label": "Gaïtánion",
+    "value": "262159",
+    "population": 1899
+  },
+  {
+    "label": "Platýkampos",
+    "value": "254990",
+    "population": 1889
+  },
+  {
+    "label": "Vathý",
+    "value": "252166",
+    "population": 1888
+  },
+  {
+    "label": "Samos",
+    "value": "254115",
+    "population": 1885
+  },
+  {
+    "label": "Kréstena",
+    "value": "258842",
+    "population": 1864
+  },
+  {
+    "label": "Agnanteró",
+    "value": "265627",
+    "population": 1859
+  },
+  {
+    "label": "Koutsopódi",
+    "value": "258933",
+    "population": 1857
+  },
+  {
+    "label": "Megála Kalývia",
+    "value": "257448",
+    "population": 1849
+  },
+  {
+    "label": "Fotolívos",
+    "value": "736222",
+    "population": 1844
+  },
+  {
+    "label": "Itháki",
+    "value": "261708",
+    "population": 1843
+  },
+  {
+    "label": "Pérama",
+    "value": "255585",
+    "population": 1841
+  },
+  {
+    "label": "Chálki",
+    "value": "260144",
+    "population": 1837
+  },
+  {
+    "label": "Makrychóri",
+    "value": "257948",
+    "population": 1835
+  },
+  {
+    "label": "Athíkia",
+    "value": "264374",
+    "population": 1834
+  },
+  {
+    "label": "Kastélli",
+    "value": "260804",
+    "population": 1828
+  },
+  {
+    "label": "Kálamos",
+    "value": "261571",
+    "population": 1824
+  },
+  {
+    "label": "Chrysochóri",
+    "value": "735750",
+    "population": 1818
+  },
+  {
+    "label": "Pórto Chéli",
+    "value": "254842",
+    "population": 1817
+  },
+  {
+    "label": "Examília",
+    "value": "262558",
+    "population": 1810
+  },
+  {
+    "label": "Mytikas",
+    "value": "256872",
+    "population": 1808
+  },
+  {
+    "label": "Paralía",
+    "value": "734757",
+    "population": 1801
+  },
+  {
+    "label": "Mantoúdi",
+    "value": "257814",
+    "population": 1794
+  },
+  {
+    "label": "Pýli",
+    "value": "255305",
+    "population": 1790
+  },
+  {
+    "label": "Argyropoúli",
+    "value": "264519",
+    "population": 1782
+  },
+  {
+    "label": "Kalloní",
+    "value": "261396",
+    "population": 1776
+  },
+  {
+    "label": "Kalí",
+    "value": "736071",
+    "population": 1773
+  },
+  {
+    "label": "Filótas",
+    "value": "736243",
+    "population": 1772
+  },
+  {
+    "label": "Lófos",
+    "value": "735375",
+    "population": 1772
+  },
+  {
+    "label": "Ágios Geórgios",
+    "value": "736581",
+    "population": 1767
+  },
+  {
+    "label": "Proástio",
+    "value": "255750",
+    "population": 1766
+  },
+  {
+    "label": "Plátanos",
+    "value": "255030",
+    "population": 1764
+  },
+  {
+    "label": "Kokkíni Cháni",
+    "value": "259578",
+    "population": 1755
+  },
+  {
+    "label": "Káto Glykóvrysi",
+    "value": "260604",
+    "population": 1753
+  },
+  {
+    "label": "Káto Lekhónia",
+    "value": "260542",
+    "population": 1751
+  },
+  {
+    "label": "Skála",
+    "value": "253737",
+    "population": 1747
+  },
+  {
+    "label": "Prómachoi",
+    "value": "734454",
+    "population": 1740
+  },
+  {
+    "label": "Evropós",
+    "value": "736288",
+    "population": 1734
+  },
+  {
+    "label": "Skýros",
+    "value": "253614",
+    "population": 1732
+  },
+  {
+    "label": "Schísma Eloúndas",
+    "value": "253666",
+    "population": 1730
+  },
+  {
+    "label": "Áthyra",
+    "value": "736682",
+    "population": 1722
+  },
+  {
+    "label": "Thesprotikó",
+    "value": "252939",
+    "population": 1718
+  },
+  {
+    "label": "Ágios Nikólaos",
+    "value": "736598",
+    "population": 1714
+  },
+  {
+    "label": "Lianovérgi",
+    "value": "735434",
+    "population": 1712
+  },
+  {
+    "label": "Ritíni",
+    "value": "734396",
+    "population": 1711
+  },
+  {
+    "label": "Tríkala",
+    "value": "734018",
+    "population": 1704
+  },
+  {
+    "label": "Zonianá",
+    "value": "251187",
+    "population": 1703
+  },
+  {
+    "label": "Mouzaki",
+    "value": "256664",
+    "population": 1702
+  },
+  {
+    "label": "Khiliomódhi",
+    "value": "259993",
+    "population": 1699
+  },
+  {
+    "label": "Tsotíli",
+    "value": "733986",
+    "population": 1695
+  },
+  {
+    "label": "Anthíli",
+    "value": "264793",
+    "population": 1693
+  },
+  {
+    "label": "Néa Sánta",
+    "value": "734987",
+    "population": 1693
+  },
+  {
+    "label": "Pyrgetós",
+    "value": "255195",
+    "population": 1681
+  },
+  {
+    "label": "Sofikón",
+    "value": "253494",
+    "population": 1679
+  },
+  {
+    "label": "Pontisméno",
+    "value": "734513",
+    "population": 1666
+  },
+  {
+    "label": "Ágios Loukás",
+    "value": "736602",
+    "population": 1665
+  },
+  {
+    "label": "Dhokímion",
+    "value": "263015",
+    "population": 1664
+  },
+  {
+    "label": "Livaderó",
+    "value": "735393",
+    "population": 1663
+  },
+  {
+    "label": "Vassilies",
+    "value": "252213",
+    "population": 1662
+  },
+  {
+    "label": "Kontokáli",
+    "value": "2463662",
+    "population": 1660
+  },
+  {
+    "label": "Pérama",
+    "value": "255589",
+    "population": 1655
+  },
+  {
+    "label": "Manoláda",
+    "value": "257762",
+    "population": 1650
+  },
+  {
+    "label": "Rízia",
+    "value": "734389",
+    "population": 1645
+  },
+  {
+    "label": "Kalávryta",
+    "value": "261537",
+    "population": 1629
+  },
+  {
+    "label": "Goúrnes",
+    "value": "261935",
+    "population": 1628
+  },
+  {
+    "label": "Patitírion",
+    "value": "255689",
+    "population": 1628
+  },
+  {
+    "label": "Kavásila",
+    "value": "260379",
+    "population": 1623
+  },
+  {
+    "label": "Koróni",
+    "value": "259265",
+    "population": 1620
+  },
+  {
+    "label": "Strymonikó",
+    "value": "734128",
+    "population": 1619
+  },
+  {
+    "label": "Palaiá Epídavros",
+    "value": "256175",
+    "population": 1618
+  },
+  {
+    "label": "Periyiáli",
+    "value": "255495",
+    "population": 1616
+  },
+  {
+    "label": "Kýria",
+    "value": "735714",
+    "population": 1611
+  },
+  {
+    "label": "Ambelókipoi",
+    "value": "265210",
+    "population": 1606
+  },
+  {
+    "label": "Néa Flogitá",
+    "value": "736226",
+    "population": 1604
+  },
+  {
+    "label": "Verdikoússa",
+    "value": "252030",
+    "population": 1602
+  },
+  {
+    "label": "Néa Pélla",
+    "value": "734995",
+    "population": 1595
+  },
+  {
+    "label": "Sylivainiótika",
+    "value": "253866",
+    "population": 1595
+  },
+  {
+    "label": "Aghios Panteleímon",
+    "value": "8740257",
+    "population": 1591
+  },
+  {
+    "label": "Karellás",
+    "value": "9036678",
+    "population": 1579
+  },
+  {
+    "label": "Mitrópoli",
+    "value": "256860",
+    "population": 1572
+  },
+  {
+    "label": "Mavrothálassa",
+    "value": "735282",
+    "population": 1572
+  },
+  {
+    "label": "Tsiflikópoulo",
+    "value": "10175091",
+    "population": 1571
+  },
+  {
+    "label": "Chrysó",
+    "value": "735749",
+    "population": 1571
+  },
+  {
+    "label": "Thymianá",
+    "value": "252927",
+    "population": 1566
+  },
+  {
+    "label": "Megalochóri",
+    "value": "257406",
+    "population": 1564
+  },
+  {
+    "label": "Stavráki",
+    "value": "253272",
+    "population": 1563
+  },
+  {
+    "label": "Sevastianá",
+    "value": "734324",
+    "population": 1561
+  },
+  {
+    "label": "Néa Iraklítsa",
+    "value": "735017",
+    "population": 1560
+  },
+  {
+    "label": "Néa Potídhaia",
+    "value": "8411066",
+    "population": 1559
+  },
+  {
+    "label": "Néa Poteídaia",
+    "value": "734990",
+    "population": 1559
+  },
+  {
+    "label": "Míthymna",
+    "value": "256879",
+    "population": 1558
+  },
+  {
+    "label": "Árnissa",
+    "value": "736732",
+    "population": 1556
+  },
+  {
+    "label": "Andros",
+    "value": "265040",
+    "population": 1556
+  },
+  {
+    "label": "Koryfí",
+    "value": "735620",
+    "population": 1552
+  },
+  {
+    "label": "Áno Kómi",
+    "value": "736810",
+    "population": 1547
+  },
+  {
+    "label": "Tsikalariá",
+    "value": "252486",
+    "population": 1545
+  },
+  {
+    "label": "Magoúla",
+    "value": "258011",
+    "population": 1545
+  },
+  {
+    "label": "Lagós",
+    "value": "735497",
+    "population": 1536
+  },
+  {
+    "label": "Pappádos",
+    "value": "255798",
+    "population": 1534
+  },
+  {
+    "label": "Domokós",
+    "value": "263000",
+    "population": 1531
+  },
+  {
+    "label": "Kavýli",
+    "value": "735852",
+    "population": 1531
+  },
+  {
+    "label": "Skópelos",
+    "value": "253582",
+    "population": 1530
+  },
+  {
+    "label": "Stavrós",
+    "value": "734155",
+    "population": 1529
+  },
+  {
+    "label": "Grizáno",
+    "value": "261842",
+    "population": 1528
+  },
+  {
+    "label": "Gra Liyiá",
+    "value": "261910",
+    "population": 1528
+  },
+  {
+    "label": "Angelochóri",
+    "value": "736843",
+    "population": 1526
+  },
+  {
+    "label": "Mikró Monastíri",
+    "value": "735115",
+    "population": 1518
+  },
+  {
+    "label": "Fyteíes",
+    "value": "262383",
+    "population": 1516
+  },
+  {
+    "label": "Aravissós",
+    "value": "736762",
+    "population": 1513
+  },
+  {
+    "label": "Ágios Pétros",
+    "value": "736592",
+    "population": 1505
+  },
+  {
+    "label": "Agía Paraskeví",
+    "value": "736650",
+    "population": 1501
+  },
+  {
+    "label": "Kopanáki",
+    "value": "264897",
+    "population": 1500
+  },
+  {
+    "label": "Thrapsanón",
+    "value": "252889",
+    "population": 1499
+  },
+  {
+    "label": "Politiká",
+    "value": "254898",
+    "population": 1498
+  },
+  {
+    "label": "Pelasgía",
+    "value": "255638",
+    "population": 1497
+  },
+  {
+    "label": "Vathý",
+    "value": "252165",
+    "population": 1495
+  },
+  {
+    "label": "Aktaío",
+    "value": "252019",
+    "population": 1494
+  },
+  {
+    "label": "Koíla",
+    "value": "735679",
+    "population": 1493
+  },
+  {
+    "label": "Mesiméri",
+    "value": "735196",
+    "population": 1491
+  },
+  {
+    "label": "Palaiochóri",
+    "value": "734823",
+    "population": 1489
+  },
+  {
+    "label": "Dravískos",
+    "value": "736396",
+    "population": 1488
+  },
+  {
+    "label": "Zygós",
+    "value": "733749",
+    "population": 1485
+  },
+  {
+    "label": "Triandaíika",
+    "value": "252680",
+    "population": 1484
+  },
+  {
+    "label": "Rizómylos",
+    "value": "254283",
+    "population": 1482
+  },
+  {
+    "label": "Profítis Ilías",
+    "value": "254599",
+    "population": 1482
+  },
+  {
+    "label": "Mitroúsi",
+    "value": "736795",
+    "population": 1479
+  },
+  {
+    "label": "Kaparéllion",
+    "value": "261132",
+    "population": 1478
+  },
+  {
+    "label": "Filótion",
+    "value": "262397",
+    "population": 1477
+  },
+  {
+    "label": "Pérdika",
+    "value": "255562",
+    "population": 1476
+  },
+  {
+    "label": "Palaífyto",
+    "value": "734832",
+    "population": 1475
+  },
+  {
+    "label": "Nisí",
+    "value": "734906",
+    "population": 1473
+  },
+  {
+    "label": "Kokkinóchoma",
+    "value": "735661",
+    "population": 1472
+  },
+  {
+    "label": "Synoikismós Chavaríou",
+    "value": "253817",
+    "population": 1466
+  },
+  {
+    "label": "Vlycháda",
+    "value": "9036830",
+    "population": 1462
+  },
+  {
+    "label": "Aíyira",
+    "value": "265498",
+    "population": 1462
+  },
+  {
+    "label": "Mouzourás",
+    "value": "256660",
+    "population": 1462
+  },
+  {
+    "label": "Tolón",
+    "value": "252833",
+    "population": 1460
+  },
+  {
+    "label": "Agkathiá",
+    "value": "736847",
+    "population": 1459
+  },
+  {
+    "label": "Fílla",
+    "value": "262402",
+    "population": 1459
+  },
+  {
+    "label": "Áno Merá",
+    "value": "264878",
+    "population": 1459
+  },
+  {
+    "label": "Soúrpi",
+    "value": "253419",
+    "population": 1457
+  },
+  {
+    "label": "Antikyra",
+    "value": "265082",
+    "population": 1448
+  },
+  {
+    "label": "Lávara",
+    "value": "735474",
+    "population": 1447
+  },
+  {
+    "label": "Kinéta",
+    "value": "259796",
+    "population": 1446
+  },
+  {
+    "label": "Vlachópoulo",
+    "value": "251888",
+    "population": 1446
+  },
+  {
+    "label": "Xylaganí",
+    "value": "733831",
+    "population": 1445
+  },
+  {
+    "label": "Gérgeri",
+    "value": "251366",
+    "population": 1444
+  },
+  {
+    "label": "Xilópolis",
+    "value": "733828",
+    "population": 1442
+  },
+  {
+    "label": "Neápolis",
+    "value": "254188",
+    "population": 1442
+  },
+  {
+    "label": "Keramotí",
+    "value": "735821",
+    "population": 1438
+  },
+  {
+    "label": "Thespiés",
+    "value": "252942",
+    "population": 1437
+  },
+  {
+    "label": "Grammatikó",
+    "value": "261903",
+    "population": 1432
+  },
+  {
+    "label": "Melíti",
+    "value": "735220",
+    "population": 1432
+  },
+  {
+    "label": "Meligalás",
+    "value": "257322",
+    "population": 1431
+  },
+  {
+    "label": "Neochoroúda",
+    "value": "734958",
+    "population": 1430
+  },
+  {
+    "label": "Skála Oropoú",
+    "value": "253716",
+    "population": 1430
+  },
+  {
+    "label": "Portariá",
+    "value": "254849",
+    "population": 1429
+  },
+  {
+    "label": "Kalýves",
+    "value": "261497",
+    "population": 1429
+  },
+  {
+    "label": "Kouvarás",
+    "value": "258912",
+    "population": 1426
+  },
+  {
+    "label": "Mavrommáti",
+    "value": "257535",
+    "population": 1426
+  },
+  {
+    "label": "Néa Karyá",
+    "value": "735015",
+    "population": 1426
+  },
+  {
+    "label": "Próchoma",
+    "value": "734455",
+    "population": 1422
+  },
+  {
+    "label": "Skotoússa",
+    "value": "734216",
+    "population": 1415
+  },
+  {
+    "label": "Koímisi",
+    "value": "735674",
+    "population": 1414
+  },
+  {
+    "label": "Díon",
+    "value": "735342",
+    "population": 1413
+  },
+  {
+    "label": "Artesianó",
+    "value": "264547",
+    "population": 1412
+  },
+  {
+    "label": "Kleidí",
+    "value": "735695",
+    "population": 1412
+  },
+  {
+    "label": "Kítros",
+    "value": "735702",
+    "population": 1412
+  },
+  {
+    "label": "Rízoma",
+    "value": "254286",
+    "population": 1410
+  },
+  {
+    "label": "Megáli Khóra",
+    "value": "257434",
+    "population": 1408
+  },
+  {
+    "label": "Zárkos",
+    "value": "251253",
+    "population": 1407
+  },
+  {
+    "label": "Askós",
+    "value": "736716",
+    "population": 1406
+  },
+  {
+    "label": "Iliokentima",
+    "value": "11612310",
+    "population": 1405
+  },
+  {
+    "label": "Afrátion",
+    "value": "265650",
+    "population": 1405
+  },
+  {
+    "label": "Palaiochóri",
+    "value": "734821",
+    "population": 1404
+  },
+  {
+    "label": "Vounoplagiá",
+    "value": "251749",
+    "population": 1404
+  },
+  {
+    "label": "Akrolímni",
+    "value": "733768",
+    "population": 1398
+  },
+  {
+    "label": "Akráta",
+    "value": "265417",
+    "population": 1393
+  },
+  {
+    "label": "Atsipópoulo",
+    "value": "264359",
+    "population": 1392
+  },
+  {
+    "label": "Arsénio",
+    "value": "736725",
+    "population": 1389
+  },
+  {
+    "label": "Vasilikí",
+    "value": "252200",
+    "population": 1388
+  },
+  {
+    "label": "Polydéndri",
+    "value": "254924",
+    "population": 1385
+  },
+  {
+    "label": "Potamiá",
+    "value": "734496",
+    "population": 1383
+  },
+  {
+    "label": "Erátyra",
+    "value": "736309",
+    "population": 1383
+  },
+  {
+    "label": "Chairóneia",
+    "value": "260176",
+    "population": 1382
+  },
+  {
+    "label": "Kleítos",
+    "value": "735682",
+    "population": 1382
+  },
+  {
+    "label": "Perivóli",
+    "value": "255498",
+    "population": 1378
+  },
+  {
+    "label": "Katastárion",
+    "value": "260674",
+    "population": 1378
+  },
+  {
+    "label": "Varybóbi",
+    "value": "8740252",
+    "population": 1377
+  },
+  {
+    "label": "Lápas",
+    "value": "258584",
+    "population": 1377
+  },
+  {
+    "label": "Néos Oropós",
+    "value": "445298",
+    "population": 1375
+  },
+  {
+    "label": "Asopía",
+    "value": "264482",
+    "population": 1375
+  },
+  {
+    "label": "Krithiá",
+    "value": "735523",
+    "population": 1374
+  },
+  {
+    "label": "Kastélla",
+    "value": "260811",
+    "population": 1370
+  },
+  {
+    "label": "Agía Galíni",
+    "value": "264260",
+    "population": 1369
+  },
+  {
+    "label": "Langádhia",
+    "value": "258600",
+    "population": 1363
+  },
+  {
+    "label": "Ávato",
+    "value": "736677",
+    "population": 1357
+  },
+  {
+    "label": "Ágio Pnévma",
+    "value": "736628",
+    "population": 1353
+  },
+  {
+    "label": "Kírra",
+    "value": "259720",
+    "population": 1348
+  },
+  {
+    "label": "Lárdos",
+    "value": "408689",
+    "population": 1348
+  },
+  {
+    "label": "Sámi",
+    "value": "254123",
+    "population": 1347
+  },
+  {
+    "label": "Adámas",
+    "value": "265711",
+    "population": 1347
+  },
+  {
+    "label": "Mataránga",
+    "value": "257593",
+    "population": 1344
+  },
+  {
+    "label": "Savália",
+    "value": "254045",
+    "population": 1339
+  },
+  {
+    "label": "Ágios Spyrídon",
+    "value": "736058",
+    "population": 1337
+  },
+  {
+    "label": "Axós",
+    "value": "734819",
+    "population": 1336
+  },
+  {
+    "label": "Kalýves Polygýrou",
+    "value": "736056",
+    "population": 1333
+  },
+  {
+    "label": "Patrída",
+    "value": "734733",
+    "population": 1330
+  },
+  {
+    "label": "Krokeés",
+    "value": "258754",
+    "population": 1329
+  },
+  {
+    "label": "Ágios Vasíleios",
+    "value": "736586",
+    "population": 1328
+  },
+  {
+    "label": "Neochorópoulo",
+    "value": "256499",
+    "population": 1326
+  },
+  {
+    "label": "Varnávas",
+    "value": "252244",
+    "population": 1326
+  },
+  {
+    "label": "Geráki",
+    "value": "251411",
+    "population": 1323
+  },
+  {
+    "label": "Moúlki",
+    "value": "256728",
+    "population": 1316
+  },
+  {
+    "label": "Gázoros",
+    "value": "736192",
+    "population": 1315
+  },
+  {
+    "label": "Pappadátes",
+    "value": "255807",
+    "population": 1313
+  },
+  {
+    "label": "Kríkellos",
+    "value": "258819",
+    "population": 1312
+  },
+  {
+    "label": "Lithakiá",
+    "value": "258241",
+    "population": 1307
+  },
+  {
+    "label": "Arkoúdi",
+    "value": "263809",
+    "population": 1305
+  },
+  {
+    "label": "Eleftherés",
+    "value": "736337",
+    "population": 1303
+  },
+  {
+    "label": "Thouría",
+    "value": "252891",
+    "population": 1302
+  },
+  {
+    "label": "Pithári",
+    "value": "255161",
+    "population": 1302
+  },
+  {
+    "label": "Itéa",
+    "value": "261714",
+    "population": 1301
+  },
+  {
+    "label": "Monastiráki",
+    "value": "256808",
+    "population": 1299
+  },
+  {
+    "label": "Géfyra",
+    "value": "251465",
+    "population": 1299
+  },
+  {
+    "label": "Pétra",
+    "value": "255439",
+    "population": 1299
+  },
+  {
+    "label": "Pásion",
+    "value": "255709",
+    "population": 1298
+  },
+  {
+    "label": "Loutrós",
+    "value": "735365",
+    "population": 1296
+  },
+  {
+    "label": "Kritsá",
+    "value": "258759",
+    "population": 1296
+  },
+  {
+    "label": "Diavatós",
+    "value": "736449",
+    "population": 1294
+  },
+  {
+    "label": "Oreoí",
+    "value": "256284",
+    "population": 1293
+  },
+  {
+    "label": "Gerakaroú",
+    "value": "733791",
+    "population": 1293
+  },
+  {
+    "label": "Exaplátanos",
+    "value": "736283",
+    "population": 1292
+  },
+  {
+    "label": "Áyios Thomás",
+    "value": "263714",
+    "population": 1292
+  },
+  {
+    "label": "Royítika",
+    "value": "254165",
+    "population": 1288
+  },
+  {
+    "label": "Mavrochóri",
+    "value": "735299",
+    "population": 1287
+  },
+  {
+    "label": "Káto Miliá",
+    "value": "735881",
+    "population": 1286
+  },
+  {
+    "label": "Argalastí",
+    "value": "264677",
+    "population": 1285
+  },
+  {
+    "label": "Arfará",
+    "value": "264679",
+    "population": 1285
+  },
+  {
+    "label": "Chalkiádes",
+    "value": "260142",
+    "population": 1284
+  },
+  {
+    "label": "Varvásaina",
+    "value": "252232",
+    "population": 1280
+  },
+  {
+    "label": "Asopós",
+    "value": "264481",
+    "population": 1279
+  },
+  {
+    "label": "Kalós Agrós",
+    "value": "736024",
+    "population": 1275
+  },
+  {
+    "label": "Palaiokómi",
+    "value": "734820",
+    "population": 1274
+  },
+  {
+    "label": "Áfytos",
+    "value": "736987",
+    "population": 1273
+  },
+  {
+    "label": "Pythagóreio",
+    "value": "255163",
+    "population": 1272
+  },
+  {
+    "label": "Drépanon",
+    "value": "262920",
+    "population": 1272
+  },
+  {
+    "label": "Vília",
+    "value": "251959",
+    "population": 1269
+  },
+  {
+    "label": "Vári",
+    "value": "252271",
+    "population": 1266
+  },
+  {
+    "label": "Káto Asítai",
+    "value": "260630",
+    "population": 1264
+  },
+  {
+    "label": "Áyios Vasílios",
+    "value": "263698",
+    "population": 1264
+  },
+  {
+    "label": "Graikochóri",
+    "value": "261913",
+    "population": 1263
+  },
+  {
+    "label": "Asímion",
+    "value": "264501",
+    "population": 1259
+  },
+  {
+    "label": "Grammenítsa",
+    "value": "261895",
+    "population": 1258
+  },
+  {
+    "label": "Skarmagkás",
+    "value": "253688",
+    "population": 1255
+  },
+  {
+    "label": "Pámfila",
+    "value": "255959",
+    "population": 1251
+  },
+  {
+    "label": "Ammochóri",
+    "value": "736878",
+    "population": 1250
+  },
+  {
+    "label": "Aidipsós",
+    "value": "265544",
+    "population": 1249
+  },
+  {
+    "label": "Kandíla",
+    "value": "261150",
+    "population": 1245
+  },
+  {
+    "label": "Vergína",
+    "value": "733901",
+    "population": 1242
+  },
+  {
+    "label": "Mesariá",
+    "value": "257224",
+    "population": 1233
+  },
+  {
+    "label": "Neochóri",
+    "value": "734963",
+    "population": 1227
+  },
+  {
+    "label": "Vólakas",
+    "value": "733877",
+    "population": 1225
+  },
+  {
+    "label": "Chávari",
+    "value": "260037",
+    "population": 1225
+  },
+  {
+    "label": "Profítis Ilías",
+    "value": "734461",
+    "population": 1225
+  },
+  {
+    "label": "Angelókastro",
+    "value": "265013",
+    "population": 1220
+  },
+  {
+    "label": "Chóra",
+    "value": "259917",
+    "population": 1218
+  },
+  {
+    "label": "Áno Lekhónia",
+    "value": "264890",
+    "population": 1214
+  },
+  {
+    "label": "Kastaniés",
+    "value": "735938",
+    "population": 1214
+  },
+  {
+    "label": "Néa Seléfkeia",
+    "value": "256580",
+    "population": 1213
+  },
+  {
+    "label": "Limnokhórion",
+    "value": "258294",
+    "population": 1213
+  },
+  {
+    "label": "Myrsíni",
+    "value": "256914",
+    "population": 1213
+  },
+  {
+    "label": "Prínos",
+    "value": "736067",
+    "population": 1211
+  },
+  {
+    "label": "Omvriakí",
+    "value": "256296",
+    "population": 1210
+  },
+  {
+    "label": "Sfendámi",
+    "value": "734320",
+    "population": 1209
+  },
+  {
+    "label": "Kallifóni",
+    "value": "261431",
+    "population": 1208
+  },
+  {
+    "label": "Archaía Olympía",
+    "value": "264637",
+    "population": 1208
+  },
+  {
+    "label": "Roviés",
+    "value": "254170",
+    "population": 1206
+  },
+  {
+    "label": "Mándalo",
+    "value": "735338",
+    "population": 1204
+  },
+  {
+    "label": "Portariá",
+    "value": "734499",
+    "population": 1202
+  },
+  {
+    "label": "Virós",
+    "value": "2463549",
+    "population": 1201
+  },
+  {
+    "label": "Káto Dhiminió",
+    "value": "260618",
+    "population": 1201
+  },
+  {
+    "label": "Kamárai",
+    "value": "261283",
+    "population": 1200
+  },
+  {
+    "label": "Akraifnía",
+    "value": "265420",
+    "population": 1195
+  },
+  {
+    "label": "Elaiochóri",
+    "value": "736346",
+    "population": 1195
+  },
+  {
+    "label": "Archontochóri",
+    "value": "264618",
+    "population": 1194
+  },
+  {
+    "label": "Álli Meriá",
+    "value": "265300",
+    "population": 1188
+  },
+  {
+    "label": "Makrychóri",
+    "value": "257949",
+    "population": 1188
+  },
+  {
+    "label": "Néa Tírins",
+    "value": "256571",
+    "population": 1186
+  },
+  {
+    "label": "Sikyón",
+    "value": "253878",
+    "population": 1185
+  },
+  {
+    "label": "Palaiókipos",
+    "value": "256093",
+    "population": 1184
+  },
+  {
+    "label": "Palaiomonástiro",
+    "value": "256079",
+    "population": 1182
+  },
+  {
+    "label": "Tríkeri",
+    "value": "252655",
+    "population": 1182
+  },
+  {
+    "label": "Stalís",
+    "value": "253305",
+    "population": 1182
+  },
+  {
+    "label": "Pyrgetós",
+    "value": "255196",
+    "population": 1179
+  },
+  {
+    "label": "Kallithéa",
+    "value": "736040",
+    "population": 1179
+  },
+  {
+    "label": "Sosándra",
+    "value": "734195",
+    "population": 1178
+  },
+  {
+    "label": "Próti",
+    "value": "734443",
+    "population": 1176
+  },
+  {
+    "label": "Mória",
+    "value": "256757",
+    "population": 1176
+  },
+  {
+    "label": "Néo Agionéri",
+    "value": "734957",
+    "population": 1176
+  },
+  {
+    "label": "Kastráki",
+    "value": "260780",
+    "population": 1172
+  },
+  {
+    "label": "Lákkoma",
+    "value": "735490",
+    "population": 1171
+  },
+  {
+    "label": "Fáros",
+    "value": "262465",
+    "population": 1171
+  },
+  {
+    "label": "Kampánis",
+    "value": "736014",
+    "population": 1170
+  },
+  {
+    "label": "Lálas",
+    "value": "258655",
+    "population": 1168
+  },
+  {
+    "label": "Koilás",
+    "value": "259618",
+    "population": 1165
+  },
+  {
+    "label": "Methóni",
+    "value": "257122",
+    "population": 1165
+  },
+  {
+    "label": "Kalí Vrýsi",
+    "value": "736051",
+    "population": 1163
+  },
+  {
+    "label": "Loukísia",
+    "value": "258108",
+    "population": 1161
+  },
+  {
+    "label": "Neochóri",
+    "value": "734960",
+    "population": 1160
+  },
+  {
+    "label": "Néon Monastírion",
+    "value": "256485",
+    "population": 1159
+  },
+  {
+    "label": "Pigí",
+    "value": "255138",
+    "population": 1158
+  },
+  {
+    "label": "Arrianá",
+    "value": "736727",
+    "population": 1158
+  },
+  {
+    "label": "Rizómata",
+    "value": "734386",
+    "population": 1157
+  },
+  {
+    "label": "Pánormos",
+    "value": "255849",
+    "population": 1157
+  },
+  {
+    "label": "Taxiárches",
+    "value": "258757",
+    "population": 1157
+  },
+  {
+    "label": "Sárti",
+    "value": "734339",
+    "population": 1156
+  },
+  {
+    "label": "Kouloúra",
+    "value": "735581",
+    "population": 1156
+  },
+  {
+    "label": "Néa Róda",
+    "value": "734988",
+    "population": 1153
+  },
+  {
+    "label": "Áratos",
+    "value": "736763",
+    "population": 1152
+  },
+  {
+    "label": "Ayía Triás",
+    "value": "264131",
+    "population": 1151
+  },
+  {
+    "label": "Anaráchi",
+    "value": "736866",
+    "population": 1147
+  },
+  {
+    "label": "Loutráki",
+    "value": "735886",
+    "population": 1146
+  },
+  {
+    "label": "Paralía Ofryníou",
+    "value": "8261472",
+    "population": 1146
+  },
+  {
+    "label": "Loutrá Oraías Elénis",
+    "value": "9408790",
+    "population": 1145
+  },
+  {
+    "label": "Anávra",
+    "value": "265095",
+    "population": 1145
+  },
+  {
+    "label": "Perachóra",
+    "value": "255594",
+    "population": 1141
+  },
+  {
+    "label": "Rodotópi",
+    "value": "254253",
+    "population": 1140
+  },
+  {
+    "label": "Pteleós",
+    "value": "254442",
+    "population": 1140
+  },
+  {
+    "label": "Domvraína",
+    "value": "259292",
+    "population": 1138
+  },
+  {
+    "label": "Kainoúryion",
+    "value": "261680",
+    "population": 1138
+  },
+  {
+    "label": "Kardamás",
+    "value": "261002",
+    "population": 1138
+  },
+  {
+    "label": "Áno Sýros",
+    "value": "264839",
+    "population": 1138
+  },
+  {
+    "label": "Peristerá",
+    "value": "734695",
+    "population": 1137
+  },
+  {
+    "label": "Prámanta",
+    "value": "254746",
+    "population": 1137
+  },
+  {
+    "label": "Pýrgos",
+    "value": "255242",
+    "population": 1134
+  },
+  {
+    "label": "Isthmía",
+    "value": "261721",
+    "population": 1134
+  },
+  {
+    "label": "Vareiá",
+    "value": "252267",
+    "population": 1133
+  },
+  {
+    "label": "Stános",
+    "value": "253286",
+    "population": 1132
+  },
+  {
+    "label": "Mokhós",
+    "value": "256838",
+    "population": 1132
+  },
+  {
+    "label": "Kalá Déndra",
+    "value": "736084",
+    "population": 1131
+  },
+  {
+    "label": "Kalývia",
+    "value": "736065",
+    "population": 1130
+  },
+  {
+    "label": "Mýki",
+    "value": "735146",
+    "population": 1130
+  },
+  {
+    "label": "Astypálaia",
+    "value": "264408",
+    "population": 1129
+  },
+  {
+    "label": "Kyrás Vrýsi",
+    "value": "259734",
+    "population": 1128
+  },
+  {
+    "label": "Néa Plágia",
+    "value": "734992",
+    "population": 1127
+  },
+  {
+    "label": "Káto Kamíla",
+    "value": "735902",
+    "population": 1127
+  },
+  {
+    "label": "Komniná",
+    "value": "735643",
+    "population": 1126
+  },
+  {
+    "label": "Parapótamos",
+    "value": "255753",
+    "population": 1126
+  },
+  {
+    "label": "Témeni",
+    "value": "253003",
+    "population": 1125
+  },
+  {
+    "label": "Ápsalos",
+    "value": "736767",
+    "population": 1121
+  },
+  {
+    "label": "Mantamádos",
+    "value": "257827",
+    "population": 1120
+  },
+  {
+    "label": "Paravóla",
+    "value": "255739",
+    "population": 1118
+  },
+  {
+    "label": "Koutselió",
+    "value": "258949",
+    "population": 1118
+  },
+  {
+    "label": "Neos Voutzás",
+    "value": "9036767",
+    "population": 1116
+  },
+  {
+    "label": "Loutrá",
+    "value": "258076",
+    "population": 1116
+  },
+  {
+    "label": "Léchovo",
+    "value": "736102",
+    "population": 1115
+  },
+  {
+    "label": "Akriní",
+    "value": "736944",
+    "population": 1113
+  },
+  {
+    "label": "Platanórevma",
+    "value": "734579",
+    "population": 1112
+  },
+  {
+    "label": "Ólynthos",
+    "value": "734996",
+    "population": 1111
+  },
+  {
+    "label": "Oropós",
+    "value": "256257",
+    "population": 1111
+  },
+  {
+    "label": "Anéza",
+    "value": "265028",
+    "population": 1111
+  },
+  {
+    "label": "Páchni",
+    "value": "734843",
+    "population": 1110
+  },
+  {
+    "label": "Menídi",
+    "value": "257268",
+    "population": 1110
+  },
+  {
+    "label": "Prokópi",
+    "value": "254584",
+    "population": 1108
+  },
+  {
+    "label": "Rizó",
+    "value": "734385",
+    "population": 1106
+  },
+  {
+    "label": "Neochóri",
+    "value": "256527",
+    "population": 1105
+  },
+  {
+    "label": "Sitagroí",
+    "value": "734268",
+    "population": 1105
+  },
+  {
+    "label": "Vamvakoú",
+    "value": "252303",
+    "population": 1104
+  },
+  {
+    "label": "Valteró",
+    "value": "733965",
+    "population": 1102
+  },
+  {
+    "label": "Provatás",
+    "value": "734440",
+    "population": 1099
+  },
+  {
+    "label": "Fíki",
+    "value": "262433",
+    "population": 1098
+  },
+  {
+    "label": "Kallíthiro",
+    "value": "261401",
+    "population": 1098
+  },
+  {
+    "label": "Rizári",
+    "value": "734391",
+    "population": 1098
+  },
+  {
+    "label": "Agía Triáda",
+    "value": "264128",
+    "population": 1098
+  },
+  {
+    "label": "Kallífytos",
+    "value": "736049",
+    "population": 1098
+  },
+  {
+    "label": "Malakónta",
+    "value": "257884",
+    "population": 1097
+  },
+  {
+    "label": "Kyprínos",
+    "value": "735720",
+    "population": 1095
+  },
+  {
+    "label": "Mikrópolis",
+    "value": "735111",
+    "population": 1094
+  },
+  {
+    "label": "Palekastro",
+    "value": "256155",
+    "population": 1094
+  },
+  {
+    "label": "Eleoúsa",
+    "value": "262758",
+    "population": 1093
+  },
+  {
+    "label": "Marína",
+    "value": "735318",
+    "population": 1091
+  },
+  {
+    "label": "Ágios Matthaíos",
+    "value": "2463763",
+    "population": 1088
+  },
+  {
+    "label": "Lianokládhion",
+    "value": "258399",
+    "population": 1085
+  },
+  {
+    "label": "Vraná",
+    "value": "251671",
+    "population": 1082
+  },
+  {
+    "label": "Xinó Neró",
+    "value": "733827",
+    "population": 1081
+  },
+  {
+    "label": "Lýkeio",
+    "value": "735430",
+    "population": 1081
+  },
+  {
+    "label": "Áyios Adhrianós",
+    "value": "264040",
+    "population": 1080
+  },
+  {
+    "label": "Kyllíni",
+    "value": "259813",
+    "population": 1079
+  },
+  {
+    "label": "Árma",
+    "value": "264604",
+    "population": 1078
+  },
+  {
+    "label": "Pappadhátai",
+    "value": "255808",
+    "population": 1077
+  },
+  {
+    "label": "Káto Lipochóri",
+    "value": "735888",
+    "population": 1074
+  },
+  {
+    "label": "Pelópi",
+    "value": "255621",
+    "population": 1073
+  },
+  {
+    "label": "Goúmero",
+    "value": "261956",
+    "population": 1072
+  },
+  {
+    "label": "Ampeleíes",
+    "value": "736902",
+    "population": 1070
+  },
+  {
+    "label": "Marathókampos",
+    "value": "257721",
+    "population": 1069
+  },
+  {
+    "label": "Arísvi",
+    "value": "736751",
+    "population": 1068
+  },
+  {
+    "label": "Mavrovoúni",
+    "value": "735277",
+    "population": 1067
+  },
+  {
+    "label": "Alfeioúsa",
+    "value": "265344",
+    "population": 1067
+  },
+  {
+    "label": "Sardínia",
+    "value": "254064",
+    "population": 1064
+  },
+  {
+    "label": "Gómfoi",
+    "value": "262007",
+    "population": 1064
+  },
+  {
+    "label": "Magoúla",
+    "value": "258004",
+    "population": 1063
+  },
+  {
+    "label": "Vamvakófyto",
+    "value": "733955",
+    "population": 1061
+  },
+  {
+    "label": "Oxílithos",
+    "value": "256210",
+    "population": 1061
+  },
+  {
+    "label": "Émponas",
+    "value": "262698",
+    "population": 1061
+  },
+  {
+    "label": "Kokkári",
+    "value": "259595",
+    "population": 1060
+  },
+  {
+    "label": "Póros",
+    "value": "254864",
+    "population": 1059
+  },
+  {
+    "label": "Karpochóri",
+    "value": "260886",
+    "population": 1059
+  },
+  {
+    "label": "Galatás",
+    "value": "262140",
+    "population": 1057
+  },
+  {
+    "label": "Stratónion",
+    "value": "734133",
+    "population": 1057
+  },
+  {
+    "label": "Steíri",
+    "value": "253158",
+    "population": 1056
+  },
+  {
+    "label": "Kokkónion",
+    "value": "259537",
+    "population": 1056
+  },
+  {
+    "label": "Asíni",
+    "value": "264496",
+    "population": 1055
+  },
+  {
+    "label": "Kynopiástes",
+    "value": "2463670",
+    "population": 1054
+  },
+  {
+    "label": "Petrochóri",
+    "value": "734672",
+    "population": 1052
+  },
+  {
+    "label": "Polykárpi",
+    "value": "734543",
+    "population": 1049
+  },
+  {
+    "label": "Sourotí",
+    "value": "734183",
+    "population": 1048
+  },
+  {
+    "label": "Karyés",
+    "value": "260956",
+    "population": 1048
+  },
+  {
+    "label": "Ouranoupolis",
+    "value": "734854",
+    "population": 1047
+  },
+  {
+    "label": "Dídyma",
+    "value": "263115",
+    "population": 1047
+  },
+  {
+    "label": "Vanáton",
+    "value": "252300",
+    "population": 1045
+  },
+  {
+    "label": "Platariá",
+    "value": "255013",
+    "population": 1044
+  },
+  {
+    "label": "Charopó",
+    "value": "735794",
+    "population": 1042
+  },
+  {
+    "label": "Eresós",
+    "value": "262629",
+    "population": 1042
+  },
+  {
+    "label": "Fillýra",
+    "value": "736244",
+    "population": 1041
+  },
+  {
+    "label": "Stathmós Mourión",
+    "value": "12022148",
+    "population": 1040
+  },
+  {
+    "label": "Péplos",
+    "value": "734715",
+    "population": 1037
+  },
+  {
+    "label": "Magoúla",
+    "value": "262503",
+    "population": 1036
+  },
+  {
+    "label": "Áris",
+    "value": "264650",
+    "population": 1036
+  },
+  {
+    "label": "Palaiópyrgos",
+    "value": "256066",
+    "population": 1035
+  },
+  {
+    "label": "Ágios Andréas",
+    "value": "264022",
+    "population": 1033
+  },
+  {
+    "label": "Empório",
+    "value": "736324",
+    "population": 1033
+  },
+  {
+    "label": "Kolympári",
+    "value": "259508",
+    "population": 1032
+  },
+  {
+    "label": "Néa Stíra",
+    "value": "256572",
+    "population": 1031
+  },
+  {
+    "label": "Sykiá",
+    "value": "253908",
+    "population": 1031
+  },
+  {
+    "label": "Agía Triáda",
+    "value": "257258",
+    "population": 1030
+  },
+  {
+    "label": "Tílisos",
+    "value": "252864",
+    "population": 1026
+  },
+  {
+    "label": "Levídion",
+    "value": "258458",
+    "population": 1025
+  },
+  {
+    "label": "Ornós",
+    "value": "6692717",
+    "population": 1025
+  },
+  {
+    "label": "Melíssi",
+    "value": "865331",
+    "population": 1024
+  },
+  {
+    "label": "Argithéa",
+    "value": "9036773",
+    "population": 1024
+  },
+  {
+    "label": "Chrysochórafa",
+    "value": "735751",
+    "population": 1023
+  },
+  {
+    "label": "Kamariótissa",
+    "value": "736017",
+    "population": 1022
+  },
+  {
+    "label": "Kentrí",
+    "value": "260264",
+    "population": 1021
+  },
+  {
+    "label": "Perama",
+    "value": "9165903",
+    "population": 1021
+  },
+  {
+    "label": "Stýpsi",
+    "value": "253164",
+    "population": 1020
+  },
+  {
+    "label": "Vokhaïkó",
+    "value": "251849",
+    "population": 1020
+  },
+  {
+    "label": "Gavaloú",
+    "value": "262091",
+    "population": 1018
+  },
+  {
+    "label": "Kalamiá",
+    "value": "261596",
+    "population": 1018
+  },
+  {
+    "label": "Antirrio",
+    "value": "265067",
+    "population": 1018
+  },
+  {
+    "label": "Pentaplátano",
+    "value": "734720",
+    "population": 1015
+  },
+  {
+    "label": "Kanália",
+    "value": "261169",
+    "population": 1015
+  },
+  {
+    "label": "Peteinós",
+    "value": "734683",
+    "population": 1014
+  },
+  {
+    "label": "Marmárion",
+    "value": "257643",
+    "population": 1013
+  },
+  {
+    "label": "Acharávi",
+    "value": "6692637",
+    "population": 1013
+  },
+  {
+    "label": "Anakasiá",
+    "value": "10792347",
+    "population": 1012
+  },
+  {
+    "label": "Skalánion",
+    "value": "253717",
+    "population": 1012
+  },
+  {
+    "label": "Agios Dimítrios Kropiás",
+    "value": "9036677",
+    "population": 1011
+  },
+  {
+    "label": "Valsamáta",
+    "value": "252327",
+    "population": 1008
+  },
+  {
+    "label": "Fteliá",
+    "value": "734430",
+    "population": 1006
+  },
+  {
+    "label": "Káto Mazaráki",
+    "value": "260531",
+    "population": 1005
+  },
+  {
+    "label": "Sperchógeia",
+    "value": "253357",
+    "population": 1004
+  },
+  {
+    "label": "Karátoula",
+    "value": "261039",
+    "population": 1004
+  },
+  {
+    "label": "Áno Kastrítsi",
+    "value": "264909",
+    "population": 1003
+  },
+  {
+    "label": "Sísion",
+    "value": "253770",
+    "population": 1003
+  },
+  {
+    "label": "Néa Anatolí",
+    "value": "8608506",
+    "population": 1002
+  },
+  {
+    "label": "Chalandrítsa",
+    "value": "260171",
+    "population": 949
+  },
+  {
+    "label": "Nestório",
+    "value": "734927",
+    "population": 865
+  },
+  {
+    "label": "Lidoríki",
+    "value": "258385",
+    "population": 840
+  },
+  {
+    "label": "Kímolos",
+    "value": "259802",
+    "population": 837
+  },
+  {
+    "label": "Mílos",
+    "value": "256952",
+    "population": 819
+  },
+  {
+    "label": "Oinoússes",
+    "value": "256329",
+    "population": 792
+  },
+  {
+    "label": "Vrýses",
+    "value": "251647",
+    "population": 740
+  },
+  {
+    "label": "Dimitsána",
+    "value": "263075",
+    "population": 739
+  },
+  {
+    "label": "Samothráki",
+    "value": "734359",
+    "population": 719
+  },
+  {
+    "label": "Mandráki",
+    "value": "257804",
+    "population": 682
+  },
+  {
+    "label": "Folégandros",
+    "value": "262319",
+    "population": 667
+  },
+  {
+    "label": "Kalpáki",
+    "value": "261298",
+    "population": 625
+  },
+  {
+    "label": "Voulgaréli",
+    "value": "262862",
+    "population": 590
+  },
+  {
+    "label": "Megalochóri",
+    "value": "265001",
+    "population": 566
+  },
+  {
+    "label": "Pátmos",
+    "value": "255688",
+    "population": 541
+  },
+  {
+    "label": "Gáïos",
+    "value": "255654",
+    "population": 487
+  },
+  {
+    "label": "Morfovoúni",
+    "value": "256759",
+    "population": 485
+  },
+  {
+    "label": "Psará",
+    "value": "256163",
+    "population": 454
+  },
+  {
+    "label": "Amorgós",
+    "value": "265142",
+    "population": 397
+  },
+  {
+    "label": "Sérifos",
+    "value": "253996",
+    "population": 364
+  },
+  {
+    "label": "Fry",
+    "value": "262217",
+    "population": 357
+  },
+  {
+    "label": "Kardamýli",
+    "value": "260999",
+    "population": 300
+  },
+  {
+    "label": "Kýthira",
+    "value": "259710",
+    "population": 281
+  },
+  {
+    "label": "Kerasochóri",
+    "value": "260220",
+    "population": 274
+  },
+  {
+    "label": "Anthiró",
+    "value": "264792",
+    "population": 270
+  },
+  {
+    "label": "Chóra Sfakíon",
+    "value": "259912",
+    "population": 243
+  },
+  {
+    "label": "Karyes",
+    "value": "735972",
+    "population": 237
+  },
+  {
+    "label": "Laimós",
+    "value": "735496",
+    "population": 185
+  },
+  {
+    "label": "Áno Kalentíni",
+    "value": "264928",
+    "population": 172
+  },
+  {
+    "label": "Megálo Chorió",
+    "value": "8202413",
+    "population": 168
+  },
+  {
+    "label": "Asprángeloi",
+    "value": "264472",
+    "population": 165
+  },
+  {
+    "label": "Agía Kyriakí",
+    "value": "8261760",
+    "population": 83
+  },
+  {
+    "label": "Kastrí",
+    "value": "260764",
+    "population": 37
+  },
+  {
+    "label": "Stavroúpoli",
+    "value": "734150",
+    "population": 0
+  },
+  {
+    "label": "Mosynopolis, Maximianopolis, Μαξιμιανούπολις",
+    "value": "12088903",
+    "population": 0
+  },
+  {
+    "label": "Smínthi",
+    "value": "734205",
+    "population": 0
+  },
+  {
+    "label": "Palaiokastro",
+    "value": "12358454",
+    "population": 0
+  },
+  {
+    "label": "Geráni",
+    "value": "251398",
+    "population": 0
+  },
+  {
+    "label": "Sofádes",
+    "value": "253499",
+    "population": 0
+  },
+  {
+    "label": "Anáfi",
+    "value": "265133",
+    "population": 0
+  },
+  {
+    "label": "Paranésti",
+    "value": "734753",
+    "population": 0
+  },
+  {
+    "label": "Káto Nevrokópi",
+    "value": "735879",
+    "population": 0
+  },
+  {
+    "label": "Ampelókipoi",
+    "value": "8358616",
+    "population": 0
+  },
+  {
+    "label": "Antíparos",
+    "value": "265075",
+    "population": 0
+  },
+  {
+    "label": "Chálki",
+    "value": "260145",
+    "population": 0
+  },
+  {
+    "label": "Megálo Chorió",
+    "value": "257400",
+    "population": 0
+  },
+  {
+    "label": "Kýthnos",
+    "value": "259707",
+    "population": 0
+  },
+  {
+    "label": "Foúrnoi",
+    "value": "8359411",
+    "population": 0
+  },
+  {
+    "label": "Stavrós",
+    "value": "734154",
+    "population": 0
+  },
+  {
+    "label": "Agía Foteiní",
+    "value": "8262246",
+    "population": 0
+  },
+  {
+    "label": "Dístomo",
+    "value": "263034",
+    "population": 0
+  },
+  {
+    "label": "Évlalo",
+    "value": "736293",
+    "population": 0
+  },
+  {
+    "label": "Ágios Efstrátios",
+    "value": "263960",
+    "population": 0
+  },
+  {
+    "label": "Kéa",
+    "value": "260348",
+    "population": 0
+  },
+  {
+    "label": "Xinos",
+    "value": "12165967",
+    "population": 0
+  },
+  {
+    "label": "Leipsoí",
+    "value": "258261",
+    "population": 0
+  },
+  {
+    "label": "Síkinos",
+    "value": "253880",
+    "population": 0
+  },
+  {
+    "label": "Farkadóna",
+    "value": "262472",
+    "population": 0
+  },
+  {
+    "label": "Évosmos",
+    "value": "736291",
+    "population": 0
+  },
+  {
+    "label": "Nea Lava",
+    "value": "11837808",
+    "population": 0
+  },
+  {
+    "label": "Megísti",
+    "value": "257080",
+    "population": 0
+  },
+  {
+    "label": "Ágioi Déka",
+    "value": "264083",
+    "population": 0
+  }
+]

@@ -2,7 +2,7 @@ import React, { useMemo, createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import useTranslation from "next-translate/useTranslation";
+import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
 import { ThemeProvider as ThemeProviderNative } from "styled-components/native";
 import { primary } from "../src/style/theme.config";
@@ -131,4 +131,4 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

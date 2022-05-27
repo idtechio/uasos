@@ -4,7 +4,7 @@ import {
   LiteralUnion,
   ClientSafeProvider,
 } from "next-auth/react";
-import loadNamespaces from "next-translate/loadNamespaces";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import LoginForm from "../src/components/FormLogin";
 import FormRegisterWithSocials from "../src/components/FormRegisterWithSocials";
@@ -68,7 +68,7 @@ export const getServerSideProps: GetServerSideProps = withSession(
         session,
         providers,
         csrfToken,
-        ...(locale && (await loadNamespaces(locale))),
+        ...(locale && (await serverSideTranslations(locale))),
       },
     };
   }

@@ -1,5 +1,5 @@
 import React from "react";
-import useTranslation from "next-translate/useTranslation";
+import { useTranslation } from "next-i18next";
 import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
