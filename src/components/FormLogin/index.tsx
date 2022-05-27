@@ -244,7 +244,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
-          {error ? <ErrorText>{error}</ErrorText> : <></>}
+          {error ? (
+            <ErrorText testID="error-message">{error}</ErrorText>
+          ) : (
+            <></>
+          )}
           {providerLoginError ? (
             <CardModal
               closeable

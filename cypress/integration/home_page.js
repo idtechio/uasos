@@ -5,6 +5,10 @@ describe("The home page when user is not signed in", () => {
     cy.visit("/");
   });
 
+  after(() => {
+    cy.logout();
+  });
+
   it("successfully loads and contains headers", () => {
     cy.get("h1").should(
       "contain",
@@ -36,7 +40,7 @@ describe("The home page when user is not signed in", () => {
   });
 });
 
-describe("The home page when user is not signed in", () => {
+describe("The home page when user is signed in", () => {
   beforeEach(() => {
     cy.login();
     cy.visit("/");
