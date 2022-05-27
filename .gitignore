@@ -46,5 +46,5 @@ cypress/videos
 cypress/screenshots
 cypress.env.json
 
-#firebase account key
+#firebase account data 
 serviceAccount.json

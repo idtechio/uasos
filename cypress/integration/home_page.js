@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 
-//TODO: Add separate test for logged in and logged out user
 describe("The home page when user is not signed in", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -31,12 +30,24 @@ describe("The home page when user is not signed in", () => {
     cy.url().should("include", "/partners");
   });
 
-  it("Propose a shelter button redirects to sign in page", () => {
+  it("Propose a shelter button redirects to sign in page if user is not logged in", () => {
     cy.contains("Propose a shelter").click();
     cy.url().should("include", "/signin");
   });
+});
 
-  // it("login", () => {
-  // cy.login();
-  // });
+describe("The home page when user is not signed in", () => {
+  beforeEach(() => {
+    cy.login();
+    cy.visit("/");
+  });
+
+  afterEach(() => {
+    cy.logout();
+  });
+
+  it("Propose a shelter button redirects to create host page if user is logged in", () => {
+    cy.contains("Propose a shelter").click();
+    cy.url().should("include", "/host");
+  });
 });
