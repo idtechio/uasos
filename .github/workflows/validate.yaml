@@ -13,7 +13,7 @@ jobs:
           node-version: "16.x"
           cache: "yarn"
       - run: yarn
-      - run: yarn lint
+      - run: yarn precommit:lint
   tsc:
     runs-on: ubuntu-latest
     name: Run TypeScript check
