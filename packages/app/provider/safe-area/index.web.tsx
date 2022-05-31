@@ -8,6 +8,8 @@
 // for more, see the `./use-safe-area.web.ts` file
 import React from "react";
 
-export const SafeArea = ({ children }: { children: React.ReactElement }) => (
-  <>{children}</>
-);
+export const SafeAreaView = ({
+  children,
+}: {
+  children: React.ReactElement;
+}) => <>{children}</>;

@@ -1,7 +1,7 @@
 import React, { useMemo, createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-
+// import { ThemeProvider } from "app/provider/theme";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
 import { ThemeProvider as ThemeProviderNative } from "styled-components/native";

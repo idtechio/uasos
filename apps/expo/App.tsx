@@ -7,13 +7,13 @@ import { Provider } from "app/provider";
 
 export default function App() {
   const [loaded] = useFonts({
-    RobotoBlack: require("./assets/fonts/Roboto-Black.ttf"),
-    RobotoBold: require("./assets/fonts/Roboto-Bold.ttf"),
-    RobotoItalic: require("./assets/fonts/Roboto-Italic.ttf"),
-    RobotoLight: require("./assets/fonts/Roboto-Light.ttf"),
-    RobotoMedium: require("./assets/fonts/Roboto-Medium.ttf"),
-    RobotoRegular: require("./assets/fonts/Roboto-Regular.ttf"),
-    RobotoThin: require("./assets/fonts/Roboto-Thin.ttf"),
+    RobotoBlack: require("app/assets/fonts/Roboto-Black.ttf"),
+    RobotoBold: require("app/assets/fonts/Roboto-Bold.ttf"),
+    RobotoItalic: require("app/assets/fonts/Roboto-Italic.ttf"),
+    RobotoLight: require("app/assets/fonts/Roboto-Light.ttf"),
+    RobotoMedium: require("app/assets/fonts/Roboto-Medium.ttf"),
+    RobotoRegular: require("app/assets/fonts/Roboto-Regular.ttf"),
+    RobotoThin: require("app/assets/fonts/Roboto-Thin.ttf"),
   });
 
   if (!loaded) {

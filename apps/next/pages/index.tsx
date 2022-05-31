@@ -13,7 +13,7 @@ import { GetServerSideProps } from "next";
 import { NumbersProps } from "./api/listing/numbers";
 import { Theme } from "../src/style/theme.config";
 import { getNumberList } from "../src/client-api/numbers";
-import { HomeScreen } from "app/features/home/screen";
+import { HomeScreen } from "app/screens/home";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
