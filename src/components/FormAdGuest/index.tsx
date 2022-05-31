@@ -133,7 +133,7 @@ export default function FormAdGuest({
     if (data?.city && location === Location.Any) {
       setLocation(Location.Preferred);
     }
-  }, [data]);
+  }, [data, location]);
 
   const {
     handleSubmit,
@@ -160,7 +160,7 @@ export default function FormAdGuest({
         setLocation(newLocation);
       }
     },
-    [location]
+    [formFields]
   );
 
   const onSubmit: SubmitHandler<FormType> = async ({ advancedRefugee }) => {
@@ -286,7 +286,7 @@ export default function FormAdGuest({
             </InputCotrolLabel>
             <Buttons justifyContent={"space-between"}>
               <ChoiceButton
-                text={t("others:forms.createRefuge:shelter.anyCity")}
+                text={t("others:forms.createRefuge.shelter.anyCity")}
                 isSmall
                 onPress={onChooseLocation(Location.Any)}
                 isSelected={location === Location.Any}
@@ -339,7 +339,7 @@ export default function FormAdGuest({
       <CompositionSection
         zIndex={2}
         padding={[35, 30, 8, 30]}
-        header={t("others:forms.createRefuge:shelter.groupDetails")}
+        header={t("others:forms.createRefuge.shelter.groupDetails")}
       >
         <SectionContent>
           <View style={{}}>
@@ -353,7 +353,7 @@ export default function FormAdGuest({
               }}
               min={1}
               error={errors?.advancedRefugee?.fullBedCount}
-              errorMsg={t("refugeeAddForm.errors.fullBedCount")}
+              errorMsg={t("refugeeAddForm.errors.fullBedCountsaas")}
             />
           </View>
           <FormButtonsVertical

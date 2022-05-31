@@ -1,12 +1,12 @@
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useContext, useEffect } from "react";
-import { Text } from "react-native";
 import AppBack from "../src/components/AppBack";
 import { CompositionAppBody } from "../src/components/Compositions";
 import EditUserProfileForm from "../src/components/EditUserProfileForm";
 import PageContentWrapper from "../src/components/PageContentWrapper";
 import Redirect from "../src/components/Redirect";
+import Spinner from "../src/components/Spinner";
 import { AuthContext } from "./_app";
 
 export default function UserProfile() {
@@ -16,14 +16,8 @@ export default function UserProfile() {
     if (refetchAccount) {
       refetchAccount().catch((err) => err);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  if (!loaded) {
-    // TODO: add nice spinner or use react-loading-skeleton as components/SupportSection/LoadingCards
-    return (
-      <Text style={{ textAlign: "center", alignSelf: "center" }}>Loading</Text>
-    );
-  }
 
   if (!identity && loaded) {
     return <Redirect path="/signin"></Redirect>;
@@ -32,12 +26,18 @@ export default function UserProfile() {
   return (
     <CompositionAppBody>
       <PageContentWrapper>
-        <AppBack to={"/dashboard"} />
-        <EditUserProfileForm
-          key={JSON.stringify(account)}
-          account={account}
-          identity={identity}
-        />
+        {!loaded ? (
+          <Spinner />
+        ) : (
+          <>
+            <AppBack to={"/dashboard"} />
+            <EditUserProfileForm
+              key={JSON.stringify(account)}
+              account={account}
+              identity={identity}
+            />
+          </>
+        )}
       </PageContentWrapper>
     </CompositionAppBody>
   );

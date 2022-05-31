@@ -81,3 +81,12 @@ export const ButtonsBox = styled.View`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const InnerHTML = styled.View`
+  margin: 1em 0;
+  margin-top: 40px;
+`;
+
+export const InnerHTMLText = styled.Text`
+  font-size: 16px;
+`;

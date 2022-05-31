@@ -1,4 +1,5 @@
 import { StyleSheet, View } from "react-native";
+import { useTranslation } from "next-i18next";
 import { ButtonCta } from "../Buttons";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import {
@@ -9,9 +10,10 @@ import {
   DeactivateText,
 } from "./style";
 import CardModal from "../CardModal";
-import Link from "next/link";
 import { AfterDeactivateModalProps } from "./types";
 import { Routes } from "../../consts/router";
+import { useRouter } from "next/router";
+import { useCallback } from "react";
 
 const ICON_BASE_WIDTH = 160;
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
@@ -22,6 +24,14 @@ export const AfterDeactivateModal = ({
   onClose,
   isHost,
 }: AfterDeactivateModalProps) => {
+  const { t } = useTranslation(["others", "common"]);
+  const router = useRouter();
+
+  const goToHomePage = useCallback(
+    () => router.push(Routes.HOMEPAGE),
+    [router]
+  );
+
   return (
     <CardModal onModalClose={onClose} closeable={false} cardStyle={styles.card}>
       <DeactivateModalContentWrapper>
@@ -63,11 +73,10 @@ export const AfterDeactivateModal = ({
         </DeactivateModalTextWrapper>
 
         <DeactivateModalButtonCtaWrapper>
-          <Link href={Routes.HOMEPAGE}>
-            <a>
-              <ButtonCta anchor="Strona główna / Home page" />
-            </a>
-          </Link>
+          <ButtonCta
+            onPress={goToHomePage}
+            anchor={t("common:backToHomePage")}
+          />
         </DeactivateModalButtonCtaWrapper>
       </DeactivateModalContentWrapper>
     </CardModal>

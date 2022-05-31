@@ -262,7 +262,7 @@
         "popup": {
             "description": "Anunțați-ne despre orice problemă folosind formularul de mai jos",
             "problemReported": "Problema a fost raportată",
-            "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație. Vă mulțumim că ne-ați informat despre această situație. Vom căuta o altă potrivire pentru dumneavoastră.",
+            "thanksForLettingKnow": "Vă mulțumim că ne-ați informat despre această situație. Vom căuta o altă potrivire pentru dumneavoastră.",
             "reasons": {
                 "guestNotNeedHelp": "Oaspetele meu nu mai are nevoie de cazare",
                 "hostCantHelp": "Gazda mea nu mai poate oferi cazare",

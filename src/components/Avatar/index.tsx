@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+import { Image } from "react-native";
 import type { ButtonProps } from "./types";
 import {
   AvatarWraper,
@@ -6,15 +8,13 @@ import {
   Subtitle,
   Title,
 } from "./style";
-import Image from "next/image";
 
 const Avatar = ({ title, subtitle, reversedTitle, avatar }: ButtonProps) => {
   return (
     <AvatarWraper>
       <AvatarImage>
         <Image
-          src={`${avatar || "http://placehold.jp/150x150.png"}`}
-          alt=""
+          source={{ uri: `${avatar || "http://placehold.jp/150x150.png"}` }}
           width={32}
           height={32}
         />

@@ -1,10 +1,10 @@
 {
     "001": {
-        "name": "",
+        "name": "ALLGEMEINE INFORMATIONEN",
         "content": {
             "001": {
-                "question": "",
-                "answer": ""
+                "question": "Wofür ist das Portal gedacht?",
+                "answer": "Die Plattform uaSOS.org bringt Flüchtlinge, die eine Unterkunft suchen, mit Privatpersonen, Institutionen, NGOs und Unternehmen zusammen, die eine Unterkunft anbieten. Im Gegensatz zu anderen Initiativen, die ähnliche Daten sammeln, verbindet die Plattform uaSOS.org automatisch die Meldungen von Bedürftigen mit Hilfsangeboten, um einem möglichst großen Personenkreis die bestmögliche Unterstützung zukommen zu lassen. Dank der Plattform müssen Bedürftige nicht Hunderte von verfügbaren Hilfsangeboten durchforsten, sondern bekommen das für sie am besten geeignete, aktuelle und auf ihre Bedürfnisse zugeschnittene Angebot präsentiert. Die Registrierung auf der Plattform ist nicht anonym, was für beide Seiten Sicherheit bietet."
             },
             "002": {
                 "question": "Wer hat dieses Portal geschaffen?",

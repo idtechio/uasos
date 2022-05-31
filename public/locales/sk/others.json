@@ -262,7 +262,7 @@
         "popup": {
             "description": "Upozornite nás na akékoľvek problémy pomocou nižšie uvedeného formulára",
             "problemReported": "Problém bol nahlásený",
-            "thanksForLettingKnow": "Ďakujeme, že ste nás o tejto situácii informovali. Ďakujeme, že ste nás o tejto situácii informovali. Budeme pre vás hľadať iný zápas.",
+            "thanksForLettingKnow": "Ďakujeme, že ste nás o tejto situácii informovali. Budeme pre vás hľadať iný zápas.",
             "reasons": {
                 "guestNotNeedHelp": "Môj hosť už nepotrebuje ubytovanie",
                 "hostCantHelp": "Môj hostiteľ už nemôže poskytnúť ubytovanie",

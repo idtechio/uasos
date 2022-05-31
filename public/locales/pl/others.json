@@ -262,7 +262,7 @@
         "popup": {
             "description": "Powiadom nas o wszelkich problemach, korzystając z poniższego formularza",
             "problemReported": "Problem został zgłoszony",
-            "thanksForLettingKnow": "Dziękujemy za poinformowanie nas o tej sytuacji. Dziękujemy za poinformowanie nas o tej sytuacji. Poszukamy dla Ciebie innego odpowiednika.",
+            "thanksForLettingKnow": "Dziękujemy za poinformowanie nas o tej sytuacji. Poszukamy dla Ciebie innego odpowiednika.",
             "reasons": {
                 "guestNotNeedHelp": "Gość nie potrzebuje już noclegu",
                 "hostCantHelp": "Gospodarz nie może już zapewnić zakwaterowania",

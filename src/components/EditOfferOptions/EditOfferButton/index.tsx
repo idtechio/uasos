@@ -27,6 +27,11 @@ import { GuestHostType } from "../../SupportSection/mapper";
 
 const { AlertIcon, BinIcon, ClockIcon, EditIcon } = Icons;
 
+type ButtonLabel =
+  | "others:common.words.renew"
+  | "others:desktop.contextMenu.edit"
+  | "others:desktop.contextMenu.reportProblem";
+
 export const EditOfferContext = createContext<{
   targetID: string;
   targetType: "hosts" | "guests";
@@ -79,7 +84,7 @@ export default function EditOfferButton({
         label: "hostAdd.accomodationPhotoReset",
       },
     ],
-    []
+    [matchID, targetStatusType]
   );
 
   const getEditButtonLink = useMemo(
@@ -144,7 +149,14 @@ export default function EditOfferButton({
         </CardModal>
       )
     );
-  }, [modalOpened, closeModal, targetID, targetType]);
+  }, [
+    modalOpened,
+    closeModal,
+    targetID,
+    targetType,
+    router,
+    getEditButtonLink,
+  ]);
 
   const PopoverOptions = useCallback(
     () => (
@@ -161,13 +173,13 @@ export default function EditOfferButton({
               withBottomBorder={i !== array.length - 1}
               onPress={triggerModal(button.type as ModalTypes)}
             >
-              {t(button.label)}
+              {t(button.label as ButtonLabel)}
             </ListButton>
           );
         })}
       </Options>
     ),
-    [t]
+    [getButtonList, t]
   );
 
   useWebHandleClickOutside(containerRef, popoverOpened, () =>

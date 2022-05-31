@@ -2,10 +2,11 @@ import React, { useCallback, useState } from "react";
 import ButtonCta from "../EditOfferOptions/ButtonCta";
 import CardModal from "../CardModal";
 import { CardModalStyle } from "../EditOfferOptions/EditOfferButton/style";
-import { FormDescription, FormFooter } from "../EditOfferOptions/style";
+import { FormFooter } from "../EditOfferOptions/style";
 import ModalOnConfirm from "./ModalOnConfirm";
 import ModalOnReject from "./ModalOnReject";
 import { useTranslation } from "react-i18next";
+import Spinner from "../Spinner";
 
 interface DetailsDecisionButtonsProps {
   typeOfUser: string;
@@ -100,8 +101,7 @@ export default function DetailsDecisionButtons({
         return (
           <CardModal closeable={false} cardStyle={CardModalStyle}>
             {isLoading ? (
-              // TODO: nice spinner
-              <FormDescription>Loading...</FormDescription>
+              <Spinner />
             ) : (
               <ModalOnConfirm
                 close={closeModal}
@@ -117,7 +117,7 @@ export default function DetailsDecisionButtons({
           <CardModal closeable={false} cardStyle={CardModalStyle}>
             {isLoading ? (
               // TODO: nice spinner
-              <FormDescription>Loading...</FormDescription>
+              <Spinner />
             ) : (
               <ModalOnReject
                 close={closeModal}

@@ -8,6 +8,8 @@ import {
 } from "./style";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { View } from "react-native";
+import styled from "styled-components/native";
 
 export const LoadingCards = ({
   count,
@@ -42,14 +44,19 @@ const LoadingCard = ({ showImage }: { showImage?: boolean }) => {
           </OfferTitle>
         </TextWrapper>
       </HeaderWrapper>
-      <div>
+      <View>
         <Skeleton />
         <Skeleton />
         <Skeleton />
-      </div>
-      <div style={{ alignSelf: "flex-end", marginTop: 10 }}>
-        <Skeleton style={{ width: 100 }} />
-      </div>
+      </View>
+      <SkeletonBottom>
+        <Skeleton width={100} />
+      </SkeletonBottom>
     </SupportCard>
   );
 };
+
+const SkeletonBottom = styled.View`
+  marginleft: auto;
+  margintop: 10;
+`;

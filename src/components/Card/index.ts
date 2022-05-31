@@ -5,4 +5,5 @@ export default styled.View`
   padding: 12px;
   border: 1px solid #eeeeee;
   border-radius: 10px;
+  width: 100%;
 `;

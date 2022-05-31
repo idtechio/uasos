@@ -18,7 +18,17 @@ type Props = {
   onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const countriesData = [
+type Country = "poland" | "hungary" | "czechia" | "slovakia" | "romania";
+
+type Label = `hostAdd.countries.${Country}`;
+
+interface CountryObject {
+  icon: string;
+  label: Label;
+  value: string;
+}
+
+const countriesData: Array<CountryObject> = [
   {
     icon: "pl",
     label: "hostAdd.countries.poland",

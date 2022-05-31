@@ -17,6 +17,7 @@ import {
   SupportWrapper,
   TextWrapper,
   Title,
+  StatusBadgeWrapper,
 } from "./style";
 import { Request } from "./types";
 import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
@@ -35,11 +36,11 @@ export default function LookingForSupport({
   isLoading,
   readonly,
 }: RequestProps): JSX.Element {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation(["desktop", "others"]);
   if (!isLoading && (isError || !requests)) {
     return (
       <SupportWrapper>
-        <Error>{t("could_not_fetch_requests_list")}</Error>
+        <Error>{t("desktop:could_not_fetch_requests_list")}</Error>
       </SupportWrapper>
     );
   }
@@ -74,12 +75,12 @@ const Content = ({
 };
 
 const NoOffer = ({ readonly }: { readonly: boolean }) => {
-  const { t } = useTranslation("desktop");
+  const { t } = useTranslation("others");
 
   const router = useRouter();
   return (
     <CardAdd
-      label={t("others:common.actions.addSubmission")}
+      label={t("common.actions.addSubmission")}
       readonly={readonly}
       onPress={() => {
         if (!readonly) router.push(Routes.GUEST);
@@ -139,15 +140,9 @@ const Requests = ({
                 </RequestSecondLine>
               </RequestTextWrapper>
             </HeaderWrapper>
-            <div
-              style={{
-                alignSelf: "flex-start",
-                justifySelf: "flex-end",
-                marginBottom: 14,
-              }}
-            >
+            <StatusBadgeWrapper>
               <StatusBadge state={r.type} />
-            </div>
+            </StatusBadgeWrapper>
 
             {/* {r.matchedOffer ? (
             <MetchedInfo

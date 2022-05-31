@@ -19,6 +19,14 @@ interface GuestCardContentProps {
   showContact?: boolean;
 }
 
+type GroupRelationLabel =
+  | "single_man"
+  | "single_woman"
+  | "spouses"
+  | "mother_with_children"
+  | "family_with_children"
+  | "unrelated_group";
+
 export default function GuestCardContent({
   request,
   showContact,
@@ -128,8 +136,14 @@ export default function GuestCardContent({
             iconWidth={15}
             iconHeight={15}
             label={t("others:forms.generic.groupType", {
-              type: request.group_relation
-                .map((el: string) => t(`staticValues.groupRelations.${el}`))
+              type: (request.group_relation as Array<GroupRelationLabel>)
+                .map((el: GroupRelationLabel) =>
+                  t(
+                    `common:staticValues.groupRelations.${
+                      el as GroupRelationLabel
+                    }`
+                  )
+                )
                 .join(", "),
             })}
           />

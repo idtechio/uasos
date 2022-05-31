@@ -21,37 +21,37 @@ export const MetchedInfo = ({
         <IconWrapper>
           <UsersIcon />
         </IconWrapper>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: t("others:forms.generic.guest", { name }),
-          }}
-        />
+        <InnerHTML>
+          <InnerHTMLText>
+            {t("others:forms.generic.guest", { name })}
+          </InnerHTMLText>
+        </InnerHTML>
       </Info>
       <Info>
         <IconWrapper>
           <EmailIcon />
         </IconWrapper>
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html: t("others:forms.generic.emailAddressWithData", {
+        <InnerHTML>
+          <InnerHTMLText>
+            {t("others:forms.generic.emailAddressWithData", {
               mail: email,
-            }),
-          }}
-        />
+            })}
+          </InnerHTMLText>
+        </InnerHTML>
       </Info>
       <Info>
         <IconWrapper>
           <PhoneIcon />
         </IconWrapper>
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html: t("others:forms.generic.phoneNumberWithData", {
+        <InnerHTML>
+          <InnerHTMLText>
+            {t("others:forms.generic.phoneNumberWithData", {
               number: phone_num,
-            }),
-          }}
-        />
+            })}
+          </InnerHTMLText>
+        </InnerHTML>
       </Info>
     </SectionInfo>
   );
@@ -84,3 +84,9 @@ const IconWrapper = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
+const InnerHTML = styled.View`
+  margin: 1em 0;
+`;
+
+const InnerHTMLText = styled.Text``;

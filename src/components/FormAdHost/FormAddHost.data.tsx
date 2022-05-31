@@ -1,12 +1,28 @@
-import { Data } from "../Inputs/FormButtonsVertcal";
 import AnimalsIcon from "../../style/svgs/animals.svg";
 import DisabilityIcon from "../../style/svgs/disability.svg";
 import PregnancyIcon from "../../style/svgs/pregnancy.svg";
 import CarIcon from "../../style/svgs/car.svg";
 import ElderSittingIcon from "../../style/svgs/elder_sitting.svg";
-import { AccommodationType } from "../../helpers/FormTypes";
+import { AccommodationTypeEnum, FormKey } from "../../helpers/FormTypes";
+import { ReactNode } from "react";
 
-export const GROUP_RELATIONS = [
+type GroupRelationsLabelType =
+  | "single_man"
+  | "single_woman"
+  | "spouses"
+  | "mother_with_children"
+  | "family_with_children"
+  | "unrelated_group";
+
+type GroupRelationsLabel =
+  `staticValues.groupRelations.${GroupRelationsLabelType}`;
+
+interface GroupRelationsTypes {
+  label: GroupRelationsLabel;
+  value: string;
+}
+
+export const GROUP_RELATIONS: Array<GroupRelationsTypes> = [
   { label: "staticValues.groupRelations.single_man", value: "single_man" },
   {
     label: "staticValues.groupRelations.single_woman",
@@ -27,7 +43,22 @@ export const GROUP_RELATIONS = [
   },
 ];
 
-export const additionalHostsFeats: Data[] = [
+type AdditionalHostsFeatType =
+  | "transportReady"
+  | "pregnantReady"
+  | "elderReady"
+  | "dissabilityReady"
+  | "animalReady";
+
+export type AdditionalHostsFeatsLabel = `hostAdd.${AdditionalHostsFeatType}`;
+
+interface AdditionalHostsFeats {
+  label: AdditionalHostsFeatsLabel | string;
+  id: FormKey;
+  icon: ReactNode;
+}
+
+export const additionalHostsFeats: Array<AdditionalHostsFeats> = [
   {
     id: "advancedHost.transportReady",
     label: "hostAdd.transportReady",
@@ -55,31 +86,93 @@ export const additionalHostsFeats: Data[] = [
   },
 ];
 
+type AccommodationType = "bed" | "room" | "flat" | "house" | "collective";
+
+type AccommodationLabel =
+  `staticValues.accommodationTypes.${AccommodationType}`;
+
+interface AccommodationTypeDropdownFields {
+  label: AccommodationLabel;
+  value: string;
+}
+
 // todo: make sure values are consistent with API
-export const accomodationTypeDropdownFields = [
+export const accomodationTypeDropdownFields: Array<AccommodationTypeDropdownFields> =
+  [
+    {
+      label: "staticValues.accommodationTypes.bed",
+      value: AccommodationTypeEnum.BED,
+    },
+    {
+      label: "staticValues.accommodationTypes.room",
+      value: AccommodationTypeEnum.ROOM,
+    },
+    {
+      label: "staticValues.accommodationTypes.flat",
+      value: AccommodationTypeEnum.FLAT,
+    },
+    {
+      label: "staticValues.accommodationTypes.house",
+      value: AccommodationTypeEnum.HOUSE,
+    },
+    {
+      label: "staticValues.accommodationTypes.collective",
+      value: AccommodationTypeEnum.COLLECTIVE,
+    },
+  ];
+
+type HostLabelType =
+  | "host_type_men"
+  | "host_type_women"
+  | "host_type_couple"
+  | "host_type_family"
+  | "host_type_elder_people"
+  | "host_type_friends_group";
+
+type HostLabel = `hostAdd.hostTypeLabel.${HostLabelType}`;
+
+interface HostTypeData {
+  label: HostLabel;
+  value: string;
+}
+
+export const hostType: Array<HostTypeData> = [
+  { label: "hostAdd.hostTypeLabel.host_type_men", value: "host_type_men" },
+  { label: "hostAdd.hostTypeLabel.host_type_women", value: "host_type_women" },
   {
-    label: "staticValues.accommodationTypes.bed",
-    value: AccommodationType.BED,
+    label: "hostAdd.hostTypeLabel.host_type_couple",
+    value: "host_type_couple",
   },
   {
-    label: "staticValues.accommodationTypes.room",
-    value: AccommodationType.ROOM,
+    label: "hostAdd.hostTypeLabel.host_type_family",
+    value: "host_type_family",
   },
   {
-    label: "staticValues.accommodationTypes.flat",
-    value: AccommodationType.FLAT,
+    label: "hostAdd.hostTypeLabel.host_type_elder_people",
+    value: "host_type_elder_people",
   },
   {
-    label: "staticValues.accommodationTypes.house",
-    value: AccommodationType.HOUSE,
-  },
-  {
-    label: "staticValues.accommodationTypes.collective",
-    value: AccommodationType.COLLECTIVE,
+    label: "hostAdd.hostTypeLabel.host_type_friends_group",
+    value: "host_type_friends_group",
   },
 ];
 
-export const OVERNIGHT_DURATION_TYPES = [
+type OverNightDurationLabelType =
+  | "lessThanAWeek"
+  | "week"
+  | "twoWeeks"
+  | "month"
+  | "longer";
+
+type OverNightDurationLabel =
+  `staticValues.timePeriod.${OverNightDurationLabelType}`;
+
+interface OverNightDurationTypes {
+  label: OverNightDurationLabel;
+  value: string;
+}
+
+export const OVERNIGHT_DURATION_TYPES: Array<OverNightDurationTypes> = [
   {
     label: "staticValues.timePeriod.lessThanAWeek",
     value: "less_than_1_week",

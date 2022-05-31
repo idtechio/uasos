@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { View } from "react-native";
 import { useTranslation } from "next-i18next";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
@@ -52,6 +53,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const onSubmit = async (data: {
     login: { phoneOrEmail: string; password?: string };
   }) => {
+    setError("");
     if (
       /* eslint-disable-next-line */
       data.login.hasOwnProperty("password") &&
@@ -61,8 +63,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       setPasswordInput(false);
       delete data.login.password;
     }
-    /* eslint-disable-next-line */
-    if (data.login.hasOwnProperty("password") && data.login.password) {
+    if (
+      /* eslint-disable-next-line */
+      data.login.hasOwnProperty("password") &&
+      data.login.password &&
+      passwordInput
+    ) {
       try {
         await Authorization.signInWithEmail(
           data.login.phoneOrEmail,
@@ -73,6 +79,12 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
           if (error.message.includes("wrong-password")) {
             setError(t("others:forms.login.invalidPassword"));
           }
+          if (error.message.includes("user-not-found")) {
+            setError("Invalid email");
+          }
+          if (error.message.includes("too-many-requests")) {
+            setError("Too many requests");
+          }
         }
       }
     } else {
@@ -80,16 +92,19 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
         setPasswordInput(true);
       } else if (PHONE_REGEX.test(data.login.phoneOrEmail)) {
         try {
+          const captcha = Authorization.recaptcha
+            ? Authorization.recaptcha
+            : Authorization.initCaptcha("captcha__container");
           const confirmation = await Authorization.signInWithPhone(
             data.login.phoneOrEmail,
-            Authorization.initCaptcha("captcha__container")
+            captcha
           );
           setPhoneLoginConfirmation(confirmation);
           setPhoneNumber(data.login.phoneOrEmail);
         } catch (error) {
           // eslint-disable-next-line
           // @ts-ignore
-          setError(error.message);
+          setError("Invalid phone number");
         }
       }
     }
@@ -117,14 +132,19 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
   const validateSheba = (str: string) => {
     const isPhoneWithoutPrefixValid = PHONE_WITHOUT_PREFIX_REGEX.test(str);
     const isPhoneOrEmail = EMAIL_OR_PHONE_REGEX.test(str);
+    if (PHONE_REGEX.test(str) && passwordInput) {
+      setPasswordInput(false);
+    }
 
     if (!str) {
+      setPasswordInput(false);
       return "Your phone or email is required";
     } else if (str.length >= 50) {
       return "Your contact information should be lesss than 50 symbols";
     } else if (isPhoneWithoutPrefixValid) {
       return "+38";
     } else if (!isPhoneOrEmail) {
+      setPasswordInput(false);
       return t("others:forms.login.emailOrPhoneDetail");
     }
   };
@@ -208,7 +228,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               anchor={t("others:forms.login.login")}
               onPress={handleSubmit(onSubmit, () => {})}
             />
-            <div id="captcha__container" style={{ display: "none" }}></div>
+            <View nativeID="captcha__container" style={{ display: "none" }} />
           </FormProvider>
           {phoneLoginConfirmation ? (
             <SmsVerificationModal
@@ -245,14 +265,19 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
 
 export default FormLogin;
 
-export const FormHeader = styled.h2`
+export const FormHeader = styled.View`
   color: ${({ theme }: { theme: Theme }) => theme.colors.textOnCta};
   font-weight: bold;
   font-size: 24px;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
   line-height: 24px;
   letter-spacing: 0.5px;
 `;
 
-export const Spacer = styled.div`
+export const Spacer = styled.View`
   margin-bottom: 60px;
 `;

@@ -57,6 +57,14 @@ export interface MatchedRequestProps {
   status: GuestHostStatus;
 }
 
+export type ShelterType =
+  | "bed"
+  | "room"
+  | "flat"
+  | "house"
+  | "collective"
+  | "public_shared_space";
+
 export interface OfferProps {
   id: string;
   name: string;
