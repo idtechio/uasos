@@ -64,7 +64,13 @@ function Accordion({
     margin-bottom: 15px;
   `;
 
-  const QuestionWrapper = styled.View``;
+  const QuestionWrapper = styled.Text`
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    color: #003566;
+  `;
 
   const NameCategoryWrapper = styled.View``;
 
