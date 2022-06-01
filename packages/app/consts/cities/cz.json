@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Praha",
+    "value": "Praha"
+  },
+  {
+    "label": "Brno",
+    "value": "Brno"
+  },
+  {
+    "label": "Ostrava",
+    "value": "Ostrava"
+  },
+  {
+    "label": "Plzeň",
+    "value": "Plzeň"
+  },
+  {
+    "label": "Liberec",
+    "value": "Liberec"
+  },
+  {
+    "label": "Olomouc",
+    "value": "Olomouc"
+  },
+  {
+    "label": "České Budějovice",
+    "value": "České Budějovice"
+  },
+  {
+    "label": "Hradec Králové",
+    "value": "Hradec Králové"
+  },
+  {
+    "label": "Ústí nad Labem",
+    "value": "Ústí nad Labem"
+  },
+  {
+    "label": "Pardubice",
+    "value": "Pardubice"
+  },
+  {
+    "label": "Zlín",
+    "value": "Zlín"
+  }
+]

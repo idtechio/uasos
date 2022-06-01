@@ -1,0 +1,597 @@
+[
+  {
+    "label": "Vilnius",
+    "value": "593116",
+    "population": 542366
+  },
+  {
+    "label": "Kaunas",
+    "value": "598316",
+    "population": 374643
+  },
+  {
+    "label": "Klaipėda",
+    "value": "598098",
+    "population": 192307
+  },
+  {
+    "label": "Šiauliai",
+    "value": "594739",
+    "population": 130587
+  },
+  {
+    "label": "Panevėžys",
+    "value": "596128",
+    "population": 117395
+  },
+  {
+    "label": "Alytus",
+    "value": "601084",
+    "population": 70747
+  },
+  {
+    "label": "Dainava (Kaunas)",
+    "value": "6618486",
+    "population": 70000
+  },
+  {
+    "label": "Eiguliai",
+    "value": "9610008",
+    "population": 61700
+  },
+  {
+    "label": "Marijampolė",
+    "value": "597231",
+    "population": 47613
+  },
+  {
+    "label": "Šilainiai",
+    "value": "9610004",
+    "population": 40600
+  },
+  {
+    "label": "Fabijoniškės",
+    "value": "596479",
+    "population": 39759
+  },
+  {
+    "label": "Jonava",
+    "value": "598818",
+    "population": 34993
+  },
+  {
+    "label": "Utena",
+    "value": "593672",
+    "population": 33240
+  },
+  {
+    "label": "Pašilaičiai",
+    "value": "10062599",
+    "population": 33056
+  },
+  {
+    "label": "Mazeikiai",
+    "value": "597188",
+    "population": 32470
+  },
+  {
+    "label": "Kėdainiai",
+    "value": "598272",
+    "population": 31980
+  },
+  {
+    "label": "Šeškinė",
+    "value": "10062602",
+    "population": 31333
+  },
+  {
+    "label": "Lazdynai",
+    "value": "10062605",
+    "population": 31097
+  },
+  {
+    "label": "Telsiai",
+    "value": "593926",
+    "population": 30098
+  },
+  {
+    "label": "Visaginas",
+    "value": "593063",
+    "population": 28348
+  },
+  {
+    "label": "Taurage",
+    "value": "593959",
+    "population": 27662
+  },
+  {
+    "label": "Justiniškės",
+    "value": "10062601",
+    "population": 27462
+  },
+  {
+    "label": "Aleksotas",
+    "value": "601138",
+    "population": 24270
+  },
+  {
+    "label": "Naujamiestis",
+    "value": "10062607",
+    "population": 23232
+  },
+  {
+    "label": "Kretinga",
+    "value": "597989",
+    "population": 22236
+  },
+  {
+    "label": "Vilkpėdė",
+    "value": "10062606",
+    "population": 21346
+  },
+  {
+    "label": "Pilaitė",
+    "value": "10062600",
+    "population": 20320
+  },
+  {
+    "label": "Ukmerge",
+    "value": "593733",
+    "population": 20154
+  },
+  {
+    "label": "Plunge",
+    "value": "595689",
+    "population": 18904
+  },
+  {
+    "label": "Palanga",
+    "value": "596238",
+    "population": 18207
+  },
+  {
+    "label": "Druskininkai",
+    "value": "599757",
+    "population": 17791
+  },
+  {
+    "label": "Gargždai",
+    "value": "599506",
+    "population": 16433
+  },
+  {
+    "label": "Radviliskis",
+    "value": "595449",
+    "population": 16344
+  },
+  {
+    "label": "Rokiškis",
+    "value": "595213",
+    "population": 16255
+  },
+  {
+    "label": "Silute",
+    "value": "594656",
+    "population": 14968
+  },
+  {
+    "label": "Birzai",
+    "value": "600438",
+    "population": 14911
+  },
+  {
+    "label": "Elektrėnai",
+    "value": "599602",
+    "population": 13501
+  },
+  {
+    "label": "Jurbarkas",
+    "value": "598655",
+    "population": 13102
+  },
+  {
+    "label": "Vilkaviskis",
+    "value": "593153",
+    "population": 13011
+  },
+  {
+    "label": "Raseiniai",
+    "value": "595378",
+    "population": 12523
+  },
+  {
+    "label": "Naujoji Akmene",
+    "value": "596719",
+    "population": 11922
+  },
+  {
+    "label": "Grigiškės",
+    "value": "599161",
+    "population": 11555
+  },
+  {
+    "label": "Prienai",
+    "value": "595596",
+    "population": 11352
+  },
+  {
+    "label": "Joniškis",
+    "value": "598796",
+    "population": 11113
+  },
+  {
+    "label": "Kuršėnai",
+    "value": "597769",
+    "population": 10829
+  },
+  {
+    "label": "Kelmė",
+    "value": "598257",
+    "population": 10626
+  },
+  {
+    "label": "Rasos",
+    "value": "10062609",
+    "population": 10597
+  },
+  {
+    "label": "Anykščiai",
+    "value": "600994",
+    "population": 10575
+  },
+  {
+    "label": "Varėna",
+    "value": "593406",
+    "population": 10304
+  },
+  {
+    "label": "Lentvaris",
+    "value": "597532",
+    "population": 10004
+  },
+  {
+    "label": "Garliava",
+    "value": "599504",
+    "population": 9873
+  },
+  {
+    "label": "Kaišiadorys",
+    "value": "598567",
+    "population": 9867
+  },
+  {
+    "label": "Pasvalys",
+    "value": "595997",
+    "population": 8510
+  },
+  {
+    "label": "Kupiskis",
+    "value": "597806",
+    "population": 8263
+  },
+  {
+    "label": "Zarasai",
+    "value": "592891",
+    "population": 8095
+  },
+  {
+    "label": "Skuodas",
+    "value": "594488",
+    "population": 7726
+  },
+  {
+    "label": "Širvintos",
+    "value": "594607",
+    "population": 7321
+  },
+  {
+    "label": "Molėtai",
+    "value": "596867",
+    "population": 7243
+  },
+  {
+    "label": "Šalčininkai",
+    "value": "595016",
+    "population": 6891
+  },
+  {
+    "label": "Šakiai",
+    "value": "595044",
+    "population": 6613
+  },
+  {
+    "label": "Ignalina",
+    "value": "598998",
+    "population": 6421
+  },
+  {
+    "label": "Pabradė",
+    "value": "596473",
+    "population": 6375
+  },
+  {
+    "label": "Šilalė",
+    "value": "594693",
+    "population": 6026
+  },
+  {
+    "label": "Pakruojis",
+    "value": "596260",
+    "population": 5964
+  },
+  {
+    "label": "Kazlų Rūda",
+    "value": "598286",
+    "population": 5666
+  },
+  {
+    "label": "Kybartai",
+    "value": "597729",
+    "population": 5631
+  },
+  {
+    "label": "Švenčionys",
+    "value": "594064",
+    "population": 5538
+  },
+  {
+    "label": "Trakai",
+    "value": "593871",
+    "population": 5530
+  },
+  {
+    "label": "Nemenčinė",
+    "value": "596664",
+    "population": 5054
+  },
+  {
+    "label": "Lazdijai",
+    "value": "597596",
+    "population": 4975
+  },
+  {
+    "label": "Švenčionėliai",
+    "value": "594067",
+    "population": 4726
+  },
+  {
+    "label": "Vievis",
+    "value": "593191",
+    "population": 4521
+  },
+  {
+    "label": "Kalvarija",
+    "value": "598512",
+    "population": 4457
+  },
+  {
+    "label": "Skaidiškės",
+    "value": "594585",
+    "population": 4203
+  },
+  {
+    "label": "Rietavas",
+    "value": "595284",
+    "population": 3737
+  },
+  {
+    "label": "Ariogala",
+    "value": "600962",
+    "population": 3653
+  },
+  {
+    "label": "Eišiškės",
+    "value": "599614",
+    "population": 3416
+  },
+  {
+    "label": "Šeduva",
+    "value": "594861",
+    "population": 3321
+  },
+  {
+    "label": "Venta",
+    "value": "593303",
+    "population": 3270
+  },
+  {
+    "label": "Žiežmariai",
+    "value": "592778",
+    "population": 3268
+  },
+  {
+    "label": "Pervalka",
+    "value": "595842",
+    "population": 3097
+  },
+  {
+    "label": "Akmenė",
+    "value": "601182",
+    "population": 3026
+  },
+  {
+    "label": "Akademija (Kaunas)",
+    "value": "9610015",
+    "population": 2807
+  },
+  {
+    "label": "Tytuvėnėliai",
+    "value": "593746",
+    "population": 2775
+  },
+  {
+    "label": "Sargėnai",
+    "value": "594943",
+    "population": 2495
+  },
+  {
+    "label": "Rusnė",
+    "value": "595087",
+    "population": 2484
+  },
+  {
+    "label": "Neringa",
+    "value": "596643",
+    "population": 2380
+  },
+  {
+    "label": "Ramučiai",
+    "value": "595393",
+    "population": 2372
+  },
+  {
+    "label": "Pagėgiai",
+    "value": "596399",
+    "population": 2363
+  },
+  {
+    "label": "Birštonas",
+    "value": "600443",
+    "population": 2331
+  },
+  {
+    "label": "Rūdiškės",
+    "value": "595160",
+    "population": 2300
+  },
+  {
+    "label": "Vilkija",
+    "value": "593144",
+    "population": 2289
+  },
+  {
+    "label": "Ežerėlis",
+    "value": "599579",
+    "population": 2051
+  },
+  {
+    "label": "Šventoji",
+    "value": "594050",
+    "population": 2000
+  },
+  {
+    "label": "Juodupė",
+    "value": "598690",
+    "population": 1989
+  },
+  {
+    "label": "Būgai",
+    "value": "594562",
+    "population": 1976
+  },
+  {
+    "label": "Kudirkos Naumiestis",
+    "value": "597904",
+    "population": 1961
+  },
+  {
+    "label": "Viekšniai",
+    "value": "593218",
+    "population": 1938
+  },
+  {
+    "label": "Simnas",
+    "value": "594639",
+    "population": 1864
+  },
+  {
+    "label": "Gelgaudiškis",
+    "value": "599420",
+    "population": 1839
+  },
+  {
+    "label": "Salantai",
+    "value": "595020",
+    "population": 1829
+  },
+  {
+    "label": "Linkuva",
+    "value": "597440",
+    "population": 1719
+  },
+  {
+    "label": "Priekulė",
+    "value": "595598",
+    "population": 1710
+  },
+  {
+    "label": "Veisiejai",
+    "value": "593338",
+    "population": 1654
+  },
+  {
+    "label": "Nida",
+    "value": "596612",
+    "population": 1650
+  },
+  {
+    "label": "Senieji Trakai",
+    "value": "594814",
+    "population": 1501
+  },
+  {
+    "label": "Ramygala",
+    "value": "595387",
+    "population": 1440
+  },
+  {
+    "label": "Kulautuva",
+    "value": "597881",
+    "population": 1425
+  },
+  {
+    "label": "Karmėlava",
+    "value": "598392",
+    "population": 1395
+  },
+  {
+    "label": "Mastaiciai",
+    "value": "9610406",
+    "population": 1339
+  },
+  {
+    "label": "Žagarė",
+    "value": "592942",
+    "population": 1309
+  },
+  {
+    "label": "Žemaičių Naumiestis",
+    "value": "592828",
+    "population": 1284
+  },
+  {
+    "label": "Daugai",
+    "value": "600040",
+    "population": 1279
+  },
+  {
+    "label": "Obeliai",
+    "value": "596544",
+    "population": 1247
+  },
+  {
+    "label": "Seda",
+    "value": "594867",
+    "population": 1224
+  },
+  {
+    "label": "Matuizos",
+    "value": "597199",
+    "population": 1201
+  },
+  {
+    "label": "Plateliai",
+    "value": "595726",
+    "population": 1100
+  },
+  {
+    "label": "Baltoji Vokė",
+    "value": "600688",
+    "population": 1071
+  },
+  {
+    "label": "Jieznas",
+    "value": "598854",
+    "population": 1032
+  }
+]

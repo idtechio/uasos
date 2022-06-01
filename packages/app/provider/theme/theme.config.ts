@@ -1,4 +1,5 @@
 import { scale } from "app/utils/scale";
+import { styleFor } from "app/utils/styleFor";
 import { useCallback, useLayoutEffect, useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
 
@@ -129,6 +130,7 @@ export const primary = {
     labelSize: "12px",
   },
   scale,
+  styleFor,
 };
 
 // TODO: DarkMode
@@ -151,4 +153,5 @@ export const secondary = {
 export type Theme = typeof primary & {
   getBreakPoint: ReturnType<typeof useBreakPointGetter>;
   scale: ReturnType<typeof scale>;
+  styleFor: ReturnType<typeof styleFor>;
 };

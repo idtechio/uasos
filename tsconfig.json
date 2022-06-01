@@ -3,7 +3,12 @@
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "app/*": ["./packages/app/*"]
+      "app/*": ["./packages/app/*"],
+      "components/": ["./packages/app/components/*"],
+      "common-i18n/*": ["./packages/app/common-i18n/*"],
+      "navigation/*": ["./packages/app/navigation/*"],
+      "provider/*": ["./packages/app/provider/*"],
+      "screens/*": ["./packages/app/screens/*"]
     }
   },
   "extends": "expo/tsconfig.base"

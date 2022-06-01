@@ -1,0 +1,627 @@
+[
+  {
+    "label": "Riga",
+    "value": "456172",
+    "population": 742572
+  },
+  {
+    "label": "Daugavpils",
+    "value": "460413",
+    "population": 111564
+  },
+  {
+    "label": "Liepāja",
+    "value": "457954",
+    "population": 85132
+  },
+  {
+    "label": "Jelgava",
+    "value": "459279",
+    "population": 61791
+  },
+  {
+    "label": "Jūrmala",
+    "value": "459201",
+    "population": 54088
+  },
+  {
+    "label": "Ventspils",
+    "value": "454310",
+    "population": 42644
+  },
+  {
+    "label": "Rēzekne",
+    "value": "456202",
+    "population": 38340
+  },
+  {
+    "label": "Jēkabpils",
+    "value": "459283",
+    "population": 27078
+  },
+  {
+    "label": "Valmiera",
+    "value": "453754",
+    "population": 26963
+  },
+  {
+    "label": "Ogre",
+    "value": "457065",
+    "population": 26760
+  },
+  {
+    "label": "Dārzciems",
+    "value": "460433",
+    "population": 18956
+  },
+  {
+    "label": "Tukums",
+    "value": "454768",
+    "population": 18348
+  },
+  {
+    "label": "Cēsis",
+    "value": "460570",
+    "population": 18198
+  },
+  {
+    "label": "Salaspils",
+    "value": "455898",
+    "population": 17606
+  },
+  {
+    "label": "Bolderaja",
+    "value": "460885",
+    "population": 14771
+  },
+  {
+    "label": "Kuldīga",
+    "value": "458460",
+    "population": 13289
+  },
+  {
+    "label": "Olaine",
+    "value": "457052",
+    "population": 12584
+  },
+  {
+    "label": "Saldus",
+    "value": "455890",
+    "population": 12224
+  },
+  {
+    "label": "Talsi",
+    "value": "454970",
+    "population": 12022
+  },
+  {
+    "label": "Dobele",
+    "value": "460312",
+    "population": 11225
+  },
+  {
+    "label": "Krāslava",
+    "value": "458623",
+    "population": 11088
+  },
+  {
+    "label": "Bauska",
+    "value": "461114",
+    "population": 10532
+  },
+  {
+    "label": "Ludza",
+    "value": "457776",
+    "population": 10514
+  },
+  {
+    "label": "Sigulda",
+    "value": "455718",
+    "population": 10422
+  },
+  {
+    "label": "Līvāni",
+    "value": "457860",
+    "population": 10073
+  },
+  {
+    "label": "Daugavgrīva",
+    "value": "460416",
+    "population": 9952
+  },
+  {
+    "label": "Gulbene",
+    "value": "459668",
+    "population": 9355
+  },
+  {
+    "label": "Madona",
+    "value": "457714",
+    "population": 9280
+  },
+  {
+    "label": "Limbaži",
+    "value": "457890",
+    "population": 8974
+  },
+  {
+    "label": "Aizkraukle",
+    "value": "461615",
+    "population": 8840
+  },
+  {
+    "label": "Preiļi",
+    "value": "456530",
+    "population": 8656
+  },
+  {
+    "label": "Balvi",
+    "value": "461163",
+    "population": 8409
+  },
+  {
+    "label": "Karosta",
+    "value": "458995",
+    "population": 7500
+  },
+  {
+    "label": "Dreiliņi",
+    "value": "460274",
+    "population": 7376
+  },
+  {
+    "label": "Ikšķile",
+    "value": "459598",
+    "population": 7278
+  },
+  {
+    "label": "Baloži",
+    "value": "864721",
+    "population": 6780
+  },
+  {
+    "label": "Krustpils",
+    "value": "458511",
+    "population": 6680
+  },
+  {
+    "label": "Valka",
+    "value": "454572",
+    "population": 6589
+  },
+  {
+    "label": "Smiltene",
+    "value": "455406",
+    "population": 6108
+  },
+  {
+    "label": "Aizpute",
+    "value": "461602",
+    "population": 5634
+  },
+  {
+    "label": "Lielvārde",
+    "value": "457965",
+    "population": 5114
+  },
+  {
+    "label": "Ķekava",
+    "value": "458880",
+    "population": 4600
+  },
+  {
+    "label": "Mežaparks",
+    "value": "457388",
+    "population": 4500
+  },
+  {
+    "label": "Grobiņa",
+    "value": "459692",
+    "population": 4203
+  },
+  {
+    "label": "Iecava",
+    "value": "459624",
+    "population": 4000
+  },
+  {
+    "label": "Viļāni",
+    "value": "454178",
+    "population": 3934
+  },
+  {
+    "label": "Pļaviņas",
+    "value": "456635",
+    "population": 3848
+  },
+  {
+    "label": "Baldone",
+    "value": "461224",
+    "population": 3664
+  },
+  {
+    "label": "Rūjiena",
+    "value": "456008",
+    "population": 3638
+  },
+  {
+    "label": "Kandava",
+    "value": "459031",
+    "population": 3592
+  },
+  {
+    "label": "Ozolnieki",
+    "value": "456954",
+    "population": 3400
+  },
+  {
+    "label": "Vecrīga",
+    "value": "6615326",
+    "population": 3336
+  },
+  {
+    "label": "Vangaži",
+    "value": "454537",
+    "population": 3235
+  },
+  {
+    "label": "Saulkrasti",
+    "value": "455812",
+    "population": 3184
+  },
+  {
+    "label": "Auce",
+    "value": "461336",
+    "population": 3125
+  },
+  {
+    "label": "Piņķi",
+    "value": "456685",
+    "population": 3033
+  },
+  {
+    "label": "Koknese",
+    "value": "458687",
+    "population": 2906
+  },
+  {
+    "label": "Ilūkste",
+    "value": "459586",
+    "population": 2898
+  },
+  {
+    "label": "Skrīveri",
+    "value": "455523",
+    "population": 2879
+  },
+  {
+    "label": "Brocēni",
+    "value": "460786",
+    "population": 2830
+  },
+  {
+    "label": "Ulbroka",
+    "value": "454714",
+    "population": 2800
+  },
+  {
+    "label": "Dagda",
+    "value": "460474",
+    "population": 2740
+  },
+  {
+    "label": "Jaunciems",
+    "value": "459419",
+    "population": 2684
+  },
+  {
+    "label": "Skrunda",
+    "value": "455520",
+    "population": 2659
+  },
+  {
+    "label": "Kārsava",
+    "value": "458972",
+    "population": 2645
+  },
+  {
+    "label": "Salacgrīva",
+    "value": "455910",
+    "population": 2579
+  },
+  {
+    "label": "Priekule",
+    "value": "456506",
+    "population": 2550
+  },
+  {
+    "label": "Kalnciems",
+    "value": "459102",
+    "population": 2548
+  },
+  {
+    "label": "Priekuļi",
+    "value": "456503",
+    "population": 2532
+  },
+  {
+    "label": "Mazsalaca",
+    "value": "457533",
+    "population": 2412
+  },
+  {
+    "label": "Ķegums",
+    "value": "458892",
+    "population": 2372
+  },
+  {
+    "label": "Alūksne",
+    "value": "461528",
+    "population": 2264
+  },
+  {
+    "label": "Ērgļi",
+    "value": "460001",
+    "population": 2186
+  },
+  {
+    "label": "Jumprava",
+    "value": "459220",
+    "population": 2177
+  },
+  {
+    "label": "Viesīte",
+    "value": "454216",
+    "population": 2162
+  },
+  {
+    "label": "Tērvete",
+    "value": "454910",
+    "population": 2132
+  },
+  {
+    "label": "Varakļāni",
+    "value": "454530",
+    "population": 2106
+  },
+  {
+    "label": "Tīreļi",
+    "value": "454848",
+    "population": 2103
+  },
+  {
+    "label": "Vecumnieki",
+    "value": "454273",
+    "population": 2103
+  },
+  {
+    "label": "Inčukalns",
+    "value": "459563",
+    "population": 2028
+  },
+  {
+    "label": "Jaunjelgava",
+    "value": "459402",
+    "population": 1938
+  },
+  {
+    "label": "Lubāna",
+    "value": "457799",
+    "population": 1918
+  },
+  {
+    "label": "Zilupe",
+    "value": "453850",
+    "population": 1897
+  },
+  {
+    "label": "Mērsrags",
+    "value": "457408",
+    "population": 1860
+  },
+  {
+    "label": "Roja",
+    "value": "456107",
+    "population": 1800
+  },
+  {
+    "label": "Engure",
+    "value": "460019",
+    "population": 1600
+  },
+  {
+    "label": "Strenči",
+    "value": "455166",
+    "population": 1593
+  },
+  {
+    "label": "Stende",
+    "value": "455260",
+    "population": 1559
+  },
+  {
+    "label": "Viļaka",
+    "value": "454130",
+    "population": 1525
+  },
+  {
+    "label": "Ape",
+    "value": "461442",
+    "population": 1521
+  },
+  {
+    "label": "Aloja",
+    "value": "461539",
+    "population": 1509
+  },
+  {
+    "label": "Valdemārpils",
+    "value": "454584",
+    "population": 1447
+  },
+  {
+    "label": "Līgatne",
+    "value": "457912",
+    "population": 1433
+  },
+  {
+    "label": "Sabile",
+    "value": "455937",
+    "population": 1347
+  },
+  {
+    "label": "Aknīste",
+    "value": "461566",
+    "population": 1314
+  },
+  {
+    "label": "Nereta",
+    "value": "457148",
+    "population": 1282
+  },
+  {
+    "label": "Ainaži",
+    "value": "461628",
+    "population": 1278
+  },
+  {
+    "label": "Cesvaine",
+    "value": "460568",
+    "population": 1239
+  },
+  {
+    "label": "Pāvilosta",
+    "value": "456827",
+    "population": 1171
+  },
+  {
+    "label": "Liezēre",
+    "value": "457915",
+    "population": 1108
+  },
+  {
+    "label": "Seda",
+    "value": "455786",
+    "population": 1098
+  },
+  {
+    "label": "Jaunaglona",
+    "value": "459448",
+    "population": 1053
+  },
+  {
+    "label": "Jaunpils",
+    "value": "459357",
+    "population": 1029
+  },
+  {
+    "label": "Alsunga",
+    "value": "461534",
+    "population": 940
+  },
+  {
+    "label": "Smārde",
+    "value": "455427",
+    "population": 734
+  },
+  {
+    "label": "Vecpiebalga",
+    "value": "454408",
+    "population": 596
+  },
+  {
+    "label": "Rucava",
+    "value": "456050",
+    "population": 547
+  },
+  {
+    "label": "Naukšēni",
+    "value": "457161",
+    "population": 0
+  },
+  {
+    "label": "Sala",
+    "value": "455915",
+    "population": 0
+  },
+  {
+    "label": "Ragana",
+    "value": "456341",
+    "population": 0
+  },
+  {
+    "label": "Vaiņode",
+    "value": "454602",
+    "population": 0
+  },
+  {
+    "label": "Berģi",
+    "value": "461064",
+    "population": 0
+  },
+  {
+    "label": "Stalbe",
+    "value": "455293",
+    "population": 0
+  },
+  {
+    "label": "Kocēni",
+    "value": "458695",
+    "population": 0
+  },
+  {
+    "label": "Matīši",
+    "value": "457615",
+    "population": 0
+  },
+  {
+    "label": "Lieģi",
+    "value": "458065",
+    "population": 0
+  },
+  {
+    "label": "Garkalne",
+    "value": "456089",
+    "population": 0
+  },
+  {
+    "label": "Mārupe",
+    "value": "864723",
+    "population": 0
+  },
+  {
+    "label": "Riebiņi",
+    "value": "456185",
+    "population": 0
+  },
+  {
+    "label": "Mūrmuiža",
+    "value": "457211",
+    "population": 0
+  },
+  {
+    "label": "Zelmeņi",
+    "value": "453922",
+    "population": 0
+  },
+  {
+    "label": "Nīca",
+    "value": "457142",
+    "population": 0
+  },
+  {
+    "label": "Drabeši",
+    "value": "460285",
+    "population": 0
+  },
+  {
+    "label": "Rauna",
+    "value": "456272",
+    "population": 0
+  },
+  {
+    "label": "Ādaži",
+    "value": "461650",
+    "population": 0
+  }
+]

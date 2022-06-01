@@ -1,6 +1,5 @@
-import { Platform } from "react-native";
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../../provider/theme/theme.config";
+import { Theme } from "../../../../packages/app/provider/theme/theme.config";
 
 export const Button = styled.Pressable<{
   colorOpposite?: boolean;
@@ -13,7 +12,7 @@ export const Button = styled.Pressable<{
   align-items: center;
 
   ${({ theme }) =>
-    Platform.select({
+    theme.styleFor({
       web: css`
         border-radius: 50px;
         padding: 16px 25px;

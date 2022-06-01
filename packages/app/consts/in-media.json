@@ -1,0 +1,369 @@
+{
+  "uasosInMedia": [
+    {
+      "alt": "discovery",
+      "image": "/in-media/discovery.png",
+      "href": ""
+    },
+    {
+      "alt": "24jgora-pl",
+      "image": "/in-media/24jgora-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "7skynews-pl",
+      "image": "/in-media/7skynews-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "anty-radio",
+      "image": "/in-media/anty-radio.png",
+      "href": ""
+    },
+    {
+      "alt": "bogaty-region",
+      "image": "/in-media/bogaty-region.png",
+      "href": ""
+    },
+    {
+      "alt": "bomega",
+      "image": "/in-media/bomega.png",
+      "href": ""
+    },
+    {
+      "alt": "godziny-poznan",
+      "image": "/in-media/godziny-poznan.png",
+      "href": ""
+    },
+    {
+      "alt": "ca",
+      "image": "/in-media/ca.png",
+      "href": ""
+    },
+    {
+      "alt": "dzienik-internatow",
+      "image": "/in-media/dzienik-internatow.png",
+      "href": ""
+    },
+    {
+      "alt": "dzienna-pl",
+      "image": "/in-media/dzienna-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "gazeta-prawna",
+      "image": "/in-media/gazeta-prawna.png",
+      "href": ""
+    },
+    {
+      "alt": "dziennik",
+      "image": "/in-media/dziennik.png",
+      "href": ""
+    },
+    {
+      "alt": "ekai",
+      "image": "/in-media/ekai.png",
+      "href": ""
+    },
+    {
+      "alt": "facebook",
+      "image": "/in-media/facebook.png",
+      "href": ""
+    },
+    {
+      "alt": "filary-business",
+      "image": "/in-media/filary-business.png",
+      "href": ""
+    },
+    {
+      "alt": "fintek",
+      "image": "/in-media/fintek.png",
+      "href": ""
+    },
+    {
+      "alt": "wyborza-pl",
+      "image": "/in-media/wyborza-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "gazeta-pl",
+      "image": "/in-media/gazeta-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "gazetafinansowa-info-pl",
+      "image": "/in-media/gazetafinansowa-info-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "powiwiatova",
+      "image": "/in-media/powiwiatova.png",
+      "href": ""
+    },
+    {
+      "alt": "gizycko-pl",
+      "image": "/in-media/gizycko-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "gosc-nedzielny",
+      "image": "/in-media/gosc-nedzielny.png",
+      "href": ""
+    },
+    {
+      "alt": "hitweb-eu",
+      "image": "/in-media/hitweb-eu.png",
+      "href": ""
+    },
+    {
+      "alt": "homo-digital",
+      "image": "/in-media/homo-digital.png",
+      "href": ""
+    },
+    {
+      "alt": "wiar-pl",
+      "image": "/in-media/wiar-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "instagram",
+      "image": "/in-media/instagram.png",
+      "href": ""
+    },
+    {
+      "alt": "interia",
+      "image": "/in-media/interia.png",
+      "href": ""
+    },
+    {
+      "alt": "inwesctycie-pl",
+      "image": "/in-media/inwesctycie-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "itblog24",
+      "image": "/in-media/itblog24.png",
+      "href": ""
+    },
+    {
+      "alt": "it-wiz",
+      "image": "/in-media/it-wiz.png",
+      "href": ""
+    },
+    {
+      "alt": "gosc-pl",
+      "image": "/in-media/gosc-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "linkedin",
+      "image": "/in-media/linkedin.png",
+      "href": ""
+    },
+    {
+      "alt": "mainboard-pl",
+      "image": "/in-media/mainboard-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "ms",
+      "image": "/in-media/ms.png",
+      "href": ""
+    },
+    {
+      "alt": "media-wirtualne",
+      "image": "/in-media/media-wirtualne.png",
+      "href": ""
+    },
+    {
+      "alt": "melo-radio",
+      "image": "/in-media/melo-radio.png",
+      "href": ""
+    },
+    {
+      "alt": "misyjne",
+      "image": "/in-media/misyjne.png",
+      "href": ""
+    },
+    {
+      "alt": "msn",
+      "image": "/in-media/msn.png",
+      "href": ""
+    },
+    {
+      "alt": "newseria",
+      "image": "/in-media/newseria.png",
+      "href": ""
+    },
+    {
+      "alt": "onet",
+      "image": "/in-media/onet.png",
+      "href": ""
+    },
+    {
+      "alt": "pap",
+      "image": "/in-media/pap.png",
+      "href": ""
+    },
+    {
+      "alt": "plotkie-biznesowe",
+      "image": "/in-media/plotkie-biznesowe.png",
+      "href": ""
+    },
+    {
+      "alt": "polskaprasa-pl",
+      "image": "/in-media/polskaprasa-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "polske-radio",
+      "image": "/in-media/polske-radio.png",
+      "href": ""
+    },
+    {
+      "alt": "PR4",
+      "image": "/in-media/PR4.png",
+      "href": ""
+    },
+    {
+      "alt": "przewodnik-katolicki",
+      "image": "/in-media/przewodnik-katolicki.png",
+      "href": ""
+    },
+    {
+      "alt": "publiccrelations-pl",
+      "image": "/in-media/publiccrelations-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "ngo-pl",
+      "image": "/in-media/ngo-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "radio-fama",
+      "image": "/in-media/radio-fama.png",
+      "href": ""
+    },
+    {
+      "alt": "radio-wloclawek",
+      "image": "/in-media/radio-wloclawek.png",
+      "href": ""
+    },
+    {
+      "alt": "radio-rekord",
+      "image": "/in-media/radio-rekord.png",
+      "href": ""
+    },
+    {
+      "alt": "rmf-max",
+      "image": "/in-media/rmf-max.png",
+      "href": ""
+    },
+    {
+      "alt": "zet-radio",
+      "image": "/in-media/zet-radio.png",
+      "href": ""
+    },
+    {
+      "alt": "radio-katowice",
+      "image": "/in-media/radio-katowice.png",
+      "href": ""
+    },
+    {
+      "alt": "radio-em",
+      "image": "/in-media/radio-em.png",
+      "href": ""
+    },
+    {
+      "alt": "sadeszcanin",
+      "image": "/in-media/sadeszcanin.png",
+      "href": ""
+    },
+    {
+      "alt": "sieminowice-pl",
+      "image": "/in-media/sieminowice-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "spotify",
+      "image": "/in-media/spotify.png",
+      "href": ""
+    },
+    {
+      "alt": "stooq",
+      "image": "/in-media/stooq.png",
+      "href": ""
+    },
+    {
+      "alt": "swiat&ludzie",
+      "image": "/in-media/swiat&ludzie.png",
+      "href": ""
+    },
+    {
+      "alt": "tarnowska-tv",
+      "image": "/in-media/tarnowska-tv.png",
+      "href": ""
+    },
+    {
+      "alt": "tech-hitweb-eu",
+      "image": "/in-media/tech-hitweb-eu.png",
+      "href": ""
+    },
+    {
+      "alt": "telko-in",
+      "image": "/in-media/telko-in.png",
+      "href": ""
+    },
+    {
+      "alt": "tomaszowski",
+      "image": "/in-media/tomaszowski.png",
+      "href": ""
+    },
+    {
+      "alt": "tok-fm",
+      "image": "/in-media/tok-fm.png",
+      "href": ""
+    },
+    {
+      "alt": "tvn",
+      "image": "/in-media/tvn.png",
+      "href": ""
+    },
+    {
+      "alt": "tvn24",
+      "image": "/in-media/tvn24.png",
+      "href": ""
+    },
+    {
+      "alt": "tvp3",
+      "image": "/in-media/tvp3.png",
+      "href": ""
+    },
+    {
+      "alt": "twitter",
+      "image": "/in-media/twitter.png",
+      "href": ""
+    },
+    {
+      "alt": "warsawnow-pl",
+      "image": "/in-media/warsawnow-pl.png",
+      "href": ""
+    },
+    {
+      "alt": "wirtualne-media",
+      "image": "/in-media/wirtualne-media.png",
+      "href": ""
+    },
+    {
+      "alt": "wprost",
+      "image": "/in-media/wprost.png",
+      "href": ""
+    },
+    {
+      "alt": "youtube",
+      "image": "/in-media/youtube.png",
+      "href": ""
+    }
+  ]
+}
