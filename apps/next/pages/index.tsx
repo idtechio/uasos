@@ -13,7 +13,6 @@ import { GetServerSideProps } from "next";
 import { NumbersProps } from "./api/listing/numbers";
 import { Theme } from "../src/style/theme.config";
 import { getNumberList } from "../src/client-api/numbers";
-import { HomeScreen } from "app/screens/home";
 
 const LandingProjectIntentionWrapper = styled.View`
   flex-direction: column;
@@ -166,7 +165,6 @@ function Landing({ numberList }: LandingProps) {
         splashPosition={BottomLeftBlueSplashPosition}
       />
       <LandingProjectIntentionWrapper>
-        <HomeScreen />
         <LandingProjectIntention />
       </LandingProjectIntentionWrapper>
 

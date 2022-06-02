@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Theme } from "../../../../packages/app/provider/theme/theme.config";
+import { Theme } from "../../../provider/theme/theme.config";
 
 export const Button = styled.Pressable`
   background-color: ${({ theme }: { theme: Theme }) =>
