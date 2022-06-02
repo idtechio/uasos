@@ -1,6 +1,6 @@
+import styled, { css } from "styled-components/native";
 import type { ChoiceButtonProps } from "./type";
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import { Theme } from "../../../provider/theme/theme.config";
 
 type ButtonType = Pick<
   ChoiceButtonProps,
@@ -30,8 +30,8 @@ export const Button = styled.View<ButtonType>`
         : `10px`
       : `0`};
   margin-bottom: ${(props) => (props.isSmall ? `10px` : `0`)};
-  height: ${(props) => (props.isSmall ? `unset` : `100%`)};
-  width: ${(props) => props.width};
+  height: ${(props) => (props.isSmall ? "auto" : `100%`)};
+  width: ${(props) => props.width}px;
 `;
 
 type TextProps = {

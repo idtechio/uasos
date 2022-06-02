@@ -1,29 +1,18 @@
 import React from "react";
 import { ViewStyle } from "react-native";
-import styled from "styled-components/native";
+import { InnerWrapper, OuterWrapper } from "./style";
 
-const OuterWrapper = styled.View`
-  width: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const InnerWrapper = styled.View`
-  width: 100%;
-  max-width: 450px;
-`;
+interface PageContentWrapperProps {
+  children: JSX.Element | JSX.Element[] | null;
+  outerStyles?: ViewStyle;
+  innerStyles?: ViewStyle;
+}
 
 const PageContentWrapper = ({
   children,
   outerStyles,
   innerStyles,
-}: {
-  children: JSX.Element | JSX.Element[] | null;
-  outerStyles?: ViewStyle;
-  innerStyles?: ViewStyle;
-}) => (
+}: PageContentWrapperProps) => (
   <OuterWrapper style={outerStyles}>
     <InnerWrapper style={innerStyles}>{children}</InnerWrapper>
   </OuterWrapper>

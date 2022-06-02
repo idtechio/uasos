@@ -1,11 +1,8 @@
 import React from "react";
-import { Controller, FieldError, useFormContext } from "react-hook-form";
-
 import { View } from "react-native";
-
+import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { Error } from "./style";
 import UploadInput from "../Forms/UploadInput";
-
 import { FormKey } from "../../helpers/FormTypes";
 
 type Props = {
@@ -17,6 +14,7 @@ type Props = {
 
 const FormUpload = ({ name, errorMsg, rules, error, label }: Props) => {
   const { control } = useFormContext();
+
   return (
     <Controller
       control={control}
@@ -37,4 +35,5 @@ const FormUpload = ({ name, errorMsg, rules, error, label }: Props) => {
     />
   );
 };
+
 export default FormUpload;

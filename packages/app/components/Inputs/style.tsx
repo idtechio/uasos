@@ -1,9 +1,18 @@
-import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 
-export const Error = styled.Text`
+export const Error = styled.Text<{ theme: Theme }>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.error};
-  margin-bottom: 10px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 10px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(10)}px;
+      `,
+    })}
 `;
 
 type WrapperProps = { isCentered?: boolean };

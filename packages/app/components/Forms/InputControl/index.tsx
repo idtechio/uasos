@@ -1,12 +1,12 @@
 import React from "react";
 import type { InputControlProps } from "./types";
-import { InputWraper } from "./style";
+import { InputWrapper } from "./style";
 
 const InputControl = ({ children, zIndex, styles }: InputControlProps) => {
   return (
-    <InputWraper zIndex={zIndex} style={styles?.wrapper}>
+    <InputWrapper zIndex={zIndex} style={styles?.wrapper}>
       {children}
-    </InputWraper>
+    </InputWrapper>
   );
 };
 

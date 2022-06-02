@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   object,
   string,
@@ -37,6 +38,11 @@ const HostPropsType = object({
 
 export type HostProps = Infer<typeof HostPropsType>;
 
+=======
+import { HostProps } from "../../pages/api/hosts/edit";
+import { getFirebaseToken } from "./getFirebaseToken";
+
+>>>>>>> 1e3e88039 (Refactored GoBack component)
 export default async function updateHostToApi(host: HostProps) {
   const token = await getFirebaseToken();
   return fetch(process.env.NEXT_PUBLIC_DOMAIN + "api/hosts/edit", {

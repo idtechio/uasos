@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   object,
   string,
@@ -29,6 +30,11 @@ const GuestPropsType = object({
 
 export type GuestProps = Infer<typeof GuestPropsType>;
 
+=======
+import type { GuestProps } from "../../pages/api/guests/add";
+import { getFirebaseToken } from "./getFirebaseToken";
+
+>>>>>>> 1e3e88039 (Refactored GoBack component)
 export default async function addGuestToApi(guest: GuestProps) {
   const token = await getFirebaseToken();
   return fetch(process.env.NEXT_PUBLIC_DOMAIN + "api/guests/add", {

@@ -1,8 +1,8 @@
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../../provider/theme/theme.config";
 import { InputProps } from "./types";
 
-export const InputWraper = styled.View`
+export const InputWrapper = styled.View`
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -14,20 +14,30 @@ export const InputRow = styled.View`
 `;
 
 type TextInputProps = InputProps & { theme: Theme };
+
 export const TextInput = styled.TextInput<TextInputProps>`
   position: relative;
-  border: ${({ theme, error }) =>
-    `${theme.forms.borderWidth} solid ${
-      error ? theme.colors.error : "rgba(28, 27, 37, 0.3)"
-    }`};
+  border-width: ${({ theme }) => theme.forms.borderWidth};
+  border-color: ${({ theme, error, focused }) =>
+    error
+      ? theme.colors.error
+      : focused
+      ? theme.colors.text
+      : theme.colors.figmaPalette.borderInput};
   background-color: ${(props) => props.theme.pageSection.backgroundColor};
-  padding: 13px 20px 14px;
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
-  &:focus {
-    outlinecolor: "#003566";
-  }
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 13px 20px 14px;
+      `,
+      native: css`
+        padding: ${theme.scale(13)}px ${theme.scale(20)}px ${theme.scale(14)}px;
+      `,
+    })}
 `;
 
 export const Error = styled.Text`

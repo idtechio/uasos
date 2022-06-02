@@ -1,45 +1,92 @@
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../../provider/theme/theme.config";
 
-interface RadioButtonStyleInterface {
+interface RadioButtonStyle {
   radius?: number;
   borderWidth?: number;
   color?: string;
 }
 
-interface RadioButtonLabelStyleInterface {
+interface RadioButtonLabelStyle {
   theme: Theme;
   fontSize?: number;
 }
 
-export const RadioButtonContainer = styled.TouchableOpacity`
+export const RadioButtonContainer = styled.TouchableOpacity<{ theme: Theme }>`
   flex: 1;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 0;
-  padding-bottom: 10;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding-top: 0px;
+        padding-bottom: 10px;
+      `,
+      native: css`
+        padding-top: ${theme.scale(0)}px;
+        padding-bottom: ${theme.scale(10)}px;
+      `,
+    })}
 `;
 
-export const RadioButtonLabel = styled.Text<RadioButtonLabelStyleInterface>`
+export const RadioButtonLabel = styled.Text<
+  RadioButtonLabelStyle & { theme: Theme }
+>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.headings};
-  font-size: ${(props) => (props.fontSize ? props.fontSize : 14)};
-  margin-left: 10;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : 14)}px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-left: 10px;
+      `,
+      native: css`
+        margin-left: ${theme.scale(10)}px;
+      `,
+    })}
 `;
 
-export const RadioButtonOuterCircle = styled.View<RadioButtonStyleInterface>`
-  height: ${(props) => (props.radius ? props.radius * 2 : 18)};
-  width: ${(props) => (props.radius ? props.radius * 2 : 18)};
-  border-radius: ${(props) => (props.radius ? props.radius : 9)};
-  border-width: ${(props) => (props.borderWidth ? props.borderWidth : 1)};
-  border-color: ${(props) => (props.color ? props.color : "#bbbbbc")};
+export const RadioButtonOuterCircle = styled.View<
+  RadioButtonStyle & { theme: Theme }
+>`
+  border-radius: ${({ radius }) => (radius ? radius : 9)}px;
+  border-width: ${({ borderWidth }) => (borderWidth ? borderWidth : 1)}px;
+  border-color: ${({ color }) => (color ? color : "#bbbbbc")};
   align-items: center;
   justify-content: center;
+
+  ${({ theme, radius }) =>
+    theme.styleFor({
+      web: css`
+        height: ${() => (radius ? radius * 2 : 18)}px;
+        width: ${() => (radius ? radius * 2 : 18)}px;
+      `,
+      native: css`
+        height: ${() => (radius ? theme.scale(radius) * 2 : theme.scale(18))}px;
+        width: ${() => (radius ? theme.scale(radius) * 2 : theme.scale(18))}px;
+      `,
+    })}
 `;
 
-export const RadioButtonInnerCircle = styled.View<RadioButtonStyleInterface>`
-  height: ${(props) => (props.radius ? props.radius * 1.25 : 11)};
-  width: ${(props) => (props.radius ? props.radius * 1.25 : 11)};
-  border-radius: ${(props) => (props.radius ? props.radius : 9)};
-  background-color: ${(props) => (props.color ? props.color : "#bbbbbc")};
+export const RadioButtonInnerCircle = styled.View<
+  RadioButtonStyle & { theme: Theme }
+>`
+  border-radius: ${({ radius }) => (radius ? radius : 9)}px;
+  background-color: ${({ color }) => (color ? color : "#bbbbbc")};
+
+  ${({ theme, radius }) =>
+    theme.styleFor({
+      web: css`
+        height: ${() => (radius ? radius * 1.25 : 11)}px;
+        width: ${() => (radius ? radius * 1.25 : 11)}px;
+      `,
+      native: css`
+        height: ${() =>
+          radius ? radius * theme.scale(1.25) : theme.scale(11)}px;
+        width: ${() =>
+          radius ? radius * theme.scale(1.25) : theme.scale(11)}px;
+      `,
+    })}
 `;

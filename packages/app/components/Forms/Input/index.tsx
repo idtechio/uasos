@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import type { InputProps } from "./types";
-import { InputWraper, TextInput, InputRow } from "./style";
+import { InputWrapper, TextInput, InputRow } from "./style";
 
 const Input = ({
   placeholder,
@@ -12,23 +12,33 @@ const Input = ({
   styles,
   readonly,
   keyboardType = "default",
-}: InputProps) => (
-  <InputWraper style={styles?.wrapper}>
-    <InputRow>
-      <TextInput
-        onChangeText={onChange}
-        value={value}
-        placeholder={placeholder}
-        error={error}
-        secureTextEntry={secureTextEntry}
-        style={styles?.textInput}
-        editable={!readonly}
-        keyboardType={keyboardType}
-      />
+}: InputProps) => {
+  const [focused, setFocused] = useState(false);
 
-      {extra && extra}
-    </InputRow>
-  </InputWraper>
-);
+  const focusHandler = (focusState: boolean) => () => {
+    setFocused(focusState);
+  };
+
+  return (
+    <InputWrapper style={styles?.wrapper}>
+      <InputRow>
+        <TextInput
+          focused={focused}
+          onChangeText={onChange}
+          onFocus={focusHandler(true)}
+          onBlur={focusHandler(false)}
+          value={value}
+          placeholder={placeholder}
+          error={error}
+          secureTextEntry={secureTextEntry}
+          style={styles?.textInput}
+          editable={!readonly}
+          keyboardType={keyboardType}
+        />
+        {extra && extra}
+      </InputRow>
+    </InputWrapper>
+  );
+};
 
 export default Input;

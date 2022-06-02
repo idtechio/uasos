@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { FieldError, useFormContext } from "react-hook-form";
 import { ActivityIndicator, Platform, Text } from "react-native";
-import styled from "styled-components/native";
+import { FieldError, useFormContext } from "react-hook-form";
+
 import UploadIcon from "../../../style/svgs/upload.svg";
 import UploadPreview from "../UploadPreview";
 import Compressor from "compressorjs";
 import { MAX_HEIGHT, MAX_WIDTH, MIME_TYPE, QUALITY } from "./config";
 import { blobToBase64 } from "./utils";
+import { ButtonLabelText, List, UploadButton } from "./style";
 
 type UploadInputProps = {
   accept?: string;
@@ -17,34 +18,6 @@ type UploadInputProps = {
   disabled?: boolean;
   error?: FieldError;
 };
-
-const UploadButton = styled.TouchableOpacity`
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  border: 1.5px #c8c8c8 dashed;
-  border-radius: 10px;
-  flex-direction: column;
-  background: #fff;
-  width: 85px;
-  height: 85px;
-  opacity: ${(props) => (props.disabled ? 0.3 : 1)};
-`;
-
-const ButtonLabelText = styled.Text`
-  color: #003566;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16.5px;
-  margin-top: 10px;
-  text-align: center;
-`;
-
-const List = styled.View`
-  display: flex;
-  flex-direction: row;
-  gap: 0px 15px;
-`;
 
 const UploadInput = ({
   accept = ".jpeg",
@@ -128,6 +101,7 @@ const UploadInput = ({
                 {isLoading ? <ActivityIndicator /> : <Text>{label}</Text>}
               </ButtonLabelText>
             </UploadButton>
+            {/* TODO: Change input to RN element */}
             <input
               type="file"
               ref={inputRef}

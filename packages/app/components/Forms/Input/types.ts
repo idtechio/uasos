@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { ViewStyle, KeyboardType } from "react-native";
 
 export type InputStylesProps = {
@@ -18,4 +18,5 @@ export type InputProps<T = string> = {
   secureTextEntry?: boolean;
   styles?: InputStylesProps;
   keyboardType?: KeyboardType;
+  focused?: boolean;
 };

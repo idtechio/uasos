@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import type { InputProps } from "./types";
 import { Controls, Icon, InputWraper, TextInput } from "./style";
 
@@ -12,6 +12,12 @@ const NumericInput = ({
   max,
   min = 0,
 }: InputProps<number>) => {
+  const [focused, setFocused] = useState(false);
+
+  const focusHandler = (focusState: boolean) => () => {
+    setFocused(focusState);
+  };
+
   const handleMinusPress = () => {
     const newValue = Number(value) - 1;
     if (min === undefined || min <= newValue) {
@@ -28,7 +34,13 @@ const NumericInput = ({
 
   return (
     <InputWraper>
-      <TextInput value={value} error={error} />
+      <TextInput
+        value={value}
+        error={error}
+        focused={focused}
+        onFocus={focusHandler(true)}
+        onBlur={focusHandler(false)}
+      />
       <Controls>
         <Icon onPress={handleMinusPress}>
           <MinusIcon />
