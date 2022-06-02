@@ -1,9 +1,10 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { DATA } from "./config";
 import ListItem from "./ListItem";
+import { InstructionsGridItem } from "./style";
 
 export const InstructionsGrid = () => {
   const { t } = useTranslation("landingPage");
@@ -20,22 +21,15 @@ export const InstructionsGrid = () => {
       }}
     >
       {DATA.map((item, index) => (
-        <View key={index} style={styles.item}>
+        <InstructionsGridItem key={index}>
           <ListItem
             title={t(item.title)}
             image={item.image}
             text={t(item.text)}
             index={index}
           />
-        </View>
+        </InstructionsGridItem>
       ))}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  item: {
-    width: "225px",
-    height: "225px",
-  },
-});
