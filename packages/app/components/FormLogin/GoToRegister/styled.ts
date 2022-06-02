@@ -29,8 +29,8 @@ export const StyledText = styled.Text<{ theme: Theme }>`
   ${({ theme }) =>
     theme.styleFor({
       web: css`
-          margin: 35px 0;
-          width: 250px;
+        margin: 35px 0;
+        width: 250px;
       `,
       native: css`
         margin-vertical: ${theme.scale(35)}px;

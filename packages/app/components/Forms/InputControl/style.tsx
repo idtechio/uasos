@@ -22,7 +22,6 @@ type InputControlLabelProps = {
   theme: Theme;
   marginBottom?: string;
 };
-
 export const InputCotrolLabel = styled.Text<InputControlLabelProps>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.headings};
   margin-bottom: ${(props) =>
