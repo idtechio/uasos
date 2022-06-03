@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React from "react";
 import { Subtitle, Info, FlexWrapper, ItemsColumn } from "./style";
-import { Bullet, ListItem } from "../WarningSection/style";
+import { Bullet, ListItem } from "../../../../../packages/app/components/WarningSection/style";
 import { StyleProp, ViewStyle } from "react-native";
 import { useTranslation } from "react-i18next";
 import { Boolean } from "../../../pages/api/listing/requests";

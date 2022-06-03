@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
 
-import Tile from "../Tile";
-import SectionTitle from "../SectionTitle";
+import Tile from "../../../../../packages/app/components/Tile";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 import { MatchedCardsWrapper } from "./LandingMatchedSection.styled";
 import { NumbersProps } from "../../../pages/api/listing/numbers";
 

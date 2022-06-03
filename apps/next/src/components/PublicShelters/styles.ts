@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components/native";
 import { Theme } from "../../style/theme.config";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 
 interface CommonProp {
   theme: Theme;

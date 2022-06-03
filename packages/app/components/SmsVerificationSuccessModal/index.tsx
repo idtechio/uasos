@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper, StyledHeader } from "./style";
-import { ButtonCta } from "../Buttons";
-import CardModal from "../CardModal";
+import { ButtonCta } from "../../../../apps/next/src/components/Buttons";
+import CardModal from "../../../../apps/next/src/components/CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/PasswordReset.png";
 import { useRouter } from "next/router";

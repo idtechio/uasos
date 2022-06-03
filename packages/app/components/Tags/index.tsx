@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 const TagsLineWrapper = styled.View`
   display: flex;

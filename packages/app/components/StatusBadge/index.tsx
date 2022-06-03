@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import React from "react";
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 import { MATCH_TYPE } from "../SupportSection/types";
 type BadgeStyle = "disabled" | "positive" | "pending";
 

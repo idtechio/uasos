@@ -11,7 +11,7 @@ import AddressIcon from "../../style/svgs/marker.svg";
 import PhoneIcon from "../../style/svgs/phone2.svg";
 import HostIcon from "../../style/svgs/user-check.svg";
 import GuestsIcon from "../../style/svgs/users.svg";
-import { toAccomodationTime } from "../SupportSection/mapper";
+import { toAccomodationTime } from "../../../../../packages/app/components/SupportSection/mapper";
 import DataField from "./DataField";
 import HostAdditionalInfo, { InfoType } from "./HostAdditionalInfo";
 import { FlexWrapper, Header, Title } from "./style";

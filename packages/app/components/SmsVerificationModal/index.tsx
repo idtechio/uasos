@@ -11,8 +11,8 @@ import {
   InputWrapper,
   ErrorText,
 } from "./style";
-import { ButtonCta } from "../Buttons";
-import CardModal from "../CardModal";
+import { ButtonCta } from "../../../../apps/next/src/components/Buttons";
+import CardModal from "../../../../apps/next/src/components/CardModal";
 import Image from "next/image";
 import SmsSent from "../../../public/assets/SmsSent.png";
 import {
@@ -20,11 +20,11 @@ import {
   RecaptchaVerifier,
   PhoneAuthProvider,
 } from "firebase/auth";
-import { Authorization } from "../../hooks/useAuth";
-import { AuthContext } from "../../../pages/_app";
+import { Authorization } from "../../../../apps/next/src/hooks/useAuth";
+import { AuthContext } from "../../../../apps/next/pages/_app";
 import { useTranslation } from "next-i18next";
 import { FirebaseError } from "@firebase/util";
-import { CloseButton } from "../EditOfferOptions/style";
+import { CloseButton } from "../../../../apps/next/src/components/EditOfferOptions/style";
 
 type FormType = {
   "1": string;

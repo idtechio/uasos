@@ -1,8 +1,8 @@
 import React from "react";
 import { css } from "styled-components";
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
-import Card from "../Card";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
+import Card from "../../../../apps/next/src/components/Card";
 
 const Value = styled.Text`
   font-weight: 800;

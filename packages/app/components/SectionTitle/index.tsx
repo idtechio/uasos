@@ -1,8 +1,8 @@
 import React from "react";
 import { ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
-import { colors } from "../../style/landingPageStyle";
-import { Theme } from "../../style/theme.config";
+import { colors } from "../../../../apps/next/src/style/landingPageStyle";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 const TitleWrapper = styled.View`
   position: relative;

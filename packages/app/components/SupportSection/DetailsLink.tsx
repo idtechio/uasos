@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components/native";
 import ArrowIcon from "../../../src/style/svgs/arrow.svg";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 export default function DetailsLink({
   href,

@@ -1,5 +1,5 @@
 import { CompositionAppBody } from "../../../src/components/Compositions";
-import Section from "../../../src/components/Section";
+import Section from "../../../../../packages/app/components/Section";
 import { AfterDeactivateModal } from "../../../src/components/AfterDeactivateModal";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";

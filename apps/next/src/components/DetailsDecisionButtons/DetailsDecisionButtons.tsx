@@ -6,7 +6,7 @@ import { FormFooter } from "../EditOfferOptions/style";
 import ModalOnConfirm from "./ModalOnConfirm";
 import ModalOnReject from "./ModalOnReject";
 import { useTranslation } from "react-i18next";
-import Spinner from "../Spinner";
+import Spinner from "../../../../../packages/app/components/Spinner";
 
 interface DetailsDecisionButtonsProps {
   typeOfUser: string;

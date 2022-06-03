@@ -2,8 +2,8 @@ import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
-import Section from "../src/components/Section";
-import SectionTitle from "../src/components/SectionTitle";
+import Section from "../../../packages/app/components/Section";
+import SectionTitle from "../../../packages/app/components/SectionTitle";
 import { PartnerCard } from "../src/components/PartnerCard";
 import { CompositionAppBody } from "../src/components/Compositions";
 import {

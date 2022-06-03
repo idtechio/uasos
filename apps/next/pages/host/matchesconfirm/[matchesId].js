@@ -1,5 +1,5 @@
 import { CompositionAppBody } from "../../../src/components/Compositions";
-import Section from "../../../src/components/Section";
+import Section from "../../../../../packages/app/components/Section";
 import { AfterDecisionModal } from "../../../src/components/AfterDecisionModal";
 import { withSession } from "../../../src/helpers/withSession";
 import React, { useEffect } from "react";

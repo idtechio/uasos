@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { StyleProp, ViewStyle, ActivityIndicator } from "react-native";
 import styled, { useTheme } from "styled-components/native";
-import EmailIcon from "../../style/svgs/email.svg";
-import PhoneIcon from "../../style/svgs/phone.svg";
-import { Theme } from "../../style/theme.config";
+import EmailIcon from "../../../../apps/next/src/style/svgs/email.svg";
+import PhoneIcon from "../../../../apps/next/src/style/svgs/phone.svg";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 import Toast from "../Toast";
 
 const VerifySectionWrapper = styled.View``;

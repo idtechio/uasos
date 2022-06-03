@@ -10,7 +10,7 @@ import { Authorization } from "../../hooks/useAuth";
 import { useEditAccount } from "../../queries/useAccount";
 import ButtonCta from "../EditOfferOptions/ButtonCta";
 import { StyledErrorMessage } from "../FormRegisterUser/styles";
-import SmsVerificationModal from "../SmsVerificationModal";
+import SmsVerificationModal from "../../../../../packages/app/components/SmsVerificationModal";
 import { getFormDefaultValues, parseError } from "./helpers";
 import Inputs from "./Inputs";
 import {

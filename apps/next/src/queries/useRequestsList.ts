@@ -6,7 +6,7 @@ import {
   GuestHostStatus,
   GuestHostType,
   Boolean,
-} from "../components/SupportSection/mapper";
+} from "../../../../packages/app/components/SupportSection/mapper";
 import addGuestToApi from "../helpers/addGuestToApi";
 import { API_REFRESH_LATENCY, uid } from "../helpers/misc";
 import { QueryKeys } from "./queryKeys";

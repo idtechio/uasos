@@ -5,14 +5,14 @@ import { StyleProp, ViewStyle } from "react-native";
 import { CompositionAppBody } from "../../src/components/Compositions";
 import PageContentWrapper from "../../src/components/PageContentWrapper";
 import Redirect from "../../src/components/Redirect";
-import SupportSection from "../../src/components/SupportSection";
+import SupportSection from "../../../../packages/app/components/SupportSection";
 import PortraitIcon from "../../src/style/svgs/portrait.svg";
 import {
   toOffers,
   toRequests,
-} from "../../src/components/SupportSection/mapper";
-// import Tags from "../../src/components/Tags";
-import VerifySection from "../../src/components/VerifySection/VerifySection";
+} from "../../../../packages/app/components/SupportSection/mapper";
+// import Tags from "../../../../packages/app/components/Tags";
+import VerifySection from "../../../../packages/app/components/VerifySection/VerifySection";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { useRequestsList } from "../../src/queries/useRequestsList";
 import { AuthContext } from "../_app";
@@ -22,13 +22,13 @@ import { useRouter } from "next/router";
 import { useTimer } from "react-timer-hook";
 import ConfirmRejectModal from "../../src/components/ConfirmRejectModal";
 import { MODAL_STATUS } from "../../src/components/ConfirmRejectModal/constants";
-import Toast from "../../src/components/Toast";
+import Toast from "../../../../packages/app/components/Toast";
 import { Theme } from "../../src/style/theme.config";
 
 import { useTheme } from "styled-components";
 import { useProgressToastContext } from "../../src/providers/ProgressToastProvider";
 import { useTranslation } from "react-i18next";
-import Spinner from "../../src/components/Spinner";
+import Spinner from "../../../../packages/app/components/Spinner";
 
 const bottomMarginStyle: StyleProp<ViewStyle> = { marginBottom: 20 };
 

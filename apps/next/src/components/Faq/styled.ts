@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components/native";
 import { Theme } from "../../style/theme.config";
-import { Splash } from "../Slash";
+import { Splash } from "../../../../../packages/app/components/Slash";
 import { ButtonCta } from "../Buttons";
 import { colors } from "../../style/landingPageStyle";
 

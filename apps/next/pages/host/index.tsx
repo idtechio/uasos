@@ -9,7 +9,7 @@ import { AuthContext } from "../_app";
 import { useRouter } from "next/router";
 import { useOffersList } from "../../src/queries/useOffersList";
 import { OfferProps } from "../api/listing/offers";
-import Spinner from "../../src/components/Spinner";
+import Spinner from "../../../../packages/app/components/Spinner";
 
 export default function Account() {
   const { identity, loaded } = useContext(AuthContext);

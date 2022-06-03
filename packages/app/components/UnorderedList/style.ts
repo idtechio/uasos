@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 export const ColumnBulletPoint = styled.Text`
   align-self: flex-start;

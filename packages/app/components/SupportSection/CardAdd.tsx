@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
-import Card from "../Card";
+import Card from "../../../../apps/next/src/components/Card";
 import PlusCircleIcon from "../../../src/style/svgs/plus_circle.svg";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 const CardAddWrapper = styled(Card)`
   display: flex;

@@ -7,7 +7,7 @@ import { HowDoesItWorkSection } from "../src/components/LandingSections/HowDoesI
 import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 import { LandingMatchedSection } from "../src/components/LandingMatchedSection";
 import { PartnersSection } from "../src/components/PartnersSection";
-import { Splash } from "../src/components/Slash";
+import { Splash } from "../../../packages/app/components/Slash";
 import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { NumbersProps } from "./api/listing/numbers";

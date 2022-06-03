@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 const TabPanelContainer = styled.View``;
 const TabHeader = styled.View`

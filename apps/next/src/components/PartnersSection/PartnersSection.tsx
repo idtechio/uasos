@@ -6,7 +6,7 @@ import { NGO } from "../../consts/partners.json";
 import { Theme } from "../../style/theme.config";
 import { ButtonCta } from "../Buttons";
 import { PartnerCard } from "../PartnerCard";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 import { Routes } from "../../consts/router";
 
 type StyledSectionProps = { bgColor?: string; theme: Theme };

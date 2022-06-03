@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 export const WarningWrapper = styled.View`
   background-color: ${({ theme }: { theme: Theme }) => theme.colors.warning};

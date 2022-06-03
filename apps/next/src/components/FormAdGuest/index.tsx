@@ -22,8 +22,8 @@ import FormDropdown from "../Inputs/FormDropdown";
 import FormNumericInput from "../Inputs/FormNumericInput";
 import FormRadioGroup from "../Inputs/FormRadioGroup";
 import { Error as InputError } from "../Inputs/style";
-import { ThankfulnessModal } from "../ThankfulnessModal";
-import { Tooltip } from "../Tooltip";
+import { ThankfulnessModal } from "../../../../../packages/app/components/ThankfulnessModal";
+import { Tooltip } from "../../../../../packages/app/components/Tooltip";
 import { RequestProps } from "../../../pages/api/listing/requests";
 import {
   ACCOMMODATION_TYPES,

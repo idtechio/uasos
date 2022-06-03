@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { StyleSheet, View } from "react-native";
-import { UnorderedList } from "../UnorderedList/UnorderedList";
-import Section from "../Section";
+import { UnorderedList } from "../../../../../packages/app/components/UnorderedList/UnorderedList";
+import Section from "../../../../../packages/app/components/Section";
 import {
   Container,
   Text,
@@ -13,7 +13,7 @@ import {
 import gradient from "../../../public/gradient.png";
 import { ButtonDefault } from "../Buttons";
 import { InstructionsCarousel, InstructionsGrid } from "../Instructions";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 import { useTheme } from "styled-components/native";
 import { Theme } from "../../style/theme.config";
 

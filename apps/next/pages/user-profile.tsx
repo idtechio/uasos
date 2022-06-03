@@ -6,7 +6,7 @@ import { CompositionAppBody } from "../src/components/Compositions";
 import EditUserProfileForm from "../src/components/EditUserProfileForm";
 import PageContentWrapper from "../src/components/PageContentWrapper";
 import Redirect from "../src/components/Redirect";
-import Spinner from "../src/components/Spinner";
+import Spinner from "../../../packages/app/components/Spinner";
 import { AuthContext } from "./_app";
 
 export default function UserProfile() {

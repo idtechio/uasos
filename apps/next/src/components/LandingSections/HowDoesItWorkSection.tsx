@@ -2,10 +2,10 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { Text } from "react-native";
 import styled, { css, useTheme } from "styled-components/native";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 import pathSVG from "../../../public/how-does-it-work-path.png";
 import { Fragment, useMemo } from "react";
-import Section from "../Section";
+import Section from "../../../../../packages/app/components/Section";
 import { Theme } from "../../style/theme.config";
 
 type CustomIndex = "0" | "1" | "2" | "3" | "4";

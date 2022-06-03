@@ -1,10 +1,10 @@
 import { Trans, useTranslation } from "next-i18next";
 import React from "react";
 import styled, { css } from "styled-components/native";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "../../../../../packages/app/components/SectionTitle";
 import { LikeToHelpSectionProps } from "./types";
 import { ButtonCta } from "../Buttons";
-import Section from "../Section";
+import Section from "../../../../../packages/app/components/Section";
 import { useRouter } from "next/router";
 import { Theme } from "../../style/theme.config";
 

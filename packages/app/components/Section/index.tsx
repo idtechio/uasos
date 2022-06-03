@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "../../../../apps/next/src/style/theme.config";
 
 const StyledSection = styled.View<{ bgColor?: string }>`
   background-color: ${(props) => props.bgColor};
