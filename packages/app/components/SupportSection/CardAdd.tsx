@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components/native";
 import Card from "../../../../apps/next/src/components/Card";
 import PlusCircleIcon from "../../../src/style/svgs/plus_circle.svg";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 
-const CardAddWrapper = styled(Card)`
+const CardAddWrapper = styled(Card)<{ theme: Theme }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,19 @@ const CardAddWrapper = styled(Card)`
   border: 1px dashed ${({ theme }: { theme: Theme }) => theme.colors.darkgray};
   box-sizing: border-box;
   border-radius: 8px;
-  padding: 40px 0px;
-  margin-top: 14px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 40px 0px;
+        margin-top: 14px;
+      `,
+      native: css`
+        padding-vertical: ${theme.scale(40)}px;
+        padding-horizontal: ${theme.scale(0)}px;
+        margin-top: ${theme.scale(14)}px;
+      `,
+    })}
 `;
 
 const Button = styled.Pressable`
@@ -21,11 +32,21 @@ const Button = styled.Pressable`
   align-items: center;
 `;
 
-export const Label = styled.Text`
+export const Label = styled.Text<{ theme: Theme }>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
   font-size: 14px;
   font-weight: 700;
-  padding: 10px 0px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 10px 0px;
+      `,
+      native: css`
+        padding-vertical: ${theme.scale(10)}px;
+        padding-horizontal: ${theme.scale(0)}px;
+      `,
+    })}
 `;
 
 type CardAddProps = { label: string; onPress: () => void; readonly?: boolean };

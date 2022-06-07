@@ -1,12 +1,13 @@
 import React from "react";
-import { StyleProp, View, ViewStyle } from "react-native";
-import { useTranslation } from "next-i18next";
+import { StyleProp, View, ViewStyle, Platform } from "react-native";
+import { useTranslation } from "../../common-i18n/use-translation";
 import { WarningWrapper, HeaderText, TextWrapper } from "./style";
 import WarningIcon from "../../style/svgs/warningTriangle.svg";
 import styled from "styled-components/native";
 import { sanitize } from "../../../../apps/next/src/helpers/sanitize";
+import { scale } from "app/utils/scale";
 
-const ICON_DIM = 24;
+const ICON_DIM = Platform.OS === "web" ? 24 : scale(24);
 
 export type WarningSectionProps = {
   containerStyle?: StyleProp<ViewStyle>;

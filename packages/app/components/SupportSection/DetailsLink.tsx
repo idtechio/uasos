@@ -1,9 +1,9 @@
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import { useTranslation } from "../../common-i18n/use-translation";
+import { TextLink  } from "solito/link";
 import React from "react";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import ArrowIcon from "../../../src/style/svgs/arrow.svg";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import { Theme } from "../../provider/theme/theme.config";
 
 export default function DetailsLink({
   href,
@@ -13,14 +13,18 @@ export default function DetailsLink({
   const { t } = useTranslation("others");
   return (
     <LinkWrapper>
-      <Link href={href} passHref>
+      <TextLink  href={href}>
         <SectionDetails>
           <DetailsText>{t("common.actions.details")}</DetailsText>
-          <ArrowIconWrapper>
+          <ArrowIconWrapper
+            style={{
+              transform: [{ rotate: "45deg" }],
+            }}
+          >
             <ArrowIcon />
           </ArrowIconWrapper>
         </SectionDetails>
-      </Link>
+      </TextLink >
     </LinkWrapper>
   );
 }
@@ -32,12 +36,21 @@ const DetailsText = styled.Text`
   line-height: 24px;
   text-transform: capitalize;
 `;
-const ArrowIconWrapper = styled.View`
-  transform: rotate(270deg);
+const ArrowIconWrapper = styled.View<{ theme: Theme }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 16px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-left: 16px;
+        transform: rotate(270deg);
+      `,
+      native: css`
+        margin-left: ${theme.scale(16)}px;
+      `,
+    })}
 `;
 const SectionDetails = styled.View`
   display: flex;
@@ -45,10 +58,19 @@ const SectionDetails = styled.View`
   justify-content: flex-end;
 `;
 
-const LinkWrapper = styled.View`
+const LinkWrapper = styled.View<{ theme: Theme }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 28px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding-top: 28px;
+      `,
+      native: css`
+        padding-top: ${theme.scale(28)}px;
+      `,
+    })}
 `;

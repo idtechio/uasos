@@ -1,4 +1,4 @@
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../common-i18n/use-translation";
 import React, { useMemo } from "react";
 import TabPanel from "../TabPanel";
 import LookingForSupport from "./LookingForSupport";

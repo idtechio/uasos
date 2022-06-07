@@ -1,24 +1,35 @@
 import React, { useState } from "react";
 import { StyleProp, ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import { Theme } from "../../provider/theme/theme.config";
 
 const TabPanelContainer = styled.View``;
 const TabHeader = styled.View`
   display: flex;
   flex-direction: row;
 `;
-const TabItems = styled.View`
+const TabItems = styled.View<{ theme: Theme }>`
   background: ${({ theme }: { theme: Theme }) => theme.colors.textOnAccent};
-  padding-top: 13px;
-  padding-bottom: 13px;
-  margin-bottom: 16px;
   border-radius: 6px;
-  top: -3px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        top: -3px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        margin-bottom: 16px;
+      `,
+      native: css`
+        top: ${theme.scale(-3)}px;
+        padding-vertical: ${theme.scale(13)}px;
+        margin-bottom: ${theme.scale(16)}px;
+      `,
+    })}
 `;
 const TabItemContainer = styled.View``;
 
-const Button = styled.Pressable<{ selected: boolean }>`
+const Button = styled.Pressable<{ selected: boolean; theme: Theme }>`
   ${(props) =>
     props.selected
       ? css`
@@ -29,12 +40,22 @@ const Button = styled.Pressable<{ selected: boolean }>`
         `
       : css``}
 
-  padding-left: 10px;
-  padding-right: 10px;
   text-align: center;
   display: inline-block;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding-left: 10px;
+        padding-right: 10px;
+      `,
+      native: css`
+        padding-horizontal: ${theme.scale(10)}px;
+      `,
+    })}
+
   &:hover {
     opacity: 0.7;
   }

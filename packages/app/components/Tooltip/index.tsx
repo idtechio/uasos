@@ -1,24 +1,37 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Platform, useWindowDimensions, View } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import InfoIcon from "../../style/svgs/info.svg";
+import { Theme } from "../../provider/theme/theme.config";
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const TooltipContainer = styled.View`
+export const TooltipContainer = styled.View<{ theme: Theme }>`
   position: absolute;
-  bottom: -15px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding: 20px;
-  min-width: 200px;
-  max-width: 200px;
   border-color: rgba(0, 0, 0, 0.05);
   border-width: 1px;
   z-index: 100 !important;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        bottom: -15px;
+        padding: 20px;
+        min-width: 200px;
+        max-width: 200px;
+      `,
+      native: css`
+        bottom: ${theme.scale(-15)}px;
+        padding: ${theme.scale(20)}px;
+        min-width: ${theme.scale(200)}px;
+        max-width: ${theme.scale(200)}px;
+      `,
+    })}
 `;
 
 export const Tooltip = ({ children }: Props) => {

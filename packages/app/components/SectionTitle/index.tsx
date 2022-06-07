@@ -2,7 +2,7 @@ import React from "react";
 import { ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
 import { colors } from "../../../../apps/next/src/style/landingPageStyle";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import { Theme } from "../../provider/theme/theme.config";
 
 const TitleWrapper = styled.View`
   position: relative;
@@ -12,7 +12,6 @@ const Title = styled.Text`
   color: #003566;
   position: relative;
   z-index: 1;
-  margin-bottom: 25px;
   font-size: 20px;
   font-weight: 700;
   line-height: 56px;
@@ -23,13 +22,20 @@ const Title = styled.Text`
         font-size: 30px;
       `,
     })}
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 25px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(25)}px;
+      `,
+    })}
 `;
 
 const YellowHighlight = styled.View`
   position: absolute;
-  top: 30px;
-  height: 15px;
-  width: 130px;
   background-color: ${colors.yellow};
 
   ${({ theme }: { theme: Theme }) =>
@@ -37,6 +43,20 @@ const YellowHighlight = styled.View`
       lg: css`
         width: 220px;
         top: 34px;
+      `,
+    })}
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        top: 30px;
+        width: 130px;
+        height: 15px;
+      `,
+      native: css`
+        top: ${theme.scale(30)}px;
+        width: ${theme.scale(130)}px;
+        height: ${theme.scale(15)}px;
       `,
     })}
 `;

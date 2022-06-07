@@ -9,7 +9,8 @@ import {
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { View } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 
 export const LoadingCards = ({
   count,
@@ -56,7 +57,16 @@ const LoadingCard = ({ showImage }: { showImage?: boolean }) => {
   );
 };
 
-const SkeletonBottom = styled.View`
-  marginleft: auto;
-  margintop: 10;
+const SkeletonBottom = styled.View<{ theme: Theme }>`
+  margin-left: auto;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        amrgin-top: 10px;
+      `,
+      native: css`
+        margin-top: ${theme.scale(10)}px;
+      `,
+    })}
 `;

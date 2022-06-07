@@ -1,10 +1,10 @@
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import { TextLink } from "solito/link";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Platform } from "react-native";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import { ButtonCta } from "../Buttons";
-import CardModal from "../CardModal";
+import CardModal from "../../../../apps/next/src/components/CardModal";
 import {
   ThankfulnessHeader,
   ThankfulnessModalButtonCtaWrapper,
@@ -13,10 +13,11 @@ import {
   ThankfulnessText,
 } from "./style";
 import { ThankfulnessModalProps } from "./types";
+import { scale } from "app/utils/scale";
 
-const ICON_BASE_WIDTH = 160;
+const ICON_BASE_WIDTH = Platform.OS === "web" ? 160 : scale(160);
 const ICON_WIDTH = ICON_BASE_WIDTH * 1.25;
-const ICON_BASE_HEIGHT = 105;
+const ICON_BASE_HEIGHT = Platform.OS === "web" ? 105 : scale(105);
 const ICON_HEIGHT = ICON_BASE_HEIGHT * 1.25;
 
 export const ThankfulnessModal = ({
@@ -45,11 +46,11 @@ export const ThankfulnessModal = ({
           </ThankfulnessText>
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
-          <Link href="/dashboard" passHref>
+          <TextLink href="/dashboard">
             <a>
               <ButtonCta pressable={false} anchor={t("backToHomePage")} />
             </a>
-          </Link>
+          </TextLink>
         </ThankfulnessModalButtonCtaWrapper>
       </ThankfulnessModalContentWrapper>
     </CardModal>
@@ -58,7 +59,7 @@ export const ThankfulnessModal = ({
 
 const styles = StyleSheet.create({
   textContainer: {
-    marginTop: 24,
+    marginTop: Platform.OS === "web" ? 24 : scale(24),
   },
   wrapper: {
     minWidth: ICON_WIDTH,

@@ -1,7 +1,7 @@
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../common-i18n/use-translation";
 import React from "react";
-import styled from "styled-components/native";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 import { MATCH_TYPE } from "../SupportSection/types";
 type BadgeStyle = "disabled" | "positive" | "pending";
 
@@ -68,15 +68,25 @@ const BadgeBase = styled.View`
   width: fit-content;
 `;
 
-const BadgeText = styled.Text`
-  color: inherit;
-  font-family: "Roboto";
+const BadgeText = styled.Text<{ theme: Theme }>`
   font-style: normal;
   font-weight: 700;
   font-size: 10px;
   line-height: 24px;
   letter-spacing: 0.5px;
-  padding: 2px 8px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 2px 8px;
+        color: inherit;
+        font-family: "Roboto";
+      `,
+      native: css`
+        padding-vertical: ${theme.scale(2)}px;
+        padding-horizontal: ${theme.scale(8)}px;
+      `,
+    })}
 `;
 
 const PendingBadge = styled(BadgeBase)`

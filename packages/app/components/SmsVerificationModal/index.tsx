@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useContext, useRef } from "react";
 import { Controller, FormProvider, useForm } from "react-hook-form";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Image } from "react-native";
 
 import {
   StyledText,
@@ -10,11 +10,10 @@ import {
   StyledInput,
   InputWrapper,
   ErrorText,
+  ButtonSubmit,
 } from "./style";
-import { ButtonCta } from "../../../../apps/next/src/components/Buttons";
 import CardModal from "../../../../apps/next/src/components/CardModal";
-import Image from "next/image";
-import SmsSent from "../../../public/assets/SmsSent.png";
+import SmsSent from "../../../../apps/next/public/assets/SmsSent.png";
 import {
   ConfirmationResult,
   RecaptchaVerifier,
@@ -22,7 +21,7 @@ import {
 } from "firebase/auth";
 import { Authorization } from "../../../../apps/next/src/hooks/useAuth";
 import { AuthContext } from "../../../../apps/next/pages/_app";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../common-i18n/use-translation";
 import { FirebaseError } from "@firebase/util";
 import { CloseButton } from "../../../../apps/next/src/components/EditOfferOptions/style";
 
@@ -179,7 +178,7 @@ export default function SmsVerificationModal({
       <View style={{ display: "none" }} nativeID="recaptcha__container" />
       <Wrapper>
         {close && <CloseButton onPress={close} />}
-        <Image src={SmsSent} alt=""></Image>
+        <Image source={SmsSent} />
         <StyledHeader>{t("others:common.sms.verification")}</StyledHeader>
         <StyledText>
           {t("others:common.sms.sentInfo", { phoneNumber })}
@@ -366,10 +365,9 @@ export default function SmsVerificationModal({
           </FormProvider>
         </InputWrapper>
         {apiError ? <ErrorText>{apiError}</ErrorText> : <></>}
-        <ButtonCta
+        <ButtonSubmit
           onPress={handleSubmit(onSubmit, onError)}
           anchor={t("others:common.buttons.verify")}
-          style={{ width: "100px", marginTop: "30px" }}
           isLoading={isLoading}
           disabled={isLoading}
         />

@@ -1,32 +1,64 @@
 import React from "react";
-import { css } from "styled-components";
-import styled from "styled-components/native";
-import { Theme } from "../../../../apps/next/src/style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 import Card from "../../../../apps/next/src/components/Card";
 
 const Value = styled.Text`
   font-weight: 800;
   font-size: 36px;
   color: ${({ theme }: { theme: Theme }) => theme.colors.text};
+
   ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint({
+    theme.getBreakPoint?.({
       xl: css`
         font-size: 42px;
         line-height: 60px;
-        margin-bottom: 32px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              margin-bottom: 32px;
+            `,
+            native: css`
+              margin-bottom: ${theme.scale(32)}px;
+            `,
+          })}
       `,
       lg: css`
         font-size: 36px;
         line-height: 56px;
-        margin-bottom: 30px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              margin-bottom: 30px;
+            `,
+            native: css`
+              margin-bottom: ${theme.scale(30)}px;
+            `,
+          })}
       `,
       md: css`
         font-size: 36px;
-        margin-bottom: 20px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              margin-bottom: 20px;
+            `,
+            native: css`
+              margin-bottom: ${theme.scale(20)}px;
+            `,
+          })}
       `,
       sm: css`
         font-size: 36px;
-        margin-bottom: 10px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              margin-bottom: 10px;
+            `,
+            native: css`
+              margin-bottom: ${theme.scale(10)}px;
+            `,
+          })}
       `,
     })}
 `;
@@ -38,38 +70,73 @@ const Text = styled.Text`
   text-align: center;
 
   ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint({
+    theme.getBreakPoint?.({
       lg: css`
         font-size: 16px;
       `,
     })}
 `;
 
-const TileCard = styled(Card)<{ spaced?: boolean }>`
+const TileCard = styled(Card)<{ spaced?: boolean; theme: Theme }>`
   width: 225px;
   height: 100%;
-  margin-top: 15px;
-  margin-left: 16px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-top: 15px;
+        margin-left: 16px;
+      `,
+      native: css`
+        margin-top: ${theme.scale(15)}px;
+        margin-left: ${theme.scale(16)}px;
+      `,
+    })}
 
   ${({ theme, spaced }) =>
-    theme.getBreakPoint({
+    theme.getBreakPoint?.({
       lg: css`
         margin: 0;
-        ${spaced && "margin: 0 35px;"}
         flex-grow: 1;
-        padding: 20px 16px;
+        margin: ${spaced? "0 35px" : 0};
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css``,
+            native: css`
+              padding-vertical: ${theme.scale(20)}px;
+              padding-horizontal: ${theme.scale(16)}px;
+              margin: ${spaced? "0 35px" : 0};
+            `,
+          })}
       `,
       md: css`
         margin: 0;
         ${spaced && "margin: 0 35px;"}
         flex-grow: 1;
-        padding: 40px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              padding: 40px;
+            `,
+            native: css`
+              padding-vertical: ${theme.scale(20)}px;
+              padding-horizontal: ${theme.scale(16)}px;
+            `,
+          })}
       `,
       sm: css`
-        padding: 16px 5px;
+        ${({ theme }) =>
+          theme.styleFor({
+            web: css`
+              padding: 16px 5px;
+            `,
+            native: css`
+              padding-vertical: ${theme.scale(16)}px;
+              padding-horizontal: ${theme.scale(5)}px;
+            `,
+          })}
       `,
     })}
 `;

@@ -1,11 +1,10 @@
 import React from "react";
-import { Wrapper, StyledHeader } from "./style";
-import { ButtonCta } from "../../../../apps/next/src/components/Buttons";
+import { Image } from "react-native";
+import { Wrapper, StyledHeader, ButtonSubmit } from "./style";
 import CardModal from "../../../../apps/next/src/components/CardModal";
-import Image from "next/image";
-import SmsSent from "../../../public/assets/PasswordReset.png";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import SmsSent from "../../../../apps/next/public/assets/PasswordReset.png";
+import { useTranslation } from "../../common-i18n/use-translation";
+import { useRouter } from "solito/router";
 
 export default function SmsVerificationSuccessModal() {
   const router = useRouter();
@@ -13,14 +12,13 @@ export default function SmsVerificationSuccessModal() {
   return (
     <CardModal closeable={false}>
       <Wrapper>
-        <Image src={SmsSent} alt=""></Image>
+        <Image source={SmsSent} />
         <StyledHeader>
           {t("others:common.sms.verificationSuccess")}
         </StyledHeader>
-        <ButtonCta
+        <ButtonSubmit
           onPress={() => router.push("/dashboard")}
           anchor={"Continue"}
-          style={{ width: "100px", marginTop: "30px" }}
         />
       </Wrapper>
     </CardModal>

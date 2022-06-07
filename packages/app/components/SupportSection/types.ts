@@ -1,4 +1,4 @@
-import { AccommodationTime } from "../../helpers/FormTypes";
+import { AccommodationTime } from "../../../../apps/next/src/helpers/FormTypes";
 
 export type MatchState =
   | "INACTIVE"
