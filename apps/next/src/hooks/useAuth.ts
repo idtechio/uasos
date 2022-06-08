@@ -25,7 +25,7 @@ import {
   User,
   UserCredential,
 } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../../lib/firebase-app";
 import { AccountApi, getAccountDTO } from "../client-api/account";
 

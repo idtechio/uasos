@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 export const ButtonContainer = styled.View`
