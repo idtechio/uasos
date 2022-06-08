@@ -5,8 +5,6 @@ export type DeleteListItemDTO = {
   targetType: "guests" | "hosts";
 };
 
-const a = 4;
-
 export const deleteListItem = async ({
   targetID,
   targetType,
