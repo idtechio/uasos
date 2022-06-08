@@ -5,6 +5,9 @@ import { ButtonDefault } from "app/components/Buttons";
 import { ButtonCta } from "app/components/Buttons";
 import { ButtonSM } from "app/components/Buttons";
 
+console.log("work");
+const a = "s";
+
 export function HomeScreen() {
   return (
     <SafeAreaView
