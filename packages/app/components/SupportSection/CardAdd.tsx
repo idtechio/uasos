@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../../apps/next/src/components/Card";
-import PlusCircleIcon from "../../../src/style/svgs/plus_circle.svg";
+import PlusCircleIcon from "../../style/svgs/plus_circle.svg";
 import styled, { css } from "styled-components/native";
 import { Theme } from "../../provider/theme/theme.config";
 

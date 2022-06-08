@@ -2,7 +2,7 @@ import { useTranslation } from "../../common-i18n/use-translation";
 import { TextLink } from "solito/link";
 import React from "react";
 import styled, { css } from "styled-components/native";
-import ArrowIcon from "../../../src/style/svgs/arrow.svg";
+import ArrowIcon from "../../style/svgs/arrow.svg";
 import { Theme } from "../../provider/theme/theme.config";
 
 export default function DetailsLink({

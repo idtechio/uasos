@@ -1,7 +1,7 @@
 import React from "react";
 import { Pressable, StyleProp, ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
-import { hexToRGB } from "../../../../apps/next/src/helpers/misc";
+import { hexToRGB } from "../../helpers/misc";
 import { Theme } from "../../provider/theme/theme.config";
 
 const ToastWrapper = styled.View<{ color: string; theme: Theme }>`

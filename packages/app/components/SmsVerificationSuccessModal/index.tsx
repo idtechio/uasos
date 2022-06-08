@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "react-native";
 import { Wrapper, StyledHeader, ButtonSubmit } from "./style";
 import CardModal from "../../../../apps/next/src/components/CardModal";
-import SmsSent from "../../../../apps/next/public/assets/PasswordReset.png";
+import SmsSent from "../../assets/PasswordReset.png";
 import { useTranslation } from "../../common-i18n/use-translation";
 import { useRouter } from "solito/router";
 

@@ -61,8 +61,6 @@ export const ThankfulnessModalButtonCtaWrapper = styled.View<{ theme: Theme }>`
       `,
       native: css`
         margin-top: ${theme.scale(28)}px;
-        padding-vertical: 
-        padding-horizontal: ${theme.scale(24)}px;
       `,
     })}
 `;

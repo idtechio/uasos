@@ -1,14 +1,14 @@
 import React from "react";
 import { ViewStyle } from "react-native";
 import styled, { css } from "styled-components/native";
-import { colors } from "../../../../apps/next/src/style/landingPageStyle";
+import { colors } from "../../style/landingPageStyle";
 import { Theme } from "../../provider/theme/theme.config";
 
 const TitleWrapper = styled.View`
   position: relative;
 `;
 
-const Title = styled.Text`
+const Title = styled.Text<{ theme: Theme }>`
   color: #003566;
   position: relative;
   z-index: 1;
@@ -16,17 +16,15 @@ const Title = styled.Text`
   font-weight: 700;
   line-height: 56px;
 
-  ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint?.({
-      lg: css`
-        font-size: 30px;
-      `,
-    })}
-
   ${({ theme }) =>
     theme.styleFor({
       web: css`
         margin-bottom: 25px;
+        ${theme.getBreakPoint?.({
+          lg: css`
+            font-size: 30px;
+          `,
+        })}
       `,
       native: css`
         margin-bottom: ${theme.scale(25)}px;
@@ -34,17 +32,9 @@ const Title = styled.Text`
     })}
 `;
 
-const YellowHighlight = styled.View`
+const YellowHighlight = styled.View<{ theme: Theme }>`
   position: absolute;
   background-color: ${colors.yellow};
-
-  ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint?.({
-      lg: css`
-        width: 220px;
-        top: 34px;
-      `,
-    })}
 
   ${({ theme }) =>
     theme.styleFor({
@@ -52,6 +42,12 @@ const YellowHighlight = styled.View`
         top: 30px;
         width: 130px;
         height: 15px;
+        ${theme.getBreakPoint?.({
+          lg: css`
+            width: 220px;
+            top: 34px;
+          `,
+        })}
       `,
       native: css`
         top: ${theme.scale(30)}px;

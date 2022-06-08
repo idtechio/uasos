@@ -43,7 +43,12 @@ export const ListItem = styled.View<{ theme: Theme }>`
         gap: 10px;
       `,
       native: css`
-        gap: ${theme.scale(10)}px; ;
+        paddinghorizontal: ${theme.scale(10 / -2)}px;
+
+        /* fix it add  for GuestAdditionalInfo
+        child: {
+          marginHorizontal: gap / 2,
+        }, */
       `,
     })}
 `;

@@ -4,7 +4,7 @@ import { useTranslation } from "../../common-i18n/use-translation";
 import { WarningWrapper, HeaderText, TextWrapper } from "./style";
 import WarningIcon from "../../style/svgs/warningTriangle.svg";
 import styled from "styled-components/native";
-import { sanitize } from "../../../../apps/next/src/helpers/sanitize";
+import RenderHtml from "react-native-render-html";
 import { scale } from "app/utils/scale";
 
 const ICON_DIM = Platform.OS === "web" ? 24 : scale(24);
@@ -28,8 +28,6 @@ const Test = styled.View`
   }
 `;
 
-const TestText = styled.Text``;
-
 const WarningSection = ({ containerStyle }: WarningSectionProps) => {
   const { t } = useTranslation("others");
   return (
@@ -41,7 +39,7 @@ const WarningSection = ({ containerStyle }: WarningSectionProps) => {
         <View>
           <HeaderText>
             <Test>
-              <TestText>{sanitize(t("forms.match.usersWarning"))}</TestText>
+              <RenderHtml source={{ html: t("forms.match.usersWarning") }} />
             </Test>
           </HeaderText>
         </View>

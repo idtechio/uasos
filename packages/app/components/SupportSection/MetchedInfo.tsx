@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "../../common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
-import EmailIcon from "../../../src/style/svgs/matched_email.svg";
-import UsersIcon from "../../../src/style/svgs/users.svg";
-import PhoneIcon from "../../../src/style/svgs/matched_phone.svg";
+import EmailIcon from "../../style/svgs/matched_email.svg";
+import UsersIcon from "../../style/svgs/users.svg";
+import PhoneIcon from "../../style/svgs/matched_phone.svg";
 import { Theme } from "../../provider/theme/theme.config";
 
 export const MetchedInfo = ({

@@ -2,9 +2,9 @@ import React from "react";
 import { useTranslation } from "../../common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
 import { Theme } from "../../provider/theme/theme.config";
-import ClockIcon from "../../../src/style/svgs/clock.svg";
-import MarkerIcon from "../../../src/style/svgs/marker2.svg";
-import UsersIcon from "../../../src/style/svgs/users.svg";
+import ClockIcon from "../../style/svgs/clock.svg";
+import MarkerIcon from "../../style/svgs/marker2.svg";
+import UsersIcon from "../../style/svgs/users.svg";
 import { Label } from "./style";
 
 export type Duration =

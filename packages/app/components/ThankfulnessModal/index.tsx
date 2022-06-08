@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import { TextLink } from "solito/link";
 import React from "react";
-import { StyleSheet, View, Platform } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import { ButtonCta } from "../Buttons";
 import CardModal from "../../../../apps/next/src/components/CardModal";
@@ -47,9 +47,9 @@ export const ThankfulnessModal = ({
         </ThankfulnessModalTextWrapper>
         <ThankfulnessModalButtonCtaWrapper>
           <TextLink href="/dashboard">
-            <a>
+            <Text>
               <ButtonCta pressable={false} anchor={t("backToHomePage")} />
-            </a>
+            </Text>
           </TextLink>
         </ThankfulnessModalButtonCtaWrapper>
       </ThankfulnessModalContentWrapper>

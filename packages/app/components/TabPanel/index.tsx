@@ -50,15 +50,14 @@ const Button = styled.Pressable<{ selected: boolean; theme: Theme }>`
       web: css`
         padding-left: 10px;
         padding-right: 10px;
+        &:hover {
+          opacity: 0.7;
+        }
       `,
       native: css`
         padding-horizontal: ${theme.scale(10)}px;
       `,
     })}
-
-  &:hover {
-    opacity: 0.7;
-  }
 `;
 
 const Text = styled.Text<{ selected: boolean; theme: Theme }>`

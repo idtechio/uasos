@@ -42,5 +42,8 @@
       "yarn precommit:lint",
       "yarn precommit:format"
     ]
+  },
+  "dependencies": {
+    "react-native-render-html": "^6.3.4"
   }
 }

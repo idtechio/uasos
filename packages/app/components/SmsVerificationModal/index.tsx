@@ -13,7 +13,7 @@ import {
   ButtonSubmit,
 } from "./style";
 import CardModal from "../../../../apps/next/src/components/CardModal";
-import SmsSent from "../../../../apps/next/public/assets/SmsSent.png";
+import SmsSent from "../../assets/PasswordReset.png";
 import {
   ConfirmationResult,
   RecaptchaVerifier,
