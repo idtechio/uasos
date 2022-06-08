@@ -38,7 +38,7 @@
     }
   },
   "lint-staged": {
-    "**/*.@(ts|tsx)": [
+    "packages/app/**/*.@(ts|tsx)": [
       "yarn precommit:lint",
       "yarn precommit:format"
     ]
