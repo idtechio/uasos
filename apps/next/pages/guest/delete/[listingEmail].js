@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { CompositionAppBody } from "../../../src/components/Compositions";
 import Section from "../../../src/components/Section";
 import { AfterDeactivateModal } from "../../../src/components/AfterDeactivateModal";
