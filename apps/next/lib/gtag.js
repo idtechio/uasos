@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 export const GOOGLE_TAG_ID = process.env.NEXT_PUBLIC_GTM_ID;
 

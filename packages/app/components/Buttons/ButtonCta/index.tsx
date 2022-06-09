@@ -1,18 +1,26 @@
 import { Button, Text } from "./style";
-import type { ButtonProps } from "../types";
+import type { ButtonProps } from "../../Buttons/types";
 import React, { useCallback } from "react";
-import { ActivityIndicator, Pressable, View } from "react-native";
+import { ActivityIndicator, TextStyle } from "react-native";
+import { ButtonColor, ButtonVariant } from "./types";
 
+// TODO: apply these changes in src/components/Buttons/ButtonCta
 const ButtonCta = ({
   style,
   anchor,
   onPress,
   colorOpposite = false,
   onClick,
-  pressable = true,
-  disabled,
-  isLoading,
-}: ButtonProps) => {
+  variant = "contained",
+  disabled = false,
+  isLoading = false,
+}: ButtonProps & {
+  disabled?: boolean;
+  isLoading?: boolean;
+  textStyle?: TextStyle;
+  variant?: ButtonVariant;
+  color?: ButtonColor;
+}) => {
   const handlePress = useCallback(
     (event) => {
       onClick?.(event);
@@ -23,7 +31,7 @@ const ButtonCta = ({
 
   return (
     <Button
-      as={pressable ? Pressable : View}
+      variant={variant}
       style={style}
       onPress={handlePress}
       colorOpposite={colorOpposite}
@@ -32,7 +40,9 @@ const ButtonCta = ({
       {isLoading ? (
         <ActivityIndicator size="small" />
       ) : typeof anchor === "string" ? (
-        <Text colorOpposite={colorOpposite}>{anchor}</Text>
+        <Text variant={variant} colorOpposite={colorOpposite}>
+          {anchor}
+        </Text>
       ) : (
         anchor
       )}
