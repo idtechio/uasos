@@ -23,7 +23,6 @@ export function HomeScreen() {
 Components that includes another components not from my refactoring list: 
 
 Complex components return to them later: 
-PlacesAutocomplete
 Navigation
 LendingProjectIntention
 Instructions

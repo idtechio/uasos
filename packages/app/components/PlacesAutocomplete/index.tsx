@@ -2,17 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 
 import usePlacesAutocomplete from "use-places-autocomplete";
 import {
-  ActivityIndicator,
   FlatList,
   NativeSyntheticEvent,
   Platform,
   TextInputChangeEventData,
 } from "react-native";
 
-import { Container, Input, List, Separator } from "./styles";
+import { Container, Input, List, Separator, ActivityIndicator } from "./styles";
 import { FieldError } from "react-hook-form";
 import { Item } from "./Item";
-import { CountryCode, SelectedCountry } from "../Inputs/FormGeoAutocomplete";
+import { CountryCode, SelectedCountry } from "./type";
 
 interface Props {
   value: string;
@@ -105,14 +104,7 @@ export const PlacesAutocomplete = ({
           value={localValue || value}
           onChange={handleChange}
         />
-        {loading ? (
-          <ActivityIndicator
-            style={{
-              position: "absolute",
-              right: 15,
-            }}
-          />
-        ) : null}
+        {loading ? <ActivityIndicator /> : null}
       </Container>
 
       {!loading && localValue && showOptions ? (

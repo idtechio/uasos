@@ -1,20 +1,21 @@
-import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
-import { useTranslation } from "next-i18next";
+import React, { useContext } from "react";
+import { useRouter } from "solito/router";
+import { useTranslation } from "../../common-i18n/use-translation";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
 import UserIcon from "../../style/svgs/user.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
 import { signOut } from "next-auth/react";
-import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
-import React, { useContext } from "react";
+import NavigationMenuItem from "./NavigationMenuItem.tsx/NavigationMenuItem";
 
 interface Props {
   isOpen: boolean;
   hideDrawer: () => void;
 }
 
+// TODO: Make separate component for mobile, that will not use language in url
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
   const { t } = useTranslation(["common", "others"]);

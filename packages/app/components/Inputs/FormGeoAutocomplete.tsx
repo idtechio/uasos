@@ -5,6 +5,7 @@ import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import { Error } from "./style";
 import { PlacesAutocomplete } from "../PlacesAutocomplete";
+import { SelectedCountry } from "../PlacesAutocomplete/type";
 
 type Props = {
   name: FormKey;
@@ -13,16 +14,6 @@ type Props = {
   errorMsg?: string;
   zIndex?: number;
 };
-
-export enum CountryCode {
-  poland = "pl",
-  hungary = "hu",
-  czechia = "cz",
-  slovakia = "sk",
-  romania = "ro",
-}
-
-export type SelectedCountry = keyof typeof CountryCode;
 
 function FormGeoAutocomplete({
   name,
