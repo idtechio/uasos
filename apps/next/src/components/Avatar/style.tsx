@@ -8,7 +8,7 @@ export const AvatarWraper = styled.View`
 
 export const AvatarImage = styled.View`
   margin-right: 10px;
-  border-radius: 50%;
+  border-radius: 50px;
   overflow: hidden;
 `;
 

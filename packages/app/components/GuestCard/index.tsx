@@ -1,9 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { useTranslation } from "../../common-i18n/use-translation";
 import { ButtonCta } from "../Buttons";
 import Avatar from "../Avatar";
-import { styles } from "./style";
-import { Trans, useTranslation } from "next-i18next";
+import {
+  Container,
+  Footer,
+  Header,
+  HeaderLeft,
+  HeaderRight,
+  HeaderRightText,
+  HeaderRightTextContent,
+  Tag,
+  Tags,
+  TagText,
+} from "./style";
 import AccountIcon from "../../style/svgs/account.svg";
 import MarkerIcon from "../../style/svgs/marker.svg";
 import AnimalsIcon from "../../style/svgs/animals.svg";
@@ -36,103 +46,82 @@ const GuestCard = ({
   animals,
   toddler,
 }: GuestCardProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
   return (
-    <View style={styles.box}>
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
+    <Container>
+      <Header>
+        <HeaderLeft>
           <Avatar
             avatar={avatar}
             title={name}
             subtitle={t(`guestOffer.arrivalToPoland`, { arrival })}
             reversedTitle
           />
-        </View>
+        </HeaderLeft>
         {numberOfGuests > 2 && (
-          <>
-            <View style={styles.headerRight}>
-              <View style={styles.headerRightText}>
-                <AccountIcon width="16" height="16" />
-                <Text style={styles.headerRightTextContent}>
-                  <strong>
-                    {t("guestOffer.peopleToAccommodate", {
-                      count: numberOfGuests - 1,
-                    })}
-                  </strong>
-                </Text>
-              </View>
-              <View style={styles.headerRightText}>
-                <Text style={styles.headerRightTextContentSmall}>
-                  {guests && guests.join(", ")}
-                </Text>
-              </View>
-            </View>
-          </>
+          <HeaderRight>
+            <HeaderRightText>
+              <AccountIcon width="16" height="16" />
+              <HeaderRightTextContent>
+                {t("guestOffer.peopleToAccommodate", {
+                  count: numberOfGuests - 1,
+                })}
+              </HeaderRightTextContent>
+            </HeaderRightText>
+            <HeaderRightText>
+              <HeaderRightTextContent small>
+                {guests && guests.join(", ")}
+              </HeaderRightTextContent>
+            </HeaderRightText>
+          </HeaderRight>
         )}
-      </View>
-
-      <View style={styles.tags}>
-        <View style={styles.tag}>
+      </Header>
+      <Tags>
+        <Tag>
           <MarkerIcon width="16" height="16" />
-          <Text style={styles.tagText}>
-            <Trans
-              i18nKey="guestOffer.preferredLocation"
-              values={{
-                location: preferredPlace || t("staticValues.anyLocation"),
-              }}
-            >
-              preferred location: <strong>any</strong>
-            </Trans>
-          </Text>
-        </View>
+          <TagText>
+            {t("guestOffer.preferredLocation", {
+              location: preferredPlace || t("staticValues.anyLocation"),
+            })}
+          </TagText>
+        </Tag>
         {animals ? (
-          <View style={styles.tag}>
+          <Tag>
             <AnimalsIcon width="16" height="16" />
-            <Text style={styles.tagText}>
-              <Trans
-                i18nKey="guestOffer.withAnimals"
-                values={{
-                  animals: animals.join(", "),
-                }}
-              >
-                animals with us: <strong>{animals.join(", ")}</strong>
-              </Trans>
-            </Text>
-          </View>
+            <TagText>
+              {t("guestOffer.withAnimals", {
+                animals: animals.join(", "),
+              })}
+            </TagText>
+          </Tag>
         ) : null}
         {toddler && (
-          <View style={styles.tag}>
+          <Tag>
             <KidsIcon width="16" height="16" />
-            <Text style={styles.tagText}>
-              <Trans
-                i18nKey="guestOffer.withKids"
-                values={{
-                  /** TODO: create method of age handling */
-                  age: "6 miesięcy",
-                }}
-              >
-                kids with us: <strong>6 months</strong>
-              </Trans>
-            </Text>
-          </View>
+            <TagText>
+              {t("guestOffer.withKids", {
+                age: "6 miesięcy",
+              })}
+            </TagText>
+          </Tag>
         )}
         {disabled && (
-          <View style={styles.tag}>
+          <Tag>
             <DisabilityIcon width="16" height="16" />
-            <Text style={styles.tagText}>{t("guestOffer.withDisabled")}</Text>
-          </View>
+            <TagText>{t("guestOffer.withDisabled")}</TagText>
+          </Tag>
         )}
         {elderly && (
-          <View style={styles.tag}>
+          <Tag>
             <ElderIcon width="16" height="16" />
-            <Text style={styles.tagText}>{t("guestOffer.withElder")}</Text>
-          </View>
+            <TagText>{t("guestOffer.withElder")}</TagText>
+          </Tag>
         )}
-      </View>
-      <View style={styles.footer}>
+      </Tags>
+      <Footer>
         <ButtonCta anchor={t("guestOffer.invite")} />
-      </View>
-    </View>
+      </Footer>
+    </Container>
   );
 };
 

@@ -1,14 +1,21 @@
 import React, { useContext, useRef, useState } from "react";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
-import styled, { css } from "styled-components/native";
+import { css } from "styled-components/native";
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { ConfirmationResult, User } from "firebase/auth";
+import { FirebaseError } from "@firebase/util";
+import { useMutation } from "react-query";
+import { useRouter } from "solito/router";
+import { useTranslation } from "../../common-i18n/use-translation";
+import { AccountApi } from "../../client-api/account";
+import { Authorization } from "../../hooks/useAuth";
+import { AuthContext } from "../../../pages/_app";
 import { FormType } from "../../helpers/FormTypes";
+import { Routes } from "../../consts/router";
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 import { InputControl, InputCotrolLabel as InputControlLabel } from "../Forms";
 import FormTextInput from "../Inputs/FormTextInput";
-import CardModal from "../CardModal";
 // import { Error } from "../Inputs/style";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
@@ -18,29 +25,16 @@ import {
   StyledErrorMessage,
   FormPhoneInputWrapper,
   FormTextInputWrapper,
+  SectionContent,
 } from "./styles";
 import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
-import { AccountApi } from "../../client-api/account";
-import { AuthContext } from "../../../pages/_app";
 import FormCheckbox from "../Inputs/FormCheckbox";
 import { CompositionRow } from "../Compositions/CompositionRow";
-import { useRouter } from "next/router";
-import { Routes } from "../../consts/router";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
-import { Authorization } from "../../hooks/useAuth";
-import { ConfirmationResult, User } from "firebase/auth";
+import CardModal from "../CardModal";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import { useMutation } from "react-query";
-import { FirebaseError } from "@firebase/util";
 import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
-
-export const SectionContent = styled.View`
-  max-width: 400px;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-`;
 
 type SubmitRequestState = {
   loading: boolean;
@@ -218,7 +212,7 @@ export default function FormRegisterUser() {
           {t("others:forms.userRegistration.enterDetails")}
         </StyledSubheader>
         <SectionContent>
-          <InputControlLabel marginBottom={"0"}>
+          <InputControlLabel marginBottom={0}>
             {t("others:forms.generic.name")}
           </InputControlLabel>
           <FormTextInput
@@ -230,7 +224,7 @@ export default function FormRegisterUser() {
             }}
             error={errors?.registrationUserForm?.name}
           />
-          <InputControlLabel marginBottom={"14px"}>
+          <InputControlLabel marginBottom={14}>
             {t("others:forms.userRegistration.preferredLanguage")}
           </InputControlLabel>
           <FormLanguageDropdown
@@ -244,7 +238,7 @@ export default function FormRegisterUser() {
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]} zIndex={1}>
         <SectionContent>
-          <InputControlLabel marginBottom={"14px"}>
+          <InputControlLabel marginBottom={14}>
             {t("refugeeAddForm.phoneLabel")}
           </InputControlLabel>
           <FormPhoneInputWrapper>
@@ -275,7 +269,7 @@ export default function FormRegisterUser() {
       </CompositionSection>
       <CompositionSection padding={[0, 30, 8, 30]}>
         <SectionContent>
-          <InputControlLabel marginBottom={"0"}>
+          <InputControlLabel marginBottom={0}>
             {t("others:forms.generic.emailAddress")}
           </InputControlLabel>
           <FormTextInputWrapper>
@@ -296,7 +290,7 @@ export default function FormRegisterUser() {
       </CompositionSection>
       <CompositionSection padding={[0, 30, 0, 30]}>
         <SectionContent>
-          <InputControlLabel marginBottom={"0"}>
+          <InputControlLabel marginBottom={0}>
             {t("others:forms.generic.password")}
           </InputControlLabel>
           <FormTextInput
@@ -311,7 +305,7 @@ export default function FormRegisterUser() {
             }}
             error={errors?.registrationUserForm?.password}
           />
-          <InputControlLabel marginBottom={"0"}>
+          <InputControlLabel marginBottom={0}>
             {t("others:forms.userRegistration.confirmPassword")}
           </InputControlLabel>
           <FormTextInput

@@ -1,10 +1,10 @@
 import React from "react";
 import { Platform } from "react-native";
-import CheckBox from "@react-native-community/checkbox";
+import CheckBox from "expo-checkbox";
 
 import { CheckboxFieldProps } from "./type";
 import { InputCotrolLabel } from "../";
-import { Label } from "./style";
+import { CheckBoxContainer, Label } from "./style";
 
 const CheckboxField = ({
   text,
@@ -27,10 +27,11 @@ const CheckboxField = ({
           </label>
         </>
       ) : (
-        <CheckBox onValueChange={onChange} />
+        <CheckBoxContainer>
+          <CheckBox value={value} onValueChange={onChange} />
+          <Label>{text}</Label>
+        </CheckBoxContainer>
       )}
-
-      {Platform.OS !== "web" && <Label>{text}</Label>}
     </InputCotrolLabel>
   );
 };

@@ -1,35 +1,34 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View } from "react-native";
+import { css } from "styled-components/native";
 import { FormProvider, useForm } from "react-hook-form";
+import { ConfirmationResult } from "firebase/auth";
+import { FirebaseError } from "@firebase/util";
+import { useTranslation } from "../../common-i18n/use-translation";
+import { AuthContext } from "../../../pages/_app";
+import { Authorization } from "../../hooks/useAuth";
+import { AccountApi } from "../../client-api/account";
 import { FormType } from "../../helpers/FormTypes";
 import { CompositionSection } from "../Compositions";
 import { FormHeader, Spacer } from "../FormLogin";
 import FormContainer from "../FormLogin/FormContainer";
 import FormTextInput from "../Inputs/FormTextInput";
-import { useTranslation } from "react-i18next";
 import { ButtonCta, ButtonSM } from "../Buttons";
 import FormPhoneInput from "../Inputs/FormPhoneInput";
 import { generatePhonePrefixDropdownList } from "../Inputs/FormPhoneInput/helpers";
 import { phonePrefixDropdownList } from "../../consts/phonePrefixDropdown";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
-import { FormFooter, ErrorText } from "./styles";
-import { styles } from "./styles";
-import { useContext } from "react";
-import { AuthContext } from "../../../pages/_app";
-import { Authorization } from "../../hooks/useAuth";
-import { ConfirmationResult } from "firebase/auth";
+import { FormFooter, ErrorText, styles } from "./styles";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import { AccountApi } from "../../client-api/account";
 import FormLanguageDropdown from "../Inputs/FormLanguageDropdown";
-import { FirebaseError } from "@firebase/util";
-import { css } from "styled-components/native";
 import SmsNotificationInput from "../EditUserProfileForm/Inputs/SmsNotificationInput";
 
 export default function FromRegisterWithSocials() {
   const { t } = useTranslation(["others", "common"]);
   const { identity, account } = useContext(AuthContext);
+
   const [phoneLoginConfirmation, setPhoneLoginConfirmation] =
     useState<ConfirmationResult | null>(null);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
@@ -42,6 +41,7 @@ export default function FromRegisterWithSocials() {
     smsNotification: boolean;
   }>();
   const [apiError, setApiError] = useState<string>("");
+
   const parseError = (error: string) => {
     if (error.includes("email-already-exists")) {
       setApiError(t("others:userRegistration.errors.emailExist"));
@@ -58,6 +58,7 @@ export default function FromRegisterWithSocials() {
       setApiError(t("others:common.sms.verificationFail"));
     }
   };
+
   const provider = identity?.providerData
     .map((provider) => provider.providerId)
     .includes("google.com")
@@ -67,6 +68,7 @@ export default function FromRegisterWithSocials() {
         .includes("facebook.com")
     ? "facebook"
     : "";
+
   const form = useForm<FormType>({
     defaultValues: {
       registerWithSocials: {
@@ -144,7 +146,7 @@ export default function FromRegisterWithSocials() {
         )}
         <Spacer />
         <FormProvider {...form}>
-          <InputControlLabel marginBottom="10px">
+          <InputControlLabel marginBottom={10}>
             {t("others:forms.generic.name")}
           </InputControlLabel>
           <FormTextInput

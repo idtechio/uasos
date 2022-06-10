@@ -21,18 +21,17 @@ type Props = {
   onChange?: (selected: string | string[]) => void;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormTextInput: VFC<Props> = (props) => {
-  const {
-    name,
-    label,
-    country,
-    errorMsg,
-    rules,
-    error,
-    zIndex,
-    placeholder,
-    multiSelect,
-  } = props;
+const FormTextInput: VFC<Props> = ({
+  name,
+  label,
+  country,
+  errorMsg,
+  rules,
+  error,
+  zIndex,
+  placeholder,
+  multiSelect,
+}) => {
   const { control } = useFormContext();
   let cityList: { label: string; value: unknown }[] = [];
 

@@ -1,5 +1,5 @@
 import React, { useMemo, VFC } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../common-i18n/use-translation";
 import { Dropdown } from "../../Dropdown";
 import InputControl from "../InputControl";
 import { getDefaultCountryList } from "./defaultLists";

@@ -1,33 +1,34 @@
-import { HeaderPage, ActionBar, ServiceLogo, Container } from "./style";
+import React, { useState } from "react";
+import { View, TouchableOpacity } from "react-native";
+import { useRouter } from "solito/router";
+import { HeaderPage, ActionBar, ServiceLogo, Container, Flags } from "./style";
 import Logo from "./image/Logo";
 import HamburgerButton from "../Navigation/HamburgerButton";
 import NavigationDrawer from "../Navigation/NavigationDrawer";
-import React, { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
-import { View, StyleSheet, Pressable } from "react-native";
 import { Routes } from "../../consts/router";
-import router from "next/router";
 
 const Header = () => {
+  const { push } = useRouter();
   const [navigationDrawerOpen, setNavigationDrawerOpen] = useState(false);
 
   const toggleNavigationDrawer = () =>
     setNavigationDrawerOpen(!navigationDrawerOpen);
 
-  const onPressLogo = () => router.push(Routes.HOMEPAGE);
+  const onPressLogo = () => push(Routes.HOMEPAGE);
 
   return (
     <Container>
       <HeaderPage>
         <ServiceLogo>
-          <Pressable onPress={onPressLogo}>
+          <TouchableOpacity onPress={onPressLogo}>
             <Logo width={129} height={40} />
-          </Pressable>
+          </TouchableOpacity>
         </ServiceLogo>
         <ActionBar>
-          <View style={styles.flags}>
+          <Flags>
             <LanguageSwitcher />
-          </View>
+          </Flags>
           <HamburgerButton
             isOpen={navigationDrawerOpen}
             onPress={toggleNavigationDrawer}
@@ -41,12 +42,5 @@ const Header = () => {
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  flags: {
-    flexDirection: "row",
-    marginRight: 20,
-  },
-});
 
 export default Header;

@@ -1,7 +1,7 @@
 import React from "react";
-import type { ChoiceButtonProps } from "./type";
-import { Button, Text, Icon } from "./style";
 import { TouchableOpacity } from "react-native";
+import { Button, Text, Icon } from "./style";
+import type { ChoiceButtonProps } from "./type";
 
 const ChoiceButton = ({
   text,

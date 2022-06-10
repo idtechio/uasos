@@ -1,16 +1,17 @@
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { useRouter } from "solito/router";
+import { useTranslation } from "../../common-i18n/use-translation";
 
 import { ButtonCta } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 import { InputCotrolLabel as InputControlLabel } from "../Forms";
-
 import FormContainer from "../FormLogin/FormContainer";
-import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import FormTextInput from "../Inputs/FormTextInput";
 import { Authorization } from "../../hooks/useAuth";
+import CardModal from "../CardModal";
+import { Routes } from "../../consts/router";
 import {
   StyledText,
   StyledHeader,
@@ -19,11 +20,8 @@ import {
   ModalContainer,
   StyledModalText,
   VerticalDivider,
+  Image,
 } from "./styles";
-import CardModal from "../CardModal";
-import ModalPicture from "../../../public/assets/PasswordReset.png";
-import Image from "next/image";
-import { Routes } from "../../consts/router";
 
 type LengthError = "others:forms.userRegistration.validations.passwordLength";
 type RepeatError = "others:forms.userRegistration.validations.passwordMismatch";
@@ -92,7 +90,7 @@ const FormPasswordReset = () => {
         <StyledText>{t("others:forms.resetPassword.header")}</StyledText>
         <FormContainer>
           <FormProvider {...formFields}>
-            <InputControlLabel marginBottom={"10"}>
+            <InputControlLabel marginBottom={10}>
               {t("others:forms.userRegistration.newPassword")}
             </InputControlLabel>
             <FormTextInput
@@ -111,7 +109,7 @@ const FormPasswordReset = () => {
             <VerticalDivider
               height={errors?.resetPassword?.password ? "0px" : "26px"}
             />
-            <InputControlLabel marginBottom={"10"}>
+            <InputControlLabel marginBottom={10}>
               {t("others:forms.userRegistration.confirmPassword")}
             </InputControlLabel>
             <FormTextInput
@@ -146,15 +144,11 @@ const FormPasswordReset = () => {
         {resetSuccess ? (
           <CardModal>
             <ModalContainer>
-              <Image src={ModalPicture} alt="" />
+              <Image source={require("app/assets/images/PasswordReset.png")} />
               <StyledModalText>
                 {t("others:forms.resetPassword.success")}
               </StyledModalText>
-              <ButtonCta
-                onPress={onPressHandler}
-                anchor={"Continue"}
-                style={styles.confirmButton}
-              />
+              <ButtonCta onPress={onPressHandler} anchor={"Continue"} />
             </ModalContainer>
           </CardModal>
         ) : (

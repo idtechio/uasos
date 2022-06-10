@@ -1,20 +1,27 @@
-import { Platform } from "react-native";
-import { FlattenSimpleInterpolation } from "styled-components";
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import { FlattenSimpleInterpolation } from "styled-components";
+import { Theme } from "../../../provider/theme/theme.config";
+
+export const CheckBoxContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+`;
 
 export const Label = styled.Text<{
   error?: boolean;
   theme: Theme;
   styleOverrides?: FlattenSimpleInterpolation;
 }>`
-  color: ${(props) => (props.error ? props.theme.colors.error : `inherit`)};
+  color: ${({ theme, error }) =>
+    error ? theme.colors.error : theme.colors.text};
 
-  ${Platform.select({
-    web: css`
-      cursor: pointer;
-    `,
-  })}
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        cursor: pointer;
+      `,
+    })}
 
   ${({ styleOverrides }) => styleOverrides}
 `;

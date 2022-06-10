@@ -1,15 +1,25 @@
 import React, { useMemo, VFC } from "react";
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../../provider/theme/theme.config";
 import { Dropdown } from "../../Dropdown";
 import { generatePhonePrefixDropdownList } from "../../Inputs/FormPhoneInput/helpers";
 import InputControl from "../InputControl";
 import { phonePrefixDropdownList } from "../../../consts/phonePrefixDropdown";
 import { NumberPrefixItemType, NumberPrefixSelectProps } from "./types";
+import { styles } from "./style";
 
-export const Error = styled.Text`
-  color: ${({ theme }: { theme: Theme }) => theme.colors.error};
-  margin-bottom: 10px;
+export const Error = styled.Text<{ theme: Theme }>`
+  color: ${({ theme }) => theme.colors.error};
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 10px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(10)}px;
+      `,
+    })}
 `;
 
 const usePrefixList = (data?: NumberPrefixItemType[]) => {
@@ -40,12 +50,7 @@ const PhoneNumberPrefixSelect: VFC<NumberPrefixSelectProps> = (props) => {
   return (
     <InputControl
       styles={{
-        wrapper: {
-          width: "100%",
-          maxWidth: "initial",
-          marginBottom: 0,
-          zIndex: 0,
-        },
+        wrapper: styles.inputControlWrapper,
       }}
     >
       <Dropdown
@@ -56,7 +61,7 @@ const PhoneNumberPrefixSelect: VFC<NumberPrefixSelectProps> = (props) => {
         error={error}
         label={label}
         multiselect={multiSelect}
-        styles={{ select: { paddingTop: 10, paddingBottom: 11 } }}
+        styles={{ select: styles.dropdown }}
       />
       {error && <Error>{errorMsg}</Error>}
     </InputControl>

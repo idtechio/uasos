@@ -1,12 +1,12 @@
 import React, { VFC } from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
+import { useRouter } from "solito/router";
 import { FormKey } from "../../../helpers/FormTypes";
-import { useRouter } from "next/router";
 import { generateLanguageDropdownList } from "./helpers";
-import { StyleSheet } from "react-native";
 import { Dropdown } from "../../Dropdown";
 import { Error } from "../style";
 import InputControl from "../../Forms/InputControl";
+import { styles } from "./style";
 
 type Props = {
   name: FormKey;
@@ -21,6 +21,7 @@ type Props = {
 
 const FormLanguageDropdown: VFC<Props> = (props) => {
   const { name, errorMsg, rules, error, placeholder } = props;
+  // TODO: find how to get locales for generateLanguageDropdown function
   const { locales } = useRouter();
   const { control } = useFormContext();
 
@@ -41,7 +42,7 @@ const FormLanguageDropdown: VFC<Props> = (props) => {
             onBlur={onBlur}
             selected={value}
             error={!!error}
-            styles={dropdownStyles}
+            styles={{ select: styles.select }}
           />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>
@@ -50,13 +51,5 @@ const FormLanguageDropdown: VFC<Props> = (props) => {
     />
   );
 };
-
-const dropdownStyles = StyleSheet.create({
-  select: {
-    paddingTop: "14px",
-    paddingBottom: "14px",
-    height: "54px",
-  },
-});
 
 export default FormLanguageDropdown;

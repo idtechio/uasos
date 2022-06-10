@@ -12,7 +12,7 @@ import {
 export type ListItemProps = {
   title: string;
   text: string;
-  image: string;
+  image?: NodeRequire;
   index: number;
 };
 
@@ -20,12 +20,12 @@ const ListItem = ({ title, text, image, index }: ListItemProps) => {
   return (
     <ListItemWrapper>
       <SlideBadge>
-        <BadgeText>{index + 1}</BadgeText>
+        <BadgeText>{index ? index + 1 : 1}</BadgeText>
       </SlideBadge>
 
       <ContentContainer>
         {/* @ts-expect-error TODO: fix prop types */}
-        <Image source={image} alt={title} resizeMode="contain" />
+        <Image source={image} accessibilityLabel={title} resizeMode="contain" />
         <Title>{title}</Title>
         <Text>{text}</Text>
       </ContentContainer>

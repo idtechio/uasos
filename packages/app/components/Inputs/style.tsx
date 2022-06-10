@@ -16,6 +16,7 @@ export const Error = styled.Text<{ theme: Theme }>`
 `;
 
 type WrapperProps = { isCentered?: boolean };
+
 export const Wrapper = styled.View<WrapperProps>`
   display: flex;
   align-items: ${({ isCentered }) => (isCentered ? "center" : "normal")};

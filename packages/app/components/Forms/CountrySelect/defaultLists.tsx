@@ -1,5 +1,5 @@
 import React from "react";
-import { TFunction } from "next-i18next";
+import { TFunction } from "../../../common-i18n/use-translation";
 import { LanguageFlags } from "../../LanguageSwitcher/LanguageFlags";
 import { LabelContainer, LabelText } from "./style";
 

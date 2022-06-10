@@ -1,7 +1,7 @@
 import React from "react";
+import { View } from "react-native";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import InputControl from "../Forms/InputControl";
-import { View } from "react-native";
 import { FormKey } from "../../helpers/FormTypes";
 import { DropdownProps } from "../Dropdown/types";
 import { Dropdown } from "../Dropdown";

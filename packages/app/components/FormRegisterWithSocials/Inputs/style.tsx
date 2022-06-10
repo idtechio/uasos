@@ -1,19 +1,17 @@
-import React, { ReactNode } from "react";
-import { ViewStyle } from "react-native";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../../provider/theme/theme.config";
 
-const Container = styled.View`
+export const Container = styled.View<{ theme: Theme }>`
   display: block;
   margin-top: 0px;
-  margin-bottom: 30px;
-`;
 
-export const InputWrapperRegister = ({
-  children,
-  styles,
-}: {
-  children: ReactNode;
-  styles?: {
-    container?: ViewStyle;
-  };
-}) => <Container style={styles?.container}>{children}</Container>;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 30px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(30)}px;
+      `,
+    })}
+`;

@@ -1,11 +1,11 @@
 import React, { VFC } from "react";
+import styled, { css } from "styled-components/native";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-
+import { useTranslation } from "../../common-i18n/use-translation";
+import { Theme } from "../../provider/theme/theme.config";
 import { FormKey } from "../../helpers/FormTypes";
-import { useTranslation } from "react-i18next";
 import FormDropdown from "./FormDropdown";
 import { LanguageFlags } from "../LanguageSwitcher/LanguageFlags";
-import styled from "styled-components/native";
 
 type Props = {
   name: FormKey;
@@ -52,25 +52,23 @@ const countriesData: Array<CountryObject> = [
   },
 ];
 
-const FormTextInput: VFC<Props> = (props) => {
-  const {
-    name,
-    label,
-    errorMsg,
-    rules,
-    error,
-    zIndex,
-    placeholder,
-    multiSelect,
-  } = props;
-
+const FormTextInput: VFC<Props> = ({
+  name,
+  label,
+  errorMsg,
+  rules,
+  error,
+  zIndex,
+  placeholder,
+  multiSelect,
+}) => {
   const { t } = useTranslation();
 
   const countryDropdownList = countriesData.map((country) => ({
     label: (
       <FlexAlignCenter>
         <LanguageFlags locale={country.icon} />
-        <span style={{ marginLeft: 5 }}>{t(country.label)}</span>
+        <Text>{t(country.label)}</Text>
       </FlexAlignCenter>
     ),
     value: country.value,
@@ -103,4 +101,16 @@ export default FormTextInput;
 const FlexAlignCenter = styled.View`
   flex-direction: row;
   align-items: center;
+`;
+
+const Text = styled.Text<{ theme: Theme }>`
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-left: 5px;
+      `,
+      native: css`
+        margin-left: ${theme.scale(5)}px;
+      `,
+    })}
 `;

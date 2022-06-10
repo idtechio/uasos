@@ -1,25 +1,15 @@
 import React from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../common-i18n/use-translation";
 
-import { View } from "react-native";
 import { DATA } from "./config";
 import ListItem from "./ListItem";
-import { InstructionsGridItem } from "./style";
+import { InstructionsGridContainer, InstructionsGridItem } from "./style";
 
-export const InstructionsGrid = () => {
+const InstructionsGrid = () => {
   const { t } = useTranslation("landingPage");
 
   return (
-    <View
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      /** @ts-ignore */
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr 1fr",
-        gridGap: "22px",
-        alignSelf: "stretch",
-      }}
-    >
+    <InstructionsGridContainer>
       {DATA.map((item, index) => (
         <InstructionsGridItem key={index}>
           <ListItem
@@ -30,6 +20,8 @@ export const InstructionsGrid = () => {
           />
         </InstructionsGridItem>
       ))}
-    </View>
+    </InstructionsGridContainer>
   );
 };
+
+export default InstructionsGrid;

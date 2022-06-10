@@ -1,46 +1,70 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+import { Theme } from "../../provider/theme/theme.config";
 import { StyleSheet } from "react-native";
 
-export const ButtonContainer = styled.View`
+export const ButtonContainer = styled.View<{ theme: Theme }>`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 30px;
+
+  ${({ theme }) =>
+    theme.styledFor({
+      web: css`
+        margin-bottom: 30px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(30)}px;
+      `,
+    })}
 `;
+
 export const StyledHeader = styled.Text`
+  display: flex;
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-  display: flex;
   letter-spacing: 0.5px;
   color: #003566;
 `;
-export const StyledText = styled.Text`
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
-  display: flex;
-  letter-spacing: 0.5px;
-  margin: 10px 0 50px;
 
+export const StyledText = styled.Text<{ theme: Theme }>`
+  display: flex;
   font-style: normal;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   line-height: 24px;
-  /* identical to box height, or 150% */
-
   letter-spacing: 0.5px;
-
   color: #003566;
+
+  ${({ theme }) =>
+    theme.styledFor({
+      web: css`
+        margin: 10px 0 50px;
+      `,
+      native: css`
+        margin: ${theme.scale(10)}px 0 ${theme.scale(50)}px;
+      `,
+    })}
 `;
+
 export const ModalContainer = styled.View`
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
+
 export const StyledModalText = styled(StyledText)`
   text-align: center;
 `;
+
+export const VerticalDivider = styled.View<{
+  height?: string;
+}>`
+  height: ${(props) => props.height};
+`;
+
+export const Image = styled.Image``;
+
 export const styles = StyleSheet.create({
   backButton: {
     backgroundColor: "#fff",
@@ -53,10 +77,4 @@ export const styles = StyleSheet.create({
     width: 190,
     marginTop: 50,
   },
-  confirmButton: {},
 });
-export const VerticalDivider = styled.View<{
-  height?: string;
-}>`
-  height: ${(props) => props.height};
-`;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import CountrySelect from "../../Forms/CountrySelect";
-import { InputWrapperRegister } from "./style";
+import InputWrapperRegister from "./InputWrapperRegister";
 import { FormType } from "../../../helpers/FormTypes";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "../../../common-i18n/use-translation";
 
 export default function PreferredLanguageInput() {
   const { control } = useFormContext<FormType>();

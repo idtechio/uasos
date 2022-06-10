@@ -21,7 +21,7 @@ export const InstructionsCarousel = () => (
         title={item.title}
         image={item.image}
         text={item.text}
-        index={index}
+        index={index ?? null}
       />
     ))}
   </Slider>

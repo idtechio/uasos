@@ -1,15 +1,16 @@
 import React from "react";
-
+import { Theme } from "../../../provider/theme/theme.config";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-import { Error } from "../style";
 import Input from "../../Forms/Input";
 import InputControl from "../../Forms/InputControl";
 import { FormKey } from "../../../helpers/FormTypes";
 import { Dropdown } from "../../Dropdown";
 import { CompositionRow } from "../../Compositions/CompositionRow";
-import { StyleSheet } from "react-native";
+import { Error } from "../style";
+import { PHONE_INPUT_SIZES } from "./consts";
+import { styles } from "./style";
 
-type Props = {
+type FormPhoneInputProps = {
   prefixName: FormKey;
   numberName: FormKey;
   phoneLabel: string;
@@ -35,16 +36,16 @@ function FormPhoneInput({
   extra,
   secureTextEntry,
   data,
-}: Props) {
+}: FormPhoneInputProps) {
   const { control } = useFormContext();
 
   return (
-    <CompositionRow spacing={CompositionRowSpacing}>
+    <CompositionRow spacing={PHONE_INPUT_SIZES.COMPOSITION_ROW_SPACING}>
       <Controller
         control={control}
         rules={{ required: true }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <InputControl styles={prefixInputControlStyles}>
+          <InputControl styles={{ wrapper: styles.prefixInputControl }}>
             <Dropdown
               data={data}
               placeholder={phonePrefixLabel}
@@ -52,7 +53,7 @@ function FormPhoneInput({
               onBlur={onBlur}
               selected={value}
               error={!!error}
-              styles={dropdownStyles}
+              styles={{ select: styles.dropdown }}
             />
             {errorPrefix && errorPrefixMsg && <Error>{errorPrefixMsg}</Error>}
           </InputControl>
@@ -70,7 +71,7 @@ function FormPhoneInput({
           },
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <InputControl styles={phoneInputControlStyles}>
+          <InputControl styles={{ wrapper: styles.phoneInputControl }}>
             <Input
               placeholder={phoneLabel}
               onChange={onChange}
@@ -79,7 +80,10 @@ function FormPhoneInput({
               error={error}
               extra={extra}
               secureTextEntry={secureTextEntry}
-              styles={inputStyles}
+              styles={{
+                wrapper: styles.inputWrapper,
+                textInput: styles.inputText,
+              }}
               keyboardType={"phone-pad"}
             />
             {error && <Error>{errorMsg}</Error>}
@@ -90,43 +94,5 @@ function FormPhoneInput({
     </CompositionRow>
   );
 }
-
-/* TODO: Styles should be changed in a certain styled-component in accordance with new design  */
-
-const CompositionRowSpacing = 11;
-
-const prefixInputControlStyles = StyleSheet.create({
-  wrapper: {
-    width: "107px",
-  },
-});
-
-const phoneInputControlStyles = StyleSheet.create({
-  wrapper: {
-    maxWidth: "283px",
-    width: `calc(100% - 107px - ${CompositionRowSpacing}px)`,
-    marginBottom: "12px",
-  },
-});
-
-const dropdownStyles = StyleSheet.create({
-  select: {
-    paddingTop: "14px",
-    paddingBottom: "14px",
-    marginBottom: "12px",
-  },
-});
-
-const inputStyles = StyleSheet.create({
-  wrapper: {
-    height: "54px",
-    marginBottom: "12px",
-  },
-  textInput: {
-    paddingTop: "15px",
-    paddingBottom: "15px",
-    height: "54px",
-  },
-});
 
 export default FormPhoneInput;

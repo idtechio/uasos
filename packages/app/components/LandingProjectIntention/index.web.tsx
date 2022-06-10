@@ -15,7 +15,7 @@ import {
   SubTitleWrapper,
   TextContainer,
   Title,
-  SubTitle,
+  SubTitleWeb,
 } from "./style";
 
 const LandingProjectIntention = () => {
@@ -27,6 +27,7 @@ const LandingProjectIntention = () => {
   const isAccountVerified =
     identity && account?.confirmedEmail && account?.confirmedPhone;
 
+  const welcomeAppDescription = t("others:welcomePage.appDescription");
   return (
     <Container>
       <ContentWrapper>
@@ -37,23 +38,29 @@ const LandingProjectIntention = () => {
           </Title>
 
           <SubTitleWrapper>
-            <SubTitle>{t("others:welcomePage.appDescription")}</SubTitle>
+            <SubTitleWeb
+              dangerouslySetInnerHTML={{ __html: welcomeAppDescription }}
+            />
           </SubTitleWrapper>
 
           <ButtonContainer>
             {isAccountVerified ? (
               <>
                 <Link href="/guest">
-                  <ButtonStyle
-                    colorOpposite
-                    anchor={t("landingPage:projectIntention.lookingForHelp")}
-                  />
+                  <a>
+                    <ButtonStyle
+                      colorOpposite
+                      anchor={t("landingPage:projectIntention.lookingForHelp")}
+                    />
+                  </a>
                 </Link>
                 <Link href="/host">
-                  <ButtonStyle
-                    colorOpposite
-                    anchor={t("landingPage:projectIntention.shareHelp")}
-                  />
+                  <a>
+                    <ButtonStyle
+                      colorOpposite
+                      anchor={t("landingPage:projectIntention.shareHelp")}
+                    />
+                  </a>
                 </Link>
               </>
             ) : (
@@ -62,27 +69,33 @@ const LandingProjectIntention = () => {
                   first
                   colorOpposite
                   anchor={t("common:shareLocation")}
-                  onPress={() => router.push(Routes.SIGN_IN)}
+                  onPress={(event) => {
+                    event?.preventDefault();
+                    // TODO: change component to not use language in router
+                    router.push(`/${router?.locale}${Routes.SIGN_IN}`);
+                  }}
                 />
               </>
             )}
             <Link href="/public-shelters">
-              <ButtonStyle
-                style={{
-                  flexDirection: "row",
-                  backgroundColor: "transparent",
-                  border: "1.5px solid rgb(0, 53, 102)",
-                  boxSizing: "border-box",
-                }}
-                anchor={
-                  <FlexAnchor>
-                    <ButtonText>
-                      {t("others:common.words.publicShelters")}
-                    </ButtonText>
-                    <ChevronRight />
-                  </FlexAnchor>
-                }
-              />
+              <a>
+                <ButtonStyle
+                  style={{
+                    flexDirection: "row",
+                    backgroundColor: "transparent",
+                    border: "1.5px solid rgb(0, 53, 102)",
+                    boxSizing: "border-box",
+                  }}
+                  anchor={
+                    <FlexAnchor>
+                      <ButtonText>
+                        {t("others:common.words.publicShelters")}
+                      </ButtonText>
+                      <ChevronRight />
+                    </FlexAnchor>
+                  }
+                />
+              </a>
             </Link>
           </ButtonContainer>
         </TextContainer>
