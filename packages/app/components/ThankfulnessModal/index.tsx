@@ -4,7 +4,7 @@ import React from "react";
 import { StyleSheet, View, Text, Platform } from "react-native";
 import FormSentIcon from "../../style/svgs/form_sent.svg";
 import { ButtonCta } from "../Buttons";
-import CardModal from "../../../../apps/next/src/components/CardModal";
+import CardModal from "../CardModal";
 import {
   ThankfulnessHeader,
   ThankfulnessModalButtonCtaWrapper,

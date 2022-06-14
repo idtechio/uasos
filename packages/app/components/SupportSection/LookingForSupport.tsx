@@ -4,8 +4,8 @@ import { useRouter } from "solito/router";
 import styled, { css } from "styled-components/native";
 import { Theme } from "../../provider/theme/theme.config";
 import { Routes } from "../../consts/router";
-import EditOfferButton from "../../../../apps/next/src/components/EditOfferOptions/EditOfferButton";
-import { Error } from "../../../../apps/next/src/components/Inputs/style";
+import EditOfferButton from "../EditOfferOptions/EditOfferButton";
+import { Error } from "../Inputs/style";
 import StatusBadge from "../StatusBadge";
 import { AnnouncementHighlights } from "./AnnouncementHighlights";
 import CardAdd from "./CardAdd";
@@ -22,7 +22,7 @@ import {
   StatusBadgeWrapper,
 } from "./style";
 import { Request } from "./types";
-import { TargetTypes } from "../../../../apps/next/src/components/EditOfferOptions/EditOfferButton/types";
+import { TargetTypes } from "../EditOfferOptions/EditOfferButton/types";
 import { ActivityIndicator } from "react-native";
 
 type RequestProps = {

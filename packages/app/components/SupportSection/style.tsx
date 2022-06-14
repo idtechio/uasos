@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components/native";
-import Card from "../../../../apps/next/src/components/Card";
+import Card from "../Card";
 import { Theme } from "../../provider/theme/theme.config";
 
 export const SupportCard = styled(Card)<{ theme: Theme }>`

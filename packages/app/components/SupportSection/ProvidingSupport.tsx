@@ -3,7 +3,7 @@ import { useTranslation } from "../../common-i18n/use-translation";
 import { useRouter } from "solito/router";
 import "react-loading-skeleton/dist/skeleton.css";
 import { ActivityIndicator } from "react-native";
-import { ShelterType } from "../../../../apps/next/pages/api/listing/offers";
+import { ShelterType } from "../../queries/useRequestsList";
 import { Routes } from "../../consts/router";
 import EditOfferButton from "../../../../apps/next/src/components/EditOfferOptions/EditOfferButton";
 import { TargetTypes } from "../../../../apps/next/src/components/EditOfferOptions/EditOfferButton/types";
