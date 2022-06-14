@@ -75,38 +75,38 @@ export const ShelterCard = ({
             <Info>
               <MarkerIcon width={15} height={15} />
               <RowText>
-                <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.city", {
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.city", {
                       city: fullAddress,
-                    })}
-                  </InnerHTMLText>
-                </InnerHTML>
+                    }),
+                  }}
+                />
               </RowText>
             </Info>
             <Info>
               <UsersIcon />
 
               <RowText>
-                <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.occupancy", {
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.occupancy", {
                       number: occupancy,
-                    })}
-                  </InnerHTMLText>
-                </InnerHTML>
+                    }),
+                  }}
+                />
               </RowText>
             </Info>
             <Info>
               <PhoneIcon />
               <RowText>
-                <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.phoneNumberWithData", {
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t("others:forms.generic.phoneNumberWithData", {
                       number: phoneNumber,
-                    })}
-                  </InnerHTMLText>
-                </InnerHTML>
+                    }),
+                  }}
+                />
               </RowText>
             </Info>
           </SectionInfo>
