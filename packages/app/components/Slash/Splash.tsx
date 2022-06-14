@@ -4,8 +4,8 @@ import { ViewStyle } from "react-native";
 import styled from "styled-components/native";
 
 const SPLASH = {
-  blue: "/assets/splash_blue.png",
-  yellow: "/assets/splash_yellow.png",
+  blue: "../../assets/splash_blue.png",
+  yellow: "../../assets/splash_yellow.png",
 };
 
 const SpriteContainer = styled.View`
