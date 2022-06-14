@@ -29,8 +29,8 @@
     "native": "cd apps/expo && expo start",
     "web": "cd apps/next && yarn next",
     "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
-    "precommit-lint": "eslint .",
-    "precommit-format": "prettier --write"
+    "precommit:lint": "eslint .",
+    "precommit:format": "prettier --write"
   },
   "husky": {
     "hooks": {
