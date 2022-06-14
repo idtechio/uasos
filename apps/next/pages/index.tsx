@@ -8,7 +8,6 @@ import { LikeToHelpSection } from "../src/components/LikeToHelpSection";
 import { LandingMatchedSection } from "../src/components/LandingMatchedSection";
 import { PartnersSection } from "../src/components/PartnersSection";
 import { Splash } from "../src/components/Slash";
-import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { NumbersProps } from "./api/listing/numbers";
 import { Theme } from "../src/style/theme.config";
@@ -177,18 +176,15 @@ function Landing({ numberList }: LandingProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => {
-    const numberList = await getNumberList();
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const numberList = await getNumberList();
 
-    return {
-      props: {
-        session,
-        numberList: numberList.numbers,
-        ...(locale && (await serverSideTranslations(locale))),
-      },
-    };
-  }
-);
+  return {
+    props: {
+      numberList: numberList.numbers,
+      ...(locale && (await serverSideTranslations(locale))),
+    },
+  };
+};
 
 export default Landing;

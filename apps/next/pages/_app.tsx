@@ -6,7 +6,6 @@ import { appWithTranslation, useTranslation } from "next-i18next";
 import { ThemeProvider as ThemeProviderWeb } from "styled-components";
 import { ThemeProvider as ThemeProviderNative } from "styled-components/native";
 import { primary } from "../src/style/theme.config";
-import { SessionProvider } from "next-auth/react";
 import GlobalStyles from "../src/style/globalStyle";
 import { ProgressToastProvider } from "../src/providers/ProgressToastProvider";
 import { useBreakPointGetter } from "../src/hooks/useBreakPointGetter";
@@ -35,7 +34,7 @@ export const AuthContext = createContext<{
   loaded: false,
 });
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+function MyApp({ Component, pageProps: { ...pageProps } }: AppProps) {
   const getBreakPoint = useBreakPointGetter();
   const theme = useMemo(() => ({ ...primary, getBreakPoint }), [getBreakPoint]);
   const { t } = useTranslation();
@@ -89,42 +88,38 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps?.dehydratedState}>
           <GlobalStyles />
-          <SessionProvider session={session}>
-            <Head>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <meta property="og:title" content={t("ogMeta.title")} />
-              <meta
-                property="og:description"
-                content={t("ogMeta.description")}
-              />
-              <meta
-                property="og:image"
-                content="https://uasos.org/assets/fb_banner.png"
-              />
-              <meta property="og:image:type" content="image/png" />
-            </Head>
-            {gtag.GA_TRACKING_ID && <GAtag id={gtag.GA_TRACKING_ID} />}
-            <ThemeProviderWeb theme={theme}>
-              <ThemeProviderNative theme={theme}>
-                <AuthContext.Provider
-                  value={{
-                    identity,
-                    account,
-                    getTokenForAPI,
-                    loaded,
-                    refetchAccount,
-                  }}
-                >
-                  <ProgressToastProvider>
-                    <Component {...pageProps} />
-                  </ProgressToastProvider>
-                </AuthContext.Provider>
-              </ThemeProviderNative>
-            </ThemeProviderWeb>
-          </SessionProvider>
+
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <meta property="og:title" content={t("ogMeta.title")} />
+            <meta property="og:description" content={t("ogMeta.description")} />
+            <meta
+              property="og:image"
+              content="https://uasos.org/assets/fb_banner.png"
+            />
+            <meta property="og:image:type" content="image/png" />
+          </Head>
+          {gtag.GA_TRACKING_ID && <GAtag id={gtag.GA_TRACKING_ID} />}
+          <ThemeProviderWeb theme={theme}>
+            <ThemeProviderNative theme={theme}>
+              <AuthContext.Provider
+                value={{
+                  identity,
+                  account,
+                  getTokenForAPI,
+                  loaded,
+                  refetchAccount,
+                }}
+              >
+                <ProgressToastProvider>
+                  <Component {...pageProps} />
+                </ProgressToastProvider>
+              </AuthContext.Provider>
+            </ThemeProviderNative>
+          </ThemeProviderWeb>
         </Hydrate>
       </QueryClientProvider>
     </>
