@@ -1,125 +1,125 @@
 {
-    "001": {
-        "name": "INFORMATIONS GÉNÉRALES",
-        "content": {
-            "001": {
-                "question": "A quoi sert le portail ?",
-                "answer": "La plateforme uaSOS.org met en relation des réfugiés à la recherche d'un logement avec des particuliers, des institutions, des ONG et des entreprises proposant un hébergement. Contrairement à d'autres initiatives qui collectent des données similaires, la plateforme uaSOS.org met automatiquement en relation les annonces des personnes dans le besoin avec les offres d'aide, afin de fournir la meilleure assistance possible au plus grand nombre. Grâce à la plateforme, les personnes dans le besoin n'auront pas à parcourir des centaines d'offres d'aide disponibles, mais seront présentées la plus appropriée et la plus actuelle, adaptée à leurs besoins. L'inscription sur la plateforme n'est pas anonyme, ce qui assure la sécurité des deux parties."
-            },
-            "002": {
-                "question": "Qui a crée cette plateforme ?",
-                "answer": "L’initiative est soutenue par des ONGs polonaises et ukrainiennes, des gouvernements locaux et de nombreuses entreprises, qui non seulement fournissent la meilleure technologie, mais permettent également d’atteindre des centaines de milliers de personnes des deux côtés de la frontière. La plateforme a été créée avec la participation de dizaines de bénévoles et est basée sur un moteur avancé, ce qui donne à l’avenir la possibilité de développer la plateforme pour servir d’autres besoins (par exemple le transport)."
-            },
-            "003": {
-                "question": "Est-ce une plateforme sécurisée ?",
-                "answer": "La plateforme a été entièrement sécurisée sur le plan juridique (y compris les questions relatives au RGPD) par des experts coopérant avec le cabinet d’avocats ID Advisory. Elle dispose également d’un certain nombre de garanties techniques, telles que : les données personnelles sont traitées dans le cloud de Google, l’ensemble des données traitées est limité et la connexion s’effectue à travers Facebook et Gmail, ce qui garantit une sécurité accrue. \n\nEn même temps, nous ne sommes pas en mesure de vérifier toutes les personnes qui remplissent les formulaires via le portail. Veuillez donc contacter votre hôte\/ hôtesse et clarifier tous les détails avant votre séjour"
-            },
-            "004": {
-                "question": "Comment créer un compte ?",
-                "answer": "Pour créer un compte, vous devrez fournir votre adresse email et numéro de téléphone auquel un code de vérification sera envoyé."
-            },
-            "005": {
-                "question": "Dois-je saisir mes données personelles ?",
-                "answer": "Pour vous inscrire correctement, vous devez fournir votre adresse électronique et votre numéro de téléphone. Nous vous demandons votre nom pour faciliter la communication entre les parties."
-            },
-            "006": {
-                "question": "Qu'est-ce que la politique de confidentialité et le RGPD ?",
-                "answer": "Pour lire la politique de confidentialité, rendez-vous sur l'onglet \"Politique de confidentialité\"."
-            },
-            "007": {
-                "question": "Puis-je modifier mon annonce ?",
-                "answer": "Pour modifier votre annonce, après vous être connecté, cliquez sur le menu à côté de l'annonce (trois points) et sélectionnez la fonction \"Modifier\"."
-            },
-            "008": {
-                "question": "Comment puis-je supprimer mon annonce ?",
-                "answer": "Vous pouvez supprimer votre annonce de deux manières : \n\naprès vous être connecté, cliquez sur le menu à côté de l'annonce (trois points) et sélectionnez la fonction \"Supprimer\" \n\ndans l'e-mail \"UA SOS - Nous avons trouvé un hôte potentiel pour vous\", vous avez la possibilité de choisir l'option de suppression de l'annonce"
-            },
-            "009": {
-                "question": "La création d'un compte est-elle payante ?",
-                "answer": "Le portail est gratuit, il est destiné à aider les personnes qui fuient la guerre en Ukraine. Aucun frais n'est perçu quel que soit le stade de l'inscription ou de l'utilisation de notre portail."
-            },
-            "010": {
-                "question": "Comment fonctionne l'algorithme d'appariement des candidatures ? ",
-                "answer": "L'algorithme effectue des recherches dans les deux bases de données (celle des réfugiés et celle des hôtes) afin de trouver le plus grand nombre possible de connexions potentielles entre hôtes et réfugiés potentiels en fonction de leurs besoins. Toutes les 15 minutes, l'algorithme est lancé pour trouver des connexions pour les utilisateurs nouvellement enregistrés, mais aussi pour les personnes qui n'ont pas encore trouvé d'offre - ou qui ont refusé une offre précédente."
-            },
-            "011": {
-                "question": "Serai-je informé du statut ?",
-                "answer": "Oui, nous vous tiendrons informé de l'état de votre candidature par courrier électronique - consultez régulièrement votre boîte de réception email.\n\nEn outre, lorsque nous trouverons un invité\/hôte potentiel pour vous, nous vous en informerons par SMS."
-            }
-        }
-    },
-    "002": {
-        "name": "POUR LES HÔTES",
-        "content": {
-            "001": {
-                "question": "Je veux aider, comment puis-je accueillir ?",
-                "answer": "Pour mettre un logement à disposition, inscrivez-vous sur le portail, indiquez votre adresse e-mail, votre numéro de téléphone et activez votre compte. \n\nDès que nous aurons trouvé un réfugié potentiel pour vous, nous vous en informerons par e-mail et par SMS. Vous pourrez alors accéder au portail, voir les informations clés du formulaire de l'invité correspondant et accepter ou refuser l'offre. \n\nUne fois que les deux parties auront confirmé la correspondance, vous pourrez échanger vos coordonnées, clarifier les derniers détails et confirmer le lieu de votre rencontre. N'oubliez pas que tout le monde ne parlera pas la langue locale. Les courriers électroniques peuvent parfois être une option plus pratique, car il existe de nombreux outils de traduction en ligne que vous pouvez utiliser pour traduire vos échanges."
-            },
-            "002": {
-                "question": "Je veux aider les réfugiés. Les Ukrainiens sont-ils les seuls à avoir besoin d'aide ?",
-                "answer": "Lorsque la guerre a éclaté, il y avait en Ukraine des personnes de différentes nationalités - par exemple, des étudiants, des personnes en voyage d'affaires, des employés sous contrat, etc. Nous aidons toutes les personnes, quelles que soient leur nationalité, leur citoyenneté, leurs opinions politiques, leur religion, leur orientation sexuelle ou leur appartenance à une minorité ethnique."
-            },
-            "003": {
-                "question": "Puis-je indiquer le nombre de personnes que je souhaite héberger ? Une famille avec des enfants est-elle préférable, par exemple ?",
-                "answer": "Bien sûr. Toute personne qui décide d'aider les personnes venant d'Ukraine peut déclarer combien de personnes elle souhaite aider en les accueillant. Vous pouvez également indiquer si vous êtes prêt à accepter, par exemple, une famille avec des enfants, des animaux, etc."
-            },
-            "004": {
-                "question": "Dois-je me rendre à la frontière pour accueillir un réfugié ?",
-                "answer": "Pour l'instant, le portail est principalement destiné à vous aider à trouver un logement pour les réfugiés. Si vous êtes en mesure d'aller chercher la personne à la frontière ou à un endroit particulier, ceci est apprécié mais pas nécéssaire. Vous pouvez soumettre ces informations supplémentaires dans le formulaire. Des fonctionnalités supplémentaires seront ajoutées à l'avenir pour aider à trouver des moyens de transport, des emplois, etc."
-            },
-            "005": {
-                "question": "Je ne parle pas ukrainien, comment puis-je communiquer ?",
-                "answer": "La forme de communication préférée est le courrier électronique. Il n'est pas nécessaire de connaître la langue ukrainienne pour communiquer avec une personne qui la parle. Il existe de nombreux outils de traduction disponibles sur internet que vous pouvez utiliser pour traduire votre correspondance."
-            },
-            "006": {
-                "question": "Dois-je indiquer l'adresse de mon domicile ?",
-                "answer": "Vous devez fournir l'adresse de votre domicile pour créer un compte sur le portail. Elle ne sera pas affichée ou accessible à l’invité – l’invité ne verra que la ville de l'hébergement. Nous recommandons que l'hôte et l'invité se rencontrent dans un espace public."
-            },
-            "007": {
-                "question": "Pendant quelle durée minimale puis-je accueillir une personne d'Ukraine ?",
-                "answer": "La durée minimale pour accueillir une personne d'Ukraine est d'une nuit."
-            },
-            "008": {
-                "question": "Le service vérifie-t-il les utilisateurs du portail ?",
-                "answer": "Les utilisateurs se connectent sous leur profil par e-mail, Facebook ou Gmail, et leurs numéros de téléphone sont vérifiés."
-            },
-            "009": {
-                "question": "Puis-je renoncer à accueillir un réfugié ?",
-                "answer": "Nous sommes conscients que la vie est faite de divers évènements, c'est pourquoi vous pouvez démissionner de l'accueil de réfugiés à tout moment. Cependant, n'oubliez pas que votre offre d'accueil de personnes originaires d'Ukraine est importante pour elles et qu'elles ne sont pas toujours en mesure de trouver un nouvel endroit où passer la nuit. En vous portant volontaire, vous décidez de les aider."
-            },
-            "010": {
-                "question": "Dois-je aider financièrement les réfugiés ?",
-                "answer": "Vous n'êtes pas obligés d'apporter une aide financière aux réfugiés. Celà depend uniquement de votre bonne volonté."
-            },
-            "011": {
-                "question": "Dois-je fournir de la nourriture aux réfugiés ?",
-                "answer": "Compte tenu de la situation des réfugiés, fournir de la nourriture, au moins pour la période initiale de leur séjour, est bienvenu mais reste volontaire."
-            },
-            "012": {
-                "question": "Je n'utilise pas Internet, comment puis-je accueillir des réfugiés d'Ukraine ?",
-                "answer": "Pour pouvoir aider les réfugiés d'Ukraine par le biais de notre portail, vous devez vous inscrire sur la plateforme Internet. Toutefois, si vous n'y avez pas accès chez vous, vous pouvez le demander à des personnes de votre entourage."
-            },
-            "013": {
-                "question": "Puis-je faire payer les réfugiés pour les charges ménagères ?",
-                "answer": "Les personnes venant d'Ukraine ont fui la guerre. Essayez de les soutenir pendant cette période difficile. Si vous décidez d’accueillir un\/des réfugié(s), pensez aussi que vos charges ménagères risquent d'augmenter."
-            }
-        }
-    },
-    "003": {
-        "name": "POUR LES REFUGIES \/ INVITES",
-        "content": {
-            "001": {
-                "question": "Je suis un réfugié d'Ukraine, comment puis-je trouver un logement ?",
-                "answer": "Pour trouver un logement, inscrivez-vous sur le portail, indiquez votre adresse électronique et votre numéro de téléphone, activez votre compte et indiquez vos besoins dans le formulaire. \n\nDès que nous aurons trouvé un hôte potentiel pour vous, nous vous en informerons par e-mail et par SMS. Vous pourrez alors vous rendre sur le portail, consulter le profil de l'hôte et accepter ou refuser son offre. \n\nUne fois que les deux parties auront confirmé la correspondance, vous échangerez vos coordonnées, vous pourrez échanger vos coordonnées, clarifier les derniers détails et confirmer le lieu de votre rencontre. N'oubliez pas que tout le monde ne parlera pas la langue locale - le contact par courrier électronique peut donc parfois être une option plus pratique, car il existe de nombreux outils de traduction en ligne que vous pouvez utiliser pour traduire vos échanges."
-            },
-            "002": {
-                "question": "Puis-je compter sur un transport de la frontière à ma destination finale ?",
-                "answer": "Les personnes qui proposent un logement aux réfugiés ne sont pas toutes motorisées ou ne peuvent pas toutes offrir un transport. L'offre que vous recevez peut porter la mention \"avec transport\". Sinon, vous pouvez demander de l'aide à votre hôte dans une correspondance privée pour trouver un moyen d’arriver au logement."
-            },
-            "003": {
-                "question": "Dois-je payer le gîte et le couvert de la personne qui m'a accueilli ?",
-                "answer": "L'aide aux réfugiés est désintéressée et gratuite. Les personnes qui s'inscrivent sur le portail et proposent leur aide n'attendent rien en retour. N'oubliez pas, cependant, que le service n'est pas responsable des conditions dans lesquelles vous serez accepté. Assurez-vous de ne rien attendre en retour."
-            }
-        }
+  "001": {
+    "name": "INFORMATIONS GÉNÉRALES",
+    "content": {
+      "001": {
+        "question": "A quoi sert le portail ?",
+        "answer": "La plateforme uaSOS.org met en relation des réfugiés à la recherche d'un logement avec des particuliers, des institutions, des ONG et des entreprises proposant un hébergement. Contrairement à d'autres initiatives qui collectent des données similaires, la plateforme uaSOS.org met automatiquement en relation les annonces des personnes dans le besoin avec les offres d'aide, afin de fournir la meilleure assistance possible au plus grand nombre. Grâce à la plateforme, les personnes dans le besoin n'auront pas à parcourir des centaines d'offres d'aide disponibles, mais seront présentées la plus appropriée et la plus actuelle, adaptée à leurs besoins. L'inscription sur la plateforme n'est pas anonyme, ce qui assure la sécurité des deux parties."
+      },
+      "002": {
+        "question": "Qui a crée cette plateforme ?",
+        "answer": "L’initiative est soutenue par des ONGs polonaises et ukrainiennes, des gouvernements locaux et de nombreuses entreprises, qui non seulement fournissent la meilleure technologie, mais permettent également d’atteindre des centaines de milliers de personnes des deux côtés de la frontière. La plateforme a été créée avec la participation de dizaines de bénévoles et est basée sur un moteur avancé, ce qui donne à l’avenir la possibilité de développer la plateforme pour servir d’autres besoins (par exemple le transport)."
+      },
+      "003": {
+        "question": "Est-ce une plateforme sécurisée ?",
+        "answer": "La plateforme a été entièrement sécurisée sur le plan juridique (y compris les questions relatives au RGPD) par des experts coopérant avec le cabinet d’avocats ID Advisory. Elle dispose également d’un certain nombre de garanties techniques, telles que : les données personnelles sont traitées dans le cloud de Google, l’ensemble des données traitées est limité et la connexion s’effectue à travers Facebook et Gmail, ce qui garantit une sécurité accrue. \n\nEn même temps, nous ne sommes pas en mesure de vérifier toutes les personnes qui remplissent les formulaires via le portail. Veuillez donc contacter votre hôte/ hôtesse et clarifier tous les détails avant votre séjour"
+      },
+      "004": {
+        "question": "Comment créer un compte ?",
+        "answer": "Pour créer un compte, vous devrez fournir votre adresse email et numéro de téléphone auquel un code de vérification sera envoyé."
+      },
+      "005": {
+        "question": "Dois-je saisir mes données personelles ?",
+        "answer": "Pour vous inscrire correctement, vous devez fournir votre adresse électronique et votre numéro de téléphone. Nous vous demandons votre nom pour faciliter la communication entre les parties."
+      },
+      "006": {
+        "question": "Qu'est-ce que la politique de confidentialité et le RGPD ?",
+        "answer": "Pour lire la politique de confidentialité, rendez-vous sur l'onglet \"Politique de confidentialité\"."
+      },
+      "007": {
+        "question": "Puis-je modifier mon annonce ?",
+        "answer": "Pour modifier votre annonce, après vous être connecté, cliquez sur le menu à côté de l'annonce (trois points) et sélectionnez la fonction \"Modifier\"."
+      },
+      "008": {
+        "question": "Comment puis-je supprimer mon annonce ?",
+        "answer": "Vous pouvez supprimer votre annonce de deux manières : \n\naprès vous être connecté, cliquez sur le menu à côté de l'annonce (trois points) et sélectionnez la fonction \"Supprimer\" \n\ndans l'e-mail \"UA SOS - Nous avons trouvé un hôte potentiel pour vous\", vous avez la possibilité de choisir l'option de suppression de l'annonce"
+      },
+      "009": {
+        "question": "La création d'un compte est-elle payante ?",
+        "answer": "Le portail est gratuit, il est destiné à aider les personnes qui fuient la guerre en Ukraine. Aucun frais n'est perçu quel que soit le stade de l'inscription ou de l'utilisation de notre portail."
+      },
+      "010": {
+        "question": "Comment fonctionne l'algorithme d'appariement des candidatures ? ",
+        "answer": "L'algorithme effectue des recherches dans les deux bases de données (celle des réfugiés et celle des hôtes) afin de trouver le plus grand nombre possible de connexions potentielles entre hôtes et réfugiés potentiels en fonction de leurs besoins. Toutes les 15 minutes, l'algorithme est lancé pour trouver des connexions pour les utilisateurs nouvellement enregistrés, mais aussi pour les personnes qui n'ont pas encore trouvé d'offre - ou qui ont refusé une offre précédente."
+      },
+      "011": {
+        "question": "Serai-je informé du statut ?",
+        "answer": "Oui, nous vous tiendrons informé de l'état de votre candidature par courrier électronique - consultez régulièrement votre boîte de réception email.\n\nEn outre, lorsque nous trouverons un invité/hôte potentiel pour vous, nous vous en informerons par SMS."
+      }
     }
+  },
+  "002": {
+    "name": "POUR LES HÔTES",
+    "content": {
+      "001": {
+        "question": "Je veux aider, comment puis-je accueillir ?",
+        "answer": "Pour mettre un logement à disposition, inscrivez-vous sur le portail, indiquez votre adresse e-mail, votre numéro de téléphone et activez votre compte. \n\nDès que nous aurons trouvé un réfugié potentiel pour vous, nous vous en informerons par e-mail et par SMS. Vous pourrez alors accéder au portail, voir les informations clés du formulaire de l'invité correspondant et accepter ou refuser l'offre. \n\nUne fois que les deux parties auront confirmé la correspondance, vous pourrez échanger vos coordonnées, clarifier les derniers détails et confirmer le lieu de votre rencontre. N'oubliez pas que tout le monde ne parlera pas la langue locale. Les courriers électroniques peuvent parfois être une option plus pratique, car il existe de nombreux outils de traduction en ligne que vous pouvez utiliser pour traduire vos échanges."
+      },
+      "002": {
+        "question": "Je veux aider les réfugiés. Les Ukrainiens sont-ils les seuls à avoir besoin d'aide ?",
+        "answer": "Lorsque la guerre a éclaté, il y avait en Ukraine des personnes de différentes nationalités - par exemple, des étudiants, des personnes en voyage d'affaires, des employés sous contrat, etc. Nous aidons toutes les personnes, quelles que soient leur nationalité, leur citoyenneté, leurs opinions politiques, leur religion, leur orientation sexuelle ou leur appartenance à une minorité ethnique."
+      },
+      "003": {
+        "question": "Puis-je indiquer le nombre de personnes que je souhaite héberger ? Une famille avec des enfants est-elle préférable, par exemple ?",
+        "answer": "Bien sûr. Toute personne qui décide d'aider les personnes venant d'Ukraine peut déclarer combien de personnes elle souhaite aider en les accueillant. Vous pouvez également indiquer si vous êtes prêt à accepter, par exemple, une famille avec des enfants, des animaux, etc."
+      },
+      "004": {
+        "question": "Dois-je me rendre à la frontière pour accueillir un réfugié ?",
+        "answer": "Pour l'instant, le portail est principalement destiné à vous aider à trouver un logement pour les réfugiés. Si vous êtes en mesure d'aller chercher la personne à la frontière ou à un endroit particulier, ceci est apprécié mais pas nécéssaire. Vous pouvez soumettre ces informations supplémentaires dans le formulaire. Des fonctionnalités supplémentaires seront ajoutées à l'avenir pour aider à trouver des moyens de transport, des emplois, etc."
+      },
+      "005": {
+        "question": "Je ne parle pas ukrainien, comment puis-je communiquer ?",
+        "answer": "La forme de communication préférée est le courrier électronique. Il n'est pas nécessaire de connaître la langue ukrainienne pour communiquer avec une personne qui la parle. Il existe de nombreux outils de traduction disponibles sur internet que vous pouvez utiliser pour traduire votre correspondance."
+      },
+      "006": {
+        "question": "Dois-je indiquer l'adresse de mon domicile ?",
+        "answer": "Vous devez fournir l'adresse de votre domicile pour créer un compte sur le portail. Elle ne sera pas affichée ou accessible à l’invité – l’invité ne verra que la ville de l'hébergement. Nous recommandons que l'hôte et l'invité se rencontrent dans un espace public."
+      },
+      "007": {
+        "question": "Pendant quelle durée minimale puis-je accueillir une personne d'Ukraine ?",
+        "answer": "La durée minimale pour accueillir une personne d'Ukraine est d'une nuit."
+      },
+      "008": {
+        "question": "Le service vérifie-t-il les utilisateurs du portail ?",
+        "answer": "Les utilisateurs se connectent sous leur profil par e-mail, Facebook ou Gmail, et leurs numéros de téléphone sont vérifiés."
+      },
+      "009": {
+        "question": "Puis-je renoncer à accueillir un réfugié ?",
+        "answer": "Nous sommes conscients que la vie est faite de divers évènements, c'est pourquoi vous pouvez démissionner de l'accueil de réfugiés à tout moment. Cependant, n'oubliez pas que votre offre d'accueil de personnes originaires d'Ukraine est importante pour elles et qu'elles ne sont pas toujours en mesure de trouver un nouvel endroit où passer la nuit. En vous portant volontaire, vous décidez de les aider."
+      },
+      "010": {
+        "question": "Dois-je aider financièrement les réfugiés ?",
+        "answer": "Vous n'êtes pas obligés d'apporter une aide financière aux réfugiés. Celà depend uniquement de votre bonne volonté."
+      },
+      "011": {
+        "question": "Dois-je fournir de la nourriture aux réfugiés ?",
+        "answer": "Compte tenu de la situation des réfugiés, fournir de la nourriture, au moins pour la période initiale de leur séjour, est bienvenu mais reste volontaire."
+      },
+      "012": {
+        "question": "Je n'utilise pas Internet, comment puis-je accueillir des réfugiés d'Ukraine ?",
+        "answer": "Pour pouvoir aider les réfugiés d'Ukraine par le biais de notre portail, vous devez vous inscrire sur la plateforme Internet. Toutefois, si vous n'y avez pas accès chez vous, vous pouvez le demander à des personnes de votre entourage."
+      },
+      "013": {
+        "question": "Puis-je faire payer les réfugiés pour les charges ménagères ?",
+        "answer": "Les personnes venant d'Ukraine ont fui la guerre. Essayez de les soutenir pendant cette période difficile. Si vous décidez d’accueillir un/des réfugié(s), pensez aussi que vos charges ménagères risquent d'augmenter."
+      }
+    }
+  },
+  "003": {
+    "name": "POUR LES REFUGIES / INVITES",
+    "content": {
+      "001": {
+        "question": "Je suis un réfugié d'Ukraine, comment puis-je trouver un logement ?",
+        "answer": "Pour trouver un logement, inscrivez-vous sur le portail, indiquez votre adresse électronique et votre numéro de téléphone, activez votre compte et indiquez vos besoins dans le formulaire. \n\nDès que nous aurons trouvé un hôte potentiel pour vous, nous vous en informerons par e-mail et par SMS. Vous pourrez alors vous rendre sur le portail, consulter le profil de l'hôte et accepter ou refuser son offre. \n\nUne fois que les deux parties auront confirmé la correspondance, vous échangerez vos coordonnées, vous pourrez échanger vos coordonnées, clarifier les derniers détails et confirmer le lieu de votre rencontre. N'oubliez pas que tout le monde ne parlera pas la langue locale - le contact par courrier électronique peut donc parfois être une option plus pratique, car il existe de nombreux outils de traduction en ligne que vous pouvez utiliser pour traduire vos échanges."
+      },
+      "002": {
+        "question": "Puis-je compter sur un transport de la frontière à ma destination finale ?",
+        "answer": "Les personnes qui proposent un logement aux réfugiés ne sont pas toutes motorisées ou ne peuvent pas toutes offrir un transport. L'offre que vous recevez peut porter la mention \"avec transport\". Sinon, vous pouvez demander de l'aide à votre hôte dans une correspondance privée pour trouver un moyen d’arriver au logement."
+      },
+      "003": {
+        "question": "Dois-je payer le gîte et le couvert de la personne qui m'a accueilli ?",
+        "answer": "L'aide aux réfugiés est désintéressée et gratuite. Les personnes qui s'inscrivent sur le portail et proposent leur aide n'attendent rien en retour. N'oubliez pas, cependant, que le service n'est pas responsable des conditions dans lesquelles vous serez accepté. Assurez-vous de ne rien attendre en retour."
+      }
+    }
+  }
 }

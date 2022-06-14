@@ -25,15 +25,17 @@ const IconWrapper = styled.TouchableOpacity`
 type Props = {
   preview: string;
   onDelete: (key: string) => void;
+  onClick: () => void;
 };
 
-const UploadPreview = ({ preview, onDelete }: Props) => {
+const UploadPreview = ({ preview, onDelete, onClick }: Props) => {
   return (
     <PreviewWrapper>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         alt=""
         src={preview}
+        onClick={onClick}
         style={{
           objectFit: "cover",
           width: "100%",

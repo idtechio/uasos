@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FieldError, useFormContext } from "react-hook-form";
 import { ActivityIndicator, Platform, Text } from "react-native";
@@ -7,6 +8,7 @@ import UploadPreview from "../UploadPreview";
 import Compressor from "compressorjs";
 import { MAX_HEIGHT, MAX_WIDTH, MIME_TYPE, QUALITY } from "./config";
 import { blobToBase64 } from "./utils";
+import ImageViewer from "react-simple-image-viewer";
 
 type UploadInputProps = {
   accept?: string;
@@ -55,6 +57,9 @@ const UploadInput = ({
 }: UploadInputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isLoading, toggleLoading] = useState(false);
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
 
   const { watch, setValue } = useFormContext();
 
@@ -111,6 +116,16 @@ const UploadInput = ({
     };
   }, [onFileChange, uploadedPhotos]);
 
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
   if (Platform.OS !== "web") {
     return null;
   }
@@ -118,8 +133,13 @@ const UploadInput = ({
   return (
     <>
       <List>
-        {uploadedPhotos.map((file: string) => (
-          <UploadPreview key={file} preview={file} onDelete={handleDelete} />
+        {uploadedPhotos.map((file: string, index) => (
+          <UploadPreview
+            key={file}
+            preview={file}
+            onDelete={handleDelete}
+            onClick={() => openImageViewer(index)}
+          />
         ))}
         {uploadedPhotos.length < 3 && (
           <>
@@ -138,6 +158,31 @@ const UploadInput = ({
           </>
         )}
       </List>
+      {isViewerOpen &&
+        ReactDOM.createPortal(
+          <div
+            style={{
+              position: "fixed",
+              zIndex: 100,
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+            }}
+          >
+            <ImageViewer
+              src={uploadedPhotos}
+              currentIndex={currentImage}
+              disableScroll={false}
+              backgroundStyle={{
+                backgroundColor: "rgba(0,0,0, 0.7)",
+              }}
+              closeOnClickOutside={true}
+              onClose={closeImageViewer}
+            />
+          </div>,
+          document.getElementById("photo-viewer") as HTMLDivElement
+        )}
     </>
   );
 };
