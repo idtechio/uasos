@@ -12,6 +12,7 @@ const ButtonCta = ({
   pressable = true,
   disabled,
   isLoading,
+  ...props
 }: ButtonProps) => {
   const handlePress = useCallback(
     (event) => {
@@ -23,6 +24,7 @@ const ButtonCta = ({
 
   return (
     <Button
+      {...props}
       as={pressable ? Pressable : View}
       style={style}
       onPress={handlePress}

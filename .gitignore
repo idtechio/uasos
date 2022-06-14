@@ -40,3 +40,11 @@ sa_key.json
 .idea
 
 tsconfig.tsbuildinfo
+
+#cypress
+cypress/videos
+cypress/screenshots
+cypress.env.json
+
+#firebase account data 
+serviceAccount.json
