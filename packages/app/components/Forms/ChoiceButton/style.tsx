@@ -17,21 +17,37 @@ export const Button = styled.View<ButtonType>`
   background-color: ${(props) =>
     props.isSelected ? `rgba(56, 176, 0, 0.1)` : `transparent`};
   border-radius: 4px;
-  padding: ${(props) => (props.isSmall ? `10px 14px` : `25px`)};
   width: fit-content;
   flex-direction: ${(props) => (props.isSmall ? `row` : `column`)};
   align-items: center;
   justify-content: ${(props) => (props.isVertical ? `flex-left` : `center`)};
   text-align: center;
-  margin-right: ${(props) =>
-    props.isSmall
-      ? props.isVertical || props.noMarginRight
-        ? `0`
-        : `10px`
-      : `0`};
-  margin-bottom: ${(props) => (props.isSmall ? `10px` : `0`)};
   height: ${(props) => (props.isSmall ? "auto" : `100%`)};
-  width: ${(props) => props.width}px;
+
+  ${({ theme, isSmall, width, isVertical, noMarginRight }) =>
+    theme.styleFor({
+      web: css`
+        width: ${() => width}px;
+        padding: ${() => (isSmall ? `10px 14px` : `25px`)};
+        margin-right: ${() =>
+          isSmall ? (isVertical || noMarginRight ? `0` : `10px`) : `0`};
+        margin-bottom: ${() => (isSmall ? `10px` : `0`)};
+      `,
+      native: css`
+        width: ${() => theme.scale(width)}px;
+        padding: ${() =>
+          isSmall
+            ? `${theme.scale(10)}px ${theme.scale(14)}px`
+            : `${theme.scale(25)}px`};
+        margin-right: ${() =>
+          isSmall
+            ? isVertical || noMarginRight
+              ? `0`
+              : `${theme.scale(10)}px`
+            : `0`};
+        margin-bottom: ${() => (isSmall ? `${theme.scale(10)}px` : `0`)};
+      `,
+    })}
 `;
 
 type TextProps = {
