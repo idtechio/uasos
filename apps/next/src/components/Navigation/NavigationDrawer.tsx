@@ -5,7 +5,6 @@ import { Authorization } from "../../hooks/useAuth";
 import LogoutIcon from "../../style/svgs/logout.svg";
 import UserIcon from "../../style/svgs/user.svg";
 import { DrawerContainer, DrawerEmptySpace } from "./style";
-import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { Routes } from "../../consts/router";
 import React, { useContext } from "react";
@@ -22,10 +21,6 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
 
   const handleSignOut = () => {
     Authorization.logOut();
-    return signOut({
-      redirect: true,
-      callbackUrl: router.locale ? `/${router.locale}` : undefined,
-    });
   };
 
   if (!isOpen) {

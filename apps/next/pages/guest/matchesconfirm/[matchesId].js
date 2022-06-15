@@ -4,7 +4,6 @@ import Section from "../../../src/components/Section";
 import { AfterDecisionModal } from "../../../src/components/AfterDecisionModal";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { withSession } from "../../../src/helpers/withSession";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //TODO: DRY pages/guest/matchesconfirm/[matchesId].js
@@ -29,11 +28,10 @@ const Matchesconfirm = () => {
   );
 };
 
-export const getServerSideProps = withSession(async ({ locale }, session) => ({
+export const getServerSideProps = async ({ locale }) => ({
   props: {
-    session,
     ...(await serverSideTranslations(locale)),
   },
-}));
+});
 
 export default Matchesconfirm;

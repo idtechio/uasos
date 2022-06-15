@@ -13,7 +13,6 @@ import {
   PARTNERS,
 } from "../src/consts/partners.json";
 import { uasosInMedia } from "../src/consts/in-media.json";
-import { withSession } from "../src/helpers/withSession";
 import { GetServerSideProps } from "next";
 import { Theme } from "../src/style/theme.config";
 import GoBack from "../src/components/GoBack";
@@ -133,13 +132,10 @@ const PartnersPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => ({
-    props: {
-      session,
-      ...(locale && (await serverSideTranslations(locale))),
-    },
-  })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});
 
 export default PartnersPage;

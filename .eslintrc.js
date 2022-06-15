@@ -34,5 +34,6 @@ module.exports = {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "error",
     "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "_" }],
+    "@typescript-eslint/no-var-requires": 0,
   },
 };

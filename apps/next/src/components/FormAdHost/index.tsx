@@ -70,7 +70,7 @@ const submitRequestDefaultState = {
 };
 
 type FormAdHostProps = {
-  data: OfferProps | null;
+  data: null;
 };
 
 type MutateCallbacks = {

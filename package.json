@@ -39,8 +39,8 @@
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "yarn precommit:lint",
-      "yarn precommit:format"
+      "eslint .",
+      "prettier --write"
     ]
   }
 }
