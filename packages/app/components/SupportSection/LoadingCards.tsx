@@ -6,10 +6,10 @@ import {
   SupportCard,
   TextWrapper,
 } from "./style";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import SkeletonLoader from "expo-skeleton-loader";
 import { View } from "react-native";
 import styled, { css } from "styled-components/native";
+import { scale } from "app/utils/scale";
 import { Theme } from "../../provider/theme/theme.config";
 
 export const LoadingCards = ({
@@ -41,17 +41,54 @@ const LoadingCard = ({ showImage }: { showImage?: boolean }) => {
         )}
         <TextWrapper>
           <OfferTitle>
-            <Skeleton />
+            <SkeletonLoader>
+              <SkeletonLoader.Container>
+                <SkeletonLoader.Item
+                  style={{
+                    width: scale(100),
+                    height: scale(24),
+                  }}
+                />
+              </SkeletonLoader.Container>
+            </SkeletonLoader>
           </OfferTitle>
         </TextWrapper>
       </HeaderWrapper>
       <View>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
+        <SkeletonLoader>
+          <SkeletonLoader.Container style={[{ flex: 1, flexDirection: "row" }]}>
+            <SkeletonLoader.Item
+              style={{
+                width: scale(100),
+                height: scale(24),
+              }}
+            />
+            <SkeletonLoader.Item
+              style={{
+                width: scale(100),
+                height: scale(24),
+              }}
+            />
+            <SkeletonLoader.Item
+              style={{
+                width: scale(100),
+                height: scale(24),
+              }}
+            />
+          </SkeletonLoader.Container>
+        </SkeletonLoader>
       </View>
       <SkeletonBottom>
-        <Skeleton width={100} />
+        <SkeletonLoader>
+          <SkeletonLoader.Container>
+            <SkeletonLoader.Item
+              style={{
+                width: scale(100),
+                height: scale(24),
+              }}
+            />
+          </SkeletonLoader.Container>
+        </SkeletonLoader>
       </SkeletonBottom>
     </SupportCard>
   );
