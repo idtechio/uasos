@@ -1,5 +1,5 @@
-import { OfferProps } from "../../../../apps/next/pages/api/listing/offers";
-import { RequestProps } from "../../../../apps/next/pages/api/listing/requests";
+import { OfferProps } from "../../api/listing/offers";
+import { RequestProps } from "../../api/listing/requests";
 import { GetOffersListDTO } from "../../client-api/offers";
 import { GetRequestsListDTO } from "../../client-api/requests";
 import { AccommodationTime } from "../../helpers/FormTypes";

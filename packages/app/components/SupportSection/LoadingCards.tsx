@@ -34,7 +34,15 @@ const LoadingCard = ({ showImage }: { showImage?: boolean }) => {
       <HeaderWrapper>
         {showImage === true ? (
           <ImageWrapper>
-            <Skeleton height={80} />
+            <SkeletonLoader>
+              <SkeletonLoader.Container>
+                <SkeletonLoader.Item
+                  style={{
+                    height: scale(80),
+                  }}
+                />
+              </SkeletonLoader.Container>
+            </SkeletonLoader>
           </ImageWrapper>
         ) : (
           <></>
