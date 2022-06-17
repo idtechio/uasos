@@ -67,7 +67,7 @@ const useAuth = () => {
       setLoaded(true);
     });
   }, []);
-  let getTokenForAPI = null;
+  let getTokenForAPI: null | (() => Promise<string>) = null;
   if (identity) {
     getTokenForAPI = async () => await getIdToken(identity, true);
   }

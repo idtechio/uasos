@@ -5,7 +5,7 @@ import { UserRecord } from "firebase-admin/auth";
 import withApiAuth, {
   ApiAuthTokenDetails,
 } from "../../../src/helpers/withAPIAuth";
-import { getUser } from "../../../lib/firebase-admin-app";
+import { getUser } from "app/config/firebase-admin-app";
 import { publishMessage, PublishStatus } from "../../../src/helpers/PubSub";
 import { AccountInfoDBProps, getAccountFromDB } from "./get";
 

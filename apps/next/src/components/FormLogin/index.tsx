@@ -21,7 +21,7 @@ import { ConfirmationResult, getRedirectResult } from "firebase/auth";
 import SmsVerificationModal from "../SmsVerificationModal";
 import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { ErrorText } from "../FormRegisterWithSocials/styles";
-import { auth } from "../../../lib/firebase-app";
+import { auth } from "app/config/firebase-app";
 import CardModal from "../CardModal";
 import { PROVIDERS } from "./constants";
 

@@ -1,21 +1,18 @@
 import React from "react";
+import { View, Text } from "react-native";
 
 import { SafeAreaView } from "app/provider/safe-area";
-import { ButtonDefault } from "app/components/Buttons";
-import { ButtonCta } from "app/components/Buttons";
-import { ButtonSM } from "app/components/Buttons";
 
-export function HomeScreen() {
+export const HomeScreen = () => {
   return (
     <SafeAreaView
       style={{
         flex: 1,
       }}
     >
-      <ButtonSM id="google" anchor="ButtonSM - google" />
-      <ButtonSM id="facebook" anchor="ButtonSM - facebook" />
-      <ButtonCta anchor="ButtonCta" />
-      <ButtonDefault anchor="ButtonDefault" />
+      <View>
+        <Text>This is HOME SCREEN</Text>
+      </View>
     </SafeAreaView>
   );
-}
+};

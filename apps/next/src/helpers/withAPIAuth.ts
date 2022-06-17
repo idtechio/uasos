@@ -2,7 +2,7 @@
 import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import { DecodedIdToken } from "firebase-admin/auth";
 
-import { decodeToken } from "../../lib/firebase-admin-app";
+import { decodeToken } from "app/config/firebase-admin-app";
 
 export interface ApiAuthTokenDetails {
   token?: String;
