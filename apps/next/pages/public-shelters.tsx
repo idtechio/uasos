@@ -8,7 +8,6 @@ import { Theme } from "../src/style/theme.config";
 import { Routes } from "../src/consts/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetServerSideProps } from "next";
-import { withSession } from "../src/helpers/withSession";
 
 const StyledAppBack = styled(AppBack)<{ theme: Theme }>(
   ({ theme }) => css`
@@ -29,11 +28,8 @@ const PublicShelters = () => (
 
 export default PublicShelters;
 
-export const getServerSideProps: GetServerSideProps = withSession(
-  async ({ locale }, session) => ({
-    props: {
-      session,
-      ...(locale && (await serverSideTranslations(locale))),
-    },
-  })
-);
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(locale && (await serverSideTranslations(locale))),
+  },
+});

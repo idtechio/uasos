@@ -108,6 +108,7 @@ export const primary = {
       alert: "#F44336",
       positive: "#38B000",
       positiveButtonFill: "rgba(56, 176, 0, 0.1)",
+      borderInput: "rgba(28, 27, 37, 0.3)",
     },
   },
   fonts: {

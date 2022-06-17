@@ -1,25 +1,19 @@
 import React from "react";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
-
-import { Error } from "./style";
+import NumericInput from "../Forms/NumericInput";
 import InputControl from "../Forms/InputControl";
 import { FormKey } from "../../helpers/FormTypes";
-import Autocomplete from "../Forms/Autocomplete";
+import { Error } from "./style";
 
 type Props = {
   name: FormKey;
-  label: string;
+  min?: number;
+  max?: number;
   error?: FieldError;
   errorMsg?: string;
 } & Pick<React.ComponentProps<typeof Controller>, "rules">;
 
-const FormAutocompleteInput = ({
-  name,
-  label,
-  errorMsg,
-  rules,
-  error,
-}: Props) => {
+const FormTextInput = ({ name, errorMsg, rules, error, max, min }: Props) => {
   const { control } = useFormContext();
   return (
     <Controller
@@ -27,11 +21,12 @@ const FormAutocompleteInput = ({
       rules={rules}
       render={({ field: { onChange, value } }) => (
         <InputControl>
-          <Autocomplete
-            label={label}
-            value={value}
+          <NumericInput
             onChange={onChange}
+            value={value}
             error={error}
+            min={min}
+            max={max}
           />
           {error && <Error>{errorMsg}</Error>}
         </InputControl>
@@ -40,4 +35,4 @@ const FormAutocompleteInput = ({
     />
   );
 };
-export default FormAutocompleteInput;
+export default FormTextInput;

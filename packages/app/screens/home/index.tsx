@@ -1,5 +1,4 @@
 import React from "react";
-
 import { SafeAreaView } from "app/provider/safe-area";
 import { ButtonDefault } from "app/components/Buttons";
 import { ButtonCta } from "app/components/Buttons";
@@ -31,3 +30,12 @@ export function HomeScreen() {
     </SafeAreaView>
   );
 }
+
+/* 
+Components that includes another components not from my refactoring list: 
+
+Complex components return to them later: 
+Navigation
+LendingProjectIntention
+Instructions
+*/

@@ -1,5 +1,6 @@
+import { Theme } from "app/provider/theme/theme.config";
 import styled, { css } from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+
 import type { SectionProps } from "./types";
 
 export const PageSection = styled.View<SectionProps & { theme: Theme }>`

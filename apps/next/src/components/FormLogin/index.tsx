@@ -10,7 +10,6 @@ import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 
 import FormContainer from "./FormContainer";
-import { SignInProps } from "../../../pages/signin";
 import { Theme } from "../../style/theme.config";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
@@ -24,9 +23,9 @@ import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { ErrorText } from "../FormRegisterWithSocials/styles";
 import { auth } from "../../../lib/firebase-app";
 import CardModal from "../CardModal";
-type FormLoginProps = Pick<SignInProps, "providers" | "csrfToken">;
+import { PROVIDERS } from "./constants";
 
-const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
+const FormLogin = () => {
   const { t } = useTranslation();
 
   const [passwordInput, setPasswordInput] = useState(false);
@@ -152,10 +151,6 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
     }
   };
 
-  enum PROVIDERS {
-    FACEBOOK = "facebook",
-    GOOGLE = "google",
-  }
   const handleSignIn = async (providerId: string) => {
     switch (providerId) {
       case PROVIDERS.FACEBOOK:
@@ -176,13 +171,13 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
       <CompositionSection padding={[40, 15, 0, 15]} flexGrow="2">
         <FormContainer>
           <FormHeader>{t("others:forms.login.login")}</FormHeader>
-          {Object.values(providers).map(({ id, name }) => (
+          {Object.values(PROVIDERS).map((provider) => (
             <ButtonSM
-              key={name}
-              id={id}
-              onPress={() => handleSignIn(id)}
+              key={provider}
+              id={provider}
+              onPress={() => handleSignIn(provider)}
               anchor={
-                name === "Facebook"
+                provider === PROVIDERS.FACEBOOK
                   ? t("others:forms.login.signInFacebook")
                   : t("others:forms.login.signInGoogle")
               }
