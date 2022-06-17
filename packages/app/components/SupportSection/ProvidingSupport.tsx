@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "../../common-i18n/use-translation";
 import { useRouter } from "solito/router";
-import "react-loading-skeleton/dist/skeleton.css";
 import { ActivityIndicator } from "react-native";
 import { ShelterType } from "../../queries/useRequestsList";
 import { Routes } from "../../consts/router";
