@@ -1,5 +1,14 @@
 import React from "react";
 import { SafeAreaView } from "app/provider/safe-area";
+import { ButtonDefault } from "app/components/Buttons";
+import { ButtonCta } from "app/components/Buttons";
+import Section from "app/components/Section";
+import SectionTitle from "app/components/SectionTitle";
+
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+};
 
 export function HomeScreen() {
   return (
@@ -7,7 +16,12 @@ export function HomeScreen() {
       style={{
         flex: 1,
       }}
-    ></SafeAreaView>
+    >
+      <Section bgColor="gray" style={containerStyle} />
+      <SectionTitle title="SectionTitle" style={containerStyle} />
+      <ButtonCta anchor="ButtonCta" />
+      <ButtonDefault anchor="ButtonDefault" />
+    </SafeAreaView>
   );
 }
 

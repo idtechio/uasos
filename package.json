@@ -42,5 +42,9 @@
       "eslint .",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "expo-skeleton-loader": "^1.1.3",
+    "react-native-render-html": "^6.3.4"
   }
 }
