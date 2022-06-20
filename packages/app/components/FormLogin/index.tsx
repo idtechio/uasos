@@ -7,7 +7,7 @@ import { useTranslation } from "app/common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
-import { CompositionSection } from "../Compositions";
+import CompositionSection from "../Compositions/CompositionSection/index.web";
 
 import FormContainer from "./FormContainer";
 import { Theme } from "app/provider/theme/theme.config";

@@ -3,7 +3,7 @@ import { useTranslation } from "app/common-i18n/use-translation";
 import { Link } from "solito/link";
 import { StyleSheet, Platform } from "react-native";
 import { ButtonCta } from "../../Buttons";
-import { CompositionSection } from "../../Compositions";
+import CompositionSection from "../../Compositions/CompositionSection/index.web";
 import FormContainer from "../FormContainer";
 import { StyledText, Wrapper } from "./styled";
 import { Routes } from "../../../consts/router";

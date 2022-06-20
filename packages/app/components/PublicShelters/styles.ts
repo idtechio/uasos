@@ -159,7 +159,7 @@ export const MobileSectionTitle = styled.Text<{ theme: Theme }>`
   font-weight: 700;
   font-size: 24px;
   line-height: 24px;
-  color: ${theme.colors.headings};
+  color: ${({ theme }) => theme.colors.headings};
 
   ${({ theme }) =>
     theme.styleFor({
@@ -200,7 +200,7 @@ export const Wrapper = styled.View<{ theme: Theme }>`
 export const Description = styled.Text<{ theme: Theme }>`
   font-size: 12px;
   line-height: 13px;
-  color: ${theme.colors.headings};
+  color: ${({ theme }) => theme.colors.headings};
 
   ${({ theme }) =>
     theme.styleFor({
@@ -256,7 +256,7 @@ export const Label = styled.Text<{ theme: Theme }>`
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: ${theme.colors.headings};
+  color: ${({ theme }) => theme.colors.headings};
 
   ${({ theme }) =>
     theme.styleFor({
