@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components/native";
-import { useTranslation } from "next-i18next";
-import { Theme } from "../../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { useTranslation } from "app/common-i18n/use-translation";
+import { Theme } from "app/provider/theme/theme.config";
 
 const Separation = () => {
   const { t } = useTranslation();
@@ -15,13 +15,22 @@ const Separation = () => {
 
 export default Separation;
 
-const Wrapper = styled.View`
+const Wrapper = styled.View<{ theme: Theme }>`
   width: 100%;
-  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        height: 50px;
+      `,
+      native: css`
+        height: ${theme.scale(50)}px;
+      `,
+    })}
 `;
 
 const Detail = styled.View`
@@ -33,7 +42,7 @@ const Detail = styled.View`
   z-index: -1;
 `;
 
-const StyledText = styled.Text`
+const StyledText = styled.Text<{ theme: Theme }>`
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
@@ -41,6 +50,16 @@ const StyledText = styled.Text`
   color: ${({ theme }: { theme: Theme }) => theme.colors.blue};
   background-color: #fff;
   display: block;
-  padding: 0 15px;
   text-transform: capitalize;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 0 15px;
+      `,
+      native: css`
+        paddng-vertical: 0;
+        paddng-horizontal: ${theme.scale(15)}px;
+      `,
+    })}
 `;

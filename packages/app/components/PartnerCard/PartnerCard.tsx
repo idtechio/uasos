@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, ViewStyle } from "react-native";
-import Link from "next/link";
+import { Link } from "solito/link";
 import styled from "styled-components/native";
 import Card from "../Card";
 
@@ -17,7 +17,7 @@ interface Props {
 
 export function PartnerCard({ source, href = "", alt, style }: Props) {
   return (
-    <Link href={href} passHref>
+    <Link href={href}>
       <a target="_blank">
         <Card style={style}>
           <StyledImage

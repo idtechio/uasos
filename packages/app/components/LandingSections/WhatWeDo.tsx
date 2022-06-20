@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "next-i18next";
-import { StyleSheet, View } from "react-native";
+import { useTranslation } from "app/common-i18n/use-translation";
+import { StyleSheet, View, Platform } from "react-native";
 import { UnorderedList } from "../UnorderedList/UnorderedList";
 import Section from "../Section";
 import {
@@ -10,12 +10,13 @@ import {
   GradientBackground,
   ButtonContainer,
 } from "./style";
-import gradient from "../../../public/gradient.png";
+import gradient from "../../assets/images/gradient.png";
 import { ButtonDefault } from "../Buttons";
 import { InstructionsCarousel, InstructionsGrid } from "../Instructions";
 import SectionTitle from "../SectionTitle";
 import { useTheme } from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "app/provider/theme/theme.config";
+import { scale } from "app/utils/scale";
 
 const WhatWeDoSection = () => {
   const { getBreakPoint } = useTheme() as Theme;
@@ -106,14 +107,14 @@ const styles = StyleSheet.create({
   section: {
     justifyContent: "space-between",
     width: "100%",
-    paddingTop: "100px",
-    paddingBottom: "50px",
+    paddingTop: Platform.OS === "web" ? "100px" : `${scale(100)}px`,
+    paddingBottom: Platform.OS === "web" ? "50px" : `${scale(50)}px`,
   },
   wrapper: {
     alignItems: "flex-start",
   },
   spacer: {
-    marginTop: "10px",
+    marginTop: Platform.OS === "web" ? "10px" : `${scale(10)}px`,
   },
   instructionsWrapper: {
     alignSelf: "stretch",

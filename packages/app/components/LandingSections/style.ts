@@ -1,15 +1,32 @@
-import styled from "styled-components/native";
-import { Theme } from "../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "app/provider/theme/theme.config";
 
-export const Container = styled.View<{ isOpen: boolean }>`
+export const Container = styled.View<{ isOpen: boolean, theme: Theme }>`
   position: relative;
   overflow: hidden;
-  max-height: ${({ isOpen }) => (isOpen ? "100%" : "140px;")};
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+          max-height: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : `${theme.scale(16)}px`)};
+      `,
+      native: css`
+      max-height: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : `${theme.scale(16)}px`)};
+      `,
+    })}
 `;
 
-export const Text = styled.Text`
+export const Text = styled.Text<{ theme: Theme }>`
   color: ${({ theme }: { theme: Theme }) => theme.colors.text};
-  margin-bottom: 24px;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 24px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(24)}px;
+      `,
+    })}
 `;
 
 export const TextBold = styled(Text)`
@@ -19,14 +36,24 @@ export const TextBold = styled(Text)`
   letter-spacing: 0em;
 `;
 
-export const GradientBackground = styled.ImageBackground`
+export const GradientBackground = styled.ImageBackground<{ theme: Theme }>`
   position: absolute;
   background-color: transparent;
   height: 10px;
   background-size: stretch;
-  width: 100vw;
-  height: 50;
   bottom: 0;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        width: 100vw;
+        height: 50;
+      `,
+      native: css`
+        width: ${theme.scale(100)}px;
+        height: ${theme.scale(50)}px;
+      `,
+    })}
 `;
 
 export const ButtonContainer = styled.View`

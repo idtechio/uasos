@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components/native";
 import { Theme } from "app/provider/theme/theme.config";
-import SectionTitle from "../../../../apps/next/src/components/SectionTitle";
 
 interface CommonProp {
   theme: Theme;

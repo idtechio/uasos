@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import Image from "next/image";
+import { Image } from "react-native";
 
 const FLAG_TYPE_EMOJI = "emoji";
 const FLAG_TYPE_SVG = "svg";

@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useRouter } from "solito/router";
+import { Link } from "solito/link";
 import { LanguageFlags } from "./LanguageFlags";
 import React, { useMemo } from "react";
 import { Dropdown } from "../Dropdown";
@@ -26,7 +26,7 @@ function LanguageSwitcher() {
     () =>
       locales?.map((locale) => ({
         label: (
-          <Link passHref href={asPath} locale={locale}>
+          <Link href={asPath} locale={locale}>
             <a style={InnerLink}>
               <Flex>
                 <LanguageFlags locale={locale} />

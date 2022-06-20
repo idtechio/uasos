@@ -3,14 +3,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { View } from "react-native";
-import { useTranslation } from "next-i18next";
-import styled from "styled-components/native";
+import { useTranslation } from "app/common-i18n/use-translation";
+import styled, { css } from "styled-components/native";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
 import { CompositionSection } from "../Compositions";
 
 import FormContainer from "./FormContainer";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "app/provider/theme/theme.config";
 import { FormProvider, useForm } from "react-hook-form";
 import { FormType } from "../../helpers/FormTypes";
 import GoToRegister from "./GoToRegister";
@@ -263,19 +263,39 @@ const FormLogin = () => {
 
 export default FormLogin;
 
-export const FormHeader = styled.View`
-  color: ${({ theme }: { theme: Theme }) => theme.colors.textOnCta};
+export const FormHeader = styled.View<{ theme: Theme }>`
+  color: ${({ theme }) => theme.colors.textOnCta};
   font-weight: bold;
   font-size: 24px;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
   font-weight: bold;
   line-height: 24px;
   letter-spacing: 0.5px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+      `,
+      native: css`
+        margin-top: ${theme.scale(14 * 0.83)}px;
+        margin-bottom: ${theme.scale(14 * 0.83)}px;
+        margin-left: 0;
+        margin-right: 0;
+      `,
+    })}
 `;
 
-export const Spacer = styled.View`
-  margin-bottom: 60px;
+export const Spacer = styled.View<{ theme: Theme }>`
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 60px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(60)}px; ;
+      `,
+    })}
 `;

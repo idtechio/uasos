@@ -1,9 +1,18 @@
-import styled from "styled-components/native";
-import { Theme } from "../../../style/theme.config";
+import styled, { css } from "styled-components/native";
+import { Theme } from "app/provider/theme/theme.config";
 
-export const LostPassWrapper = styled.View`
-  margin-top: 32px;
+export const LostPassWrapper = styled.View<{ theme: Theme }>`
   text-transform: capitalize;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-top: 32px;
+      `,
+      native: css`
+        margin-top: ${theme.scale(32)}px;
+      `,
+    })}
 `;
 
 export const StyledText = styled.Text`

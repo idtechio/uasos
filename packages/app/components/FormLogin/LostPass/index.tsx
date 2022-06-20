@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { Link } from "solito/link";
+import { useTranslation } from "app/common-i18n/use-translation";
 
 import { LostPassWrapper, StyledLink, StyledText } from "./styled";
 
@@ -10,7 +10,7 @@ const LostPass = () => {
     <LostPassWrapper>
       <StyledText>
         {t("common:loginForm.lostPass")}{" "}
-        <Link href={"/password-reset-init"} passHref>
+        <Link href={"/password-reset-init"}>
           <StyledLink>{t("common:loginForm.click")}</StyledLink>
         </Link>
       </StyledText>

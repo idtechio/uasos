@@ -7,7 +7,7 @@ import ChevronDownIcon from "../../../src/style/svgs/chevron-down.svg";
 import MarkerIcon from "../../../src/style/svgs/marker.svg";
 import UsersIcon from "../../../src/style/svgs/users.svg";
 import PhoneIcon from "../../../src/style/svgs/matched_phone.svg";
-import { Theme } from "../../style/theme.config";
+import { Theme } from "app/provider/theme/theme.config";
 import { ButtonCta } from "../Buttons";
 import { MapComponent } from "./MapComponent";
 
@@ -134,37 +134,60 @@ export const ShelterCard = ({
   );
 };
 
-const Container = styled.View`
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0,
-    height: -20,
-  };
-  shadow-opacity: 0.2;
-  shadow-radius: 10;
-  elevation: 10;
-  padding: 15px;
+const Container = styled.View<CommonProp>`
   background: #fff;
   border-radius: 5px;
   height: fit-content;
-`;
 
-const Column = styled.View<CommonProp>(
-  ({ theme }) => css`
-    flex-grow: 1;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding: 15px;
+        box-shadow: "0px -20px 10px rgba(0, 0, 0, 0.2)";
+      `,
+      native: css`
+        padding: ${theme.scale(15)}px;
 
-    ${theme.getBreakPoint({
-      md: css`
-        flex-grow: 0;
+        shadow-color: #000;
+        shadow-offset: {
+          width: 0,
+          height: -20,
+        };
+        shadow-opacity: 0.2;
+        shadow-radius: 10;
+        elevation: 10;
       `,
     })};
-  `
+`;
+
+const Column = styled.View<CommonProp>(({ theme }) =>
+  theme.styleFor({
+    web: css`
+      ${theme.getBreakPoint({
+        md: css`
+          flex-grow: 0;
+        `,
+      })}
+    `,
+    ["native" || "web"]: css`
+      flex-grow: 1;
+    `,
+  })
 );
 
-const Header = styled.View`
+const Header = styled.View<CommonProp>`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin-bottom: 10px;
+      `,
+      native: css`
+        margin-bottom: ${theme.scale(10)}px;
+      `,
+    })};
 `;
 
 const HeaderContent = styled.View`
@@ -175,31 +198,40 @@ interface CommonProp {
   theme: Theme;
 }
 
-const Footer = styled.View<CommonProp>(
-  ({ theme }) => css`
-    padding-top: 15px;
-    flex-direction: row;
-    justify-content: flex-end;
+const Footer = styled.View<CommonProp>`
+  flex-direction: row;
+  justify-content: flex-end;
 
-    ${theme.getBreakPoint({
-      md: css`
-        justify-content: flex-start;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        padding-top: 15px;
+        ${theme.getBreakPoint({
+          md: css`
+            justify-content: flex-start;
+          `,
+        })}
+      `,
+      native: css`
+        padding-top: ${theme.scale(15)}px;
       `,
     })};
-  `
-);
+`;
 
-const Button = styled.TouchableOpacity<CommonProp>(
-  ({ theme }) => css`
-    display: block;
+const Button = styled.TouchableOpacity<CommonProp>`
+  display: block;
 
-    ${theme.getBreakPoint({
-      md: css`
-        display: none;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        ${theme.getBreakPoint({
+          md: css`
+            display: none;
+          `,
+        })}
       `,
     })};
-  `
-);
+`;
 
 const Country = styled.Text<CommonProp>(
   ({ theme }) => css`
@@ -217,50 +249,73 @@ const Title = styled.Text<CommonProp>(
   `
 );
 
-const SectionInfo = styled.View`
+const SectionInfo = styled.View<CommonProp>`
   flex-grow: 1;
-  gap: 18px 0px;
-  padding: 15px 0px;
   border-top-width: 2px;
   border-bottom-width: 2px;
   border-color: #f2f2f2;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        gap: 18px 0px;
+        padding: 15px 0px;
+      `,
+      native: css`
+        padding-vertical: ${theme.scale(6)}px;
+        padding-horizontal: 0;
+      `,
+    })};
 `;
 
-const FlexContainer = styled.View<CommonProp>(
-  ({ theme }) => css`
-    flex-grow: 1;
+const FlexContainer = styled.View<CommonProp>`
+  flex-grow: 1;
 
-    ${theme.getBreakPoint({
-      md: css`
-        flex-direction: row;
-        gap: 0px 25px;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        ${theme.getBreakPoint({
+          md: css`
+            flex-direction: row;
+            gap: 0px 25px;
+          `,
+        })}
       `,
     })};
-  `
-);
+`;
 
-const Info = styled.View<CommonProp>(
-  ({ theme }) => css`
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid #f5f4f4;
-    gap: 0px 5px;
-    font-size: 14px;
-    line-height: 19px;
-    padding: 0px 5px;
+const Info = styled.View<CommonProp>`
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  border-radius: 5px;
+  border: 1px solid #f5f4f4;
+  font-size: 14px;
+  line-height: 19px;
 
-    ${theme.getBreakPoint({
-      md: css`
-        font-size: 16px;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        height: 30px;
+        gap: 0px 5px;
+        padding: 0px 5px;
+
+        ${theme.getBreakPoint({
+          md: css`
+            font-size: 16px;
+          `,
+        })}
+      `,
+      native: css`
+        height: ${theme.scale(30)}px;
+        padding-vertical: 0;
+        padding-horizontal: ${theme.scale(7)}px;
+        margin-vertical: ${theme.scale(9)}px;
       `,
     })};
-  `
-);
+`;
 
 const ButtonText = styled.Text<CommonProp>(
   ({ theme }) => css`
@@ -271,43 +326,60 @@ const ButtonText = styled.Text<CommonProp>(
   `
 );
 
-const FlexTextIcon = styled.View<CommonProp>(
-  ({ theme }) => css`
-    gap: 0px 10px;
-    align-items: center;
-    flex-direction: row;
-    color: ${theme.colors.headings};
-  `
-);
+const FlexTextIcon = styled.View<CommonProp>`
+  align-items: center;
+  flex-direction: row;
+  color: ${theme.colors.headings};
 
-export const MapWrapper = styled.View<CommonProp>(
-  ({ theme }) => css`
-    flex-grow: 1;
-    height: 200px;
-    background: #cecece;
-    border-radius: 4px;
-    overflow: hidden;
-
-    ${theme.getBreakPoint({
-      md: css`
-        display: none;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        gap: 0px 10px;
+      `,
+      native: css`
+        padding-horizontal: ${theme.scale(5)}px;
       `,
     })};
-  `
-);
+`;
 
-export const DesktopMapWrapper = styled(MapWrapper)<CommonProp>(
-  ({ theme }) => css`
-    display: none;
-    height: 100%;
+export const MapWrapper = styled.View<CommonProp>`
+  flex-grow: 1;
+  background: #cecece;
+  border-radius: 4px;
+  overflow: hidden;
 
-    ${theme.getBreakPoint({
-      md: css`
-        display: block;
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        height: 200px;
+
+        ${theme.getBreakPoint({
+          md: css`
+            display: none;
+          `,
+        })}
+      `,
+      native: css`
+        height: ${theme.scale(200)}px;
       `,
     })};
-  `
-);
+`;
+
+export const DesktopMapWrapper = styled(MapWrapper)<CommonProp>`
+  display: none;
+  height: 100%;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        ${theme.getBreakPoint({
+          md: css`
+            display: block;
+          `,
+        })}
+      `,
+    })};
+`;
 
 export const RowText = styled.Text<CommonProp>(
   ({ theme }) => css`
@@ -315,8 +387,17 @@ export const RowText = styled.Text<CommonProp>(
   `
 );
 
-export const InnerHTML = styled.View`
-  margin: 1em 0;
+export const InnerHTML = styled.View<CommonProp>`
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        margin: 1em 0;
+      `,
+      native: css`
+        margin-vertical: ${theme.scale(14)}px;
+        margin-horizontal: 0;
+      `,
+    })};
 `;
 
 export const InnerHTMLText = styled.Text``;

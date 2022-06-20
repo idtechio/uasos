@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useMemo, useState } from "react";
 
-import { useTranslation } from "../../common-i18n/use-translation";
+import { useTranslation } from "app/common-i18n/use-translation";
 import { Dropdown } from "../Dropdown";
 import { ShelterCard } from "./ShelterCard";
 

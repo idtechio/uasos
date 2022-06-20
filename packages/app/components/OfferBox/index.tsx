@@ -7,7 +7,7 @@ import Calendar from "./image/Calendar";
 import Dish from "./image/Dish";
 import Animals from "./image/Animals";
 import Disability from "./image/Disability";
-import { Trans, useTranslation } from "next-i18next";
+import { useTranslation } from "app/common-i18n/use-translation";
 import React, { Fragment } from "react";
 
 type Props = {
