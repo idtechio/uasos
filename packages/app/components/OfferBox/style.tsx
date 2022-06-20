@@ -63,6 +63,9 @@ export const styles = StyleSheet.create({
   subTitle: {
     color: "#003566",
   },
+  boldText: {
+    fontWeight: "bold",
+  },
   content: {
     paddingRight: Platform.OS === "web" ? 22 : scale(22),
     paddingLeft: Platform.OS === "web" ? 22 : scale(22),

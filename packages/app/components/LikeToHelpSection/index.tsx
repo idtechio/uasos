@@ -1,4 +1,4 @@
-import { useTranslation } from "app/common-i18n/use-translation";
+import { useTranslation, Trans } from "app/common-i18n/use-translation";
 import React from "react";
 import styled, { css } from "styled-components/native";
 import SectionTitle from "../SectionTitle";
@@ -64,6 +64,10 @@ const SectionInner = styled.Text`
     })}
 `;
 
+const BoldText = styled.Text`
+  font-weight: bold;
+`;
+
 const CTAText = styled.Text<{ theme: Theme }>`
   font-size: 16px;
   font-weight: bold;
@@ -102,12 +106,12 @@ export function LikeToHelpSection({ children }: LikeToHelpSectionProps) {
               t={t}
               i18nKey="likeToHelp.details"
               components={{
-                bold: <strong />,
+                bold: <BoldText />,
               }}
             >
               Zgłoś lokal, pokój lub miejsce, które możesz{" "}
-              <strong>nieodpłatnie</strong> udostępnić{" "}
-              <strong>ofiarom wojny w Ukrainie</strong>
+              <BoldText>nieodpłatnie</BoldText> udostępnić{" "}
+              <BoldText>ofiarom wojny w Ukrainie</BoldText>
             </Trans>
           </DetailsText>
           <StyledButton
