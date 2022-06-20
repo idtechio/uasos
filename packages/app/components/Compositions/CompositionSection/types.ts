@@ -2,9 +2,11 @@ export type SectionProps = {
   id?: string;
   children: React.ReactNode;
   backgroundColor?: string;
-  zeroPadding?: boolean;
   sectionId?: string;
-  padding?: [number, number, number, number];
+  paddingT?: number;
+  paddingR?: number;
+  paddingB?: number;
+  paddingL?: number;
   header?: string;
   subHeader?: string;
   zIndex?: number;

@@ -10,10 +10,12 @@ import {
 const CompositionSection = ({
   children,
   backgroundColor,
-  zeroPadding,
   sectionId,
-  padding,
   header,
+  paddingT,
+  paddingR,
+  paddingB,
+  paddingL,
   subHeader,
   zIndex,
   flexGrow,
@@ -22,17 +24,20 @@ const CompositionSection = ({
     <PageSection
       id={sectionId}
       backgroundColor={backgroundColor}
-      zeroPadding={zeroPadding}
-      padding={padding}
+      paddingT={paddingT}
+      paddingR={paddingR}
+      paddingB={paddingB}
+      paddingL={paddingL}
       zIndex={zIndex}
       flexGrow={flexGrow}
     >
+    <>
       <HeaderWrapper useMargin={Boolean(header || subHeader)}>
         {header && <SectionHeader>{header}</SectionHeader>}
         {subHeader && <SectionSubHeader>{subHeader}</SectionSubHeader>}
       </HeaderWrapper>
-
       {children}
+      </>      
     </PageSection>
   );
 };
