@@ -18,10 +18,10 @@ import FormTextInput from "../Inputs/FormTextInput";
 import LostPass from "./LostPass";
 import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult, getRedirectResult } from "firebase/auth";
-import SmsVerificationModal from "../SmsVerificationModal";
-import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
+// import SmsVerificationModal from "../SmsVerificationModal";
+// import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
 import { ErrorText } from "../FormRegisterWithSocials/styles";
-import { auth } from "../../../lib/firebase-app";
+import { auth } from "../../lib/firebase-app";
 import CardModal from "../CardModal";
 import { PROVIDERS } from "./constants";
 
@@ -228,7 +228,7 @@ const FormLogin = () => {
             />
             <View nativeID="captcha__container" style={{ display: "none" }} />
           </FormProvider>
-          {phoneLoginConfirmation ? (
+          {/* {phoneLoginConfirmation ? (
             <SmsVerificationModal
               phoneNumber={phoneNumber}
               confirmation={phoneLoginConfirmation}
@@ -239,17 +239,17 @@ const FormLogin = () => {
             />
           ) : (
             <></>
-          )}
-          {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
-          {error ? <ErrorText>{error}</ErrorText> : <></>}
+          )} */}
+          {/* {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>} */}
+          {/* {error ? <ErrorText>{error}</ErrorText> : <></>} */}
           {providerLoginError ? (
             <CardModal
               closeable
               onModalClose={() => setProviderLoginError(false)}
             >
-              <ErrorText>
+              {/* <ErrorText>
                 {t("others:desktop.checks.emailAlreadyInUse")}
-              </ErrorText>
+              </ErrorText> */}
             </CardModal>
           ) : (
             <></>
