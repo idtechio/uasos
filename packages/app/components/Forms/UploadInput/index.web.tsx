@@ -19,7 +19,6 @@ type UploadInputProps = {
   error?: FieldError;
 };
 
-// TODO: Change component to RN using https://github.com/rnmods/react-native-document-picker#readme
 const UploadInput = ({
   accept = ".jpeg",
   label,
@@ -98,7 +97,6 @@ const UploadInput = ({
                 {isLoading ? <ActivityIndicator /> : <Text>{label}</Text>}
               </ButtonLabelText>
             </UploadButton>
-            {/* TODO: Change input to RN element */}
             <input
               type="file"
               ref={inputRef}

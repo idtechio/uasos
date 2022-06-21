@@ -4,7 +4,7 @@ import { useRouter } from "solito/router";
 import { HeaderPage, ActionBar, ServiceLogo, Container, Flags } from "./style";
 import Logo from "./image/Logo";
 import HamburgerButton from "../Navigation/HamburgerButton";
-import NavigationDrawer from "../Navigation/NavigationDrawer";
+import NavigationDrawer from "../Navigation/NavigationDrawer.web";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { Routes } from "../../consts/router";
 

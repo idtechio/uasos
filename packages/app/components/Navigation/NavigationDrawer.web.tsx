@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useRouter } from "solito/router";
+import { useRouter } from "next/router";
 import { useTranslation } from "../../common-i18n/use-translation";
 import { AuthContext } from "../../../pages/_app";
 import { Authorization } from "../../hooks/useAuth";
@@ -15,6 +15,7 @@ interface Props {
   hideDrawer: () => void;
 }
 
+// TODO: Make separate component for mobile, that will not use language in url
 const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
   const router = useRouter();
   const { t } = useTranslation(["common", "others"]);
@@ -24,8 +25,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
     Authorization.logOut();
     return signOut({
       redirect: true,
-      // TODO: put here url with user default language if there is one
-      callbackUrl: undefined,
+      callbackUrl: router.locale ? `/${router.locale}` : undefined,
     });
   };
 
@@ -66,7 +66,7 @@ const NavigationDrawer = ({ isOpen, hideDrawer }: Props) => {
             title={t("common:navigationDrawer.logIn")}
             Icon={UserIcon}
             onPress={() => {
-              router.push(`/${Routes.SIGN_IN}`);
+              router.push(`/${router?.locale}${Routes.SIGN_IN}`);
             }}
           />
         )}

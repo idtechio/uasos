@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import { Error } from "./style";
-import UploadInput from "../Forms/UploadInput";
+import UploadInput from "../Forms/UploadInput/index.web";
 import { FormKey } from "../../helpers/FormTypes";
 
 type Props = {

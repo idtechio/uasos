@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { useRouter } from "solito/router";
-import { Link } from "solito/link";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { useTranslation } from "../../common-i18n/use-translation";
 import { Routes } from "../../consts/router";
 import { AuthContext } from "../../../pages/_app";
