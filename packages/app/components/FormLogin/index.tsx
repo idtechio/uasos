@@ -7,7 +7,7 @@ import { useTranslation } from "app/common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
 
 import { ButtonCta, ButtonSM } from "../Buttons";
-import CompositionSection from "../Compositions/CompositionSection/index.web";
+import CompositionSection from "../Compositions/CompositionSection/index.native";
 
 import FormContainer from "./FormContainer";
 import { Theme } from "app/provider/theme/theme.config";
@@ -20,7 +20,7 @@ import { Authorization } from "../../hooks/useAuth";
 import { ConfirmationResult, getRedirectResult } from "firebase/auth";
 // import SmsVerificationModal from "../SmsVerificationModal";
 // import SmsVerificationSuccessModal from "../SmsVerificationSuccessModal";
-import { ErrorText } from "../FormRegisterWithSocials/styles";
+// import { ErrorText } from "../FormRegisterWithSocials/styles";
 import { auth } from "../../lib/firebase-app";
 import CardModal from "../CardModal";
 import { PROVIDERS } from "./constants";

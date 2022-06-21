@@ -4,10 +4,13 @@ import React from "react";
 import Tile from "../Tile";
 import SectionTitle from "../SectionTitle";
 import { MatchedCardsWrapper } from "./LandingMatchedSection.styled";
-import { NumbersProps } from "../../api/listing/numbers";
 
 export type LandingMatchedSectionProps = {
-  numberList: NumbersProps;
+  numberList: {
+    matched_beds: string;
+    available_beds: string;
+    requested_beds: string;
+  };
 };
 
 export const LandingMatchedSection = ({
