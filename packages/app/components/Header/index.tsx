@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { useRouter } from "solito/router";
 import { HeaderPage, ActionBar, ServiceLogo, Container, Flags } from "./style";
 import Logo from "./image/Logo";

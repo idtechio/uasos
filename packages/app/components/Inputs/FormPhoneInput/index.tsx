@@ -1,5 +1,4 @@
 import React from "react";
-import { Theme } from "../../../provider/theme/theme.config";
 import { Controller, FieldError, useFormContext } from "react-hook-form";
 import Input from "../../Forms/Input";
 import InputControl from "../../Forms/InputControl";
