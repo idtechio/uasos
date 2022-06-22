@@ -8,6 +8,7 @@
     "expo-checkbox": "^2.1.0",
     "expo-linking": "^3.0.0",
     "react-native-paper": "^4.11.2",
+    "react-native-render-html": "^6.3.4",
     "solito": "0.0.22"
   }
 }

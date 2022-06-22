@@ -2,6 +2,7 @@ import styled, { css } from "styled-components/native";
 import styledWeb from "styled-components";
 import { Theme } from "../../provider/theme/theme.config";
 import { ButtonCta } from "../Buttons";
+import RenderHtml from "react-native-render-html";
 
 export const Container = styled.View`
   width: 100%;
@@ -69,7 +70,7 @@ export const SubTitleWrapper = styled.View<{ theme: Theme }>`
         margin-top: 10px;
         max-width: 300px;
 
-        ${({ theme }) =>
+        ${() =>
           theme.getBreakPoint({
             lg: css`
               margin-top: 40px;
@@ -83,7 +84,7 @@ export const SubTitleWrapper = styled.View<{ theme: Theme }>`
     })}
 `;
 
-export const SubTitle = styled.Text<{ theme: Theme }>`
+export const SubTitle = styled(RenderHtml)<{ theme: Theme }>`
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -91,7 +92,7 @@ export const SubTitle = styled.Text<{ theme: Theme }>`
   margin-top: ${({ theme }) => theme.scale(30)}px;
 `;
 
-export const SubTitleWeb = styledWeb.div` //TODO: react native doesn't support dangerouslySetInnerHTML attribute. When we create the mobile app extract this component and create a version working with both web and mobile
+export const SubTitleWeb = styledWeb.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;

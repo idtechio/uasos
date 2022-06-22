@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useWindowDimensions } from "react-native";
 import { useRouter } from "solito/router";
 import { Link } from "solito/link";
 import { useTranslation } from "../../common-i18n/use-translation";
@@ -22,6 +23,7 @@ const LandingProjectIntention = () => {
   const { t } = useTranslation(["landingPage", "others", "common"]);
 
   const router = useRouter();
+  const { width } = useWindowDimensions();
   const { identity, account } = useContext(AuthContext);
 
   const isAccountVerified =
@@ -37,7 +39,10 @@ const LandingProjectIntention = () => {
           </Title>
 
           <SubTitleWrapper>
-            <SubTitle>{t("others:welcomePage.appDescription")}</SubTitle>
+            <SubTitle
+              contentWidth={width}
+              source={{ html: t("others:welcomePage.appDescription") }}
+            />
           </SubTitleWrapper>
 
           <ButtonContainer>
