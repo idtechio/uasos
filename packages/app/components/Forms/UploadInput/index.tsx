@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { ActivityIndicator, Platform, Text } from "react-native";
+import { ActivityIndicator, Text } from "react-native";
 import { FieldError, useFormContext } from "react-hook-form";
 
 import UploadIcon from "../../../style/svgs/upload.svg";
@@ -19,6 +19,7 @@ type UploadInputProps = {
   error?: FieldError;
 };
 
+// TODO: Change component to RN using https://github.com/rnmods/react-native-document-picker#readme
 const UploadInput = ({
   accept = ".jpeg",
   label,
@@ -82,10 +83,6 @@ const UploadInput = ({
       }
     };
   }, [onFileChange, uploadedPhotos]);
-
-  if (Platform.OS !== "web") {
-    return null;
-  }
 
   return (
     <>

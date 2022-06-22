@@ -1,17 +1,19 @@
 import styled, { css } from "styled-components/native";
 import { Theme } from "app/provider/theme/theme.config";
 
-export const Container = styled.View<{ isOpen: boolean, theme: Theme }>`
+export const Container = styled.View<{ isOpen: boolean; theme: Theme }>`
   position: relative;
   overflow: hidden;
 
   ${({ theme }) =>
     theme.styleFor({
       web: css`
-          max-height: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : `${theme.scale(16)}px`)};
+        max-height: ${({ isOpen }: { isOpen: boolean }) =>
+          isOpen ? "100%" : `${theme.scale(16)}px`};
       `,
       native: css`
-      max-height: ${({ isOpen }: { isOpen: boolean }) => (isOpen ? "100%" : `${theme.scale(16)}px`)};
+        max-height: ${({ isOpen }: { isOpen: boolean }) =>
+          isOpen ? "100%" : `${theme.scale(16)}px`};
       `,
     })}
 `;

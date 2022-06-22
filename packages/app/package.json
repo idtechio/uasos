@@ -5,6 +5,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "expo-checkbox": "^2.1.0",
     "expo-linking": "^3.0.0",
     "react-native-paper": "^4.11.2",
     "solito": "0.0.22"
