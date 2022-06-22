@@ -11,3 +11,5 @@ const LocaleNames: { [key: string]: string } = {
 
 export const getLocaleFullName = (locale?: string) =>
   locale ? LocaleNames[locale] : locale?.toUpperCase;
+
+export const getLocaleNamesKeys = Object.keys(LocaleNames);

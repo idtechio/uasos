@@ -95,8 +95,26 @@ export const LanguageLabel = styled.Text`
     })}
 `;
 
-export const InnerLink = {
-  display: "inline-flex",
+export const InnerLink: ViewStyle = {
+  display: "flex",
+  alignItems: "center",
+  width: "100%",
+
+  ...({ theme }: { theme: Theme }) =>
+    theme.styleFor({
+      web: css`
+        min-width: 32px;
+        padding: 10px;
+      `,
+      native: css`
+        min-width: ${theme.scale(32)}px;
+        padding: ${theme.scale(10)}px;
+      `,
+    })(),
+};
+
+export const InnerLinkWeb = {
+  display: "flex",
   alignItems: "center",
   width: "100%",
 

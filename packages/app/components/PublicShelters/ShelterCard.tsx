@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 
 import { useTranslation } from "next-i18next";
 import styled, { css } from "styled-components/native";
+import { WebView } from "react-native-webview";
 import PlaneIcon from "../../../src/style/svgs/plane.svg";
 import ChevronDownIcon from "../../../src/style/svgs/chevron-down.svg";
 import MarkerIcon from "../../../src/style/svgs/marker.svg";
@@ -75,13 +76,14 @@ export const ShelterCard = ({
             <Info>
               <MarkerIcon width={15} height={15} />
               <RowText>
-                <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.city", {
+                <WebView
+                  originWhitelist={["*"]}
+                  source={{
+                    html: t("others:forms.generic.city", {
                       city: fullAddress,
-                    })}
-                  </InnerHTMLText>
-                </InnerHTML>
+                    }),
+                  }}
+                />
               </RowText>
             </Info>
             <Info>

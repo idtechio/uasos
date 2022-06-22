@@ -49,10 +49,9 @@ const SvgFlag = ({ locale }: Props) => {
       <Image
         width={SIZE.width}
         height={SIZE.height}
-        src={`/assets/${
+        source={require(`../../style/svgs/${
           svgs[locale.toUpperCase()] || locale.toUpperCase()
-        }_flag.svg`}
-        alt="flag"
+        }_flag.svg`)}
       />
     </Wrapper>
   );

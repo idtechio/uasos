@@ -18,16 +18,14 @@ interface Props {
 export function PartnerCard({ source, href = "", alt, style }: Props) {
   return (
     <Link href={href}>
-      <a target="_blank">
-        <Card style={style}>
-          <StyledImage
-            alt={alt}
-            /* @ts-expect-error TODO: fix prop types */
-            source={source}
-            resizeMode="contain"
-          />
-        </Card>
-      </a>
+      <Card style={style}>
+        <StyledImage
+          alt={alt}
+          /* @ts-expect-error TODO: fix prop types */
+          source={source}
+          resizeMode="contain"
+        />
+      </Card>
     </Link>
   );
 }

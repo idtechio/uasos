@@ -1,9 +1,9 @@
-import { useRouter } from "solito/router";
-import { Link } from "solito/link";
+import { useTranslation } from "../../common-i18n/use-translation";
 import { LanguageFlags } from "./LanguageFlags";
 import React, { useMemo } from "react";
+import { View, TouchableWithoutFeedback } from "react-native";
 import { Dropdown } from "../Dropdown";
-import { getLocaleFullName } from "./getLocaleFullName";
+import { getLocaleFullName, getLocaleNamesKeys } from "./getLocaleFullName";
 import {
   DropDownListItemObject,
   DropDownWrapperObject,
@@ -17,17 +17,17 @@ import {
 import { useBreakPointGetter } from "../../hooks/useBreakPointGetter";
 
 function LanguageSwitcher() {
-  const { locales, asPath, locale } = useRouter();
+  const { i18n } = useTranslation();
   const getBreakPoint = useBreakPointGetter();
 
   const isDesktop = getBreakPoint({ default: false, lg: true });
 
   const dropdownData = useMemo(
     () =>
-      locales?.map((locale) => ({
+      getLocaleNamesKeys?.map((locale) => ({
         label: (
-          <Link href={asPath} locale={locale}>
-            <a style={InnerLink}>
+          <TouchableWithoutFeedback onPress={() => i18n.changeLanguage(locale)}>
+            <View style={InnerLink}>
               <Flex>
                 <LanguageFlags locale={locale} />
                 {isDesktop && (
@@ -36,12 +36,12 @@ function LanguageSwitcher() {
                   </LanguageLabel>
                 )}
               </Flex>
-            </a>
-          </Link>
+            </View>
+          </TouchableWithoutFeedback>
         ),
         value: locale,
       })),
-    [locales, asPath, isDesktop]
+    [getLocaleNamesKeys, isDesktop]
   );
 
   if (!dropdownData) {
@@ -51,7 +51,7 @@ function LanguageSwitcher() {
   return (
     <Dropdown
       itemPressFunction={() => null}
-      selected={locale}
+      selected={i18n.language}
       data={dropdownData}
       itemListAutoHeight
       highlightSelectedItem
