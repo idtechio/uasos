@@ -1,3 +1,3 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans, TFunction } from "react-i18next";
 
-export { useTranslation };
+export { useTranslation, Trans, TFunction };

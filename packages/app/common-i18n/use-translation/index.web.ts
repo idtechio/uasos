@@ -1,3 +1,3 @@
-import { useTranslation } from "next-i18next";
+import { useTranslation, Trans, TFunction } from "next-i18next";
 
-export { useTranslation };
+export { useTranslation, Trans, TFunction };
