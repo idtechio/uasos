@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useWindowDimensions } from "react-native";
 import { useRouter } from "solito/router";
 import { Link } from "solito/link";
+import RenderHtml from "react-native-render-html";
 import { useTranslation } from "../../common-i18n/use-translation";
 import { Routes } from "../../consts/router";
 import { AuthContext } from "../../../pages/_app";
@@ -16,7 +17,7 @@ import {
   SubTitleWrapper,
   TextContainer,
   Title,
-  SubTitle,
+  styles,
 } from "./style";
 
 const LandingProjectIntention = () => {
@@ -39,7 +40,8 @@ const LandingProjectIntention = () => {
           </Title>
 
           <SubTitleWrapper>
-            <SubTitle
+            <RenderHtml
+              tagsStyles={{ b: styles.html }}
               contentWidth={width}
               source={{ html: t("others:welcomePage.appDescription") }}
             />
