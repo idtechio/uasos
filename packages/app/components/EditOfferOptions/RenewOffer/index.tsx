@@ -1,5 +1,5 @@
 import React from "react";
-import { ActivityIndicator } from "react-native";
+import { useWindowDimensions, ActivityIndicator } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useRenewItem } from "../../../queries/useListing";
 
@@ -13,17 +13,9 @@ import {
   FormHeader,
   FormWrapper,
   InnerHTML,
-  InnerHTMLText,
+  styles,
 } from "../style";
 import RenderHtml from "react-native-render-html";
-import { primary } from "app/provider/theme/theme.config";
-
-const tagsStyles = {
-  body: {
-    color: primary.colors.text,
-    fontFamily: "RobotoRegular",
-  },
-};
 
 export default function RenewOffer({
   close,
@@ -35,6 +27,7 @@ export default function RenewOffer({
   targetType: TargetTypes;
 }) {
   const { t } = useTranslation();
+  const { width } = useWindowDimensions();
 
   const { mutate, isLoading } = useRenewItem();
 
@@ -48,12 +41,11 @@ export default function RenewOffer({
         {t("others:common.words.renew")}
       </FormHeader>
       <InnerHTML>
-        <InnerHTMLText>
-          <RenderHtml
-            tagsStyles={tagsStyles}
-            source={{ html: t("others:offer.popup.renew.expiredMsg") }}
-          />
-        </InnerHTMLText>
+        <RenderHtml
+          tagsStyles={{ body: styles.html }}
+          contentWidth={width}
+          source={{ html: t("others:offer.popup.renew.expiredMsg") }}
+        />
       </InnerHTML>
 
       <FormDescription style={{ marginTop: 22 }}>
