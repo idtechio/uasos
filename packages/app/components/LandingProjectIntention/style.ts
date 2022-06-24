@@ -4,7 +4,6 @@ import styledWeb from "styled-components";
 import { Theme, primary } from "../../provider/theme/theme.config";
 import { ButtonCta } from "../Buttons";
 import { scale } from "../../utils/scale";
-import RenderHtml from "react-native-render-html";
 
 export const Container = styled.View`
   width: 100%;
@@ -83,14 +82,6 @@ export const SubTitleWrapper = styled.View<{ theme: Theme }>`
         margin-top: ${theme.scale(10)}px;
       `,
     })}
-`;
-
-export const SubTitle = styled(RenderHtml)<{ theme: Theme }>`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: ${({ theme }) => `${theme.colors.text}`};
-  margin-top: ${({ theme }) => theme.scale(30)}px;
 `;
 
 export const SubTitleWeb = styledWeb.div<{ theme: Theme }>`
