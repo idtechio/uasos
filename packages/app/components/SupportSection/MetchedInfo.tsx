@@ -1,6 +1,8 @@
 import React from "react";
+import { useWindowDimensions } from "react-native";
 import { useTranslation } from "../../common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
+import RenderHtml from "react-native-render-html";
 import EmailIcon from "../../style/svgs/matched_email.svg";
 import UsersIcon from "../../style/svgs/users.svg";
 import PhoneIcon from "../../style/svgs/matched_phone.svg";
@@ -16,6 +18,7 @@ export const MetchedInfo = ({
   phone_num: string;
 }) => {
   const { t } = useTranslation();
+  const { width } = useWindowDimensions();
 
   return (
     <SectionInfo>
@@ -24,9 +27,10 @@ export const MetchedInfo = ({
           <UsersIcon />
         </IconWrapper>
         <InnerHTML>
-          <InnerHTMLText>
-            {t("others:forms.generic.guest", { name })}
-          </InnerHTMLText>
+          <RenderHtml
+            contentWidth={width}
+            source={{ html: t("others:forms.generic.guest", { name }) }}
+          />
         </InnerHTML>
       </Info>
       <Info>
@@ -35,24 +39,29 @@ export const MetchedInfo = ({
         </IconWrapper>
 
         <InnerHTML>
-          <InnerHTMLText>
-            {t("others:forms.generic.emailAddressWithData", {
-              mail: email,
-            })}
-          </InnerHTMLText>
+          <RenderHtml
+            contentWidth={width}
+            source={{
+              html: t("others:forms.generic.emailAddressWithData", {
+                mail: email,
+              }),
+            }}
+          />
         </InnerHTML>
       </Info>
       <Info>
         <IconWrapper>
           <PhoneIcon />
         </IconWrapper>
-
         <InnerHTML>
-          <InnerHTMLText>
-            {t("others:forms.generic.phoneNumberWithData", {
-              number: phone_num,
-            })}
-          </InnerHTMLText>
+          <RenderHtml
+            contentWidth={width}
+            source={{
+              html: t("others:forms.generic.phoneNumberWithData", {
+                number: phone_num,
+              }),
+            }}
+          />
         </InnerHTML>
       </Info>
     </SectionInfo>
@@ -130,5 +139,3 @@ const InnerHTML = styled.View<{ theme: Theme }>`
       `,
     })}
 `;
-
-const InnerHTMLText = styled.Text``;

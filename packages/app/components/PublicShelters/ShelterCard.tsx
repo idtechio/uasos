@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
-
-import { useTranslation } from "next-i18next";
+import { useWindowDimensions } from "react-native";
+import { useTranslation } from "../../common-i18n/use-translation";
 import styled, { css } from "styled-components/native";
 import PlaneIcon from "../../../src/style/svgs/plane.svg";
 import ChevronDownIcon from "../../../src/style/svgs/chevron-down.svg";
@@ -10,6 +10,7 @@ import PhoneIcon from "../../../src/style/svgs/matched_phone.svg";
 import { Theme } from "app/provider/theme/theme.config";
 import { ButtonCta } from "../Buttons";
 import { MapComponent } from "./MapComponent";
+import RenderHtml from "react-native-render-html";
 
 export const ShelterCard = ({
   name,
@@ -27,7 +28,7 @@ export const ShelterCard = ({
   howToGetThere: string;
 }) => {
   const { t } = useTranslation();
-
+  const { width } = useWindowDimensions();
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   const toogleMap = () => setIsMapVisible((pIsMapVisible) => !pIsMapVisible);
@@ -76,11 +77,14 @@ export const ShelterCard = ({
               <MarkerIcon width={15} height={15} />
               <RowText>
                 <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.city", {
-                      city: fullAddress,
-                    })}
-                  </InnerHTMLText>
+                  <RenderHtml
+                    contentWidth={width}
+                    source={{
+                      html: t("others:forms.generic.city", {
+                        city: fullAddress,
+                      }),
+                    }}
+                  />
                 </InnerHTML>
               </RowText>
             </Info>
@@ -89,11 +93,14 @@ export const ShelterCard = ({
 
               <RowText>
                 <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.occupancy", {
-                      number: occupancy,
-                    })}
-                  </InnerHTMLText>
+                  <RenderHtml
+                    contentWidth={width}
+                    source={{
+                      html: t("others:forms.generic.occupancy", {
+                        number: occupancy,
+                      }),
+                    }}
+                  />
                 </InnerHTML>
               </RowText>
             </Info>
@@ -101,11 +108,14 @@ export const ShelterCard = ({
               <PhoneIcon />
               <RowText>
                 <InnerHTML>
-                  <InnerHTMLText>
-                    {t("others:forms.generic.phoneNumberWithData", {
-                      number: phoneNumber,
-                    })}
-                  </InnerHTMLText>
+                  <RenderHtml
+                    contentWidth={width}
+                    source={{
+                      html: t("others:forms.generic.phoneNumberWithData", {
+                        number: phoneNumber,
+                      }),
+                    }}
+                  />
                 </InnerHTML>
               </RowText>
             </Info>
@@ -160,20 +170,20 @@ const Container = styled.View<CommonProp>`
     })};
 `;
 
-const Column = styled.View<CommonProp>(({ theme }) =>
-  theme.styleFor({
-    web: css`
-      ${theme.getBreakPoint({
-        md: css`
-          flex-grow: 0;
-        `,
-      })}
-    `,
-    ["native" || "web"]: css`
-      flex-grow: 1;
-    `,
-  })
-);
+const Column = styled.View<CommonProp>`
+  flex-grow: 1;
+
+  ${({ theme }) =>
+    theme.styleFor({
+      web: css`
+        ${theme.getBreakPoint({
+          md: css`
+            flex-grow: 0;
+          `,
+        })}
+      `,
+    })}
+`;
 
 const Header = styled.View<CommonProp>`
   flex-direction: row;
@@ -329,7 +339,7 @@ const ButtonText = styled.Text<CommonProp>(
 const FlexTextIcon = styled.View<CommonProp>`
   align-items: center;
   flex-direction: row;
-  color: ${theme.colors.headings};
+  color: ${({ theme }) => theme.colors.headings};
 
   ${({ theme }) =>
     theme.styleFor({
@@ -399,5 +409,3 @@ export const InnerHTML = styled.View<CommonProp>`
       `,
     })};
 `;
-
-export const InnerHTMLText = styled.Text``;

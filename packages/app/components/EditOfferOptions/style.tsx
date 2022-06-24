@@ -1,6 +1,8 @@
-import { Theme } from "app/provider/theme/theme.config";
 import React, { ComponentProps } from "react";
+import { StyleSheet } from "react-native";
 import styled, { css } from "styled-components/native";
+import { Theme } from "app/provider/theme/theme.config";
+import { primary } from "app/provider/theme/theme.config";
 import CrossIcon from "../../style/svgs/cross.svg";
 
 export const FormWrapper = styled.View(
@@ -125,7 +127,10 @@ export const InnerHTML = styled.View(
     `
 );
 
-export const InnerHTMLText = styled.Text`
-  font-size: 16px;
-  color: ${({ theme }) => (theme as Theme).colors.text};
-`;
+export const styles = StyleSheet.create({
+  html: {
+    color: primary.colors.text,
+    fontSize: 16,
+    fontFamily: "RobotoRegular",
+  },
+});

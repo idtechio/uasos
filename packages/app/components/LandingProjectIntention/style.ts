@@ -1,7 +1,9 @@
+import { StyleSheet } from "react-native";
 import styled, { css } from "styled-components/native";
 import styledWeb from "styled-components";
-import { Theme } from "../../provider/theme/theme.config";
+import { Theme, primary } from "../../provider/theme/theme.config";
 import { ButtonCta } from "../Buttons";
+import { scale } from "../../utils/scale";
 
 export const Container = styled.View`
   width: 100%;
@@ -61,15 +63,14 @@ export const Title = styled.Text<{ theme: Theme }>`
 `;
 
 export const SubTitleWrapper = styled.View<{ theme: Theme }>`
-  display: inline-block;
-
   ${({ theme }) =>
     theme.styleFor({
       web: css`
+        display: inline-block;
         margin-top: 10px;
         max-width: 300px;
 
-        ${({ theme }) =>
+        ${() =>
           theme.getBreakPoint({
             lg: css`
               margin-top: 40px;
@@ -83,34 +84,26 @@ export const SubTitleWrapper = styled.View<{ theme: Theme }>`
     })}
 `;
 
-export const SubTitle = styled.Text<{ theme: Theme }>`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: ${({ theme }) => `${theme.colors.text}`};
-  margin-top: ${({ theme }) => theme.scale(30)}px;
-`;
+export const SubTitleWeb = styledWeb.div<{ theme: Theme }>`
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: ${({ theme }) => `${theme.colors.text}`};
+    margin-top: 30px;
 
-export const SubTitleWeb = styledWeb.div` //TODO: react native doesn't support dangerouslySetInnerHTML attribute. When we create the mobile app extract this component and create a version working with both web and mobile
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: ${({ theme }: { theme: Theme }) => `${theme.colors.text}`};
-  margin-top: 30px;
+    b {
+      font-weight: 700;
+    }
 
-  b {
-    font-weight: 700;
-  }
-
-  ${({ theme }: { theme: Theme }) =>
-    theme.getBreakPoint({
-      lg: css`
-        font-size: 20px;
-        line-height: 28px;
-        margin-top: 40px;
-      `,
-    })}
-`;
+    ${({ theme }) =>
+      theme.getBreakPoint({
+        lg: css`
+          font-size: 20px;
+          line-height: 28px;
+          margin-top: 40px;
+        `,
+      })}
+  `;
 
 export const ButtonContainer = styled.View<{ theme: Theme }>`
   align-items: flex-start;
@@ -182,7 +175,17 @@ export const FlexAnchor = styled.View<{ theme: Theme }>`
         gap: 0px 10px;
       `,
       native: css`
-        gap: 0px ${theme.scale(10)}px;
+        padding: 0px ${theme.scale(10)}px;
       `,
     })}
 `;
+
+export const styles = StyleSheet.create({
+  html: {
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 22,
+    color: primary.colors.text,
+    marginTop: scale(30),
+  },
+});
