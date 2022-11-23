@@ -80,15 +80,17 @@ const SubTitle = styledWeb.div` //TODO: react native doesn't support dangerously
 
 `;
 
-const ButtonContainer = styled.View`
-  align-items: flex-start;
+const ButtonContainerWrapper = styled.View`
   margin-top: 50px;
   margin-bottom: 145px;
+`;
+
+const ButtonContainer = styled.View`
+  align-items: flex-start;
 
   ${({ theme }: { theme: Theme }) =>
     theme.getBreakPoint({
       lg: css`
-        margin-top: 28px;
         flex-direction: row;
         margin-top: 104px;
       `,
@@ -149,61 +151,84 @@ const LandingProjectIntention = () => {
               dangerouslySetInnerHTML={{ __html: welcomeAppDescription }}
             />
           </SubTitleWrapper>
-
-          <ButtonContainer>
-            {isAccountVerified ? (
-              <>
-                <Link href="/guest">
-                  <a>
-                    <ButtonStyle
-                      colorOpposite
-                      anchor={t("landingPage:projectIntention.lookingForHelp")}
-                    />
-                  </a>
-                </Link>
-                <Link href="/host">
-                  <a>
-                    <ButtonStyle
-                      colorOpposite
-                      anchor={t("landingPage:projectIntention.shareHelp")}
-                    />
-                  </a>
-                </Link>
-              </>
-            ) : (
-              <>
-                <ButtonStyle
-                  first
-                  colorOpposite
-                  anchor={t("common:shareLocation")}
-                  onPress={(event) => {
-                    event?.preventDefault();
-                    router.push(`/${router?.locale}${Routes.SIGN_IN}`);
-                  }}
-                />
-              </>
-            )}
-            <Link href="/public-shelters">
-              <a>
-                <ButtonStyle
-                  style={{
-                    flexDirection: "row",
-                    backgroundColor: "transparent",
-                    border: "1.5px solid rgb(0, 53, 102)",
-                    boxSizing: "border-box",
-                  }}
-                  anchor={
-                    <FlexAnchor>
-                      <ButtonText>
-                        {t("others:common.words.publicShelters")}
-                      </ButtonText>
-                      <ChevronRight />
-                    </FlexAnchor>
-                  }
-                />
-              </a>
-            </Link>
-          </ButtonContainer>
+          <ButtonContainerWrapper>
+            <ButtonContainer>
+              {isAccountVerified ? (
+                <>
+                  <Link href="/guest">
+                    <a>
+                      <ButtonStyle
+                        colorOpposite
+                        anchor={t("projectIntention.lookingForHelp")}
+                      />
+                    </a>
+                  </Link>
+                  <Link href="/host">
+                    <a>
+                      <ButtonStyle
+                        colorOpposite
+                        anchor={t("projectIntention.shareHelp")}
+                      />
+                    </a>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <ButtonStyle
+                    first
+                    colorOpposite
+                    anchor={t("common:shareLocation")}
+                    onPress={(event) => {
+                      event?.preventDefault();
+                      router.push(`/${router?.locale}${Routes.SIGN_IN}`);
+                    }}
+                  />
+                </>
+              )}
+              <Link href="/public-shelters">
+                <a>
+                  <ButtonStyle
+                    style={{
+                      flexDirection: "row",
+                      backgroundColor: "transparent",
+                      border: "1.5px solid rgb(0, 53, 102)",
+                      boxSizing: "border-box",
+                    }}
+                    anchor={
+                      <FlexAnchor>
+                        <ButtonText>
+                          {t("others:common.words.publicShelters")}
+                        </ButtonText>
+                        <ChevronRight />
+                      </FlexAnchor>
+                    }
+                  />
+                </a>
+              </Link>
+            </ButtonContainer>
+            <ButtonContainer>
+              <Link href="/support-groups">
+                <a>
+                  <ButtonStyle
+                    style={{
+                      flexDirection: "row",
+                      backgroundColor: "transparent",
+                      border: "1.5px solid rgb(0, 53, 102)",
+                      boxSizing: "border-box",
+                    }}
+                    anchor={
+                      <FlexAnchor>
+                        <ButtonText>
+                          {t("others:common.words.supportGroups")}
+                        </ButtonText>
+                        <ChevronRight />
+                      </FlexAnchor>
+                    }
+                  />
+                </a>
+              </Link>
+            </ButtonContainer>
+          </ButtonContainerWrapper>
         </TextContainer>
       </ContentWrapper>
     </Container>
