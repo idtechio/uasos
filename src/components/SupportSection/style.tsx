@@ -18,13 +18,6 @@ export const Title = styled.Text`
   line-height: 33px;
 `;
 
-export const Placeholder = styled.View`
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  background: #ececec;
-`;
-
 export const HeaderWrapper = styled.View`
   display: flex;
   flex-direction: row;
@@ -39,9 +32,34 @@ export const MoreButtonWrapper = styled.View`
   z-index: 9999999;
 `;
 
-export const ImageWrapper = styled.View`
-  height: 80px;
-  flex: 0 0 80px;
+interface ImagePropsInterface {
+  size?: string | number;
+  margin?: string;
+}
+
+export const Placeholder = styled.View<ImagePropsInterface>`
+  width: ${(props) => (props.size ? props.size : "80px")};
+  height: ${(props) => (props.size ? props.size : "80px")};
+  border-radius: 4px;
+  background: #ececec;
+`;
+
+export const ImageWrapper = styled.View<ImagePropsInterface>`
+  display: flex;
+  width: ${(props) => (props.size ? props.size : "80px")};
+  height: ${(props) => (props.size ? props.size : "80px")};
+  margin: ${(props) => (props.margin ? props.margin : 0)};
+`;
+
+export const StyledImage = styled.Image<ImagePropsInterface>`
+  width: ${(props) => (props.size ? props.size : "80px")};
+  height: ${(props) => (props.size ? props.size : "80px")};
+  border-radius: 4px;
+  position: absolute;
+`;
+
+export const Spinner = styled.ActivityIndicator`
+  margin: auto;
 `;
 
 export const TextWrapper = styled.View`
