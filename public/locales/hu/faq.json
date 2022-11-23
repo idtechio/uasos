@@ -1,125 +1,125 @@
 {
-    "001": {
-        "name": "ÁLTALÁNOS INFORMÁCIÓK",
-        "content": {
-            "001": {
-                "question": "Mire szolgál a portál?",
-                "answer": "Az uaSOS.org platform összekapcsolja a szállást kereső menekülteket a szállást kínáló magánszemélyekkel, intézményekkel, civil szervezetekkel és cégekkel. Más, hasonló adatokat gyűjtő kezdeményezésekkel ellentétben a uaSOS.org platform automatikusan összekapcsolja a rászorulók bejelentéseit a segítségre vonatkozó ajánlatokkal, hogy a lehető legszélesebb körnek nyújthassa a lehető legjobb segítséget. A platformnak köszönhetően a rászorulóknak nem kell több száz elérhető segélyajánlatot böngészniük, hanem a legmegfelelőbb és legaktuálisabb igényeikre szabott ajánlatot kapják. A platformon való regisztráció nem anonim, ami mindkét fél számára biztonságot nyújt."
-            },
-            "002": {
-                "question": "Ki hozta létre ezt a portált?",
-                "answer": "A kezdeményezést lengyel és ukrán civil szervezetek, helyi önkormányzatok és számos vállalat támogatja, amelyek nemcsak a legjobb technológiát biztosítják, hanem lehetővé teszik, hogy a határ mindkét oldalán több százezer emberhez eljusson. A platform több tucat önkéntes részvételével jött létre, és egy fejlett motoron alapul, amely a jövőben lehetőséget ad arra, hogy a platformot más igények (pl. szállítás) kiszolgálására is fejlesszék."
-            },
-            "003": {
-                "question": "Biztonságos?",
-                "answer": "A platformot az ID Advisory ügyvédi irodával együttműködő szakértők teljes mértékben biztosították jogi oldalról (beleértve a RODO kérdéseket is), és számos technikai biztosítékkal is rendelkezik, mint például: a személyes adatok feldolgozása a Google felhőben történik, a feldolgozott adatok köre korlátozott, és a naplózás az Facebook és a Gmail segítségével történik, ami fokozott biztonságot nyújt. \n\nUgyanakkor nem áll módunkban minden személyt ellenőrizni, aki a portálon keresztül kitölti az űrlapokat. Ezért kérjük, hogy vegye fel a kapcsolatot a vendéglátójával\/hostesszel, és tisztázza az összes részletet a tartózkodás előtt."
-            },
-            "004": {
-                "question": "Hogyan hozhatok létre fiókot?",
-                "answer": "A fiók létrehozásához meg kell adnia az e-mail címét és a telefonszámát, amelyre egy ellenőrző kódot küldünk."
-            },
-            "005": {
-                "question": "Meg kell adnom a személyes adataimat?",
-                "answer": "A megfelelő regisztrációhoz meg kell adnia az e-mail címét és a telefonszámát. A nevét a felek közötti kommunikáció megkönnyítése érdekében kérjük."
-            },
-            "006": {
-                "question": "Mi az adatvédelmi politika és a GDPR?",
-                "answer": "Az adatvédelmi irányelvek elolvasásához lépjen az \"Adatvédelmi irányelvek\" fülre."
-            },
-            "007": {
-                "question": "Szerkeszthetem a hirdetésemet?",
-                "answer": "A hirdetés szerkesztéséhez a bejelentkezés után kattintson a hirdetés melletti menüre (\"három pont\"), és válassza a \"Szerkesztés\" funkciót."
-            },
-            "008": {
-                "question": "Hogyan tudom törölni a hirdetésemet?",
-                "answer": "Hirdetését kétféleképpen törölheti:\nbejelentkezés után kattintson az értesítés melletti menüre (\"három pont\"), és válassza a \"Törlés\" funkciót, vagy\naz \"UA SOS - Találtunk egy potenciális vendéget az Ön számára\" című e-mailben lehetősége van a bejegyzés törlésének lehetőségét választani."
-            },
-            "009": {
-                "question": "Van valamilyen díj a fiók létrehozásáért?",
-                "answer": "A portál ingyenes, célja, hogy segítse az ukrajnai háború elől menekülő embereket. A regisztráció vagy a portál használatának semmilyen szakaszában nem számítunk fel díjat."
-            },
-            "010": {
-                "question": "Hogyan működik az alkalmazások párosításának algoritmusa? ",
-                "answer": "Az algoritmus mindkét adatbázisban keres, hogy minél több lehetséges kapcsolatot találjon a vendéglátók és a potenciális vendégek között az igényeik alapján. 15 percenként lefuttatja az algoritmust, hogy kapcsolatot találjon az újonnan regisztrált felhasználóknak, de azoknak is, akik még nem találtak ajánlatot - vagy elutasítottak egy korábbi ajánlatot."
-            },
-            "011": {
-                "question": "Tájékoztatnak majd a státuszról?",
-                "answer": "Igen, e-mailben folyamatosan tájékoztatjuk a jelentkezésed állásáról - ellenőrizd rendszeresen a postaládádat.\n\nTovábbá, ha találunk egy potenciális vendéget\/hostot az Ön számára, SMS-ben értesítjük Önt."
-            }
-        }
-    },
-    "002": {
-        "name": "A SEGÍTŐK\/GAZDÁK SZÁMÁRA",
-        "content": {
-            "001": {
-                "question": "Szeretnék segíteni, hogyan lehetek házigazda?",
-                "answer": "Ahhoz, hogy helyet foglaljon, regisztráljon a portálon, adja meg e-mail címét, telefonszámát és aktiválja fiókját. \n\nAmint találunk egy potenciális vendéget az Ön számára - e-mailben és SMS-ben értesítjük erről. Ezután beléphet a portálra, láthatja a legfontosabb információkat a megfelelő vendég űrlapról, és elfogadhatja vagy elutasíthatja az ajánlatot. \n\nMiután mindkét fél megerősíti a kapcsolatot, kicserélik az elérhetőségeket - tisztázzák az utolsó részleteket, és megerősítik, hogy hol fognak találkozni. Ne feledje, hogy nem mindenki beszél lengyelül, ezért az e-mail néha kényelmesebb megoldás lehet, mivel az interneten számos fordító áll rendelkezésre, amelyet a levelezés lefordítására használhat."
-            },
-            "002": {
-                "question": "Csak az ukránoknak van szükségük segítségre?",
-                "answer": "Amikor a háború kitört, Ukrajnában különböző nemzetiségű emberek voltak - például tanultak, üzleti úton voltak, szerződéssel rendelkeztek stb. Mi minden embernek segítünk, függetlenül nemzetiségtől, állampolgárságtól, politikai nézettől, vallástól, szexuális irányultságtól vagy etnikai kisebbséghez tartozástól."
-            },
-            "003": {
-                "question": "Megadhatom, hogy hány embert szeretnék vendégül látni, és például előnyben részesítem-e a gyermekes\ncsaládokat?",
-                "answer": "Természetesen. Mindenki, aki úgy dönt, hogy segít az Ukrajnából érkező embereknek, nyilatkozhat arról, hogy hány ember befogadásával szeretne segíteni. Azt is jelezheti, hogy hajlandó-e például gyermekes családot, állatokat stb. befogadni."
-            },
-            "004": {
-                "question": "El kell mennem a határra, hogy menekültet fogadjak?",
-                "answer": "Jelenleg a portál elsősorban arra szolgál, hogy segítsen szállást találni a menekültek számára. Ha Ön képes felvenni az illetőt a határról vagy egy adott helyről, azt szívesen fogadjuk, de nem kötelező. Az ilyen kiegészítő információkat az űrlapon adhatja meg. A jövőben további funkciókkal bővül majd, hogy segítsen a szállítás, munkahelyek stb. megtalálásában."
-            },
-            "005": {
-                "question": "Nem beszélek ukránul, hogyan tudok kommunikálni?",
-                "answer": "A kommunikáció előnyben részesített formája az e-mail. Nem kell ismernie az ukrán nyelvet ahhoz, hogy kommunikáljon az ukrán nyelvet beszélő személlyel. Az interneten számos fordítóprogram áll rendelkezésre, amelyek segítségével lefordíthatja levelezését."
-            },
-            "006": {
-                "question": "Meg kell adnom a lakcímemet?",
-                "answer": "A portálon való fiók létrehozásához meg kell adnia lakcímét. Ez nem jelenik meg a vendég számára - a vendég csak a szállás városát látja. Javasoljuk, hogy a vendéglátó és a vendég nyilvános helyen találkozzon."
-            },
-            "007": {
-                "question": "Milyen minimális időtartamra tudok fogadni egy ukrajnai személyt?",
-                "answer": "A minimális idő, hogy egy ukrán vendéget fogadjon, egy éjszaka."
-            },
-            "008": {
-                "question": "A szolgáltatás ellenőrzi a portál felhasználóit?",
-                "answer": "A felhasználók bejelentkeznek a profiljukat használó e-mail, Facebook vagy Gmail segítségével, és a telefonszámukat ellenőrzik"
-            },
-            "009": {
-                "question": "Lemondhatok egy menekült befogadásáról?",
-                "answer": "Tisztában vagyunk azzal, hogy az élet különböző véletlenszerű helyzetekben zajlik, ezért bármikor lemondhatsz a menekültek befogadásáról. Azonban kérlek, ne feledd, hogy az Ukrajnából érkező emberek számára fontos az, hogy felajánlod, hogy vendégül látod őket, és előfordulhat, hogy nem tudnak új helyet találni éjszakára. Az önkéntességeddel úgy döntesz, hogy segítesz."
-            },
-            "010": {
-                "question": "Kell-e segítenem a menekülteket anyagilag?",
-                "answer": "A menekülteknek nem kell anyagi támogatást nyújtania, ez kizárólag az Ön jóindulatán múlik."
-            },
-            "011": {
-                "question": "Köteles vagyok-e élelmet biztosítani a menekülteknek?",
-                "answer": "A menekültek helyzetére való tekintettel az élelem biztosítása - legalábbis a tartózkodásuk kezdeti időszakában - üdvözlendő, de továbbra is önkéntes."
-            },
-            "012": {
-                "question": "Nem használom az internetet, hogyan fogadhatok menekülteket Ukrajnából?",
-                "answer": "Ahhoz, hogy portálunkon keresztül segíthessen az Ukrajnából érkező menekülteknek, regisztrálnia kell a portálon. Ha azonban nem használja napi szinten az internetet, megkérdezheti azokat, akik használják."
-            },
-            "013": {
-                "question": "Számlázhatok fel menekülteknek közüzemi díjakat?",
-                "answer": "Az Ukrajnából érkező emberek a háború elől menekültek. Próbálja meg támogatni őket ebben a nehéz időszakban. Ha úgy dönt, hogy segít a menekülteknek, gondoljon arra is, hogy a közüzemi számlái megnövekedhetnek."
-            }
-        }
-    },
-    "003": {
-        "name": "MENEKÜLTEK \/ LÁTOGATÓK SZÁMÁRA",
-        "content": {
-            "001": {
-                "question": "Menekült vagyok Ukrajnából, hogyan találok szállást?",
-                "answer": "A szálláskereséshez regisztráljon a portálon, adja meg e-mail címét, telefonszámát, aktiválja fiókját, és adja meg igényeit az űrlapon.\n\nAmint találunk Önnek egy potenciális vendéglátót, e-mailben és SMS-ben értesítjük Önt. Ezután beléphet a portálra, megtekintheti a vendéglátó profilját, és elfogadhatja vagy elutasíthatja az ajánlatát. \n\nMiután mindkét fél megerősíti a kapcsolatot, kicserélik az elérhetőségeket - tisztázzák az utolsó részleteket, és megerősítik, hogy hol fognak találkozni. Ne feledje, hogy nem mindenki beszél ukránul - ezért az e-mailes kapcsolatfelvétel néha kényelmesebb megoldás lehet, mivel az interneten számos fordító áll rendelkezésre, akivel lefordíthatja a beszélgetést."
-            },
-            "002": {
-                "question": "Számíthatok a határról a célállomásomra történő szállításra?",
-                "answer": "Nem mindenki, aki szállást kínál menekülteknek, rendelkezik gépjárművel, vagy tud szállítást biztosítani. A kapott ajánlaton szerepelhet a \"szállítással\" megjelölés. Ellenkező esetben magánlevelezésben kérhet segítséget a vendéglátójától."
-            },
-            "003": {
-                "question": "Fizessek-e szállást és ellátást annak a személynek, aki befogadott?",
-                "answer": "A menekültek segítése önzetlen és ingyenes. Azok, akik regisztrálnak a portálon és felajánlják segítségüket, nem várnak semmit cserébe. Ne feledje azonban, hogy a szolgálat nem felelős azért, hogy milyen feltételek mellett fogadják el Önt. Győződjön meg róla, hogy nem vár semmit cserébe."
-            }
-        }
+  "001": {
+    "name": "ÁLTALÁNOS INFORMÁCIÓK",
+    "content": {
+      "001": {
+        "question": "Mire szolgál a portál?",
+        "answer": "Az uaSOS.org platform összekapcsolja a szállást kereső menekülteket a szállást kínáló magánszemélyekkel, intézményekkel, civil szervezetekkel és cégekkel. Más, hasonló adatokat gyűjtő kezdeményezésekkel ellentétben a uaSOS.org platform automatikusan összekapcsolja a rászorulók bejelentéseit a segítségre vonatkozó ajánlatokkal, hogy a lehető legszélesebb körnek nyújthassa a lehető legjobb segítséget. A platformnak köszönhetően a rászorulóknak nem kell több száz elérhető segélyajánlatot böngészniük, hanem a legmegfelelőbb és legaktuálisabb igényeikre szabott ajánlatot kapják. A platformon való regisztráció nem anonim, ami mindkét fél számára biztonságot nyújt."
+      },
+      "002": {
+        "question": "Ki hozta létre ezt a portált?",
+        "answer": "A kezdeményezést lengyel és ukrán civil szervezetek, helyi önkormányzatok és számos vállalat támogatja, amelyek nemcsak a legjobb technológiát biztosítják, hanem lehetővé teszik, hogy a határ mindkét oldalán több százezer emberhez eljusson. A platform több tucat önkéntes részvételével jött létre, és egy fejlett motoron alapul, amely a jövőben lehetőséget ad arra, hogy a platformot más igények (pl. szállítás) kiszolgálására is fejlesszék."
+      },
+      "003": {
+        "question": "Biztonságos?",
+        "answer": "A platformot az ID Advisory ügyvédi irodával együttműködő szakértők teljes mértékben biztosították jogi oldalról (beleértve a RODO kérdéseket is), és számos technikai biztosítékkal is rendelkezik, mint például: a személyes adatok feldolgozása a Google felhőben történik, a feldolgozott adatok köre korlátozott, és a naplózás az Facebook és a Gmail segítségével történik, ami fokozott biztonságot nyújt. \n\nUgyanakkor nem áll módunkban minden személyt ellenőrizni, aki a portálon keresztül kitölti az űrlapokat. Ezért kérjük, hogy vegye fel a kapcsolatot a vendéglátójával/hostesszel, és tisztázza az összes részletet a tartózkodás előtt."
+      },
+      "004": {
+        "question": "Hogyan hozhatok létre fiókot?",
+        "answer": "A fiók létrehozásához meg kell adnia az e-mail címét és a telefonszámát, amelyre egy ellenőrző kódot küldünk."
+      },
+      "005": {
+        "question": "Meg kell adnom a személyes adataimat?",
+        "answer": "A megfelelő regisztrációhoz meg kell adnia az e-mail címét és a telefonszámát. A nevét a felek közötti kommunikáció megkönnyítése érdekében kérjük."
+      },
+      "006": {
+        "question": "Mi az adatvédelmi politika és a GDPR?",
+        "answer": "Az adatvédelmi irányelvek elolvasásához lépjen az \"Adatvédelmi irányelvek\" fülre."
+      },
+      "007": {
+        "question": "Szerkeszthetem a hirdetésemet?",
+        "answer": "A hirdetés szerkesztéséhez a bejelentkezés után kattintson a hirdetés melletti menüre (\"három pont\"), és válassza a \"Szerkesztés\" funkciót."
+      },
+      "008": {
+        "question": "Hogyan tudom törölni a hirdetésemet?",
+        "answer": "Hirdetését kétféleképpen törölheti:\nbejelentkezés után kattintson az értesítés melletti menüre (\"három pont\"), és válassza a \"Törlés\" funkciót, vagy\naz \"UA SOS - Találtunk egy potenciális vendéget az Ön számára\" című e-mailben lehetősége van a bejegyzés törlésének lehetőségét választani."
+      },
+      "009": {
+        "question": "Van valamilyen díj a fiók létrehozásáért?",
+        "answer": "A portál ingyenes, célja, hogy segítse az ukrajnai háború elől menekülő embereket. A regisztráció vagy a portál használatának semmilyen szakaszában nem számítunk fel díjat."
+      },
+      "010": {
+        "question": "Hogyan működik az alkalmazások párosításának algoritmusa? ",
+        "answer": "Az algoritmus mindkét adatbázisban keres, hogy minél több lehetséges kapcsolatot találjon a vendéglátók és a potenciális vendégek között az igényeik alapján. 15 percenként lefuttatja az algoritmust, hogy kapcsolatot találjon az újonnan regisztrált felhasználóknak, de azoknak is, akik még nem találtak ajánlatot - vagy elutasítottak egy korábbi ajánlatot."
+      },
+      "011": {
+        "question": "Tájékoztatnak majd a státuszról?",
+        "answer": "Igen, e-mailben folyamatosan tájékoztatjuk a jelentkezésed állásáról - ellenőrizd rendszeresen a postaládádat.\n\nTovábbá, ha találunk egy potenciális vendéget/hostot az Ön számára, SMS-ben értesítjük Önt."
+      }
     }
+  },
+  "002": {
+    "name": "A SEGÍTŐK/GAZDÁK SZÁMÁRA",
+    "content": {
+      "001": {
+        "question": "Szeretnék segíteni, hogyan lehetek házigazda?",
+        "answer": "Ahhoz, hogy helyet foglaljon, regisztráljon a portálon, adja meg e-mail címét, telefonszámát és aktiválja fiókját. \n\nAmint találunk egy potenciális vendéget az Ön számára - e-mailben és SMS-ben értesítjük erről. Ezután beléphet a portálra, láthatja a legfontosabb információkat a megfelelő vendég űrlapról, és elfogadhatja vagy elutasíthatja az ajánlatot. \n\nMiután mindkét fél megerősíti a kapcsolatot, kicserélik az elérhetőségeket - tisztázzák az utolsó részleteket, és megerősítik, hogy hol fognak találkozni. Ne feledje, hogy nem mindenki beszél lengyelül, ezért az e-mail néha kényelmesebb megoldás lehet, mivel az interneten számos fordító áll rendelkezésre, amelyet a levelezés lefordítására használhat."
+      },
+      "002": {
+        "question": "Csak az ukránoknak van szükségük segítségre?",
+        "answer": "Amikor a háború kitört, Ukrajnában különböző nemzetiségű emberek voltak - például tanultak, üzleti úton voltak, szerződéssel rendelkeztek stb. Mi minden embernek segítünk, függetlenül nemzetiségtől, állampolgárságtól, politikai nézettől, vallástól, szexuális irányultságtól vagy etnikai kisebbséghez tartozástól."
+      },
+      "003": {
+        "question": "Megadhatom, hogy hány embert szeretnék vendégül látni, és például előnyben részesítem-e a gyermekes\ncsaládokat?",
+        "answer": "Természetesen. Mindenki, aki úgy dönt, hogy segít az Ukrajnából érkező embereknek, nyilatkozhat arról, hogy hány ember befogadásával szeretne segíteni. Azt is jelezheti, hogy hajlandó-e például gyermekes családot, állatokat stb. befogadni."
+      },
+      "004": {
+        "question": "El kell mennem a határra, hogy menekültet fogadjak?",
+        "answer": "Jelenleg a portál elsősorban arra szolgál, hogy segítsen szállást találni a menekültek számára. Ha Ön képes felvenni az illetőt a határról vagy egy adott helyről, azt szívesen fogadjuk, de nem kötelező. Az ilyen kiegészítő információkat az űrlapon adhatja meg. A jövőben további funkciókkal bővül majd, hogy segítsen a szállítás, munkahelyek stb. megtalálásában."
+      },
+      "005": {
+        "question": "Nem beszélek ukránul, hogyan tudok kommunikálni?",
+        "answer": "A kommunikáció előnyben részesített formája az e-mail. Nem kell ismernie az ukrán nyelvet ahhoz, hogy kommunikáljon az ukrán nyelvet beszélő személlyel. Az interneten számos fordítóprogram áll rendelkezésre, amelyek segítségével lefordíthatja levelezését."
+      },
+      "006": {
+        "question": "Meg kell adnom a lakcímemet?",
+        "answer": "A portálon való fiók létrehozásához meg kell adnia lakcímét. Ez nem jelenik meg a vendég számára - a vendég csak a szállás városát látja. Javasoljuk, hogy a vendéglátó és a vendég nyilvános helyen találkozzon."
+      },
+      "007": {
+        "question": "Milyen minimális időtartamra tudok fogadni egy ukrajnai személyt?",
+        "answer": "A minimális idő, hogy egy ukrán vendéget fogadjon, egy éjszaka."
+      },
+      "008": {
+        "question": "A szolgáltatás ellenőrzi a portál felhasználóit?",
+        "answer": "A felhasználók bejelentkeznek a profiljukat használó e-mail, Facebook vagy Gmail segítségével, és a telefonszámukat ellenőrzik"
+      },
+      "009": {
+        "question": "Lemondhatok egy menekült befogadásáról?",
+        "answer": "Tisztában vagyunk azzal, hogy az élet különböző véletlenszerű helyzetekben zajlik, ezért bármikor lemondhatsz a menekültek befogadásáról. Azonban kérlek, ne feledd, hogy az Ukrajnából érkező emberek számára fontos az, hogy felajánlod, hogy vendégül látod őket, és előfordulhat, hogy nem tudnak új helyet találni éjszakára. Az önkéntességeddel úgy döntesz, hogy segítesz."
+      },
+      "010": {
+        "question": "Kell-e segítenem a menekülteket anyagilag?",
+        "answer": "A menekülteknek nem kell anyagi támogatást nyújtania, ez kizárólag az Ön jóindulatán múlik."
+      },
+      "011": {
+        "question": "Köteles vagyok-e élelmet biztosítani a menekülteknek?",
+        "answer": "A menekültek helyzetére való tekintettel az élelem biztosítása - legalábbis a tartózkodásuk kezdeti időszakában - üdvözlendő, de továbbra is önkéntes."
+      },
+      "012": {
+        "question": "Nem használom az internetet, hogyan fogadhatok menekülteket Ukrajnából?",
+        "answer": "Ahhoz, hogy portálunkon keresztül segíthessen az Ukrajnából érkező menekülteknek, regisztrálnia kell a portálon. Ha azonban nem használja napi szinten az internetet, megkérdezheti azokat, akik használják."
+      },
+      "013": {
+        "question": "Számlázhatok fel menekülteknek közüzemi díjakat?",
+        "answer": "Az Ukrajnából érkező emberek a háború elől menekültek. Próbálja meg támogatni őket ebben a nehéz időszakban. Ha úgy dönt, hogy segít a menekülteknek, gondoljon arra is, hogy a közüzemi számlái megnövekedhetnek."
+      }
+    }
+  },
+  "003": {
+    "name": "MENEKÜLTEK / LÁTOGATÓK SZÁMÁRA",
+    "content": {
+      "001": {
+        "question": "Menekült vagyok Ukrajnából, hogyan találok szállást?",
+        "answer": "A szálláskereséshez regisztráljon a portálon, adja meg e-mail címét, telefonszámát, aktiválja fiókját, és adja meg igényeit az űrlapon.\n\nAmint találunk Önnek egy potenciális vendéglátót, e-mailben és SMS-ben értesítjük Önt. Ezután beléphet a portálra, megtekintheti a vendéglátó profilját, és elfogadhatja vagy elutasíthatja az ajánlatát. \n\nMiután mindkét fél megerősíti a kapcsolatot, kicserélik az elérhetőségeket - tisztázzák az utolsó részleteket, és megerősítik, hogy hol fognak találkozni. Ne feledje, hogy nem mindenki beszél ukránul - ezért az e-mailes kapcsolatfelvétel néha kényelmesebb megoldás lehet, mivel az interneten számos fordító áll rendelkezésre, akivel lefordíthatja a beszélgetést."
+      },
+      "002": {
+        "question": "Számíthatok a határról a célállomásomra történő szállításra?",
+        "answer": "Nem mindenki, aki szállást kínál menekülteknek, rendelkezik gépjárművel, vagy tud szállítást biztosítani. A kapott ajánlaton szerepelhet a \"szállítással\" megjelölés. Ellenkező esetben magánlevelezésben kérhet segítséget a vendéglátójától."
+      },
+      "003": {
+        "question": "Fizessek-e szállást és ellátást annak a személynek, aki befogadott?",
+        "answer": "A menekültek segítése önzetlen és ingyenes. Azok, akik regisztrálnak a portálon és felajánlják segítségüket, nem várnak semmit cserébe. Ne feledje azonban, hogy a szolgálat nem felelős azért, hogy milyen feltételek mellett fogadják el Önt. Győződjön meg róla, hogy nem vár semmit cserébe."
+      }
+    }
+  }
 }

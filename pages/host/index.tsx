@@ -33,10 +33,18 @@ export default function Account() {
   if (loaded) {
     if (identity) {
       return (
-        <CompositionAppBody>
-          <AppBack to="/dashboard" />
-          <FormAdHost data={offer} />
-        </CompositionAppBody>
+        <>
+          <CompositionAppBody>
+            <AppBack to="/dashboard" />
+            <FormAdHost data={offer} />
+          </CompositionAppBody>
+          <div
+            style={{
+              position: "relative",
+            }}
+            id="photo-viewer"
+          />
+        </>
       );
     } else {
       return <Redirect path="/signin"></Redirect>;

@@ -1,125 +1,125 @@
 {
-    "001": {
-        "name": "ALLGEMEINE INFORMATIONEN",
-        "content": {
-            "001": {
-                "question": "Wofür ist das Portal gedacht?",
-                "answer": "Die Plattform uaSOS.org bringt Flüchtlinge, die eine Unterkunft suchen, mit Privatpersonen, Institutionen, NGOs und Unternehmen zusammen, die eine Unterkunft anbieten. Im Gegensatz zu anderen Initiativen, die ähnliche Daten sammeln, verbindet die Plattform uaSOS.org automatisch die Meldungen von Bedürftigen mit Hilfsangeboten, um einem möglichst großen Personenkreis die bestmögliche Unterstützung zukommen zu lassen. Dank der Plattform müssen Bedürftige nicht Hunderte von verfügbaren Hilfsangeboten durchforsten, sondern bekommen das für sie am besten geeignete, aktuelle und auf ihre Bedürfnisse zugeschnittene Angebot präsentiert. Die Registrierung auf der Plattform ist nicht anonym, was für beide Seiten Sicherheit bietet."
-            },
-            "002": {
-                "question": "Wer hat dieses Portal geschaffen?",
-                "answer": "Die Initiative wird von polnischen und ukrainischen Nichtregierungsorganisationen, lokalen Regierungen und vielen Unternehmen unterstützt, die nicht nur die beste Technologie zur Verfügung stellen, sondern auch dafür sorgen, dass Hunderttausende von Menschen auf beiden Seiten der Grenze erreicht werden können. Die Plattform wurde unter Mitwirkung von Dutzenden von Freiwilligen geschaffen und basiert auf einer fortschrittlichen Engine, die in Zukunft die Möglichkeit bietet, die Plattform für andere Zwecke (z. B. Transport) zu entwickeln."
-            },
-            "003": {
-                "question": "Ist es sicher?",
-                "answer": "Die Plattform wurde von Experten, die mit der Anwaltskanzlei ID Advisory zusammenarbeiten, rechtlich vollständig abgesichert (einschließlich der RODO-Problematik) und verfügt über eine Reihe von technischen Sicherheitsvorkehrungen, wie z. B. die Verarbeitung personenbezogener Daten in der Google-Cloud, die Beschränkung der verarbeiteten Daten und die Protokollierung über Facebook und Gmail, was eine erhöhte Sicherheit gewährleistet. \n\nDa wir nicht in der Lage sind, alle Personen, die die Formulare über das Portal ausfüllen, zu überprüfen, bitten wir Sie, sich vor Ihrem Aufenthalt mit Ihrem Gastgeber in Verbindung zu setzen und alle Einzelheiten zu klären."
-            },
-            "004": {
-                "question": "Wie kann ich ein Konto erstellen?",
-                "answer": "Um ein Konto einzurichten, müssen Sie Ihre E-Mail-Adresse und Telefonnummer angeben, an die ein Verifizierungscode gesendet wird."
-            },
-            "005": {
-                "question": "Muss ich meine persönlichen Daten eingeben?",
-                "answer": "Um sich ordnungsgemäß zu registrieren, müssen Sie Ihre E-Mail-Adresse und Telefonnummer angeben. Wir bitten Sie um Ihren Namen, um die Kommunikation zwischen den Parteien zu erleichtern."
-            },
-            "006": {
-                "question": "Was ist die Datenschutzrichtlinie und GDPR?",
-                "answer": "Um die Datenschutzbestimmungen zu lesen, gehen Sie bitte auf die Registerkarte \"Datenschutzbestimmungen\"."
-            },
-            "007": {
-                "question": "Kann ich meine Anzeige bearbeiten?",
-                "answer": "Um Ihre Anzeige zu bearbeiten, klicken Sie nach dem Einloggen auf das Menü neben der Anzeige (\"drei Punkte\") und wählen Sie die Funktion \"Bearbeiten\"."
-            },
-            "008": {
-                "question": "Wie kann ich meine Anzeige löschen?",
-                "answer": "Sie können Ihre Anzeige auf zwei Arten löschen:\n\nklicken Sie nach dem Einloggen auf das Menü neben der Benachrichtigung (\"drei Punkte\") und wählen Sie die Funktion \"Löschen\" oder\n\nin der E-Mail \"UA SOS - Wir haben einen potentiellen Gast für Sie gefunden\" haben Sie die Möglichkeit, die Option zum Löschen des Eintrags zu wählen."
-            },
-            "009": {
-                "question": "Ist die Einrichtung eines Kontos mit Kosten verbunden?",
-                "answer": "Das Portal ist kostenlos und soll Menschen helfen, die vor dem Krieg in der Ukraine fliehen. Für die Registrierung und die Nutzung unseres Portals werden keine Gebühren erhoben."
-            },
-            "010": {
-                "question": "Wie funktioniert der Algorithmus für das Pairing von Bewerbungen?",
-                "answer": "Der Algorithmus durchsucht beide Datenbanken, um möglichst viele potenzielle Verbindungen zwischen Gastgebern und potenziellen Gästen auf der Grundlage ihrer Anforderungen zu finden. Alle 15 Minuten wird der Algorithmus ausgeführt, um Verbindungen für neu registrierte Nutzer zu finden, aber auch für Personen, die noch kein Angebot gefunden haben - oder ein früheres Angebot abgelehnt haben."
-            },
-            "011": {
-                "question": "Werde ich über den Status informiert?",
-                "answer": "Ja, wir halten Sie per E-Mail über den Stand Ihrer Bewerbung auf dem Laufenden - schauen Sie regelmäßig in Ihre Mailbox.\n\nAußerdem werden wir Sie per SMS benachrichtigen, wenn wir einen potenziellen Gast\/Gastgeber für Sie gefunden haben."
-            }
-        }
-    },
-    "002": {
-        "name": "FÜR HILFSKRÄFTE\/GASTGEBER",
-        "content": {
-            "001": {
-                "question": "Ich möchte helfen, wie kann ich Gastgeber sein?",
-                "answer": "Um einen Platz zur Verfügung zu stellen, müssen Sie sich auf dem Portal registrieren, Ihre E-Mail-Adresse und Telefonnummer angeben und Ihr Konto aktivieren.\n\nSobald wir einen potenziellen Gast für Sie gefunden haben, informieren wir Sie per E-Mail und SMS, damit Sie das Portal betreten, die wichtigsten Informationen aus dem Formular für den passenden Gast einsehen und das Angebot annehmen oder ablehnen können. \n\nSobald beide Parteien die Verbindung bestätigt haben, tauschen Sie Ihre Kontaktdaten aus - klären Sie die letzten Details und bestätigen Sie, wo Sie sich treffen werden. Denken Sie daran, dass nicht jeder Polnisch spricht, so dass eine E-Mail manchmal die bequemere Option sein kann, da es im Internet viele Übersetzer gibt, die Sie für die Übersetzung Ihrer Korrespondenz nutzen können."
-            },
-            "002": {
-                "question": "Ich möchte Flüchtlingen helfen. Brauchen nur Ukrainer Hilfe?",
-                "answer": "Als der Krieg ausbrach, hielten sich Menschen verschiedener Nationalitäten in der Ukraine auf - sie studierten, waren auf Geschäftsreise, hatten Verträge usw. Wir helfen allen Menschen, unabhängig von ihrer Nationalität, Staatsangehörigkeit, politischen Einstellung, Religion, sexuellen Orientierung oder Zugehörigkeit zu einer ethnischen Minderheit."
-            },
-            "003": {
-                "question": "Kann ich angeben, wie viele Personen ich beherbergen möchte, und wird zum Beispiel eine Familie mit Kindern bevorzugt?",
-                "answer": "Natürlich. Jeder, der sich entschließt, Menschen aus der Ukraine zu helfen, kann angeben, wie vielen Menschen er helfen möchte, indem er sie aufnimmt. Sie können auch angeben, ob Sie bereit sind, z. B. eine Familie mit Kindern, Tieren usw. aufzunehmen."
-            },
-            "004": {
-                "question": "Muss ich mich an die Grenze begeben, um einen Flüchtling aufzunehmen?",
-                "answer": "Im Moment ist das Portal in erster Linie dafür gedacht, Ihnen bei der Suche nach einer Unterkunft für Flüchtlinge zu helfen. Wenn Sie in der Lage sind, die Person von der Grenze oder von einem bestimmten Ort abzuholen, ist das willkommen, aber nicht erforderlich. Sie können solche zusätzlichen Informationen in das Formular eingeben. In Zukunft werden zusätzliche Funktionen hinzugefügt, um bei der Suche nach Transportmitteln, Arbeitsplätzen usw. zu helfen."
-            },
-            "005": {
-                "question": "Ich spreche kein Ukrainisch, wie kann ich mich verständigen?",
-                "answer": "Die bevorzugte Kommunikationsform ist die E-Mail. Sie brauchen die ukrainische Sprache nicht zu beherrschen, um mit einer Person zu kommunizieren, die diese Sprache spricht. Im Internet gibt es viele Übersetzer, die Sie für die Übersetzung Ihrer Korrespondenz nutzen können."
-            },
-            "006": {
-                "question": "Muss ich meine Wohnanschrift angeben?",
-                "answer": "Sie müssen Ihre Heimatadresse angeben, um ein Konto auf dem Portal zu erstellen. Sie wird dem Gast nicht angezeigt - er sieht nur den Ort der Unterkunft. Wir empfehlen, dass sich Gastgeber und Gast an einem öffentlichen Ort treffen."
-            },
-            "007": {
-                "question": "Für welchen Mindestzeitraum kann ich eine Person aus der Ukraine aufnehmen?",
-                "answer": "Die Mindestdauer für die Aufnahme einer Person aus der Ukraine beträgt eine Nacht."
-            },
-            "008": {
-                "question": "Überprüft der Dienst die Nutzer des Portals?",
-                "answer": "Die Benutzer melden sich über ihr Profil per E-Mail, Facebook oder Gmail an, und ihre Telefonnummern werden überprüft"
-            },
-            "009": {
-                "question": "Kann ich auf die Aufnahme eines Flüchtlings verzichten?",
-                "answer": "Wir sind uns der Tatsache bewusst, dass das Leben in verschiedenen zufälligen Situationen abläuft, daher können Sie jederzeit von der Aufnahme von Flüchtlingen zurücktreten. Bitte denken Sie jedoch daran, dass Ihr Angebot, Menschen aus der Ukraine aufzunehmen, für diese Menschen wichtig ist und sie möglicherweise keinen neuen Platz zum Übernachten finden. Durch Ihre freiwillige Mitarbeit entscheiden Sie sich zu helfen."
-            },
-            "010": {
-                "question": "Muss ich die Flüchtlinge finanziell unterstützen?",
-                "answer": "Sie müssen den Flüchtlingen keine finanzielle Unterstützung zukommen lassen, es ist allein Ihr guter Wille."
-            },
-            "011": {
-                "question": "Muss ich Flüchtlinge mit Lebensmitteln versorgen?",
-                "answer": "In Anbetracht der Situation der Flüchtlinge ist die Bereitstellung von Lebensmitteln, zumindest für die erste Zeit ihres Aufenthalts, zu begrüßen, bleibt aber freiwillig."
-            },
-            "012": {
-                "question": "Ich habe kein Internet, wie kann ich Flüchtlinge aus der Ukraine aufnehmen?",
-                "answer": "Um Flüchtlingen aus der Ukraine über unser Portal zu helfen, müssen Sie sich dort registrieren lassen. Wenn Sie das Internet nicht täglich nutzen, können Sie aber auch Menschen fragen, die es tun."
-            },
-            "013": {
-                "question": "Kann ich Flüchtlingen die Nebenkosten in Rechnung stellen?",
-                "answer": "Die Menschen, die aus der Ukraine kommen, sind vor dem Krieg geflohen. Versuchen Sie, sie in dieser schwierigen Zeit zu unterstützen. Wenn Sie sich entscheiden, Flüchtlingen zu helfen, bedenken Sie auch, dass Ihre Stromrechnungen steigen könnten."
-            }
-        }
-    },
-    "003": {
-        "name": "FÜR FLÜCHTLINGE \/ BESUCHER",
-        "content": {
-            "001": {
-                "question": "Ich bin ein Flüchtling aus der Ukraine, wie finde ich eine Unterkunft?",
-                "answer": "Um eine Unterkunft zu finden, registrieren Sie sich auf dem Portal, geben Sie Ihre E-Mail-Adresse und Telefonnummer an, aktivieren Sie Ihr Konto und tragen Sie Ihren Bedarf in das Formular ein. \n\nSobald wir einen potenziellen Gastgeber für Sie gefunden haben, informieren wir Sie per E-Mail und SMS. Sie können dann auf das Portal gehen, das Profil des Gastgebers einsehen und sein Angebot annehmen oder ablehnen. \n\nSobald beide Parteien die Verbindung bestätigt haben, tauschen Sie Ihre Kontaktdaten aus - klären Sie die letzten Details und bestätigen Sie, wo Sie sich treffen werden. Denken Sie daran, dass nicht jeder Ukrainisch spricht - daher kann der E-Mail-Kontakt manchmal eine bequemere Option sein, da es im Internet viele Übersetzer gibt, die Sie zur Übersetzung Ihrer Konversation nutzen können."
-            },
-            "002": {
-                "question": "Kann ich mit einem Transport von der Grenze zu meinem endgültigen Bestimmungsort rechnen?",
-                "answer": "Nicht jeder, der eine Unterkunft für Flüchtlinge anbietet, ist motorisiert oder kann einen Transport anbieten. Das Angebot, das Sie erhalten, kann mit dem Vermerk \"mit Transport\" versehen sein. Andernfalls können Sie Ihren Gastgeber im privaten Schriftverkehr um Hilfe bitten."
-            },
-            "003": {
-                "question": "Soll ich für Unterkunft und Verpflegung der Person, die mich aufgenommen hat, aufkommen?",
-                "answer": "Die Hilfe für Flüchtlinge ist selbstlos und kostenlos. Menschen, die sich auf dem Portal registrieren und Hilfe anbieten, erwarten keine Gegenleistung. Denken Sie jedoch daran, dass der Dienst nicht für die Bedingungen verantwortlich ist, unter denen Sie aufgenommen werden. Vergewissern Sie sich, dass Sie keine Gegenleistung erwarten."
-            }
-        }
+  "001": {
+    "name": "ALLGEMEINE INFORMATIONEN",
+    "content": {
+      "001": {
+        "question": "Wofür ist das Portal gedacht?",
+        "answer": "Die Plattform uaSOS.org bringt Flüchtlinge, die eine Unterkunft suchen, mit Privatpersonen, Institutionen, NGOs und Unternehmen zusammen, die eine Unterkunft anbieten. Im Gegensatz zu anderen Initiativen, die ähnliche Daten sammeln, verbindet die Plattform uaSOS.org automatisch die Meldungen von Bedürftigen mit Hilfsangeboten, um einem möglichst großen Personenkreis die bestmögliche Unterstützung zukommen zu lassen. Dank der Plattform müssen Bedürftige nicht Hunderte von verfügbaren Hilfsangeboten durchforsten, sondern bekommen das für sie am besten geeignete, aktuelle und auf ihre Bedürfnisse zugeschnittene Angebot präsentiert. Die Registrierung auf der Plattform ist nicht anonym, was für beide Seiten Sicherheit bietet."
+      },
+      "002": {
+        "question": "Wer hat dieses Portal geschaffen?",
+        "answer": "Die Initiative wird von polnischen und ukrainischen Nichtregierungsorganisationen, lokalen Regierungen und vielen Unternehmen unterstützt, die nicht nur die beste Technologie zur Verfügung stellen, sondern auch dafür sorgen, dass Hunderttausende von Menschen auf beiden Seiten der Grenze erreicht werden können. Die Plattform wurde unter Mitwirkung von Dutzenden von Freiwilligen geschaffen und basiert auf einer fortschrittlichen Engine, die in Zukunft die Möglichkeit bietet, die Plattform für andere Zwecke (z. B. Transport) zu entwickeln."
+      },
+      "003": {
+        "question": "Ist es sicher?",
+        "answer": "Die Plattform wurde von Experten, die mit der Anwaltskanzlei ID Advisory zusammenarbeiten, rechtlich vollständig abgesichert (einschließlich der RODO-Problematik) und verfügt über eine Reihe von technischen Sicherheitsvorkehrungen, wie z. B. die Verarbeitung personenbezogener Daten in der Google-Cloud, die Beschränkung der verarbeiteten Daten und die Protokollierung über Facebook und Gmail, was eine erhöhte Sicherheit gewährleistet. \n\nDa wir nicht in der Lage sind, alle Personen, die die Formulare über das Portal ausfüllen, zu überprüfen, bitten wir Sie, sich vor Ihrem Aufenthalt mit Ihrem Gastgeber in Verbindung zu setzen und alle Einzelheiten zu klären."
+      },
+      "004": {
+        "question": "Wie kann ich ein Konto erstellen?",
+        "answer": "Um ein Konto einzurichten, müssen Sie Ihre E-Mail-Adresse und Telefonnummer angeben, an die ein Verifizierungscode gesendet wird."
+      },
+      "005": {
+        "question": "Muss ich meine persönlichen Daten eingeben?",
+        "answer": "Um sich ordnungsgemäß zu registrieren, müssen Sie Ihre E-Mail-Adresse und Telefonnummer angeben. Wir bitten Sie um Ihren Namen, um die Kommunikation zwischen den Parteien zu erleichtern."
+      },
+      "006": {
+        "question": "Was ist die Datenschutzrichtlinie und GDPR?",
+        "answer": "Um die Datenschutzbestimmungen zu lesen, gehen Sie bitte auf die Registerkarte \"Datenschutzbestimmungen\"."
+      },
+      "007": {
+        "question": "Kann ich meine Anzeige bearbeiten?",
+        "answer": "Um Ihre Anzeige zu bearbeiten, klicken Sie nach dem Einloggen auf das Menü neben der Anzeige (\"drei Punkte\") und wählen Sie die Funktion \"Bearbeiten\"."
+      },
+      "008": {
+        "question": "Wie kann ich meine Anzeige löschen?",
+        "answer": "Sie können Ihre Anzeige auf zwei Arten löschen:\n\nklicken Sie nach dem Einloggen auf das Menü neben der Benachrichtigung (\"drei Punkte\") und wählen Sie die Funktion \"Löschen\" oder\n\nin der E-Mail \"UA SOS - Wir haben einen potentiellen Gast für Sie gefunden\" haben Sie die Möglichkeit, die Option zum Löschen des Eintrags zu wählen."
+      },
+      "009": {
+        "question": "Ist die Einrichtung eines Kontos mit Kosten verbunden?",
+        "answer": "Das Portal ist kostenlos und soll Menschen helfen, die vor dem Krieg in der Ukraine fliehen. Für die Registrierung und die Nutzung unseres Portals werden keine Gebühren erhoben."
+      },
+      "010": {
+        "question": "Wie funktioniert der Algorithmus für das Pairing von Bewerbungen?",
+        "answer": "Der Algorithmus durchsucht beide Datenbanken, um möglichst viele potenzielle Verbindungen zwischen Gastgebern und potenziellen Gästen auf der Grundlage ihrer Anforderungen zu finden. Alle 15 Minuten wird der Algorithmus ausgeführt, um Verbindungen für neu registrierte Nutzer zu finden, aber auch für Personen, die noch kein Angebot gefunden haben - oder ein früheres Angebot abgelehnt haben."
+      },
+      "011": {
+        "question": "Werde ich über den Status informiert?",
+        "answer": "Ja, wir halten Sie per E-Mail über den Stand Ihrer Bewerbung auf dem Laufenden - schauen Sie regelmäßig in Ihre Mailbox.\n\nAußerdem werden wir Sie per SMS benachrichtigen, wenn wir einen potenziellen Gast/Gastgeber für Sie gefunden haben."
+      }
     }
+  },
+  "002": {
+    "name": "FÜR HILFSKRÄFTE/GASTGEBER",
+    "content": {
+      "001": {
+        "question": "Ich möchte helfen, wie kann ich Gastgeber sein?",
+        "answer": "Um einen Platz zur Verfügung zu stellen, müssen Sie sich auf dem Portal registrieren, Ihre E-Mail-Adresse und Telefonnummer angeben und Ihr Konto aktivieren.\n\nSobald wir einen potenziellen Gast für Sie gefunden haben, informieren wir Sie per E-Mail und SMS, damit Sie das Portal betreten, die wichtigsten Informationen aus dem Formular für den passenden Gast einsehen und das Angebot annehmen oder ablehnen können. \n\nSobald beide Parteien die Verbindung bestätigt haben, tauschen Sie Ihre Kontaktdaten aus - klären Sie die letzten Details und bestätigen Sie, wo Sie sich treffen werden. Denken Sie daran, dass nicht jeder Polnisch spricht, so dass eine E-Mail manchmal die bequemere Option sein kann, da es im Internet viele Übersetzer gibt, die Sie für die Übersetzung Ihrer Korrespondenz nutzen können."
+      },
+      "002": {
+        "question": "Ich möchte Flüchtlingen helfen. Brauchen nur Ukrainer Hilfe?",
+        "answer": "Als der Krieg ausbrach, hielten sich Menschen verschiedener Nationalitäten in der Ukraine auf - sie studierten, waren auf Geschäftsreise, hatten Verträge usw. Wir helfen allen Menschen, unabhängig von ihrer Nationalität, Staatsangehörigkeit, politischen Einstellung, Religion, sexuellen Orientierung oder Zugehörigkeit zu einer ethnischen Minderheit."
+      },
+      "003": {
+        "question": "Kann ich angeben, wie viele Personen ich beherbergen möchte, und wird zum Beispiel eine Familie mit Kindern bevorzugt?",
+        "answer": "Natürlich. Jeder, der sich entschließt, Menschen aus der Ukraine zu helfen, kann angeben, wie vielen Menschen er helfen möchte, indem er sie aufnimmt. Sie können auch angeben, ob Sie bereit sind, z. B. eine Familie mit Kindern, Tieren usw. aufzunehmen."
+      },
+      "004": {
+        "question": "Muss ich mich an die Grenze begeben, um einen Flüchtling aufzunehmen?",
+        "answer": "Im Moment ist das Portal in erster Linie dafür gedacht, Ihnen bei der Suche nach einer Unterkunft für Flüchtlinge zu helfen. Wenn Sie in der Lage sind, die Person von der Grenze oder von einem bestimmten Ort abzuholen, ist das willkommen, aber nicht erforderlich. Sie können solche zusätzlichen Informationen in das Formular eingeben. In Zukunft werden zusätzliche Funktionen hinzugefügt, um bei der Suche nach Transportmitteln, Arbeitsplätzen usw. zu helfen."
+      },
+      "005": {
+        "question": "Ich spreche kein Ukrainisch, wie kann ich mich verständigen?",
+        "answer": "Die bevorzugte Kommunikationsform ist die E-Mail. Sie brauchen die ukrainische Sprache nicht zu beherrschen, um mit einer Person zu kommunizieren, die diese Sprache spricht. Im Internet gibt es viele Übersetzer, die Sie für die Übersetzung Ihrer Korrespondenz nutzen können."
+      },
+      "006": {
+        "question": "Muss ich meine Wohnanschrift angeben?",
+        "answer": "Sie müssen Ihre Heimatadresse angeben, um ein Konto auf dem Portal zu erstellen. Sie wird dem Gast nicht angezeigt - er sieht nur den Ort der Unterkunft. Wir empfehlen, dass sich Gastgeber und Gast an einem öffentlichen Ort treffen."
+      },
+      "007": {
+        "question": "Für welchen Mindestzeitraum kann ich eine Person aus der Ukraine aufnehmen?",
+        "answer": "Die Mindestdauer für die Aufnahme einer Person aus der Ukraine beträgt eine Nacht."
+      },
+      "008": {
+        "question": "Überprüft der Dienst die Nutzer des Portals?",
+        "answer": "Die Benutzer melden sich über ihr Profil per E-Mail, Facebook oder Gmail an, und ihre Telefonnummern werden überprüft"
+      },
+      "009": {
+        "question": "Kann ich auf die Aufnahme eines Flüchtlings verzichten?",
+        "answer": "Wir sind uns der Tatsache bewusst, dass das Leben in verschiedenen zufälligen Situationen abläuft, daher können Sie jederzeit von der Aufnahme von Flüchtlingen zurücktreten. Bitte denken Sie jedoch daran, dass Ihr Angebot, Menschen aus der Ukraine aufzunehmen, für diese Menschen wichtig ist und sie möglicherweise keinen neuen Platz zum Übernachten finden. Durch Ihre freiwillige Mitarbeit entscheiden Sie sich zu helfen."
+      },
+      "010": {
+        "question": "Muss ich die Flüchtlinge finanziell unterstützen?",
+        "answer": "Sie müssen den Flüchtlingen keine finanzielle Unterstützung zukommen lassen, es ist allein Ihr guter Wille."
+      },
+      "011": {
+        "question": "Muss ich Flüchtlinge mit Lebensmitteln versorgen?",
+        "answer": "In Anbetracht der Situation der Flüchtlinge ist die Bereitstellung von Lebensmitteln, zumindest für die erste Zeit ihres Aufenthalts, zu begrüßen, bleibt aber freiwillig."
+      },
+      "012": {
+        "question": "Ich habe kein Internet, wie kann ich Flüchtlinge aus der Ukraine aufnehmen?",
+        "answer": "Um Flüchtlingen aus der Ukraine über unser Portal zu helfen, müssen Sie sich dort registrieren lassen. Wenn Sie das Internet nicht täglich nutzen, können Sie aber auch Menschen fragen, die es tun."
+      },
+      "013": {
+        "question": "Kann ich Flüchtlingen die Nebenkosten in Rechnung stellen?",
+        "answer": "Die Menschen, die aus der Ukraine kommen, sind vor dem Krieg geflohen. Versuchen Sie, sie in dieser schwierigen Zeit zu unterstützen. Wenn Sie sich entscheiden, Flüchtlingen zu helfen, bedenken Sie auch, dass Ihre Stromrechnungen steigen könnten."
+      }
+    }
+  },
+  "003": {
+    "name": "FÜR FLÜCHTLINGE / BESUCHER",
+    "content": {
+      "001": {
+        "question": "Ich bin ein Flüchtling aus der Ukraine, wie finde ich eine Unterkunft?",
+        "answer": "Um eine Unterkunft zu finden, registrieren Sie sich auf dem Portal, geben Sie Ihre E-Mail-Adresse und Telefonnummer an, aktivieren Sie Ihr Konto und tragen Sie Ihren Bedarf in das Formular ein. \n\nSobald wir einen potenziellen Gastgeber für Sie gefunden haben, informieren wir Sie per E-Mail und SMS. Sie können dann auf das Portal gehen, das Profil des Gastgebers einsehen und sein Angebot annehmen oder ablehnen. \n\nSobald beide Parteien die Verbindung bestätigt haben, tauschen Sie Ihre Kontaktdaten aus - klären Sie die letzten Details und bestätigen Sie, wo Sie sich treffen werden. Denken Sie daran, dass nicht jeder Ukrainisch spricht - daher kann der E-Mail-Kontakt manchmal eine bequemere Option sein, da es im Internet viele Übersetzer gibt, die Sie zur Übersetzung Ihrer Konversation nutzen können."
+      },
+      "002": {
+        "question": "Kann ich mit einem Transport von der Grenze zu meinem endgültigen Bestimmungsort rechnen?",
+        "answer": "Nicht jeder, der eine Unterkunft für Flüchtlinge anbietet, ist motorisiert oder kann einen Transport anbieten. Das Angebot, das Sie erhalten, kann mit dem Vermerk \"mit Transport\" versehen sein. Andernfalls können Sie Ihren Gastgeber im privaten Schriftverkehr um Hilfe bitten."
+      },
+      "003": {
+        "question": "Soll ich für Unterkunft und Verpflegung der Person, die mich aufgenommen hat, aufkommen?",
+        "answer": "Die Hilfe für Flüchtlinge ist selbstlos und kostenlos. Menschen, die sich auf dem Portal registrieren und Hilfe anbieten, erwarten keine Gegenleistung. Denken Sie jedoch daran, dass der Dienst nicht für die Bedingungen verantwortlich ist, unter denen Sie aufgenommen werden. Vergewissern Sie sich, dass Sie keine Gegenleistung erwarten."
+      }
+    }
+  }
 }
