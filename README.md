@@ -26,7 +26,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ![image](https://user-images.githubusercontent.com/102538002/169299195-c2498fb1-5ae2-43cd-bdf6-6838f5ed8bf9.png)
 
-
 ## 2. API from "dev" server
 
 You can use API from ["dev"](https://dev.uasos.org/) server changing
@@ -47,7 +46,7 @@ Ensure that `.env` in this project contains:
 
 We are using [Google Identity Platform] (https://cloud.google.com/identity-platform) for user authentication.
 
-You need to set up a few values in `.env` to use Identity Platform on local envinronment.
+You need to set up a few values in `.env` to use Identity Platform on local environment.
 
 For signing in/up you need:
 
@@ -65,6 +64,33 @@ To use API on localhost (for user token verification) you need:
 - `FIREBASE_PRIVATE_KEY`
 
 Ask your team leader about it :)
+
+## 6. Cypress e2e tests
+
+First, environment for Cypress need to be set up
+In the project root run: `touch serviceAccount.json cypress.env.json`
+
+Ask somebody from your teammates to send you content of this files and copy it to each file respectively.
+
+serviceAccount.json must contain data from the firebase console private key, see how to generate it [in the Google Docs](https://sites.google.com/site/scriptsexamples/new-connectors-to-google-services/firebase/tutorials/authenticate-with-a-service-account).
+
+cypress.env.json must contain cypress local variables.
+
+Both this files contains sensitive data, make sure they are always added to the .gitignore
+
+Before running tests, make sure your development server is running, if no, run:
+`yarn dev`
+
+Test runner can be opened in different mods
+
+1. Manual mode, run: `yarn cy`
+2. Automated mode, run: `yarn e2e`
+3. Automated mode with ui, run: `yarn e2e:headed`
+
+To learn more about Cypress.io, take a look at the following:
+
+- [Cypress.io Guides](https://docs.cypress.io/guides/getting-started/writing-your-first-test) - writing you first test.
+- [Cypress.io API](https://docs.cypress.io/api/table-of-contents) - all assertions, commands and more.
 
 ## Learn More about Next.js
 

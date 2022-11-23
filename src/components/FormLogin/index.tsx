@@ -217,6 +217,7 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
               <></>
             )}
             <ButtonCta
+              testID="login-button"
               style={{
                 width: "130px",
                 height: "43px",
@@ -243,7 +244,11 @@ const FormLogin = ({ providers, csrfToken: _csrfToken }: FormLoginProps) => {
             <></>
           )}
           {smsVerificationSuccess ? <SmsVerificationSuccessModal /> : <></>}
-          {error ? <ErrorText>{error}</ErrorText> : <></>}
+          {error ? (
+            <ErrorText testID="error-message">{error}</ErrorText>
+          ) : (
+            <></>
+          )}
           {providerLoginError ? (
             <CardModal
               closeable

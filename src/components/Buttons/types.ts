@@ -10,6 +10,7 @@ export type ButtonProps = {
   colorOpposite?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
+  testID?: string;
 
   // next-link params for routing
   onMouseEnter?: (event: NativeTouchEvent) => void;

@@ -6,7 +6,10 @@
     "start": "next start",
     "prepare": "husky install",
     "lint": "eslint .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "cy": "cypress open",
+    "e2e": "cypress run",
+    "e2e:headed": "cypress run --headed"
   },
   "dependencies": {
     "@artsy/detect-responsive-traits": "^0.1.0",
@@ -66,6 +69,8 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-react-native-web": "^0.17.7",
     "babel-plugin-styled-components": "^2.0.6",
+    "cypress": "^9.6.1",
+    "cypress-firebase": "^2.2.1",
     "eslint": "^8.10.0",
     "eslint-config-next": "^12.1.0",
     "eslint-config-prettier": "^8.4.0",
