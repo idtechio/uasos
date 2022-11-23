@@ -51,6 +51,10 @@ const StyledButton = styled(ButtonCta)`
   align-self: flex-start;
 `;
 
+const TextBold = styled.Text`
+  font-weight: bold;
+`;
+
 export function LikeToHelpSection({ children }: LikeToHelpSectionProps) {
   const { t } = useTranslation("landingPage");
   const router = useRouter();
@@ -69,12 +73,12 @@ export function LikeToHelpSection({ children }: LikeToHelpSectionProps) {
               t={t}
               i18nKey="likeToHelp.details"
               components={{
-                bold: <strong />,
+                bold: <TextBold />,
               }}
             >
               Zgłoś lokal, pokój lub miejsce, które możesz{" "}
-              <strong>nieodpłatnie</strong> udostępnić{" "}
-              <strong>ofiarom wojny w Ukrainie</strong>
+              <TextBold>nieodpłatnie</TextBold> udostępnić{" "}
+              <TextBold>ofiarom wojny w Ukrainie</TextBold>
             </Trans>
           </DetailsText>
           <StyledButton

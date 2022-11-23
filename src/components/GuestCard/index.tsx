@@ -53,11 +53,11 @@ const GuestCard = ({
               <View style={styles.headerRightText}>
                 <AccountIcon width="16" height="16" />
                 <Text style={styles.headerRightTextContent}>
-                  <strong>
+                  <Text style={styles.textBold}>
                     {t("guestOffer.peopleToAccommodate", {
                       count: numberOfGuests - 1,
                     })}
-                  </strong>
+                  </Text>
                 </Text>
               </View>
               <View style={styles.headerRightText}>
@@ -80,7 +80,7 @@ const GuestCard = ({
                 location: preferredPlace || t("staticValues.anyLocation"),
               }}
             >
-              preferred location: <strong>any</strong>
+              preferred location: <Text style={styles.textBold}>any</Text>
             </Trans>
           </Text>
         </View>
@@ -94,7 +94,8 @@ const GuestCard = ({
                   animals: animals.join(", "),
                 }}
               >
-                animals with us: <strong>{animals.join(", ")}</strong>
+                animals with us:{" "}
+                <Text style={styles.textBold}>{animals.join(", ")}</Text>
               </Trans>
             </Text>
           </View>
@@ -110,7 +111,7 @@ const GuestCard = ({
                   age: "6 miesięcy",
                 }}
               >
-                kids with us: <strong>6 months</strong>
+                kids with us: <Text style={styles.textBold}>6 months</Text>
               </Trans>
             </Text>
           </View>

@@ -36,7 +36,7 @@ const OfferBox = ({ location, host, preferences }: Props) => {
                 i18nKey="accommodationOffer.canAccommodate"
                 values={{ count: 6 }}
               >
-                place for <strong>3 people</strong>
+                place for <Text style={styles.textBold}>3 people</Text>
               </Trans>
             </Text>
           </View>
@@ -47,7 +47,7 @@ const OfferBox = ({ location, host, preferences }: Props) => {
                 i18nKey="accommodationOffer.duration"
                 values={{ time: t("staticValues.timePeriod.twoWeeks") }}
               >
-                max. <strong>2 weeks</strong>
+                max. <Text style={styles.textBold}>2 weeks</Text>
               </Trans>
             </Text>
           </View>
